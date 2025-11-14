@@ -5,6 +5,8 @@
 physics_demo
 advanced_demo
 scientific_demo
+matrix_demo
+matrix_advanced
 
 # CMake
 build/
