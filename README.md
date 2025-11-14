@@ -318,6 +318,165 @@ A comprehensive C++ library implementing fundamental mathematics and physics con
 
 ---
 
+## Topology
+
+**Location**: `include/maths/topology/`
+
+Advanced topological concepts including metric spaces, topological spaces, weak topologies, and set-valued mappings.
+
+### Metric Spaces (`metric_spaces.hpp`)
+
+#### MetricSpace Template Class
+- Generic metric space implementation with custom distance functions
+- `distance(x, y)` - Compute metric between points
+- `converges(sequence, limit)` - Check sequence convergence
+- `isCauchy(sequence)` - Verify Cauchy property
+- `inOpenBall()`, `inClosedBall()`, `onSphere()` - Ball membership
+
+#### Standard Metrics
+- `EuclideanSpace` - ‖x - y‖₂ (Euclidean distance)
+- `TaxicabSpace` - ‖x - y‖₁ (Manhattan distance)
+- `MaximumSpace` - ‖x - y‖∞ (Chebyshev distance)
+- `DiscreteMetricSpace` - d(x,y) = 0 if x=y, 1 otherwise
+
+#### Properties and Theory
+- `MetricSpaceProperties::axioms()` - Four metric axioms
+- `convergence()` - Sequence convergence definition
+- `completeness()` - Complete metric spaces (Cauchy convergence)
+- `openClosedSets()` - Open/closed sets, closure, interior, boundary
+- `compactness()` - Heine-Borel, sequential compactness
+- `continuity()` - Continuous, uniform, Lipschitz continuity
+
+#### Convergence Modes
+- `Convergence::pointwise()` - Pointwise convergence of functions
+- `uniform()` - Uniform convergence, sup norm
+- `comparison()` - Uniform ⇒ pointwise, Dini's theorem
+
+### Topological Spaces (`topological_spaces.hpp`)
+
+#### General Topology
+- `TopologicalSpaceProperties::definition()` - Topology axioms
+- `separationAxioms()` - T₀, T₁, T₂ (Hausdorff), T₃, T₃½, T₄ (Normal)
+- `connectedness()` - Connected and path-connected spaces
+- `basesSubbases()` - Bases and subbases for topologies
+
+#### Weak Topologies
+- `WeakTopology::initialTopology()` - Coarsest topology making maps continuous
+- `finalTopology()` - Finest topology (quotient topology)
+- `weakTopologyBanach()` - Weak and weak* topologies on Banach spaces
+
+#### Semicontinuity
+- `Semicontinuity::lowerSemicontinuous()` - lsc functions, epigraph
+- `upperSemicontinuous()` - usc functions, hypograph
+- `existenceResults()` - Weierstrass theorem, optimization applications
+
+#### Baire Spaces
+- `BaireSpaces::categoryTheorem()` - Baire Category Theorem
+- `uniformBoundedness()` - Banach-Steinhaus Theorem
+- `openMappingTheorem()` - Open Mapping, Inverse Mapping, Closed Graph Theorems
+
+### Set-Valued Mappings (`set_valued_mappings.hpp`)
+
+#### Multimaps/Correspondences
+- `SetValuedMappings::definitions()` - F: X ⇉ Y, domain, graph, preimages
+- `continuityConcepts()` - Upper/lower hemicontinuity, continuity
+- `sequentialCharacterization()` - Sequential characterization in metric spaces
+- `closedGraph()` - Closed graph property, Maximum Theorem
+
+#### Fixed-Point Theorems
+- `FixedPointTheorems::kakutani()` - Kakutani Fixed-Point Theorem
+- `michaelSelection()` - Michael Selection Theorem (lhc → continuous selection)
+- `otherResults()` - Banach, Brouwer, Schauder, Fan-Glicksberg
+
+#### Measurability
+- `Measurability::measurableSelections()` - Measurable multifunctions
+- Kuratowski-Ryll-Nardzewski and Aumann theorems
+
+---
+
+## Analysis
+
+**Location**: `include/maths/analysis/`
+
+Advanced analysis concepts including convex analysis, separation theorems, and conjugate functions.
+
+### Convexity (`convexity.hpp`)
+
+#### Convex Sets
+- `ConvexSets::definition()` - Convex set axioms and properties
+- `interiorClosure()` - Interior, closure, relative interior
+- `extremePoints()` - Extreme points, Krein-Milman Theorem
+- `supportingHyperplanes()` - Supporting hyperplanes, normal cones
+
+#### Separation Theorems
+- `SeparationTheorems::basicSeparation()` - Point-set, set-set separation
+- `hahnBanach()` - Hahn-Banach Theorem (analytic and geometric forms)
+- `farkasLemma()` - Farkas Lemma, theorems of alternatives
+
+#### Convex Functions
+- `ConvexFunctions::definition()` - Convex, strictly convex, strongly convex
+- `jensenInequality()` - Jensen's inequality, AM-GM
+- `subdifferential()` - Subdifferential ∂f(x), optimality conditions
+- `conjugate()` - Fenchel-Legendre conjugate f*(y), Fenchel-Young
+
+---
+
+## Optimization
+
+**Location**: `include/maths/optimization/`
+
+Variational principles, error bounds, and optimization methods.
+
+### Variational Principles (`variational_principles.hpp`)
+
+#### Ekeland's Principle
+- `EkelandPrinciple::statement()` - Ekeland Variational Principle (EVP)
+- `proofSketch()` - Proof using Zorn's Lemma
+- `consequences()` - Approximate minimizers, critical points
+- `applications()` - Optimization, PDEs, fixed-points, game theory
+
+#### Fixed-Point Theorems
+- `CaristiTheorem::statement()` - Caristi Fixed-Point Theorem
+- `comparisonContractions()` - Caristi vs Banach contraction
+
+#### Geometric Principles
+- `GeometricPrinciples::dropTheorem()` - Drop Theorem (Danes)
+- `petalTheorem()` - Petal and Flower Petal Theorems
+
+#### Palais-Smale Condition
+- `PalaisSmale::condition()` - (PS) and (PS)_c conditions
+- `mountainPass()` - Ambrosetti-Rabinowitz Mountain Pass Theorem
+- `deformationLemmas()` - Deformation lemmas, Morse theory
+
+#### Metric Convexity
+- `MetricConvexity::busemannConvexity()` - Geodesic spaces, CAT(0) spaces
+
+### Error Bounds (`error_bounds.hpp`)
+
+#### Error Bounds and Regularity
+- `ErrorBounds::definition()` - Error bounds, Hölder/Lipschitz bounds
+- `hoffman()` - Hoffman's error bound for linear systems
+- `lojasiewicz()` - Łojasiewicz inequality, KŁ property
+- `metricRegularity()` - Metric regularity, Aubin property
+
+#### Decrease Principles
+- `DecreasePrinciple::armijo()` - Armijo rule (sufficient decrease)
+- `wolfe()` - Wolfe conditions (Armijo + curvature)
+- `goldstein()` - Goldstein conditions
+
+#### Penalization Methods
+- `Penalization::exactPenalty()` - ℓ₁ exact penalty methods
+- `quadraticPenalty()` - Quadratic penalty, ill-conditioning
+- `augmentedLagrangian()` - Method of multipliers, ADMM
+- `barrierMethods()` - Logarithmic barriers, interior point methods
+
+#### Robust Optimization
+- `RobustOptimization::robust()` - Worst-case optimization
+- `stabilized()` - Stabilized infima with regularization
+- `tikhonov()` - Tikhonov regularization for ill-posed problems
+
+---
+
 # Physics
 
 ## Basic Mechanics
