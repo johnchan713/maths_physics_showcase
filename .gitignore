@@ -11,6 +11,7 @@ topology_demo
 finance_demo
 calculus_demo
 nonsmooth_demo
+nonsmooth_algorithms_demo
 
 # CMake
 build/
