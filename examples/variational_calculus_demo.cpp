@@ -13,7 +13,7 @@
  * - Conservation laws and field theories
  */
 
-#include "maths/geometry/variational_calculus.hpp"
+#include "maths/advanced/geometry/variational_calculus.hpp"
 #include <iostream>
 #include <iomanip>
 #include <cmath>

@@ -12,7 +12,7 @@
  * - MCMC convergence diagnostics
  */
 
-#include "maths/stochastic/monte_carlo.hpp"
+#include "maths/advanced/stochastic/monte_carlo.hpp"
 #include <iostream>
 #include <iomanip>
 #include <cmath>
