@@ -174,11 +174,11 @@ int main() {
     double yPos = physics::projectile::calculateVerticalPosition(initialVel, launchAngle, t);
     double vx = physics::projectile::getHorizontalVelocityAtTime(initialVel, launchAngle);
     double vy = physics::projectile::getVerticalVelocityAtTime(initialVel, launchAngle, t);
-    double speed = physics::projectile::calculateSpeedAtTime(initialVel, launchAngle, t);
+    double projectileSpeed = physics::projectile::calculateSpeedAtTime(initialVel, launchAngle, t);
 
     std::cout << "Position: (" << xPos << ", " << yPos << ") m\n";
     std::cout << "Velocity: (" << vx << ", " << vy << ") m/s\n";
-    std::cout << "Speed: " << speed << " m/s\n";
+    std::cout << "Speed: " << projectileSpeed << " m/s\n";
 
     std::cout << "\n--- Maximum Range ---\n";
     double maxRange = physics::projectile::calculateMaximumRange(initialVel);

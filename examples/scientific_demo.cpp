@@ -55,7 +55,7 @@ int main() {
     std::cout << "\n--- Barometer Height Measurement ---\n";
     double mercuryHeight = 0.76; // m (76 cm)
 
-    double atmPressure = physics::thermodynamics::barometerPressure(mercuryHeight);
+    double atmPressure = physics::fluid_mechanics::barometerPressure(mercuryHeight);
     std::cout << "Mercury column height: " << mercuryHeight << " m\n";
     std::cout << "Atmospheric pressure: " << (atmPressure / 1000.0) << " kPa\n";
     std::cout << "  = " << (atmPressure / 101325.0) << " atm\n";
@@ -79,11 +79,13 @@ int main() {
     double depth = 100.0; // meters
 
     std::cout << "Water depth: " << depth << " m\n";
-    double waterPressure = physics::fluid_mechanics::pressureAtDepth(depth);
+    double waterPressure = physics::fluid_mechanics::pressureAtDepth(
+        depth, physics::fluid_mechanics::constants::WATER_DENSITY);
     std::cout << "Total pressure: " << (waterPressure / 1000.0) << " kPa\n";
     std::cout << "  = " << (waterPressure / 101325.0) << " atm\n";
 
-    double gaugePressure = physics::fluid_mechanics::gaugePressure(depth);
+    double gaugePressure = physics::fluid_mechanics::gaugePressure(
+        depth, physics::fluid_mechanics::constants::WATER_DENSITY);
     std::cout << "Gauge pressure: " << (gaugePressure / 1000.0) << " kPa\n";
 
     std::cout << "\n--- Continuity Equation (Flow in Pipes) ---\n";
@@ -109,7 +111,7 @@ int main() {
     std::cout << "Efflux velocity: " << effluxVel << " m/s\n";
 
     double holeArea = 0.001; // m² (10 cm²)
-    double effluxRate = physics::fluid_mechanics::volumetricEffluxRate(tankDepth, holeArea);
+    double effluxRate = physics::fluid_mechanics::volumeFlowRate(holeArea, effluxVel);
     std::cout << "Flow rate (hole area " << (holeArea * 10000) << " cm²): " <<
         (effluxRate * 1000.0) << " L/s\n";
 
@@ -120,7 +122,7 @@ int main() {
     std::cout << "Tank depth: " << jetDepth << " m\n";
     std::cout << "Orifice height above ground: " << jetHeight << " m\n";
 
-    double jetRange = physics::fluid_mechanics::horizontalJetRange(jetDepth, jetHeight);
+    double jetRange = physics::fluid_mechanics::jetRange(jetDepth, jetHeight);
     std::cout << "Horizontal jet range: " << jetRange << " m\n";
 
     std::cout << "\n--- Pipe Friction (Darcy-Weisbach) ---\n";
@@ -139,7 +141,7 @@ int main() {
         physics::fluid_mechanics::constants::WATER_DENSITY, pipeVelocity);
     std::cout << "Pressure drop due to friction: " << (pressureDrop / 1000.0) << " kPa\n";
 
-    double headLoss = physics::fluid_mechanics::headLoss(
+    double headLoss = physics::fluid_mechanics::headLossFriction(
         frictionFactor, pipeLength, pipeDiameter, pipeVelocity);
     std::cout << "Head loss: " << headLoss << " m\n";
 
@@ -394,14 +396,14 @@ int main() {
         " = √γ = " << std::sqrt(physics::wave_mechanics::constants::GAMMA_AIR) << "\n";
 
     std::cout << "\n--- Resonance in Open Tube (Organ Pipe) ---\n";
-    double pipeLength = 1.0; // m
+    double organPipeLength = 1.0; // m
 
-    std::cout << "Open pipe length: " << pipeLength << " m\n";
+    std::cout << "Open pipe length: " << organPipeLength << " m\n";
     std::cout << "First 3 harmonics:\n";
 
     for (int n = 1; n <= 3; n++) {
         double resonantFreq = physics::wave_mechanics::openTubeResonance(
-            n, pipeLength, soundSpeed);
+            n, organPipeLength, soundSpeed);
         std::cout << "  n=" << n << ": " << resonantFreq << " Hz\n";
     }
 
