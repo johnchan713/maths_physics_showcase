@@ -166,13 +166,13 @@ int main() {
     // Example 2: Multiple forces
     std::cout << "\n--- Example 2: Multiple Forces Acting on Object ---\n";
     std::vector<double> multipleForces = {100.0, -30.0, 50.0, -20.0}; // N
-    double objectMass = 25.0; // kg
+    double objectMass2 = 25.0; // kg
 
     std::cout << "Forces acting: 100N, -30N, 50N, -20N\n";
-    std::cout << "Object mass: " << objectMass << " kg\n";
+    std::cout << "Object mass: " << objectMass2 << " kg\n";
 
     double netF = physics::dynamics::calculateNetForce(multipleForces);
-    double resultAccel = physics::dynamics::calculateAccelerationFromForce(netF, objectMass);
+    double resultAccel = physics::dynamics::calculateAccelerationFromForce(netF, objectMass2);
 
     std::cout << "Net force: " << netF << " N\n";
     std::cout << "Acceleration: " << resultAccel << " m/s²\n";
@@ -251,12 +251,12 @@ int main() {
     double burnTime = 10.0;             // s
 
     // During powered ascent
-    double weight = physics::newton::calculateWeight(rocketMass, g);
-    double netForceUp = thrust - weight;
+    double rocketWeight = physics::newton::calculateWeight(rocketMass, g);
+    double netForceUp = thrust - rocketWeight;
 
     std::cout << "\n--- Powered Ascent (0-10s) ---\n";
     std::cout << "Thrust force: " << thrust << " N (upward)\n";
-    std::cout << "Weight: " << weight << " N (downward)\n";
+    std::cout << "Weight: " << rocketWeight << " N (downward)\n";
     std::cout << "Net force: " << netForceUp << " N (upward)\n";
 
     double ascentAccel = physics::dynamics::calculateAccelerationFromForce(netForceUp, rocketMass);

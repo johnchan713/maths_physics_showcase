@@ -418,6 +418,82 @@ inline double calculateTensionAtTop(double mass, double velocity, double radius,
 }
 
 // ============================================================================
+// Other Expressions for Centripetal Force
+// ============================================================================
+
+/**
+ * @brief Calculate centripetal force using angular velocity
+ *
+ * Alternative expression: F_c = mω²r
+ *
+ * @param mass Mass of object (in kilograms, must be > 0)
+ * @param angularVelocity Angular velocity (in rad/s, must be >= 0)
+ * @param radius Radius of circular path (in meters, must be > 0)
+ * @return Centripetal force (in Newtons)
+ * @throws std::invalid_argument if parameters out of range
+ */
+inline double calculateCentripetalForceAngular(double mass, double angularVelocity, double radius) {
+    if (mass <= 0) {
+        throw std::invalid_argument("Mass must be positive");
+    }
+    if (angularVelocity < 0) {
+        throw std::invalid_argument("Angular velocity must be non-negative");
+    }
+    if (radius <= 0) {
+        throw std::invalid_argument("Radius must be positive");
+    }
+    return mass * angularVelocity * angularVelocity * radius;
+}
+
+/**
+ * @brief Calculate centripetal force using period
+ *
+ * Since ω = 2π/T, we have F_c = m(2π/T)²r = 4π²mr/T²
+ *
+ * @param mass Mass of object (in kilograms, must be > 0)
+ * @param radius Radius of circular path (in meters, must be > 0)
+ * @param period Period of revolution (in seconds, must be > 0)
+ * @return Centripetal force (in Newtons)
+ * @throws std::invalid_argument if parameters out of range
+ */
+inline double calculateCentripetalForceFromPeriod(double mass, double radius, double period) {
+    if (mass <= 0) {
+        throw std::invalid_argument("Mass must be positive");
+    }
+    if (radius <= 0) {
+        throw std::invalid_argument("Radius must be positive");
+    }
+    if (period <= 0) {
+        throw std::invalid_argument("Period must be positive");
+    }
+    return (4.0 * M_PI * M_PI * mass * radius) / (period * period);
+}
+
+/**
+ * @brief Calculate centripetal force using frequency
+ *
+ * Since ω = 2πf, we have F_c = m(2πf)²r = 4π²mf²r
+ *
+ * @param mass Mass of object (in kilograms, must be > 0)
+ * @param radius Radius of circular path (in meters, must be > 0)
+ * @param frequency Frequency (in Hz, must be > 0)
+ * @return Centripetal force (in Newtons)
+ * @throws std::invalid_argument if parameters out of range
+ */
+inline double calculateCentripetalForceFromFrequency(double mass, double radius, double frequency) {
+    if (mass <= 0) {
+        throw std::invalid_argument("Mass must be positive");
+    }
+    if (radius <= 0) {
+        throw std::invalid_argument("Radius must be positive");
+    }
+    if (frequency <= 0) {
+        throw std::invalid_argument("Frequency must be positive");
+    }
+    return 4.0 * M_PI * M_PI * mass * frequency * frequency * radius;
+}
+
+// ============================================================================
 // Conversions
 // ============================================================================
 
