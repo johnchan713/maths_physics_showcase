@@ -243,57 +243,107 @@ physics_showcase/
 ### Differential Equations and Dynamical Systems (`maths/advanced/dynamical_systems/ode_dynamical_systems.hpp`)
 **~1500 lines | Comprehensive ODE theory and chaos**
 
-**Part 1 - Classical Theory (Chapters 1-5):**
+**Classical ODE Theory:**
 - **Newton's Equations**: Second-order to first-order conversion, autonomous equations, equilibria
 - **Initial Value Problems**: Euler, Heun, RK4 methods, Picard iteration, Lipschitz continuity
 - **Linear Systems**: Matrix exponential, fundamental matrices, Floquet theory for periodic systems
 - **Complex Domain**: Frobenius method, indicial equations, Bessel's equation
 - **Boundary Value Problems**: Sturm-Liouville theory foundation
 
-**Part 2 - Dynamical Systems (Chapters 6-9):**
-- **Dynamical Systems**: Flows φ_t(x), fixed points, Liapunov functions, stability analysis
+**Dynamical Systems:**
+- **Flows and Trajectories**: Flows φ_t(x), fixed points, Liapunov functions, stability analysis
 - **Local Behavior**: Jacobian analysis, eigenvalues, classification (nodes, saddles, spirals, centers)
-- **Hartman-Grobman Theorem**: Linearization near hyperbolic fixed points
+- **Linearization**: Hartman-Grobman theorem for hyperbolic fixed points
 - **Planar Systems**: Poincaré-Bendixson theorem foundation, limit cycles
 - **Higher Dimensions**: Attractors, Lorenz system, Hamiltonian mechanics, KAM theorem
 
-**Part 3 - Chaos Theory (Chapters 10-13):**
+**Chaos Theory:**
 - **Discrete Systems**: Logistic map, period doubling, bifurcation diagrams
 - **Lyapunov Exponents**: λ > 0 ⟹ chaos, numerical computation
 - **Poincaré Maps**: First return maps, periodic orbits
-- **Melnikov Method**: Homoclinic chaos detection
-- **Sarkovskii's Theorem**: Period ordering (3 ⟹ all periods)
+- **Homoclinic Chaos**: Melnikov method for chaos detection
+- **Period Theory**: Sarkovskii's theorem (period 3 implies all periods)
 - **Symbolic Dynamics**: Orbit encoding, admissible sequences
 - **Fractals**: Box-counting dimension, strange attractors
-- **Smale Horseshoe**: Stretch and fold, topological chaos
+- **Topological Chaos**: Smale horseshoe, stretch and fold mechanisms
 
 **Applications**: Physics (pendulum, Lorenz), biology (population dynamics), engineering (nonlinear control)
 
 ### Partial Differential Equations (`maths/advanced/pde/partial_differential_equations.hpp`)
 **~1500 lines | Classical PDE theory and method of characteristics**
 
-**Chapter 1 - Introduction:**
-- **Classification**: Order (first, second, higher), linearity (linear, quasi-linear, semi-linear, fully nonlinear)
-- **Second Order Types**: Elliptic (Δ < 0), parabolic (Δ = 0), hyperbolic (Δ > 0) via discriminant
+**PDE Classification and Fundamentals:**
+- **Order and Linearity**: First/second/higher order, linear/quasi-linear/semi-linear/fully nonlinear
+- **Second Order Types**: Elliptic (Δ < 0), parabolic (Δ = 0), hyperbolic (Δ > 0) via discriminant Δ = B² - AC
 - **Boundary Conditions**: Dirichlet (u = g), Neumann (∂u/∂n = g), Robin (αu + β∂u/∂n = g), Cauchy
-- **Well-Known PDEs**:
-  - Heat equation: u_t = α u_xx (fundamental solution, diffusion)
-  - Wave equation: u_tt = c² u_xx (d'Alembert solution)
-  - Laplace equation: Δu = 0 (harmonic functions, mean value property)
-  - Poisson equation: Δu = f (with source)
-  - Transport equation: u_t + c·∇u = 0
-- **Superposition Principle**: Linear combinations, general solution structure
+- **Superposition Principle**: Linear combinations for linear PDEs, solution space structure
 
-**Chapter 2 - Method of Characteristics:**
+**Well-Known PDEs:**
+- **Heat Equation**: u_t = α u_xx (fundamental solution, diffusion, smoothing)
+- **Wave Equation**: u_tt = c² u_xx (d'Alembert solution, propagation)
+- **Laplace Equation**: Δu = 0 (harmonic functions, mean value property)
+- **Poisson Equation**: Δu = f (with source term)
+- **Transport Equation**: u_t + c·∇u = 0 (advection)
+
+**Method of Characteristics:**
 - **First Order Linear**: Constant/variable coefficients, characteristic curves dy/dx = b/a
-- **Quasi-Linear**: a(x,y,u) u_x + b(x,y,u) u_y = c(x,y,u), Charpit's method, Burgers' equation
-- **Fully Nonlinear**: F(x, y, u, u_x, u_y) = 0, complete Charpit system, Eikonal equation
+- **Quasi-Linear Equations**: a(x,y,u) u_x + b(x,y,u) u_y = c(x,y,u), Charpit's method
+- **Fully Nonlinear Equations**: F(x, y, u, u_x, u_y) = 0, complete Charpit system
 - **Geometrical Interpretation**: Integral surfaces, Monge cones, characteristic directions
-- **Second Order**: Characteristic equation A(dy)² - 2B dx dy + C(dx)² = 0, canonical transformations
+- **Second Order Characteristics**: A(dy)² - 2B dx dy + C(dx)² = 0, canonical forms
 
 **Key Algorithms**: Classification via discriminant, characteristic ODE integration (Euler, RK4), Charpit solver, solution verification, boundary condition checking
 
 **Applications**: Heat diffusion, wave propagation, fluid mechanics, electrostatics, quantum mechanics, optimal control
+
+### PDE Solution Methods (`maths/advanced/pde/pde_solution_methods.hpp`)
+**~1500 lines | Classical solution techniques for PDEs**
+
+**Linear Equations with Constant Coefficients:**
+- **Inverse Operators**: Differential operator D = d/dx, inverse operator D⁻¹ (integration)
+- **Polynomial Operators**: P(D) = aₙDⁿ + ... + a₁D + a₀, factorization methods
+- **Exponential Shift**: Operator shift formula e^(ax) P(D) e^(-ax) = P(D - a)
+- **Homogeneous Equations**: P(D)u = 0, complementary function from characteristic equation
+- **Nonhomogeneous Equations**: P(D)u = f(x), particular solutions via inverse operators
+- **Solution Structure**: General solution = complementary function + particular solution
+
+**Orthogonal Expansions:**
+- **Orthogonal Polynomials**:
+  - Legendre polynomials Pₙ(x) on [-1,1]: (n+1)Pₙ₊₁ = (2n+1)xPₙ - nPₙ₋₁
+  - Chebyshev polynomials Tₙ(x) = cos(n arccos x), minimal deviation property
+  - Hermite polynomials Hₙ(x): Hₙ₊₁ = 2xHₙ - 2nHₙ₋₁, weight function e^(-x²)
+  - Laguerre polynomials Lₙ(x): (n+1)Lₙ₊₁ = (2n+1-x)Lₙ - nLₙ₋₁, weight e^(-x)
+- **Fourier Series Expansions**:
+  - Trigonometric series: f(x) = a₀/2 + ∑ aₙcos(nπx/L) + bₙsin(nπx/L)
+  - Half-range expansions: sine series, cosine series
+  - Convergence theorems for piecewise smooth functions
+- **Bessel Functions**:
+  - Bessel functions of first kind Jₙ(x): series expansions, recurrence relations
+  - Modified Bessel functions Iₙ(x) for imaginary arguments
+  - Zeros of Bessel functions for eigenvalue problems
+  - Applications to cylindrical boundary value problems
+
+**Separation of Variables:**
+- **Wave Equation Solutions** (hyperbolic): u_tt = c²u_xx
+  - Series form: u(x,t) = ∑ (Aₙcos(ωₙt) + Bₙsin(ωₙt))sin(nπx/L)
+  - Standing waves, normal modes, frequency spectrum
+- **Heat Equation Solutions** (parabolic): u_t = αu_xx
+  - Exponential decay: u(x,t) = ∑ Aₙ exp(-α(nπ/L)²t)sin(nπx/L)
+  - Long-time behavior and steady states
+- **Laplace Equation Solutions** (elliptic): Δu = 0
+  - Rectangular domains: product solutions X(x)Y(y)
+  - Dirichlet boundary value problems
+- **Cylindrical Coordinate Systems**: ∇²u = u_rr + (1/r)u_r + (1/r²)u_θθ + u_zz
+  - Bessel function solutions for radial dependence
+  - Eigenvalues from zeros of Jₙ(x)
+- **Spherical Coordinate Systems**: Laplacian in (r,θ,φ)
+  - Legendre polynomial solutions for angular dependence
+  - Azimuthal symmetry problems
+- **Nonhomogeneous Problems**: Eigenfunction expansions, Duhamel's principle for time-dependent sources
+
+**Key Techniques**: Orthogonality relations, eigenfunction expansions, Fourier coefficient computation, separation ansatz u(x,t) = X(x)T(t), boundary condition matching, series convergence analysis
+
+**Applications**: Vibrating strings, heat conduction, electrostatic potential, quantum mechanics (particle in box), acoustics, diffusion processes
 
 ### Probability & Statistics (`maths/advanced/probability/distributions.hpp`)
 **~920 lines | Comprehensive probability distributions**
@@ -562,6 +612,10 @@ done
   - Method of characteristics (linear, quasi-linear, nonlinear PDEs)
   - Charpit's method for fully nonlinear equations
   - PDE classification via discriminant
+  - Separation of variables (wave, heat, Laplace equations)
+  - Orthogonal polynomial expansions (Legendre, Chebyshev, Hermite, Laguerre)
+  - Bessel function computations and zero-finding
+  - Fourier series coefficient computation
 
 ## 🎓 Educational Value
 

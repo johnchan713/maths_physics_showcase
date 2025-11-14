@@ -2,25 +2,23 @@
  * @file partial_differential_equations.hpp
  * @brief Comprehensive Partial Differential Equations Theory
  *
- * CHAPTER 1: INTRODUCTION
- * 1.1. Notation and Definitions (orders, linearity, homogeneity)
- * 1.2. Initial and Boundary Conditions (Cauchy, Dirichlet, Neumann, Robin)
- * 1.3. Classification of Second Order Equations (elliptic, parabolic, hyperbolic)
- * 1.4. Some Known Equations (heat, wave, Laplace, Poisson, transport)
- * 1.5. Superposition Principle (linear equations)
- * 1.6. Exercises
+ * PDE FUNDAMENTALS:
+ * - Notation and Definitions (orders, linearity, homogeneity)
+ * - Initial and Boundary Conditions (Cauchy, Dirichlet, Neumann, Robin)
+ * - Classification of Second Order Equations (elliptic, parabolic, hyperbolic)
+ * - Well-Known Equations (heat, wave, Laplace, Poisson, transport)
+ * - Superposition Principle (linear equations)
  *
- * CHAPTER 2: METHOD OF CHARACTERISTICS
+ * METHOD OF CHARACTERISTICS:
  * First Order Equations:
- * 2.1. Linear Equations with Constant Coefficients
- * 2.2. Linear Equations with Variable Coefficients
- * 2.3. First Order Quasi-linear Equations
- * 2.4. First Order Nonlinear Equations
- * 2.5. Geometrical Considerations (characteristic curves, Monge cone)
- * 2.6. Theorems on Characteristics (existence, uniqueness, regularity)
+ * - Linear Equations (constant and variable coefficients)
+ * - Quasi-linear Equations
+ * - Fully Nonlinear Equations
+ * - Geometrical Considerations (characteristic curves, Monge cone)
+ * - Existence, uniqueness, and regularity theorems
  *
  * Second Order Equations:
- * 2.7. Linear and Quasi-linear Equations (characteristic surfaces)
+ * - Linear and Quasi-linear Equations (characteristic surfaces)
  */
 
 #ifndef MATHS_PDE_HPP
@@ -45,13 +43,13 @@ using VectorField3D = std::function<std::array<double, 3>(double, double, double
 
 /**
  * ============================================================================
- * CHAPTER 1: INTRODUCTION
+ * PDE FUNDAMENTALS
  * ============================================================================
  */
 
 /**
  * @class PDEClassification
- * @brief Chapter 1: Classification and properties of PDEs
+ * @brief Classification and properties of PDEs
  */
 class PDEClassification {
 public:
@@ -137,7 +135,7 @@ public:
 
 /**
  * @class BoundaryConditions
- * @brief Chapter 1.2: Initial and boundary conditions
+ * @brief Initial and boundary conditions
  */
 class BoundaryConditions {
 public:
@@ -220,7 +218,7 @@ public:
 
 /**
  * @class WellKnownPDEs
- * @brief Chapter 1.4: Standard PDEs in mathematical physics
+ * @brief Standard PDEs in mathematical physics
  */
 class WellKnownPDEs {
 public:
@@ -383,7 +381,7 @@ public:
 
 /**
  * @class SuperpositionPrinciple
- * @brief Chapter 1.5: Superposition for linear equations
+ * @brief Superposition for linear equations
  */
 class SuperpositionPrinciple {
 public:
@@ -425,13 +423,13 @@ public:
 
 /**
  * ============================================================================
- * CHAPTER 2: METHOD OF CHARACTERISTICS
+ * METHOD OF CHARACTERISTICS
  * ============================================================================
  */
 
 /**
  * @class FirstOrderLinearPDE
- * @brief Chapter 2.1-2.2: First-order linear PDEs
+ * @brief First-order linear PDEs
  */
 class FirstOrderLinearPDE {
 public:
@@ -538,7 +536,7 @@ public:
 
 /**
  * @class QuasilinearPDE
- * @brief Chapter 2.3: First-order quasi-linear equations
+ * @brief First-order quasi-linear equations
  *
  * General form: a(x,y,u) u_x + b(x,y,u) u_y = c(x,y,u)
  */
@@ -649,7 +647,7 @@ public:
 
 /**
  * @class NonlinearFirstOrder
- * @brief Chapter 2.4: First-order fully nonlinear PDEs
+ * @brief First-order fully nonlinear PDEs
  *
  * General form: F(x, y, u, u_x, u_y) = 0
  */
@@ -748,7 +746,7 @@ public:
 
 /**
  * @class GeometricalInterpretation
- * @brief Chapter 2.5: Geometrical considerations
+ * @brief Geometrical considerations
  */
 class GeometricalInterpretation {
 public:
@@ -824,7 +822,7 @@ public:
 
 /**
  * @class SecondOrderCharacteristics
- * @brief Chapter 2.7: Characteristics for second-order PDEs
+ * @brief Characteristics for second-order PDEs
  */
 class SecondOrderCharacteristics {
 public:
