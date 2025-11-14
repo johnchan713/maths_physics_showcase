@@ -4,20 +4,29 @@ A comprehensive C++ library implementing fundamental physics concepts with well-
 
 ## Overview
 
-This project implements core physics functionality as standalone C++ functions, categorized into nine comprehensive modules:
+This project implements core physics functionality as standalone C++ functions, categorized into twelve comprehensive modules:
 
 ### Basic Mechanics
 1. **Newton's Laws of Motion** (`newton_laws.hpp`)
 2. **Kinematics** - Motion with constant acceleration (`kinematics.hpp`)
 3. **Dynamics** - Force causing rectilinear motion (`dynamics.hpp`)
 
-### Advanced Topics
-4. **Unit Conversions** (`units.hpp`) - CGS, SI, Imperial unit conversions
-5. **Inclined Plane** (`inclined_plane.hpp`) - Motion on slopes with/without friction
-6. **Energy & Momentum** (`energy_momentum.hpp`) - KE, PE, momentum relationships
-7. **Projectile Motion** (`projectile.hpp`) - 2D motion under gravity
-8. **Circular Motion** (`circular_motion.hpp`) - Uniform circular motion
-9. **Orbital Mechanics** (`orbital.hpp`) - Satellite orbits and escape velocity
+### Motion and Energy
+4. **Unit Conversions** (`units.hpp`) - CGS, SI, Imperial conversions (Dyne-Gram relation)
+5. **Inclined Plane** (`inclined_plane.hpp`) - Velocity at foot, friction effects
+6. **Energy & Momentum** (`energy_momentum.hpp`) - KE/momentum compared
+7. **Projectile Motion** (`projectile.hpp`) - 2D parabolic trajectories
+
+### Circular and Oscillatory Motion
+8. **Circular Motion** (`circular_motion.hpp`) - Centripetal force expressions
+9. **Simple Harmonic Motion** (`harmonic_motion.hpp`) - SHM, pendulums, vibrating masses
+
+### Rotational Mechanics
+10. **Rotational Dynamics** (`rotational_dynamics.hpp`) - Torque, angular momentum, moments of inertia
+
+### Gravitation and Orbits
+11. **Orbital Mechanics** (`orbital.hpp`) - Satellite motion around Earth
+12. **Universal Gravitation** (`gravitation.hpp`) - Apple and Moon connection, Kepler's Laws
 
 All functions are thoroughly documented with parameter descriptions, units, return values, and exception handling.
 
@@ -27,15 +36,18 @@ All functions are thoroughly documented with parameter descriptions, units, retu
 physics_showcase/
 ├── include/
 │   └── physics/
-│       ├── newton_laws.hpp      # Newton's three laws of motion
-│       ├── kinematics.hpp       # Motion with constant acceleration
-│       ├── dynamics.hpp         # Force and motion integration
-│       ├── units.hpp            # Unit conversions (CGS, SI, Imperial)
-│       ├── inclined_plane.hpp   # Velocity at foot of inclined plane
-│       ├── energy_momentum.hpp  # Energy and momentum comparisons
-│       ├── projectile.hpp       # Projectile motion (2D)
-│       ├── circular_motion.hpp  # Circular motion with constant speed
-│       └── orbital.hpp          # Motion around Earth (orbital mechanics)
+│       ├── newton_laws.hpp         # Newton's three laws of motion
+│       ├── kinematics.hpp          # Motion with constant acceleration
+│       ├── dynamics.hpp            # Force and motion integration
+│       ├── units.hpp               # Unit conversions (Dyne-Gram, CGS, SI)
+│       ├── inclined_plane.hpp      # Velocity at foot of inclined plane
+│       ├── energy_momentum.hpp     # Energy and momentum comparisons
+│       ├── projectile.hpp          # Projectile motion (2D)
+│       ├── circular_motion.hpp     # Circular motion + centripetal force expressions
+│       ├── harmonic_motion.hpp     # Simple harmonic motion and pendulums
+│       ├── rotational_dynamics.hpp # Torque, angular momentum, moment of inertia
+│       ├── orbital.hpp             # Motion around Earth (satellites)
+│       └── gravitation.hpp         # Universal gravitation and Kepler's Laws
 ├── examples/
 │   ├── main.cpp                 # Basic mechanics demonstrations
 │   └── advanced_demo.cpp        # Advanced topics demonstrations
@@ -225,6 +237,11 @@ Motion in a circle with constant speed:
 - `calculateCentripetalForce()` - F_c = mv²/r
 - `calculateVelocityFromAcceleration()` - v = √(a_c × r)
 
+#### Other Expressions for Centripetal Force
+- `calculateCentripetalForceAngular()` - F_c = mω²r
+- `calculateCentripetalForceFromPeriod()` - F_c = 4π²mr/T²
+- `calculateCentripetalForceFromFrequency()` - F_c = 4π²mf²r
+
 #### Angular Motion
 - `calculateAngularVelocity()` - ω = v/r
 - `calculateTangentialVelocity()` - v = ωr
@@ -268,6 +285,122 @@ Motion around Earth and celestial bodies:
 #### Special Orbits
 - `calculateLEOVelocity()` - Low Earth Orbit parameters
 - `calculateWeightInOrbit()` - Gravitational force in orbit
+
+### Simple Harmonic Motion (`harmonic_motion.hpp`)
+
+Oscillatory motion with restoring force proportional to displacement:
+
+#### Acceleration and Force
+- `calculateAcceleration()` - a = -ω²x
+- `calculateMaxAcceleration()` - a_max = ω²A
+- `calculateRestoringForce()` - F = -kx (Hooke's Law)
+- `calculateMaxForce()` - F_max = kA
+
+#### Angular Frequency and Period
+- `calculateAngularFrequency()` - ω = √(k/m)
+- `calculatePeriod()` - T = 2π√(m/k)
+- `calculateFrequency()` - f = (1/2π)√(k/m)
+
+#### Energy of Vibrating Mass
+- `calculateKineticEnergy()` - KE = (1/2)k(A² - x²)
+- `calculatePotentialEnergy()` - PE = (1/2)kx²
+- `calculateTotalEnergy()` - E_total = (1/2)kA²
+- `verifyEnergyConservation()` - Check KE + PE = constant
+
+#### Displacement and Velocity
+- `calculateDisplacement()` - x(t) = A cos(ωt + φ)
+- `calculateVelocity()` - v(t) = -Aω sin(ωt + φ)
+- `calculateMaxVelocity()` - v_max = Aω
+- `calculateVelocityAtDisplacement()` - v = ω√(A² - x²)
+
+#### Simple Pendulum
+- `calculatePendulumPeriod()` - T = 2π√(L/g)
+- `calculatePendulumFrequency()` - f = (1/2π)√(g/L)
+- `calculatePendulumLength()` - L for desired period
+- `calculatePendulumMaxVelocity()` - v_max = θ₀√(gL)
+- `calculatePendulumEnergy()` - E = (1/2)mgLθ₀²
+
+### Rotational Dynamics (`rotational_dynamics.hpp`)
+
+Rotational analogs of linear motion:
+
+#### Angular Acceleration
+- `calculateAngularAcceleration()` - α = Δω/Δt
+- `calculateFinalAngularVelocity()` - ω_f = ω_i + αt
+- `calculateAngularDisplacement()` - θ = ω₀t + (1/2)αt²
+- `calculateTangentialAcceleration()` - a_t = rα
+
+#### Torque
+- `calculateTorque()` - τ = rF (perpendicular force)
+- `calculateTorqueWithAngle()` - τ = rF sin(θ)
+
+#### Angular Acceleration Caused by Torque
+- `calculateAngularAccelFromTorque()` - α = τ/I
+- `calculateRequiredTorque()` - τ = Iα
+
+#### Angular Momentum
+- `calculateAngularMomentum()` - L = Iω
+- `calculatePointMassAngularMomentum()` - L = mvr
+- `calculateAngularMomentumChange()` - ΔL = τ·Δt
+
+#### Kinetic Energy of Rotating Body
+- `calculateRotationalKE()` - KE = (1/2)Iω²
+- `calculateAngularVelocityFromKE()` - ω = √(2KE/I)
+
+#### Formulas for Moment of Inertia
+- `momentOfInertiaPointMass()` - I = mr²
+- `momentOfInertiaRodCenter()` - I = (1/12)ML² (rod about center)
+- `momentOfInertiaRodEnd()` - I = (1/3)ML² (rod about end)
+- `momentOfInertiaCylinder()` - I = (1/2)MR² (solid cylinder)
+- `momentOfInertiaHollowCylinder()` - I = MR²
+- `momentOfInertiaSolidSphere()` - I = (2/5)MR²
+- `momentOfInertiaHollowSphere()` - I = (2/3)MR²
+- `momentOfInertiaDisk()` - I = (1/2)MR²
+- `momentOfInertiaHoop()` - I = MR²
+
+#### Moment of Inertia about Parallel Axis
+- `parallelAxisTheorem()` - I = I_cm + Md²
+
+#### Compound Pendulum
+- `calculateCompoundPendulumPeriod()` - T = 2π√(I/(mgd))
+- `calculateEquivalentLength()` - L_eq = I/(md)
+
+#### Center of Percussion
+- `calculateCenterOfPercussion()` - Sweet spot location
+- `calculateRodCenterOfPercussion()` - For uniform rod: (2/3)L
+
+### Universal Gravitation (`gravitation.hpp`)
+
+Newton's synthesis of terrestrial and celestial mechanics:
+
+#### Universal Gravitation
+- `universalGravitationForce()` - F = Gm₁m₂/r²
+- `gravitationalFieldStrength()` - g = GM/r²
+
+#### Moon's Motions Connected with Fall of Apple
+- `calculateSurfaceGravity()` - g at Earth's surface
+- `calculateMoonCentripetalAccel()` - Moon's orbital acceleration
+- `verifyInverseSquareLaw()` - g_surface/g_moon = (r_moon/R_earth)²
+- `calculateDistanceRatio()` - r_moon/R_earth ≈ 60
+
+#### Mass of the Earth
+- `calculateEarthMass()` - From surface gravity: M = gR²/G
+- `calculateEarthMassFromMoon()` - From Moon's orbit
+- `calculateCentralMassFromOrbit()` - General formula for any satellite
+
+#### Significance of Kepler's Third Law
+- `calculatePeriodKeplerThird()` - T² = (4π²/GM)r³
+- `calculateKeplerConstant()` - K = 4π²/(GM), same for all satellites
+- `verifyKeplerThirdLaw()` - Check if orbit obeys law
+- `compareSatellitePeriods()` - T₁/T₂ = (r₁/r₂)^(3/2)
+
+#### Gravitational Potential Energy
+- `gravitationalPotentialEnergy()` - U = -GMm/r
+- `calculateEscapeVelocity()` - v_esc = √(2GM/R)
+
+#### Binary Systems
+- `calculateReducedMass()` - μ = m₁m₂/(m₁ + m₂)
+- `calculateCMDistance()` - Distance from center of mass
 
 ## Units
 
@@ -445,7 +578,10 @@ inline double calculateForce(double mass, double acceleration);
    - `physics::energy_momentum` - Energy and momentum
    - `physics::projectile` - Projectile motion
    - `physics::circular_motion` - Circular motion
+   - `physics::harmonic_motion` - Simple harmonic motion
+   - `physics::rotational_dynamics` - Rotational mechanics
    - `physics::orbital` - Orbital mechanics
+   - `physics::gravitation` - Universal gravitation
 3. **Comprehensive Documentation**: Every function fully documented with units and constraints
 4. **Error Handling**: Input validation with meaningful exception messages
 5. **SI Units**: Consistent use of SI units throughout (with conversion utilities)
@@ -457,12 +593,15 @@ This showcase currently implements:
 - ✅ Newton's Three Laws of Motion
 - ✅ Kinematics (constant acceleration)
 - ✅ Dynamics (force causing motion)
-- ✅ Unit Conversions (CGS, SI, Imperial)
-- ✅ Inclined Plane Mechanics
-- ✅ Energy and Momentum
+- ✅ Unit Conversions (Dyne-Gram relationship, CGS, SI, Imperial)
+- ✅ Inclined Plane Mechanics (velocity at foot)
+- ✅ Energy and Momentum (KE/momentum compared)
 - ✅ 2D Projectile Motion
-- ✅ Uniform Circular Motion
+- ✅ Uniform Circular Motion (centripetal force expressions)
+- ✅ Simple Harmonic Motion (SHM, pendulums, vibrating masses)
+- ✅ Rotational Dynamics (torque, angular momentum, moment of inertia)
 - ✅ Orbital Mechanics (Earth satellites)
+- ✅ Universal Gravitation (Apple-Moon connection, Kepler's Laws)
 
 ## Future Extensions
 
