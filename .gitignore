@@ -10,6 +10,7 @@ matrix_advanced
 topology_demo
 finance_demo
 calculus_demo
+nonsmooth_demo
 
 # CMake
 build/
