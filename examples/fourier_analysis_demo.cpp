@@ -11,7 +11,7 @@
  * - Time-frequency analysis
  */
 
-#include "maths/analysis/fourier_analysis.hpp"
+#include "maths/advanced/analysis/fourier_analysis.hpp"
 #include <iostream>
 #include <iomanip>
 #include <chrono>

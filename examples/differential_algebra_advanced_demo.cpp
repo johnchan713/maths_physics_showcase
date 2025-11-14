@@ -8,7 +8,7 @@
  * - Partial differential algebra (Chapter IX)
  */
 
-#include "maths/algebra/differential_algebra.hpp"
+#include "maths/advanced/algebra/differential_algebra.hpp"
 #include <iostream>
 #include <iomanip>
 

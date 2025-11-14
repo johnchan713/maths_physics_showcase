@@ -12,7 +12,7 @@
  * - Low power theorem for singular solutions
  */
 
-#include "maths/algebra/differential_algebra.hpp"
+#include "maths/advanced/algebra/differential_algebra.hpp"
 #include <iostream>
 #include <iomanip>
 

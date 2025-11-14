@@ -17,25 +17,37 @@ Comprehensive C++17 header-only library implementing computational algorithms fr
 physics_showcase/
 ├── include/
 │   ├── maths/
-│   │   ├── algebra/               # Differential Algebra (Ritt-Kolchin theory)
-│   │   ├── analysis/              # Analysis (Fourier, subdifferentials)
-│   │   ├── calculus/              # Calculus theorems and methods
-│   │   ├── probability/           # Probability distributions & statistics
-│   │   ├── linear_algebra/        # Matrix operations
-│   │   ├── trigonometry/          # Trig functions and identities
-│   │   ├── transforms/            # Integral transforms
+│   │   ├── basic/                 # Foundational mathematics
+│   │   │   ├── calculus/          # Calculus theorems and methods
+│   │   │   ├── linear_algebra/    # Matrix operations & vectors
+│   │   │   ├── trigonometry/      # Trig functions and identities
+│   │   │   └── transforms/        # Basic transforms (Fourier, polar)
+│   │   ├── advanced/              # Advanced mathematical topics
+│   │   │   ├── algebra/           # Differential Algebra (Ritt-Kolchin)
+│   │   │   ├── analysis/          # Fourier analysis & subdifferentials
+│   │   │   ├── geometry/          # Variational calculus & Lagrangians
+│   │   │   ├── stochastic/        # Monte Carlo & MCMC methods
+│   │   │   └── probability/       # Probability distributions & statistics
 │   │   ├── finance/               # Financial mathematics
 │   │   ├── actuarial/             # Actuarial science
 │   │   └── econometrics/          # Econometric models
 │   └── physics/
-│       └── (physics modules)
-├── examples/                       # Demonstration programs
+│       ├── (basic modules)        # Classical mechanics, waves, etc.
+│       └── advanced/              # Advanced physics topics
+│           ├── classical/         # Hamiltonian, Liouville, phase space
+│           ├── cosmology/         # Friedmann equations, early universe
+│           ├── fluid_dynamics/    # Turbulence, compressible flow
+│           ├── gauge_theory/      # Gauge invariance, Higgs mechanism
+│           └── qft/              # Quantum field theory
+├── examples/                      # Demonstration programs
 └── README.md
 ```
 
 ## 🧮 Mathematics Modules
 
-### Differential Algebra (`maths/algebra/differential_algebra.hpp`)
+### Advanced Mathematics
+
+### Differential Algebra (`maths/advanced/algebra/differential_algebra.hpp`)
 **~1700 lines | Chapters I-IX from Ritt's "Differential Algebra"**
 
 - **Differential Polynomials & Fields (Ch. I)**
@@ -85,7 +97,7 @@ physics_showcase/
 - Laplace equation: ∇²u = 0
 - Wave equation: u_tt - c²u_xx = 0
 
-### Fourier Analysis (`maths/analysis/fourier_analysis.hpp`)
+### Fourier Analysis (`maths/advanced/analysis/fourier_analysis.hpp`)
 **~1200 lines | Discrete & continuous Fourier theory**
 
 - **Discrete & Fast Fourier Transform**
@@ -120,7 +132,7 @@ physics_showcase/
   - Gabor transform with Gaussian windows
   - Chirp signal detection
 
-### Advanced Subdifferentials (`maths/analysis/advanced_subdifferentials.hpp`)
+### Advanced Subdifferentials (`maths/advanced/analysis/advanced_subdifferentials.hpp`)
 **~900 lines | Nonsmooth analysis & variational calculus**
 
 - **Clarke Subdifferential** ∂_C f(x)
@@ -131,7 +143,7 @@ physics_showcase/
 - **Calculus Rules**: sum, chain, max rules
 - **Metric Regularity Criterion**
 
-### Nonsmooth Algorithms (`maths/analysis/nonsmooth_algorithms.hpp`)
+### Nonsmooth Algorithms (`maths/advanced/analysis/nonsmooth_algorithms.hpp`)
 **~800 lines | Optimization algorithms**
 
 - **Proximal Operators**
@@ -152,7 +164,81 @@ physics_showcase/
   - Consensus optimization
   - Dual variable updates
 
-### Probability & Statistics (`maths/probability/distributions.hpp`)
+### Stochastic Methods (`maths/advanced/stochastic/monte_carlo.hpp`)
+**~1000 lines | Monte Carlo methods and stochastic algorithms**
+
+- **Monte Carlo Integration**
+  - Basic Monte Carlo integration
+  - Importance sampling and rejection sampling
+  - Stratified sampling for variance reduction
+
+- **Markov Chains**
+  - Discrete-time Markov chains with transition matrices
+  - Stationary distributions via power iteration
+  - n-step transitions and irreducibility checking
+
+- **MCMC Sampling**
+  - Metropolis-Hastings algorithm (general and symmetric)
+  - Gibbs sampling for multivariate distributions
+  - Convergence diagnostics (ESS, Gelman-Rubin R̂, acceptance rate)
+
+- **Stochastic Processes**
+  - Standard Brownian motion (Wiener process)
+  - Geometric Brownian motion (stock price model)
+  - Ornstein-Uhlenbeck process (mean-reverting)
+
+- **Boltzmann Equation and Kinetic Theory**
+  - Maxwell-Boltzmann velocity distribution
+  - Direct Simulation Monte Carlo (DSMC)
+  - H-theorem for entropy evolution
+
+- **Hamiltonian Monte Carlo**
+  - HMC with leapfrog integration
+  - Efficient sampling without random walk
+  - Low autocorrelation chains
+
+**Applications:** Finance (option pricing), physics (molecular dynamics), Bayesian inference, machine learning
+
+### Variational Calculus (`maths/advanced/geometry/variational_calculus.hpp`)
+**~1200 lines | Lagrangians, Poincaré-Cartan Forms, and variational principles**
+
+- **Contact Geometry**
+  - Contact structures on jet bundles J^1(R,R)
+  - Contact forms θ = du - p dx
+  - Reeb vector fields and Legendre submanifolds
+
+- **Lagrangians and Euler-Lagrange Equations**
+  - Lagrangian functions L(x, u, u_x, ...)
+  - Euler-Lagrange operator: ∂L/∂u - D(∂L/∂u_x) + ...
+  - Total derivatives and jet prolongation
+
+- **Poincaré-Cartan Forms**
+  - Poincaré-Cartan form θ_L for Lagrangians
+  - Canonical symplectic forms Ω = dθ_L
+  - Cartan's integral invariants
+
+- **Legendre Transformations**
+  - Fiber derivative: (x, u, u_x) ↦ (x, u, p)
+  - Hamiltonian: H = p·u_x - L
+  - Lagrangian ↔ Hamiltonian mechanics
+
+- **Noether's Theorem**
+  - Symmetries → Conservation laws
+  - Time translation → Energy conservation
+  - Space translation → Momentum conservation
+  - Infinitesimal symmetries and prolongations
+
+- **Advanced Topics**
+  - Second variation and Jacobi equations
+  - Conjugate points and optimality
+  - Bäcklund transformations (Sine-Gordon, KdV)
+  - Conservation laws for PDEs
+  - Field theories (Klein-Gordon, Maxwell, Yang-Mills)
+  - De Donder-Weyl Hamiltonian formulation
+
+**Applications:** Classical mechanics, field theory, optimal control, integrable systems
+
+### Probability & Statistics (`maths/advanced/probability/distributions.hpp`)
 **~650 lines | Comprehensive probability distributions**
 
 **Discrete Distributions:**
@@ -182,18 +268,104 @@ physics_showcase/
 - Chi-squared goodness-of-fit
 - Maximum likelihood estimation
 
-### Other Mathematics Modules
+### Basic Mathematics
 
-- **Calculus** (`calculus/theorems.hpp`): Numerical derivatives, integration (Simpson's rule)
-- **Trigonometry** (`trigonometry/identities.hpp`): Computational trig identities
-- **Linear Algebra**: Matrix operations, eigenvalues
-- **Financial Mathematics**: Options pricing, risk metrics
-- **Actuarial Science**: Life tables, annuities
-- **Econometrics**: Time series, regression
+- **Calculus** (`maths/basic/calculus/theorems.hpp`): Numerical derivatives, integration (Simpson's rule)
+- **Trigonometry** (`maths/basic/trigonometry/identities.hpp`): Computational trig identities
+- **Linear Algebra** (`maths/basic/linear_algebra/`): Matrix operations, vectors, eigenvalues
+- **Transforms** (`maths/basic/transforms/`): Fourier transforms, polar coordinates
+
+### Applied Mathematics
+
+- **Financial Mathematics** (`maths/finance/`): Options pricing, Black-Scholes, risk metrics
+- **Actuarial Science** (`maths/actuarial/`): Life tables, annuities, mortality models
+- **Econometrics** (`maths/econometrics/`): Time series analysis, regression models
 
 ## 🔬 Physics Modules
 
-*(Physics modules follow the same computational pattern)*
+### Basic Physics
+
+**Classical Mechanics:**
+- **Newton's Laws** (`physics/newton_laws.hpp`): Force calculations, Newton's second law
+- **Kinematics** (`physics/kinematics.hpp`): Position, velocity, acceleration equations
+- **Dynamics** (`physics/dynamics.hpp`): Force systems, friction, tension
+- **Energy & Momentum** (`physics/energy_momentum.hpp`): Conservation laws, work, kinetic/potential energy
+- **Circular Motion** (`physics/circular_motion.hpp`): Centripetal force, angular velocity
+- **Rotational Dynamics** (`physics/rotational_dynamics.hpp`): Torque, moment of inertia, angular momentum
+- **Harmonic Motion** (`physics/harmonic_motion.hpp`): Simple harmonic oscillator, pendulum
+- **Oscillations** (`physics/oscillations.hpp`): Damped and driven oscillations
+- **Gravitation** (`physics/gravitation.hpp`): Universal gravitation, gravitational fields
+- **Orbital** (`physics/orbital.hpp`): Orbital mechanics, Kepler's laws
+
+**Electromagnetism:**
+- **Electrostatics** (`physics/electrostatics.hpp`): Coulomb's law, electric fields, potential
+- **Magnetism** (`physics/magnetism.hpp`): Magnetic fields, Lorentz force
+- **Electric Circuits** (`physics/electric_circuits.hpp`): Ohm's law, RC/RL circuits
+- **Electromagnetic Induction** (`physics/electromagnetic_induction.hpp`): Faraday's law, Lenz's law
+- **Electromagnetic Waves** (`physics/electromagnetic_waves.hpp`): Wave propagation, Poynting vector
+- **Maxwell Equations** (`physics/maxwell_equations.hpp`): Complete electromagnetic theory
+
+**Waves and Optics:**
+- **Wave Mechanics** (`physics/wave_mechanics.hpp`): Wave equation, interference, diffraction
+- **Optics** (`physics/optics.hpp`): Reflection, refraction, lenses, mirrors
+
+**Thermodynamics:**
+- **Thermodynamics** (`physics/thermodynamics.hpp`): Laws of thermodynamics, entropy, cycles
+- **Heat Transfer** (`physics/heat_transfer.hpp`): Conduction, convection, radiation
+- **Thermal Expansion** (`physics/thermal_expansion.hpp`): Linear and volumetric expansion
+- **Calorimetry** (`physics/calorimetry.hpp`): Specific heat, latent heat
+
+**Fluid Mechanics:**
+- **Fluid Mechanics** (`physics/fluid_mechanics.hpp`): Bernoulli's equation, continuity, viscosity
+- **Surface Tension** (`physics/surface_tension.hpp`): Capillary action, contact angle
+
+**Modern Physics:**
+- **Special Relativity** (`physics/special_relativity.hpp`): Lorentz transformations, time dilation, E=mc²
+- **Quantum Basics** (`physics/quantum_basics.hpp`): Planck's law, photoelectric effect, uncertainty principle
+
+**Statics:**
+- **Inclined Plane** (`physics/inclined_plane.hpp`): Forces on inclines, friction
+- **Elasticity** (`physics/elasticity.hpp`): Hooke's law, Young's modulus, stress-strain
+
+### Advanced Physics
+
+**Advanced Classical Mechanics** (`physics/advanced/classical/`):
+- **Hamiltonian Mechanics** (`hamiltonian.hpp`): Hamilton's equations, canonical transformations, generating functions
+- **Phase Space** (`phase_space.hpp`): Phase space analysis, Poincaré sections, symplectic structure
+- **Liouville Theorem** (`liouville.hpp`): Phase space volume conservation, statistical mechanics connection
+
+**Cosmology** (`physics/advanced/cosmology/`):
+- **Friedmann Equations** (`friedmann_equations.hpp`): FLRW metric, expansion dynamics, critical density
+- **Expanding Universe** (`expanding_universe.hpp`): Hubble's law, scale factor evolution, redshift
+- **Early Universe** (`early_universe.hpp`): Radiation/matter domination, recombination, nucleosynthesis
+- **Energy Density** (`energy_density.hpp`): Matter, radiation, dark energy components
+
+**Fluid Dynamics** (`physics/advanced/fluid_dynamics/`):
+- **Governing Equations** (`governing_equations.hpp`): Navier-Stokes, continuity, energy equations
+- **Flow Types** (`flow_types.hpp`): Laminar, turbulent, compressible, incompressible
+- **Compressible Flow** (`compressible_flow.hpp`): Mach number, shock waves, supersonic flow
+- **Boundary Layer** (`boundary_layer.hpp`): Boundary layer theory, separation, drag
+- **Vorticity** (`vorticity.hpp`): Vorticity dynamics, circulation, Kelvin's theorem
+- **Turbulence** (`turbulence.hpp`): Reynolds decomposition, energy cascade, turbulence models
+- **Dimensionless Numbers** (`dimensionless_numbers.hpp`): Reynolds, Prandtl, Mach, Froude numbers
+
+**Gauge Theory** (`physics/advanced/gauge_theory/`):
+- **Gauge Invariance** (`gauge_invariance.hpp`): U(1), SU(2), SU(3) gauge symmetries
+- **Higgs Mechanism** (`higgs_mechanism.hpp`): Spontaneous symmetry breaking, mass generation
+- **Symmetries** (`symmetries.hpp`): Discrete and continuous symmetries, CPT theorem
+- **Running Couplings** (`running_couplings.hpp`): Renormalization group, beta functions
+- **Helicity** (`helicity.hpp`): Helicity conservation, polarization
+- **CP Violation** (`cp_violation_kaons.hpp`): CP violation in kaon systems
+
+**Quantum Field Theory** (`physics/advanced/qft/`):
+- **Particle Physics** (`particle_physics.hpp`): Standard Model particles, interactions
+- **Antiparticles** (`antiparticles.hpp`): Particle-antiparticle creation/annihilation
+- **Interactions** (`interactions.hpp`): Electromagnetic, weak, strong interactions
+- **Cross Sections** (`cross_sections.hpp`): Scattering amplitudes, differential cross sections
+- **Decays** (`decays.hpp`): Decay rates, branching ratios, lifetime calculations
+- **Spin Statistics** (`spin_statistics.hpp`): Fermi-Dirac, Bose-Einstein statistics
+- **Supersymmetry** (`supersymmetry.hpp`): SUSY transformations, superpartners
+- **Quark-Gluon Plasma** (`quark_gluon_plasma.hpp`): QCD matter at extreme temperatures
 
 ## 🎯 Demo Programs
 
@@ -240,6 +412,29 @@ All demos compile with: `g++ -std=c++17 -I./include -o demo examples/demo.cpp -l
    - Metric regularity testing
    - Nonsmooth optimization examples
 
+### Stochastic Methods Demos
+
+6. **`stochastic_methods_demo`** (~450 lines)
+   - Monte Carlo integration (basic, importance, stratified sampling)
+   - Markov chains and stationary distributions
+   - MCMC sampling (Metropolis-Hastings, Gibbs)
+   - Brownian motion and stochastic processes
+   - Boltzmann equation and DSMC simulation
+   - Hamiltonian Monte Carlo
+   - MCMC convergence diagnostics (ESS, R̂)
+
+### Variational Calculus Demos
+
+7. **`variational_calculus_demo`** (~400 lines)
+   - Contact geometry and contact structures
+   - Lagrangians and Euler-Lagrange equations
+   - Poincaré-Cartan forms and integral invariants
+   - Legendre transformations (Lagrangian ↔ Hamiltonian)
+   - Noether's theorem (symmetries → conservation laws)
+   - Second variation and Jacobi fields
+   - Bäcklund transformations (Sine-Gordon)
+   - Field theories (Klein-Gordon, Maxwell, Yang-Mills)
+
 ## 🚀 Building and Running
 
 ### Prerequisites
@@ -281,22 +476,39 @@ done
   - Ritt's "Differential Algebra" (1950)
   - Clarke's "Optimization and Nonsmooth Analysis"
   - Mallat's "A Wavelet Tour of Signal Processing"
-  - Standard probability theory texts
+  - Arnold's "Mathematical Methods of Classical Mechanics"
+  - Standard texts on stochastic processes and Monte Carlo methods
 
 ## 📊 Statistics
 
-- **Total Lines**: ~10,000+ lines of computational mathematics
-- **Modules**: 15+ major mathematical areas
-- **Demos**: 10+ comprehensive demonstration programs
-- **Distributions**: 10 probability distributions with full statistics
-- **Algorithms**: DFT, FFT, ISTA, FISTA, ADMM, Ritt's algorithm, and more
+- **Total Lines**: ~15,000+ lines of computational mathematics and physics
+- **Mathematics Modules**:
+  - Basic: 4 modules (calculus, linear algebra, trigonometry, transforms)
+  - Advanced: 7 modules (differential algebra, Fourier analysis, subdifferentials, nonsmooth algorithms, stochastic methods, variational calculus, probability)
+  - Applied: 3 modules (finance, actuarial, econometrics)
+- **Physics Modules**:
+  - Basic: 25+ modules covering classical mechanics, E&M, thermodynamics, optics, modern physics
+  - Advanced: 20+ modules in Hamiltonian mechanics, cosmology, fluid dynamics, gauge theory, QFT
+- **Demos**: 7+ comprehensive demonstration programs
+- **Key Algorithms**:
+  - DFT, FFT (O(N log N))
+  - ISTA, FISTA (O(1/k²) convergence)
+  - ADMM, Ritt's algorithm
+  - Monte Carlo, MCMC (Metropolis-Hastings, Gibbs, HMC)
+  - Euler-Lagrange, Noether's theorem, Legendre transforms
 
 ## 🎓 Educational Value
 
 Each module serves as both:
 1. **Production-ready code** for numerical computations
 2. **Educational reference** showing how abstract mathematics translates to algorithms
-3. **Research tool** for differential equations, nonsmooth optimization, signal processing
+3. **Research tool** for:
+   - Differential equations and algebraic geometry
+   - Nonsmooth optimization and variational calculus
+   - Signal processing and Fourier analysis
+   - Stochastic methods and Monte Carlo simulations
+   - Classical and quantum field theory
+   - Statistical mechanics and computational physics
 
 ## 📝 License
 
