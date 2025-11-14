@@ -28,7 +28,8 @@ physics_showcase/
 │   │   │   ├── geometry/          # Variational calculus & Lagrangians
 │   │   │   ├── stochastic/        # Monte Carlo & MCMC methods
 │   │   │   ├── probability/       # Probability distributions & statistics
-│   │   │   └── dynamical_systems/ # ODEs, chaos theory, bifurcations
+│   │   │   ├── dynamical_systems/ # ODEs, chaos theory, bifurcations
+│   │   │   └── pde/              # Partial differential equations
 │   │   ├── finance/               # Financial mathematics
 │   │   ├── actuarial/             # Actuarial science
 │   │   └── econometrics/          # Econometric models
@@ -267,6 +268,32 @@ physics_showcase/
 - **Smale Horseshoe**: Stretch and fold, topological chaos
 
 **Applications**: Physics (pendulum, Lorenz), biology (population dynamics), engineering (nonlinear control)
+
+### Partial Differential Equations (`maths/advanced/pde/partial_differential_equations.hpp`)
+**~1500 lines | Classical PDE theory and method of characteristics**
+
+**Chapter 1 - Introduction:**
+- **Classification**: Order (first, second, higher), linearity (linear, quasi-linear, semi-linear, fully nonlinear)
+- **Second Order Types**: Elliptic (Δ < 0), parabolic (Δ = 0), hyperbolic (Δ > 0) via discriminant
+- **Boundary Conditions**: Dirichlet (u = g), Neumann (∂u/∂n = g), Robin (αu + β∂u/∂n = g), Cauchy
+- **Well-Known PDEs**:
+  - Heat equation: u_t = α u_xx (fundamental solution, diffusion)
+  - Wave equation: u_tt = c² u_xx (d'Alembert solution)
+  - Laplace equation: Δu = 0 (harmonic functions, mean value property)
+  - Poisson equation: Δu = f (with source)
+  - Transport equation: u_t + c·∇u = 0
+- **Superposition Principle**: Linear combinations, general solution structure
+
+**Chapter 2 - Method of Characteristics:**
+- **First Order Linear**: Constant/variable coefficients, characteristic curves dy/dx = b/a
+- **Quasi-Linear**: a(x,y,u) u_x + b(x,y,u) u_y = c(x,y,u), Charpit's method, Burgers' equation
+- **Fully Nonlinear**: F(x, y, u, u_x, u_y) = 0, complete Charpit system, Eikonal equation
+- **Geometrical Interpretation**: Integral surfaces, Monge cones, characteristic directions
+- **Second Order**: Characteristic equation A(dy)² - 2B dx dy + C(dx)² = 0, canonical transformations
+
+**Key Algorithms**: Classification via discriminant, characteristic ODE integration (Euler, RK4), Charpit solver, solution verification, boundary condition checking
+
+**Applications**: Heat diffusion, wave propagation, fluid mechanics, electrostatics, quantum mechanics, optimal control
 
 ### Probability & Statistics (`maths/advanced/probability/distributions.hpp`)
 **~920 lines | Comprehensive probability distributions**
@@ -514,10 +541,10 @@ done
 
 ## 📊 Statistics
 
-- **Total Lines**: ~18,000+ lines of computational mathematics and physics
+- **Total Lines**: ~20,000+ lines of computational mathematics and physics
 - **Mathematics Modules**:
   - Basic: 4 modules (calculus, linear algebra, trigonometry, transforms)
-  - Advanced: 8 modules (differential algebra, Fourier analysis, subdifferentials, nonsmooth algorithms, stochastic methods, variational calculus, dynamical systems, probability)
+  - Advanced: 9 modules (differential algebra, Fourier analysis, subdifferentials, nonsmooth algorithms, stochastic methods, variational calculus, dynamical systems, probability, PDEs)
   - Applied: 3 modules (finance, actuarial, econometrics)
 - **Physics Modules**:
   - Basic: 25+ modules covering classical mechanics, E&M, thermodynamics, optics, modern physics
@@ -532,6 +559,9 @@ done
   - Euler-Lagrange, Noether's theorem, Legendre transforms
   - RK4, Picard iteration, Floquet theory
   - Lyapunov exponents, bifurcation diagrams, fractal dimensions
+  - Method of characteristics (linear, quasi-linear, nonlinear PDEs)
+  - Charpit's method for fully nonlinear equations
+  - PDE classification via discriminant
 
 ## 🎓 Educational Value
 
@@ -539,13 +569,14 @@ Each module serves as both:
 1. **Production-ready code** for numerical computations
 2. **Educational reference** showing how abstract mathematics translates to algorithms
 3. **Research tool** for:
-   - Differential equations, dynamical systems, and chaos theory
+   - Ordinary and partial differential equations
+   - Dynamical systems, chaos theory, and bifurcation analysis
    - Nonsmooth optimization and variational calculus
    - Signal processing and Fourier analysis
    - Stochastic methods and Monte Carlo simulations
    - Classical and quantum field theory
    - Statistical mechanics and computational physics
-   - Bifurcation analysis and nonlinear dynamics
+   - PDE theory: heat diffusion, wave propagation, fluid mechanics
 
 ## 📝 License
 
