@@ -435,6 +435,24 @@ physics_showcase/
 
 **Applications**: Heat conduction, diffusion processes, electrostatics, membrane vibrations, acoustic waves, electromagnetic waves
 
+**Green's Functions for All PDE Types:**
+- **Parabolic (Heat)**:
+  - 1D/2D heat kernels: G(x,t;ξ,τ) = 1/√(4πα(t-τ)) exp(-(x-ξ)²/(4α(t-τ)))
+  - Half-space with Dirichlet/Neumann BC via method of images
+  - Solution with source terms via convolution
+- **Elliptic (Poisson)**:
+  - 2D: G(x,y;ξ,η) = -(1/2π) ln(r), 3D: G = -1/(4πr)
+  - Half-space with Dirichlet BC using method of images
+  - Rectangle domain with eigenfunction expansion
+  - Poisson solver: u(x,y) = ∫∫ G(x,y;ξ,η) f(ξ,η) dξdη
+- **Hyperbolic (Wave)**:
+  - 1D retarded: G(x,t;ξ,τ) = 1/(2c) H(t-τ-|x-ξ|/c)
+  - 2D (odd dimensions): G = H(c(t-τ) - r) / (2π√(c²(t-τ)² - r²))
+  - 3D with Huygens' principle: G = δ(c(t-τ) - r) / (4πr)
+  - Duhamel's principle for source terms
+  - Causality and light cone checking
+- **Method of Images**: Image source locations for Dirichlet/Neumann BC
+
 ### PDE Variational Methods (`maths/advanced/pde/pde_variational_methods.hpp`)
 **Weak formulations and variational methods for PDEs**
 
@@ -446,7 +464,10 @@ physics_showcase/
 **Multiple Integrals:**
 - **Double and Triple Integrals**: Change of variables, Jacobians
 - **Divergence Theorem**: ∫_Ω div(F) dV = ∫_∂Ω F·n dS
-- **Green's Identities**: First and second identities for integration by parts
+- **Green's Identities**: First, second, and third identities
+  - First identity: ∫_Ω (∇u·∇v + v∇²u) dV = ∫_∂Ω v(∂u/∂n) dS
+  - Second identity: ∫_Ω (v∇²u - u∇²v) dV = ∫_∂Ω (v∂u/∂n - u∂v/∂n) dS
+  - Integration by parts in multiple dimensions
 
 **Weak Variational Formulation:**
 - **Test Functions**: Compact support, smoothness requirements
@@ -454,6 +475,24 @@ physics_showcase/
 - **Weak Derivatives**: Distributional derivatives
 - **Sobolev Spaces**: H¹, H₀¹ function spaces
 - **Weak Solutions**: ∫_Ω ∇u·∇v dx = ∫_Ω fv dx for all test functions v
+
+**Weighted Residual Methods (WRM):**
+- **General Framework**: ∫_Ω w(x) R(x) dx = 0 where R = L[u] - f is residual
+- **Test Function Selection**:
+  - Hat functions (piecewise linear finite elements)
+  - Polynomial basis with boundary conditions
+  - Trigonometric functions (Fourier modes)
+  - Bubble functions for incompressible flow
+  - Completeness and linear independence criteria
+- **Collocation Method**: w(x) = δ(x - xᵢ) at collocation points
+  - Chebyshev nodes for spectral accuracy
+  - Direct enforcement R(xᵢ) = 0
+- **Subdomain Method**: w(x) = 1 on subdomain Ωᵢ, 0 elsewhere
+  - Domain partitioning strategies
+  - Integrated residual minimization
+- **Least Squares Method**: Minimize J = ∫_Ω R² dx
+  - Optimality conditions: ∂J/∂cᵢ = 0
+  - Symmetric positive definite systems
 
 **Galerkin Method:**
 - **Finite Element Approximation**: Basis function expansion
@@ -499,6 +538,25 @@ physics_showcase/
 - **Boundary Layer Thickness**: δ ~ √ε for second order problems
 - **Inner and Outer Expansions**: Composite solutions
 
+**Perturbation Methods:**
+- **Multiple Scales Analysis**: Disparate time/space scales T₀ = t, T₁ = εt
+  - Solvability conditions to eliminate secular terms
+  - Fast and slow scale separation
+- **Matched Asymptotic Expansions**: Singular perturbation problems
+  - Outer expansion (valid away from boundary)
+  - Inner expansion (boundary layer with stretched coordinate ξ = x/δ(ε))
+  - Van Dyke matching principle
+  - Composite solutions
+- **WKB Approximation**: Rapidly oscillating solutions
+  - Eikonal equation: (dS/dx)² = k²(x)
+  - Amplitude expansion: A = A₀ + εA₁ + ...
+  - Connection formulas at turning points
+- **Poincare-Lindstedt Method**: Nonlinear oscillators
+  - Frequency correction: ω = ω₀ + εω₁ + ε²ω₂ + ...
+  - Elimination of secular terms
+  - Stretched time coordinate
+- **Asymptotic Sequence Verification**: Check uₙ₊₁/uₙ → 0 as ε → 0
+
 **Finite Difference Schemes for First Order Equations:**
 - **Upwind Scheme**: Backward difference for c > 0, first order accurate
 - **Lax-Friedrichs**: Central difference with averaging, stable
@@ -517,9 +575,9 @@ physics_showcase/
 - **Stability**: Amplification factor analysis, von Neumann method
 - **Tridiagonal Systems**: Thomas algorithm O(n) solution
 
-**Key Algorithms**: Upwind, Lax-Friedrichs, Lax-Wendroff, Crank-Nicolson, ADI, SOR, Picard iteration
+**Key Algorithms**: Upwind, Lax-Friedrichs, Lax-Wendroff, Crank-Nicolson, ADI, SOR, Picard iteration, multiple scales, matched asymptotics, WKB
 
-**Applications**: Computational fluid dynamics, heat transfer, wave propagation, image processing, option pricing
+**Applications**: Computational fluid dynamics, heat transfer, wave propagation, image processing, option pricing, boundary layer problems, quantum mechanics
 
 ### Probability & Statistics (`maths/advanced/probability/distributions.hpp`)
 **Comprehensive probability distributions**
@@ -539,6 +597,7 @@ physics_showcase/
 - **Gamma**: shape α, rate β
 - **Beta**: on [0,1], conjugate prior
 - **Chi-squared**: χ²(k) for hypothesis testing
+- **Student's t**: t-distribution with ν degrees of freedom, small sample inference
 - **F-Distribution**: Ratio of chi-squared, ANOVA, regression F-tests
 
 **Statistical Functions:**
@@ -731,6 +790,24 @@ All demos compile with: `g++ -std=c++17 -I./include -o demo examples/demo.cpp -l
    - Sturm-Liouville eigenvalue problems
    - Eigenfunction expansions
 
+9. **`greens_functions_demo`**
+   - Heat equation Green's functions (parabolic)
+   - Poisson equation Green's functions (elliptic)
+   - Wave equation Green's functions (hyperbolic)
+   - Method of images for boundary conditions
+   - Retarded Green's functions and causality
+   - Solutions via convolution with source terms
+
+10. **`variational_wrm_demo`**
+   - Green's identities (first, second, integration by parts)
+   - Weighted Residual Methods framework
+   - Galerkin method for BVPs
+   - Collocation method with Chebyshev nodes
+   - Subdomain method with domain partitioning
+   - Least squares method for optimal approximation
+   - Test function selection (hat, polynomial, trigonometric, bubble functions)
+   - Linear independence verification
+
 ## 🚀 Building and Running
 
 ### Prerequisites
@@ -784,8 +861,8 @@ done
 - **Physics Modules**:
   - Basic: 25+ modules covering classical mechanics, E&M, thermodynamics, optics, modern physics
   - Advanced: 20+ modules in Hamiltonian mechanics, cosmology, fluid dynamics, gauge theory, QFT
-- **Demos**: 8 comprehensive demonstration programs
-- **Distributions**: 13 probability distributions (Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Hypergeometric, Uniform, Normal, Exponential, Gamma, Beta, Chi-squared, F-distribution)
+- **Demos**: 10 comprehensive demonstration programs
+- **Distributions**: 14 probability distributions (Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Hypergeometric, Uniform, Normal, Exponential, Gamma, Beta, Chi-squared, Student's t, F-distribution)
 - **Key Algorithms**:
   - DFT, FFT (O(N log N))
   - ISTA, FISTA (O(1/k²) convergence)
@@ -809,12 +886,18 @@ done
   - Poisson integral formula
   - Galerkin finite element method
   - Rayleigh-Ritz energy minimization
+  - Weighted Residual Methods (Galerkin, collocation, subdomain, least squares)
+  - Collocation with Chebyshev nodes
   - Upwind, Lax-Friedrichs, Lax-Wendroff schemes
   - ADI (Alternating Direction Implicit)
   - Crank-Nicolson time stepping
   - SOR (Successive Over-Relaxation)
   - Picard iteration
   - Von Neumann stability analysis
+  - Multiple scales analysis
+  - Matched asymptotic expansions
+  - WKB approximation
+  - Poincare-Lindstedt method
 
 ## 🎓 Educational Value
 
