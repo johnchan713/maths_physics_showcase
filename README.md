@@ -597,6 +597,7 @@ physics_showcase/
 - **Gamma**: shape α, rate β
 - **Beta**: on [0,1], conjugate prior
 - **Chi-squared**: χ²(k) for hypothesis testing
+- **Student's t**: t-distribution with ν degrees of freedom, small sample inference
 - **F-Distribution**: Ratio of chi-squared, ANOVA, regression F-tests
 
 **Statistical Functions:**
@@ -861,7 +862,7 @@ done
   - Basic: 25+ modules covering classical mechanics, E&M, thermodynamics, optics, modern physics
   - Advanced: 20+ modules in Hamiltonian mechanics, cosmology, fluid dynamics, gauge theory, QFT
 - **Demos**: 10 comprehensive demonstration programs
-- **Distributions**: 13 probability distributions (Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Hypergeometric, Uniform, Normal, Exponential, Gamma, Beta, Chi-squared, F-distribution)
+- **Distributions**: 14 probability distributions (Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Hypergeometric, Uniform, Normal, Exponential, Gamma, Beta, Chi-squared, Student's t, F-distribution)
 - **Key Algorithms**:
   - DFT, FFT (O(N log N))
   - ISTA, FISTA (O(1/k²) convergence)

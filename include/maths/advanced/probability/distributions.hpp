@@ -504,6 +504,129 @@ public:
 };
 
 /**
+ * @class StudentTDistribution
+ * @brief Student's t-distribution with ν degrees of freedom
+ *
+ * Defined as: t = Z / sqrt(χ²/ν) where Z ~ N(0,1) and χ² ~ χ²(ν)
+ *
+ * Used in t-tests, confidence intervals for small samples
+ * As ν → ∞, approaches standard normal distribution
+ */
+class StudentTDistribution : public Distribution {
+private:
+    int nu;  // degrees of freedom
+
+public:
+    StudentTDistribution(int degrees_of_freedom) : nu(degrees_of_freedom) {
+        if (nu <= 0) {
+            throw std::invalid_argument("Degrees of freedom must be positive");
+        }
+    }
+
+    /**
+     * @brief PDF: f(t) = Γ((ν+1)/2) / (sqrt(νπ) Γ(ν/2)) * (1 + t²/ν)^(-(ν+1)/2)
+     */
+    double pdf(double t) const {
+        double numerator = gamma_function((nu + 1) / 2.0);
+        double denominator = std::sqrt(nu * PI) * gamma_function(nu / 2.0);
+        double base = 1.0 + (t * t) / nu;
+        double exponent = -(nu + 1) / 2.0;
+
+        return (numerator / denominator) * std::pow(base, exponent);
+    }
+
+    /**
+     * @brief CDF using approximation
+     * For large ν, approaches standard normal CDF
+     */
+    double cdf(double t) const {
+        // For ν > 30, approximate with standard normal
+        if (nu > 30) {
+            return 0.5 * (1.0 + error_function(t / std::sqrt(2.0)));
+        }
+
+        // Numerical integration for general case
+        double dt = 0.01;
+        double sum = 0.0;
+        int n_steps = static_cast<int>(std::abs(t) / dt) + 100;
+
+        for (int i = -n_steps; i <= n_steps; ++i) {
+            double x = i * dt;
+            if (x <= t) {
+                sum += pdf(x) * dt;
+            }
+        }
+
+        return sum;
+    }
+
+    /**
+     * @brief Mean: E[T] = 0 for ν > 1
+     */
+    double mean() const override {
+        if (nu <= 1) throw std::runtime_error("Mean undefined for ν <= 1");
+        return 0.0;
+    }
+
+    /**
+     * @brief Variance: Var(T) = ν/(ν-2) for ν > 2
+     */
+    double variance() const override {
+        if (nu <= 2) throw std::runtime_error("Variance undefined for ν <= 2");
+        return static_cast<double>(nu) / (nu - 2);
+    }
+
+    /**
+     * @brief Sample from t-distribution
+     */
+    double sample() const {
+        std::student_t_distribution<double> dist(nu);
+        return dist(gen);
+    }
+
+    /**
+     * @brief Quantile function (inverse CDF) - approximation
+     */
+    double quantile(double p) const {
+        if (p <= 0.0 || p >= 1.0) {
+            throw std::invalid_argument("Probability must be in (0, 1)");
+        }
+
+        // For large ν, use normal approximation
+        if (nu > 30) {
+            // Inverse error function approximation
+            double x = 2.0 * p - 1.0;
+            return std::sqrt(2.0) * x * (1.0 + x * x / 4.0);  // Simplified
+        }
+
+        // Binary search for general case
+        double low = -10.0, high = 10.0;
+        double mid, cdf_mid;
+        int max_iter = 100;
+
+        for (int iter = 0; iter < max_iter; ++iter) {
+            mid = (low + high) / 2.0;
+            cdf_mid = cdf(mid);
+
+            if (std::abs(cdf_mid - p) < 1e-6) break;
+
+            if (cdf_mid < p) {
+                low = mid;
+            } else {
+                high = mid;
+            }
+        }
+
+        return mid;
+    }
+
+    /**
+     * @brief Degrees of freedom
+     */
+    int degrees_of_freedom() const { return nu; }
+};
+
+/**
  * @class FDistribution
  * @brief F-distribution (Fisher-Snedecor distribution)
  *
