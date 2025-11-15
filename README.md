@@ -1237,17 +1237,98 @@ Comprehensive spin-1/2 theory and relativistic quantum mechanics (~1,174 lines)
 
 **Relativistic Quantum Mechanics:**
 
-- **The Klein-Gordon Equation**
-  - Relativistic spinless particles
+- **Relativistic Notation and Formalism**
+  - 4-vector components: x^μ = (ct, x, y, z)
+  - Minkowski metric tensor: g_μν = diag(±1, ∓1, ∓1, ∓1)
+  - D'Alembertian operator: □ = ∂_μ ∂^μ = (1/c²)∂²/∂t² - ∇²
+  - Lorentz invariant scalar products: x·y = x^μ y_μ
+  - Natural units (ℏ = c = 1) conversions
+
+- **The Klein-Gordon Equation** (Comprehensive Treatment)
   - Klein-Gordon equation: (□ + m²c²/ℏ²)ψ = 0
-  - D'Alembertian: □ = ∂²/∂t² - c²∇²
-  - Plane wave solutions: ψ = e^(i(k⃗·r⃗-ωt))
+  - Dispersion relation: ω² = c²k² + (mc²/ℏ)²
+  - Plane wave solutions: ψ = Ae^(i(k⃗·r⃗-ωt))
   - Energy-momentum relation: E² = (pc)² + (mc²)²
-  - Positive and negative energy solutions: E = ±√((pc)² + (mc²)²)
-  - Probability density issues: ρ not positive definite
-  - Current density: j⃗ = (iℏ/2m)[ψ*∇ψ - ψ∇ψ*]
-  - Klein paradox: barrier transmission > 1 for strong potentials
-  - Application to π mesons and scalar bosons
+  - Positive and negative energy solutions: E = ±E_p
+  - Conserved current density: j^μ = (iℏ/2m)(ψ*∂^μψ - ψ∂^μψ*)
+  - Probability density (not positive definite): ρ = j^0/c
+  - Klein paradox: T > 1 for V₀ > E + 2mc² (pair production)
+  - Continuity equation: ∂ρ/∂t + ∇·j⃗ = 0
+
+- **Nonrelativistic Limit (Klein-Gordon → Schrödinger)**
+  - Ansatz: ψ = φ(x,t)e^(-imc²t/ℏ)
+  - Schrödinger equation recovery: iℏ∂φ/∂t = -(ℏ²/2m)∇²φ
+  - Relativistic corrections: E ≈ mc² + p²/2m - p⁴/8m³c² + ...
+  - Velocity ratio β = v/c = pc/E
+  - Validity criterion: p << mc (v << c)
+
+- **Free Spin-0 Particles**
+  - General solution: ψ(x,t) = ∫[A(k)e^(i(kx-ωt)) + B(k)e^(i(kx+ωt))]dk
+  - Energy eigenvalue: E_p = √((pc)² + (mc²)²)
+  - Group velocity: v_g = dω/dk = pc²/E
+  - Phase velocity: v_p = ω/k = E/p (can exceed c)
+  - Gaussian wave packets: ψ = exp(-x²/4σ²)exp(ik₀x)
+  - Klein-Gordon inner product: (ψ₁, ψ₂) = i∫[ψ₁*∂_t ψ₂ - (∂_t ψ₁*)ψ₂]d³x
+
+- **Energy-Momentum Tensor T^μν**
+  - Energy density: T^00 = (1/2)[(∂_t ψ)² + c²(∇ψ)² + (mc²/ℏ)²ψ²]
+  - Momentum density: T^0i = (∂_t ψ*)(∂_i ψ) + (∂_i ψ*)(∂_t ψ)
+  - Stress tensor: T^ij = c²[(∂_i ψ*)(∂_j ψ) + c.c.] - δ^ij L
+  - Conservation: ∂_μ T^μν = 0
+  - Hamiltonian density: H = T^00
+
+- **Klein-Gordon in Schrödinger Form**
+  - Two-component: Ψ = (ψ, π)^T where π = ∂ψ/∂t
+  - First-order evolution: iℏ∂Ψ/∂t = H_KG Ψ
+  - Hamiltonian matrix: H_KG = [[0, 1], [c²∇² - (mc²)², 0]]
+  - Positive-definite norm: ||Ψ||² = ∫[|π|² + c²|∇ψ|² + (mc²/ℏ)²|ψ|²]d³x
+
+- **Charge Conjugation**
+  - Charge conjugation operator: C: ψ → ψ*
+  - Particle/antiparticle states (positive/negative frequency)
+  - C-parity for neutral scalars: C = ±1
+  - Current transformation: j^μ → -j^μ under C
+  - Self-conjugate states (real scalar fields)
+
+- **Feshbach-Villars Representation**
+  - FV transformation: φ = (1/√2)(ψ + iπ/mc²), χ = (1/√2)(ψ - iπ/mc²)
+  - Positive-definite density: ρ_FV = |φ|² + |χ|² ≥ 0
+  - Coupled equations: iℏ∂φ/∂t = mc²φ - iℏc∇χ, iℏ∂χ/∂t = -mc²χ + iℏc∇φ
+  - FV Hamiltonian: H_FV = βmc² + α⃗·(cp⃗)
+  - Nonrelativistic limit: χ → 0, φ → ψ_Schrödinger
+
+- **Klein-Gordon with Electromagnetic Field**
+  - Minimal coupling: ∂_μ → D_μ = ∂_μ + (iq/ℏc)A_μ
+  - Modified equation: [(∂_μ + iqA_μ)(∂^μ + iqA^μ) + (mc/ℏ)²]ψ = 0
+  - Energy-momentum relation: (E - qφ)² = (p⃗ - qA⃗)²c² + (mc²)²
+  - Current with field: j^μ = (iq/2m)[ψ*(D^μψ) - (D^μψ)*ψ]
+  - Landau levels: E_n = √[(mc²)² + 2n|q|ℏcB]
+  - Cyclotron frequency: ω_c = |q|B/(γm)
+
+- **Gauge Invariance (U(1))**
+  - Wave function transformation: ψ → ψ' = e^(iqΛ/ℏ)ψ
+  - Vector potential: A_μ → A'_μ = A_μ - ∂_μΛ
+  - Scalar potential: φ → φ' = φ + ∂_t Λ
+  - Aharonov-Bohm phase: exp(iq/ℏ ∮A⃗·dl⃗)
+  - Field strength (gauge invariant): F_μν = ∂_μA_ν - ∂_νA_μ
+
+- **Nonrelativistic Limit with Fields**
+  - Pauli equation: iℏ∂ψ/∂t = [(p⃗ - qA⃗)²/2m + qφ]ψ
+  - Darwin term: H_Darwin = -(ℏ²/8m²c²)∇²V
+  - Relativistic kinetic correction: -(p⃗ - qA⃗)⁴/8m³c²
+  - No spin-orbit coupling (spin-0 particle)
+  - Diamagnetic energy: ΔE = -(q²B²r_⊥²)/(8mc²)
+
+- **Interpretation of One-Particle Operators**
+  - Position operator: Newton-Wigner (non-local)
+  - Momentum: p̂ = -iℏ∇ (well-defined)
+  - Energy: Ê = iℏ∂/∂t (positive and negative eigenvalues)
+  - Charge density: Not positive-definite (requires second quantization)
+  - Current density: Well-defined for Klein-Gordon field
+  - Angular momentum: L̂ = r⃗ × p̂ (orbital only, no spin)
+  - Second quantization necessity: Negative energy states → antiparticles
+  - No Zitterbewegung (unlike Dirac equation)
+  - Compton wavelength: λ_C = ℏ/(mc) (localization scale)
 
 - **The Dirac Equation**
   - 4-component Dirac spinors: ψ = (ψ₁, ψ₂, ψ₃, ψ₄)ᵀ
@@ -1368,12 +1449,12 @@ g++ -std=c++17 -I./include your_program.cpp -o your_program -lm
   - Financial mathematics, actuarial science, econometrics
 - **Physics Modules**:
   - Basic: 25+ modules covering classical mechanics, E&M, thermodynamics, optics, modern physics
-  - **Quantum Mechanics & Chemistry** (5 comprehensive modules, ~7,924 lines total):
+  - **Quantum Mechanics & Chemistry** (5 comprehensive modules, ~8,906 lines total):
     - **Operator Algebras** (~2,800 lines): von Neumann algebras, unitary representations, factor classification, elementary C*-algebra theory (13 classes), GNS construction
     - **Quantum Foundations** (~1,000 lines): Historical development from Planck to Schrödinger, Bohr model, matrix mechanics, uncertainty relations
     - **Advanced Quantum Mechanics** (~1,650 lines): Kummer's functions, Hamiltonian mechanics, perturbation theory, Stark effect, Pauli exclusion, electron spin, helium atom
     - **Quantum Chemistry** (~1,300 lines): Atomic structure (Hartree-Fock, Slater orbitals, multiplet theory), molecular structure (Born-Oppenheimer, diatomic molecules, H₂⁺, H₂, chemical bonding, VSEPR, Hückel MO theory)
-    - **Relativistic Quantum Mechanics** (~1,174 lines): Spin-1/2 theory (Pauli matrices, Bloch sphere, Stern-Gerlach), atomic spectra (spin-orbit coupling, Zeeman effect), relativistic wave equations (Klein-Gordon, Dirac), Dirac hydrogen atom, Landau levels
+    - **Relativistic Quantum Mechanics** (~2,156 lines): Spin-1/2 theory (Pauli matrices, Bloch sphere, Stern-Gerlach), atomic spectra (spin-orbit coupling, Zeeman effect), comprehensive Klein-Gordon equation (12 topics: notation, equation, nonrelativistic limit, free particles, energy-momentum tensor, Schrödinger form, charge conjugation, Feshbach-Villars, EM fields, gauge invariance, operators interpretation), Dirac equation, Dirac hydrogen atom, Landau levels
   - Advanced: 23+ modules in Hamiltonian mechanics, cosmology, fluid dynamics, gauge theory, QFT
 - **Probability Distributions**: 14 distributions (Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Hypergeometric, Uniform, Normal, Exponential, Gamma, Beta, Chi-squared, Student's t, F-distribution)
 - **Key Algorithms**:
