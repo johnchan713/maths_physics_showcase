@@ -435,6 +435,24 @@ physics_showcase/
 
 **Applications**: Heat conduction, diffusion processes, electrostatics, membrane vibrations, acoustic waves, electromagnetic waves
 
+**Green's Functions for All PDE Types:**
+- **Parabolic (Heat)**:
+  - 1D/2D heat kernels: G(x,t;ξ,τ) = 1/√(4πα(t-τ)) exp(-(x-ξ)²/(4α(t-τ)))
+  - Half-space with Dirichlet/Neumann BC via method of images
+  - Solution with source terms via convolution
+- **Elliptic (Poisson)**:
+  - 2D: G(x,y;ξ,η) = -(1/2π) ln(r), 3D: G = -1/(4πr)
+  - Half-space with Dirichlet BC using method of images
+  - Rectangle domain with eigenfunction expansion
+  - Poisson solver: u(x,y) = ∫∫ G(x,y;ξ,η) f(ξ,η) dξdη
+- **Hyperbolic (Wave)**:
+  - 1D retarded: G(x,t;ξ,τ) = 1/(2c) H(t-τ-|x-ξ|/c)
+  - 2D (odd dimensions): G = H(c(t-τ) - r) / (2π√(c²(t-τ)² - r²))
+  - 3D with Huygens' principle: G = δ(c(t-τ) - r) / (4πr)
+  - Duhamel's principle for source terms
+  - Causality and light cone checking
+- **Method of Images**: Image source locations for Dirichlet/Neumann BC
+
 ### PDE Variational Methods (`maths/advanced/pde/pde_variational_methods.hpp`)
 **Weak formulations and variational methods for PDEs**
 
@@ -731,6 +749,14 @@ All demos compile with: `g++ -std=c++17 -I./include -o demo examples/demo.cpp -l
    - Sturm-Liouville eigenvalue problems
    - Eigenfunction expansions
 
+9. **`greens_functions_demo`**
+   - Heat equation Green's functions (parabolic)
+   - Poisson equation Green's functions (elliptic)
+   - Wave equation Green's functions (hyperbolic)
+   - Method of images for boundary conditions
+   - Retarded Green's functions and causality
+   - Solutions via convolution with source terms
+
 ## 🚀 Building and Running
 
 ### Prerequisites
@@ -784,7 +810,7 @@ done
 - **Physics Modules**:
   - Basic: 25+ modules covering classical mechanics, E&M, thermodynamics, optics, modern physics
   - Advanced: 20+ modules in Hamiltonian mechanics, cosmology, fluid dynamics, gauge theory, QFT
-- **Demos**: 8 comprehensive demonstration programs
+- **Demos**: 9 comprehensive demonstration programs
 - **Distributions**: 13 probability distributions (Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Hypergeometric, Uniform, Normal, Exponential, Gamma, Beta, Chi-squared, F-distribution)
 - **Key Algorithms**:
   - DFT, FFT (O(N log N))

@@ -766,6 +766,383 @@ public:
     };
 };
 
+/**
+ * ============================================================================
+ * GREEN'S FUNCTIONS FOR PDEs
+ * ============================================================================
+ */
+
+/**
+ * @class GreensFunctions
+ * @brief Green's functions for parabolic, elliptic, and hyperbolic PDEs
+ *
+ * Green's function G(x, t; ξ, τ) solves: L[G] = δ(x-ξ)δ(t-τ)
+ * Solution: u(x,t) = ∫∫ G(x,t;ξ,τ) f(ξ,τ) dξdτ
+ */
+class GreensFunctions {
+public:
+    /**
+     * ========================================================================
+     * PARABOLIC: Heat Equation Green's Functions
+     * ========================================================================
+     */
+
+    /**
+     * @brief Green's function for 1D heat equation on infinite domain
+     *
+     * Equation: u_t = α u_xx
+     * Green's function: G(x,t;ξ,τ) = 1/√(4πα(t-τ)) exp(-(x-ξ)²/(4α(t-τ)))
+     */
+    struct HeatGreenFunction {
+        /**
+         * @brief Fundamental solution (heat kernel)
+         */
+        static double infinite1D(double x, double t, double xi, double tau, double alpha) {
+            if (t <= tau) return 0.0;
+            double dt = t - tau;
+            double denom = std::sqrt(4.0 * M_PI * alpha * dt);
+            double exponent = -(x - xi) * (x - xi) / (4.0 * alpha * dt);
+            return std::exp(exponent) / denom;
+        }
+
+        /**
+         * @brief Green's function for half-space x > 0 with Dirichlet BC
+         * G(0,t) = 0 via method of images
+         */
+        static double halfSpaceDirichlet(double x, double t, double xi, double tau, double alpha) {
+            if (t <= tau || x <= 0 || xi <= 0) return 0.0;
+
+            // Original source + image source
+            double G_original = infinite1D(x, t, xi, tau, alpha);
+            double G_image = infinite1D(x, t, -xi, tau, alpha);
+
+            return G_original - G_image;
+        }
+
+        /**
+         * @brief Green's function for half-space x > 0 with Neumann BC
+         * G_x(0,t) = 0 via method of images
+         */
+        static double halfSpaceNeumann(double x, double t, double xi, double tau, double alpha) {
+            if (t <= tau || x <= 0 || xi <= 0) return 0.0;
+
+            // Original source + image source (same sign for Neumann)
+            double G_original = infinite1D(x, t, xi, tau, alpha);
+            double G_image = infinite1D(x, t, -xi, tau, alpha);
+
+            return G_original + G_image;
+        }
+
+        /**
+         * @brief 2D heat equation Green's function on infinite domain
+         * G(x,y,t;ξ,η,τ) = 1/(4πα(t-τ)) exp(-r²/(4α(t-τ)))
+         */
+        static double infinite2D(double x, double y, double t,
+                                double xi, double eta, double tau, double alpha) {
+            if (t <= tau) return 0.0;
+            double dt = t - tau;
+            double r_squared = (x - xi)*(x - xi) + (y - eta)*(y - eta);
+            double denom = 4.0 * M_PI * alpha * dt;
+            double exponent = -r_squared / (4.0 * alpha * dt);
+            return std::exp(exponent) / denom;
+        }
+
+        /**
+         * @brief Solution via convolution with source term
+         * u(x,t) = ∫₀ᵗ ∫ G(x,t;ξ,τ) f(ξ,τ) dξ dτ
+         */
+        static double solveWithSource(
+            std::function<double(double, double)> f_source,  // Source term f(x,t)
+            double x, double t, double alpha,
+            double x_min = -10.0, double x_max = 10.0) {
+
+            int n_space = 50;
+            int n_time = 50;
+            double dx = (x_max - x_min) / n_space;
+            double dt_step = t / n_time;
+
+            double result = 0.0;
+
+            for (int j = 0; j < n_time; ++j) {
+                double tau = j * dt_step;
+                double weight_t = (j == 0) ? 0.5 : 1.0;
+
+                for (int i = 0; i <= n_space; ++i) {
+                    double xi = x_min + i * dx;
+                    double weight_x = (i == 0 || i == n_space) ? 0.5 : 1.0;
+
+                    double G = infinite1D(x, t, xi, tau, alpha);
+                    result += weight_t * weight_x * G * f_source(xi, tau) * dx * dt_step;
+                }
+            }
+
+            return result;
+        }
+    };
+
+    /**
+     * ========================================================================
+     * ELLIPTIC: Laplace/Poisson Equation Green's Functions
+     * ========================================================================
+     */
+
+    /**
+     * @brief Green's function for Poisson equation
+     *
+     * Equation: ∇²u = f
+     * Green's function satisfies: ∇²G = δ(x-ξ)
+     */
+    struct PoissonGreenFunction {
+        /**
+         * @brief 2D Laplacian on unbounded domain
+         * G(x,y;ξ,η) = -(1/2π) ln(r) where r = √((x-ξ)² + (y-η)²)
+         */
+        static double infinite2D(double x, double y, double xi, double eta) {
+            double r = std::sqrt((x - xi)*(x - xi) + (y - eta)*(y - eta));
+            if (r < 1e-10) return 0.0;  // Regularization at singularity
+            return -(1.0 / (2.0 * M_PI)) * std::log(r);
+        }
+
+        /**
+         * @brief 3D Laplacian on unbounded domain
+         * G(x,y,z;ξ,η,ζ) = -1/(4πr) where r = |x-ξ|
+         */
+        static double infinite3D(double x, double y, double z,
+                                double xi, double eta, double zeta) {
+            double r = std::sqrt((x - xi)*(x - xi) +
+                               (y - eta)*(y - eta) +
+                               (z - zeta)*(z - zeta));
+            if (r < 1e-10) return 0.0;  // Regularization
+            return -1.0 / (4.0 * M_PI * r);
+        }
+
+        /**
+         * @brief Half-space z > 0 with Dirichlet BC G(x,y,0) = 0
+         * Uses method of images
+         */
+        static double halfSpace3DDirichlet(double x, double y, double z,
+                                          double xi, double eta, double zeta) {
+            if (z <= 0 || zeta <= 0) return 0.0;
+
+            // Original + image (opposite sign)
+            double G_orig = infinite3D(x, y, z, xi, eta, zeta);
+            double G_image = infinite3D(x, y, z, xi, eta, -zeta);
+
+            return G_orig - G_image;
+        }
+
+        /**
+         * @brief Green's function for rectangle [0,a] × [0,b]
+         * Using eigenfunction expansion
+         *
+         * G(x,y;ξ,η) = (4/ab) ∑∑ sin(mπx/a)sin(nπy/b)sin(mπξ/a)sin(nπη/b) / λ_mn
+         * where λ_mn = (mπ/a)² + (nπ/b)²
+         */
+        static double rectangle2D(double x, double y, double xi, double eta,
+                                 double a, double b, int n_terms = 20) {
+            double result = 0.0;
+
+            for (int m = 1; m <= n_terms; ++m) {
+                for (int n = 1; n <= n_terms; ++n) {
+                    double lambda_m = m * M_PI / a;
+                    double mu_n = n * M_PI / b;
+                    double lambda_mn = lambda_m * lambda_m + mu_n * mu_n;
+
+                    double term = std::sin(lambda_m * x) * std::sin(mu_n * y) *
+                                 std::sin(lambda_m * xi) * std::sin(mu_n * eta) / lambda_mn;
+
+                    result += term;
+                }
+            }
+
+            return (4.0 / (a * b)) * result;
+        }
+
+        /**
+         * @brief Solution of Poisson equation via Green's function
+         * u(x,y) = ∫∫ G(x,y;ξ,η) f(ξ,η) dξdη
+         */
+        static double solvePoissonRectangle(
+            std::function<double(double, double)> f_source,
+            double x, double y, double a, double b, int n_terms = 20) {
+
+            int n_points = 30;
+            double dxi = a / n_points;
+            double deta = b / n_points;
+            double result = 0.0;
+
+            for (int i = 0; i <= n_points; ++i) {
+                for (int j = 0; j <= n_points; ++j) {
+                    double xi = i * dxi;
+                    double eta = j * deta;
+                    double weight = ((i == 0 || i == n_points) ? 0.5 : 1.0) *
+                                   ((j == 0 || j == n_points) ? 0.5 : 1.0);
+
+                    double G = rectangle2D(x, y, xi, eta, a, b, n_terms);
+                    result += weight * G * f_source(xi, eta) * dxi * deta;
+                }
+            }
+
+            return result;
+        }
+    };
+
+    /**
+     * ========================================================================
+     * HYPERBOLIC: Wave Equation Green's Functions
+     * ========================================================================
+     */
+
+    /**
+     * @brief Green's function for wave equation
+     *
+     * Equation: u_tt = c² u_xx
+     * Green's function satisfies: G_tt - c²G_xx = δ(x-ξ)δ(t-τ)
+     */
+    struct WaveGreenFunction {
+        /**
+         * @brief 1D wave equation Green's function (retarded)
+         * G(x,t;ξ,τ) = 1/(2c) H(t-τ-|x-ξ|/c)
+         * where H is Heaviside step function
+         */
+        static double retarded1D(double x, double t, double xi, double tau, double c) {
+            if (t <= tau) return 0.0;
+
+            double dt = t - tau;
+            double dx = std::abs(x - xi);
+
+            // Retarded time: signal arrives after dt = dx/c
+            if (dt >= dx / c) {
+                return 1.0 / (2.0 * c);
+            }
+            return 0.0;
+        }
+
+        /**
+         * @brief 2D wave equation Green's function (odd dimensions)
+         * G(x,y,t;ξ,η,τ) = H(c(t-τ) - r) / (2π√(c²(t-τ)² - r²))
+         * where r = √((x-ξ)² + (y-η)²)
+         */
+        static double retarded2D(double x, double y, double t,
+                                double xi, double eta, double tau, double c) {
+            if (t <= tau) return 0.0;
+
+            double dt = t - tau;
+            double r = std::sqrt((x - xi)*(x - xi) + (y - eta)*(y - eta));
+
+            // Check if within past light cone
+            if (r >= c * dt) return 0.0;
+
+            double discriminant = c*c * dt*dt - r*r;
+            if (discriminant <= 0) return 0.0;
+
+            return 1.0 / (2.0 * M_PI * std::sqrt(discriminant));
+        }
+
+        /**
+         * @brief 3D wave equation Green's function (Huygens' principle)
+         * G(x,y,z,t;ξ,η,ζ,τ) = δ(c(t-τ) - r) / (4πr)
+         * where r = |x-ξ|
+         */
+        static double retarded3D(double x, double y, double z, double t,
+                                double xi, double eta, double zeta, double tau, double c) {
+            if (t <= tau) return 0.0;
+
+            double dt = t - tau;
+            double r = std::sqrt((x - xi)*(x - xi) +
+                               (y - eta)*(y - eta) +
+                               (z - zeta)*(z - zeta));
+
+            if (r < 1e-10) return 0.0;
+
+            // Delta function centered at wavefront r = c*dt
+            // For numerical purposes, use narrow Gaussian approximation
+            double width = 0.1;  // Width of delta approximation
+            double center = c * dt;
+
+            if (std::abs(r - center) < width) {
+                // Gaussian approximation of delta function
+                double delta_approx = std::exp(-((r - center) * (r - center)) / (2.0 * width * width)) /
+                                     (width * std::sqrt(2.0 * M_PI));
+                return delta_approx / (4.0 * M_PI * r);
+            }
+
+            return 0.0;
+        }
+
+        /**
+         * @brief Solution via Duhamel's principle (source term)
+         * u(x,t) = ∫₀ᵗ ∫ G(x,t;ξ,τ) f(ξ,τ) dξ dτ
+         */
+        static double solveWithSource1D(
+            std::function<double(double, double)> f_source,
+            double x, double t, double c,
+            double x_min = -10.0, double x_max = 10.0) {
+
+            int n_space = 50;
+            int n_time = 50;
+            double dx = (x_max - x_min) / n_space;
+            double dt_step = t / n_time;
+
+            double result = 0.0;
+
+            for (int j = 0; j < n_time; ++j) {
+                double tau = j * dt_step;
+                double weight_t = (j == 0) ? 0.5 : 1.0;
+
+                for (int i = 0; i <= n_space; ++i) {
+                    double xi = x_min + i * dx;
+                    double weight_x = (i == 0 || i == n_space) ? 0.5 : 1.0;
+
+                    double G = retarded1D(x, t, xi, tau, c);
+                    result += weight_t * weight_x * G * f_source(xi, tau) * dx * dt_step;
+                }
+            }
+
+            return result;
+        }
+
+        /**
+         * @brief Causality check: point (x,t) in past light cone of (xi,tau)?
+         */
+        static bool isInPastLightCone(double x, double t, double xi, double tau, double c) {
+            if (t <= tau) return false;
+            double dx = std::abs(x - xi);
+            double dt = t - tau;
+            return dx <= c * dt;
+        }
+    };
+
+    /**
+     * @brief Method of images for boundary conditions
+     */
+    struct MethodOfImages {
+        /**
+         * @brief Compute image source location for Dirichlet BC on plane
+         * For boundary at x = a, image of ξ is 2a - ξ
+         */
+        static double imageLocation1D(double xi, double boundary_position) {
+            return 2.0 * boundary_position - xi;
+        }
+
+        /**
+         * @brief Image source for point (ξ,η) reflected across x = a
+         */
+        static std::pair<double, double> imageLocation2D_x(
+            double xi, double eta, double boundary_x) {
+            return {2.0 * boundary_x - xi, eta};
+        }
+
+        /**
+         * @brief Image source for point (ξ,η) reflected across y = b
+         */
+        static std::pair<double, double> imageLocation2D_y(
+            double xi, double eta, double boundary_y) {
+            return {xi, 2.0 * boundary_y - eta};
+        }
+    };
+};
+
 } // namespace maths::pde
 
 #endif // MATHS_PDE_CLASSIFICATION_SOLUTIONS_HPP
