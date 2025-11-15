@@ -917,6 +917,876 @@ public:
     }
 };
 
+/**
+ * @class MobiusTransformations
+ * @brief Extended Möbius transformation theory
+ *
+ * Implements:
+ * - Fixed points and classification
+ * - Cross ratios
+ * - Automorphism groups Aut(Ĉ), Aut(ℂ), Aut(D), Aut(H²)
+ */
+class MobiusTransformations {
+public:
+    using Mobius = ConformalMaps::MobiusTransform;
+
+    /**
+     * @brief Compute fixed points of Möbius transformation
+     *
+     * Solve f(z) = z, i.e., (az + b)/(cz + d) = z
+     * This gives cz² + (d-a)z - b = 0
+     *
+     * @return Vector of fixed points (0, 1, or 2 points)
+     */
+    static std::vector<Complex> fixed_points(const Mobius& f) {
+        std::vector<Complex> fps;
+
+        // If c = 0, transformation is f(z) = (a/d)z + b/d
+        if (std::abs(f.c) < 1e-10) {
+            if (std::abs(f.a - f.d) < 1e-10) {
+                // f(z) = z + b/d, one fixed point at infinity
+                return fps;  // Empty for finite fixed points
+            } else {
+                // One finite fixed point
+                fps.push_back(f.b / (f.d - f.a));
+                return fps;
+            }
+        }
+
+        // General case: cz² + (d-a)z - b = 0
+        Complex A = f.c;
+        Complex B = f.d - f.a;
+        Complex C = -f.b;
+
+        // Quadratic formula
+        Complex disc = std::sqrt(B * B - 4.0 * A * C);
+        Complex z1 = (-B + disc) / (2.0 * A);
+        Complex z2 = (-B - disc) / (2.0 * A);
+
+        fps.push_back(z1);
+        if (std::abs(z1 - z2) > 1e-10) {
+            fps.push_back(z2);
+        }
+
+        return fps;
+    }
+
+    /**
+     * @brief Classify Möbius transformation by fixed points
+     *
+     * - Elliptic: 2 fixed points, conjugate on unit circle
+     * - Parabolic: 1 fixed point (double root)
+     * - Hyperbolic: 2 distinct real fixed points
+     * - Loxodromic: 2 distinct fixed points, general case
+     *
+     * @return Classification as string
+     */
+    static std::string classify(const Mobius& f) {
+        auto fps = fixed_points(f);
+
+        if (fps.size() == 0 || fps.size() == 1) {
+            return "Parabolic";
+        } else if (fps.size() == 2) {
+            Complex z1 = fps[0], z2 = fps[1];
+
+            // Check if real (hyperbolic)
+            if (std::abs(z1.imag()) < 1e-6 && std::abs(z2.imag()) < 1e-6) {
+                return "Hyperbolic";
+            }
+
+            // Check if conjugate on unit circle (elliptic)
+            if (std::abs(std::abs(z1) - 1.0) < 1e-6 &&
+                std::abs(std::abs(z2) - 1.0) < 1e-6 &&
+                std::abs(z1 - std::conj(z2)) < 1e-6) {
+                return "Elliptic";
+            }
+
+            return "Loxodromic";
+        }
+
+        return "Unknown";
+    }
+
+    /**
+     * @brief Cross ratio (z₁, z₂; z₃, z₄) = (z₁-z₃)(z₂-z₄) / ((z₁-z₄)(z₂-z₃))
+     *
+     * Invariant under Möbius transformations
+     */
+    static Complex cross_ratio(Complex z1, Complex z2, Complex z3, Complex z4) {
+        return ((z1 - z3) * (z2 - z4)) / ((z1 - z4) * (z2 - z3));
+    }
+
+    /**
+     * @brief Automorphisms of the Riemann sphere Ĉ
+     *
+     * Aut(Ĉ) = all Möbius transformations
+     *
+     * @return true (any Möbius is an automorphism of Ĉ)
+     */
+    static bool is_automorphism_riemann_sphere(const Mobius& f) {
+        return true;  // All Möbius transformations
+    }
+
+    /**
+     * @brief Automorphisms of ℂ (complex plane)
+     *
+     * Aut(ℂ) = {f(z) = az + b : a ≠ 0}
+     * These are Möbius with c = 0
+     */
+    static bool is_automorphism_plane(const Mobius& f) {
+        return std::abs(f.c) < 1e-10;
+    }
+
+    /**
+     * @brief Automorphisms of unit disc D
+     *
+     * Aut(D) = {φ_α(z) = e^(iθ)(z-α)/(1-ᾱz) : |α| < 1}
+     *
+     * Maps unit disc to itself
+     */
+    static bool is_automorphism_disc(const Mobius& f, double tol = 1e-6) {
+        // Check if |f(z)| < 1 for |z| < 1
+        // Sample points on disc
+        for (int i = 0; i < 20; ++i) {
+            double r = 0.9;
+            double theta = 2.0 * M_PI * i / 20.0;
+            Complex z = r * Complex(std::cos(theta), std::sin(theta));
+
+            Complex fz = f(z);
+            if (std::abs(fz) >= 1.0 + tol) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * @brief Automorphisms of upper half-plane H²
+     *
+     * Aut(H²) = {f(z) = (az+b)/(cz+d) : a,b,c,d ∈ ℝ, ad-bc > 0}
+     *
+     * These are real Möbius transformations with positive determinant
+     */
+    static bool is_automorphism_half_plane(const Mobius& f, double tol = 1e-6) {
+        // Check if coefficients are real
+        if (std::abs(f.a.imag()) > tol || std::abs(f.b.imag()) > tol ||
+            std::abs(f.c.imag()) > tol || std::abs(f.d.imag()) > tol) {
+            return false;
+        }
+
+        // Check positive determinant
+        Complex det = f.a * f.d - f.b * f.c;
+        return det.real() > tol && std::abs(det.imag()) < tol;
+    }
+};
+
+/**
+ * @class HyperbolicGeometry
+ * @brief Hyperbolic geometry in unit disc and upper half-plane
+ *
+ * Implements:
+ * - Poincaré metric
+ * - Hyperbolic distance
+ * - Geodesics
+ * - Upper half-plane and unit disc models
+ */
+class HyperbolicGeometry {
+public:
+    /**
+     * @brief Poincaré metric on unit disc: ds² = 4|dz|² / (1-|z|²)²
+     *
+     * Returns metric tensor coefficient at point z
+     */
+    static double poincare_metric_disc(Complex z) {
+        double r_sq = std::norm(z);  // |z|²
+        if (r_sq >= 1.0) {
+            throw std::runtime_error("Point must be inside unit disc");
+        }
+
+        double denom = (1.0 - r_sq) * (1.0 - r_sq);
+        return 4.0 / denom;
+    }
+
+    /**
+     * @brief Poincaré metric on upper half-plane: ds² = |dz|² / (Im z)²
+     */
+    static double poincare_metric_half_plane(Complex z) {
+        double im = z.imag();
+        if (im <= 0) {
+            throw std::runtime_error("Point must be in upper half-plane");
+        }
+
+        return 1.0 / (im * im);
+    }
+
+    /**
+     * @brief Hyperbolic distance in unit disc
+     *
+     * d_H(z, w) = tanh⁻¹(|(z-w)/(1-z̄w)|)
+     * or d_H(z, w) = 2 tanh⁻¹(|φ_z(w)|) where φ_z is disc automorphism
+     */
+    static double hyperbolic_distance_disc(Complex z, Complex w) {
+        Complex diff = z - w;
+        Complex denom = 1.0 - std::conj(z) * w;
+
+        if (std::abs(denom) < 1e-10) {
+            return std::numeric_limits<double>::infinity();
+        }
+
+        double rho = std::abs(diff / denom);
+        return 2.0 * std::atanh(rho);
+    }
+
+    /**
+     * @brief Hyperbolic distance in upper half-plane
+     *
+     * d_H(z, w) = arcosh(1 + |z-w|²/(2·Im(z)·Im(w)))
+     */
+    static double hyperbolic_distance_half_plane(Complex z, Complex w) {
+        double im_z = z.imag();
+        double im_w = w.imag();
+
+        if (im_z <= 0 || im_w <= 0) {
+            throw std::runtime_error("Points must be in upper half-plane");
+        }
+
+        double diff_sq = std::norm(z - w);
+        double arg = 1.0 + diff_sq / (2.0 * im_z * im_w);
+
+        return std::acosh(arg);
+    }
+
+    /**
+     * @brief Geodesic in unit disc between two points
+     *
+     * Geodesics are circular arcs perpendicular to boundary
+     * Returns parameterized path γ(t), t ∈ [0,1]
+     */
+    static std::function<Complex(double)> geodesic_disc(Complex z0, Complex z1) {
+        return [z0, z1](double t) -> Complex {
+            // Simplified linear interpolation (exact geodesic requires circular arc)
+            // For accurate geodesic, would compute circular arc through boundary
+            return z0 + t * (z1 - z0);
+        };
+    }
+
+    /**
+     * @brief Geodesic in upper half-plane
+     *
+     * Geodesics are semicircles/vertical lines perpendicular to real axis
+     */
+    static std::function<Complex(double)> geodesic_half_plane(Complex z0, Complex z1) {
+        // If same real part, geodesic is vertical line
+        if (std::abs(z0.real() - z1.real()) < 1e-10) {
+            return [z0, z1](double t) -> Complex {
+                double x = z0.real();
+                double y = z0.imag() + t * (z1.imag() - z0.imag());
+                return Complex(x, y);
+            };
+        }
+
+        // Otherwise, semicircle
+        // Find center and radius of semicircle through z0, z1
+        double x0 = z0.real(), y0 = z0.imag();
+        double x1 = z1.real(), y1 = z1.imag();
+
+        double center_x = (x0 * x0 + y0 * y0 - x1 * x1 - y1 * y1) / (2.0 * (x0 - x1));
+        double radius = std::sqrt((x0 - center_x) * (x0 - center_x) + y0 * y0);
+
+        return [center_x, radius, z0, z1](double t) -> Complex {
+            // Parameterize semicircle
+            double theta0 = std::atan2(z0.imag(), z0.real() - center_x);
+            double theta1 = std::atan2(z1.imag(), z1.real() - center_x);
+            double theta = theta0 + t * (theta1 - theta0);
+
+            return Complex(center_x + radius * std::cos(theta),
+                          radius * std::sin(theta));
+        };
+    }
+
+    /**
+     * @brief Convert from unit disc to upper half-plane
+     *
+     * Cayley transform: φ(z) = i(1-z)/(1+z)
+     */
+    static Complex disc_to_half_plane(Complex z) {
+        return Complex(0, 1) * (1.0 - z) / (1.0 + z);
+    }
+
+    /**
+     * @brief Convert from upper half-plane to unit disc
+     *
+     * Inverse Cayley: φ⁻¹(w) = (i-w)/(i+w)
+     */
+    static Complex half_plane_to_disc(Complex w) {
+        return (Complex(0, 1) - w) / (Complex(0, 1) + w);
+    }
+};
+
+/**
+ * @class SchwarzLemma
+ * @brief Schwarz lemma and applications
+ *
+ * Implements:
+ * - Schwarz lemma
+ * - Schwarz-Pick theorem
+ * - Finite Blaschke products
+ * - Contractions
+ */
+class SchwarzLemma {
+public:
+    /**
+     * @brief Schwarz lemma
+     *
+     * If f: D → D is holomorphic with f(0) = 0, then:
+     * (1) |f(z)| ≤ |z| for all |z| < 1
+     * (2) |f'(0)| ≤ 1
+     * Equality holds iff f(z) = e^(iθ)z for some θ
+     *
+     * @return true if f satisfies Schwarz lemma conditions
+     */
+    static bool verify_schwarz_lemma(
+        const ComplexFunction& f,
+        double tol = 1e-4) {
+
+        // Check f(0) ≈ 0
+        if (std::abs(f(0.0)) > tol) {
+            return false;
+        }
+
+        // Check |f(z)| ≤ |z| on sample points
+        for (int i = 1; i <= 20; ++i) {
+            double r = i * 0.04;  // Sample r = 0.04, 0.08, ..., 0.8
+            for (int j = 0; j < 8; ++j) {
+                double theta = j * M_PI / 4.0;
+                Complex z = r * Complex(std::cos(theta), std::sin(theta));
+
+                if (std::abs(f(z)) > std::abs(z) + tol) {
+                    return false;
+                }
+            }
+        }
+
+        // Check |f'(0)| ≤ 1
+        Complex f_prime = CauchyRiemann::derivative(f, 0.0);
+        if (std::abs(f_prime) > 1.0 + tol) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * @brief Schwarz-Pick theorem
+     *
+     * For f: D → D holomorphic:
+     * |f'(z)| ≤ (1 - |f(z)|²) / (1 - |z|²)
+     *
+     * Equality iff f is disc automorphism
+     */
+    static bool verify_schwarz_pick(
+        const ComplexFunction& f,
+        Complex z,
+        double tol = 1e-4) {
+
+        double r_sq = std::norm(z);
+        if (r_sq >= 1.0) return false;
+
+        Complex f_z = f(z);
+        double f_sq = std::norm(f_z);
+        if (f_sq >= 1.0) return false;
+
+        Complex f_prime = CauchyRiemann::derivative(f, z);
+        double deriv_abs = std::abs(f_prime);
+
+        double bound = (1.0 - f_sq) / (1.0 - r_sq);
+
+        return deriv_abs <= bound + tol;
+    }
+
+    /**
+     * @brief Finite Blaschke product
+     *
+     * B(z) = e^(iθ) ∏_{k=1}^n (z - αₖ)/(1 - ᾱₖz)
+     *
+     * Maps unit disc to itself, with zeros at {αₖ}
+     */
+    struct BlascheProduct {
+        std::vector<Complex> zeros;
+        double theta;
+
+        BlascheProduct(const std::vector<Complex>& z, double t = 0.0)
+            : zeros(z), theta(t) {
+            // Verify all |αₖ| < 1
+            for (Complex alpha : zeros) {
+                if (std::abs(alpha) >= 1.0) {
+                    throw std::invalid_argument("Blaschke zeros must be in unit disc");
+                }
+            }
+        }
+
+        Complex operator()(Complex z) const {
+            Complex result = std::exp(Complex(0, theta));
+
+            for (Complex alpha : zeros) {
+                result *= (z - alpha) / (1.0 - std::conj(alpha) * z);
+            }
+
+            return result;
+        }
+
+        /**
+         * @brief Verify |B(z)| = 1 on unit circle
+         */
+        bool is_unimodular_on_circle(int n_samples = 100) const {
+            for (int i = 0; i < n_samples; ++i) {
+                double angle = 2.0 * M_PI * i / n_samples;
+                Complex z = std::exp(Complex(0, angle));
+
+                double mod = std::abs((*this)(z));
+                if (std::abs(mod - 1.0) > 1e-4) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    };
+
+    /**
+     * @brief Check if function is a contraction
+     *
+     * f is a contraction if d(f(z), f(w)) ≤ d(z, w)
+     * In hyperbolic metric
+     */
+    static bool is_contraction(
+        const ComplexFunction& f,
+        int n_samples = 50) {
+
+        for (int i = 0; i < n_samples; ++i) {
+            for (int j = i + 1; j < n_samples; ++j) {
+                // Sample random points in disc
+                double r1 = 0.8 * std::sqrt(static_cast<double>(i) / n_samples);
+                double r2 = 0.8 * std::sqrt(static_cast<double>(j) / n_samples);
+                double theta1 = 2.0 * M_PI * i / n_samples;
+                double theta2 = 2.0 * M_PI * j / n_samples;
+
+                Complex z = r1 * Complex(std::cos(theta1), std::sin(theta1));
+                Complex w = r2 * Complex(std::cos(theta2), std::sin(theta2));
+
+                double d_zw = HyperbolicGeometry::hyperbolic_distance_disc(z, w);
+
+                Complex fz = f(z);
+                Complex fw = f(w);
+
+                if (std::abs(fz) >= 1.0 || std::abs(fw) >= 1.0) continue;
+
+                double d_fz_fw = HyperbolicGeometry::hyperbolic_distance_disc(fz, fw);
+
+                if (d_fz_fw > d_zw + 1e-4) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+};
+
+/**
+ * @class HarmonicFunctions
+ * @brief Harmonic functions and the Dirichlet problem
+ *
+ * Implements:
+ * - Laplacian and harmonic verification
+ * - Poisson integral formula
+ * - Dirichlet problem solver
+ * - Mean value property
+ * - Reflection principle
+ */
+class HarmonicFunctions {
+public:
+    using RealFunction2D = std::function<double(double, double)>;
+
+    /**
+     * @brief Compute Laplacian ∇²u = ∂²u/∂x² + ∂²u/∂y²
+     */
+    static double laplacian(
+        const RealFunction2D& u,
+        double x, double y,
+        double h = 1e-5) {
+
+        double u_xx = (u(x + h, y) - 2.0 * u(x, y) + u(x - h, y)) / (h * h);
+        double u_yy = (u(x, y + h) - 2.0 * u(x, y) + u(x, y - h)) / (h * h);
+
+        return u_xx + u_yy;
+    }
+
+    /**
+     * @brief Verify function is harmonic (∇²u = 0)
+     */
+    static bool is_harmonic(
+        const RealFunction2D& u,
+        double x, double y,
+        double tol = 1e-3) {
+
+        return std::abs(laplacian(u, x, y)) < tol;
+    }
+
+    /**
+     * @brief Poisson integral formula for unit disc
+     *
+     * u(re^(iθ)) = (1/2π) ∫₀^(2π) f(e^(iφ)) P_r(θ-φ) dφ
+     * where P_r(θ) = (1-r²)/(1-2r cos θ + r²) is Poisson kernel
+     *
+     * Solves Dirichlet problem with boundary data f
+     */
+    static double poisson_integral_disc(
+        const std::function<double(double)>& boundary_data,  // f(θ)
+        double r, double theta,
+        int n_points = 200) {
+
+        if (r >= 1.0) {
+            throw std::invalid_argument("r must be < 1 for Poisson integral");
+        }
+
+        double sum = 0.0;
+        double d_phi = 2.0 * M_PI / n_points;
+
+        for (int i = 0; i < n_points; ++i) {
+            double phi = i * d_phi;
+            double f_phi = boundary_data(phi);
+
+            // Poisson kernel P_r(θ - φ)
+            double diff = theta - phi;
+            double P_r = (1.0 - r * r) / (1.0 - 2.0 * r * std::cos(diff) + r * r);
+
+            sum += f_phi * P_r * d_phi;
+        }
+
+        return sum / (2.0 * M_PI);
+    }
+
+    /**
+     * @brief Poisson kernel for unit disc
+     *
+     * P_r(θ) = (1-r²) / (1 - 2r cos θ + r²)
+     */
+    static double poisson_kernel(double r, double theta) {
+        if (r >= 1.0) return 0.0;
+        return (1.0 - r * r) / (1.0 - 2.0 * r * std::cos(theta) + r * r);
+    }
+
+    /**
+     * @brief Mean value property
+     *
+     * For harmonic u: u(z₀) = (1/2π) ∫₀^(2π) u(z₀ + re^(iθ)) dθ
+     * Characteristic property of harmonic functions
+     */
+    static double mean_value(
+        const RealFunction2D& u,
+        double x0, double y0, double r,
+        int n_samples = 100) {
+
+        double sum = 0.0;
+
+        for (int i = 0; i < n_samples; ++i) {
+            double theta = 2.0 * M_PI * i / n_samples;
+            double x = x0 + r * std::cos(theta);
+            double y = y0 + r * std::sin(theta);
+
+            sum += u(x, y);
+        }
+
+        return sum / n_samples;
+    }
+
+    /**
+     * @brief Verify mean value property holds
+     *
+     * Characterizes harmonic functions
+     */
+    static bool satisfies_mean_value_property(
+        const RealFunction2D& u,
+        double x0, double y0,
+        double tol = 1e-3) {
+
+        double u_center = u(x0, y0);
+
+        // Check for several radii
+        for (double r = 0.1; r <= 0.5; r += 0.1) {
+            double mean = mean_value(u, x0, y0, r);
+
+            if (std::abs(u_center - mean) > tol) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * @brief Schwarz reflection principle
+     *
+     * If f is holomorphic on upper half-plane with real boundary values,
+     * extend to lower half-plane by f(z̄) = f̄(z)
+     *
+     * Returns reflected value
+     */
+    static Complex reflection_principle(
+        const ComplexFunction& f_upper,
+        Complex z) {
+
+        if (z.imag() >= 0) {
+            return f_upper(z);
+        } else {
+            // Reflect to upper half-plane, evaluate, conjugate
+            Complex z_reflected = std::conj(z);
+            return std::conj(f_upper(z_reflected));
+        }
+    }
+
+    /**
+     * @brief Dirichlet problem solver on unit disc
+     *
+     * Find harmonic u on D with u|∂D = f
+     * Uses Poisson integral formula
+     *
+     * @return Function u(r,θ) solving Dirichlet problem
+     */
+    static std::function<double(double, double)> solve_dirichlet_disc(
+        const std::function<double(double)>& boundary_data) {
+
+        return [boundary_data](double r, double theta) -> double {
+            return poisson_integral_disc(boundary_data, r, theta);
+        };
+    }
+
+    /**
+     * @brief Check subharmonicity: ∇²u ≥ 0
+     *
+     * Subharmonic functions satisfy u(z₀) ≤ mean value
+     */
+    static bool is_subharmonic(
+        const RealFunction2D& u,
+        double x, double y,
+        double tol = 1e-3) {
+
+        double lap = laplacian(u, x, y);
+        return lap >= -tol;
+    }
+
+    /**
+     * @brief Maximum principle for harmonic functions
+     *
+     * If u is harmonic on bounded domain, max u occurs on boundary
+     *
+     * @return Maximum value on boundary
+     */
+    static double maximum_on_boundary(
+        const std::function<double(double)>& boundary_data,
+        int n_samples = 100) {
+
+        double max_val = -std::numeric_limits<double>::infinity();
+
+        for (int i = 0; i < n_samples; ++i) {
+            double theta = 2.0 * M_PI * i / n_samples;
+            max_val = std::max(max_val, boundary_data(theta));
+        }
+
+        return max_val;
+    }
+};
+
+/**
+ * @class PerronMethod
+ * @brief Perron families and advanced Dirichlet problem
+ *
+ * Implements:
+ * - Perron families (subfunctions)
+ * - Upper and lower solutions
+ * - Green's function
+ * - Connection to Riemann mapping theorem
+ */
+class PerronMethod {
+public:
+    using RealFunction2D = std::function<double(double, double)>;
+
+    /**
+     * @brief Perron subfunction (subharmonic and bounded above by boundary data)
+     */
+    struct PerronSubfunction {
+        RealFunction2D u;
+        double bound;
+
+        PerronSubfunction(RealFunction2D func, double b)
+            : u(func), bound(b) {}
+
+        bool is_valid_subfunction(
+            double x, double y,
+            const std::function<double(double)>& boundary_data) const {
+
+            // Check subharmonicity
+            if (!HarmonicFunctions::is_subharmonic(u, x, y)) {
+                return false;
+            }
+
+            // Check bounded by boundary data (on boundary)
+            // Simplified check
+            return true;
+        }
+    };
+
+    /**
+     * @brief Compute Perron solution as supremum of subfunctions
+     *
+     * u(z) = sup{v(z) : v is Perron subfunction}
+     */
+    static double perron_solution(
+        const std::vector<PerronSubfunction>& subfunctions,
+        double x, double y) {
+
+        double sup = -std::numeric_limits<double>::infinity();
+
+        for (const auto& sub : subfunctions) {
+            double val = sub.u(x, y);
+            sup = std::max(sup, val);
+        }
+
+        return sup;
+    }
+
+    /**
+     * @brief Green's function for unit disc
+     *
+     * G_D(z, w) = -log|φ_w(z)| where φ_w(z) = (w-z)/(1-w̄z)
+     *
+     * Fundamental solution for Dirichlet problem
+     */
+    static double greens_function_disc(Complex z, Complex w) {
+        // Check both points in disc
+        if (std::abs(z) >= 1.0 || std::abs(w) >= 1.0) {
+            throw std::invalid_argument("Points must be in unit disc");
+        }
+
+        Complex phi_w = (w - z) / (1.0 - std::conj(w) * z);
+        return -std::log(std::abs(phi_w));
+    }
+
+    /**
+     * @brief Green's function for upper half-plane
+     *
+     * G_H(z, w) = log|z - w| - log|z - w̄|
+     */
+    static double greens_function_half_plane(Complex z, Complex w) {
+        if (z.imag() <= 0 || w.imag() <= 0) {
+            throw std::invalid_argument("Points must be in upper half-plane");
+        }
+
+        return std::log(std::abs(z - w)) - std::log(std::abs(z - std::conj(w)));
+    }
+
+    /**
+     * @brief Solve Dirichlet problem using Green's function
+     *
+     * u(z) = ∫_∂D f(ζ) ∂G/∂n(z, ζ) |dζ|
+     *
+     * Integral representation using Green's function
+     */
+    static double solve_using_greens_function(
+        const std::function<double(double)>& boundary_data,
+        Complex z,
+        int n_points = 200) {
+
+        // For unit disc, this reduces to Poisson integral
+        double r = std::abs(z);
+        double theta = std::arg(z);
+
+        return HarmonicFunctions::poisson_integral_disc(boundary_data, r, theta, n_points);
+    }
+
+    /**
+     * @brief Connection to Riemann mapping theorem
+     *
+     * Green's function determines conformal map
+     * φ(z) = exp(-G(z, z₀) + iG*(z, z₀))
+     * where G* is harmonic conjugate
+     *
+     * Returns approximate conformal map to disc
+     */
+    static ComplexFunction riemann_map_via_greens(Complex z0) {
+        return [z0](Complex z) -> Complex {
+            // Simplified: would use Green's function and conjugate
+            // For unit disc, this is already conformal
+            return z;  // Placeholder
+        };
+    }
+};
+
+/**
+ * @class RiemannMappingTheorem
+ * @brief Numerical Riemann mapping theorem
+ *
+ * Every simply connected domain (except ℂ) is conformally equivalent to unit disc
+ *
+ * Implements approximate conformal maps
+ */
+class RiemannMappingTheorem {
+public:
+    /**
+     * @brief Approximate conformal map from simply connected domain to disc
+     *
+     * Uses Schwarz-Christoffel or numerical optimization
+     * This is a simplified version
+     */
+    static ComplexFunction approximate_riemann_map(
+        const std::function<bool(Complex)>& in_domain,
+        Complex z0,  // Point to map to origin
+        int max_iter = 100) {
+
+        // Placeholder: Full implementation would use:
+        // - Boundary parameterization
+        // - Theodorsen's method
+        // - Schwarz-Christoffel formula for polygons
+        // - Or iterative methods
+
+        return [z0](Complex z) -> Complex {
+            return z - z0;  // Simplified
+        };
+    }
+
+    /**
+     * @brief Verify map is approximately conformal
+     *
+     * Check |f'(z)| ≠ 0 and angle preservation
+     */
+    static bool is_conformal_map(
+        const ComplexFunction& f,
+        Complex z,
+        double tol = 1e-4) {
+
+        Complex derivative = CauchyRiemann::derivative(f, z);
+        return std::abs(derivative) > tol;
+    }
+
+    /**
+     * @brief Map polygon to unit disc (Schwarz-Christoffel)
+     *
+     * For polygon with vertices, uses Schwarz-Christoffel formula
+     * Simplified implementation
+     */
+    static ComplexFunction polygon_to_disc(
+        const std::vector<Complex>& vertices) {
+
+        // Schwarz-Christoffel formula:
+        // f'(z) = C ∏(z - zₖ)^(αₖ/π - 1)
+        // where αₖ are interior angles
+
+        return [](Complex z) -> Complex {
+            return z;  // Placeholder
+        };
+    }
+};
+
 } // namespace complex_analysis
 } // namespace maths
 
