@@ -44,6 +44,7 @@ physics_showcase/
 │   └── physics/
 │       ├── (basic modules)        # Classical mechanics, waves, etc.
 │       ├── advanced_quantum_mechanics.hpp  # NEW: Advanced QM topics
+│       ├── quantum_chemistry.hpp           # NEW: Atomic/molecular structure
 │       ├── quantum_foundations.hpp         # NEW: Historical QM development
 │       └── advanced/              # Advanced physics topics
 │           ├── classical/         # Hamiltonian, Liouville, phase space
@@ -1053,6 +1054,129 @@ Advanced topics in quantum mechanics (~1,650 lines)
 
 **Applications:** Atomic physics, quantum chemistry, spectroscopy, multi-electron systems, perturbation theory, solid-state physics
 
+**Quantum Chemistry: Atomic and Molecular Structure** (`physics/quantum_chemistry.hpp`):
+Comprehensive quantum chemistry module for atoms and molecules (~1,300 lines)
+
+**Atomic Structure:**
+
+- **Atomic and Molecular Wave Functions**
+  - Multi-electron wave functions: ψ(1,2,...,N)
+  - Product wave functions vs antisymmetrized
+  - Slater determinants for fermions: ψ(1,2) = -ψ(2,1)
+  - Normalization integrals ∫|ψ|² dτ = 1
+  - Spin-spatial factorization: ψ(r,s) = ψ_spatial(r) × χ_spin(s)
+  - Exchange symmetry verification
+
+- **The Hartree-Fock Method**
+  - Self-consistent field (SCF) theory
+  - Fock operator: F = h + Σⱼ(2Jⱼ - Kⱼ)
+  - Coulomb integral Jᵢⱼ: electron-electron repulsion
+  - Exchange integral Kᵢⱼ: quantum exchange effects
+  - Hartree-Fock energy: E_HF = Σᵢhᵢᵢ + ½ΣᵢΣⱼ(2Jᵢⱼ - Kᵢⱼ)
+  - SCF iteration and convergence criteria
+  - Koopmans' theorem: ionization energy ≈ -εᵢ
+
+- **Slater Orbitals**
+  - Slater-type orbitals (STOs): φₙₗₘ = N rⁿ⁻¹ e^(-ζr) Yₗₘ
+  - Slater's rules for screening constants
+  - Effective nuclear charge: Z_eff = Z - S
+  - Slater exponents ζ = Z_eff/n*
+  - Overlap integrals between STOs
+  - Orbital normalization
+
+- **Multiplet Theory**
+  - Term symbols: ²ˢ⁺¹Lⱼ notation
+  - L-S coupling (Russell-Saunders): L = Σlᵢ, S = Σsᵢ
+  - Total angular momentum: J = L + S
+  - Hund's rules for ground states:
+    1. Maximize total spin S
+    2. Maximize total orbital angular momentum L
+    3. J = |L-S| if less than half-filled, J = L+S if more
+  - Spectroscopic notation (S, P, D, F, G, ...)
+  - Fine structure splitting
+  - Multiplicity 2S+1
+
+**Molecular Structure:**
+
+- **The Born-Oppenheimer Approximation**
+  - Electronic-nuclear motion separation
+  - Mass ratio justification: m_e/M_n << 1
+  - Wave function factorization: Ψ(r,R) ≈ ψ_el(r;R) × χ_nuc(R)
+  - Electronic Hamiltonian at fixed nuclear positions
+  - Adiabatic vs diabatic representations
+  - Validity criterion: ω_vib << ω_el
+
+- **Nuclear Motion of Diatomic Molecules**
+  - Reduced mass: μ = m₁m₂/(m₁ + m₂)
+  - Rotational energy levels: E_J = BJ(J+1)
+  - Rotational constant: B = ℏ²/(2I)
+  - Vibrational energy (harmonic): E_v = ℏω(v + 1/2)
+  - Anharmonic corrections: -χₑℏω(v + 1/2)²
+  - Rovibrational coupling: E(v,J) = E_vib + E_rot
+  - Centrifugal distortion: -DJ²(J+1)²
+  - Morse potential: V(R) = Dₑ[1 - e^(-a(R-Rₑ))]²
+  - Selection rules: ΔJ = ±1, Δv = ±1
+
+- **The Hydrogen Molecular Ion H₂⁺**
+  - LCAO (Linear Combination of Atomic Orbitals)
+  - Molecular orbitals: ψ = c₁φ_A ± c₂φ_B
+  - Bonding (σ_g) and antibonding (σ_u*) orbitals
+  - Bonding/antibonding energies: E_± = (H_AA ± H_AB)/(1 ± S_AB)
+  - Overlap integral S_AB for 1s orbitals
+  - Equilibrium bond length: R_e ≈ 2.5a₀
+  - Dissociation energy: D₀ ≈ 2.8 eV
+  - Energy curve E(R)
+
+- **The Hydrogen Molecule H₂**
+  - Molecular orbital configuration: (σ_g 1s)²
+  - Valence bond (VB) wave function: covalent structure
+  - Molecular orbital (MO) wave function
+  - Heitler-London approximation: E = (Q + J)/(1 + S²)
+  - Bond dissociation energy: D₀ = 4.75 eV
+  - Equilibrium bond length: R_e = 0.74 Å
+  - Ionic-covalent resonance: ψ = c₁ψ_covalent + c₂ψ_ionic
+  - Comparison of VB and MO theories
+
+- **The Chemical Bond**
+  - Bond order: BO = (n_bonding - n_antibonding)/2
+  - σ, π, and δ bonds
+  - Hybridization: sp, sp², sp³, sp³d, sp³d²
+  - Electronegativity and ionic character
+  - Percent ionic character: 100[1 - e^(-0.25Δχ²)]
+  - Bond length correlation with bond order
+  - Bond energy correlation with bond order
+  - Resonance structures and hybrid energies
+
+- **Structures of Simple Polyatomic Molecules**
+  - VSEPR (Valence Shell Electron Pair Repulsion) theory
+  - Molecular geometries:
+    - Linear (180°): 2 electron pairs
+    - Trigonal planar (120°): 3 pairs, no lone pairs
+    - Bent (<120°): 3 pairs with lone pairs
+    - Tetrahedral (109.5°): 4 pairs, no lone pairs
+    - Trigonal pyramidal (107°): 4 pairs, 1 lone pair
+    - Bent (104.5°): 4 pairs, 2 lone pairs
+    - Trigonal bipyramidal: 5 pairs
+    - Octahedral (90°): 6 pairs
+  - Walsh diagrams: orbital energy vs geometry
+  - Examples: H₂O (bent), NH₃ (pyramidal), CH₄ (tetrahedral), CO₂ (linear)
+  - Dipole moments: μ = Σqᵢrᵢ
+
+- **The Hückel Molecular Orbital Method**
+  - π-electron theory for conjugated systems
+  - Hückel Hamiltonian matrix: H_ii = α, H_ij = β (adjacent)
+  - Hückel 4n+2 aromaticity rule
+  - Aromatic: benzene (6π), naphthalene (10π), cyclopentadienyl⁻ (6π)
+  - Antiaromatic: cyclobutadiene (4π)
+  - Total π-electron energy: E_π = Σᵢnᵢεᵢ
+  - Delocalization (resonance) energy
+  - Bond order: p_ij = Σₖnₖc_ikc_jk
+  - Charge density: q_i = Σₖnₖ|c_ik|²
+  - Aromatic stabilization energy
+  - Examples: benzene resonance energy = 2β
+
+**Applications:** Quantum chemistry, computational chemistry, molecular spectroscopy, chemical bonding theory, organic chemistry, materials science, drug design
+
 ## 🚀 Usage
 
 ### Integration
@@ -1112,10 +1236,11 @@ g++ -std=c++17 -I./include your_program.cpp -o your_program -lm
   - Financial mathematics, actuarial science, econometrics
 - **Physics Modules**:
   - Basic: 25+ modules covering classical mechanics, E&M, thermodynamics, optics, modern physics
-  - **Quantum Mechanics** (3 comprehensive modules, ~5,450 lines total):
+  - **Quantum Mechanics & Chemistry** (4 comprehensive modules, ~6,750 lines total):
     - **Operator Algebras** (~2,800 lines): von Neumann algebras, unitary representations, factor classification, elementary C*-algebra theory (13 classes), GNS construction
     - **Quantum Foundations** (~1,000 lines): Historical development from Planck to Schrödinger, Bohr model, matrix mechanics, uncertainty relations
     - **Advanced Quantum Mechanics** (~1,650 lines): Kummer's functions, Hamiltonian mechanics, perturbation theory, Stark effect, Pauli exclusion, electron spin, helium atom
+    - **Quantum Chemistry** (~1,300 lines): Atomic structure (Hartree-Fock, Slater orbitals, multiplet theory), molecular structure (Born-Oppenheimer, diatomic molecules, H₂⁺, H₂, chemical bonding, VSEPR, Hückel MO theory)
   - Advanced: 23+ modules in Hamiltonian mechanics, cosmology, fluid dynamics, gauge theory, QFT
 - **Probability Distributions**: 14 distributions (Bernoulli, Binomial, Poisson, Geometric, Negative Binomial, Hypergeometric, Uniform, Normal, Exponential, Gamma, Beta, Chi-squared, Student's t, F-distribution)
 - **Key Algorithms**:
@@ -1165,6 +1290,7 @@ Each module serves as both:
    - **Complex Analysis**: Zeros of holomorphic functions, infinite products, special functions (Gamma, Beta), Blaschke products, Hardy spaces
    - **Operator Algebras**: Von Neumann algebras, C*-algebras, GNS construction, spectral theory, quantum observables
    - **Quantum Mechanics**: Historical development, Schrödinger equation, perturbation theory, multi-electron systems, atomic structure
+   - **Quantum Chemistry**: Hartree-Fock method, molecular orbital theory, chemical bonding, VSEPR theory, Hückel aromaticity, spectroscopy
    - Ordinary and partial differential equations
    - Stochastic differential equations and Itô calculus
    - Dynamical systems, chaos theory, and bifurcation analysis
