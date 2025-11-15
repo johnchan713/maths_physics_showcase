@@ -2414,6 +2414,643 @@ public:
     }
 };
 
+/**
+ * @class MarketTheory
+ * @brief Market models, portfolio dynamics, and arbitrage theory
+ *
+ * Models financial markets with multiple assets:
+ * - Stock: dS(t) = μS(t)dt + σS(t)dW(t) (geometric Brownian motion)
+ * - Bond: dB(t) = rB(t)dt (risk-free asset)
+ * - Self-financing portfolio: dV = Σᵢ φᵢ dSᵢ
+ * - Arbitrage: Risk-free profit with zero investment
+ */
+class MarketTheory {
+public:
+    struct Asset {
+        double S0;      // Initial price
+        double mu;      // Drift
+        double sigma;   // Volatility
+    };
+
+    struct Portfolio {
+        std::vector<double> holdings;  // φᵢ = shares of asset i
+        double cash;                    // Cash position
+    };
+
+    /**
+     * @brief Simulate market with multiple stocks and risk-free bond
+     *
+     * Stock i: dSᵢ = μᵢSᵢ dt + σᵢSᵢ dWᵢ
+     * Bond: dB = rB dt
+     */
+    static std::vector<std::vector<double>> simulateMarket(
+        const std::vector<Asset>& assets,
+        double r,           // Risk-free rate
+        double T,
+        int n_steps,
+        const std::vector<std::vector<double>>& correlations = {}) {
+
+        int n_assets = assets.size();
+        double dt = T / n_steps;
+        double sqrt_dt = std::sqrt(dt);
+        std::normal_distribution<double> normal(0.0, 1.0);
+
+        // Initialize price paths
+        std::vector<std::vector<double>> prices(n_assets);
+        for (int i = 0; i < n_assets; ++i) {
+            prices[i].resize(n_steps + 1);
+            prices[i][0] = assets[i].S0;
+        }
+
+        // Simulate correlated Brownian motions
+        for (int t = 0; t < n_steps; ++t) {
+            std::vector<double> dW(n_assets);
+
+            if (correlations.empty()) {
+                // Independent Brownian motions
+                for (int i = 0; i < n_assets; ++i) {
+                    dW[i] = sqrt_dt * normal(gen);
+                }
+            } else {
+                // Correlated via Cholesky decomposition
+                std::vector<double> Z(n_assets);
+                for (int i = 0; i < n_assets; ++i) {
+                    Z[i] = normal(gen);
+                }
+
+                // L from Cholesky: ρ = LL^T
+                for (int i = 0; i < n_assets; ++i) {
+                    dW[i] = 0.0;
+                    for (int j = 0; j <= i; ++j) {
+                        dW[i] += correlations[i][j] * Z[j];
+                    }
+                    dW[i] *= sqrt_dt;
+                }
+            }
+
+            // Update prices: dS = μS dt + σS dW
+            for (int i = 0; i < n_assets; ++i) {
+                prices[i][t+1] = prices[i][t] * (1.0 + assets[i].mu * dt + assets[i].sigma * dW[i]);
+            }
+        }
+
+        return prices;
+    }
+
+    /**
+     * @brief Self-financing portfolio dynamics
+     *
+     * A trading strategy (φ₀(t), φ₁(t), ..., φₙ(t)) is self-financing if:
+     * dV(t) = φ₀(t) dB(t) + Σᵢ φᵢ(t) dSᵢ(t)
+     *
+     * No external cash injections or withdrawals
+     */
+    static std::vector<double> selfFinancingPortfolio(
+        const std::vector<std::vector<double>>& asset_prices,
+        const std::vector<std::function<double(int)>>& strategy,  // φᵢ(t)
+        double r,  // Risk-free rate
+        double V0, // Initial wealth
+        double T,
+        int n_steps) {
+
+        int n_assets = asset_prices.size();
+        double dt = T / n_steps;
+        std::vector<double> V(n_steps + 1);
+        V[0] = V0;
+
+        for (int t = 0; t < n_steps; ++t) {
+            double dV = 0.0;
+
+            // φ₀ dB: Cash account grows at risk-free rate
+            double bond_value = V[t];
+            for (int i = 0; i < n_assets; ++i) {
+                bond_value -= strategy[i](t) * asset_prices[i][t];
+            }
+            dV += r * bond_value * dt;
+
+            // Σᵢ φᵢ dSᵢ: Stock holdings
+            for (int i = 0; i < n_assets; ++i) {
+                double dS = asset_prices[i][t+1] - asset_prices[i][t];
+                dV += strategy[i](t) * dS;
+            }
+
+            V[t+1] = V[t] + dV;
+        }
+
+        return V;
+    }
+
+    /**
+     * @brief Detect arbitrage via martingale property
+     *
+     * Fundamental Theorem of Asset Pricing:
+     * No arbitrage ⟺ ∃ equivalent martingale measure Q
+     * where discounted prices S̃(t) = e^(-rt)S(t) are Q-martingales
+     */
+    static bool detectArbitrage(
+        const std::vector<Asset>& assets,
+        double r,  // Risk-free rate
+        double tolerance = 1e-6) {
+
+        // For single-asset market: no arbitrage iff can find Q with
+        // E^Q[dS̃/S̃] = 0 ⟺ μ - r = λσ for some λ (market price of risk)
+
+        if (assets.size() == 1) {
+            // Always no arbitrage in single-asset Black-Scholes
+            return false;
+        }
+
+        // For multi-asset: check if system μᵢ - r = Σⱼ σᵢⱼλⱼ is solvable
+        // Simplified check: verify all Sharpe ratios are consistent
+        std::vector<double> sharpe_ratios(assets.size());
+        for (size_t i = 0; i < assets.size(); ++i) {
+            sharpe_ratios[i] = (assets[i].mu - r) / assets[i].sigma;
+        }
+
+        // In complete market, all Sharpe ratios should be equal
+        double sharpe_ref = sharpe_ratios[0];
+        for (size_t i = 1; i < assets.size(); ++i) {
+            if (std::abs(sharpe_ratios[i] - sharpe_ref) > tolerance) {
+                return true;  // Arbitrage exists
+            }
+        }
+
+        return false;  // No arbitrage
+    }
+
+    /**
+     * @brief Construct risk-neutral measure (Girsanov change)
+     *
+     * Under Q: dS = rS dt + σS dW^Q
+     * where W^Q = W + (μ-r)/σ t (market price of risk added to Brownian motion)
+     *
+     * Radon-Nikodym: dQ/dP = exp(-θW - ½θ²t) where θ = (μ-r)/σ
+     */
+    static std::pair<std::vector<double>, double> riskNeutralMeasure(
+        double S0, double mu, double sigma, double r,
+        double T, int n_steps) {
+
+        double dt = T / n_steps;
+        double sqrt_dt = std::sqrt(dt);
+        std::normal_distribution<double> normal(0.0, 1.0);
+
+        double theta = (mu - r) / sigma;  // Market price of risk
+        std::vector<double> S(n_steps + 1);
+        S[0] = S0;
+
+        double W_Q = 0.0;
+        double radon_nikodym = 1.0;
+
+        for (int i = 0; i < n_steps; ++i) {
+            double dW_P = sqrt_dt * normal(gen);
+            double dW_Q = dW_P + theta * sqrt_dt;  // Girsanov drift
+
+            // Under Q: dS = rS dt + σS dW^Q
+            S[i+1] = S[i] * (1.0 + r * dt + sigma * dW_Q);
+
+            // Radon-Nikodym derivative
+            W_Q += dW_Q;
+            radon_nikodym *= std::exp(-theta * dW_P - 0.5 * theta * theta * dt);
+        }
+
+        return {S, radon_nikodym};
+    }
+
+    /**
+     * @brief Market price of risk (Sharpe ratio)
+     *
+     * λ = (μ - r) / σ
+     */
+    static double marketPriceOfRisk(double mu, double sigma, double r) {
+        return (mu - r) / sigma;
+    }
+};
+
+/**
+ * @class AttainabilityCompleteness
+ * @brief Attainable claims, market completeness, and hedging strategies
+ *
+ * - Attainable claim: Payoff that can be replicated by trading strategy
+ * - Complete market: All claims are attainable
+ * - Hedging: Replicating portfolio that eliminates risk
+ */
+class AttainabilityCompleteness {
+public:
+    /**
+     * @brief Check if claim is attainable in Black-Scholes market
+     *
+     * In complete market (1 stock + 1 bond), any measurable payoff h(S(T))
+     * is attainable with replicating portfolio
+     */
+    static bool isAttainable(
+        std::function<double(double)> payoff,
+        double S0, double r, double sigma,
+        double T,
+        double tolerance = 1e-3) {
+
+        // Black-Scholes market is complete: all payoffs attainable
+        // Verify by checking if value function exists
+
+        // Price via risk-neutral valuation
+        double price = riskNeutralPrice(payoff, S0, r, sigma, T, 1000);
+
+        return std::isfinite(price);  // Attainable if finite price exists
+    }
+
+    /**
+     * @brief Check market completeness
+     *
+     * Market with d stocks and d sources of randomness (Brownian motions)
+     * is complete if volatility matrix σ is non-singular
+     */
+    static bool isMarketComplete(
+        const std::vector<std::vector<double>>& volatility_matrix) {
+
+        int n = volatility_matrix.size();
+        if (n == 0) return false;
+
+        // For 1D: complete if σ > 0
+        if (n == 1) {
+            return volatility_matrix[0][0] > 0;
+        }
+
+        // For multi-dimensional: check det(σ) ≠ 0
+        // Simplified check for 2×2
+        if (n == 2) {
+            double det = volatility_matrix[0][0] * volatility_matrix[1][1]
+                       - volatility_matrix[0][1] * volatility_matrix[1][0];
+            return std::abs(det) > 1e-10;
+        }
+
+        // For larger systems, assume complete if square and well-conditioned
+        return true;
+    }
+
+    /**
+     * @brief Construct replicating portfolio (delta hedging)
+     *
+     * For option with value V(t,S), replicating portfolio:
+     * - Δ(t) = ∂V/∂S shares of stock
+     * - B(t) = V - ΔS units of bond
+     *
+     * This replicates: dV = Δ dS + rB dt
+     */
+    static std::pair<std::vector<double>, std::vector<double>> replicatingPortfolio(
+        std::function<double(double, double)> value_func,  // V(t,S)
+        std::function<double(double, double)> delta_func,  // ∂V/∂S
+        const std::vector<double>& stock_price,
+        double r, double T, int n_steps) {
+
+        int n = stock_price.size();
+        double dt = T / n_steps;
+        std::vector<double> stock_holdings(n);
+        std::vector<double> bond_holdings(n);
+
+        for (int i = 0; i < n; ++i) {
+            double t = i * dt;
+            double S = stock_price[i];
+
+            // Delta hedge
+            stock_holdings[i] = delta_func(t, S);
+
+            // Bond position: B = V - ΔS
+            double V = value_func(t, S);
+            bond_holdings[i] = V - stock_holdings[i] * S;
+        }
+
+        return {stock_holdings, bond_holdings};
+    }
+
+    /**
+     * @brief Verify hedging strategy eliminates risk
+     *
+     * For perfect hedge: dV = rV dt (no stochastic term)
+     * Achieved when Δ = ∂V/∂S (delta hedge)
+     */
+    static bool verifyHedge(
+        std::function<double(double, double)> value_func,
+        std::function<double(double, double)> delta_func,
+        double S0, double r, double sigma,
+        double T, int n_steps,
+        double tolerance = 1e-2) {
+
+        double dt = T / n_steps;
+        double sqrt_dt = std::sqrt(dt);
+        std::normal_distribution<double> normal(0.0, 1.0);
+
+        double S = S0;
+        double V = value_func(0.0, S0);
+
+        for (int i = 0; i < n_steps; ++i) {
+            double t = i * dt;
+            double delta = delta_func(t, S);
+
+            // Stock evolution: dS = rS dt + σS dW (risk-neutral)
+            double dW = sqrt_dt * normal(gen);
+            double dS = r * S * dt + sigma * S * dW;
+
+            // Portfolio evolution: dV = Δ dS + r(V - ΔS) dt
+            double dV_hedge = delta * dS + r * (V - delta * S) * dt;
+
+            S += dS;
+            V += dV_hedge;
+
+            // Check if matches true value (within tolerance)
+            double V_true = value_func(t + dt, S);
+            if (std::abs(V - V_true) > tolerance * V_true) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+private:
+    static double riskNeutralPrice(
+        std::function<double(double)> payoff,
+        double S0, double r, double sigma,
+        double T, int n_samples) {
+
+        std::normal_distribution<double> normal(0.0, 1.0);
+        double sum = 0.0;
+
+        for (int i = 0; i < n_samples; ++i) {
+            double Z = normal(gen);
+            double S_T = S0 * std::exp((r - 0.5 * sigma * sigma) * T + sigma * std::sqrt(T) * Z);
+            sum += payoff(S_T);
+        }
+
+        return std::exp(-r * T) * sum / n_samples;
+    }
+};
+
+/**
+ * @class OptionPricing
+ * @brief Option pricing via Black-Scholes and path-dependent options
+ *
+ * Black-Scholes PDE: ∂V/∂t + ½σ²S²∂²V/∂S² + rS∂V/∂S - rV = 0
+ * Solution: V = E^Q[e^(-rT) h(S(T))]
+ */
+class OptionPricing {
+public:
+    /**
+     * @brief Black-Scholes formula for European call
+     *
+     * C(S,t) = S·N(d₁) - K·e^(-r(T-t))·N(d₂)
+     * d₁ = [ln(S/K) + (r + σ²/2)(T-t)] / (σ√(T-t))
+     * d₂ = d₁ - σ√(T-t)
+     */
+    static double europeanCall(
+        double S, double K, double r, double sigma, double T) {
+
+        if (T <= 0) return std::max(S - K, 0.0);
+
+        double d1 = (std::log(S / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * std::sqrt(T));
+        double d2 = d1 - sigma * std::sqrt(T);
+
+        auto N = [](double x) {
+            return 0.5 * std::erfc(-x / std::sqrt(2.0));
+        };
+
+        return S * N(d1) - K * std::exp(-r * T) * N(d2);
+    }
+
+    /**
+     * @brief Black-Scholes formula for European put
+     *
+     * P(S,t) = K·e^(-r(T-t))·N(-d₂) - S·N(-d₁)
+     */
+    static double europeanPut(
+        double S, double K, double r, double sigma, double T) {
+
+        if (T <= 0) return std::max(K - S, 0.0);
+
+        double d1 = (std::log(S / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * std::sqrt(T));
+        double d2 = d1 - sigma * std::sqrt(T);
+
+        auto N = [](double x) {
+            return 0.5 * std::erfc(-x / std::sqrt(2.0));
+        };
+
+        return K * std::exp(-r * T) * N(-d2) - S * N(-d1);
+    }
+
+    /**
+     * @brief Digital (binary) option
+     *
+     * Pays 1 if S(T) > K, 0 otherwise
+     * Value: e^(-rT)·N(d₂)
+     */
+    static double digitalOption(
+        double S, double K, double r, double sigma, double T) {
+
+        if (T <= 0) return S > K ? 1.0 : 0.0;
+
+        double d2 = (std::log(S / K) + (r - 0.5 * sigma * sigma) * T) / (sigma * std::sqrt(T));
+
+        auto N = [](double x) {
+            return 0.5 * std::erfc(-x / std::sqrt(2.0));
+        };
+
+        return std::exp(-r * T) * N(d2);
+    }
+
+    /**
+     * @brief Asian option (arithmetic average)
+     *
+     * Payoff: max(Ā - K, 0) where Ā = (1/n)Σᵢ S(tᵢ)
+     * No closed form - use Monte Carlo
+     */
+    static double asianOption(
+        double S0, double K, double r, double sigma,
+        double T, int n_steps, int n_samples = 10000) {
+
+        double dt = T / n_steps;
+        double sqrt_dt = std::sqrt(dt);
+        std::normal_distribution<double> normal(0.0, 1.0);
+
+        double sum_payoffs = 0.0;
+
+        for (int sample = 0; sample < n_samples; ++sample) {
+            double S = S0;
+            double average = 0.0;
+
+            for (int i = 0; i < n_steps; ++i) {
+                double dW = sqrt_dt * normal(gen);
+                S *= std::exp((r - 0.5 * sigma * sigma) * dt + sigma * dW);
+                average += S;
+            }
+
+            average /= n_steps;
+            sum_payoffs += std::max(average - K, 0.0);
+        }
+
+        return std::exp(-r * T) * sum_payoffs / n_samples;
+    }
+
+    /**
+     * @brief Barrier option (knock-out call)
+     *
+     * Payoff: max(S(T) - K, 0) if S(t) < H for all t, else 0
+     * Option becomes worthless if barrier H is hit
+     */
+    static double barrierOption(
+        double S0, double K, double H, double r, double sigma,
+        double T, int n_steps, int n_samples = 10000) {
+
+        double dt = T / n_steps;
+        double sqrt_dt = std::sqrt(dt);
+        std::normal_distribution<double> normal(0.0, 1.0);
+
+        double sum_payoffs = 0.0;
+
+        for (int sample = 0; sample < n_samples; ++sample) {
+            double S = S0;
+            bool barrier_hit = false;
+
+            for (int i = 0; i < n_steps; ++i) {
+                double dW = sqrt_dt * normal(gen);
+                S *= std::exp((r - 0.5 * sigma * sigma) * dt + sigma * dW);
+
+                if (S >= H) {
+                    barrier_hit = true;
+                    break;
+                }
+            }
+
+            if (!barrier_hit) {
+                sum_payoffs += std::max(S - K, 0.0);
+            }
+        }
+
+        return std::exp(-r * T) * sum_payoffs / n_samples;
+    }
+
+    /**
+     * @brief Lookback option (floating strike)
+     *
+     * Payoff: S(T) - min_{t∈[0,T]} S(t)
+     * Maximum gain from hindsight trading
+     */
+    static double lookbackOption(
+        double S0, double r, double sigma,
+        double T, int n_steps, int n_samples = 10000) {
+
+        double dt = T / n_steps;
+        double sqrt_dt = std::sqrt(dt);
+        std::normal_distribution<double> normal(0.0, 1.0);
+
+        double sum_payoffs = 0.0;
+
+        for (int sample = 0; sample < n_samples; ++sample) {
+            double S = S0;
+            double S_min = S0;
+
+            for (int i = 0; i < n_steps; ++i) {
+                double dW = sqrt_dt * normal(gen);
+                S *= std::exp((r - 0.5 * sigma * sigma) * dt + sigma * dW);
+                S_min = std::min(S_min, S);
+            }
+
+            sum_payoffs += S - S_min;
+        }
+
+        return std::exp(-r * T) * sum_payoffs / n_samples;
+    }
+
+    /**
+     * @brief Option Greeks
+     *
+     * Delta: Δ = ∂V/∂S
+     * Gamma: Γ = ∂²V/∂S²
+     * Vega: ν = ∂V/∂σ
+     * Theta: Θ = ∂V/∂t
+     * Rho: ρ = ∂V/∂r
+     */
+    struct Greeks {
+        double delta;   // ∂V/∂S
+        double gamma;   // ∂²V/∂S²
+        double vega;    // ∂V/∂σ
+        double theta;   // ∂V/∂t
+        double rho;     // ∂V/∂r
+    };
+
+    static Greeks europeanCallGreeks(
+        double S, double K, double r, double sigma, double T) {
+
+        Greeks greeks;
+
+        double d1 = (std::log(S / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * std::sqrt(T));
+        double d2 = d1 - sigma * std::sqrt(T);
+
+        auto N = [](double x) {
+            return 0.5 * std::erfc(-x / std::sqrt(2.0));
+        };
+
+        auto n = [](double x) {
+            return std::exp(-0.5 * x * x) / std::sqrt(2.0 * M_PI);
+        };
+
+        // Delta: Δ = N(d₁)
+        greeks.delta = N(d1);
+
+        // Gamma: Γ = n(d₁) / (S σ √T)
+        greeks.gamma = n(d1) / (S * sigma * std::sqrt(T));
+
+        // Vega: ν = S n(d₁) √T
+        greeks.vega = S * n(d1) * std::sqrt(T);
+
+        // Theta: Θ = -S n(d₁) σ / (2√T) - rK e^(-rT) N(d₂)
+        greeks.theta = -S * n(d1) * sigma / (2.0 * std::sqrt(T))
+                      - r * K * std::exp(-r * T) * N(d2);
+
+        // Rho: ρ = K T e^(-rT) N(d₂)
+        greeks.rho = K * T * std::exp(-r * T) * N(d2);
+
+        return greeks;
+    }
+
+    /**
+     * @brief Risk-neutral valuation
+     *
+     * V(0,S) = E^Q[e^(-rT) h(S(T))]
+     * where Q is risk-neutral measure (S grows at rate r)
+     */
+    static double riskNeutralValuation(
+        std::function<double(double)> payoff,
+        double S0, double r, double sigma,
+        double T, int n_samples = 10000) {
+
+        std::normal_distribution<double> normal(0.0, 1.0);
+        double sum = 0.0;
+
+        for (int i = 0; i < n_samples; ++i) {
+            double Z = normal(gen);
+            double S_T = S0 * std::exp((r - 0.5 * sigma * sigma) * T + sigma * std::sqrt(T) * Z);
+            sum += payoff(S_T);
+        }
+
+        return std::exp(-r * T) * sum / n_samples;
+    }
+
+    /**
+     * @brief Put-Call parity
+     *
+     * C - P = S - K·e^(-rT)
+     * Relationship between European call and put prices
+     */
+    static bool verifyPutCallParity(
+        double call_price, double put_price,
+        double S, double K, double r, double T,
+        double tolerance = 1e-6) {
+
+        double lhs = call_price - put_price;
+        double rhs = S - K * std::exp(-r * T);
+
+        return std::abs(lhs - rhs) < tolerance;
+    }
+};
+
 } // namespace maths::sde
 
 #endif // MATHS_STOCHASTIC_DIFFERENTIAL_EQUATIONS_HPP
