@@ -108,6 +108,10 @@ public:
     double standard_deviation() const { return std::sqrt(variance()); }
 };
 
+// ============================================================================
+// SECTION 1: DISCRETE PROBABILITY DISTRIBUTIONS
+// ============================================================================
+
 /**
  * @class BernoulliDistribution
  * @brief Bernoulli distribution: X ∈ {0,1} with P(X=1) = p
@@ -268,6 +272,10 @@ public:
         return dist(gen) + 1;  // Shift to start at 1
     }
 };
+
+// ============================================================================
+// SECTION 2: CONTINUOUS PROBABILITY DISTRIBUTIONS
+// ============================================================================
 
 /**
  * @class UniformDistribution
@@ -1827,6 +1835,10 @@ public:
     }
 };
 
+// ============================================================================
+// SECTION 3: STATISTICS AND STATISTICAL INFERENCE
+// ============================================================================
+
 /**
  * @class StandardNormalExtensions
  * @brief Extended functions for standard normal distribution
@@ -2274,15 +2286,387 @@ public:
 };
 
 /**
- * @class StatisticalTests
- * @brief Hypothesis testing and statistical inference
+ * @class HypothesisTesting
+ * @brief Comprehensive hypothesis testing methods
+ *
+ * Implements computational methods for:
+ * - Neyman-Pearson lemma
+ * - Likelihood ratio tests
+ * - Goodness of fit tests
+ * - Contingency tables
+ * - Variance tests (Bartlett, Cochran)
+ * - Sample size calculations
+ * - Outlier detection
+ * - Bernoulli trials
  */
-class StatisticalTests {
+class HypothesisTesting {
 public:
+    /**
+     * @brief Neyman-Pearson lemma likelihood ratio test
+     *
+     * For H₀: θ = θ₀ vs H₁: θ = θ₁ (simple vs simple)
+     * Reject H₀ if L(θ₁)/L(θ₀) > k
+     *
+     * @param distribution Name of distribution ("Normal", "Exponential", etc.)
+     * @param data Sample data
+     * @param theta0 Null hypothesis parameter
+     * @param theta1 Alternative hypothesis parameter
+     * @return Likelihood ratio L(θ₁)/L(θ₀)
+     */
+    static double neyman_pearson_lr(
+        const std::string& distribution,
+        const std::vector<double>& data,
+        double theta0,
+        double theta1) {
+
+        double log_lik0 = 0.0, log_lik1 = 0.0;
+
+        if (distribution == "Normal-mean") {
+            // Assuming σ² = 1
+            for (double x : data) {
+                log_lik0 += -0.5 * (x - theta0) * (x - theta0);
+                log_lik1 += -0.5 * (x - theta1) * (x - theta1);
+            }
+        } else if (distribution == "Exponential") {
+            for (double x : data) {
+                log_lik0 += std::log(theta0) - theta0 * x;
+                log_lik1 += std::log(theta1) - theta1 * x;
+            }
+        } else if (distribution == "Poisson") {
+            for (double x : data) {
+                int k = static_cast<int>(x);
+                log_lik0 += k * std::log(theta0) - theta0;
+                log_lik1 += k * std::log(theta1) - theta1;
+            }
+        }
+
+        return std::exp(log_lik1 - log_lik0);
+    }
+
+    /**
+     * @brief Generalized likelihood ratio test (GLRT)
+     *
+     * Test statistic: Λ = L(θ̂₀)/L(θ̂) where θ̂₀ is MLE under H₀, θ̂ is unrestricted MLE
+     * -2 log Λ ~ χ²(df) asymptotically
+     *
+     * @return -2 log(Λ)
+     */
+    static double generalized_lr_test(
+        double log_lik_H0,
+        double log_lik_unrestricted) {
+
+        return -2.0 * (log_lik_H0 - log_lik_unrestricted);
+    }
+
+    /**
+     * @brief Kolmogorov-Smirnov goodness-of-fit test
+     *
+     * Tests if sample comes from specified distribution
+     * Test statistic: D = max|F_n(x) - F(x)|
+     *
+     * @param data Sample data (will be sorted)
+     * @param cdf_function Theoretical CDF function
+     * @return KS test statistic D
+     */
+    static double kolmogorov_smirnov_test(
+        std::vector<double> data,
+        std::function<double(double)> cdf_function) {
+
+        std::sort(data.begin(), data.end());
+        int n = data.size();
+        double max_diff = 0.0;
+
+        for (int i = 0; i < n; ++i) {
+            double empirical_cdf = (i + 1.0) / n;
+            double theoretical_cdf = cdf_function(data[i]);
+            double diff = std::abs(empirical_cdf - theoretical_cdf);
+            max_diff = std::max(max_diff, diff);
+        }
+
+        return max_diff;
+    }
+
+    /**
+     * @brief Chi-squared goodness-of-fit test
+     *
+     * Tests if observed frequencies match expected frequencies
+     * χ² = ∑(O_i - E_i)²/E_i
+     *
+     * @param observed Observed frequencies
+     * @param expected Expected frequencies
+     * @return Chi-squared statistic (compare with χ²(k-1) distribution)
+     */
+    static double chi_squared_goodness_of_fit(
+        const std::vector<double>& observed,
+        const std::vector<double>& expected) {
+
+        if (observed.size() != expected.size()) {
+            throw std::invalid_argument("Observed and expected must have same size");
+        }
+
+        double chi_sq = 0.0;
+        for (size_t i = 0; i < observed.size(); ++i) {
+            if (expected[i] < 1e-10) {
+                throw std::invalid_argument("Expected frequencies must be > 0");
+            }
+            double diff = observed[i] - expected[i];
+            chi_sq += (diff * diff) / expected[i];
+        }
+        return chi_sq;
+    }
+
+    /**
+     * @brief Chi-squared test for r×c contingency table
+     *
+     * Tests independence of two categorical variables
+     * χ² = ∑∑(O_ij - E_ij)²/E_ij where E_ij = (row_i total)(col_j total)/grand total
+     *
+     * @param table Contingency table (r rows × c columns)
+     * @return Chi-squared statistic (df = (r-1)(c-1))
+     */
+    static double contingency_table_test(
+        const std::vector<std::vector<double>>& table) {
+
+        int r = table.size();
+        if (r == 0) throw std::invalid_argument("Empty table");
+        int c = table[0].size();
+
+        // Compute row and column totals
+        std::vector<double> row_totals(r, 0.0);
+        std::vector<double> col_totals(c, 0.0);
+        double grand_total = 0.0;
+
+        for (int i = 0; i < r; ++i) {
+            for (int j = 0; j < c; ++j) {
+                row_totals[i] += table[i][j];
+                col_totals[j] += table[i][j];
+                grand_total += table[i][j];
+            }
+        }
+
+        // Compute chi-squared statistic
+        double chi_sq = 0.0;
+        for (int i = 0; i < r; ++i) {
+            for (int j = 0; j < c; ++j) {
+                double expected = (row_totals[i] * col_totals[j]) / grand_total;
+                if (expected < 1e-10) continue;
+                double diff = table[i][j] - expected;
+                chi_sq += (diff * diff) / expected;
+            }
+        }
+
+        return chi_sq;
+    }
+
+    /**
+     * @brief Fisher's exact test for 2×2 contingency table
+     *
+     * Computes exact p-value using hypergeometric distribution
+     * Used when cell counts are small
+     *
+     * @param a, b, c, d Cell counts in 2×2 table [[a,b],[c,d]]
+     * @return One-tailed p-value
+     */
+    static double fishers_exact_test_2x2(int a, int b, int c, int d) {
+        int n1 = a + b;  // Row 1 total
+        int n2 = c + d;  // Row 2 total
+        int m1 = a + c;  // Col 1 total
+        int N = a + b + c + d;  // Grand total
+
+        // P(X = a) under hypergeometric
+        double p_observed = (binomial_coefficient(n1, a) *
+                            binomial_coefficient(n2, c)) /
+                            binomial_coefficient(N, m1);
+
+        // Sum probabilities for tables as or more extreme
+        double p_value = 0.0;
+        int min_a = std::max(0, m1 - n2);
+        int max_a = std::min(n1, m1);
+
+        for (int x = min_a; x <= max_a; ++x) {
+            int y = m1 - x;
+            double p = (binomial_coefficient(n1, x) *
+                       binomial_coefficient(n2, y)) /
+                       binomial_coefficient(N, m1);
+
+            if (p <= p_observed + 1e-10) {  // As or more extreme
+                p_value += p;
+            }
+        }
+
+        return p_value;
+    }
+
+    /**
+     * @brief Bartlett's test for homogeneity of variances
+     *
+     * Tests H₀: σ₁² = σ₂² = ... = σ₂ₖ
+     * Test statistic ~ χ²(k-1) under H₀
+     *
+     * @param samples Vector of samples (each sample is a vector)
+     * @return Bartlett's test statistic
+     */
+    static double bartletts_test(const std::vector<std::vector<double>>& samples) {
+        int k = samples.size();
+        if (k < 2) throw std::invalid_argument("Need at least 2 samples");
+
+        std::vector<int> n_i(k);
+        std::vector<double> s_i_sq(k);
+        int N = 0;
+
+        // Compute sample variances
+        for (int i = 0; i < k; ++i) {
+            n_i[i] = samples[i].size();
+            N += n_i[i];
+
+            double mean = std::accumulate(samples[i].begin(), samples[i].end(), 0.0) / n_i[i];
+            double var = 0.0;
+            for (double x : samples[i]) {
+                var += (x - mean) * (x - mean);
+            }
+            s_i_sq[i] = var / (n_i[i] - 1);
+        }
+
+        // Pooled variance
+        double s_p_sq = 0.0;
+        for (int i = 0; i < k; ++i) {
+            s_p_sq += (n_i[i] - 1) * s_i_sq[i];
+        }
+        s_p_sq /= (N - k);
+
+        // Bartlett's statistic
+        double numerator = (N - k) * std::log(s_p_sq);
+        double denominator = 0.0;
+        for (int i = 0; i < k; ++i) {
+            numerator -= (n_i[i] - 1) * std::log(s_i_sq[i]);
+        }
+
+        // Correction factor C
+        double C = 1.0 + (1.0 / (3.0 * (k - 1))) *
+                   (std::accumulate(n_i.begin(), n_i.end(), 0.0,
+                    [](double sum, int n) { return sum + 1.0 / (n - 1); })
+                    - 1.0 / (N - k));
+
+        return numerator / C;
+    }
+
+    /**
+     * @brief Cochran's test for outlying variance
+     *
+     * Tests if one variance is significantly larger than others
+     * C = max(s_i²) / ∑s_i²
+     *
+     * @param samples Vector of samples
+     * @return Cochran's C statistic
+     */
+    static double cochrans_test(const std::vector<std::vector<double>>& samples) {
+        int k = samples.size();
+        if (k < 2) throw std::invalid_argument("Need at least 2 samples");
+
+        std::vector<double> variances(k);
+
+        // Compute sample variances
+        for (int i = 0; i < k; ++i) {
+            double mean = std::accumulate(samples[i].begin(), samples[i].end(), 0.0)
+                         / samples[i].size();
+            double var = 0.0;
+            for (double x : samples[i]) {
+                var += (x - mean) * (x - mean);
+            }
+            variances[i] = var / (samples[i].size() - 1);
+        }
+
+        double max_var = *std::max_element(variances.begin(), variances.end());
+        double sum_var = std::accumulate(variances.begin(), variances.end(), 0.0);
+
+        return max_var / sum_var;
+    }
+
+    /**
+     * @brief Sample size required for hypothesis test
+     *
+     * For testing H₀: μ = μ₀ vs H₁: μ = μ₁
+     * Given Type I error α, Type II error β, and standard deviation σ
+     *
+     * n ≈ (z_α + z_β)² σ² / (μ₁ - μ₀)²
+     *
+     * @param alpha Type I error rate
+     * @param beta Type II error rate
+     * @param sigma Population standard deviation
+     * @param mu0 Null hypothesis mean
+     * @param mu1 Alternative hypothesis mean
+     * @return Required sample size
+     */
+    static int required_sample_size(
+        double alpha, double beta,
+        double sigma, double mu0, double mu1) {
+
+        double z_alpha = StandardNormalExtensions::critical_value(alpha);
+        double z_beta = StandardNormalExtensions::critical_value(beta);
+
+        double delta = std::abs(mu1 - mu0);
+        double n = ((z_alpha + z_beta) * sigma / delta);
+        n = n * n;
+
+        return static_cast<int>(std::ceil(n));
+    }
+
+    /**
+     * @brief Grubbs' test for outliers
+     *
+     * Tests if maximum or minimum is an outlier
+     * G = |x_extreme - x̄| / s
+     *
+     * @param data Sample data
+     * @param test_max If true, test maximum; else test minimum
+     * @return Grubbs' test statistic
+     */
+    static double grubbs_test(const std::vector<double>& data, bool test_max = true) {
+        int n = data.size();
+        if (n < 3) throw std::invalid_argument("Need at least 3 observations");
+
+        double mean = std::accumulate(data.begin(), data.end(), 0.0) / n;
+
+        double var = 0.0;
+        for (double x : data) {
+            var += (x - mean) * (x - mean);
+        }
+        double std_dev = std::sqrt(var / (n - 1));
+
+        double extreme = test_max ?
+            *std::max_element(data.begin(), data.end()) :
+            *std::min_element(data.begin(), data.end());
+
+        return std::abs(extreme - mean) / std_dev;
+    }
+
+    /**
+     * @brief Dixon's Q test for outliers
+     *
+     * Tests if extreme value is an outlier
+     * Q = (x_suspect - x_nearest) / range
+     *
+     * @param data Sample data
+     * @return Dixon's Q statistic
+     */
+    static double dixons_q_test(std::vector<double> data) {
+        int n = data.size();
+        if (n < 3) throw std::invalid_argument("Need at least 3 observations");
+
+        std::sort(data.begin(), data.end());
+
+        // Test both extremes
+        double Q_low = (data[1] - data[0]) / (data[n-1] - data[0]);
+        double Q_high = (data[n-1] - data[n-2]) / (data[n-1] - data[0]);
+
+        return std::max(Q_low, Q_high);
+    }
+
     /**
      * @brief One-sample t-test
      *
      * Tests H₀: μ = μ₀ vs H₁: μ ≠ μ₀
+     * t = (x̄ - μ₀) / (s/√n) ~ t(n-1)
      *
      * @param data Sample data
      * @param mu0 Hypothesized mean
@@ -2302,42 +2686,489 @@ public:
     }
 
     /**
-     * @brief Chi-squared goodness-of-fit test
+     * @brief Two-sample t-test (equal variances)
      *
-     * @param observed Observed frequencies
-     * @param expected Expected frequencies
-     * @return Chi-squared statistic
+     * Tests H₀: μ₁ = μ₂ vs H₁: μ₁ ≠ μ₂
+     *
+     * @return t-statistic
      */
-    static double chi_squared_test(const std::vector<double>& observed,
-                                   const std::vector<double>& expected) {
-        if (observed.size() != expected.size()) {
-            throw std::invalid_argument("Observed and expected must have same size");
-        }
+    static double t_test_two_sample(
+        const std::vector<double>& data1,
+        const std::vector<double>& data2) {
 
-        double chi_sq = 0.0;
-        for (size_t i = 0; i < observed.size(); ++i) {
-            double diff = observed[i] - expected[i];
-            chi_sq += (diff * diff) / expected[i];
-        }
-        return chi_sq;
+        int n1 = data1.size(), n2 = data2.size();
+
+        double mean1 = std::accumulate(data1.begin(), data1.end(), 0.0) / n1;
+        double mean2 = std::accumulate(data2.begin(), data2.end(), 0.0) / n2;
+
+        double var1 = 0.0, var2 = 0.0;
+        for (double x : data1) var1 += (x - mean1) * (x - mean1);
+        for (double x : data2) var2 += (x - mean2) * (x - mean2);
+
+        // Pooled variance
+        double sp_sq = (var1 + var2) / (n1 + n2 - 2);
+        double se = std::sqrt(sp_sq * (1.0/n1 + 1.0/n2));
+
+        return (mean1 - mean2) / se;
     }
 
     /**
-     * @brief Maximum likelihood estimation for normal distribution
+     * @brief Binomial test determining values in Bernoulli trials
      *
-     * @param data Sample data
-     * @return Pair (mean, standard_deviation)
+     * Given n trials and x successes, test H₀: p = p₀
+     * Exact binomial test using binomial distribution
+     *
+     * @param x Number of successes
+     * @param n Number of trials
+     * @param p0 Hypothesized probability
+     * @return Two-tailed p-value
      */
-    static std::pair<double, double> mle_normal(const std::vector<double>& data) {
-        double mean = std::accumulate(data.begin(), data.end(), 0.0) / data.size();
+    static double binomial_test(int x, int n, double p0) {
+        BinomialDistribution binom(n, p0);
 
-        double variance = 0.0;
-        for (double x : data) {
-            variance += (x - mean) * (x - mean);
+        // P(X = x) under H₀
+        double p_observed = binom.pmf(x);
+
+        // Two-tailed: sum probabilities ≤ p_observed
+        double p_value = 0.0;
+        for (int k = 0; k <= n; ++k) {
+            double p_k = binom.pmf(k);
+            if (p_k <= p_observed + 1e-10) {
+                p_value += p_k;
+            }
         }
-        variance /= data.size();
 
-        return {mean, std::sqrt(variance)};
+        return p_value;
+    }
+
+    /**
+     * @brief Estimate probability in Bernoulli trials
+     *
+     * MLE: p̂ = x/n
+     * Confidence interval: p̂ ± z_α/2 √(p̂(1-p̂)/n)
+     *
+     * @param x Number of successes
+     * @param n Number of trials
+     * @param alpha Significance level
+     * @return (point estimate, lower CI, upper CI)
+     */
+    static std::tuple<double, double, double> bernoulli_estimate(
+        int x, int n, double alpha = 0.05) {
+
+        double p_hat = static_cast<double>(x) / n;
+        double z = StandardNormalExtensions::critical_value(alpha / 2.0);
+        double se = std::sqrt(p_hat * (1.0 - p_hat) / n);
+
+        double lower = std::max(0.0, p_hat - z * se);
+        double upper = std::min(1.0, p_hat + z * se);
+
+        return {p_hat, lower, upper};
+    }
+};
+
+/**
+ * @class RegressionAnalysis
+ * @brief Linear regression and orthogonal polynomial regression
+ *
+ * Implements computational methods for:
+ * - Simple linear regression (y = β₀ + β₁x + ε)
+ * - Multiple linear regression (y = Xβ + ε)
+ * - Orthogonal polynomials (Legendre, Chebyshev)
+ * - Regression diagnostics (R², ANOVA, residuals)
+ */
+class RegressionAnalysis {
+public:
+    /**
+     * @brief Simple linear regression result
+     */
+    struct SimpleRegressionResult {
+        double beta0;           // Intercept
+        double beta1;           // Slope
+        double r_squared;       // Coefficient of determination
+        double residual_se;     // Residual standard error
+        double beta0_se;        // Standard error of β₀
+        double beta1_se;        // Standard error of β₁
+        double t_stat_beta1;    // t-statistic for β₁
+        std::vector<double> residuals;
+        std::vector<double> fitted_values;
+    };
+
+    /**
+     * @brief Simple linear regression: y = β₀ + β₁x + ε
+     *
+     * Least squares estimates:
+     * β₁ = Σ(x-x̄)(y-ȳ) / Σ(x-x̄)²
+     * β₀ = ȳ - β₁x̄
+     *
+     * @param x Independent variable
+     * @param y Dependent variable
+     * @return Regression results
+     */
+    static SimpleRegressionResult simple_linear_regression(
+        const std::vector<double>& x,
+        const std::vector<double>& y) {
+
+        int n = x.size();
+        if (n != static_cast<int>(y.size())) {
+            throw std::invalid_argument("x and y must have same size");
+        }
+        if (n < 3) throw std::invalid_argument("Need at least 3 observations");
+
+        // Compute means
+        double x_mean = std::accumulate(x.begin(), x.end(), 0.0) / n;
+        double y_mean = std::accumulate(y.begin(), y.end(), 0.0) / n;
+
+        // Compute β₁ and β₀
+        double numerator = 0.0, denominator = 0.0;
+        for (int i = 0; i < n; ++i) {
+            double x_dev = x[i] - x_mean;
+            double y_dev = y[i] - y_mean;
+            numerator += x_dev * y_dev;
+            denominator += x_dev * x_dev;
+        }
+
+        if (std::abs(denominator) < 1e-10) {
+            throw std::runtime_error("x values have zero variance");
+        }
+
+        double beta1 = numerator / denominator;
+        double beta0 = y_mean - beta1 * x_mean;
+
+        // Compute fitted values and residuals
+        std::vector<double> fitted(n), residuals(n);
+        double SSE = 0.0, SST = 0.0;
+        for (int i = 0; i < n; ++i) {
+            fitted[i] = beta0 + beta1 * x[i];
+            residuals[i] = y[i] - fitted[i];
+            SSE += residuals[i] * residuals[i];
+            SST += (y[i] - y_mean) * (y[i] - y_mean);
+        }
+
+        // R² = 1 - SSE/SST
+        double r_squared = 1.0 - SSE / SST;
+
+        // Residual standard error: s = √(SSE/(n-2))
+        double residual_se = std::sqrt(SSE / (n - 2));
+
+        // Standard errors of coefficients
+        double beta1_se = residual_se / std::sqrt(denominator);
+        double sum_x_sq = 0.0;
+        for (double xi : x) sum_x_sq += xi * xi;
+        double beta0_se = residual_se * std::sqrt(sum_x_sq / (n * denominator));
+
+        // t-statistic for β₁: H₀: β₁ = 0
+        double t_stat_beta1 = beta1 / beta1_se;
+
+        return {beta0, beta1, r_squared, residual_se,
+                beta0_se, beta1_se, t_stat_beta1,
+                residuals, fitted};
+    }
+
+    /**
+     * @brief Multiple regression result
+     */
+    struct MultipleRegressionResult {
+        std::vector<double> beta;        // Coefficients (β₀, β₁, ..., βₖ)
+        double r_squared;                // R²
+        double adjusted_r_squared;       // Adjusted R²
+        double residual_se;              // Residual standard error
+        double f_statistic;              // F-statistic for overall significance
+        std::vector<double> residuals;
+        std::vector<double> fitted_values;
+        std::vector<double> beta_se;     // Standard errors of coefficients
+    };
+
+    /**
+     * @brief Multiple linear regression: y = Xβ + ε
+     *
+     * Using normal equations: β = (XᵀX)⁻¹Xᵀy
+     *
+     * @param X Design matrix (n × (k+1)) including intercept column
+     * @param y Response vector (n × 1)
+     * @return Regression results
+     */
+    static MultipleRegressionResult multiple_linear_regression(
+        const std::vector<std::vector<double>>& X,
+        const std::vector<double>& y) {
+
+        int n = X.size();        // Number of observations
+        int p = X[0].size();     // Number of predictors (including intercept)
+
+        if (n != static_cast<int>(y.size())) {
+            throw std::invalid_argument("X and y dimensions don't match");
+        }
+        if (n < p) {
+            throw std::invalid_argument("Need more observations than predictors");
+        }
+
+        // Compute XᵀX
+        std::vector<std::vector<double>> XtX(p, std::vector<double>(p, 0.0));
+        for (int i = 0; i < p; ++i) {
+            for (int j = 0; j < p; ++j) {
+                for (int k = 0; k < n; ++k) {
+                    XtX[i][j] += X[k][i] * X[k][j];
+                }
+            }
+        }
+
+        // Compute Xᵀy
+        std::vector<double> Xty(p, 0.0);
+        for (int i = 0; i < p; ++i) {
+            for (int k = 0; k < n; ++k) {
+                Xty[i] += X[k][i] * y[k];
+            }
+        }
+
+        // Solve (XᵀX)β = Xᵀy using Gaussian elimination
+        std::vector<double> beta = solve_linear_system(XtX, Xty);
+
+        // Compute fitted values and residuals
+        double y_mean = std::accumulate(y.begin(), y.end(), 0.0) / n;
+        std::vector<double> fitted(n), residuals(n);
+        double SSE = 0.0, SST = 0.0;
+
+        for (int i = 0; i < n; ++i) {
+            fitted[i] = 0.0;
+            for (int j = 0; j < p; ++j) {
+                fitted[i] += X[i][j] * beta[j];
+            }
+            residuals[i] = y[i] - fitted[i];
+            SSE += residuals[i] * residuals[i];
+            SST += (y[i] - y_mean) * (y[i] - y_mean);
+        }
+
+        // R² and adjusted R²
+        double r_squared = 1.0 - SSE / SST;
+        double adj_r_squared = 1.0 - (SSE / (n - p)) / (SST / (n - 1));
+
+        // Residual standard error
+        double residual_se = std::sqrt(SSE / (n - p));
+
+        // F-statistic: F = (SSR/k) / (SSE/(n-k-1))
+        double SSR = SST - SSE;
+        int k = p - 1;  // Number of predictors (excluding intercept)
+        double f_statistic = (SSR / k) / (SSE / (n - p));
+
+        // Standard errors of coefficients (diagonal of (XᵀX)⁻¹ * MSE)
+        std::vector<std::vector<double>> XtX_inv = invert_matrix(XtX);
+        std::vector<double> beta_se(p);
+        double mse = SSE / (n - p);
+        for (int i = 0; i < p; ++i) {
+            beta_se[i] = std::sqrt(XtX_inv[i][i] * mse);
+        }
+
+        return {beta, r_squared, adj_r_squared, residual_se,
+                f_statistic, residuals, fitted, beta_se};
+    }
+
+    /**
+     * @brief Legendre polynomial P_n(x) on [-1, 1]
+     *
+     * Recurrence: (n+1)P_{n+1}(x) = (2n+1)xP_n(x) - nP_{n-1}(x)
+     * P_0(x) = 1, P_1(x) = x
+     *
+     * @param n Degree
+     * @param x Evaluation point in [-1, 1]
+     * @return P_n(x)
+     */
+    static double legendre_polynomial(int n, double x) {
+        if (n == 0) return 1.0;
+        if (n == 1) return x;
+
+        double P_prev = 1.0;  // P_0
+        double P_curr = x;    // P_1
+
+        for (int k = 1; k < n; ++k) {
+            double P_next = ((2.0 * k + 1.0) * x * P_curr - k * P_prev) / (k + 1.0);
+            P_prev = P_curr;
+            P_curr = P_next;
+        }
+
+        return P_curr;
+    }
+
+    /**
+     * @brief Chebyshev polynomial T_n(x) of first kind on [-1, 1]
+     *
+     * Recurrence: T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x)
+     * T_0(x) = 1, T_1(x) = x
+     *
+     * @param n Degree
+     * @param x Evaluation point in [-1, 1]
+     * @return T_n(x)
+     */
+    static double chebyshev_polynomial(int n, double x) {
+        if (n == 0) return 1.0;
+        if (n == 1) return x;
+
+        double T_prev = 1.0;  // T_0
+        double T_curr = x;    // T_1
+
+        for (int k = 1; k < n; ++k) {
+            double T_next = 2.0 * x * T_curr - T_prev;
+            T_prev = T_curr;
+            T_curr = T_next;
+        }
+
+        return T_curr;
+    }
+
+    /**
+     * @brief Orthogonal polynomial regression
+     *
+     * Fit y = Σᵢ₌₀ⁿ aᵢPᵢ(x) where Pᵢ are orthogonal polynomials
+     *
+     * @param x Independent variable
+     * @param y Dependent variable
+     * @param degree Maximum degree of polynomial
+     * @param poly_type "Legendre" or "Chebyshev"
+     * @return Coefficients {a₀, a₁, ..., aₙ}
+     */
+    static std::vector<double> orthogonal_polynomial_regression(
+        const std::vector<double>& x,
+        const std::vector<double>& y,
+        int degree,
+        const std::string& poly_type = "Legendre") {
+
+        int n = x.size();
+        if (n != static_cast<int>(y.size())) {
+            throw std::invalid_argument("x and y must have same size");
+        }
+
+        // Normalize x to [-1, 1]
+        double x_min = *std::min_element(x.begin(), x.end());
+        double x_max = *std::max_element(x.begin(), x.end());
+        std::vector<double> x_norm(n);
+        for (int i = 0; i < n; ++i) {
+            x_norm[i] = 2.0 * (x[i] - x_min) / (x_max - x_min) - 1.0;
+        }
+
+        // Build design matrix with orthogonal polynomials
+        std::vector<std::vector<double>> X(n, std::vector<double>(degree + 1));
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j <= degree; ++j) {
+                if (poly_type == "Legendre") {
+                    X[i][j] = legendre_polynomial(j, x_norm[i]);
+                } else if (poly_type == "Chebyshev") {
+                    X[i][j] = chebyshev_polynomial(j, x_norm[i]);
+                } else {
+                    throw std::invalid_argument("Unknown polynomial type");
+                }
+            }
+        }
+
+        // Perform multiple regression
+        auto result = multiple_linear_regression(X, y);
+        return result.beta;
+    }
+
+private:
+    /**
+     * @brief Solve linear system Ax = b using Gaussian elimination
+     */
+    static std::vector<double> solve_linear_system(
+        std::vector<std::vector<double>> A,
+        std::vector<double> b) {
+
+        int n = A.size();
+
+        // Forward elimination with partial pivoting
+        for (int i = 0; i < n; ++i) {
+            // Find pivot
+            int max_row = i;
+            for (int k = i + 1; k < n; ++k) {
+                if (std::abs(A[k][i]) > std::abs(A[max_row][i])) {
+                    max_row = k;
+                }
+            }
+
+            // Swap rows
+            std::swap(A[i], A[max_row]);
+            std::swap(b[i], b[max_row]);
+
+            // Eliminate column
+            for (int k = i + 1; k < n; ++k) {
+                double factor = A[k][i] / A[i][i];
+                for (int j = i; j < n; ++j) {
+                    A[k][j] -= factor * A[i][j];
+                }
+                b[k] -= factor * b[i];
+            }
+        }
+
+        // Back substitution
+        std::vector<double> x(n);
+        for (int i = n - 1; i >= 0; --i) {
+            x[i] = b[i];
+            for (int j = i + 1; j < n; ++j) {
+                x[i] -= A[i][j] * x[j];
+            }
+            x[i] /= A[i][i];
+        }
+
+        return x;
+    }
+
+    /**
+     * @brief Invert matrix using Gaussian elimination
+     */
+    static std::vector<std::vector<double>> invert_matrix(
+        std::vector<std::vector<double>> A) {
+
+        int n = A.size();
+        std::vector<std::vector<double>> inv(n, std::vector<double>(n, 0.0));
+
+        // Initialize inv as identity
+        for (int i = 0; i < n; ++i) {
+            inv[i][i] = 1.0;
+        }
+
+        // Forward elimination
+        for (int i = 0; i < n; ++i) {
+            // Pivot
+            double pivot = A[i][i];
+            if (std::abs(pivot) < 1e-10) {
+                throw std::runtime_error("Matrix is singular");
+            }
+
+            for (int j = 0; j < n; ++j) {
+                A[i][j] /= pivot;
+                inv[i][j] /= pivot;
+            }
+
+            for (int k = 0; k < n; ++k) {
+                if (k != i) {
+                    double factor = A[k][i];
+                    for (int j = 0; j < n; ++j) {
+                        A[k][j] -= factor * A[i][j];
+                        inv[k][j] -= factor * inv[i][j];
+                    }
+                }
+            }
+        }
+
+        return inv;
+    }
+};
+
+/**
+ * @class StatisticalTests
+ * @brief Legacy statistical test methods (kept for backward compatibility)
+ */
+class StatisticalTests {
+public:
+    static double t_test_one_sample(const std::vector<double>& data, double mu0) {
+        return HypothesisTesting::t_test_one_sample(data, mu0);
+    }
+
+    static double chi_squared_test(const std::vector<double>& observed,
+                                   const std::vector<double>& expected) {
+        return HypothesisTesting::chi_squared_goodness_of_fit(observed, expected);
+    }
+
+    static std::pair<double, double> mle_normal(const std::vector<double>& data) {
+        auto result = StatisticalEstimation::maximum_likelihood("Normal", data);
+        return {result[0], result[1]};
     }
 };
 
