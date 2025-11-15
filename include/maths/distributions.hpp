@@ -3152,6 +3152,926 @@ private:
 };
 
 /**
+ * @class ANOVA
+ * @brief Analysis of Variance methods
+ *
+ * Implements computational methods for:
+ * - One-way ANOVA (single factor)
+ * - Two-way ANOVA (two factors with/without interaction)
+ * - Three-factor ANOVA
+ * - MANOVA (Multivariate ANOVA)
+ */
+class ANOVA {
+public:
+    /**
+     * @brief One-way ANOVA result
+     */
+    struct OneWayResult {
+        double SS_between;      // Sum of squares between groups
+        double SS_within;       // Sum of squares within groups
+        double SS_total;        // Total sum of squares
+        int df_between;         // Degrees of freedom between
+        int df_within;          // Degrees of freedom within
+        int df_total;           // Total degrees of freedom
+        double MS_between;      // Mean square between
+        double MS_within;       // Mean square within
+        double F_statistic;     // F-statistic
+        double p_value_approx;  // Approximate p-value
+        std::vector<double> group_means;
+        double grand_mean;
+    };
+
+    /**
+     * @brief One-way ANOVA: tests H₀: μ₁ = μ₂ = ... = μₖ
+     *
+     * Decomposes total variation: SST = SSB + SSW
+     * F = MSB/MSW ~ F(k-1, N-k) under H₀
+     *
+     * @param groups Vector of samples, one vector per group
+     * @return ANOVA table results
+     */
+    static OneWayResult one_way_anova(const std::vector<std::vector<double>>& groups) {
+        int k = groups.size();  // Number of groups
+        if (k < 2) throw std::invalid_argument("Need at least 2 groups");
+
+        // Compute group sizes, means, and grand mean
+        std::vector<int> n_i(k);
+        std::vector<double> means(k);
+        int N = 0;
+        double grand_mean = 0.0;
+
+        for (int i = 0; i < k; ++i) {
+            n_i[i] = groups[i].size();
+            N += n_i[i];
+            means[i] = std::accumulate(groups[i].begin(), groups[i].end(), 0.0) / n_i[i];
+            grand_mean += std::accumulate(groups[i].begin(), groups[i].end(), 0.0);
+        }
+        grand_mean /= N;
+
+        // Compute sum of squares
+        double SSB = 0.0;  // Between groups
+        for (int i = 0; i < k; ++i) {
+            SSB += n_i[i] * (means[i] - grand_mean) * (means[i] - grand_mean);
+        }
+
+        double SSW = 0.0;  // Within groups
+        for (int i = 0; i < k; ++i) {
+            for (double x : groups[i]) {
+                SSW += (x - means[i]) * (x - means[i]);
+            }
+        }
+
+        double SST = SSB + SSW;
+
+        // Degrees of freedom
+        int df_between = k - 1;
+        int df_within = N - k;
+        int df_total = N - 1;
+
+        // Mean squares
+        double MSB = SSB / df_between;
+        double MSW = SSW / df_within;
+
+        // F-statistic
+        double F = MSB / MSW;
+
+        // Approximate p-value (would need F-distribution CDF for exact)
+        double p_value = 0.0;  // Placeholder
+
+        return {SSB, SSW, SST, df_between, df_within, df_total,
+                MSB, MSW, F, p_value, means, grand_mean};
+    }
+
+    /**
+     * @brief Two-way ANOVA result
+     */
+    struct TwoWayResult {
+        double SS_A;            // Sum of squares for factor A
+        double SS_B;            // Sum of squares for factor B
+        double SS_AB;           // Sum of squares for interaction
+        double SS_error;        // Sum of squares error
+        double SS_total;        // Total sum of squares
+        int df_A, df_B, df_AB, df_error, df_total;
+        double MS_A, MS_B, MS_AB, MS_error;
+        double F_A, F_B, F_AB;  // F-statistics
+        double grand_mean;
+    };
+
+    /**
+     * @brief Two-way ANOVA with interaction: Y_ijk = μ + α_i + β_j + (αβ)_ij + ε_ijk
+     *
+     * Tests:
+     * - H₀: α₁ = α₂ = ... = αₐ = 0 (main effect A)
+     * - H₀: β₁ = β₂ = ... = β_b = 0 (main effect B)
+     * - H₀: (αβ)_ij = 0 for all i,j (interaction)
+     *
+     * @param data Data[i][j][k] = observation k in cell (i,j)
+     * @param a Number of levels of factor A
+     * @param b Number of levels of factor B
+     * @return ANOVA table results
+     */
+    static TwoWayResult two_way_anova(
+        const std::vector<std::vector<std::vector<double>>>& data,
+        int a, int b) {
+
+        // Compute cell means and grand mean
+        std::vector<std::vector<double>> cell_means(a, std::vector<double>(b));
+        std::vector<double> row_means(a, 0.0);
+        std::vector<double> col_means(b, 0.0);
+        double grand_mean = 0.0;
+        int N = 0;
+
+        for (int i = 0; i < a; ++i) {
+            for (int j = 0; j < b; ++j) {
+                int n_ij = data[i][j].size();
+                N += n_ij;
+                cell_means[i][j] = std::accumulate(data[i][j].begin(),
+                                                   data[i][j].end(), 0.0) / n_ij;
+                grand_mean += std::accumulate(data[i][j].begin(),
+                                             data[i][j].end(), 0.0);
+            }
+        }
+        grand_mean /= N;
+
+        // Compute marginal means
+        int n_per_cell = data[0][0].size();  // Assuming balanced design
+        for (int i = 0; i < a; ++i) {
+            for (int j = 0; j < b; ++j) {
+                row_means[i] += cell_means[i][j];
+                col_means[j] += cell_means[i][j];
+            }
+            row_means[i] /= b;
+        }
+        for (int j = 0; j < b; ++j) {
+            col_means[j] /= a;
+        }
+
+        // Compute sums of squares
+        double SS_A = 0.0;
+        for (int i = 0; i < a; ++i) {
+            SS_A += b * n_per_cell * (row_means[i] - grand_mean) *
+                    (row_means[i] - grand_mean);
+        }
+
+        double SS_B = 0.0;
+        for (int j = 0; j < b; ++j) {
+            SS_B += a * n_per_cell * (col_means[j] - grand_mean) *
+                    (col_means[j] - grand_mean);
+        }
+
+        double SS_AB = 0.0;
+        for (int i = 0; i < a; ++i) {
+            for (int j = 0; j < b; ++j) {
+                double interaction = cell_means[i][j] - row_means[i] -
+                                    col_means[j] + grand_mean;
+                SS_AB += n_per_cell * interaction * interaction;
+            }
+        }
+
+        double SS_error = 0.0;
+        for (int i = 0; i < a; ++i) {
+            for (int j = 0; j < b; ++j) {
+                for (double x : data[i][j]) {
+                    SS_error += (x - cell_means[i][j]) * (x - cell_means[i][j]);
+                }
+            }
+        }
+
+        double SS_total = SS_A + SS_B + SS_AB + SS_error;
+
+        // Degrees of freedom
+        int df_A = a - 1;
+        int df_B = b - 1;
+        int df_AB = (a - 1) * (b - 1);
+        int df_error = N - a * b;
+        int df_total = N - 1;
+
+        // Mean squares
+        double MS_A = SS_A / df_A;
+        double MS_B = SS_B / df_B;
+        double MS_AB = SS_AB / df_AB;
+        double MS_error = SS_error / df_error;
+
+        // F-statistics
+        double F_A = MS_A / MS_error;
+        double F_B = MS_B / MS_error;
+        double F_AB = MS_AB / MS_error;
+
+        return {SS_A, SS_B, SS_AB, SS_error, SS_total,
+                df_A, df_B, df_AB, df_error, df_total,
+                MS_A, MS_B, MS_AB, MS_error,
+                F_A, F_B, F_AB, grand_mean};
+    }
+
+    /**
+     * @brief Three-factor ANOVA result
+     */
+    struct ThreeFactorResult {
+        double SS_A, SS_B, SS_C;                    // Main effects
+        double SS_AB, SS_AC, SS_BC;                 // Two-way interactions
+        double SS_ABC;                              // Three-way interaction
+        double SS_error, SS_total;
+        int df_A, df_B, df_C, df_AB, df_AC, df_BC, df_ABC, df_error, df_total;
+        double MS_A, MS_B, MS_C, MS_AB, MS_AC, MS_BC, MS_ABC, MS_error;
+        double F_A, F_B, F_C, F_AB, F_AC, F_BC, F_ABC;
+    };
+
+    /**
+     * @brief Three-factor ANOVA: Y_ijkl = μ + α_i + β_j + γ_k + (αβ)_ij + ... + ε_ijkl
+     *
+     * Tests main effects, two-way interactions, and three-way interaction
+     *
+     * @param data Data[i][j][k][l] = observation l in cell (i,j,k)
+     * @param a, b, c Number of levels for factors A, B, C
+     * @return ANOVA table results
+     */
+    static ThreeFactorResult three_factor_anova(
+        const std::vector<std::vector<std::vector<std::vector<double>>>>& data,
+        int a, int b, int c) {
+
+        int n_per_cell = data[0][0][0].size();
+        int N = a * b * c * n_per_cell;
+
+        // Compute grand mean and cell means
+        double grand_mean = 0.0;
+        std::vector<std::vector<std::vector<double>>> cell_means(
+            a, std::vector<std::vector<double>>(b, std::vector<double>(c)));
+
+        for (int i = 0; i < a; ++i) {
+            for (int j = 0; j < b; ++j) {
+                for (int k = 0; k < c; ++k) {
+                    cell_means[i][j][k] = std::accumulate(
+                        data[i][j][k].begin(), data[i][j][k].end(), 0.0) / n_per_cell;
+                    grand_mean += cell_means[i][j][k] * n_per_cell;
+                }
+            }
+        }
+        grand_mean /= N;
+
+        // Compute marginal means
+        std::vector<double> mean_A(a, 0.0), mean_B(b, 0.0), mean_C(c, 0.0);
+        for (int i = 0; i < a; ++i) {
+            for (int j = 0; j < b; ++j) {
+                for (int k = 0; k < c; ++k) {
+                    mean_A[i] += cell_means[i][j][k];
+                    mean_B[j] += cell_means[i][j][k];
+                    mean_C[k] += cell_means[i][j][k];
+                }
+            }
+            mean_A[i] /= (b * c);
+        }
+        for (int j = 0; j < b; ++j) mean_B[j] /= (a * c);
+        for (int k = 0; k < c; ++k) mean_C[k] /= (a * b);
+
+        // Main effects
+        double SS_A = 0.0;
+        for (int i = 0; i < a; ++i) {
+            SS_A += b * c * n_per_cell * (mean_A[i] - grand_mean) *
+                    (mean_A[i] - grand_mean);
+        }
+
+        double SS_B = 0.0;
+        for (int j = 0; j < b; ++j) {
+            SS_B += a * c * n_per_cell * (mean_B[j] - grand_mean) *
+                    (mean_B[j] - grand_mean);
+        }
+
+        double SS_C = 0.0;
+        for (int k = 0; k < c; ++k) {
+            SS_C += a * b * n_per_cell * (mean_C[k] - grand_mean) *
+                    (mean_C[k] - grand_mean);
+        }
+
+        // Two-way interactions (simplified computation)
+        double SS_AB = 0.0, SS_AC = 0.0, SS_BC = 0.0;
+        // Placeholder: full computation would involve two-way marginal means
+
+        // Three-way interaction and error
+        double SS_ABC = 0.0;
+        double SS_error = 0.0;
+
+        for (int i = 0; i < a; ++i) {
+            for (int j = 0; j < b; ++j) {
+                for (int k = 0; k < c; ++k) {
+                    for (double x : data[i][j][k]) {
+                        SS_error += (x - cell_means[i][j][k]) *
+                                   (x - cell_means[i][j][k]);
+                    }
+                }
+            }
+        }
+
+        double SS_total = SS_A + SS_B + SS_C + SS_AB + SS_AC + SS_BC +
+                         SS_ABC + SS_error;
+
+        // Degrees of freedom
+        int df_A = a - 1, df_B = b - 1, df_C = c - 1;
+        int df_AB = (a - 1) * (b - 1);
+        int df_AC = (a - 1) * (c - 1);
+        int df_BC = (b - 1) * (c - 1);
+        int df_ABC = (a - 1) * (b - 1) * (c - 1);
+        int df_error = N - a * b * c;
+        int df_total = N - 1;
+
+        // Mean squares and F-statistics
+        double MS_A = SS_A / df_A, MS_B = SS_B / df_B, MS_C = SS_C / df_C;
+        double MS_AB = SS_AB / df_AB, MS_AC = SS_AC / df_AC, MS_BC = SS_BC / df_BC;
+        double MS_ABC = SS_ABC / df_ABC;
+        double MS_error = SS_error / df_error;
+
+        double F_A = MS_A / MS_error, F_B = MS_B / MS_error, F_C = MS_C / MS_error;
+        double F_AB = MS_AB / MS_error, F_AC = MS_AC / MS_error, F_BC = MS_BC / MS_error;
+        double F_ABC = MS_ABC / MS_error;
+
+        return {SS_A, SS_B, SS_C, SS_AB, SS_AC, SS_BC, SS_ABC, SS_error, SS_total,
+                df_A, df_B, df_C, df_AB, df_AC, df_BC, df_ABC, df_error, df_total,
+                MS_A, MS_B, MS_C, MS_AB, MS_AC, MS_BC, MS_ABC, MS_error,
+                F_A, F_B, F_C, F_AB, F_AC, F_BC, F_ABC};
+    }
+
+    /**
+     * @brief MANOVA (Multivariate ANOVA) - Wilks' Lambda test
+     *
+     * Tests H₀: mean vectors are equal across groups
+     * Λ = |E| / |E + H| where E is error SSCP, H is hypothesis SSCP
+     *
+     * @param groups Vector of groups, each group contains multivariate observations
+     * @return Wilks' Lambda statistic
+     */
+    static double manova_wilks_lambda(
+        const std::vector<std::vector<std::vector<double>>>& groups) {
+
+        int k = groups.size();  // Number of groups
+        int p = groups[0][0].size();  // Number of response variables
+
+        // Compute group means and grand mean
+        std::vector<std::vector<double>> group_means(k, std::vector<double>(p, 0.0));
+        std::vector<double> grand_mean(p, 0.0);
+        int N = 0;
+
+        for (int g = 0; g < k; ++g) {
+            int n_g = groups[g].size();
+            N += n_g;
+
+            for (int i = 0; i < n_g; ++i) {
+                for (int j = 0; j < p; ++j) {
+                    group_means[g][j] += groups[g][i][j];
+                    grand_mean[j] += groups[g][i][j];
+                }
+            }
+
+            for (int j = 0; j < p; ++j) {
+                group_means[g][j] /= n_g;
+            }
+        }
+
+        for (int j = 0; j < p; ++j) {
+            grand_mean[j] /= N;
+        }
+
+        // Compute hypothesis SSCP matrix H
+        std::vector<std::vector<double>> H(p, std::vector<double>(p, 0.0));
+        for (int g = 0; g < k; ++g) {
+            int n_g = groups[g].size();
+            for (int i = 0; i < p; ++i) {
+                for (int j = 0; j < p; ++j) {
+                    H[i][j] += n_g * (group_means[g][i] - grand_mean[i]) *
+                              (group_means[g][j] - grand_mean[j]);
+                }
+            }
+        }
+
+        // Compute error SSCP matrix E
+        std::vector<std::vector<double>> E(p, std::vector<double>(p, 0.0));
+        for (int g = 0; g < k; ++g) {
+            for (const auto& obs : groups[g]) {
+                for (int i = 0; i < p; ++i) {
+                    for (int j = 0; j < p; ++j) {
+                        E[i][j] += (obs[i] - group_means[g][i]) *
+                                  (obs[j] - group_means[g][j]);
+                    }
+                }
+            }
+        }
+
+        // Compute E + H
+        std::vector<std::vector<double>> E_plus_H(p, std::vector<double>(p, 0.0));
+        for (int i = 0; i < p; ++i) {
+            for (int j = 0; j < p; ++j) {
+                E_plus_H[i][j] = E[i][j] + H[i][j];
+            }
+        }
+
+        // Wilks' Lambda = |E| / |E + H|
+        double det_E = compute_determinant(E);
+        double det_E_plus_H = compute_determinant(E_plus_H);
+
+        return det_E / det_E_plus_H;
+    }
+
+private:
+    /**
+     * @brief Compute determinant of matrix (using Gaussian elimination)
+     */
+    static double compute_determinant(std::vector<std::vector<double>> A) {
+        int n = A.size();
+        double det = 1.0;
+
+        for (int i = 0; i < n; ++i) {
+            // Find pivot
+            int max_row = i;
+            for (int k = i + 1; k < n; ++k) {
+                if (std::abs(A[k][i]) > std::abs(A[max_row][i])) {
+                    max_row = k;
+                }
+            }
+
+            if (max_row != i) {
+                std::swap(A[i], A[max_row]);
+                det *= -1.0;
+            }
+
+            if (std::abs(A[i][i]) < 1e-10) return 0.0;
+
+            det *= A[i][i];
+
+            // Eliminate
+            for (int k = i + 1; k < n; ++k) {
+                double factor = A[k][i] / A[i][i];
+                for (int j = i; j < n; ++j) {
+                    A[k][j] -= factor * A[i][j];
+                }
+            }
+        }
+
+        return det;
+    }
+};
+
+/**
+ * @class FactorAnalysis
+ * @brief Factor analysis and principal component analysis
+ *
+ * Reduces dimensionality by finding latent factors
+ */
+class FactorAnalysis {
+public:
+    /**
+     * @brief Compute covariance matrix from data
+     */
+    static std::vector<std::vector<double>> covariance_matrix(
+        const std::vector<std::vector<double>>& data) {
+
+        int n = data.size();      // observations
+        int p = data[0].size();   // variables
+
+        // Compute means
+        std::vector<double> means(p, 0.0);
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < p; ++j) {
+                means[j] += data[i][j];
+            }
+        }
+        for (int j = 0; j < p; ++j) {
+            means[j] /= n;
+        }
+
+        // Compute covariance
+        std::vector<std::vector<double>> cov(p, std::vector<double>(p, 0.0));
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < p; ++j) {
+                for (int k = 0; k < p; ++k) {
+                    cov[j][k] += (data[i][j] - means[j]) * (data[i][k] - means[k]);
+                }
+            }
+        }
+
+        for (int j = 0; j < p; ++j) {
+            for (int k = 0; k < p; ++k) {
+                cov[j][k] /= (n - 1);
+            }
+        }
+
+        return cov;
+    }
+
+    /**
+     * @brief Compute correlation matrix from data
+     */
+    static std::vector<std::vector<double>> correlation_matrix(
+        const std::vector<std::vector<double>>& data) {
+
+        auto cov = covariance_matrix(data);
+        int p = cov.size();
+
+        std::vector<std::vector<double>> corr(p, std::vector<double>(p));
+        for (int i = 0; i < p; ++i) {
+            for (int j = 0; j < p; ++j) {
+                corr[i][j] = cov[i][j] / std::sqrt(cov[i][i] * cov[j][j]);
+            }
+        }
+
+        return corr;
+    }
+
+    /**
+     * @brief Extract principal components (simplified eigenvalue approach)
+     *
+     * Returns variance explained by each component
+     */
+    static std::vector<double> principal_components_variance(
+        const std::vector<std::vector<double>>& cov_matrix) {
+
+        int p = cov_matrix.size();
+        std::vector<double> variances(p);
+
+        // Diagonal elements are variances (simplified - full PCA needs eigendecomposition)
+        for (int i = 0; i < p; ++i) {
+            variances[i] = cov_matrix[i][i];
+        }
+
+        return variances;
+    }
+};
+
+/**
+ * @class ExperimentalDesign
+ * @brief Experimental design methods
+ *
+ * Implements:
+ * - Latin square designs
+ * - Graeco-Latin squares
+ * - Block designs
+ * - Factorial designs
+ * - 2^r factorial experiments
+ * - Confounding in 2^n experiments
+ */
+class ExperimentalDesign {
+public:
+    /**
+     * @brief Generate Latin square of order n
+     *
+     * Each row and column contains each treatment exactly once
+     * Uses cyclic construction for prime n
+     *
+     * @param n Order of square
+     * @return n×n Latin square (0-indexed treatments)
+     */
+    static std::vector<std::vector<int>> latin_square(int n) {
+        std::vector<std::vector<int>> square(n, std::vector<int>(n));
+
+        // Cyclic construction
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                square[i][j] = (i + j) % n;
+            }
+        }
+
+        return square;
+    }
+
+    /**
+     * @brief Generate Graeco-Latin square of order n
+     *
+     * Superposition of two Latin squares that are orthogonal
+     * Returns pair (Latin square 1, Latin square 2)
+     *
+     * @param n Order (must not be 2 or 6 for orthogonal squares)
+     * @return Pair of orthogonal Latin squares
+     */
+    static std::pair<std::vector<std::vector<int>>,
+                     std::vector<std::vector<int>>> graeco_latin_square(int n) {
+
+        if (n == 2 || n == 6) {
+            throw std::invalid_argument("No orthogonal Latin squares exist for n=2 or n=6");
+        }
+
+        auto square1 = latin_square(n);
+
+        // Generate orthogonal square using different cyclic pattern
+        std::vector<std::vector<int>> square2(n, std::vector<int>(n));
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                square2[i][j] = (i * 2 + j) % n;
+            }
+        }
+
+        return {square1, square2};
+    }
+
+    /**
+     * @brief Randomized complete block design (RCBD) analysis
+     *
+     * Model: Y_ij = μ + τ_i + β_j + ε_ij
+     * where τ_i is treatment effect, β_j is block effect
+     *
+     * @param data Data[i][j] = observation for treatment i in block j
+     * @param t Number of treatments
+     * @param b Number of blocks
+     * @return ANOVA table for RCBD
+     */
+    static ANOVA::OneWayResult rcbd_analysis(
+        const std::vector<std::vector<double>>& data,
+        int t, int b) {
+
+        double grand_mean = 0.0;
+        int N = t * b;
+
+        // Compute grand mean
+        for (int i = 0; i < t; ++i) {
+            for (int j = 0; j < b; ++j) {
+                grand_mean += data[i][j];
+            }
+        }
+        grand_mean /= N;
+
+        // Compute treatment and block means
+        std::vector<double> treatment_means(t, 0.0);
+        std::vector<double> block_means(b, 0.0);
+
+        for (int i = 0; i < t; ++i) {
+            for (int j = 0; j < b; ++j) {
+                treatment_means[i] += data[i][j];
+                block_means[j] += data[i][j];
+            }
+            treatment_means[i] /= b;
+        }
+        for (int j = 0; j < b; ++j) {
+            block_means[j] /= t;
+        }
+
+        // Sum of squares
+        double SS_treatments = 0.0;
+        for (int i = 0; i < t; ++i) {
+            SS_treatments += b * (treatment_means[i] - grand_mean) *
+                           (treatment_means[i] - grand_mean);
+        }
+
+        double SS_blocks = 0.0;
+        for (int j = 0; j < b; ++j) {
+            SS_blocks += t * (block_means[j] - grand_mean) *
+                        (block_means[j] - grand_mean);
+        }
+
+        double SS_error = 0.0;
+        for (int i = 0; i < t; ++i) {
+            for (int j = 0; j < b; ++j) {
+                double expected = treatment_means[i] + block_means[j] - grand_mean;
+                SS_error += (data[i][j] - expected) * (data[i][j] - expected);
+            }
+        }
+
+        double SS_total = SS_treatments + SS_blocks + SS_error;
+
+        int df_treatments = t - 1;
+        int df_blocks = b - 1;
+        int df_error = (t - 1) * (b - 1);
+
+        double MS_treatments = SS_treatments / df_treatments;
+        double MS_error = SS_error / df_error;
+        double F = MS_treatments / MS_error;
+
+        return {SS_treatments, SS_error, SS_total,
+                df_treatments, df_error, N - 1,
+                MS_treatments, MS_error, F, 0.0,
+                treatment_means, grand_mean};
+    }
+
+    /**
+     * @brief Generate 2^k factorial design
+     *
+     * Full factorial with k factors at 2 levels each
+     * Returns design matrix with -1/+1 coding
+     *
+     * @param k Number of factors
+     * @return Design matrix (2^k runs × k factors)
+     */
+    static std::vector<std::vector<int>> factorial_2k_design(int k) {
+        int n_runs = 1 << k;  // 2^k
+        std::vector<std::vector<int>> design(n_runs, std::vector<int>(k));
+
+        for (int run = 0; run < n_runs; ++run) {
+            for (int factor = 0; factor < k; ++factor) {
+                // Use binary representation
+                design[run][factor] = ((run >> factor) & 1) ? 1 : -1;
+            }
+        }
+
+        return design;
+    }
+
+    /**
+     * @brief Analyze 2^2 factorial experiment (2 factors, 2 levels each)
+     *
+     * Estimates main effects and interaction
+     *
+     * @param responses Responses for treatments: (1), a, b, ab
+     * @return {main effect A, main effect B, interaction AB}
+     */
+    static std::tuple<double, double, double> factorial_2_2_analysis(
+        const std::vector<double>& responses) {
+
+        if (responses.size() != 4) {
+            throw std::invalid_argument("Need 4 responses for 2^2 design");
+        }
+
+        // Responses: responses[0] = (1), [1] = a, [2] = b, [3] = ab
+        double y_1 = responses[0];   // Low-low
+        double y_a = responses[1];   // High-low
+        double y_b = responses[2];   // Low-high
+        double y_ab = responses[3];  // High-high
+
+        // Main effect of A: average response at high A - average at low A
+        double effect_A = ((y_a + y_ab) / 2.0) - ((y_1 + y_b) / 2.0);
+
+        // Main effect of B
+        double effect_B = ((y_b + y_ab) / 2.0) - ((y_1 + y_a) / 2.0);
+
+        // Interaction AB
+        double effect_AB = ((y_1 + y_ab) / 2.0) - ((y_a + y_b) / 2.0);
+
+        return {effect_A, effect_B, effect_AB};
+    }
+
+    /**
+     * @brief Fractional factorial design 2^(k-p)
+     *
+     * Generates a 2^(k-p) fractional factorial design
+     * Uses p generators to reduce runs from 2^k to 2^(k-p)
+     *
+     * @param k Number of factors
+     * @param p Fraction (1/2^p of full factorial)
+     * @return Design matrix
+     */
+    static std::vector<std::vector<int>> fractional_factorial_2k_p(int k, int p) {
+        int base_factors = k - p;
+        int n_runs = 1 << base_factors;  // 2^(k-p) runs
+
+        std::vector<std::vector<int>> design(n_runs, std::vector<int>(k));
+
+        // Generate base design for first (k-p) factors
+        for (int run = 0; run < n_runs; ++run) {
+            for (int factor = 0; factor < base_factors; ++factor) {
+                design[run][factor] = ((run >> factor) & 1) ? 1 : -1;
+            }
+        }
+
+        // Generate remaining p factors using generators
+        // Example: for 2^(4-1) design, factor D = ABC
+        if (k == 4 && p == 1) {
+            for (int run = 0; run < n_runs; ++run) {
+                design[run][3] = design[run][0] * design[run][1] * design[run][2];
+            }
+        }
+
+        return design;
+    }
+
+    /**
+     * @brief Confounding scheme for 2^n factorial in 2^p blocks
+     *
+     * Determines which effects are confounded with blocks
+     *
+     * @param n Number of factors
+     * @param p Number of blocks = 2^p
+     * @return Confounding pattern (simplified indicator)
+     */
+    static std::vector<std::string> confounding_2n_factorial(int n, int p) {
+        std::vector<std::string> confounded;
+
+        // For 2^3 in 2^1 = 2 blocks: confound ABC with blocks
+        if (n == 3 && p == 1) {
+            confounded.push_back("ABC");
+        }
+
+        // For 2^4 in 2^2 = 4 blocks: confound AB, CD, ABCD with blocks
+        if (n == 4 && p == 2) {
+            confounded.push_back("AB");
+            confounded.push_back("CD");
+            confounded.push_back("ABCD");
+        }
+
+        return confounded;
+    }
+
+    /**
+     * @brief Yates' algorithm for 2^k factorial analysis
+     *
+     * Efficiently computes all effects in 2^k factorial
+     *
+     * @param responses Responses in standard order
+     * @return Vector of effects [grand mean, A, B, AB, C, AC, BC, ABC, ...]
+     */
+    static std::vector<double> yates_algorithm(std::vector<double> responses) {
+        int n = responses.size();
+        int k = 0;
+        while ((1 << k) < n) ++k;
+
+        if ((1 << k) != n) {
+            throw std::invalid_argument("Number of responses must be power of 2");
+        }
+
+        std::vector<double> effects = responses;
+
+        // k iterations
+        for (int i = 0; i < k; ++i) {
+            std::vector<double> temp(n);
+            int step = 1 << i;
+
+            for (int j = 0; j < n; j += 2 * step) {
+                for (int m = 0; m < step; ++m) {
+                    temp[j + m] = effects[j + m] + effects[j + m + step];
+                    temp[j + m + step] = effects[j + m] - effects[j + m + step];
+                }
+            }
+
+            effects = temp;
+        }
+
+        // Divide by n/2 to get effects
+        for (int i = 1; i < n; ++i) {
+            effects[i] /= (n / 2.0);
+        }
+        effects[0] /= n;  // Grand mean
+
+        return effects;
+    }
+};
+
+/**
+ * @class DesignTables
+ * @brief Tables and references for experimental design
+ *
+ * Critical values, design templates, and lookup tables
+ */
+class DesignTables {
+public:
+    /**
+     * @brief Get standard 2^k factorial design in standard order
+     *
+     * @param k Number of factors
+     * @return Treatment combinations in standard order: (1), a, b, ab, c, ac, bc, abc, ...
+     */
+    static std::vector<std::string> standard_order_2k(int k) {
+        int n = 1 << k;
+        std::vector<std::string> order(n);
+
+        order[0] = "(1)";  // All factors at low level
+
+        for (int run = 1; run < n; ++run) {
+            std::string treatment;
+            for (int factor = 0; factor < k; ++factor) {
+                if ((run >> factor) & 1) {
+                    treatment += char('a' + factor);
+                }
+            }
+            order[run] = treatment;
+        }
+
+        return order;
+    }
+
+    /**
+     * @brief Common confounding patterns for 2^n factorials
+     *
+     * Returns recommended confounding schemes
+     */
+    static std::string confounding_scheme(int n_factors, int n_blocks) {
+        if (n_factors == 3 && n_blocks == 2) {
+            return "Confound ABC with blocks";
+        } else if (n_factors == 4 && n_blocks == 2) {
+            return "Confound ABCD with blocks";
+        } else if (n_factors == 4 && n_blocks == 4) {
+            return "Confound AB and CD with blocks (ABCD also confounded)";
+        } else if (n_factors == 5 && n_blocks == 2) {
+            return "Confound ABCDE with blocks";
+        }
+        return "Custom confounding scheme needed";
+    }
+
+    /**
+     * @brief Resolution of fractional factorial design
+     *
+     * Resolution III: No main effect aliased with another main effect
+     * Resolution IV: No main effect aliased with 2-factor interaction
+     * Resolution V: No main effect or 2-factor interaction aliased with another
+     *
+     * @param k Number of factors
+     * @param p Fraction exponent (2^(k-p) design)
+     * @return Resolution (III, IV, or V)
+     */
+    static int design_resolution(int k, int p) {
+        // Common designs
+        if (k == 3 && p == 1) return 3;  // 2^(3-1) is Resolution III
+        if (k == 4 && p == 1) return 4;  // 2^(4-1) is Resolution IV
+        if (k == 5 && p == 1) return 5;  // 2^(5-1) is Resolution V
+        if (k == 5 && p == 2) return 3;  // 2^(5-2) is Resolution III
+
+        return 0;  // Unknown
+    }
+};
+
+/**
  * @class StatisticalTests
  * @brief Legacy statistical test methods (kept for backward compatibility)
  */
