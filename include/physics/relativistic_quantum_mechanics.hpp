@@ -593,37 +593,134 @@ public:
     }
 };
 
+// ============================================================================
+// KLEIN-GORDON EQUATION: Relativistic Wave Equation for Spin-0 Particles
+// ============================================================================
+
+/**
+ * @brief Notation for Relativistic Quantum Mechanics
+ *
+ * Standard 4-vector and tensor notation
+ */
+class RelativisticNotation {
+public:
+    /**
+     * @brief 4-vector components
+     *
+     * x^μ = (ct, x, y, z) = (x^0, x^1, x^2, x^3)
+     */
+    struct FourVector {
+        double x0;  // ct
+        double x1;  // x
+        double x2;  // y
+        double x3;  // z
+
+        static FourVector position(double t, double x, double y, double z) {
+            return {constants::c * t, x, y, z};
+        }
+
+        static FourVector momentum(double E, double px, double py, double pz) {
+            return {E / constants::c, px, py, pz};
+        }
+    };
+
+    /**
+     * @brief Metric tensor (Minkowski spacetime)
+     *
+     * g_μν = diag(+1, -1, -1, -1) (mostly minus signature)
+     * or g_μν = diag(-1, +1, +1, +1) (mostly plus signature)
+     */
+    static std::array<std::array<double, 4>, 4> metric_tensor(
+        bool mostly_minus = true) {
+
+        if (mostly_minus) {
+            return {{
+                {1.0, 0.0, 0.0, 0.0},
+                {0.0, -1.0, 0.0, 0.0},
+                {0.0, 0.0, -1.0, 0.0},
+                {0.0, 0.0, 0.0, -1.0}
+            }};
+        } else {
+            return {{
+                {-1.0, 0.0, 0.0, 0.0},
+                {0.0, 1.0, 0.0, 0.0},
+                {0.0, 0.0, 1.0, 0.0},
+                {0.0, 0.0, 0.0, 1.0}
+            }};
+        }
+    }
+
+    /**
+     * @brief D'Alembertian operator
+     *
+     * □ = ∂_μ ∂^μ = (1/c²)∂²/∂t² - ∇²
+     */
+    static double dalembertian_dispersion(
+        double omega,
+        double k_x,
+        double k_y,
+        double k_z) {
+
+        return (omega * omega) / (constants::c * constants::c) -
+               (k_x * k_x + k_y * k_y + k_z * k_z);
+    }
+
+    /**
+     * @brief Lorentz invariant scalar product
+     *
+     * x·y = x^μ y_μ = x^0 y^0 - x⃗·y⃗
+     */
+    static double lorentz_product(
+        const FourVector& x,
+        const FourVector& y) {
+
+        return x.x0 * y.x0 - x.x1 * y.x1 - x.x2 * y.x2 - x.x3 * y.x3;
+    }
+
+    /**
+     * @brief Natural units conversion
+     *
+     * Set ℏ = c = 1
+     */
+    static double natural_units_energy(double energy_SI) {
+        return energy_SI / constants::hbar;
+    }
+
+    static double natural_units_mass(double mass_SI) {
+        return mass_SI * constants::c * constants::c / constants::hbar;
+    }
+};
+
 /**
  * @brief The Klein-Gordon Equation
  *
- * Relativistic equation for spinless particles
+ * Relativistic wave equation for spin-0 particles
+ * (□ + m²c²/ℏ²)ψ = 0
  */
 class KleinGordonEquation {
 public:
     /**
-     * @brief Klein-Gordon equation
+     * @brief Klein-Gordon equation operator
      *
-     * (□ + m²c²/ℏ²)ψ = 0
-     * □ = (1/c²)∂²/∂t² - ∇²
+     * (□ + μ²)ψ = 0 where μ² = m²c²/ℏ²
      */
     static bool satisfies_klein_gordon(
         double mass,
         double energy,
         double momentum) {
 
-        // Relativistic energy-momentum relation
         // E² = (pc)² + (mc²)²
         double lhs = energy * energy;
         double rhs = momentum * momentum * constants::c * constants::c +
                      mass * mass * constants::c * constants::c * constants::c * constants::c;
 
-        return std::abs(lhs - rhs) < 1e-10;
+        return std::abs(lhs - rhs) < 1e-10 * rhs;
     }
 
     /**
      * @brief Plane wave solutions
      *
-     * ψ = e^(i(p·x - Et)/ℏ)
+     * ψ = A e^(i(k⃗·r⃗ - ωt)) with ω² = c²k² + (mc²/ℏ)²
      */
     static Complex plane_wave(
         double x,
@@ -636,9 +733,21 @@ public:
     }
 
     /**
+     * @brief Dispersion relation
+     *
+     * ω² = c²k² + (mc²/ℏ)²
+     */
+    static double frequency_from_wavevector(double k, double mass) {
+        double omega_squared = constants::c * constants::c * k * k +
+                              (mass * constants::c * constants::c * mass * constants::c * constants::c) /
+                              (constants::hbar * constants::hbar);
+        return std::sqrt(omega_squared);
+    }
+
+    /**
      * @brief Positive and negative energy solutions
      *
-     * E = ±√((pc)² + (mc²)²)
+     * E = ±√((pc)² + (mc²)²) = ±E_p
      */
     static std::pair<double, double> energy_solutions(
         double momentum,
@@ -648,41 +757,914 @@ public:
                           mass * mass * constants::c * constants::c * constants::c * constants::c;
         double E = std::sqrt(E_squared);
 
-        return {E, -E};  // Positive and negative energy
+        return {E, -E};  // E_+ and E_-
+    }
+
+    /**
+     * @brief Conserved current density
+     *
+     * j^μ = (iℏ/2m)(ψ*∂^μψ - ψ∂^μψ*)
+     */
+    static double current_density_time(
+        Complex psi,
+        Complex psi_t,
+        double mass) {
+
+        // j^0 = (iℏ/2mc²)(ψ*∂_t ψ - ψ ∂_t ψ*)
+        Complex j0 = Complex(0, constants::hbar / (2.0 * mass * constants::c * constants::c)) *
+                     (std::conj(psi) * psi_t - psi * std::conj(psi_t));
+        return std::real(j0);
+    }
+
+    /**
+     * @brief Probability density (not positive definite!)
+     *
+     * ρ = j^0/c = (iℏ/2mc²)(ψ*∂_t ψ - ψ ∂_t ψ*)
+     */
+    static double probability_density(
+        Complex psi,
+        Complex psi_t,
+        double mass) {
+
+        return current_density_time(psi, psi_t, mass) / constants::c;
     }
 
     /**
      * @brief Klein paradox
      *
-     * Transmission through potential barrier can exceed 1
+     * For V₀ > E + 2mc², transmission coefficient can exceed 1
      */
     static double klein_paradox_transmission(
         double energy,
         double barrier_height,
-        double mass) {
+        double mass,
+        double barrier_width) {
 
-        if (barrier_height > energy + 2.0 * mass * constants::c * constants::c) {
-            // Pair production regime
-            return 1.0;  // Perfect transmission
+        double mc2 = mass * constants::c * constants::c;
+
+        if (barrier_height > energy + 2.0 * mc2) {
+            // Pair production regime - perfect transmission
+            return 1.0;
         }
 
-        // Normal tunneling regime
-        return 0.0;  // Simplified
+        // Normal tunneling (simplified)
+        if (barrier_height > energy) {
+            double kappa = std::sqrt(2.0 * mass * (barrier_height - energy)) / constants::hbar;
+            return std::exp(-2.0 * kappa * barrier_width);
+        }
+
+        return 1.0;  // E > V₀
     }
 
     /**
-     * @brief Probability density issue
+     * @brief Continuity equation
      *
-     * Klein-Gordon ρ is not positive definite
+     * ∂ρ/∂t + ∇·j⃗ = 0
      */
-    static double probability_density(
-        Complex psi,
-        Complex psi_t) {
+    static bool satisfies_continuity(
+        double rho_t,
+        double div_j,
+        double tol = 1e-10) {
 
-        // ρ = (iℏ/2mc²)(ψ*∂ψ/∂t - ψ∂ψ*/∂t)
-        // Can be negative!
-        return std::real(Complex(0, constants::hbar / (2.0 * constants::m_e * constants::c * constants::c)) *
-                        (std::conj(psi) * psi_t - psi * std::conj(psi_t)));
+        return std::abs(rho_t + div_j) < tol;
+    }
+};
+
+/**
+ * @brief Nonrelativistic Limit of Klein-Gordon Equation
+ *
+ * Recover Schrödinger equation for v << c
+ */
+class KleinGordonNonrelativisticLimit {
+public:
+    /**
+     * @brief Nonrelativistic ansatz
+     *
+     * ψ = φ(x,t) e^(-imc²t/ℏ)
+     */
+    static Complex nonrelativistic_wavefunction(
+        Complex phi,
+        double t,
+        double mass) {
+
+        double phase = -(mass * constants::c * constants::c * t) / constants::hbar;
+        return phi * std::exp(Complex(0, phase));
+    }
+
+    /**
+     * @brief Schrödinger equation emerges
+     *
+     * iℏ∂φ/∂t = -(ℏ²/2m)∇²φ
+     */
+    static double schrodinger_kinetic_energy(
+        double momentum,
+        double mass) {
+
+        return (momentum * momentum) / (2.0 * mass);
+    }
+
+    /**
+     * @brief Relativistic correction
+     *
+     * E ≈ mc² + p²/2m - p⁴/8m³c² + ...
+     */
+    static double energy_expansion(
+        double momentum,
+        double mass,
+        int order = 2) {
+
+        double mc2 = mass * constants::c * constants::c;
+        double p2 = momentum * momentum;
+
+        // Leading order: rest mass
+        double E = mc2;
+
+        // First order: nonrelativistic kinetic
+        if (order >= 1) {
+            E += p2 / (2.0 * mass);
+        }
+
+        // Second order: relativistic correction
+        if (order >= 2) {
+            E -= p2 * p2 / (8.0 * mass * mass * mass * constants::c * constants::c);
+        }
+
+        return E;
+    }
+
+    /**
+     * @brief Velocity β = v/c for given momentum
+     */
+    static double velocity_ratio(double momentum, double mass) {
+        double E = std::sqrt(momentum * momentum * constants::c * constants::c +
+                           mass * mass * constants::c * constants::c * constants::c * constants::c);
+        return (momentum * constants::c) / E;
+    }
+
+    /**
+     * @brief Check if nonrelativistic approximation is valid
+     *
+     * Valid if p << mc (or v << c)
+     */
+    static bool is_nonrelativistic(double momentum, double mass) {
+        return momentum < 0.1 * mass * constants::c;  // β < 0.1
+    }
+};
+
+/**
+ * @brief Free Spin-0 Particles (Klein-Gordon Solutions)
+ *
+ * Complete solution set for free particles
+ */
+class KleinGordonFreeParticles {
+public:
+    /**
+     * @brief General solution as superposition
+     *
+     * ψ(x,t) = ∫[A(k)e^(i(kx-ωt)) + B(k)e^(i(kx+ωt))]dk
+     */
+    struct FreeSolution {
+        double amplitude_positive;   // A(k)
+        double amplitude_negative;   // B(k)
+        double wavevector;          // k
+        double frequency;           // ω
+    };
+
+    /**
+     * @brief Energy eigenvalue for given momentum
+     *
+     * E_p = +√((pc)² + (mc²)²)
+     */
+    static double positive_energy(double momentum, double mass) {
+        return std::sqrt(momentum * momentum * constants::c * constants::c +
+                        mass * mass * constants::c * constants::c * constants::c * constants::c);
+    }
+
+    /**
+     * @brief Group velocity
+     *
+     * v_g = dω/dk = pc²/E
+     */
+    static double group_velocity(double momentum, double mass) {
+        double E = positive_energy(momentum, mass);
+        return (momentum * constants::c * constants::c) / E;
+    }
+
+    /**
+     * @brief Phase velocity
+     *
+     * v_p = ω/k = E/p
+     */
+    static double phase_velocity(double momentum, double mass) {
+        double E = positive_energy(momentum, mass);
+        return (E * constants::c) / (momentum * constants::c);
+    }
+
+    /**
+     * @brief Wave packet for localized particle
+     *
+     * Gaussian wave packet: ψ(x,0) = exp(-x²/4σ²)exp(ik₀x)
+     */
+    static Complex gaussian_wave_packet(
+        double x,
+        double x0,
+        double sigma,
+        double k0) {
+
+        double gaussian = std::exp(-(x - x0) * (x - x0) / (4.0 * sigma * sigma));
+        double phase = k0 * x;
+        return gaussian * std::exp(Complex(0, phase));
+    }
+
+    /**
+     * @brief Normalization for free particle states
+     *
+     * ⟨p|p'⟩ = (2π)³ δ³(p⃗ - p⃗')
+     */
+    static double normalization_factor(double volume) {
+        return 1.0 / std::sqrt(volume);
+    }
+
+    /**
+     * @brief Klein-Gordon inner product
+     *
+     * (ψ₁, ψ₂) = i∫[ψ₁*∂_t ψ₂ - (∂_t ψ₁*)ψ₂]d³x
+     */
+    static Complex klein_gordon_inner_product(
+        Complex psi1,
+        Complex psi1_t,
+        Complex psi2,
+        Complex psi2_t,
+        double volume) {
+
+        return Complex(0, 1) * (std::conj(psi1) * psi2_t - std::conj(psi1_t) * psi2) * volume;
+    }
+};
+
+/**
+ * @brief Energy-Momentum Tensor of Klein-Gordon Field
+ *
+ * Stress-energy tensor T^μν for scalar field
+ */
+class KleinGordonEnergyMomentum {
+public:
+    /**
+     * @brief Energy density (T^00)
+     *
+     * T^00 = (1/2)[(∂_t ψ)² + c²(∇ψ)² + (mc²/ℏ)²ψ²]
+     */
+    static double energy_density(
+        Complex psi,
+        Complex psi_t,
+        double grad_psi_squared,
+        double mass) {
+
+        double term1 = std::norm(psi_t);
+        double term2 = constants::c * constants::c * grad_psi_squared;
+        double term3 = (mass * constants::c * constants::c / constants::hbar) *
+                       (mass * constants::c * constants::c / constants::hbar) *
+                       std::norm(psi);
+
+        return 0.5 * (term1 + term2 + term3);
+    }
+
+    /**
+     * @brief Momentum density (T^0i)
+     *
+     * T^0i = (∂_t ψ*)(∂_i ψ) + (∂_i ψ*)(∂_t ψ)
+     */
+    static double momentum_density(
+        Complex psi_t,
+        Complex psi_x) {
+
+        return std::real(std::conj(psi_t) * psi_x + std::conj(psi_x) * psi_t);
+    }
+
+    /**
+     * @brief Stress tensor (T^ij)
+     *
+     * T^ij = c²(∂_i ψ*)(∂_j ψ) + c²(∂_j ψ*)(∂_i ψ) - δ^ij L
+     */
+    static double stress_tensor_component(
+        Complex psi_i,
+        Complex psi_j,
+        double lagrangian_density,
+        bool is_diagonal) {
+
+        double term = constants::c * constants::c *
+                     std::real(std::conj(psi_i) * psi_j + std::conj(psi_j) * psi_i);
+
+        if (is_diagonal) {
+            term -= lagrangian_density;
+        }
+
+        return term;
+    }
+
+    /**
+     * @brief Conservation of energy-momentum
+     *
+     * ∂_μ T^μν = 0
+     */
+    static bool is_conserved(
+        double d_T00_dt,
+        double div_T0i,
+        double tol = 1e-10) {
+
+        return std::abs(d_T00_dt + div_T0i) < tol;
+    }
+
+    /**
+     * @brief Hamiltonian density
+     *
+     * H = T^00 (for canonical formulation)
+     */
+    static double hamiltonian_density(
+        Complex psi,
+        Complex pi,
+        double grad_psi_squared,
+        double mass) {
+
+        // H = π·π* + c²|∇ψ|² + (mc²/ℏ)²|ψ|²
+        return std::norm(pi) +
+               constants::c * constants::c * grad_psi_squared +
+               (mass * constants::c * constants::c / constants::hbar) *
+               (mass * constants::c * constants::c / constants::hbar) *
+               std::norm(psi);
+    }
+};
+
+/**
+ * @brief Klein-Gordon Equation in Schrödinger Form
+ *
+ * First-order in time formulation
+ */
+class KleinGordonSchrodingerForm {
+public:
+    /**
+     * @brief Two-component formulation
+     *
+     * Ψ = (ψ, π)^T where π = ∂ψ/∂t
+     */
+    struct TwoComponentState {
+        Complex psi;
+        Complex pi;  // Conjugate momentum
+    };
+
+    /**
+     * @brief Schrödinger-like equation
+     *
+     * iℏ ∂Ψ/∂t = H_KG Ψ
+     */
+    static TwoComponentState time_evolution(
+        const TwoComponentState& state,
+        double laplacian_psi,
+        double mass,
+        double dt) {
+
+        // π̇ = ∇²ψ - (mc/ℏ)²ψ
+        // ψ̇ = π
+
+        Complex pi_dot = laplacian_psi -
+                        (mass * constants::c / constants::hbar) *
+                        (mass * constants::c / constants::hbar) * state.psi;
+
+        TwoComponentState evolved;
+        evolved.psi = state.psi + state.pi * dt;
+        evolved.pi = state.pi + pi_dot * dt;
+
+        return evolved;
+    }
+
+    /**
+     * @brief Hamiltonian operator in matrix form
+     *
+     * H_KG = [[0, 1], [c²∇² - (mc²)², 0]]
+     */
+    static std::array<std::array<double, 2>, 2> hamiltonian_matrix(
+        double k_squared,
+        double mass) {
+
+        double h11 = 0.0;
+        double h12 = 1.0;
+        double h21 = -constants::c * constants::c * k_squared -
+                     (mass * constants::c * constants::c / constants::hbar) *
+                     (mass * constants::c * constants::c / constants::hbar);
+        double h22 = 0.0;
+
+        return {{{h11, h12}, {h21, h22}}};
+    }
+
+    /**
+     * @brief Positive definite norm
+     *
+     * ||Ψ||² = ∫[|π|² + c²|∇ψ|² + (mc²/ℏ)²|ψ|²]d³x
+     */
+    static double positive_norm_squared(
+        const TwoComponentState& state,
+        double grad_psi_squared,
+        double mass) {
+
+        return std::norm(state.pi) +
+               constants::c * constants::c * grad_psi_squared +
+               (mass * constants::c * constants::c / constants::hbar) *
+               (mass * constants::c * constants::c / constants::hbar) *
+               std::norm(state.psi);
+    }
+};
+
+/**
+ * @brief Charge Conjugation for Klein-Gordon Field
+ *
+ * Particle-antiparticle symmetry
+ */
+class ChargeConjugation {
+public:
+    /**
+     * @brief Charge conjugation operator
+     *
+     * C: ψ → ψ* (for real scalar field ψ = ψ*)
+     */
+    static Complex charge_conjugate(Complex psi) {
+        return std::conj(psi);
+    }
+
+    /**
+     * @brief Particle and antiparticle states
+     *
+     * Positive frequency: particle
+     * Negative frequency: antiparticle
+     */
+    struct ParticleAntiparticle {
+        Complex particle_amplitude;      // e^(-iEt/ℏ)
+        Complex antiparticle_amplitude;  // e^(+iEt/ℏ)
+    };
+
+    /**
+     * @brief Charge conjugation invariance
+     *
+     * For neutral scalar: C|ψ⟩ = |ψ⟩
+     */
+    static bool is_charge_eigenstate(Complex psi, double phase_tol = 1e-10) {
+        // ψ = ψ* for real scalar (self-conjugate)
+        return std::abs(psi - std::conj(psi)) < phase_tol;
+    }
+
+    /**
+     * @brief C-parity for neutral particles
+     *
+     * C = ±1 for self-conjugate states
+     */
+    static int c_parity(bool symmetric) {
+        return symmetric ? 1 : -1;
+    }
+
+    /**
+     * @brief Transformation of current under C
+     *
+     * j^μ → -j^μ (changes sign)
+     */
+    static double conjugate_current(double current) {
+        return -current;
+    }
+};
+
+/**
+ * @brief Feshbach-Villars Representation
+ *
+ * Positive-definite probability density formulation
+ */
+class FeshbachVillarsRepresentation {
+public:
+    /**
+     * @brief Feshbach-Villars transformation
+     *
+     * φ = (1/√2)(ψ + iπ/mc²)
+     * χ = (1/√2)(ψ - iπ/mc²)
+     */
+    struct FVComponents {
+        Complex phi;  // Positive energy component
+        Complex chi;  // Negative energy component
+    };
+
+    /**
+     * @brief Transform to FV representation
+     */
+    static FVComponents to_feshbach_villars(
+        Complex psi,
+        Complex pi,
+        double mass) {
+
+        double mc2 = mass * constants::c * constants::c;
+        Complex factor = Complex(0, 1) / mc2;
+
+        FVComponents fv;
+        fv.phi = (psi + factor * pi) / std::sqrt(2.0);
+        fv.chi = (psi - factor * pi) / std::sqrt(2.0);
+
+        return fv;
+    }
+
+    /**
+     * @brief Positive-definite probability density
+     *
+     * ρ_FV = |φ|² + |χ|² ≥ 0
+     */
+    static double probability_density_fv(const FVComponents& fv) {
+        return std::norm(fv.phi) + std::norm(fv.chi);
+    }
+
+    /**
+     * @brief FV Hamiltonian
+     *
+     * H_FV = βmc² + α⃗·(cp⃗)
+     */
+    static std::array<std::array<double, 2>, 2> fv_beta_matrix() {
+        return {{{1.0, 0.0}, {0.0, -1.0}}};
+    }
+
+    /**
+     * @brief Coupled equations
+     *
+     * iℏ∂φ/∂t = mc²φ - iℏc∇χ
+     * iℏ∂χ/∂t = -mc²χ + iℏc∇φ
+     */
+    static FVComponents time_evolution_fv(
+        const FVComponents& state,
+        double grad_phi,
+        double grad_chi,
+        double mass,
+        double dt) {
+
+        double mc2 = mass * constants::c * constants::c;
+
+        FVComponents evolved;
+        Complex phi_dot = Complex(0, -mc2 / constants::hbar) * state.phi -
+                         constants::c * grad_chi;
+        Complex chi_dot = Complex(0, mc2 / constants::hbar) * state.chi +
+                         constants::c * grad_phi;
+
+        evolved.phi = state.phi + phi_dot * dt;
+        evolved.chi = state.chi + chi_dot * dt;
+
+        return evolved;
+    }
+
+    /**
+     * @brief Nonrelativistic limit in FV representation
+     *
+     * χ → 0, φ → ψ_Schrödinger
+     */
+    static Complex nonrelativistic_component(const FVComponents& fv) {
+        return fv.phi;  // Positive energy dominates
+    }
+};
+
+/**
+ * @brief Klein-Gordon Equation with Electromagnetic Field
+ *
+ * Minimal coupling to electromagnetism
+ */
+class KleinGordonElectromagneticField {
+public:
+    /**
+     * @brief Minimal coupling (gauge covariant derivative)
+     *
+     * ∂_μ → D_μ = ∂_μ + (iq/ℏc)A_μ
+     */
+    static Complex covariant_derivative_time(
+        Complex psi,
+        Complex psi_t,
+        double charge,
+        double phi_em) {
+
+        // D_0 ψ = (∂_t + iqφ/ℏ)ψ
+        return psi_t + Complex(0, charge * phi_em / constants::hbar) * psi;
+    }
+
+    /**
+     * @brief Klein-Gordon with EM field
+     *
+     * [(∂_μ + iqA_μ)(∂^μ + iqA^μ) + (mc/ℏ)²]ψ = 0
+     */
+    static bool satisfies_kg_with_field(
+        double energy,
+        double momentum,
+        double mass,
+        double charge,
+        double phi_em,
+        double A_vector) {
+
+        // (E - qφ)² = (p - qA)²c² + (mc²)²
+        double E_kin = energy - charge * phi_em;
+        double p_kin = momentum - charge * A_vector;
+
+        double lhs = E_kin * E_kin;
+        double rhs = p_kin * p_kin * constants::c * constants::c +
+                     mass * mass * constants::c * constants::c * constants::c * constants::c;
+
+        return std::abs(lhs - rhs) < 1e-10 * rhs;
+    }
+
+    /**
+     * @brief Conserved current with EM field
+     *
+     * j^μ = (iq/2m)[ψ*(D^μψ) - (D^μψ)*ψ]
+     */
+    static double current_density_with_field(
+        Complex psi,
+        Complex D_mu_psi,
+        double charge,
+        double mass) {
+
+        return std::real(Complex(0, charge / (2.0 * mass)) *
+                        (std::conj(psi) * D_mu_psi - std::conj(D_mu_psi) * psi));
+    }
+
+    /**
+     * @brief Landau levels for charged scalar in B field
+     *
+     * E_n = √[(mc²)² + 2n|q|ℏcB]
+     */
+    static double landau_level_energy(
+        int n,
+        double charge,
+        double magnetic_field,
+        double mass) {
+
+        double mc2_squared = mass * mass * constants::c * constants::c *
+                            constants::c * constants::c;
+        double term = 2.0 * n * std::abs(charge) * constants::hbar *
+                     constants::c * magnetic_field;
+
+        return std::sqrt(mc2_squared + term);
+    }
+
+    /**
+     * @brief Cyclotron frequency
+     *
+     * ω_c = |q|B/(γm)
+     */
+    static double cyclotron_frequency(
+        double charge,
+        double magnetic_field,
+        double mass,
+        double gamma = 1.0) {
+
+        return std::abs(charge) * magnetic_field / (gamma * mass);
+    }
+};
+
+/**
+ * @brief Gauge Invariance of the Coupling
+ *
+ * Local U(1) gauge symmetry
+ */
+class GaugeInvariance {
+public:
+    /**
+     * @brief Gauge transformation of wave function
+     *
+     * ψ → ψ' = e^(iqΛ/ℏ)ψ
+     */
+    static Complex gauge_transform_wavefunction(
+        Complex psi,
+        double charge,
+        double lambda) {
+
+        double phase = charge * lambda / constants::hbar;
+        return psi * std::exp(Complex(0, phase));
+    }
+
+    /**
+     * @brief Gauge transformation of potential
+     *
+     * A_μ → A'_μ = A_μ - ∂_μΛ
+     */
+    static double gauge_transform_vector_potential(
+        double A,
+        double grad_lambda) {
+
+        return A - grad_lambda;
+    }
+
+    static double gauge_transform_scalar_potential(
+        double phi,
+        double lambda_t) {
+
+        return phi + lambda_t;
+    }
+
+    /**
+     * @brief Gauge invariance of Klein-Gordon equation
+     *
+     * Equation invariant under simultaneous gauge transformation
+     */
+    static bool verify_gauge_invariance(
+        Complex psi,
+        Complex psi_prime,
+        double lambda,
+        double charge,
+        double tol = 1e-10) {
+
+        Complex expected = gauge_transform_wavefunction(psi, charge, lambda);
+        return std::abs(psi_prime - expected) < tol;
+    }
+
+    /**
+     * @brief Gauge-invariant phase
+     *
+     * Aharonov-Bohm phase: exp(iq/ℏ ∮A⃗·dl⃗)
+     */
+    static double aharonov_bohm_phase(
+        double charge,
+        double magnetic_flux) {
+
+        return charge * magnetic_flux / constants::hbar;
+    }
+
+    /**
+     * @brief Gauge-invariant field strength
+     *
+     * F_μν = ∂_μA_ν - ∂_νA_μ
+     */
+    static double field_strength(
+        double dA_nu_dx_mu,
+        double dA_mu_dx_nu) {
+
+        return dA_nu_dx_mu - dA_mu_dx_nu;
+    }
+};
+
+/**
+ * @brief Nonrelativistic Limit with Electromagnetic Fields
+ *
+ * Recover Schrödinger equation with EM coupling
+ */
+class KleinGordonNonrelativisticLimitWithFields {
+public:
+    /**
+     * @brief Pauli equation emerges
+     *
+     * iℏ∂ψ/∂t = [(p⃗ - qA⃗)²/2m + qφ]ψ
+     */
+    static double schrodinger_energy_with_field(
+        double momentum,
+        double charge,
+        double A_vector,
+        double phi_em,
+        double mass) {
+
+        double p_kin = momentum - charge * A_vector;
+        return (p_kin * p_kin) / (2.0 * mass) + charge * phi_em;
+    }
+
+    /**
+     * @brief Darwin term (relativistic correction)
+     *
+     * H_Darwin = -(ℏ²/8m²c²)∇²V
+     */
+    static double darwin_correction(
+        double laplacian_potential,
+        double mass) {
+
+        return -(constants::hbar * constants::hbar) /
+               (8.0 * mass * mass * constants::c * constants::c) *
+               laplacian_potential;
+    }
+
+    /**
+     * @brief Spin-orbit coupling analogue (for scalar)
+     *
+     * Absent for spin-0, present for spin-1/2
+     */
+    static double spin_orbit_energy_scalar() {
+        return 0.0;  // No spin-orbit for scalar particles
+    }
+
+    /**
+     * @brief Relativistic kinetic energy correction
+     *
+     * -(p⃗ - qA⃗)⁴/8m³c²
+     */
+    static double relativistic_kinetic_correction(
+        double momentum,
+        double charge,
+        double A_vector,
+        double mass) {
+
+        double p_kin = momentum - charge * A_vector;
+        return -(p_kin * p_kin * p_kin * p_kin) /
+               (8.0 * mass * mass * mass * constants::c * constants::c);
+    }
+
+    /**
+     * @brief Zeeman energy for scalar in magnetic field
+     *
+     * ΔE = -(q²ℏ²/8m²c²)B²r² (diamagnetic)
+     */
+    static double diamagnetic_energy(
+        double charge,
+        double magnetic_field,
+        double r_perp,
+        double mass) {
+
+        return -(charge * charge * magnetic_field * magnetic_field * r_perp * r_perp) /
+               (8.0 * mass * constants::c * constants::c);
+    }
+};
+
+/**
+ * @brief Interpretation of One-Particle Operators
+ *
+ * Physical observables in relativistic QM
+ */
+class OneParticleOperators {
+public:
+    /**
+     * @brief Position operator issue
+     *
+     * No local position operator for relativistic particles
+     */
+    static std::string position_operator_interpretation() {
+        return "Newton-Wigner position (non-local)";
+    }
+
+    /**
+     * @brief Momentum operator
+     *
+     * p̂ = -iℏ∇ (well-defined)
+     */
+    static double momentum_eigenvalue(double k) {
+        return constants::hbar * k;
+    }
+
+    /**
+     * @brief Energy operator
+     *
+     * Ê = iℏ∂/∂t (positive and negative values)
+     */
+    static std::pair<double, double> energy_eigenvalues(
+        double momentum,
+        double mass) {
+
+        double E = std::sqrt(momentum * momentum * constants::c * constants::c +
+                           mass * mass * constants::c * constants::c * constants::c * constants::c);
+        return {E, -E};
+    }
+
+    /**
+     * @brief Charge density operator
+     *
+     * ρ̂ = iq(ψ*∂_t ψ - ψ∂_t ψ*)/2mc²
+     */
+    static std::string charge_density_interpretation() {
+        return "Not positive-definite; needs second quantization";
+    }
+
+    /**
+     * @brief Current density operator
+     *
+     * ĵ = (q/2m)[ψ*(-iℏ∇)ψ + c.c.]
+     */
+    static std::string current_interpretation() {
+        return "Well-defined for Klein-Gordon field";
+    }
+
+    /**
+     * @brief Angular momentum
+     *
+     * L̂ = r⃗ × p̂ (orbital, no spin for scalar)
+     */
+    static double orbital_angular_momentum_quantum_number(int l) {
+        return constants::hbar * std::sqrt(l * (l + 1.0));
+    }
+
+    /**
+     * @brief Second quantization interpretation
+     *
+     * Single-particle interpretation breaks down
+     */
+    static std::string second_quantization_necessity() {
+        return "Negative energy states → antiparticles; need QFT";
+    }
+
+    /**
+     * @brief Zitterbewegung absent
+     *
+     * Unlike Dirac, Klein-Gordon has no Zitterbewegung
+     */
+    static bool has_zitterbewegung() {
+        return false;
+    }
+
+    /**
+     * @brief Localization length scale
+     *
+     * Compton wavelength: λ_C = ℏ/(mc)
+     */
+    static double compton_wavelength(double mass) {
+        return constants::hbar / (mass * constants::c);
     }
 };
 
