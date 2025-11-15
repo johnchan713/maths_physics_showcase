@@ -1454,6 +1454,46 @@ public:
     static std::string observations() {
         return "CMB: suppressed power at large scales, r < 0.01";
     }
+
+    /**
+     * @brief Compute Planck density
+     *
+     * ρ_Planck = c⁵/(ℏG²) (maximum density scale)
+     */
+    static double planck_density() {
+        return (constants::c * constants::c * constants::c * constants::c * constants::c) /
+               (constants::hbar * constants::G * constants::G);
+    }
+
+    /**
+     * @brief Compute critical density for bounce
+     *
+     * ρ_crit ≈ 0.41 ρ_Planck
+     */
+    static double critical_density() {
+        return max_density_ratio() * planck_density();
+    }
+
+    /**
+     * @brief Compute Hubble parameter with LQC corrections
+     *
+     * H² = (8πG/3)ρ(1 - ρ/ρ_crit)
+     */
+    static double hubble_parameter_lqc(double density) {
+        double rho_crit = critical_density();
+        double factor = (8.0 * M_PI * constants::G / 3.0) * density * (1.0 - density / rho_crit);
+        return std::sqrt(std::max(0.0, factor));  // Ensure non-negative
+    }
+
+    /**
+     * @brief Compute scale factor evolution near bounce
+     *
+     * a(t) for given density (assuming flat FRW)
+     */
+    static double scale_factor_near_bounce(double density, double density_today = 1.0) {
+        // a ∝ ρ^(-1/2) in radiation era near bounce
+        return std::sqrt(density_today / std::max(density, 1e-100));
+    }
 };
 
 /**
@@ -1524,6 +1564,68 @@ public:
      */
     static std::string graceful_exit() {
         return "Reheating after inflation (quantum corrections small)";
+    }
+
+    /**
+     * @brief Compute slow-roll parameter ε
+     *
+     * ε = (1/2)(V'/V)² where V is potential, V' is derivative
+     */
+    static double epsilon_slow_roll(double V, double V_prime) {
+        if (std::abs(V) < 1e-100) return 1.0;  // Avoid division by zero
+        double ratio = V_prime / V;
+        return 0.5 * ratio * ratio;
+    }
+
+    /**
+     * @brief Compute slow-roll parameter η
+     *
+     * η = V''/V where V'' is second derivative
+     */
+    static double eta_slow_roll(double V, double V_double_prime) {
+        if (std::abs(V) < 1e-100) return 1.0;  // Avoid division by zero
+        return V_double_prime / V;
+    }
+
+    /**
+     * @brief Compute scalar power spectrum amplitude
+     *
+     * P_s(k) = (H²/2π)² (1/2ε) at horizon crossing
+     */
+    static double scalar_power_spectrum(double hubble, double epsilon) {
+        if (epsilon < 1e-100) return 0.0;  // Avoid division by zero
+        double H_over_2pi = hubble / (2.0 * M_PI);
+        return (H_over_2pi * H_over_2pi) / (2.0 * epsilon);
+    }
+
+    /**
+     * @brief Compute tensor power spectrum amplitude
+     *
+     * P_t(k) = 2(H/2π)²
+     */
+    static double tensor_power_spectrum(double hubble) {
+        double H_over_2pi = hubble / (2.0 * M_PI);
+        return 2.0 * H_over_2pi * H_over_2pi;
+    }
+
+    /**
+     * @brief Compute spectral index
+     *
+     * n_s - 1 ≈ -6ε + 2η
+     */
+    static double spectral_index(double epsilon, double eta) {
+        return 1.0 - 6.0 * epsilon + 2.0 * eta;
+    }
+
+    /**
+     * @brief Compute number of e-folds
+     *
+     * N = ∫ H dt ≈ ∫ (V/V') dφ (slow-roll approximation)
+     */
+    static double efolds_estimate(double V_initial, double V_final, double V_avg, double V_prime_avg) {
+        if (std::abs(V_prime_avg) < 1e-100) return 0.0;
+        // Simple estimate: N ≈ (V/V') Δφ
+        return (V_avg / V_prime_avg) * std::log(V_initial / V_final);
     }
 };
 
@@ -1743,6 +1845,27 @@ public:
     static std::string observability() {
         return "GW ringdown: test LQG via QNM spectrum";
     }
+
+    /**
+     * @brief Compute damping time
+     *
+     * τ = r_s/c (light crossing time of horizon)
+     */
+    static double damping_time(double mass) {
+        double r_s = 2.0 * constants::G * mass / (constants::c * constants::c);
+        return r_s / constants::c;
+    }
+
+    /**
+     * @brief Compute QNM quality factor
+     *
+     * Q = ω_R/(2ω_I) = π(ω_R τ)
+     */
+    static double quality_factor(double mass) {
+        double omega_R = frequency_estimate(mass);
+        double tau = damping_time(mass);
+        return M_PI * omega_R * tau;
+    }
 };
 
 /**
@@ -1804,6 +1927,45 @@ public:
      */
     static std::string observations() {
         return "Observable: Planck-mass BH evaporation (discrete bursts)";
+    }
+
+    /**
+     * @brief Compute area quantum for given spin
+     *
+     * ΔA_j = 8πγl_P²√(j(j+1))
+     */
+    static double area_quantum(int twice_j, double gamma_IP = constants::gamma) {
+        double j = twice_j / 2.0;
+        return 8.0 * M_PI * gamma_IP * constants::l_P * constants::l_P *
+               std::sqrt(j * (j + 1.0));
+    }
+
+    /**
+     * @brief Compute entropy quantum
+     *
+     * ΔS = k_B ΔA/(4γl_P²)
+     */
+    static double entropy_quantum(int twice_j, double gamma_IP = constants::gamma) {
+        double dA = area_quantum(twice_j, gamma_IP);
+        return constants::k_B * dA / (4.0 * gamma_IP * constants::l_P * constants::l_P);
+    }
+
+    /**
+     * @brief Compute minimal area change
+     *
+     * Minimal j=1/2 puncture
+     */
+    static double minimal_area_change(double gamma_IP = constants::gamma) {
+        return area_quantum(1, gamma_IP);  // j=1/2, so twice_j=1
+    }
+
+    /**
+     * @brief Compute minimal entropy change
+     *
+     * ΔS_min for j=1/2
+     */
+    static double minimal_entropy_change(double gamma_IP = constants::gamma) {
+        return entropy_quantum(1, gamma_IP);  // j=1/2
     }
 };
 
@@ -1884,6 +2046,77 @@ public:
      */
     static std::string constraints() {
         return "Current limits: Lorentz violation ξ < 10⁻² (Fermi-LAT)";
+    }
+
+    /**
+     * @brief Compute time-of-flight delay
+     *
+     * Δt ≈ α × (ΔE/E_Planck) × (l_P/c) × D
+     * where α is suppression parameter, ΔE is energy difference, D is distance
+     */
+    static double time_delay(double energy_diff_eV, double distance_m, double alpha = 1.0) {
+        double E_Planck_eV = constants::E_P / 1.602176634e-19;  // Convert J to eV
+        double factor = alpha * (energy_diff_eV / E_Planck_eV) * (constants::l_P / constants::c);
+        return factor * distance_m;
+    }
+
+    /**
+     * @brief Compute modified energy-momentum relation
+     *
+     * E² ≈ p²c² + m²c⁴ + α(l_P E)²E (first-order LQG correction)
+     */
+    static double modified_energy(double momentum, double mass, double alpha = 1.0) {
+        double E_classical_sq = momentum * momentum * constants::c * constants::c +
+                               mass * mass * constants::c * constants::c * constants::c * constants::c;
+        double E_classical = std::sqrt(E_classical_sq);
+        // Perturbative correction
+        double correction = alpha * constants::l_P * E_classical * E_classical;
+        return E_classical + correction;
+    }
+
+    /**
+     * @brief Compute velocity modification
+     *
+     * v/c = ∂E/∂p ≈ pc²/E + (LQG corrections)
+     */
+    static double modified_velocity(double momentum, double energy) {
+        if (energy < 1e-100) return 0.0;
+        return (momentum * constants::c * constants::c) / energy;
+    }
+
+    /**
+     * @brief Compute photon sphere correction
+     *
+     * Δr/r_s ~ (l_P/r_s)²
+     */
+    static double photon_sphere_correction(double mass) {
+        double r_s = 2.0 * constants::G * mass / (constants::c * constants::c);
+        double ratio = constants::l_P / r_s;
+        return ratio * ratio;
+    }
+
+    /**
+     * @brief Compute GW echo time delay
+     *
+     * Δt_echo ~ r_s/c × ln(r_s/l_P) (quantum horizon effect)
+     */
+    static double gw_echo_delay(double mass) {
+        double r_s = 2.0 * constants::G * mass / (constants::c * constants::c);
+        double ln_factor = std::log(r_s / constants::l_P);
+        return (r_s / constants::c) * ln_factor;
+    }
+
+    /**
+     * @brief Estimate GRB time delay for typical parameters
+     *
+     * E_high ~ 10 GeV, E_low ~ 1 GeV, D ~ 1 Gpc
+     */
+    static double grb_delay_estimate() {
+        double E_high = 10.0e9 * 1.602176634e-19;  // 10 GeV in Joules
+        double E_low = 1.0e9 * 1.602176634e-19;    // 1 GeV in Joules
+        double distance = 1.0e9 * 3.086e22;         // 1 Gpc in meters
+        double dE = E_high - E_low;
+        return time_delay(dE / 1.602176634e-19, distance, 1.0);  // Convert back to eV
     }
 };
 

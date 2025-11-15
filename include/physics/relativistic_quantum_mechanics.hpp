@@ -3602,6 +3602,55 @@ public:
     static std::string see_saw() {
         return "See-saw: m_ν ~ m_D²/M_R (M_R >> m_D explains tiny mass)";
     }
+
+    /**
+     * @brief Compute see-saw mass
+     *
+     * m_ν ≈ m_D²/M_R (type-I see-saw)
+     */
+    static double seesaw_mass(double m_dirac, double m_right) {
+        if (m_right < 1e-100) return 0.0;
+        return (m_dirac * m_dirac) / m_right;
+    }
+
+    /**
+     * @brief Compute oscillation length
+     *
+     * L_osc = 4πE/Δm² (in natural units)
+     */
+    static double oscillation_length(double energy_GeV, double delta_m2_eV2) {
+        if (std::abs(delta_m2_eV2) < 1e-100) return 1.0e100;  // Infinite for no mass diff
+        // L_osc (km) = 2.48 × E(GeV) / Δm²(eV²)
+        return 2.48 * energy_GeV / delta_m2_eV2;
+    }
+
+    /**
+     * @brief Atmospheric neutrino parameters (typical values)
+     *
+     * Δm²_23 ≈ 2.5×10⁻³ eV²
+     */
+    static double atmospheric_delta_m2() {
+        return 2.5e-3;  // eV²
+    }
+
+    /**
+     * @brief Solar neutrino parameters (typical values)
+     *
+     * Δm²_12 ≈ 7.5×10⁻⁵ eV²
+     */
+    static double solar_delta_m2() {
+        return 7.5e-5;  // eV²
+    }
+
+    /**
+     * @brief Compute survival probability
+     *
+     * P(νₐ → νₐ) = 1 - P(νₐ → νᵦ)
+     */
+    static double survival_probability(double L, double E, double delta_m2_eV2,
+                                       double theta) {
+        return 1.0 - oscillation_probability(L, E, delta_m2_eV2, theta);
+    }
 };
 
 /**
@@ -3738,6 +3787,60 @@ public:
      */
     static std::string applications() {
         return "W± (m_W = 80.4 GeV), Z⁰ (m_Z = 91.2 GeV) are massive spin-1";
+    }
+
+    /**
+     * @brief Compute Compton wavelength
+     *
+     * λ_C = h/(mc) = 2πℏ/(mc)
+     */
+    static double compton_wavelength(double mass) {
+        return constants::h / (mass * constants::c);
+    }
+
+    /**
+     * @brief Compute range of Yukawa potential
+     *
+     * r₀ ≈ ℏ/(mc) (force range)
+     */
+    static double force_range(double mass) {
+        return constants::hbar / (mass * constants::c);
+    }
+
+    /**
+     * @brief Compute energy-momentum relation
+     *
+     * E² = p²c² + m²c⁴
+     */
+    static double energy(double momentum, double mass) {
+        return std::sqrt(momentum * momentum * constants::c * constants::c +
+                        mass * mass * constants::c * constants::c * constants::c * constants::c);
+    }
+
+    /**
+     * @brief Compute dispersion relation ω(k)
+     *
+     * ω² = k²c² + (mc²/ℏ)²
+     */
+    static double frequency(double k, double mass) {
+        double omega_sq = k * k * constants::c * constants::c +
+                         (mass * constants::c * constants::c / constants::hbar) *
+                         (mass * constants::c * constants::c / constants::hbar);
+        return std::sqrt(omega_sq);
+    }
+
+    /**
+     * @brief W boson mass (experimental value)
+     */
+    static double w_boson_mass() {
+        return 80.4e9 * constants::e / (constants::c * constants::c);  // 80.4 GeV/c²
+    }
+
+    /**
+     * @brief Z boson mass (experimental value)
+     */
+    static double z_boson_mass() {
+        return 91.2e9 * constants::e / (constants::c * constants::c);  // 91.2 GeV/c²
     }
 };
 
