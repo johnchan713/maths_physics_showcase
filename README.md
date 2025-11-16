@@ -2285,6 +2285,64 @@ Comprehensive nuclear physics module covering radioactive decay, nuclear stabili
   - `eta_factor(ν, σ_f, σ_a)` - η = νσ_f/σ_a (reproduction factor)
   - `alpha_ratio(σ_c, σ_f)` - α = σ_c/σ_f (capture-to-fission ratio)
 
+**Nuclear Fission Physics:**
+
+*Liquid Drop Model:*
+- **Surface Energy**: E_surface = a_s A^(2/3) ≈ 17.8 A^(2/3) MeV
+- **Coulomb Energy**: E_Coulomb = a_c Z²/A^(1/3) ≈ 0.711 Z²/A^(1/3) MeV
+- **Fissility Parameter**: x = E_Coulomb / (2 × E_surface) = Z²/(50A)
+- **Critical Energy**: E_crit = 2 E_surface (1 - x), typically 5-6 MeV for actinides
+
+*Material Classification:*
+- **Fissile**: U-233, U-235, Pu-239, Pu-241 (fission with thermal neutrons)
+- **Fissionable**: U-238, Th-232 (fission with fast neutrons only)
+- **Fertile**: U-238 → Pu-239, Th-232 → U-233 (breeding potential)
+
+**Computational Functions**:
+  - `surface_energy(A)`, `coulomb_energy(Z, A)` - Liquid drop terms
+  - `fissility_parameter(Z, A)` - x = Z²/(50A)
+  - `critical_energy(Z, A)` - Fission barrier height
+  - `is_fissile/fissionable/fertile(Z, A)` - Material classification
+  - `binding_energy_per_nucleon(A, Z)` - BE/A from SEMF
+  - `spontaneous_fission_parameter(Z, A)` - Z²/A > 47 criterion
+
+**Fission Energy Release:**
+- **Total**: ~200 MeV (fragments: 168, neutrons: 5, gammas: 13, betas: 14, neutrinos: 10 lost)
+- **Recoverable**: 193 MeV (excluding neutrinos)
+
+**Computational Functions**:
+  - `fission_q_value_from_fragments(...)` - Calculate Q from SEMF
+  - `fragment_kinetic_energy_light/heavy(...)` - Fragment KE split by momentum
+  - `prompt/delayed_energy()` - Energy release timing
+  - `power_from_fission_rate(...)` - Convert fissions/s to watts
+  - `burnup_energy(...)` - Fuel burnup (MWd/kg)
+
+**Radiation Interactions:**
+
+*Alpha (α):*
+- Range: R ≈ 0.31 E^(3/2) cm in air, ~1/1000 in tissue
+- Very high ionization, Bragg peak at ~95% of range
+- Functions: `alpha_range_air/tissue(E)`, `alpha_specific_ionization(E)`
+
+*Beta (β⁻):*
+- Range: Katz-Penfold formula, ~0.1-1 cm in tissue
+- Bremsstrahlung: Y ≈ 3.5×10⁻⁴ Z E
+- Functions: `beta_range_aluminum/tissue(E)`, `bremsstrahlung_yield(Z, E)`
+
+*Positron (β⁺):*
+- Annihilation: e⁺ + e⁻ → 2γ (0.511 MeV each)
+- Functions: `positron_range_tissue(E)`, `annihilation_photon_energy()`
+
+*Neutron (n):*
+- Mean free path: λ = 1/(Nσ), diffusion length: L = √(D/Σ_a)
+- Quality factor: Q = 5-20 (energy dependent)
+- Functions: `neutron_mean_free_path(...)`, `neutron_quality_factor(E)`
+
+*Gamma (γ):*
+- Three processes: photoelectric (τ ∝ Z⁴/E³), Compton, pair production (E > 1.022 MeV)
+- Attenuation: I = I₀ e^(-μx), HVL = 0.693/μ
+- Functions: `gamma_attenuation_coefficient(...)`, `half_value_layer(μ)`, `gamma_transmission(...)`
+
 ### Compilation
 All modules are header-only and require C++17:
 

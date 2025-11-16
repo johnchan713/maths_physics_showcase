@@ -1842,6 +1842,872 @@ public:
     }
 };
 
+/**
+ * @brief Nuclear Fission Physics
+ *
+ * Liquid drop model, critical energy, and fissile materials
+ */
+class NuclearFissionPhysics {
+public:
+    /**
+     * @brief Fission overview
+     *
+     * Heavy nucleus splits into lighter fragments
+     */
+    static std::string fission_overview() {
+        return "Fission: heavy nucleus → 2 fragments + neutrons + energy (for A > 90)";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Liquid drop model: surface energy term
+     *
+     * E_surface = a_s A^(2/3)
+     *
+     * @param A Mass number
+     * @return Surface energy (MeV)
+     */
+    static double surface_energy(int A) {
+        double a_s = 17.8;  // MeV
+        return a_s * std::pow(A, 2.0/3.0);
+    }
+
+    /**
+     * @brief Liquid drop model: Coulomb energy term
+     *
+     * E_Coulomb = a_c Z²/A^(1/3)
+     *
+     * @param Z Atomic number
+     * @param A Mass number
+     * @return Coulomb energy (MeV)
+     */
+    static double coulomb_energy(int Z, int A) {
+        double a_c = 0.711;  // MeV
+        return a_c * Z * Z / std::pow(A, 1.0/3.0);
+    }
+
+    /**
+     * @brief Fissility parameter
+     *
+     * x = E_Coulomb / (2 × E_surface) = Z²/(50A)
+     * Fission likely for x > 1
+     *
+     * @param Z Atomic number
+     * @param A Mass number
+     * @return Fissility parameter (dimensionless)
+     */
+    static double fissility_parameter(int Z, int A) {
+        double E_coul = coulomb_energy(Z, A);
+        double E_surf = surface_energy(A);
+        return E_coul / (2.0 * E_surf);
+    }
+
+    /**
+     * @brief Critical energy for fission
+     *
+     * E_crit = E_barrier ≈ 2 × E_surface (1 - x) where x = fissility
+     *
+     * @param Z Atomic number
+     * @param A Mass number
+     * @return Critical energy (MeV)
+     */
+    static double critical_energy(int Z, int A) {
+        double E_surf = surface_energy(A);
+        double x = fissility_parameter(Z, A);
+        return 2.0 * E_surf * (1.0 - x);
+    }
+
+    /**
+     * @brief Fission barrier height (liquid drop)
+     *
+     * E_barrier ≈ 0.8 × E_surface for typical actinides
+     *
+     * @param A Mass number
+     * @return Barrier height (MeV)
+     */
+    static double fission_barrier(int A) {
+        return 0.8 * surface_energy(A);
+    }
+
+    /**
+     * @brief Check if nucleus is fissile
+     *
+     * Fissile: fissions with thermal neutrons (E_activation < E_barrier)
+     * U-233, U-235, Pu-239, Pu-241 are fissile
+     *
+     * @param Z Atomic number
+     * @param A Mass number
+     * @return True if likely fissile (simplified criterion)
+     */
+    static bool is_fissile(int Z, int A) {
+        // Simplified: odd-A actinides with low barrier
+        if (Z < 90) return false;  // Must be actinide
+
+        // Check specific known fissile nuclides
+        if ((Z == 92 && (A == 233 || A == 235)) ||  // U-233, U-235
+            (Z == 94 && (A == 239 || A == 241))) {  // Pu-239, Pu-241
+            return true;
+        }
+
+        // General criterion: odd-A with low barrier
+        if (A % 2 == 1) {
+            double barrier = fission_barrier(A);
+            return (barrier < 6.0);  // Rough threshold
+        }
+
+        return false;
+    }
+
+    /**
+     * @brief Check if nucleus is fissionable
+     *
+     * Fissionable: fissions with fast neutrons (E_n > threshold)
+     * U-238, Th-232 are fissionable but not fissile
+     *
+     * @param Z Atomic number
+     * @param A Mass number
+     * @return True if fissionable
+     */
+    static bool is_fissionable(int Z, int A) {
+        // All heavy nuclei (Z > 90) are fissionable with high enough energy
+        if (Z >= 90 && A > 230) return true;
+
+        // Fissility parameter check
+        double x = fissility_parameter(Z, A);
+        return (x > 0.7);  // Can fission with fast neutrons
+    }
+
+    /**
+     * @brief Check if nucleus is fertile
+     *
+     * Fertile: can be converted to fissile by neutron capture
+     * U-238 → Pu-239, Th-232 → U-233
+     *
+     * @param Z Atomic number
+     * @param A Mass number
+     * @return True if fertile
+     */
+    static bool is_fertile(int Z, int A) {
+        // U-238: fertile (→ Pu-239)
+        if (Z == 92 && A == 238) return true;
+
+        // Th-232: fertile (→ U-233)
+        if (Z == 90 && A == 232) return true;
+
+        return false;
+    }
+
+    /**
+     * @brief Binding energy per nucleon
+     *
+     * BE/A from SEMF
+     *
+     * @param A Mass number
+     * @param Z Atomic number
+     * @return BE/A (MeV/nucleon)
+     */
+    static double binding_energy_per_nucleon(int A, int Z) {
+        // Use existing SEMF binding energy
+        double BE = NuclearStability::binding_energy_semf(A, Z);
+        return BE / A;
+    }
+
+    /**
+     * @brief Spontaneous fission parameter
+     *
+     * Z²/A for spontaneous fission likelihood
+     * SF competes with α decay for Z²/A > 47
+     *
+     * @param Z Atomic number
+     * @param A Mass number
+     * @return Z²/A parameter
+     */
+    static double spontaneous_fission_parameter(int Z, int A) {
+        return (Z * Z) / static_cast<double>(A);
+    }
+
+    /**
+     * @brief Check if spontaneous fission is likely
+     *
+     * SF significant for Z²/A > 47
+     *
+     * @param Z Atomic number
+     * @param A Mass number
+     * @return True if SF likely
+     */
+    static bool spontaneous_fission_likely(int Z, int A) {
+        return (spontaneous_fission_parameter(Z, A) > 47.0);
+    }
+
+    /**
+     * @brief Asymmetry energy contribution to fission
+     *
+     * Favors symmetric fission for light fragments, asymmetric for heavy
+     *
+     * @param A Mass number
+     * @return Asymmetry preference (dimensionless)
+     */
+    static double asymmetry_energy_factor(int A) {
+        // Shell effects favor asymmetric fission for actinides
+        // A ~ 95 and A ~ 135 are magic/semi-magic
+        if (A > 230) return 1.3;  // Asymmetric preferred
+        return 0.8;  // More symmetric
+    }
+
+    /**
+     * @brief Neutron separation energy (S_n)
+     *
+     * Energy to remove one neutron
+     * S_n = B(A,Z) - B(A-1,Z)
+     *
+     * @param A Mass number
+     * @param Z Atomic number
+     * @return S_n (MeV)
+     */
+    static double neutron_separation_energy(int A, int Z) {
+        double B_A = NuclearStability::binding_energy_semf(A, Z);
+        double B_A_minus_1 = NuclearStability::binding_energy_semf(A-1, Z);
+        return B_A - B_A_minus_1;
+    }
+};
+
+/**
+ * @brief Fission Energy Release
+ *
+ * Detailed calculations of fission energy distribution
+ */
+class FissionEnergyRelease {
+public:
+    /**
+     * @brief Energy release overview
+     *
+     * Total ~200 MeV per fission
+     */
+    static std::string energy_overview() {
+        return "Fission releases ~200 MeV: fragments (168), neutrons (5), gammas (13), betas (14)";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Calculate total fission energy from mass defect
+     *
+     * Q = [M_parent + m_n - Σ M_fragments - Σ m_neutrons]c²
+     *
+     * @param A_parent Mass number of fissioning nucleus
+     * @param Z_parent Atomic number
+     * @param A_light Light fragment mass number
+     * @param Z_light Light fragment Z
+     * @param n_neutrons Number of neutrons emitted
+     * @return Q-value (MeV)
+     */
+    static double fission_q_value_from_fragments(int A_parent, int Z_parent,
+                                                   int A_light, int Z_light,
+                                                   int n_neutrons) {
+        // Heavy fragment: A_heavy = A_parent - A_light - n_neutrons
+        int A_heavy = A_parent - A_light - n_neutrons;
+        int Z_heavy = Z_parent - Z_light;
+
+        // Calculate binding energies
+        double BE_parent = NuclearStability::binding_energy_semf(A_parent, Z_parent);
+        double BE_light = NuclearStability::binding_energy_semf(A_light, Z_light);
+        double BE_heavy = NuclearStability::binding_energy_semf(A_heavy, Z_heavy);
+
+        // Q = BE_products - BE_parent
+        return (BE_light + BE_heavy) - BE_parent;
+    }
+
+    /**
+     * @brief Kinetic energy of fission fragments
+     *
+     * ~168 MeV divided between fragments
+     * Momentum conservation: p_light = p_heavy
+     *
+     * @param Q_total Total fission energy (MeV)
+     * @param A_light Light fragment mass
+     * @param A_heavy Heavy fragment mass
+     * @return Light fragment KE (MeV)
+     */
+    static double fragment_kinetic_energy_light(double Q_total, int A_light, int A_heavy) {
+        double fragment_fraction = 0.84;  // ~84% goes to fragments
+        double KE_fragments = fragment_fraction * Q_total;
+
+        // By momentum conservation: KE_light/KE_heavy = A_heavy/A_light
+        double ratio = static_cast<double>(A_heavy) / (A_light + A_heavy);
+        return KE_fragments * ratio;
+    }
+
+    /**
+     * @brief Kinetic energy of heavy fragment
+     *
+     * @param Q_total Total fission energy (MeV)
+     * @param A_light Light fragment mass
+     * @param A_heavy Heavy fragment mass
+     * @return Heavy fragment KE (MeV)
+     */
+    static double fragment_kinetic_energy_heavy(double Q_total, int A_light, int A_heavy) {
+        double fragment_fraction = 0.84;
+        double KE_fragments = fragment_fraction * Q_total;
+
+        double ratio = static_cast<double>(A_light) / (A_light + A_heavy);
+        return KE_fragments * ratio;
+    }
+
+    /**
+     * @brief Prompt neutron kinetic energy
+     *
+     * Average ~2 MeV per neutron, total ~5 MeV for ~2.5 neutrons
+     *
+     * @param n_neutrons Number of prompt neutrons
+     * @return Total neutron KE (MeV)
+     */
+    static double prompt_neutron_energy(double n_neutrons) {
+        return n_neutrons * 2.0;  // ~2 MeV per neutron average
+    }
+
+    /**
+     * @brief Prompt gamma energy
+     *
+     * ~7 MeV in prompt gammas
+     *
+     * @return Prompt gamma energy (MeV)
+     */
+    static double prompt_gamma_energy() {
+        return 7.0;  // MeV
+    }
+
+    /**
+     * @brief Beta decay energy from fission products
+     *
+     * Neutron-rich fragments undergo β⁻ decay
+     * ~7 MeV from betas + ~6 MeV from delayed gammas
+     *
+     * @return Beta decay energy (MeV)
+     */
+    static double beta_decay_energy() {
+        return 7.0;  // MeV from beta particles
+    }
+
+    /**
+     * @brief Delayed gamma energy
+     *
+     * Gammas following beta decay
+     *
+     * @return Delayed gamma energy (MeV)
+     */
+    static double delayed_gamma_energy() {
+        return 6.0;  // MeV
+    }
+
+    /**
+     * @brief Neutrino energy (lost)
+     *
+     * ~10 MeV carried away by antineutrinos
+     *
+     * @return Neutrino energy (MeV, not deposited)
+     */
+    static double neutrino_energy() {
+        return 10.0;  // MeV, escapes
+    }
+
+    /**
+     * @brief Total recoverable energy
+     *
+     * All energy minus neutrinos
+     *
+     * @return Recoverable energy (MeV)
+     */
+    static double total_recoverable_energy() {
+        return 168.0 + 5.0 + 7.0 + 7.0 + 6.0;  // 193 MeV
+    }
+
+    /**
+     * @brief Prompt energy (instantaneous release)
+     *
+     * Fragments + neutrons + prompt gammas
+     *
+     * @return Prompt energy (MeV)
+     */
+    static double prompt_energy() {
+        return 168.0 + 5.0 + 7.0;  // 180 MeV
+    }
+
+    /**
+     * @brief Delayed energy (from decay)
+     *
+     * Betas + delayed gammas (neutrinos not counted)
+     *
+     * @return Delayed energy (MeV)
+     */
+    static double delayed_energy() {
+        return 7.0 + 6.0;  // 13 MeV
+    }
+
+    /**
+     * @brief Energy per fission in reactor (time-averaged)
+     *
+     * Includes delayed energy contribution
+     *
+     * @param time_seconds Time for delayed energy accumulation
+     * @return Average energy per fission (MeV)
+     */
+    static double energy_per_fission_time_averaged(double time_seconds) {
+        double prompt = prompt_energy();
+
+        // Delayed energy builds up exponentially
+        // Characteristic time ~10 seconds
+        double tau = 10.0;  // seconds
+        double delayed = delayed_energy() * (1.0 - std::exp(-time_seconds / tau));
+
+        return prompt + delayed;
+    }
+
+    /**
+     * @brief Power from fission rate
+     *
+     * P = fission_rate × energy_per_fission
+     *
+     * @param fission_rate Fissions per second
+     * @param energy_per_fission Energy per fission (MeV)
+     * @return Power (watts)
+     */
+    static double power_from_fission_rate(double fission_rate, double energy_per_fission) {
+        double MeV_to_joules = 1.602176634e-13;
+        return fission_rate * energy_per_fission * MeV_to_joules;
+    }
+
+    /**
+     * @brief Fission rate for given power
+     *
+     * @param power_watts Reactor thermal power (W)
+     * @param energy_per_fission Energy per fission (MeV)
+     * @return Fissions per second
+     */
+    static double fission_rate_from_power(double power_watts, double energy_per_fission) {
+        double MeV_to_joules = 1.602176634e-13;
+        double energy_joules = energy_per_fission * MeV_to_joules;
+        return power_watts / energy_joules;
+    }
+
+    /**
+     * @brief Burnup energy
+     *
+     * Energy released per unit mass of fuel
+     *
+     * @param fissions_per_gram Fissions per gram
+     * @param energy_per_fission Energy per fission (MeV)
+     * @return Burnup (MWd/kg)
+     */
+    static double burnup_energy(double fissions_per_gram, double energy_per_fission) {
+        // Convert to MWd/kg
+        double MeV_to_joules = 1.602176634e-13;
+        double joules_per_gram = fissions_per_gram * energy_per_fission * MeV_to_joules;
+        double joules_per_kg = joules_per_gram * 1000.0;
+
+        // Convert to MWd
+        double seconds_per_day = 86400.0;
+        double MWd = joules_per_kg / (1.0e6 * seconds_per_day);
+
+        return MWd;
+    }
+};
+
+/**
+ * @brief Radiation Interactions with Matter
+ *
+ * Alpha, beta, neutron, and gamma interactions
+ */
+class RadiationInteractions {
+public:
+    /**
+     * @brief Interaction overview
+     *
+     * Different radiation types interact differently
+     */
+    static std::string interaction_overview() {
+        return "Radiation interactions: ionization (α,β), scattering (n), absorption (γ)";
+    }
+
+    // =========================================================================
+    // ALPHA RADIATION INTERACTIONS
+    // =========================================================================
+
+    /**
+     * @brief Alpha particle range in air
+     *
+     * Geiger-Nuttal empirical formula
+     * R_air ≈ 0.31 E^(3/2) for E in MeV, R in cm
+     *
+     * @param energy_MeV Alpha particle energy (MeV)
+     * @return Range in air (cm)
+     */
+    static double alpha_range_air(double energy_MeV) {
+        if (energy_MeV < 4.0) {
+            return 0.31 * std::pow(energy_MeV, 1.5);
+        } else {
+            return 0.325 * energy_MeV - 2.2;  // For E > 4 MeV
+        }
+    }
+
+    /**
+     * @brief Alpha particle range in tissue
+     *
+     * R_tissue ≈ R_air / 1000 (very short range)
+     *
+     * @param energy_MeV Alpha energy (MeV)
+     * @return Range in tissue (cm)
+     */
+    static double alpha_range_tissue(double energy_MeV) {
+        return alpha_range_air(energy_MeV) / 1000.0;
+    }
+
+    /**
+     * @brief Bragg peak position
+     *
+     * Maximum ionization near end of range
+     *
+     * @param energy_MeV Initial energy (MeV)
+     * @return Peak position as fraction of range
+     */
+    static double alpha_bragg_peak_position(double energy_MeV) {
+        return 0.95;  // Peak at ~95% of range
+    }
+
+    /**
+     * @brief Specific ionization for alpha
+     *
+     * Number of ion pairs per cm
+     * Very high due to large charge
+     *
+     * @param energy_MeV Alpha energy (MeV)
+     * @return Ion pairs per cm in air
+     */
+    static double alpha_specific_ionization(double energy_MeV) {
+        // Roughly 40,000-100,000 ion pairs/cm depending on energy
+        // Lower energy → higher ionization density
+        return 50000.0 / std::sqrt(energy_MeV);  // Approximate
+    }
+
+    // =========================================================================
+    // BETA RADIATION INTERACTIONS
+    // =========================================================================
+
+    /**
+     * @brief Beta particle maximum range
+     *
+     * Katz-Penfold formula for range in aluminum
+     * R_max (mg/cm²) ≈ 412 E^(1.265-0.0954 ln E) for 0.01 < E < 2.5 MeV
+     *
+     * @param energy_MeV Maximum beta energy (MeV)
+     * @return Range in aluminum (mg/cm²)
+     */
+    static double beta_range_aluminum(double energy_MeV) {
+        if (energy_MeV < 0.01) return 0.0;
+
+        if (energy_MeV < 2.5) {
+            double exponent = 1.265 - 0.0954 * std::log(energy_MeV);
+            return 412.0 * std::pow(energy_MeV, exponent);
+        } else {
+            return 530.0 * energy_MeV - 106.0;  // For E > 2.5 MeV
+        }
+    }
+
+    /**
+     * @brief Beta range in tissue
+     *
+     * Approximate conversion from aluminum
+     *
+     * @param energy_MeV Beta energy (MeV)
+     * @return Range in tissue (cm)
+     */
+    static double beta_range_tissue(double energy_MeV) {
+        double range_al = beta_range_aluminum(energy_MeV);  // mg/cm²
+        double tissue_density = 1.0;  // g/cm³
+        return range_al / (1000.0 * tissue_density);  // Convert to cm
+    }
+
+    /**
+     * @brief Bremsstrahlung yield
+     *
+     * Fraction of energy emitted as X-rays
+     * Y ≈ 3.5×10⁻⁴ Z E_max (for E in MeV)
+     *
+     * @param Z Atomic number of absorber
+     * @param energy_MeV Maximum beta energy (MeV)
+     * @return Bremsstrahlung fraction
+     */
+    static double bremsstrahlung_yield(int Z, double energy_MeV) {
+        return 3.5e-4 * Z * energy_MeV;
+    }
+
+    /**
+     * @brief Beta stopping power
+     *
+     * Energy loss per unit path length
+     * -dE/dx (MeV/cm)
+     *
+     * @param energy_MeV Beta energy (MeV)
+     * @param density Absorber density (g/cm³)
+     * @param Z Atomic number
+     * @return Stopping power (MeV/cm)
+     */
+    static double beta_stopping_power(double energy_MeV, double density, int Z) {
+        // Simplified Bethe formula
+        // Actual calculation is complex
+        double beta = std::sqrt(1.0 - 1.0/((energy_MeV/0.511 + 1.0)*(energy_MeV/0.511 + 1.0)));
+        double factor = density * Z / (beta * beta);
+        return 0.15 * factor;  // Approximate MeV/cm
+    }
+
+    // =========================================================================
+    // POSITRON RADIATION INTERACTIONS
+    // =========================================================================
+
+    /**
+     * @brief Positron range
+     *
+     * Similar to electron, but ends in annihilation
+     *
+     * @param energy_MeV Positron energy (MeV)
+     * @return Range before annihilation (cm in tissue)
+     */
+    static double positron_range_tissue(double energy_MeV) {
+        return beta_range_tissue(energy_MeV);
+    }
+
+    /**
+     * @brief Annihilation photon energy
+     *
+     * e⁺ + e⁻ → 2γ (each 0.511 MeV)
+     *
+     * @return Photon energy (MeV)
+     */
+    static double annihilation_photon_energy() {
+        return 0.511;  // MeV (electron rest mass)
+    }
+
+    /**
+     * @brief Positron annihilation probability
+     *
+     * Nearly 100% at rest
+     *
+     * @return Annihilation probability
+     */
+    static double annihilation_probability() {
+        return 1.0;  // Essentially certain
+    }
+
+    // =========================================================================
+    // NEUTRON RADIATION INTERACTIONS  // =========================================================================
+
+    /**
+     * @brief Neutron mean free path
+     *
+     * λ = 1 / (N σ_total)
+     *
+     * @param number_density Atom density (atoms/cm³)
+     * @param sigma_total Total cross-section (barns)
+     * @return Mean free path (cm)
+     */
+    static double neutron_mean_free_path(double number_density, double sigma_total) {
+        double sigma_cm2 = sigma_total * 1.0e-24;  // Convert barns to cm²
+        return 1.0 / (number_density * sigma_cm2);
+    }
+
+    /**
+     * @brief Neutron diffusion length
+     *
+     * L = √(D/Σ_a) where D = λ_tr/3
+     *
+     * @param transport_mfp Transport mean free path (cm)
+     * @param sigma_absorption Absorption cross-section (cm⁻¹)
+     * @return Diffusion length (cm)
+     */
+    static double neutron_diffusion_length(double transport_mfp, double sigma_absorption) {
+        double D = transport_mfp / 3.0;  // Diffusion coefficient
+        return std::sqrt(D / sigma_absorption);
+    }
+
+    /**
+     * @brief Neutron kerma (kinetic energy released in matter)
+     *
+     * K = φ Σ_k where Σ_k is kerma factor
+     *
+     * @param flux Neutron flux (n/cm²/s)
+     * @param kerma_factor Energy transfer coefficient (MeV·cm²/g)
+     * @return Kerma rate (MeV/g/s)
+     */
+    static double neutron_kerma(double flux, double kerma_factor) {
+        return flux * kerma_factor;
+    }
+
+    /**
+     * @brief Quality factor for neutron dose
+     *
+     * Q depends on neutron energy
+     * Thermal: Q=5, Fast: Q=10, High energy: Q=20
+     *
+     * @param energy_MeV Neutron energy (MeV)
+     * @return Quality factor Q
+     */
+    static double neutron_quality_factor(double energy_MeV) {
+        if (energy_MeV < 0.01) return 5.0;   // Thermal
+        if (energy_MeV < 0.1) return 10.0;   // Epithermal
+        if (energy_MeV < 2.0) return 10.0;   // Fast
+        if (energy_MeV < 20.0) return 20.0;  // High energy
+        return 10.0;  // Very high energy
+    }
+
+    // =========================================================================
+    // GAMMA RADIATION INTERACTIONS
+    // =========================================================================
+
+    /**
+     * @brief Photoelectric absorption cross-section
+     *
+     * τ ∝ Z^n / E^3 (n ≈ 4-5)
+     * Dominant at low energies
+     *
+     * @param Z Atomic number
+     * @param energy_MeV Gamma energy (MeV)
+     * @return Relative photoelectric probability
+     */
+    static double photoelectric_coefficient(int Z, double energy_MeV) {
+        double Z4 = Z * Z * Z * Z;
+        return Z4 / std::pow(energy_MeV, 3.0);  // Relative units
+    }
+
+    /**
+     * @brief Compton scattering cross-section
+     *
+     * Klein-Nishina formula (simplified)
+     * Dominant at intermediate energies (0.1-10 MeV)
+     *
+     * @param energy_MeV Gamma energy (MeV)
+     * @return Relative Compton probability
+     */
+    static double compton_coefficient(double energy_MeV) {
+        double alpha = energy_MeV / 0.511;  // E/m_e c²
+        // Simplified Klein-Nishina
+        double factor = 1.0 / (1.0 + 2.0 * alpha);
+        return factor;  // Relative units
+    }
+
+    /**
+     * @brief Pair production cross-section
+     *
+     * κ ∝ Z² (for E > 2m_e c² = 1.022 MeV)
+     * Dominant at high energies
+     *
+     * @param Z Atomic number
+     * @param energy_MeV Gamma energy (MeV)
+     * @return Relative pair production probability
+     */
+    static double pair_production_coefficient(int Z, double energy_MeV) {
+        if (energy_MeV < 1.022) return 0.0;  // Below threshold
+
+        double Z2 = Z * Z;
+        double excess_energy = energy_MeV - 1.022;
+        return Z2 * excess_energy;  // Relative units
+    }
+
+    /**
+     * @brief Linear attenuation coefficient
+     *
+     * μ = τ + σ + κ (photoelectric + Compton + pair production)
+     *
+     * @param Z Atomic number
+     * @param energy_MeV Gamma energy (MeV)
+     * @param density Material density (g/cm³)
+     * @return Linear attenuation coefficient (cm⁻¹)
+     */
+    static double gamma_attenuation_coefficient(int Z, double energy_MeV, double density) {
+        // Highly simplified - real values are tabulated
+        double tau = photoelectric_coefficient(Z, energy_MeV) * 1e-3;
+        double sigma = compton_coefficient(energy_MeV) * 0.1;
+        double kappa = pair_production_coefficient(Z, energy_MeV) * 1e-4;
+
+        return (tau + sigma + kappa) * density;
+    }
+
+    /**
+     * @brief Half-value layer (HVL)
+     *
+     * Thickness to reduce intensity by half
+     * HVL = ln(2) / μ
+     *
+     * @param mu Linear attenuation coefficient (cm⁻¹)
+     * @return HVL (cm)
+     */
+    static double half_value_layer(double mu) {
+        return 0.693 / mu;  // ln(2) / μ
+    }
+
+    /**
+     * @brief Tenth-value layer (TVL)
+     *
+     * Thickness to reduce to 10%
+     * TVL = ln(10) / μ
+     *
+     * @param mu Linear attenuation coefficient (cm⁻¹)
+     * @return TVL (cm)
+     */
+    static double tenth_value_layer(double mu) {
+        return 2.303 / mu;  // ln(10) / μ
+    }
+
+    /**
+     * @brief Gamma intensity after shielding
+     *
+     * I = I_0 exp(-μx)
+     *
+     * @param I_0 Initial intensity
+     * @param mu Attenuation coefficient (cm⁻¹)
+     * @param thickness Shield thickness (cm)
+     * @return Transmitted intensity
+     */
+    static double gamma_transmission(double I_0, double mu, double thickness) {
+        return I_0 * std::exp(-mu * thickness);
+    }
+
+    /**
+     * @brief Buildup factor
+     *
+     * Accounts for scattered radiation
+     * B(μx) = 1 + μx (simple linear approximation)
+     *
+     * @param mu_times_x Product of attenuation and thickness
+     * @return Buildup factor
+     */
+    static double buildup_factor(double mu_times_x) {
+        // Simplified linear buildup
+        return 1.0 + mu_times_x;
+    }
+
+    /**
+     * @brief Gamma dose rate
+     *
+     * D = A × E × μ_en/ρ where μ_en = energy absorption coefficient
+     *
+     * @param activity Activity (Bq)
+     * @param energy_MeV Gamma energy (MeV)
+     * @param mu_en_rho Energy absorption coefficient (cm²/g)
+     * @param distance Distance (cm)
+     * @return Dose rate (Gy/s)
+     */
+    static double gamma_dose_rate(double activity, double energy_MeV,
+                                   double mu_en_rho, double distance) {
+        double conversion = 1.602176634e-13;  // MeV to J
+        double flux = activity / (4.0 * M_PI * distance * distance);
+        return flux * energy_MeV * mu_en_rho * conversion;
+    }
+};
+
 } // namespace nuclear
 } // namespace physics
 
