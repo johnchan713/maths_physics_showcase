@@ -1245,6 +1245,1206 @@ inline double primeDensity(double x) {
     return 1.0 / std::log(x);
 }
 
+// ============================================================================
+// ABELIAN GROUPS
+// ============================================================================
+
+/**
+ * @class AbelianGroup
+ * @brief Abstract abelian (commutative) group
+ *
+ * An abelian group (G, +) satisfies:
+ * 1. Closure: a + b ∈ G for all a, b ∈ G
+ * 2. Associativity: (a + b) + c = a + (b + c)
+ * 3. Identity: ∃0 ∈ G such that a + 0 = a
+ * 4. Inverses: ∀a ∈ G, ∃(-a) such that a + (-a) = 0
+ * 5. Commutativity: a + b = b + a
+ */
+template<typename T>
+class AbelianGroup {
+public:
+    virtual ~AbelianGroup() = default;
+
+    // Group operation (additive notation)
+    virtual T add(const T& a, const T& b) const = 0;
+
+    // Identity element (zero)
+    virtual T zero() const = 0;
+
+    // Inverse (negation)
+    virtual T negate(const T& a) const = 0;
+
+    // Check if element is in group
+    virtual bool contains(const T& a) const = 0;
+
+    // Order of the group (-1 if infinite)
+    virtual long long order() const = 0;
+
+    // Order of an element
+    virtual long long elementOrder(const T& a) const {
+        if (!contains(a)) {
+            throw std::invalid_argument("Element not in group");
+        }
+
+        T current = a;
+        long long n = 1;
+        long long maxIter = (order() > 0) ? order() : 10000;
+
+        while (n <= maxIter) {
+            if (approxEqual(current, zero())) {
+                return n;
+            }
+            current = add(current, a);
+            n++;
+        }
+
+        return -1;  // Infinite order
+    }
+
+    // Verify commutativity
+    bool isCommutative(const T& a, const T& b) const {
+        T ab = add(a, b);
+        T ba = add(b, a);
+        return approxEqual(ab, ba);
+    }
+
+protected:
+    virtual bool approxEqual(const T& a, const T& b) const = 0;
+};
+
+/**
+ * @class IntegersModN
+ * @brief Additive group (ℤ/nℤ, +)
+ *
+ * Elements: {0, 1, 2, ..., n-1}
+ * Operation: (a + b) mod n
+ */
+class IntegersModN : public AbelianGroup<long long> {
+private:
+    long long n;
+
+public:
+    explicit IntegersModN(long long modulus) : n(modulus) {
+        if (modulus <= 0) {
+            throw std::invalid_argument("Modulus must be positive");
+        }
+    }
+
+    long long add(const long long& a, const long long& b) const override {
+        return (a + b) % n;
+    }
+
+    long long zero() const override {
+        return 0;
+    }
+
+    long long negate(const long long& a) const override {
+        return (n - a) % n;
+    }
+
+    bool contains(const long long& a) const override {
+        return a >= 0 && a < n;
+    }
+
+    long long order() const override {
+        return n;
+    }
+
+    long long getModulus() const {
+        return n;
+    }
+
+protected:
+    bool approxEqual(const long long& a, const long long& b) const override {
+        return a == b;
+    }
+};
+
+// ============================================================================
+// SUBGROUPS
+// ============================================================================
+
+/**
+ * @brief Check if subset is a subgroup of abelian group
+ *
+ * H ⊆ G is a subgroup if:
+ * 1. 0 ∈ H
+ * 2. If a, b ∈ H, then a + b ∈ H
+ * 3. If a ∈ H, then -a ∈ H
+ *
+ * @param elements Elements of potential subgroup
+ * @param group Parent group
+ * @return true if H is a subgroup
+ */
+template<typename T>
+bool isSubgroup(const std::vector<T>& elements, const AbelianGroup<T>& group) {
+    if (elements.empty()) {
+        return false;
+    }
+
+    // Check identity
+    T zero_elem = group.zero();
+    bool hasZero = false;
+    for (const auto& elem : elements) {
+        if (group.approxEqual(elem, zero_elem)) {
+            hasZero = true;
+            break;
+        }
+    }
+    if (!hasZero) {
+        return false;
+    }
+
+    // Check closure and inverses
+    for (const auto& a : elements) {
+        // Check inverse
+        T neg_a = group.negate(a);
+        bool hasInverse = false;
+        for (const auto& elem : elements) {
+            if (group.approxEqual(elem, neg_a)) {
+                hasInverse = true;
+                break;
+            }
+        }
+        if (!hasInverse) {
+            return false;
+        }
+
+        // Check closure
+        for (const auto& b : elements) {
+            T sum = group.add(a, b);
+            bool inSubgroup = false;
+            for (const auto& elem : elements) {
+                if (group.approxEqual(elem, sum)) {
+                    inSubgroup = true;
+                    break;
+                }
+            }
+            if (!inSubgroup) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+/**
+ * @brief Generate cyclic subgroup <a> = {0, a, 2a, 3a, ...}
+ *
+ * @param generator Generator element
+ * @param group Parent group
+ * @return Elements of cyclic subgroup
+ */
+template<typename T>
+std::vector<T> cyclicSubgroup(const T& generator, const AbelianGroup<T>& group) {
+    std::vector<T> subgroup;
+    T current = group.zero();
+
+    long long maxIter = (group.order() > 0) ? group.order() : 1000;
+
+    for (long long i = 0; i < maxIter; ++i) {
+        // Check if current is already in subgroup
+        bool found = false;
+        for (const auto& elem : subgroup) {
+            if (group.approxEqual(elem, current)) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            break;  // Cyclic group complete
+        }
+
+        subgroup.push_back(current);
+        current = group.add(current, generator);
+    }
+
+    return subgroup;
+}
+
+// ============================================================================
+// COSETS AND QUOTIENT GROUPS
+// ============================================================================
+
+/**
+ * @brief Compute left coset a + H = {a + h : h ∈ H}
+ *
+ * @param a Element of group
+ * @param subgroup Elements of subgroup H
+ * @param group Parent group
+ * @return Elements of coset a + H
+ */
+template<typename T>
+std::vector<T> leftCoset(const T& a, const std::vector<T>& subgroup,
+                        const AbelianGroup<T>& group) {
+    std::vector<T> coset;
+
+    for (const auto& h : subgroup) {
+        T elem = group.add(a, h);
+        coset.push_back(elem);
+    }
+
+    return coset;
+}
+
+/**
+ * @brief Compute all cosets of H in G
+ *
+ * Returns G/H = {g + H : g ∈ G}
+ *
+ * @param group_elements All elements of G
+ * @param subgroup Elements of subgroup H
+ * @param group Parent group
+ * @return Vector of cosets (each coset is a vector of elements)
+ */
+template<typename T>
+std::vector<std::vector<T>> quotientGroup(const std::vector<T>& group_elements,
+                                          const std::vector<T>& subgroup,
+                                          const AbelianGroup<T>& group) {
+    std::vector<std::vector<T>> cosets;
+    std::set<size_t> used;  // Track which elements are already in a coset
+
+    for (size_t i = 0; i < group_elements.size(); ++i) {
+        if (used.count(i) > 0) {
+            continue;
+        }
+
+        // Compute coset of group_elements[i]
+        std::vector<T> coset = leftCoset(group_elements[i], subgroup, group);
+        cosets.push_back(coset);
+
+        // Mark all elements in this coset as used
+        for (const auto& c : coset) {
+            for (size_t j = 0; j < group_elements.size(); ++j) {
+                if (group.approxEqual(group_elements[j], c)) {
+                    used.insert(j);
+                }
+            }
+        }
+    }
+
+    return cosets;
+}
+
+/**
+ * @brief Compute index [G : H] = |G| / |H|
+ *
+ * @param group_order Order of group G
+ * @param subgroup_order Order of subgroup H
+ * @return Index [G : H]
+ */
+inline long long groupIndex(long long group_order, long long subgroup_order) {
+    if (subgroup_order == 0) {
+        throw std::invalid_argument("Subgroup order cannot be zero");
+    }
+
+    if (group_order % subgroup_order != 0) {
+        throw std::invalid_argument("Subgroup order must divide group order (Lagrange)");
+    }
+
+    return group_order / subgroup_order;
+}
+
+// ============================================================================
+// GROUP HOMOMORPHISMS AND ISOMORPHISMS
+// ============================================================================
+
+/**
+ * @brief Check if map is a group homomorphism
+ *
+ * φ: G → H is a homomorphism if φ(a + b) = φ(a) + φ(b)
+ *
+ * @param elementsG Elements of group G
+ * @param groupG Group G
+ * @param groupH Group H
+ * @param phi The homomorphism φ
+ * @return true if φ is a homomorphism
+ */
+template<typename T, typename U>
+bool isGroupHomomorphism(const std::vector<T>& elementsG,
+                        const AbelianGroup<T>& groupG,
+                        const AbelianGroup<U>& groupH,
+                        std::function<U(const T&)> phi) {
+    // Check φ(a + b) = φ(a) + φ(b)
+    for (const auto& a : elementsG) {
+        for (const auto& b : elementsG) {
+            T sum_G = groupG.add(a, b);
+            U left = phi(sum_G);
+
+            U phi_a = phi(a);
+            U phi_b = phi(b);
+            U right = groupH.add(phi_a, phi_b);
+
+            if (!groupH.approxEqual(left, right)) {
+                return false;
+            }
+        }
+    }
+
+    // Also check φ(0) = 0
+    T zero_G = groupG.zero();
+    U zero_H = groupH.zero();
+    U phi_zero = phi(zero_G);
+
+    return groupH.approxEqual(phi_zero, zero_H);
+}
+
+/**
+ * @brief Compute kernel of homomorphism
+ *
+ * ker(φ) = {g ∈ G : φ(g) = 0}
+ *
+ * @param elements Elements of G
+ * @param groupG Group G
+ * @param groupH Group H
+ * @param phi Homomorphism φ: G → H
+ * @return Elements in kernel
+ */
+template<typename T, typename U>
+std::vector<T> kernelOfHomomorphism(const std::vector<T>& elements,
+                                    const AbelianGroup<T>& groupG,
+                                    const AbelianGroup<U>& groupH,
+                                    std::function<U(const T&)> phi) {
+    std::vector<T> kernel;
+    U zero_H = groupH.zero();
+
+    for (const auto& g : elements) {
+        U phi_g = phi(g);
+        if (groupH.approxEqual(phi_g, zero_H)) {
+            kernel.push_back(g);
+        }
+    }
+
+    return kernel;
+}
+
+// ============================================================================
+// CYCLIC GROUPS
+// ============================================================================
+
+/**
+ * @brief Check if group is cyclic
+ *
+ * A group is cyclic if it can be generated by a single element
+ *
+ * @param elements All elements of group
+ * @param group The group
+ * @return true if cyclic, along with a generator
+ */
+template<typename T>
+std::pair<bool, T> isCyclic(const std::vector<T>& elements,
+                            const AbelianGroup<T>& group) {
+    // Try each element as potential generator
+    for (const auto& g : elements) {
+        std::vector<T> generated = cyclicSubgroup(g, group);
+
+        // Check if generated equals full group
+        if (generated.size() == elements.size()) {
+            // Verify all elements are present
+            bool isGenerator = true;
+            for (const auto& elem : elements) {
+                bool found = false;
+                for (const auto& gen_elem : generated) {
+                    if (group.approxEqual(elem, gen_elem)) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    isGenerator = false;
+                    break;
+                }
+            }
+
+            if (isGenerator) {
+                return {true, g};
+            }
+        }
+    }
+
+    return {false, group.zero()};
+}
+
+// ============================================================================
+// STRUCTURE OF FINITE ABELIAN GROUPS
+// ============================================================================
+
+/**
+ * @brief Fundamental theorem of finite abelian groups
+ *
+ * Every finite abelian group is isomorphic to a direct product of cyclic groups:
+ * G ≅ ℤ/n₁ℤ × ℤ/n₂ℤ × ... × ℤ/nₖℤ
+ *
+ * where n₁ | n₂ | ... | nₖ (divisibility chain)
+ *
+ * This computes the invariant factors
+ *
+ * @param groupOrder Order of the finite abelian group
+ * @return Vector of invariant factors
+ */
+inline std::vector<long long> invariantFactors(long long groupOrder) {
+    if (groupOrder <= 0) {
+        throw std::invalid_argument("Group order must be positive");
+    }
+
+    // For a cyclic group of order n, return {n}
+    // For more complex groups, would need group structure information
+    // This is a simplified version
+
+    std::vector<long long> factors;
+
+    // Factorize the group order
+    long long n = groupOrder;
+    std::map<long long, int> prime_powers;
+
+    for (long long p = 2; p * p <= n; ++p) {
+        while (n % p == 0) {
+            prime_powers[p]++;
+            n /= p;
+        }
+    }
+    if (n > 1) {
+        prime_powers[n]++;
+    }
+
+    // For cyclic case: single factor = group order
+    factors.push_back(groupOrder);
+
+    return factors;
+}
+
+/**
+ * @brief Check if integer is cyclic group order
+ *
+ * ℤ/nℤ is cyclic for all n
+ *
+ * @param n Order
+ * @return true (always cyclic for ℤ/nℤ)
+ */
+inline bool isIntegersModNCyclic(long long n) {
+    return true;  // ℤ/nℤ is always cyclic
+}
+
+// ============================================================================
+// RINGS
+// ============================================================================
+
+/**
+ * @class Ring
+ * @brief Abstract ring structure
+ *
+ * A ring (R, +, ×) consists of:
+ * 1. An abelian group (R, +)
+ * 2. Associative multiplication: (ab)c = a(bc)
+ * 3. Distributivity: a(b+c) = ab + ac, (a+b)c = ac + bc
+ * 4. Multiplicative identity (for unital rings): 1 ∈ R
+ */
+template<typename T>
+class Ring {
+public:
+    virtual ~Ring() = default;
+
+    // Addition (abelian group operation)
+    virtual T add(const T& a, const T& b) const = 0;
+    virtual T zero() const = 0;
+    virtual T negate(const T& a) const = 0;
+
+    // Multiplication
+    virtual T multiply(const T& a, const T& b) const = 0;
+    virtual T one() const = 0;  // Multiplicative identity
+
+    // Ring properties
+    virtual bool contains(const T& a) const = 0;
+
+    // Check if ring is commutative
+    bool isCommutative(const T& a, const T& b) const {
+        T ab = multiply(a, b);
+        T ba = multiply(b, a);
+        return approxEqual(ab, ba);
+    }
+
+    // Verify distributivity
+    bool verifyDistributivity(const T& a, const T& b, const T& c) const {
+        // Left distributivity: a(b + c) = ab + ac
+        T left = multiply(a, add(b, c));
+        T right = add(multiply(a, b), multiply(a, c));
+
+        if (!approxEqual(left, right)) {
+            return false;
+        }
+
+        // Right distributivity: (a + b)c = ac + bc
+        left = multiply(add(a, b), c);
+        right = add(multiply(a, c), multiply(b, c));
+
+        return approxEqual(left, right);
+    }
+
+protected:
+    virtual bool approxEqual(const T& a, const T& b) const = 0;
+};
+
+/**
+ * @class IntegersModNRing
+ * @brief Ring ℤ/nℤ
+ *
+ * Addition and multiplication modulo n
+ */
+class IntegersModNRing : public Ring<long long> {
+private:
+    long long n;
+
+public:
+    explicit IntegersModNRing(long long modulus) : n(modulus) {
+        if (modulus <= 0) {
+            throw std::invalid_argument("Modulus must be positive");
+        }
+    }
+
+    long long add(const long long& a, const long long& b) const override {
+        return (a + b) % n;
+    }
+
+    long long zero() const override {
+        return 0;
+    }
+
+    long long negate(const long long& a) const override {
+        return (n - a) % n;
+    }
+
+    long long multiply(const long long& a, const long long& b) const override {
+        return (a * b) % n;
+    }
+
+    long long one() const override {
+        return 1;
+    }
+
+    bool contains(const long long& a) const override {
+        return a >= 0 && a < n;
+    }
+
+    long long getModulus() const {
+        return n;
+    }
+
+protected:
+    bool approxEqual(const long long& a, const long long& b) const override {
+        return a == b;
+    }
+};
+
+// ============================================================================
+// POLYNOMIAL RINGS
+// ============================================================================
+
+/**
+ * @class Polynomial
+ * @brief Polynomial with integer coefficients
+ *
+ * Represents a polynomial a₀ + a₁x + a₂x² + ... + aₙxⁿ
+ */
+class Polynomial {
+private:
+    std::vector<long long> coeffs;  // coeffs[i] is coefficient of x^i
+
+    void normalize() {
+        // Remove leading zeros
+        while (coeffs.size() > 1 && coeffs.back() == 0) {
+            coeffs.pop_back();
+        }
+        if (coeffs.empty()) {
+            coeffs.push_back(0);
+        }
+    }
+
+public:
+    Polynomial() : coeffs({0}) {}
+
+    explicit Polynomial(const std::vector<long long>& c) : coeffs(c) {
+        if (coeffs.empty()) {
+            coeffs.push_back(0);
+        }
+        normalize();
+    }
+
+    explicit Polynomial(long long constant) : coeffs({constant}) {}
+
+    // Degree of polynomial
+    int degree() const {
+        if (coeffs.size() == 1 && coeffs[0] == 0) {
+            return -1;  // Zero polynomial has degree -1 or -∞
+        }
+        return static_cast<int>(coeffs.size()) - 1;
+    }
+
+    // Get coefficient of x^i
+    long long operator[](size_t i) const {
+        return (i < coeffs.size()) ? coeffs[i] : 0;
+    }
+
+    // Addition
+    Polynomial operator+(const Polynomial& other) const {
+        size_t max_size = std::max(coeffs.size(), other.coeffs.size());
+        std::vector<long long> result(max_size, 0);
+
+        for (size_t i = 0; i < coeffs.size(); ++i) {
+            result[i] += coeffs[i];
+        }
+        for (size_t i = 0; i < other.coeffs.size(); ++i) {
+            result[i] += other.coeffs[i];
+        }
+
+        return Polynomial(result);
+    }
+
+    // Subtraction
+    Polynomial operator-(const Polynomial& other) const {
+        size_t max_size = std::max(coeffs.size(), other.coeffs.size());
+        std::vector<long long> result(max_size, 0);
+
+        for (size_t i = 0; i < coeffs.size(); ++i) {
+            result[i] += coeffs[i];
+        }
+        for (size_t i = 0; i < other.coeffs.size(); ++i) {
+            result[i] -= other.coeffs[i];
+        }
+
+        return Polynomial(result);
+    }
+
+    // Multiplication
+    Polynomial operator*(const Polynomial& other) const {
+        if (degree() < 0 || other.degree() < 0) {
+            return Polynomial(0);
+        }
+
+        size_t result_size = coeffs.size() + other.coeffs.size() - 1;
+        std::vector<long long> result(result_size, 0);
+
+        for (size_t i = 0; i < coeffs.size(); ++i) {
+            for (size_t j = 0; j < other.coeffs.size(); ++j) {
+                result[i + j] += coeffs[i] * other.coeffs[j];
+            }
+        }
+
+        return Polynomial(result);
+    }
+
+    // Equality
+    bool operator==(const Polynomial& other) const {
+        return coeffs == other.coeffs;
+    }
+
+    // Evaluate at x
+    long long evaluate(long long x) const {
+        long long result = 0;
+        long long x_power = 1;
+
+        for (long long c : coeffs) {
+            result += c * x_power;
+            x_power *= x;
+        }
+
+        return result;
+    }
+
+    const std::vector<long long>& getCoeffs() const {
+        return coeffs;
+    }
+};
+
+// ============================================================================
+// IDEALS AND QUOTIENT RINGS
+// ============================================================================
+
+/**
+ * @brief Check if subset is an ideal of ℤ/nℤ
+ *
+ * I ⊆ R is an ideal if:
+ * 1. I is a subgroup under addition
+ * 2. For all r ∈ R and i ∈ I: ri ∈ I and ir ∈ I
+ *
+ * In ℤ/nℤ, ideals are of the form (d) = {kd mod n : k ∈ ℤ} where d | n
+ *
+ * @param elements Elements of potential ideal
+ * @param ring The ring ℤ/nℤ
+ * @return true if I is an ideal
+ */
+inline bool isIdealOfIntegersModN(const std::vector<long long>& elements,
+                                   const IntegersModNRing& ring) {
+    if (elements.empty()) {
+        return false;
+    }
+
+    long long n = ring.getModulus();
+
+    // Check if subgroup under addition
+    // (Simplified: we check closure and 0)
+
+    bool hasZero = false;
+    for (auto elem : elements) {
+        if (elem == 0) {
+            hasZero = true;
+            break;
+        }
+    }
+    if (!hasZero) {
+        return false;
+    }
+
+    // Check absorption: for all r in ring and i in ideal, r*i in ideal
+    for (long long r = 0; r < n; ++r) {
+        for (auto i : elements) {
+            long long product = (r * i) % n;
+
+            bool found = false;
+            for (auto elem : elements) {
+                if (elem == product) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+/**
+ * @brief Generate principal ideal (a) in ℤ/nℤ
+ *
+ * (a) = {ka mod n : k ∈ ℤ}
+ *
+ * @param generator Generator a
+ * @param n Modulus
+ * @return Elements of ideal (a)
+ */
+inline std::vector<long long> principalIdeal(long long generator, long long n) {
+    std::vector<long long> ideal;
+    std::set<long long> seen;
+
+    long long current = 0;
+    while (seen.find(current) == seen.end()) {
+        seen.insert(current);
+        ideal.push_back(current);
+        current = (current + generator) % n;
+    }
+
+    std::sort(ideal.begin(), ideal.end());
+    return ideal;
+}
+
+// ============================================================================
+// STRUCTURE OF ℤ*_n (MULTIPLICATIVE GROUP MOD N)
+// ============================================================================
+
+/**
+ * @brief Compute ℤ*_n = units (invertible elements) in ℤ/nℤ
+ *
+ * ℤ*_n = {a ∈ ℤ/nℤ : gcd(a, n) = 1}
+ *
+ * |ℤ*_n| = φ(n) (Euler's totient)
+ *
+ * @param n Modulus
+ * @return Elements of ℤ*_n
+ */
+inline std::vector<long long> unitsModN(long long n) {
+    if (n <= 0) {
+        throw std::invalid_argument("n must be positive");
+    }
+
+    std::vector<long long> units;
+
+    for (long long a = 1; a < n; ++a) {
+        if (gcd(a, n) == 1) {
+            units.push_back(a);
+        }
+    }
+
+    return units;
+}
+
+/**
+ * @brief Check if ℤ*_n is cyclic
+ *
+ * ℤ*_n is cyclic iff n = 1, 2, 4, p^k, or 2p^k
+ * where p is an odd prime
+ *
+ * @param n Modulus
+ * @return true if ℤ*_n is cyclic
+ */
+inline bool isUnitsModNCyclic(long long n) {
+    if (n == 1 || n == 2 || n == 4) {
+        return true;
+    }
+
+    // Check if n = p^k for odd prime p
+    for (long long p = 3; p * p <= n; p += 2) {
+        if (n % p == 0) {
+            long long temp = n;
+            while (temp % p == 0) {
+                temp /= p;
+            }
+            if (temp == 1) {
+                return true;  // n = p^k
+            }
+            if (temp == 2) {
+                return true;  // n = 2p^k
+            }
+            return false;
+        }
+    }
+
+    // n is prime
+    if (isPrime(n)) {
+        return true;
+    }
+
+    // Check if n = 2p where p is odd prime
+    if (n % 2 == 0) {
+        long long half = n / 2;
+        if (isPrime(half)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * @brief Find a generator of ℤ*_n (if cyclic)
+ *
+ * @param n Modulus
+ * @return A generator of ℤ*_n
+ */
+inline long long generatorOfUnitsModN(long long n) {
+    if (!isUnitsModNCyclic(n)) {
+        throw std::invalid_argument("ℤ*_n is not cyclic for this n");
+    }
+
+    std::vector<long long> units = unitsModN(n);
+    long long phi_n = units.size();
+
+    // Try each unit as potential generator
+    for (long long g : units) {
+        // Check if order of g is φ(n)
+        long long current = g;
+        long long order = 1;
+
+        while (current != 1 && order <= phi_n) {
+            current = (current * g) % n;
+            order++;
+        }
+
+        if (order == phi_n) {
+            return g;
+        }
+    }
+
+    throw std::runtime_error("Generator not found (should not happen for cyclic group)");
+}
+
+// ============================================================================
+// ADVANCED PRIMALITY TESTING
+// ============================================================================
+
+/**
+ * @brief Enhanced Miller-Rabin primality test
+ *
+ * Deterministic for n < 3,317,044,064,679,887,385,961,981 using specific witnesses
+ *
+ * @param n Number to test
+ * @param witnesses Specific witnesses to test (if empty, use random)
+ * @return true if probably prime
+ */
+inline bool millerRabinDeterministic(long long n,
+                                     const std::vector<long long>& witnesses = {}) {
+    if (n <= 1) return false;
+    if (n == 2 || n == 3) return true;
+    if (n % 2 == 0) return false;
+
+    // Write n-1 as 2^r × d
+    long long d = n - 1;
+    int r = 0;
+    while (d % 2 == 0) {
+        d /= 2;
+        r++;
+    }
+
+    // Use deterministic witnesses for small n
+    std::vector<long long> test_witnesses;
+    if (witnesses.empty()) {
+        // Deterministic set for n < 3,317,044,064,679,887,385,961,981
+        test_witnesses = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37};
+    } else {
+        test_witnesses = witnesses;
+    }
+
+    // Witness loop
+    for (long long a : test_witnesses) {
+        if (a >= n) continue;
+
+        long long x = modPow(a, d, n);
+
+        if (x == 1 || x == n - 1) {
+            continue;
+        }
+
+        bool composite = true;
+        for (int i = 0; i < r - 1; ++i) {
+            x = modPow(x, 2, n);
+            if (x == n - 1) {
+                composite = false;
+                break;
+            }
+        }
+
+        if (composite) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+/**
+ * @brief Generate random prime in range [low, high]
+ *
+ * Uses Miller-Rabin for primality testing
+ *
+ * @param low Lower bound
+ * @param high Upper bound
+ * @param maxAttempts Maximum attempts before giving up
+ * @return Random prime in [low, high]
+ */
+inline long long generateRandomPrime(long long low, long long high,
+                                     int maxAttempts = 1000) {
+    if (low > high) {
+        throw std::invalid_argument("Invalid range");
+    }
+    if (low < 2) {
+        low = 2;
+    }
+
+    std::srand(std::time(nullptr));
+
+    for (int attempt = 0; attempt < maxAttempts; ++attempt) {
+        // Generate random odd number in range
+        long long candidate = low + (std::rand() % (high - low + 1));
+        if (candidate % 2 == 0 && candidate > 2) {
+            candidate++;
+        }
+        if (candidate > high) {
+            candidate = high;
+        }
+
+        if (millerRabinDeterministic(candidate)) {
+            return candidate;
+        }
+    }
+
+    throw std::runtime_error("Failed to generate prime in range after max attempts");
+}
+
+// ============================================================================
+// PERFECT POWER TESTING
+// ============================================================================
+
+/**
+ * @brief Test if n is a perfect power: n = m^k for some k ≥ 2
+ *
+ * @param n Number to test
+ * @return Pair (isPerfectPower, exponent) where exponent is largest k
+ */
+inline std::pair<bool, int> isPerfectPower(long long n) {
+    if (n <= 1) {
+        return {true, 0};  // 0 and 1 are trivial perfect powers
+    }
+
+    // Test for each possible exponent k from 2 to log₂(n)
+    int maxExp = static_cast<int>(std::log2(n)) + 1;
+
+    for (int k = 2; k <= maxExp; ++k) {
+        // Binary search for m such that m^k = n
+        long long low = 1;
+        long long high = static_cast<long long>(std::pow(n, 1.0 / k)) + 2;
+
+        while (low <= high) {
+            long long mid = low + (high - low) / 2;
+
+            // Compute mid^k carefully to avoid overflow
+            long long power = 1;
+            bool overflow = false;
+            for (int i = 0; i < k; ++i) {
+                if (power > n / mid) {
+                    overflow = true;
+                    break;
+                }
+                power *= mid;
+            }
+
+            if (overflow) {
+                high = mid - 1;
+                continue;
+            }
+
+            if (power == n) {
+                return {true, k};
+            } else if (power < n) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+    }
+
+    return {false, 1};
+}
+
+/**
+ * @brief Extract perfect power factorization
+ *
+ * If n = m^k, returns (m, k) with m not a perfect power
+ *
+ * @param n Number to factor
+ * @return Pair (base, exponent)
+ */
+inline std::pair<long long, int> perfectPowerFactorization(long long n) {
+    if (n <= 1) {
+        return {n, 1};
+    }
+
+    int totalExp = 1;
+    long long current = n;
+
+    while (true) {
+        auto [isPower, exp] = isPerfectPower(current);
+
+        if (!isPower) {
+            break;
+        }
+
+        // current = base^exp
+        long long base = static_cast<long long>(std::pow(current, 1.0 / exp) + 0.5);
+        current = base;
+        totalExp *= exp;
+    }
+
+    return {current, totalExp};
+}
+
+// ============================================================================
+// PRIME POWER FACTORING
+// ============================================================================
+
+/**
+ * @brief Test if n is a prime power: n = p^k for prime p
+ *
+ * @param n Number to test
+ * @return Pair (isPrimePower, {prime, exponent})
+ */
+inline std::pair<bool, std::pair<long long, int>> isPrimePower(long long n) {
+    if (n <= 1) {
+        return {false, {0, 0}};
+    }
+
+    // First check if n is a perfect power
+    auto [base, exp] = perfectPowerFactorization(n);
+
+    // Check if base is prime
+    if (isPrime(base)) {
+        return {true, {base, exp}};
+    }
+
+    return {false, {0, 0}};
+}
+
+/**
+ * @brief Simple trial division factorization
+ *
+ * Returns prime factorization of n
+ *
+ * @param n Number to factor
+ * @return Map of {prime : exponent}
+ */
+inline std::map<long long, int> trialDivisionFactorization(long long n) {
+    std::map<long long, int> factors;
+
+    if (n <= 1) {
+        return factors;
+    }
+
+    // Check for factor 2
+    while (n % 2 == 0) {
+        factors[2]++;
+        n /= 2;
+    }
+
+    // Check odd factors
+    for (long long p = 3; p * p <= n; p += 2) {
+        while (n % p == 0) {
+            factors[p]++;
+            n /= p;
+        }
+    }
+
+    // If n > 1, then it's a prime factor
+    if (n > 1) {
+        factors[n]++;
+    }
+
+    return factors;
+}
+
+/**
+ * @brief Compute Euler's phi function from prime factorization
+ *
+ * φ(n) = n × ∏(1 - 1/p) for each prime p dividing n
+ *
+ * @param factorization Prime factorization map
+ * @return φ(n)
+ */
+inline long long eulerPhiFromFactorization(const std::map<long long, int>& factorization) {
+    long long phi = 1;
+
+    for (const auto& [prime, exp] : factorization) {
+        // φ(p^k) = p^k - p^(k-1) = p^(k-1) × (p - 1)
+        long long p_power = 1;
+        for (int i = 0; i < exp - 1; ++i) {
+            p_power *= prime;
+        }
+        phi *= p_power * (prime - 1);
+    }
+
+    return phi;
+}
+
+/**
+ * @brief Compute n from prime factorization
+ *
+ * @param factorization Prime factorization map
+ * @return n = ∏ p^e
+ */
+inline long long reconstructFromFactorization(const std::map<long long, int>& factorization) {
+    long long n = 1;
+
+    for (const auto& [prime, exp] : factorization) {
+        for (int i = 0; i < exp; ++i) {
+            n *= prime;
+        }
+    }
+
+    return n;
+}
+
 } // namespace number_theory
 } // namespace maths
 
