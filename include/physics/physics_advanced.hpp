@@ -10,97 +10,74 @@
  *
  * Categories:
  * 1. Classical Mechanics (Hamiltonian, Phase Space, Liouville)
- * 2. Electromagnetism (Tensors, Gauge Theory)
- * 3. Relativity (General Relativity, Geodesics)
- * 4. Wave Theory (Green Functions, Waveguides, Diffraction)
- * 5. Thermodynamics (Statistical, Coefficients)
- * 6. Quantum Mechanics (Schrödinger, Dirac, Perturbation)
- * 7. Condensed Matter (Superconductivity, Magnetism)
- * 8. Plasma Physics (Transport, Collision-Radiative)
- * 9. Advanced Quantum Theory (Group Theory, Tensor Operators)
+ * 2. Cosmology (Friedmann equations, early universe, CMB)
+ * 3. Fluid Dynamics (Turbulence, boundary layers, compressible flow)
+ * 4. Gauge Theory (Gauge invariance, Higgs mechanism, CP violation)
+ * 5. Quantum Field Theory (Particle physics, QGP, supersymmetry)
+ * 6. Quantum Mechanics (Advanced QM, quantum chemistry, foundations)
+ * 7. Specialized (Loop quantum gravity, operator algebras, nuclear physics)
  *
  * Requirements:
  * - C++17 or later
- * - Eigen3 library
- * - Boost (optional, for special functions)
+ * - Standard library only (header-only implementation)
  */
 
 // Category 1: Classical Mechanics
-#include "classical/hamiltonian.hpp"
-#include "classical/phase_space.hpp"
-#include "classical/liouville.hpp"
+#include "classical_hamiltonian.hpp"
+#include "classical_phase_space.hpp"
+#include "classical_liouville.hpp"
 
-// Category 2: Electromagnetism
-#include "electromagnetism/field_tensor.hpp"
-#include "electromagnetism/stress_energy_tensor.hpp"
-#include "electromagnetism/gauge_theory.hpp"
+// Category 2: Cosmology
+#include "cosmology_friedmann_equations.hpp"
+#include "cosmology_expanding_universe.hpp"
+#include "cosmology_energy_density.hpp"
+#include "cosmology_early_universe.hpp"
 
-// Category 3: Relativity
-#include "relativity/metric_tensor.hpp"
-#include "relativity/christoffel.hpp"
-#include "relativity/riemann_tensor.hpp"
-#include "relativity/einstein_tensor.hpp"
-#include "relativity/geodesics.hpp"
+// Category 3: Fluid Dynamics
+#include "fluid_dynamics_governing_equations.hpp"
+#include "fluid_dynamics_dimensionless_numbers.hpp"
+#include "fluid_dynamics_flow_types.hpp"
+#include "fluid_dynamics_boundary_layer.hpp"
+#include "fluid_dynamics_turbulence.hpp"
+#include "fluid_dynamics_vorticity.hpp"
+#include "fluid_dynamics_compressible_flow.hpp"
 
-// Category 4: Wave Theory
-#include "waves/green_functions.hpp"
-#include "waves/waveguides.hpp"
-#include "waves/spherical_waves.hpp"
-#include "waves/diffraction.hpp"
+// Category 4: Gauge Theory
+#include "gauge_theory_gauge_invariance.hpp"
+#include "gauge_theory_higgs_mechanism.hpp"
+#include "gauge_theory_running_couplings.hpp"
+#include "gauge_theory_symmetries.hpp"
+#include "gauge_theory_helicity.hpp"
+#include "gauge_theory_cp_violation_kaons.hpp"
 
-// Category 5: Thermodynamics
-#include "thermodynamics/coefficients.hpp"
-#include "thermodynamics/equation_of_state.hpp"
+// Category 5: Quantum Field Theory
+#include "qft_particle_physics.hpp"
+#include "qft_spin_statistics.hpp"
+#include "qft_antiparticles.hpp"
+#include "qft_interactions.hpp"
+#include "qft_cross_sections.hpp"
+#include "qft_decays.hpp"
+#include "qft_quark_gluon_plasma.hpp"
+#include "qft_supersymmetry.hpp"
 
-// Category 6: Quantum Mechanics
-#include "quantum/schrodinger_solver.hpp"
-#include "quantum/dirac_equation.hpp"
-#include "quantum/perturbation_theory.hpp"
-#include "quantum/spin_matrices.hpp"
+// Category 6: Advanced Quantum Mechanics
+#include "advanced_quantum_mechanics.hpp"
+#include "quantum_chemistry.hpp"
+#include "quantum_foundations.hpp"
+#include "relativistic_quantum_mechanics.hpp"
 
-// Category 7: Condensed Matter
-#include "condensed_matter/superconductivity.hpp"
-#include "condensed_matter/magnetism.hpp"
-
-// Category 8: Plasma Physics
-#include "plasma/plasma_state.hpp"
-#include "plasma/transport.hpp"
-
-// Category 9: Advanced Quantum
-#include "advanced_quantum/clebsch_gordan.hpp"
-#include "advanced_quantum/wigner_eckart.hpp"
-#include "advanced_quantum/group_theory.hpp"
+// Category 7: Specialized Topics
+#include "loop_quantum_gravity.hpp"
+#include "operator_algebras.hpp"
+#include "nuclear_physics.hpp"
 
 namespace physics::advanced {
 
-/**
- * @brief Version information
- */
 struct Version {
     static constexpr int MAJOR = 2;
     static constexpr int MINOR = 0;
     static constexpr int PATCH = 0;
-
-    static std::string string() {
-        return std::to_string(MAJOR) + "." +
-               std::to_string(MINOR) + "." +
-               std::to_string(PATCH);
-    }
 };
-
-/**
- * @brief Initialize advanced physics library
- *
- * Call this before using advanced features.
- * Sets up numerical precision, threading, etc.
- */
-inline void initialize() {
-    // Set Eigen to use all available threads
-    Eigen::initParallel();
-
-    // Set numerical precision defaults
-    // (Could customize based on application needs)
-}
 
 } // namespace physics::advanced
 
