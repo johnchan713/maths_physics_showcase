@@ -1061,6 +1061,787 @@ public:
     }
 };
 
+/**
+ * @brief Neutron Scattering
+ *
+ * Elastic and inelastic scattering of neutrons
+ */
+class NeutronScattering {
+public:
+    /**
+     * @brief Elastic scattering overview
+     *
+     * n + A → n + A (KE conserved in CM frame)
+     */
+    static std::string elastic_description() {
+        return "Elastic: (n,n) - neutron scatters, nucleus recoils, no excitation";
+    }
+
+    /**
+     * @brief Inelastic scattering overview
+     *
+     * n + A → n + A* (nucleus left in excited state)
+     */
+    static std::string inelastic_description() {
+        return "Inelastic: (n,n') - neutron loses energy, nucleus excited";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Average scattering cosine (elastic)
+     *
+     * μ_avg = 2/(3A) for A >> 1
+     *
+     * @param A Mass number
+     * @return Average cosine of scattering angle
+     */
+    static double average_scattering_cosine(int A) {
+        if (A <= 0) return 0.0;
+        return 2.0 / (3.0 * A);
+    }
+
+    /**
+     * @brief Average logarithmic energy decrement (elastic)
+     *
+     * ξ = 1 - [(A-1)²/(2A)] ln[(A+1)/(A-1)]
+     *
+     * @param A Mass number
+     * @return Average log energy loss per collision
+     */
+    static double average_log_energy_decrement(int A) {
+        if (A <= 1) return 1.0;  // Special case for hydrogen
+
+        double A_plus = A + 1.0;
+        double A_minus = A - 1.0;
+        double term = (A_minus * A_minus) / (2.0 * A) * std::log(A_plus / A_minus);
+        return 1.0 - term;
+    }
+
+    /**
+     * @brief Neutron energy after elastic collision
+     *
+     * E' = E [(A² + 1 + 2A cos(θ_CM)) / (A+1)²]
+     *
+     * @param E_initial Initial neutron energy (eV)
+     * @param A Mass number
+     * @param theta_cm Scattering angle in CM frame (radians)
+     * @return Final neutron energy (eV)
+     */
+    static double energy_after_elastic(double E_initial, int A, double theta_cm) {
+        if (A <= 0) return E_initial;
+
+        double A_plus_1 = A + 1.0;
+        double numerator = A * A + 1.0 + 2.0 * A * std::cos(theta_cm);
+        double denominator = A_plus_1 * A_plus_1;
+
+        return E_initial * numerator / denominator;
+    }
+
+    /**
+     * @brief Minimum energy after elastic scatter (backscatter)
+     *
+     * E_min = E [(A-1)/(A+1)]²
+     *
+     * @param E_initial Initial energy (eV)
+     * @param A Mass number
+     * @return Minimum possible energy (eV)
+     */
+    static double minimum_energy_elastic(double E_initial, int A) {
+        if (A <= 0) return E_initial;
+
+        double ratio = (A - 1.0) / (A + 1.0);
+        return E_initial * ratio * ratio;
+    }
+
+    /**
+     * @brief Maximum energy after elastic scatter (forward)
+     *
+     * E_max = E (always E for elastic)
+     *
+     * @param E_initial Initial energy (eV)
+     * @return Maximum energy (eV)
+     */
+    static double maximum_energy_elastic(double E_initial) {
+        return E_initial;  // Forward scatter, no energy loss
+    }
+
+    /**
+     * @brief Number of collisions to slow down
+     *
+     * n ≈ ln(E_initial/E_final) / ξ
+     *
+     * @param E_initial Initial energy (eV)
+     * @param E_final Final energy (eV)
+     * @param A Mass number
+     * @return Average number of collisions
+     */
+    static double collisions_to_slow(double E_initial, double E_final, int A) {
+        if (E_initial <= E_final || E_final <= 0.0) return 0.0;
+
+        double xi = average_log_energy_decrement(A);
+        if (xi <= 0.0) return 0.0;
+
+        return std::log(E_initial / E_final) / xi;
+    }
+
+    /**
+     * @brief Inelastic scattering threshold energy
+     *
+     * E_threshold = Q [(A+1)/A] where Q = excitation energy
+     *
+     * @param Q_value Excitation energy of level (MeV)
+     * @param A Mass number
+     * @return Threshold neutron energy (MeV)
+     */
+    static double inelastic_threshold(double Q_value, int A) {
+        if (A <= 0) return 0.0;
+        return std::abs(Q_value) * (A + 1.0) / A;
+    }
+
+    /**
+     * @brief Neutron energy after inelastic scatter
+     *
+     * E_n' ≈ E_n - Q - E_recoil
+     *
+     * @param E_initial Initial neutron energy (MeV)
+     * @param Q_value Excitation energy (MeV, positive)
+     * @param A Mass number
+     * @return Final neutron energy (MeV)
+     */
+    static double energy_after_inelastic(double E_initial, double Q_value, int A) {
+        // Simple approximation: E' ≈ E - Q(A+1)/A
+        double threshold = inelastic_threshold(Q_value, A);
+        if (E_initial < threshold) return 0.0;  // Below threshold
+
+        double energy_loss = Q_value * (A + 1.0) / A;
+        return std::max(0.0, E_initial - energy_loss);
+    }
+
+    /**
+     * @brief Scattering cross-section energy dependence (simple model)
+     *
+     * σ_s ≈ σ_0 for E > resonance region
+     * More complex near resonances
+     *
+     * @param sigma_0 Constant cross-section (barns)
+     * @param energy Neutron energy (eV)
+     * @return Scattering cross-section (barns)
+     */
+    static double scattering_cross_section(double sigma_0, double energy) {
+        // Simplified: constant cross-section at high energy
+        // Real cross-sections have resonances and energy dependence
+        return sigma_0;
+    }
+
+    /**
+     * @brief Slowing-down power
+     *
+     * ξΣ_s = moderating power
+     *
+     * @param xi Average log energy decrement
+     * @param sigma_s Macroscopic scattering cross-section (cm⁻¹)
+     * @return Slowing-down power (cm⁻¹)
+     */
+    static double slowing_down_power(double xi, double sigma_s) {
+        return xi * sigma_s;
+    }
+
+    /**
+     * @brief Moderating ratio
+     *
+     * ξΣ_s / Σ_a = figure of merit for moderators
+     *
+     * @param xi Average log energy decrement
+     * @param sigma_s Scattering cross-section (cm⁻¹)
+     * @param sigma_a Absorption cross-section (cm⁻¹)
+     * @return Moderating ratio
+     */
+    static double moderating_ratio(double xi, double sigma_s, double sigma_a) {
+        if (sigma_a <= 0.0) return 1e10;  // Perfect moderator
+        return (xi * sigma_s) / sigma_a;
+    }
+};
+
+/**
+ * @brief Neutron Absorption
+ *
+ * Radiative capture reactions
+ */
+class NeutronAbsorption {
+public:
+    /**
+     * @brief Radiative capture overview
+     *
+     * n + A → (A+1) + γ
+     */
+    static std::string radiative_capture_description() {
+        return "Radiative capture: (n,γ) - neutron absorbed, gamma ray emitted";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Q-value for radiative capture
+     *
+     * Q = (M_A + m_n - M_{A+1})c² = binding energy of neutron
+     *
+     * @param A Mass number of target
+     * @param Z Atomic number
+     * @return Q-value (MeV, typically 6-8 MeV)
+     */
+    static double q_value_radiative_capture(int A, int Z) {
+        // Approximate neutron binding energy using SEMF
+        // B(A+1,Z) - B(A,Z) ≈ neutron separation energy
+
+        // Simplified: typical values are 6-8 MeV
+        // More accurate would use actual binding energies
+        return 7.0;  // Typical value in MeV
+    }
+
+    /**
+     * @brief Capture cross-section (1/v law)
+     *
+     * σ_capture ∝ 1/v for thermal neutrons
+     * σ(E) = σ_0 √(E_0/E)
+     *
+     * @param sigma_0 Cross-section at reference energy (barns)
+     * @param E_0 Reference energy (eV, typically 0.0253 eV)
+     * @param E Neutron energy (eV)
+     * @return Capture cross-section (barns)
+     */
+    static double capture_cross_section_thermal(double sigma_0, double E_0, double E) {
+        if (E <= 0.0) return 0.0;
+        return sigma_0 * std::sqrt(E_0 / E);
+    }
+
+    /**
+     * @brief Breit-Wigner resonance cross-section
+     *
+     * σ(E) = σ_max [Γ²/4] / [(E - E_R)² + Γ²/4]
+     *
+     * @param sigma_max Peak cross-section (barns)
+     * @param E_resonance Resonance energy (eV)
+     * @param gamma_total Total width (eV)
+     * @param E Neutron energy (eV)
+     * @return Cross-section at energy E (barns)
+     */
+    static double breit_wigner_resonance(double sigma_max, double E_resonance,
+                                          double gamma_total, double E) {
+        double delta_E = E - E_resonance;
+        double gamma_half = gamma_total / 2.0;
+        double denominator = delta_E * delta_E + gamma_half * gamma_half;
+
+        return sigma_max * (gamma_half * gamma_half) / denominator;
+    }
+
+    /**
+     * @brief Resonance integral
+     *
+     * I = ∫ σ(E) dE/E over epithermal range
+     * Approximation for single resonance
+     *
+     * @param sigma_0 Thermal cross-section (barns)
+     * @param E_resonance Resonance energy (eV)
+     * @param gamma Width (eV)
+     * @return Resonance integral (barns)
+     */
+    static double resonance_integral_single(double sigma_0, double E_resonance, double gamma) {
+        // Simplified formula: I ≈ (π/2) σ_peak Γ / E_R
+        // For detailed calculations, numerical integration needed
+        return (M_PI / 2.0) * sigma_0 * gamma / E_resonance;
+    }
+
+    /**
+     * @brief Activation rate
+     *
+     * R = φ N σ_a (reactions/cm³/s)
+     *
+     * @param flux Neutron flux (n/cm²/s)
+     * @param number_density Atom density (atoms/cm³)
+     * @param sigma_absorption Cross-section (barns = 10⁻²⁴ cm²)
+     * @return Reaction rate (reactions/cm³/s)
+     */
+    static double activation_rate(double flux, double number_density, double sigma_absorption) {
+        double sigma_cm2 = sigma_absorption * 1.0e-24;  // Convert barns to cm²
+        return flux * number_density * sigma_cm2;
+    }
+
+    /**
+     * @brief Saturated activity from irradiation
+     *
+     * A_sat = R (1 - e^(-λt))
+     *
+     * @param reaction_rate Production rate (atoms/s)
+     * @param decay_constant Decay constant (s⁻¹)
+     * @param irradiation_time Time (s)
+     * @return Activity (Bq)
+     */
+    static double activity_from_irradiation(double reaction_rate, double decay_constant,
+                                             double irradiation_time) {
+        return reaction_rate * (1.0 - std::exp(-decay_constant * irradiation_time));
+    }
+
+    /**
+     * @brief Saturation activity (infinite irradiation)
+     *
+     * A_sat = R
+     *
+     * @param reaction_rate Production rate (atoms/s)
+     * @return Maximum activity (Bq)
+     */
+    static double saturation_activity(double reaction_rate) {
+        return reaction_rate;
+    }
+
+    /**
+     * @brief Effective cross-section in reactor spectrum
+     *
+     * σ_eff = ∫ σ(E) φ(E) dE / ∫ φ(E) dE
+     *
+     * @param sigma_thermal Thermal cross-section (barns)
+     * @param resonance_integral Epithermal contribution (barns)
+     * @param thermal_fraction Fraction of thermal flux
+     * @return Effective cross-section (barns)
+     */
+    static double effective_cross_section(double sigma_thermal, double resonance_integral,
+                                           double thermal_fraction) {
+        double epithermal_fraction = 1.0 - thermal_fraction;
+        return sigma_thermal * thermal_fraction + resonance_integral * epithermal_fraction;
+    }
+
+    /**
+     * @brief Self-shielding factor
+     *
+     * f = σ_eff / σ_infinite (< 1 for large samples)
+     *
+     * @param optical_thickness τ = Σt × dimension
+     * @return Self-shielding factor
+     */
+    static double self_shielding_factor(double optical_thickness) {
+        // Simplified: f ≈ 1/(1 + τ) for slab geometry
+        return 1.0 / (1.0 + optical_thickness);
+    }
+};
+
+/**
+ * @brief Particle Ejection Reactions
+ *
+ * (n,p), (n,α), (n,2n) and other particle emission
+ */
+class ParticleEjection {
+public:
+    /**
+     * @brief (n,p) reaction overview
+     *
+     * n + A(Z) → p + A(Z-1)
+     */
+    static std::string np_description() {
+        return "(n,p): neutron in, proton out - changes Z by -1";
+    }
+
+    /**
+     * @brief (n,α) reaction overview
+     *
+     * n + A(Z) → α + (A-3)(Z-2)
+     */
+    static std::string nalpha_description() {
+        return "(n,α): neutron in, alpha out - changes Z by -2, A by -3";
+    }
+
+    /**
+     * @brief (n,2n) reaction overview
+     *
+     * n + A → 2n + (A-1)
+     */
+    static std::string n2n_description() {
+        return "(n,2n): neutron multiplication - high energy threshold";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Q-value for (n,p) reaction
+     *
+     * Q = [M(A,Z) + m_n - M(A,Z-1) - m_p]c²
+     *
+     * @param A Mass number
+     * @param Z Atomic number
+     * @return Q-value (MeV, typically negative, endothermic)
+     */
+    static double q_value_np(int A, int Z) {
+        // Approximation: Q ≈ (m_n - m_p)c² + binding energy difference
+        // m_n - m_p ≈ 1.293 MeV
+        // Usually endothermic for most nuclei
+        return -0.8;  // Typical value, usually negative
+    }
+
+    /**
+     * @brief Q-value for (n,α) reaction
+     *
+     * Q = [M(A,Z) + m_n - M(A-3,Z-2) - m_α]c²
+     *
+     * @param A Mass number
+     * @param Z Atomic number
+     * @return Q-value (MeV)
+     */
+    static double q_value_nalpha(int A, int Z) {
+        // Highly dependent on nucleus
+        // Often exothermic for light nuclei, endothermic for heavy
+        return 0.0;  // Placeholder, varies widely
+    }
+
+    /**
+     * @brief Q-value for (n,2n) reaction
+     *
+     * Q = [M(A,Z) + m_n - M(A-1,Z) - 2m_n]c²
+     * Q = -S_n (negative of neutron separation energy)
+     *
+     * @param A Mass number
+     * @param Z Atomic number
+     * @return Q-value (MeV, always negative)
+     */
+    static double q_value_n2n(int A, int Z) {
+        // Q ≈ -8 MeV typically (neutron separation energy)
+        return -8.0;
+    }
+
+    /**
+     * @brief Threshold energy for particle ejection
+     *
+     * E_threshold = -Q [(A_product + m_product)/(A_target)] for Q < 0
+     *
+     * @param Q_value Q-value (MeV)
+     * @param A_target Mass number of target
+     * @param A_product Total mass of products
+     * @return Threshold energy (MeV)
+     */
+    static double threshold_energy(double Q_value, int A_target, double A_product) {
+        if (Q_value >= 0.0) return 0.0;  // Exothermic, no threshold
+
+        return -Q_value * (A_product / A_target);
+    }
+
+    /**
+     * @brief (n,p) threshold energy
+     *
+     * Typically 1-5 MeV
+     *
+     * @param A Mass number
+     * @return Threshold (MeV)
+     */
+    static double np_threshold(int A) {
+        double Q = q_value_np(A, 0);  // Z not critical for estimate
+        return threshold_energy(Q, A, A + 1.0);
+    }
+
+    /**
+     * @brief (n,2n) threshold energy
+     *
+     * Typically 8-10 MeV
+     *
+     * @param A Mass number
+     * @return Threshold (MeV)
+     */
+    static double n2n_threshold(int A) {
+        double Q = q_value_n2n(A, 0);
+        // For (n,2n): threshold ≈ -Q(A+2)/(A-1)
+        return -Q * (A + 2.0) / (A - 1.0);
+    }
+
+    /**
+     * @brief (n,p) cross-section estimate
+     *
+     * σ(n,p) peaks around 2-5 MeV, then decreases
+     *
+     * @param energy Neutron energy (MeV)
+     * @param sigma_max Peak cross-section (barns)
+     * @param E_peak Peak energy (MeV)
+     * @return Cross-section (barns)
+     */
+    static double np_cross_section(double energy, double sigma_max, double E_peak) {
+        if (energy < np_threshold(50)) return 0.0;  // Below threshold
+
+        // Simplified Gaussian-like peak
+        double exponent = -(energy - E_peak) * (energy - E_peak) / (E_peak * E_peak);
+        return sigma_max * std::exp(exponent);
+    }
+
+    /**
+     * @brief (n,2n) cross-section estimate
+     *
+     * Rises from threshold, peaks around 14 MeV
+     *
+     * @param energy Neutron energy (MeV)
+     * @param sigma_max Peak cross-section (barns, typically 0.5-2 b)
+     * @return Cross-section (barns)
+     */
+    static double n2n_cross_section(double energy, double sigma_max) {
+        double threshold = 8.0;  // Typical threshold
+
+        if (energy < threshold) return 0.0;
+
+        // Simplified: rises from threshold, peaks near 14 MeV
+        double E_peak = 14.0;
+        if (energy < E_peak) {
+            // Rising from threshold
+            return sigma_max * (energy - threshold) / (E_peak - threshold);
+        } else {
+            // Decreasing after peak
+            return sigma_max * std::exp(-(energy - E_peak) / 5.0);
+        }
+    }
+
+    /**
+     * @brief Neutron multiplication from (n,2n)
+     *
+     * ν = average neutrons out per neutron in
+     * ν = 1 + σ(n,2n)/σ_total
+     *
+     * @param sigma_n2n (n,2n) cross-section (barns)
+     * @param sigma_total Total cross-section (barns)
+     * @return Neutron multiplication factor
+     */
+    static double neutron_multiplication(double sigma_n2n, double sigma_total) {
+        if (sigma_total <= 0.0) return 1.0;
+        return 1.0 + sigma_n2n / sigma_total;
+    }
+};
+
+/**
+ * @brief Neutron-Induced Fission
+ *
+ * Fission reactions and characteristics
+ */
+class NeutronInducedFission {
+public:
+    /**
+     * @brief Fission overview
+     *
+     * n + A → fission fragments + neutrons + energy
+     */
+    static std::string fission_description() {
+        return "Fission: nucleus splits into 2 fragments + 2-3 neutrons + ~200 MeV";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Fission Q-value
+     *
+     * Q ≈ 200 MeV for U-235, Pu-239
+     *
+     * @param A Mass number (typically 235, 239)
+     * @return Energy release (MeV)
+     */
+    static double fission_q_value(int A) {
+        // Approximately 0.85 MeV per nucleon
+        return 0.85 * A;
+    }
+
+    /**
+     * @brief Fission cross-section for U-235 (thermal)
+     *
+     * σ_f = 585 barns at 0.0253 eV
+     *
+     * @return Thermal fission cross-section (barns)
+     */
+    static double u235_fission_cross_section_thermal() {
+        return 585.0;  // barns
+    }
+
+    /**
+     * @brief Fission cross-section for Pu-239 (thermal)
+     *
+     * σ_f = 747 barns at 0.0253 eV
+     *
+     * @return Thermal fission cross-section (barns)
+     */
+    static double pu239_fission_cross_section_thermal() {
+        return 747.0;  // barns
+    }
+
+    /**
+     * @brief Fission cross-section for U-238 (fast)
+     *
+     * Threshold at ~1 MeV, rises to ~0.5 barns at 14 MeV
+     *
+     * @param energy Neutron energy (MeV)
+     * @return Fission cross-section (barns)
+     */
+    static double u238_fission_cross_section(double energy) {
+        double threshold = 1.0;  // MeV
+        if (energy < threshold) return 0.0;
+
+        // Simplified: rises roughly linearly
+        return 0.5 * (energy - threshold) / 13.0;
+    }
+
+    /**
+     * @brief Average neutrons per fission
+     *
+     * ν̄ for different fissile isotopes
+     *
+     * @param isotope "U235", "U238", "Pu239"
+     * @param energy Neutron energy (MeV)
+     * @return Average neutron yield
+     */
+    static double average_neutrons_per_fission(const std::string& isotope, double energy) {
+        // Approximate values, slightly energy dependent
+        // ν̄ = ν̄_0 + slope × E
+
+        if (isotope == "U235") {
+            return 2.42 + 0.066 * energy;  // Thermal: 2.42, increases with E
+        } else if (isotope == "U238") {
+            return 2.47 + 0.13 * energy;   // Higher slope for fast
+        } else if (isotope == "Pu239") {
+            return 2.87 + 0.09 * energy;   // Highest yield
+        }
+        return 2.5;  // Default
+    }
+
+    /**
+     * @brief Prompt neutron fraction
+     *
+     * Fraction of neutrons emitted promptly (< 10⁻¹⁴ s)
+     *
+     * @return Prompt fraction (typically 0.993-0.997)
+     */
+    static double prompt_neutron_fraction() {
+        return 0.993;  // ~99.3% prompt for U-235
+    }
+
+    /**
+     * @brief Delayed neutron fraction (β)
+     *
+     * Critical for reactor control
+     *
+     * @param isotope "U235", "U238", "Pu239"
+     * @return Delayed fraction β
+     */
+    static double delayed_neutron_fraction(const std::string& isotope) {
+        if (isotope == "U235") {
+            return 0.0065;  // 0.65%
+        } else if (isotope == "U238") {
+            return 0.0148;  // 1.48%
+        } else if (isotope == "Pu239") {
+            return 0.0021;  // 0.21%
+        }
+        return 0.0065;  // Default to U-235
+    }
+
+    /**
+     * @brief Fission energy distribution
+     *
+     * ~200 MeV total, distributed as:
+     * Fission fragments: ~168 MeV
+     * Neutrons: ~5 MeV
+     * Prompt gammas: ~7 MeV
+     * Beta decay: ~7 MeV
+     * Neutrinos: ~10 MeV (lost)
+     * Gamma decay: ~6 MeV
+     *
+     * @param component "fragments", "neutrons", "prompt_gamma", "beta", "neutrinos", "delayed_gamma"
+     * @return Energy (MeV)
+     */
+    static double fission_energy_component(const std::string& component) {
+        if (component == "fragments") return 168.0;
+        if (component == "neutrons") return 5.0;
+        if (component == "prompt_gamma") return 7.0;
+        if (component == "beta") return 7.0;
+        if (component == "neutrinos") return 10.0;  // Lost, not deposited
+        if (component == "delayed_gamma") return 6.0;
+        return 0.0;
+    }
+
+    /**
+     * @brief Recoverable energy per fission
+     *
+     * Total minus neutrinos
+     *
+     * @return Recoverable energy (MeV)
+     */
+    static double recoverable_energy_per_fission() {
+        return 200.0 - 10.0;  // 190 MeV (minus neutrinos)
+    }
+
+    /**
+     * @brief Fission product yield (mass distribution)
+     *
+     * Bimodal distribution with peaks at A~95 and A~135
+     *
+     * @param A_fragment Mass number of fragment
+     * @return Yield (percent per fission)
+     */
+    static double fission_yield_mass(int A_fragment) {
+        // Simplified bimodal Gaussian distribution
+        // Light peak around A=95, heavy peak around A=135
+
+        double light_peak = 95.0;
+        double heavy_peak = 135.0;
+        double width = 5.0;
+
+        double light_contrib = 0.03 * std::exp(-(A_fragment - light_peak) * (A_fragment - light_peak) / (2.0 * width * width));
+        double heavy_contrib = 0.04 * std::exp(-(A_fragment - heavy_peak) * (A_fragment - heavy_peak) / (2.0 * width * width));
+
+        return (light_contrib + heavy_contrib) * 100.0;  // Percent
+    }
+
+    /**
+     * @brief Multiplication factor (k-infinity)
+     *
+     * k∞ = (ν σ_f) / (σ_a) = (ν σ_f) / (σ_f + σ_c)
+     *
+     * @param nu Average neutrons per fission
+     * @param sigma_fission Fission cross-section (barns)
+     * @param sigma_capture Capture cross-section (barns)
+     * @return Infinite multiplication factor
+     */
+    static double k_infinity(double nu, double sigma_fission, double sigma_capture) {
+        double sigma_absorption = sigma_fission + sigma_capture;
+        if (sigma_absorption <= 0.0) return 0.0;
+
+        return (nu * sigma_fission) / sigma_absorption;
+    }
+
+    /**
+     * @brief Reproduction factor (η - eta)
+     *
+     * η = ν σ_f / σ_a (neutrons produced per absorption in fuel)
+     *
+     * @param nu Average neutrons per fission
+     * @param sigma_fission Fission cross-section
+     * @param sigma_absorption Total absorption cross-section
+     * @return Eta factor
+     */
+    static double eta_factor(double nu, double sigma_fission, double sigma_absorption) {
+        if (sigma_absorption <= 0.0) return 0.0;
+        return (nu * sigma_fission) / sigma_absorption;
+    }
+
+    /**
+     * @brief Alpha ratio
+     *
+     * α = σ_c / σ_f (capture to fission ratio)
+     *
+     * @param sigma_capture Capture cross-section
+     * @param sigma_fission Fission cross-section
+     * @return Alpha ratio
+     */
+    static double alpha_ratio(double sigma_capture, double sigma_fission) {
+        if (sigma_fission <= 0.0) return 0.0;
+        return sigma_capture / sigma_fission;
+    }
+};
+
 } // namespace nuclear
 } // namespace physics
 
