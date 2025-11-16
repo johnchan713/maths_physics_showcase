@@ -63,9 +63,11 @@ public:
 
         // Pairing term δ
         double delta = 0.0;
-        if (Z % 2 == 0 && N % 2 == 0) {
+        int Z_int = static_cast<int>(Z);
+        int N_int = static_cast<int>(N);
+        if (Z_int % 2 == 0 && N_int % 2 == 0) {
             delta = a_p / std::sqrt(A);  // Even-even: +
-        } else if (Z % 2 == 1 && N % 2 == 1) {
+        } else if (Z_int % 2 == 1 && N_int % 2 == 1) {
             delta = -a_p / std::sqrt(A);  // Odd-odd: -
         }
         // Odd-A: delta = 0

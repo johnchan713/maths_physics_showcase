@@ -643,8 +643,8 @@ inline double twoBeamInterferenceIntensity(double intensity1, double intensity2,
  * @param slitSeparation Slit separation (m)
  * @return Fringe spacing (m)
  */
-inline double doubleSlit FringeSpacing(double wavelength, double screenDistance,
-                                       double slitSeparation) {
+inline double doubleSlitFringeSpacing(double wavelength, double screenDistance,
+                                      double slitSeparation) {
     if (wavelength <= 0.0 || screenDistance <= 0.0 || slitSeparation <= 0.0) {
         throw std::invalid_argument("All parameters must be positive");
     }

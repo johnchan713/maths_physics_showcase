@@ -217,7 +217,7 @@ public:
      *
      * φ_{n+1}(t) = y0 + ∫_{t0}^t f(s, φ_n(s)) ds
      */
-    static std::vector<double> picard Iteration(
+    static std::vector<double> picardIteration(
         ScalarODE f, double t0, double y0,
         const std::vector<double>& t_points, int iterations) {
 

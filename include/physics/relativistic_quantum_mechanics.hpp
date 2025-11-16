@@ -26,6 +26,7 @@ namespace constants {
     constexpr double alpha = 7.2973525693e-3;   // Fine structure constant ≈ 1/137
     constexpr double mu_B = 9.2740100783e-24;   // Bohr magneton (J/T)
     constexpr double g_e = 2.00231930436256;    // Electron g-factor
+    constexpr double k_e = 8.9875517923e9;      // Coulomb's constant (N⋅m²/C²)
 }
 
 /**

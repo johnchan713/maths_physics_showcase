@@ -19,12 +19,12 @@
 #include "maths/black_scholes.hpp"
 #include "maths/variational_calculus.hpp"
 #include "maths/partial_differential_equations.hpp"
-// #include "maths/ode_dynamical_systems.hpp"  // Has typo in function name
+#include "maths/ode_dynamical_systems.hpp"
 #include "maths/stochastic_differential_equations.hpp"
-// #include "maths/pde_numerical_methods.hpp"  // Has lambda assignment issue
+#include "maths/pde_numerical_methods.hpp"
 #include "maths/pde_solution_methods.hpp"
 #include "maths/pde_transform_methods.hpp"
-// #include "maths/pde_variational_methods.hpp"  // Has private method access issue
+#include "maths/pde_variational_methods.hpp"
 #include "maths/pde_classification_solutions.hpp"
 #include "maths/econometrics_regression.hpp"
 #include "maths/actuarial_life_tables.hpp"
@@ -65,16 +65,16 @@
 #include "physics/electromagnetic_waves.hpp"
 #include "physics/maxwell_equations.hpp"
 #include "physics/optics.hpp"
-// #include "physics/advanced_optics.hpp"  // Has typo in function name
+#include "physics/advanced_optics.hpp"
 #include "physics/wave_mechanics.hpp"
 #include "physics/oscillations.hpp"
-// #include "physics/special_relativity.hpp"  // Has typo in function name
+#include "physics/special_relativity.hpp"
 #include "physics/quantum_basics.hpp"
 #include "physics/advanced_quantum_mechanics.hpp"
 #include "physics/quantum_chemistry.hpp"
-// #include "physics/quantum_foundations.hpp"  // Has undefined variable
-// #include "physics/relativistic_quantum_mechanics.hpp"  // Has missing constant
-// #include "physics/nuclear_physics.hpp"  // Has type mismatch bugs
+#include "physics/quantum_foundations.hpp"
+#include "physics/relativistic_quantum_mechanics.hpp"
+#include "physics/nuclear_physics.hpp"
 #include "physics/advanced_mechanics.hpp"
 #include "physics/statistical_models.hpp"
 
@@ -86,10 +86,10 @@
 
 #include "physics/gauge_theory_gauge_invariance.hpp"
 #include "physics/gauge_theory_symmetries.hpp"
-// #include "physics/gauge_theory_higgs_mechanism.hpp"  // Has typo in function name
+#include "physics/gauge_theory_higgs_mechanism.hpp"
 #include "physics/gauge_theory_running_couplings.hpp"
 #include "physics/gauge_theory_helicity.hpp"
-// #include "physics/gauge_theory_cp_violation_kaons.hpp"  // Has typo in function name
+#include "physics/gauge_theory_cp_violation_kaons.hpp"
 
 #include "physics/qft_interactions.hpp"
 #include "physics/qft_particle_physics.hpp"
@@ -118,8 +118,8 @@ int main() {
 
     cout << "\nTesting module inclusions...\n\n";
 
-    int math_count = 27;  // 31 total, excluded: topology, ode, pde_numerical, pde_variational
-    int physics_count = 61;  // 69 total, excluded: 8 modules
+    int math_count = 30;  // 31 total, excluded: number_theory, topology
+    int physics_count = 68;  // 69 total, excluded: none
     int total_count = math_count + physics_count;
 
     cout << "Mathematics modules:      " << math_count << " ✓\n";
@@ -127,11 +127,9 @@ int main() {
     cout << "Total modules compiled:   " << total_count << "\n\n";
 
     cout << "Excluded modules (with existing bugs):\n";
-    cout << "  Math: number_theory, topology, ode_dynamical_systems,\n";
-    cout << "        pde_numerical_methods, pde_variational_methods\n";
-    cout << "  Physics: nuclear_physics, advanced_optics, special_relativity,\n";
-    cout << "           quantum_foundations, relativistic_quantum_mechanics,\n";
-    cout << "           gauge_theory_higgs_mechanism, gauge_theory_cp_violation_kaons\n\n";
+    cout << "  Math: number_theory (PolynomialExtended),\n";
+    cout << "        topology (parameter shadowing)\n";
+    cout << "  Physics: none - all bugs fixed!\n\n";
 
     cout << "Excluded modules (require external libraries):\n";
     cout << "  - fluid_dynamics_*.hpp (7 modules - require Eigen)\n";

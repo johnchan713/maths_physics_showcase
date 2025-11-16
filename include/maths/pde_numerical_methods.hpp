@@ -145,10 +145,10 @@ public:
         double t_max) {
 
         // Start with u_0(t) = u0 (constant)
-        auto u_n = [u0](double t) { return u0; };
+        std::function<double(double)> u_n = [u0](double t) { return u0; };
 
         for (int iter = 0; iter < n_iterations; ++iter) {
-            auto u_next = [f, t0, u0, u_n](double t) {
+            std::function<double(double)> u_next = [f, t0, u0, u_n](double t) {
                 // Numerical integration from t0 to t
                 int n_points = 100;
                 double dt = (t - t0) / n_points;
