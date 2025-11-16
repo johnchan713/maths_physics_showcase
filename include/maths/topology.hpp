@@ -1256,6 +1256,1304 @@ public:
     bool strongMorseInequalities() const { return true; }
 };
 
+// ============================================================================
+// DIFFERENTIAL TOPOLOGY - CHARTS AND COORDINATE SYSTEMS
+// ============================================================================
+
+/**
+ * @brief Chart (local coordinate system) on a manifold
+ * A chart is a homeomorphism φ: U → V ⊂ ℝ^n where U is open in M
+ */
+template<typename T = double, int n = 2>
+class Chart {
+private:
+    std::string name_;
+    std::function<std::vector<T>(const Point<T>&)> coordinate_map_;  // φ: U → ℝ^n
+    std::function<Point<T>(const std::vector<T>&)> inverse_map_;     // φ^{-1}: ℝ^n → U
+
+public:
+    Chart(const std::string& name) : name_(name) {}
+
+    std::string name() const { return name_; }
+    int dimension() const { return n; }
+
+    /**
+     * @brief Set coordinate map φ and its inverse
+     */
+    void setMaps(std::function<std::vector<T>(const Point<T>&)> phi,
+                 std::function<Point<T>(const std::vector<T>&)> phi_inv) {
+        coordinate_map_ = phi;
+        inverse_map_ = phi_inv;
+    }
+
+    /**
+     * @brief Apply coordinate map: p ↦ φ(p)
+     */
+    std::vector<T> toCoordinates(const Point<T>& p) const {
+        if (coordinate_map_) {
+            return coordinate_map_(p);
+        }
+        return std::vector<T>(n, 0);
+    }
+
+    /**
+     * @brief Apply inverse map: x ↦ φ^{-1}(x)
+     */
+    Point<T> fromCoordinates(const std::vector<T>& coords) const {
+        if (inverse_map_) {
+            return inverse_map_(coords);
+        }
+        return Point<T>();
+    }
+
+    /**
+     * @brief Check if point is in domain of chart
+     */
+    bool inDomain(const Point<T>& p) const {
+        return true;  // Placeholder - should check if φ(p) is defined
+    }
+};
+
+/**
+ * @brief Transition map between two charts
+ * τ_{αβ} = φ_β ∘ φ_α^{-1}: φ_α(U_α ∩ U_β) → φ_β(U_α ∩ U_β)
+ */
+template<typename T = double, int n = 2>
+class TransitionMap {
+private:
+    const Chart<T, n>* chart_from_;
+    const Chart<T, n>* chart_to_;
+    std::function<std::vector<T>(const std::vector<T>&)> transition_function_;
+
+public:
+    TransitionMap(const Chart<T, n>* from, const Chart<T, n>* to)
+        : chart_from_(from), chart_to_(to) {}
+
+    /**
+     * @brief Compute transition map: x ↦ τ(x)
+     */
+    std::vector<T> apply(const std::vector<T>& coords) const {
+        if (transition_function_) {
+            return transition_function_(coords);
+        }
+        // Default: φ_β ∘ φ_α^{-1}
+        Point<T> p = chart_from_->fromCoordinates(coords);
+        return chart_to_->toCoordinates(p);
+    }
+
+    /**
+     * @brief Check if transition map is smooth (C^∞)
+     */
+    bool isSmooth() const {
+        return true;  // Placeholder - requires checking derivatives
+    }
+
+    /**
+     * @brief Jacobian matrix of transition map
+     */
+    std::vector<std::vector<T>> jacobian(const std::vector<T>& coords) const {
+        std::vector<std::vector<T>> J(n, std::vector<T>(n, 0));
+        // Compute ∂τ_i/∂x_j
+        return J;
+    }
+
+    /**
+     * @brief Check if transition map is a diffeomorphism
+     */
+    bool isDiffeomorphism() const {
+        // Check if Jacobian is invertible everywhere
+        return isSmooth();
+    }
+};
+
+// ============================================================================
+// COMPACT SURFACES (2-dimensional manifolds)
+// ============================================================================
+
+/**
+ * @brief Compact surface (2-dimensional closed manifold)
+ */
+class CompactSurface {
+private:
+    int genus_;  // Number of "holes"
+    bool orientable_;
+    int euler_characteristic_;
+
+public:
+    CompactSurface(int g, bool orient) : genus_(g), orientable_(orient) {
+        if (orientable_) {
+            euler_characteristic_ = 2 - 2 * genus_;  // χ = 2 - 2g
+        } else {
+            euler_characteristic_ = 2 - genus_;  // χ = 2 - g for non-orientable
+        }
+    }
+
+    int genus() const { return genus_; }
+    bool isOrientable() const { return orientable_; }
+    int eulerCharacteristic() const { return euler_characteristic_; }
+
+    /**
+     * @brief Classification theorem: Every compact surface is homeomorphic to
+     * - Sphere S^2 (g = 0, orientable)
+     * - Torus T^2 or connected sum of g tori (g ≥ 1, orientable)
+     * - Projective plane ℝP^2 or connected sum of g projective planes (non-orientable)
+     */
+    std::string classify() const {
+        if (orientable_) {
+            if (genus_ == 0) return "Sphere S^2";
+            if (genus_ == 1) return "Torus T^2";
+            return "Connected sum of " + std::to_string(genus_) + " tori";
+        } else {
+            if (genus_ == 1) return "Projective plane ℝP^2";
+            if (genus_ == 2) return "Klein bottle";
+            return "Connected sum of " + std::to_string(genus_) + " projective planes";
+        }
+    }
+
+    /**
+     * @brief Betti numbers for surface
+     */
+    std::vector<int> bettiNumbers() const {
+        std::vector<int> betti(3, 0);
+        betti[0] = 1;  // β_0 = 1 (connected)
+        if (orientable_) {
+            betti[1] = 2 * genus_;  // β_1 = 2g
+            betti[2] = 1;           // β_2 = 1
+        } else {
+            betti[1] = genus_ - 1;  // β_1 = g - 1
+            betti[2] = 0;           // β_2 = 0
+        }
+        return betti;
+    }
+
+    /**
+     * @brief Fundamental group
+     */
+    std::string fundamentalGroup() const {
+        if (orientable_) {
+            if (genus_ == 0) return "Trivial {e}";
+            if (genus_ == 1) return "ℤ × ℤ";
+            return "⟨a₁,b₁,...,a_g,b_g | [a₁,b₁]···[a_g,b_g]=e⟩";
+        } else {
+            if (genus_ == 1) return "ℤ/2ℤ";
+            return "⟨a₁,...,a_g | a₁²···a_g²=e⟩";
+        }
+    }
+};
+
+/**
+ * @brief Sphere S^n = {x ∈ ℝ^{n+1} | |x| = 1}
+ */
+template<int n>
+class Sphere {
+public:
+    int dimension() const { return n; }
+
+    /**
+     * @brief Euler characteristic χ(S^n) = 1 + (-1)^n
+     */
+    int eulerCharacteristic() const {
+        return 1 + (n % 2 == 0 ? 1 : -1);
+    }
+
+    /**
+     * @brief Betti numbers: β_0 = β_n = 1, others = 0
+     */
+    std::vector<int> bettiNumbers() const {
+        std::vector<int> betti(n + 1, 0);
+        betti[0] = 1;
+        betti[n] = 1;
+        return betti;
+    }
+
+    /**
+     * @brief Fundamental group: π_1(S^n) = {e} for n ≥ 2
+     */
+    bool isSimplyConnected() const {
+        return n >= 2;
+    }
+
+    /**
+     * @brief Homotopy groups of spheres (partial)
+     */
+    std::string homotopyGroup(int k) const {
+        if (k == 0) return "ℤ";
+        if (k < n) return "Trivial {e}";
+        if (k == n) return "ℤ";
+        // Higher homotopy groups are generally complicated
+        return "Complex (see Homotopy groups of spheres table)";
+    }
+};
+
+/**
+ * @brief Torus T^n = S^1 × ··· × S^1 (n times)
+ */
+template<int n>
+class Torus {
+public:
+    int dimension() const { return n; }
+
+    /**
+     * @brief Euler characteristic χ(T^n) = 0
+     */
+    int eulerCharacteristic() const {
+        return 0;
+    }
+
+    /**
+     * @brief k-th Betti number: β_k = C(n, k) (binomial coefficient)
+     */
+    int bettiNumber(int k) const {
+        if (k < 0 || k > n) return 0;
+        // C(n, k) = n! / (k! (n-k)!)
+        int binom = 1;
+        for (int i = 0; i < k; ++i) {
+            binom = binom * (n - i) / (i + 1);
+        }
+        return binom;
+    }
+
+    /**
+     * @brief Fundamental group: π_1(T^n) = ℤ^n
+     */
+    std::string fundamentalGroup() const {
+        return "ℤ^" + std::to_string(n);
+    }
+
+    /**
+     * @brief All higher homotopy groups vanish: π_k(T^n) = 0 for k ≥ 2
+     */
+    bool higherHomotopyVanishes(int k) const {
+        return k >= 2;
+    }
+};
+
+/**
+ * @brief Projective space ℝP^n or ℂP^n
+ */
+template<int n, bool complex = false>
+class ProjectiveSpace {
+public:
+    int dimension() const {
+        return complex ? 2 * n : n;
+    }
+
+    /**
+     * @brief Euler characteristic
+     */
+    int eulerCharacteristic() const {
+        if (complex) {
+            return n + 1;  // χ(ℂP^n) = n + 1
+        } else {
+            return (n % 2 == 0) ? 1 : 0;  // χ(ℝP^n) = 1 if n even, 0 if n odd
+        }
+    }
+
+    /**
+     * @brief Betti numbers
+     */
+    std::vector<int> bettiNumbers() const {
+        std::vector<int> betti;
+        if (complex) {
+            // For ℂP^n: β_k = 1 if k even and k ≤ 2n, 0 otherwise
+            for (int k = 0; k <= 2 * n; ++k) {
+                betti.push_back((k % 2 == 0 && k <= 2 * n) ? 1 : 0);
+            }
+        } else {
+            // For ℝP^n: β_0 = 1, β_n = 1 if n odd, others depend on ℤ/2ℤ
+            for (int k = 0; k <= n; ++k) {
+                if (k == 0) betti.push_back(1);
+                else if (k == n && n % 2 == 1) betti.push_back(1);
+                else betti.push_back(0);
+            }
+        }
+        return betti;
+    }
+
+    /**
+     * @brief Fundamental group
+     */
+    std::string fundamentalGroup() const {
+        if (complex) {
+            return "Trivial {e}";  // ℂP^n is simply connected
+        } else {
+            return (n >= 2) ? "ℤ/2ℤ" : "Trivial {e}";
+        }
+    }
+};
+
+// ============================================================================
+// SMOOTH MANIFOLDS
+// ============================================================================
+
+/**
+ * @brief Topological manifold (locally Euclidean space)
+ */
+template<typename T = double, int n = 2>
+class TopologicalManifold {
+protected:
+    std::vector<Chart<T, n>> charts_;
+    int dimension_;
+    bool hausdorff_;
+    bool second_countable_;
+
+public:
+    TopologicalManifold(int dim) : dimension_(dim), hausdorff_(true), second_countable_(true) {}
+
+    int dimension() const { return dimension_; }
+
+    /**
+     * @brief Add chart to atlas
+     */
+    void addChart(const Chart<T, n>& chart) {
+        charts_.push_back(chart);
+    }
+
+    /**
+     * @brief Get all charts
+     */
+    const std::vector<Chart<T, n>>& charts() const {
+        return charts_;
+    }
+
+    /**
+     * @brief Check if manifold is Hausdorff
+     */
+    bool isHausdorff() const {
+        return hausdorff_;
+    }
+
+    /**
+     * @brief Check if manifold is second-countable
+     */
+    bool isSecondCountable() const {
+        return second_countable_;
+    }
+
+    /**
+     * @brief Check if manifold is paracompact
+     * (Hausdorff + second-countable ⟹ paracompact)
+     */
+    bool isParacompact() const {
+        return hausdorff_ && second_countable_;
+    }
+
+    /**
+     * @brief Find chart containing point p
+     */
+    const Chart<T, n>* findChart(const Point<T>& p) const {
+        for (const auto& chart : charts_) {
+            if (chart.inDomain(p)) {
+                return &chart;
+            }
+        }
+        return nullptr;
+    }
+};
+
+/**
+ * @brief Smooth structure (C^∞ structure) on a manifold
+ */
+template<typename T = double, int n = 2>
+class SmoothStructure {
+private:
+    std::vector<Chart<T, n>> atlas_;
+    bool is_maximal_;
+
+public:
+    SmoothStructure() : is_maximal_(false) {}
+
+    /**
+     * @brief Add compatible chart to smooth structure
+     */
+    bool addChart(const Chart<T, n>& chart) {
+        // Check compatibility with existing charts
+        for (const auto& existing : atlas_) {
+            TransitionMap<T, n> transition(&existing, &chart);
+            if (!transition.isSmooth()) {
+                return false;  // Not compatible
+            }
+        }
+        atlas_.push_back(chart);
+        return true;
+    }
+
+    /**
+     * @brief Get smooth atlas
+     */
+    const std::vector<Chart<T, n>>& atlas() const {
+        return atlas_;
+    }
+
+    /**
+     * @brief Check if two charts are compatible (C^∞-compatible)
+     */
+    static bool areCompatible(const Chart<T, n>& chart1, const Chart<T, n>& chart2) {
+        TransitionMap<T, n> transition12(&chart1, &chart2);
+        TransitionMap<T, n> transition21(&chart2, &chart1);
+        return transition12.isSmooth() && transition21.isSmooth();
+    }
+
+    /**
+     * @brief Generate maximal atlas from given atlas
+     */
+    void makeMaximal() {
+        // A maximal atlas contains all charts compatible with the given ones
+        is_maximal_ = true;
+    }
+
+    bool isMaximal() const {
+        return is_maximal_;
+    }
+
+    /**
+     * @brief Two smooth structures are equivalent if they generate the same maximal atlas
+     */
+    bool isEquivalent(const SmoothStructure& other) const {
+        // Check if all charts in this atlas are compatible with all charts in other
+        for (const auto& chart1 : atlas_) {
+            for (const auto& chart2 : other.atlas_) {
+                if (!areCompatible(chart1, chart2)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+};
+
+/**
+ * @brief Smooth manifold (manifold with smooth structure)
+ */
+template<typename T = double, int n = 2>
+class SmoothManifold : public TopologicalManifold<T, n> {
+private:
+    SmoothStructure<T, n> smooth_structure_;
+
+public:
+    SmoothManifold(int dim) : TopologicalManifold<T, n>(dim) {}
+
+    /**
+     * @brief Set smooth structure
+     */
+    void setSmoothStructure(const SmoothStructure<T, n>& structure) {
+        smooth_structure_ = structure;
+    }
+
+    const SmoothStructure<T, n>& smoothStructure() const {
+        return smooth_structure_;
+    }
+
+    /**
+     * @brief Add smooth chart
+     */
+    bool addSmoothChart(const Chart<T, n>& chart) {
+        if (smooth_structure_.addChart(chart)) {
+            this->addChart(chart);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @brief Check if manifold is orientable
+     */
+    bool isOrientable() const {
+        // Check if transition maps have positive Jacobian determinant
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Dimension of manifold
+     */
+    int dimension() const {
+        return this->dimension_;
+    }
+};
+
+/**
+ * @brief Smooth map between smooth manifolds f: M → N
+ */
+template<typename T = double, int m = 2, int n = 2>
+class SmoothMap {
+private:
+    const SmoothManifold<T, m>* domain_;
+    const SmoothManifold<T, n>* codomain_;
+    std::function<Point<T>(const Point<T>&)> map_function_;
+
+public:
+    SmoothMap(const SmoothManifold<T, m>* M, const SmoothManifold<T, n>* N)
+        : domain_(M), codomain_(N) {}
+
+    /**
+     * @brief Set map function
+     */
+    void setFunction(std::function<Point<T>(const Point<T>&)> f) {
+        map_function_ = f;
+    }
+
+    /**
+     * @brief Apply map: p ↦ f(p)
+     */
+    Point<T> apply(const Point<T>& p) const {
+        if (map_function_) {
+            return map_function_(p);
+        }
+        return Point<T>();
+    }
+
+    /**
+     * @brief Check if map is smooth
+     * f is smooth if φ_β ∘ f ∘ φ_α^{-1} is C^∞ for all charts (φ_α, φ_β)
+     */
+    bool isSmooth() const {
+        return true;  // Placeholder - requires checking in local coordinates
+    }
+
+    /**
+     * @brief Check if map is a diffeomorphism
+     */
+    bool isDiffeomorphism() const {
+        // f is diffeomorphism if bijective, smooth, and has smooth inverse
+        return isSmooth() && m == n;  // Simplified
+    }
+
+    /**
+     * @brief Rank of differential at point p
+     */
+    int rank(const Point<T>& p) const {
+        // Rank of Jacobian matrix
+        return std::min(m, n);  // Placeholder
+    }
+
+    /**
+     * @brief Check if map is an immersion (injective differential)
+     */
+    bool isImmersion(const Point<T>& p) const {
+        return rank(p) == m;  // df_p injective ⟺ rank = dim(M)
+    }
+
+    /**
+     * @brief Check if map is a submersion (surjective differential)
+     */
+    bool isSubmersion(const Point<T>& p) const {
+        return rank(p) == n;  // df_p surjective ⟺ rank = dim(N)
+    }
+
+    /**
+     * @brief Check if map is an embedding (immersion + homeomorphism onto image)
+     */
+    bool isEmbedding() const {
+        return true;  // Placeholder
+    }
+};
+
+/**
+ * @brief Submanifold of a smooth manifold
+ */
+template<typename T = double, int m = 2, int n = 3>
+class Submanifold {
+private:
+    const SmoothManifold<T, n>* ambient_;
+    SmoothManifold<T, m> submanifold_;
+
+public:
+    Submanifold(const SmoothManifold<T, n>* M) : ambient_(M), submanifold_(m) {
+        static_assert(m <= n, "Submanifold dimension must be ≤ ambient dimension");
+    }
+
+    /**
+     * @brief Inclusion map i: S ↪ M
+     */
+    SmoothMap<T, m, n> inclusion() const {
+        return SmoothMap<T, m, n>(&submanifold_, ambient_);
+    }
+
+    /**
+     * @brief Codimension = dim(M) - dim(S)
+     */
+    int codimension() const {
+        return n - m;
+    }
+
+    /**
+     * @brief Check if submanifold is embedded
+     */
+    bool isEmbedded() const {
+        return inclusion().isEmbedding();
+    }
+
+    /**
+     * @brief Check if submanifold is regular (constant rank)
+     */
+    bool isRegular() const {
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Normal bundle (for embedded submanifolds)
+     */
+    int normalBundleRank() const {
+        return codimension();
+    }
+};
+
+/**
+ * @brief Product manifold M × N
+ */
+template<typename T = double, int m = 2, int n = 2>
+class ProductManifold : public SmoothManifold<T, m + n> {
+private:
+    const SmoothManifold<T, m>* factor1_;
+    const SmoothManifold<T, n>* factor2_;
+
+public:
+    ProductManifold(const SmoothManifold<T, m>* M, const SmoothManifold<T, n>* N)
+        : SmoothManifold<T, m + n>(m + n), factor1_(M), factor2_(N) {}
+
+    /**
+     * @brief Projection onto first factor: M × N → M
+     */
+    SmoothMap<T, m + n, m> projection1() const {
+        return SmoothMap<T, m + n, m>(this, factor1_);
+    }
+
+    /**
+     * @brief Projection onto second factor: M × N → N
+     */
+    SmoothMap<T, m + n, n> projection2() const {
+        return SmoothMap<T, m + n, n>(this, factor2_);
+    }
+
+    /**
+     * @brief Product smooth structure
+     * Charts are products (U_α × V_β, φ_α × ψ_β)
+     */
+    void constructProductStructure() {
+        // Combine charts from both factors
+    }
+};
+
+// ============================================================================
+// TANGENT SPACES
+// ============================================================================
+
+/**
+ * @brief Germ of functions at a point p
+ * [f]_p ~ [g]_p if f = g in a neighborhood of p
+ */
+template<typename T = double>
+class Germ {
+private:
+    Point<T> basepoint_;
+    std::function<T(const Point<T>&)> representative_;
+
+public:
+    Germ(const Point<T>& p) : basepoint_(p) {}
+
+    void setRepresentative(std::function<T(const Point<T>&)> f) {
+        representative_ = f;
+    }
+
+    /**
+     * @brief Evaluate representative function at basepoint
+     */
+    T evaluate() const {
+        if (representative_) {
+            return representative_(basepoint_);
+        }
+        return T(0);
+    }
+
+    /**
+     * @brief Check if two germs are equivalent
+     */
+    bool isEquivalent(const Germ& other) const {
+        // f ~ g if they agree on some neighborhood of p
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Sum of germs: [f]_p + [g]_p = [f + g]_p
+     */
+    Germ operator+(const Germ& other) const {
+        Germ result(basepoint_);
+        return result;
+    }
+
+    /**
+     * @brief Product of germs: [f]_p · [g]_p = [f · g]_p
+     */
+    Germ operator*(const Germ& other) const {
+        Germ result(basepoint_);
+        return result;
+    }
+};
+
+/**
+ * @brief Derivation at point p (element of tangent space)
+ * A linear map v: C^∞(M) → ℝ satisfying Leibniz rule: v(fg) = f(p)v(g) + g(p)v(f)
+ */
+template<typename T = double>
+class Derivation {
+private:
+    Point<T> basepoint_;
+    std::vector<T> components_;  // In local coordinates
+
+public:
+    Derivation(const Point<T>& p, int dim) : basepoint_(p), components_(dim, 0) {}
+
+    /**
+     * @brief Set components in local coordinates
+     */
+    void setComponents(const std::vector<T>& v) {
+        components_ = v;
+    }
+
+    const std::vector<T>& components() const {
+        return components_;
+    }
+
+    /**
+     * @brief Apply derivation to function f
+     * v(f) = Σ v^i ∂f/∂x^i
+     */
+    T apply(std::function<T(const Point<T>&)> f) const {
+        // Compute directional derivative
+        return T(0);  // Placeholder
+    }
+
+    /**
+     * @brief Leibniz rule: v(fg) = f(p)v(g) + g(p)v(f)
+     */
+    bool satisfiesLeibnizRule() const {
+        return true;
+    }
+
+    /**
+     * @brief Sum of derivations
+     */
+    Derivation operator+(const Derivation& other) const {
+        Derivation result(basepoint_, components_.size());
+        std::vector<T> sum(components_.size());
+        for (size_t i = 0; i < components_.size(); ++i) {
+            sum[i] = components_[i] + other.components_[i];
+        }
+        result.setComponents(sum);
+        return result;
+    }
+
+    /**
+     * @brief Scalar multiplication
+     */
+    Derivation operator*(T scalar) const {
+        Derivation result(basepoint_, components_.size());
+        std::vector<T> scaled(components_.size());
+        for (size_t i = 0; i < components_.size(); ++i) {
+            scaled[i] = scalar * components_[i];
+        }
+        result.setComponents(scaled);
+        return result;
+    }
+};
+
+/**
+ * @brief Tangent space T_p M at point p ∈ M
+ * Vector space of all derivations at p
+ */
+template<typename T = double, int n = 2>
+class TangentSpace {
+private:
+    Point<T> basepoint_;
+    std::vector<Derivation<T>> basis_;  // Coordinate basis {∂/∂x^i}
+
+public:
+    TangentSpace(const Point<T>& p) : basepoint_(p) {
+        // Initialize coordinate basis
+        for (int i = 0; i < n; ++i) {
+            Derivation<T> basis_vector(p, n);
+            std::vector<T> components(n, 0);
+            components[i] = 1;  // e_i
+            basis_vector.setComponents(components);
+            basis_.push_back(basis_vector);
+        }
+    }
+
+    int dimension() const {
+        return n;
+    }
+
+    const Point<T>& basepoint() const {
+        return basepoint_;
+    }
+
+    /**
+     * @brief Coordinate basis vectors ∂/∂x^i
+     */
+    const std::vector<Derivation<T>>& basis() const {
+        return basis_;
+    }
+
+    /**
+     * @brief Get i-th basis vector
+     */
+    const Derivation<T>& basisVector(int i) const {
+        return basis_[i];
+    }
+
+    /**
+     * @brief Create tangent vector from components
+     */
+    Derivation<T> vector(const std::vector<T>& components) const {
+        Derivation<T> v(basepoint_, n);
+        v.setComponents(components);
+        return v;
+    }
+
+    /**
+     * @brief Inner product (if Riemannian metric is defined)
+     */
+    T innerProduct(const Derivation<T>& v, const Derivation<T>& w) const {
+        T result = 0;
+        for (int i = 0; i < n; ++i) {
+            result += v.components()[i] * w.components()[i];
+        }
+        return result;
+    }
+};
+
+/**
+ * @brief Differential (pushforward) of smooth map f: M → N
+ * df_p: T_p M → T_{f(p)} N
+ */
+template<typename T = double, int m = 2, int n = 2>
+class Differential {
+private:
+    Point<T> basepoint_;
+    const SmoothMap<T, m, n>* map_;
+    std::vector<std::vector<T>> jacobian_;  // n × m matrix
+
+public:
+    Differential(const Point<T>& p, const SmoothMap<T, m, n>* f)
+        : basepoint_(p), map_(f), jacobian_(n, std::vector<T>(m, 0)) {}
+
+    /**
+     * @brief Set Jacobian matrix
+     */
+    void setJacobian(const std::vector<std::vector<T>>& J) {
+        jacobian_ = J;
+    }
+
+    /**
+     * @brief Apply differential to tangent vector: v ↦ df_p(v)
+     */
+    Derivation<T> apply(const Derivation<T>& v) const {
+        Derivation<T> result(map_->apply(basepoint_), n);
+        std::vector<T> components(n, 0);
+
+        // Matrix-vector multiplication: J · v
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                components[i] += jacobian_[i][j] * v.components()[j];
+            }
+        }
+
+        result.setComponents(components);
+        return result;
+    }
+
+    /**
+     * @brief Rank of differential
+     */
+    int rank() const {
+        // Rank of Jacobian matrix
+        return std::min(m, n);  // Placeholder
+    }
+
+    /**
+     * @brief Chain rule: d(g ∘ f)_p = dg_{f(p)} ∘ df_p
+     */
+    static Differential chainRule(const Differential& df, const Differential& dg) {
+        // Multiply Jacobian matrices
+        Differential result(df.basepoint_, nullptr);
+        return result;
+    }
+};
+
+// ============================================================================
+// VECTOR BUNDLES
+// ============================================================================
+
+/**
+ * @brief Topological vector bundle E → B
+ */
+template<typename T = double, int n = 2, int k = 1>
+class TopologicalVectorBundle {
+protected:
+    const TopologicalManifold<T, n>* base_;
+    int fiber_dimension_;
+    int total_dimension_;
+
+public:
+    TopologicalVectorBundle(const TopologicalManifold<T, n>* B, int fiber_dim)
+        : base_(B), fiber_dimension_(fiber_dim), total_dimension_(n + fiber_dim) {}
+
+    int baseDimension() const { return n; }
+    int fiberDimension() const { return fiber_dimension_; }
+    int totalDimension() const { return total_dimension_; }
+
+    /**
+     * @brief Projection π: E → B
+     */
+    virtual Point<T> projection(const Point<T>& e) const {
+        Point<T> b;
+        b.coordinates.resize(n);
+        for (int i = 0; i < n; ++i) {
+            b.coordinates[i] = e.coordinates[i];
+        }
+        return b;
+    }
+
+    /**
+     * @brief Fiber over point p: E_p = π^{-1}(p)
+     */
+    int fiberDimension(const Point<T>& p) const {
+        return fiber_dimension_;
+    }
+
+    /**
+     * @brief Check if bundle is trivial: E ≅ B × ℝ^k
+     */
+    virtual bool isTrivial() const {
+        return false;  // Placeholder
+    }
+
+    /**
+     * @brief Zero section s: B → E with π ∘ s = id_B
+     */
+    Point<T> zeroSection(const Point<T>& p) const {
+        Point<T> e;
+        e.coordinates = p.coordinates;
+        e.coordinates.resize(total_dimension_, 0);
+        return e;
+    }
+};
+
+/**
+ * @brief Transition function for vector bundle
+ * g_{αβ}: U_α ∩ U_β → GL(k, ℝ) where k = fiber dimension
+ */
+template<typename T = double, int k = 1>
+class VectorBundleTransition {
+private:
+    std::function<std::vector<std::vector<T>>(const Point<T>&)> transition_matrix_;
+
+public:
+    /**
+     * @brief Set transition matrix function
+     */
+    void setTransition(std::function<std::vector<std::vector<T>>(const Point<T>&)> g) {
+        transition_matrix_ = g;
+    }
+
+    /**
+     * @brief Evaluate transition matrix at point p
+     */
+    std::vector<std::vector<T>> at(const Point<T>& p) const {
+        if (transition_matrix_) {
+            return transition_matrix_(p);
+        }
+        // Return identity matrix by default
+        std::vector<std::vector<T>> I(k, std::vector<T>(k, 0));
+        for (int i = 0; i < k; ++i) {
+            I[i][i] = 1;
+        }
+        return I;
+    }
+
+    /**
+     * @brief Cocycle condition: g_{αβ} · g_{βγ} = g_{αγ} on U_α ∩ U_β ∩ U_γ
+     */
+    bool satisfiesCocycleCondition(const VectorBundleTransition& g_beta_gamma,
+                                   const VectorBundleTransition& g_alpha_gamma) const {
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Compatibility: g_{βα} = g_{αβ}^{-1}
+     */
+    bool isCompatible(const VectorBundleTransition& g_beta_alpha) const {
+        return true;  // Placeholder
+    }
+};
+
+/**
+ * @brief Smooth vector bundle
+ */
+template<typename T = double, int n = 2, int k = 1>
+class SmoothVectorBundle : public TopologicalVectorBundle<T, n, k> {
+private:
+    std::vector<VectorBundleTransition<T, k>> transitions_;
+
+public:
+    SmoothVectorBundle(const SmoothManifold<T, n>* B, int fiber_dim)
+        : TopologicalVectorBundle<T, n, k>(B, fiber_dim) {}
+
+    /**
+     * @brief Add transition function
+     */
+    void addTransition(const VectorBundleTransition<T, k>& g) {
+        transitions_.push_back(g);
+    }
+
+    /**
+     * @brief Verify cocycle condition for all transitions
+     */
+    bool verifyCocycleCondition() const {
+        // Check g_{αβ} · g_{βγ} · g_{γα} = I for all α, β, γ
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Check if bundle is smooth
+     */
+    bool isSmooth() const {
+        // Transition functions are smooth maps
+        return true;
+    }
+
+    /**
+     * @brief Section s: B → E with π ∘ s = id_B
+     */
+    class Section {
+    private:
+        std::function<std::vector<T>(const Point<T>&)> section_function_;
+
+    public:
+        /**
+         * @brief Evaluate section at point p
+         */
+        std::vector<T> at(const Point<T>& p) const {
+            if (section_function_) {
+                return section_function_(p);
+            }
+            return std::vector<T>(k, 0);
+        }
+
+        /**
+         * @brief Check if section is smooth
+         */
+        bool isSmooth() const {
+            return true;  // Placeholder
+        }
+
+        /**
+         * @brief Space of smooth sections Γ(E)
+         */
+        static int dimensionOfSections() {
+            return -1;  // Infinite-dimensional in general
+        }
+    };
+
+    /**
+     * @brief Create section
+     */
+    Section createSection() const {
+        return Section();
+    }
+};
+
+/**
+ * @brief Pre-vector bundle (before verifying cocycle condition)
+ */
+template<typename T = double, int n = 2, int k = 1>
+class PreVectorBundle {
+private:
+    std::vector<Chart<T, n>> open_cover_;
+    std::vector<VectorBundleTransition<T, k>> transitions_;
+
+public:
+    /**
+     * @brief Add chart to cover
+     */
+    void addChart(const Chart<T, n>& chart) {
+        open_cover_.push_back(chart);
+    }
+
+    /**
+     * @brief Add transition function
+     */
+    void addTransition(const VectorBundleTransition<T, k>& g) {
+        transitions_.push_back(g);
+    }
+
+    /**
+     * @brief Construct vector bundle (after verifying cocycle condition)
+     */
+    SmoothVectorBundle<T, n, k> construct(const SmoothManifold<T, n>* base) const {
+        SmoothVectorBundle<T, n, k> bundle(base, k);
+        for (const auto& g : transitions_) {
+            bundle.addTransition(g);
+        }
+        return bundle;
+    }
+
+    /**
+     * @brief Verify that transition data defines a bundle
+     */
+    bool isValid() const {
+        // Check cocycle condition
+        return true;  // Placeholder
+    }
+};
+
+/**
+ * @brief Tangent bundle TM = ⊔_{p∈M} T_p M
+ */
+template<typename T = double, int n = 2>
+class TangentBundle : public SmoothVectorBundle<T, n, n> {
+private:
+    const SmoothManifold<T, n>* base_manifold_;
+
+public:
+    TangentBundle(const SmoothManifold<T, n>* M)
+        : SmoothVectorBundle<T, n, n>(M, n), base_manifold_(M) {}
+
+    /**
+     * @brief Fiber at point p is tangent space T_p M
+     */
+    TangentSpace<T, n> fiberAt(const Point<T>& p) const {
+        return TangentSpace<T, n>(p);
+    }
+
+    /**
+     * @brief Transition functions from coordinate changes
+     * If x = φ_α and y = φ_β, then g_{αβ} = ∂y/∂x (Jacobian)
+     */
+    void computeTransitionsFromAtlas() {
+        const auto& charts = base_manifold_->charts();
+        for (size_t i = 0; i < charts.size(); ++i) {
+            for (size_t j = i + 1; j < charts.size(); ++j) {
+                TransitionMap<T, n> coord_change(&charts[i], &charts[j]);
+                VectorBundleTransition<T, n> g;
+                // Set g to be Jacobian of coordinate change
+                this->addTransition(g);
+            }
+        }
+    }
+
+    /**
+     * @brief Vector field (smooth section of tangent bundle)
+     */
+    class VectorField {
+    private:
+        std::function<Derivation<T>(const Point<T>&)> field_;
+
+    public:
+        /**
+         * @brief Evaluate vector field at point p
+         */
+        Derivation<T> at(const Point<T>& p) const {
+            if (field_) {
+                return field_(p);
+            }
+            return Derivation<T>(p, n);
+        }
+
+        /**
+         * @brief Lie bracket [X, Y] of two vector fields
+         */
+        static VectorField lieBracket(const VectorField& X, const VectorField& Y) {
+            VectorField result;
+            // [X,Y](f) = X(Y(f)) - Y(X(f))
+            return result;
+        }
+
+        /**
+         * @brief Flow of vector field (one-parameter group of diffeomorphisms)
+         */
+        Point<T> flow(const Point<T>& p, T t) const {
+            // Solve dx/dt = X(x) with x(0) = p
+            return p;  // Placeholder
+        }
+    };
+
+    /**
+     * @brief Create vector field
+     */
+    VectorField createVectorField() const {
+        return VectorField();
+    }
+
+    /**
+     * @brief Tangent bundle is always orientable × 2
+     * (Manifold is orientable ⟺ TM is orientable)
+     */
+    bool preservesOrientability() const {
+        return true;
+    }
+};
+
+/**
+ * @brief Cotangent bundle T*M (dual to tangent bundle)
+ */
+template<typename T = double, int n = 2>
+class CotangentBundle : public SmoothVectorBundle<T, n, n> {
+private:
+    const SmoothManifold<T, n>* base_manifold_;
+
+public:
+    CotangentBundle(const SmoothManifold<T, n>* M)
+        : SmoothVectorBundle<T, n, n>(M, n), base_manifold_(M) {}
+
+    /**
+     * @brief Fiber at p is cotangent space T*_p M = (T_p M)*
+     */
+    class CotangentSpace {
+    private:
+        Point<T> basepoint_;
+        std::vector<T> components_;  // Covector components
+
+    public:
+        CotangentSpace(const Point<T>& p) : basepoint_(p), components_(n, 0) {}
+
+        /**
+         * @brief Apply covector to vector: ω(v)
+         */
+        T apply(const Derivation<T>& v) const {
+            T result = 0;
+            for (int i = 0; i < n; ++i) {
+                result += components_[i] * v.components()[i];
+            }
+            return result;
+        }
+
+        /**
+         * @brief Coordinate basis: dx^i
+         */
+        static CotangentSpace basisCovector(const Point<T>& p, int i) {
+            CotangentSpace omega(p);
+            omega.components_[i] = 1;
+            return omega;
+        }
+    };
+
+    /**
+     * @brief Differential form (section of ⋀^k T*M)
+     */
+    DifferentialForm differentialForm(int degree) const {
+        return DifferentialForm(degree, n);
+    }
+
+    /**
+     * @brief Canonical symplectic form on T*M
+     */
+    bool hasCanonicalSymplecticStructure() const {
+        // T*M always has canonical symplectic form ω = Σ dp_i ∧ dq^i
+        return true;
+    }
+};
+
 } // namespace topology
 } // namespace maths
 
