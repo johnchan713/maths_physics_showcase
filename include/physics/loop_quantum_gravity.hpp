@@ -2189,6 +2189,75 @@ public:
     static std::string discrete_continuum() {
         return "Spinfoam: discretized path integral (Regge-like)";
     }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Calculate phase for path integral contribution
+     *
+     * Phase = S/ℏ for action S
+     *
+     * @param action Action value in Planck units
+     * @return Phase in radians
+     */
+    static double path_integral_phase(double action) {
+        return action;  // Already in Planck units where ℏ = 1
+    }
+
+    /**
+     * @brief Estimate transition amplitude magnitude
+     *
+     * Simple exponential suppression for large action
+     * |A| ~ e^(-|S|) for Euclidean signature
+     *
+     * @param action_euclidean Euclidean action
+     * @return Amplitude magnitude (dimensionless)
+     */
+    static double amplitude_magnitude(double action_euclidean) {
+        return std::exp(-std::abs(action_euclidean));
+    }
+
+    /**
+     * @brief Wheeler-DeWitt time parameter
+     *
+     * Intrinsic time from volume change
+     * t ~ V^(1/3) (volume clock)
+     *
+     * @param volume Spatial volume in Planck units
+     * @return Time parameter
+     */
+    static double intrinsic_time(double volume) {
+        if (volume <= 0.0) return 0.0;
+        return std::pow(volume, 1.0/3.0);
+    }
+
+    /**
+     * @brief Estimate number of 4-simplices for discretization
+     *
+     * N ~ (V/l_P^4)^(3/4) for volume V
+     *
+     * @param spacetime_volume 4-volume in Planck units
+     * @return Approximate number of 4-simplices needed
+     */
+    static int estimate_simplices(double spacetime_volume) {
+        if (spacetime_volume <= 0.0) return 0;
+        return static_cast<int>(std::pow(spacetime_volume, 0.75));
+    }
+
+    /**
+     * @brief Discretization scale from number of simplices
+     *
+     * @param n_simplices Number of 4-simplices
+     * @param total_volume Total 4-volume in Planck units
+     * @return Typical simplex size in Planck lengths
+     */
+    static double discretization_scale(int n_simplices, double total_volume) {
+        if (n_simplices <= 0 || total_volume <= 0.0) return 0.0;
+        double volume_per_simplex = total_volume / n_simplices;
+        return std::pow(volume_per_simplex, 0.25);  // 4D linear size
+    }
 };
 
 /**
@@ -2260,6 +2329,109 @@ public:
     static std::string transition() {
         return "⟨s_f|s_i⟩ = Σ_{σ:∂σ=s_i∪s_f} A(σ)";
     }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Face dimension from spin
+     *
+     * d_j = 2j + 1 (dimension of SU(2) irrep)
+     *
+     * @param twice_j Twice the spin j (integer)
+     * @return Dimension (always odd integer)
+     */
+    static int face_dimension(int twice_j) {
+        return twice_j + 1;
+    }
+
+    /**
+     * @brief Euler characteristic of 2-complex
+     *
+     * χ = V - E + F (topological invariant)
+     *
+     * @param vertices Number of vertices
+     * @param edges Number of edges
+     * @param faces Number of faces
+     * @return Euler characteristic
+     */
+    static int euler_characteristic(int vertices, int edges, int faces) {
+        return vertices - edges + faces;
+    }
+
+    /**
+     * @brief Face weight product for amplitude
+     *
+     * Π_f d_j = product over all face dimensions
+     *
+     * @param twice_spins Vector of 2j values for all faces
+     * @return Product of all face dimensions
+     */
+    static double face_weight_product(const std::vector<int>& twice_spins) {
+        double product = 1.0;
+        for (int twice_j : twice_spins) {
+            product *= face_dimension(twice_j);
+        }
+        return product;
+    }
+
+    /**
+     * @brief Number of faces for 4-simplex
+     *
+     * 4-simplex has 5 vertices, 10 edges, 10 faces (triangles)
+     *
+     * @return Number of faces (10)
+     */
+    static int simplex_4d_faces() {
+        return 10;
+    }
+
+    /**
+     * @brief Number of edges for 4-simplex
+     *
+     * @return Number of edges (10)
+     */
+    static int simplex_4d_edges() {
+        return 10;
+    }
+
+    /**
+     * @brief Number of vertices for 4-simplex
+     *
+     * @return Number of vertices (5)
+     */
+    static int simplex_4d_vertices() {
+        return 5;
+    }
+
+    /**
+     * @brief Estimate amplitude weight from average spin
+     *
+     * Simple estimate: weight ~ (2j_avg + 1)^N_faces
+     *
+     * @param avg_twice_j Average of 2j over faces
+     * @param n_faces Number of faces
+     * @return Estimated weight contribution
+     */
+    static double amplitude_weight_estimate(double avg_twice_j, int n_faces) {
+        double avg_dim = avg_twice_j + 1.0;
+        return std::pow(avg_dim, n_faces);
+    }
+
+    /**
+     * @brief Check if 2-complex is valid for 4-simplex
+     *
+     * 4-simplex: χ = 1, V = 5, E = 10, F = 10
+     *
+     * @param vertices Number of vertices
+     * @param edges Number of edges
+     * @param faces Number of faces
+     * @return True if valid 4-simplex topology
+     */
+    static bool is_valid_4simplex(int vertices, int edges, int faces) {
+        return (vertices == 5 && edges == 10 && faces == 10);
+    }
 };
 
 /**
@@ -2312,6 +2484,82 @@ public:
      */
     static std::string evolution() {
         return "Ĥ generates boundary deformation (discrete time step)";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Check normalization condition
+     *
+     * ⟨s|s⟩ = 1 (cylindrical consistency)
+     * For discrete spin network, check if inner product normalizes
+     *
+     * @param amplitude Inner product amplitude
+     * @return True if approximately normalized
+     */
+    static bool is_normalized(double amplitude, double tolerance = 0.01) {
+        return std::abs(amplitude - 1.0) < tolerance;
+    }
+
+    /**
+     * @brief Gluing composition factor
+     *
+     * When gluing two spinfoams, amplitudes compose
+     * A(σ₁ ∪ σ₂) involves sum over boundary spins
+     *
+     * @param amplitude1 First spinfoam amplitude
+     * @param amplitude2 Second spinfoam amplitude
+     * @param n_boundary_links Number of links in shared boundary
+     * @return Approximate composed amplitude
+     */
+    static double gluing_amplitude(double amplitude1, double amplitude2, int n_boundary_links) {
+        // Simplified: product times dimensionality factor from sum over boundary
+        double boundary_factor = std::pow(2.0, n_boundary_links);  // Rough estimate
+        return amplitude1 * amplitude2 * boundary_factor;
+    }
+
+    /**
+     * @brief Boundary area from spin network
+     *
+     * A = 8πγl_P² Σ_links √(j(j+1))
+     *
+     * @param twice_spins Vector of 2j values for boundary links
+     * @param gamma Immirzi parameter (default 0.2375)
+     * @return Boundary area in Planck units
+     */
+    static double boundary_area(const std::vector<int>& twice_spins, double gamma = 0.2375) {
+        double sum = 0.0;
+        for (int twice_j : twice_spins) {
+            double j = twice_j / 2.0;
+            sum += std::sqrt(j * (j + 1.0));
+        }
+        return 8.0 * M_PI * gamma * sum;  // In Planck units where l_P = 1
+    }
+
+    /**
+     * @brief Time step from boundary deformation
+     *
+     * Δt ~ l_P for Planck-scale evolution
+     *
+     * @param n_steps Number of discrete evolution steps
+     * @return Total time in Planck units
+     */
+    static double discrete_time_step(int n_steps) {
+        return static_cast<double>(n_steps);  // Each step ~ l_P/c
+    }
+
+    /**
+     * @brief Check if boundary is closed
+     *
+     * Closed boundary: no dangling edges
+     *
+     * @param n_edges Number of boundary edges
+     * @return True if no boundary (closed universe)
+     */
+    static bool is_closed_boundary(int n_edges) {
+        return (n_edges == 0);
     }
 };
 
@@ -2366,6 +2614,108 @@ public:
     static std::string btz() {
         return "BTZ: 3D rotating BH, horizon entropy from Chern-Simons";
     }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Number of edges in 3D tetrahedron
+     *
+     * Tetrahedron has 6 edges
+     *
+     * @return Number of edges (6)
+     */
+    static int tetrahedron_edges() {
+        return 6;
+    }
+
+    /**
+     * @brief Ponzano-Regge amplitude estimate
+     *
+     * Simple approximation: amplitude ~ product of face dimensions
+     * Real amplitude involves {6j} symbols
+     *
+     * @param twice_spins Vector of 6 spin values (2j for each edge)
+     * @return Approximate amplitude contribution
+     */
+    static double ponzano_regge_amplitude(const std::vector<int>& twice_spins) {
+        if (twice_spins.size() != 6) return 0.0;
+
+        // Simplified estimate: product of dimensions
+        double weight = 1.0;
+        for (int twice_j : twice_spins) {
+            weight *= (twice_j + 1);  // d_j = 2j + 1
+        }
+        return weight;
+    }
+
+    /**
+     * @brief Turaev-Viro quantum dimension
+     *
+     * For quantum SU(2) at root of unity q = e^(iπ/k)
+     * Quantum dimension: [n]_q = (q^n - q^{-n})/(q - q^{-1})
+     *
+     * @param n Value (typically 2j+1)
+     * @param k Level (q^{2k} = 1)
+     * @return Quantum dimension
+     */
+    static double quantum_dimension(int n, int k) {
+        if (k <= 0) return 0.0;
+        double q = std::cos(M_PI / k);  // Real part of e^(iπ/k)
+        if (std::abs(q - 1.0) < 1e-10) return static_cast<double>(n);
+
+        // [n]_q formula (simplified for real case)
+        double q_n = std::pow(q, n);
+        double q_inv_n = std::pow(q, -n);
+        double numerator = q_n - q_inv_n;
+        double denominator = q - 1.0/q;
+
+        return std::abs(numerator / denominator);
+    }
+
+    /**
+     * @brief BTZ black hole mass from horizon radius
+     *
+     * In 3D: M = r_+²/(8G) for non-rotating BTZ
+     *
+     * @param horizon_radius Horizon radius in Planck lengths
+     * @return Mass in Planck masses
+     */
+    static double btz_mass(double horizon_radius) {
+        if (horizon_radius <= 0.0) return 0.0;
+        return (horizon_radius * horizon_radius) / 8.0;  // G = 1 in Planck units
+    }
+
+    /**
+     * @brief BTZ entropy from horizon
+     *
+     * S = 2π r_+ / (4G) in Planck units
+     *
+     * @param horizon_radius Horizon radius
+     * @return Entropy (dimensionless)
+     */
+    static double btz_entropy(double horizon_radius) {
+        if (horizon_radius <= 0.0) return 0.0;
+        return M_PI * horizon_radius / 2.0;  // Simplified, G = 1
+    }
+
+    /**
+     * @brief Check triangle inequality for 6j symbol
+     *
+     * 6j symbol {j1 j2 j3; j4 j5 j6} requires triangle inequalities
+     * |j_a - j_b| ≤ j_c ≤ j_a + j_b for appropriate triads
+     *
+     * @param twice_j1 First spin (2j1)
+     * @param twice_j2 Second spin (2j2)
+     * @param twice_j3 Third spin (2j3)
+     * @return True if triangle inequality satisfied
+     */
+    static bool triangle_inequality(int twice_j1, int twice_j2, int twice_j3) {
+        int sum = twice_j1 + twice_j2;
+        int diff = std::abs(twice_j1 - twice_j2);
+        return (diff <= twice_j3 && twice_j3 <= sum);
+    }
 };
 
 /**
@@ -2418,6 +2768,92 @@ public:
      */
     static std::string to_spinfoam() {
         return "BF + simplicity (quantum) → gravity spinfoam models";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief BF theory action (topological part)
+     *
+     * S_BF = Tr(B ∧ F)
+     * For discrete case: sum over 2-cells
+     *
+     * @param B_field B-field value
+     * @param curvature Curvature F
+     * @return Action contribution (dimensionless)
+     */
+    static double bf_action(double B_field, double curvature) {
+        return B_field * curvature;
+    }
+
+    /**
+     * @brief Check simplicity constraint
+     *
+     * Plebanski constraint: relates B to metric
+     * Simple check: |B - expected| < tolerance
+     *
+     * @param B_value Actual B field value
+     * @param expected Expected value from e∧e
+     * @param tolerance Constraint violation tolerance
+     * @return True if constraint satisfied
+     */
+    static bool satisfies_simplicity(double B_value, double expected, double tolerance = 0.01) {
+        return std::abs(B_value - expected) < tolerance;
+    }
+
+    /**
+     * @brief Area from B field
+     *
+     * In Plebanski formulation, B ~ area bivector
+     * |B| gives area magnitude
+     *
+     * @param B_x Component of B bivector
+     * @param B_y Component of B bivector
+     * @param B_z Component of B bivector
+     * @return Area magnitude
+     */
+    static double area_from_B(double B_x, double B_y, double B_z) {
+        return std::sqrt(B_x*B_x + B_y*B_y + B_z*B_z);
+    }
+
+    /**
+     * @brief Degrees of freedom in BF theory
+     *
+     * Pure BF: topological, no local DOF
+     * Only global (topological) DOF
+     *
+     * @param dimension Spacetime dimension
+     * @return Number of local DOF (0 for topological)
+     */
+    static int local_dof(int dimension) {
+        return 0;  // Topological theory
+    }
+
+    /**
+     * @brief Constraint violation measure
+     *
+     * How much does B deviate from simplicity constraint
+     *
+     * @param B_value Actual B
+     * @param metric_derived B derived from metric
+     * @return Violation magnitude
+     */
+    static double constraint_violation(double B_value, double metric_derived) {
+        return std::abs(B_value - metric_derived);
+    }
+
+    /**
+     * @brief Gauge orbit dimension
+     *
+     * BF theory has SO(4) gauge symmetry in 4D
+     * Gauge orbit dimension = dim(SO(4)) = 6
+     *
+     * @return Dimension of gauge group (6 for SO(4))
+     */
+    static int gauge_dimension_so4() {
+        return 6;
     }
 };
 
@@ -2481,6 +2917,96 @@ public:
     static std::string cosmology() {
         return "GFT condensate → FRW cosmology (emergent)";
     }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief GFT field configuration dimension
+     *
+     * Field φ(g₁,g₂,g₃,g₄) lives on SU(2)^×4
+     * Each SU(2) has dimension 3
+     *
+     * @return Configuration space dimension (12 for SU(2)^×4)
+     */
+    static int gft_field_dimension() {
+        return 12;  // 4 copies of SU(2), each dim 3
+    }
+
+    /**
+     * @brief Number of strands at interaction vertex
+     *
+     * 4D GFT: 5-valent vertex (4-simplex)
+     * Each strand = one copy of group element
+     *
+     * @param dimension Spacetime dimension
+     * @return Number of strands (d+1)
+     */
+    static int vertex_valence(int dimension) {
+        return dimension + 1;
+    }
+
+    /**
+     * @brief Estimate condensate density
+     *
+     * ⟨φ⟩ ~ N^(1/2) for N quanta
+     *
+     * @param n_quanta Number of field quanta
+     * @return Condensate amplitude
+     */
+    static double condensate_amplitude(int n_quanta) {
+        if (n_quanta <= 0) return 0.0;
+        return std::sqrt(static_cast<double>(n_quanta));
+    }
+
+    /**
+     * @brief Volume from GFT condensate
+     *
+     * V ~ N for N quanta in condensate
+     *
+     * @param n_quanta Number of condensed quanta
+     * @return Volume in Planck units
+     */
+    static double emergent_volume(int n_quanta) {
+        return static_cast<double>(n_quanta);
+    }
+
+    /**
+     * @brief Scale factor from condensate
+     *
+     * a(t) ~ N(t)^(1/3) for 3D space
+     *
+     * @param n_quanta Number of quanta at time t
+     * @return Scale factor (dimensionless)
+     */
+    static double scale_factor_from_gft(int n_quanta) {
+        if (n_quanta <= 0) return 0.0;
+        return std::pow(static_cast<double>(n_quanta), 1.0/3.0);
+    }
+
+    /**
+     * @brief Feynman diagram vertex count
+     *
+     * Each vertex in GFT Feynman diagram = 4-simplex in spinfoam
+     *
+     * @param n_vertices Number of interaction vertices
+     * @return Number of 4-simplices
+     */
+    static int feynman_to_spinfoam_vertices(int n_vertices) {
+        return n_vertices;
+    }
+
+    /**
+     * @brief Coupling constant dimensionality
+     *
+     * In 4D GFT: λ has dimension [length]^(-12) in Planck units
+     *
+     * @return Mass dimension of coupling (-12 for 4D)
+     */
+    static int coupling_dimension_4d() {
+        return -12;
+    }
 };
 
 /**
@@ -2533,6 +3059,87 @@ public:
      */
     static std::string superseded() {
         return "BC superseded by EPRL/FK models (correct semiclassical limit)";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief SO(4) representation decomposition
+     *
+     * SO(4) = SU(2) × SU(2), so j = (j_+, j_-)
+     *
+     * @param twice_j_plus Self-dual part (2j_+)
+     * @param twice_j_minus Anti-self-dual part (2j_-)
+     * @return Combined representation dimension
+     */
+    static int so4_dimension(int twice_j_plus, int twice_j_minus) {
+        int d_plus = twice_j_plus + 1;
+        int d_minus = twice_j_minus + 1;
+        return d_plus * d_minus;
+    }
+
+    /**
+     * @brief Check Barrett-Crane simplicity constraint
+     *
+     * BC constraint: j_+ = j_- (simple representation)
+     *
+     * @param twice_j_plus Self-dual spin
+     * @param twice_j_minus Anti-self-dual spin
+     * @return True if constraint satisfied
+     */
+    static bool satisfies_bc_constraint(int twice_j_plus, int twice_j_minus) {
+        return (twice_j_plus == twice_j_minus);
+    }
+
+    /**
+     * @brief Simple representation dimension
+     *
+     * For j_+ = j_- = j: d = (2j+1)²
+     *
+     * @param twice_j Common spin value
+     * @return Dimension of simple representation
+     */
+    static int simple_rep_dimension(int twice_j) {
+        int d = twice_j + 1;
+        return d * d;
+    }
+
+    /**
+     * @brief Number of 10j symbols per vertex
+     *
+     * BC model uses 10j symbols (Euclidean 4-simplex)
+     *
+     * @return Number of 10j symbols (1 per vertex)
+     */
+    static int tensors_per_vertex() {
+        return 1;  // One 10j symbol
+    }
+
+    /**
+     * @brief Estimate 10j symbol computational cost
+     *
+     * 10j symbol computational complexity ~ j^5
+     *
+     * @param typical_twice_j Typical spin value
+     * @return Relative computational cost
+     */
+    static double tenjsymbol_cost(int typical_twice_j) {
+        double j = typical_twice_j / 2.0;
+        return std::pow(j, 5.0);
+    }
+
+    /**
+     * @brief Check if model has correct DOF
+     *
+     * BC model problem: too few propagating DOF
+     * GR should have 2 DOF per point
+     *
+     * @return Expected DOF for GR (2)
+     */
+    static int expected_graviton_dof() {
+        return 2;  // GR has 2 polarizations
     }
 };
 
@@ -2604,6 +3211,119 @@ public:
      */
     static std::string mean_field() {
         return "Mean field: δS/δφ = 0 → classical field equation";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief SU(2) dimension
+     *
+     * Dimension of SU(2) group manifold
+     *
+     * @return Dimension (3)
+     */
+    static int su2_dimension() {
+        return 3;
+    }
+
+    /**
+     * @brief Configuration space dimension for GFT field
+     *
+     * φ(g₁,...,g_n) on SU(2)^×n
+     *
+     * @param n Number of group arguments
+     * @return Total dimension (3n)
+     */
+    static int config_space_dim(int n) {
+        return 3 * n;
+    }
+
+    /**
+     * @brief Peter-Weyl expansion truncation
+     *
+     * Truncate at maximum spin j_max
+     * Number of terms ~ j_max³
+     *
+     * @param twice_j_max Maximum spin (2j_max)
+     * @return Number of terms in truncated expansion
+     */
+    static int peter_weyl_terms(int twice_j_max) {
+        int j_max = twice_j_max / 2;
+        return j_max * j_max * j_max;
+    }
+
+    /**
+     * @brief Character value for SU(2)
+     *
+     * χ_j(g) = sin((2j+1)θ) / sin(θ) for g = e^(iθσ_3)
+     *
+     * @param twice_j Spin value
+     * @param theta Rotation angle
+     * @return Character value
+     */
+    static double su2_character(int twice_j, double theta) {
+        double j = twice_j / 2.0;
+        if (std::abs(std::sin(theta)) < 1e-10) {
+            return (2.0 * j + 1.0);  // Limit as θ → 0
+        }
+        double num = std::sin((2.0 * j + 1.0) * theta);
+        double denom = std::sin(theta);
+        return num / denom;
+    }
+
+    /**
+     * @brief Propagator weight from Peter-Weyl
+     *
+     * Propagator: Σ_j d_j χ_j(gg'^{-1})
+     *
+     * @param twice_j Spin
+     * @param theta Relative angle
+     * @return Contribution to propagator
+     */
+    static double propagator_contribution(int twice_j, double theta) {
+        int d_j = twice_j + 1;
+        return d_j * su2_character(twice_j, theta);
+    }
+
+    /**
+     * @brief Kinetic term mass parameter
+     *
+     * K = Δ_G + m² (Laplacian + mass on group)
+     *
+     * @param mass_squared Mass parameter
+     * @return Kinetic operator eigenvalue estimate
+     */
+    static double kinetic_eigenvalue(double mass_squared, int twice_j) {
+        // Laplacian on SU(2): Δχ_j = -j(j+1)χ_j
+        double j = twice_j / 2.0;
+        double laplacian_eigenvalue = -j * (j + 1.0);
+        return laplacian_eigenvalue + mass_squared;
+    }
+
+    /**
+     * @brief Interaction vertex dimension
+     *
+     * For d-dimensional spacetime, vertex has d+1 legs
+     *
+     * @param spacetime_dim Spacetime dimension
+     * @return Number of legs at vertex
+     */
+    static int interaction_legs(int spacetime_dim) {
+        return spacetime_dim + 1;
+    }
+
+    /**
+     * @brief Gauge orbit volume (schematic)
+     *
+     * Right-invariance quotients by SU(2)
+     * Volume ~ Vol(SU(2)) = 2π²
+     *
+     * @return Approximate gauge volume
+     */
+    static double gauge_orbit_volume() {
+        return 2.0 * M_PI * M_PI;
     }
 };
 
@@ -2685,6 +3405,129 @@ public:
     static std::string n_point() {
         return "⟨h_μν(x) h_ρσ(y)⟩: graviton 2-point function";
     }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief SL(2,C) dimension
+     *
+     * Dimension of SL(2,C) group manifold (real dimension)
+     *
+     * @return Dimension (6)
+     */
+    static int sl2c_dimension() {
+        return 6;
+    }
+
+    /**
+     * @brief SL(2,C) representation parameters
+     *
+     * (ρ, k) where ρ ∈ ℝ⁺ is principal series, k ∈ ℤ/2
+     *
+     * @param rho Principal series parameter
+     * @param twice_k Helicity (2k)
+     * @return Representation label validity (always true for rho > 0)
+     */
+    static bool is_valid_sl2c_rep(double rho, int twice_k) {
+        return (rho > 0.0);  // Principal series requires ρ > 0
+    }
+
+    /**
+     * @brief EPRL map: SU(2) to SL(2,C)
+     *
+     * j → (ρ = γj, k = j) for Immirzi parameter γ
+     *
+     * @param twice_j SU(2) spin
+     * @param gamma Immirzi parameter
+     * @return Principal series parameter ρ
+     */
+    static double eprl_rho(int twice_j, double gamma = 0.2375) {
+        double j = twice_j / 2.0;
+        return gamma * j;
+    }
+
+    /**
+     * @brief Regge action for 4-simplex
+     *
+     * S_Regge = Σ_triangles A_triangle θ_hinge
+     *
+     * @param areas Vector of triangle areas
+     * @param deficit_angles Vector of deficit angles at hinges
+     * @return Regge action
+     */
+    static double regge_action(const std::vector<double>& areas,
+                                const std::vector<double>& deficit_angles) {
+        if (areas.size() != deficit_angles.size()) return 0.0;
+
+        double action = 0.0;
+        for (size_t i = 0; i < areas.size(); ++i) {
+            action += areas[i] * deficit_angles[i];
+        }
+        return action;
+    }
+
+    /**
+     * @brief Semiclassical amplitude phase
+     *
+     * A_v ~ e^(iS_Regge) for large spins
+     *
+     * @param regge_action Regge action
+     * @return Phase (in radians)
+     */
+    static double semiclassical_phase(double regge_action) {
+        return regge_action;
+    }
+
+    /**
+     * @brief Large spin scaling estimate
+     *
+     * For j → ∞, vertex amplitude oscillates with period ~ 1/j
+     *
+     * @param typical_twice_j Typical spin value
+     * @return Oscillation period
+     */
+    static double oscillation_period(int typical_twice_j) {
+        double j = typical_twice_j / 2.0;
+        if (j < 1.0) return 1.0;
+        return 1.0 / j;
+    }
+
+    /**
+     * @brief Graviton polarization states
+     *
+     * Lorentzian signature: 2 physical polarizations
+     *
+     * @return Number of polarizations (2)
+     */
+    static int graviton_polarizations() {
+        return 2;
+    }
+
+    /**
+     * @brief Check if spins are in semiclassical regime
+     *
+     * Semiclassical: j >> 1
+     *
+     * @param twice_j Spin value
+     * @param threshold Semiclassical threshold (default 20)
+     * @return True if in semiclassical regime
+     */
+    static bool is_semiclassical(int twice_j, int threshold = 20) {
+        return (twice_j > threshold);
+    }
+
+    /**
+     * @brief Immirzi parameter standard value
+     *
+     * From black hole entropy matching
+     *
+     * @return Standard Immirzi value (≈ 0.2375)
+     */
+    static double immirzi_standard() {
+        return 0.2375;
+    }
 };
 
 /**
@@ -2764,6 +3607,130 @@ public:
      */
     static std::string continuum() {
         return "Continuum: ε → 0 limit of spinfoam (triangulation refined)";
+    }
+
+    // =========================================================================
+    // COMPUTATIONAL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * @brief Graviton propagator in flat space
+     *
+     * ⟨h(x)h(y)⟩ ~ 1/|x-y|² in 4D
+     *
+     * @param distance Spatial separation |x-y|
+     * @return Propagator magnitude
+     */
+    static double graviton_propagator(double distance) {
+        if (distance < 1.0) distance = 1.0;  // Regularize at short distances
+        return 1.0 / (distance * distance);
+    }
+
+    /**
+     * @brief Coherent state width parameter
+     *
+     * Coherent states peaked on classical geometry
+     * Width σ ~ 1/√j for large j
+     *
+     * @param typical_twice_j Typical spin value
+     * @return Width parameter σ
+     */
+    static double coherent_state_width(int typical_twice_j) {
+        double j = typical_twice_j / 2.0;
+        if (j < 1.0) return 1.0;
+        return 1.0 / std::sqrt(j);
+    }
+
+    /**
+     * @brief Quantum correction order
+     *
+     * ℏ^n correction to classical result
+     *
+     * @param order Correction order (1, 2, 3, ...)
+     * @return Relative size of correction (schematic)
+     */
+    static double quantum_correction_factor(int order) {
+        // In Planck units ℏ = 1, but physically corrections ~ (l_P/L)^order
+        // For typical scale L ~ 100 l_P:
+        double typical_scale_ratio = 0.01;
+        return std::pow(typical_scale_ratio, order);
+    }
+
+    /**
+     * @brief Effective cosmological constant
+     *
+     * Λ_eff from spinfoam asymptotics (speculative)
+     * Simple estimate: Λ ~ 1/L² for typical scale L
+     *
+     * @param typical_scale Typical geometric scale
+     * @return Effective Λ
+     */
+    static double effective_lambda(double typical_scale) {
+        if (typical_scale < 1.0) return 1.0;
+        return 1.0 / (typical_scale * typical_scale);
+    }
+
+    /**
+     * @brief Locality emergence scale
+     *
+     * Scale below which locality breaks down
+     * Roughly the Planck length in Planck units
+     *
+     * @return Locality scale (1.0 in Planck units)
+     */
+    static double locality_scale() {
+        return 1.0;  // l_P in Planck units
+    }
+
+    /**
+     * @brief Coarse-graining parameter
+     *
+     * How many Planck-scale elements per coarse cell
+     *
+     * @param fine_elements Number of fine-grained elements
+     * @param coarse_cells Number of coarse-grained cells
+     * @return Elements per cell
+     */
+    static double coarse_graining_factor(int fine_elements, int coarse_cells) {
+        if (coarse_cells <= 0) return 0.0;
+        return static_cast<double>(fine_elements) / coarse_cells;
+    }
+
+    /**
+     * @brief Continuum limit criterion
+     *
+     * Check if discretization is fine enough
+     * ε << L (lattice spacing << physical scale)
+     *
+     * @param lattice_spacing Typical simplex size
+     * @param physical_scale Physical length scale of interest
+     * @return True if in continuum limit
+     */
+    static bool in_continuum_limit(double lattice_spacing, double physical_scale) {
+        return (lattice_spacing < 0.1 * physical_scale);
+    }
+
+    /**
+     * @brief Minkowski vacuum energy density
+     *
+     * Flat space: ⟨T_μν⟩ = 0
+     *
+     * @return Energy density (0 for Minkowski)
+     */
+    static double minkowski_energy_density() {
+        return 0.0;
+    }
+
+    /**
+     * @brief Scattering matrix element estimate
+     *
+     * |S_fi|² ~ A(spinfoam) for matter coupling
+     *
+     * @param spinfoam_amplitude Amplitude for process
+     * @return Scattering probability
+     */
+    static double scattering_probability(double spinfoam_amplitude) {
+        return spinfoam_amplitude * spinfoam_amplitude;
     }
 };
 
