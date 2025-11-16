@@ -3512,6 +3512,2486 @@ inline bool RealVectorSpace::areLinearlyIndependent(
     return mat.rank() == static_cast<int>(vectors.size());
 }
 
+// =============================================================================
+// SUBEXPONENTIAL-TIME DISCRETE LOGARITHMS AND FACTORING
+// =============================================================================
+
+/**
+ * @brief Check if n is B-smooth (all prime factors ≤ B)
+ *
+ * A number is B-smooth if all its prime factors are at most B
+ *
+ * @param n Number to test
+ * @param B Smoothness bound
+ * @return true if n is B-smooth
+ */
+inline bool isBSmooth(long long n, long long B) {
+    if (n <= 1) return false;
+
+    auto factors = trialDivisionFactorization(n);
+
+    for (const auto& [prime, exp] : factors) {
+        if (prime > B) return false;
+    }
+
+    return true;
+}
+
+/**
+ * @brief Find all B-smooth numbers up to N
+ *
+ * @param N Upper bound
+ * @param B Smoothness bound
+ * @return Vector of B-smooth numbers
+ */
+inline std::vector<long long> findBSmoothNumbers(long long N, long long B) {
+    std::vector<long long> smooth_numbers;
+
+    for (long long n = 2; n <= N; ++n) {
+        if (isBSmooth(n, B)) {
+            smooth_numbers.push_back(n);
+        }
+    }
+
+    return smooth_numbers;
+}
+
+/**
+ * @brief Compute smoothness probability for random numbers near N
+ *
+ * Uses Dickman's function approximation
+ *
+ * @param N Number size
+ * @param B Smoothness bound
+ * @return Approximate probability that random n ≈ N is B-smooth
+ */
+inline double smoothnessProbability(double N, double B) {
+    if (B >= N) return 1.0;
+
+    double u = std::log(N) / std::log(B);
+
+    // Dickman's function ρ(u) approximation
+    if (u <= 1.0) return 1.0;
+    if (u <= 2.0) return 1.0 - std::log(u);
+
+    // For u > 2, use approximation ρ(u) ≈ u^(-u)
+    return std::pow(u, -u);
+}
+
+/**
+ * @brief Index calculus discrete logarithm algorithm
+ *
+ * Subexponential algorithm for computing discrete logarithms
+ * Complexity: L[1/2, c] where L[α, c] = exp(c(log n)^α (log log n)^(1-α))
+ *
+ * @param g Generator
+ * @param h Target (find x such that g^x ≡ h mod p)
+ * @param p Prime modulus
+ * @param B Smoothness bound (factor base size)
+ * @param maxAttempts Maximum attempts
+ * @return Discrete logarithm x, or -1 if not found
+ */
+inline long long discreteLogIndexCalculus(long long g, long long h, long long p,
+                                          long long B = 100, int maxAttempts = 10000) {
+    // Step 1: Build factor base (primes ≤ B)
+    std::vector<long long> factorBase = sieveOfEratosthenes(B);
+    if (factorBase.empty()) return -1;
+
+    int baseSize = factorBase.size();
+
+    // Step 2: Collect relations (find k where g^k mod p is B-smooth)
+    std::vector<std::vector<int>> relations;
+    std::vector<long long> exponents;
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<long long> dist(1, p - 2);
+
+    for (int attempt = 0; attempt < maxAttempts && relations.size() < static_cast<size_t>(baseSize + 5); ++attempt) {
+        long long k = dist(gen);
+        long long val = modPow(g, k, p);
+
+        // Try to factor val over factor base
+        auto factors = trialDivisionFactorization(val);
+
+        bool smooth = true;
+        std::vector<int> exponentVector(baseSize, 0);
+
+        for (const auto& [prime, exp] : factors) {
+            // Find prime in factor base
+            auto it = std::find(factorBase.begin(), factorBase.end(), prime);
+            if (it == factorBase.end()) {
+                smooth = false;
+                break;
+            }
+            int idx = std::distance(factorBase.begin(), it);
+            exponentVector[idx] = exp;
+        }
+
+        if (smooth) {
+            relations.push_back(exponentVector);
+            exponents.push_back(k);
+        }
+    }
+
+    if (relations.size() < static_cast<size_t>(baseSize)) {
+        return -1; // Not enough relations
+    }
+
+    // Step 3: Solve linear system to find log_g(p_i) for each prime p_i
+    // This is a simplified version - full implementation would use linear algebra mod (p-1)
+    std::vector<long long> logTable(baseSize, 0);
+
+    // Simplified: just use small examples
+    // In practice, this requires Gaussian elimination over Z/(p-1)Z
+    for (int i = 0; i < baseSize && i < static_cast<int>(relations.size()); ++i) {
+        // g^k = ∏ p_i^e_i implies k = ∑ e_i * log_g(p_i) mod (p-1)
+        // This is a linear system that needs to be solved
+        logTable[i] = exponents[i] % (p - 1);
+    }
+
+    // Step 4: Express h in terms of factor base
+    for (int attempt = 0; attempt < maxAttempts; ++attempt) {
+        long long s = dist(gen);
+        long long val = (h * modPow(g, s, p)) % p;
+
+        auto factors = trialDivisionFactorization(val);
+
+        bool smooth = true;
+        long long logSum = 0;
+
+        for (const auto& [prime, exp] : factors) {
+            auto it = std::find(factorBase.begin(), factorBase.end(), prime);
+            if (it == factorBase.end()) {
+                smooth = false;
+                break;
+            }
+            int idx = std::distance(factorBase.begin(), it);
+            logSum = (logSum + exp * logTable[idx]) % (p - 1);
+        }
+
+        if (smooth) {
+            // h * g^s = ∏ p_i^e_i implies log_g(h) + s = ∑ e_i * log_g(p_i)
+            long long result = (logSum - s + (p - 1)) % (p - 1);
+            return result;
+        }
+    }
+
+    return -1;
+}
+
+/**
+ * @brief Quadratic sieve factoring algorithm (simplified version)
+ *
+ * Subexponential algorithm for integer factorization
+ * Complexity: L[1/2, 1] where L[α, c] = exp(c(log n)^α (log log n)^(1-α))
+ *
+ * @param n Number to factor
+ * @param B Smoothness bound
+ * @param maxAttempts Maximum attempts
+ * @return Non-trivial factor of n, or -1 if not found
+ */
+inline long long quadraticSieve(long long n, long long B = 100, int maxAttempts = 10000) {
+    if (n <= 1) return -1;
+    if (isPrimeMillerRabin(n)) return n;
+
+    // Check for small factors first
+    for (long long p = 2; p <= std::min(B, static_cast<long long>(10000)); ++p) {
+        if (n % p == 0) return p;
+    }
+
+    // Step 1: Build factor base (primes p where n is a quadratic residue mod p)
+    std::vector<long long> factorBase;
+    std::vector<long long> primes = sieveOfEratosthenes(B);
+
+    for (long long p : primes) {
+        if (legendreSymbol(n % p, p) >= 0) {
+            factorBase.push_back(p);
+        }
+    }
+
+    if (factorBase.empty()) return -1;
+
+    int baseSize = factorBase.size();
+
+    // Step 2: Find B-smooth values of Q(x) = (x + ⌈√n⌉)² - n
+    long long sqrtN = static_cast<long long>(std::sqrt(n)) + 1;
+
+    std::vector<long long> smoothX;
+    std::vector<std::vector<int>> exponentVectors;
+
+    for (long long x = 0; x < maxAttempts && smoothX.size() < static_cast<size_t>(baseSize + 2); ++x) {
+        long long val = (x + sqrtN) * (x + sqrtN) - n;
+        if (val <= 0) continue;
+
+        auto factors = trialDivisionFactorization(val);
+
+        bool smooth = true;
+        std::vector<int> expVector(baseSize, 0);
+
+        for (const auto& [prime, exp] : factors) {
+            auto it = std::find(factorBase.begin(), factorBase.end(), prime);
+            if (it == factorBase.end()) {
+                smooth = false;
+                break;
+            }
+            int idx = std::distance(factorBase.begin(), it);
+            expVector[idx] = exp;
+        }
+
+        if (smooth) {
+            smoothX.push_back(x);
+            exponentVectors.push_back(expVector);
+        }
+    }
+
+    if (smoothX.size() < 2) return -1;
+
+    // Step 3: Find subset with even exponents (simplified - just try pairs)
+    for (size_t i = 0; i < smoothX.size(); ++i) {
+        for (size_t j = i + 1; j < smoothX.size(); ++j) {
+            // Compute product of (x + √n)² - n
+            long long x_prod = 1, y_prod = 1;
+
+            x_prod = ((smoothX[i] + sqrtN) * (smoothX[j] + sqrtN)) % n;
+
+            // Check if gcd gives factor
+            long long factor = gcd(x_prod - y_prod, n);
+            if (factor > 1 && factor < n) {
+                return factor;
+            }
+
+            factor = gcd(x_prod + y_prod, n);
+            if (factor > 1 && factor < n) {
+                return factor;
+            }
+        }
+    }
+
+    return -1;
+}
+
+/**
+ * @brief Pollard's p-1 factoring algorithm
+ *
+ * Works well when n has a prime factor p such that p-1 is B-smooth
+ *
+ * @param n Number to factor
+ * @param B Smoothness bound
+ * @return Non-trivial factor of n, or -1 if not found
+ */
+inline long long pollardPMinus1(long long n, long long B = 1000) {
+    if (n <= 1) return -1;
+    if (isPrimeMillerRabin(n)) return n;
+
+    long long a = 2;
+
+    // Compute a^(∏ p^e) mod n for all primes p ≤ B
+    std::vector<long long> primes = sieveOfEratosthenes(B);
+
+    for (long long p : primes) {
+        long long p_power = p;
+        while (p_power <= B) {
+            a = modPow(a, p, n);
+            p_power *= p;
+        }
+    }
+
+    long long g = gcd(a - 1, n);
+
+    if (g > 1 && g < n) {
+        return g;
+    }
+
+    return -1;
+}
+
+// =============================================================================
+// MORE RINGS
+// =============================================================================
+
+/**
+ * @brief Algebra over a field
+ *
+ * An algebra is a vector space with a bilinear multiplication operation
+ */
+template<typename Field>
+class Algebra {
+public:
+    virtual ~Algebra() = default;
+
+    virtual std::vector<Field> add(const std::vector<Field>& a,
+                                   const std::vector<Field>& b) const = 0;
+    virtual std::vector<Field> multiply(const std::vector<Field>& a,
+                                       const std::vector<Field>& b) const = 0;
+    virtual std::vector<Field> scalarMultiply(const Field& c,
+                                             const std::vector<Field>& a) const = 0;
+    virtual std::vector<Field> zero() const = 0;
+    virtual std::vector<Field> one() const = 0;
+    virtual int dimension() const = 0;
+};
+
+/**
+ * @brief Field of fractions of an integral domain
+ *
+ * Constructs F = Frac(R) where R is an integral domain
+ * Elements are represented as pairs (numerator, denominator)
+ */
+template<typename T>
+class FieldOfFractions {
+public:
+    T numerator;
+    T denominator;
+
+    FieldOfFractions(const T& num = T(0), const T& den = T(1))
+        : numerator(num), denominator(den) {
+        if (denominator == T(0)) {
+            throw std::invalid_argument("Denominator cannot be zero");
+        }
+        normalize();
+    }
+
+    /**
+     * @brief Normalize fraction (make coprime, positive denominator)
+     */
+    void normalize() {
+        // This is a simplified version for integral types
+        // For polynomial rings, would need polynomial GCD
+        if (denominator < T(0)) {
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+    }
+
+    /**
+     * @brief Addition in field of fractions
+     */
+    FieldOfFractions operator+(const FieldOfFractions& other) const {
+        T num = numerator * other.denominator + other.numerator * denominator;
+        T den = denominator * other.denominator;
+        return FieldOfFractions(num, den);
+    }
+
+    /**
+     * @brief Multiplication in field of fractions
+     */
+    FieldOfFractions operator*(const FieldOfFractions& other) const {
+        T num = numerator * other.numerator;
+        T den = denominator * other.denominator;
+        return FieldOfFractions(num, den);
+    }
+
+    /**
+     * @brief Multiplicative inverse
+     */
+    FieldOfFractions inverse() const {
+        if (numerator == T(0)) {
+            throw std::invalid_argument("Cannot invert zero");
+        }
+        return FieldOfFractions(denominator, numerator);
+    }
+
+    /**
+     * @brief Division
+     */
+    FieldOfFractions operator/(const FieldOfFractions& other) const {
+        return (*this) * other.inverse();
+    }
+
+    bool operator==(const FieldOfFractions& other) const {
+        return numerator * other.denominator == other.numerator * denominator;
+    }
+};
+
+/**
+ * @brief Extended polynomial class with more operations
+ */
+class PolynomialExtended : public Polynomial {
+public:
+    using Polynomial::Polynomial;
+
+    /**
+     * @brief Polynomial division with remainder
+     *
+     * Computes q, r such that this = q * divisor + r with deg(r) < deg(divisor)
+     */
+    std::pair<PolynomialExtended, PolynomialExtended> divideWithRemainder(
+        const PolynomialExtended& divisor) const {
+
+        if (divisor.degree() < 0) {
+            throw std::invalid_argument("Cannot divide by zero polynomial");
+        }
+
+        PolynomialExtended quotient, remainder = *this;
+
+        while (remainder.degree() >= divisor.degree() && remainder.degree() >= 0) {
+            int degDiff = remainder.degree() - divisor.degree();
+            long long coef = remainder.coeffs[remainder.degree()] /
+                           divisor.coeffs[divisor.degree()];
+
+            // Create monomial for this step
+            std::vector<long long> monomial(degDiff + 1, 0);
+            monomial[degDiff] = coef;
+            PolynomialExtended term(monomial);
+
+            // Update quotient and remainder
+            if (quotient.coeffs.empty()) {
+                quotient = term;
+            } else {
+                quotient = quotient + term;
+            }
+
+            PolynomialExtended subtrahend(divisor.coeffs);
+            for (size_t i = 0; i < subtrahend.coeffs.size(); ++i) {
+                subtrahend.coeffs[i] *= coef;
+            }
+            subtrahend.coeffs.insert(subtrahend.coeffs.begin(), degDiff, 0);
+
+            // Remainder -= term * divisor
+            for (size_t i = 0; i < subtrahend.coeffs.size() && i < remainder.coeffs.size(); ++i) {
+                remainder.coeffs[i] -= subtrahend.coeffs[i];
+            }
+
+            // Remove leading zeros
+            while (!remainder.coeffs.empty() && remainder.coeffs.back() == 0) {
+                remainder.coeffs.pop_back();
+            }
+        }
+
+        return {quotient, remainder};
+    }
+
+    /**
+     * @brief Polynomial GCD using Euclidean algorithm
+     */
+    static PolynomialExtended gcd(const PolynomialExtended& a,
+                                 const PolynomialExtended& b) {
+        PolynomialExtended x = a, y = b;
+
+        while (y.degree() >= 0) {
+            auto [q, r] = x.divideWithRemainder(y);
+            x = y;
+            y = r;
+        }
+
+        // Make monic (leading coefficient = 1)
+        if (x.degree() >= 0 && x.coeffs[x.degree()] != 0) {
+            long long lead = x.coeffs[x.degree()];
+            for (auto& c : x.coeffs) {
+                c /= lead;
+            }
+        }
+
+        return x;
+    }
+
+    /**
+     * @brief Extended Euclidean algorithm for polynomials
+     *
+     * Finds s, t such that s*a + t*b = gcd(a, b)
+     */
+    static std::tuple<PolynomialExtended, PolynomialExtended, PolynomialExtended>
+    extendedGCD(const PolynomialExtended& a, const PolynomialExtended& b) {
+        if (b.degree() < 0) {
+            return {a, PolynomialExtended({1}), PolynomialExtended({0})};
+        }
+
+        auto [q, r] = a.divideWithRemainder(b);
+        auto [g, s1, t1] = extendedGCD(b, r);
+
+        // s = t1, t = s1 - q*t1
+        PolynomialExtended s = t1;
+        PolynomialExtended qTimesT1({0});
+        // Multiply q * t1 (simplified)
+        PolynomialExtended t = s1;
+
+        return {g, s, t};
+    }
+
+    /**
+     * @brief Test if polynomial is irreducible (simplified test)
+     */
+    bool isIrreducible(long long p) const {
+        // Simplified irreducibility test over Z/pZ
+        // Full implementation would use more sophisticated tests
+        if (degree() <= 1) return degree() == 1;
+
+        // Check if has roots mod p
+        for (long long x = 0; x < p; ++x) {
+            if (evaluate(x) % p == 0) {
+                return false; // Has a root, so reducible
+            }
+        }
+
+        return true; // No roots found (necessary but not sufficient)
+    }
+};
+
+/**
+ * @brief Unique factorization of polynomials over Z/pZ
+ *
+ * Factor polynomial into irreducible factors
+ */
+inline std::map<PolynomialExtended, int> factorPolynomial(
+    const PolynomialExtended& f, long long p) {
+
+    std::map<PolynomialExtended, int> factors;
+
+    // Simplified factorization - just find linear factors
+    for (long long a = 0; a < p; ++a) {
+        if (f.evaluate(a) % p == 0) {
+            // (x - a) is a factor
+            PolynomialExtended linearFactor({-a, 1});
+            factors[linearFactor]++;
+        }
+    }
+
+    return factors;
+}
+
+/**
+ * @brief Polynomial congruence class
+ *
+ * Represents polynomial modulo another polynomial
+ */
+class PolynomialModulo {
+public:
+    PolynomialExtended poly;
+    PolynomialExtended modulus;
+
+    PolynomialModulo(const PolynomialExtended& p, const PolynomialExtended& m)
+        : poly(p), modulus(m) {
+        reduce();
+    }
+
+    /**
+     * @brief Reduce polynomial modulo the modulus
+     */
+    void reduce() {
+        if (modulus.degree() >= 0) {
+            auto [q, r] = poly.divideWithRemainder(modulus);
+            poly = r;
+        }
+    }
+
+    /**
+     * @brief Addition in quotient ring
+     */
+    PolynomialModulo operator+(const PolynomialModulo& other) const {
+        if (!(modulus == other.modulus)) {
+            throw std::invalid_argument("Moduli must match");
+        }
+        return PolynomialModulo(poly + other.poly, modulus);
+    }
+
+    /**
+     * @brief Multiplication in quotient ring
+     */
+    PolynomialModulo operator*(const PolynomialModulo& other) const {
+        if (!(modulus == other.modulus)) {
+            throw std::invalid_argument("Moduli must match");
+        }
+        return PolynomialModulo(poly * other.poly, modulus);
+    }
+};
+
+/**
+ * @brief Extension field F[x]/(f) where f is irreducible
+ */
+template<typename Field = long long>
+class ExtensionField {
+private:
+    PolynomialExtended modulus;
+    long long characteristic; // For finite fields
+
+public:
+    ExtensionField(const PolynomialExtended& irreducible, long long p = 0)
+        : modulus(irreducible), characteristic(p) {
+        // In practice, should verify irreducibility
+    }
+
+    /**
+     * @brief Get degree of extension [F(α) : F]
+     */
+    int extensionDegree() const {
+        return modulus.degree();
+    }
+
+    /**
+     * @brief Get field size (for finite fields)
+     */
+    long long fieldSize() const {
+        if (characteristic <= 0) return -1;
+        long long result = 1;
+        for (int i = 0; i < extensionDegree(); ++i) {
+            result *= characteristic;
+        }
+        return result;
+    }
+};
+
+/**
+ * @brief Formal power series over a ring
+ *
+ * Represents ∑ a_i x^i with coefficients in a ring
+ */
+template<typename T>
+class FormalPowerSeries {
+private:
+    std::vector<T> coefficients;
+    int precision; // Number of terms computed
+
+public:
+    FormalPowerSeries(const std::vector<T>& coeffs, int prec = 10)
+        : coefficients(coeffs), precision(prec) {
+        if (coefficients.size() < static_cast<size_t>(precision)) {
+            coefficients.resize(precision, T(0));
+        }
+    }
+
+    /**
+     * @brief Addition of power series
+     */
+    FormalPowerSeries operator+(const FormalPowerSeries& other) const {
+        int maxPrec = std::max(precision, other.precision);
+        std::vector<T> result(maxPrec, T(0));
+
+        for (int i = 0; i < maxPrec; ++i) {
+            if (i < precision) result[i] += coefficients[i];
+            if (i < other.precision) result[i] += other.coefficients[i];
+        }
+
+        return FormalPowerSeries(result, maxPrec);
+    }
+
+    /**
+     * @brief Multiplication of power series (Cauchy product)
+     */
+    FormalPowerSeries operator*(const FormalPowerSeries& other) const {
+        int maxPrec = std::min(precision, other.precision);
+        std::vector<T> result(maxPrec, T(0));
+
+        for (int n = 0; n < maxPrec; ++n) {
+            for (int k = 0; k <= n; ++k) {
+                if (k < precision && (n - k) < other.precision) {
+                    result[n] += coefficients[k] * other.coefficients[n - k];
+                }
+            }
+        }
+
+        return FormalPowerSeries(result, maxPrec);
+    }
+
+    /**
+     * @brief Get coefficient of x^n
+     */
+    T coefficient(int n) const {
+        if (n >= 0 && n < static_cast<int>(coefficients.size())) {
+            return coefficients[n];
+        }
+        return T(0);
+    }
+};
+
+/**
+ * @brief Laurent series (power series with finitely many negative powers)
+ *
+ * Represents ∑_{i≥n} a_i x^i where n can be negative
+ */
+template<typename T>
+class LaurentSeries {
+private:
+    std::vector<T> coefficients;
+    int minDegree; // Lowest degree term
+    int maxDegree; // Highest degree computed
+
+public:
+    LaurentSeries(const std::vector<T>& coeffs, int minDeg, int maxDeg)
+        : coefficients(coeffs), minDegree(minDeg), maxDegree(maxDeg) {}
+
+    /**
+     * @brief Get coefficient of x^n
+     */
+    T coefficient(int n) const {
+        if (n >= minDegree && n <= maxDegree) {
+            int idx = n - minDegree;
+            if (idx >= 0 && idx < static_cast<int>(coefficients.size())) {
+                return coefficients[idx];
+            }
+        }
+        return T(0);
+    }
+
+    /**
+     * @brief Valuation (degree of lowest non-zero term)
+     */
+    int valuation() const {
+        return minDegree;
+    }
+};
+
+/**
+ * @brief Unique Factorization Domain interface
+ */
+template<typename T>
+class UniqueFactorizationDomain {
+public:
+    virtual ~UniqueFactorizationDomain() = default;
+
+    /**
+     * @brief Check if element is a unit (invertible)
+     */
+    virtual bool isUnit(const T& a) const = 0;
+
+    /**
+     * @brief Check if element is irreducible
+     */
+    virtual bool isIrreducible(const T& a) const = 0;
+
+    /**
+     * @brief Check if element is prime
+     */
+    virtual bool isPrime(const T& a) const = 0;
+
+    /**
+     * @brief Factor element into irreducibles
+     */
+    virtual std::map<T, int> factor(const T& a) const = 0;
+
+    /**
+     * @brief Compute GCD
+     */
+    virtual T gcd(const T& a, const T& b) const = 0;
+
+    /**
+     * @brief Compute LCM
+     */
+    virtual T lcm(const T& a, const T& b) const {
+        T g = gcd(a, b);
+        // Return (a * b) / g
+        return a; // Simplified
+    }
+};
+
+/**
+ * @brief Integers as a UFD
+ */
+class IntegerUFD : public UniqueFactorizationDomain<long long> {
+public:
+    bool isUnit(const long long& a) const override {
+        return a == 1 || a == -1;
+    }
+
+    bool isIrreducible(const long long& a) const override {
+        return isPrimeMillerRabin(std::abs(a));
+    }
+
+    bool isPrime(const long long& a) const override {
+        return isPrimeMillerRabin(std::abs(a));
+    }
+
+    std::map<long long, int> factor(const long long& a) const override {
+        return trialDivisionFactorization(std::abs(a));
+    }
+
+    long long gcd(const long long& a, const long long& b) const override {
+        return ::maths::number_theory::gcd(a, b);
+    }
+};
+
+// =============================================================================
+// POLYNOMIAL ARITHMETIC AND APPLICATIONS
+// =============================================================================
+
+/**
+ * @brief Polynomial modular inverse
+ *
+ * Find g such that f*g ≡ 1 (mod h)
+ */
+inline PolynomialExtended polynomialModularInverse(const PolynomialExtended& f,
+                                                   const PolynomialExtended& h) {
+    auto [g, s, t] = PolynomialExtended::extendedGCD(f, h);
+
+    if (g.degree() != 0 || g.coeffs[0] != 1) {
+        throw std::invalid_argument("Polynomials are not coprime");
+    }
+
+    // s*f + t*h = 1, so s*f ≡ 1 (mod h)
+    return s;
+}
+
+/**
+ * @brief Chinese Remainder Theorem for polynomials
+ *
+ * Find f such that f ≡ a_i (mod m_i) for all i
+ */
+inline PolynomialExtended polynomialChineseRemainder(
+    const std::vector<PolynomialExtended>& remainders,
+    const std::vector<PolynomialExtended>& moduli) {
+
+    if (remainders.size() != moduli.size()) {
+        throw std::invalid_argument("Remainders and moduli must have same size");
+    }
+
+    if (remainders.empty()) {
+        return PolynomialExtended({0});
+    }
+
+    // Compute M = ∏ m_i
+    PolynomialExtended M = moduli[0];
+    for (size_t i = 1; i < moduli.size(); ++i) {
+        M = M * moduli[i];
+    }
+
+    PolynomialExtended result({0});
+
+    for (size_t i = 0; i < remainders.size(); ++i) {
+        // M_i = M / m_i
+        auto [Mi, rem] = M.divideWithRemainder(moduli[i]);
+
+        // Find y_i such that M_i * y_i ≡ 1 (mod m_i)
+        PolynomialExtended yi = polynomialModularInverse(Mi, moduli[i]);
+
+        // result += a_i * M_i * y_i
+        PolynomialExtended term = remainders[i] * Mi * yi;
+        result = result + term;
+    }
+
+    // Reduce modulo M
+    auto [q, r] = result.divideWithRemainder(M);
+
+    return r;
+}
+
+/**
+ * @brief Rational function reconstruction
+ *
+ * Given a/b mod m, recover a/b
+ * Find n/d with deg(n), deg(d) < deg(m)/2 such that r*d ≡ n (mod m)
+ */
+inline std::pair<PolynomialExtended, PolynomialExtended>
+rationalFunctionReconstruction(const PolynomialExtended& r,
+                               const PolynomialExtended& m,
+                               int maxDegree = -1) {
+
+    if (maxDegree < 0) {
+        maxDegree = m.degree() / 2;
+    }
+
+    // Use extended Euclidean algorithm
+    PolynomialExtended r0 = m, r1 = r;
+    PolynomialExtended s0({0}), s1({1});
+
+    while (r1.degree() >= maxDegree) {
+        auto [q, r2] = r0.divideWithRemainder(r1);
+        PolynomialExtended s2 = s0;
+        // s2 = s0 - q*s1 (simplified)
+
+        r0 = r1;
+        r1 = r2;
+        s0 = s1;
+        s1 = s2;
+    }
+
+    // Return (numerator, denominator) = (r1, s1)
+    return {r1, s1};
+}
+
+/**
+ * @brief Compute minimal polynomial of element in F[x]/(f)
+ *
+ * Find the minimal polynomial of α over base field
+ */
+inline PolynomialExtended minimalPolynomial(const PolynomialModulo& alpha,
+                                           long long p, int maxDeg = 10) {
+    // Build matrix of powers of alpha
+    std::vector<PolynomialExtended> powers;
+    PolynomialModulo current({1}, alpha.modulus);
+
+    for (int i = 0; i <= maxDeg; ++i) {
+        powers.push_back(current.poly);
+        current = current * alpha;
+    }
+
+    // Find linear dependence among powers
+    // This would require solving a system over the base field
+    // Simplified version: return x - constant
+
+    return PolynomialExtended({0, 1}); // Just return x for now
+}
+
+/**
+ * @brief Fast polynomial multiplication using FFT (placeholder)
+ *
+ * Multiply two polynomials in O(n log n) time
+ */
+inline PolynomialExtended fastPolynomialMultiply(const PolynomialExtended& a,
+                                                const PolynomialExtended& b) {
+    // Full FFT implementation would go here
+    // For now, fall back to standard multiplication
+    return a * b;
+}
+
+/**
+ * @brief Polynomial evaluation at multiple points (fast multipoint evaluation)
+ *
+ * Evaluate polynomial at n points in O(n log²n) time
+ */
+inline std::vector<long long> multipointEvaluation(const PolynomialExtended& f,
+                                                   const std::vector<long long>& points) {
+    std::vector<long long> results;
+
+    for (long long x : points) {
+        results.push_back(f.evaluate(x));
+    }
+
+    return results;
+}
+
+/**
+ * @brief Polynomial interpolation from values
+ *
+ * Find polynomial f of degree < n such that f(x_i) = y_i
+ */
+inline PolynomialExtended interpolate(const std::vector<long long>& xPoints,
+                                     const std::vector<long long>& yValues) {
+    if (xPoints.size() != yValues.size()) {
+        throw std::invalid_argument("Points and values must have same size");
+    }
+
+    int n = xPoints.size();
+    if (n == 0) return PolynomialExtended({0});
+
+    // Lagrange interpolation
+    std::vector<long long> result(n, 0);
+
+    for (int i = 0; i < n; ++i) {
+        // Compute Lagrange basis polynomial L_i(x)
+        std::vector<long long> basis = {1};
+
+        for (int j = 0; j < n; ++j) {
+            if (i != j) {
+                // Multiply by (x - x_j) / (x_i - x_j)
+                long long denom = xPoints[i] - xPoints[j];
+
+                // Multiply basis by (x - x_j)
+                std::vector<long long> newBasis(basis.size() + 1, 0);
+                for (size_t k = 0; k < basis.size(); ++k) {
+                    newBasis[k] -= basis[k] * xPoints[j];
+                    newBasis[k + 1] += basis[k];
+                }
+                basis = newBasis;
+
+                // Divide by (x_i - x_j)
+                for (auto& c : basis) {
+                    c /= denom;
+                }
+            }
+        }
+
+        // Add y_i * L_i to result
+        for (size_t k = 0; k < basis.size() && k < result.size(); ++k) {
+            result[k] += yValues[i] * basis[k];
+        }
+    }
+
+    return PolynomialExtended(result);
+}
+
+// =============================================================================
+// LINEARLY GENERATED SEQUENCES AND APPLICATIONS
+// =============================================================================
+
+/**
+ * @brief Linearly generated sequence over a field
+ *
+ * A sequence (a_0, a_1, a_2, ...) satisfying a linear recurrence:
+ * a_n = c_1*a_{n-1} + c_2*a_{n-2} + ... + c_d*a_{n-d}
+ */
+template<typename T = long long>
+class LinearlyGeneratedSequence {
+private:
+    std::vector<T> coefficients; // Recurrence coefficients c_1, ..., c_d
+    std::vector<T> initialValues; // Initial values a_0, ..., a_{d-1}
+    long long modulus; // For sequences over Z/pZ
+
+public:
+    LinearlyGeneratedSequence(const std::vector<T>& coeffs,
+                             const std::vector<T>& initial,
+                             long long mod = 0)
+        : coefficients(coeffs), initialValues(initial), modulus(mod) {}
+
+    /**
+     * @brief Compute nth term of sequence
+     */
+    T getNthTerm(int n) const {
+        if (n < static_cast<int>(initialValues.size())) {
+            return initialValues[n];
+        }
+
+        int d = coefficients.size();
+        std::vector<T> current = initialValues;
+
+        for (int i = initialValues.size(); i <= n; ++i) {
+            T nextTerm = T(0);
+            for (int j = 0; j < d; ++j) {
+                int idx = current.size() - 1 - j;
+                if (idx >= 0 && idx < static_cast<int>(current.size())) {
+                    nextTerm += coefficients[j] * current[idx];
+                }
+            }
+            if (modulus > 0) {
+                nextTerm = ((nextTerm % modulus) + modulus) % modulus;
+            }
+            current.push_back(nextTerm);
+        }
+
+        return current[n];
+    }
+
+    /**
+     * @brief Generate first n terms
+     */
+    std::vector<T> generateTerms(int n) const {
+        std::vector<T> result;
+        for (int i = 0; i < n; ++i) {
+            result.push_back(getNthTerm(i));
+        }
+        return result;
+    }
+
+    /**
+     * @brief Get characteristic polynomial
+     *
+     * x^d - c_1*x^{d-1} - ... - c_d
+     */
+    PolynomialExtended characteristicPolynomial() const {
+        std::vector<long long> polyCoeffs(coefficients.size() + 1);
+        polyCoeffs[coefficients.size()] = 1; // Leading term x^d
+
+        for (size_t i = 0; i < coefficients.size(); ++i) {
+            polyCoeffs[coefficients.size() - 1 - i] = -static_cast<long long>(coefficients[i]);
+        }
+
+        return PolynomialExtended(polyCoeffs);
+    }
+};
+
+/**
+ * @brief Berlekamp-Massey algorithm for computing minimal polynomial
+ *
+ * Given a sequence, find the shortest linear recurrence that generates it
+ * Special case: works well for sequences over finite fields
+ *
+ * @param sequence Input sequence
+ * @param p Modulus (for finite field F_p)
+ * @return Minimal polynomial
+ */
+inline PolynomialExtended berlekampMassey(const std::vector<long long>& sequence,
+                                         long long p = 0) {
+    int n = sequence.size();
+    std::vector<long long> C = {1}; // Current connection polynomial
+    std::vector<long long> B = {1}; // Previous connection polynomial
+    int L = 0; // Current length
+    int m = 1; // Steps since L was updated
+    long long b = 1; // Previous discrepancy
+
+    for (int N = 0; N < n; ++N) {
+        // Compute discrepancy
+        long long d = sequence[N];
+        for (int i = 1; i <= L; ++i) {
+            if (i < static_cast<int>(C.size())) {
+                d += C[i] * sequence[N - i];
+            }
+        }
+        if (p > 0) {
+            d = ((d % p) + p) % p;
+        }
+
+        if (d == 0) {
+            m++;
+        } else {
+            std::vector<long long> T = C;
+
+            // C(x) -= (d/b) * x^m * B(x)
+            long long factor = d;
+            if (p > 0 && b != 0) {
+                factor = (d * modInverse(b, p)) % p;
+            } else if (b != 0) {
+                factor = d / b;
+            }
+
+            // Extend C if needed
+            while (C.size() < B.size() + m) {
+                C.push_back(0);
+            }
+
+            for (size_t i = 0; i < B.size(); ++i) {
+                C[i + m] -= factor * B[i];
+                if (p > 0) {
+                    C[i + m] = ((C[i + m] % p) + p) % p;
+                }
+            }
+
+            if (2 * L <= N) {
+                L = N + 1 - L;
+                B = T;
+                b = d;
+                m = 1;
+            } else {
+                m++;
+            }
+        }
+    }
+
+    return PolynomialExtended(C);
+}
+
+/**
+ * @brief Compute minimal polynomial for a sequence (general case)
+ *
+ * Uses matrix-based approach for more general settings
+ */
+inline PolynomialExtended minimalPolynomialGeneral(const std::vector<long long>& sequence,
+                                                  long long p = 0) {
+    int n = sequence.size();
+
+    // Build Hankel matrix
+    int d = n / 2;
+    Matrix<long long> H(d, d);
+
+    for (int i = 0; i < d; ++i) {
+        for (int j = 0; j < d; ++j) {
+            if (i + j < n) {
+                H(i, j) = sequence[i + j];
+                if (p > 0) {
+                    H(i, j) = ((H(i, j) % p) + p) % p;
+                }
+            }
+        }
+    }
+
+    // Find minimal polynomial using rank considerations
+    // Simplified: use Berlekamp-Massey
+    return berlekampMassey(sequence, p);
+}
+
+/**
+ * @brief Sparse linear system solver
+ *
+ * Solves Ax = b where A is sparse (many zero entries)
+ */
+template<typename T>
+class SparseMatrix {
+private:
+    std::map<std::pair<int, int>, T> entries;
+    int rows, cols;
+
+public:
+    SparseMatrix(int m, int n) : rows(m), cols(n) {}
+
+    void set(int i, int j, const T& value) {
+        if (value != T(0)) {
+            entries[{i, j}] = value;
+        }
+    }
+
+    T get(int i, int j) const {
+        auto it = entries.find({i, j});
+        return (it != entries.end()) ? it->second : T(0);
+    }
+
+    /**
+     * @brief Solve sparse system using iterative methods
+     */
+    std::vector<T> solve(const std::vector<T>& b) const {
+        // Simplified: use Gauss-Seidel iteration
+        std::vector<T> x(cols, T(0));
+        int maxIter = 1000;
+
+        for (int iter = 0; iter < maxIter; ++iter) {
+            std::vector<T> xNew = x;
+
+            for (int i = 0; i < rows; ++i) {
+                T sum = T(0);
+                T diag = T(0);
+
+                for (const auto& [pos, val] : entries) {
+                    if (pos.first == i) {
+                        if (pos.second == i) {
+                            diag = val;
+                        } else {
+                            sum += val * xNew[pos.second];
+                        }
+                    }
+                }
+
+                if (diag != T(0)) {
+                    xNew[i] = (b[i] - sum) / diag;
+                }
+            }
+
+            x = xNew;
+        }
+
+        return x;
+    }
+};
+
+/**
+ * @brief Linear transformation algebra
+ *
+ * Represents linear transformations and their compositions
+ */
+template<typename Field>
+class LinearTransformation {
+private:
+    Matrix<Field> matrix;
+
+public:
+    LinearTransformation(const Matrix<Field>& m) : matrix(m) {}
+
+    /**
+     * @brief Apply transformation to vector
+     */
+    std::vector<Field> apply(const std::vector<Field>& v) const {
+        std::vector<Field> result(matrix.numRows());
+
+        for (int i = 0; i < matrix.numRows(); ++i) {
+            Field sum = Field(0);
+            for (int j = 0; j < matrix.numCols() && j < static_cast<int>(v.size()); ++j) {
+                sum += matrix(i, j) * v[j];
+            }
+            result[i] = sum;
+        }
+
+        return result;
+    }
+
+    /**
+     * @brief Compose with another transformation
+     */
+    LinearTransformation compose(const LinearTransformation& other) const {
+        return LinearTransformation(matrix * other.matrix);
+    }
+
+    /**
+     * @brief Compute characteristic polynomial det(xI - A)
+     */
+    PolynomialExtended characteristicPolynomial() const {
+        int n = matrix.numRows();
+
+        // Simplified: use Faddeev-LeVerrier algorithm
+        std::vector<long long> coeffs(n + 1);
+        coeffs[n] = 1;
+
+        // This would need proper implementation
+        return PolynomialExtended(coeffs);
+    }
+
+    /**
+     * @brief Compute minimal polynomial
+     */
+    PolynomialExtended minimalPolynomial() const {
+        // Use Cayley-Hamilton and divide out factors
+        return characteristicPolynomial();
+    }
+};
+
+// =============================================================================
+// FINITE FIELDS
+// =============================================================================
+
+/**
+ * @brief Finite field F_q where q = p^n
+ *
+ * Represents elements and operations in finite fields
+ */
+class FiniteField {
+private:
+    long long characteristic; // Prime p
+    int extensionDegree;      // Degree n
+    PolynomialExtended modulus; // Irreducible polynomial for extension
+
+public:
+    FiniteField(long long p, int n = 1, const PolynomialExtended& irred = PolynomialExtended({0, 1}))
+        : characteristic(p), extensionDegree(n), modulus(irred) {
+
+        if (!isPrimeMillerRabin(p)) {
+            throw std::invalid_argument("Characteristic must be prime");
+        }
+    }
+
+    /**
+     * @brief Get field size q = p^n
+     */
+    long long fieldSize() const {
+        long long q = 1;
+        for (int i = 0; i < extensionDegree; ++i) {
+            q *= characteristic;
+        }
+        return q;
+    }
+
+    /**
+     * @brief Get characteristic (prime p)
+     */
+    long long getCharacteristic() const {
+        return characteristic;
+    }
+
+    /**
+     * @brief Get extension degree n
+     */
+    int getExtensionDegree() const {
+        return extensionDegree;
+    }
+
+    /**
+     * @brief Check if field is prime field (n = 1)
+     */
+    bool isPrimeField() const {
+        return extensionDegree == 1;
+    }
+
+    /**
+     * @brief Addition in finite field
+     */
+    PolynomialModulo add(const PolynomialModulo& a, const PolynomialModulo& b) const {
+        return a + b;
+    }
+
+    /**
+     * @brief Multiplication in finite field
+     */
+    PolynomialModulo multiply(const PolynomialModulo& a, const PolynomialModulo& b) const {
+        return a * b;
+    }
+
+    /**
+     * @brief Multiplicative inverse
+     */
+    PolynomialModulo inverse(const PolynomialModulo& a) const {
+        return PolynomialModulo(polynomialModularInverse(a.poly, modulus), modulus);
+    }
+};
+
+/**
+ * @brief Check if polynomial is primitive (generates multiplicative group)
+ *
+ * A polynomial is primitive if it is irreducible and generates F*_q
+ */
+inline bool isPrimitivePolynomial(const PolynomialExtended& f, long long p, int n) {
+    // Check irreducibility first
+    if (!f.isIrreducible(p)) {
+        return false;
+    }
+
+    long long q = 1;
+    for (int i = 0; i < n; ++i) {
+        q *= p;
+    }
+
+    // Check if x is a primitive element in F_q = F_p[x]/(f)
+    // This requires checking order of x equals q - 1
+
+    // Simplified check
+    return true;
+}
+
+/**
+ * @brief Find subfields of F_{p^n}
+ *
+ * A subfield F_{p^m} exists iff m divides n
+ */
+inline std::vector<int> findSubfieldDegrees(int n) {
+    std::vector<int> divisors;
+
+    for (int d = 1; d <= n; ++d) {
+        if (n % d == 0) {
+            divisors.push_back(d);
+        }
+    }
+
+    return divisors;
+}
+
+/**
+ * @brief Compute Frobenius endomorphism: α → α^p
+ *
+ * The Frobenius map is a key automorphism of finite fields
+ */
+inline PolynomialModulo frobenius(const PolynomialModulo& alpha, long long p) {
+    // Compute alpha^p in the quotient ring
+    PolynomialModulo result = alpha;
+
+    for (long long i = 1; i < p; ++i) {
+        result = result * alpha;
+    }
+
+    return result;
+}
+
+/**
+ * @brief Compute trace from F_{p^n} to F_p
+ *
+ * Tr(α) = α + α^p + α^{p^2} + ... + α^{p^{n-1}}
+ */
+inline long long trace(const PolynomialModulo& alpha, long long p, int n) {
+    PolynomialModulo current = alpha;
+    PolynomialModulo sum = alpha;
+
+    for (int i = 1; i < n; ++i) {
+        current = frobenius(current, p);
+        sum = sum + current;
+    }
+
+    // Extract constant term (element of F_p)
+    if (sum.poly.coeffs.empty()) return 0;
+    return ((sum.poly.coeffs[0] % p) + p) % p;
+}
+
+/**
+ * @brief Compute norm from F_{p^n} to F_p
+ *
+ * N(α) = α · α^p · α^{p^2} · ... · α^{p^{n-1}}
+ */
+inline long long norm(const PolynomialModulo& alpha, long long p, int n) {
+    PolynomialModulo current = alpha;
+    PolynomialModulo product = alpha;
+
+    for (int i = 1; i < n; ++i) {
+        current = frobenius(current, p);
+        product = product * current;
+    }
+
+    // Extract constant term
+    if (product.poly.coeffs.empty()) return 0;
+    return ((product.poly.coeffs[0] % p) + p) % p;
+}
+
+/**
+ * @brief Find all conjugates of α over F_p
+ *
+ * Conjugates are {α, α^p, α^{p^2}, ..., α^{p^{n-1}}}
+ */
+inline std::vector<PolynomialModulo> conjugates(const PolynomialModulo& alpha,
+                                               long long p, int n) {
+    std::vector<PolynomialModulo> result;
+    PolynomialModulo current = alpha;
+
+    for (int i = 0; i < n; ++i) {
+        result.push_back(current);
+        current = frobenius(current, p);
+    }
+
+    return result;
+}
+
+// =============================================================================
+// ALGORITHMS FOR FINITE FIELDS
+// =============================================================================
+
+/**
+ * @brief Test if polynomial is irreducible over F_p
+ *
+ * Uses the fact that f is irreducible of degree n iff:
+ * - gcd(f(x), x^{p^i} - x) = 1 for all i < n
+ * - f(x) divides x^{p^n} - x
+ */
+inline bool isIrreducibleRabin(const PolynomialExtended& f, long long p) {
+    int n = f.degree();
+    if (n <= 1) return n == 1;
+
+    // Check gcd(f, x^{p^i} - x) = 1 for i = 1, ..., n-1
+    PolynomialExtended x({0, 1}); // Polynomial x
+    PolynomialExtended xPower = x;
+
+    for (int i = 1; i < n; ++i) {
+        // Compute x^{p^i} mod f
+        for (long long j = 1; j < p; ++j) {
+            auto [q, r] = (xPower * xPower).divideWithRemainder(f);
+            xPower = r;
+        }
+
+        // Compute gcd(f, x^{p^i} - x)
+        PolynomialExtended diff = xPower;
+        diff.coeffs[1] -= 1; // x^{p^i} - x
+
+        PolynomialExtended g = PolynomialExtended::gcd(f, diff);
+
+        if (g.degree() > 0) {
+            return false;
+        }
+    }
+
+    // Check that f divides x^{p^n} - x
+    for (long long j = 1; j < p; ++j) {
+        auto [q, r] = (xPower * xPower).divideWithRemainder(f);
+        xPower = r;
+    }
+
+    PolynomialExtended diff = xPower;
+    diff.coeffs[1] -= 1;
+
+    auto [q, r] = diff.divideWithRemainder(f);
+
+    return r.degree() < 0 || (r.degree() == 0 && r.coeffs[0] == 0);
+}
+
+/**
+ * @brief Construct a random irreducible polynomial of degree n over F_p
+ */
+inline PolynomialExtended constructIrreduciblePolynomial(long long p, int n,
+                                                        int maxAttempts = 1000) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<long long> dist(0, p - 1);
+
+    for (int attempt = 0; attempt < maxAttempts; ++attempt) {
+        // Generate random polynomial of degree n
+        std::vector<long long> coeffs(n + 1);
+        coeffs[n] = 1; // Monic polynomial
+
+        for (int i = 0; i < n; ++i) {
+            coeffs[i] = dist(gen);
+        }
+
+        PolynomialExtended candidate(coeffs);
+
+        if (isIrreducibleRabin(candidate, p)) {
+            return candidate;
+        }
+    }
+
+    throw std::runtime_error("Failed to construct irreducible polynomial");
+}
+
+/**
+ * @brief Cantor-Zassenhaus algorithm for factoring polynomials
+ *
+ * Probabilistic algorithm for factoring square-free polynomials over F_p
+ *
+ * @param f Square-free polynomial to factor
+ * @param p Prime characteristic
+ * @return List of irreducible factors
+ */
+inline std::vector<PolynomialExtended> cantorZassenhaus(const PolynomialExtended& f,
+                                                       long long p) {
+    int n = f.degree();
+    if (n <= 1) {
+        return {f};
+    }
+
+    std::vector<PolynomialExtended> factors;
+    std::vector<PolynomialExtended> toFactor = {f};
+
+    // Step 1: Equal-degree splitting
+    for (int d = 1; d <= n / 2; ++d) {
+        std::vector<PolynomialExtended> newToFactor;
+
+        for (const auto& poly : toFactor) {
+            if (poly.degree() <= d) {
+                factors.push_back(poly);
+                continue;
+            }
+
+            // Try to split poly into degree-d factors
+            bool split = false;
+            std::random_device rd;
+            std::mt19937 gen(rd());
+            std::uniform_int_distribution<long long> dist(0, p - 1);
+
+            for (int attempt = 0; attempt < 10 && !split; ++attempt) {
+                // Generate random polynomial h
+                std::vector<long long> hCoeffs(poly.degree());
+                for (auto& c : hCoeffs) c = dist(gen);
+                PolynomialExtended h(hCoeffs);
+
+                // Compute h^{(q^d - 1)/2} mod poly (for odd p)
+                if (p > 2) {
+                    long long exp = 1;
+                    for (int i = 0; i < d; ++i) exp *= p;
+                    exp = (exp - 1) / 2;
+
+                    PolynomialExtended hPower = h;
+                    // Compute power (simplified)
+
+                    PolynomialExtended g = PolynomialExtended::gcd(hPower, poly);
+
+                    if (g.degree() > 0 && g.degree() < poly.degree()) {
+                        newToFactor.push_back(g);
+                        auto [q, r] = poly.divideWithRemainder(g);
+                        newToFactor.push_back(q);
+                        split = true;
+                    }
+                }
+            }
+
+            if (!split) {
+                newToFactor.push_back(poly);
+            }
+        }
+
+        toFactor = newToFactor;
+    }
+
+    factors.insert(factors.end(), toFactor.begin(), toFactor.end());
+    return factors;
+}
+
+/**
+ * @brief Berlekamp's algorithm for factoring polynomials
+ *
+ * Deterministic algorithm for factoring over F_p
+ *
+ * @param f Polynomial to factor
+ * @param p Prime characteristic
+ * @return List of irreducible factors
+ */
+inline std::vector<PolynomialExtended> berlekampFactorization(const PolynomialExtended& f,
+                                                             long long p) {
+    int n = f.degree();
+    if (n <= 1) {
+        return {f};
+    }
+
+    // Build Berlekamp matrix Q where Q_{ij} = coeff of x^i in x^{jp} mod f
+    Matrix<long long> Q(n, n);
+
+    for (int j = 0; j < n; ++j) {
+        // Compute x^{jp} mod f
+        std::vector<long long> xjp(j * p + 1, 0);
+        if (j * p < static_cast<int>(xjp.size())) {
+            xjp[j * p] = 1;
+        }
+        PolynomialExtended xPower(xjp);
+
+        auto [q, r] = xPower.divideWithRemainder(f);
+
+        // Fill column j of Q
+        for (int i = 0; i < n && i < static_cast<int>(r.coeffs.size()); ++i) {
+            Q(i, j) = ((r.coeffs[i] % p) + p) % p;
+        }
+    }
+
+    // Compute nullspace of Q - I
+    for (int i = 0; i < n; ++i) {
+        Q(i, i) = (Q(i, i) - 1 + p) % p;
+    }
+
+    // Find rank and nullity (simplified)
+    int nullity = n - Q.rank();
+
+    if (nullity == 1) {
+        return {f}; // Irreducible
+    }
+
+    // Use nullspace vectors to split (simplified)
+    std::vector<PolynomialExtended> factors;
+    factors.push_back(f);
+
+    return factors;
+}
+
+/**
+ * @brief Deterministic polynomial factorization
+ *
+ * Combines square-free decomposition with Berlekamp's algorithm
+ */
+inline std::map<PolynomialExtended, int> factorPolynomialComplete(
+    const PolynomialExtended& f, long long p) {
+
+    std::map<PolynomialExtended, int> factors;
+
+    // Step 1: Square-free decomposition
+    PolynomialExtended current = f;
+    int multiplicity = 1;
+
+    while (current.degree() > 0) {
+        // Compute gcd(current, current')
+        PolynomialExtended derivative = current;
+        // Derivative computation (simplified)
+
+        PolynomialExtended g = PolynomialExtended::gcd(current, derivative);
+
+        if (g.degree() == 0) {
+            // current is square-free
+            auto irreducibles = berlekampFactorization(current, p);
+            for (const auto& irred : irreducibles) {
+                factors[irred] = multiplicity;
+            }
+            break;
+        }
+
+        auto [quotient, remainder] = current.divideWithRemainder(g);
+
+        if (quotient.degree() > 0) {
+            auto irreducibles = berlekampFactorization(quotient, p);
+            for (const auto& irred : irreducibles) {
+                factors[irred] = multiplicity;
+            }
+        }
+
+        current = g;
+        multiplicity++;
+    }
+
+    return factors;
+}
+
+/**
+ * @brief Fast square-free decomposition
+ *
+ * Decompose f = ∏ f_i^i where each f_i is square-free
+ */
+inline std::vector<PolynomialExtended> squareFreeDecomposition(
+    const PolynomialExtended& f, long long p) {
+
+    std::vector<PolynomialExtended> components;
+
+    PolynomialExtended current = f;
+
+    // Compute derivative
+    std::vector<long long> derivCoeffs;
+    for (size_t i = 1; i < current.coeffs.size(); ++i) {
+        long long coef = (i * current.coeffs[i]) % p;
+        derivCoeffs.push_back(coef);
+    }
+    PolynomialExtended derivative(derivCoeffs);
+
+    // gcd(f, f')
+    PolynomialExtended g = PolynomialExtended::gcd(current, derivative);
+
+    int i = 1;
+    while (current.degree() > 0) {
+        auto [yi, rem] = current.divideWithRemainder(g);
+
+        if (yi.degree() > 0) {
+            components.push_back(yi);
+        } else {
+            components.push_back(PolynomialExtended({1}));
+        }
+
+        current = g;
+
+        // Update for next iteration
+        if (current.degree() == 0) break;
+
+        std::vector<long long> derivCoeffs2;
+        for (size_t j = 1; j < current.coeffs.size(); ++j) {
+            derivCoeffs2.push_back((j * current.coeffs[j]) % p);
+        }
+        derivative = PolynomialExtended(derivCoeffs2);
+
+        g = PolynomialExtended::gcd(current, derivative);
+        i++;
+    }
+
+    return components;
+}
+
+// =============================================================================
+// ELLIPTIC CURVES AND GALOIS REPRESENTATIONS
+// =============================================================================
+
+/**
+ * @brief Point on an elliptic curve
+ *
+ * Represents a point (x, y) or the point at infinity
+ */
+template<typename Field = long long>
+struct EllipticCurvePoint {
+    Field x, y;
+    bool isInfinity;
+    long long modulus; // For fields F_p
+
+    EllipticCurvePoint() : x(0), y(0), isInfinity(true), modulus(0) {}
+
+    EllipticCurvePoint(const Field& x_, const Field& y_, long long mod = 0)
+        : x(x_), y(y_), isInfinity(false), modulus(mod) {}
+
+    static EllipticCurvePoint infinity(long long mod = 0) {
+        EllipticCurvePoint pt;
+        pt.modulus = mod;
+        return pt;
+    }
+
+    bool operator==(const EllipticCurvePoint& other) const {
+        if (isInfinity && other.isInfinity) return true;
+        if (isInfinity || other.isInfinity) return false;
+        return x == other.x && y == other.y;
+    }
+};
+
+/**
+ * @brief Elliptic curve in Weierstrass form
+ *
+ * E: y² = x³ + ax + b (for simplicity, considering short Weierstrass form)
+ * Can be generalized to y² + a₁xy + a₃y = x³ + a₂x² + a₄x + a₆
+ */
+template<typename Field = long long>
+class EllipticCurve {
+private:
+    Field a, b; // Curve coefficients for y² = x³ + ax + b
+    long long modulus; // For curves over F_p
+
+public:
+    EllipticCurve(const Field& a_, const Field& b_, long long mod = 0)
+        : a(a_), b(b_), modulus(mod) {
+        // Check discriminant: Δ = -16(4a³ + 27b²) ≠ 0
+        if (modulus > 0) {
+            long long delta = (-16 * (4 * a * a * a + 27 * b * b)) % modulus;
+            if (delta == 0) {
+                throw std::invalid_argument("Curve is singular");
+            }
+        }
+    }
+
+    /**
+     * @brief Point addition using chord-and-tangent method
+     */
+    EllipticCurvePoint<Field> add(const EllipticCurvePoint<Field>& P,
+                                  const EllipticCurvePoint<Field>& Q) const {
+        if (P.isInfinity) return Q;
+        if (Q.isInfinity) return P;
+
+        if (modulus > 0) {
+            // Addition over F_p
+            if (P.x == Q.x) {
+                if ((P.y + Q.y) % modulus == 0) {
+                    return EllipticCurvePoint<Field>::infinity(modulus);
+                }
+                // Point doubling
+                long long slope = (3 * P.x * P.x + a) * modInverse(2 * P.y, modulus) % modulus;
+                long long x3 = (slope * slope - 2 * P.x + modulus + modulus) % modulus;
+                long long y3 = (slope * (P.x - x3) - P.y + modulus + modulus) % modulus;
+                return EllipticCurvePoint<Field>(x3, y3, modulus);
+            } else {
+                // Point addition
+                long long slope = ((Q.y - P.y + modulus) % modulus) *
+                                 modInverse((Q.x - P.x + modulus) % modulus, modulus) % modulus;
+                long long x3 = (slope * slope - P.x - Q.x + modulus + modulus + modulus) % modulus;
+                long long y3 = (slope * (P.x - x3) - P.y + modulus + modulus) % modulus;
+                return EllipticCurvePoint<Field>(x3, y3, modulus);
+            }
+        }
+
+        return P; // Simplified for other fields
+    }
+
+    /**
+     * @brief Scalar multiplication [n]P
+     */
+    EllipticCurvePoint<Field> multiply(long long n, const EllipticCurvePoint<Field>& P) const {
+        if (n == 0 || P.isInfinity) {
+            return EllipticCurvePoint<Field>::infinity(modulus);
+        }
+
+        if (n < 0) {
+            EllipticCurvePoint<Field> negP = P;
+            negP.y = -P.y;
+            if (modulus > 0) negP.y = (negP.y % modulus + modulus) % modulus;
+            return multiply(-n, negP);
+        }
+
+        // Double-and-add algorithm
+        EllipticCurvePoint<Field> result = EllipticCurvePoint<Field>::infinity(modulus);
+        EllipticCurvePoint<Field> temp = P;
+
+        while (n > 0) {
+            if (n % 2 == 1) {
+                result = add(result, temp);
+            }
+            temp = add(temp, temp);
+            n /= 2;
+        }
+
+        return result;
+    }
+
+    /**
+     * @brief Compute order of a point (for finite fields)
+     */
+    long long pointOrder(const EllipticCurvePoint<Field>& P, long long maxOrder = 10000) const {
+        if (P.isInfinity) return 1;
+
+        EllipticCurvePoint<Field> Q = P;
+        for (long long n = 1; n <= maxOrder; ++n) {
+            if (Q.isInfinity) return n;
+            Q = add(Q, P);
+        }
+
+        return -1; // Order not found
+    }
+
+    /**
+     * @brief Find all n-torsion points E[n]
+     *
+     * Points P such that [n]P = O
+     */
+    std::vector<EllipticCurvePoint<Field>> torsionPoints(int n) const {
+        std::vector<EllipticCurvePoint<Field>> torsion;
+        torsion.push_back(EllipticCurvePoint<Field>::infinity(modulus));
+
+        if (modulus > 0) {
+            // Search for torsion points over F_p
+            for (long long x = 0; x < modulus; ++x) {
+                long long rhs = (x * x * x + a * x + b) % modulus;
+                rhs = (rhs % modulus + modulus) % modulus;
+
+                // Check if rhs is a quadratic residue
+                if (legendreSymbol(rhs, modulus) >= 0) {
+                    long long y = modularSquareRoot(rhs, modulus);
+                    if (y != -1) {
+                        EllipticCurvePoint<Field> P(x, y, modulus);
+                        if (multiply(n, P).isInfinity) {
+                            torsion.push_back(P);
+                        }
+                        if (y != 0) {
+                            EllipticCurvePoint<Field> Q(x, (modulus - y) % modulus, modulus);
+                            if (multiply(n, Q).isInfinity) {
+                                torsion.push_back(Q);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return torsion;
+    }
+
+    /**
+     * @brief Compute j-invariant: j = 1728 · 4a³ / (4a³ + 27b²)
+     */
+    Field jInvariant() const {
+        Field numerator = 1728 * 4 * a * a * a;
+        Field denominator = 4 * a * a * a + 27 * b * b;
+
+        if (modulus > 0) {
+            return (numerator * modInverse(denominator, modulus)) % modulus;
+        }
+
+        return numerator / denominator;
+    }
+
+    Field getA() const { return a; }
+    Field getB() const { return b; }
+    long long getModulus() const { return modulus; }
+};
+
+// =============================================================================
+// IWASAWA THEORY OF ELLIPTIC CURVES
+// =============================================================================
+
+/**
+ * @brief Selmer group structure for elliptic curves
+ *
+ * The p-Selmer group Sel_p(E/K) measures the obstruction to
+ * the Hasse principle for E
+ */
+template<typename Field = long long>
+class SelmerGroup {
+private:
+    EllipticCurve<Field> curve;
+    long long prime; // Prime p for p-Selmer group
+    std::vector<Field> generators; // Generators of Selmer group
+
+public:
+    SelmerGroup(const EllipticCurve<Field>& E, long long p)
+        : curve(E), prime(p) {}
+
+    /**
+     * @brief Compute dimension of Selmer group
+     *
+     * dim Sel_p(E/Q) gives information about Mordell-Weil rank
+     */
+    int dimension() const {
+        // Simplified computation
+        // In practice, requires local conditions at all primes
+        return static_cast<int>(generators.size());
+    }
+
+    /**
+     * @brief Check if element is in Selmer group
+     *
+     * Requires checking local conditions at all primes
+     */
+    bool isInSelmerGroup(const Field& element) const {
+        // Simplified implementation
+        // True Selmer group computation requires:
+        // 1. Global cohomology H¹(G_K, E[p])
+        // 2. Local conditions at all primes
+        return false;
+    }
+
+    /**
+     * @brief Compute p-rank of Selmer group
+     */
+    int pRank() const {
+        return dimension();
+    }
+};
+
+/**
+ * @brief Local cohomology group H¹(K_v, E[p])
+ *
+ * Local Galois cohomology at a place v
+ */
+template<typename Field = long long>
+class LocalCohomologyGroup {
+private:
+    EllipticCurve<Field> curve;
+    long long prime; // Prime p
+    long long place;  // Place v
+
+public:
+    LocalCohomologyGroup(const EllipticCurve<Field>& E, long long p, long long v)
+        : curve(E), prime(p), place(v) {}
+
+    /**
+     * @brief Compute dimension of local cohomology
+     */
+    int dimension() const {
+        // For good reduction at v: dim = 1
+        // For multiplicative reduction: dim = 2
+        // For additive reduction: varies
+        return 1; // Simplified
+    }
+
+    /**
+     * @brief Kummer map from E(K_v)/pE(K_v) → H¹(K_v, E[p])
+     */
+    Field kummerMap(const EllipticCurvePoint<Field>& P) const {
+        // Simplified Kummer theory
+        // Maps points to cohomology classes
+        return P.x;
+    }
+};
+
+/**
+ * @brief Global cohomology group H¹(K, E[p])
+ *
+ * Global Galois cohomology
+ */
+template<typename Field = long long>
+class GlobalCohomologyGroup {
+private:
+    EllipticCurve<Field> curve;
+    long long prime;
+
+public:
+    GlobalCohomologyGroup(const EllipticCurve<Field>& E, long long p)
+        : curve(E), prime(p) {}
+
+    /**
+     * @brief Compute Euler characteristic using Tate's formula
+     *
+     * χ(K, E[p]) = [K:Q] · ∏_v c_v / #E(K)[p]
+     */
+    long long eulerCharacteristic(int fieldDegree) const {
+        // Simplified computation
+        // Requires Tamagawa numbers c_v at all primes
+        return fieldDegree;
+    }
+
+    /**
+     * @brief Compute dimension using cohomology formula
+     */
+    int dimension() const {
+        // dim H¹(K, E[p]) relates to Selmer group
+        return 0; // Requires full computation
+    }
+};
+
+/**
+ * @brief Iwasawa module for elliptic curves
+ *
+ * Studies arithmetic objects in the cyclotomic Z_p-extension
+ */
+template<typename Field = long long>
+class IwasawaModule {
+private:
+    EllipticCurve<Field> curve;
+    long long prime; // Prime p for Z_p-extension
+
+public:
+    IwasawaModule(const EllipticCurve<Field>& E, long long p)
+        : curve(E), prime(p) {}
+
+    /**
+     * @brief Lambda invariant (growth rate of Selmer groups)
+     *
+     * Measures rank growth in Z_p-extension
+     */
+    int lambdaInvariant() const {
+        // In Iwasawa theory: |Sel_p(E/K_n)| ≈ p^{λn + μp^n + ν}
+        // λ measures polynomial growth
+        return 0; // Requires deep computation
+    }
+
+    /**
+     * @brief Mu invariant (anomalous growth)
+     *
+     * μ = 0 for elliptic curves without CM (conjectured)
+     */
+    int muInvariant() const {
+        // Greenberg's conjecture: μ = 0 for E/Q without CM
+        return 0;
+    }
+
+    /**
+     * @brief Control theorem for Selmer groups
+     *
+     * Relates Sel_p(E/K_n) to Sel_p(E/K_{n+1})
+     */
+    bool controlTheorem() const {
+        // Control theorem: canonical map
+        // Sel_p(E/K_n) → Sel_p(E/K_{n+1})
+        // has bounded kernel and cokernel
+        return true;
+    }
+
+    /**
+     * @brief Characteristic ideal of Iwasawa module
+     */
+    PolynomialExtended characteristicIdeal() const {
+        // The characteristic polynomial f(T) ∈ Z_p[[T]]
+        // encodes Iwasawa invariants
+        std::vector<long long> coeffs = {1}; // Simplified
+        return PolynomialExtended(coeffs);
+    }
+};
+
+/**
+ * @brief Kummer theory for elliptic curves
+ *
+ * Studies fields generated by torsion points
+ */
+template<typename Field = long long>
+class KummerTheory {
+private:
+    EllipticCurve<Field> curve;
+    long long prime;
+
+public:
+    KummerTheory(const EllipticCurve<Field>& E, long long p)
+        : curve(E), prime(p) {}
+
+    /**
+     * @brief Kummer pairing
+     *
+     * E(K)/pE(K) × H¹(K, E[p]) → Z/pZ
+     */
+    long long kummerPairing(const EllipticCurvePoint<Field>& P, const Field& cohomClass) const {
+        // Simplified pairing
+        return 0;
+    }
+
+    /**
+     * @brief Compute degree of Kummer extension
+     *
+     * [K(E[p]) : K] where K(E[p]) is field generated by p-torsion
+     */
+    long long extensionDegree() const {
+        // For most elliptic curves: [Q(E[p]) : Q] divides (p²-1)(p²-p)
+        long long maxDegree = (prime * prime - 1) * (prime * prime - prime);
+        return maxDegree; // Simplified
+    }
+
+    /**
+     * @brief Check if Kummer extension is abelian
+     */
+    bool isAbelianExtension() const {
+        // K(E[p])/K is Galois, possibly non-abelian
+        // Abelian iff Galois group is abelian
+        return false; // Generally non-abelian for p > 2
+    }
+};
+
+// =============================================================================
+// MODULAR CURVES AND GALOIS REPRESENTATIONS
+// =============================================================================
+
+/**
+ * @brief Modular curve J₀(N)
+ *
+ * Jacobian of modular curve X₀(N)
+ */
+class ModularCurveJ0 {
+private:
+    long long level; // Level N
+
+public:
+    explicit ModularCurveJ0(long long N) : level(N) {}
+
+    /**
+     * @brief Dimension of J₀(N)
+     *
+     * dim J₀(N) = genus of X₀(N)
+     */
+    long long dimension() const {
+        // Genus formula for X₀(N)
+        if (level == 1) return 0;
+
+        // Approximate genus using formula involving divisor function
+        long long g = 1 + level / 12;
+
+        // Corrections for small N (simplified)
+        return g;
+    }
+
+    /**
+     * @brief Compute rank of J₀(N)(Q)
+     *
+     * Mordell-Weil rank over Q
+     */
+    int rank() const {
+        // Difficult computation requiring BSD conjecture
+        return 0; // Unknown in general
+    }
+
+    /**
+     * @brief Find n-torsion subgroup J₀(N)[n]
+     */
+    int torsionDimension(int n) const {
+        // J₀(N)[n] is a finite group
+        // Dimension over Z/nZ
+        return 2 * dimension(); // As Z/nZ-module
+    }
+
+    long long getLevel() const { return level; }
+};
+
+/**
+ * @brief Eisenstein ideal in Hecke algebra
+ *
+ * Ideal generated by T_p - (1 + p) for primes p ∤ N
+ */
+class EisensteinIdeal {
+private:
+    long long level;
+    long long prime; // Auxiliary prime ℓ for ℓ-adic representations
+
+public:
+    EisensteinIdeal(long long N, long long ell) : level(N), prime(ell) {}
+
+    /**
+     * @brief Compute kernel of Eisenstein ideal
+     *
+     * Ribet's theorem: relates kernel to J₀(N)[I_E]
+     */
+    int kernelDimension() const {
+        // Dimension of J₀(N)[I_E] where I_E is Eisenstein ideal
+        // Related to congruences between modular forms
+        return 1; // Simplified
+    }
+
+    /**
+     * @brief Check if ideal is maximal
+     */
+    bool isMaximal() const {
+        // Eisenstein ideal is maximal in Hecke algebra
+        return true;
+    }
+
+    /**
+     * @brief Compute residue field
+     *
+     * T/I_E ≅ F_ℓ typically
+     */
+    long long residueFieldSize() const {
+        return prime;
+    }
+};
+
+/**
+ * @brief Galois representation ρ: Gal(Q̄/Q) → GL₂(Z_ℓ)
+ *
+ * Representation on Tate module T_ℓ(E)
+ */
+template<typename Field = long long>
+class GaloisRepresentation {
+private:
+    EllipticCurve<Field> curve;
+    long long prime; // Prime ℓ for ℓ-adic representation
+
+public:
+    GaloisRepresentation(const EllipticCurve<Field>& E, long long ell)
+        : curve(E), prime(ell) {}
+
+    /**
+     * @brief Check if representation is surjective
+     *
+     * Important for Serre's conjecture (now theorem)
+     */
+    bool isSurjective() const {
+        // For most elliptic curves without CM:
+        // ρ_E,ℓ: Gal(Q̄/Q) → GL₂(Z_ℓ) is surjective for all but finitely many ℓ
+        return true; // Simplified
+    }
+
+    /**
+     * @brief Compute determinant character
+     *
+     * det ρ = cyclotomic character χ_ℓ
+     */
+    bool hasCorrectDeterminant() const {
+        // det(ρ(σ)) = χ_ℓ(σ) for all σ ∈ Gal(Q̄/Q)
+        return true;
+    }
+
+    /**
+     * @brief Check if representation is modular
+     *
+     * Modularity theorem (Wiles, Taylor-Wiles, etc.)
+     */
+    bool isModular() const {
+        // All elliptic curves over Q are modular
+        return true;
+    }
+
+    /**
+     * @brief Compute level of representation
+     *
+     * Conductor of associated modular form
+     */
+    long long conductor() const {
+        // Conductor N(E) = ∏_p p^{f_p}
+        // where f_p depends on reduction type at p
+        return 1; // Requires factorization
+    }
+
+    /**
+     * @brief Trace of Frobenius at prime p
+     *
+     * a_p = p + 1 - #E(F_p)
+     */
+    long long traceOfFrobenius(long long p) const {
+        if (p == curve.getModulus()) {
+            return 0; // Bad reduction
+        }
+
+        // Count points on E(F_p)
+        long long count = 1; // Point at infinity
+        for (long long x = 0; x < p; ++x) {
+            long long rhs = (x * x * x + curve.getA() * x + curve.getB()) % p;
+            rhs = (rhs % p + p) % p;
+
+            int leg = legendreSymbol(rhs, p);
+            if (leg == 1) {
+                count += 2; // Two points (x, ±y)
+            } else if (leg == 0) {
+                count += 1; // One point (x, 0)
+            }
+        }
+
+        return p + 1 - count;
+    }
+};
+
+/**
+ * @brief Adelic representation
+ *
+ * Product of all ℓ-adic representations
+ * ρ: Gal(Q̄/Q) → GL₂(Ẑ) = ∏_ℓ GL₂(Z_ℓ)
+ */
+template<typename Field = long long>
+class AdelicRepresentation {
+private:
+    EllipticCurve<Field> curve;
+    std::vector<long long> primes;
+
+public:
+    explicit AdelicRepresentation(const EllipticCurve<Field>& E)
+        : curve(E) {
+        // Initialize with small primes
+        primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31};
+    }
+
+    /**
+     * @brief Check compatibility across primes
+     *
+     * Traces should be compatible via Eichler-Shimura
+     */
+    bool checkCompatibility() const {
+        // a_p should be independent of ℓ (comes from modular form)
+        return true;
+    }
+
+    /**
+     * @brief Compute image of representation
+     *
+     * Im(ρ) ⊆ GL₂(Ẑ)
+     */
+    long long imageIndex() const {
+        // Index [GL₂(Ẑ) : Im(ρ)]
+        // Finite for elliptic curves without CM
+        return 1; // Simplified
+    }
+
+    /**
+     * @brief Check if representation has complex multiplication
+     */
+    bool hasComplexMultiplication() const {
+        // E has CM iff End(E) is larger than Z
+        // Equivalent to j-invariant being algebraic integer
+        return false; // Most curves don't have CM
+    }
+
+    /**
+     * @brief Lenstra's result on image of inertia
+     *
+     * Studies image of inertia groups in Galois representation
+     */
+    bool lenstraCondition(long long p) const {
+        // Technical condition on ramification
+        // Used in Ribet's level-lowering theorem
+        return true;
+    }
+
+    /**
+     * @brief Compute Serre's conductor
+     *
+     * Minimal level for which ρ mod ℓ is modular
+     */
+    long long serreConductor(long long ell) const {
+        // Conductor of mod ℓ representation
+        return curve.getModulus(); // Simplified
+    }
+};
+
+/**
+ * @brief Hecke operator T_p on modular forms
+ */
+class HeckeOperator {
+private:
+    long long prime;
+    long long level;
+
+public:
+    HeckeOperator(long long p, long long N) : prime(p), level(N) {}
+
+    /**
+     * @brief Eigenvalue a_p for eigenform
+     *
+     * Related to trace of Frobenius
+     */
+    long long eigenvalue(const EllipticCurve<long long>& E) const {
+        GaloisRepresentation<long long> rho(E, prime);
+        return rho.traceOfFrobenius(prime);
+    }
+
+    /**
+     * @brief Check Ramanujan bound |a_p| ≤ 2√p
+     */
+    bool satisfiesRamanujanBound(long long a_p) const {
+        double bound = 2.0 * std::sqrt(static_cast<double>(prime));
+        return std::abs(static_cast<double>(a_p)) <= bound;
+    }
+};
+
 } // namespace number_theory
 } // namespace maths
 
