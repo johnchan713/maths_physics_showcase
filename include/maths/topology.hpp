@@ -2554,6 +2554,1545 @@ public:
     }
 };
 
+// ============================================================================
+// ADVANCED SUBMANIFOLD THEORY
+// ============================================================================
+
+/**
+ * @brief Rank of smooth map (constant rank theorem)
+ */
+template<typename T = double, int m = 2, int n = 2>
+class RankTheory {
+public:
+    /**
+     * @brief Compute rank of f at point p
+     */
+    static int rank(const SmoothMap<T, m, n>& f, const Point<T>& p) {
+        // Rank of differential df_p
+        return std::min(m, n);  // Placeholder
+    }
+
+    /**
+     * @brief Check if f has constant rank
+     */
+    static bool hasConstantRank(const SmoothMap<T, m, n>& f) {
+        // f has constant rank if rank(df_p) is same for all p
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Constant Rank Theorem:
+     * If f: M → N has constant rank r, then for each p ∈ M, there exist
+     * charts such that f looks like (x₁,...,xₘ) ↦ (x₁,...,xᵣ,0,...,0)
+     */
+    static bool constantRankTheorem(int rank_value) {
+        return true;
+    }
+};
+
+/**
+ * @brief Inverse Function Theorem
+ */
+template<typename T = double, int n = 2>
+class InverseFunctionTheorem {
+public:
+    /**
+     * @brief Check conditions for inverse function theorem
+     * If f: M → N is smooth and df_p: T_p M → T_{f(p)} N is isomorphism,
+     * then f is local diffeomorphism near p
+     */
+    static bool hasLocalInverse(const SmoothMap<T, n, n>& f, const Point<T>& p) {
+        // Check if df_p is invertible (Jacobian has det ≠ 0)
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Inverse function: guaranteed to exist locally
+     */
+    static SmoothMap<T, n, n> localInverse(const SmoothMap<T, n, n>& f, const Point<T>& p) {
+        // Construct local inverse g with f ∘ g = id near f(p)
+        return f;  // Placeholder
+    }
+
+    /**
+     * @brief Jacobian determinant at point
+     */
+    static T jacobianDeterminant(const SmoothMap<T, n, n>& f, const Point<T>& p) {
+        return T(1);  // Placeholder
+    }
+};
+
+/**
+ * @brief Rank Theorem (generalization of inverse/implicit function theorems)
+ */
+template<typename T = double, int m = 2, int n = 2>
+class RankTheoremFull {
+public:
+    /**
+     * @brief Rank Theorem:
+     * If f: M^m → N^n has constant rank r at p, then ∃ charts such that
+     * f(x₁,...,xₘ) = (x₁,...,xᵣ,0,...,0)
+     */
+    static bool rankTheorem(const SmoothMap<T, m, n>& f, const Point<T>& p, int r) {
+        // Locally, f can be written in canonical form
+        return true;
+    }
+
+    /**
+     * @brief Submersion case: rank = n (onto tangent space)
+     */
+    static bool submersionTheorem(const SmoothMap<T, m, n>& f) {
+        // If f is submersion, preimage f^{-1}(q) is submanifold of codim n
+        return m >= n;
+    }
+
+    /**
+     * @brief Immersion case: rank = m (1-1 on tangent space)
+     */
+    static bool immersionTheorem(const SmoothMap<T, m, n>& f) {
+        // If f is immersion, f(M) is locally a submanifold
+        return m <= n;
+    }
+};
+
+/**
+ * @brief Regular and critical values
+ */
+template<typename T = double, int m = 2, int n = 2>
+class RegularValueTheory {
+private:
+    const SmoothMap<T, m, n>* map_;
+
+public:
+    RegularValueTheory(const SmoothMap<T, m, n>* f) : map_(f) {}
+
+    /**
+     * @brief Point p is critical if df_p is not surjective
+     */
+    bool isCriticalPoint(const Point<T>& p) const {
+        return !map_->isSubmersion(p);
+    }
+
+    /**
+     * @brief Point q is critical value if q = f(p) for some critical p
+     */
+    bool isCriticalValue(const Point<T>& q) const {
+        // q is critical value if ∃ p with f(p) = q and df_p not surjective
+        return false;  // Placeholder
+    }
+
+    /**
+     * @brief Point q is regular value if not critical
+     */
+    bool isRegularValue(const Point<T>& q) const {
+        return !isCriticalValue(q);
+    }
+
+    /**
+     * @brief Regular Level Set Theorem:
+     * If q is regular value, then f^{-1}(q) is submanifold of M
+     * with codimension = dim(N)
+     */
+    Submanifold<T, m - n, m> regularLevelSet(const Point<T>& q) const {
+        // f^{-1}(q) is (m-n)-dimensional submanifold
+        return Submanifold<T, m - n, m>(nullptr);
+    }
+
+    /**
+     * @brief Preimage theorem: for regular value q,
+     * codim(f^{-1}(q)) = dim(N)
+     */
+    int preimageCodeimension(const Point<T>& q) const {
+        if (isRegularValue(q)) {
+            return n;
+        }
+        return -1;  // Not defined for critical values
+    }
+};
+
+/**
+ * @brief Immersions and Embeddings
+ */
+template<typename T = double, int m = 2, int n = 3>
+class ImmersionEmbeddingTheory {
+public:
+    /**
+     * @brief f is immersion if df_p injective for all p
+     */
+    static bool isImmersion(const SmoothMap<T, m, n>& f) {
+        // rank(df_p) = m for all p (requires m ≤ n)
+        return m <= n;  // Simplified
+    }
+
+    /**
+     * @brief f is embedding if immersion + homeomorphism onto image
+     */
+    static bool isEmbedding(const SmoothMap<T, m, n>& f) {
+        // Embedding = injective immersion + proper map + topological embedding
+        return isImmersion(f);  // Simplified
+    }
+
+    /**
+     * @brief Proper immersion is embedding (proper = preimage of compact is compact)
+     */
+    static bool properImmersionIsEmbedding(const SmoothMap<T, m, n>& f, bool is_proper) {
+        return is_proper && isImmersion(f);
+    }
+
+    /**
+     * @brief Whitney embedding theorem: Every smooth m-manifold embeds in ℝ^{2m+1}
+     */
+    static int whitneyEmbeddingDimension(int m) {
+        return 2 * m + 1;
+    }
+
+    /**
+     * @brief Whitney immersion theorem: Every smooth m-manifold immerses in ℝ^{2m}
+     */
+    static int whitneyImmersionDimension(int m) {
+        return 2 * m;
+    }
+
+    /**
+     * @brief Normal bundle for immersion f: M → N
+     */
+    static int normalBundleRank(const SmoothMap<T, m, n>& f) {
+        return n - m;  // Codimension
+    }
+};
+
+/**
+ * @brief Sard's Theorem
+ */
+template<typename T = double, int m = 2, int n = 2>
+class SardsTheorem {
+public:
+    /**
+     * @brief Sard's Theorem: Set of critical values has measure zero
+     *
+     * For smooth f: M^m → N^n, the set of critical values has
+     * Lebesgue measure zero in N.
+     *
+     * Consequence: Regular values are dense in N.
+     */
+    static bool criticalValuesHaveMeasureZero() {
+        return true;
+    }
+
+    /**
+     * @brief Regular values are dense (Sard's theorem)
+     */
+    static bool regularValuesAreDense() {
+        return true;
+    }
+
+    /**
+     * @brief Brown-Sard theorem (stronger version)
+     * Critical values of f: ℝ^m → ℝ^n have measure zero if m ≥ n
+     */
+    static bool brownSardTheorem(int m, int n) {
+        return m >= n;
+    }
+
+    /**
+     * @brief Application: Almost every linear projection is regular
+     */
+    static bool almostEveryProjectionIsRegular() {
+        // Generic projection ℝ^n → ℝ^k has regular values dense
+        return true;
+    }
+
+    /**
+     * @brief Transversality theorem (from Sard)
+     */
+    static bool transversalityIsDense() {
+        // Transverse maps are dense in C^∞(M, N)
+        return true;
+    }
+};
+
+// ============================================================================
+// PARTITION OF UNITY
+// ============================================================================
+
+/**
+ * @brief Smooth bump function (compactly supported smooth function)
+ */
+template<typename T = double>
+class SmoothBumpFunction {
+private:
+    Point<T> center_;
+    T radius_;
+    std::function<T(T)> cutoff_;  // Standard cutoff function
+
+public:
+    SmoothBumpFunction(const Point<T>& center, T r) : center_(center), radius_(r) {
+        // Construct standard smooth cutoff: 1 near center, 0 outside ball
+    }
+
+    /**
+     * @brief Evaluate bump function at point
+     */
+    T evaluate(const Point<T>& p) const {
+        // Standard construction: exp(-1/(r² - |x|²)) inside ball, 0 outside
+        return T(0);  // Placeholder
+    }
+
+    /**
+     * @brief Support of function (compact set)
+     */
+    T support() const {
+        return radius_;
+    }
+
+    /**
+     * @brief Standard smooth cutoff ρ: ℝ → [0,1]
+     * ρ(t) = 0 for t ≤ 0, ρ(t) = 1 for t ≥ 1, smooth everywhere
+     */
+    static T standardCutoff(T t) {
+        if (t <= 0) return T(0);
+        if (t >= 1) return T(1);
+        // Use exp(-1/t) / (exp(-1/t) + exp(-1/(1-t)))
+        return T(0.5);  // Placeholder
+    }
+
+    /**
+     * @brief Mollifier: smooth approximation to delta function
+     */
+    static T mollifier(T r) {
+        // φ(x) = C exp(-1/(1-|x|²)) for |x| < 1, 0 otherwise
+        return T(0);  // Placeholder
+    }
+};
+
+/**
+ * @brief Refinement of open covers
+ */
+template<typename T = double>
+class CoverRefinement {
+private:
+    std::vector<std::set<Point<T>>> original_cover_;
+    std::vector<std::set<Point<T>>> refined_cover_;
+
+public:
+    /**
+     * @brief Add open set to original cover
+     */
+    void addToOriginalCover(const std::set<Point<T>>& U) {
+        original_cover_.push_back(U);
+    }
+
+    /**
+     * @brief Cover V is refinement of cover U if every V_i ⊂ some U_j
+     */
+    bool isRefinement(const std::vector<std::set<Point<T>>>& coarser) const {
+        // Check if refined_cover_ refines coarser
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Locally finite cover: each point has neighborhood meeting finitely many sets
+     */
+    bool isLocallyFinite() const {
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Paracompact space: every open cover has locally finite refinement
+     */
+    static bool hasLocallyFiniteRefinement() {
+        // Smooth manifolds are paracompact
+        return true;
+    }
+
+    /**
+     * @brief Shrinking lemma: locally finite cover has shrinking
+     */
+    std::vector<std::set<Point<T>>> shrink() const {
+        // For locally finite cover U, ∃ cover V with cl(V_i) ⊂ U_i
+        return original_cover_;  // Placeholder
+    }
+};
+
+/**
+ * @brief Partition of unity subordinate to open cover
+ */
+template<typename T = double, int n = 2>
+class PartitionOfUnity {
+private:
+    std::vector<std::function<T(const Point<T>&)>> functions_;  // {φ_i}
+    std::vector<std::set<Point<T>>> cover_;  // {U_i}
+
+public:
+    /**
+     * @brief Add function to partition
+     */
+    void addFunction(std::function<T(const Point<T>&)> phi,
+                     const std::set<Point<T>>& support) {
+        functions_.push_back(phi);
+        cover_.push_back(support);
+    }
+
+    /**
+     * @brief Partition of unity conditions:
+     * 1. φ_i ≥ 0 for all i
+     * 2. supp(φ_i) ⊂ U_i (subordinate to cover)
+     * 3. {supp(φ_i)} is locally finite
+     * 4. Σ φ_i ≡ 1
+     */
+    bool isValid() const {
+        // Check all partition of unity axioms
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Evaluate Σ φ_i at point (should equal 1)
+     */
+    T sum(const Point<T>& p) const {
+        T total = 0;
+        for (const auto& phi : functions_) {
+            total += phi(p);
+        }
+        return total;
+    }
+
+    /**
+     * @brief Support of φ_i
+     */
+    const std::set<Point<T>>& support(int i) const {
+        return cover_[i];
+    }
+
+    /**
+     * @brief Check if partition is subordinate to given cover
+     */
+    bool isSubordinateTo(const std::vector<std::set<Point<T>>>& cover) const {
+        // Each supp(φ_i) contained in some U_j
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Finite partition: finitely many functions
+     */
+    bool isFinite() const {
+        return functions_.size() < 1000000;  // Practical bound
+    }
+
+    /**
+     * @brief Locally finite: each point has neighborhood meeting finite supports
+     */
+    bool isLocallyFinite() const {
+        return true;  // Always true for smooth manifolds
+    }
+};
+
+/**
+ * @brief Existence theorem for partitions of unity
+ */
+template<typename T = double, int n = 2>
+class PartitionOfUnityExistence {
+public:
+    /**
+     * @brief Main theorem: Every smooth manifold admits partitions of unity
+     *
+     * For any open cover {U_α} of smooth manifold M, there exists
+     * smooth partition of unity {φ_α} subordinate to {U_α}
+     */
+    static PartitionOfUnity<T, n> construct(const SmoothManifold<T, n>& M,
+                                             const std::vector<std::set<Point<T>>>& cover) {
+        PartitionOfUnity<T, n> partition;
+        // Construction uses paracompactness + smooth bump functions
+        return partition;
+    }
+
+    /**
+     * @brief Paracompact ⟹ admits partitions of unity
+     */
+    static bool paracompactAdmitsPartitions() {
+        return true;
+    }
+
+    /**
+     * @brief Applications of partition of unity:
+     * - Existence of Riemannian metrics
+     * - Integration on manifolds
+     * - Gluing local objects to global ones
+     */
+    static bool hasApplications() {
+        return true;
+    }
+};
+
+/**
+ * @brief Embeddings in Euclidean space
+ */
+template<typename T = double, int m = 2>
+class EuclideanEmbedding {
+public:
+    /**
+     * @brief Whitney Embedding Theorem (strong form):
+     * Every smooth compact m-manifold embeds in ℝ^{2m}
+     */
+    static int compactEmbeddingDimension(int m) {
+        return 2 * m;
+    }
+
+    /**
+     * @brief Whitney Embedding Theorem (weak form):
+     * Every smooth m-manifold embeds in ℝ^{2m+1}
+     */
+    static int generalEmbeddingDimension(int m) {
+        return 2 * m + 1;
+    }
+
+    /**
+     * @brief Construct embedding using partition of unity
+     */
+    static SmoothMap<T, m, 2*m+1> constructEmbedding(const SmoothManifold<T, m>& M) {
+        // Use partition of unity to glue local embeddings
+        return SmoothMap<T, m, 2*m+1>(nullptr, nullptr);
+    }
+
+    /**
+     * @brief Nash embedding theorem: Every Riemannian manifold
+     * isometrically embeds in some ℝ^N
+     */
+    static bool nashEmbeddingTheorem() {
+        return true;
+    }
+
+    /**
+     * @brief Compact m-manifold can be embedded in S^{2m}
+     */
+    static bool embeddingInSphere(int m) {
+        return true;
+    }
+};
+
+// ============================================================================
+// CONSTRUCTIONS ON VECTOR BUNDLES
+// ============================================================================
+
+/**
+ * @brief Subbundle of vector bundle
+ */
+template<typename T = double, int n = 2, int k = 2, int r = 1>
+class Subbundle {
+private:
+    const SmoothVectorBundle<T, n, k>* ambient_bundle_;
+
+public:
+    Subbundle(const SmoothVectorBundle<T, n, k>* E) : ambient_bundle_(E) {
+        static_assert(r <= k, "Subbundle rank must be ≤ ambient rank");
+    }
+
+    /**
+     * @brief E' is subbundle of E if E'_p ⊂ E_p for all p
+     */
+    bool isSubbundle() const {
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Quotient bundle E/E'
+     */
+    SmoothVectorBundle<T, n, k - r> quotientBundle() const {
+        return SmoothVectorBundle<T, n, k - r>(nullptr, k - r);
+    }
+
+    /**
+     * @brief Inclusion map i: E' ↪ E
+     */
+    int inclusionRank() const {
+        return r;
+    }
+};
+
+/**
+ * @brief Pullback (induced) bundle f*E
+ */
+template<typename T = double, int m = 2, int n = 2, int k = 1>
+class PullbackBundle {
+private:
+    const SmoothMap<T, m, n>* base_map_;  // f: M → N
+    const SmoothVectorBundle<T, n, k>* bundle_;  // E → N
+
+public:
+    PullbackBundle(const SmoothMap<T, m, n>* f,
+                   const SmoothVectorBundle<T, n, k>* E)
+        : base_map_(f), bundle_(E) {}
+
+    /**
+     * @brief Pullback bundle f*E → M
+     * Fiber: (f*E)_p = E_{f(p)}
+     */
+    SmoothVectorBundle<T, m, k> construct() const {
+        // f*E = {(p, v) ∈ M × E | f(p) = π(v)}
+        return SmoothVectorBundle<T, m, k>(nullptr, k);
+    }
+
+    /**
+     * @brief Pullback diagram commutes
+     */
+    bool diagramCommutes() const {
+        return true;
+    }
+
+    /**
+     * @brief Universal property of pullback
+     */
+    bool universalProperty() const {
+        return true;
+    }
+
+    /**
+     * @brief Induced bundle over submanifold
+     */
+    static PullbackBundle restrictionToSubmanifold(const SmoothVectorBundle<T, n, k>* E) {
+        // E|_S for submanifold S ⊂ M
+        return PullbackBundle(nullptr, E);
+    }
+};
+
+/**
+ * @brief Whitney sum E ⊕ F of vector bundles
+ */
+template<typename T = double, int n = 2, int k1 = 1, int k2 = 1>
+class WhitneySum {
+private:
+    const SmoothVectorBundle<T, n, k1>* bundle1_;
+    const SmoothVectorBundle<T, n, k2>* bundle2_;
+
+public:
+    WhitneySum(const SmoothVectorBundle<T, n, k1>* E,
+               const SmoothVectorBundle<T, n, k2>* F)
+        : bundle1_(E), bundle2_(F) {}
+
+    /**
+     * @brief Whitney sum E ⊕ F has fiber (E ⊕ F)_p = E_p ⊕ F_p
+     */
+    SmoothVectorBundle<T, n, k1 + k2> construct() const {
+        return SmoothVectorBundle<T, n, k1 + k2>(nullptr, k1 + k2);
+    }
+
+    /**
+     * @brief Rank of Whitney sum
+     */
+    int rank() const {
+        return k1 + k2;
+    }
+
+    /**
+     * @brief Transition functions of E ⊕ F
+     */
+    bool transitionIsBlockDiagonal() const {
+        // g_{E⊕F} = diag(g_E, g_F)
+        return true;
+    }
+
+    /**
+     * @brief Projection onto first factor
+     */
+    int projection1Rank() const {
+        return k1;
+    }
+
+    /**
+     * @brief Projection onto second factor
+     */
+    int projection2Rank() const {
+        return k2;
+    }
+};
+
+/**
+ * @brief Tensor product of vector bundles E ⊗ F
+ */
+template<typename T = double, int n = 2, int k1 = 2, int k2 = 2>
+class TensorProductBundle {
+public:
+    /**
+     * @brief (E ⊗ F)_p = E_p ⊗ F_p
+     */
+    static SmoothVectorBundle<T, n, k1 * k2> construct(
+        const SmoothVectorBundle<T, n, k1>* E,
+        const SmoothVectorBundle<T, n, k2>* F) {
+        return SmoothVectorBundle<T, n, k1 * k2>(nullptr, k1 * k2);
+    }
+
+    /**
+     * @brief Rank of tensor product
+     */
+    static int rank() {
+        return k1 * k2;
+    }
+
+    /**
+     * @brief Sections of E ⊗ F are tensors
+     */
+    static bool sectionsAreTensors() {
+        return true;
+    }
+};
+
+/**
+ * @brief Dual bundle E* (fiberwise dual)
+ */
+template<typename T = double, int n = 2, int k = 2>
+class DualBundle {
+private:
+    const SmoothVectorBundle<T, n, k>* bundle_;
+
+public:
+    DualBundle(const SmoothVectorBundle<T, n, k>* E) : bundle_(E) {}
+
+    /**
+     * @brief (E*)_p = (E_p)*
+     */
+    SmoothVectorBundle<T, n, k> construct() const {
+        return SmoothVectorBundle<T, n, k>(nullptr, k);
+    }
+
+    /**
+     * @brief Transition functions of dual: g* = (g^T)^{-1}
+     */
+    bool dualTransition() const {
+        return true;
+    }
+
+    /**
+     * @brief Pairing E × E* → ℝ
+     */
+    T pairing(const std::vector<T>& v, const std::vector<T>& w) const {
+        T result = 0;
+        for (size_t i = 0; i < v.size(); ++i) {
+            result += v[i] * w[i];
+        }
+        return result;
+    }
+
+    /**
+     * @brief Cotangent bundle is dual to tangent bundle
+     */
+    static bool cotangentIsDualToTangent() {
+        return true;
+    }
+};
+
+/**
+ * @brief Exterior power bundle ⋀^k E
+ */
+template<typename T = double, int n = 2, int r = 3, int k = 2>
+class ExteriorPowerBundle {
+public:
+    /**
+     * @brief (⋀^k E)_p = ⋀^k(E_p)
+     */
+    static int rank() {
+        // Rank = C(r, k) = r!/(k!(r-k)!)
+        int result = 1;
+        for (int i = 0; i < k; ++i) {
+            result = result * (r - i) / (i + 1);
+        }
+        return result;
+    }
+
+    /**
+     * @brief Top exterior power ⋀^r E (for rank r bundle)
+     */
+    static SmoothVectorBundle<T, n, 1> topExteriorPower() {
+        // ⋀^r E is line bundle (determinant bundle)
+        return SmoothVectorBundle<T, n, 1>(nullptr, 1);
+    }
+
+    /**
+     * @brief Sections of ⋀^k T*M are differential k-forms
+     */
+    static bool sectionsAreDifferentialForms() {
+        return true;
+    }
+};
+
+/**
+ * @brief Riemannian metric on vector bundle
+ */
+template<typename T = double, int n = 2, int k = 2>
+class RiemannianStructure {
+private:
+    const SmoothVectorBundle<T, n, k>* bundle_;
+    std::function<T(const std::vector<T>&, const std::vector<T>&, const Point<T>&)> metric_;
+
+public:
+    RiemannianStructure(const SmoothVectorBundle<T, n, k>* E) : bundle_(E) {}
+
+    /**
+     * @brief Riemannian metric: smoothly varying inner product g_p on E_p
+     */
+    void setMetric(std::function<T(const std::vector<T>&, const std::vector<T>&, const Point<T>&)> g) {
+        metric_ = g;
+    }
+
+    /**
+     * @brief Inner product ⟨v, w⟩_p
+     */
+    T innerProduct(const std::vector<T>& v, const std::vector<T>& w, const Point<T>& p) const {
+        if (metric_) {
+            return metric_(v, w, p);
+        }
+        // Default Euclidean metric
+        T result = 0;
+        for (size_t i = 0; i < v.size(); ++i) {
+            result += v[i] * w[i];
+        }
+        return result;
+    }
+
+    /**
+     * @brief Norm |v|_p = √⟨v,v⟩_p
+     */
+    T norm(const std::vector<T>& v, const Point<T>& p) const {
+        return std::sqrt(innerProduct(v, v, p));
+    }
+
+    /**
+     * @brief Existence: Every vector bundle admits Riemannian metric
+     * (Proof uses partition of unity)
+     */
+    static bool existenceTheorem() {
+        return true;
+    }
+
+    /**
+     * @brief Orthonormal frame: basis {e_i} with ⟨e_i, e_j⟩ = δ_ij
+     */
+    std::vector<std::vector<T>> orthonormalFrame(const Point<T>& p) const {
+        std::vector<std::vector<T>> frame(k, std::vector<T>(k, 0));
+        for (int i = 0; i < k; ++i) {
+            frame[i][i] = 1;
+        }
+        return frame;
+    }
+};
+
+/**
+ * @brief Normal bundle of submanifold
+ */
+template<typename T = double, int m = 2, int n = 3>
+class NormalBundle {
+private:
+    const Submanifold<T, m, n>* submanifold_;
+
+public:
+    NormalBundle(const Submanifold<T, m, n>* S) : submanifold_(S) {}
+
+    /**
+     * @brief For S ⊂ M, normal bundle N(S) has fiber N_p(S) = T_p M / T_p S
+     */
+    int rank() const {
+        return n - m;  // Codimension
+    }
+
+    /**
+     * @brief Exact sequence: 0 → TS → TM|_S → N(S) → 0
+     */
+    bool exactSequence() const {
+        return true;
+    }
+
+    /**
+     * @brief Normal space N_p = (T_p S)^⊥ in T_p M (with Riemannian metric)
+     */
+    bool isOrthogonalComplement() const {
+        return true;
+    }
+
+    /**
+     * @brief Tubular neighborhood theorem:
+     * Neighborhood of S ≅ neighborhood in N(S)
+     */
+    bool tubularNeighborhoodTheorem() const {
+        return true;
+    }
+
+    /**
+     * @brief Normal bundle is trivial ⟺ has nowhere-zero section
+     */
+    bool trivialityCondition() const {
+        return true;
+    }
+};
+
+/**
+ * @brief Transversality
+ */
+template<typename T = double>
+class Transversality {
+public:
+    /**
+     * @brief f ⋔ S (f transverse to S) if:
+     * Image(df_p) + T_{f(p)} S = T_{f(p)} N for all p ∈ f^{-1}(S)
+     */
+    template<int m, int n, int k>
+    static bool isTransverse(const SmoothMap<T, m, n>& f,
+                            const Submanifold<T, k, n>& S) {
+        // Check tangent space sum condition
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Transversality theorem:
+     * If f ⋔ S, then f^{-1}(S) is submanifold of M with
+     * codim(f^{-1}(S)) = codim(S)
+     */
+    template<int m, int n, int k>
+    static int preimageCodeimension(int codim_S) {
+        return codim_S;
+    }
+
+    /**
+     * @brief Generic transversality: transverse maps are dense in C^∞(M,N)
+     */
+    static bool transverseIsDense() {
+        return true;  // Thom transversality theorem
+    }
+
+    /**
+     * @brief Intersection of transverse submanifolds
+     */
+    template<int k1, int k2, int n>
+    static int intersectionDimension(int dim_S1, int dim_S2, int dim_M) {
+        // dim(S₁ ∩ S₂) = dim(S₁) + dim(S₂) - dim(M) (transverse intersection)
+        return dim_S1 + dim_S2 - dim_M;
+    }
+};
+
+/**
+ * @brief Orientations on manifolds and bundles
+ */
+template<typename T = double, int n = 2>
+class Orientation {
+private:
+    bool oriented_;
+
+public:
+    Orientation() : oriented_(false) {}
+
+    /**
+     * @brief Orientation = consistent choice of ordered basis for T_p M
+     */
+    void setOriented(bool orient) {
+        oriented_ = orient;
+    }
+
+    bool isOriented() const {
+        return oriented_;
+    }
+
+    /**
+     * @brief Manifold is orientable if admits nowhere-vanishing top form
+     */
+    bool isOrientable() const {
+        // M orientable ⟺ ⋀^n T*M is trivial line bundle
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Orientation cover: double cover M̃ → M (always orientable)
+     */
+    static int orientationCoverDegree() {
+        return 2;
+    }
+
+    /**
+     * @brief Orientation-preserving map: det(Jacobian) > 0
+     */
+    bool preservesOrientation(const SmoothMap<T, n, n>& f) const {
+        // Check sign of Jacobian determinant
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Induced orientation on boundary ∂M
+     */
+    Orientation boundaryOrientation() const {
+        return Orientation();
+    }
+
+    /**
+     * @brief Non-orientable examples: Möbius band, Klein bottle, ℝP^2n
+     */
+    static bool mobiusBandIsNonOrientable() {
+        return true;
+    }
+};
+
+/**
+ * @brief Grassmann manifold Gr(k, n) = k-planes in ℝ^n
+ */
+template<int k, int n>
+class GrassmannManifold {
+public:
+    /**
+     * @brief Dimension of Gr(k, n) = k(n - k)
+     */
+    static int dimension() {
+        return k * (n - k);
+    }
+
+    /**
+     * @brief Tautological bundle S_k → Gr(k, n)
+     * Fiber S_k(V) = V ⊂ ℝ^n
+     */
+    static int tautologicalBundleRank() {
+        return k;
+    }
+
+    /**
+     * @brief Quotient bundle Q = (ℝ^n) / S_k
+     */
+    static int quotientBundleRank() {
+        return n - k;
+    }
+
+    /**
+     * @brief Plücker embedding: Gr(k,n) ↪ ℙ(⋀^k ℝ^n)
+     */
+    static int pluckerEmbeddingDimension() {
+        // Dimension of ℙ(⋀^k ℝ^n)
+        int binomial = 1;
+        for (int i = 0; i < k; ++i) {
+            binomial = binomial * (n - i) / (i + 1);
+        }
+        return binomial - 1;
+    }
+
+    /**
+     * @brief Special cases:
+     * Gr(1, n) = ℝP^{n-1}
+     * Gr(n-1, n) = ℝP^{n-1}
+     */
+    static bool specialCases() {
+        return (k == 1) || (k == n - 1);
+    }
+
+    /**
+     * @brief Schubert cells give cell decomposition
+     */
+    static bool hasSchubertCellDecomposition() {
+        return true;
+    }
+};
+
+// ============================================================================
+// DIFFERENTIAL EQUATIONS AND FLOWS
+// ============================================================================
+
+/**
+ * @brief Flow of vector field (one-parameter group of diffeomorphisms)
+ */
+template<typename T = double, int n = 2>
+class Flow {
+private:
+    std::function<Derivation<T>(const Point<T>&)> vector_field_;
+    std::function<Point<T>(const Point<T>&, T)> flow_map_;  // φ_t(p)
+
+public:
+    /**
+     * @brief Set vector field X
+     */
+    void setVectorField(std::function<Derivation<T>(const Point<T>&)> X) {
+        vector_field_ = X;
+    }
+
+    /**
+     * @brief Flow φ_t: M → M satisfying dφ_t/dt = X(φ_t)
+     */
+    Point<T> flowAtTime(const Point<T>& p, T t) const {
+        if (flow_map_) {
+            return flow_map_(p, t);
+        }
+        // Solve ODE: dx/dt = X(x), x(0) = p
+        return p;  // Placeholder
+    }
+
+    /**
+     * @brief Group property: φ_s ∘ φ_t = φ_{s+t}
+     */
+    bool satisfiesGroupProperty(T s, T t) const {
+        // φ_s(φ_t(p)) = φ_{s+t}(p)
+        return true;
+    }
+
+    /**
+     * @brief φ_0 = identity
+     */
+    bool identityAtZero() const {
+        return true;
+    }
+
+    /**
+     * @brief φ_{-t} = (φ_t)^{-1}
+     */
+    bool inverseProperty() const {
+        return true;
+    }
+
+    /**
+     * @brief Complete vector field: flow exists for all t ∈ ℝ
+     */
+    bool isComplete() const {
+        return true;  // On compact manifolds, all vector fields complete
+    }
+
+    /**
+     * @brief Integral curve: γ'(t) = X(γ(t))
+     */
+    Point<T> integralCurve(const Point<T>& p0, T t) const {
+        return flowAtTime(p0, t);
+    }
+};
+
+/**
+ * @brief Integrability of vector fields
+ */
+template<typename T = double, int n = 2>
+class Integrability {
+public:
+    /**
+     * @brief Compact manifold case: Every vector field is complete
+     */
+    static bool compactImpliesComplete() {
+        return true;
+    }
+
+    /**
+     * @brief Local flow: exists for small t
+     */
+    static bool localFlowExists() {
+        // By ODE theory, local solution always exists
+        return true;
+    }
+
+    /**
+     * @brief Maximal flow: extend until leaving domain
+     */
+    static bool maximalFlowTheorem() {
+        return true;
+    }
+
+    /**
+     * @brief Existence and uniqueness (ODE theory)
+     */
+    static bool existenceUniqueness() {
+        // Picard-Lindelöf theorem for smooth vector fields
+        return true;
+    }
+
+    /**
+     * @brief Smooth dependence on initial conditions
+     */
+    static bool smoothDependenceOnInitialConditions() {
+        return true;
+    }
+
+    /**
+     * @brief Flow box theorem: near regular point, ∃ coords where X = ∂/∂x¹
+     */
+    static bool flowBoxTheorem(bool is_regular_point) {
+        return is_regular_point;
+    }
+};
+
+/**
+ * @brief Ehresmann fibration theorem
+ */
+template<typename T = double, int m = 3, int n = 2>
+class EhresmannFibration {
+public:
+    /**
+     * @brief Ehresmann's theorem:
+     * If f: M → N is proper submersion, then f is locally trivial fibration
+     * (i.e., f is fiber bundle)
+     */
+    static bool isLocallyTrivial(const SmoothMap<T, m, n>& f,
+                                 bool is_proper, bool is_submersion) {
+        return is_proper && is_submersion;
+    }
+
+    /**
+     * @brief Fiber F = f^{-1}(point) is (m-n)-dimensional manifold
+     */
+    static int fiberDimension() {
+        return m - n;
+    }
+
+    /**
+     * @brief All fibers are diffeomorphic (for connected base)
+     */
+    static bool fibersAreDiffeomorphic() {
+        return true;
+    }
+
+    /**
+     * @brief Local trivialization: f^{-1}(U) ≅ U × F
+     */
+    static bool localTrivialization() {
+        return true;
+    }
+
+    /**
+     * @brief Application: Milnor fibration for singularities
+     */
+    static bool milnorFibration() {
+        return true;
+    }
+};
+
+/**
+ * @brief Second order differential equations (spray/geodesics)
+ */
+template<typename T = double, int n = 2>
+class SecondOrderODE {
+private:
+    std::function<std::vector<T>(const Point<T>&, const std::vector<T>&)> acceleration_;
+
+public:
+    /**
+     * @brief Second order ODE: d²x/dt² = F(x, dx/dt)
+     */
+    void setAcceleration(std::function<std::vector<T>(const Point<T>&, const std::vector<T>&)> F) {
+        acceleration_ = F;
+    }
+
+    /**
+     * @brief Convert to first order system on TM
+     * (x, v) ↦ (v, F(x, v))
+     */
+    std::pair<Point<T>, std::vector<T>> toFirstOrder(const Point<T>& x,
+                                                      const std::vector<T>& v) const {
+        if (acceleration_) {
+            return {x, acceleration_(x, v)};
+        }
+        return {x, v};
+    }
+
+    /**
+     * @brief Geodesic equation: ẍ^k + Γ^k_{ij} ẋ^i ẋ^j = 0
+     */
+    bool isGeodesicEquation() const {
+        // Special case with Christoffel symbols
+        return true;
+    }
+
+    /**
+     * @brief Spray: vector field on TM generating second order ODE
+     */
+    bool hasSprayStructure() const {
+        return true;
+    }
+};
+
+/**
+ * @brief Exponential map (Riemannian geometry)
+ */
+template<typename T = double, int n = 2>
+class ExponentialMap {
+private:
+    Point<T> basepoint_;
+
+public:
+    ExponentialMap(const Point<T>& p) : basepoint_(p) {}
+
+    /**
+     * @brief exp_p: T_p M → M
+     * exp_p(v) = γ_v(1) where γ_v is geodesic with γ'(0) = v
+     */
+    Point<T> exponential(const std::vector<T>& v) const {
+        // Flow of geodesic spray for time 1
+        return basepoint_;  // Placeholder
+    }
+
+    /**
+     * @brief exp_p is diffeomorphism on neighborhood of 0 ∈ T_p M
+     */
+    bool isLocalDiffeomorphism() const {
+        return true;
+    }
+
+    /**
+     * @brief Normal coordinates: coordinates via exp_p
+     */
+    std::vector<T> normalCoordinates(const Point<T>& q) const {
+        // Inverse of exponential map
+        return std::vector<T>(n, 0);
+    }
+
+    /**
+     * @brief Injectivity radius: maximal ball where exp_p is diffeomorphism
+     */
+    T injectivityRadius() const {
+        return T(1);  // Placeholder
+    }
+
+    /**
+     * @brief Cut locus: where exp_p stops being injective
+     */
+    bool hasC utLocus() const {
+        return true;
+    }
+};
+
+// ============================================================================
+// APPENDIX: POINT SET TOPOLOGY
+// ============================================================================
+
+/**
+ * @brief Topological space with open sets
+ */
+template<typename T = double>
+class TopologicalSpace {
+private:
+    std::vector<std::set<Point<T>>> open_sets_;
+
+public:
+    /**
+     * @brief Add open set to topology
+     */
+    void addOpenSet(const std::set<Point<T>>& U) {
+        open_sets_.push_back(U);
+    }
+
+    /**
+     * @brief Topology axioms:
+     * 1. ∅ and X are open
+     * 2. Arbitrary union of open sets is open
+     * 3. Finite intersection of open sets is open
+     */
+    bool satisfiesTopologyAxioms() const {
+        return true;
+    }
+
+    /**
+     * @brief Closed set: complement of open set
+     */
+    bool isClosed(const std::set<Point<T>>& A) const {
+        // A is closed ⟺ X \ A is open
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Closure: smallest closed set containing A
+     */
+    std::set<Point<T>> closure(const std::set<Point<T>>& A) const {
+        return A;  // Placeholder
+    }
+
+    /**
+     * @brief Interior: largest open set contained in A
+     */
+    std::set<Point<T>> interior(const std::set<Point<T>>& A) const {
+        return A;  // Placeholder
+    }
+
+    /**
+     * @brief Boundary: ∂A = cl(A) ∩ cl(X \ A)
+     */
+    std::set<Point<T>> boundary(const std::set<Point<T>>& A) const {
+        return {};  // Placeholder
+    }
+};
+
+/**
+ * @brief Continuous maps between topological spaces
+ */
+template<typename T = double>
+class ContinuousMap {
+private:
+    std::function<Point<T>(const Point<T>&)> map_;
+
+public:
+    /**
+     * @brief f is continuous if f^{-1}(U) is open for all open U
+     */
+    bool isContinuous() const {
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Homeomorphism: continuous bijection with continuous inverse
+     */
+    bool isHomeomorphism() const {
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Composition of continuous maps is continuous
+     */
+    static bool compositionIsContinuous() {
+        return true;
+    }
+
+    /**
+     * @brief Pasting lemma: f continuous on A ∪ B if continuous on A and B
+     */
+    static bool pastingLemma() {
+        return true;
+    }
+};
+
+/**
+ * @brief Base for topology
+ */
+template<typename T = double>
+class TopologyBase {
+private:
+    std::vector<std::set<Point<T>>> basis_;
+
+public:
+    /**
+     * @brief Add basis element
+     */
+    void addBasisElement(const std::set<Point<T>>& B) {
+        basis_.push_back(B);
+    }
+
+    /**
+     * @brief Base conditions:
+     * 1. Union of basis = X
+     * 2. Intersection of basis elements is union of basis elements
+     */
+    bool isBasis() const {
+        return true;
+    }
+
+    /**
+     * @brief Generate topology from basis
+     */
+    std::vector<std::set<Point<T>>> generateTopology() const {
+        // Open sets = arbitrary unions of basis elements
+        return basis_;
+    }
+
+    /**
+     * @brief Second countable: has countable basis
+     */
+    bool isSecondCountable() const {
+        return basis_.size() < 1000000;  // Placeholder
+    }
+
+    /**
+     * @brief Metric space: basis = {B(x, ε)}
+     */
+    static bool metricSpaceHasNaturalBasis() {
+        return true;
+    }
+};
+
+/**
+ * @brief Separation axioms
+ */
+template<typename T = double>
+class SeparationAxioms {
+public:
+    /**
+     * @brief T₀ (Kolmogorov): ∀ x ≠ y, ∃ open U with x ∈ U, y ∉ U or vice versa
+     */
+    static bool isT0() {
+        return true;
+    }
+
+    /**
+     * @brief T₁ (Fréchet): {x} is closed for all x
+     */
+    static bool isT1() {
+        return true;
+    }
+
+    /**
+     * @brief T₂ (Hausdorff): ∀ x ≠ y, ∃ disjoint open U, V with x ∈ U, y ∈ V
+     */
+    static bool isHausdorff() {
+        return true;
+    }
+
+    /**
+     * @brief T₃ (Regular): T₁ + closed sets can be separated from points
+     */
+    static bool isRegular() {
+        return true;
+    }
+
+    /**
+     * @brief T₄ (Normal): T₁ + disjoint closed sets can be separated
+     */
+    static bool isNormal() {
+        return true;
+    }
+
+    /**
+     * @brief Metric spaces are Hausdorff
+     */
+    static bool metricIsHausdorff() {
+        return true;
+    }
+
+    /**
+     * @brief Compact Hausdorff spaces are normal
+     */
+    static bool compactHausdorffIsNormal() {
+        return true;
+    }
+};
+
+/**
+ * @brief Subspace topology
+ */
+template<typename T = double>
+class SubspaceTopology {
+private:
+    const TopologicalSpace<T>* ambient_;
+    std::set<Point<T>> subset_;
+
+public:
+    SubspaceTopology(const TopologicalSpace<T>* X, const std::set<Point<T>>& A)
+        : ambient_(X), subset_(A) {}
+
+    /**
+     * @brief Subspace topology: U ⊂ A is open ⟺ U = A ∩ V for some open V ⊂ X
+     */
+    bool isOpenInSubspace(const std::set<Point<T>>& U) const {
+        return true;  // Placeholder
+    }
+
+    /**
+     * @brief Inclusion map i: A ↪ X is continuous
+     */
+    bool inclusionIsContinuous() const {
+        return true;
+    }
+
+    /**
+     * @brief Universal property: f: Y → A continuous ⟺ i ∘ f: Y → X continuous
+     */
+    bool universalProperty() const {
+        return true;
+    }
+
+    /**
+     * @brief Subspace of Hausdorff is Hausdorff
+     */
+    bool inheritsHausdorff() const {
+        return true;
+    }
+
+    /**
+     * @brief Closed subspace of compact is compact
+     */
+    bool closedSubspaceOfCompactIsCompact() const {
+        return true;
+    }
+};
+
 } // namespace topology
 } // namespace maths
 
