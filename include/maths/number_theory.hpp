@@ -9,6 +9,7 @@
 #include <map>
 #include <set>
 #include <cstdint>
+#include <random>
 
 /**
  * @file number_theory.hpp
@@ -1848,7 +1849,7 @@ protected:
  * Represents a polynomial a₀ + a₁x + a₂x² + ... + aₙxⁿ
  */
 class Polynomial {
-private:
+protected:
     std::vector<long long> coeffs;  // coeffs[i] is coefficient of x^i
 
     void normalize() {

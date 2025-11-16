@@ -1,7 +1,7 @@
 #ifndef PHYSICS_ADVANCED_QFT_ANTIPARTICLES_HPP
 #define PHYSICS_ADVANCED_QFT_ANTIPARTICLES_HPP
 
-#include "particle_physics.hpp"
+#include "qft_particle_physics.hpp"
 #include <string>
 #include <cmath>
 
