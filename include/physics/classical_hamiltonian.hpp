@@ -1,7 +1,8 @@
 #ifndef PHYSICS_ADVANCED_CLASSICAL_HAMILTONIAN_HPP
 #define PHYSICS_ADVANCED_CLASSICAL_HAMILTONIAN_HPP
 
-#include <Eigen/Dense>
+#include "maths/vectors.hpp"
+#include "maths/matrices.hpp"
 #include <functional>
 #include <vector>
 #include <stdexcept>
@@ -27,20 +28,19 @@ namespace physics::advanced::classical {
  * @brief Point in phase space (q, p)
  */
 struct PhasePoint {
-    Eigen::VectorXd q;  // Generalized coordinates
-    Eigen::VectorXd p;  // Generalized momenta
+    maths::linear_algebra::Vector q;  // Generalized coordinates
+    maths::linear_algebra::Vector p;  // Generalized momenta
 
-    PhasePoint(int dim) : q(Eigen::VectorXd::Zero(dim)),
-                          p(Eigen::VectorXd::Zero(dim)) {}
+    PhasePoint(int dim) : q(dim), p(dim) {}
 
-    PhasePoint(const Eigen::VectorXd& q_, const Eigen::VectorXd& p_)
+    PhasePoint(const maths::linear_algebra::Vector& q_, const maths::linear_algebra::Vector& p_)
         : q(q_), p(p_) {
-        if (q.size() != p.size()) {
+        if (q.dimension() != p.dimension()) {
             throw std::invalid_argument("q and p must have same dimension");
         }
     }
 
-    int dimension() const { return q.size(); }
+    int dimension() const { return q.dimension(); }
 };
 
 /**
@@ -86,8 +86,8 @@ public:
     double dH_dq(const PhasePoint& point, int i) const {
         PhasePoint p_plus = point;
         PhasePoint p_minus = point;
-        p_plus.q(i) += epsilon_;
-        p_minus.q(i) -= epsilon_;
+        p_plus.q[i] += epsilon_;
+        p_minus.q[i] -= epsilon_;
         return (H_(p_plus) - H_(p_minus)) / (2.0 * epsilon_);
     }
 
@@ -97,8 +97,8 @@ public:
     double dH_dp(const PhasePoint& point, int i) const {
         PhasePoint p_plus = point;
         PhasePoint p_minus = point;
-        p_plus.p(i) += epsilon_;
-        p_minus.p(i) -= epsilon_;
+        p_plus.p[i] += epsilon_;
+        p_minus.p[i] -= epsilon_;
         return (H_(p_plus) - H_(p_minus)) / (2.0 * epsilon_);
     }
 
@@ -113,8 +113,8 @@ public:
         PhasePoint derivative(dim_);
 
         for (int i = 0; i < dim_; ++i) {
-            derivative.q(i) = dH_dp(point, i);
-            derivative.p(i) = -dH_dq(point, i);
+            derivative.q[i] = dH_dp(point, i);
+            derivative.p[i] = -dH_dq(point, i);
         }
 
         return derivative;
@@ -130,12 +130,12 @@ public:
 
         // Update p first: p_{n+1} = p_n - dt ∂H/∂q|_{q_n}
         for (int i = 0; i < dim_; ++i) {
-            next.p(i) = point.p(i) - dt * dH_dq(point, i);
+            next.p[i] = point.p[i] - dt * dH_dq(point, i);
         }
 
         // Then update q: q_{n+1} = q_n + dt ∂H/∂p|_{p_{n+1}}
         for (int i = 0; i < dim_; ++i) {
-            next.q(i) = point.q(i) + dt * dH_dp(next, i);
+            next.q[i] = point.q[i] + dt * dH_dp(next, i);
         }
 
         return next;
@@ -151,17 +151,17 @@ public:
 
         // Half step in p
         for (int i = 0; i < dim_; ++i) {
-            next.p(i) = point.p(i) - 0.5 * dt * dH_dq(point, i);
+            next.p[i] = point.p[i] - 0.5 * dt * dH_dq(point, i);
         }
 
         // Full step in q
         for (int i = 0; i < dim_; ++i) {
-            next.q(i) = point.q(i) + dt * dH_dp(next, i);
+            next.q[i] = point.q[i] + dt * dH_dp(next, i);
         }
 
         // Half step in p
         for (int i = 0; i < dim_; ++i) {
-            next.p(i) = next.p(i) - 0.5 * dt * dH_dq(next, i);
+            next.p[i] = next.p[i] - 0.5 * dt * dH_dq(next, i);
         }
 
         return next;
@@ -211,8 +211,8 @@ public:
      */
     static HamiltonianSystem harmonicOscillator(double mass, double k) {
         return HamiltonianSystem(1, [mass, k](const PhasePoint& point) {
-            double q = point.q(0);
-            double p = point.p(0);
+            double q = point.q[0];
+            double p = point.p[0];
             return p * p / (2.0 * mass) + 0.5 * k * q * q;
         });
     }
@@ -224,10 +224,10 @@ public:
      */
     static HamiltonianSystem keplerProblem(double mass, double GM) {
         return HamiltonianSystem(2, [mass, GM](const PhasePoint& point) {
-            double px = point.p(0);
-            double py = point.p(1);
-            double x = point.q(0);
-            double y = point.q(1);
+            double px = point.p[0];
+            double py = point.p[1];
+            double x = point.q[0];
+            double y = point.q[1];
             double r = std::sqrt(x * x + y * y);
 
             if (r < 1e-10) {
@@ -261,26 +261,26 @@ public:
         for (int i = 0; i < dim; ++i) {
             // ∂f/∂qᵢ
             PhasePoint p_plus = point, p_minus = point;
-            p_plus.q(i) += epsilon_;
-            p_minus.q(i) -= epsilon_;
+            p_plus.q[i] += epsilon_;
+            p_minus.q[i] -= epsilon_;
             double df_dq = (f(p_plus) - f(p_minus)) / (2.0 * epsilon_);
 
             // ∂g/∂pᵢ
             p_plus = point; p_minus = point;
-            p_plus.p(i) += epsilon_;
-            p_minus.p(i) -= epsilon_;
+            p_plus.p[i] += epsilon_;
+            p_minus.p[i] -= epsilon_;
             double dg_dp = (g(p_plus) - g(p_minus)) / (2.0 * epsilon_);
 
             // ∂f/∂pᵢ
             p_plus = point; p_minus = point;
-            p_plus.p(i) += epsilon_;
-            p_minus.p(i) -= epsilon_;
+            p_plus.p[i] += epsilon_;
+            p_minus.p[i] -= epsilon_;
             double df_dp = (f(p_plus) - f(p_minus)) / (2.0 * epsilon_);
 
             // ∂g/∂qᵢ
             p_plus = point; p_minus = point;
-            p_plus.q(i) += epsilon_;
-            p_minus.q(i) -= epsilon_;
+            p_plus.q[i] += epsilon_;
+            p_minus.q[i] -= epsilon_;
             double dg_dq = (g(p_plus) - g(p_minus)) / (2.0 * epsilon_);
 
             result += df_dq * dg_dp - df_dp * dg_dq;
@@ -303,8 +303,8 @@ public:
         for (int i = 0; i < dim; ++i) {
             for (int j = 0; j < dim; ++j) {
                 // {qᵢ, pⱼ}
-                auto qi = [i](const PhasePoint& p) { return p.q(i); };
-                auto pj = [j](const PhasePoint& p) { return p.p(j); };
+                auto qi = [i](const PhasePoint& p) { return p.q[i]; };
+                auto pj = [j](const PhasePoint& p) { return p.p[j]; };
                 double bracket_qp = compute(qi, pj, point);
                 double expected = (i == j) ? 1.0 : 0.0;
                 if (std::abs(bracket_qp - expected) > tolerance) {
@@ -312,13 +312,13 @@ public:
                 }
 
                 // {qᵢ, qⱼ} = 0
-                auto qj = [j](const PhasePoint& p) { return p.q(j); };
+                auto qj = [j](const PhasePoint& p) { return p.q[j]; };
                 if (std::abs(compute(qi, qj, point)) > tolerance) {
                     return false;
                 }
 
                 // {pᵢ, pⱼ} = 0
-                auto pi = [i](const PhasePoint& p) { return p.p(i); };
+                auto pi = [i](const PhasePoint& p) { return p.p[i]; };
                 if (std::abs(compute(pi, pj, point)) > tolerance) {
                     return false;
                 }

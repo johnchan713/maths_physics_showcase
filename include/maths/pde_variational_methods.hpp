@@ -395,7 +395,6 @@ public:
         return solution;
     }
 
-private:
     /**
      * @brief Gauss elimination for linear system
      */

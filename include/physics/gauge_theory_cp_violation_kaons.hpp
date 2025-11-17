@@ -172,7 +172,7 @@ public:
      *
      * Branching ratio: BR(K_L → π⁺π⁻) ≈ 2×10⁻³
      */
-    static std::string cronin FitchExperiment() {
+    static std::string croninFitchExperiment() {
         return "Cronin-Fitch experiment (1964):\n"
                "\n"
                "Expected: K_L (CP = -1) → πππ only\n"

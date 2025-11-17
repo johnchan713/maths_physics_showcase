@@ -1,9 +1,10 @@
 #ifndef PHYSICS_ADVANCED_CLASSICAL_LIOUVILLE_HPP
 #define PHYSICS_ADVANCED_CLASSICAL_LIOUVILLE_HPP
 
-#include "hamiltonian.hpp"
-#include "phase_space.hpp"
-#include <Eigen/Dense>
+#include "classical_hamiltonian.hpp"
+#include "classical_phase_space.hpp"
+#include "maths/vectors.hpp"
+#include "maths/matrices.hpp"
 #include <functional>
 
 /**
@@ -261,8 +262,8 @@ public:
             for (const auto& config : ensemble) {
                 for (const auto& particle : config) {
                     // Check if near (q, p)
-                    double dq = std::abs(particle.q(0) - q);
-                    double dp = std::abs(particle.p(0) - p);
+                    double dq = std::abs(particle.q[0] - q);
+                    double dp = std::abs(particle.p[0] - p);
                     if (dq < 0.1 && dp < 0.1) {  // Within window
                         sum += f_N(config);
                         count++;

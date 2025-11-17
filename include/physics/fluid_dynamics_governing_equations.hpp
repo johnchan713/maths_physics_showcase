@@ -1,7 +1,8 @@
 #ifndef PHYSICS_ADVANCED_FLUID_DYNAMICS_GOVERNING_EQUATIONS_HPP
 #define PHYSICS_ADVANCED_FLUID_DYNAMICS_GOVERNING_EQUATIONS_HPP
 
-#include <Eigen/Dense>
+#include "maths/vectors.hpp"
+#include "maths/matrices.hpp"
 #include <cmath>
 #include <stdexcept>
 #include <functional>
@@ -26,12 +27,12 @@ namespace physics::advanced::fluid_dynamics {
  */
 struct FluidState {
     double density;              // ρ (kg/m³)
-    Eigen::Vector3d velocity;    // u (m/s)
+    maths::linear_algebra::Vector velocity;    // u (m/s)
     double pressure;             // p (Pa)
     double temperature;          // T (K)
     double internal_energy;      // e (J/kg)
 
-    FluidState() : density(1.0), velocity(Eigen::Vector3d::Zero()),
+    FluidState() : density(1.0), velocity(3),
                    pressure(101325.0), temperature(300.0),
                    internal_energy(0.0) {}
 };
@@ -70,22 +71,22 @@ public:
      * @return Divergence value
      */
     static double velocityDivergence(
-        const std::function<Eigen::Vector3d(const Eigen::Vector3d&)>& velocity_field,
-        const Eigen::Vector3d& position,
+        const std::function<maths::linear_algebra::Vector(const maths::linear_algebra::Vector&)>& velocity_field,
+        const maths::linear_algebra::Vector& position,
         double dx = 1e-6) {
 
         double div = 0.0;
 
         for (int i = 0; i < 3; ++i) {
-            Eigen::Vector3d pos_plus = position;
-            Eigen::Vector3d pos_minus = position;
-            pos_plus(i) += dx;
-            pos_minus(i) -= dx;
+            maths::linear_algebra::Vector pos_plus = position;
+            maths::linear_algebra::Vector pos_minus = position;
+            pos_plus[i] += dx;
+            pos_minus[i] -= dx;
 
-            Eigen::Vector3d u_plus = velocity_field(pos_plus);
-            Eigen::Vector3d u_minus = velocity_field(pos_minus);
+            maths::linear_algebra::Vector u_plus = velocity_field(pos_plus);
+            maths::linear_algebra::Vector u_minus = velocity_field(pos_minus);
 
-            div += (u_plus(i) - u_minus(i)) / (2.0 * dx);
+            div += (u_plus[i] - u_minus[i]) / (2.0 * dx);
         }
 
         return div;
@@ -104,7 +105,7 @@ public:
     static double densityTimeDerivative(
         const FluidState& state,
         double velocity_divergence,
-        const Eigen::Vector3d& density_gradient) {
+        const maths::linear_algebra::Vector& density_gradient) {
 
         return -state.density * velocity_divergence -
                state.velocity.dot(density_gradient);
@@ -121,7 +122,7 @@ public:
      * @return Mass flux (kg/s)
      */
     static double massFlux(const FluidState& state,
-                          const Eigen::Vector3d& normal,
+                          const maths::linear_algebra::Vector& normal,
                           double area) {
         return state.density * state.velocity.dot(normal) * area;
     }
@@ -147,9 +148,9 @@ public:
      * @param velocity_gradient ∇u (3x3 Jacobian)
      * @return Convective acceleration
      */
-    static Eigen::Vector3d convectiveAcceleration(
-        const Eigen::Vector3d& velocity,
-        const Eigen::Matrix3d& velocity_gradient) {
+    static maths::linear_algebra::Vector convectiveAcceleration(
+        const maths::linear_algebra::Vector& velocity,
+        const maths::linear_algebra::Matrix& velocity_gradient) {
 
         return velocity_gradient * velocity;
     }
@@ -163,12 +164,12 @@ public:
      * @param dynamic_viscosity μ (Pa·s)
      * @return Viscous force per unit mass
      */
-    static Eigen::Vector3d viscousTerm(
-        const Eigen::Vector3d& laplacian,
+    static maths::linear_algebra::Vector viscousTerm(
+        const maths::linear_algebra::Vector& laplacian,
         double dynamic_viscosity,
         double density) {
 
-        return (dynamic_viscosity / density) * laplacian;
+        return laplacian * (dynamic_viscosity / density);
     }
 
     /**
@@ -199,15 +200,15 @@ public:
      * @param gravity g
      * @return Total acceleration
      */
-    static Eigen::Vector3d totalAcceleration(
-        const Eigen::Vector3d& pressure_gradient,
-        const Eigen::Vector3d& laplacian,
+    static maths::linear_algebra::Vector totalAcceleration(
+        const maths::linear_algebra::Vector& pressure_gradient,
+        const maths::linear_algebra::Vector& laplacian,
         double density,
         double kinematic_viscosity,
-        const Eigen::Vector3d& gravity = Eigen::Vector3d(0, 0, -9.81)) {
+        const maths::linear_algebra::Vector& gravity = maths::linear_algebra::Vector({0, 0, -9.81})) {
 
-        return -pressure_gradient / density +
-               kinematic_viscosity * laplacian +
+        return pressure_gradient * (-1.0 / density) +
+               laplacian * kinematic_viscosity +
                gravity;
     }
 
@@ -218,19 +219,19 @@ public:
      *
      * where ω = ∇×u (vorticity)
      */
-    static Eigen::Vector3d vorticityEquation(
-        const Eigen::Vector3d& vorticity,
-        const Eigen::Vector3d& velocity,
-        const Eigen::Matrix3d& velocity_gradient,
-        const Eigen::Matrix3d& vorticity_gradient,
-        const Eigen::Vector3d& vorticity_laplacian,
+    static maths::linear_algebra::Vector vorticityEquation(
+        const maths::linear_algebra::Vector& vorticity,
+        const maths::linear_algebra::Vector& velocity,
+        const maths::linear_algebra::Matrix& velocity_gradient,
+        const maths::linear_algebra::Matrix& vorticity_gradient,
+        const maths::linear_algebra::Vector& vorticity_laplacian,
         double kinematic_viscosity) {
 
-        Eigen::Vector3d convection = velocity_gradient * vorticity;
-        Eigen::Vector3d stretching = vorticity_gradient * velocity;
-        Eigen::Vector3d diffusion = kinematic_viscosity * vorticity_laplacian;
+        maths::linear_algebra::Vector convection = velocity_gradient * vorticity;
+        maths::linear_algebra::Vector stretching = vorticity_gradient * velocity;
+        maths::linear_algebra::Vector diffusion = vorticity_laplacian * kinematic_viscosity;
 
-        return -convection + stretching + diffusion;
+        return convection * (-1.0) + stretching + diffusion;
     }
 };
 
@@ -254,12 +255,12 @@ public:
      * @param gravity g
      * @return Acceleration
      */
-    static Eigen::Vector3d eulerAcceleration(
-        const Eigen::Vector3d& pressure_gradient,
+    static maths::linear_algebra::Vector eulerAcceleration(
+        const maths::linear_algebra::Vector& pressure_gradient,
         double density,
-        const Eigen::Vector3d& gravity = Eigen::Vector3d(0, 0, -9.81)) {
+        const maths::linear_algebra::Vector& gravity = maths::linear_algebra::Vector({0, 0, -9.81})) {
 
-        return -pressure_gradient / density + gravity;
+        return pressure_gradient * (-1.0 / density) + gravity;
     }
 
     /**
@@ -282,35 +283,32 @@ public:
      * where U = [ρ, ρu, ρv, ρw, ρE]^T
      */
     struct ConservationForm {
-        Eigen::VectorXd U;  // Conservative variables [ρ, ρu, ρv, ρw, ρE]
-        Eigen::VectorXd F;  // Flux in x-direction
-        Eigen::VectorXd G;  // Flux in y-direction
-        Eigen::VectorXd H;  // Flux in z-direction
-        Eigen::VectorXd S;  // Source terms
+        maths::linear_algebra::Vector U;  // Conservative variables [ρ, ρu, ρv, ρw, ρE]
+        maths::linear_algebra::Vector F;  // Flux in x-direction
+        maths::linear_algebra::Vector G;  // Flux in y-direction
+        maths::linear_algebra::Vector H;  // Flux in z-direction
+        maths::linear_algebra::Vector S;  // Source terms
 
         ConservationForm() : U(5), F(5), G(5), H(5), S(5) {
-            U.setZero();
-            F.setZero();
-            G.setZero();
-            H.setZero();
-            S.setZero();
+            // All vectors are already zero-initialized by default
         }
     };
 
     /**
      * @brief Convert primitive to conservative variables
      */
-    static Eigen::VectorXd primitiveToConservative(const FluidState& state) {
-        Eigen::VectorXd U(5);
+    static maths::linear_algebra::Vector primitiveToConservative(const FluidState& state) {
+        maths::linear_algebra::Vector U(5);
         double rho = state.density;
-        Eigen::Vector3d u = state.velocity;
-        double E = state.internal_energy + 0.5 * u.squaredNorm();
+        const maths::linear_algebra::Vector& u = state.velocity;
+        double u_norm = u.norm();
+        double E = state.internal_energy + 0.5 * u_norm * u_norm;
 
-        U(0) = rho;
-        U(1) = rho * u(0);
-        U(2) = rho * u(1);
-        U(3) = rho * u(2);
-        U(4) = rho * E;
+        U[0] = rho;
+        U[1] = rho * u[0];
+        U[2] = rho * u[1];
+        U[3] = rho * u[2];
+        U[4] = rho * E;
 
         return U;
     }
@@ -338,8 +336,9 @@ public:
      */
     static double totalPressure(double static_pressure,
                                 double density,
-                                const Eigen::Vector3d& velocity) {
-        double dynamic_pressure = 0.5 * density * velocity.squaredNorm();
+                                const maths::linear_algebra::Vector& velocity) {
+        double v_norm = velocity.norm();
+        double dynamic_pressure = 0.5 * density * v_norm * v_norm;
         return static_pressure + dynamic_pressure;
     }
 
@@ -353,8 +352,9 @@ public:
      * @return Dynamic pressure q
      */
     static double dynamicPressure(double density,
-                                  const Eigen::Vector3d& velocity) {
-        return 0.5 * density * velocity.squaredNorm();
+                                  const maths::linear_algebra::Vector& velocity) {
+        double v_norm = velocity.norm();
+        return 0.5 * density * v_norm * v_norm;
     }
 
     /**
@@ -389,13 +389,15 @@ public:
      */
     static double pressureFromVelocity(
         double p1, double rho,
-        const Eigen::Vector3d& v1,
-        const Eigen::Vector3d& v2,
+        const maths::linear_algebra::Vector& v1,
+        const maths::linear_algebra::Vector& v2,
         double h1, double h2,
         double g = 9.81) {
 
-        double v1_sq = v1.squaredNorm();
-        double v2_sq = v2.squaredNorm();
+        double v1_norm = v1.norm();
+        double v2_norm = v2.norm();
+        double v1_sq = v1_norm * v1_norm;
+        double v2_sq = v2_norm * v2_norm;
 
         return p1 + 0.5 * rho * (v1_sq - v2_sq) + rho * g * (h1 - h2);
     }
@@ -413,10 +415,11 @@ public:
      * @return Total head H (m)
      */
     static double totalHead(double pressure, double density,
-                           const Eigen::Vector3d& velocity,
+                           const maths::linear_algebra::Vector& velocity,
                            double height, double g = 9.81) {
+        double v_norm = velocity.norm();
         return pressure / (density * g) +
-               velocity.squaredNorm() / (2.0 * g) +
+               (v_norm * v_norm) / (2.0 * g) +
                height;
     }
 
@@ -481,8 +484,9 @@ public:
      * @return Total energy E
      */
     static double totalEnergy(double internal_energy,
-                             const Eigen::Vector3d& velocity) {
-        return internal_energy + 0.5 * velocity.squaredNorm();
+                             const maths::linear_algebra::Vector& velocity) {
+        double v_norm = velocity.norm();
+        return internal_energy + 0.5 * v_norm * v_norm;
     }
 
     /**
@@ -495,8 +499,9 @@ public:
      * @return Total enthalpy h₀
      */
     static double totalEnthalpy(double enthalpy,
-                                const Eigen::Vector3d& velocity) {
-        return enthalpy + 0.5 * velocity.squaredNorm();
+                                const maths::linear_algebra::Vector& velocity) {
+        double v_norm = velocity.norm();
+        return enthalpy + 0.5 * v_norm * v_norm;
     }
 
     /**
@@ -525,15 +530,18 @@ public:
      * @return Dissipation rate Φ (W/m³)
      */
     static double viscousDissipation(
-        const Eigen::Matrix3d& velocity_gradient,
+        const maths::linear_algebra::Matrix& velocity_gradient,
         double dynamic_viscosity) {
 
         // Strain rate tensor: Sᵢⱼ = (∂uᵢ/∂xⱼ + ∂uⱼ/∂xᵢ)/2
-        Eigen::Matrix3d strain_rate =
-            0.5 * (velocity_gradient + velocity_gradient.transpose());
+        maths::linear_algebra::Matrix strain_rate =
+            (velocity_gradient + velocity_gradient.transpose()) * 0.5;
 
-        // Trace (divergence)
-        double div = velocity_gradient.trace();
+        // Trace (divergence) - manual calculation
+        double div = 0.0;
+        for (int i = 0; i < 3; ++i) {
+            div += velocity_gradient(i, i);
+        }
 
         // Dissipation
         double dissipation = 0.0;
@@ -557,7 +565,7 @@ public:
      */
     static double energyTimeDerivative(
         const FluidState& state,
-        const Eigen::Vector3d& heat_flux,
+        const maths::linear_algebra::Vector& heat_flux,
         double viscous_dissipation,
         double work_by_pressure) {
 

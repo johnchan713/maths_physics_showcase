@@ -1,8 +1,9 @@
 #ifndef PHYSICS_ADVANCED_CLASSICAL_PHASE_SPACE_HPP
 #define PHYSICS_ADVANCED_CLASSICAL_PHASE_SPACE_HPP
 
-#include "hamiltonian.hpp"
-#include <Eigen/Dense>
+#include "classical_hamiltonian.hpp"
+#include "maths/vectors.hpp"
+#include "maths/matrices.hpp"
 #include <functional>
 #include <cmath>
 
@@ -38,14 +39,14 @@ public:
         int dim = points[0].dimension();
         if (dim == 1) {
             // 2D phase space: area = Δq × Δp
-            double q_min = points[0].q(0), q_max = points[0].q(0);
-            double p_min = points[0].p(0), p_max = points[0].p(0);
+            double q_min = points[0].q[0], q_max = points[0].q[0];
+            double p_min = points[0].p[0], p_max = points[0].p[0];
 
             for (const auto& pt : points) {
-                q_min = std::min(q_min, pt.q(0));
-                q_max = std::max(q_max, pt.q(0));
-                p_min = std::min(p_min, pt.p(0));
-                p_max = std::max(p_max, pt.p(0));
+                q_min = std::min(q_min, pt.q[0]);
+                q_max = std::max(q_max, pt.q[0]);
+                p_min = std::min(p_min, pt.p[0]);
+                p_max = std::max(p_max, pt.p[0]);
             }
 
             return (q_max - q_min) * (p_max - p_min);
@@ -279,7 +280,7 @@ public:
 
         // Create nearby trajectory
         PhasePoint perturbed = initial;
-        perturbed.q(0) += delta0;
+        perturbed.q[0] += delta0;
 
         auto traj1 = system_.integrate(initial, dt, num_steps);
         auto traj2 = system_.integrate(perturbed, dt, num_steps);
@@ -325,32 +326,44 @@ public:
 class SymplecticMatrix {
 private:
     int dim_;
-    Eigen::MatrixXd omega_;
+    maths::linear_algebra::Matrix omega_;
 
 public:
-    SymplecticMatrix(int dimension) : dim_(dimension) {
+    SymplecticMatrix(int dimension) : dim_(dimension), omega_(2 * dimension, 2 * dimension) {
         int n = 2 * dimension;
-        omega_ = Eigen::MatrixXd::Zero(n, n);
 
-        // Upper right block: +I
-        omega_.block(0, dimension, dimension, dimension) =
-            Eigen::MatrixXd::Identity(dimension, dimension);
+        // Upper right block: +I (identity matrix)
+        for (int i = 0; i < dimension; ++i) {
+            omega_(i, dimension + i) = 1.0;
+        }
 
-        // Lower left block: -I
-        omega_.block(dimension, 0, dimension, dimension) =
-            -Eigen::MatrixXd::Identity(dimension, dimension);
+        // Lower left block: -I (negative identity matrix)
+        for (int i = 0; i < dimension; ++i) {
+            omega_(dimension + i, i) = -1.0;
+        }
     }
 
-    const Eigen::MatrixXd& matrix() const { return omega_; }
+    const maths::linear_algebra::Matrix& matrix() const { return omega_; }
 
     /**
      * @brief Verify symplectic property of transformation M
      *
      * M is symplectic if: M^T Ω M = Ω
      */
-    bool isSymplectic(const Eigen::MatrixXd& M, double tolerance = 1e-10) const {
-        Eigen::MatrixXd result = M.transpose() * omega_ * M;
-        return (result - omega_).norm() < tolerance;
+    bool isSymplectic(const maths::linear_algebra::Matrix& M, double tolerance = 1e-10) const {
+        maths::linear_algebra::Matrix result = M.transpose() * omega_ * M;
+
+        // Compute Frobenius norm of (result - omega_)
+        double diff_norm = 0.0;
+        for (size_t i = 0; i < result.rows(); ++i) {
+            for (size_t j = 0; j < result.cols(); ++j) {
+                double diff = result(i, j) - omega_(i, j);
+                diff_norm += diff * diff;
+            }
+        }
+        diff_norm = std::sqrt(diff_norm);
+
+        return diff_norm < tolerance;
     }
 };
 

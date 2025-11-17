@@ -5,6 +5,9 @@
 physics_demo
 field_tensor_demo
 *_demo
+test_gr
+test_modules
+test_all
 
 # CMake
 build/

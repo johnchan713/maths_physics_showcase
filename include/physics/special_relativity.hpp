@@ -202,7 +202,7 @@ inline double velocityAddition(double velocityFrame, double velocityInFrame,
  * @param speedOfLight Speed of light c (m/s)
  * @return true if result < c
  */
-inline bool isValidRelativistic Velocity(double result, double speedOfLight = constants::SPEED_OF_LIGHT) {
+inline bool isValidRelativisticVelocity(double result, double speedOfLight = constants::SPEED_OF_LIGHT) {
     return std::abs(result) < speedOfLight;
 }
 

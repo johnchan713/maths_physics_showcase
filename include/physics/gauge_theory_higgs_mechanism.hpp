@@ -495,7 +495,7 @@ public:
         return 246.0;  // GeV
     }
 
-    static std::string gaugeBos onMassFormulas() {
+    static std::string gaugeBosonMassFormulas() {
         return "Gauge boson masses from EWSB:\n"
                "\n"
                "m_W = gv/2 ≈ 80.4 GeV\n"

@@ -841,7 +841,7 @@ public:
         double hbar_over_m = constants::hbar / mass;
 
         // Spreading parameter
-        Complex sigma_t = sigma * std::sqrt(Complex(1.0, hbar_t * t / (mass * sigma * sigma)));
+        Complex sigma_t = sigma * std::sqrt(Complex(1.0, hbar_over_m * t / (sigma * sigma)));
 
         double norm = std::pow(1.0 / (2.0 * M_PI * sigma * sigma), 0.25);
 

@@ -1,9 +1,11 @@
 #ifndef PHYSICS_ADVANCED_FLUID_DYNAMICS_TURBULENCE_HPP
 #define PHYSICS_ADVANCED_FLUID_DYNAMICS_TURBULENCE_HPP
 
-#include <Eigen/Dense>
+#include "maths/vectors.hpp"
+#include "maths/matrices.hpp"
 #include <cmath>
 #include <stdexcept>
+#include <vector>
 
 /**
  * @file turbulence.hpp
@@ -39,15 +41,15 @@ public:
      * - ⟨u'v'⟩ ≠ 0 (Reynolds stress)
      */
     struct DecomposedField {
-        Eigen::Vector3d mean;        // ū
-        Eigen::Vector3d fluctuation; // u'
+        maths::linear_algebra::Vector mean;        // ū
+        maths::linear_algebra::Vector fluctuation; // u'
     };
 
     /**
      * @brief Create decomposed field
      */
-    static DecomposedField decompose(const Eigen::Vector3d& instantaneous,
-                                     const Eigen::Vector3d& mean) {
+    static DecomposedField decompose(const maths::linear_algebra::Vector& instantaneous,
+                                     const maths::linear_algebra::Vector& mean) {
         return {mean, instantaneous - mean};
     }
 
@@ -57,14 +59,14 @@ public:
      * Check: ⟨ū⟩ = ū and ⟨u'⟩ = 0
      */
     static bool verifyAveraging(
-        const std::vector<Eigen::Vector3d>& fluctuations,
+        const std::vector<maths::linear_algebra::Vector>& fluctuations,
         double tolerance = 1e-6) {
 
-        Eigen::Vector3d avg = Eigen::Vector3d::Zero();
+        maths::linear_algebra::Vector avg(3);
         for (const auto& u_prime : fluctuations) {
-            avg += u_prime;
+            avg = avg + u_prime;
         }
-        avg /= fluctuations.size();
+        avg = avg * (1.0 / fluctuations.size());
 
         return avg.norm() < tolerance;
     }
@@ -87,18 +89,24 @@ public:
      * @param velocity_fluctuations Sample of u' vectors
      * @return 3×3 Reynolds stress tensor (Pa)
      */
-    static Eigen::Matrix3d compute(
+    static maths::linear_algebra::Matrix compute(
         double density,
-        const std::vector<Eigen::Vector3d>& velocity_fluctuations) {
+        const std::vector<maths::linear_algebra::Vector>& velocity_fluctuations) {
 
-        Eigen::Matrix3d stress = Eigen::Matrix3d::Zero();
+        maths::linear_algebra::Matrix stress(3, 3);
 
+        // Compute outer product sum: Σ(u' ⊗ u')
         for (const auto& u_prime : velocity_fluctuations) {
-            stress += u_prime * u_prime.transpose();
+            // Outer product: stress += u_prime * u_prime^T
+            for (size_t i = 0; i < 3; ++i) {
+                for (size_t j = 0; j < 3; ++j) {
+                    stress(i, j) = stress(i, j) + u_prime[i] * u_prime[j];
+                }
+            }
         }
 
-        stress /= velocity_fluctuations.size();
-        stress *= -density;
+        stress = stress * (1.0 / velocity_fluctuations.size());
+        stress = stress * (-density);
 
         return stress;
     }
@@ -112,11 +120,12 @@ public:
      * @return Turbulent kinetic energy (m²/s²)
      */
     static double turbulentKineticEnergy(
-        const std::vector<Eigen::Vector3d>& velocity_fluctuations) {
+        const std::vector<maths::linear_algebra::Vector>& velocity_fluctuations) {
 
         double k = 0.0;
         for (const auto& u_prime : velocity_fluctuations) {
-            k += u_prime.squaredNorm();
+            double norm = u_prime.norm();
+            k += norm * norm;
         }
 
         return 0.5 * k / velocity_fluctuations.size();
@@ -155,9 +164,9 @@ public:
      * @param k Turbulent kinetic energy
      * @return Anisotropy tensor
      */
-    static Eigen::Matrix3d anisotropyTensor(const Eigen::Matrix3d& reynolds_stress,
+    static maths::linear_algebra::Matrix anisotropyTensor(const maths::linear_algebra::Matrix& reynolds_stress,
                                             double k) {
-        Eigen::Matrix3d b = reynolds_stress / (2.0 * k);
+        maths::linear_algebra::Matrix b = reynolds_stress * (1.0 / (2.0 * k));
         b(0,0) -= 1.0/3.0;
         b(1,1) -= 1.0/3.0;
         b(2,2) -= 1.0/3.0;
@@ -187,13 +196,13 @@ public:
      * @param turbulent_ke k (m²/s²)
      * @return Reynolds stress tensor (Pa)
      */
-    static Eigen::Matrix3d reynoldsStress(
+    static maths::linear_algebra::Matrix reynoldsStress(
         double eddy_viscosity,
-        const Eigen::Matrix3d& mean_strain_rate,
+        const maths::linear_algebra::Matrix& mean_strain_rate,
         double density,
         double turbulent_ke) {
 
-        Eigen::Matrix3d tau_R = eddy_viscosity * mean_strain_rate;
+        maths::linear_algebra::Matrix tau_R = mean_strain_rate * eddy_viscosity;
 
         // Subtract ⅔ρk from diagonal
         double diag_term = (2.0/3.0) * density * turbulent_ke;
@@ -212,7 +221,7 @@ public:
      * @param velocity_gradient ∂ūᵢ/∂xⱼ
      * @return Strain rate tensor (1/s)
      */
-    static Eigen::Matrix3d strainRateTensor(const Eigen::Matrix3d& velocity_gradient) {
+    static maths::linear_algebra::Matrix strainRateTensor(const maths::linear_algebra::Matrix& velocity_gradient) {
         return velocity_gradient + velocity_gradient.transpose();
     }
 
@@ -224,8 +233,15 @@ public:
      * @param strain_rate Sᵢⱼ
      * @return Strain rate magnitude (1/s)
      */
-    static double strainRateMagnitude(const Eigen::Matrix3d& strain_rate) {
-        return std::sqrt(2.0 * (strain_rate.array() * strain_rate.array()).sum());
+    static double strainRateMagnitude(const maths::linear_algebra::Matrix& strain_rate) {
+        // Compute Frobenius norm: sqrt(Σᵢⱼ Sᵢⱼ²)
+        double sum_sq = 0.0;
+        for (size_t i = 0; i < 3; ++i) {
+            for (size_t j = 0; j < 3; ++j) {
+                sum_sq += strain_rate(i, j) * strain_rate(i, j);
+            }
+        }
+        return std::sqrt(2.0 * sum_sq);
     }
 };
 
@@ -304,11 +320,16 @@ public:
      * @brief Model constants (standard k-ε)
      */
     struct Constants {
-        double C_mu = 0.09;     // Eddy viscosity constant
-        double C_eps1 = 1.44;   // Production constant
-        double C_eps2 = 1.92;   // Dissipation constant
-        double sigma_k = 1.0;   // k diffusion constant
-        double sigma_eps = 1.3; // ε diffusion constant
+        double C_mu;
+        double C_eps1;
+        double C_eps2;
+        double sigma_k;
+        double sigma_eps;
+
+        // Constructor with default values
+        Constants(double cmu = 0.09, double ceps1 = 1.44, double ceps2 = 1.92,
+                 double sk = 1.0, double seps = 1.3)
+            : C_mu(cmu), C_eps1(ceps1), C_eps2(ceps2), sigma_k(sk), sigma_eps(seps) {}
     };
 
     /**
@@ -323,7 +344,7 @@ public:
      * @return Eddy viscosity (Pa·s)
      */
     static double eddyViscosity(double density, double k, double epsilon,
-                                const Constants& constants = Constants{}) {
+                                const Constants& constants = Constants()) {
         if (epsilon <= 0.0) {
             throw std::invalid_argument("Epsilon must be positive");
         }
@@ -339,7 +360,7 @@ public:
      */
     static double dissipationRate(double eddy_viscosity, double k,
                                   double density,
-                                  const Constants& constants = Constants{}) {
+                                  const Constants& constants = Constants()) {
         // From μₜ = ρCμk²/ε, solve for ε
         return density * constants.C_mu * k * k / eddy_viscosity;
     }
@@ -398,7 +419,7 @@ public:
                                       double production,
                                       double diffusion,
                                       double dt,
-                                      const Constants& constants = Constants{}) {
+                                      const Constants& constants = Constants()) {
         if (k <= 0.0) {
             throw std::invalid_argument("k must be positive");
         }
