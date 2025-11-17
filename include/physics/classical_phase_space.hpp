@@ -1,8 +1,9 @@
 #ifndef PHYSICS_ADVANCED_CLASSICAL_PHASE_SPACE_HPP
 #define PHYSICS_ADVANCED_CLASSICAL_PHASE_SPACE_HPP
 
-#include "hamiltonian.hpp"
-#include <Eigen/Dense>
+#include "classical_hamiltonian.hpp"
+#include "maths/vectors.hpp"
+#include "maths/matrices.hpp"
 #include <functional>
 #include <cmath>
 
@@ -38,14 +39,14 @@ public:
         int dim = points[0].dimension();
         if (dim == 1) {
             // 2D phase space: area = Δq × Δp
-            double q_min = points[0].q(0), q_max = points[0].q(0);
-            double p_min = points[0].p(0), p_max = points[0].p(0);
+            double q_min = points[0].q[0], q_max = points[0].q[0];
+            double p_min = points[0].p[0], p_max = points[0].p[0];
 
             for (const auto& pt : points) {
-                q_min = std::min(q_min, pt.q(0));
-                q_max = std::max(q_max, pt.q(0));
-                p_min = std::min(p_min, pt.p(0));
-                p_max = std::max(p_max, pt.p(0));
+                q_min = std::min(q_min, pt.q[0]);
+                q_max = std::max(q_max, pt.q[0]);
+                p_min = std::min(p_min, pt.p[0]);
+                p_max = std::max(p_max, pt.p[0]);
             }
 
             return (q_max - q_min) * (p_max - p_min);
@@ -279,7 +280,7 @@ public:
 
         // Create nearby trajectory
         PhasePoint perturbed = initial;
-        perturbed.q(0) += delta0;
+        perturbed.q[0] += delta0;
 
         auto traj1 = system_.integrate(initial, dt, num_steps);
         auto traj2 = system_.integrate(perturbed, dt, num_steps);

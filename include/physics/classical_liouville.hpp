@@ -1,9 +1,10 @@
 #ifndef PHYSICS_ADVANCED_CLASSICAL_LIOUVILLE_HPP
 #define PHYSICS_ADVANCED_CLASSICAL_LIOUVILLE_HPP
 
-#include "hamiltonian.hpp"
-#include "phase_space.hpp"
-#include <Eigen/Dense>
+#include "classical_hamiltonian.hpp"
+#include "classical_phase_space.hpp"
+#include "maths/vectors.hpp"
+#include "maths/matrices.hpp"
 #include <functional>
 
 /**

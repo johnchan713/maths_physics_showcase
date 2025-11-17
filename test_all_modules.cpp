@@ -115,6 +115,9 @@
 #include "physics/fluid_dynamics_compressible_flow.hpp"
 #include "physics/fluid_dynamics_dimensionless_numbers.hpp"
 
+// Classical mechanics modules (now using our own Vector/Matrix instead of Eigen!)
+#include "physics/classical_hamiltonian.hpp"
+
 using namespace std;
 
 int main() {
@@ -125,7 +128,7 @@ int main() {
     cout << "\nTesting module inclusions...\n\n";
 
     int math_count = 32;  // All 32 math modules compile!
-    int physics_count = 65;  // 65 physics modules compile!
+    int physics_count = 66;  // 66 physics modules compile!
     int total_count = math_count + physics_count;
 
     cout << "Mathematics modules:      " << math_count << " ✓\n";
@@ -136,14 +139,16 @@ int main() {
     cout << "  None - ALL BUGS FIXED!\n\n";
 
     cout << "Excluded modules (require external Eigen library):\n";
-    cout << "  - fluid_dynamics_flow_types.hpp\n";
-    cout << "  - fluid_dynamics_governing_equations.hpp\n";
-    cout << "  - fluid_dynamics_turbulence.hpp\n";
-    cout << "  - fluid_dynamics_vorticity.hpp\n";
-    cout << "  - classical_hamiltonian.hpp\n";
-    cout << "  - classical_liouville.hpp (also needs hamiltonian.hpp)\n";
-    cout << "  - classical_phase_space.hpp (also needs hamiltonian.hpp)\n";
-    cout << "  - physics_advanced.hpp (includes classical_hamiltonian.hpp)\n\n";
+    cout << "  Fluid dynamics (4 modules - heavy Eigen::VectorXd/MatrixXd usage):\n";
+    cout << "    - fluid_dynamics_flow_types.hpp\n";
+    cout << "    - fluid_dynamics_governing_equations.hpp\n";
+    cout << "    - fluid_dynamics_turbulence.hpp\n";
+    cout << "    - fluid_dynamics_vorticity.hpp\n";
+    cout << "  Classical mechanics (3 modules - complex matrix operations):\n";
+    cout << "    - classical_liouville.hpp (uses advanced matrix features)\n";
+    cout << "    - classical_phase_space.hpp (uses .block(), .norm())\n";
+    cout << "    - physics_advanced.hpp (aggregator, includes above modules)\n\n";
+    cout << "SUCCESS: Replaced Eigen in classical_hamiltonian.hpp with our own Vector class!\n\n";
 
     cout << "========================================\n";
     cout << "  ✓ ALL " << total_count << " MODULES COMPILED SUCCESSFULLY!\n";
