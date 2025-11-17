@@ -1,7 +1,6 @@
 #ifndef PHYSICS_ADVANCED_FLUID_DYNAMICS_BOUNDARY_LAYER_HPP
 #define PHYSICS_ADVANCED_FLUID_DYNAMICS_BOUNDARY_LAYER_HPP
 
-#include <Eigen/Dense>
 #include <cmath>
 #include <stdexcept>
 

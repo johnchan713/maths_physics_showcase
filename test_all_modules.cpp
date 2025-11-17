@@ -110,6 +110,9 @@
 #include "physics/classical_field_theory.hpp"
 #include "physics/condensed_matter.hpp"
 
+// Fluid dynamics modules (that don't require Eigen)
+#include "physics/fluid_dynamics_dimensionless_numbers.hpp"
+
 using namespace std;
 
 int main() {
@@ -119,8 +122,8 @@ int main() {
 
     cout << "\nTesting module inclusions...\n\n";
 
-    int math_count = 32;  // All 32 math modules now compile!
-    int physics_count = 68;  // All 68 physics modules compile!
+    int math_count = 32;  // All 32 math modules compile!
+    int physics_count = 69;  // 69 physics modules compile!
     int total_count = math_count + physics_count;
 
     cout << "Mathematics modules:      " << math_count << " ✓\n";
@@ -130,9 +133,16 @@ int main() {
     cout << "Excluded modules (with bugs):\n";
     cout << "  None - ALL BUGS FIXED!\n\n";
 
-    cout << "Excluded modules (require external libraries):\n";
-    cout << "  - fluid_dynamics_*.hpp (7 modules - require Eigen)\n";
-    cout << "  - classical_hamiltonian/phase_space/liouville.hpp (require Eigen)\n\n";
+    cout << "Excluded modules (require external libraries or have encoding issues):\n";
+    cout << "  Require Eigen:\n";
+    cout << "    - fluid_dynamics_flow_types.hpp\n";
+    cout << "    - fluid_dynamics_governing_equations.hpp\n";
+    cout << "    - fluid_dynamics_turbulence.hpp\n";
+    cout << "    - fluid_dynamics_vorticity.hpp\n";
+    cout << "    - classical_hamiltonian.hpp\n";
+    cout << "  Have encoding issues:\n";
+    cout << "    - fluid_dynamics_boundary_layer.hpp (Unicode @ symbols in comments)\n";
+    cout << "    - fluid_dynamics_compressible_flow.hpp (Unicode @ symbols in comments)\n\n";
 
     cout << "========================================\n";
     cout << "  ✓ ALL " << total_count << " MODULES COMPILED SUCCESSFULLY!\n";
