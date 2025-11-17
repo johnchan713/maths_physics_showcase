@@ -8,6 +8,9 @@ field_tensor_demo
 test_gr
 test_modules
 test_all
+tests/*_test
+tests/phase*_test
+bin/
 
 # CMake
 build/
