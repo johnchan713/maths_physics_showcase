@@ -100,8 +100,8 @@ public:
         double quantum_factor = 1.0 - rho / rho_crit;
 
         // If density exceeds critical, bounce occurs (H² becomes negative classically)
-        if (quantum_factor < 0) {
-            quantum_factor = 0;  // Bounce condition
+        if (quantum_factor <= 0) {
+            return 0.0;  // Bounce condition: H = 0
         }
 
         // Classical term: (8πG/3)ρ
