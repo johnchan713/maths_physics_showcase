@@ -1,5 +1,11 @@
 # Three-Body Problem: Pure Mathematical Formulation
 
+## Plain English Explanation
+
+The three-body problem asks: if you have three masses (like stars or planets) pulling on each other through gravity, how will they move? The problem is solved by using **Newton's second law** (F = ma) applied to each body, where the force comes from **Newton's law of gravity** (F = Gm₁m₂/r²) between each pair. This gives you **18 coupled differential equations** (6 per body: 3 positions + 3 velocities) that must be solved together. Since there's no formula to solve these exactly (Poincaré proved this in the 1890s), we use **numerical integration** - essentially small time-stepping with computers. The best methods are **symplectic integrators** like the Verlet algorithm, which preserve the geometric structure of the physics and prevent artificial energy drift. The result is chaotic: tiny changes in starting positions lead to completely different trajectories, but we can still predict them accurately for limited time periods using sufficiently small time steps.
+
+---
+
 ## System Definition
 
 **Three masses**: m₁, m₂, m₃
