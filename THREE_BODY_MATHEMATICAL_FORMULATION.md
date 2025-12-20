@@ -4,6 +4,8 @@
 
 **How the equations work together:** Start with initial positions and velocities for all three bodies. At each time step: (1) Calculate gravitational forces between each pair using F = Gm₁m₂/r², (2) Sum the forces on each body, (3) Use F = ma to get accelerations, (4) Update velocities (v_new = v_old + a·Δt), (5) Update positions (r_new = r_old + v·Δt). Repeat these steps millions of times. The Hamiltonian H = T + V provides energy conservation checks. Symplectic integrators ensure the geometry of phase space is preserved, preventing numerical errors from accumulating. The result: complete trajectories showing how the three bodies orbit, scatter, or collide.
 
+**Why Lyapunov exponents matter:** The Lyapunov exponent λ measures how fast nearby trajectories diverge. We use it because even though we can calculate trajectories numerically, we need to know if our solution is predictable or chaotic. It works by comparing two nearly identical starting conditions: if separation grows exponentially as e^(λt), then λ is the Lyapunov exponent. When λ > 0, the system is chaotic—tiny measurement errors double every 1/λ time units, making long-term prediction impossible. When λ = 0, motion is regular and predictable. For the three-body problem, typical λ ≈ 0.1-1.0 per orbit, meaning prediction breaks down after ~10-20 orbits regardless of computational precision. The crucial property: λ connects directly to the Hamiltonian through phase space geometry. Symplectic systems have paired exponents (λᵢ, -λᵢ) that sum to zero, reflecting time-reversibility. This tells us the three-body problem is fundamentally unpredictable, not due to computational limits, but due to the mathematics itself.
+
 ---
 
 ## System Definition
