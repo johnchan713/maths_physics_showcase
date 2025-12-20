@@ -2,7 +2,7 @@
 
 ## Plain English Explanation
 
-The three-body problem asks: if you have three masses (like stars or planets) pulling on each other through gravity, how will they move? The problem is solved by using **Newton's second law** (F = ma) applied to each body, where the force comes from **Newton's law of gravity** (F = Gm₁m₂/r²) between each pair. This gives you **18 coupled differential equations** (6 per body: 3 positions + 3 velocities) that must be solved together. Since there's no formula to solve these exactly (Poincaré proved this in the 1890s), we use **numerical integration** - essentially small time-stepping with computers. The best methods are **symplectic integrators** like the Verlet algorithm, which preserve the geometric structure of the physics and prevent artificial energy drift. The result is chaotic: tiny changes in starting positions lead to completely different trajectories, but we can still predict them accurately for limited time periods using sufficiently small time steps.
+**How the equations work together:** Start with initial positions and velocities for all three bodies. At each time step: (1) Calculate gravitational forces between each pair using F = Gm₁m₂/r², (2) Sum the forces on each body, (3) Use F = ma to get accelerations, (4) Update velocities (v_new = v_old + a·Δt), (5) Update positions (r_new = r_old + v·Δt). Repeat these steps millions of times. The Hamiltonian H = T + V provides energy conservation checks. Symplectic integrators ensure the geometry of phase space is preserved, preventing numerical errors from accumulating. The result: complete trajectories showing how the three bodies orbit, scatter, or collide.
 
 ---
 
