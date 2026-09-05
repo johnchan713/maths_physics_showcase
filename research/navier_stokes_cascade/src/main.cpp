@@ -8,6 +8,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <vector>
 
 namespace {
 
@@ -19,8 +20,20 @@ struct Options {
     int diagnostic_every = 20;
     int sample_points = 0;
     double initial_energy = 1.0;
+    ns_cascade::InitialCondition initial_condition =
+        ns_cascade::InitialCondition::TaylorGreen;
     std::string output = "navier_stokes_cascade.csv";
+    std::string shell_output = "navier_stokes_shells.csv";
 };
+
+ns_cascade::InitialCondition parseInitialCondition(const std::string& value) {
+    if (value == "deterministic") return ns_cascade::InitialCondition::Deterministic;
+    if (value == "taylor-green") return ns_cascade::InitialCondition::TaylorGreen;
+    if (value == "abc") return ns_cascade::InitialCondition::ABC;
+    throw std::invalid_argument(
+        "Unknown initial condition: " + value +
+        " (expected deterministic, taylor-green, or abc)");
+}
 
 void printUsage(const char* program) {
     std::cout
@@ -34,7 +47,10 @@ void printUsage(const char* program) {
         << "  --diagnostic-every N    CSV sampling interval (default: 20)\n"
         << "  --sample-points N       Grid points per axis; 0 selects a safe default\n"
         << "  --energy E              Initial normalized kinetic energy (default: 1)\n"
+        << "  --initial-condition C   deterministic, taylor-green, or abc\n"
+        << "                            (default: taylor-green)\n"
         << "  --output PATH           CSV path (default: navier_stokes_cascade.csv)\n"
+        << "  --shell-output PATH     Shell CSV path (default: navier_stokes_shells.csv)\n"
         << "  --help                  Show this message\n";
 }
 
@@ -80,8 +96,13 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--energy") {
             options.initial_energy =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--initial-condition") {
+            options.initial_condition =
+                parseInitialCondition(requireValue(i, argc, argv));
         } else if (flag == "--output") {
             options.output = requireValue(i, argc, argv);
+        } else if (flag == "--shell-output") {
+            options.shell_output = requireValue(i, argc, argv);
         } else {
             throw std::invalid_argument("Unknown option: " + flag);
         }
@@ -104,12 +125,18 @@ Options parseOptions(int argc, char** argv) {
         throw std::invalid_argument("--energy must be positive");
     }
     if (options.output.empty()) throw std::invalid_argument("--output cannot be empty");
+    if (options.shell_output.empty()) {
+        throw std::invalid_argument("--shell-output cannot be empty");
+    }
+    if (options.output == options.shell_output) {
+        throw std::invalid_argument("--output and --shell-output must be different");
+    }
     return options;
 }
 
 void writeHeader(std::ostream& output) {
     output
-        << "step,time,energy,enstrophy,palinstrophy,critical_l3_sample,"
+        << "step,time,sample_points,energy,enstrophy,palinstrophy,critical_l3_sample,"
         << "sampled_vorticity_max,vorticity_sup_upper_bound,spectral_centroid,"
         << "high_shell_energy_fraction,divergence_defect,reality_defect,"
         << "energy_balance_residual,bkm_sampled_integral\n";
@@ -118,9 +145,11 @@ void writeHeader(std::ostream& output) {
 void writeRow(std::ostream& output,
               int step,
               double time,
+              int sample_points,
               const ns_cascade::GalerkinSystem::Diagnostics& values,
               double bkm_integral) {
-    output << step << ',' << time << ',' << values.energy << ',' << values.enstrophy
+    output << step << ',' << time << ',' << sample_points << ',' << values.energy
+           << ',' << values.enstrophy
            << ',' << values.palinstrophy << ',' << values.critical_l3_sample << ','
            << values.sampled_vorticity_max << ','
            << values.vorticity_sup_upper_bound << ',' << values.spectral_centroid
@@ -129,34 +158,83 @@ void writeRow(std::ostream& output,
            << values.energy_balance_residual << ',' << bkm_integral << '\n';
 }
 
+void writeShellHeader(std::ostream& output) {
+    output
+        << "initial_condition,step,time,shell,lower_radius,upper_radius,"
+        << "shell_energy,nonlinear_transfer,viscous_dissipation,forward_flux\n";
+}
+
+double writeShellRows(
+    std::ostream& output,
+    ns_cascade::InitialCondition initial_condition,
+    int step,
+    double time,
+    const std::vector<ns_cascade::GalerkinSystem::ShellDiagnostics>& shells) {
+    double largest_forward_flux = 0.0;
+    for (std::size_t i = 0; i < shells.size(); ++i) {
+        const ns_cascade::GalerkinSystem::ShellDiagnostics& values = shells[i];
+        output << ns_cascade::initialConditionName(initial_condition) << ',' << step
+               << ',' << time << ',' << values.shell << ',' << values.lower_radius
+               << ',' << values.upper_radius << ',' << values.energy << ','
+               << values.nonlinear_transfer << ',' << values.viscous_dissipation
+               << ',' << values.forward_flux << '\n';
+        largest_forward_flux =
+            std::max(largest_forward_flux, values.forward_flux);
+    }
+    return largest_forward_flux;
+}
+
 }  // namespace
 
 int main(int argc, char** argv) {
     try {
         const Options options = parseOptions(argc, argv);
         const ns_cascade::GalerkinSystem system(options.cutoff, options.viscosity);
+        const int diagnostic_sample_points =
+            options.sample_points == 0
+                ? std::max(4 * options.cutoff + 1, 9)
+                : options.sample_points;
         ns_cascade::GalerkinSystem::State state =
-            system.deterministicLowModeState(options.initial_energy);
+            system.initialState(options.initial_condition, options.initial_energy);
 
         std::ofstream csv(options.output.c_str());
         if (!csv) throw std::runtime_error("Cannot open output file: " + options.output);
         csv << std::setprecision(17);
         writeHeader(csv);
 
+        std::ofstream shell_csv(options.shell_output.c_str());
+        if (!shell_csv) {
+            throw std::runtime_error("Cannot open shell output file: " +
+                                     options.shell_output);
+        }
+        shell_csv << std::setprecision(17);
+        writeShellHeader(shell_csv);
+
         ns_cascade::GalerkinSystem::Diagnostics diagnostics =
-            system.diagnostics(state, options.sample_points);
+            system.diagnostics(state, diagnostic_sample_points);
         double bkm_sampled_integral = 0.0;
         double previous_vorticity_max = diagnostics.sampled_vorticity_max;
         double peak_high_shell_fraction = diagnostics.high_shell_energy_fraction;
         double peak_critical_l3 = diagnostics.critical_l3_sample;
         int previous_diagnostic_step = 0;
-        writeRow(csv, 0, 0.0, diagnostics, bkm_sampled_integral);
+        writeRow(csv,
+                 0,
+                 0.0,
+                 diagnostic_sample_points,
+                 diagnostics,
+                 bkm_sampled_integral);
+        double peak_forward_flux = writeShellRows(
+            shell_csv,
+            options.initial_condition,
+            0,
+            0.0,
+            system.shellDiagnostics(state));
 
         for (int step = 1; step <= options.steps; ++step) {
             system.stepRungeKutta4(state, options.time_step);
             if (step % options.diagnostic_every != 0 && step != options.steps) continue;
 
-            diagnostics = system.diagnostics(state, options.sample_points);
+            diagnostics = system.diagnostics(state, diagnostic_sample_points);
             const double interval =
                 (step - previous_diagnostic_step) * options.time_step;
             bkm_sampled_integral +=
@@ -172,11 +250,21 @@ int main(int argc, char** argv) {
             writeRow(csv,
                      step,
                      step * options.time_step,
+                     diagnostic_sample_points,
                      diagnostics,
                      bkm_sampled_integral);
+            peak_forward_flux = std::max(
+                peak_forward_flux,
+                writeShellRows(shell_csv,
+                               options.initial_condition,
+                               step,
+                               step * options.time_step,
+                               system.shellDiagnostics(state)));
         }
 
         std::cout << std::setprecision(8)
+                  << "Initial condition: "
+                  << ns_cascade::initialConditionName(options.initial_condition) << '\n'
                   << "Completed " << options.steps << " steps with "
                   << system.modeCount() << " non-zero Fourier modes.\n"
                   << "Final normalized energy: " << diagnostics.energy << '\n'
@@ -184,7 +272,9 @@ int main(int argc, char** argv) {
                   << "Sampled BKM integral: " << bkm_sampled_integral << '\n'
                   << "Peak cutoff-shell energy fraction: "
                   << peak_high_shell_fraction << '\n'
+                  << "Peak forward shell flux: " << peak_forward_flux << '\n'
                   << "Diagnostics written to " << options.output << '\n';
+        std::cout << "Shell transfers written to " << options.shell_output << '\n';
 
         if (peak_high_shell_fraction > 0.01) {
             std::cout

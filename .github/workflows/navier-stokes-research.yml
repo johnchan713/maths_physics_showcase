@@ -1,0 +1,55 @@
+name: Navier-Stokes research checks
+
+on:
+  push:
+    branches:
+      - research/navier-stokes-cascade
+    paths:
+      - CMakeLists.txt
+      - research/navier_stokes_cascade/**
+      - .github/workflows/navier-stokes-research.yml
+  pull_request:
+    paths:
+      - CMakeLists.txt
+      - research/navier_stokes_cascade/**
+      - .github/workflows/navier-stokes-research.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure CMake
+        run: cmake -S . -B build -DBUILD_TESTING=ON
+
+      - name: Build research targets
+        run: >-
+          cmake --build build --parallel --target
+          navier_stokes_cascade
+          navier_stokes_convergence
+          navier_stokes_cascade_tests
+
+      - name: Run invariant tests
+        run: >-
+          ctest --test-dir build
+          --output-on-failure
+          -R navier_stokes_cascade_invariants
+
+      - name: Run convergence smoke comparison
+        run: >-
+          ./build/research/navier_stokes_cascade/navier_stokes_convergence
+          --cutoffs 2,3
+          --steps 8
+          --diagnostic-every 4
+          --output navier_stokes_convergence.csv
+
+      - name: Retain convergence CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: navier-stokes-convergence
+          path: navier_stokes_convergence.csv

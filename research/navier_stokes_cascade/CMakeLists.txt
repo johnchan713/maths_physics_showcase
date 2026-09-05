@@ -9,6 +9,11 @@ add_executable(navier_stokes_cascade
 )
 target_link_libraries(navier_stokes_cascade PRIVATE ns_cascade)
 
+add_executable(navier_stokes_convergence
+    src/convergence.cpp
+)
+target_link_libraries(navier_stokes_convergence PRIVATE ns_cascade)
+
 if(BUILD_TESTING)
     add_executable(navier_stokes_cascade_tests
         tests/test_galerkin.cpp

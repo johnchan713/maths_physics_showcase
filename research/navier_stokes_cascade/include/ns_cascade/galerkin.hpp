@@ -14,6 +14,21 @@ namespace ns_cascade {
 
 using Complex = std::complex<double>;
 
+enum class InitialCondition {
+    Deterministic,
+    TaylorGreen,
+    ABC
+};
+
+inline const char* initialConditionName(InitialCondition condition) {
+    switch (condition) {
+        case InitialCondition::Deterministic: return "deterministic";
+        case InitialCondition::TaylorGreen: return "taylor-green";
+        case InitialCondition::ABC: return "abc";
+    }
+    return "unknown";
+}
+
 struct WaveVector {
     int x;
     int y;
@@ -142,6 +157,16 @@ public:
         double energy_balance_residual;
     };
 
+    struct ShellDiagnostics {
+        int shell;
+        double lower_radius;
+        double upper_radius;
+        double energy;
+        double nonlinear_transfer;
+        double viscous_dissipation;
+        double forward_flux;
+    };
+
     GalerkinSystem(int cutoff, double viscosity)
         : cutoff_(cutoff), viscosity_(viscosity) {
         if (cutoff_ < 1) {
@@ -170,6 +195,19 @@ public:
 
     State zeroState() const { return State(modes_.size()); }
 
+    State initialState(InitialCondition condition,
+                       double target_energy = 1.0) const {
+        switch (condition) {
+            case InitialCondition::Deterministic:
+                return deterministicLowModeState(target_energy);
+            case InitialCondition::TaylorGreen:
+                return taylorGreenState(target_energy);
+            case InitialCondition::ABC:
+                return abcState(target_energy);
+        }
+        throw std::invalid_argument("Unknown initial condition");
+    }
+
     State deterministicLowModeState(double target_energy = 1.0) const {
         if (target_energy <= 0.0) {
             throw std::invalid_argument("Target energy must be positive");
@@ -195,13 +233,52 @@ public:
             }
         }
 
-        const double current_energy = energy(state);
-        if (current_energy == 0.0) {
-            throw std::runtime_error("Failed to construct non-zero initial data");
+        return normalizedToEnergy(state, target_energy);
+    }
+
+    State taylorGreenState(double target_energy = 1.0) const {
+        State state = zeroState();
+        for (std::size_t i = 0; i < modes_.size(); ++i) {
+            const WaveVector& wave = modes_[i];
+            if (std::abs(wave.x) != 1 || std::abs(wave.y) != 1 ||
+                std::abs(wave.z) != 1) {
+                continue;
+            }
+
+            // u = (sin(x)cos(y)cos(z), -cos(x)sin(y)cos(z), 0).
+            state[i] = ComplexVector(
+                Complex(0.0, -static_cast<double>(wave.x) / 8.0),
+                Complex(0.0, static_cast<double>(wave.y) / 8.0),
+                Complex());
         }
-        const double scale = std::sqrt(target_energy / current_energy);
-        for (std::size_t i = 0; i < state.size(); ++i) state[i] = state[i] * scale;
-        return state;
+        return normalizedToEnergy(state, target_energy);
+    }
+
+    State abcState(double target_energy = 1.0) const {
+        State state = zeroState();
+        for (std::size_t i = 0; i < modes_.size(); ++i) {
+            const WaveVector& wave = modes_[i];
+
+            // A = B = C = 1 in
+            // u = (sin(z)+cos(y), sin(x)+cos(z), sin(y)+cos(x)).
+            if (std::abs(wave.x) == 1 && wave.y == 0 && wave.z == 0) {
+                state[i] = ComplexVector(
+                    Complex(),
+                    Complex(0.0, -static_cast<double>(wave.x) / 2.0),
+                    Complex(0.5, 0.0));
+            } else if (wave.x == 0 && std::abs(wave.y) == 1 && wave.z == 0) {
+                state[i] = ComplexVector(
+                    Complex(0.5, 0.0),
+                    Complex(),
+                    Complex(0.0, -static_cast<double>(wave.y) / 2.0));
+            } else if (wave.x == 0 && wave.y == 0 && std::abs(wave.z) == 1) {
+                state[i] = ComplexVector(
+                    Complex(0.0, -static_cast<double>(wave.z) / 2.0),
+                    Complex(0.5, 0.0),
+                    Complex());
+            }
+        }
+        return normalizedToEnergy(state, target_energy);
     }
 
     State rightHandSide(const State& state, bool include_viscosity = true) const {
@@ -298,7 +375,9 @@ public:
     Diagnostics diagnostics(const State& state, int sample_points_per_axis = 0) const {
         requireCompatible(state);
         if (sample_points_per_axis == 0) {
-            sample_points_per_axis = std::max(2 * cutoff_ + 1, 7);
+            // The Fourier field itself needs only 2*K+1 points, but |u|^3 and
+            // pointwise maxima are nonlinear observables. Oversample them.
+            sample_points_per_axis = std::max(4 * cutoff_ + 1, 9);
         }
         if (sample_points_per_axis < 2 * cutoff_ + 1) {
             throw std::invalid_argument(
@@ -324,6 +403,52 @@ public:
         values.energy_balance_residual = std::abs(
             energyDerivative(state, derivative) + 2.0 * viscosity_ * values.enstrophy);
         return values;
+    }
+
+    std::vector<ShellDiagnostics> shellDiagnostics(const State& state) const {
+        requireCompatible(state);
+        const State nonlinear_derivative = rightHandSide(state, false);
+        const int shell_count = static_cast<int>(std::ceil(
+            std::sqrt(3.0) * static_cast<double>(cutoff_) - 1e-12));
+        std::vector<ShellDiagnostics> shells(
+            static_cast<std::size_t>(shell_count));
+
+        for (int shell = 1; shell <= shell_count; ++shell) {
+            ShellDiagnostics& values = shells[static_cast<std::size_t>(shell - 1)];
+            values.shell = shell;
+            values.lower_radius = static_cast<double>(shell - 1);
+            values.upper_radius = static_cast<double>(shell);
+            values.energy = 0.0;
+            values.nonlinear_transfer = 0.0;
+            values.viscous_dissipation = 0.0;
+            values.forward_flux = 0.0;
+        }
+
+        for (std::size_t i = 0; i < modes_.size(); ++i) {
+            const double wave_squared =
+                static_cast<double>(modes_[i].normSquared());
+            const double radius = std::sqrt(wave_squared);
+            const int shell =
+                std::max(1, static_cast<int>(std::ceil(radius - 1e-12)));
+            ShellDiagnostics& values =
+                shells[static_cast<std::size_t>(shell - 1)];
+            const double coefficient_energy = normSquared(state[i]);
+
+            values.energy += 0.5 * coefficient_energy;
+            values.nonlinear_transfer +=
+                std::real(innerProduct(state[i], nonlinear_derivative[i]));
+            values.viscous_dissipation +=
+                viscosity_ * wave_squared * coefficient_energy;
+        }
+
+        double cumulative_transfer = 0.0;
+        for (std::size_t i = 0; i < shells.size(); ++i) {
+            cumulative_transfer += shells[i].nonlinear_transfer;
+            // Positive flux means the modes inside the radius lose energy to
+            // modes outside it through the nonlinear term.
+            shells[i].forward_flux = -cumulative_transfer;
+        }
+        return shells;
     }
 
     double divergenceDefect(const State& state) const {
@@ -368,6 +493,21 @@ private:
         if (state.size() != modes_.size()) {
             throw std::invalid_argument("State size does not match Galerkin system");
         }
+    }
+
+    State normalizedToEnergy(State state, double target_energy) const {
+        if (target_energy <= 0.0) {
+            throw std::invalid_argument("Target energy must be positive");
+        }
+        const double current_energy = energy(state);
+        if (current_energy == 0.0) {
+            throw std::runtime_error("Failed to construct non-zero initial data");
+        }
+        const double scale = std::sqrt(target_energy / current_energy);
+        for (std::size_t i = 0; i < state.size(); ++i) {
+            state[i] = state[i] * scale;
+        }
+        return state;
     }
 
     State addScaled(const State& state, const State& increment, double scale) const {
