@@ -14,6 +14,11 @@ add_executable(navier_stokes_convergence
 )
 target_link_libraries(navier_stokes_convergence PRIVATE ns_cascade)
 
+add_executable(navier_stokes_fft
+    src/fft_main.cpp
+)
+target_link_libraries(navier_stokes_fft PRIVATE ns_cascade)
+
 if(BUILD_TESTING)
     add_executable(navier_stokes_cascade_tests
         tests/test_galerkin.cpp
@@ -21,4 +26,11 @@ if(BUILD_TESTING)
     target_link_libraries(navier_stokes_cascade_tests PRIVATE ns_cascade)
     add_test(NAME navier_stokes_cascade_invariants
              COMMAND navier_stokes_cascade_tests)
+
+    add_executable(navier_stokes_fft_tests
+        tests/test_pseudospectral.cpp
+    )
+    target_link_libraries(navier_stokes_fft_tests PRIVATE ns_cascade)
+    add_test(NAME navier_stokes_fft_oracle
+             COMMAND navier_stokes_fft_tests)
 endif()

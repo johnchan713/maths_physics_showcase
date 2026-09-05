@@ -25,20 +25,22 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configure CMake
-        run: cmake -S . -B build -DBUILD_TESTING=ON
+        run: >-
+          cmake -S . -B build
+          -DBUILD_TESTING=ON
+          -DCMAKE_BUILD_TYPE=Release
 
       - name: Build research targets
         run: >-
           cmake --build build --parallel --target
           navier_stokes_cascade
           navier_stokes_convergence
+          navier_stokes_fft
           navier_stokes_cascade_tests
+          navier_stokes_fft_tests
 
       - name: Run invariant tests
-        run: >-
-          ctest --test-dir build
-          --output-on-failure
-          -R navier_stokes_cascade_invariants
+        run: ctest --test-dir build --output-on-failure
 
       - name: Run convergence smoke comparison
         run: >-
@@ -48,8 +50,19 @@ jobs:
           --diagnostic-every 4
           --output navier_stokes_convergence.csv
 
+      - name: Run FFT convergence smoke comparison
+        run: >-
+          ./build/research/navier_stokes_cascade/navier_stokes_convergence
+          --backend fft
+          --grids 8,16
+          --steps 4
+          --diagnostic-every 2
+          --output navier_stokes_fft_convergence.csv
+
       - name: Retain convergence CSV
         uses: actions/upload-artifact@v4
         with:
           name: navier-stokes-convergence
-          path: navier_stokes_convergence.csv
+          path: |
+            navier_stokes_convergence.csv
+            navier_stokes_fft_convergence.csv

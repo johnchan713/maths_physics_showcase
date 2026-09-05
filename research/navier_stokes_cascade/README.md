@@ -26,9 +26,17 @@ or a large finite numerical value does not settle that statement.
 
 ## What is implemented
 
-`GalerkinSystem` evolves a mean-zero, real, divergence-free velocity field on
-the 2-pi periodic torus using the Fourier cube
-`|k_x|, |k_y|, |k_z| <= K`. For each retained non-zero mode,
+Two independent numerical paths now evolve a mean-zero, real, divergence-free
+velocity field on the 2-pi periodic torus using the Fourier cube
+`|k_x|, |k_y|, |k_z| <= K`:
+
+- `GalerkinSystem` evaluates every Fourier triad directly. Its quadratic cost
+  makes it slow, but its simple formula is the low-cutoff correctness oracle.
+- `PseudospectralSystem` uses an in-repository radix-2 three-dimensional FFT,
+  the rotational nonlinearity `P[u x curl(u)]`, and strict 2/3 de-aliasing. Its
+  cost scales approximately as `N^3 log(N)` and permits materially larger runs.
+
+For each retained non-zero mode, both backends compute
 
 ```text
 d u_k / dt = -nu |k|^2 u_k
@@ -38,6 +46,16 @@ d u_k / dt = -nu |k|^2 u_k
 where `P_k` is the Leray projector. Time stepping is classical RK4. The direct
 convolution is intentionally small and auditable; it is not intended as a
 production turbulence solver.
+
+For an `N^3` FFT grid, the code enforces
+
+```text
+K <= floor((N - 1) / 3),
+```
+
+so `3K < N`. Therefore a wrapped quadratic product cannot alias back into the
+retained cube. Modes outside the retained cube and the mean mode are never
+evolved. The Fourier normalization is `u(x) = sum_k u_k exp(i k.x)`.
 
 Three smooth, exactly divergence-free starting fields are available:
 
@@ -91,6 +109,10 @@ The tests check the structural identities before any experiment is interpreted:
 Leray projection, real/divergence-free invariants, nonlinear energy
 cancellation, shell accounting, viscous energy dissipation, the ABC negative
 control, and short-run numerical stability.
+The FFT-specific suite also checks a complex 3D transform round trip, rejects
+unsafe cutoffs, compares every nonlinear Fourier coefficient against direct
+convolution, repeats that comparison with all modes populated at the maximum
+safe cutoff, and compares complete short trajectories.
 They also encode the elementary guardrail that zero gradient does not imply
 zero field value, a mistake found in some purported proofs.
 
@@ -99,10 +121,20 @@ zero field value, a mistake found in some purported proofs.
 From the repository root:
 
 ```bash
-cmake -S . -B build -DBUILD_TESTING=ON
+cmake -S . -B build -DBUILD_TESTING=ON -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ctest --test-dir build --output-on-failure
 ./build/research/navier_stokes_cascade/navier_stokes_cascade
+```
+
+Run the faster FFT backend on a `32^3` grid, retaining the strict safe cutoff
+`K=10`:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_fft \
+  --grid 32 --cutoff 0 --initial-condition taylor-green \
+  --dt 0.0005 --steps 200 --diagnostic-every 20 \
+  --output fft-n32.csv --shell-output fft-n32-shells.csv
 ```
 
 The main executable writes a time-series CSV and a separate long-form shell
@@ -127,10 +159,21 @@ Run the same physical experiment at several cutoffs and at both `dt` and
   --output navier_stokes_convergence.csv
 ```
 
-The comparison CSV uses one common spatial sampling grid for every cutoff. It
+Use the same comparison program with the FFT backend:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_convergence \
+  --backend fft --grids 16,32 --initial-condition taylor-green \
+  --dt 0.0005 --steps 60 --diagnostic-every 20 \
+  --output navier_stokes_fft_convergence.csv
+```
+
+The direct comparison uses one common spatial sampling grid for every cutoff.
+The FFT comparison samples on each native grid; therefore its L3-grid
+difference includes quadrature error as well as solution error. The CSV
 contains total and shell energies, critical-L3 ratio, nonlinear transfer,
 viscous dissipation, forward flux, constraint defects, and cutoff-shell checks.
-The terminal summary reports both timestep differences and adjacent-cutoff
+The terminal summary reports both timestep differences and adjacent-resolution
 differences, including common-shell flux disagreement.
 
 ### Verified reference run
@@ -153,12 +196,28 @@ short run. These figures verify the implementation baseline only. They do not
 show growing critical norms, an infinite cascade, or singular behaviour; so
 far, the monster has merely submitted tidy paperwork.
 
-Use `--help` for all parameters. Runtime grows quickly because the current
-quadratic convolution is direct rather than FFT-based.
+The corresponding FFT comparison at `N=16, K=5` and `N=32, K=10` gave:
+
+| Check | Result |
+|---|---:|
+| N=16 peak cutoff-shell energy fraction | 5.46049e-13 |
+| N=32 peak cutoff-shell energy fraction | 1.17288e-26 |
+| Final-energy resolution difference | 3.36079e-16 |
+| Final-L3 resolution difference | 1.40368e-4 |
+| Common-shell flux difference | 7.35405e-12 |
+| N=32 final critical-L3 ratio | 0.995387 |
+
+The run has a clean, converged finite forward flux, but its critical L3 norm
+decreases by about 0.46%. That is evidence the measurement machinery works;
+it is not a blow-up candidate.
+
+Use `--help` for all parameters. The direct backend still grows quadratically
+in the retained mode count; use it to audit small cases and the FFT backend to
+explore larger ones.
 
 The branch-scoped GitHub Actions workflow builds these CMake targets, runs the
-invariant test, performs a short `K=2,3` convergence comparison, and uploads its
-CSV as a workflow artifact.
+direct and FFT invariant tests, performs short direct and FFT convergence
+comparisons, and uploads their CSV files as workflow artifacts.
 
 ## Interpretation guardrails
 
@@ -180,15 +239,18 @@ itself demonstrate PDE singularity. In particular:
 ## Research gates
 
 The exact low-cutoff oracle, named benchmark fields, shell accounting, and the
-cutoff/timestep comparison harness are now implemented. The next engineering
-milestone is the dealiased FFT solver; high-cutoff claims must wait for it.
+cutoff/timestep comparison harness are implemented. The strictly dealiased FFT
+backend is also implemented and checked against the direct oracle. The next
+engineering milestone is adaptive timestep/CFL control followed by
+parameterized smooth vortex-tube data and automated candidate searches.
 
 A credible path from this scaffold to a theorem has several hard gates:
 
-1. **Numerical credibility:** replace direct convolution with a dealiased 3D
-   FFT solver; reproduce standard benchmarks; run convergence studies across
-   cutoff, time step, box, and precision; and search for stable rescaled
-   profiles rather than isolated spikes.
+1. **Numerical credibility:** cross-check this small radix-2 implementation
+   against an established FFT library; add adaptive timestep/CFL control;
+   reproduce standard benchmarks; run convergence studies across cutoff, time
+   step, box, and precision; and search for stable rescaled profiles rather
+   than isolated spikes.
 2. **Analytic mechanism:** state a scale-by-scale transfer lemma that controls
    viscosity, nonlocal frequency interactions, pressure/Leray projection, and
    the time accumulated over infinitely many stages. Track a critical norm

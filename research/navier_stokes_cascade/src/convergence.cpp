@@ -1,4 +1,5 @@
 #include "ns_cascade/galerkin.hpp"
+#include "ns_cascade/pseudospectral.hpp"
 
 #include <algorithm>
 #include <cmath>
@@ -13,8 +14,19 @@
 
 namespace {
 
+enum class Backend {
+    Direct,
+    FFT
+};
+
+const char* backendName(Backend backend) {
+    return backend == Backend::Direct ? "direct" : "fft";
+}
+
 struct Options {
+    Backend backend = Backend::Direct;
     std::vector<int> cutoffs = std::vector<int>{2, 3};
+    std::vector<int> grid_sizes = std::vector<int>{16, 32};
     double viscosity = 0.05;
     double time_step = 0.0005;
     int steps = 60;
@@ -66,33 +78,45 @@ ns_cascade::InitialCondition parseInitialCondition(const std::string& value) {
         " (expected deterministic, taylor-green, or abc)");
 }
 
-std::vector<int> parseCutoffs(const std::string& text) {
-    std::vector<int> cutoffs;
+Backend parseBackend(const std::string& value) {
+    if (value == "direct") return Backend::Direct;
+    if (value == "fft") return Backend::FFT;
+    throw std::invalid_argument(
+        "Unknown backend: " + value + " (expected direct or fft)");
+}
+
+std::vector<int> parsePositiveList(const std::string& text,
+                                   const std::string& flag) {
+    std::vector<int> values;
     std::istringstream stream(text);
     std::string item;
     while (std::getline(stream, item, ',')) {
-        if (item.empty()) throw std::invalid_argument("Empty value in --cutoffs");
-        const int cutoff = parseNumber<int>(item, "--cutoffs");
-        if (cutoff < 1) throw std::invalid_argument("Every cutoff must be >= 1");
-        cutoffs.push_back(cutoff);
+        if (item.empty()) throw std::invalid_argument("Empty value in " + flag);
+        const int value = parseNumber<int>(item, flag);
+        if (value < 1) {
+            throw std::invalid_argument("Every value in " + flag + " must be >= 1");
+        }
+        values.push_back(value);
     }
-    if (cutoffs.empty()) throw std::invalid_argument("--cutoffs cannot be empty");
-    std::sort(cutoffs.begin(), cutoffs.end());
-    cutoffs.erase(std::unique(cutoffs.begin(), cutoffs.end()), cutoffs.end());
-    return cutoffs;
+    if (values.empty()) throw std::invalid_argument(flag + " cannot be empty");
+    std::sort(values.begin(), values.end());
+    values.erase(std::unique(values.begin(), values.end()), values.end());
+    return values;
 }
 
 void printUsage(const char* program) {
     std::cout
         << "Usage: " << program << " [options]\n\n"
-        << "Compare Fourier cutoffs and dt versus dt/2 at equal physical time.\n\n"
+        << "Compare spatial resolutions and dt versus dt/2 at equal physical time.\n\n"
         << "Options:\n"
+        << "  --backend B             direct or fft (default: direct)\n"
         << "  --cutoffs LIST          Comma-separated cutoffs (default: 2,3)\n"
+        << "  --grids LIST            FFT grids (default: 16,32)\n"
         << "  --viscosity NU          Non-negative viscosity (default: 0.05)\n"
         << "  --dt DT                 Coarse RK4 step (default: 0.0005)\n"
         << "  --steps N               Coarse run steps (default: 60)\n"
         << "  --diagnostic-every N    Coarse sampling interval (default: 20)\n"
-        << "  --sample-points N       Grid points per axis; 0 selects a safe default\n"
+        << "  --sample-points N       Direct-backend samples; FFT uses native grids\n"
         << "  --energy E              Initial normalized energy (default: 1)\n"
         << "  --initial-condition C   deterministic, taylor-green, or abc\n"
         << "                            (default: taylor-green)\n"
@@ -107,8 +131,14 @@ Options parseOptions(int argc, char** argv) {
         if (flag == "--help") {
             printUsage(argv[0]);
             std::exit(0);
+        } else if (flag == "--backend") {
+            options.backend = parseBackend(requireValue(i, argc, argv));
         } else if (flag == "--cutoffs") {
-            options.cutoffs = parseCutoffs(requireValue(i, argc, argv));
+            options.cutoffs =
+                parsePositiveList(requireValue(i, argc, argv), flag);
+        } else if (flag == "--grids") {
+            options.grid_sizes =
+                parsePositiveList(requireValue(i, argc, argv), flag);
         } else if (flag == "--viscosity") {
             options.viscosity = parseNumber<double>(requireValue(i, argc, argv), flag);
         } else if (flag == "--dt") {
@@ -144,10 +174,14 @@ Options parseOptions(int argc, char** argv) {
     if (options.sample_points < 0) {
         throw std::invalid_argument("--sample-points cannot be negative");
     }
-    if (options.sample_points != 0 &&
+    if (options.backend == Backend::Direct && options.sample_points != 0 &&
         options.sample_points < 2 * options.cutoffs.back() + 1) {
         throw std::invalid_argument(
             "--sample-points must be 0 or >= 2*largest-cutoff+1");
+    }
+    if (options.backend == Backend::FFT && options.sample_points != 0) {
+        throw std::invalid_argument(
+            "FFT comparisons sample on each native grid; omit --sample-points");
     }
     if (options.initial_energy <= 0.0) {
         throw std::invalid_argument("--energy must be positive");
@@ -156,13 +190,14 @@ Options parseOptions(int argc, char** argv) {
     return options;
 }
 
-RunResult runConfiguration(const ns_cascade::GalerkinSystem& system,
+template <typename System>
+RunResult runConfiguration(const System& system,
                            const Options& options,
                            double time_step,
                            int steps,
                            int diagnostic_every,
-                           int common_sample_points) {
-    ns_cascade::GalerkinSystem::State state =
+                           int diagnostic_sample_points) {
+    typename System::State state =
         system.initialState(options.initial_condition, options.initial_energy);
     RunResult result;
     result.peak_cutoff_fraction = 0.0;
@@ -172,7 +207,8 @@ RunResult runConfiguration(const ns_cascade::GalerkinSystem& system,
             Snapshot snapshot;
             snapshot.step = step;
             snapshot.time = step * time_step;
-            snapshot.diagnostics = system.diagnostics(state, common_sample_points);
+            snapshot.diagnostics =
+                system.diagnostics(state, diagnostic_sample_points);
             snapshot.shells = system.shellDiagnostics(state);
             result.peak_cutoff_fraction =
                 std::max(result.peak_cutoff_fraction,
@@ -186,7 +222,8 @@ RunResult runConfiguration(const ns_cascade::GalerkinSystem& system,
 
 void writeHeader(std::ostream& output) {
     output
-        << "initial_condition,cutoff,refinement,dt,sample_points,step,time,shell,"
+        << "initial_condition,backend,grid_size,cutoff,refinement,dt,"
+        << "sample_points,step,time,shell,"
         << "lower_radius,upper_radius,total_energy,critical_l3_sample,"
         << "critical_l3_ratio,shell_energy,nonlinear_transfer,"
         << "viscous_dissipation,forward_flux,cutoff_shell_energy_fraction,"
@@ -197,6 +234,8 @@ void writeHeader(std::ostream& output) {
 void writeRun(std::ostream& output,
               const RunResult& result,
               ns_cascade::InitialCondition initial_condition,
+              Backend backend,
+              int grid_size,
               int cutoff,
               const std::string& refinement,
               double time_step,
@@ -219,9 +258,10 @@ void writeRun(std::ostream& output,
             const ns_cascade::GalerkinSystem::ShellDiagnostics& shell =
                 snapshot.shells[shell_index];
             output << ns_cascade::initialConditionName(initial_condition) << ','
-                   << cutoff << ',' << refinement << ',' << time_step << ','
-                   << sample_points << ',' << snapshot.step << ',' << snapshot.time
-                   << ',' << shell.shell
+                   << backendName(backend) << ',' << grid_size << ',' << cutoff
+                   << ',' << refinement << ',' << time_step << ',' << sample_points
+                   << ',' << snapshot.step << ',' << snapshot.time << ','
+                   << shell.shell
                    << ',' << shell.lower_radius << ',' << shell.upper_radius << ','
                    << snapshot.diagnostics.energy << ','
                    << snapshot.diagnostics.critical_l3_sample << ',' << l3_ratio
@@ -263,6 +303,82 @@ double relativeCommonFluxDifference(const RunResult& left,
     return largest_difference / largest_flux;
 }
 
+template <typename System>
+RunResult runResolution(const System& system,
+                        const Options& options,
+                        std::ostream& csv,
+                        Backend backend,
+                        int grid_size,
+                        int cutoff,
+                        int diagnostic_sample_points,
+                        const std::string& resolution_label,
+                        const RunResult* previous_refined,
+                        const std::string& previous_label) {
+    const RunResult coarse =
+        runConfiguration(system,
+                         options,
+                         options.time_step,
+                         options.steps,
+                         options.diagnostic_every,
+                         diagnostic_sample_points);
+    const RunResult refined =
+        runConfiguration(system,
+                         options,
+                         options.time_step / 2.0,
+                         options.steps * 2,
+                         options.diagnostic_every * 2,
+                         diagnostic_sample_points);
+    writeRun(csv,
+             coarse,
+             options.initial_condition,
+             backend,
+             grid_size,
+             cutoff,
+             "dt",
+             options.time_step,
+             diagnostic_sample_points);
+    writeRun(csv,
+             refined,
+             options.initial_condition,
+             backend,
+             grid_size,
+             cutoff,
+             "dt/2",
+             options.time_step / 2.0,
+             diagnostic_sample_points);
+
+    const ns_cascade::GalerkinSystem::Diagnostics& coarse_final =
+        coarse.snapshots.back().diagnostics;
+    const ns_cascade::GalerkinSystem::Diagnostics& refined_final =
+        refined.snapshots.back().diagnostics;
+    std::cout << std::setprecision(6)
+              << resolution_label
+              << ": relative final-energy dt error = "
+              << relativeDifference(coarse_final.energy, refined_final.energy)
+              << ", relative final-L3 dt error = "
+              << relativeDifference(coarse_final.critical_l3_sample,
+                                    refined_final.critical_l3_sample)
+              << ", peak cutoff fraction = "
+              << std::max(coarse.peak_cutoff_fraction,
+                          refined.peak_cutoff_fraction)
+              << '\n';
+
+    if (previous_refined != NULL) {
+        const ns_cascade::GalerkinSystem::Diagnostics& previous_final =
+            previous_refined->snapshots.back().diagnostics;
+        std::cout
+            << previous_label << " -> " << resolution_label
+            << ": relative final-energy resolution difference = "
+            << relativeDifference(previous_final.energy, refined_final.energy)
+            << ", relative final-L3 resolution difference = "
+            << relativeDifference(previous_final.critical_l3_sample,
+                                  refined_final.critical_l3_sample)
+            << ", relative common-shell flux difference = "
+            << relativeCommonFluxDifference(*previous_refined, refined) << '\n';
+    }
+    return refined;
+}
+
 }  // namespace
 
 int main(int argc, char** argv) {
@@ -275,81 +391,58 @@ int main(int argc, char** argv) {
 
         std::cout << "Initial condition: "
                   << ns_cascade::initialConditionName(options.initial_condition)
-                  << '\n';
-        const int common_sample_points =
-            options.sample_points == 0
-                ? std::max(4 * options.cutoffs.back() + 1, 9)
-                : options.sample_points;
-        bool have_previous_cutoff = false;
-        int previous_cutoff = 0;
+                  << "\nBackend: " << backendName(options.backend) << '\n';
+        bool have_previous_resolution = false;
+        std::string previous_label;
         RunResult previous_refined;
-        for (std::size_t i = 0; i < options.cutoffs.size(); ++i) {
-            const int cutoff = options.cutoffs[i];
-            const ns_cascade::GalerkinSystem system(cutoff, options.viscosity);
-            const RunResult coarse =
-                runConfiguration(system,
-                                 options,
-                                 options.time_step,
-                                 options.steps,
-                                 options.diagnostic_every,
-                                 common_sample_points);
-            const RunResult refined =
-                runConfiguration(system,
-                                 options,
-                                 options.time_step / 2.0,
-                                 options.steps * 2,
-                                 options.diagnostic_every * 2,
-                                 common_sample_points);
-            writeRun(csv,
-                     coarse,
-                     options.initial_condition,
-                     cutoff,
-                     "dt",
-                     options.time_step,
-                     common_sample_points);
-            writeRun(csv,
-                     refined,
-                     options.initial_condition,
-                     cutoff,
-                     "dt/2",
-                     options.time_step / 2.0,
-                     common_sample_points);
 
-            const ns_cascade::GalerkinSystem::Diagnostics& coarse_final =
-                coarse.snapshots.back().diagnostics;
-            const ns_cascade::GalerkinSystem::Diagnostics& refined_final =
-                refined.snapshots.back().diagnostics;
-            std::cout << std::setprecision(6)
-                      << "K=" << cutoff
-                      << ": relative final-energy dt error = "
-                      << relativeDifference(coarse_final.energy,
-                                            refined_final.energy)
-                      << ", relative final-L3 dt error = "
-                      << relativeDifference(coarse_final.critical_l3_sample,
-                                            refined_final.critical_l3_sample)
-                      << ", peak cutoff fraction = "
-                      << std::max(coarse.peak_cutoff_fraction,
-                                  refined.peak_cutoff_fraction)
-                      << '\n';
-
-            if (have_previous_cutoff) {
-                const ns_cascade::GalerkinSystem::Diagnostics& previous_final =
-                    previous_refined.snapshots.back().diagnostics;
-                std::cout
-                    << "K=" << previous_cutoff << " -> K=" << cutoff
-                    << ": relative final-energy cutoff difference = "
-                    << relativeDifference(previous_final.energy,
-                                          refined_final.energy)
-                    << ", relative final-L3 cutoff difference = "
-                    << relativeDifference(previous_final.critical_l3_sample,
-                                          refined_final.critical_l3_sample)
-                    << ", relative common-shell flux difference = "
-                    << relativeCommonFluxDifference(previous_refined, refined)
-                    << '\n';
+        if (options.backend == Backend::Direct) {
+            const int common_sample_points =
+                options.sample_points == 0
+                    ? std::max(4 * options.cutoffs.back() + 1, 9)
+                    : options.sample_points;
+            for (std::size_t i = 0; i < options.cutoffs.size(); ++i) {
+                const int cutoff = options.cutoffs[i];
+                const ns_cascade::GalerkinSystem system(cutoff, options.viscosity);
+                const std::string label = "K=" + std::to_string(cutoff);
+                const RunResult refined = runResolution(
+                    system,
+                    options,
+                    csv,
+                    Backend::Direct,
+                    0,
+                    cutoff,
+                    common_sample_points,
+                    label,
+                    have_previous_resolution ? &previous_refined : NULL,
+                    previous_label);
+                previous_refined = refined;
+                previous_label = label;
+                have_previous_resolution = true;
             }
-            previous_refined = refined;
-            previous_cutoff = cutoff;
-            have_previous_cutoff = true;
+        } else {
+            for (std::size_t i = 0; i < options.grid_sizes.size(); ++i) {
+                const int grid_size = options.grid_sizes[i];
+                const ns_cascade::PseudospectralSystem system(
+                    grid_size, options.viscosity);
+                const std::string label =
+                    "N=" + std::to_string(grid_size) +
+                    ", K=" + std::to_string(system.cutoff());
+                const RunResult refined = runResolution(
+                    system,
+                    options,
+                    csv,
+                    Backend::FFT,
+                    grid_size,
+                    system.cutoff(),
+                    grid_size,
+                    label,
+                    have_previous_resolution ? &previous_refined : NULL,
+                    previous_label);
+                previous_refined = refined;
+                previous_label = label;
+                have_previous_resolution = true;
+            }
         }
 
         std::cout << "Comparison written to " << options.output << '\n'
