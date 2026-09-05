@@ -15,6 +15,10 @@ else()
     add_compile_options(-Wall -Wextra -pedantic)
 endif()
 
+include(CTest)
+option(BUILD_NAVIER_STOKES_RESEARCH
+       "Build the experimental Navier-Stokes cascade research harness" ON)
+
 # Include directories
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
@@ -22,6 +26,10 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 add_executable(physics_demo
     examples/main.cpp
 )
+
+if(BUILD_NAVIER_STOKES_RESEARCH)
+    add_subdirectory(research/navier_stokes_cascade)
+endif()
 
 # Installation rules (optional)
 install(TARGETS physics_demo DESTINATION bin)
