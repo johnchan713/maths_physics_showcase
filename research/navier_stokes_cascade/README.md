@@ -423,6 +423,28 @@ windows. Only forward movement to finer scales completes a window. The cutoff
 fraction used by the resolution gate and score is also checked after every
 accepted step, so a short contamination spike cannot hide between CSV rows.
 
+Optimize the three continuous wave-packet coordinates at a fixed carrier with
+checked central differences and a cutoff-gated backtracking line search:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_optimize \
+  --grid 16 --carrier-mode 1 \
+  --initial-width 1.1 --initial-weight 0.75 \
+  --initial-phase 1.0471975511965976 \
+  --energy 10 --viscosity 0.02 --final-time 0.08 \
+  --iterations 2 --gradient-step 0.015 \
+  --cutoff-threshold 0.01 \
+  --output navier_stokes_packet_optimization.csv
+```
+
+The optimizer uses normalized bounded coordinates. Each derivative is computed
+at step `h` and `h/2`, then Richardson extrapolated; excessive disagreement
+rejects the entire gradient. Its smooth finite-time objective rewards terminal
+H1/2 and L3, forward characteristic-scale motion, and penalizes smooth
+scale-normalized spectral-profile change plus terminal cutoff loading. Peak
+cutoff loading remains a hard acceptance gate. This is a parameter-space
+finite-difference optimizer, not yet a discrete adjoint or a proof tool.
+
 For one resolution, let `G3`, `Gh`, and `Gw` be the peak L3, H1/2, and sampled
 vorticity ratios; `F3` the final L3 ratio; `C/C*` the peak cutoff fraction
 normalized by its threshold; and `D/D*` the latest profile drift normalized by
@@ -775,6 +797,31 @@ difference of `7.60244e-16`; peak scaled diagnostic disagreement was
 `6.76855e-16`. Thus the finite amplification is reproduced, but zero of 16
 candidates qualifies for refinement and no `N=64` promotion is justified.
 
+### Checked-gradient packet optimization
+
+Starting from the resolved width `1.1`, weight `0.75`, phase `pi/3`, carrier-one
+packet, a two-step `N=16, t=0.08` run used normalized perturbation `h=0.015`.
+The first gradient's coarse/refined disagreement was `0.0891`; the second's was
+`0.00584`. Both backtracking steps improved the evaluated objective without
+crossing the one-percent peak-cutoff gate:
+
+| Measurement | Initial | Optimized N=16 | Optimized N=32 |
+|---|---:|---:|---:|
+| Width / weight / phase | 1.100 / 0.750 / 1.047 | 1.088 / 0.758 / 0.299 | same |
+| Smooth objective | -0.02027 | -0.01335 | 0.01475 |
+| Peak H1/2 / initial | 1.03907 | 1.04744 | 1.04820 |
+| Characteristic wavenumber / initial | 1.14022 | 1.16200 | 1.16849 |
+| Smooth endpoint profile drift | 1.93271 | 1.91310 | 1.90936 |
+| Strict windowed profile drift | 7.53732 | 7.46301 | 7.62088 |
+| Peak cutoff-shell energy fraction | 7.64993e-3 | 9.59527e-3 | 9.26224e-5 |
+
+The objective improvement transfers to the fine grid, but the strict profile
+drift remains far above one and sampled-vorticity growth still disagrees across
+resolutions. The optimized `N=32` trajectory therefore fails the existing
+promotion gates. Its 221-step independent FFTW replay passed with peak relative
+state disagreement `8.40746e-16`. This is evidence that optimization found a
+slightly stronger finite cascade, not evidence of singular behaviour.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
@@ -847,13 +894,14 @@ replay. Its first 16-case pilot also produced no survivor. The most active
 resolved packet amplified sampled vorticity by 36% at `N=32`, but its profile
 drift was `7.66` and the conservative cross-resolution gate rejected it.
 
-Larger grids for either rejected geometry remain deprioritized. The next
-scientifically useful milestone is not another brute-force tube permutation;
-it is a low-resolution, finite-time adjoint/gradient check for optimizing
-solenoidal spectral seeds against an explicitly profile-aware objective.
-The packet coordinates now provide a controlled finite-dimensional seed for
-that adjoint experiment, but every optimized result must still pass the same
-cutoff, refinement, and independent-evolution gates.
+The checked finite-difference parameter optimizer is now implemented. Its first
+two-step run improved both coarse and fine objectives, but the result failed the
+unchanged promotion gates. Larger grids for the rejected geometry remain
+deprioritized. The next scientifically useful milestone is a tangent-linear
+and discrete-adjoint implementation checked against these finite differences.
+That would permit optimization over many solenoidal Fourier coefficients rather
+than only three packet coordinates, while every result would still face the
+same cutoff, refinement, and independent-evolution gates.
 
 A credible path from this scaffold to a theorem has several hard gates:
 

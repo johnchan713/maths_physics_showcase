@@ -41,9 +41,11 @@ jobs:
           navier_stokes_convergence
           navier_stokes_fft
           navier_stokes_search
+          navier_stokes_optimize
           navier_stokes_cascade_tests
           navier_stokes_fft_tests
           navier_stokes_candidate_score_tests
+          navier_stokes_parameter_optimizer_tests
           navier_stokes_fftw_compare
           navier_stokes_fftw_tests
 
@@ -119,6 +121,22 @@ jobs:
             END { exit found && !malformed ? 0 : 1 }
           ' navier_stokes_candidate_search.csv
 
+      - name: Run checked-gradient optimizer smoke test
+        run: >-
+          ./build/research/navier_stokes_cascade/navier_stokes_optimize
+          --grid 16
+          --final-time 0.02
+          --iterations 1
+          --gradient-step 0.015
+          --output navier_stokes_packet_optimization.csv
+
+      - name: Verify optimizer accepted a checked improving step
+        shell: bash
+        run: >-
+          awk -F, 'NR > 1 && $2 == "accepted" { found = 1 }
+          END { exit found ? 0 : 1 }'
+          navier_stokes_packet_optimization.csv
+
       - name: Verify checkpoint restart is bit-for-bit reproducible
         shell: bash
         run: |
@@ -150,6 +168,7 @@ jobs:
             navier_stokes_convergence.csv
             navier_stokes_fft_convergence.csv
             navier_stokes_candidate_search.csv
+            navier_stokes_packet_optimization.csv
             navier_stokes_fftw_comparison.csv
             segment-a.csv
             segment-b.csv
