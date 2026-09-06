@@ -930,20 +930,28 @@ J = log(H1/2(T) / H1/2(0))
 final spectra in the coordinate `log(|k|/k_rms)`. Each measurement is divided
 by total energy, and the penalty is the mean squared change of their
 regularized logarithms. It is therefore insensitive to amplitude and to a
-pure shift of spectral scale. With the default four snapshots,
+pure shift of spectral scale. For snapshot penalties
+`p_j = P_shape(u(0), u(j T / S))`, the default path term is now
 
 ```text
-P_path = (1 / 4) sum_j P_shape(u(0), u(j T / 4)),  j = 1,...,4.
+P_path = tau log((1 / S) sum_j exp(p_j / tau)),
+S = 8, tau = 0.01.
 ```
 
-The integrator lands exactly on these fixed physical times, independently of
+This normalized log-sum-exp lies between the arithmetic mean and the hard
+maximum. Its derivative gives the worst-changing snapshots the largest
+softmax weights while remaining smooth enough for the discrete adjoint. The
+integrator lands exactly on the fixed physical times, independently of
 diagnostic cadence. The analytic gradient includes the state dependence of
-`k_rms` and injects every snapshot derivative at the corresponding point in
-the reverse RK4 sweep. Centered differences test the shape derivative both
-directly and through the full path. `--profile-shape-weight`,
-`--profile-path-weight`, and `--profile-path-samples` expose the two weights
-and schedule. These differentiable quantities only guide optimization. The
-independent cloud-in-cell L1 drift remains the promotion gate.
+`k_rms` and injects every weighted snapshot derivative at the corresponding
+point in the reverse RK4 sweep. Centered differences test the shape derivative
+both directly and through the full path. `--profile-shape-weight`,
+`--profile-path-weight`, `--profile-path-samples`, and
+`--profile-path-temperature` expose the weights and schedule. Historical
+arithmetic-mean runs remain reproducible with
+`--profile-path-aggregation mean`. These differentiable quantities only guide
+optimization. The independent cloud-in-cell L1 drift remains the promotion
+gate.
 
 The terminal gradient and intermediate snapshot gradients are reversed
 through every stored fixed-step RK4 stage, then projected onto the low-band,
@@ -962,7 +970,10 @@ tool.
 same base state and places them at `--start-angle` on the fixed-energy sphere.
 Start zero is always the unperturbed control. The trace records `start_index`,
 and `--start-offset I` can replay one numbered basin without rerunning earlier
-starts. Exact `--state-input` replay deliberately permits only start zero.
+starts. A loaded `--state-input` can now serve as the center of the same
+deterministic local-start construction; exact replay uses one start at offset
+zero. Every rejected line-search state is recorded as `line-trial`, making a
+surrogate-versus-hard-score conflict auditable.
 
 For example:
 
@@ -973,7 +984,7 @@ For example:
   --dt 0.0005 --final-time 0.08 --iterations 3 \
   --starts 4 --start-angle 0.35 \
   --profile-shape-weight 0.25 --profile-path-weight 0.25 \
-  --profile-path-samples 4 \
+  --profile-path-samples 8 --profile-path-temperature 0.01 \
   --output navier_stokes_state_optimization.csv \
   --state-output navier_stokes_optimized_state.csv
 ```
@@ -1077,7 +1088,7 @@ The retained state is
 | Peak sampled vorticity / initial | 1.279198 | 1.488865 |
 | Final `k_rms` / initial | 1.161960 | 1.169504 |
 | Smooth endpoint shape penalty | 0.085033 | 0.100035 |
-| Four-snapshot path penalty | 0.035026 | 0.040059 |
+| Historical four-snapshot mean path penalty | 0.035026 | 0.040059 |
 | Latest windowed L1 drift | 4.629944 | 4.605072 |
 | Completed profile windows | 15 | 15 |
 | Peak cutoff-shell fraction | 0.00997863 | 0.000122778 |
@@ -1093,12 +1104,60 @@ the threshold, L3 falls, the coarse cutoff margin is only `2.14e-5`, and the
 coarse/fine vorticity-amplification difference is about 14%, above its 10%
 agreement gate. Larger grids remain deliberately gated.
 
-The next objective experiment should replace the mean path cost with a smooth
-maximum over denser fixed-time snapshots. That targets the worst shape
-excursion instead of allowing it to be diluted by quieter frames. Screen it at
-`T=0.06` around this exact checkpoint and retain a `T=0.08` state only if the
-strict drift and vorticity agreement both improve without consuming the
-remaining coarse cutoff margin.
+### Smooth-maximum local screening result
+
+The eight-snapshot smooth maximum was tested at `T=0.06` around the retained
+path checkpoint. Four adjoint checks spanning path weights `1`, `2`, and `4`
+and temperatures `0.01` and `0.005` had relative errors between `8.81e-7` and
+`5.07e-6`. No smooth-maximum ascent direction produced a line step that
+improved both the differentiated objective and the strict profile-aware
+score. The trace explains why: at angle `0.00375`, the coarse smooth path
+penalty fell from `0.024036` to `0.022590`, but strict drift rose from
+`6.166903` to `6.345465`. The derivative is correct; the smooth proxy is
+locally misaligned with the hard cloud-in-cell drift.
+
+Six deterministic perturbations of angle `0.00375` were therefore screened
+around the exact checkpoint. Local start 3 slightly improved the paired score;
+a half-angle six-start refinement and a new adjoint step found no further
+improvement. The retained control is
+`candidates/wave_k3_smoothmax_t008_screening.csv` (SHA-256
+`75818222d22aaaeb0b92f1a417a0309400e810335712b1df9aef729884fcc7b1`).
+
+With diagnostics evaluated on every accepted step, its `T=0.08` measurements
+are:
+
+| Measurement | Coarse `N=16, K=5` | Fine `N=32, K=10` |
+|---|---:|---:|
+| Peak/final H1/2 / initial | 1.054363 | 1.055388 |
+| Peak L3 / initial | 1.000572 | 1.000550 |
+| Final L3 / initial | 0.985719 | 0.985288 |
+| Peak sampled vorticity / initial | 1.280092 | 1.489476 |
+| Final `k_rms` / initial | 1.161872 | 1.169418 |
+| Smooth endpoint shape penalty | 0.085031 | 0.100033 |
+| Eight-snapshot smooth-maximum path penalty | 0.065240 | 0.079745 |
+| Latest windowed L1 drift | 4.606862 | 4.574379 |
+| Peak cutoff-shell fraction | 0.00997425 | 0.000122795 |
+
+Against the prior checkpoint under the same dense schedule, the worse of the
+two drift values fell by `0.50%` (`4.629944` to `4.606862`), vorticity-ratio
+disagreement fell from `14.0808%` to `14.0576%`, and the coarse cutoff margin
+grew by about `20.5%`. Halving the coarse timestep preserved the direction:
+the old/new worst drifts were `4.610665` and `4.588704`. However, the fine-grid
+drift alone worsened from `4.562908` to `4.574379`, critical growth decreased
+slightly, and vorticity disagreement remains above the `10%` gate. This is a
+secondary screening checkpoint, not a promoted candidate.
+
+An independent `N=32, T=0.08` FFTW/RK4 replay used 276 common adaptive steps.
+Peak whole-state and diagnostic disagreements were `7.85e-16` and `8.94e-16`.
+The small numerical change is reproducible, but it remains nowhere near proof
+evidence.
+
+The next objective should target the actual failure exposed here: compare
+adjacent rescaled spectra and divide their smooth shape change by the
+corresponding `log(k_rms)` advance, then take a smooth maximum over those
+local rates. That mirrors the strict windowed drift much more closely than
+comparing every snapshot with the initial spectrum. Its gradient must include
+both endpoints of every adjacent pair and the scale-advance denominator.
 
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to

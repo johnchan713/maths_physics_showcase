@@ -277,6 +277,86 @@ void testSmoothSpectrumShapeGradient() {
            "Smooth spectrum-shape gradient failed finite differences");
 }
 
+void testSmoothSpectrumPathAggregation() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    ns_cascade::StateObjectiveWeights weights;
+    weights.profile_path_temperature = 0.01;
+    const State initial = makeInitial(system);
+    std::vector<State> snapshots;
+    State state = initial;
+    for (int snapshot = 0; snapshot < 4; ++snapshot) {
+        evolve(system, state, 4, 0.0004);
+        snapshots.push_back(state);
+    }
+    const ns_cascade::SmoothSpectrumPathComparison path =
+        ns_cascade::compareSmoothSpectrumPath(
+            system, initial, snapshots, weights);
+    double maximum_penalty = 0.0;
+    double weight_sum = 0.0;
+    std::size_t maximum_index = 0;
+    for (std::size_t snapshot = 0; snapshot < path.snapshots.size();
+         ++snapshot) {
+        if (path.snapshots[snapshot].penalty > maximum_penalty) {
+            maximum_penalty = path.snapshots[snapshot].penalty;
+            maximum_index = snapshot;
+        }
+        expect(path.aggregation_weights[snapshot] > 0.0,
+               "Smooth path maximum assigned a nonpositive weight");
+        weight_sum += path.aggregation_weights[snapshot];
+    }
+    expect(std::abs(weight_sum - 1.0) < 2e-15,
+           "Smooth path maximum weights do not sum to one");
+    expect(path.smooth_maximum_penalty + 2e-15 >= path.average_penalty &&
+               path.smooth_maximum_penalty <= maximum_penalty + 2e-15,
+           "Smooth path maximum is outside its mean/maximum bounds");
+    expect(ns_cascade::smoothSpectrumPathPenalty(path, weights) ==
+               path.smooth_maximum_penalty,
+           "Default path aggregation did not select the smooth maximum");
+    for (std::size_t snapshot = 0; snapshot < path.snapshots.size();
+         ++snapshot) {
+        expect(path.aggregation_weights[maximum_index] + 2e-15 >=
+                   path.aggregation_weights[snapshot],
+               "Worst path snapshot did not receive the largest weight");
+    }
+
+    const std::vector<State> unchanged_snapshots(4, initial);
+    const ns_cascade::SmoothSpectrumPathComparison unchanged =
+        ns_cascade::compareSmoothSpectrumPath(
+            system, initial, unchanged_snapshots, weights);
+    expect(unchanged.smooth_maximum_penalty == 0.0,
+           "Zero path changes produced a nonzero smooth maximum");
+    for (std::size_t snapshot = 0;
+         snapshot < unchanged.aggregation_weights.size(); ++snapshot) {
+        expect(std::abs(unchanged.aggregation_weights[snapshot] - 0.25) <
+                   2e-15,
+               "Equal path penalties did not receive equal weights");
+    }
+
+    weights.profile_path_temperature = 0.0;
+    bool rejected_zero_temperature = false;
+    try {
+        ns_cascade::compareSmoothSpectrumPath(
+            system, initial, snapshots, weights);
+    } catch (const std::invalid_argument&) {
+        rejected_zero_temperature = true;
+    }
+    expect(rejected_zero_temperature,
+           "Smooth path maximum accepted zero temperature");
+
+    weights.profile_path_temperature = 0.01;
+    weights.profile_path_aggregation =
+        ns_cascade::SmoothSpectrumPathAggregation::Mean;
+    expect(ns_cascade::smoothSpectrumPathPenalty(path, weights) ==
+               path.average_penalty,
+           "Historical mean path aggregation is not reproducible");
+    for (std::size_t snapshot = 0; snapshot < path.snapshots.size();
+         ++snapshot) {
+        expect(std::abs(ns_cascade::smoothSpectrumPathGradientWeight(
+                            path, weights, snapshot) - 0.25) < 2e-15,
+               "Mean path aggregation has a nonuniform gradient weight");
+    }
+}
+
 void testTrajectoryObjectiveGradient() {
     const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
     const State initial = makeInitial(system);
@@ -306,9 +386,6 @@ void testTrajectoryObjectiveGradient() {
     const ns_cascade::SmoothSpectrumPathComparison path_comparison =
         ns_cascade::compareSmoothSpectrumPath(
             system, initial, profile_path_states, weights);
-    const double path_gradient_scale =
-        -weights.profile_path_penalty_weight /
-        static_cast<double>(path_comparison.snapshots.size());
     for (int step = step_count; step-- > 0;) {
         for (std::size_t snapshot = 0;
              snapshot < profile_path_states.size();
@@ -322,7 +399,9 @@ void testTrajectoryObjectiveGradient() {
                     weights,
                     path_comparison.snapshots[snapshot],
                     true),
-                path_gradient_scale);
+                -weights.profile_path_penalty_weight *
+                    ns_cascade::smoothSpectrumPathGradientWeight(
+                        path_comparison, weights, snapshot));
         }
         reverse_gradient = system.adjointRungeKutta4Step(
             trajectory[static_cast<std::size_t>(step)],
@@ -345,7 +424,9 @@ void testTrajectoryObjectiveGradient() {
                 weights,
                 path_comparison.snapshots[snapshot],
                 false),
-            path_gradient_scale);
+            -weights.profile_path_penalty_weight *
+                ns_cascade::smoothSpectrumPathGradientWeight(
+                    path_comparison, weights, snapshot));
     }
     const double analytical =
         ns_cascade::stateRealInnerProduct(reverse_gradient, direction);
@@ -371,14 +452,20 @@ void testTrajectoryObjectiveGradient() {
         system, plus_initial, plus, weights).total;
     const double minus_endpoint = ns_cascade::evaluateStateObjective(
         system, minus_initial, minus, weights).total;
+    const ns_cascade::SmoothSpectrumPathComparison plus_path_comparison =
+        ns_cascade::compareSmoothSpectrumPath(
+            system, plus_initial, plus_path, weights);
+    const ns_cascade::SmoothSpectrumPathComparison minus_path_comparison =
+        ns_cascade::compareSmoothSpectrumPath(
+            system, minus_initial, minus_path, weights);
     const double plus_objective = plus_endpoint -
         weights.profile_path_penalty_weight *
-        ns_cascade::compareSmoothSpectrumPath(
-            system, plus_initial, plus_path, weights).average_penalty;
+            ns_cascade::smoothSpectrumPathPenalty(
+                plus_path_comparison, weights);
     const double minus_objective = minus_endpoint -
         weights.profile_path_penalty_weight *
-        ns_cascade::compareSmoothSpectrumPath(
-            system, minus_initial, minus_path, weights).average_penalty;
+            ns_cascade::smoothSpectrumPathPenalty(
+                minus_path_comparison, weights);
     const double finite_difference =
         (plus_objective - minus_objective) /
         (2.0 * epsilon);
@@ -467,6 +554,7 @@ int main() {
         testStaticObjectiveGradient();
         testSmoothSpectrumShapeInvariances();
         testSmoothSpectrumShapeGradient();
+        testSmoothSpectrumPathAggregation();
         testTrajectoryObjectiveGradient();
         testLiftToFineGrid();
         testOptimizationStateCsvRoundTrip();

@@ -31,6 +31,16 @@ independent FFTW trajectory replay agreed with the internal state to
 `8.27e-16`. Its SHA-256 digest is
 `cd73fe95e4a8c69f193dff3ebe5abd07a8716bf3739ae412a30b95b008b59491`.
 
+`wave_k3_smoothmax_t008_screening.csv` is the best paired local control from
+the eight-snapshot smooth-maximum experiment around the preceding checkpoint.
+At `T=0.08`, its coarse/fine H1/2 ratios are `1.054363` and `1.055388`; its
+strict drifts are `4.606862` and `4.574379`. The worst drift and vorticity
+agreement improve slightly, and coarse cutoff loading falls to `0.00997425`,
+but fine-grid drift worsens and vorticity disagreement remains `14.0576%`.
+It is retained for exact follow-up, not promoted. An independent FFTW replay
+agreed to `7.85e-16`. Its SHA-256 digest is
+`75818222d22aaaeb0b92f1a417a0309400e810335712b1df9aef729884fcc7b1`.
+
 Replay the `K_seed=3` checkpoint without changing the coefficients:
 
 ```bash
@@ -58,9 +68,22 @@ Replay the path-dependent checkpoint through the optimizer with:
 ./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
   --initial-family wave-packets --seed-bandwidth 3 \
   --profile-shape-weight 0.25 --profile-path-weight 1 \
+  --profile-path-aggregation mean --profile-path-samples 4 \
   --state-input research/navier_stokes_cascade/candidates/wave_k3_path_t008_screening.csv \
   --final-time 0.08 --iterations 0 \
   --output path-replay.csv --state-output path-replayed-state.csv
+```
+
+Replay the smooth-maximum local checkpoint with:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+  --initial-family wave-packets --seed-bandwidth 3 \
+  --profile-shape-weight 0.25 --profile-path-weight 1 \
+  --profile-path-samples 8 --profile-path-temperature 0.01 \
+  --state-input research/navier_stokes_cascade/candidates/wave_k3_smoothmax_t008_screening.csv \
+  --final-time 0.08 --iterations 0 --diagnostic-every 1 \
+  --output smoothmax-replay.csv --state-output smoothmax-replayed-state.csv
 ```
 
 Replay the exact same coefficients through both independent evolution paths:
@@ -69,6 +92,6 @@ Replay the exact same coefficients through both independent evolution paths:
 ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare \
   --grid 32 --viscosity 0.02 --energy 10 --dt 0.005 \
   --final-time 0.08 --diagnostic-every 25 \
-  --state-input research/navier_stokes_cascade/candidates/wave_k3_path_t008_screening.csv \
-  --output path-fftw-comparison.csv
+  --state-input research/navier_stokes_cascade/candidates/wave_k3_smoothmax_t008_screening.csv \
+  --output smoothmax-fftw-comparison.csv
 ```

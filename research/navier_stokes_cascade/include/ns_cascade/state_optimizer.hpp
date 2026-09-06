@@ -15,12 +15,20 @@ namespace ns_cascade {
 
 using OptimizationState = PseudospectralSystem::State;
 
+enum class SmoothSpectrumPathAggregation {
+    Mean,
+    SmoothMaximum
+};
+
 struct StateObjectiveWeights {
     double characteristic_scale_weight = 0.15;
     double cutoff_penalty_weight = 0.04;
     double cutoff_fraction_threshold = 0.01;
     double profile_shape_penalty_weight = 0.05;
     double profile_path_penalty_weight = 0.05;
+    double profile_path_temperature = 0.01;
+    SmoothSpectrumPathAggregation profile_path_aggregation =
+        SmoothSpectrumPathAggregation::SmoothMaximum;
     int profile_feature_count = 9;
     double profile_minimum_log_coordinate = -1.5;
     double profile_maximum_log_coordinate = 1.5;
@@ -61,7 +69,9 @@ struct SmoothSpectrumShapeComparison {
 
 struct SmoothSpectrumPathComparison {
     std::vector<SmoothSpectrumShapeComparison> snapshots;
+    std::vector<double> aggregation_weights;
     double average_penalty = 0.0;
+    double smooth_maximum_penalty = 0.0;
 };
 
 inline int stateMaximumComponent(const WaveVector& wave) {
@@ -226,6 +236,12 @@ inline void validateSmoothSpectrumParameters(
         weights.profile_shape_penalty_weight < 0.0 ||
         !std::isfinite(weights.profile_path_penalty_weight) ||
         weights.profile_path_penalty_weight < 0.0 ||
+        !std::isfinite(weights.profile_path_temperature) ||
+        weights.profile_path_temperature <= 0.0 ||
+        (weights.profile_path_aggregation !=
+             SmoothSpectrumPathAggregation::Mean &&
+         weights.profile_path_aggregation !=
+             SmoothSpectrumPathAggregation::SmoothMaximum) ||
         weights.profile_feature_count < 3 ||
         weights.profile_feature_count > 64 ||
         !std::isfinite(weights.profile_minimum_log_coordinate) ||
@@ -354,18 +370,72 @@ inline SmoothSpectrumPathComparison compareSmoothSpectrumPath(
     }
     SmoothSpectrumPathComparison path;
     path.snapshots.reserve(snapshots.size());
+    double maximum_penalty = 0.0;
     for (std::size_t snapshot = 0; snapshot < snapshots.size(); ++snapshot) {
         path.snapshots.push_back(compareSmoothSpectrumShapes(
             system, initial, snapshots[snapshot], weights));
         path.average_penalty += path.snapshots.back().penalty;
+        maximum_penalty = std::max(
+            maximum_penalty, path.snapshots.back().penalty);
     }
     path.average_penalty /= static_cast<double>(path.snapshots.size());
+
+    double exponential_sum = 0.0;
+    path.aggregation_weights.reserve(path.snapshots.size());
+    for (std::size_t snapshot = 0; snapshot < path.snapshots.size();
+         ++snapshot) {
+        const double exponential = std::exp(
+            (path.snapshots[snapshot].penalty - maximum_penalty) /
+            weights.profile_path_temperature);
+        path.aggregation_weights.push_back(exponential);
+        exponential_sum += exponential;
+    }
+    for (std::size_t snapshot = 0;
+         snapshot < path.aggregation_weights.size(); ++snapshot) {
+        path.aggregation_weights[snapshot] /= exponential_sum;
+    }
+    path.smooth_maximum_penalty = maximum_penalty +
+        weights.profile_path_temperature *
+            (std::log(exponential_sum) -
+             std::log(static_cast<double>(path.snapshots.size())));
+    if (path.smooth_maximum_penalty < 0.0 &&
+        path.smooth_maximum_penalty >
+            -64.0 * std::numeric_limits<double>::epsilon()) {
+        path.smooth_maximum_penalty = 0.0;
+    }
     if (!std::isfinite(path.average_penalty) ||
-        path.average_penalty < 0.0) {
+        path.average_penalty < 0.0 ||
+        !std::isfinite(path.smooth_maximum_penalty) ||
+        path.smooth_maximum_penalty < 0.0 ||
+        !std::isfinite(exponential_sum) || exponential_sum <= 0.0) {
         throw std::runtime_error(
             "Smooth spectrum path penalty became non-finite");
     }
     return path;
+}
+
+inline double smoothSpectrumPathPenalty(
+    const SmoothSpectrumPathComparison& path,
+    const StateObjectiveWeights& weights) {
+    return weights.profile_path_aggregation ==
+                   SmoothSpectrumPathAggregation::Mean
+               ? path.average_penalty
+               : path.smooth_maximum_penalty;
+}
+
+inline double smoothSpectrumPathGradientWeight(
+    const SmoothSpectrumPathComparison& path,
+    const StateObjectiveWeights& weights,
+    std::size_t snapshot) {
+    if (snapshot >= path.snapshots.size() ||
+        path.aggregation_weights.size() != path.snapshots.size()) {
+        throw std::invalid_argument(
+            "Smooth spectrum path gradient index is invalid");
+    }
+    return weights.profile_path_aggregation ==
+                   SmoothSpectrumPathAggregation::Mean
+               ? 1.0 / static_cast<double>(path.snapshots.size())
+               : path.aggregation_weights[snapshot];
 }
 
 inline OptimizationState smoothSpectrumLogFeatureGradient(

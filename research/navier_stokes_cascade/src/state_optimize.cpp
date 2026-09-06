@@ -41,6 +41,18 @@ SeedFamily parseSeedFamily(const std::string& text) {
     throw std::invalid_argument("Unknown state-optimizer seed family: " + text);
 }
 
+ns_cascade::SmoothSpectrumPathAggregation parsePathAggregation(
+    const std::string& text) {
+    if (text == "mean") {
+        return ns_cascade::SmoothSpectrumPathAggregation::Mean;
+    }
+    if (text == "smooth-max") {
+        return ns_cascade::SmoothSpectrumPathAggregation::SmoothMaximum;
+    }
+    throw std::invalid_argument(
+        "Unknown profile-path aggregation: " + text);
+}
+
 struct Options {
     int grid_size = 16;
     int fine_grid_size = 32;
@@ -66,7 +78,7 @@ struct Options {
     double minimum_line_angle = 0.002;
     double armijo_fraction = 1e-4;
     ns_cascade::StateObjectiveWeights objective_weights;
-    int profile_path_samples = 4;
+    int profile_path_samples = 8;
     int profile_bin_count = 32;
     double profile_maximum_coordinate = 4.0;
     double profile_log_scale_window = 0.01;
@@ -197,11 +209,13 @@ void printUsage(const char* program) {
         << "  --scale-weight W            k_rms-growth reward (default: 0.15)\n"
         << "  --cutoff-weight W           Smooth cutoff cost (default: 0.04)\n"
         << "  --profile-shape-weight W    Smooth rescaled-shape cost (default: 0.05)\n"
-        << "  --profile-path-weight W     Four-snapshot path cost (default: 0.05)\n"
-        << "  --profile-path-samples N    Fixed-time shape snapshots (default: 4)\n"
+        << "  --profile-path-weight W     Smooth-maximum path cost (default: 0.05)\n"
+        << "  --profile-path-samples N    Fixed-time shape snapshots (default: 8)\n"
+        << "  --profile-path-temperature T  Smooth-max temperature (default: 0.01)\n"
+        << "  --profile-path-aggregation A  mean or smooth-max (default: smooth-max)\n"
         << "  --cutoff-threshold F        Hard cutoff gate (default: 0.01)\n"
         << "  --profile-scale-window X    log(k_rms) window (default: 0.01)\n"
-        << "  --state-input PATH          Resume or replay a saved coefficient CSV\n"
+        << "  --state-input PATH          Base checkpoint for replay or local starts\n"
         << "  --output PATH               Optimization trace CSV\n"
         << "  --state-output PATH         Optimized coefficient CSV\n"
         << "  --help                      Show this message\n";
@@ -291,6 +305,12 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--profile-path-samples") {
             options.profile_path_samples =
                 parseNumber<int>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-path-temperature") {
+            options.objective_weights.profile_path_temperature =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-path-aggregation") {
+            options.objective_weights.profile_path_aggregation =
+                parsePathAggregation(requireValue(i, argc, argv));
         } else if (flag == "--cutoff-threshold") {
             options.objective_weights.cutoff_fraction_threshold =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
@@ -319,8 +339,7 @@ Options parseOptions(int argc, char** argv) {
         options.state_output.empty() || options.output == options.state_output ||
         (!options.state_input.empty() &&
          (options.state_input == options.output ||
-          options.state_input == options.state_output ||
-          options.start_count != 1 || options.start_offset != 0))) {
+          options.state_input == options.state_output))) {
         throw std::invalid_argument("State-optimizer integer or path is invalid");
     }
     const double positive[] = {
@@ -627,7 +646,8 @@ Evaluation evaluateTrajectory(
             result.profile_path_states,
             options.objective_weights);
     result.objective.profile_path_penalty =
-        path_comparison.average_penalty;
+        ns_cascade::smoothSpectrumPathPenalty(
+            path_comparison, options.objective_weights);
     result.objective.total -=
         options.objective_weights.profile_path_penalty_weight *
         result.objective.profile_path_penalty;
@@ -741,9 +761,6 @@ ns_cascade::OptimizationState fullInitialGradient(
             initial,
             evaluation.profile_path_states,
             options.objective_weights);
-    const double path_gradient_scale =
-        -options.objective_weights.profile_path_penalty_weight /
-        static_cast<double>(path_comparison.snapshots.size());
     for (std::size_t step = evaluation.trajectory.size(); step-- > 0;) {
         const int state_index = static_cast<int>(step + 1U);
         for (std::size_t snapshot = 0;
@@ -761,7 +778,11 @@ ns_cascade::OptimizationState fullInitialGradient(
                     options.objective_weights,
                     path_comparison.snapshots[snapshot],
                     true),
-                path_gradient_scale);
+                -options.objective_weights.profile_path_penalty_weight *
+                    ns_cascade::smoothSpectrumPathGradientWeight(
+                        path_comparison,
+                        options.objective_weights,
+                        snapshot));
         }
         gradient = system.adjointRungeKutta4Step(
             evaluation.trajectory[step],
@@ -787,7 +808,11 @@ ns_cascade::OptimizationState fullInitialGradient(
                 options.objective_weights,
                 path_comparison.snapshots[snapshot],
                 false),
-            path_gradient_scale);
+            -options.objective_weights.profile_path_penalty_weight *
+                ns_cascade::smoothSpectrumPathGradientWeight(
+                    path_comparison,
+                    options.objective_weights,
+                    snapshot));
     }
     return gradient;
 }
@@ -1125,6 +1150,19 @@ StartResult optimizeStart(
             const Evaluation trial = evaluateTrajectory(
                 coarse_system, trial_state, options, true, false);
             ++trajectory_count;
+            writeTraceRow(trace,
+                          iteration,
+                          "line-trial",
+                          "coarse",
+                          trial,
+                          options,
+                          gradient_norm,
+                          gradient_relative_error,
+                          gradient_slope,
+                          line_angle,
+                          trajectory_count,
+                          nullptr,
+                          start_index);
             if (trial.valid &&
                 trial.objective.total >
                     current.objective.total +
