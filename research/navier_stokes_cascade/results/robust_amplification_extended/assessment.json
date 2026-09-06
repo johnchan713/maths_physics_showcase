@@ -1,0 +1,54 @@
+{
+  "evidence": {
+    "coarse": {
+      "h_final": 1.0790448401937303,
+      "l3_final": 0.9863831993264983,
+      "vorticity_final": 1.5064466779960635,
+      "enstrophy_final": 1.4933097292950162,
+      "scale_final": 1.2334291777657693,
+      "h_late": 1.0421767194656968,
+      "h_late_min_step": 1.0099480295390955,
+      "stretch_late_min": 9.648878953448952,
+      "vorticity_peak_sampled": 1.5064466779960635
+    },
+    "fine": {
+      "h_final": 1.079088315550624,
+      "l3_final": 0.9865944527128684,
+      "vorticity_final": 1.6047980996489404,
+      "enstrophy_final": 1.495045195012167,
+      "scale_final": 1.2341473830240914,
+      "h_late": 1.042218588464451,
+      "h_late_min_step": 1.009974913000884,
+      "stretch_late_min": 9.500616478239625,
+      "vorticity_peak_sampled": 1.6047980996489404
+    }
+  },
+  "conservative": {
+    "h_final": 1.0790448401937303,
+    "l3_final": 0.9863831993264983,
+    "vorticity_final": 1.5064466779960635,
+    "enstrophy_final": 1.4933097292950162,
+    "scale_final": 1.2334291777657693,
+    "h_late": 1.0421767194656968,
+    "h_late_min_step": 1.0099480295390955,
+    "stretch_late_min": 9.500616478239625,
+    "vorticity_peak_sampled": 1.5064466779960635
+  },
+  "cross_relative": {
+    "h_final": 4.028897011219765e-05,
+    "l3_final": 0.00021412383354597184,
+    "vorticity_final": 0.0612858537621598,
+    "enstrophy_final": 0.00116081154131047,
+    "scale_final": 0.000581944481024835,
+    "stretch_late_min": 0.015365772119706309
+  },
+  "steps": {
+    "coarse": 640,
+    "fine": 667
+  },
+  "peak_cutoff": 0.000276205784588883,
+  "numerical_failures": [],
+  "physics_failures": [],
+  "profile_route_eligible": false,
+  "native_grid_vorticity_disagreement": 0.06145535595831631
+}

@@ -1,0 +1,10 @@
+start 0 best pair-score=-0.1696897145 H1/2=1.057465591 profile-drift=5.45413693 shape-penalty=0.07980774193 path-penalty=0.0601970021 globally-selected=yes
+Adjoint Fourier-state optimization complete
+  family/bandwidth/real-dofs: wave-packets/3/684
+  starts/selected start/iteration: 1/0/0
+  accepted steps/trajectories: 0/2
+  coarse objective/H1/2/k_rms/drift/cutoff: 0.0588562107453/1.05695666888/1.15831310391/6.62368371769/0.00591306288377
+  fine objective/H1/2/k_rms/drift/cutoff: 0.0782630836472/1.05746559089/1.16201036587/5.45413693012/3.37434179414e-05
+  cross-resolution/refinement-eligible: yes/no
+  outputs: /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/checkpoint-half-dt/trace.csv and /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/checkpoint-half-dt/state.csv
+This constrained floating-point candidate is not a PDE proof. Profile eligibility refers only to the profile route; amplification requires separate robustness checks.

@@ -50,6 +50,7 @@ jobs:
           navier_stokes_candidate_score_tests
           navier_stokes_parameter_optimizer_tests
           navier_stokes_state_optimizer_tests
+          navier_stokes_candidate_evidence_tests
           navier_stokes_fftw_compare
           navier_stokes_fftw_tests
 
@@ -69,6 +70,42 @@ jobs:
           --diagnostic-every 2
           --output navier_stokes_fftw_comparison.csv
 
+      - name: Run amplification discovery and held-out screening smoke
+        run: |
+          python3 research/navier_stokes_cascade/scripts/robust_search.py \
+            --optimizer ./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+            --oracle ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare \
+            --families wave-packets --starts 1 --bandwidth 2 \
+            --discovery-time 0.005 --holdout-time 0.01 --max-finalists 1 \
+            --output-dir navier_stokes_robust_smoke
+          python3 - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+          m = json.loads(Path('navier_stokes_robust_smoke/manifest.json').read_text())
+          assert len(m['runs']) == 4
+          assert all('result' in r and not r['result']['numerical_failures'] for r in m['runs'])
+          assert len(m['finalists']) == 1
+          assert m['finalists'][0]['status'] == 'screening-only'
+          assert m['finalists'][0]['failures']
+          # Logging frequency must not change the physical evidence or state.
+          binary = './build/research/navier_stokes_cascade/navier_stokes_state_optimize'
+          base = [binary, '--search-track', 'amplification', '--seed-bandwidth', '2',
+                  '--state-input', 'navier_stokes_robust_smoke/wave-packets-0-discovery/state.csv',
+                  '--final-time', '0.01', '--dt', '0.0005', '--fine-max-dt', '0.0005',
+                  '--iterations', '0']
+          for cadence in (1, 97):
+              prefix = 'navier_stokes_robust_smoke/cadence-' + str(cadence)
+              subprocess.run(base + ['--diagnostic-every', str(cadence),
+                             '--output', prefix + '-trace.csv',
+                             '--evidence-output', prefix + '-evidence.csv',
+                             '--state-output', prefix + '-state.csv'], check=True)
+          for suffix in ('evidence', 'state'):
+              paths = [Path('navier_stokes_robust_smoke/cadence-' + str(c) + '-' + suffix + '.csv')
+                       for c in (1, 97)]
+              assert paths[0].read_bytes() == paths[1].read_bytes()
+          PY
+
       - name: Replay smooth-maximum local candidate through independent FFTW
         run: >-
           ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare
@@ -81,6 +118,20 @@ jobs:
           --state-input
           research/navier_stokes_cascade/candidates/wave_k3_smoothmax_t008_screening.csv
           --output navier_stokes_smoothmax_candidate_fftw.csv
+
+      - name: Replay amplification finalist through independent FFTW
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          state = Path('research/navier_stokes_cascade/candidates/wave_k3_amplification_t004_screening.csv')
+          assert hashlib.sha256(state.read_bytes()).hexdigest() == '5f3dc4449abd58f5ae5e1aca3443b2a0fa7ad06029f9dadae939ff2b9a3b51d8'
+          PY
+          ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare \
+            --grid 32 --viscosity 0.02 --energy 10 --dt 0.000125 \
+            --final-time 0.06 --diagnostic-every 25 \
+            --state-input research/navier_stokes_cascade/candidates/wave_k3_amplification_t004_screening.csv \
+            --output navier_stokes_amplification_candidate_fftw.csv
 
       - name: Run convergence smoke comparison
         run: >-
@@ -302,6 +353,8 @@ jobs:
             navier_stokes_profile_screening_replay.csv
             navier_stokes_fftw_comparison.csv
             navier_stokes_smoothmax_candidate_fftw.csv
+            navier_stokes_amplification_candidate_fftw.csv
+            navier_stokes_robust_smoke/
             navier_stokes_path_screening_replay.csv
             navier_stokes_smoothmax_screening_replay.csv
             segment-a.csv

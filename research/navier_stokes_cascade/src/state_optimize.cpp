@@ -1,4 +1,5 @@
 #include "ns_cascade/candidate_score.hpp"
+#include "ns_cascade/candidate_evidence.hpp"
 #include "ns_cascade/optimization_state_csv.hpp"
 #include "ns_cascade/spectral_profile.hpp"
 #include "ns_cascade/state_optimizer.hpp"
@@ -85,6 +86,9 @@ struct Options {
     double profile_drift_threshold = 1.0;
     double minimum_characteristic_growth = 1.10;
     double minimum_critical_growth = 1.005;
+    bool amplification_track = false;
+    int evidence_grid_size = 0;
+    std::string evidence_output;
     std::string state_input;
     std::string output = "navier_stokes_state_optimization.csv";
     std::string state_output = "navier_stokes_optimized_state.csv";
@@ -133,6 +137,8 @@ struct Evaluation {
 };
 
 struct PairAssessment {
+    bool both_valid = false;
+    double selection_score = -std::numeric_limits<double>::infinity();
     bool preliminary_cross_resolution_ok = false;
     bool profile_drift_comparison_valid = false;
     bool profile_windows_recent = false;
@@ -216,6 +222,10 @@ void printUsage(const char* program) {
         << "  --cutoff-threshold F        Hard cutoff gate (default: 0.01)\n"
         << "  --profile-scale-window X    log(k_rms) window (default: 0.01)\n"
         << "  --state-input PATH          Base checkpoint for replay or local starts\n"
+        << "  --search-track NAME         profile (default) or amplification; the\n"
+           "                              latter disables both shape penalties\n"
+        << "  --evidence-output PATH      Fixed-time PDE budgets and common-grid samples\n"
+        << "  --evidence-grid N           Spatial sampling grid (default: fine grid)\n"
         << "  --output PATH               Optimization trace CSV\n"
         << "  --state-output PATH         Optimized coefficient CSV\n"
         << "  --help                      Show this message\n";
@@ -317,6 +327,17 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--profile-scale-window") {
             options.profile_log_scale_window =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--search-track") {
+            const std::string track = requireValue(i, argc, argv);
+            if (track != "profile" && track != "amplification") {
+                throw std::invalid_argument("Unknown search track: " + track);
+            }
+            options.amplification_track = track == "amplification";
+        } else if (flag == "--evidence-output") {
+            options.evidence_output = requireValue(i, argc, argv);
+        } else if (flag == "--evidence-grid") {
+            options.evidence_grid_size =
+                parseNumber<int>(requireValue(i, argc, argv), flag);
         } else if (flag == "--state-input") {
             options.state_input = requireValue(i, argc, argv);
         } else if (flag == "--output") {
@@ -328,6 +349,20 @@ Options parseOptions(int argc, char** argv) {
         }
     }
 
+    if (options.amplification_track) {
+        options.objective_weights.profile_shape_penalty_weight = 0.0;
+        options.objective_weights.profile_path_penalty_weight = 0.0;
+    }
+    if (options.evidence_grid_size == 0) {
+        options.evidence_grid_size = options.fine_grid_size;
+    }
+    if (options.evidence_grid_size < options.fine_grid_size ||
+        (!options.evidence_output.empty() &&
+         (options.evidence_output == options.output ||
+          options.evidence_output == options.state_output ||
+          options.evidence_output == options.state_input))) {
+        throw std::invalid_argument("Invalid candidate evidence grid or path");
+    }
     if (options.grid_size < 8 || options.fine_grid_size <= options.grid_size ||
         options.cutoff < 0 || options.fine_cutoff < 0 ||
         options.seed_bandwidth < 1 || options.start_count < 1 ||
@@ -822,6 +857,7 @@ PairAssessment assessPair(const Evaluation& coarse,
                           const Options& options) {
     PairAssessment assessment;
     if (!coarse.completed || !fine.completed) return assessment;
+    assessment.both_valid = coarse.valid && fine.valid;
     const double coarse_l3 = ratio(coarse.peak_l3, coarse.initial_l3);
     const double fine_l3 = ratio(fine.peak_l3, fine.initial_l3);
     const double coarse_h = ratio(coarse.peak_h_half, coarse.initial_h_half);
@@ -898,11 +934,23 @@ PairAssessment assessPair(const Evaluation& coarse,
         options.minimum_characteristic_growth;
     evidence.minimum_critical_growth = options.minimum_critical_growth;
     assessment.score = ns_cascade::scoreResolutionPair(evidence);
+    // Amplification discovery must not inherit a self-similarity requirement.
+    // Common-grid physics and held-out validation are separate screening gates.
+    assessment.selection_score = options.amplification_track
+        ? std::min(coarse.objective.total, fine.objective.total)
+        : assessment.score.total;
     return assessment;
 }
 
 bool pairPreferred(const PairAssessment& candidate,
-                   const PairAssessment& incumbent) {
+                   const PairAssessment& incumbent,
+                   const Options& options) {
+    if (options.amplification_track) {
+        if (candidate.both_valid != incumbent.both_valid) {
+            return candidate.both_valid;
+        }
+        return candidate.selection_score > incumbent.selection_score;
+    }
     if (candidate.score.refinement_eligible !=
         incumbent.score.refinement_eligible) {
         return candidate.score.refinement_eligible;
@@ -967,6 +1015,10 @@ void writeTraceRow(std::ostream& output,
            << ',' << (pair != nullptr && pair->score.refinement_eligible
                           ? "true" : "false")
            << ',' << start_index
+           << ',' << (options.amplification_track ? "amplification" : "profile")
+           << ',' << (pair == nullptr ?
+                          std::numeric_limits<double>::quiet_NaN() :
+                          pair->selection_score)
            << '\n';
 }
 
@@ -981,6 +1033,39 @@ void writeState(const std::string& path,
         seedFamilyName(options.seed_family),
         options.seed_bandwidth,
         options.initial_energy);
+}
+
+void writeEvidenceRows(
+    std::ostream& output,
+    const char* resolution,
+    const ns_cascade::PseudospectralSystem& system,
+    const ns_cascade::PseudospectralSystem& sampling_system,
+    const ns_cascade::OptimizationState& initial,
+    const Evaluation& evaluation,
+    const Options& options) {
+    for (std::size_t i = 0; i <= evaluation.profile_path_states.size(); ++i) {
+        const ns_cascade::OptimizationState& state = i == 0
+            ? initial : evaluation.profile_path_states[i - 1];
+        const ns_cascade::PseudospectralSystem::Diagnostics d =
+            ns_cascade::candidateDiagnostics(system, state, sampling_system);
+        if (!finiteDiagnostics(d)) {
+            throw std::runtime_error("Non-finite candidate evidence");
+        }
+        output << resolution << ',' << system.gridSize() << ','
+               << system.cutoff() << ',' << sampling_system.gridSize() << ','
+               << i << ',' << options.final_time * static_cast<double>(i) /
+                   static_cast<double>(options.profile_path_samples) << ','
+               << d.energy << ',' << d.enstrophy << ',' << d.palinstrophy << ','
+               << d.critical_h_half << ',' << d.critical_l3_sample << ','
+               << d.sampled_vorticity_max << ','
+               << d.vorticity_sup_upper_bound << ','
+               << std::sqrt(d.enstrophy / d.energy) << ','
+               << d.nonlinear_enstrophy_production << ','
+               << d.viscous_enstrophy_destruction << ','
+               << d.net_enstrophy_rate << ','
+               << d.enstrophy_production_to_dissipation << ','
+               << d.high_shell_energy_fraction << '\n';
+    }
 }
 
 StartResult optimizeStart(
@@ -1168,7 +1253,8 @@ StartResult optimizeStart(
                     current.objective.total +
                         options.armijo_fraction * line_angle *
                             gradient_slope &&
-                trial.score.total > current.score.total) {
+                (options.amplification_track ||
+                 trial.score.total > current.score.total)) {
                 accepted = true;
                 accepted_state = trial_state;
                 accepted_value = trial;
@@ -1232,7 +1318,7 @@ StartResult optimizeStart(
                       &accepted_pair,
                       start_index);
         const bool accepted_pair_preferred =
-            pairPreferred(accepted_pair, best_pair);
+            pairPreferred(accepted_pair, best_pair, options);
         if (accepted_pair_preferred) {
             best_state = current_state;
             best_coarse = current;
@@ -1303,6 +1389,9 @@ int run(const Options& options) {
         options.grid_size, options.viscosity, options.cutoff);
     const ns_cascade::PseudospectralSystem fine_system(
         options.fine_grid_size, options.viscosity, options.fine_cutoff);
+    const ns_cascade::PseudospectralSystem sampling_system(
+        options.evidence_grid_size, options.viscosity,
+        std::max(coarse_system.cutoff(), fine_system.cutoff()));
     if (options.seed_bandwidth > coarse_system.cutoff()) {
         throw std::invalid_argument(
             "Seed bandwidth exceeds the coarse retained cutoff");
@@ -1328,7 +1417,7 @@ int run(const Options& options) {
              "gradient_relative_error,gradient_slope,line_angle,"
              "trajectory_count,pair_search_score,"
              "preliminary_cross_resolution_ok,refinement_eligible,"
-             "start_index\n";
+             "start_index,search_track,selection_score\n";
 
     StartResult selected;
     bool have_selected = false;
@@ -1361,7 +1450,7 @@ int run(const Options& options) {
         }
         const bool candidate_preferred =
             !have_selected ||
-            pairPreferred(candidate.best_pair, selected.best_pair);
+            pairPreferred(candidate.best_pair, selected.best_pair, options);
         if (candidate_preferred) {
             selected = candidate;
             have_selected = true;
@@ -1420,6 +1509,24 @@ int run(const Options& options) {
                coarse_system,
                selected.best_state,
                options);
+    if (!options.evidence_output.empty()) {
+        std::ofstream evidence(options.evidence_output.c_str());
+        if (!evidence) throw std::runtime_error("Could not open evidence CSV");
+        evidence << std::setprecision(17)
+                 << "resolution,grid,cutoff,sampling_grid,snapshot,time,energy,"
+                    "enstrophy,palinstrophy,h_half,l3_sample,vorticity_sample,"
+                    "vorticity_fourier_upper_bound,k_rms,stretching,"
+                    "viscous_destruction,net_enstrophy_rate,"
+                    "production_to_dissipation,cutoff_fraction\n";
+        writeEvidenceRows(evidence, "coarse", coarse_system, sampling_system,
+                          selected.best_state, selected.best_coarse, options);
+        const ns_cascade::OptimizationState fine_initial =
+            ns_cascade::liftOptimizationState(
+                coarse_system, selected.best_state, fine_system);
+        writeEvidenceRows(evidence, "fine", fine_system, sampling_system,
+                          fine_initial, selected.best_fine, options);
+        if (!evidence) throw std::runtime_error("Failed writing evidence CSV");
+    }
 
     std::cout << std::setprecision(12)
               << "Adjoint Fourier-state optimization complete\n"
@@ -1463,7 +1570,8 @@ int run(const Options& options) {
               << "  outputs: " << options.output << " and "
               << options.state_output << '\n'
               << "This constrained floating-point candidate is not a PDE "
-                 "proof and cannot bypass the resolution/profile gates.\n";
+                 "proof. Profile eligibility refers only to the profile route; "
+                 "amplification requires separate robustness checks.\n";
     return 0;
 }
 

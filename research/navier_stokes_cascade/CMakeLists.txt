@@ -74,6 +74,19 @@ else()
 endif()
 
 if(BUILD_TESTING)
+    add_executable(navier_stokes_candidate_evidence_tests
+        tests/test_candidate_evidence.cpp
+    )
+    target_link_libraries(navier_stokes_candidate_evidence_tests PRIVATE ns_cascade)
+    add_test(NAME navier_stokes_candidate_evidence
+             COMMAND navier_stokes_candidate_evidence_tests)
+    find_package(Python3 COMPONENTS Interpreter)
+    if(Python3_Interpreter_FOUND)
+        add_test(NAME navier_stokes_robust_search
+                 COMMAND ${Python3_EXECUTABLE}
+                         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_robust_search.py)
+    endif()
+
     add_executable(navier_stokes_cascade_tests
         tests/test_galerkin.cpp
     )

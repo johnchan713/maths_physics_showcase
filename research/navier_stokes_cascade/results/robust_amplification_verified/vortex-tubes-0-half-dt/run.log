@@ -1,0 +1,10 @@
+start 0 best pair-score=-0.2050459176 H1/2=1.01558846 profile-drift=7.471935696 shape-penalty=0.06576337438 path-penalty=0.04611444258 globally-selected=yes
+Adjoint Fourier-state optimization complete
+  family/bandwidth/real-dofs: vortex-tubes/3/684
+  starts/selected start/iteration: 1/0/0
+  accepted steps/trajectories: 0/2
+  coarse objective/H1/2/k_rms/drift/cutoff: 0.0113295918259/1.01518238973/1.05813285625/7.45217867847/0.00357119705792
+  fine objective/H1/2/k_rms/drift/cutoff: 0.024193384696/1.01558846018/1.06047894631/7.47193569593/2.0751466055e-05
+  cross-resolution/refinement-eligible: no/no
+  outputs: /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/vortex-tubes-0-half-dt/trace.csv and /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/vortex-tubes-0-half-dt/state.csv
+This constrained floating-point candidate is not a PDE proof. Profile eligibility refers only to the profile route; amplification requires separate robustness checks.

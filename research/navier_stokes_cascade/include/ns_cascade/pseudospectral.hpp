@@ -960,6 +960,12 @@ public:
         return value;
     }
 
+    // Spatial quadrature and a sampled maximum, not certified continuum norms.
+    std::pair<double, double> sampledPhysicalNorms(const State& state) const {
+        requireCompatible(state);
+        return sampledNorms(state);
+    }
+
     Diagnostics diagnostics(const State& state,
                             int sample_points_per_axis = 0) const {
         requireCompatible(state);

@@ -1,2 +1,3 @@
 *.csv
 !candidates/*.csv
+!results/**/*.csv

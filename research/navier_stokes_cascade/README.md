@@ -24,6 +24,16 @@ one allowed smooth datum whose solution breaks down in finite time. Weak
 non-uniqueness from singular data, blow-up for a modified/averaged equation,
 or a large finite numerical value does not settle that statement.
 
+The search now has two distinct routes. The historical `profile` route looks
+for a relatively stationary **rescaled shell-energy spectrum**. The newer
+`amplification` route looks for sustained finite critical-norm growth and
+vortex stretching that survive held-out numerical checks. Profile rejection
+does not rule out other singularity mechanisms. Conversely, a stationary
+shell spectrum is weaker than a self-similar velocity field and proves
+neither singularity nor regularity. Historical statements below about a
+candidate being rejected or not worth refining refer to that earlier route
+and its chosen compute budget.
+
 ## What is implemented
 
 Three numerical paths now evolve a mean-zero, real, divergence-free velocity
@@ -1152,12 +1162,141 @@ Peak whole-state and diagnostic disagreements were `7.85e-16` and `8.94e-16`.
 The small numerical change is reproducible, but it remains nowhere near proof
 evidence.
 
-The next objective should target the actual failure exposed here: compare
+One possible further objective for the profile route is to compare
 adjacent rescaled spectra and divide their smooth shape change by the
 corresponding `log(k_rms)` advance, then take a smooth maximum over those
 local rates. That mirrors the strict windowed drift much more closely than
 comparing every snapshot with the initial spectrum. Its gradient must include
 both endpoints of every adjacent pair and the scale-advance denominator.
+
+## Robust amplification search
+
+The repository already contains the relevant PDE structure. Adding a generic
+heat or Poisson solver does not discover singular initial data; those methods
+are useful for verification and for deriving constraints on a search.
+
+| Existing component | Role in candidate discovery |
+|---|---|
+| `include/maths/pde_variational_methods.hpp` | Galerkin/Ritz and energy-method examples; its 1D boundary-value discretizations are not a replacement for the 3D evolution |
+| `include/maths/pde_numerical_methods.hpp` and Fourier methods | Linear diffusion, stability and spectral checks; the exact decaying-shear test exercises that PDE limit |
+| `include/ns_cascade/pseudospectral.hpp` | The actual dealiased 3D equation, spectral norms, vortex-stretching budget, and viscosity |
+| `include/ns_cascade/state_optimizer.hpp` | Checked discrete adjoint and constrained optimization of Fourier coefficients at fixed energy and bandwidth |
+| `scripts/robust_search.py` | Diverse starts, conservative multi-objective shortlist, and held-out trajectory validation |
+
+The first two paths in the table are relative to the repository root; the
+remaining paths are relative to this research directory. Adjoint searches for
+large finite-time enstrophy growth have precedent in
+[Kang, Yun and Protas](https://arxiv.org/abs/1909.00041). Their numerical search
+fixes initial enstrophy and varies the horizon; this pilot instead fixes
+energy, initial bandwidth, viscosity and horizon within each comparison.
+It is not a reproduction of their optimization or a rigorous growth bound.
+
+With volume-normalized integrals, define
+
+```text
+E = (1/2) integral |u|^2,    Z = (1/2) integral |curl u|^2,
+P = (1/2) integral |grad curl u|^2,    S = (grad u + grad u^T)/2.
+dE/dt = -2 nu Z,
+dZ/dt = integral omega . S omega - 2 nu P.
+```
+
+The solver already measures the two terms in the second balance. Production
+divided by destruction exceeding one means instantaneous positive net
+enstrophy production. The new search checks it at every fixed snapshot in
+the second half of the trajectory, along with continued H1/2 growth. Neither
+condition is necessary or sufficient for blow-up; together they help separate
+sustained finite amplification from a peak that is already decaying.
+
+`navier_stokes_state_optimize --search-track amplification` disables the two
+profile penalties and uses the existing differentiated objective
+
+```text
+J = log(H1/2(T)/H1/2(0)) + 0.15 log(k_rms(T)/k_rms(0))
+    - 0.04 log(1 + cutoff_fraction(T)/0.01).
+```
+
+Line steps must improve this objective by the Armijo condition, pass the
+adjoint/difference check and retain all existing coarse numerical gates.
+The retained state maximizes the smaller coarse/fine objective, prioritizing
+pairs that are valid at both resolutions. The profile score and
+`refinement_eligible` column remain visible as **profile-route** diagnostics;
+they cannot veto amplification discovery. Default `--search-track profile`
+preserves the historical behavior. Two trace columns are appended:
+`search_track` and `selection_score`.
+
+`--evidence-output` exports budgets and physical samples at `j*T/S`, including
+the initial state and the exact midpoint. Both evolutions' physical L3
+quadrature and sampled vorticity maximum use one `--evidence-grid` (default:
+the fine grid). Zero padding evaluates the same Fourier polynomial more
+densely; it does not recover unresolved dynamics or certify a continuum
+maximum. Spectral budgets and cutoff fractions still belong to each actual
+evolving truncation. These rows do not depend on `--diagnostic-every`.
+
+Run the default seven-seed pilot from the repository root:
+
+```sh
+python3 research/navier_stokes_cascade/scripts/robust_search.py \
+  --optimizer build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+  --oracle build/research/navier_stokes_cascade/navier_stokes_fftw_compare \
+  --checkpoint research/navier_stokes_cascade/candidates/wave_k3_smoothmax_t008_screening.csv \
+  --output-dir robust-amplification-pilot
+```
+
+The output directory must be new, so stale files cannot pass as a new result.
+The manifest records every command, exit status, rejection, executable and
+source checksum, trace, fixed-time budget and selected coefficient file.
+Defaults search the packet, tube and orthogonal-bundle families with two
+deterministic sphere starts each, plus the optional saved packet. Each seed
+receives one adjoint step at `T=0.04`, `E=10`, `nu=0.02`, initial `K=3` and
+evolution grids `16/32`. This is a bounded search of 684 real variables per
+seed, not coverage of all initial data.
+Family names identify the starting seeds; optimization varies all allowed
+low Fourier modes and does not preserve an exact tube or packet ansatz.
+
+The discovery shortlist retains non-dominated trade-offs in conservative
+H1/2 growth, late H1/2 growth, scale advance, late stretching, cutoff loading
+and cross-resolution disagreement. Round-robin objectives and family
+diversity choose up to three held-out probes; membership alone is not a pass.
+The exported thresholds are predeclared experimental choices:
+
+- per-step cutoff fraction at most `0.008`, leaving margin below the solver's
+  `0.01` hard cutoff gate;
+- coarse/fine differences at most 2% in final H1/2 and common-grid L3 ratios,
+  10% in final sampled-vorticity ratio and late minimum production/destruction,
+  and 5% in enstrophy and characteristic-scale ratios;
+- both resolutions have final H1/2 ratio at least `1.005`, second-half ratio
+  at least `1.001`, no sampled late reversal, scale ratio at least `1.05`, and
+  production/destruction above one throughout the sampled late window;
+- each selected **unchanged initial field** runs at a longer `T=0.06`, again
+  with step caps no larger than half their original caps or half their
+  observed mean steps (both trajectories must use at least 1.9 times as many
+  steps), and again with twice the spatial
+  sampling grid and twice as many fixed snapshots;
+- perturbations change endpoint ratios by at most `0.1%` (2% for vorticity
+  under denser spatial sampling, and for the late stretching minimum), and
+  the minimum critical growth exceeds three times the observed H1/2-ratio
+  spread across all six held-out trajectories;
+- an independent fine-grid FFTW trajectory passes before any state is marked
+  `validated-finite-amplification-shortlist`. Omitting the oracle leaves it
+  `screening-only`.
+
+The measured spread is an empirical error indicator, not a certified bound.
+Passing these gates earns a larger-resolution investigation, not a claim
+about the infinite-dimensional PDE. L3 decay remains visible even if H1/2
+passes. The analytic shifted-shear regression checks the physical budget,
+known diffusion, common-grid samples and rejection of dropped modes. Python
+tests exercise incomplete/corrupt evidence, smooth decay, cutoff margin,
+route separation, multi-objective trade-offs and growth smaller than error.
+
+The first completed seven-seed pilot retained three finite-amplification
+finalists. Their worst held-out H1/2 gains were 5.70%, 5.13% and 1.52% at
+`T=0.06`; all three passed the denser samples, actual timestep refinement and
+independent FFTW checks. None passed the profile route and all final L3
+ratios were below one. The leading frozen packet subsequently reached
+7.90–7.91% H1/2 growth at `T=0.08` on `N=32/64`. Its H1/2 ratio agreed to
+0.00403%, while the sampled-vorticity ratio still differed by 6.13%.
+See the [full experimental record](results/README.md) for the exact data,
+checksums, limitations and reproduction commands.
 
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
@@ -1172,14 +1311,15 @@ workflow artifacts.
 
 ## Interpretation guardrails
 
-Every fixed Galerkin cutoff is a smooth finite-dimensional ODE, so it cannot by
+At a fixed cutoff the Galerkin energy bound controls every coordinate of its
+finite-dimensional ODE and prevents finite-time divergence. It cannot by
 itself demonstrate PDE singularity. In particular:
 
 - growth that changes when `K`, the grid, or `dt` changes is a resolution
   artifact until proved otherwise;
 - cutoff-shell energy above roughly one percent is reported as an
   under-resolution warning, not evidence of blow-up;
-- `cutoff_shell_ok=true` is only one necessary resolution check, not a general
+- `cutoff_shell_ok=true` passes one empirical resolution gate, not a general
   certificate that the run is converged;
 - the sampled vorticity maximum is a lower estimate of the truncated field's
   true maximum, while the Fourier sum is an often-loose upper bound;
@@ -1217,8 +1357,10 @@ The present sharp candidate fails the stationary-profile gate, so a `128^3`
 run of exactly the same geometry is deprioritized. The candidate search now
 uses fixed-forward-scale profile windows, explicit profile-drift and cutoff
 costs, a conservative paired coarse/fine score, and a strict refinement gate.
-Only candidates whose critical-norm growth, scale motion, profile stationarity,
-and cross-resolution agreement all pass that gate may seed a narrower sweep.
+For the profile route, candidates whose critical-norm growth, scale motion,
+profile stationarity and cross-resolution agreement pass that gate may seed a
+narrower sweep. The separate amplification route above does not impose
+stationarity of the rescaled spectrum.
 The first 12-case `32^3 -> 64^3` pair neighbourhood search produced no
 survivor. The initial-data family has now been broadened to an exactly
 divergence-free six-tube orthogonal bundle, with structural tests, search

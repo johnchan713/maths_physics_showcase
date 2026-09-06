@@ -1,0 +1,8 @@
+Independent FFTW trajectory comparison
+  grid/cutoff: 64/21
+  initial family: saved-optimization-state
+  final time/steps: 0.08/666
+  peak relative state difference: 1.40916495127e-15
+  peak diagnostic scaled difference: 1.9137050822e-15
+  peak divergence/reality defects: 1.33688555546e-15/3.71366360011e-16
+  verdict: pass
