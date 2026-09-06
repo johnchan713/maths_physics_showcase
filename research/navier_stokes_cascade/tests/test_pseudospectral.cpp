@@ -396,6 +396,10 @@ void testRescaledSpectrumProfile() {
         ns_cascade::rescaledSpectrumProfile(system, unit_state, 16, 4.0);
     const ns_cascade::SpectrumProfile scaled_profile =
         ns_cascade::rescaledSpectrumProfile(system, scaled_state, 16, 4.0);
+    expectNear(system.cutoffShellEnergyFraction(unit_state),
+               system.diagnostics(unit_state).high_shell_energy_fraction,
+               0.0,
+               "Public cutoff-shell fraction disagrees with diagnostics");
 
     expectNear(unit_profile.characteristic_wavenumber,
                std::sqrt(3.0),
@@ -434,6 +438,34 @@ void testRescaledSpectrumProfile() {
                0.0,
                2e-15,
                "An exactly preserved rescaled shape has nonzero drift");
+
+    ns_cascade::PseudospectralSystem::State low_shell = system.zeroState();
+    ns_cascade::PseudospectralSystem::State high_shell = system.zeroState();
+    for (std::size_t i = 0; i < system.gridModes().size(); ++i) {
+        const ns_cascade::WaveVector& wave = system.gridModes()[i];
+        if (wave.y == 0 && wave.z == 0 && std::abs(wave.x) == 1) {
+            low_shell[i] = ns_cascade::ComplexVector(0.0, 1.0, 0.0);
+        }
+        if (wave.y == 0 && wave.z == 0 && std::abs(wave.x) == 2) {
+            high_shell[i] = ns_cascade::ComplexVector(0.0, 1.0, 0.0);
+        }
+    }
+    const ns_cascade::SpectrumProfile low_shell_profile =
+        ns_cascade::rescaledSpectrumProfile(system, low_shell, 16, 4.0);
+    const ns_cascade::SpectrumProfile high_shell_profile =
+        ns_cascade::rescaledSpectrumProfile(system, high_shell, 16, 4.0);
+    const ns_cascade::SpectrumProfileChange shell_rescaling =
+        ns_cascade::spectrumProfileChange(
+            high_shell_profile, low_shell_profile);
+    expectNear(high_shell_profile.characteristic_wavenumber /
+                   low_shell_profile.characteristic_wavenumber,
+               2.0,
+               0.0,
+               "Synthetic spectrum did not move by its exact scale factor");
+    expectNear(shell_rescaling.l1_per_log_scale_change,
+               0.0,
+               0.0,
+               "An exact discrete spectral rescaling has nonzero shape drift");
 
     ns_cascade::PseudospectralSystem::State evolved = unit_state;
     for (int step = 0; step < 20; ++step) {

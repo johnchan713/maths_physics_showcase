@@ -400,6 +400,11 @@ public:
         return value;
     }
 
+    double cutoffShellEnergyFraction(const State& state) const {
+        requireCompatible(state);
+        return highShellEnergyFraction(state);
+    }
+
     double palinstrophy(const State& state) const {
         requireCompatible(state);
         double value = 0.0;

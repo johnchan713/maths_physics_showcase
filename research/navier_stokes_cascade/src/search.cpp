@@ -1,4 +1,6 @@
+#include "ns_cascade/candidate_score.hpp"
 #include "ns_cascade/pseudospectral.hpp"
+#include "ns_cascade/spectral_profile.hpp"
 
 #include <algorithm>
 #include <chrono>
@@ -27,6 +29,12 @@ struct Options {
     int top_count = 3;
     std::vector<double> initial_energies = {1.0};
     double cutoff_fraction_threshold = 0.01;
+    int profile_bin_count = 32;
+    double profile_maximum_coordinate = 4.0;
+    double profile_log_scale_window = 0.025;
+    double profile_drift_threshold = 1.0;
+    double minimum_characteristic_growth = 1.10;
+    double minimum_critical_growth = 1.005;
     std::vector<double> core_radii = {0.55, 0.70};
     std::vector<double> separations = {1.2, 1.8};
     std::vector<double> bend_amplitudes = {0.0, 0.30};
@@ -76,6 +84,18 @@ struct RunResult {
     double maximum_nonlinear_enstrophy_production;
     double maximum_enstrophy_production_to_dissipation;
     double maximum_net_enstrophy_rate;
+    double initial_characteristic_wavenumber;
+    double final_characteristic_wavenumber;
+    int profile_scale_windows;
+    double first_profile_drift;
+    double latest_profile_drift;
+    double minimum_profile_drift;
+    double latest_profile_window_time;
+    bool profile_stationarity_improving;
+    double profile_drift_cost;
+    double profile_trend_reward;
+    double profile_rebound_cost;
+    double cutoff_cost;
     double score;
     double elapsed_seconds;
 
@@ -122,8 +142,55 @@ struct RunResult {
               std::numeric_limits<double>::quiet_NaN()),
           maximum_net_enstrophy_rate(
               std::numeric_limits<double>::quiet_NaN()),
+          initial_characteristic_wavenumber(
+              std::numeric_limits<double>::quiet_NaN()),
+          final_characteristic_wavenumber(
+              std::numeric_limits<double>::quiet_NaN()),
+          profile_scale_windows(0),
+          first_profile_drift(std::numeric_limits<double>::quiet_NaN()),
+          latest_profile_drift(std::numeric_limits<double>::quiet_NaN()),
+          minimum_profile_drift(std::numeric_limits<double>::quiet_NaN()),
+          latest_profile_window_time(
+              std::numeric_limits<double>::quiet_NaN()),
+          profile_stationarity_improving(false),
+          profile_drift_cost(std::numeric_limits<double>::quiet_NaN()),
+          profile_trend_reward(std::numeric_limits<double>::quiet_NaN()),
+          profile_rebound_cost(std::numeric_limits<double>::quiet_NaN()),
+          cutoff_cost(std::numeric_limits<double>::quiet_NaN()),
           score(-std::numeric_limits<double>::infinity()),
           elapsed_seconds(std::numeric_limits<double>::quiet_NaN()) {}
+};
+
+struct PairAssessment {
+    bool preliminary_cross_resolution_ok = false;
+    double l3_ratio_relative_difference =
+        std::numeric_limits<double>::quiet_NaN();
+    double h_half_ratio_relative_difference =
+        std::numeric_limits<double>::quiet_NaN();
+    double vorticity_ratio_relative_difference =
+        std::numeric_limits<double>::quiet_NaN();
+    double flux_relative_difference =
+        std::numeric_limits<double>::quiet_NaN();
+    double characteristic_scale_relative_difference =
+        std::numeric_limits<double>::quiet_NaN();
+    double profile_drift_relative_difference =
+        std::numeric_limits<double>::quiet_NaN();
+    bool profile_drift_comparison_valid = false;
+    bool profile_windows_recent = false;
+    ns_cascade::PairedSearchScore score;
+};
+
+struct FinalistResult {
+    RunResult coarse;
+    RunResult fine;
+    PairAssessment assessment;
+
+    FinalistResult(const RunResult& coarse_value,
+                   const RunResult& fine_value,
+                   const PairAssessment& assessment_value)
+        : coarse(coarse_value),
+          fine(fine_value),
+          assessment(assessment_value) {}
 };
 
 template <typename T>
@@ -194,6 +261,12 @@ void printUsage(const char* program) {
         << "  --bends LIST            Helical bend amplitudes (default: 0,0.30)\n"
         << "  --axial-modes LIST      Positive axial modes (default: 1,2)\n"
         << "  --cutoff-threshold F    Max cutoff-shell energy fraction (default: 0.01)\n"
+        << "  --profile-bins N        Rescaled-spectrum bins before overflow (default: 32)\n"
+        << "  --profile-max-xi X      Last finite |k|/k_rms coordinate (default: 4)\n"
+        << "  --profile-scale-window W  Forward log(k_rms) per drift window (default: 0.025)\n"
+        << "  --profile-drift-threshold D  Max refinement drift (default: 1)\n"
+        << "  --minimum-scale-growth G  Min k_rms ratio for refinement (default: 1.10)\n"
+        << "  --minimum-critical-growth G  Min critical-norm ratio (default: 1.005)\n"
         << "  --output PATH           Summary CSV path\n"
         << "  --help                  Show this message\n";
 }
@@ -257,6 +330,24 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--cutoff-threshold") {
             options.cutoff_fraction_threshold =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-bins") {
+            options.profile_bin_count =
+                parseNumber<int>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-max-xi") {
+            options.profile_maximum_coordinate =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-scale-window") {
+            options.profile_log_scale_window =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-drift-threshold") {
+            options.profile_drift_threshold =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--minimum-scale-growth") {
+            options.minimum_characteristic_growth =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--minimum-critical-growth") {
+            options.minimum_critical_growth =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
         } else if (flag == "--output") {
             options.output = requireValue(i, argc, argv);
         } else {
@@ -296,6 +387,32 @@ Options parseOptions(int argc, char** argv) {
         options.cutoff_fraction_threshold >= 1.0) {
         throw std::invalid_argument(
             "--cutoff-threshold must be finite and in (0,1)");
+    }
+    if (options.profile_bin_count < 4 || options.profile_bin_count > 4096) {
+        throw std::invalid_argument("--profile-bins must be between 4 and 4096");
+    }
+    if (!finiteAndPositive(options.profile_maximum_coordinate)) {
+        throw std::invalid_argument(
+            "--profile-max-xi must be finite and positive");
+    }
+    if (!finiteAndPositive(options.profile_log_scale_window) ||
+        options.profile_log_scale_window >= 1.0) {
+        throw std::invalid_argument(
+            "--profile-scale-window must be finite and in (0,1)");
+    }
+    if (!finiteAndPositive(options.profile_drift_threshold)) {
+        throw std::invalid_argument(
+            "--profile-drift-threshold must be finite and positive");
+    }
+    if (!std::isfinite(options.minimum_characteristic_growth) ||
+        options.minimum_characteristic_growth <= 1.0) {
+        throw std::invalid_argument(
+            "--minimum-scale-growth must be finite and greater than one");
+    }
+    if (!std::isfinite(options.minimum_critical_growth) ||
+        options.minimum_critical_growth <= 1.0) {
+        throw std::invalid_argument(
+            "--minimum-critical-growth must be finite and greater than one");
     }
     if (options.diagnostic_every < 1 || options.top_count < 1) {
         throw std::invalid_argument(
@@ -427,6 +544,12 @@ void recordDiagnostics(
     result.final_h_half = values.critical_h_half;
     result.final_vorticity = values.sampled_vorticity_max;
     result.final_enstrophy = values.enstrophy;
+    if (values.energy <= 0.0 || values.enstrophy <= 0.0) {
+        throw std::runtime_error(
+            "Candidate lost positive energy or enstrophy");
+    }
+    result.final_characteristic_wavenumber =
+        std::sqrt(values.enstrophy / values.energy);
     result.peak_l3 = std::max(result.peak_l3, values.critical_l3_sample);
     result.peak_h_half =
         std::max(result.peak_h_half, values.critical_h_half);
@@ -462,6 +585,31 @@ double ratio(double peak, double initial) {
     return initial == 0.0 ? 0.0 : peak / initial;
 }
 
+ns_cascade::SearchScoreEvidence scoreEvidence(const RunResult& result,
+                                               const Options& options) {
+    ns_cascade::SearchScoreEvidence evidence;
+    evidence.peak_l3_ratio = ratio(result.peak_l3, result.initial_l3);
+    evidence.peak_h_half_ratio =
+        ratio(result.peak_h_half, result.initial_h_half);
+    evidence.final_l3_ratio = ratio(result.final_l3, result.initial_l3);
+    evidence.peak_vorticity_ratio =
+        ratio(result.peak_vorticity, result.initial_vorticity);
+    evidence.peak_cutoff_fraction = result.peak_cutoff_fraction;
+    evidence.cutoff_fraction_threshold = options.cutoff_fraction_threshold;
+    evidence.profile_scale_windows = result.profile_scale_windows;
+    evidence.first_profile_drift = result.profile_scale_windows > 0
+                                       ? result.first_profile_drift
+                                       : 0.0;
+    evidence.latest_profile_drift = result.profile_scale_windows > 0
+                                        ? result.latest_profile_drift
+                                        : 0.0;
+    evidence.minimum_profile_drift = result.profile_scale_windows > 0
+                                         ? result.minimum_profile_drift
+                                         : 0.0;
+    evidence.profile_drift_threshold = options.profile_drift_threshold;
+    return evidence;
+}
+
 RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
                        const Candidate& candidate,
                        const Options& options) {
@@ -475,6 +623,13 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
     if (!finiteDiagnostics(initial)) {
         throw std::runtime_error("Initial diagnostics are non-finite");
     }
+    const ns_cascade::SpectrumProfile initial_profile =
+        ns_cascade::rescaledSpectrumProfile(
+            system,
+            state,
+            options.profile_bin_count,
+            options.profile_maximum_coordinate);
+    ns_cascade::SpectrumProfile profile_anchor = initial_profile;
 
     result.initial_three_dimensional_energy_fraction =
         threeDimensionalEnergyFraction(system, state);
@@ -504,6 +659,12 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
         -std::numeric_limits<double>::infinity();
     result.maximum_net_enstrophy_rate =
         -std::numeric_limits<double>::infinity();
+    result.initial_characteristic_wavenumber =
+        initial_profile.characteristic_wavenumber;
+    result.final_characteristic_wavenumber =
+        initial_profile.characteristic_wavenumber;
+    result.minimum_profile_drift =
+        std::numeric_limits<double>::infinity();
     recordDiagnostics(system, state, initial, result);
 
     double time = 0.0;
@@ -543,6 +704,55 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
             result.maximum_viscous_number,
             step_information.viscous_stability_number);
 
+        const double scale_check_energy = system.energy(state);
+        const double scale_check_enstrophy = system.enstrophy(state);
+        const double scale_check_cutoff_fraction =
+            system.cutoffShellEnergyFraction(state);
+        if (!finiteAndPositive(scale_check_energy) ||
+            !finiteAndPositive(scale_check_enstrophy) ||
+            !std::isfinite(scale_check_cutoff_fraction) ||
+            scale_check_cutoff_fraction < 0.0 ||
+            scale_check_cutoff_fraction > 1.0 + 1e-12) {
+            throw std::runtime_error(
+                "Per-step spectral gate became invalid");
+        }
+        result.peak_cutoff_fraction = std::max(
+            result.peak_cutoff_fraction, scale_check_cutoff_fraction);
+        const double scale_check_wavenumber =
+            std::sqrt(scale_check_enstrophy / scale_check_energy);
+        const double forward_log_scale = std::log(
+            scale_check_wavenumber /
+            profile_anchor.characteristic_wavenumber);
+        if (forward_log_scale >= options.profile_log_scale_window) {
+            const ns_cascade::SpectrumProfile current_profile =
+                ns_cascade::rescaledSpectrumProfile(
+                    system,
+                    state,
+                    options.profile_bin_count,
+                    options.profile_maximum_coordinate);
+            result.final_characteristic_wavenumber =
+                current_profile.characteristic_wavenumber;
+            const ns_cascade::SpectrumProfileChange change =
+                ns_cascade::spectrumProfileChange(
+                    current_profile, profile_anchor);
+            if (!change.scale_normalized_drift_valid) {
+                throw std::runtime_error(
+                    "A completed profile scale window has invalid drift");
+            }
+            if (result.profile_scale_windows == 0) {
+                result.first_profile_drift =
+                    change.l1_per_log_scale_change;
+            }
+            ++result.profile_scale_windows;
+            result.latest_profile_drift =
+                change.l1_per_log_scale_change;
+            result.minimum_profile_drift = std::min(
+                result.minimum_profile_drift,
+                change.l1_per_log_scale_change);
+            result.latest_profile_window_time = time;
+            profile_anchor = current_profile;
+        }
+
         if (result.steps % options.diagnostic_every == 0 ||
             time >= options.final_time) {
             recordDiagnostics(system, state, system.diagnostics(state), result);
@@ -555,16 +765,15 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
         result.maximum_divergence_defect <= 1e-9 &&
         result.maximum_reality_defect <= 1e-9 &&
         result.maximum_energy_balance_residual <= 1e-9;
-    const double l3_growth = ratio(result.peak_l3, result.initial_l3);
-    const double h_half_growth =
-        ratio(result.peak_h_half, result.initial_h_half);
-    const double vorticity_growth =
-        ratio(result.peak_vorticity, result.initial_vorticity);
-    const double final_l3_ratio = ratio(result.final_l3, result.initial_l3);
-    result.score = std::log(std::max(l3_growth, 1e-300)) +
-                   0.25 * std::log(std::max(h_half_growth, 1e-300)) +
-                   0.05 * std::log(std::max(vorticity_growth, 1e-300)) +
-                   0.01 * std::log(std::max(final_l3_ratio, 1e-300));
+    const ns_cascade::SearchScore score =
+        ns_cascade::scoreSingleResolution(scoreEvidence(result, options));
+    result.profile_stationarity_improving =
+        score.profile_stationarity_improving;
+    result.profile_drift_cost = score.profile_drift_cost;
+    result.profile_trend_reward = score.profile_trend_reward;
+    result.profile_rebound_cost = score.profile_rebound_cost;
+    result.cutoff_cost = score.cutoff_cost;
+    result.score = score.total;
     result.elapsed_seconds =
         std::chrono::duration<double>(
             std::chrono::steady_clock::now() - start)
@@ -638,6 +847,87 @@ bool crossResolutionOk(const RunResult& coarse,
            vorticity_growth_signal_agrees;
 }
 
+PairAssessment assessResolutionPair(const RunResult& coarse,
+                                    const RunResult& fine,
+                                    const Options& options) {
+    PairAssessment assessment;
+    if (!coarse.completed || !fine.completed) return assessment;
+
+    assessment.preliminary_cross_resolution_ok = crossResolutionOk(
+        coarse,
+        fine,
+        assessment.l3_ratio_relative_difference,
+        assessment.h_half_ratio_relative_difference,
+        assessment.vorticity_ratio_relative_difference,
+        assessment.flux_relative_difference);
+    const double coarse_characteristic_growth = ratio(
+        coarse.final_characteristic_wavenumber,
+        coarse.initial_characteristic_wavenumber);
+    const double fine_characteristic_growth = ratio(
+        fine.final_characteristic_wavenumber,
+        fine.initial_characteristic_wavenumber);
+    assessment.characteristic_scale_relative_difference = relativeDifference(
+        coarse_characteristic_growth, fine_characteristic_growth);
+    assessment.profile_drift_comparison_valid =
+        coarse.profile_scale_windows > 0 && fine.profile_scale_windows > 0;
+    assessment.profile_windows_recent =
+        assessment.profile_drift_comparison_valid &&
+        coarse.latest_profile_window_time >= 0.75 * options.final_time &&
+        fine.latest_profile_window_time >= 0.75 * options.final_time;
+    if (assessment.profile_drift_comparison_valid) {
+        assessment.profile_drift_relative_difference = relativeDifference(
+            coarse.latest_profile_drift, fine.latest_profile_drift);
+    }
+
+    ns_cascade::PairedScoreEvidence evidence;
+    evidence.coarse = scoreEvidence(coarse, options);
+    evidence.fine = scoreEvidence(fine, options);
+    evidence.preliminary_cross_resolution_ok =
+        assessment.preliminary_cross_resolution_ok;
+    evidence.l3_ratio_relative_difference =
+        assessment.l3_ratio_relative_difference;
+    evidence.h_half_ratio_relative_difference =
+        assessment.h_half_ratio_relative_difference;
+    evidence.characteristic_scale_relative_difference =
+        assessment.characteristic_scale_relative_difference;
+    evidence.profile_drift_relative_difference =
+        assessment.profile_drift_comparison_valid
+            ? assessment.profile_drift_relative_difference
+            : 1.0;
+    evidence.profile_drift_comparison_valid =
+        assessment.profile_drift_comparison_valid;
+    evidence.coarse_profile_window_recent =
+        coarse.latest_profile_window_time >= 0.75 * options.final_time;
+    evidence.fine_profile_window_recent =
+        fine.latest_profile_window_time >= 0.75 * options.final_time;
+    evidence.coarse_characteristic_growth = coarse_characteristic_growth;
+    evidence.fine_characteristic_growth = fine_characteristic_growth;
+    evidence.minimum_characteristic_growth =
+        options.minimum_characteristic_growth;
+    evidence.minimum_critical_growth = options.minimum_critical_growth;
+    assessment.score = ns_cascade::scoreResolutionPair(evidence);
+    return assessment;
+}
+
+bool betterFinalist(const FinalistResult& left,
+                    const FinalistResult& right) {
+    if (left.fine.completed != right.fine.completed) {
+        return left.fine.completed;
+    }
+    if (left.assessment.score.refinement_eligible !=
+        right.assessment.score.refinement_eligible) {
+        return left.assessment.score.refinement_eligible;
+    }
+    if (left.assessment.preliminary_cross_resolution_ok !=
+        right.assessment.preliminary_cross_resolution_ok) {
+        return left.assessment.preliminary_cross_resolution_ok;
+    }
+    if (left.assessment.score.total != right.assessment.score.total) {
+        return left.assessment.score.total > right.assessment.score.total;
+    }
+    return left.fine.candidate.id < right.fine.candidate.id;
+}
+
 std::string csvString(const std::string& value) {
     std::string result = "\"";
     for (std::size_t i = 0; i < value.size(); ++i) {
@@ -665,10 +955,21 @@ void writeHeader(std::ostream& output) {
         << "max_reality_defect,max_energy_balance_residual,resolution_ok,"
         << "max_nonlinear_enstrophy_production,"
         << "max_enstrophy_production_to_dissipation,max_net_enstrophy_rate,"
+        << "initial_characteristic_wavenumber,final_characteristic_wavenumber,"
+        << "characteristic_wavenumber_ratio,profile_scale_windows,"
+        << "first_profile_drift,latest_profile_drift,minimum_profile_drift,"
+        << "latest_profile_window_time,profile_stationarity_improving,"
+        << "profile_drift_cost,profile_trend_reward,profile_rebound_cost,"
+        << "cutoff_cost,"
         << "ranking_score,cpu_seconds,reference_grid,"
         << "l3_ratio_relative_difference,h_half_ratio_relative_difference,"
         << "vorticity_ratio_relative_difference,"
-        << "flux_relative_difference,cross_resolution_ok,failure\n";
+        << "flux_relative_difference,characteristic_scale_relative_difference,"
+        << "profile_drift_relative_difference,"
+        << "profile_drift_comparison_valid,profile_windows_recent,"
+        << "multi_resolution_cutoff_cost,"
+        << "paired_ranking_score,refinement_eligible,"
+        << "cross_resolution_ok,failure\n";
 }
 
 void writeResult(std::ostream& output,
@@ -676,7 +977,8 @@ void writeResult(std::ostream& output,
                  int selection_rank,
                  const RunResult& result,
                  const Options& options,
-                 const RunResult* reference) {
+                 const RunResult* reference,
+                 const PairAssessment* assessment) {
     output << stage << ',' << selection_rank << ',' << result.candidate.id << ','
            << (result.completed ? "completed" : "failed") << ','
            << result.grid_size << ',' << result.cutoff << ','
@@ -713,25 +1015,44 @@ void writeResult(std::ostream& output,
            << result.maximum_nonlinear_enstrophy_production << ','
            << result.maximum_enstrophy_production_to_dissipation << ','
            << result.maximum_net_enstrophy_rate << ','
+           << result.initial_characteristic_wavenumber << ','
+           << result.final_characteristic_wavenumber << ','
+           << ratio(result.final_characteristic_wavenumber,
+                    result.initial_characteristic_wavenumber)
+           << ',' << result.profile_scale_windows << ','
+           << result.first_profile_drift << ','
+           << result.latest_profile_drift << ','
+           << result.minimum_profile_drift << ','
+           << result.latest_profile_window_time << ','
+           << (result.profile_stationarity_improving ? "true" : "false")
+           << ',' << result.profile_drift_cost << ','
+           << result.profile_trend_reward << ','
+           << result.profile_rebound_cost << ',' << result.cutoff_cost << ','
            << result.score << ',' << result.elapsed_seconds << ',';
     if (reference == NULL) {
-        output << ",,,,,,";
+        output << ",,,,,,,,,,,,,";
     } else {
-        double l3_difference = 0.0;
-        double h_half_difference = 0.0;
-        double vorticity_difference = 0.0;
-        double flux_difference = 0.0;
-        const bool consistent = crossResolutionOk(
-            *reference,
-            result,
-            l3_difference,
-            h_half_difference,
-            vorticity_difference,
-            flux_difference);
-        output << reference->grid_size << ',' << l3_difference << ','
-               << h_half_difference << ',' << vorticity_difference << ','
-               << flux_difference << ','
-               << (consistent ? "true" : "false") << ',';
+        if (assessment == NULL) {
+            throw std::logic_error(
+                "A fine-grid CSV row requires a pair assessment");
+        }
+        output << reference->grid_size << ','
+               << assessment->l3_ratio_relative_difference << ','
+               << assessment->h_half_ratio_relative_difference << ','
+               << assessment->vorticity_ratio_relative_difference << ','
+               << assessment->flux_relative_difference << ','
+               << assessment->characteristic_scale_relative_difference << ','
+               << assessment->profile_drift_relative_difference << ','
+               << (assessment->profile_drift_comparison_valid ? "true"
+                                                               : "false")
+               << ',' << (assessment->profile_windows_recent ? "true" : "false")
+               << ',' << assessment->score.multi_resolution_cutoff_cost << ','
+               << assessment->score.total << ','
+               << (assessment->score.refinement_eligible ? "true" : "false")
+               << ','
+               << (assessment->preliminary_cross_resolution_ok ? "true"
+                                                                : "false")
+               << ',';
     }
     output << csvString(result.failure) << '\n';
 }
@@ -755,6 +1076,14 @@ void printProgress(const std::string& stage,
                   << ratio(result.peak_h_half, result.initial_h_half)
                   << " vorticity ratio="
                   << ratio(result.peak_vorticity, result.initial_vorticity)
+                  << " k_rms ratio="
+                  << ratio(result.final_characteristic_wavenumber,
+                           result.initial_characteristic_wavenumber)
+                  << " profile windows=" << result.profile_scale_windows;
+        if (result.profile_scale_windows > 0) {
+            std::cout << " latest drift=" << result.latest_profile_drift;
+        }
+        std::cout
                   << " cutoff fraction=" << result.peak_cutoff_fraction
                   << " resolved=" << (result.resolution_ok ? "yes" : "no")
                   << '\n';
@@ -786,18 +1115,27 @@ int main(int argc, char** argv) {
 
         const int finalist_count = std::min(
             options.top_count, static_cast<int>(coarse_results.size()));
-        std::vector<RunResult> fine_results;
-        std::vector<RunResult> references;
-        fine_results.reserve(static_cast<std::size_t>(finalist_count));
-        references.reserve(static_cast<std::size_t>(finalist_count));
+        std::vector<FinalistResult> finalists;
+        finalists.reserve(static_cast<std::size_t>(finalist_count));
         for (int i = 0; i < finalist_count; ++i) {
+            const RunResult& coarse =
+                coarse_results[static_cast<std::size_t>(i)];
             const RunResult fine = runCandidateSafely(
-                fine_system, coarse_results[static_cast<std::size_t>(i)].candidate,
-                options);
+                fine_system, coarse.candidate, options);
             printProgress("fine", i + 1, finalist_count, fine);
-            fine_results.push_back(fine);
-            references.push_back(coarse_results[static_cast<std::size_t>(i)]);
+            const PairAssessment assessment =
+                assessResolutionPair(coarse, fine, options);
+            std::cout << "pair candidate " << fine.candidate.id
+                      << " score=" << assessment.score.total
+                      << " cross-resolution="
+                      << (assessment.preliminary_cross_resolution_ok ? "yes"
+                                                                     : "no")
+                      << " refinement-eligible="
+                      << (assessment.score.refinement_eligible ? "yes" : "no")
+                      << '\n';
+            finalists.push_back(FinalistResult(coarse, fine, assessment));
         }
+        std::sort(finalists.begin(), finalists.end(), betterFinalist);
 
         std::ofstream csv(options.output.c_str());
         if (!csv) throw std::runtime_error("Cannot open output file: " + options.output);
@@ -809,15 +1147,17 @@ int main(int argc, char** argv) {
                         static_cast<int>(i + 1),
                         coarse_results[i],
                         options,
+                        NULL,
                         NULL);
         }
-        for (std::size_t i = 0; i < fine_results.size(); ++i) {
+        for (std::size_t i = 0; i < finalists.size(); ++i) {
             writeResult(csv,
                         "fine",
                         static_cast<int>(i + 1),
-                        fine_results[i],
+                        finalists[i].fine,
                         options,
-                        &references[i]);
+                        &finalists[i].coarse,
+                        &finalists[i].assessment);
         }
         csv.close();
         if (!csv) throw std::runtime_error("Failed while writing " + options.output);
@@ -827,18 +1167,13 @@ int main(int argc, char** argv) {
             if (coarse_results[i].resolution_ok) ++coarse_resolved;
         }
         int cross_resolved = 0;
-        for (std::size_t i = 0; i < fine_results.size(); ++i) {
-            double l3_difference = 0.0;
-            double h_half_difference = 0.0;
-            double vorticity_difference = 0.0;
-            double flux_difference = 0.0;
-            if (crossResolutionOk(references[i],
-                                  fine_results[i],
-                                  l3_difference,
-                                  h_half_difference,
-                                  vorticity_difference,
-                                  flux_difference)) {
+        int refinement_eligible = 0;
+        for (std::size_t i = 0; i < finalists.size(); ++i) {
+            if (finalists[i].assessment.preliminary_cross_resolution_ok) {
                 ++cross_resolved;
+            }
+            if (finalists[i].assessment.score.refinement_eligible) {
+                ++refinement_eligible;
             }
         }
 
@@ -847,31 +1182,37 @@ int main(int argc, char** argv) {
                   << " coarse candidates, " << coarse_resolved
                   << " passed cutoff/constraint gates; " << cross_resolved << '/'
                   << finalist_count
-                  << " finalists passed the preliminary cross-resolution gate.\n";
-        if (!fine_results.empty()) {
-            std::size_t best_index = 0;
-            for (std::size_t i = 1; i < fine_results.size(); ++i) {
-                if (betterCandidate(fine_results[i], fine_results[best_index])) {
-                    best_index = i;
-                }
-            }
-            const RunResult& best = fine_results[best_index];
-            std::cout << "Best fine-grid candidate " << best.candidate.id
+                  << " finalists passed the preliminary cross-resolution gate; "
+                  << refinement_eligible
+                  << " passed the stricter profile-refinement gate.\n";
+        if (!finalists.empty()) {
+            const FinalistResult& best_pair = finalists.front();
+            const RunResult& best = best_pair.fine;
+            std::cout << "Best paired candidate " << best.candidate.id
                       << ": peak L3 ratio="
                       << ratio(best.peak_l3, best.initial_l3)
                       << ", peak H1/2 ratio="
                       << ratio(best.peak_h_half, best.initial_h_half)
                       << ", peak sampled-vorticity ratio="
                       << ratio(best.peak_vorticity, best.initial_vorticity)
+                      << ", k_rms ratio="
+                      << ratio(best.final_characteristic_wavenumber,
+                               best.initial_characteristic_wavenumber)
+                      << ", profile windows=" << best.profile_scale_windows;
+            if (best.profile_scale_windows > 0) {
+                std::cout << ", latest profile drift="
+                          << best.latest_profile_drift;
+            }
+            std::cout << ", paired score="
+                      << best_pair.assessment.score.total
                       << ", peak cutoff fraction=" << best.peak_cutoff_fraction
                       << ".\n";
-            if (ratio(best.peak_l3, best.initial_l3) <= 1.005 &&
-                ratio(best.peak_h_half, best.initial_h_half) <= 1.005) {
+            if (refinement_eligible == 0) {
                 std::cout
-                    << "No material growth was found in either critical norm in this short search.\n";
+                    << "No finalist may be promoted automatically: none combined converged critical-norm growth with an improving, low-drift rescaled profile on both grids.\n";
             } else {
                 std::cout
-                    << "Critical-norm growth is only a candidate signal; it is not evidence of singularity without much stronger convergence and analysis.\n";
+                    << "Only refinement-eligible rows should seed the next parameter sweep; eligibility remains a numerical heuristic, not evidence of singularity.\n";
             }
         }
         std::cout << "Results written to " << options.output << "\n"

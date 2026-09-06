@@ -213,10 +213,15 @@ safe cutoff, and compares complete short trajectories. It now also verifies
 that straight tubes have no non-zero axial modes, bent tubes do, both remain
 real and divergence-free, invalid geometry is rejected, and adaptive steps
 obey both requested stability bounds. The profile tests check normalization,
-amplitude invariance, the exact zero-drift case, and metric ranges. Checkpoint
+amplitude invariance, an exact discrete scale shift with zero shape drift, and
+metric ranges. Checkpoint
 tests cover exact round trips, split/uninterrupted trajectory identity, and
 checksum-corruption rejection. When FFTW3 is present, a separate target checks
 the internal transforms and the full nonlinear right-hand side against FFTW.
+The candidate-score suite separately checks that lower profile drift and lower
+cutoff loading improve a score, that both grid levels contribute to the paired
+cutoff cost, and that missing, worsening, or cross-resolution-inconsistent
+profile evidence cannot pass the refinement gate.
 They also encode the elementary guardrail that zero gradient does not imply
 zero field value, a mistake found in some purported proofs.
 
@@ -318,20 +323,61 @@ constraint gates, and rerun the top three candidates at `32^3`:
   --bends 0,0.30 --axial-modes 1,2 \
   --energies 1,4,10 --viscosity 0.02 \
   --dt 0.005 --final-time 0.1 --top 3 \
+  --profile-bins 64 --profile-scale-window 0.025 \
+  --profile-drift-threshold 1 \
   --output navier_stokes_candidate_search.csv
 ```
 
 The straight cases are deduplicated because their axial wavenumber has no
 effect. `--energy E` remains the single-energy shorthand; `--energies` includes
 energy in the candidate grid. The CSV records initial/final/peak critical L3
-and H1/2, sampled
-vorticity, enstrophy, palinstrophy, enstrophy production/destruction, maximum
-positive shell flux, cutoff contamination, constraint defects, accepted-step
-statistics, and coarse/fine differences. An apparent growth signal in either
-critical norm must occur on both grids to pass the preliminary
-cross-resolution gate. The ranking score weights critical-L3 growth first,
-then critical-H1/2 growth, with small sampled-vorticity and final-L3
-tie-breaks; it is merely a deterministic triage rule.
+and H1/2, sampled vorticity, enstrophy, palinstrophy, enstrophy
+production/destruction, maximum positive shell flux, cutoff contamination,
+constraint defects, accepted-step statistics, fixed-scale profile drift,
+score components, and coarse/fine differences. Profile drift is sampled
+whenever `log(k_rms)` advances by `--profile-scale-window`, independently of
+`--diagnostic-every`; changing CSV verbosity therefore cannot change the scale
+windows. Only forward movement to finer scales completes a window. The cutoff
+fraction used by the resolution gate and score is also checked after every
+accepted step, so a short contamination spike cannot hide between CSV rows.
+
+For one resolution, let `G3`, `Gh`, and `Gw` be the peak L3, H1/2, and sampled
+vorticity ratios; `F3` the final L3 ratio; `C/C*` the peak cutoff fraction
+normalized by its threshold; and `D/D*` the latest profile drift normalized by
+its threshold. The auditable single-grid score is
+
+```text
+S_N = max(log G3, log Gh) + 0.25 min(log G3, log Gh)
+      + 0.02 log Gw + 0.01 log F3
+      + 0.05 clamp(log(D_first/D_latest), -2, 2)
+      - 0.05 clamp(log(D_latest/D_min), 0, 2)
+      - 0.10 log(1 + D/D*) - 0.03 log(1 + C/C*).
+```
+
+The trend and rebound terms are zero until two scale windows exist. The
+rebound term prevents an early low drift followed by a deteriorating final
+window from looking stationary. No completed window is assigned the finite
+missing-evidence cost `D/D*=4`, rather than being mistaken for zero drift.
+Coarse finalists are rerun on the fine grid and receive
+
+```text
+C_pair = sqrt(((C_coarse/C*)^2 + (C_fine/C*)^2) / 2),
+S_pair = min(S_coarse, S_fine) - 0.04 log(1 + C_pair)
+         - 0.25 (relative L3 difference + relative H1/2 difference)
+         - 0.10 relative k_rms-growth difference
+         - 0.05 relative profile-drift difference.
+```
+
+Using the weaker single-grid score prevents one impressive resolution from
+hiding its companion. A row becomes `refinement_eligible` only when it passes
+the existing convergence gate, the same critical norm grows materially on
+both grids, `k_rms` grows by at least 10% on both, each grid has at least two
+profile windows whose latest drift is no larger than its first or than one,
+no more than 10% above the best previous drift, each latest window occurs in
+the final quarter of the run, the two drifts agree within 50%, and scale
+growth agrees within 10%. These
+thresholds and weights are deterministic triage choices, not probabilities or
+mathematical implications.
 
 The direct comparison uses one common spatial sampling grid for every cutoff.
 The FFT comparison samples on each native grid; therefore its L3-grid
@@ -522,6 +568,38 @@ product also fell from about 3.11 initially to 0.481 rather than remaining
 constant. That regression is heuristic and does not alter the verdict by
 itself.
 
+### Profile-aware refinement result
+
+The first profile-aware neighbourhood sweep varied `core=0.50,0.55,0.60`,
+`separation=1.1,1.3`, and `bend=0.25,0.35` at axial mode two, energy ten,
+`nu=0.02`, and `t=0.08`. All 12 candidates passed the `N=32` cutoff and
+constraint gates. The paired score selected `core=0.50`, `separation=1.30`,
+and `bend=0.35` for an `N=64` rerun:
+
+| Check through t=0.08 | N=32, K=10 | N=64, K=21 |
+|---|---:|---:|
+| Peak H1/2 / initial | 1.044539613 | 1.046122325 |
+| Final L3 / initial | 0.963589780 | 0.963279662 |
+| Peak enstrophy / initial | 1.412584781 | 1.453402602 |
+| Peak sampled vorticity / initial | 1.377488837 | 1.507441512 |
+| Final characteristic wavenumber / initial | 1.210592209 | 1.228108183 |
+| Completed 2.5% log-scale windows | 7 | 8 |
+| First profile drift | 16.641357 | 16.635310 |
+| Minimum profile drift | 10.980775 | 11.040019 |
+| Latest profile drift | 10.980775 | 13.403208 |
+| Peak cutoff-shell energy fraction | 8.00816e-3 | 7.91022e-5 |
+
+The H1/2 growth ratios differ by about 0.15%, characteristic-scale growth by
+about 1.43%, and latest drifts by about 18.1%; the pair passed the preliminary
+cross-resolution gate. The fine run therefore confirms finite critical-norm
+growth and spectral motion with very low cutoff loading. It does not confirm
+profile stationarity: both latest drifts exceed the threshold one by more than
+an order of magnitude, and the fine-grid drift rebounded after reaching its
+minimum. Consequently zero candidates passed the strict refinement gate and
+no longer run was promoted. This rejects this small neighbourhood at this
+time horizon under the stated heuristic; it does not exclude other initial
+data, parameters, or later behaviour.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
@@ -570,10 +648,16 @@ search are implemented. The sharp critical-growth candidate has a short-time
 Checkpoint/restart, the independent FFTW oracle, rescaled-spectrum output,
 scale-normalized profile drift, and heuristic tail fitting are implemented.
 The present sharp candidate fails the stationary-profile gate, so a `128^3`
-run of exactly the same geometry is deprioritized. The next engineering
-milestone is to add profile drift and multi-resolution cutoff cost to the
-candidate-search objective, then refine only geometries whose critical-norm
-growth strengthens while their rescaled shape becomes more stationary.
+run of exactly the same geometry is deprioritized. The candidate search now
+uses fixed-forward-scale profile windows, explicit profile-drift and cutoff
+costs, a conservative paired coarse/fine score, and a strict refinement gate.
+Only candidates whose critical-norm growth, scale motion, profile stationarity,
+and cross-resolution agreement all pass that gate may seed a narrower sweep.
+The first 12-case `32^3 -> 64^3` neighbourhood search produced no survivor.
+The next engineering milestone is therefore a second full FFTW-based evolution
+path and trajectory-level comparison. After that independent check passes, the
+search can broaden the initial-data family instead of spending larger grids on
+a tube geometry that fails its profile gate.
 
 A credible path from this scaffold to a theorem has several hard gates:
 

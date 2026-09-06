@@ -59,4 +59,11 @@ if(BUILD_TESTING)
     target_link_libraries(navier_stokes_fft_tests PRIVATE ns_cascade)
     add_test(NAME navier_stokes_fft_oracle
              COMMAND navier_stokes_fft_tests)
+
+    add_executable(navier_stokes_candidate_score_tests
+        tests/test_candidate_score.cpp
+    )
+    target_link_libraries(navier_stokes_candidate_score_tests PRIVATE ns_cascade)
+    add_test(NAME navier_stokes_candidate_score
+             COMMAND navier_stokes_candidate_score_tests)
 endif()

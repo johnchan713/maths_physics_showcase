@@ -43,6 +43,7 @@ jobs:
           navier_stokes_search
           navier_stokes_cascade_tests
           navier_stokes_fft_tests
+          navier_stokes_candidate_score_tests
           navier_stokes_fftw_tests
 
       - name: Run invariant tests
@@ -70,15 +71,32 @@ jobs:
           ./build/research/navier_stokes_cascade/navier_stokes_search
           --coarse-grid 16
           --fine-grid 32
-          --cores 0.7
-          --separations 1.6
-          --bends 0.2
-          --axial-modes 1
-          --energies 1,10
-          --final-time 0.001
-          --diagnostic-every 1
-          --top 2
+          --cores 0.55
+          --separations 1.2
+          --bends 0.3
+          --axial-modes 2
+          --energy 10
+          --final-time 0.03
+          --diagnostic-every 5
+          --profile-scale-window 0.001
+          --top 1
           --output navier_stokes_candidate_search.csv
+
+      - name: Verify candidate search exercised profile windows
+        shell: bash
+        run: |
+          awk -F, '
+            NR == 1 {
+              expected_columns = NF
+              for (i = 1; i <= NF; ++i) column[$i] = i
+              next
+            }
+            NF != expected_columns { malformed = 1 }
+            $1 == "fine" && $(column["profile_scale_windows"]) + 0 > 0 {
+              found = 1
+            }
+            END { exit found && !malformed ? 0 : 1 }
+          ' navier_stokes_candidate_search.csv
 
       - name: Verify checkpoint restart is bit-for-bit reproducible
         shell: bash
