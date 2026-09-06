@@ -39,6 +39,11 @@ add_executable(navier_stokes_adjoint_check
 )
 target_link_libraries(navier_stokes_adjoint_check PRIVATE ns_cascade)
 
+add_executable(navier_stokes_state_optimize
+    src/state_optimize.cpp
+)
+target_link_libraries(navier_stokes_state_optimize PRIVATE ns_cascade)
+
 option(NS_CASCADE_REQUIRE_FFTW_REFERENCE
        "Fail configuration when the independent FFTW oracle is unavailable" OFF)
 find_library(NS_CASCADE_FFTW3_LIBRARY NAMES fftw3 fftw3.so.3 libfftw3.so.3)
@@ -98,4 +103,13 @@ if(BUILD_TESTING)
     )
     add_test(NAME navier_stokes_parameter_optimizer
              COMMAND navier_stokes_parameter_optimizer_tests)
+
+    add_executable(navier_stokes_state_optimizer_tests
+        tests/test_state_optimizer.cpp
+    )
+    target_link_libraries(navier_stokes_state_optimizer_tests PRIVATE
+        ns_cascade
+    )
+    add_test(NAME navier_stokes_state_optimizer
+             COMMAND navier_stokes_state_optimizer_tests)
 endif()

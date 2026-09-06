@@ -44,10 +44,12 @@ jobs:
           navier_stokes_optimize
           navier_stokes_tangent_check
           navier_stokes_adjoint_check
+          navier_stokes_state_optimize
           navier_stokes_cascade_tests
           navier_stokes_fft_tests
           navier_stokes_candidate_score_tests
           navier_stokes_parameter_optimizer_tests
+          navier_stokes_state_optimizer_tests
           navier_stokes_fftw_compare
           navier_stokes_fftw_tests
 
@@ -157,6 +159,55 @@ jobs:
           --epsilons 0.004,0.002,0.001
           --output navier_stokes_adjoint_check.csv
 
+      - name: Run constrained Fourier-state optimizer smoke test
+        run: >-
+          ./build/research/navier_stokes_cascade/navier_stokes_state_optimize
+          --grid 16
+          --fine-grid 32
+          --seed-bandwidth 2
+          --final-time 0.01
+          --iterations 1
+          --output navier_stokes_state_optimization.csv
+          --state-output navier_stokes_optimized_state.csv
+
+      - name: Verify state optimizer accepted a checked joint improvement
+        shell: bash
+        run: |
+          awk -F, '
+            NR == 1 {
+              expected_columns = NF
+              for (i = 1; i <= NF; ++i) column[$i] = i
+              next
+            }
+            NF != expected_columns { malformed = 1 }
+            $2 == "accepted" &&
+            $(column["gradient_relative_error"]) + 0 < 0.01 &&
+            $(column["peak_cutoff_fraction"]) + 0 < 0.01 {
+              accepted = 1
+            }
+            $2 == "fine-validation" && $8 == "true" { fine = 1 }
+            END { exit accepted && fine && !malformed ? 0 : 1 }
+          ' navier_stokes_state_optimization.csv
+          test "$(wc -l < navier_stokes_optimized_state.csv)" -gt 1
+          ./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+            --state-input navier_stokes_optimized_state.csv \
+            --final-time 0.005 --iterations 0 \
+            --output navier_stokes_state_replay.csv \
+            --state-output navier_stokes_replayed_state.csv
+          cmp navier_stokes_optimized_state.csv navier_stokes_replayed_state.csv
+          ./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+            --seed-bandwidth 3 \
+            --state-input research/navier_stokes_cascade/candidates/wave_k3_t008_screening.csv \
+            --final-time 0.001 --iterations 0 \
+            --output navier_stokes_screening_replay.csv \
+            --state-output navier_stokes_screening_state.csv
+          cmp research/navier_stokes_cascade/candidates/wave_k3_t008_screening.csv \
+            navier_stokes_screening_state.csv
+          printf '%s  %s\n' \
+            c94bdc0d38f1bd52fcca2072e9dcbe9103a4421d50fa9f10ea84541a4c99a128 \
+            research/navier_stokes_cascade/candidates/wave_k3_t008_screening.csv \
+            | sha256sum --check --status
+
       - name: Verify checkpoint restart is bit-for-bit reproducible
         shell: bash
         run: |
@@ -191,6 +242,10 @@ jobs:
             navier_stokes_packet_optimization.csv
             navier_stokes_tangent_check.csv
             navier_stokes_adjoint_check.csv
+            navier_stokes_state_optimization.csv
+            navier_stokes_optimized_state.csv
+            navier_stokes_state_replay.csv
+            navier_stokes_screening_replay.csv
             navier_stokes_fftw_comparison.csv
             segment-a.csv
             segment-b.csv

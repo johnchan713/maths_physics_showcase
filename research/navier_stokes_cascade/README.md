@@ -901,15 +901,93 @@ adjoint's divergence and Fourier-reality defects were `8.89911e-16` and
 finite-dimensional fixed-step solver; they do not validate a PDE singularity
 claim or remove the need for resolution and independent-evolution gates.
 
+### Constrained many-mode Fourier optimization
+
+The verified reverse RK4 pass now drives an initial-state optimizer rather
+than only checking one derivative. Its variables are every non-zero Fourier
+coefficient in the cube `|k_i| <= K_seed`, restricted exactly to real,
+divergence-free fields and to a fixed kinetic-energy sphere. The resulting
+real dimension is
+
+```text
+2 ((2 K_seed + 1)^3 - 1),
+```
+
+so `K_seed=2` gives 248 variables and `K_seed=3` gives 684. This follows the
+large-scale adjoint-optimization strategy used by Kang, Yun, and Protas, while
+retaining this project's critical-norm and resolution gates. The smooth
+differentiated objective is
+
+```text
+J = log(H1/2(T) / H1/2(0))
+    + 0.15 log(k_rms(T) / k_rms(0))
+    - 0.04 log(1 + (E_cutoff(T) / E(T)) / 0.01).
+```
+
+The terminal gradient is reversed through every stored fixed-step RK4 stage,
+then projected onto the low-band, real-solenoidal tangent space. Trial states
+follow energy-sphere geodesics. Every iteration checks the adjoint slope by a
+centered geodesic difference, requires Armijo improvement in `J`, requires an
+improvement in the existing profile-aware search score, and preserves the
+hard cutoff and invariant gates. Each accepted coarse state is also run on the
+fine grid. The saved output is the best paired state encountered, not merely
+the last coarse iterate; this prevents coarse-grid overfitting from replacing
+a better candidate. Full-precision coefficient CSVs can be reloaded exactly
+with `--state-input` for a resumed search or timestep replay.
+
+For example:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+  --grid 16 --fine-grid 32 --seed-bandwidth 3 \
+  --initial-family wave-packets --energy 10 --viscosity 0.02 \
+  --dt 0.0005 --final-time 0.08 --iterations 3 \
+  --output navier_stokes_state_optimization.csv \
+  --state-output navier_stokes_optimized_state.csv
+```
+
+The bounded three-family pilot selected the widened wave-packet branch:
+
+Its exact full-precision coefficients are preserved in
+`candidates/wave_k3_t008_screening.csv`; the candidate-directory warning is
+part of that artifact's interpretation.
+
+| Measurement | Coarse `N=16, K=5` | Fine `N=32, K=10` |
+|---|---:|---:|
+| Peak H1/2 / initial | 1.090335 | 1.091131 |
+| Peak L3 / initial | 1.001521 | 1.001642 |
+| Final L3 / initial | 0.989143 | 0.990212 |
+| Peak sampled vorticity / initial | 1.104702 | 1.117222 |
+| Final `k_rms` / initial | 1.252101 | 1.257258 |
+| Latest profile drift | 6.327532 | 6.289369 |
+| Peak cutoff-shell fraction | 0.0074097 | 0.00004135 |
+
+All three accepted slopes had relative adjoint/difference errors below
+`1.5e-5`. Halving the coarse timestep to `0.00025` changed the reported H1/2
+ratio only in the eleventh decimal place and `k_rms` ratio in the tenth; the
+drift moved from `6.3275` to `6.3347`. One further coarse-improving step made
+the fine drift rebound to `7.97`, and paired selection correctly retained the
+earlier state. The `K_seed=3` orthogonal-bundle seed exceeded the one-percent
+coarse cutoff gate and was rejected.
+
+This is a stronger, reproducible finite-cascade candidate than the earlier
+hand-parameterized packet, but it still fails decisively: the profile drift is
+over six times the stationarity threshold, L3 falls by the final time, and the
+coarse cutoff margin is modest. It is not eligible for a larger-grid or FFTW
+promotion. The useful next search is therefore multi-start optimization of the
+same constrained space with an explicitly differentiable profile-shape cost,
+not a longer run of this rejected state.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
 
 The branch-scoped GitHub Actions workflow builds these CMake targets, runs the
 direct, FFT, full FFTW-trajectory, checked-gradient, tangent-linear, and
-reverse-adjoint tests; performs short convergence and candidate-search smokes;
-and verifies bit-for-bit checkpoint/restart identity. It uploads the CSV
-products as workflow artifacts.
+reverse-adjoint and Fourier-state optimizer tests; performs short convergence
+and candidate-search smokes; verifies exact coefficient save/reload and
+bit-for-bit checkpoint/restart identity; and uploads the CSV products as
+workflow artifacts.
 
 ## Interpretation guardrails
 
@@ -979,10 +1057,19 @@ satisfies `<DF(u)v,lambda>=<v,DF(u)^*lambda>` at both RHS and full-trajectory
 levels and agrees with the established finite differences. The packet
 optimizer's first two-step run improved both coarse and fine objectives, but
 the result failed the unchanged promotion gates. Larger grids for the rejected
-geometry remain deprioritized. The next scientifically useful milestone is a
-constrained many-mode optimizer over real, solenoidal Fourier coefficients,
-with fixed energy and bandwidth. Every result must still face the same cutoff,
-refinement, and independent-evolution gates.
+geometry remain deprioritized.
+
+The constrained many-mode optimizer over real, solenoidal Fourier
+coefficients is now implemented with exact fixed-energy geodesic steps,
+adjoint/difference slope checks, profile-aware line acceptance, fine-grid
+selection, and exact coefficient save/reload. Its 684-variable pilot improved
+the critical norm and forward scale motion with close timestep and
+cross-resolution agreement, but profile drift stalled near `6.3`, so it also
+failed the unchanged promotion gate. The next scientifically useful milestone
+is a deterministic multi-start search with a differentiable rescaled-profile
+shape term in the adjoint objective. Only a state that reduces that metric
+toward one on both grids should reach the independent FFTW and higher-grid
+gates.
 
 A credible path from this scaffold to a theorem has several hard gates:
 
