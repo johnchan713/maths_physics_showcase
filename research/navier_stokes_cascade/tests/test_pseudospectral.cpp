@@ -316,6 +316,17 @@ double relativeStateDifference(
     return std::sqrt(difference_squared / reference_squared);
 }
 
+ns_cascade::PseudospectralSystem::State addScaledState(
+    const ns_cascade::PseudospectralSystem::State& state,
+    const ns_cascade::PseudospectralSystem::State& direction,
+    double scale) {
+    ns_cascade::PseudospectralSystem::State result = state;
+    for (std::size_t i = 0; i < result.size(); ++i) {
+        result[i] += direction[i] * scale;
+    }
+    return result;
+}
+
 void testVortexTubeInitialData() {
     const ns_cascade::PseudospectralSystem system(32, 0.05, 10);
     const ns_cascade::VortexTubeParameters straight_parameters(
@@ -466,6 +477,55 @@ void testInteractingWavePacketInitialData() {
     }
     expect(invalid_weight_rejected,
            "A non-positive wave-packet weight must be rejected");
+}
+
+void testTangentLinearRightHandSideAndTrajectory() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const ns_cascade::PseudospectralSystem::State initial =
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(1.1, 1, 0.75, 1.0), 4.0);
+    const ns_cascade::PseudospectralSystem::State direction =
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(1.3, 1, 1.1, -0.4), 1.0);
+    const double epsilon = 1e-5;
+
+    const ns_cascade::PseudospectralSystem::State tangent_rhs =
+        system.tangentRightHandSide(initial, direction);
+    const ns_cascade::PseudospectralSystem::State rhs_plus =
+        system.rightHandSide(addScaledState(initial, direction, epsilon));
+    const ns_cascade::PseudospectralSystem::State rhs_minus =
+        system.rightHandSide(addScaledState(initial, direction, -epsilon));
+    ns_cascade::PseudospectralSystem::State rhs_difference = rhs_plus;
+    for (std::size_t i = 0; i < rhs_difference.size(); ++i) {
+        rhs_difference[i] =
+            (rhs_plus[i] - rhs_minus[i]) * (0.5 / epsilon);
+    }
+    expect(relativeStateDifference(tangent_rhs, rhs_difference) < 2e-10,
+           "Tangent right-hand side differs from a directional difference");
+
+    ns_cascade::PseudospectralSystem::State base = initial;
+    ns_cascade::PseudospectralSystem::State tangent = direction;
+    ns_cascade::PseudospectralSystem::State plus =
+        addScaledState(initial, direction, epsilon);
+    ns_cascade::PseudospectralSystem::State minus =
+        addScaledState(initial, direction, -epsilon);
+    const double time_step = 0.0005;
+    for (int step = 0; step < 12; ++step) {
+        system.stepTangentRungeKutta4(base, tangent, time_step);
+        system.stepRungeKutta4(plus, time_step);
+        system.stepRungeKutta4(minus, time_step);
+    }
+    ns_cascade::PseudospectralSystem::State trajectory_difference = plus;
+    for (std::size_t i = 0; i < trajectory_difference.size(); ++i) {
+        trajectory_difference[i] =
+            (plus[i] - minus[i]) * (0.5 / epsilon);
+    }
+    expect(relativeStateDifference(tangent, trajectory_difference) < 5e-9,
+           "Tangent RK4 trajectory differs from a directional difference");
+    expect(system.divergenceDefect(tangent) < 2e-12,
+           "Tangent trajectory developed a divergence defect");
+    expect(system.realityDefect(tangent) < 2e-12,
+           "Tangent trajectory lost Fourier reality symmetry");
 }
 
 void testAdaptiveTimeStepControl() {
@@ -750,6 +810,7 @@ int main() {
         testVortexTubeInitialData();
         testOrthogonalVortexBundleInitialData();
         testInteractingWavePacketInitialData();
+        testTangentLinearRightHandSideAndTrajectory();
         testAdaptiveTimeStepControl();
         testRescaledSpectrumProfile();
         testCheckpointRoundTripAndRestartTrajectory();

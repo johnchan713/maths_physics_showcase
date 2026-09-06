@@ -526,6 +526,93 @@ public:
         return result;
     }
 
+    State tangentRightHandSide(const State& state,
+                               const State& tangent,
+                               bool include_viscosity = true) const {
+        requireCompatible(state);
+        requireCompatible(tangent);
+        std::vector<Complex> velocity_x(grid_point_count_);
+        std::vector<Complex> velocity_y(grid_point_count_);
+        std::vector<Complex> velocity_z(grid_point_count_);
+        std::vector<Complex> vorticity_x(grid_point_count_);
+        std::vector<Complex> vorticity_y(grid_point_count_);
+        std::vector<Complex> vorticity_z(grid_point_count_);
+        std::vector<Complex> tangent_x(grid_point_count_);
+        std::vector<Complex> tangent_y(grid_point_count_);
+        std::vector<Complex> tangent_z(grid_point_count_);
+        std::vector<Complex> tangent_vorticity_x(grid_point_count_);
+        std::vector<Complex> tangent_vorticity_y(grid_point_count_);
+        std::vector<Complex> tangent_vorticity_z(grid_point_count_);
+        fillSpectralFields(state,
+                           velocity_x,
+                           velocity_y,
+                           velocity_z,
+                           vorticity_x,
+                           vorticity_y,
+                           vorticity_z);
+        fillSpectralFields(tangent,
+                           tangent_x,
+                           tangent_y,
+                           tangent_z,
+                           tangent_vorticity_x,
+                           tangent_vorticity_y,
+                           tangent_vorticity_z);
+
+        velocity_x = inverseTransform(velocity_x);
+        velocity_y = inverseTransform(velocity_y);
+        velocity_z = inverseTransform(velocity_z);
+        vorticity_x = inverseTransform(vorticity_x);
+        vorticity_y = inverseTransform(vorticity_y);
+        vorticity_z = inverseTransform(vorticity_z);
+        tangent_x = inverseTransform(tangent_x);
+        tangent_y = inverseTransform(tangent_y);
+        tangent_z = inverseTransform(tangent_z);
+        tangent_vorticity_x = inverseTransform(tangent_vorticity_x);
+        tangent_vorticity_y = inverseTransform(tangent_vorticity_y);
+        tangent_vorticity_z = inverseTransform(tangent_vorticity_z);
+
+        std::vector<Complex> linearized_x(grid_point_count_);
+        std::vector<Complex> linearized_y(grid_point_count_);
+        std::vector<Complex> linearized_z(grid_point_count_);
+        for (std::size_t i = 0; i < grid_point_count_; ++i) {
+            // D(u x curl(u))[v] = v x curl(u) + u x curl(v).
+            linearized_x[i] =
+                tangent_y[i] * vorticity_z[i] -
+                tangent_z[i] * vorticity_y[i] +
+                velocity_y[i] * tangent_vorticity_z[i] -
+                velocity_z[i] * tangent_vorticity_y[i];
+            linearized_y[i] =
+                tangent_z[i] * vorticity_x[i] -
+                tangent_x[i] * vorticity_z[i] +
+                velocity_z[i] * tangent_vorticity_x[i] -
+                velocity_x[i] * tangent_vorticity_z[i];
+            linearized_z[i] =
+                tangent_x[i] * vorticity_y[i] -
+                tangent_y[i] * vorticity_x[i] +
+                velocity_x[i] * tangent_vorticity_y[i] -
+                velocity_y[i] * tangent_vorticity_x[i];
+        }
+        linearized_x = forwardTransform(linearized_x);
+        linearized_y = forwardTransform(linearized_y);
+        linearized_z = forwardTransform(linearized_z);
+
+        State result = zeroState();
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            const WaveVector& wave = modes_[index];
+            result[index] = lerayProject(
+                wave,
+                ComplexVector(linearized_x[index],
+                              linearized_y[index],
+                              linearized_z[index]));
+            if (include_viscosity && viscosity_ != 0.0) {
+                result[index] += tangent[index] *
+                    (-viscosity_ * static_cast<double>(wave.normSquared()));
+            }
+        }
+        return result;
+    }
+
     void stepRungeKutta4(State& state, double time_step) const {
         requireCompatible(state);
         if (!std::isfinite(time_step) || time_step <= 0.0) {
@@ -540,6 +627,40 @@ public:
             const std::size_t i = retained_indices_[n];
             state[i] +=
                 (k1[i] + k2[i] * 2.0 + k3[i] * 2.0 + k4[i]) *
+                (time_step / 6.0);
+        }
+    }
+
+    void stepTangentRungeKutta4(State& state,
+                                State& tangent,
+                                double time_step) const {
+        requireCompatible(state);
+        requireCompatible(tangent);
+        if (!std::isfinite(time_step) || time_step <= 0.0) {
+            throw std::invalid_argument("Time step must be finite and positive");
+        }
+
+        const State k1 = rightHandSide(state);
+        const State l1 = tangentRightHandSide(state, tangent);
+        const State state_2 = addScaled(state, k1, 0.5 * time_step);
+        const State tangent_2 = addScaled(tangent, l1, 0.5 * time_step);
+        const State k2 = rightHandSide(state_2);
+        const State l2 = tangentRightHandSide(state_2, tangent_2);
+        const State state_3 = addScaled(state, k2, 0.5 * time_step);
+        const State tangent_3 = addScaled(tangent, l2, 0.5 * time_step);
+        const State k3 = rightHandSide(state_3);
+        const State l3 = tangentRightHandSide(state_3, tangent_3);
+        const State state_4 = addScaled(state, k3, time_step);
+        const State tangent_4 = addScaled(tangent, l3, time_step);
+        const State k4 = rightHandSide(state_4);
+        const State l4 = tangentRightHandSide(state_4, tangent_4);
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t i = retained_indices_[n];
+            state[i] +=
+                (k1[i] + k2[i] * 2.0 + k3[i] * 2.0 + k4[i]) *
+                (time_step / 6.0);
+            tangent[i] +=
+                (l1[i] + l2[i] * 2.0 + l3[i] * 2.0 + l4[i]) *
                 (time_step / 6.0);
         }
     }

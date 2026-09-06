@@ -445,6 +445,22 @@ scale-normalized spectral-profile change plus terminal cutoff loading. Peak
 cutoff loading remains a hard acceptance gate. This is a parameter-space
 finite-difference optimizer, not yet a discrete adjoint or a proof tool.
 
+Check the tangent-linear equation and every differentiated RK4 stage against a
+sequence of centered directional differences:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_tangent_check \
+  --grid 16 --dt 0.0005 --final-time 0.01 \
+  --epsilons 0.001,0.0005,0.00025 \
+  --output navier_stokes_tangent_check.csv
+```
+
+This check uses fixed timesteps, so it differentiates the RK4 flow map rather
+than the nonsmooth minimum inside adaptive timestep selection. The perturbation
+is divergence-free, real, and projected tangent to the fixed-energy sphere.
+For `F(u)=P[u x curl(u)]-nu A u`, the implementation evolves
+`DF(u)v=P[v x curl(u)+u x curl(v)]-nu A v` directly through the FFT backend.
+
 For one resolution, let `G3`, `Gh`, and `Gw` be the peak L3, H1/2, and sampled
 vorticity ratios; `F3` the final L3 ratio; `C/C*` the peak cutoff fraction
 normalized by its threshold; and `D/D*` the latest profile drift normalized by
@@ -822,15 +838,34 @@ promotion gates. Its 221-step independent FFTW replay passed with peak relative
 state disagreement `8.40746e-16`. This is evidence that optimization found a
 slightly stronger finite cascade, not evidence of singular behaviour.
 
+### Tangent-linear trajectory verification
+
+The first fixed-step tangent check used the optimized packet on `N=16, K=5`
+through `t=0.01`. A separate smooth solenoidal packet was orthogonally
+projected onto the fixed-energy tangent space. Centered finite differences
+converged to the directly evolved tangent as follows:
+
+| Epsilon | Relative tangent error | Observed order |
+|---:|---:|---:|
+| 1.0e-3 | 2.99731e-10 | - |
+| 5.0e-4 | 7.49884e-11 | 1.99893 |
+| 2.5e-4 | 1.88739e-11 | 1.99027 |
+
+The primal state produced inside differentiated RK4 was bit-identical to the
+ordinary RK4 state. Final tangent divergence and Fourier-reality defects were
+`4.44306e-17` and `1.24321e-16`. The nearly quadratic error decrease is the
+expected centered-difference verification of the tangent implementation; it
+does not yet verify a reverse-mode adjoint.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
 
 The branch-scoped GitHub Actions workflow builds these CMake targets, runs the
-direct, FFT, and full FFTW-trajectory tests, performs an independent evolution
-smoke test, short direct and FFT convergence comparisons, a `16^3 -> 32^3`
-candidate-search smoke run, and a bit-for-bit checkpoint/restart check. It
-uploads the CSV products as workflow artifacts.
+direct, FFT, full FFTW-trajectory, checked-gradient, and tangent-linear tests;
+performs short convergence and candidate-search smokes; and verifies
+bit-for-bit checkpoint/restart identity. It uploads the CSV products as
+workflow artifacts.
 
 ## Interpretation guardrails
 
@@ -894,14 +929,16 @@ replay. Its first 16-case pilot also produced no survivor. The most active
 resolved packet amplified sampled vorticity by 36% at `N=32`, but its profile
 drift was `7.66` and the conservative cross-resolution gate rejected it.
 
-The checked finite-difference parameter optimizer is now implemented. Its first
-two-step run improved both coarse and fine objectives, but the result failed the
-unchanged promotion gates. Larger grids for the rejected geometry remain
-deprioritized. The next scientifically useful milestone is a tangent-linear
-and discrete-adjoint implementation checked against these finite differences.
-That would permit optimization over many solenoidal Fourier coefficients rather
-than only three packet coordinates, while every result would still face the
-same cutoff, refinement, and independent-evolution gates.
+The checked finite-difference parameter optimizer and the full tangent-linear
+RK4 evolution are now implemented. The optimizer's first two-step run improved
+both coarse and fine objectives, but the result failed the unchanged promotion
+gates. Larger grids for the rejected geometry remain deprioritized. The next
+scientifically useful milestone is the reverse-mode discrete adjoint, verified
+by the identity `<DF(u)v,lambda>=<v,DF(u)^*lambda>` and by agreement with the
+established finite differences. That would permit optimization over many
+solenoidal Fourier coefficients rather than only three packet coordinates,
+while every result would still face the same cutoff, refinement, and
+independent-evolution gates.
 
 A credible path from this scaffold to a theorem has several hard gates:
 

@@ -42,6 +42,7 @@ jobs:
           navier_stokes_fft
           navier_stokes_search
           navier_stokes_optimize
+          navier_stokes_tangent_check
           navier_stokes_cascade_tests
           navier_stokes_fft_tests
           navier_stokes_candidate_score_tests
@@ -137,6 +138,15 @@ jobs:
           END { exit found ? 0 : 1 }'
           navier_stokes_packet_optimization.csv
 
+      - name: Run tangent-linear convergence check
+        run: >-
+          ./build/research/navier_stokes_cascade/navier_stokes_tangent_check
+          --grid 16
+          --dt 0.0005
+          --final-time 0.01
+          --epsilons 0.001,0.0005,0.00025
+          --output navier_stokes_tangent_check.csv
+
       - name: Verify checkpoint restart is bit-for-bit reproducible
         shell: bash
         run: |
@@ -169,6 +179,7 @@ jobs:
             navier_stokes_fft_convergence.csv
             navier_stokes_candidate_search.csv
             navier_stokes_packet_optimization.csv
+            navier_stokes_tangent_check.csv
             navier_stokes_fftw_comparison.csv
             segment-a.csv
             segment-b.csv

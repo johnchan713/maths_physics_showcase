@@ -29,6 +29,11 @@ add_executable(navier_stokes_optimize
 )
 target_link_libraries(navier_stokes_optimize PRIVATE ns_cascade)
 
+add_executable(navier_stokes_tangent_check
+    src/tangent_check.cpp
+)
+target_link_libraries(navier_stokes_tangent_check PRIVATE ns_cascade)
+
 option(NS_CASCADE_REQUIRE_FFTW_REFERENCE
        "Fail configuration when the independent FFTW oracle is unavailable" OFF)
 find_library(NS_CASCADE_FFTW3_LIBRARY NAMES fftw3 fftw3.so.3 libfftw3.so.3)
