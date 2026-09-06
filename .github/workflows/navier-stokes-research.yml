@@ -69,9 +69,10 @@ jobs:
           --separations 1.6
           --bends 0.2
           --axial-modes 1
+          --energies 1,10
           --final-time 0.001
           --diagnostic-every 1
-          --top 1
+          --top 2
           --output navier_stokes_candidate_search.csv
 
       - name: Retain convergence CSV

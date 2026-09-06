@@ -225,11 +225,14 @@ void writeHeader(std::ostream& output) {
     output
         << "initial_condition,backend,grid_size,cutoff,refinement,dt,"
         << "sample_points,step,time,shell,"
-        << "lower_radius,upper_radius,total_energy,critical_l3_sample,"
-        << "critical_l3_ratio,shell_energy,nonlinear_transfer,"
+        << "lower_radius,upper_radius,total_energy,total_enstrophy,palinstrophy,"
+        << "critical_h_half,critical_h_half_ratio,critical_l3_sample,"
+        << "critical_l3_ratio,nonlinear_enstrophy_production,"
+        << "viscous_enstrophy_destruction,net_enstrophy_rate,"
+        << "enstrophy_production_to_dissipation,shell_energy,nonlinear_transfer,"
         << "viscous_dissipation,forward_flux,cutoff_shell_energy_fraction,"
         << "peak_cutoff_shell_fraction,cutoff_shell_ok,divergence_defect,"
-        << "reality_defect\n";
+        << "reality_defect,energy_balance_residual\n";
 }
 
 void writeRun(std::ostream& output,
@@ -243,6 +246,8 @@ void writeRun(std::ostream& output,
               int sample_points) {
     const double initial_l3 =
         result.snapshots.front().diagnostics.critical_l3_sample;
+    const double initial_h_half =
+        result.snapshots.front().diagnostics.critical_h_half;
     const bool cutoff_shell_ok = result.peak_cutoff_fraction <= 0.01;
 
     for (std::size_t snapshot_index = 0;
@@ -253,6 +258,10 @@ void writeRun(std::ostream& output,
                                     ? 0.0
                                     : snapshot.diagnostics.critical_l3_sample /
                                           initial_l3;
+        const double h_half_ratio = initial_h_half == 0.0
+                                        ? 0.0
+                                        : snapshot.diagnostics.critical_h_half /
+                                              initial_h_half;
         for (std::size_t shell_index = 0;
              shell_index < snapshot.shells.size();
              ++shell_index) {
@@ -265,14 +274,24 @@ void writeRun(std::ostream& output,
                    << shell.shell
                    << ',' << shell.lower_radius << ',' << shell.upper_radius << ','
                    << snapshot.diagnostics.energy << ','
+                   << snapshot.diagnostics.enstrophy << ','
+                   << snapshot.diagnostics.palinstrophy << ','
+                   << snapshot.diagnostics.critical_h_half << ','
+                   << h_half_ratio << ','
                    << snapshot.diagnostics.critical_l3_sample << ',' << l3_ratio
+                   << ',' << snapshot.diagnostics.nonlinear_enstrophy_production
+                   << ',' << snapshot.diagnostics.viscous_enstrophy_destruction
+                   << ',' << snapshot.diagnostics.net_enstrophy_rate
+                   << ','
+                   << snapshot.diagnostics.enstrophy_production_to_dissipation
                    << ',' << shell.energy << ',' << shell.nonlinear_transfer << ','
                    << shell.viscous_dissipation << ',' << shell.forward_flux << ','
                    << snapshot.diagnostics.high_shell_energy_fraction << ','
                    << result.peak_cutoff_fraction << ','
                    << (cutoff_shell_ok ? "true" : "false") << ','
                    << snapshot.diagnostics.divergence_defect << ','
-                   << snapshot.diagnostics.reality_defect << '\n';
+                   << snapshot.diagnostics.reality_defect << ','
+                   << snapshot.diagnostics.energy_balance_residual << '\n';
         }
     }
 }
@@ -359,6 +378,9 @@ RunResult runResolution(const System& system,
               << ", relative final-L3 dt error = "
               << relativeDifference(coarse_final.critical_l3_sample,
                                     refined_final.critical_l3_sample)
+              << ", relative final-H1/2 dt error = "
+              << relativeDifference(coarse_final.critical_h_half,
+                                    refined_final.critical_h_half)
               << ", peak cutoff fraction = "
               << std::max(coarse.peak_cutoff_fraction,
                           refined.peak_cutoff_fraction)
@@ -374,6 +396,9 @@ RunResult runResolution(const System& system,
             << ", relative final-L3 resolution difference = "
             << relativeDifference(previous_final.critical_l3_sample,
                                   refined_final.critical_l3_sample)
+            << ", relative final-H1/2 resolution difference = "
+            << relativeDifference(previous_final.critical_h_half,
+                                  refined_final.critical_h_half)
             << ", relative common-shell flux difference = "
             << relativeCommonFluxDifference(*previous_refined, refined) << '\n';
     }

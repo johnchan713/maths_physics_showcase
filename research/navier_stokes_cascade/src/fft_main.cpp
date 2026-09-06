@@ -204,10 +204,12 @@ void writeTimeHeader(std::ostream& output) {
         << "viscous_stability_number,velocity_supremum_bound,grid_size,cutoff,"
         << "initial_condition,tube_core_radius,tube_separation,"
         << "tube_bend_amplitude,tube_axial_wavenumber,"
-        << "energy,enstrophy,palinstrophy,"
+        << "energy,enstrophy,palinstrophy,critical_h_half,"
         << "critical_l3_sample,sampled_vorticity_max,"
         << "vorticity_sup_upper_bound,spectral_centroid,"
         << "high_shell_energy_fraction,divergence_defect,reality_defect,"
+        << "nonlinear_enstrophy_production,viscous_enstrophy_destruction,"
+        << "net_enstrophy_rate,enstrophy_production_to_dissipation,"
         << "energy_balance_residual,bkm_sampled_integral\n";
 }
 
@@ -231,11 +233,16 @@ void writeTimeRow(std::ostream& output,
            << options.tube_parameters.bend_amplitude << ','
            << options.tube_parameters.axial_wavenumber << ','
            << values.energy << ',' << values.enstrophy
-           << ',' << values.palinstrophy << ',' << values.critical_l3_sample << ','
+           << ',' << values.palinstrophy << ',' << values.critical_h_half << ','
+           << values.critical_l3_sample << ','
            << values.sampled_vorticity_max << ','
            << values.vorticity_sup_upper_bound << ',' << values.spectral_centroid
            << ',' << values.high_shell_energy_fraction << ','
            << values.divergence_defect << ',' << values.reality_defect << ','
+           << values.nonlinear_enstrophy_production << ','
+           << values.viscous_enstrophy_destruction << ','
+           << values.net_enstrophy_rate << ','
+           << values.enstrophy_production_to_dissipation << ','
            << values.energy_balance_residual << ',' << bkm_integral << '\n';
 }
 
@@ -333,8 +340,12 @@ int main(int argc, char** argv) {
         double previous_vorticity_max = diagnostics.sampled_vorticity_max;
         double peak_high_shell_fraction = diagnostics.high_shell_energy_fraction;
         double peak_critical_l3 = diagnostics.critical_l3_sample;
+        double peak_critical_h_half = diagnostics.critical_h_half;
         double peak_sampled_vorticity = diagnostics.sampled_vorticity_max;
+        double maximum_production_to_dissipation =
+            diagnostics.enstrophy_production_to_dissipation;
         const double initial_critical_l3 = diagnostics.critical_l3_sample;
+        const double initial_critical_h_half = diagnostics.critical_h_half;
         const double initial_sampled_vorticity = diagnostics.sampled_vorticity_max;
         double previous_diagnostic_time = 0.0;
         const ns_cascade::AdaptiveStepInfo initial_step_information =
@@ -418,8 +429,13 @@ int main(int argc, char** argv) {
                          diagnostics.high_shell_energy_fraction);
             peak_critical_l3 =
                 std::max(peak_critical_l3, diagnostics.critical_l3_sample);
+            peak_critical_h_half = std::max(
+                peak_critical_h_half, diagnostics.critical_h_half);
             peak_sampled_vorticity = std::max(
                 peak_sampled_vorticity, diagnostics.sampled_vorticity_max);
+            maximum_production_to_dissipation = std::max(
+                maximum_production_to_dissipation,
+                diagnostics.enstrophy_production_to_dissipation);
             writeTimeRow(csv,
                          step,
                          time,
@@ -460,8 +476,12 @@ int main(int argc, char** argv) {
                   << "Peak sampled L3 norm: " << peak_critical_l3 << '\n'
                   << "Peak/initial sampled L3 ratio: "
                   << peak_critical_l3 / initial_critical_l3 << '\n'
+                  << "Peak/initial H1/2 ratio: "
+                  << peak_critical_h_half / initial_critical_h_half << '\n'
                   << "Peak/initial sampled vorticity ratio: "
                   << peak_sampled_vorticity / initial_sampled_vorticity << '\n'
+                  << "Maximum enstrophy production/dissipation ratio: "
+                  << maximum_production_to_dissipation << '\n'
                   << "Sampled BKM integral: " << bkm_sampled_integral << '\n'
                   << "Peak cutoff-shell energy fraction: "
                   << peak_high_shell_fraction << '\n'

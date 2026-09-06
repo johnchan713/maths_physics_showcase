@@ -412,6 +412,18 @@ public:
         return value;
     }
 
+    double criticalHOneHalf(const State& state) const {
+        requireCompatible(state);
+        double norm_squared = 0.0;
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            const double wave_magnitude = std::sqrt(
+                static_cast<double>(modes_[index].normSquared()));
+            norm_squared += wave_magnitude * normSquared(state[index]);
+        }
+        return std::sqrt(norm_squared);
+    }
+
     double energyDerivative(const State& state,
                             const State& derivative) const {
         requireCompatible(state);
@@ -420,6 +432,19 @@ public:
         for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
             const std::size_t index = retained_indices_[n];
             value += std::real(innerProduct(state[index], derivative[index]));
+        }
+        return value;
+    }
+
+    double enstrophyDerivative(const State& state,
+                               const State& derivative) const {
+        requireCompatible(state);
+        requireCompatible(derivative);
+        double value = 0.0;
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            value += static_cast<double>(modes_[index].normSquared()) *
+                     std::real(innerProduct(state[index], derivative[index]));
         }
         return value;
     }
@@ -437,6 +462,7 @@ public:
         values.energy = energy(state);
         values.enstrophy = enstrophy(state);
         values.palinstrophy = palinstrophy(state);
+        values.critical_h_half = criticalHOneHalf(state);
         values.divergence_defect = divergenceDefect(state);
         values.reality_defect = realityDefect(state);
         values.vorticity_sup_upper_bound = vorticitySupremumUpperBound(state);
@@ -446,10 +472,21 @@ public:
         const std::pair<double, double> samples = sampledNorms(state);
         values.critical_l3_sample = samples.first;
         values.sampled_vorticity_max = samples.second;
-        const State derivative = rightHandSide(state);
-        values.energy_balance_residual = std::abs(
-            energyDerivative(state, derivative) +
-            2.0 * viscosity_ * values.enstrophy);
+        const State nonlinear_derivative = rightHandSide(state, false);
+        values.nonlinear_enstrophy_production =
+            enstrophyDerivative(state, nonlinear_derivative);
+        values.viscous_enstrophy_destruction =
+            2.0 * viscosity_ * values.palinstrophy;
+        values.net_enstrophy_rate =
+            values.nonlinear_enstrophy_production -
+            values.viscous_enstrophy_destruction;
+        values.enstrophy_production_to_dissipation =
+            values.viscous_enstrophy_destruction == 0.0
+                ? 0.0
+                : values.nonlinear_enstrophy_production /
+                      values.viscous_enstrophy_destruction;
+        values.energy_balance_residual =
+            std::abs(energyDerivative(state, nonlinear_derivative));
         return values;
     }
 

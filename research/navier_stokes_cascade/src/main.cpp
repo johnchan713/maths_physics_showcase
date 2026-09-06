@@ -137,9 +137,12 @@ Options parseOptions(int argc, char** argv) {
 
 void writeHeader(std::ostream& output) {
     output
-        << "step,time,sample_points,energy,enstrophy,palinstrophy,critical_l3_sample,"
+        << "step,time,sample_points,energy,enstrophy,palinstrophy,critical_h_half,"
+        << "critical_l3_sample,"
         << "sampled_vorticity_max,vorticity_sup_upper_bound,spectral_centroid,"
         << "high_shell_energy_fraction,divergence_defect,reality_defect,"
+        << "nonlinear_enstrophy_production,viscous_enstrophy_destruction,"
+        << "net_enstrophy_rate,enstrophy_production_to_dissipation,"
         << "energy_balance_residual,bkm_sampled_integral\n";
 }
 
@@ -151,11 +154,16 @@ void writeRow(std::ostream& output,
               double bkm_integral) {
     output << step << ',' << time << ',' << sample_points << ',' << values.energy
            << ',' << values.enstrophy
-           << ',' << values.palinstrophy << ',' << values.critical_l3_sample << ','
+           << ',' << values.palinstrophy << ',' << values.critical_h_half << ','
+           << values.critical_l3_sample << ','
            << values.sampled_vorticity_max << ','
            << values.vorticity_sup_upper_bound << ',' << values.spectral_centroid
            << ',' << values.high_shell_energy_fraction << ','
            << values.divergence_defect << ',' << values.reality_defect << ','
+           << values.nonlinear_enstrophy_production << ','
+           << values.viscous_enstrophy_destruction << ','
+           << values.net_enstrophy_rate << ','
+           << values.enstrophy_production_to_dissipation << ','
            << values.energy_balance_residual << ',' << bkm_integral << '\n';
 }
 
@@ -217,6 +225,10 @@ int main(int argc, char** argv) {
         double previous_vorticity_max = diagnostics.sampled_vorticity_max;
         double peak_high_shell_fraction = diagnostics.high_shell_energy_fraction;
         double peak_critical_l3 = diagnostics.critical_l3_sample;
+        double peak_critical_h_half = diagnostics.critical_h_half;
+        double maximum_production_to_dissipation =
+            diagnostics.enstrophy_production_to_dissipation;
+        const double initial_critical_h_half = diagnostics.critical_h_half;
         int previous_diagnostic_step = 0;
         writeRow(csv,
                  0,
@@ -248,6 +260,11 @@ int main(int argc, char** argv) {
                          diagnostics.high_shell_energy_fraction);
             peak_critical_l3 =
                 std::max(peak_critical_l3, diagnostics.critical_l3_sample);
+            peak_critical_h_half = std::max(
+                peak_critical_h_half, diagnostics.critical_h_half);
+            maximum_production_to_dissipation = std::max(
+                maximum_production_to_dissipation,
+                diagnostics.enstrophy_production_to_dissipation);
             writeRow(csv,
                      step,
                      step * options.time_step,
@@ -270,6 +287,10 @@ int main(int argc, char** argv) {
                   << system.modeCount() << " non-zero Fourier modes.\n"
                   << "Final normalized energy: " << diagnostics.energy << '\n'
                   << "Peak sampled L3 norm: " << peak_critical_l3 << '\n'
+                  << "Peak/initial H1/2 ratio: "
+                  << peak_critical_h_half / initial_critical_h_half << '\n'
+                  << "Maximum enstrophy production/dissipation ratio: "
+                  << maximum_production_to_dissipation << '\n'
                   << "Sampled BKM integral: " << bkm_sampled_integral << '\n'
                   << "Peak cutoff-shell energy fraction: "
                   << peak_high_shell_fraction << '\n'

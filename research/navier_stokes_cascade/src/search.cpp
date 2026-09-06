@@ -25,7 +25,7 @@ struct Options {
     double diffusion_safety = 2.0;
     int diagnostic_every = 5;
     int top_count = 3;
-    double initial_energy = 1.0;
+    std::vector<double> initial_energies = {1.0};
     double cutoff_fraction_threshold = 0.01;
     std::vector<double> core_radii = {0.55, 0.70};
     std::vector<double> separations = {1.2, 1.8};
@@ -37,6 +37,7 @@ struct Options {
 struct Candidate {
     int id;
     ns_cascade::VortexTubeParameters parameters;
+    double initial_energy;
 };
 
 struct RunResult {
@@ -57,6 +58,9 @@ struct RunResult {
     double initial_l3;
     double final_l3;
     double peak_l3;
+    double initial_h_half;
+    double final_h_half;
+    double peak_h_half;
     double initial_vorticity;
     double final_vorticity;
     double peak_vorticity;
@@ -69,6 +73,9 @@ struct RunResult {
     double maximum_divergence_defect;
     double maximum_reality_defect;
     double maximum_energy_balance_residual;
+    double maximum_nonlinear_enstrophy_production;
+    double maximum_enstrophy_production_to_dissipation;
+    double maximum_net_enstrophy_rate;
     double score;
     double elapsed_seconds;
 
@@ -91,6 +98,9 @@ struct RunResult {
           initial_l3(std::numeric_limits<double>::quiet_NaN()),
           final_l3(std::numeric_limits<double>::quiet_NaN()),
           peak_l3(std::numeric_limits<double>::quiet_NaN()),
+          initial_h_half(std::numeric_limits<double>::quiet_NaN()),
+          final_h_half(std::numeric_limits<double>::quiet_NaN()),
+          peak_h_half(std::numeric_limits<double>::quiet_NaN()),
           initial_vorticity(std::numeric_limits<double>::quiet_NaN()),
           final_vorticity(std::numeric_limits<double>::quiet_NaN()),
           peak_vorticity(std::numeric_limits<double>::quiet_NaN()),
@@ -105,6 +115,12 @@ struct RunResult {
               std::numeric_limits<double>::quiet_NaN()),
           maximum_reality_defect(std::numeric_limits<double>::quiet_NaN()),
           maximum_energy_balance_residual(
+              std::numeric_limits<double>::quiet_NaN()),
+          maximum_nonlinear_enstrophy_production(
+              std::numeric_limits<double>::quiet_NaN()),
+          maximum_enstrophy_production_to_dissipation(
+              std::numeric_limits<double>::quiet_NaN()),
+          maximum_net_enstrophy_rate(
               std::numeric_limits<double>::quiet_NaN()),
           score(-std::numeric_limits<double>::infinity()),
           elapsed_seconds(std::numeric_limits<double>::quiet_NaN()) {}
@@ -171,7 +187,8 @@ void printUsage(const char* program) {
         << "  --diffusion-safety S    Bound on nu*|k|max^2*dt (default: 2)\n"
         << "  --diagnostic-every N    Accepted steps between samples (default: 5)\n"
         << "  --top N                 Coarse finalists rerun fine (default: 3)\n"
-        << "  --energy E              Normalized initial energy (default: 1)\n"
+        << "  --energy E              One normalized initial energy (default: 1)\n"
+        << "  --energies LIST         Initial energies to search\n"
         << "  --cores LIST            Core radii (default: 0.55,0.70)\n"
         << "  --separations LIST      Pair separations (default: 1.2,1.8)\n"
         << "  --bends LIST            Helical bend amplitudes (default: 0,0.30)\n"
@@ -220,8 +237,11 @@ Options parseOptions(int argc, char** argv) {
             options.top_count =
                 parseNumber<int>(requireValue(i, argc, argv), flag);
         } else if (flag == "--energy") {
-            options.initial_energy =
-                parseNumber<double>(requireValue(i, argc, argv), flag);
+            options.initial_energies.assign(
+                1, parseNumber<double>(requireValue(i, argc, argv), flag));
+        } else if (flag == "--energies") {
+            options.initial_energies =
+                parseList<double>(requireValue(i, argc, argv), flag);
         } else if (flag == "--cores") {
             options.core_radii =
                 parseList<double>(requireValue(i, argc, argv), flag);
@@ -248,6 +268,7 @@ Options parseOptions(int argc, char** argv) {
     removeDuplicates(options.separations);
     removeDuplicates(options.bend_amplitudes);
     removeDuplicates(options.axial_wavenumbers);
+    removeDuplicates(options.initial_energies);
     if (options.coarse_grid >= options.fine_grid) {
         throw std::invalid_argument("--fine-grid must be larger than --coarse-grid");
     }
@@ -265,8 +286,11 @@ Options parseOptions(int argc, char** argv) {
         throw std::invalid_argument(
             "--cfl and --diffusion-safety must be finite and positive");
     }
-    if (!finiteAndPositive(options.initial_energy)) {
-        throw std::invalid_argument("--energy must be finite and positive");
+    for (std::size_t i = 0; i < options.initial_energies.size(); ++i) {
+        if (!finiteAndPositive(options.initial_energies[i])) {
+            throw std::invalid_argument(
+                "Every requested initial energy must be finite and positive");
+        }
     }
     if (!finiteAndPositive(options.cutoff_fraction_threshold) ||
         options.cutoff_fraction_threshold >= 1.0) {
@@ -313,26 +337,33 @@ Options parseOptions(int argc, char** argv) {
 std::vector<Candidate> buildCandidates(const Options& options) {
     std::vector<Candidate> candidates;
     int id = 1;
-    for (std::size_t core = 0; core < options.core_radii.size(); ++core) {
-        for (std::size_t separation = 0;
-             separation < options.separations.size();
-             ++separation) {
-            for (std::size_t bend = 0;
-                 bend < options.bend_amplitudes.size();
-                 ++bend) {
-                for (std::size_t mode = 0;
-                     mode < options.axial_wavenumbers.size();
-                     ++mode) {
-                    // Axial mode has no effect for a straight, z-invariant pair.
-                    if (options.bend_amplitudes[bend] == 0.0 && mode != 0) continue;
-                    Candidate candidate;
-                    candidate.id = id++;
-                    candidate.parameters = ns_cascade::VortexTubeParameters(
-                        options.core_radii[core],
-                        options.separations[separation],
-                        options.bend_amplitudes[bend],
-                        options.axial_wavenumbers[mode]);
-                    candidates.push_back(candidate);
+    for (std::size_t energy = 0;
+         energy < options.initial_energies.size();
+         ++energy) {
+        for (std::size_t core = 0; core < options.core_radii.size(); ++core) {
+            for (std::size_t separation = 0;
+                 separation < options.separations.size();
+                 ++separation) {
+                for (std::size_t bend = 0;
+                     bend < options.bend_amplitudes.size();
+                     ++bend) {
+                    for (std::size_t mode = 0;
+                         mode < options.axial_wavenumbers.size();
+                         ++mode) {
+                        // Axial mode has no effect for a straight, z-invariant pair.
+                        if (options.bend_amplitudes[bend] == 0.0 && mode != 0) {
+                            continue;
+                        }
+                        Candidate candidate;
+                        candidate.id = id++;
+                        candidate.initial_energy = options.initial_energies[energy];
+                        candidate.parameters = ns_cascade::VortexTubeParameters(
+                            options.core_radii[core],
+                            options.separations[separation],
+                            options.bend_amplitudes[bend],
+                            options.axial_wavenumbers[mode]);
+                        candidates.push_back(candidate);
+                    }
                 }
             }
         }
@@ -368,11 +399,18 @@ bool finiteDiagnostics(
     const ns_cascade::PseudospectralSystem::Diagnostics& values) {
     return std::isfinite(values.energy) && std::isfinite(values.enstrophy) &&
            std::isfinite(values.palinstrophy) &&
+           std::isfinite(values.critical_h_half) &&
            std::isfinite(values.critical_l3_sample) &&
            std::isfinite(values.sampled_vorticity_max) &&
+           std::isfinite(values.vorticity_sup_upper_bound) &&
+           std::isfinite(values.spectral_centroid) &&
            std::isfinite(values.high_shell_energy_fraction) &&
            std::isfinite(values.divergence_defect) &&
            std::isfinite(values.reality_defect) &&
+           std::isfinite(values.nonlinear_enstrophy_production) &&
+           std::isfinite(values.viscous_enstrophy_destruction) &&
+           std::isfinite(values.net_enstrophy_rate) &&
+           std::isfinite(values.enstrophy_production_to_dissipation) &&
            std::isfinite(values.energy_balance_residual);
 }
 
@@ -386,9 +424,12 @@ void recordDiagnostics(
     }
     result.final_energy = values.energy;
     result.final_l3 = values.critical_l3_sample;
+    result.final_h_half = values.critical_h_half;
     result.final_vorticity = values.sampled_vorticity_max;
     result.final_enstrophy = values.enstrophy;
     result.peak_l3 = std::max(result.peak_l3, values.critical_l3_sample);
+    result.peak_h_half =
+        std::max(result.peak_h_half, values.critical_h_half);
     result.peak_vorticity =
         std::max(result.peak_vorticity, values.sampled_vorticity_max);
     result.peak_enstrophy = std::max(result.peak_enstrophy, values.enstrophy);
@@ -403,6 +444,15 @@ void recordDiagnostics(
     result.maximum_energy_balance_residual = std::max(
         result.maximum_energy_balance_residual,
         values.energy_balance_residual);
+    result.maximum_nonlinear_enstrophy_production = std::max(
+        result.maximum_nonlinear_enstrophy_production,
+        values.nonlinear_enstrophy_production);
+    result.maximum_enstrophy_production_to_dissipation = std::max(
+        result.maximum_enstrophy_production_to_dissipation,
+        values.enstrophy_production_to_dissipation);
+    result.maximum_net_enstrophy_rate = std::max(
+        result.maximum_net_enstrophy_rate,
+        values.net_enstrophy_rate);
     result.maximum_positive_forward_flux = std::max(
         result.maximum_positive_forward_flux,
         positiveForwardFlux(system.shellDiagnostics(state)));
@@ -419,7 +469,7 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
     const std::chrono::steady_clock::time_point start =
         std::chrono::steady_clock::now();
     ns_cascade::PseudospectralSystem::State state =
-        system.vortexTubePairState(candidate.parameters, options.initial_energy);
+        system.vortexTubePairState(candidate.parameters, candidate.initial_energy);
     const ns_cascade::PseudospectralSystem::Diagnostics initial =
         system.diagnostics(state);
     if (!finiteDiagnostics(initial)) {
@@ -433,6 +483,9 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
     result.initial_l3 = initial.critical_l3_sample;
     result.final_l3 = initial.critical_l3_sample;
     result.peak_l3 = initial.critical_l3_sample;
+    result.initial_h_half = initial.critical_h_half;
+    result.final_h_half = initial.critical_h_half;
+    result.peak_h_half = initial.critical_h_half;
     result.initial_vorticity = initial.sampled_vorticity_max;
     result.final_vorticity = initial.sampled_vorticity_max;
     result.peak_vorticity = initial.sampled_vorticity_max;
@@ -445,6 +498,12 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
     result.maximum_divergence_defect = 0.0;
     result.maximum_reality_defect = 0.0;
     result.maximum_energy_balance_residual = 0.0;
+    result.maximum_nonlinear_enstrophy_production =
+        -std::numeric_limits<double>::infinity();
+    result.maximum_enstrophy_production_to_dissipation =
+        -std::numeric_limits<double>::infinity();
+    result.maximum_net_enstrophy_rate =
+        -std::numeric_limits<double>::infinity();
     recordDiagnostics(system, state, initial, result);
 
     double time = 0.0;
@@ -497,10 +556,13 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
         result.maximum_reality_defect <= 1e-9 &&
         result.maximum_energy_balance_residual <= 1e-9;
     const double l3_growth = ratio(result.peak_l3, result.initial_l3);
+    const double h_half_growth =
+        ratio(result.peak_h_half, result.initial_h_half);
     const double vorticity_growth =
         ratio(result.peak_vorticity, result.initial_vorticity);
     const double final_l3_ratio = ratio(result.final_l3, result.initial_l3);
     result.score = std::log(std::max(l3_growth, 1e-300)) +
+                   0.25 * std::log(std::max(h_half_growth, 1e-300)) +
                    0.05 * std::log(std::max(vorticity_growth, 1e-300)) +
                    0.01 * std::log(std::max(final_l3_ratio, 1e-300));
     result.elapsed_seconds =
@@ -538,15 +600,22 @@ double relativeDifference(double left, double right) {
 bool crossResolutionOk(const RunResult& coarse,
                        const RunResult& fine,
                        double& l3_difference,
+                       double& h_half_difference,
                        double& vorticity_difference,
                        double& flux_difference) {
     const double coarse_l3_ratio = ratio(coarse.peak_l3, coarse.initial_l3);
     const double fine_l3_ratio = ratio(fine.peak_l3, fine.initial_l3);
+    const double coarse_h_half_ratio =
+        ratio(coarse.peak_h_half, coarse.initial_h_half);
+    const double fine_h_half_ratio =
+        ratio(fine.peak_h_half, fine.initial_h_half);
     const double coarse_vorticity_ratio =
         ratio(coarse.peak_vorticity, coarse.initial_vorticity);
     const double fine_vorticity_ratio =
         ratio(fine.peak_vorticity, fine.initial_vorticity);
     l3_difference = relativeDifference(coarse_l3_ratio, fine_l3_ratio);
+    h_half_difference = relativeDifference(
+        coarse_h_half_ratio, fine_h_half_ratio);
     vorticity_difference = relativeDifference(
         coarse_vorticity_ratio, fine_vorticity_ratio);
     flux_difference = relativeDifference(
@@ -555,13 +624,18 @@ bool crossResolutionOk(const RunResult& coarse,
     const bool l3_growth_signal_agrees =
         std::max(coarse_l3_ratio, fine_l3_ratio) <= 1.005 ||
         (coarse_l3_ratio > 1.005 && fine_l3_ratio > 1.005);
+    const bool h_half_growth_signal_agrees =
+        std::max(coarse_h_half_ratio, fine_h_half_ratio) <= 1.005 ||
+        (coarse_h_half_ratio > 1.005 && fine_h_half_ratio > 1.005);
     const bool vorticity_growth_signal_agrees =
         std::max(coarse_vorticity_ratio, fine_vorticity_ratio) <= 1.005 ||
         (coarse_vorticity_ratio > 1.005 && fine_vorticity_ratio > 1.005);
     return coarse.completed && fine.completed && coarse.resolution_ok &&
            fine.resolution_ok && l3_difference <= 0.02 &&
+           h_half_difference <= 0.02 &&
            vorticity_difference <= 0.10 && flux_difference <= 0.25 &&
-           l3_growth_signal_agrees && vorticity_growth_signal_agrees;
+           l3_growth_signal_agrees && h_half_growth_signal_agrees &&
+           vorticity_growth_signal_agrees;
 }
 
 std::string csvString(const std::string& value) {
@@ -582,14 +656,18 @@ void writeHeader(std::ostream& output) {
         << "max_advective_cfl_upper_bound,max_viscous_stability_number,"
         << "initial_3d_energy_fraction,initial_energy,final_energy,"
         << "initial_l3,final_l3,peak_l3,peak_l3_ratio,"
+        << "initial_h_half,final_h_half,peak_h_half,peak_h_half_ratio,"
         << "initial_sampled_vorticity,final_sampled_vorticity,"
         << "peak_sampled_vorticity,peak_vorticity_ratio,"
         << "initial_enstrophy,final_enstrophy,peak_enstrophy,"
         << "peak_enstrophy_ratio,peak_palinstrophy,max_positive_forward_flux,"
         << "peak_cutoff_energy_fraction,max_divergence_defect,"
         << "max_reality_defect,max_energy_balance_residual,resolution_ok,"
+        << "max_nonlinear_enstrophy_production,"
+        << "max_enstrophy_production_to_dissipation,max_net_enstrophy_rate,"
         << "ranking_score,cpu_seconds,reference_grid,"
-        << "l3_ratio_relative_difference,vorticity_ratio_relative_difference,"
+        << "l3_ratio_relative_difference,h_half_ratio_relative_difference,"
+        << "vorticity_ratio_relative_difference,"
         << "flux_relative_difference,cross_resolution_ok,failure\n";
 }
 
@@ -606,7 +684,7 @@ void writeResult(std::ostream& output,
            << result.candidate.parameters.separation << ','
            << result.candidate.parameters.bend_amplitude << ','
            << result.candidate.parameters.axial_wavenumber << ','
-           << options.viscosity << ',' << options.initial_energy << ','
+           << options.viscosity << ',' << result.candidate.initial_energy << ','
            << options.final_time << ',' << result.steps << ','
            << result.minimum_time_step << ',' << result.maximum_time_step << ','
            << result.maximum_cfl_bound << ','
@@ -616,6 +694,9 @@ void writeResult(std::ostream& output,
            << result.initial_l3 << ',' << result.final_l3 << ','
            << result.peak_l3 << ','
            << ratio(result.peak_l3, result.initial_l3) << ','
+           << result.initial_h_half << ',' << result.final_h_half << ','
+           << result.peak_h_half << ','
+           << ratio(result.peak_h_half, result.initial_h_half) << ','
            << result.initial_vorticity << ',' << result.final_vorticity << ','
            << result.peak_vorticity << ','
            << ratio(result.peak_vorticity, result.initial_vorticity) << ','
@@ -629,21 +710,27 @@ void writeResult(std::ostream& output,
            << result.maximum_reality_defect << ','
            << result.maximum_energy_balance_residual << ','
            << (result.resolution_ok ? "true" : "false") << ','
+           << result.maximum_nonlinear_enstrophy_production << ','
+           << result.maximum_enstrophy_production_to_dissipation << ','
+           << result.maximum_net_enstrophy_rate << ','
            << result.score << ',' << result.elapsed_seconds << ',';
     if (reference == NULL) {
-        output << ",,,,,";
+        output << ",,,,,,";
     } else {
         double l3_difference = 0.0;
+        double h_half_difference = 0.0;
         double vorticity_difference = 0.0;
         double flux_difference = 0.0;
         const bool consistent = crossResolutionOk(
             *reference,
             result,
             l3_difference,
+            h_half_difference,
             vorticity_difference,
             flux_difference);
         output << reference->grid_size << ',' << l3_difference << ','
-               << vorticity_difference << ',' << flux_difference << ','
+               << h_half_difference << ',' << vorticity_difference << ','
+               << flux_difference << ','
                << (consistent ? "true" : "false") << ',';
     }
     output << csvString(result.failure) << '\n';
@@ -658,11 +745,14 @@ void printProgress(const std::string& stage,
               << result.candidate.parameters.core_radius << " separation="
               << result.candidate.parameters.separation << " bend="
               << result.candidate.parameters.bend_amplitude << " axial="
-              << result.candidate.parameters.axial_wavenumber;
+              << result.candidate.parameters.axial_wavenumber << " energy="
+              << result.candidate.initial_energy;
     if (!result.completed) {
         std::cout << " FAILED: " << result.failure << '\n';
     } else {
         std::cout << " L3 ratio=" << ratio(result.peak_l3, result.initial_l3)
+                  << " H1/2 ratio="
+                  << ratio(result.peak_h_half, result.initial_h_half)
                   << " vorticity ratio="
                   << ratio(result.peak_vorticity, result.initial_vorticity)
                   << " cutoff fraction=" << result.peak_cutoff_fraction
@@ -739,11 +829,13 @@ int main(int argc, char** argv) {
         int cross_resolved = 0;
         for (std::size_t i = 0; i < fine_results.size(); ++i) {
             double l3_difference = 0.0;
+            double h_half_difference = 0.0;
             double vorticity_difference = 0.0;
             double flux_difference = 0.0;
             if (crossResolutionOk(references[i],
                                   fine_results[i],
                                   l3_difference,
+                                  h_half_difference,
                                   vorticity_difference,
                                   flux_difference)) {
                 ++cross_resolved;
@@ -767,16 +859,19 @@ int main(int argc, char** argv) {
             std::cout << "Best fine-grid candidate " << best.candidate.id
                       << ": peak L3 ratio="
                       << ratio(best.peak_l3, best.initial_l3)
+                      << ", peak H1/2 ratio="
+                      << ratio(best.peak_h_half, best.initial_h_half)
                       << ", peak sampled-vorticity ratio="
                       << ratio(best.peak_vorticity, best.initial_vorticity)
                       << ", peak cutoff fraction=" << best.peak_cutoff_fraction
                       << ".\n";
-            if (ratio(best.peak_l3, best.initial_l3) <= 1.005) {
+            if (ratio(best.peak_l3, best.initial_l3) <= 1.005 &&
+                ratio(best.peak_h_half, best.initial_h_half) <= 1.005) {
                 std::cout
-                    << "No material critical-L3 growth was found in this short search.\n";
+                    << "No material growth was found in either critical norm in this short search.\n";
             } else {
                 std::cout
-                    << "Critical-L3 growth is only a candidate signal; it is not evidence of singularity without much stronger convergence and analysis.\n";
+                    << "Critical-norm growth is only a candidate signal; it is not evidence of singularity without much stronger convergence and analysis.\n";
             }
         }
         std::cout << "Results written to " << options.output << "\n"

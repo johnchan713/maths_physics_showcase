@@ -132,6 +132,37 @@ void testViscousEnergyIdentity() {
            "Semi-discrete viscous energy identity failed");
 }
 
+void testCriticalNormAndEnstrophyBudget() {
+    const double viscosity = 0.15;
+    const ns_cascade::GalerkinSystem system(3, viscosity);
+    const ns_cascade::GalerkinSystem::State taylor_green =
+        system.taylorGreenState(1.0);
+    expectNear(system.criticalHOneHalf(taylor_green),
+               std::sqrt(2.0 * std::sqrt(3.0)),
+               1e-13,
+               "Taylor-Green critical H1/2 norm is incorrect");
+
+    const ns_cascade::GalerkinSystem::State state =
+        system.deterministicLowModeState(1.0);
+    const ns_cascade::GalerkinSystem::State full_derivative =
+        system.rightHandSide(state);
+    const ns_cascade::GalerkinSystem::Diagnostics diagnostics =
+        system.diagnostics(state);
+    expectNear(system.enstrophyDerivative(state, full_derivative),
+               diagnostics.net_enstrophy_rate,
+               2e-12,
+               "Enstrophy budget does not match the full evolution");
+    expectNear(diagnostics.viscous_enstrophy_destruction,
+               2.0 * viscosity * system.palinstrophy(state),
+               1e-13,
+               "Viscous enstrophy destruction is incorrect");
+
+    const ns_cascade::GalerkinSystem::Diagnostics abc_diagnostics =
+        system.diagnostics(system.abcState());
+    expect(std::abs(abc_diagnostics.nonlinear_enstrophy_production) < 1e-13,
+           "ABC negative control has non-zero enstrophy production");
+}
+
 void testShortViscousRun() {
     const ns_cascade::GalerkinSystem system(2, 0.1);
     ns_cascade::GalerkinSystem::State state =
@@ -209,6 +240,7 @@ int main() {
         testAbcIsNonlinearNegativeControl();
         testNonlinearEnergyCancellation();
         testViscousEnergyIdentity();
+        testCriticalNormAndEnstrophyBudget();
         testShortViscousRun();
         testShellAccounting();
         testZeroGradientIsNotZeroValue();

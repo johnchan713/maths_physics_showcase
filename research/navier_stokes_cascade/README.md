@@ -109,14 +109,33 @@ test family, not a claim that it resembles a singular profile.
 The CSV diagnostics include:
 
 - normalized kinetic energy, enstrophy, and palinstrophy;
-- a sampled scale-critical L3 velocity norm;
+- the scale-critical homogeneous H1/2 Fourier norm and a sampled
+  scale-critical L3 velocity norm;
 - sampled maximum vorticity and its time integral (a BKM-inspired diagnostic);
 - a rigorous-for-the-truncated-polynomial Fourier upper bound on maximum
   vorticity;
 - spectral centroid and energy fraction touching the cutoff shell;
 - energy, nonlinear transfer, viscous loss, and forward flux for every radial
   Fourier shell;
+- nonlinear enstrophy production, viscous enstrophy destruction, their net
+  rate, and their ratio;
 - divergence, Fourier-reality, and semi-discrete energy-balance defects.
+
+With the repository's Fourier normalization, the critical Sobolev diagnostic
+and enstrophy budget are
+
+```text
+||u||_(Hdot 1/2) = (sum_k |k| |u_k|^2)^(1/2),
+Omega              = (1/2) sum_k |k|^2 |u_k|^2,
+d Omega / dt       = S - 2 nu P,
+S                  = sum_k |k|^2 Re(conj(u_k) . N_k),
+P                  = (1/2) sum_k |k|^4 |u_k|^2.
+```
+
+Thus `S/(2 nu P) > 1` means nonlinear vortex stretching is instantaneously
+creating enstrophy faster than viscosity destroys it. For `nu=0`, the ratio is
+reported as zero because its denominator vanishes. Neither a ratio above one
+nor finite growth of a critical norm implies blow-up.
 
 For the unit-width shell `S_j = {k : j-1 < |k| <= j}`, the code records
 
@@ -134,8 +153,9 @@ necessary for a forward cascade; it is nowhere near sufficient for blow-up.
 
 The tests check the structural identities before any experiment is interpreted:
 Leray projection, real/divergence-free invariants, nonlinear energy
-cancellation, shell accounting, viscous energy dissipation, the ABC negative
-control, and short-run numerical stability.
+cancellation, shell accounting, viscous energy dissipation, the exact
+semi-discrete enstrophy budget, an analytic Taylor-Green H1/2 value, the ABC
+negative control, and short-run numerical stability.
 The FFT-specific suite also checks a complex 3D transform round trip, rejects
 unsafe cutoffs, compares every nonlinear Fourier coefficient against direct
 convolution, repeats that comparison with all modes populated at the maximum
@@ -219,24 +239,30 @@ constraint gates, and rerun the top three candidates at `32^3`:
   --coarse-grid 16 --fine-grid 32 \
   --cores 0.55,0.70 --separations 1.2,1.8 \
   --bends 0,0.30 --axial-modes 1,2 \
-  --viscosity 0.02 --dt 0.005 --final-time 0.1 --top 3 \
+  --energies 1,4,10 --viscosity 0.02 \
+  --dt 0.005 --final-time 0.1 --top 3 \
   --output navier_stokes_candidate_search.csv
 ```
 
 The straight cases are deduplicated because their axial wavenumber has no
-effect. The CSV records initial/final/peak critical L3, sampled vorticity,
-enstrophy, palinstrophy, maximum positive shell flux, cutoff contamination,
-constraint defects, accepted-step statistics, and coarse/fine differences.
-An apparent growth signal must occur on both grids to pass the preliminary
-cross-resolution gate. The ranking score uses critical-L3 growth first with a
-small sampled-vorticity and final-L3 tie-break; it is merely a deterministic
-triage rule.
+effect. `--energy E` remains the single-energy shorthand; `--energies` includes
+energy in the candidate grid. The CSV records initial/final/peak critical L3
+and H1/2, sampled
+vorticity, enstrophy, palinstrophy, enstrophy production/destruction, maximum
+positive shell flux, cutoff contamination, constraint defects, accepted-step
+statistics, and coarse/fine differences. An apparent growth signal in either
+critical norm must occur on both grids to pass the preliminary
+cross-resolution gate. The ranking score weights critical-L3 growth first,
+then critical-H1/2 growth, with small sampled-vorticity and final-L3
+tie-breaks; it is merely a deterministic triage rule.
 
 The direct comparison uses one common spatial sampling grid for every cutoff.
 The FFT comparison samples on each native grid; therefore its L3-grid
-difference includes quadrature error as well as solution error. The CSV
-contains total and shell energies, critical-L3 ratio, nonlinear transfer,
-viscous dissipation, forward flux, constraint defects, and cutoff-shell checks.
+difference includes quadrature error as well as solution error. The H1/2
+diagnostic is computed directly from Fourier coefficients. The CSV contains
+total and shell energies, both critical-norm ratios, the enstrophy budget,
+nonlinear transfer, viscous dissipation, forward flux, constraint defects, and
+cutoff-shell checks.
 The terminal summary reports both timestep differences and adjacent-resolution
 differences, including common-shell flux disagreement.
 
@@ -287,22 +313,30 @@ signals and flux passed the preliminary resolution gate had
 |---|---:|---:|
 | Peak critical-L3 / initial | 1.000000 | 1.000000 |
 | Final critical-L3 / initial | 0.988878748 | 0.988879563 |
+| Peak critical-H1/2 / initial | 1.000000 | 1.000000 |
+| Final critical-H1/2 / initial | 0.989693218 | 0.989693227 |
 | Peak sampled vorticity / initial | 1.03280068 | 1.04312237 |
 | Final enstrophy / initial | 0.981387172 | 0.981387447 |
+| Final nonlinear enstrophy production | 1.22370216 | 1.22377821 |
+| Final production / viscous destruction | 0.809589276 | 0.809629929 |
 | Maximum positive forward flux | 0.050832943 | 0.050832879 |
 | Peak cutoff-shell energy fraction | 4.06726e-7 | 4.56699e-14 |
-| Accepted adaptive steps | 68 | 141 |
-| Maximum conservative CFL bound | 0.35 | 0.35 |
+| Accepted adaptive steps | 59 | 124 |
+| Maximum conservative CFL bound | 0.40 | 0.40 |
 
 The final-L3 ratios agree to about `8.2e-7` relative and the peak forward flux
-to about `1.3e-6` relative. The sampled-vorticity growth differs by about 0.99%
-relative, partly because the maximum is sampled on each native grid.
+to about `1.3e-6` relative. The final H1/2 ratios differ by less than `1e-8`
+relative, and the production/destruction ratios by about `5e-5` relative. The
+sampled-vorticity growth differs by about 0.99% relative, partly because the
+maximum is sampled on each native grid.
 
 Extending the same candidate to `t=0.5` at `N=32` gave peak sampled-vorticity
 growth `1.12599`, enstrophy growth `1.09518`, final critical-L3 ratio
-`0.932052`, and cutoff fraction `4.96984e-4`. The corresponding `N=16` run was
-under-resolved (cutoff fraction `0.0200`), so the long-time growth still needs
-an `N=64` check.
+`0.932052`, final critical-H1/2 ratio `0.972161`, and cutoff fraction
+`4.96984e-4`. Net enstrophy production first became positive at the sampled
+time `t=0.1264`, but neither critical norm reversed its decline. The
+corresponding `N=16` run was under-resolved (cutoff fraction `0.0200`), so the
+long-time enstrophy growth still needs an `N=64` check.
 
 The defensible interpretation is narrow: this family exhibits resolved local
 vortex amplification and forward transfer over the short interval, while its
@@ -310,6 +344,68 @@ scale-critical L3 norm decreases. That is a useful configuration for studying
 vortex stretching or geometric depletion, but it is presently evidence
 against this particular run being a blow-up candidate—not a proof of global
 regularity and not a disproof of Navier-Stokes.
+
+### Critical-H1/2 stress test
+
+Increasing the normalized initial energy changes the competition between the
+nonlinear and viscous terms without changing the broad-tube geometry. A
+`16^3 -> 32^3` sweep for `core=0.7`, `separation=1.8`, `bend=0.3`, `axial
+mode=2`, `nu=0.02`, and `t=0.1` produced the following fine-grid values; all
+six coarse/fine pairs passed the preliminary cross-resolution gate:
+
+| Initial energy | Final H1/2 / initial | Final L3 / initial | Peak enstrophy / initial | Max production / destruction | Peak cutoff fraction |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 0.989693 | 0.988879 | 1.000000 | 0.809589 | 4.07e-7 |
+| 2 | 0.991650 | 0.988170 | 1.000000 | 1.618339 | 1.83e-6 |
+| 4 | 0.995715 | 0.986683 | 1.022627 | 3.068124 | 1.09e-5 |
+| 6 | 0.999876 | 0.985121 | 1.052683 | 4.214082 | 3.41e-5 |
+| 8 | 1.004060 | 0.983527 | 1.084048 | 5.068076 | 7.95e-5 |
+| 10 | 1.008226 | 0.981948 | 1.116363 | 5.694614 | 1.54e-4 |
+
+The transition from finite-time H1/2 decay to growth lies between energies six
+and eight for this geometry and observation time. Notice that the enstrophy
+budget becomes production-dominated before H1/2 grows; `production /
+destruction > 1` is not itself a critical-norm criterion. At energy ten, an
+`N=64, K=21` rerun gave H1/2 growth `1.008248`, final L3 ratio `0.981963`, peak
+enstrophy ratio `1.117031`, and cutoff fraction `1.53e-7`. Its H1/2 growth ratio
+differs from `N=32` by about `2.2e-5` relative.
+
+This is a reproducible finite critical-norm growth signal, not a singularity
+signal. It is less than one percent, ends at a fixed finite time, coexists with
+decreasing L3, and comes from smooth finite-dimensional systems at every
+resolution.
+
+A sharper profile, first flagged but not interpreted on the under-resolved
+coarse grid, strengthened the signal. For `core=0.55`, `separation=1.2`,
+`bend=0.3`, `axial mode=2`, energy ten, `nu=0.02`, and `t=0.1`:
+
+| Check | N=32, CFL 0.4 | N=32, CFL 0.2 | N=64, CFL 0.4 |
+|---|---:|---:|---:|
+| Peak/final H1/2 / initial | 1.042902961 | 1.042902961 | 1.044373144 |
+| Peak L3 / initial | 1.000000000 | 1.000000000 | 1.000000000 |
+| Final L3 / initial | 0.962013680 | 0.962013680 | 0.961997639 |
+| Peak/final enstrophy / initial | 1.409766731 | 1.409766731 | 1.450005700 |
+| Peak sampled vorticity / initial | 1.396989578 | 1.396997100 | 1.674481303 |
+| Maximum production / destruction | 6.755828833 | 6.755906152 | 6.742804414 |
+| Maximum positive forward flux | 12.698342 | 12.698350 | 12.582115 |
+| Peak cutoff-shell energy fraction | 5.02010e-3 | 5.02010e-3 | 7.68510e-5 |
+| Accepted adaptive steps | 357 | 714 | 817 |
+
+Halving the CFL target changes the final H1/2 value by only about `3e-13`
+relative. From `N=32` to `N=64`, the H1/2 growth ratios differ by about
+`1.4e-3` relative, the final L3 ratios by about `1.7e-5`, and the maximum
+forward flux by about `9.2e-3`. The enstrophy ratios still differ by roughly
+2.8%, while the native-grid sampled-vorticity ratios differ much more. The
+critical norm and flux are substantially better converged than the pointwise
+or more heavily derivative-weighted observables.
+
+At both resolutions H1/2 first dips by about 0.14%, bottoms near `t=0.014`,
+crosses its initial value near `t=0.0275`, and reaches its sampled maximum at
+the final time. This is the strongest clue found by the scaffold so far: a
+converged net finite-time increase of one scale-critical norm. It is still far
+from a blow-up construction. The other monitored critical norm decreases,
+H1/2 has not shown divergence or a stable rescaled profile, the observation
+stops while H1/2 is still rising, and no unresolved Fourier-tail bound exists.
 
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
@@ -335,6 +431,9 @@ itself demonstrate PDE singularity. In particular:
   true maximum, while the Fourier sum is an often-loose upper bound;
 - the sampled BKM integral is finite-run telemetry, not the hypothesis or
   conclusion of a theorem;
+- finite growth of H1/2 or any other critical norm is a triage signal; only an
+  appropriate unbounded or non-integrable limiting behaviour could support a
+  blow-up argument;
 - ordinary floating point cannot certify inequalities needed by a proof.
 
 ## Research gates
@@ -342,9 +441,13 @@ itself demonstrate PDE singularity. In particular:
 The exact low-cutoff oracle, named benchmark fields, shell accounting, and the
 cutoff/timestep comparison harness are implemented. The strictly dealiased FFT
 backend, conservative adaptive timestep control, smooth parameterized
-vortex-tube family, and resolution-gated search are implemented. The next
-engineering milestone is an independent FFT-library oracle, saved time-series
-search traces, and `64^3` long-time validation of the stretching candidate.
+vortex-tube family, both critical-norm diagnostics, enstrophy budget,
+energy-parameter sweep, saved single-run time series, and resolution-gated
+search are implemented. The sharp critical-growth candidate has a short-time
+`32^3 -> 64^3` check. The next engineering milestone is an independent
+FFT-library oracle, checkpoint/restart support, longer `64^3` validation,
+rescaled-profile diagnostics, and a principled way to refine promising sharp
+profiles that are under-resolved on the nomination grid.
 
 A credible path from this scaffold to a theorem has several hard gates:
 

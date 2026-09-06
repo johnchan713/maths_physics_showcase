@@ -151,6 +151,40 @@ void testNonlinearTermMatchesCompactOracle() {
            "FFT and direct full right-hand sides differ");
 }
 
+void testCriticalAndEnstrophyDiagnosticsMatchCompactOracle() {
+    const double viscosity = 0.07;
+    const ns_cascade::GalerkinSystem compact(2, viscosity);
+    const ns_cascade::PseudospectralSystem fft(8, viscosity, 2);
+    const ns_cascade::GalerkinSystem::State compact_state =
+        compact.deterministicLowModeState(1.0);
+    const ns_cascade::PseudospectralSystem::State fft_state =
+        expandCompactState(compact, compact_state, fft);
+    const ns_cascade::GalerkinSystem::Diagnostics compact_diagnostics =
+        compact.diagnostics(compact_state);
+    const ns_cascade::PseudospectralSystem::Diagnostics fft_diagnostics =
+        fft.diagnostics(fft_state);
+
+    expectNear(fft_diagnostics.critical_h_half,
+               compact_diagnostics.critical_h_half,
+               2e-13,
+               "FFT critical H1/2 norm differs from direct convolution");
+    expectNear(fft_diagnostics.nonlinear_enstrophy_production,
+               compact_diagnostics.nonlinear_enstrophy_production,
+               2e-12,
+               "FFT nonlinear enstrophy production differs from direct convolution");
+    expectNear(fft_diagnostics.viscous_enstrophy_destruction,
+               compact_diagnostics.viscous_enstrophy_destruction,
+               2e-13,
+               "FFT viscous enstrophy destruction differs from direct convolution");
+
+    const ns_cascade::PseudospectralSystem::State full_derivative =
+        fft.rightHandSide(fft_state);
+    expectNear(fft.enstrophyDerivative(fft_state, full_derivative),
+               fft_diagnostics.net_enstrophy_rate,
+               2e-12,
+               "FFT enstrophy budget does not match the full evolution");
+}
+
 void testMaximumCutoffMatchesOracleForFullSpectrum() {
     const ns_cascade::GalerkinSystem compact(5, 0.0);
     const ns_cascade::PseudospectralSystem fft(16, 0.0, 5);
@@ -358,6 +392,7 @@ int main() {
         testScalarFftRoundTrip();
         testInitialDataMatchesCompactOracle();
         testNonlinearTermMatchesCompactOracle();
+        testCriticalAndEnstrophyDiagnosticsMatchCompactOracle();
         testMaximumCutoffMatchesOracleForFullSpectrum();
         testEnergyAndShellIdentities();
         testShortTrajectoryMatchesCompactOracle();
