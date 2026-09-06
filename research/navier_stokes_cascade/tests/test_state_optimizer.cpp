@@ -1,7 +1,10 @@
+#include "ns_cascade/optimization_state_csv.hpp"
 #include "ns_cascade/state_optimizer.hpp"
 
 #include <algorithm>
 #include <cmath>
+#include <cstdio>
+#include <fstream>
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -282,19 +285,45 @@ void testTrajectoryObjectiveGradient() {
     const State direction = ns_cascade::stateEnergySphereDirection(
         system, initial, raw_direction, 2);
     ns_cascade::StateObjectiveWeights weights;
-    const int step_count = 6;
+    const int step_count = 8;
     const double time_step = 0.0004;
     std::vector<State> trajectory;
+    std::vector<State> profile_path_states;
+    std::vector<int> profile_path_state_indices;
     State final = initial;
     for (int step = 0; step < step_count; ++step) {
         trajectory.push_back(final);
         system.stepRungeKutta4(final, time_step);
+        if ((step + 1) % 2 == 0) {
+            profile_path_states.push_back(final);
+            profile_path_state_indices.push_back(step + 1);
+        }
     }
 
     State reverse_gradient =
         ns_cascade::terminalStateObjectiveGradient(
             system, initial, final, weights);
+    const ns_cascade::SmoothSpectrumPathComparison path_comparison =
+        ns_cascade::compareSmoothSpectrumPath(
+            system, initial, profile_path_states, weights);
+    const double path_gradient_scale =
+        -weights.profile_path_penalty_weight /
+        static_cast<double>(path_comparison.snapshots.size());
     for (int step = step_count; step-- > 0;) {
+        for (std::size_t snapshot = 0;
+             snapshot < profile_path_states.size();
+             ++snapshot) {
+            if (profile_path_state_indices[snapshot] != step + 1) continue;
+            reverse_gradient = ns_cascade::addOptimizationStates(
+                reverse_gradient,
+                ns_cascade::smoothSpectrumShapePenaltyGradient(
+                    system,
+                    profile_path_states[snapshot],
+                    weights,
+                    path_comparison.snapshots[snapshot],
+                    true),
+                path_gradient_scale);
+        }
         reverse_gradient = system.adjointRungeKutta4Step(
             trajectory[static_cast<std::size_t>(step)],
             reverse_gradient,
@@ -305,6 +334,19 @@ void testTrajectoryObjectiveGradient() {
         ns_cascade::initialStateObjectiveGradient(
             system, initial, final, weights),
         1.0);
+    for (std::size_t snapshot = 0;
+         snapshot < profile_path_states.size();
+         ++snapshot) {
+        reverse_gradient = ns_cascade::addOptimizationStates(
+            reverse_gradient,
+            ns_cascade::smoothSpectrumShapePenaltyGradient(
+                system,
+                initial,
+                weights,
+                path_comparison.snapshots[snapshot],
+                false),
+            path_gradient_scale);
+    }
     const double analytical =
         ns_cascade::stateRealInnerProduct(reverse_gradient, direction);
 
@@ -315,16 +357,33 @@ void testTrajectoryObjectiveGradient() {
         system, initial, direction, -epsilon);
     State plus = plus_initial;
     State minus = minus_initial;
-    evolve(system, plus, step_count, time_step);
-    evolve(system, minus, step_count, time_step);
+    std::vector<State> plus_path;
+    std::vector<State> minus_path;
+    for (int step = 0; step < step_count; ++step) {
+        system.stepRungeKutta4(plus, time_step);
+        system.stepRungeKutta4(minus, time_step);
+        if ((step + 1) % 2 == 0) {
+            plus_path.push_back(plus);
+            minus_path.push_back(minus);
+        }
+    }
+    const double plus_endpoint = ns_cascade::evaluateStateObjective(
+        system, plus_initial, plus, weights).total;
+    const double minus_endpoint = ns_cascade::evaluateStateObjective(
+        system, minus_initial, minus, weights).total;
+    const double plus_objective = plus_endpoint -
+        weights.profile_path_penalty_weight *
+        ns_cascade::compareSmoothSpectrumPath(
+            system, plus_initial, plus_path, weights).average_penalty;
+    const double minus_objective = minus_endpoint -
+        weights.profile_path_penalty_weight *
+        ns_cascade::compareSmoothSpectrumPath(
+            system, minus_initial, minus_path, weights).average_penalty;
     const double finite_difference =
-        (ns_cascade::evaluateStateObjective(
-             system, plus_initial, plus, weights).total -
-         ns_cascade::evaluateStateObjective(
-             system, minus_initial, minus, weights).total) /
+        (plus_objective - minus_objective) /
         (2.0 * epsilon);
     expect(relativeScalarDifference(analytical, finite_difference) < 2e-6,
-           "Adjoint state-objective gradient failed a geodesic difference");
+           "Path-dependent adjoint gradient failed a geodesic difference");
 }
 
 void testLiftToFineGrid() {
@@ -349,6 +408,56 @@ void testLiftToFineGrid() {
     }
 }
 
+void testOptimizationStateCsvRoundTrip() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const State state = makeInitial(system);
+    const std::string path = "state_optimizer_round_trip_test.csv";
+    ns_cascade::writeOptimizationStateCsv(
+        path, system, state, "wave-packets", 2, 4.0);
+    const ns_cascade::LoadedOptimizationState loaded =
+        ns_cascade::readOptimizationStateCsv(path, system);
+    const int remove_result = std::remove(path.c_str());
+    expect(remove_result == 0,
+           "Could not remove state-CSV round-trip fixture");
+    expect(loaded.metadata.family == "wave-packets" &&
+               loaded.metadata.source_grid == 16 &&
+               loaded.metadata.simulation_cutoff == 5 &&
+               loaded.metadata.seed_bandwidth == 2 &&
+               loaded.metadata.target_energy == 4.0,
+           "State-CSV round trip changed metadata");
+    expect(ns_cascade::optimizationStateNorm(
+               ns_cascade::addOptimizationStates(
+                   state, loaded.state, -1.0)) == 0.0,
+           "State-CSV round trip changed a Fourier coefficient");
+
+    {
+        std::ofstream corrupt(path.c_str());
+        corrupt << ns_cascade::optimizationStateCsvHeader() << '\n';
+    }
+    bool rejected_corrupt_state = false;
+    try {
+        ns_cascade::readOptimizationStateCsv(path, system);
+    } catch (const std::exception&) {
+        rejected_corrupt_state = true;
+    }
+    expect(std::remove(path.c_str()) == 0,
+           "Could not remove corrupt state-CSV fixture");
+    expect(rejected_corrupt_state,
+           "State-CSV reader accepted an incomplete coefficient file");
+
+    const State broad_state = system.interactingWavePacketState(
+        ns_cascade::WavePacketParameters(1.1, 1, 0.75, 0.3), 4.0);
+    bool rejected_out_of_band_state = false;
+    try {
+        ns_cascade::writeOptimizationStateCsv(
+            path, system, broad_state, "wave-packets", 2, 4.0);
+    } catch (const std::invalid_argument&) {
+        rejected_out_of_band_state = true;
+    }
+    expect(rejected_out_of_band_state,
+           "State-CSV writer accepted an out-of-band coefficient");
+}
+
 }  // namespace
 
 int main() {
@@ -360,6 +469,7 @@ int main() {
         testSmoothSpectrumShapeGradient();
         testTrajectoryObjectiveGradient();
         testLiftToFineGrid();
+        testOptimizationStateCsvRoundTrip();
         std::cout << "All state-optimizer tests passed.\n";
         return 0;
     } catch (const std::exception& error) {

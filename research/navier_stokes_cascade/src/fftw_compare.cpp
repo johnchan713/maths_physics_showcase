@@ -1,4 +1,5 @@
 #include "ns_cascade/fftw_reference.hpp"
+#include "ns_cascade/optimization_state_csv.hpp"
 #include "ns_cascade/pseudospectral.hpp"
 
 #include <algorithm>
@@ -37,6 +38,7 @@ struct Options {
     bool fixed_time_step = false;
     double state_tolerance = 1e-9;
     double diagnostic_tolerance = 1e-9;
+    std::string state_input;
     std::string output = "navier_stokes_fftw_comparison.csv";
 };
 
@@ -122,6 +124,7 @@ void printUsage(const char* program) {
         << "  --packet-phase P         Packet triad phase offset in radians\n"
         << "  --state-tolerance X      Relative trajectory gate (default: 1e-9)\n"
         << "  --diagnostic-tolerance X Scaled diagnostic gate (default: 1e-9)\n"
+        << "  --state-input PATH       Saved optimization-state coefficient CSV\n"
         << "  --output PATH            Comparison CSV path\n"
         << "  --help                   Show this message\n";
 }
@@ -206,6 +209,8 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--diagnostic-tolerance") {
             options.diagnostic_tolerance =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--state-input") {
+            options.state_input = requireValue(i, argc, argv);
         } else if (flag == "--output") {
             options.output = requireValue(i, argc, argv);
         } else {
@@ -261,8 +266,11 @@ Options parseOptions(int argc, char** argv) {
         options.diagnostic_tolerance <= 0.0) {
         throw std::invalid_argument("Comparison tolerances must be positive");
     }
-    if (options.output.empty()) {
-        throw std::invalid_argument("--output cannot be empty");
+    if (options.output.empty() ||
+        (!options.state_input.empty() &&
+         options.output == options.state_input)) {
+        throw std::invalid_argument(
+            "Output must be non-empty and cannot overwrite state input");
     }
     return options;
 }
@@ -394,6 +402,18 @@ void writeRow(std::ostream& output,
 ns_cascade::PseudospectralSystem::State makeInitialState(
     const ns_cascade::PseudospectralSystem& system,
     const Options& options) {
+    if (!options.state_input.empty()) {
+        const ns_cascade::LoadedOptimizationState loaded =
+            ns_cascade::readOptimizationStateCsv(
+                options.state_input, system);
+        if (scaledDifference(
+                loaded.metadata.target_energy,
+                options.initial_energy) > 1e-13) {
+            throw std::runtime_error(
+                "Saved-state energy does not match --energy");
+        }
+        return loaded.state;
+    }
     if (options.use_wave_packets) {
         return system.interactingWavePacketState(
             options.packet_parameters, options.initial_energy);
@@ -581,7 +601,9 @@ int run(const Options& options) {
               << "  grid/cutoff: " << options.grid_size << '/'
               << internal_system.cutoff() << '\n'
               << "  initial family: "
-              << (options.use_wave_packets
+              << (!options.state_input.empty()
+                      ? "saved-optimization-state"
+                      : options.use_wave_packets
                       ? "wave-packets"
                       : (options.use_orthogonal_bundle ? "orthogonal-bundle"
                                                        : "pair"))

@@ -1,4 +1,5 @@
 #include "ns_cascade/candidate_score.hpp"
+#include "ns_cascade/optimization_state_csv.hpp"
 #include "ns_cascade/spectral_profile.hpp"
 #include "ns_cascade/state_optimizer.hpp"
 
@@ -65,6 +66,7 @@ struct Options {
     double minimum_line_angle = 0.002;
     double armijo_fraction = 1e-4;
     ns_cascade::StateObjectiveWeights objective_weights;
+    int profile_path_samples = 4;
     int profile_bin_count = 32;
     double profile_maximum_coordinate = 4.0;
     double profile_log_scale_window = 0.01;
@@ -86,6 +88,8 @@ struct Evaluation {
     ns_cascade::OptimizationState final_state;
     std::vector<ns_cascade::OptimizationState> trajectory;
     std::vector<double> time_steps;
+    std::vector<ns_cascade::OptimizationState> profile_path_states;
+    std::vector<int> profile_path_state_indices;
     double initial_energy = 0.0;
     double final_energy = 0.0;
     double initial_h_half = 0.0;
@@ -193,6 +197,8 @@ void printUsage(const char* program) {
         << "  --scale-weight W            k_rms-growth reward (default: 0.15)\n"
         << "  --cutoff-weight W           Smooth cutoff cost (default: 0.04)\n"
         << "  --profile-shape-weight W    Smooth rescaled-shape cost (default: 0.05)\n"
+        << "  --profile-path-weight W     Four-snapshot path cost (default: 0.05)\n"
+        << "  --profile-path-samples N    Fixed-time shape snapshots (default: 4)\n"
         << "  --cutoff-threshold F        Hard cutoff gate (default: 0.01)\n"
         << "  --profile-scale-window X    log(k_rms) window (default: 0.01)\n"
         << "  --state-input PATH          Resume or replay a saved coefficient CSV\n"
@@ -279,6 +285,12 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--profile-shape-weight") {
             options.objective_weights.profile_shape_penalty_weight =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-path-weight") {
+            options.objective_weights.profile_path_penalty_weight =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-path-samples") {
+            options.profile_path_samples =
+                parseNumber<int>(requireValue(i, argc, argv), flag);
         } else if (flag == "--cutoff-threshold") {
             options.objective_weights.cutoff_fraction_threshold =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
@@ -301,7 +313,8 @@ Options parseOptions(int argc, char** argv) {
         options.seed_bandwidth < 1 || options.start_count < 1 ||
         options.start_count > 64 || options.start_offset < 0 ||
         options.start_offset > 1000000 - options.start_count ||
-        options.iterations < 0 ||
+        options.iterations < 0 || options.profile_path_samples < 1 ||
+        options.profile_path_samples > 64 ||
         options.diagnostic_every < 1 || options.output.empty() ||
         options.state_output.empty() || options.output == options.state_output ||
         (!options.state_input.empty() &&
@@ -484,10 +497,14 @@ Evaluation evaluateTrajectory(
                 "State optimizer exceeded one million trajectory steps");
         }
         const double remaining = options.final_time - time;
+        const double next_path_time = options.final_time *
+            static_cast<double>(result.profile_path_states.size() + 1U) /
+            static_cast<double>(options.profile_path_samples);
         const double proposed = std::min(
-            fixed_time_step ? options.fixed_time_step
-                            : options.fine_maximum_time_step,
-            remaining);
+            std::min(fixed_time_step ? options.fixed_time_step
+                                     : options.fine_maximum_time_step,
+                     remaining),
+            next_path_time - time);
         const ns_cascade::AdaptiveStepInfo safe =
             system.chooseAdaptiveTimeStep(
                 state,
@@ -515,10 +532,22 @@ Evaluation evaluateTrajectory(
         }
         system.stepRungeKutta4(state, dt);
         time += dt;
+        if (std::abs(time - next_path_time) <= time_tolerance) {
+            time = next_path_time;
+        }
         if (options.final_time - time <= time_tolerance) {
             time = options.final_time;
         }
         ++result.steps;
+        while (result.profile_path_states.size() <
+                   static_cast<std::size_t>(options.profile_path_samples)) {
+            const double target_time = options.final_time *
+                static_cast<double>(result.profile_path_states.size() + 1U) /
+                static_cast<double>(options.profile_path_samples);
+            if (time + time_tolerance < target_time) break;
+            result.profile_path_states.push_back(state);
+            result.profile_path_state_indices.push_back(result.steps);
+        }
         result.maximum_cfl_bound = std::max(
             result.maximum_cfl_bound, safe.advective_cfl_upper_bound);
         result.maximum_viscous_number = std::max(
@@ -582,8 +611,26 @@ Evaluation evaluateTrajectory(
 
     result.completed = true;
     result.final_state = state;
+    if (result.profile_path_states.size() !=
+            static_cast<std::size_t>(options.profile_path_samples) ||
+        result.profile_path_state_indices.size() !=
+            result.profile_path_states.size()) {
+        throw std::runtime_error(
+            "State optimizer did not record every profile-path snapshot");
+    }
     result.objective = ns_cascade::evaluateStateObjective(
         system, initial_state, state, options.objective_weights);
+    const ns_cascade::SmoothSpectrumPathComparison path_comparison =
+        ns_cascade::compareSmoothSpectrumPath(
+            system,
+            initial_state,
+            result.profile_path_states,
+            options.objective_weights);
+    result.objective.profile_path_penalty =
+        path_comparison.average_penalty;
+    result.objective.total -=
+        options.objective_weights.profile_path_penalty_weight *
+        result.objective.profile_path_penalty;
     const ns_cascade::SpectrumProfile final_profile =
         ns_cascade::rescaledSpectrumProfile(
             system,
@@ -620,117 +667,20 @@ Evaluation evaluateTrajectory(
     return result;
 }
 
-const char* stateCsvHeader() {
-    return "family,source_grid,simulation_cutoff,seed_bandwidth,"
-           "target_energy,kx,ky,kz,ux_real,ux_imag,uy_real,uy_imag,"
-           "uz_real,uz_imag";
-}
-
-std::vector<std::string> splitCsvRow(const std::string& line) {
-    std::vector<std::string> fields;
-    std::istringstream stream(line);
-    std::string field;
-    while (std::getline(stream, field, ',')) fields.push_back(field);
-    if (!line.empty() && line[line.size() - 1U] == ',') fields.push_back("");
-    return fields;
-}
-
 ns_cascade::OptimizationState readOptimizationState(
     const std::string& path,
     const ns_cascade::PseudospectralSystem& system,
     const Options& options) {
-    std::ifstream input(path.c_str());
-    if (!input) throw std::runtime_error("Could not open state-input CSV");
-    std::string line;
-    if (!std::getline(input, line) || line != stateCsvHeader()) {
-        throw std::runtime_error("State-input CSV header is invalid");
-    }
-
-    ns_cascade::OptimizationState state = system.zeroState();
-    std::vector<bool> seen(system.gridPointCount(), false);
-    std::size_t rows = 0U;
-    int source_grid = 0;
-    int source_cutoff = 0;
-    while (std::getline(input, line)) {
-        if (line.empty()) continue;
-        const std::vector<std::string> fields = splitCsvRow(line);
-        if (fields.size() != 14U) {
-            throw std::runtime_error("State-input CSV row has the wrong width");
-        }
-        if (fields[0] != seedFamilyName(options.seed_family)) {
-            throw std::runtime_error(
-                "State-input family does not match --initial-family");
-        }
-        const int row_grid = parseNumber<int>(fields[1], "state source grid");
-        const int row_cutoff =
-            parseNumber<int>(fields[2], "state source cutoff");
-        const int row_bandwidth =
-            parseNumber<int>(fields[3], "state seed bandwidth");
-        const double row_energy =
-            parseNumber<double>(fields[4], "state target energy");
-        if (rows == 0U) {
-            source_grid = row_grid;
-            source_cutoff = row_cutoff;
-        }
-        if (row_grid != source_grid || row_cutoff != source_cutoff ||
-            row_bandwidth != options.seed_bandwidth || source_grid < 8 ||
-            source_cutoff < options.seed_bandwidth ||
-            !std::isfinite(row_energy) ||
-            relativeDifference(row_energy, options.initial_energy) > 1e-13) {
-            throw std::runtime_error("State-input CSV metadata is inconsistent");
-        }
-        const ns_cascade::WaveVector wave(
-            parseNumber<int>(fields[5], "state kx"),
-            parseNumber<int>(fields[6], "state ky"),
-            parseNumber<int>(fields[7], "state kz"));
-        if (wave.normSquared() == 0 ||
-            ns_cascade::stateMaximumComponent(wave) >
-                options.seed_bandwidth) {
-            throw std::runtime_error("State-input CSV contains a forbidden mode");
-        }
-        const std::size_t index = system.indexOf(wave);
-        if (seen[index]) {
-            throw std::runtime_error("State-input CSV repeats a Fourier mode");
-        }
-        const double ux_real = parseNumber<double>(fields[8], "state ux real");
-        const double ux_imag = parseNumber<double>(fields[9], "state ux imag");
-        const double uy_real = parseNumber<double>(fields[10], "state uy real");
-        const double uy_imag = parseNumber<double>(fields[11], "state uy imag");
-        const double uz_real = parseNumber<double>(fields[12], "state uz real");
-        const double uz_imag = parseNumber<double>(fields[13], "state uz imag");
-        const double components[] = {
-            ux_real, ux_imag, uy_real, uy_imag, uz_real, uz_imag};
-        for (std::size_t component = 0;
-             component < sizeof(components) / sizeof(components[0]);
-             ++component) {
-            if (!std::isfinite(components[component])) {
-                throw std::runtime_error(
-                    "State-input CSV contains a non-finite coefficient");
-            }
-        }
-        state[index] = ns_cascade::ComplexVector(
-            ns_cascade::Complex(ux_real, ux_imag),
-            ns_cascade::Complex(uy_real, uy_imag),
-            ns_cascade::Complex(uz_real, uz_imag));
-        seen[index] = true;
-        ++rows;
-    }
-    if (!input.eof()) {
-        throw std::runtime_error("Failed while reading state-input CSV");
-    }
-    const std::size_t expected_rows =
-        ns_cascade::stateOptimizationDegreesOfFreedom(
-            options.seed_bandwidth) /
-        2U;
-    if (rows != expected_rows ||
-        relativeDifference(system.energy(state), options.initial_energy) >
-            2e-13 ||
-        system.divergenceDefect(state) > 2e-12 ||
-        system.realityDefect(state) > 2e-12) {
+    const ns_cascade::LoadedOptimizationState loaded =
+        ns_cascade::readOptimizationStateCsv(path, system);
+    if (loaded.metadata.family != seedFamilyName(options.seed_family) ||
+        loaded.metadata.seed_bandwidth != options.seed_bandwidth ||
+        relativeDifference(
+            loaded.metadata.target_energy, options.initial_energy) > 1e-13) {
         throw std::runtime_error(
-            "State-input coefficients fail completeness or invariant checks");
+            "State-input metadata does not match optimizer options");
     }
-    return state;
+    return loaded.state;
 }
 
 ns_cascade::OptimizationState initialState(const Options& options,
@@ -772,7 +722,10 @@ ns_cascade::OptimizationState fullInitialGradient(
     const Evaluation& evaluation,
     const Options& options) {
     if (!evaluation.completed ||
-        evaluation.trajectory.size() != evaluation.time_steps.size()) {
+        evaluation.trajectory.size() != evaluation.time_steps.size() ||
+        evaluation.profile_path_states.size() !=
+            evaluation.profile_path_state_indices.size() ||
+        evaluation.profile_path_states.empty()) {
         throw std::invalid_argument(
             "Adjoint gradient requires a complete stored trajectory");
     }
@@ -782,13 +735,40 @@ ns_cascade::OptimizationState fullInitialGradient(
             initial,
             evaluation.final_state,
             options.objective_weights);
+    const ns_cascade::SmoothSpectrumPathComparison path_comparison =
+        ns_cascade::compareSmoothSpectrumPath(
+            system,
+            initial,
+            evaluation.profile_path_states,
+            options.objective_weights);
+    const double path_gradient_scale =
+        -options.objective_weights.profile_path_penalty_weight /
+        static_cast<double>(path_comparison.snapshots.size());
     for (std::size_t step = evaluation.trajectory.size(); step-- > 0;) {
+        const int state_index = static_cast<int>(step + 1U);
+        for (std::size_t snapshot = 0;
+             snapshot < path_comparison.snapshots.size();
+             ++snapshot) {
+            if (evaluation.profile_path_state_indices[snapshot] !=
+                state_index) {
+                continue;
+            }
+            gradient = ns_cascade::addOptimizationStates(
+                gradient,
+                ns_cascade::smoothSpectrumShapePenaltyGradient(
+                    system,
+                    evaluation.profile_path_states[snapshot],
+                    options.objective_weights,
+                    path_comparison.snapshots[snapshot],
+                    true),
+                path_gradient_scale);
+        }
         gradient = system.adjointRungeKutta4Step(
             evaluation.trajectory[step],
             gradient,
             evaluation.time_steps[step]);
     }
-    return ns_cascade::addOptimizationStates(
+    gradient = ns_cascade::addOptimizationStates(
         gradient,
         ns_cascade::initialStateObjectiveGradient(
             system,
@@ -796,6 +776,20 @@ ns_cascade::OptimizationState fullInitialGradient(
             evaluation.final_state,
             options.objective_weights),
         1.0);
+    for (std::size_t snapshot = 0;
+         snapshot < path_comparison.snapshots.size();
+         ++snapshot) {
+        gradient = ns_cascade::addOptimizationStates(
+            gradient,
+            ns_cascade::smoothSpectrumShapePenaltyGradient(
+                system,
+                initial,
+                options.objective_weights,
+                path_comparison.snapshots[snapshot],
+                false),
+            path_gradient_scale);
+    }
+    return gradient;
 }
 
 PairAssessment assessPair(const Evaluation& coarse,
@@ -919,6 +913,7 @@ void writeTraceRow(std::ostream& output,
            << value.objective.characteristic_log_growth << ','
            << value.objective.cutoff_penalty << ','
            << value.objective.profile_shape_penalty << ','
+           << value.objective.profile_path_penalty << ','
            << ratio(value.peak_h_half, value.initial_h_half) << ','
            << ratio(value.final_h_half, value.initial_h_half) << ','
            << ratio(value.peak_l3, value.initial_l3) << ','
@@ -954,29 +949,13 @@ void writeState(const std::string& path,
                 const ns_cascade::PseudospectralSystem& system,
                 const ns_cascade::OptimizationState& state,
                 const Options& options) {
-    std::ofstream output(path.c_str());
-    if (!output) throw std::runtime_error("Could not open optimized-state CSV");
-    output << std::setprecision(17) << stateCsvHeader() << '\n';
-    const std::vector<ns_cascade::WaveVector>& modes = system.gridModes();
-    for (std::size_t i = 0; i < state.size(); ++i) {
-        const ns_cascade::WaveVector& wave = modes[i];
-        if (wave.normSquared() == 0 ||
-            ns_cascade::stateMaximumComponent(wave) >
-                options.seed_bandwidth) {
-            continue;
-        }
-        output << seedFamilyName(options.seed_family) << ','
-               << system.gridSize() << ',' << system.cutoff() << ','
-               << options.seed_bandwidth << ',' << options.initial_energy
-               << ',' << wave.x << ',' << wave.y << ',' << wave.z << ','
-               << std::real(state[i].x) << ',' << std::imag(state[i].x)
-               << ',' << std::real(state[i].y) << ','
-               << std::imag(state[i].y) << ',' << std::real(state[i].z)
-               << ',' << std::imag(state[i].z) << '\n';
-    }
-    if (!output) {
-        throw std::runtime_error("Failed while writing optimized-state CSV");
-    }
+    ns_cascade::writeOptimizationStateCsv(
+        path,
+        system,
+        state,
+        seedFamilyName(options.seed_family),
+        options.seed_bandwidth,
+        options.initial_energy);
 }
 
 StartResult optimizeStart(
@@ -1299,7 +1278,8 @@ int run(const Options& options) {
           << "iteration,stage,resolution,initial_family,seed_bandwidth,"
              "real_degrees_of_freedom,objective,valid,steps,"
              "critical_log_growth,characteristic_log_growth,cutoff_penalty,"
-             "profile_shape_penalty,peak_h_half_ratio,final_h_half_ratio,"
+             "profile_shape_penalty,profile_path_penalty,peak_h_half_ratio,"
+             "final_h_half_ratio,"
              "peak_l3_ratio,final_l3_ratio,peak_vorticity_ratio,"
              "characteristic_ratio,profile_scale_windows,first_profile_drift,"
              "latest_profile_drift,minimum_profile_drift,"
@@ -1358,6 +1338,8 @@ int run(const Options& options) {
                   << candidate.best_fine.latest_profile_drift
                   << " shape-penalty="
                   << candidate.best_fine.objective.profile_shape_penalty
+                  << " path-penalty="
+                  << candidate.best_fine.objective.profile_path_penalty
                   << " globally-selected="
                   << (candidate_preferred ? "yes" : "no") << '\n';
     }

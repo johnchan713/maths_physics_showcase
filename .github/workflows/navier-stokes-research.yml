@@ -69,6 +69,19 @@ jobs:
           --diagnostic-every 2
           --output navier_stokes_fftw_comparison.csv
 
+      - name: Replay optimized path candidate through independent FFTW
+        run: >-
+          ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare
+          --grid 32
+          --viscosity 0.02
+          --energy 10
+          --dt 0.005
+          --final-time 0.08
+          --diagnostic-every 25
+          --state-input
+          research/navier_stokes_cascade/candidates/wave_k3_path_t008_screening.csv
+          --output navier_stokes_path_candidate_fftw.csv
+
       - name: Run convergence smoke comparison
         run: >-
           ./build/research/navier_stokes_cascade/navier_stokes_convergence
@@ -220,6 +233,18 @@ jobs:
             dbcdbe925512e7e4896dc3b972a491e27e5b9454e38a4f86f515718f49f4d9df \
             research/navier_stokes_cascade/candidates/wave_k2_profile_t004_screening.csv \
             | sha256sum --check --status
+          ./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+            --seed-bandwidth 3 \
+            --state-input research/navier_stokes_cascade/candidates/wave_k3_path_t008_screening.csv \
+            --final-time 0.001 --iterations 0 \
+            --output navier_stokes_path_screening_replay.csv \
+            --state-output navier_stokes_path_screening_state.csv
+          cmp research/navier_stokes_cascade/candidates/wave_k3_path_t008_screening.csv \
+            navier_stokes_path_screening_state.csv
+          printf '%s  %s\n' \
+            cd73fe95e4a8c69f193dff3ebe5abd07a8716bf3739ae412a30b95b008b59491 \
+            research/navier_stokes_cascade/candidates/wave_k3_path_t008_screening.csv \
+            | sha256sum --check --status
 
       - name: Verify checkpoint restart is bit-for-bit reproducible
         shell: bash
@@ -261,6 +286,8 @@ jobs:
             navier_stokes_screening_replay.csv
             navier_stokes_profile_screening_replay.csv
             navier_stokes_fftw_comparison.csv
+            navier_stokes_path_candidate_fftw.csv
+            navier_stokes_path_screening_replay.csv
             segment-a.csv
             segment-b.csv
             segment-a-profile.csv

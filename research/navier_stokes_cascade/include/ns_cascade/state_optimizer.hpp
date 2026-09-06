@@ -20,6 +20,7 @@ struct StateObjectiveWeights {
     double cutoff_penalty_weight = 0.04;
     double cutoff_fraction_threshold = 0.01;
     double profile_shape_penalty_weight = 0.05;
+    double profile_path_penalty_weight = 0.05;
     int profile_feature_count = 9;
     double profile_minimum_log_coordinate = -1.5;
     double profile_maximum_log_coordinate = 1.5;
@@ -32,6 +33,7 @@ struct StateObjectiveValue {
     double characteristic_log_growth = 0.0;
     double cutoff_penalty = 0.0;
     double profile_shape_penalty = 0.0;
+    double profile_path_penalty = 0.0;
     double total = 0.0;
 };
 
@@ -55,6 +57,11 @@ struct SmoothSpectrumShapeComparison {
     SmoothSpectrumSignature final;
     std::vector<double> log_feature_differences;
     double penalty = 0.0;
+};
+
+struct SmoothSpectrumPathComparison {
+    std::vector<SmoothSpectrumShapeComparison> snapshots;
+    double average_penalty = 0.0;
 };
 
 inline int stateMaximumComponent(const WaveVector& wave) {
@@ -217,6 +224,8 @@ inline void validateSmoothSpectrumParameters(
     const StateObjectiveWeights& weights) {
     if (!std::isfinite(weights.profile_shape_penalty_weight) ||
         weights.profile_shape_penalty_weight < 0.0 ||
+        !std::isfinite(weights.profile_path_penalty_weight) ||
+        weights.profile_path_penalty_weight < 0.0 ||
         weights.profile_feature_count < 3 ||
         weights.profile_feature_count > 64 ||
         !std::isfinite(weights.profile_minimum_log_coordinate) ||
@@ -334,6 +343,31 @@ inline SmoothSpectrumShapeComparison compareSmoothSpectrumShapes(
     return comparison;
 }
 
+inline SmoothSpectrumPathComparison compareSmoothSpectrumPath(
+    const PseudospectralSystem& system,
+    const OptimizationState& initial,
+    const std::vector<OptimizationState>& snapshots,
+    const StateObjectiveWeights& weights) {
+    if (snapshots.empty()) {
+        throw std::invalid_argument(
+            "Smooth spectrum path requires at least one snapshot");
+    }
+    SmoothSpectrumPathComparison path;
+    path.snapshots.reserve(snapshots.size());
+    for (std::size_t snapshot = 0; snapshot < snapshots.size(); ++snapshot) {
+        path.snapshots.push_back(compareSmoothSpectrumShapes(
+            system, initial, snapshots[snapshot], weights));
+        path.average_penalty += path.snapshots.back().penalty;
+    }
+    path.average_penalty /= static_cast<double>(path.snapshots.size());
+    if (!std::isfinite(path.average_penalty) ||
+        path.average_penalty < 0.0) {
+        throw std::runtime_error(
+            "Smooth spectrum path penalty became non-finite");
+    }
+    return path;
+}
+
 inline OptimizationState smoothSpectrumLogFeatureGradient(
     const PseudospectralSystem& system,
     const OptimizationState& state,
@@ -449,6 +483,7 @@ inline StateObjectiveValue evaluateStateObjective(
         cutoff_fraction / weights.cutoff_fraction_threshold);
     value.profile_shape_penalty = compareSmoothSpectrumShapes(
         system, initial, final, weights).penalty;
+    value.profile_path_penalty = 0.0;
     value.total = value.critical_log_growth +
                   weights.characteristic_scale_weight *
                       value.characteristic_log_growth -

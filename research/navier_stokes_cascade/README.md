@@ -922,29 +922,41 @@ differentiated objective is
 J = log(H1/2(T) / H1/2(0))
     + 0.15 log(k_rms(T) / k_rms(0))
     - 0.04 log(1 + (E_cutoff(T) / E(T)) / 0.01)
-    - 0.05 P_shape.
+    - 0.05 P_endpoint
+    - 0.05 P_path.
 ```
 
-Here `P_shape` compares nine smooth Gaussian measurements of the initial and
+`P_endpoint` compares nine smooth Gaussian measurements of the initial and
 final spectra in the coordinate `log(|k|/k_rms)`. Each measurement is divided
 by total energy, and the penalty is the mean squared change of their
 regularized logarithms. It is therefore insensitive to amplitude and to a
-pure shift of spectral scale. Its analytic gradient includes the state
-dependence of `k_rms`; centered differences test that gradient both directly
-and through the full RK4 trajectory. This differentiable quantity only guides
-optimization. The independent cloud-in-cell L1 drift remains the promotion
-gate.
+pure shift of spectral scale. With the default four snapshots,
 
-The terminal gradient is reversed through every stored fixed-step RK4 stage,
-then projected onto the low-band, real-solenoidal tangent space. Trial states
-follow energy-sphere geodesics. Every iteration checks the adjoint slope by a
-centered geodesic difference, requires Armijo improvement in `J`, requires an
-improvement in the existing profile-aware search score, and preserves the
-hard cutoff and invariant gates. Each accepted coarse state is also run on the
-fine grid. The saved output is the best paired state encountered, not merely
-the last coarse iterate; this prevents coarse-grid overfitting from replacing
-a better candidate. Full-precision coefficient CSVs can be reloaded exactly
-with `--state-input` for a resumed search or timestep replay.
+```text
+P_path = (1 / 4) sum_j P_shape(u(0), u(j T / 4)),  j = 1,...,4.
+```
+
+The integrator lands exactly on these fixed physical times, independently of
+diagnostic cadence. The analytic gradient includes the state dependence of
+`k_rms` and injects every snapshot derivative at the corresponding point in
+the reverse RK4 sweep. Centered differences test the shape derivative both
+directly and through the full path. `--profile-shape-weight`,
+`--profile-path-weight`, and `--profile-path-samples` expose the two weights
+and schedule. These differentiable quantities only guide optimization. The
+independent cloud-in-cell L1 drift remains the promotion gate.
+
+The terminal gradient and intermediate snapshot gradients are reversed
+through every stored fixed-step RK4 stage, then projected onto the low-band,
+real-solenoidal tangent space. Trial states follow energy-sphere geodesics.
+Every iteration checks the adjoint slope by a centered geodesic difference,
+requires Armijo improvement in `J`, requires an improvement in the existing
+profile-aware search score, and preserves the hard cutoff and invariant
+gates. Each accepted coarse state is also run on the fine grid. The saved
+output is the best paired state encountered, not merely the last coarse
+iterate; this prevents coarse-grid overfitting from replacing a better
+candidate. Full-precision coefficient CSVs use one shared strict reader and
+can be reloaded exactly by both the optimizer and independent FFTW trajectory
+tool.
 
 `--starts N` adds reproducible, hash-generated tangent directions around the
 same base state and places them at `--start-angle` on the fixed-energy sphere.
@@ -960,6 +972,8 @@ For example:
   --initial-family wave-packets --energy 10 --viscosity 0.02 \
   --dt 0.0005 --final-time 0.08 --iterations 3 \
   --starts 4 --start-angle 0.35 \
+  --profile-shape-weight 0.25 --profile-path-weight 0.25 \
+  --profile-path-samples 4 \
   --output navier_stokes_state_optimization.csv \
   --state-output navier_stokes_optimized_state.csv
 ```
@@ -1033,13 +1047,58 @@ integer multiples of `log(k_rms/k_rms(0))`; both the parameter search and the
 state optimizer use the same tested rule. This changes no threshold and makes
 late profile rebounds harder, not easier, to evade.
 
-The next candidate search should make the smooth shape cost path-dependent,
-penalizing changes between several forward-scale snapshots rather than only
-the two endpoints. The `K_seed=3` test showed why: an endpoint improvement can
-still hide a late-window rebound. After that adjoint extension, use a staged
-`K_seed=3` multi-start screen at `T=0.04` and extend only the best matched-shape
-basins to `T=0.08`; FFTW and larger grids remain gated on drift approaching
-one.
+### Path-dependent `K_seed=3` screening result
+
+The path-dependent extension and its staged search are complete. Four
+deterministic 684-variable starts at `T=0.04`, with endpoint and path weights
+both `0.25`, each accepted one checked ascent step. Start 2 won the paired
+score, with fine-grid H1/2 growth `1.022052`, scale growth `1.064072`, cutoff
+fraction `1.18e-6`, and strict drift `7.201165`. The largest finite-difference
+adjoint error in this stage was `1.79e-4`, well below the `0.01` rejection
+threshold.
+
+The selected basin was continued at `T=0.06`. Balanced weights found no joint
+improvement; increasing only the path weight to `1.0` accepted one step with
+gradient error `1.32e-5`. That step moved the `T=0.08` coarse cutoff fraction
+from `0.0102413` to `0.00997863` and reduced fine-grid drift from `4.746706`
+to `4.605072`. A final full-horizon gradient check, using a smaller
+energy-sphere angle so both probes remained inside the cutoff gate, had
+relative error `2.58e-7`; no admissible line step improved both objectives.
+
+The retained state is
+`candidates/wave_k3_path_t008_screening.csv` (SHA-256
+`cd73fe95e4a8c69f193dff3ebe5abd07a8716bf3739ae412a30b95b008b59491`).
+
+| Measurement | Coarse `N=16, K=5` | Fine `N=32, K=10` |
+|---|---:|---:|
+| Peak/final H1/2 / initial | 1.054411 | 1.055435 |
+| Peak L3 / initial | 1.000581 | 1.000560 |
+| Final L3 / initial | 0.985774 | 0.985337 |
+| Peak sampled vorticity / initial | 1.279198 | 1.488865 |
+| Final `k_rms` / initial | 1.161960 | 1.169504 |
+| Smooth endpoint shape penalty | 0.085033 | 0.100035 |
+| Four-snapshot path penalty | 0.035026 | 0.040059 |
+| Latest windowed L1 drift | 4.629944 | 4.605072 |
+| Completed profile windows | 15 | 15 |
+| Peak cutoff-shell fraction | 0.00997863 | 0.000122778 |
+
+An exact `N=32, T=0.08` replay through the independent FFTW/RK4 evolver used
+276 common adaptive steps. Its peak whole-state and diagnostic disagreements
+from the internal evolver were `8.27e-16` and `8.54e-16`. The trajectory is
+therefore reproducible inside the truncated numerical model.
+
+This is the lowest strict drift found so far: about 21% below the earlier
+`K_seed=2` profile candidate. It is still not promotable. Drift is 4.6 times
+the threshold, L3 falls, the coarse cutoff margin is only `2.14e-5`, and the
+coarse/fine vorticity-amplification difference is about 14%, above its 10%
+agreement gate. Larger grids remain deliberately gated.
+
+The next objective experiment should replace the mean path cost with a smooth
+maximum over denser fixed-time snapshots. That targets the worst shape
+excursion instead of allowing it to be diluted by quieter frames. Screen it at
+`T=0.06` around this exact checkpoint and retain a `T=0.08` state only if the
+strict drift and vorticity agreement both improve without consuming the
+remaining coarse cutoff margin.
 
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
