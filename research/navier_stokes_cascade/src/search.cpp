@@ -17,6 +17,41 @@
 
 namespace {
 
+enum class VortexFamily {
+    Pair,
+    OrthogonalBundle
+};
+
+const char* vortexFamilyName(VortexFamily family) {
+    return family == VortexFamily::Pair ? "pair" : "orthogonal-bundle";
+}
+
+VortexFamily parseVortexFamily(const std::string& value) {
+    if (value == "pair") return VortexFamily::Pair;
+    if (value == "orthogonal-bundle" || value == "bundle") {
+        return VortexFamily::OrthogonalBundle;
+    }
+    throw std::invalid_argument(
+        "Unknown vortex family: " + value +
+        " (expected pair or orthogonal-bundle)");
+}
+
+std::vector<VortexFamily> parseVortexFamilies(const std::string& text) {
+    std::vector<VortexFamily> families;
+    std::istringstream stream(text);
+    std::string item;
+    while (std::getline(stream, item, ',')) {
+        if (item.empty()) {
+            throw std::invalid_argument("Empty entry in --families");
+        }
+        families.push_back(parseVortexFamily(item));
+    }
+    if (families.empty()) {
+        throw std::invalid_argument("--families cannot be empty");
+    }
+    return families;
+}
+
 struct Options {
     int coarse_grid = 16;
     int fine_grid = 32;
@@ -35,16 +70,23 @@ struct Options {
     double profile_drift_threshold = 1.0;
     double minimum_characteristic_growth = 1.10;
     double minimum_critical_growth = 1.005;
+    std::vector<VortexFamily> families = {VortexFamily::Pair};
     std::vector<double> core_radii = {0.55, 0.70};
     std::vector<double> separations = {1.2, 1.8};
     std::vector<double> bend_amplitudes = {0.0, 0.30};
     std::vector<int> axial_wavenumbers = {1, 2};
+    std::vector<double> orthogonal_pair_weights = {0.5, 1.0};
+    std::vector<double> phase_offsets = {
+        0.0, 1.0471975511965977461542144610932};
     std::string output = "navier_stokes_candidate_search.csv";
 };
 
 struct Candidate {
     int id;
-    ns_cascade::VortexTubeParameters parameters;
+    VortexFamily family;
+    ns_cascade::VortexTubeParameters tube_parameters;
+    double orthogonal_pair_weight;
+    double phase_offset;
     double initial_energy;
 };
 
@@ -242,7 +284,7 @@ void removeDuplicates(std::vector<T>& values) {
 void printUsage(const char* program) {
     std::cout
         << "Usage: " << program << " [options]\n\n"
-        << "Coarse-to-fine search over smooth periodic vortex-tube pairs.\n"
+        << "Coarse-to-fine search over smooth periodic vortex configurations.\n"
         << "This ranks finite numerical signals; it cannot prove PDE blow-up.\n\n"
         << "Options:\n"
         << "  --coarse-grid N         Coarse power-of-two grid (default: 16)\n"
@@ -256,10 +298,13 @@ void printUsage(const char* program) {
         << "  --top N                 Coarse finalists rerun fine (default: 3)\n"
         << "  --energy E              One normalized initial energy (default: 1)\n"
         << "  --energies LIST         Initial energies to search\n"
+        << "  --families LIST         pair,orthogonal-bundle (default: pair)\n"
         << "  --cores LIST            Core radii (default: 0.55,0.70)\n"
         << "  --separations LIST      Pair separations (default: 1.2,1.8)\n"
         << "  --bends LIST            Helical bend amplitudes (default: 0,0.30)\n"
         << "  --axial-modes LIST      Positive axial modes (default: 1,2)\n"
+        << "  --orthogonal-weights LIST  Relative x/y-pair weights for bundles\n"
+        << "  --phase-offsets LIST    Bundle helical phase offsets in radians\n"
         << "  --cutoff-threshold F    Max cutoff-shell energy fraction (default: 0.01)\n"
         << "  --profile-bins N        Rescaled-spectrum bins before overflow (default: 32)\n"
         << "  --profile-max-xi X      Last finite |k|/k_rms coordinate (default: 4)\n"
@@ -315,6 +360,9 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--energies") {
             options.initial_energies =
                 parseList<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--families") {
+            options.families =
+                parseVortexFamilies(requireValue(i, argc, argv));
         } else if (flag == "--cores") {
             options.core_radii =
                 parseList<double>(requireValue(i, argc, argv), flag);
@@ -327,6 +375,12 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--axial-modes") {
             options.axial_wavenumbers =
                 parseList<int>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--orthogonal-weights") {
+            options.orthogonal_pair_weights =
+                parseList<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--phase-offsets") {
+            options.phase_offsets =
+                parseList<double>(requireValue(i, argc, argv), flag);
         } else if (flag == "--cutoff-threshold") {
             options.cutoff_fraction_threshold =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
@@ -355,10 +409,13 @@ Options parseOptions(int argc, char** argv) {
         }
     }
 
+    removeDuplicates(options.families);
     removeDuplicates(options.core_radii);
     removeDuplicates(options.separations);
     removeDuplicates(options.bend_amplitudes);
     removeDuplicates(options.axial_wavenumbers);
+    removeDuplicates(options.orthogonal_pair_weights);
+    removeDuplicates(options.phase_offsets);
     removeDuplicates(options.initial_energies);
     if (options.coarse_grid >= options.fine_grid) {
         throw std::invalid_argument("--fine-grid must be larger than --coarse-grid");
@@ -448,6 +505,18 @@ Options parseOptions(int argc, char** argv) {
             throw std::invalid_argument("Every bend amplitude must be in [0,pi)");
         }
     }
+    for (std::size_t i = 0; i < options.orthogonal_pair_weights.size(); ++i) {
+        if (!finiteAndPositive(options.orthogonal_pair_weights[i])) {
+            throw std::invalid_argument(
+                "Every orthogonal-pair weight must be finite and positive");
+        }
+    }
+    for (std::size_t i = 0; i < options.phase_offsets.size(); ++i) {
+        if (!std::isfinite(options.phase_offsets[i])) {
+            throw std::invalid_argument(
+                "Every bundle phase offset must be finite");
+        }
+    }
     return options;
 }
 
@@ -457,29 +526,61 @@ std::vector<Candidate> buildCandidates(const Options& options) {
     for (std::size_t energy = 0;
          energy < options.initial_energies.size();
          ++energy) {
-        for (std::size_t core = 0; core < options.core_radii.size(); ++core) {
-            for (std::size_t separation = 0;
-                 separation < options.separations.size();
-                 ++separation) {
-                for (std::size_t bend = 0;
-                     bend < options.bend_amplitudes.size();
-                     ++bend) {
-                    for (std::size_t mode = 0;
-                         mode < options.axial_wavenumbers.size();
-                         ++mode) {
-                        // Axial mode has no effect for a straight, z-invariant pair.
-                        if (options.bend_amplitudes[bend] == 0.0 && mode != 0) {
-                            continue;
+        for (std::size_t family = 0;
+             family < options.families.size();
+             ++family) {
+            for (std::size_t core = 0; core < options.core_radii.size(); ++core) {
+                for (std::size_t separation = 0;
+                     separation < options.separations.size();
+                     ++separation) {
+                    for (std::size_t bend = 0;
+                         bend < options.bend_amplitudes.size();
+                         ++bend) {
+                        for (std::size_t mode = 0;
+                             mode < options.axial_wavenumbers.size();
+                             ++mode) {
+                            // Axial mode and phase have no effect on straight tubes.
+                            if (options.bend_amplitudes[bend] == 0.0 && mode != 0) {
+                                continue;
+                            }
+                            const std::size_t weight_count =
+                                options.families[family] == VortexFamily::Pair
+                                    ? 1U
+                                    : options.orthogonal_pair_weights.size();
+                            const std::size_t phase_count =
+                                options.families[family] == VortexFamily::Pair ||
+                                        options.bend_amplitudes[bend] == 0.0
+                                    ? 1U
+                                    : options.phase_offsets.size();
+                            for (std::size_t weight = 0;
+                                 weight < weight_count;
+                                 ++weight) {
+                                for (std::size_t phase = 0;
+                                     phase < phase_count;
+                                     ++phase) {
+                                    Candidate candidate;
+                                    candidate.id = id++;
+                                    candidate.family = options.families[family];
+                                    candidate.initial_energy =
+                                        options.initial_energies[energy];
+                                    candidate.tube_parameters =
+                                        ns_cascade::VortexTubeParameters(
+                                            options.core_radii[core],
+                                            options.separations[separation],
+                                            options.bend_amplitudes[bend],
+                                            options.axial_wavenumbers[mode]);
+                                    candidate.orthogonal_pair_weight =
+                                        candidate.family == VortexFamily::Pair
+                                            ? 0.0
+                                            : options.orthogonal_pair_weights[weight];
+                                    candidate.phase_offset =
+                                        candidate.family == VortexFamily::Pair
+                                            ? 0.0
+                                            : options.phase_offsets[phase];
+                                    candidates.push_back(candidate);
+                                }
+                            }
                         }
-                        Candidate candidate;
-                        candidate.id = id++;
-                        candidate.initial_energy = options.initial_energies[energy];
-                        candidate.parameters = ns_cascade::VortexTubeParameters(
-                            options.core_radii[core],
-                            options.separations[separation],
-                            options.bend_amplitudes[bend],
-                            options.axial_wavenumbers[mode]);
-                        candidates.push_back(candidate);
                     }
                 }
             }
@@ -616,8 +717,18 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
     RunResult result(candidate, system.gridSize(), system.cutoff());
     const std::chrono::steady_clock::time_point start =
         std::chrono::steady_clock::now();
-    ns_cascade::PseudospectralSystem::State state =
-        system.vortexTubePairState(candidate.parameters, candidate.initial_energy);
+    ns_cascade::PseudospectralSystem::State state;
+    if (candidate.family == VortexFamily::Pair) {
+        state = system.vortexTubePairState(
+            candidate.tube_parameters, candidate.initial_energy);
+    } else {
+        state = system.vortexBundleState(
+            ns_cascade::VortexBundleParameters(
+                candidate.tube_parameters,
+                candidate.orthogonal_pair_weight,
+                candidate.phase_offset),
+            candidate.initial_energy);
+    }
     const ns_cascade::PseudospectralSystem::Diagnostics initial =
         system.diagnostics(state);
     if (!finiteDiagnostics(initial)) {
@@ -941,6 +1052,7 @@ std::string csvString(const std::string& value) {
 void writeHeader(std::ostream& output) {
     output
         << "stage,selection_rank,candidate_id,status,grid_size,cutoff,"
+        << "vortex_family,orthogonal_pair_weight,phase_offset,"
         << "core_radius,separation,bend_amplitude,axial_wavenumber,viscosity,"
         << "requested_initial_energy,final_time,steps,min_dt,max_dt,"
         << "max_advective_cfl_upper_bound,max_viscous_stability_number,"
@@ -982,10 +1094,13 @@ void writeResult(std::ostream& output,
     output << stage << ',' << selection_rank << ',' << result.candidate.id << ','
            << (result.completed ? "completed" : "failed") << ','
            << result.grid_size << ',' << result.cutoff << ','
-           << result.candidate.parameters.core_radius << ','
-           << result.candidate.parameters.separation << ','
-           << result.candidate.parameters.bend_amplitude << ','
-           << result.candidate.parameters.axial_wavenumber << ','
+           << vortexFamilyName(result.candidate.family) << ','
+           << result.candidate.orthogonal_pair_weight << ','
+           << result.candidate.phase_offset << ','
+           << result.candidate.tube_parameters.core_radius << ','
+           << result.candidate.tube_parameters.separation << ','
+           << result.candidate.tube_parameters.bend_amplitude << ','
+           << result.candidate.tube_parameters.axial_wavenumber << ','
            << options.viscosity << ',' << result.candidate.initial_energy << ','
            << options.final_time << ',' << result.steps << ','
            << result.minimum_time_step << ',' << result.maximum_time_step << ','
@@ -1062,11 +1177,19 @@ void printProgress(const std::string& stage,
                    int count,
                    const RunResult& result) {
     std::cout << stage << ' ' << index << '/' << count << ": candidate "
-              << result.candidate.id << " core="
-              << result.candidate.parameters.core_radius << " separation="
-              << result.candidate.parameters.separation << " bend="
-              << result.candidate.parameters.bend_amplitude << " axial="
-              << result.candidate.parameters.axial_wavenumber << " energy="
+              << result.candidate.id << " family="
+              << vortexFamilyName(result.candidate.family) << " core="
+              << result.candidate.tube_parameters.core_radius
+              << " separation="
+              << result.candidate.tube_parameters.separation << " bend="
+              << result.candidate.tube_parameters.bend_amplitude << " axial="
+              << result.candidate.tube_parameters.axial_wavenumber;
+    if (result.candidate.family == VortexFamily::OrthogonalBundle) {
+        std::cout << " orthogonal-weight="
+                  << result.candidate.orthogonal_pair_weight
+                  << " phase-offset=" << result.candidate.phase_offset;
+    }
+    std::cout << " energy="
               << result.candidate.initial_energy;
     if (!result.completed) {
         std::cout << " FAILED: " << result.failure << '\n';
@@ -1125,7 +1248,7 @@ int main(int argc, char** argv) {
             printProgress("fine", i + 1, finalist_count, fine);
             const PairAssessment assessment =
                 assessResolutionPair(coarse, fine, options);
-            std::cout << "pair candidate " << fine.candidate.id
+            std::cout << "resolution pair for candidate " << fine.candidate.id
                       << " score=" << assessment.score.total
                       << " cross-resolution="
                       << (assessment.preliminary_cross_resolution_ok ? "yes"
@@ -1188,7 +1311,7 @@ int main(int argc, char** argv) {
         if (!finalists.empty()) {
             const FinalistResult& best_pair = finalists.front();
             const RunResult& best = best_pair.fine;
-            std::cout << "Best paired candidate " << best.candidate.id
+            std::cout << "Best cross-resolution candidate " << best.candidate.id
                       << ": peak L3 ratio="
                       << ratio(best.peak_l3, best.initial_l3)
                       << ", peak H1/2 ratio="

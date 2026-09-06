@@ -29,6 +29,20 @@ struct VortexTubeParameters {
           axial_wavenumber(axial_wavenumber_value) {}
 };
 
+struct VortexBundleParameters {
+    VortexTubeParameters tubes;
+    double orthogonal_pair_weight;
+    double phase_offset;
+
+    VortexBundleParameters(
+        const VortexTubeParameters& tube_values = VortexTubeParameters(),
+        double orthogonal_pair_weight_value = 0.75,
+        double phase_offset_value = 1.0471975511965977461542144610932)
+        : tubes(tube_values),
+          orthogonal_pair_weight(orthogonal_pair_weight_value),
+          phase_offset(phase_offset_value) {}
+};
+
 struct AdaptiveStepInfo {
     double time_step;
     double velocity_supremum_bound;
@@ -194,6 +208,87 @@ public:
         const double current_energy = energy(state);
         if (current_energy == 0.0) {
             throw std::runtime_error("Vortex-tube construction produced zero energy");
+        }
+        const double scale = std::sqrt(target_energy / current_energy);
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            state[retained_indices_[n]] = state[retained_indices_[n]] * scale;
+        }
+        return state;
+    }
+
+    State vortexBundleState(const VortexBundleParameters& parameters,
+                            double target_energy = 1.0) const {
+        validateVortexTubeParameters(parameters.tubes);
+        if (!std::isfinite(parameters.orthogonal_pair_weight) ||
+            parameters.orthogonal_pair_weight < 0.0) {
+            throw std::invalid_argument(
+                "Orthogonal-pair weight must be finite and non-negative");
+        }
+        if (!std::isfinite(parameters.phase_offset)) {
+            throw std::invalid_argument("Bundle phase offset must be finite");
+        }
+        if (!std::isfinite(target_energy) || target_energy <= 0.0) {
+            throw std::invalid_argument("Target energy must be finite and positive");
+        }
+
+        std::vector<Complex> physical_x(grid_point_count_);
+        std::vector<Complex> physical_y(grid_point_count_);
+        std::vector<Complex> physical_z(grid_point_count_);
+        const double two_pi = 6.283185307179586476925286766559;
+
+        for (int ix = 0; ix < grid_size_; ++ix) {
+            const double x = two_pi * ix / grid_size_ - 0.5 * two_pi;
+            for (int iy = 0; iy < grid_size_; ++iy) {
+                const double y = two_pi * iy / grid_size_ - 0.5 * two_pi;
+                for (int iz = 0; iz < grid_size_; ++iz) {
+                    const double z = two_pi * iz / grid_size_;
+                    const double coordinates[3] = {x, y, z};
+                    double velocity[3] = {0.0, 0.0, 0.0};
+
+                    // Each contribution is curl(A) for a vector potential
+                    // aligned with its tube axis. The z pair is the original
+                    // family; the x and y pairs introduce orthogonal contacts.
+                    addVortexPairCurl(
+                        2, coordinates, parameters.tubes, 0.0, 1.0, velocity);
+                    addVortexPairCurl(
+                        0,
+                        coordinates,
+                        parameters.tubes,
+                        parameters.phase_offset,
+                        parameters.orthogonal_pair_weight,
+                        velocity);
+                    addVortexPairCurl(
+                        1,
+                        coordinates,
+                        parameters.tubes,
+                        -parameters.phase_offset,
+                        parameters.orthogonal_pair_weight,
+                        velocity);
+
+                    const std::size_t index = flatIndex(ix, iy, iz);
+                    physical_x[index] = Complex(velocity[0], 0.0);
+                    physical_y[index] = Complex(velocity[1], 0.0);
+                    physical_z[index] = Complex(velocity[2], 0.0);
+                }
+            }
+        }
+
+        const std::vector<Complex> fourier_x = forwardTransform(physical_x);
+        const std::vector<Complex> fourier_y = forwardTransform(physical_y);
+        const std::vector<Complex> fourier_z = forwardTransform(physical_z);
+        State state = zeroState();
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            state[index] = lerayProject(
+                modes_[index],
+                ComplexVector(fourier_x[index],
+                              fourier_y[index],
+                              fourier_z[index]));
+        }
+
+        const double current_energy = energy(state);
+        if (current_energy == 0.0) {
+            throw std::runtime_error("Vortex-bundle construction produced zero energy");
         }
         const double scale = std::sqrt(target_energy / current_energy);
         for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
@@ -577,6 +672,61 @@ private:
     static int maximumComponent(const WaveVector& wave) {
         return std::max(std::abs(wave.x),
                         std::max(std::abs(wave.y), std::abs(wave.z)));
+    }
+
+    static void addVortexPairCurl(
+        int axis,
+        const double coordinates[3],
+        const VortexTubeParameters& parameters,
+        double phase_offset,
+        double weight,
+        double velocity[3]) {
+        if (weight == 0.0) return;
+
+        // For cyclic coordinates (axis,b,c), A_axis = G1-G2 gives
+        // curl(A)_b = d_c A_axis and curl(A)_c = -d_b A_axis.
+        const int transverse_b = (axis + 1) % 3;
+        const int transverse_c = (axis + 2) % 3;
+        const double inverse_core_squared =
+            1.0 / (parameters.core_radius * parameters.core_radius);
+        const double bend_phase =
+            parameters.axial_wavenumber * coordinates[axis] + phase_offset;
+        const double bend_b =
+            parameters.bend_amplitude * std::cos(bend_phase);
+        const double bend_c =
+            parameters.bend_amplitude * std::sin(bend_phase);
+        const double center_1_b = -0.5 * parameters.separation + bend_b;
+        const double center_1_c = bend_c;
+        const double center_2_b = 0.5 * parameters.separation - bend_b;
+        const double center_2_c = -bend_c;
+
+        const double delta_1_b = coordinates[transverse_b] - center_1_b;
+        const double delta_1_c = coordinates[transverse_c] - center_1_c;
+        const double delta_2_b = coordinates[transverse_b] - center_2_b;
+        const double delta_2_c = coordinates[transverse_c] - center_2_c;
+        const double distance_1_squared =
+            2.0 * (1.0 - std::cos(delta_1_b)) +
+            2.0 * (1.0 - std::cos(delta_1_c));
+        const double distance_2_squared =
+            2.0 * (1.0 - std::cos(delta_2_b)) +
+            2.0 * (1.0 - std::cos(delta_2_c));
+        const double gaussian_1 = std::exp(
+            -0.5 * inverse_core_squared * distance_1_squared);
+        const double gaussian_2 = std::exp(
+            -0.5 * inverse_core_squared * distance_2_squared);
+        const double derivative_1_b =
+            -inverse_core_squared * std::sin(delta_1_b) * gaussian_1;
+        const double derivative_1_c =
+            -inverse_core_squared * std::sin(delta_1_c) * gaussian_1;
+        const double derivative_2_b =
+            -inverse_core_squared * std::sin(delta_2_b) * gaussian_2;
+        const double derivative_2_c =
+            -inverse_core_squared * std::sin(delta_2_c) * gaussian_2;
+
+        velocity[transverse_b] +=
+            weight * (derivative_1_c - derivative_2_c);
+        velocity[transverse_c] -=
+            weight * (derivative_1_b - derivative_2_b);
     }
 
     void validateVortexTubeParameters(

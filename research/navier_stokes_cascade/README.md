@@ -130,8 +130,26 @@ u = curl(A).
 The two centres follow oppositely displaced helices in `z`. Setting the bend
 to zero gives a z-invariant two-dimensional control; a non-zero bend populates
 three-dimensional Fourier modes. The sampled field is truncated at the safe
-cutoff, Leray projected, and energy normalized. This is a reproducible smooth
-test family, not a claim that it resembles a singular profile.
+cutoff, Leray projected, and energy normalized.
+
+The search and independent-comparison tools also expose an
+`orthogonal-bundle` family. It superposes three copies of the same smooth
+counter-rotating pair, with vector potentials aligned with the `x`, `y`, and
+`z` axes:
+
+```text
+A = (w F_x, w F_y, F_z),
+u = curl(A).
+```
+
+Here each `F_axis` is a periodic Gaussian difference whose two centres bend
+along that axis; the `x` and `y` helices use opposite phase offsets. Thus the
+field contains six mutually oriented tubes, remains divergence-free by
+construction, and reduces exactly to the original `z` pair at `w=0`. The
+orthogonal weight and phase are genuine geometry parameters, not amplitude
+rescalings; total energy is normalized only after the three pairs are
+combined. Both families are reproducible smooth probes, not claims that they
+resemble a singular profile.
 
 The CSV diagnostics include:
 
@@ -219,17 +237,20 @@ The FFT-specific suite also checks a complex 3D transform round trip, rejects
 unsafe cutoffs, compares every nonlinear Fourier coefficient against direct
 convolution, repeats that comparison with all modes populated at the maximum
 safe cutoff, and compares complete short trajectories. It now also verifies
-that straight tubes have no non-zero axial modes, bent tubes do, both remain
-real and divergence-free, invalid geometry is rejected, and adaptive steps
-obey both requested stability bounds. The profile tests check normalization,
+that straight tubes have no non-zero axial modes, bent tubes do, and the
+six-tube bundle is energy-normalized, real, divergence-free, cutoff-clean,
+distinct from the pair, and populated in all three velocity components. A
+zero orthogonal weight must recover the original pair, invalid geometry is
+rejected, and adaptive steps obey both requested stability bounds. The profile
+tests check normalization,
 amplitude invariance, an exact discrete scale shift with zero shape drift, and
 metric ranges. Checkpoint
 tests cover exact round trips, split/uninterrupted trajectory identity, and
 checksum-corruption rejection. When FFTW3 is present, a separate target checks
 the internal transforms, grid ordering, full nonlinear right-hand side,
 including a state that populates every retained maximum-cutoff mode, adaptive
-bound, independently sampled diagnostics, and a nonlinear 40-step vortex-tube
-trajectory against the FFTW evolution path.
+bound, independently sampled diagnostics, and a nonlinear 40-step
+orthogonal-bundle trajectory against the FFTW evolution path.
 The candidate-score suite separately checks that lower profile drift and lower
 cutoff loading improve a score, that both grid levels contribute to the paired
 cutoff cost, and that missing, worsening, or cross-resolution-inconsistent
@@ -265,6 +286,10 @@ profile-rejected candidate using:
   --cfl 0.35 --diagnostic-every 50 \
   --output navier_stokes_fftw_comparison.csv
 ```
+
+Select the six-tube geometry with `--vortex-family orthogonal-bundle`; use
+`--orthogonal-weight` and `--phase-offset` to set its relative pair strength
+and helical phase. The ordinary pair remains the default.
 
 The CSV contains both copies of every key diagnostic, the maximum coefficient
 difference, relative full-state error, and constraint defects. The state error
@@ -351,8 +376,10 @@ constraint gates, and rerun the top three candidates at `32^3`:
 ```bash
 ./build/research/navier_stokes_cascade/navier_stokes_search \
   --coarse-grid 16 --fine-grid 32 \
+  --families pair,orthogonal-bundle \
   --cores 0.55,0.70 --separations 1.2,1.8 \
   --bends 0,0.30 --axial-modes 1,2 \
+  --orthogonal-weights 0.5,1.0 --phase-offsets 0,1.0471975512 \
   --energies 1,4,10 --viscosity 0.02 \
   --dt 0.005 --final-time 0.1 --top 3 \
   --profile-bins 64 --profile-scale-window 0.025 \
@@ -360,9 +387,11 @@ constraint gates, and rerun the top three candidates at `32^3`:
   --output navier_stokes_candidate_search.csv
 ```
 
-The straight cases are deduplicated because their axial wavenumber has no
-effect. `--energy E` remains the single-energy shorthand; `--energies` includes
-energy in the candidate grid. The CSV records initial/final/peak critical L3
+The straight cases are deduplicated because their axial wavenumber and phase
+have no effect. Pair candidates do not multiply over bundle-only parameters.
+`--energy E` remains the single-energy shorthand; `--energies` includes energy
+in the candidate grid. The CSV records the family and bundle geometry together
+with initial/final/peak critical L3
 and H1/2, sampled vorticity, enstrophy, palinstrophy, enstrophy
 production/destruction, maximum positive shell flux, cutoff contamination,
 constraint defects, accepted-step statistics, fixed-scale profile drift,
@@ -657,6 +686,46 @@ rule out common equation, truncation, modelling, or finite-resolution errors.
 A separate 15-step `N=64, K=21` smoke evolution to `t=0.002` also passed, with
 peak relative state difference `5.81702e-17`.
 
+### Orthogonal-bundle pilot
+
+The first broader-family pilot used the six-tube construction motivated by
+reconnection-rich extreme-flow computations. It varied
+`core=0.55,0.70`, `separation=1.2,1.6`, `bend=0.20,0.35`, and orthogonal
+weight `0.5,1.0`, with axial mode two, phase offset `pi/3`, energy ten,
+`nu=0.02`, and `t=0.08`. This was a bounded `16^3 -> 32^3` triage sweep, not
+an adjoint optimization or an exhaustive search.
+
+Only one of the 16 candidates passed the one-percent cutoff gate already at
+`N=16`: `core=0.70`, `separation=1.60`, `bend=0.20`, and weight `0.5`.
+Its `N=32` rerun passed the preliminary cross-resolution gate but not the
+profile-refinement gate:
+
+| Check through t=0.08 | Cross-resolved candidate | Most active N=32 finalist |
+|---|---:|---:|
+| Core / separation / bend / weight | 0.70 / 1.60 / 0.20 / 0.5 | 0.55 / 1.20 / 0.35 / 1.0 |
+| Peak H1/2 / initial | 1.021059685 | 1.045863570 |
+| Peak sampled vorticity / initial | 1.256117215 | 1.497489057 |
+| Peak enstrophy / initial | 1.161895002 | 1.361950240 |
+| Final characteristic wavenumber / initial | 1.086385801 | 1.185241615 |
+| Latest rescaled-profile drift | 8.581635012 | 7.366613616 |
+| Peak cutoff-shell energy fraction at N=32 | 8.90323e-5 | 2.89824e-3 |
+
+The active narrow-core case was under-resolved at `N=16` (cutoff fraction
+about `5.25e-2`), so it did not pass the cross-resolution gate even though its
+`N=32` trajectory was cutoff-clean. Replaying that full `N=32, K=10`
+trajectory through `t=0.08` with the internal FFT and independent FFTW
+evolvers took 482 shared adaptive steps. The peak relative state difference
+was `8.21632e-16`, the peak scaled diagnostic difference was `1.38476e-15`,
+and both paths produced the ratios in the right-hand column.
+
+The broader geometry therefore generated stronger finite vorticity growth
+than the cross-resolved case, but neither candidate approached a stationary
+rescaled spectrum: both drifts remained more than seven times the threshold,
+and the active case's drift rebounded from a minimum near `3.07`. Zero of 16
+candidates passed the strict refinement gate, so no `N=64` promotion was
+justified. In short: more tubes made more drama, but not the missing
+self-similar mechanism.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
@@ -707,20 +776,29 @@ search are implemented. The sharp critical-growth candidate has a short-time
 `32^3 -> 64^3` check and a cutoff-clean `N=64` continuation to `t=0.2`.
 Checkpoint/restart, the full independent FFTW evolution oracle,
 rescaled-spectrum output, scale-normalized profile drift, and heuristic tail
-fitting are implemented. The FFTW path reproduces the selected `N=32`
-candidate trajectory to round-off through `t=0.08`.
+fitting are implemented. The FFTW path reproduces the selected pair and
+orthogonal-bundle `N=32` candidate trajectories to round-off through
+`t=0.08`.
 The present sharp candidate fails the stationary-profile gate, so a `128^3`
 run of exactly the same geometry is deprioritized. The candidate search now
 uses fixed-forward-scale profile windows, explicit profile-drift and cutoff
 costs, a conservative paired coarse/fine score, and a strict refinement gate.
 Only candidates whose critical-norm growth, scale motion, profile stationarity,
 and cross-resolution agreement all pass that gate may seed a narrower sweep.
-The first 12-case `32^3 -> 64^3` neighbourhood search produced no survivor.
-The next milestone is therefore to broaden the initial-data family instead of
-spending larger grids on a tube geometry that fails its profile gate. Useful
-new families must retain exact divergence freedom and expose genuinely new
-geometry—such as interacting multiple tubes or localized Fourier wave packets—
-rather than merely adding more parameter combinations to the rejected pair.
+The first 12-case `32^3 -> 64^3` pair neighbourhood search produced no
+survivor. The initial-data family has now been broadened to an exactly
+divergence-free six-tube orthogonal bundle, with structural tests, search
+parameters, and independent-trajectory replay. Its first 16-case
+`16^3 -> 32^3` pilot also produced no survivor: the stronger finite growth
+still came with large, rebounding profile drift.
+
+Larger grids for either rejected geometry remain deprioritized. The next
+scientifically useful milestone is not another brute-force tube permutation;
+it is a low-resolution, finite-time adjoint/gradient check for optimizing
+solenoidal spectral seeds against an explicitly profile-aware objective.
+Localized Fourier wave packets can provide controlled starting coordinates,
+but every optimized result must still pass the same cutoff, refinement, and
+independent-evolution gates.
 
 A credible path from this scaffold to a theorem has several hard gates:
 
@@ -752,6 +830,18 @@ estimate, not a plot.
   <https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf>
 - T. Tao, *Finite time blowup for an averaged three-dimensional Navier-Stokes
   equation*: <https://arxiv.org/abs/1402.0290>
+- D. Ayala and B. Protas, *Extreme vortex states and the growth of enstrophy
+  in three-dimensional incompressible flows*:
+  <https://arxiv.org/abs/1605.05742>
+- D. Kang, D. Yun, and B. Protas, *Maximum amplification of enstrophy in
+  three-dimensional Navier-Stokes flows*:
+  <https://arxiv.org/abs/1909.00041>
+- R. Suaza Jaque and O. Velasco Fuentes, *Reconnection of orthogonal
+  cylindrical vortices*:
+  <https://doi.org/10.1016/j.euromechflu.2016.11.001>
+- H. K. Moffatt and Y. Kimura, *Towards a finite-time singularity of the
+  Navier-Stokes equations. Part 3. Maximal vorticity amplification*:
+  <https://doi.org/10.1017/jfm.2023.472>
 - S. Palasek, *Arbitrary norm growth in the 3D Navier-Stokes equations*:
   <https://arxiv.org/abs/2509.18595>
 - T. Hou, Q. Wang, and D. Yang, computer-assisted weak non-uniqueness from

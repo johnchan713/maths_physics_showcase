@@ -29,6 +29,9 @@ struct Options {
         ns_cascade::InitialCondition::VortexTubes;
     ns_cascade::VortexTubeParameters tube_parameters =
         ns_cascade::VortexTubeParameters(0.50, 1.30, 0.35, 2);
+    bool use_orthogonal_bundle = false;
+    double orthogonal_pair_weight = 0.75;
+    double phase_offset = 1.0471975511965977461542144610932;
     bool fixed_time_step = false;
     double state_tolerance = 1e-9;
     double diagnostic_tolerance = 1e-9;
@@ -77,6 +80,14 @@ ns_cascade::InitialCondition parseInitialCondition(const std::string& value) {
         " (expected deterministic, taylor-green, abc, or vortex-tubes)");
 }
 
+bool parseVortexFamily(const std::string& value) {
+    if (value == "pair") return false;
+    if (value == "orthogonal-bundle" || value == "bundle") return true;
+    throw std::invalid_argument(
+        "Unknown vortex family: " + value +
+        " (expected pair or orthogonal-bundle)");
+}
+
 void printUsage(const char* program) {
     std::cout
         << "Usage: " << program << " [options]\n\n"
@@ -99,6 +110,9 @@ void printUsage(const char* program) {
         << "  --tube-separation D      Vortex separation (default: 1.30)\n"
         << "  --tube-bend B            Helical bend (default: 0.35)\n"
         << "  --tube-axial-mode M      Helical mode (default: 2)\n"
+        << "  --vortex-family F        pair or orthogonal-bundle (default: pair)\n"
+        << "  --orthogonal-weight W    Relative x/y-pair weight (default: 0.75)\n"
+        << "  --phase-offset P         Bundle helical phase in radians (default: pi/3)\n"
         << "  --state-tolerance X      Relative trajectory gate (default: 1e-9)\n"
         << "  --diagnostic-tolerance X Scaled diagnostic gate (default: 1e-9)\n"
         << "  --output PATH            Comparison CSV path\n"
@@ -156,6 +170,15 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--tube-axial-mode") {
             options.tube_parameters.axial_wavenumber =
                 parseNumber<int>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--vortex-family") {
+            options.use_orthogonal_bundle =
+                parseVortexFamily(requireValue(i, argc, argv));
+        } else if (flag == "--orthogonal-weight") {
+            options.orthogonal_pair_weight =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--phase-offset") {
+            options.phase_offset =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
         } else if (flag == "--state-tolerance") {
             options.state_tolerance =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
@@ -194,6 +217,14 @@ Options parseOptions(int argc, char** argv) {
     if (!std::isfinite(options.initial_energy) ||
         options.initial_energy <= 0.0) {
         throw std::invalid_argument("--energy must be finite and positive");
+    }
+    if (!std::isfinite(options.orthogonal_pair_weight) ||
+        options.orthogonal_pair_weight < 0.0) {
+        throw std::invalid_argument(
+            "--orthogonal-weight must be finite and non-negative");
+    }
+    if (!std::isfinite(options.phase_offset)) {
+        throw std::invalid_argument("--phase-offset must be finite");
     }
     if (!std::isfinite(options.state_tolerance) ||
         options.state_tolerance <= 0.0 ||
@@ -335,6 +366,14 @@ ns_cascade::PseudospectralSystem::State makeInitialState(
     const ns_cascade::PseudospectralSystem& system,
     const Options& options) {
     if (options.initial_condition == ns_cascade::InitialCondition::VortexTubes) {
+        if (options.use_orthogonal_bundle) {
+            return system.vortexBundleState(
+                ns_cascade::VortexBundleParameters(
+                    options.tube_parameters,
+                    options.orthogonal_pair_weight,
+                    options.phase_offset),
+                options.initial_energy);
+        }
         return system.vortexTubePairState(
             options.tube_parameters, options.initial_energy);
     }
@@ -508,6 +547,10 @@ int run(const Options& options) {
               << "Independent FFTW trajectory comparison\n"
               << "  grid/cutoff: " << options.grid_size << '/'
               << internal_system.cutoff() << '\n'
+              << "  vortex family: "
+              << (options.use_orthogonal_bundle ? "orthogonal-bundle"
+                                                : "pair")
+              << '\n'
               << "  final time/steps: " << time << '/' << step << '\n'
               << "  peak relative state difference: "
               << peak_state_difference << '\n'

@@ -287,6 +287,35 @@ double nonzeroAxialEnergyFraction(
     return axial_energy / system.energy(state);
 }
 
+double velocityComponentEnergyFraction(
+    const ns_cascade::PseudospectralSystem& system,
+    const ns_cascade::PseudospectralSystem::State& state,
+    int component) {
+    double component_energy = 0.0;
+    for (std::size_t i = 0; i < state.size(); ++i) {
+        if (component == 0) {
+            component_energy += 0.5 * std::norm(state[i].x);
+        } else if (component == 1) {
+            component_energy += 0.5 * std::norm(state[i].y);
+        } else {
+            component_energy += 0.5 * std::norm(state[i].z);
+        }
+    }
+    return component_energy / system.energy(state);
+}
+
+double relativeStateDifference(
+    const ns_cascade::PseudospectralSystem::State& left,
+    const ns_cascade::PseudospectralSystem::State& right) {
+    double difference_squared = 0.0;
+    double reference_squared = 0.0;
+    for (std::size_t i = 0; i < left.size(); ++i) {
+        difference_squared += ns_cascade::normSquared(left[i] - right[i]);
+        reference_squared += ns_cascade::normSquared(right[i]);
+    }
+    return std::sqrt(difference_squared / reference_squared);
+}
+
 void testVortexTubeInitialData() {
     const ns_cascade::PseudospectralSystem system(32, 0.05, 10);
     const ns_cascade::VortexTubeParameters straight_parameters(
@@ -331,6 +360,52 @@ void testVortexTubeInitialData() {
     }
     expect(invalid_axial_mode_rejected,
            "An unresolved tube axial mode must be rejected");
+}
+
+void testOrthogonalVortexBundleInitialData() {
+    const ns_cascade::PseudospectralSystem system(32, 0.05, 10);
+    const ns_cascade::VortexTubeParameters tubes(0.70, 1.2, 0.25, 2);
+    const ns_cascade::PseudospectralSystem::State pair =
+        system.vortexTubePairState(tubes, 4.0);
+    const ns_cascade::PseudospectralSystem::State zero_weight_bundle =
+        system.vortexBundleState(
+            ns_cascade::VortexBundleParameters(tubes, 0.0, 0.7), 4.0);
+    const ns_cascade::PseudospectralSystem::State bundle =
+        system.vortexBundleState(
+            ns_cascade::VortexBundleParameters(tubes, 0.75, 1.0471975511965976),
+            4.0);
+    const ns_cascade::PseudospectralSystem::State phase_zero_bundle =
+        system.vortexBundleState(
+            ns_cascade::VortexBundleParameters(tubes, 0.75, 0.0), 4.0);
+
+    expectNear(system.energy(bundle), 4.0, 5e-13,
+               "Orthogonal vortex bundle was not energy-normalized");
+    expect(system.divergenceDefect(bundle) < 3e-13,
+           "Orthogonal vortex bundle is not divergence-free");
+    expect(system.realityDefect(bundle) < 3e-13,
+           "Orthogonal vortex bundle does not represent a real field");
+    expect(relativeStateDifference(zero_weight_bundle, pair) < 3e-14,
+           "Zero orthogonal weight did not recover the original tube pair");
+    expect(relativeStateDifference(bundle, pair) > 0.25,
+           "Orthogonal bundle is not geometrically distinct from the tube pair");
+    expect(relativeStateDifference(bundle, phase_zero_bundle) > 0.05,
+           "Bundle phase offset did not change the bent-tube geometry");
+    for (int component = 0; component < 3; ++component) {
+        expect(velocityComponentEnergyFraction(system, bundle, component) > 0.10,
+               "Orthogonal bundle failed to populate every velocity component");
+    }
+    expect(system.diagnostics(bundle).high_shell_energy_fraction < 0.01,
+           "Default orthogonal bundle begins under-resolved");
+
+    bool negative_weight_rejected = false;
+    try {
+        system.vortexBundleState(
+            ns_cascade::VortexBundleParameters(tubes, -0.1, 0.0));
+    } catch (const std::invalid_argument&) {
+        negative_weight_rejected = true;
+    }
+    expect(negative_weight_rejected,
+           "A negative orthogonal-pair weight must be rejected");
 }
 
 void testAdaptiveTimeStepControl() {
@@ -613,6 +688,7 @@ int main() {
         testShortTrajectoryMatchesCompactOracle();
         testAbcNegativeControl();
         testVortexTubeInitialData();
+        testOrthogonalVortexBundleInitialData();
         testAdaptiveTimeStepControl();
         testRescaledSpectrumProfile();
         testCheckpointRoundTripAndRestartTrajectory();

@@ -251,8 +251,12 @@ void testFullIndependentTrajectory() {
     const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
     const ns_cascade::FftwReferenceSystem reference_system(16, 0.02, 5);
     ns_cascade::PseudospectralSystem::State internal_state =
-        system.vortexTubePairState(
-            ns_cascade::VortexTubeParameters(0.7, 1.2, 0.3, 2), 10.0);
+        system.vortexBundleState(
+            ns_cascade::VortexBundleParameters(
+                ns_cascade::VortexTubeParameters(0.7, 1.2, 0.3, 2),
+                0.75,
+                1.0471975511965976),
+            10.0);
     ns_cascade::FftwReferenceSystem::State reference_state = internal_state;
 
     double peak_relative_state_difference = 0.0;
@@ -271,7 +275,7 @@ void testFullIndependentTrajectory() {
     }
 
     expect(peak_relative_state_difference < 2e-11,
-           "Independent FFTW RK4 trajectory departed from the main solver");
+           "Independent FFTW bundle trajectory departed from the main solver");
     const ns_cascade::FftwReferenceDiagnostics final_diagnostics =
         reference_system.diagnostics(reference_state);
     expect(final_diagnostics.divergence_defect < 2e-12,
