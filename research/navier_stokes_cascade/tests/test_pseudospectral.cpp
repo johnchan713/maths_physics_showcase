@@ -1,8 +1,10 @@
 #include "ns_cascade/galerkin.hpp"
-#include "ns_cascade/pseudospectral.hpp"
+#include "ns_cascade/checkpoint.hpp"
 
 #include <cmath>
 #include <complex>
+#include <cstdio>
+#include <fstream>
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -384,6 +386,187 @@ void testAdaptiveTimeStepControl() {
     expect(invalid_cfl_rejected, "A non-positive CFL target must be rejected");
 }
 
+void testRescaledSpectrumProfile() {
+    const ns_cascade::PseudospectralSystem system(16, 0.05, 5);
+    const ns_cascade::PseudospectralSystem::State unit_state =
+        system.initialState(ns_cascade::InitialCondition::TaylorGreen, 1.0);
+    const ns_cascade::PseudospectralSystem::State scaled_state =
+        system.initialState(ns_cascade::InitialCondition::TaylorGreen, 9.0);
+    const ns_cascade::SpectrumProfile unit_profile =
+        ns_cascade::rescaledSpectrumProfile(system, unit_state, 16, 4.0);
+    const ns_cascade::SpectrumProfile scaled_profile =
+        ns_cascade::rescaledSpectrumProfile(system, scaled_state, 16, 4.0);
+
+    expectNear(unit_profile.characteristic_wavenumber,
+               std::sqrt(3.0),
+               2e-15,
+               "Taylor-Green RMS wavenumber is incorrect");
+    double fraction_sum = 0.0;
+    for (std::size_t i = 0; i < unit_profile.energy_fractions.size(); ++i) {
+        fraction_sum += unit_profile.energy_fractions[i];
+    }
+    expectNear(fraction_sum, 1.0, 2e-15,
+               "Rescaled spectral energy fractions do not sum to one");
+    expect(ns_cascade::spectrumProfileL1Distance(unit_profile, scaled_profile) <
+               2e-15,
+           "Rescaled spectrum changed under amplitude-only energy scaling");
+    expectNear(ns_cascade::spectrumProfileOverlap(unit_profile, scaled_profile),
+               1.0,
+               2e-15,
+               "Identical rescaled spectra do not have unit overlap");
+    const ns_cascade::SpectrumProfileChange amplitude_change =
+        ns_cascade::spectrumProfileChange(unit_profile, scaled_profile);
+    expect(!amplitude_change.scale_normalized_drift_valid,
+           "An unchanged spectral scale should not report a normalized drift");
+
+    ns_cascade::SpectrumProfile exactly_rescaled_profile = unit_profile;
+    exactly_rescaled_profile.characteristic_wavenumber *= std::exp(0.125);
+    const ns_cascade::SpectrumProfileChange exactly_rescaled_change =
+        ns_cascade::spectrumProfileChange(
+            exactly_rescaled_profile, unit_profile);
+    expect(exactly_rescaled_change.scale_normalized_drift_valid,
+           "A finite spectral-scale movement did not produce a drift metric");
+    expectNear(exactly_rescaled_change.absolute_log_scale_change,
+               0.125,
+               2e-15,
+               "Logarithmic spectral-scale movement is incorrect");
+    expectNear(exactly_rescaled_change.l1_per_log_scale_change,
+               0.0,
+               2e-15,
+               "An exactly preserved rescaled shape has nonzero drift");
+
+    ns_cascade::PseudospectralSystem::State evolved = unit_state;
+    for (int step = 0; step < 20; ++step) {
+        system.stepRungeKutta4(evolved, 0.0005);
+    }
+    const ns_cascade::SpectrumProfile evolved_profile =
+        ns_cascade::rescaledSpectrumProfile(system, evolved, 16, 4.0);
+    const double distance =
+        ns_cascade::spectrumProfileL1Distance(unit_profile, evolved_profile);
+    expect(distance >= 0.0 && distance <= 2.0 + 2e-15,
+           "Rescaled-profile L1 distance is outside its mathematical range");
+}
+
+ns_cascade::SimulationCheckpoint makeTestCheckpoint(
+    const ns_cascade::PseudospectralSystem& system,
+    const ns_cascade::PseudospectralSystem::State& state,
+    std::uint64_t step,
+    double time) {
+    const ns_cascade::PseudospectralSystem::Diagnostics diagnostics =
+        system.diagnostics(state);
+    const ns_cascade::SpectrumProfile profile =
+        ns_cascade::rescaledSpectrumProfile(system, state, 16, 4.0);
+    ns_cascade::SimulationCheckpoint checkpoint;
+    checkpoint.configuration.grid_size = system.gridSize();
+    checkpoint.configuration.cutoff = system.cutoff();
+    checkpoint.configuration.viscosity = system.viscosity();
+    checkpoint.configuration.initial_condition =
+        ns_cascade::InitialCondition::TaylorGreen;
+    checkpoint.configuration.initial_energy = 1.0;
+    checkpoint.configuration.adaptive = false;
+    checkpoint.configuration.maximum_time_step = 0.0005;
+    checkpoint.configuration.target_cfl = 0.4;
+    checkpoint.configuration.diffusion_safety = 2.0;
+    checkpoint.configuration.profile_bin_count = 16;
+    checkpoint.configuration.profile_maximum_coordinate = 4.0;
+    checkpoint.progress.step = step;
+    checkpoint.progress.time = time;
+    checkpoint.progress.bkm_sampled_integral =
+        time * diagnostics.sampled_vorticity_max;
+    checkpoint.progress.previous_vorticity_max =
+        diagnostics.sampled_vorticity_max;
+    checkpoint.progress.previous_diagnostic_time = time;
+    checkpoint.progress.initial_critical_l3 = diagnostics.critical_l3_sample;
+    checkpoint.progress.initial_critical_h_half = diagnostics.critical_h_half;
+    checkpoint.progress.initial_sampled_vorticity =
+        diagnostics.sampled_vorticity_max;
+    checkpoint.progress.peak_high_shell_fraction =
+        diagnostics.high_shell_energy_fraction;
+    checkpoint.progress.peak_critical_l3 = diagnostics.critical_l3_sample;
+    checkpoint.progress.peak_critical_h_half = diagnostics.critical_h_half;
+    checkpoint.progress.peak_sampled_vorticity =
+        diagnostics.sampled_vorticity_max;
+    checkpoint.progress.maximum_production_to_dissipation =
+        diagnostics.enstrophy_production_to_dissipation;
+    checkpoint.progress.peak_forward_flux = 0.0;
+    checkpoint.progress.minimum_time_step = 0.0005;
+    checkpoint.progress.maximum_time_step = 0.0005;
+    checkpoint.progress.maximum_cfl_bound = 0.1;
+    checkpoint.progress.maximum_viscous_number = 0.1;
+    checkpoint.initial_profile = profile;
+    checkpoint.previous_profile = profile;
+    checkpoint.state = state;
+    return checkpoint;
+}
+
+void testCheckpointRoundTripAndRestartTrajectory() {
+    const std::string checkpoint_path = "ns_cascade_checkpoint_test.bin";
+    const ns_cascade::PseudospectralSystem system(16, 0.05, 5);
+    ns_cascade::PseudospectralSystem::State uninterrupted =
+        system.initialState(ns_cascade::InitialCondition::TaylorGreen, 1.0);
+    ns_cascade::PseudospectralSystem::State split = uninterrupted;
+    const double time_step = 0.0005;
+    for (int step = 0; step < 8; ++step) {
+        system.stepRungeKutta4(uninterrupted, time_step);
+    }
+    for (int step = 0; step < 3; ++step) {
+        system.stepRungeKutta4(split, time_step);
+    }
+
+    ns_cascade::saveSimulationCheckpoint(
+        checkpoint_path, makeTestCheckpoint(system, split, 3U, 3.0 * time_step));
+    const ns_cascade::SimulationCheckpoint recovered =
+        ns_cascade::loadSimulationCheckpoint(checkpoint_path);
+    expect(recovered.configuration.grid_size == 16 &&
+               recovered.configuration.cutoff == 5,
+           "Checkpoint configuration was not preserved");
+    expect(recovered.progress.step == 3U,
+           "Checkpoint step count was not preserved");
+    expectNear(recovered.progress.time, 3.0 * time_step, 0.0,
+               "Checkpoint physical time was not preserved bit-for-bit");
+    double round_trip_difference = 0.0;
+    for (std::size_t i = 0; i < split.size(); ++i) {
+        round_trip_difference = std::max(
+            round_trip_difference, ns_cascade::norm(split[i] - recovered.state[i]));
+    }
+    expectNear(round_trip_difference, 0.0, 0.0,
+               "Checkpoint changed a Fourier coefficient");
+
+    ns_cascade::PseudospectralSystem::State restarted = recovered.state;
+    for (int step = 3; step < 8; ++step) {
+        system.stepRungeKutta4(restarted, time_step);
+    }
+    double trajectory_difference = 0.0;
+    for (std::size_t i = 0; i < restarted.size(); ++i) {
+        trajectory_difference = std::max(
+            trajectory_difference,
+            ns_cascade::norm(uninterrupted[i] - restarted[i]));
+    }
+    expectNear(trajectory_difference, 0.0, 0.0,
+               "Restarted and uninterrupted trajectories differ");
+
+    {
+        std::fstream corrupt(checkpoint_path.c_str(),
+                             std::ios::binary | std::ios::in | std::ios::out);
+        expect(static_cast<bool>(corrupt), "Could not reopen checkpoint for test");
+        corrupt.seekg(40);
+        char byte = 0;
+        corrupt.read(&byte, 1);
+        byte ^= 0x01;
+        corrupt.seekp(40);
+        corrupt.write(&byte, 1);
+    }
+    bool corruption_rejected = false;
+    try {
+        ns_cascade::loadSimulationCheckpoint(checkpoint_path);
+    } catch (const std::runtime_error&) {
+        corruption_rejected = true;
+    }
+    std::remove(checkpoint_path.c_str());
+    expect(corruption_rejected,
+           "Checkpoint checksum failed to reject a changed byte");
+}
+
 }  // namespace
 
 int main() {
@@ -399,6 +582,8 @@ int main() {
         testAbcNegativeControl();
         testVortexTubeInitialData();
         testAdaptiveTimeStepControl();
+        testRescaledSpectrumProfile();
+        testCheckpointRoundTripAndRestartTrajectory();
         std::cout << "All pseudospectral Navier-Stokes tests passed.\n";
         return 0;
     } catch (const std::exception& error) {

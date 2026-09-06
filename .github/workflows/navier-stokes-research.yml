@@ -24,10 +24,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Install independent FFT oracle
+        run: sudo apt-get update && sudo apt-get install -y libfftw3-dev
+
       - name: Configure CMake
         run: >-
           cmake -S . -B build
           -DBUILD_TESTING=ON
+          -DNS_CASCADE_REQUIRE_FFTW_REFERENCE=ON
           -DCMAKE_BUILD_TYPE=Release
 
       - name: Build research targets
@@ -39,6 +43,7 @@ jobs:
           navier_stokes_search
           navier_stokes_cascade_tests
           navier_stokes_fft_tests
+          navier_stokes_fftw_tests
 
       - name: Run invariant tests
         run: ctest --test-dir build --output-on-failure
@@ -75,6 +80,29 @@ jobs:
           --top 2
           --output navier_stokes_candidate_search.csv
 
+      - name: Verify checkpoint restart is bit-for-bit reproducible
+        shell: bash
+        run: |
+          FFT=./build/research/navier_stokes_cascade/navier_stokes_fft
+          "$FFT" --grid 8 --cutoff 2 --initial-condition taylor-green \
+            --viscosity 0.05 --fixed-dt --dt 0.0005 --final-time 0.0015 \
+            --diagnostic-every 2 --output segment-a.csv \
+            --shell-output segment-a-shells.csv \
+            --profile-output segment-a-profile.csv \
+            --checkpoint-output restarted.chk --checkpoint-every 3
+          "$FFT" --restart restarted.chk --final-time 0.004 \
+            --diagnostic-every 2 --output segment-b.csv \
+            --shell-output segment-b-shells.csv \
+            --profile-output segment-b-profile.csv \
+            --checkpoint-output restarted.chk --checkpoint-every 3
+          "$FFT" --grid 8 --cutoff 2 --initial-condition taylor-green \
+            --viscosity 0.05 --fixed-dt --dt 0.0005 --final-time 0.004 \
+            --diagnostic-every 2 --output uninterrupted.csv \
+            --shell-output uninterrupted-shells.csv \
+            --profile-output uninterrupted-profile.csv \
+            --checkpoint-output uninterrupted.chk --checkpoint-every 3
+          cmp restarted.chk uninterrupted.chk
+
       - name: Retain convergence CSV
         uses: actions/upload-artifact@v4
         with:
@@ -83,3 +111,7 @@ jobs:
             navier_stokes_convergence.csv
             navier_stokes_fft_convergence.csv
             navier_stokes_candidate_search.csv
+            segment-a.csv
+            segment-b.csv
+            segment-a-profile.csv
+            segment-b-profile.csv

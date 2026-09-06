@@ -58,6 +58,24 @@ CSV records every sampled accepted step and its conservative advective and
 viscous stability numbers. The direct convolution is intentionally small and
 auditable; it is not intended as a production turbulence solver.
 
+Long FFT runs can atomically replace a checksummed, versioned binary
+checkpoint. It contains the full complex Fourier state, scientific
+configuration, physical time, accepted-step count, accumulated diagnostics,
+and spectrum-profile references. Restart restores those values rather than
+reconstructing the initial condition. A split fixed-step run and an
+uninterrupted run are required by the tests and CI to produce bit-for-bit
+identical final checkpoints. Each scheduled checkpoint is also a diagnostic
+step, so its accumulated telemetry and profile reference correspond to the
+stored state time. The checksum detects accidental corruption; it is not a
+proof certificate or a guarantee against storage failure.
+
+An optional test target uses FFTW3 as an implementation-independent transform
+oracle. It compares forward and inverse three-dimensional transforms and
+reconstructs the complete dealiased Navier-Stokes right-hand side through an
+FFTW path before comparing every retained coefficient. This is a useful check
+against a shared FFT bug, although it is not yet a second full time-evolution
+codebase.
+
 For an `N^3` FFT grid, the code enforces
 
 ```text
@@ -119,6 +137,8 @@ The CSV diagnostics include:
   Fourier shell;
 - nonlinear enstrophy production, viscous enstrophy destruction, their net
   rate, and their ratio;
+- a normalized rescaled energy spectrum, its characteristic wavenumber,
+  profile distances, and a heuristic exponential-tail fit;
 - divergence, Fourier-reality, and semi-discrete energy-balance defects.
 
 With the repository's Fourier normalization, the critical Sobolev diagnostic
@@ -136,6 +156,36 @@ Thus `S/(2 nu P) > 1` means nonlinear vortex stretching is instantaneously
 creating enstrophy faster than viscosity destroys it. For `nu=0`, the ratio is
 reported as zero because its denominator vanishes. Neither a ratio above one
 nor finite growth of a critical norm implies blow-up.
+
+The rescaled-spectrum diagnostic uses
+
+```text
+k_rms = sqrt(enstrophy / energy),
+xi    = |k| / k_rms.
+```
+
+Each mode's fraction of total energy is deposited continuously onto
+neighbouring `xi`-bin centres, with a separate overflow node. For two samples
+the code reports their L1 distance, overlap `1-L1/2`, absolute change in
+`log(k_rms)`, and
+
+```text
+shape drift = L1 distance / |change in log(k_rms)|.
+```
+
+This normalization prevents an artificially short final sampling interval
+from looking like profile convergence. An exactly preserved rescaled shape
+has zero drift; a credible self-similar candidate should make the drift
+decrease toward zero as resolution grows. The command-line threshold
+`shape drift <= 1` is only a deliberately conservative triage heuristic, not
+a theorem.
+
+The tail diagnostic fits `log E(k)` linearly over the upper half of the
+isotropic retained shells and reports `delta=-slope/2`, the fit point count,
+R-squared, and the rescaled product `delta*k_rms`. An exactly self-similar
+exponential tail would keep that product constant. The fit is motivated by
+`E(k) ~ k^a exp(-2 delta k)` but ignores the algebraic prefactor and provides
+no rigorous lower bound on analyticity radius.
 
 For the unit-width shell `S_j = {k : j-1 < |k| <= j}`, the code records
 
@@ -162,7 +212,11 @@ convolution, repeats that comparison with all modes populated at the maximum
 safe cutoff, and compares complete short trajectories. It now also verifies
 that straight tubes have no non-zero axial modes, bent tubes do, both remain
 real and divergence-free, invalid geometry is rejected, and adaptive steps
-obey both requested stability bounds.
+obey both requested stability bounds. The profile tests check normalization,
+amplitude invariance, the exact zero-drift case, and metric ranges. Checkpoint
+tests cover exact round trips, split/uninterrupted trajectory identity, and
+checksum-corruption rejection. When FFTW3 is present, a separate target checks
+the internal transforms and the full nonlinear right-hand side against FFTW.
 They also encode the elementary guardrail that zero gradient does not imply
 zero field value, a mistake found in some purported proofs.
 
@@ -177,6 +231,11 @@ ctest --test-dir build --output-on-failure
 ./build/research/navier_stokes_cascade/navier_stokes_cascade
 ```
 
+To make the independent transform oracle mandatory, install FFTW3 and add
+`-DNS_CASCADE_REQUIRE_FFTW_REFERENCE=ON` to the configure command. The branch
+workflow does this on Ubuntu so a missing reference library fails CI rather
+than silently skipping the check.
+
 Run the faster FFT backend on a `32^3` grid, retaining the strict safe cutoff
 `K=10`:
 
@@ -184,13 +243,14 @@ Run the faster FFT backend on a `32^3` grid, retaining the strict safe cutoff
 ./build/research/navier_stokes_cascade/navier_stokes_fft \
   --grid 32 --cutoff 0 --initial-condition taylor-green \
   --dt 0.005 --final-time 0.1 --cfl 0.4 --diagnostic-every 20 \
-  --output fft-n32.csv --shell-output fft-n32-shells.csv
+  --output fft-n32.csv --shell-output fft-n32-shells.csv \
+  --profile-output fft-n32-profile.csv
 ```
 
 Here `--dt` is the maximum allowed adaptive step. Add `--fixed-dt` to recover
 fixed-step evolution; if `--final-time` is omitted, the end time is
 `--steps * --dt`. The executable writes a time-series CSV and a separate
-long-form shell CSV.
+long-form shell CSV, and a long-form rescaled-spectrum CSV.
 
 Run one member of the smooth vortex-tube family with:
 
@@ -200,8 +260,25 @@ Run one member of the smooth vortex-tube family with:
   --tube-core 0.7 --tube-separation 1.8 \
   --tube-bend 0.3 --tube-axial-mode 2 \
   --viscosity 0.02 --dt 0.005 --final-time 0.1 \
-  --output tube.csv --shell-output tube-shells.csv
+  --profile-bins 64 --profile-max-xi 4 \
+  --output tube.csv --shell-output tube-shells.csv \
+  --profile-output tube-profile.csv \
+  --checkpoint-output tube.chk --checkpoint-every 100
 ```
+
+Resume the exact stored state to a new absolute final time with:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_fft \
+  --restart tube.chk --final-time 0.2 --diagnostic-every 20 \
+  --output tube-part-2.csv --shell-output tube-part-2-shells.csv \
+  --profile-output tube-part-2-profile.csv \
+  --checkpoint-output tube.chk --checkpoint-every 100
+```
+
+Scientific options cannot be mixed with `--restart`; grid, cutoff, viscosity,
+initial data, timestep policy, and profile binning all come from the
+checkpoint. Output paths and the new absolute final time remain selectable.
 
 For a slightly larger exploratory run:
 
@@ -407,14 +484,53 @@ from a blow-up construction. The other monitored critical norm decreases,
 H1/2 has not shown divergence or a stable rescaled profile, the observation
 stops while H1/2 is still rising, and no unresolved Fourier-tail bound exists.
 
+Checkpoint/restart then extended the `N=64` candidate from `t=0.1` to
+`t=0.2`. The complete run used 2,457 accepted adaptive steps. A companion
+`N=32` run crossed the one-percent cutoff gate near `t=0.1288` and ended with
+2.86% cutoff loading, so its later values must not be interpreted. At the same
+failure time the `N=64` cutoff fraction was only about 0.026%, and it remained
+below the gate through `t=0.2`:
+
+| Check through t=0.2 | N=32, K=10 | N=64, K=21 |
+|---|---:|---:|
+| Peak/final H1/2 / initial | 1.094806 | 1.102222 |
+| Final L3 / initial | 0.917463 | 0.915652 |
+| Final enstrophy / initial | 2.128676 | 2.525304 |
+| Peak sampled vorticity / initial | 1.797454 | 4.009082 |
+| Final characteristic wavenumber / initial | 1.533645 | 1.677045 |
+| Peak cutoff-shell energy fraction | 2.86343e-2 | 1.85488e-3 |
+| Final tail-fit delta | 0.137844 | 0.100243 |
+| Resolution verdict | failed after t about 0.1288 | passed cutoff gate |
+
+Only the `N=64` column passes the necessary cutoff criterion at the final time,
+so the difference between the two columns is not a convergence error estimate
+and no post-`t=0.1288` cross-resolution claim is made. On `N=64`, H1/2 was
+still increasing at the final sample, but its incremental growth was slowing.
+Sampled vorticity peaked at about four times its initial value near `t=0.1871`
+and then fell to about 3.24 times initial by `t=0.2`. L3 decreased by about
+8.43%.
+
+Most importantly, the final rescaled-profile drift was about `10.5` per unit
+change in `log(k_rms)`, well above the heuristic threshold one. The spectrum
+therefore moved to finer scales without settling to a stationary rescaled
+shape. The originally tempting raw distance to the immediately preceding row
+was rejected because that row was separated by only seven final steps. The
+normalized diagnostic closes that sampling-interval loophole. This is a
+spectrally clean finite cascade episode on `N=64`, not a self-similar blow-up
+profile converged across resolutions; the simple tail-fit `delta*k_rms`
+product also fell from about 3.11 initially to 0.481 rather than remaining
+constant. That regression is heuristic and does not alter the verdict by
+itself.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
 
 The branch-scoped GitHub Actions workflow builds these CMake targets, runs the
-direct and FFT invariant tests, performs short direct and FFT convergence
-comparisons plus a `16^3 -> 32^3` candidate-search smoke run, and uploads all
-three CSV products as workflow artifacts.
+direct, FFT, and FFTW-oracle tests, performs short direct and FFT convergence
+comparisons plus a `16^3 -> 32^3` candidate-search smoke run, and verifies
+bit-for-bit checkpoint/restart identity. It uploads the CSV products as
+workflow artifacts.
 
 ## Interpretation guardrails
 
@@ -434,6 +550,12 @@ itself demonstrate PDE singularity. In particular:
 - finite growth of H1/2 or any other critical norm is a triage signal; only an
   appropriate unbounded or non-integrable limiting behaviour could support a
   blow-up argument;
+- a small raw change between adjacent rescaled profiles is meaningless unless
+  the accompanying time or spectral-scale change is controlled; the
+  scale-normalized drift is still only a heuristic;
+- the fitted exponential-tail slope is a floating-point regression over a
+  short retained range, not a certified analyticity radius or Fourier-tail
+  bound;
 - ordinary floating point cannot certify inequalities needed by a proof.
 
 ## Research gates
@@ -444,17 +566,22 @@ backend, conservative adaptive timestep control, smooth parameterized
 vortex-tube family, both critical-norm diagnostics, enstrophy budget,
 energy-parameter sweep, saved single-run time series, and resolution-gated
 search are implemented. The sharp critical-growth candidate has a short-time
-`32^3 -> 64^3` check. The next engineering milestone is an independent
-FFT-library oracle, checkpoint/restart support, longer `64^3` validation,
-rescaled-profile diagnostics, and a principled way to refine promising sharp
-profiles that are under-resolved on the nomination grid.
+`32^3 -> 64^3` check and a cutoff-clean `N=64` continuation to `t=0.2`.
+Checkpoint/restart, the independent FFTW oracle, rescaled-spectrum output,
+scale-normalized profile drift, and heuristic tail fitting are implemented.
+The present sharp candidate fails the stationary-profile gate, so a `128^3`
+run of exactly the same geometry is deprioritized. The next engineering
+milestone is to add profile drift and multi-resolution cutoff cost to the
+candidate-search objective, then refine only geometries whose critical-norm
+growth strengthens while their rescaled shape becomes more stationary.
 
 A credible path from this scaffold to a theorem has several hard gates:
 
-1. **Numerical credibility:** cross-check this small radix-2 implementation
-   against an established FFT library; reproduce standard benchmarks; run
-   convergence studies across cutoff, time step, box, and precision; and
-   search for stable rescaled profiles rather than isolated spikes.
+1. **Numerical credibility:** extend the established FFTW coefficient oracle
+   into a second full trajectory implementation; reproduce standard
+   benchmarks; run convergence studies across cutoff, time step, box, and
+   precision; and search for stable rescaled profiles rather than isolated
+   spikes.
 2. **Analytic mechanism:** state a scale-by-scale transfer lemma that controls
    viscosity, nonlocal frequency interactions, pressure/Leray projection, and
    the time accumulated over infinitely many stages. Track a critical norm
