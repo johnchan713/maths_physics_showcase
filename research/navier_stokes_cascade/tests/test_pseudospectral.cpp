@@ -327,6 +327,21 @@ ns_cascade::PseudospectralSystem::State addScaledState(
     return result;
 }
 
+double realStateInnerProduct(
+    const ns_cascade::PseudospectralSystem::State& left,
+    const ns_cascade::PseudospectralSystem::State& right) {
+    double value = 0.0;
+    for (std::size_t i = 0; i < left.size(); ++i) {
+        value += std::real(ns_cascade::innerProduct(left[i], right[i]));
+    }
+    return value;
+}
+
+double relativeScalarDifference(double left, double right) {
+    return std::abs(left - right) /
+           std::max(1.0, std::max(std::abs(left), std::abs(right)));
+}
+
 void testVortexTubeInitialData() {
     const ns_cascade::PseudospectralSystem system(32, 0.05, 10);
     const ns_cascade::VortexTubeParameters straight_parameters(
@@ -526,6 +541,86 @@ void testTangentLinearRightHandSideAndTrajectory() {
            "Tangent trajectory developed a divergence defect");
     expect(system.realityDefect(tangent) < 2e-12,
            "Tangent trajectory lost Fourier reality symmetry");
+}
+
+void testAdjointRightHandSideAndRungeKuttaTrajectory() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const ns_cascade::PseudospectralSystem::State initial =
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(1.1, 1, 0.75, 1.0), 4.0);
+    const ns_cascade::PseudospectralSystem::State direction =
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(1.3, 1, 1.1, -0.4), 1.0);
+    const ns_cascade::PseudospectralSystem::State final_dual =
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(0.85, 2, 0.6, 0.35), 1.0);
+
+    const ns_cascade::PseudospectralSystem::State tangent_rhs =
+        system.tangentRightHandSide(initial, direction);
+    const ns_cascade::PseudospectralSystem::State adjoint_rhs =
+        system.adjointTangentRightHandSide(initial, final_dual);
+    const double rhs_forward_pairing =
+        realStateInnerProduct(tangent_rhs, final_dual);
+    const double rhs_reverse_pairing =
+        realStateInnerProduct(direction, adjoint_rhs);
+    expect(relativeScalarDifference(rhs_forward_pairing,
+                                    rhs_reverse_pairing) < 2e-12,
+           "Tangent and adjoint right-hand sides violate duality");
+    const ns_cascade::PseudospectralSystem::State inviscid_tangent_rhs =
+        system.tangentRightHandSide(initial, direction, false);
+    const ns_cascade::PseudospectralSystem::State inviscid_adjoint_rhs =
+        system.adjointTangentRightHandSide(initial, final_dual, false);
+    expect(relativeScalarDifference(
+               realStateInnerProduct(inviscid_tangent_rhs, final_dual),
+               realStateInnerProduct(direction, inviscid_adjoint_rhs)) < 2e-12,
+           "Nonlinear tangent and adjoint right-hand sides violate duality");
+
+    const double time_step = 0.0005;
+    const int step_count = 12;
+    std::vector<ns_cascade::PseudospectralSystem::State> trajectory;
+    trajectory.reserve(static_cast<std::size_t>(step_count));
+    ns_cascade::PseudospectralSystem::State base = initial;
+    ns_cascade::PseudospectralSystem::State tangent = direction;
+    for (int step = 0; step < step_count; ++step) {
+        trajectory.push_back(base);
+        system.stepTangentRungeKutta4(base, tangent, time_step);
+    }
+
+    ns_cascade::PseudospectralSystem::State initial_dual = final_dual;
+    for (int step = step_count; step-- > 0;) {
+        initial_dual = system.adjointRungeKutta4Step(
+            trajectory[static_cast<std::size_t>(step)],
+            initial_dual,
+            time_step);
+    }
+    const double trajectory_forward_pairing =
+        realStateInnerProduct(tangent, final_dual);
+    const double trajectory_reverse_pairing =
+        realStateInnerProduct(direction, initial_dual);
+    expect(relativeScalarDifference(trajectory_forward_pairing,
+                                    trajectory_reverse_pairing) < 3e-12,
+           "Tangent and reverse RK4 trajectories violate duality");
+
+    const double epsilon = 1e-5;
+    ns_cascade::PseudospectralSystem::State plus =
+        addScaledState(initial, direction, epsilon);
+    ns_cascade::PseudospectralSystem::State minus =
+        addScaledState(initial, direction, -epsilon);
+    for (int step = 0; step < step_count; ++step) {
+        system.stepRungeKutta4(plus, time_step);
+        system.stepRungeKutta4(minus, time_step);
+    }
+    const double objective_difference =
+        (realStateInnerProduct(plus, final_dual) -
+         realStateInnerProduct(minus, final_dual)) /
+        (2.0 * epsilon);
+    expect(relativeScalarDifference(objective_difference,
+                                    trajectory_reverse_pairing) < 2e-9,
+           "Reverse RK4 objective gradient differs from finite differences");
+    expect(system.divergenceDefect(initial_dual) < 2e-12,
+           "Reverse RK4 dual developed a divergence defect");
+    expect(system.realityDefect(initial_dual) < 2e-12,
+           "Reverse RK4 dual lost Fourier reality symmetry");
 }
 
 void testAdaptiveTimeStepControl() {
@@ -811,6 +906,7 @@ int main() {
         testOrthogonalVortexBundleInitialData();
         testInteractingWavePacketInitialData();
         testTangentLinearRightHandSideAndTrajectory();
+        testAdjointRightHandSideAndRungeKuttaTrajectory();
         testAdaptiveTimeStepControl();
         testRescaledSpectrumProfile();
         testCheckpointRoundTripAndRestartTrajectory();

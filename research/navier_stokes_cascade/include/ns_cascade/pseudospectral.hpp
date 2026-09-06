@@ -613,6 +613,109 @@ public:
         return result;
     }
 
+    // Adjoint of tangentRightHandSide on the retained, real, solenoidal
+    // Fourier state space. With omega=curl(u), self-adjoint Leray projection,
+    // and the real Fourier inner product, this is
+    // P[omega x lambda + curl(lambda x u)] - viscosity*A*lambda.
+    State adjointTangentRightHandSide(
+        const State& state,
+        const State& dual,
+        bool include_viscosity = true) const {
+        requireCompatible(state);
+        requireCompatible(dual);
+        std::vector<Complex> velocity_x(grid_point_count_);
+        std::vector<Complex> velocity_y(grid_point_count_);
+        std::vector<Complex> velocity_z(grid_point_count_);
+        std::vector<Complex> vorticity_x(grid_point_count_);
+        std::vector<Complex> vorticity_y(grid_point_count_);
+        std::vector<Complex> vorticity_z(grid_point_count_);
+        fillSpectralFields(state,
+                           velocity_x,
+                           velocity_y,
+                           velocity_z,
+                           vorticity_x,
+                           vorticity_y,
+                           vorticity_z);
+
+        std::vector<Complex> dual_x(grid_point_count_);
+        std::vector<Complex> dual_y(grid_point_count_);
+        std::vector<Complex> dual_z(grid_point_count_);
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            const ComplexVector projected =
+                lerayProject(modes_[index], dual[index]);
+            dual_x[index] = projected.x;
+            dual_y[index] = projected.y;
+            dual_z[index] = projected.z;
+        }
+
+        velocity_x = inverseTransform(velocity_x);
+        velocity_y = inverseTransform(velocity_y);
+        velocity_z = inverseTransform(velocity_z);
+        vorticity_x = inverseTransform(vorticity_x);
+        vorticity_y = inverseTransform(vorticity_y);
+        vorticity_z = inverseTransform(vorticity_z);
+        dual_x = inverseTransform(dual_x);
+        dual_y = inverseTransform(dual_y);
+        dual_z = inverseTransform(dual_z);
+
+        std::vector<Complex> omega_cross_dual_x(grid_point_count_);
+        std::vector<Complex> omega_cross_dual_y(grid_point_count_);
+        std::vector<Complex> omega_cross_dual_z(grid_point_count_);
+        std::vector<Complex> dual_cross_velocity_x(grid_point_count_);
+        std::vector<Complex> dual_cross_velocity_y(grid_point_count_);
+        std::vector<Complex> dual_cross_velocity_z(grid_point_count_);
+        for (std::size_t i = 0; i < grid_point_count_; ++i) {
+            omega_cross_dual_x[i] =
+                vorticity_y[i] * dual_z[i] -
+                vorticity_z[i] * dual_y[i];
+            omega_cross_dual_y[i] =
+                vorticity_z[i] * dual_x[i] -
+                vorticity_x[i] * dual_z[i];
+            omega_cross_dual_z[i] =
+                vorticity_x[i] * dual_y[i] -
+                vorticity_y[i] * dual_x[i];
+            dual_cross_velocity_x[i] =
+                dual_y[i] * velocity_z[i] -
+                dual_z[i] * velocity_y[i];
+            dual_cross_velocity_y[i] =
+                dual_z[i] * velocity_x[i] -
+                dual_x[i] * velocity_z[i];
+            dual_cross_velocity_z[i] =
+                dual_x[i] * velocity_y[i] -
+                dual_y[i] * velocity_x[i];
+        }
+        omega_cross_dual_x = forwardTransform(omega_cross_dual_x);
+        omega_cross_dual_y = forwardTransform(omega_cross_dual_y);
+        omega_cross_dual_z = forwardTransform(omega_cross_dual_z);
+        dual_cross_velocity_x = forwardTransform(dual_cross_velocity_x);
+        dual_cross_velocity_y = forwardTransform(dual_cross_velocity_y);
+        dual_cross_velocity_z = forwardTransform(dual_cross_velocity_z);
+
+        const Complex imaginary_unit(0.0, 1.0);
+        State result = zeroState();
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            const WaveVector& wave = modes_[index];
+            const ComplexVector first_term(
+                omega_cross_dual_x[index],
+                omega_cross_dual_y[index],
+                omega_cross_dual_z[index]);
+            const ComplexVector cross_term(
+                dual_cross_velocity_x[index],
+                dual_cross_velocity_y[index],
+                dual_cross_velocity_z[index]);
+            const ComplexVector curl_term =
+                cross(wave, cross_term) * imaginary_unit;
+            result[index] = lerayProject(wave, first_term + curl_term);
+            if (include_viscosity && viscosity_ != 0.0) {
+                result[index] += lerayProject(wave, dual[index]) *
+                    (-viscosity_ * static_cast<double>(wave.normSquared()));
+            }
+        }
+        return result;
+    }
+
     void stepRungeKutta4(State& state, double time_step) const {
         requireCompatible(state);
         if (!std::isfinite(time_step) || time_step <= 0.0) {
@@ -663,6 +766,53 @@ public:
                 (l1[i] + l2[i] * 2.0 + l3[i] * 2.0 + l4[i]) *
                 (time_step / 6.0);
         }
+    }
+
+    // Exact reverse accumulation through the four stages of one fixed RK4
+    // step. Adaptive timestep selection is deliberately outside this map.
+    State adjointRungeKutta4Step(const State& state,
+                                 const State& final_dual,
+                                 double time_step) const {
+        requireCompatible(state);
+        requireCompatible(final_dual);
+        if (!std::isfinite(time_step) || time_step <= 0.0) {
+            throw std::invalid_argument("Time step must be finite and positive");
+        }
+
+        const double half_step = 0.5 * time_step;
+        const double sixth_step = time_step / 6.0;
+        const State k1 = rightHandSide(state);
+        const State state_2 = addScaled(state, k1, half_step);
+        const State k2 = rightHandSide(state_2);
+        const State state_3 = addScaled(state, k2, half_step);
+        const State k3 = rightHandSide(state_3);
+        const State state_4 = addScaled(state, k3, time_step);
+
+        State state_dual = final_dual;
+        State k1_dual = scaled(final_dual, sixth_step);
+        State k2_dual = scaled(final_dual, 2.0 * sixth_step);
+        State k3_dual = scaled(final_dual, 2.0 * sixth_step);
+        const State k4_dual = scaled(final_dual, sixth_step);
+
+        const State state_4_dual =
+            adjointTangentRightHandSide(state_4, k4_dual);
+        addScaledInPlace(state_dual, state_4_dual, 1.0);
+        addScaledInPlace(k3_dual, state_4_dual, time_step);
+
+        const State state_3_dual =
+            adjointTangentRightHandSide(state_3, k3_dual);
+        addScaledInPlace(state_dual, state_3_dual, 1.0);
+        addScaledInPlace(k2_dual, state_3_dual, half_step);
+
+        const State state_2_dual =
+            adjointTangentRightHandSide(state_2, k2_dual);
+        addScaledInPlace(state_dual, state_2_dual, 1.0);
+        addScaledInPlace(k1_dual, state_2_dual, half_step);
+
+        const State initial_stage_dual =
+            adjointTangentRightHandSide(state, k1_dual);
+        addScaledInPlace(state_dual, initial_stage_dual, 1.0);
+        return state_dual;
     }
 
     double velocitySupremumUpperBound(const State& state) const {
@@ -1148,6 +1298,27 @@ private:
             result[index] += increment[index] * scale;
         }
         return result;
+    }
+
+    State scaled(const State& state, double scale) const {
+        requireCompatible(state);
+        State result = zeroState();
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            result[index] = state[index] * scale;
+        }
+        return result;
+    }
+
+    void addScaledInPlace(State& state,
+                          const State& increment,
+                          double scale) const {
+        requireCompatible(state);
+        requireCompatible(increment);
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            state[index] += increment[index] * scale;
+        }
     }
 
     double vorticitySupremumUpperBound(const State& state) const {
