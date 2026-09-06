@@ -19,6 +19,11 @@ add_executable(navier_stokes_fft
 )
 target_link_libraries(navier_stokes_fft PRIVATE ns_cascade)
 
+add_executable(navier_stokes_search
+    src/search.cpp
+)
+target_link_libraries(navier_stokes_search PRIVATE ns_cascade)
+
 if(BUILD_TESTING)
     add_executable(navier_stokes_cascade_tests
         tests/test_galerkin.cpp

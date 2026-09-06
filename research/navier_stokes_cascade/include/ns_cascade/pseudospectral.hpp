@@ -13,6 +13,29 @@
 
 namespace ns_cascade {
 
+struct VortexTubeParameters {
+    double core_radius;
+    double separation;
+    double bend_amplitude;
+    int axial_wavenumber;
+
+    VortexTubeParameters(double core_radius_value = 0.55,
+                         double separation_value = 1.6,
+                         double bend_amplitude_value = 0.25,
+                         int axial_wavenumber_value = 1)
+        : core_radius(core_radius_value),
+          separation(separation_value),
+          bend_amplitude(bend_amplitude_value),
+          axial_wavenumber(axial_wavenumber_value) {}
+};
+
+struct AdaptiveStepInfo {
+    double time_step;
+    double velocity_supremum_bound;
+    double advective_cfl_upper_bound;
+    double viscous_stability_number;
+};
+
 class PseudospectralSystem {
 public:
     using State = std::vector<ComplexVector>;
@@ -31,8 +54,8 @@ public:
             throw std::invalid_argument(
                 "FFT grid size must be a power of two and at least eight");
         }
-        if (viscosity_ < 0.0) {
-            throw std::invalid_argument("Viscosity cannot be negative");
+        if (!std::isfinite(viscosity_) || viscosity_ < 0.0) {
+            throw std::invalid_argument("Viscosity must be finite and non-negative");
         }
 
         // If |p_i|,|q_i| <= K and K < N/3, no wrapped quadratic product can
@@ -71,17 +94,110 @@ public:
     double viscosity() const { return viscosity_; }
     std::size_t gridPointCount() const { return grid_point_count_; }
     std::size_t modeCount() const { return retained_indices_.size(); }
+    const std::vector<WaveVector>& gridModes() const { return modes_; }
 
     State zeroState() const { return State(grid_point_count_); }
 
     State initialState(InitialCondition condition,
                        double target_energy = 1.0) const {
+        if (condition == InitialCondition::VortexTubes) {
+            return vortexTubePairState(VortexTubeParameters(), target_energy);
+        }
         const GalerkinSystem compact_system(cutoff_, viscosity_);
         const GalerkinSystem::State compact_state =
             compact_system.initialState(condition, target_energy);
         State state = zeroState();
         for (std::size_t i = 0; i < compact_system.modes().size(); ++i) {
             state[indexOf(compact_system.modes()[i])] = compact_state[i];
+        }
+        return state;
+    }
+
+    State vortexTubePairState(const VortexTubeParameters& parameters,
+                              double target_energy = 1.0) const {
+        validateVortexTubeParameters(parameters);
+        if (!std::isfinite(target_energy) || target_energy <= 0.0) {
+            throw std::invalid_argument("Target energy must be finite and positive");
+        }
+
+        std::vector<Complex> physical_x(grid_point_count_);
+        std::vector<Complex> physical_y(grid_point_count_);
+        std::vector<Complex> physical_z(grid_point_count_);
+        const double two_pi = 6.283185307179586476925286766559;
+        const double inverse_core_squared =
+            1.0 / (parameters.core_radius * parameters.core_radius);
+
+        for (int ix = 0; ix < grid_size_; ++ix) {
+            const double x = two_pi * ix / grid_size_ - 0.5 * two_pi;
+            for (int iy = 0; iy < grid_size_; ++iy) {
+                const double y = two_pi * iy / grid_size_ - 0.5 * two_pi;
+                for (int iz = 0; iz < grid_size_; ++iz) {
+                    const double z = two_pi * iz / grid_size_;
+                    const double bend_phase = parameters.axial_wavenumber * z;
+                    const double bend_x =
+                        parameters.bend_amplitude * std::cos(bend_phase);
+                    const double bend_y =
+                        parameters.bend_amplitude * std::sin(bend_phase);
+                    const double center_1_x =
+                        -0.5 * parameters.separation + bend_x;
+                    const double center_1_y = bend_y;
+                    const double center_2_x =
+                        0.5 * parameters.separation - bend_x;
+                    const double center_2_y = -bend_y;
+
+                    const double delta_1_x = x - center_1_x;
+                    const double delta_1_y = y - center_1_y;
+                    const double delta_2_x = x - center_2_x;
+                    const double delta_2_y = y - center_2_y;
+                    const double distance_1_squared =
+                        2.0 * (1.0 - std::cos(delta_1_x)) +
+                        2.0 * (1.0 - std::cos(delta_1_y));
+                    const double distance_2_squared =
+                        2.0 * (1.0 - std::cos(delta_2_x)) +
+                        2.0 * (1.0 - std::cos(delta_2_y));
+                    const double gaussian_1 = std::exp(
+                        -0.5 * inverse_core_squared * distance_1_squared);
+                    const double gaussian_2 = std::exp(
+                        -0.5 * inverse_core_squared * distance_2_squared);
+                    const double derivative_1_x =
+                        -inverse_core_squared * std::sin(delta_1_x) * gaussian_1;
+                    const double derivative_1_y =
+                        -inverse_core_squared * std::sin(delta_1_y) * gaussian_1;
+                    const double derivative_2_x =
+                        -inverse_core_squared * std::sin(delta_2_x) * gaussian_2;
+                    const double derivative_2_y =
+                        -inverse_core_squared * std::sin(delta_2_y) * gaussian_2;
+                    const std::size_t index = flatIndex(ix, iy, iz);
+
+                    // A = (0,0,G1-G2), u = curl(A). The opposite signs form
+                    // a counter-rotating pair; helical centre lines make it 3D.
+                    physical_x[index] = derivative_1_y - derivative_2_y;
+                    physical_y[index] = -(derivative_1_x - derivative_2_x);
+                    physical_z[index] = Complex();
+                }
+            }
+        }
+
+        const std::vector<Complex> fourier_x = forwardTransform(physical_x);
+        const std::vector<Complex> fourier_y = forwardTransform(physical_y);
+        const std::vector<Complex> fourier_z = forwardTransform(physical_z);
+        State state = zeroState();
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            state[index] = lerayProject(
+                modes_[index],
+                ComplexVector(fourier_x[index],
+                              fourier_y[index],
+                              fourier_z[index]));
+        }
+
+        const double current_energy = energy(state);
+        if (current_energy == 0.0) {
+            throw std::runtime_error("Vortex-tube construction produced zero energy");
+        }
+        const double scale = std::sqrt(target_energy / current_energy);
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            state[retained_indices_[n]] = state[retained_indices_[n]] * scale;
         }
         return state;
     }
@@ -177,8 +293,8 @@ public:
 
     void stepRungeKutta4(State& state, double time_step) const {
         requireCompatible(state);
-        if (time_step <= 0.0) {
-            throw std::invalid_argument("Time step must be positive");
+        if (!std::isfinite(time_step) || time_step <= 0.0) {
+            throw std::invalid_argument("Time step must be finite and positive");
         }
 
         const State k1 = rightHandSide(state);
@@ -191,6 +307,77 @@ public:
                 (k1[i] + k2[i] * 2.0 + k3[i] * 2.0 + k4[i]) *
                 (time_step / 6.0);
         }
+    }
+
+    double velocitySupremumUpperBound(const State& state) const {
+        requireCompatible(state);
+        double bound = 0.0;
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            bound += norm(state[retained_indices_[n]]);
+        }
+        return bound;
+    }
+
+    AdaptiveStepInfo chooseAdaptiveTimeStep(
+        const State& state,
+        double maximum_time_step,
+        double target_cfl = 0.4,
+        double diffusion_safety = 2.0) const {
+        requireCompatible(state);
+        if (!std::isfinite(maximum_time_step) || maximum_time_step <= 0.0) {
+            throw std::invalid_argument(
+                "Maximum time step must be finite and positive");
+        }
+        if (!std::isfinite(target_cfl) || !std::isfinite(diffusion_safety) ||
+            target_cfl <= 0.0 || diffusion_safety <= 0.0) {
+            throw std::invalid_argument(
+                "CFL and diffusion safety values must be positive");
+        }
+
+        AdaptiveStepInfo information;
+        information.velocity_supremum_bound =
+            velocitySupremumUpperBound(state);
+        if (!std::isfinite(information.velocity_supremum_bound)) {
+            throw std::runtime_error(
+                "Cannot choose a time step for a non-finite velocity state");
+        }
+        const double largest_wave_number =
+            std::sqrt(3.0) * static_cast<double>(cutoff_);
+        const double advective_limit =
+            information.velocity_supremum_bound == 0.0
+                ? maximum_time_step
+                : target_cfl /
+                      (information.velocity_supremum_bound * largest_wave_number);
+        const double maximum_wave_squared =
+            3.0 * static_cast<double>(cutoff_) * cutoff_;
+        const double viscous_limit =
+            viscosity_ == 0.0
+                ? maximum_time_step
+                : diffusion_safety / (viscosity_ * maximum_wave_squared);
+        information.time_step =
+            std::min(maximum_time_step,
+                     std::min(advective_limit, viscous_limit));
+        if (!std::isfinite(information.time_step) ||
+            information.time_step <= 0.0) {
+            throw std::runtime_error("Adaptive time-step selection failed");
+        }
+        information.advective_cfl_upper_bound =
+            information.time_step * information.velocity_supremum_bound *
+            largest_wave_number;
+        information.viscous_stability_number =
+            information.time_step * viscosity_ * maximum_wave_squared;
+        return information;
+    }
+
+    AdaptiveStepInfo stepAdaptiveRungeKutta4(
+        State& state,
+        double maximum_time_step,
+        double target_cfl = 0.4,
+        double diffusion_safety = 2.0) const {
+        const AdaptiveStepInfo information = chooseAdaptiveTimeStep(
+            state, maximum_time_step, target_cfl, diffusion_safety);
+        stepRungeKutta4(state, information.time_step);
+        return information;
     }
 
     double energy(const State& state) const {
@@ -348,6 +535,33 @@ private:
     static int maximumComponent(const WaveVector& wave) {
         return std::max(std::abs(wave.x),
                         std::max(std::abs(wave.y), std::abs(wave.z)));
+    }
+
+    void validateVortexTubeParameters(
+        const VortexTubeParameters& parameters) const {
+        const double pi = 3.1415926535897932384626433832795;
+        const double two_pi = 2.0 * pi;
+        if (!std::isfinite(parameters.core_radius) ||
+            parameters.core_radius <= 0.0 || parameters.core_radius > pi) {
+            throw std::invalid_argument(
+                "Vortex-tube core radius must be finite and in (0, pi]");
+        }
+        if (!std::isfinite(parameters.separation) ||
+            parameters.separation <= 0.0 || parameters.separation >= two_pi) {
+            throw std::invalid_argument(
+                "Vortex-tube separation must be finite and in (0, 2*pi)");
+        }
+        if (!std::isfinite(parameters.bend_amplitude) ||
+            parameters.bend_amplitude < 0.0 ||
+            parameters.bend_amplitude >= pi) {
+            throw std::invalid_argument(
+                "Vortex-tube bend amplitude must be finite and in [0, pi)");
+        }
+        if (parameters.axial_wavenumber < 1 ||
+            parameters.axial_wavenumber > cutoff_) {
+            throw std::invalid_argument(
+                "Vortex-tube axial wavenumber must be between 1 and the cutoff");
+        }
     }
 
     int waveNumber(int coordinate) const {

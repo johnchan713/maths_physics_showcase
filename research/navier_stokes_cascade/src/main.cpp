@@ -30,9 +30,10 @@ ns_cascade::InitialCondition parseInitialCondition(const std::string& value) {
     if (value == "deterministic") return ns_cascade::InitialCondition::Deterministic;
     if (value == "taylor-green") return ns_cascade::InitialCondition::TaylorGreen;
     if (value == "abc") return ns_cascade::InitialCondition::ABC;
+    if (value == "vortex-tubes") return ns_cascade::InitialCondition::VortexTubes;
     throw std::invalid_argument(
         "Unknown initial condition: " + value +
-        " (expected deterministic, taylor-green, or abc)");
+        " (expected deterministic, taylor-green, abc, or vortex-tubes)");
 }
 
 void printUsage(const char* program) {
@@ -47,7 +48,7 @@ void printUsage(const char* program) {
         << "  --diagnostic-every N    CSV sampling interval (default: 20)\n"
         << "  --sample-points N       Grid points per axis; 0 selects a safe default\n"
         << "  --energy E              Initial normalized kinetic energy (default: 1)\n"
-        << "  --initial-condition C   deterministic, taylor-green, or abc\n"
+        << "  --initial-condition C   deterministic, taylor-green, abc, or vortex-tubes\n"
         << "                            (default: taylor-green)\n"
         << "  --output PATH           CSV path (default: navier_stokes_cascade.csv)\n"
         << "  --shell-output PATH     Shell CSV path (default: navier_stokes_shells.csv)\n"

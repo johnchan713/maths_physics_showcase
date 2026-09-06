@@ -43,9 +43,20 @@ d u_k / dt = -nu |k|^2 u_k
              - i P_k sum_(p+q=k) (u_p . q) u_q,
 ```
 
-where `P_k` is the Leray projector. Time stepping is classical RK4. The direct
-convolution is intentionally small and auditable; it is not intended as a
-production turbulence solver.
+where `P_k` is the Leray projector. Time stepping is classical RK4. The FFT
+path can choose each step from the conservative Fourier bound
+
+```text
+U_F = sum_k |u_k| >= ||u||_infinity,
+dt  = min(dt_max, CFL/(sqrt(3) K U_F), S_nu/(3 nu K^2)).
+```
+
+The defaults are `CFL=0.4` for a single FFT run (`0.35` in the search) and
+`S_nu=2`, inside the negative-real-axis stability interval of RK4. The final
+step is shortened to end at the same physical time at every resolution. The
+CSV records every sampled accepted step and its conservative advective and
+viscous stability numbers. The direct convolution is intentionally small and
+auditable; it is not intended as a production turbulence solver.
 
 For an `N^3` FFT grid, the code enforces
 
@@ -57,12 +68,14 @@ so `3K < N`. Therefore a wrapped quadratic product cannot alias back into the
 retained cube. Modes outside the retained cube and the mean mode are never
 evolved. The Fourier normalization is `u(x) = sum_k u_k exp(i k.x)`.
 
-Three smooth, exactly divergence-free starting fields are available:
+Four smooth, exactly divergence-free starting fields are available:
 
 - `taylor-green` (default), a standard vortex-interaction benchmark;
 - `abc`, a Beltrami flow whose projected nonlinear term vanishes, used here as
   a negative control: a cascade detector should report no nonlinear flux;
-- `deterministic`, the original reproducible low-mode mixture.
+- `deterministic`, the original reproducible low-mode mixture;
+- `vortex-tubes` (FFT only), a parameterized counter-rotating pair with core
+  radius, separation, helical bend amplitude, and axial wavenumber.
 
 The Taylor-Green field is
 
@@ -78,6 +91,20 @@ u = (sin(z) + cos(y), sin(x) + cos(z), sin(y) + cos(x)).
 
 Both are normalized to the requested kinetic energy without changing their
 shape.
+
+The vortex pair starts from the smooth periodic vector potential
+
+```text
+A = (0, 0, G_1 - G_2),
+G_j = exp(-(2(1-cos(x-c_jx)) + 2(1-cos(y-c_jy)))/(2 a^2)),
+u = curl(A).
+```
+
+The two centres follow oppositely displaced helices in `z`. Setting the bend
+to zero gives a z-invariant two-dimensional control; a non-zero bend populates
+three-dimensional Fourier modes. The sampled field is truncated at the safe
+cutoff, Leray projected, and energy normalized. This is a reproducible smooth
+test family, not a claim that it resembles a singular profile.
 
 The CSV diagnostics include:
 
@@ -112,7 +139,10 @@ control, and short-run numerical stability.
 The FFT-specific suite also checks a complex 3D transform round trip, rejects
 unsafe cutoffs, compares every nonlinear Fourier coefficient against direct
 convolution, repeats that comparison with all modes populated at the maximum
-safe cutoff, and compares complete short trajectories.
+safe cutoff, and compares complete short trajectories. It now also verifies
+that straight tubes have no non-zero axial modes, bent tubes do, both remain
+real and divergence-free, invalid geometry is rejected, and adaptive steps
+obey both requested stability bounds.
 They also encode the elementary guardrail that zero gradient does not imply
 zero field value, a mistake found in some purported proofs.
 
@@ -133,12 +163,25 @@ Run the faster FFT backend on a `32^3` grid, retaining the strict safe cutoff
 ```bash
 ./build/research/navier_stokes_cascade/navier_stokes_fft \
   --grid 32 --cutoff 0 --initial-condition taylor-green \
-  --dt 0.0005 --steps 200 --diagnostic-every 20 \
+  --dt 0.005 --final-time 0.1 --cfl 0.4 --diagnostic-every 20 \
   --output fft-n32.csv --shell-output fft-n32-shells.csv
 ```
 
-The main executable writes a time-series CSV and a separate long-form shell
-CSV. Select the starting field with `--initial-condition`:
+Here `--dt` is the maximum allowed adaptive step. Add `--fixed-dt` to recover
+fixed-step evolution; if `--final-time` is omitted, the end time is
+`--steps * --dt`. The executable writes a time-series CSV and a separate
+long-form shell CSV.
+
+Run one member of the smooth vortex-tube family with:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_fft \
+  --grid 32 --initial-condition vortex-tubes \
+  --tube-core 0.7 --tube-separation 1.8 \
+  --tube-bend 0.3 --tube-axial-mode 2 \
+  --viscosity 0.02 --dt 0.005 --final-time 0.1 \
+  --output tube.csv --shell-output tube-shells.csv
+```
 
 For a slightly larger exploratory run:
 
@@ -167,6 +210,27 @@ Use the same comparison program with the FFT backend:
   --dt 0.0005 --steps 60 --diagnostic-every 20 \
   --output navier_stokes_fft_convergence.csv
 ```
+
+Search a small parameter grid at `16^3`, rank only after applying cutoff and
+constraint gates, and rerun the top three candidates at `32^3`:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_search \
+  --coarse-grid 16 --fine-grid 32 \
+  --cores 0.55,0.70 --separations 1.2,1.8 \
+  --bends 0,0.30 --axial-modes 1,2 \
+  --viscosity 0.02 --dt 0.005 --final-time 0.1 --top 3 \
+  --output navier_stokes_candidate_search.csv
+```
+
+The straight cases are deduplicated because their axial wavenumber has no
+effect. The CSV records initial/final/peak critical L3, sampled vorticity,
+enstrophy, palinstrophy, maximum positive shell flux, cutoff contamination,
+constraint defects, accepted-step statistics, and coarse/fine differences.
+An apparent growth signal must occur on both grids to pass the preliminary
+cross-resolution gate. The ranking score uses critical-L3 growth first with a
+small sampled-vorticity and final-L3 tie-break; it is merely a deterministic
+triage rule.
 
 The direct comparison uses one common spatial sampling grid for every cutoff.
 The FFT comparison samples on each native grid; therefore its L3-grid
@@ -211,13 +275,50 @@ The run has a clean, converged finite forward flux, but its critical L3 norm
 decreases by about 0.46%. That is evidence the measurement machinery works;
 it is not a blow-up candidate.
 
+### Vortex-tube search result
+
+An extended 12-configuration sweep at `nu=0.02`, initial energy one, and
+`t=0.1` found no critical-L3 growth. The only finalist whose growth/no-growth
+signals and flux passed the preliminary resolution gate had
+`core=0.7`, `separation=1.8`, `bend=0.3`, and `axial mode=2`. A dedicated
+`32^3 -> 64^3` rerun produced:
+
+| Check at t=0.1 | N=32, K=10 | N=64, K=21 |
+|---|---:|---:|
+| Peak critical-L3 / initial | 1.000000 | 1.000000 |
+| Final critical-L3 / initial | 0.988878748 | 0.988879563 |
+| Peak sampled vorticity / initial | 1.03280068 | 1.04312237 |
+| Final enstrophy / initial | 0.981387172 | 0.981387447 |
+| Maximum positive forward flux | 0.050832943 | 0.050832879 |
+| Peak cutoff-shell energy fraction | 4.06726e-7 | 4.56699e-14 |
+| Accepted adaptive steps | 68 | 141 |
+| Maximum conservative CFL bound | 0.35 | 0.35 |
+
+The final-L3 ratios agree to about `8.2e-7` relative and the peak forward flux
+to about `1.3e-6` relative. The sampled-vorticity growth differs by about 0.99%
+relative, partly because the maximum is sampled on each native grid.
+
+Extending the same candidate to `t=0.5` at `N=32` gave peak sampled-vorticity
+growth `1.12599`, enstrophy growth `1.09518`, final critical-L3 ratio
+`0.932052`, and cutoff fraction `4.96984e-4`. The corresponding `N=16` run was
+under-resolved (cutoff fraction `0.0200`), so the long-time growth still needs
+an `N=64` check.
+
+The defensible interpretation is narrow: this family exhibits resolved local
+vortex amplification and forward transfer over the short interval, while its
+scale-critical L3 norm decreases. That is a useful configuration for studying
+vortex stretching or geometric depletion, but it is presently evidence
+against this particular run being a blow-up candidate—not a proof of global
+regularity and not a disproof of Navier-Stokes.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
 
 The branch-scoped GitHub Actions workflow builds these CMake targets, runs the
 direct and FFT invariant tests, performs short direct and FFT convergence
-comparisons, and uploads their CSV files as workflow artifacts.
+comparisons plus a `16^3 -> 32^3` candidate-search smoke run, and uploads all
+three CSV products as workflow artifacts.
 
 ## Interpretation guardrails
 
@@ -240,17 +341,17 @@ itself demonstrate PDE singularity. In particular:
 
 The exact low-cutoff oracle, named benchmark fields, shell accounting, and the
 cutoff/timestep comparison harness are implemented. The strictly dealiased FFT
-backend is also implemented and checked against the direct oracle. The next
-engineering milestone is adaptive timestep/CFL control followed by
-parameterized smooth vortex-tube data and automated candidate searches.
+backend, conservative adaptive timestep control, smooth parameterized
+vortex-tube family, and resolution-gated search are implemented. The next
+engineering milestone is an independent FFT-library oracle, saved time-series
+search traces, and `64^3` long-time validation of the stretching candidate.
 
 A credible path from this scaffold to a theorem has several hard gates:
 
 1. **Numerical credibility:** cross-check this small radix-2 implementation
-   against an established FFT library; add adaptive timestep/CFL control;
-   reproduce standard benchmarks; run convergence studies across cutoff, time
-   step, box, and precision; and search for stable rescaled profiles rather
-   than isolated spikes.
+   against an established FFT library; reproduce standard benchmarks; run
+   convergence studies across cutoff, time step, box, and precision; and
+   search for stable rescaled profiles rather than isolated spikes.
 2. **Analytic mechanism:** state a scale-by-scale transfer lemma that controls
    viscosity, nonlocal frequency interactions, pressure/Leray projection, and
    the time accumulated over infinitely many stages. Track a critical norm

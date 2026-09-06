@@ -73,9 +73,10 @@ ns_cascade::InitialCondition parseInitialCondition(const std::string& value) {
     if (value == "deterministic") return ns_cascade::InitialCondition::Deterministic;
     if (value == "taylor-green") return ns_cascade::InitialCondition::TaylorGreen;
     if (value == "abc") return ns_cascade::InitialCondition::ABC;
+    if (value == "vortex-tubes") return ns_cascade::InitialCondition::VortexTubes;
     throw std::invalid_argument(
         "Unknown initial condition: " + value +
-        " (expected deterministic, taylor-green, or abc)");
+        " (expected deterministic, taylor-green, abc, or vortex-tubes)");
 }
 
 Backend parseBackend(const std::string& value) {
@@ -118,7 +119,7 @@ void printUsage(const char* program) {
         << "  --diagnostic-every N    Coarse sampling interval (default: 20)\n"
         << "  --sample-points N       Direct-backend samples; FFT uses native grids\n"
         << "  --energy E              Initial normalized energy (default: 1)\n"
-        << "  --initial-condition C   deterministic, taylor-green, or abc\n"
+        << "  --initial-condition C   deterministic, taylor-green, abc, or vortex-tubes\n"
         << "                            (default: taylor-green)\n"
         << "  --output PATH           Long-form comparison CSV path\n"
         << "  --help                  Show this message\n";

@@ -85,6 +85,15 @@ void testNamedInitialConditions() {
                1.0,
                1e-13,
                "Normalized ABC enstrophy should equal one");
+
+    bool vortex_tubes_rejected = false;
+    try {
+        system.initialState(ns_cascade::InitialCondition::VortexTubes);
+    } catch (const std::invalid_argument&) {
+        vortex_tubes_rejected = true;
+    }
+    expect(vortex_tubes_rejected,
+           "The direct backend must reject FFT-only vortex-tube data");
 }
 
 void testAbcIsNonlinearNegativeControl() {

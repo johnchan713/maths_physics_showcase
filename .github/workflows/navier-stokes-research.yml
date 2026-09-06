@@ -36,6 +36,7 @@ jobs:
           navier_stokes_cascade
           navier_stokes_convergence
           navier_stokes_fft
+          navier_stokes_search
           navier_stokes_cascade_tests
           navier_stokes_fft_tests
 
@@ -59,6 +60,20 @@ jobs:
           --diagnostic-every 2
           --output navier_stokes_fft_convergence.csv
 
+      - name: Run candidate-search smoke comparison
+        run: >-
+          ./build/research/navier_stokes_cascade/navier_stokes_search
+          --coarse-grid 16
+          --fine-grid 32
+          --cores 0.7
+          --separations 1.6
+          --bends 0.2
+          --axial-modes 1
+          --final-time 0.001
+          --diagnostic-every 1
+          --top 1
+          --output navier_stokes_candidate_search.csv
+
       - name: Retain convergence CSV
         uses: actions/upload-artifact@v4
         with:
@@ -66,3 +81,4 @@ jobs:
           path: |
             navier_stokes_convergence.csv
             navier_stokes_fft_convergence.csv
+            navier_stokes_candidate_search.csv

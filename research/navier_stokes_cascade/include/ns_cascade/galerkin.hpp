@@ -17,7 +17,8 @@ using Complex = std::complex<double>;
 enum class InitialCondition {
     Deterministic,
     TaylorGreen,
-    ABC
+    ABC,
+    VortexTubes
 };
 
 inline const char* initialConditionName(InitialCondition condition) {
@@ -25,6 +26,7 @@ inline const char* initialConditionName(InitialCondition condition) {
         case InitialCondition::Deterministic: return "deterministic";
         case InitialCondition::TaylorGreen: return "taylor-green";
         case InitialCondition::ABC: return "abc";
+        case InitialCondition::VortexTubes: return "vortex-tubes";
     }
     return "unknown";
 }
@@ -204,6 +206,9 @@ public:
                 return taylorGreenState(target_energy);
             case InitialCondition::ABC:
                 return abcState(target_energy);
+            case InitialCondition::VortexTubes:
+                throw std::invalid_argument(
+                    "Vortex-tube data requires the FFT backend");
         }
         throw std::invalid_argument("Unknown initial condition");
     }

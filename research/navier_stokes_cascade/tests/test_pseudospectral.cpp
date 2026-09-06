@@ -239,6 +239,117 @@ void testAbcNegativeControl() {
            "FFT backend reported a false ABC cascade");
 }
 
+double nonzeroAxialEnergyFraction(
+    const ns_cascade::PseudospectralSystem& system,
+    const ns_cascade::PseudospectralSystem::State& state) {
+    double axial_energy = 0.0;
+    for (std::size_t i = 0; i < state.size(); ++i) {
+        if (system.gridModes()[i].z != 0) {
+            axial_energy += 0.5 * ns_cascade::normSquared(state[i]);
+        }
+    }
+    return axial_energy / system.energy(state);
+}
+
+void testVortexTubeInitialData() {
+    const ns_cascade::PseudospectralSystem system(32, 0.05, 10);
+    const ns_cascade::VortexTubeParameters straight_parameters(
+        0.55, 1.6, 0.0, 1);
+    const ns_cascade::VortexTubeParameters bent_parameters(
+        0.55, 1.6, 0.25, 2);
+    const ns_cascade::PseudospectralSystem::State straight =
+        system.vortexTubePairState(straight_parameters, 1.0);
+    const ns_cascade::PseudospectralSystem::State bent =
+        system.vortexTubePairState(bent_parameters, 1.0);
+
+    expectNear(system.energy(straight), 1.0, 2e-13,
+               "Straight vortex tubes were not energy-normalized");
+    expectNear(system.energy(bent), 1.0, 2e-13,
+               "Bent vortex tubes were not energy-normalized");
+    expect(system.divergenceDefect(bent) < 2e-13,
+           "Bent vortex tubes are not divergence-free");
+    expect(system.realityDefect(bent) < 2e-13,
+           "Bent vortex tubes do not represent a real velocity field");
+    expect(nonzeroAxialEnergyFraction(system, straight) < 1e-24,
+           "Straight tubes unexpectedly contain three-dimensional modes");
+    expect(nonzeroAxialEnergyFraction(system, bent) > 1e-5,
+           "Bent tubes failed to populate three-dimensional modes");
+    expect(system.diagnostics(bent).high_shell_energy_fraction < 0.01,
+           "Default bent tubes begin under-resolved");
+
+    bool invalid_core_rejected = false;
+    try {
+        system.vortexTubePairState(
+            ns_cascade::VortexTubeParameters(0.0, 1.6, 0.25, 1));
+    } catch (const std::invalid_argument&) {
+        invalid_core_rejected = true;
+    }
+    expect(invalid_core_rejected, "A zero tube core radius must be rejected");
+
+    bool invalid_axial_mode_rejected = false;
+    try {
+        system.vortexTubePairState(
+            ns_cascade::VortexTubeParameters(0.55, 1.6, 0.25, 11));
+    } catch (const std::invalid_argument&) {
+        invalid_axial_mode_rejected = true;
+    }
+    expect(invalid_axial_mode_rejected,
+           "An unresolved tube axial mode must be rejected");
+}
+
+void testAdaptiveTimeStepControl() {
+    const ns_cascade::PseudospectralSystem system(16, 0.2, 5);
+    ns_cascade::PseudospectralSystem::State state =
+        system.vortexTubePairState(ns_cascade::VortexTubeParameters());
+    const double target_cfl = 0.08;
+    const double diffusion_safety = 1.5;
+    const ns_cascade::AdaptiveStepInfo information =
+        system.chooseAdaptiveTimeStep(
+            state, 0.1, target_cfl, diffusion_safety);
+    expect(information.time_step > 0.0 && information.time_step < 0.1,
+           "Adaptive control did not reduce an unsafe trial step");
+    expect(information.advective_cfl_upper_bound <=
+               target_cfl * (1.0 + 2e-15),
+           "Adaptive step exceeds its conservative CFL target");
+    expect(information.viscous_stability_number <=
+               diffusion_safety * (1.0 + 2e-15),
+           "Adaptive step exceeds its viscous stability bound");
+
+    const ns_cascade::PseudospectralSystem diffusion_limited_system(16, 10.0, 5);
+    const ns_cascade::PseudospectralSystem::State diffusion_state =
+        diffusion_limited_system.initialState(
+            ns_cascade::InitialCondition::TaylorGreen);
+    const ns_cascade::AdaptiveStepInfo diffusion_limited =
+        diffusion_limited_system.chooseAdaptiveTimeStep(
+            diffusion_state, 0.1, 100.0, diffusion_safety);
+    expectNear(diffusion_limited.viscous_stability_number,
+               diffusion_safety,
+               2e-15,
+               "Viscous control did not become active when required");
+
+    const ns_cascade::AdaptiveStepInfo accepted =
+        system.stepAdaptiveRungeKutta4(
+            state, 0.1, target_cfl, diffusion_safety);
+    expectNear(accepted.time_step, information.time_step, 1e-16,
+               "Adaptive stepping used a different proposed step");
+    const ns_cascade::PseudospectralSystem::Diagnostics diagnostics =
+        system.diagnostics(state);
+    expect(std::isfinite(diagnostics.energy),
+           "Adaptive step produced non-finite energy");
+    expect(diagnostics.divergence_defect < 2e-13,
+           "Adaptive step developed a divergence defect");
+    expect(diagnostics.reality_defect < 2e-13,
+           "Adaptive step lost Fourier reality symmetry");
+
+    bool invalid_cfl_rejected = false;
+    try {
+        system.chooseAdaptiveTimeStep(state, 0.01, 0.0, 1.0);
+    } catch (const std::invalid_argument&) {
+        invalid_cfl_rejected = true;
+    }
+    expect(invalid_cfl_rejected, "A non-positive CFL target must be rejected");
+}
+
 }  // namespace
 
 int main() {
@@ -251,6 +362,8 @@ int main() {
         testEnergyAndShellIdentities();
         testShortTrajectoryMatchesCompactOracle();
         testAbcNegativeControl();
+        testVortexTubeInitialData();
+        testAdaptiveTimeStepControl();
         std::cout << "All pseudospectral Navier-Stokes tests passed.\n";
         return 0;
     } catch (const std::exception& error) {
