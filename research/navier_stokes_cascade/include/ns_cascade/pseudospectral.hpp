@@ -43,6 +43,22 @@ struct VortexBundleParameters {
           phase_offset(phase_offset_value) {}
 };
 
+struct WavePacketParameters {
+    double envelope_width;
+    int carrier_wavenumber;
+    double secondary_weight;
+    double phase_offset;
+
+    WavePacketParameters(double envelope_width_value = 0.9,
+                         int carrier_wavenumber_value = 2,
+                         double secondary_weight_value = 1.0,
+                         double phase_offset_value = 1.0471975511965977461542144610932)
+        : envelope_width(envelope_width_value),
+          carrier_wavenumber(carrier_wavenumber_value),
+          secondary_weight(secondary_weight_value),
+          phase_offset(phase_offset_value) {}
+};
+
 struct AdaptiveStepInfo {
     double time_step;
     double velocity_supremum_bound;
@@ -289,6 +305,130 @@ public:
         const double current_energy = energy(state);
         if (current_energy == 0.0) {
             throw std::runtime_error("Vortex-bundle construction produced zero energy");
+        }
+        const double scale = std::sqrt(target_energy / current_energy);
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            state[retained_indices_[n]] = state[retained_indices_[n]] * scale;
+        }
+        return state;
+    }
+
+    State interactingWavePacketState(const WavePacketParameters& parameters,
+                                     double target_energy = 1.0) const {
+        if (!std::isfinite(parameters.envelope_width) ||
+            parameters.envelope_width <= 0.0 ||
+            parameters.envelope_width > 3.1415926535897932384626433832795) {
+            throw std::invalid_argument(
+                "Wave-packet envelope width must be finite and in (0, pi]");
+        }
+        if (parameters.carrier_wavenumber < 1 ||
+            parameters.carrier_wavenumber > cutoff_ / 2) {
+            throw std::invalid_argument(
+                "Wave-packet carrier must be between 1 and half the cutoff");
+        }
+        if (!std::isfinite(parameters.secondary_weight) ||
+            parameters.secondary_weight <= 0.0) {
+            throw std::invalid_argument(
+                "Wave-packet secondary weight must be finite and positive");
+        }
+        if (!std::isfinite(parameters.phase_offset)) {
+            throw std::invalid_argument(
+                "Wave-packet phase offset must be finite");
+        }
+        if (!std::isfinite(target_energy) || target_energy <= 0.0) {
+            throw std::invalid_argument("Target energy must be finite and positive");
+        }
+
+        std::vector<Complex> physical_x(grid_point_count_);
+        std::vector<Complex> physical_y(grid_point_count_);
+        std::vector<Complex> physical_z(grid_point_count_);
+        const double two_pi = 6.283185307179586476925286766559;
+        const int carrier = parameters.carrier_wavenumber;
+        const int carriers[3][3] = {
+            {carrier, carrier, 0},
+            {-carrier, 0, carrier},
+            {0, -carrier, -carrier}};
+        const int polarizations[3][3] = {
+            {0, 0, 1}, {0, 1, 0}, {1, 0, 0}};
+        const double phases[3] = {
+            0.0, parameters.phase_offset, -parameters.phase_offset};
+        const double weights[3] = {
+            1.0, parameters.secondary_weight, parameters.secondary_weight};
+        const double inverse_width_squared =
+            1.0 / (parameters.envelope_width * parameters.envelope_width);
+
+        for (int ix = 0; ix < grid_size_; ++ix) {
+            const double x = two_pi * ix / grid_size_ - 0.5 * two_pi;
+            for (int iy = 0; iy < grid_size_; ++iy) {
+                const double y = two_pi * iy / grid_size_ - 0.5 * two_pi;
+                for (int iz = 0; iz < grid_size_; ++iz) {
+                    const double z = two_pi * iz / grid_size_ - 0.5 * two_pi;
+                    const double coordinates[3] = {x, y, z};
+                    const double periodic_radius_squared =
+                        2.0 * (1.0 - std::cos(x)) +
+                        2.0 * (1.0 - std::cos(y)) +
+                        2.0 * (1.0 - std::cos(z));
+                    const double envelope = std::exp(
+                        -0.5 * inverse_width_squared *
+                        periodic_radius_squared);
+                    double envelope_gradient[3] = {
+                        -inverse_width_squared * std::sin(x) * envelope,
+                        -inverse_width_squared * std::sin(y) * envelope,
+                        -inverse_width_squared * std::sin(z) * envelope};
+                    double velocity[3] = {0.0, 0.0, 0.0};
+
+                    for (int packet = 0; packet < 3; ++packet) {
+                        double angle = phases[packet];
+                        for (int component = 0; component < 3; ++component) {
+                            angle += carriers[packet][component] *
+                                     coordinates[component];
+                        }
+                        double scalar_gradient[3];
+                        for (int component = 0; component < 3; ++component) {
+                            scalar_gradient[component] =
+                                weights[packet] *
+                                (envelope_gradient[component] * std::cos(angle) -
+                                 envelope * carriers[packet][component] *
+                                     std::sin(angle));
+                        }
+                        // A = f a and curl(A) = grad(f) x a.  The three
+                        // carrier vectors form an exact resonant triad.
+                        velocity[0] +=
+                            scalar_gradient[1] * polarizations[packet][2] -
+                            scalar_gradient[2] * polarizations[packet][1];
+                        velocity[1] +=
+                            scalar_gradient[2] * polarizations[packet][0] -
+                            scalar_gradient[0] * polarizations[packet][2];
+                        velocity[2] +=
+                            scalar_gradient[0] * polarizations[packet][1] -
+                            scalar_gradient[1] * polarizations[packet][0];
+                    }
+
+                    const std::size_t index = flatIndex(ix, iy, iz);
+                    physical_x[index] = Complex(velocity[0], 0.0);
+                    physical_y[index] = Complex(velocity[1], 0.0);
+                    physical_z[index] = Complex(velocity[2], 0.0);
+                }
+            }
+        }
+
+        const std::vector<Complex> fourier_x = forwardTransform(physical_x);
+        const std::vector<Complex> fourier_y = forwardTransform(physical_y);
+        const std::vector<Complex> fourier_z = forwardTransform(physical_z);
+        State state = zeroState();
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            state[index] = lerayProject(
+                modes_[index],
+                ComplexVector(fourier_x[index],
+                              fourier_y[index],
+                              fourier_z[index]));
+        }
+
+        const double current_energy = energy(state);
+        if (current_energy == 0.0) {
+            throw std::runtime_error(
+                "Wave-packet construction produced zero energy");
         }
         const double scale = std::sqrt(target_energy / current_energy);
         for (std::size_t n = 0; n < retained_indices_.size(); ++n) {

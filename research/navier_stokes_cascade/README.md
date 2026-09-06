@@ -151,6 +151,24 @@ rescalings; total energy is normalized only after the three pairs are
 combined. Both families are reproducible smooth probes, not claims that they
 resemble a singular profile.
 
+The third family is a localized interacting wave-packet triad. Three real
+periodic Gaussian-envelope vector potentials carry the integer wavevectors
+
+```text
+k1 = (m,m,0),  k2 = (-m,0,m),  k3 = (0,-m,-m),  k1+k2+k3 = 0,
+A = sum_j w_j G(x) cos(k_j . x + phi_j) a_j,
+u = curl(A).
+```
+
+The exact triad relation permits immediate quadratic interaction, while the
+envelope localizes the packets in physical space and broadens each carrier in
+frequency. The curl, real sampling, safe truncation, Leray projection, and
+energy normalization preserve periodicity, Fourier reality, and numerical
+incompressibility. Width, carrier, secondary-packet weight, and phase are
+independent search coordinates. This is motivated by the central role of
+Fourier triads in Navier-Stokes energy transfer; it does not assume that one
+triad can sustain an infinite cascade.
+
 The CSV diagnostics include:
 
 - normalized kinetic energy, enstrophy, and palinstrophy;
@@ -376,10 +394,12 @@ constraint gates, and rerun the top three candidates at `32^3`:
 ```bash
 ./build/research/navier_stokes_cascade/navier_stokes_search \
   --coarse-grid 16 --fine-grid 32 \
-  --families pair,orthogonal-bundle \
+  --families pair,orthogonal-bundle,wave-packets \
   --cores 0.55,0.70 --separations 1.2,1.8 \
   --bends 0,0.30 --axial-modes 1,2 \
   --orthogonal-weights 0.5,1.0 --phase-offsets 0,1.0471975512 \
+  --packet-widths 0.8,1.1 --carrier-modes 1,2 \
+  --packet-weights 0.75,1.0 --packet-phases 0,1.0471975512 \
   --energies 1,4,10 --viscosity 0.02 \
   --dt 0.005 --final-time 0.1 --top 3 \
   --profile-bins 64 --profile-scale-window 0.025 \
@@ -389,6 +409,7 @@ constraint gates, and rerun the top three candidates at `32^3`:
 
 The straight cases are deduplicated because their axial wavenumber and phase
 have no effect. Pair candidates do not multiply over bundle-only parameters.
+Wave-packet candidates likewise do not multiply over tube-only parameters.
 `--energy E` remains the single-energy shorthand; `--energies` includes energy
 in the candidate grid. The CSV records the family and bundle geometry together
 with initial/final/peak critical L3
@@ -726,6 +747,34 @@ candidates passed the strict refinement gate, so no `N=64` promotion was
 justified. In short: more tubes made more drama, but not the missing
 self-similar mechanism.
 
+### Interacting wave-packet pilot
+
+A separate 16-case pilot varied envelope width `0.8,1.1`, carrier mode `1,2`,
+secondary-packet weight `0.75,1.0`, and phase `0,pi/3`, at energy ten,
+`nu=0.02`, and `t=0.08`. It used the same `16^3 -> 32^3` cutoff,
+cross-resolution, and profile gates as the vortex searches.
+
+Three coarse candidates passed the one-percent cutoff gate. The best resolved
+`N=32` case used width `1.1`, carrier one, weight `0.75`, and phase `pi/3`:
+
+| Check through t=0.08 | N=16 | N=32 |
+|---|---:|---:|
+| Peak H1/2 / initial | 1.039069558 | 1.039894160 |
+| Peak sampled vorticity / initial | 1.143555544 | 1.360050385 |
+| Peak enstrophy / initial | 1.282393587 | 1.296462862 |
+| Final characteristic wavenumber / initial | 1.140217559 | 1.146475609 |
+| Latest rescaled-profile drift | 7.537323850 | 7.658901048 |
+| Peak cutoff-shell energy fraction | 7.64993e-3 | 5.18432e-5 |
+
+The scale and H1/2 changes agree fairly closely, but sampled-vorticity growth
+and cutoff history do not satisfy the conservative cross-resolution gate.
+More importantly, profile drift remains over seven times the threshold. An
+independent FFTW replay of the full `N=32, K=10` trajectory used 219 shared
+adaptive steps and matched the internal evolution to a peak relative state
+difference of `7.60244e-16`; peak scaled diagnostic disagreement was
+`6.76855e-16`. Thus the finite amplification is reproduced, but zero of 16
+candidates qualifies for refinement and no `N=64` promotion is justified.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
@@ -776,9 +825,9 @@ search are implemented. The sharp critical-growth candidate has a short-time
 `32^3 -> 64^3` check and a cutoff-clean `N=64` continuation to `t=0.2`.
 Checkpoint/restart, the full independent FFTW evolution oracle,
 rescaled-spectrum output, scale-normalized profile drift, and heuristic tail
-fitting are implemented. The FFTW path reproduces the selected pair and
-orthogonal-bundle `N=32` candidate trajectories to round-off through
-`t=0.08`.
+fitting are implemented. The FFTW path reproduces the selected pair,
+orthogonal-bundle, and interacting-wave-packet `N=32` candidate trajectories
+to round-off through `t=0.08`.
 The present sharp candidate fails the stationary-profile gate, so a `128^3`
 run of exactly the same geometry is deprioritized. The candidate search now
 uses fixed-forward-scale profile windows, explicit profile-drift and cutoff
@@ -792,13 +841,19 @@ parameters, and independent-trajectory replay. Its first 16-case
 `16^3 -> 32^3` pilot also produced no survivor: the stronger finite growth
 still came with large, rebounding profile drift.
 
+The localized wave-packet family is now implemented with structural tests,
+separate search coordinates, workflow coverage, and independent-trajectory
+replay. Its first 16-case pilot also produced no survivor. The most active
+resolved packet amplified sampled vorticity by 36% at `N=32`, but its profile
+drift was `7.66` and the conservative cross-resolution gate rejected it.
+
 Larger grids for either rejected geometry remain deprioritized. The next
 scientifically useful milestone is not another brute-force tube permutation;
 it is a low-resolution, finite-time adjoint/gradient check for optimizing
 solenoidal spectral seeds against an explicitly profile-aware objective.
-Localized Fourier wave packets can provide controlled starting coordinates,
-but every optimized result must still pass the same cutoff, refinement, and
-independent-evolution gates.
+The packet coordinates now provide a controlled finite-dimensional seed for
+that adjoint experiment, but every optimized result must still pass the same
+cutoff, refinement, and independent-evolution gates.
 
 A credible path from this scaffold to a theorem has several hard gates:
 
@@ -839,6 +894,8 @@ estimate, not a plot.
 - R. Suaza Jaque and O. Velasco Fuentes, *Reconnection of orthogonal
   cylindrical vortices*:
   <https://doi.org/10.1016/j.euromechflu.2016.11.001>
+- F. Waleffe, *The nature of triad interactions in homogeneous turbulence*:
+  <https://pubs.aip.org/aip/pof/article/4/2/350/402478/The-nature-of-triad-interactions-in-homogeneous>
 - H. K. Moffatt and Y. Kimura, *Towards a finite-time singularity of the
   Navier-Stokes equations. Part 3. Maximal vorticity amplification*:
   <https://doi.org/10.1017/jfm.2023.472>

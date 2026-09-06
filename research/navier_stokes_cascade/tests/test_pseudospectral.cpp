@@ -408,6 +408,66 @@ void testOrthogonalVortexBundleInitialData() {
            "A negative orthogonal-pair weight must be rejected");
 }
 
+void testInteractingWavePacketInitialData() {
+    const ns_cascade::PseudospectralSystem system(32, 0.05, 10);
+    const ns_cascade::PseudospectralSystem::State packets =
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(0.9, 2, 1.0, 1.0471975511965976),
+            4.0);
+    const ns_cascade::PseudospectralSystem::State wider_packets =
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(1.3, 2, 1.0, 1.0471975511965976),
+            4.0);
+    const ns_cascade::PseudospectralSystem::State shifted_packets =
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(0.9, 2, 1.0, 0.0), 4.0);
+
+    expectNear(system.energy(packets), 4.0, 5e-13,
+               "Interacting wave packets were not energy-normalized");
+    expect(system.divergenceDefect(packets) < 3e-13,
+           "Interacting wave packets are not divergence-free");
+    expect(system.realityDefect(packets) < 3e-13,
+           "Interacting wave packets do not represent a real field");
+    expect(relativeStateDifference(packets, wider_packets) > 0.10,
+           "Wave-packet envelope width did not change the field");
+    expect(relativeStateDifference(packets, shifted_packets) > 0.10,
+           "Wave-packet phase offset did not change the field");
+    for (int component = 0; component < 3; ++component) {
+        expect(velocityComponentEnergyFraction(system, packets, component) > 0.05,
+               "Wave packets failed to populate every velocity component");
+    }
+    expect(system.diagnostics(packets).high_shell_energy_fraction < 0.01,
+           "Default wave packets begin under-resolved");
+    const ns_cascade::PseudospectralSystem::State nonlinear =
+        system.rightHandSide(packets, false);
+    double nonlinear_norm_squared = 0.0;
+    for (std::size_t i = 0; i < nonlinear.size(); ++i) {
+        nonlinear_norm_squared += ns_cascade::normSquared(nonlinear[i]);
+    }
+    expect(nonlinear_norm_squared > 1e-6,
+           "Wave-packet triad has no measurable nonlinear interaction");
+
+    bool invalid_carrier_rejected = false;
+    try {
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(0.9, 6, 1.0, 0.0));
+    } catch (const std::invalid_argument&) {
+        invalid_carrier_rejected = true;
+    }
+    expect(invalid_carrier_rejected,
+           "An unresolved wave-packet carrier must be rejected");
+
+    bool invalid_weight_rejected = false;
+    try {
+        system.interactingWavePacketState(
+            ns_cascade::WavePacketParameters(0.9, 2, 0.0, 0.0));
+    } catch (const std::invalid_argument&) {
+        invalid_weight_rejected = true;
+    }
+    expect(invalid_weight_rejected,
+           "A non-positive wave-packet weight must be rejected");
+}
+
 void testAdaptiveTimeStepControl() {
     const ns_cascade::PseudospectralSystem system(16, 0.2, 5);
     ns_cascade::PseudospectralSystem::State state =
@@ -689,6 +749,7 @@ int main() {
         testAbcNegativeControl();
         testVortexTubeInitialData();
         testOrthogonalVortexBundleInitialData();
+        testInteractingWavePacketInitialData();
         testAdaptiveTimeStepControl();
         testRescaledSpectrumProfile();
         testCheckpointRoundTripAndRestartTrajectory();

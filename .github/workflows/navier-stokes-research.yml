@@ -54,9 +54,11 @@ jobs:
         run: >-
           ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare
           --grid 16
-          --vortex-family orthogonal-bundle
-          --orthogonal-weight 0.75
-          --phase-offset 1.0471975511965976
+          --wave-packets
+          --packet-width 1.1
+          --carrier-mode 2
+          --packet-weight 0.75
+          --packet-phase 1.0471975511965976
           --final-time 0.005
           --diagnostic-every 2
           --output navier_stokes_fftw_comparison.csv
@@ -87,9 +89,13 @@ jobs:
           --separations 1.2
           --bends 0.3
           --axial-modes 2
-          --families orthogonal-bundle
+          --families orthogonal-bundle,wave-packets
           --orthogonal-weights 0.75
           --phase-offsets 1.0471975511965976
+          --packet-widths 1.1
+          --carrier-modes 2
+          --packet-weights 0.75
+          --packet-phases 1.0471975511965976
           --energy 10
           --final-time 0.03
           --diagnostic-every 5
