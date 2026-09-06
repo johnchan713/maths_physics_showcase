@@ -26,8 +26,8 @@ or a large finite numerical value does not settle that statement.
 
 ## What is implemented
 
-Two independent numerical paths now evolve a mean-zero, real, divergence-free
-velocity field on the 2-pi periodic torus using the Fourier cube
+Three numerical paths now evolve a mean-zero, real, divergence-free velocity
+field on the 2-pi periodic torus using the Fourier cube
 `|k_x|, |k_y|, |k_z| <= K`:
 
 - `GalerkinSystem` evaluates every Fourier triad directly. Its quadratic cost
@@ -35,8 +35,12 @@ velocity field on the 2-pi periodic torus using the Fourier cube
 - `PseudospectralSystem` uses an in-repository radix-2 three-dimensional FFT,
   the rotational nonlinearity `P[u x curl(u)]`, and strict 2/3 de-aliasing. Its
   cost scales approximately as `N^3 log(N)` and permits materially larger runs.
+- `FftwReferenceSystem` is an optional independent evolution oracle. It rebuilds
+  the Fourier grid, uses FFTW3 transforms, writes out its own Leray projection,
+  computes its own adaptive bound and diagnostics, and assembles all four RK4
+  stages independently.
 
-For each retained non-zero mode, both backends compute
+For each retained non-zero mode, all three paths compute
 
 ```text
 d u_k / dt = -nu |k|^2 u_k
@@ -69,12 +73,17 @@ step, so its accumulated telemetry and profile reference correspond to the
 stored state time. The checksum detects accidental corruption; it is not a
 proof certificate or a guarantee against storage failure.
 
-An optional test target uses FFTW3 as an implementation-independent transform
-oracle. It compares forward and inverse three-dimensional transforms and
-reconstructs the complete dealiased Navier-Stokes right-hand side through an
-FFTW path before comparing every retained coefficient. This is a useful check
-against a shared FFT bug, although it is not yet a second full time-evolution
-codebase.
+The optional FFTW3 target now compares forward and inverse transforms, the
+complete dealiased Navier-Stokes right-hand side, independently computed
+physical and spectral diagnostics, adaptive timestep bounds, and complete RK4
+trajectories. The comparison executable gives both evolvers the exact same
+initial Fourier coefficients and advances them on a common timestep equal to
+the safer of their two independently proposed steps. It checks the full state
+after every accepted step and returns failure when state, diagnostic, reality,
+or divergence tolerances are exceeded. This isolates evolution-code errors,
+but it is not fully independent mathematics: both paths solve the same
+finite-dimensional Fourier model in double precision and intentionally share
+the initial coefficients and elementary complex-vector types.
 
 For an `N^3` FFT grid, the code enforces
 
@@ -217,7 +226,10 @@ amplitude invariance, an exact discrete scale shift with zero shape drift, and
 metric ranges. Checkpoint
 tests cover exact round trips, split/uninterrupted trajectory identity, and
 checksum-corruption rejection. When FFTW3 is present, a separate target checks
-the internal transforms and the full nonlinear right-hand side against FFTW.
+the internal transforms, grid ordering, full nonlinear right-hand side,
+including a state that populates every retained maximum-cutoff mode, adaptive
+bound, independently sampled diagnostics, and a nonlinear 40-step vortex-tube
+trajectory against the FFTW evolution path.
 The candidate-score suite separately checks that lower profile drift and lower
 cutoff loading improve a score, that both grid levels contribute to the paired
 cutoff cost, and that missing, worsening, or cross-resolution-inconsistent
@@ -236,10 +248,30 @@ ctest --test-dir build --output-on-failure
 ./build/research/navier_stokes_cascade/navier_stokes_cascade
 ```
 
-To make the independent transform oracle mandatory, install FFTW3 and add
+To make the independent evolution oracle mandatory, install FFTW3 and add
 `-DNS_CASCADE_REQUIRE_FFTW_REFERENCE=ON` to the configure command. The branch
 workflow does this on Ubuntu so a missing reference library fails CI rather
 than silently skipping the check.
+
+Compare the main solver with the independent FFTW trajectory on the strongest
+profile-rejected candidate using:
+
+```bash
+./build/research/navier_stokes_cascade/navier_stokes_fftw_compare \
+  --grid 32 --initial-condition vortex-tubes \
+  --tube-core 0.50 --tube-separation 1.30 \
+  --tube-bend 0.35 --tube-axial-mode 2 \
+  --energy 10 --viscosity 0.02 --dt 0.005 --final-time 0.08 \
+  --cfl 0.35 --diagnostic-every 50 \
+  --output navier_stokes_fftw_comparison.csv
+```
+
+The CSV contains both copies of every key diagnostic, the maximum coefficient
+difference, relative full-state error, and constraint defects. The state error
+is checked after every step even when a row is not written. By default the
+command fails if the state error or scaled diagnostic difference exceeds
+`1e-9`; both gates are configurable. `--fixed-dt` is available for controlled
+timestep studies.
 
 Run the faster FFT backend on a `32^3` grid, retaining the strict safe cutoff
 `K=10`:
@@ -600,15 +632,40 @@ no longer run was promoted. This rejects this small neighbourhood at this
 time horizon under the stated heuristic; it does not exclude other initial
 data, parameters, or later behaviour.
 
+### Independent trajectory result
+
+The selected profile-rejected case was then replayed to `t=0.08` on an
+`N=32, K=10` grid through the internal FFT and independent FFTW evolution
+paths. Each of the 381 accepted steps used the smaller of the two separately
+computed CFL bounds:
+
+| Check | Internal FFT | Independent FFTW |
+|---|---:|---:|
+| Final H1/2 / initial | 1.044539612676717 | 1.044539612676717 |
+| Final L3 / initial | 0.9635897800235352 | 0.9635897800235353 |
+| Final enstrophy / initial | 1.412584781446576 | 1.412584781446577 |
+| Final characteristic wavenumber / initial | 1.210592208763490 | 1.210592208763490 |
+
+Across all accepted steps, the peak relative Fourier-state difference was
+`1.10305e-15`. Across sampled diagnostics, the peak scaled difference was
+`6.64882e-16`; the largest divergence and reality defects were `1.24127e-15`
+and `3.95053e-16`. Thus the finite 4.45% H1/2 growth is not explained by a bug
+specific to the in-repository FFT or its RK4 assembly. This does not rescue the
+candidate: its large and rebounding rescaled-profile drift is a property of the
+agreed trajectory. Agreement between two floating-point solvers also cannot
+rule out common equation, truncation, modelling, or finite-resolution errors.
+A separate 15-step `N=64, K=21` smoke evolution to `t=0.002` also passed, with
+peak relative state difference `5.81702e-17`.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.
 
 The branch-scoped GitHub Actions workflow builds these CMake targets, runs the
-direct, FFT, and FFTW-oracle tests, performs short direct and FFT convergence
-comparisons plus a `16^3 -> 32^3` candidate-search smoke run, and verifies
-bit-for-bit checkpoint/restart identity. It uploads the CSV products as
-workflow artifacts.
+direct, FFT, and full FFTW-trajectory tests, performs an independent evolution
+smoke test, short direct and FFT convergence comparisons, a `16^3 -> 32^3`
+candidate-search smoke run, and a bit-for-bit checkpoint/restart check. It
+uploads the CSV products as workflow artifacts.
 
 ## Interpretation guardrails
 
@@ -634,6 +691,9 @@ itself demonstrate PDE singularity. In particular:
 - the fitted exponential-tail slope is a floating-point regression over a
   short retained range, not a certified analyticity radius or Fourier-tail
   bound;
+- close agreement between the internal FFT and FFTW evolvers rules out many
+  implementation-specific mistakes, but not errors shared by the common
+  truncated equation, floating-point model, or starting coefficients;
 - ordinary floating point cannot certify inequalities needed by a proof.
 
 ## Research gates
@@ -645,8 +705,10 @@ vortex-tube family, both critical-norm diagnostics, enstrophy budget,
 energy-parameter sweep, saved single-run time series, and resolution-gated
 search are implemented. The sharp critical-growth candidate has a short-time
 `32^3 -> 64^3` check and a cutoff-clean `N=64` continuation to `t=0.2`.
-Checkpoint/restart, the independent FFTW oracle, rescaled-spectrum output,
-scale-normalized profile drift, and heuristic tail fitting are implemented.
+Checkpoint/restart, the full independent FFTW evolution oracle,
+rescaled-spectrum output, scale-normalized profile drift, and heuristic tail
+fitting are implemented. The FFTW path reproduces the selected `N=32`
+candidate trajectory to round-off through `t=0.08`.
 The present sharp candidate fails the stationary-profile gate, so a `128^3`
 run of exactly the same geometry is deprioritized. The candidate search now
 uses fixed-forward-scale profile windows, explicit profile-drift and cutoff
@@ -654,18 +716,18 @@ costs, a conservative paired coarse/fine score, and a strict refinement gate.
 Only candidates whose critical-norm growth, scale motion, profile stationarity,
 and cross-resolution agreement all pass that gate may seed a narrower sweep.
 The first 12-case `32^3 -> 64^3` neighbourhood search produced no survivor.
-The next engineering milestone is therefore a second full FFTW-based evolution
-path and trajectory-level comparison. After that independent check passes, the
-search can broaden the initial-data family instead of spending larger grids on
-a tube geometry that fails its profile gate.
+The next milestone is therefore to broaden the initial-data family instead of
+spending larger grids on a tube geometry that fails its profile gate. Useful
+new families must retain exact divergence freedom and expose genuinely new
+geometry—such as interacting multiple tubes or localized Fourier wave packets—
+rather than merely adding more parameter combinations to the rejected pair.
 
 A credible path from this scaffold to a theorem has several hard gates:
 
-1. **Numerical credibility:** extend the established FFTW coefficient oracle
-   into a second full trajectory implementation; reproduce standard
-   benchmarks; run convergence studies across cutoff, time step, box, and
-   precision; and search for stable rescaled profiles rather than isolated
-   spikes.
+1. **Numerical credibility:** reproduce standard benchmarks with both complete
+   trajectory implementations; run convergence studies across cutoff, time
+   step, box, and precision; and search for stable rescaled profiles rather
+   than isolated spikes.
 2. **Analytic mechanism:** state a scale-by-scale transfer lemma that controls
    viscosity, nonlocal frequency interactions, pressure/Leray projection, and
    the time accumulated over infinitely many stages. Track a critical norm

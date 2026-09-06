@@ -28,6 +28,14 @@ option(NS_CASCADE_REQUIRE_FFTW_REFERENCE
        "Fail configuration when the independent FFTW oracle is unavailable" OFF)
 find_library(NS_CASCADE_FFTW3_LIBRARY NAMES fftw3 fftw3.so.3 libfftw3.so.3)
 if(NS_CASCADE_FFTW3_LIBRARY)
+    add_executable(navier_stokes_fftw_compare
+        src/fftw_compare.cpp
+    )
+    target_link_libraries(navier_stokes_fftw_compare PRIVATE
+        ns_cascade
+        ${NS_CASCADE_FFTW3_LIBRARY}
+    )
+
     add_executable(navier_stokes_fftw_tests
         tests/test_fftw_crosscheck.cpp
     )

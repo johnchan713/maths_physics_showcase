@@ -44,10 +44,19 @@ jobs:
           navier_stokes_cascade_tests
           navier_stokes_fft_tests
           navier_stokes_candidate_score_tests
+          navier_stokes_fftw_compare
           navier_stokes_fftw_tests
 
       - name: Run invariant tests
         run: ctest --test-dir build --output-on-failure
+
+      - name: Run independent FFTW trajectory comparison
+        run: >-
+          ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare
+          --grid 16
+          --final-time 0.005
+          --diagnostic-every 2
+          --output navier_stokes_fftw_comparison.csv
 
       - name: Run convergence smoke comparison
         run: >-
@@ -129,6 +138,7 @@ jobs:
             navier_stokes_convergence.csv
             navier_stokes_fft_convergence.csv
             navier_stokes_candidate_search.csv
+            navier_stokes_fftw_comparison.csv
             segment-a.csv
             segment-b.csv
             segment-a-profile.csv

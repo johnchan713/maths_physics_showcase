@@ -1,3 +1,4 @@
+#include "ns_cascade/fftw_reference.hpp"
 #include "ns_cascade/pseudospectral.hpp"
 
 #include <algorithm>
@@ -9,86 +10,20 @@
 #include <string>
 #include <vector>
 
-extern "C" {
-typedef double fftw_complex[2];
-typedef struct fftw_plan_s* fftw_plan;
-void* fftw_malloc(std::size_t size);
-void fftw_free(void* pointer);
-fftw_plan fftw_plan_dft_3d(int first_size,
-                           int second_size,
-                           int third_size,
-                           fftw_complex* input,
-                           fftw_complex* output,
-                           int sign,
-                           unsigned flags);
-void fftw_execute(const fftw_plan plan);
-void fftw_destroy_plan(fftw_plan plan);
-}
-
 namespace {
-
-const int kFftwForward = -1;
-const int kFftwBackward = 1;
-const unsigned kFftwEstimate = 1U << 6;
 
 void expect(bool condition, const std::string& message) {
     if (!condition) throw std::runtime_error(message);
 }
 
-class FftwBuffer {
-public:
-    explicit FftwBuffer(std::size_t size)
-        : data_(static_cast<fftw_complex*>(
-              fftw_malloc(sizeof(fftw_complex) * size))) {
-        if (data_ == NULL) throw std::bad_alloc();
+void expectRelativeNear(double actual,
+                        double expected,
+                        double tolerance,
+                        const std::string& message) {
+    const double scale = std::max(1.0, std::abs(expected));
+    if (std::abs(actual - expected) > tolerance * scale) {
+        throw std::runtime_error(message);
     }
-
-    ~FftwBuffer() { fftw_free(data_); }
-
-    fftw_complex* data() { return data_; }
-
-private:
-    FftwBuffer(const FftwBuffer&);
-    FftwBuffer& operator=(const FftwBuffer&);
-    fftw_complex* data_;
-};
-
-std::vector<ns_cascade::Complex> fftwTransform(
-    const std::vector<ns_cascade::Complex>& values,
-    int grid_size,
-    int sign) {
-    const std::size_t expected_size =
-        static_cast<std::size_t>(grid_size) * grid_size * grid_size;
-    if (values.size() != expected_size) {
-        throw std::invalid_argument("FFTW reference input has the wrong size");
-    }
-    FftwBuffer input(values.size());
-    FftwBuffer output(values.size());
-    for (std::size_t i = 0; i < values.size(); ++i) {
-        input.data()[i][0] = values[i].real();
-        input.data()[i][1] = values[i].imag();
-    }
-    fftw_plan plan = fftw_plan_dft_3d(grid_size,
-                                      grid_size,
-                                      grid_size,
-                                      input.data(),
-                                      output.data(),
-                                      sign,
-                                      kFftwEstimate);
-    if (plan == NULL) throw std::runtime_error("FFTW failed to create a 3D plan");
-    fftw_execute(plan);
-    fftw_destroy_plan(plan);
-
-    const double scale = sign == kFftwForward
-                             ? 1.0 / static_cast<double>(values.size())
-                             : 1.0;
-    std::vector<ns_cascade::Complex> transformed(values.size());
-    for (std::size_t i = 0; i < values.size(); ++i) {
-        transformed[i] = ns_cascade::Complex(output.data()[i][0],
-                                             output.data()[i][1]) *
-                         scale;
-    }
-    return transformed;
 }
 
 double maximumDifference(const std::vector<ns_cascade::Complex>& left,
@@ -103,75 +38,128 @@ double maximumDifference(const std::vector<ns_cascade::Complex>& left,
     return difference;
 }
 
-bool retained(const ns_cascade::PseudospectralSystem& system,
-              const ns_cascade::WaveVector& wave) {
-    const int maximum_component = std::max(
-        std::abs(wave.x), std::max(std::abs(wave.y), std::abs(wave.z)));
-    return wave.normSquared() != 0 && maximum_component <= system.cutoff();
+double relativeStateDifference(
+    const ns_cascade::PseudospectralSystem::State& left,
+    const ns_cascade::PseudospectralSystem::State& right) {
+    if (left.size() != right.size()) {
+        throw std::invalid_argument("Cannot compare states of different sizes");
+    }
+    double difference_squared = 0.0;
+    double reference_squared = 0.0;
+    for (std::size_t i = 0; i < left.size(); ++i) {
+        difference_squared += ns_cascade::normSquared(left[i] - right[i]);
+        reference_squared += ns_cascade::normSquared(right[i]);
+    }
+    return std::sqrt(difference_squared /
+                     std::max(reference_squared, 1e-300));
 }
 
-ns_cascade::PseudospectralSystem::State fftwRightHandSide(
-    const ns_cascade::PseudospectralSystem& system,
-    const ns_cascade::PseudospectralSystem::State& state) {
-    typedef std::vector<ns_cascade::Complex> ScalarField;
-    const std::size_t size = system.gridPointCount();
-    ScalarField velocity_x(size);
-    ScalarField velocity_y(size);
-    ScalarField velocity_z(size);
-    ScalarField vorticity_x(size);
-    ScalarField vorticity_y(size);
-    ScalarField vorticity_z(size);
-    const ns_cascade::Complex imaginary_unit(0.0, 1.0);
+ns_cascade::PseudospectralSystem::State fullSpectrumState(
+    const ns_cascade::PseudospectralSystem& system) {
+    ns_cascade::PseudospectralSystem::State state = system.zeroState();
     const std::vector<ns_cascade::WaveVector>& modes = system.gridModes();
-    for (std::size_t i = 0; i < size; ++i) {
-        if (!retained(system, modes[i])) continue;
-        const ns_cascade::ComplexVector vorticity =
-            ns_cascade::cross(modes[i], state[i]) * imaginary_unit;
-        velocity_x[i] = state[i].x;
-        velocity_y[i] = state[i].y;
-        velocity_z[i] = state[i].z;
-        vorticity_x[i] = vorticity.x;
-        vorticity_y[i] = vorticity.y;
-        vorticity_z[i] = vorticity.z;
+    for (std::size_t i = 0; i < modes.size(); ++i) {
+        const ns_cascade::WaveVector& wave = modes[i];
+        const int maximum_component = std::max(
+            std::abs(wave.x), std::max(std::abs(wave.y), std::abs(wave.z)));
+        if (wave.normSquared() == 0 || maximum_component > system.cutoff()) {
+            continue;
+        }
+        const double decay = std::exp(-0.12 * wave.normSquared());
+        const double phase_x =
+            0.19 * wave.x + 0.31 * wave.y - 0.23 * wave.z;
+        const double phase_y =
+            -0.29 * wave.x + 0.17 * wave.y + 0.37 * wave.z;
+        const double phase_z =
+            0.41 * wave.x - 0.13 * wave.y + 0.11 * wave.z;
+        const ns_cascade::ComplexVector raw(
+            decay * ns_cascade::Complex(std::cos(phase_x), std::sin(phase_x)),
+            decay * ns_cascade::Complex(std::cos(phase_y), std::sin(phase_y)),
+            decay * ns_cascade::Complex(std::cos(phase_z), std::sin(phase_z)));
+        state[i] = ns_cascade::lerayProject(wave, raw);
+    }
+    const double scale = std::sqrt(10.0 / system.energy(state));
+    for (std::size_t i = 0; i < state.size(); ++i) {
+        state[i] = state[i] * scale;
+    }
+    return state;
+}
+
+void compareDiagnostics(
+    const ns_cascade::PseudospectralSystem::Diagnostics& internal,
+    const ns_cascade::FftwReferenceDiagnostics& reference,
+    double tolerance) {
+    expectRelativeNear(internal.energy,
+                       reference.energy,
+                       tolerance,
+                       "Independent energy diagnostic differs");
+    expectRelativeNear(internal.enstrophy,
+                       reference.enstrophy,
+                       tolerance,
+                       "Independent enstrophy diagnostic differs");
+    expectRelativeNear(internal.critical_h_half,
+                       reference.critical_h_half,
+                       tolerance,
+                       "Independent H1/2 diagnostic differs");
+    expectRelativeNear(internal.critical_l3_sample,
+                       reference.critical_l3_sample,
+                       tolerance,
+                       "Independent sampled L3 diagnostic differs");
+    expectRelativeNear(internal.sampled_vorticity_max,
+                       reference.sampled_vorticity_max,
+                       tolerance,
+                       "Independent sampled vorticity diagnostic differs");
+    expectRelativeNear(internal.high_shell_energy_fraction,
+                       reference.cutoff_shell_energy_fraction,
+                       tolerance,
+                       "Independent cutoff-energy diagnostic differs");
+    expectRelativeNear(internal.divergence_defect,
+                       reference.divergence_defect,
+                       tolerance,
+                       "Independent divergence diagnostic differs");
+    expectRelativeNear(internal.reality_defect,
+                       reference.reality_defect,
+                       tolerance,
+                       "Independent reality diagnostic differs");
+}
+
+void testReferenceGridAndValidation() {
+    const ns_cascade::PseudospectralSystem internal(16, 0.02, 5);
+    const ns_cascade::FftwReferenceSystem reference(16, 0.02, 5);
+    expect(reference.gridSize() == internal.gridSize() &&
+               reference.cutoff() == internal.cutoff() &&
+               reference.gridPointCount() == internal.gridPointCount(),
+           "Independent FFTW grid metadata differs");
+    for (std::size_t i = 0; i < internal.gridPointCount(); ++i) {
+        const ns_cascade::WaveVector& left = internal.gridModes()[i];
+        const ns_cascade::WaveVector& right = reference.gridModes()[i];
+        expect(left.x == right.x && left.y == right.y && left.z == right.z,
+               "Independent FFTW mode ordering differs");
     }
 
-    velocity_x = fftwTransform(velocity_x, system.gridSize(), kFftwBackward);
-    velocity_y = fftwTransform(velocity_y, system.gridSize(), kFftwBackward);
-    velocity_z = fftwTransform(velocity_z, system.gridSize(), kFftwBackward);
-    vorticity_x = fftwTransform(vorticity_x, system.gridSize(), kFftwBackward);
-    vorticity_y = fftwTransform(vorticity_y, system.gridSize(), kFftwBackward);
-    vorticity_z = fftwTransform(vorticity_z, system.gridSize(), kFftwBackward);
-
-    ScalarField nonlinear_x(size);
-    ScalarField nonlinear_y(size);
-    ScalarField nonlinear_z(size);
-    for (std::size_t i = 0; i < size; ++i) {
-        nonlinear_x[i] = velocity_y[i] * vorticity_z[i] -
-                         velocity_z[i] * vorticity_y[i];
-        nonlinear_y[i] = velocity_z[i] * vorticity_x[i] -
-                         velocity_x[i] * vorticity_z[i];
-        nonlinear_z[i] = velocity_x[i] * vorticity_y[i] -
-                         velocity_y[i] * vorticity_x[i];
+    bool invalid_cutoff_rejected = false;
+    try {
+        const ns_cascade::FftwReferenceSystem invalid(16, 0.02, 6);
+        (void)invalid;
+    } catch (const std::invalid_argument&) {
+        invalid_cutoff_rejected = true;
     }
-    nonlinear_x = fftwTransform(nonlinear_x, system.gridSize(), kFftwForward);
-    nonlinear_y = fftwTransform(nonlinear_y, system.gridSize(), kFftwForward);
-    nonlinear_z = fftwTransform(nonlinear_z, system.gridSize(), kFftwForward);
+    expect(invalid_cutoff_rejected,
+           "Independent FFTW path accepted an aliased cutoff");
 
-    ns_cascade::PseudospectralSystem::State result = system.zeroState();
-    for (std::size_t i = 0; i < size; ++i) {
-        if (!retained(system, modes[i])) continue;
-        result[i] = ns_cascade::lerayProject(
-            modes[i],
-            ns_cascade::ComplexVector(
-                nonlinear_x[i], nonlinear_y[i], nonlinear_z[i]));
-        result[i] +=
-            state[i] * (-system.viscosity() * modes[i].normSquared());
+    bool invalid_state_rejected = false;
+    try {
+        reference.rightHandSide(ns_cascade::FftwReferenceSystem::State(3));
+    } catch (const std::invalid_argument&) {
+        invalid_state_rejected = true;
     }
-    return result;
+    expect(invalid_state_rejected,
+           "Independent FFTW path accepted a mismatched state");
 }
 
 void testTransformsAgainstFftw() {
     const ns_cascade::PseudospectralSystem system(16, 0.05, 5);
+    const ns_cascade::FftwReferenceSystem reference(16, 0.05, 5);
     std::vector<ns_cascade::Complex> physical(system.gridPointCount());
     for (std::size_t i = 0; i < physical.size(); ++i) {
         const double coordinate = static_cast<double>(i);
@@ -182,27 +170,28 @@ void testTransformsAgainstFftw() {
     const std::vector<ns_cascade::Complex> internal_forward =
         system.forwardTransform(physical);
     const std::vector<ns_cascade::Complex> fftw_forward =
-        fftwTransform(physical, system.gridSize(), kFftwForward);
+        reference.forwardTransform(physical);
     expect(maximumDifference(internal_forward, fftw_forward) < 2e-14,
            "In-repository forward FFT differs from FFTW");
 
     const std::vector<ns_cascade::Complex> internal_inverse =
         system.inverseTransform(internal_forward);
     const std::vector<ns_cascade::Complex> fftw_inverse =
-        fftwTransform(internal_forward, system.gridSize(), kFftwBackward);
+        reference.inverseTransform(internal_forward);
     expect(maximumDifference(internal_inverse, fftw_inverse) < 2e-13,
            "In-repository inverse FFT differs from FFTW");
 }
 
 void testNavierStokesRightHandSideAgainstFftw() {
     const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const ns_cascade::FftwReferenceSystem reference_system(16, 0.02, 5);
     const ns_cascade::PseudospectralSystem::State state =
         system.vortexTubePairState(
             ns_cascade::VortexTubeParameters(0.7, 1.2, 0.3, 2), 10.0);
     const ns_cascade::PseudospectralSystem::State internal =
         system.rightHandSide(state);
     const ns_cascade::PseudospectralSystem::State reference =
-        fftwRightHandSide(system, state);
+        reference_system.rightHandSide(state);
     double difference = 0.0;
     for (std::size_t i = 0; i < internal.size(); ++i) {
         difference = std::max(
@@ -212,13 +201,96 @@ void testNavierStokesRightHandSideAgainstFftw() {
            "Navier-Stokes right-hand side differs from independent FFTW path");
 }
 
+void testFullSpectrumRightHandSideAgainstFftw() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const ns_cascade::FftwReferenceSystem reference_system(16, 0.02, 5);
+    const ns_cascade::PseudospectralSystem::State state =
+        fullSpectrumState(system);
+    expect(system.divergenceDefect(state) < 2e-14,
+           "Full-spectrum comparison state is not divergence-free");
+    expect(system.realityDefect(state) < 2e-14,
+           "Full-spectrum comparison state is not real-valued");
+    const ns_cascade::PseudospectralSystem::State internal =
+        system.rightHandSide(state);
+    const ns_cascade::PseudospectralSystem::State reference =
+        reference_system.rightHandSide(state);
+    double difference = 0.0;
+    for (std::size_t i = 0; i < internal.size(); ++i) {
+        difference = std::max(
+            difference, ns_cascade::norm(internal[i] - reference[i]));
+    }
+    expect(difference < 5e-12,
+           "Full-spectrum right-hand side differs from the FFTW path");
+}
+
+void testIndependentDiagnostics() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const ns_cascade::FftwReferenceSystem reference_system(16, 0.02, 5);
+    const ns_cascade::PseudospectralSystem::State state =
+        system.vortexTubePairState(
+            ns_cascade::VortexTubeParameters(0.7, 1.2, 0.3, 2), 10.0);
+    compareDiagnostics(system.diagnostics(state),
+                       reference_system.diagnostics(state),
+                       3e-13);
+
+    const ns_cascade::AdaptiveStepInfo internal_step =
+        system.chooseAdaptiveTimeStep(state, 0.01, 0.35, 2.0);
+    const ns_cascade::FftwReferenceStepInfo reference_step =
+        reference_system.chooseAdaptiveTimeStep(state, 0.01, 0.35, 2.0);
+    expectRelativeNear(internal_step.time_step,
+                       reference_step.time_step,
+                       2e-15,
+                       "Independent adaptive time step differs");
+    expectRelativeNear(internal_step.advective_cfl_upper_bound,
+                       reference_step.advective_cfl_upper_bound,
+                       2e-15,
+                       "Independent CFL diagnostic differs");
+}
+
+void testFullIndependentTrajectory() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const ns_cascade::FftwReferenceSystem reference_system(16, 0.02, 5);
+    ns_cascade::PseudospectralSystem::State internal_state =
+        system.vortexTubePairState(
+            ns_cascade::VortexTubeParameters(0.7, 1.2, 0.3, 2), 10.0);
+    ns_cascade::FftwReferenceSystem::State reference_state = internal_state;
+
+    double peak_relative_state_difference = 0.0;
+    const double time_step = 0.0005;
+    for (int step = 0; step < 40; ++step) {
+        system.stepRungeKutta4(internal_state, time_step);
+        reference_system.stepRungeKutta4(reference_state, time_step);
+        peak_relative_state_difference = std::max(
+            peak_relative_state_difference,
+            relativeStateDifference(internal_state, reference_state));
+        if ((step + 1) % 10 == 0) {
+            compareDiagnostics(system.diagnostics(internal_state),
+                               reference_system.diagnostics(reference_state),
+                               2e-10);
+        }
+    }
+
+    expect(peak_relative_state_difference < 2e-11,
+           "Independent FFTW RK4 trajectory departed from the main solver");
+    const ns_cascade::FftwReferenceDiagnostics final_diagnostics =
+        reference_system.diagnostics(reference_state);
+    expect(final_diagnostics.divergence_defect < 2e-12,
+           "Independent FFTW trajectory developed a divergence defect");
+    expect(final_diagnostics.reality_defect < 2e-12,
+           "Independent FFTW trajectory lost Fourier reality symmetry");
+}
+
 }  // namespace
 
 int main() {
     try {
+        testReferenceGridAndValidation();
         testTransformsAgainstFftw();
         testNavierStokesRightHandSideAgainstFftw();
-        std::cout << "Independent FFTW cross-check passed.\n";
+        testFullSpectrumRightHandSideAgainstFftw();
+        testIndependentDiagnostics();
+        testFullIndependentTrajectory();
+        std::cout << "Independent FFTW trajectory cross-check passed.\n";
         return 0;
     } catch (const std::exception& error) {
         std::cerr << "test failure: " << error.what() << '\n';
