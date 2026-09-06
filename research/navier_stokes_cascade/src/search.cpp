@@ -935,10 +935,12 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
             result.peak_cutoff_fraction, scale_check_cutoff_fraction);
         const double scale_check_wavenumber =
             std::sqrt(scale_check_enstrophy / scale_check_energy);
-        const double forward_log_scale = std::log(
-            scale_check_wavenumber /
-            profile_anchor.characteristic_wavenumber);
-        if (forward_log_scale >= options.profile_log_scale_window) {
+        const int completed_profile_windows =
+            ns_cascade::completedForwardProfileScaleWindows(
+                scale_check_wavenumber,
+                initial_profile.characteristic_wavenumber,
+                options.profile_log_scale_window);
+        if (completed_profile_windows > result.profile_scale_windows) {
             const ns_cascade::SpectrumProfile current_profile =
                 ns_cascade::rescaledSpectrumProfile(
                     system,
@@ -958,7 +960,7 @@ RunResult runCandidate(const ns_cascade::PseudospectralSystem& system,
                 result.first_profile_drift =
                     change.l1_per_log_scale_change;
             }
-            ++result.profile_scale_windows;
+            result.profile_scale_windows = completed_profile_windows;
             result.latest_profile_drift =
                 change.l1_per_log_scale_change;
             result.minimum_profile_drift = std::min(

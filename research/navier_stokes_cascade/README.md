@@ -921,8 +921,19 @@ differentiated objective is
 ```text
 J = log(H1/2(T) / H1/2(0))
     + 0.15 log(k_rms(T) / k_rms(0))
-    - 0.04 log(1 + (E_cutoff(T) / E(T)) / 0.01).
+    - 0.04 log(1 + (E_cutoff(T) / E(T)) / 0.01)
+    - 0.05 P_shape.
 ```
+
+Here `P_shape` compares nine smooth Gaussian measurements of the initial and
+final spectra in the coordinate `log(|k|/k_rms)`. Each measurement is divided
+by total energy, and the penalty is the mean squared change of their
+regularized logarithms. It is therefore insensitive to amplitude and to a
+pure shift of spectral scale. Its analytic gradient includes the state
+dependence of `k_rms`; centered differences test that gradient both directly
+and through the full RK4 trajectory. This differentiable quantity only guides
+optimization. The independent cloud-in-cell L1 drift remains the promotion
+gate.
 
 The terminal gradient is reversed through every stored fixed-step RK4 stage,
 then projected onto the low-band, real-solenoidal tangent space. Trial states
@@ -935,6 +946,12 @@ the last coarse iterate; this prevents coarse-grid overfitting from replacing
 a better candidate. Full-precision coefficient CSVs can be reloaded exactly
 with `--state-input` for a resumed search or timestep replay.
 
+`--starts N` adds reproducible, hash-generated tangent directions around the
+same base state and places them at `--start-angle` on the fixed-energy sphere.
+Start zero is always the unperturbed control. The trace records `start_index`,
+and `--start-offset I` can replay one numbered basin without rerunning earlier
+starts. Exact `--state-input` replay deliberately permits only start zero.
+
 For example:
 
 ```bash
@@ -942,6 +959,7 @@ For example:
   --grid 16 --fine-grid 32 --seed-bandwidth 3 \
   --initial-family wave-packets --energy 10 --viscosity 0.02 \
   --dt 0.0005 --final-time 0.08 --iterations 3 \
+  --starts 4 --start-angle 0.35 \
   --output navier_stokes_state_optimization.csv \
   --state-output navier_stokes_optimized_state.csv
 ```
@@ -959,24 +977,69 @@ part of that artifact's interpretation.
 | Final L3 / initial | 0.989143 | 0.990212 |
 | Peak sampled vorticity / initial | 1.104702 | 1.117222 |
 | Final `k_rms` / initial | 1.252101 | 1.257258 |
-| Latest profile drift | 6.327532 | 6.289369 |
+| Latest profile drift (fixed-threshold audit) | 6.301960 | 6.284336 |
 | Peak cutoff-shell fraction | 0.0074097 | 0.00004135 |
 
 All three accepted slopes had relative adjoint/difference errors below
 `1.5e-5`. Halving the coarse timestep to `0.00025` changed the reported H1/2
-ratio only in the eleventh decimal place and `k_rms` ratio in the tenth; the
-drift moved from `6.3275` to `6.3347`. One further coarse-improving step made
-the fine drift rebound to `7.97`, and paired selection correctly retained the
-earlier state. The `K_seed=3` orthogonal-bundle seed exceeded the one-percent
-coarse cutoff gate and was rejected.
+ratio only in the eleventh decimal place and `k_rms` ratio in the tenth. A
+shape-aware step reduced the smooth endpoint penalty, but the fine trajectory
+reached one additional forward-scale window and its latest L1 drift rebounded
+to `9.18`; paired selection correctly retained the earlier state. The
+`K_seed=3` orthogonal-bundle seed exceeded the one-percent coarse cutoff gate
+and was rejected.
 
 This is a stronger, reproducible finite-cascade candidate than the earlier
 hand-parameterized packet, but it still fails decisively: the profile drift is
 over six times the stationarity threshold, L3 falls by the final time, and the
 coarse cutoff margin is modest. It is not eligible for a larger-grid or FFTW
-promotion. The useful next search is therefore multi-start optimization of the
-same constrained space with an explicitly differentiable profile-shape cost,
-not a longer run of this rejected state.
+promotion. It therefore motivated multi-start optimization of the same
+constrained space with an explicitly differentiable profile-shape cost, not a
+longer run of this rejected state.
+
+### Smooth-profile deterministic multi-start result
+
+That next search is now implemented. A bounded four-start `K_seed=2` pilot at
+`T=0.04`, using shape weight `0.25`, accepted two checked steps from every
+start. The largest adjoint/difference slope error was `1.42e-5`. Fixed coarse
+and adaptive fine trajectories selected deterministic start 3. A continuation
+with shape weight `0.25`, followed by a profile-dominant weight `1.0`, each
+accepted one further step and then failed to find a jointly improving line
+step. The best profile-oriented state is preserved exactly in
+`candidates/wave_k2_profile_t004_screening.csv`.
+
+| Measurement | Coarse `N=16, K=5` | Fine `N=32, K=10` |
+|---|---:|---:|
+| Peak/final H1/2 / initial | 1.013871 | 1.013876 |
+| Peak L3 / initial | 1.000000 | 1.000000 |
+| Final L3 / initial | 0.997357 | 0.997320 |
+| Peak sampled vorticity / initial | 1.140758 | 1.166421 |
+| Final `k_rms` / initial | 1.040772 | 1.040805 |
+| Smooth endpoint shape penalty | 0.012229 | 0.012370 |
+| Latest windowed L1 drift | 5.795320 | 5.838034 |
+| Peak cutoff-shell fraction | 0.00014424 | 0.0000000202 |
+
+The smooth penalty fell by about 71% from the unperturbed fine-grid baseline,
+and the strict drift fell from about `11.12` to `5.84`. This is a real
+improvement and agrees across resolutions, but it remains almost six times the
+stationarity threshold. L3 also decreases. The state is therefore a screening
+checkpoint, not a promoted blow-up candidate.
+
+This pilot also exposed cumulative phase error in the profile-window
+scheduler: each new window had previously been measured from the slightly
+overshot prior crossing. Coarse and fine trajectories could consequently
+report different window counts near an endpoint. Windows are now indexed by
+integer multiples of `log(k_rms/k_rms(0))`; both the parameter search and the
+state optimizer use the same tested rule. This changes no threshold and makes
+late profile rebounds harder, not easier, to evade.
+
+The next candidate search should make the smooth shape cost path-dependent,
+penalizing changes between several forward-scale snapshots rather than only
+the two endpoints. The `K_seed=3` test showed why: an endpoint improvement can
+still hide a late-window rebound. After that adjoint extension, use a staged
+`K_seed=3` multi-start screen at `T=0.04` and extend only the best matched-shape
+basins to `T=0.08`; FFTW and larger grids remain gated on drift approaching
+one.
 
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
@@ -1065,11 +1128,16 @@ adjoint/difference slope checks, profile-aware line acceptance, fine-grid
 selection, and exact coefficient save/reload. Its 684-variable pilot improved
 the critical norm and forward scale motion with close timestep and
 cross-resolution agreement, but profile drift stalled near `6.3`, so it also
-failed the unchanged promotion gate. The next scientifically useful milestone
-is a deterministic multi-start search with a differentiable rescaled-profile
-shape term in the adjoint objective. Only a state that reduces that metric
-toward one on both grids should reach the independent FFTW and higher-grid
-gates.
+failed the unchanged promotion gate. Deterministic multi-start search and a
+differentiable, amplitude- and scale-normalized spectrum-shape term are now
+implemented and checked through the full adjoint. The first four-start pilot
+cut strict drift from about `11.12` to `5.84`, but the improvement plateaued
+far above one and L3 still fell. Fixed-threshold profile-window scheduling now
+prevents accumulated crossing overshoot from changing coarse/fine window
+counts. The next useful adjoint extension is a path-dependent smooth shape
+cost, followed by staged `K_seed=3` multi-start screening. Only a state whose
+strict drift approaches one on both grids should reach the independent FFTW
+and higher-grid gates.
 
 A credible path from this scaffold to a theorem has several hard gates:
 

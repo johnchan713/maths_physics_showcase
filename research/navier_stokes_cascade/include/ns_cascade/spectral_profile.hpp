@@ -32,6 +32,35 @@ struct SpectrumProfileChange {
     bool scale_normalized_drift_valid = false;
 };
 
+inline int completedForwardProfileScaleWindows(
+    double current_characteristic_wavenumber,
+    double initial_characteristic_wavenumber,
+    double log_scale_window) {
+    if (!std::isfinite(current_characteristic_wavenumber) ||
+        !std::isfinite(initial_characteristic_wavenumber) ||
+        !std::isfinite(log_scale_window) ||
+        current_characteristic_wavenumber <= 0.0 ||
+        initial_characteristic_wavenumber <= 0.0 ||
+        log_scale_window <= 0.0) {
+        throw std::invalid_argument(
+            "Forward profile windows require positive finite scales");
+    }
+    const double forward_log_scale = std::log(
+        current_characteristic_wavenumber /
+        initial_characteristic_wavenumber);
+    if (forward_log_scale <= 0.0) return 0;
+    const double scaled_windows = forward_log_scale / log_scale_window;
+    const double tolerance =
+        128.0 * std::numeric_limits<double>::epsilon() *
+        std::max(1.0, std::abs(scaled_windows));
+    if (!std::isfinite(scaled_windows) ||
+        scaled_windows + tolerance >
+            static_cast<double>(std::numeric_limits<int>::max())) {
+        throw std::overflow_error("Forward profile-window count overflowed");
+    }
+    return static_cast<int>(std::floor(scaled_windows + tolerance));
+}
+
 inline SpectrumProfile rescaledSpectrumProfile(
     const PseudospectralSystem& system,
     const PseudospectralSystem::State& state,

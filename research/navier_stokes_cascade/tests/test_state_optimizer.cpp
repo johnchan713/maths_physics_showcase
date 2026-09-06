@@ -42,6 +42,21 @@ State makeInitial(const ns_cascade::PseudospectralSystem& system,
         system, raw, 2, energy);
 }
 
+State makeSingleShellState(
+    const ns_cascade::PseudospectralSystem& system,
+    int wave_number,
+    double energy = 4.0) {
+    State state = system.zeroState();
+    const ns_cascade::WaveVector positive(wave_number, 0, 0);
+    const ns_cascade::WaveVector negative(-wave_number, 0, 0);
+    const ns_cascade::ComplexVector coefficient(
+        ns_cascade::Complex(), ns_cascade::Complex(1.0, 0.0),
+        ns_cascade::Complex());
+    state[system.indexOf(positive)] = coefficient;
+    state[system.indexOf(negative)] = coefficient;
+    return ns_cascade::normalizeOptimizationEnergy(system, state, energy);
+}
+
 void evolve(const ns_cascade::PseudospectralSystem& system,
             State& state,
             int steps,
@@ -93,6 +108,34 @@ void testBandLimitAndEnergySphere() {
            "Geodesic state step lost Fourier reality");
 }
 
+void testDeterministicMultipleStarts() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const State base = makeInitial(system);
+    const State start_one = ns_cascade::deterministicOptimizationStart(
+        system, base, 2, 1, 0.35);
+    const State start_one_repeat =
+        ns_cascade::deterministicOptimizationStart(
+            system, base, 2, 1, 0.35);
+    const State start_two = ns_cascade::deterministicOptimizationStart(
+        system, base, 2, 2, 0.35);
+    expect(ns_cascade::optimizationStateNorm(
+               ns_cascade::addOptimizationStates(
+                   start_one, start_one_repeat, -1.0)) == 0.0,
+           "Repeated deterministic starts are not bitwise identical");
+    expect(ns_cascade::optimizationStateNorm(
+               ns_cascade::addOptimizationStates(
+                   start_one, start_two, -1.0)) > 1e-3,
+           "Distinct deterministic start indices produced the same state");
+    expect(std::abs(system.energy(start_one) - system.energy(base)) < 5e-13,
+           "Deterministic start changed fixed energy");
+    expect(outOfBandNorm(system, start_one, 2) == 0.0,
+           "Deterministic start left the seed band");
+    expect(system.divergenceDefect(start_one) < 2e-13,
+           "Deterministic start developed divergence");
+    expect(system.realityDefect(start_one) < 2e-13,
+           "Deterministic start lost Fourier reality");
+}
+
 void testStaticObjectiveGradient() {
     const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
     const State initial = makeInitial(system);
@@ -123,9 +166,11 @@ void testStaticObjectiveGradient() {
            "State objective disagrees with the characteristic scale");
 
     const State initial_gradient =
-        ns_cascade::initialStateObjectiveGradient(system, initial, weights);
+        ns_cascade::initialStateObjectiveGradient(
+            system, initial, final, weights);
     const State final_gradient =
-        ns_cascade::terminalStateObjectiveGradient(system, final, weights);
+        ns_cascade::terminalStateObjectiveGradient(
+            system, initial, final, weights);
     const double analytical =
         ns_cascade::stateRealInnerProduct(initial_gradient, initial_direction) +
         ns_cascade::stateRealInnerProduct(final_gradient, final_direction);
@@ -150,6 +195,85 @@ void testStaticObjectiveGradient() {
            "Smooth state-objective gradient failed finite differences");
 }
 
+void testSmoothSpectrumShapeInvariances() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const ns_cascade::StateObjectiveWeights weights;
+    const State state = makeInitial(system);
+    const State scaled = ns_cascade::scaleOptimizationState(state, 2.75);
+    const ns_cascade::SmoothSpectrumSignature signature =
+        ns_cascade::smoothSpectrumSignature(system, state, weights);
+    const ns_cascade::SmoothSpectrumSignature scaled_signature =
+        ns_cascade::smoothSpectrumSignature(system, scaled, weights);
+    for (std::size_t feature = 0;
+         feature < signature.features.size();
+         ++feature) {
+        expect(std::abs(signature.features[feature] -
+                        scaled_signature.features[feature]) < 3e-15,
+               "Smooth spectrum signature depends on amplitude");
+    }
+
+    const State shell_one = makeSingleShellState(system, 1);
+    const State shell_two = makeSingleShellState(system, 2);
+    const ns_cascade::SmoothSpectrumSignature shell_one_signature =
+        ns_cascade::smoothSpectrumSignature(system, shell_one, weights);
+    const ns_cascade::SmoothSpectrumSignature shell_two_signature =
+        ns_cascade::smoothSpectrumSignature(system, shell_two, weights);
+    for (std::size_t feature = 0;
+         feature < shell_one_signature.features.size();
+         ++feature) {
+        expect(std::abs(shell_one_signature.features[feature] -
+                        shell_two_signature.features[feature]) < 3e-15,
+               "Smooth spectrum signature depends on a pure scale shift");
+    }
+    expect(ns_cascade::compareSmoothSpectrumShapes(
+               system, shell_one, shell_two, weights).penalty < 2e-29,
+           "Pure shell rescaling has nonzero smooth shape penalty");
+}
+
+void testSmoothSpectrumShapeGradient() {
+    const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
+    const ns_cascade::StateObjectiveWeights weights;
+    const State initial = makeInitial(system);
+    State final = initial;
+    evolve(system, final, 12, 0.0004);
+    const State initial_direction = system.interactingWavePacketState(
+        ns_cascade::WavePacketParameters(1.45, 2, 0.95, -0.5), 1.0);
+    const State final_direction = system.interactingWavePacketState(
+        ns_cascade::WavePacketParameters(0.8, 1, 0.65, 0.9), 1.0);
+    const ns_cascade::SmoothSpectrumShapeComparison comparison =
+        ns_cascade::compareSmoothSpectrumShapes(
+            system, initial, final, weights);
+    const State initial_gradient =
+        ns_cascade::smoothSpectrumShapePenaltyGradient(
+            system, initial, weights, comparison, false);
+    const State final_gradient =
+        ns_cascade::smoothSpectrumShapePenaltyGradient(
+            system, final, weights, comparison, true);
+    const double analytical =
+        ns_cascade::stateRealInnerProduct(
+            initial_gradient, initial_direction) +
+        ns_cascade::stateRealInnerProduct(final_gradient, final_direction);
+    const double epsilon = 1e-6;
+    const double plus = ns_cascade::compareSmoothSpectrumShapes(
+        system,
+        ns_cascade::addOptimizationStates(
+            initial, initial_direction, epsilon),
+        ns_cascade::addOptimizationStates(
+            final, final_direction, epsilon),
+        weights).penalty;
+    const double minus = ns_cascade::compareSmoothSpectrumShapes(
+        system,
+        ns_cascade::addOptimizationStates(
+            initial, initial_direction, -epsilon),
+        ns_cascade::addOptimizationStates(
+            final, final_direction, -epsilon),
+        weights).penalty;
+    const double finite_difference =
+        (plus - minus) / (2.0 * epsilon);
+    expect(relativeScalarDifference(analytical, finite_difference) < 3e-8,
+           "Smooth spectrum-shape gradient failed finite differences");
+}
+
 void testTrajectoryObjectiveGradient() {
     const ns_cascade::PseudospectralSystem system(16, 0.02, 5);
     const State initial = makeInitial(system);
@@ -168,7 +292,8 @@ void testTrajectoryObjectiveGradient() {
     }
 
     State reverse_gradient =
-        ns_cascade::terminalStateObjectiveGradient(system, final, weights);
+        ns_cascade::terminalStateObjectiveGradient(
+            system, initial, final, weights);
     for (int step = step_count; step-- > 0;) {
         reverse_gradient = system.adjointRungeKutta4Step(
             trajectory[static_cast<std::size_t>(step)],
@@ -177,7 +302,8 @@ void testTrajectoryObjectiveGradient() {
     }
     reverse_gradient = ns_cascade::addOptimizationStates(
         reverse_gradient,
-        ns_cascade::initialStateObjectiveGradient(system, initial, weights),
+        ns_cascade::initialStateObjectiveGradient(
+            system, initial, final, weights),
         1.0);
     const double analytical =
         ns_cascade::stateRealInnerProduct(reverse_gradient, direction);
@@ -228,7 +354,10 @@ void testLiftToFineGrid() {
 int main() {
     try {
         testBandLimitAndEnergySphere();
+        testDeterministicMultipleStarts();
         testStaticObjectiveGradient();
+        testSmoothSpectrumShapeInvariances();
+        testSmoothSpectrumShapeGradient();
         testTrajectoryObjectiveGradient();
         testLiftToFineGrid();
         std::cout << "All state-optimizer tests passed.\n";

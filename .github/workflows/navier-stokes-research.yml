@@ -165,6 +165,7 @@ jobs:
           --grid 16
           --fine-grid 32
           --seed-bandwidth 2
+          --starts 2
           --final-time 0.01
           --iterations 1
           --output navier_stokes_state_optimization.csv
@@ -207,6 +208,18 @@ jobs:
             c94bdc0d38f1bd52fcca2072e9dcbe9103a4421d50fa9f10ea84541a4c99a128 \
             research/navier_stokes_cascade/candidates/wave_k3_t008_screening.csv \
             | sha256sum --check --status
+          ./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+            --seed-bandwidth 2 --profile-shape-weight 1 \
+            --state-input research/navier_stokes_cascade/candidates/wave_k2_profile_t004_screening.csv \
+            --final-time 0.001 --iterations 0 \
+            --output navier_stokes_profile_screening_replay.csv \
+            --state-output navier_stokes_profile_screening_state.csv
+          cmp research/navier_stokes_cascade/candidates/wave_k2_profile_t004_screening.csv \
+            navier_stokes_profile_screening_state.csv
+          printf '%s  %s\n' \
+            dbcdbe925512e7e4896dc3b972a491e27e5b9454e38a4f86f515718f49f4d9df \
+            research/navier_stokes_cascade/candidates/wave_k2_profile_t004_screening.csv \
+            | sha256sum --check --status
 
       - name: Verify checkpoint restart is bit-for-bit reproducible
         shell: bash
@@ -246,6 +259,7 @@ jobs:
             navier_stokes_optimized_state.csv
             navier_stokes_state_replay.csv
             navier_stokes_screening_replay.csv
+            navier_stokes_profile_screening_replay.csv
             navier_stokes_fftw_comparison.csv
             segment-a.csv
             segment-b.csv

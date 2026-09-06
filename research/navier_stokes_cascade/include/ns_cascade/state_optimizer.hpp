@@ -6,8 +6,10 @@
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
+#include <cstdint>
 #include <limits>
 #include <stdexcept>
+#include <vector>
 
 namespace ns_cascade {
 
@@ -17,12 +19,19 @@ struct StateObjectiveWeights {
     double characteristic_scale_weight = 0.15;
     double cutoff_penalty_weight = 0.04;
     double cutoff_fraction_threshold = 0.01;
+    double profile_shape_penalty_weight = 0.05;
+    int profile_feature_count = 9;
+    double profile_minimum_log_coordinate = -1.5;
+    double profile_maximum_log_coordinate = 1.5;
+    double profile_kernel_width = 0.35;
+    double profile_log_floor = 1e-8;
 };
 
 struct StateObjectiveValue {
     double critical_log_growth = 0.0;
     double characteristic_log_growth = 0.0;
     double cutoff_penalty = 0.0;
+    double profile_shape_penalty = 0.0;
     double total = 0.0;
 };
 
@@ -31,6 +40,21 @@ struct StateSpectralSums {
     double enstrophy = 0.0;
     double critical_h_half_squared = 0.0;
     double cutoff_energy = 0.0;
+};
+
+struct SmoothSpectrumSignature {
+    double energy = 0.0;
+    double enstrophy = 0.0;
+    double log_characteristic_wavenumber = 0.0;
+    std::vector<double> features;
+    std::vector<double> scale_derivative_sums;
+};
+
+struct SmoothSpectrumShapeComparison {
+    SmoothSpectrumSignature initial;
+    SmoothSpectrumSignature final;
+    std::vector<double> log_feature_differences;
+    double penalty = 0.0;
 };
 
 inline int stateMaximumComponent(const WaveVector& wave) {
@@ -189,6 +213,205 @@ inline StateSpectralSums optimizationStateSpectralSums(
     return sums;
 }
 
+inline void validateSmoothSpectrumParameters(
+    const StateObjectiveWeights& weights) {
+    if (!std::isfinite(weights.profile_shape_penalty_weight) ||
+        weights.profile_shape_penalty_weight < 0.0 ||
+        weights.profile_feature_count < 3 ||
+        weights.profile_feature_count > 64 ||
+        !std::isfinite(weights.profile_minimum_log_coordinate) ||
+        !std::isfinite(weights.profile_maximum_log_coordinate) ||
+        weights.profile_minimum_log_coordinate >=
+            weights.profile_maximum_log_coordinate ||
+        !std::isfinite(weights.profile_kernel_width) ||
+        weights.profile_kernel_width <= 0.0 ||
+        !std::isfinite(weights.profile_log_floor) ||
+        weights.profile_log_floor <= 0.0 ||
+        weights.profile_log_floor >= 1.0) {
+        throw std::invalid_argument(
+            "Smooth spectrum-shape parameters are invalid");
+    }
+}
+
+inline double smoothSpectrumFeatureCenter(
+    const StateObjectiveWeights& weights,
+    int feature) {
+    const double fraction = static_cast<double>(feature) /
+                            (weights.profile_feature_count - 1);
+    return weights.profile_minimum_log_coordinate +
+           fraction * (weights.profile_maximum_log_coordinate -
+                       weights.profile_minimum_log_coordinate);
+}
+
+inline SmoothSpectrumSignature smoothSpectrumSignature(
+    const PseudospectralSystem& system,
+    const OptimizationState& state,
+    const StateObjectiveWeights& weights) {
+    requireOptimizationState(system, state);
+    validateSmoothSpectrumParameters(weights);
+    const StateSpectralSums sums =
+        optimizationStateSpectralSums(system, state);
+    SmoothSpectrumSignature signature;
+    signature.energy = sums.energy;
+    signature.enstrophy = sums.enstrophy;
+    signature.log_characteristic_wavenumber = 0.5 * std::log(
+        sums.enstrophy / sums.energy);
+    signature.features.assign(
+        static_cast<std::size_t>(weights.profile_feature_count), 0.0);
+    signature.scale_derivative_sums.assign(
+        static_cast<std::size_t>(weights.profile_feature_count), 0.0);
+
+    const double inverse_width_squared =
+        1.0 / (weights.profile_kernel_width *
+               weights.profile_kernel_width);
+    const std::vector<WaveVector>& modes = system.gridModes();
+    for (std::size_t i = 0; i < state.size(); ++i) {
+        const int wave_squared = modes[i].normSquared();
+        if (wave_squared == 0 ||
+            stateMaximumComponent(modes[i]) > system.cutoff()) {
+            continue;
+        }
+        const double mode_energy = 0.5 * normSquared(state[i]);
+        if (mode_energy == 0.0) continue;
+        const double log_rescaled_wave =
+            0.5 * std::log(static_cast<double>(wave_squared)) -
+            signature.log_characteristic_wavenumber;
+        for (int feature = 0;
+             feature < weights.profile_feature_count;
+             ++feature) {
+            const double centered = log_rescaled_wave -
+                smoothSpectrumFeatureCenter(weights, feature);
+            const double kernel = std::exp(
+                -0.5 * centered * centered * inverse_width_squared);
+            const std::size_t index = static_cast<std::size_t>(feature);
+            signature.features[index] += mode_energy * kernel;
+            signature.scale_derivative_sums[index] +=
+                mode_energy * kernel * centered * inverse_width_squared;
+        }
+    }
+    for (std::size_t feature = 0;
+         feature < signature.features.size();
+         ++feature) {
+        signature.features[feature] /= signature.energy;
+        signature.scale_derivative_sums[feature] /= signature.energy;
+        if (!std::isfinite(signature.features[feature]) ||
+            signature.features[feature] < 0.0 ||
+            !std::isfinite(signature.scale_derivative_sums[feature])) {
+            throw std::runtime_error(
+                "Smooth spectrum signature became non-finite");
+        }
+    }
+    return signature;
+}
+
+inline SmoothSpectrumShapeComparison compareSmoothSpectrumShapes(
+    const PseudospectralSystem& system,
+    const OptimizationState& initial,
+    const OptimizationState& final,
+    const StateObjectiveWeights& weights) {
+    SmoothSpectrumShapeComparison comparison;
+    comparison.initial = smoothSpectrumSignature(system, initial, weights);
+    comparison.final = smoothSpectrumSignature(system, final, weights);
+    comparison.log_feature_differences.assign(
+        comparison.initial.features.size(), 0.0);
+    const double inverse_count =
+        1.0 / static_cast<double>(comparison.initial.features.size());
+    for (std::size_t feature = 0;
+         feature < comparison.log_feature_differences.size();
+         ++feature) {
+        const double difference = std::log(
+            comparison.final.features[feature] +
+            weights.profile_log_floor) -
+            std::log(comparison.initial.features[feature] +
+                     weights.profile_log_floor);
+        comparison.log_feature_differences[feature] = difference;
+        comparison.penalty += 0.5 * inverse_count * difference * difference;
+    }
+    if (!std::isfinite(comparison.penalty) || comparison.penalty < 0.0) {
+        throw std::runtime_error(
+            "Smooth spectrum-shape penalty became non-finite");
+    }
+    return comparison;
+}
+
+inline OptimizationState smoothSpectrumLogFeatureGradient(
+    const PseudospectralSystem& system,
+    const OptimizationState& state,
+    const StateObjectiveWeights& weights,
+    const SmoothSpectrumSignature& signature,
+    const std::vector<double>& log_feature_weights) {
+    requireOptimizationState(system, state);
+    if (signature.features.size() !=
+            static_cast<std::size_t>(weights.profile_feature_count) ||
+        signature.scale_derivative_sums.size() !=
+            signature.features.size() ||
+        log_feature_weights.size() != signature.features.size()) {
+        throw std::invalid_argument(
+            "Smooth spectrum gradient has incompatible feature data");
+    }
+    OptimizationState gradient = system.zeroState();
+    const std::vector<WaveVector>& modes = system.gridModes();
+    const double inverse_width_squared =
+        1.0 / (weights.profile_kernel_width *
+               weights.profile_kernel_width);
+    for (std::size_t i = 0; i < state.size(); ++i) {
+        const int wave_squared = modes[i].normSquared();
+        if (wave_squared == 0 ||
+            stateMaximumComponent(modes[i]) > system.cutoff()) {
+            continue;
+        }
+        const double log_rescaled_wave =
+            0.5 * std::log(static_cast<double>(wave_squared)) -
+            signature.log_characteristic_wavenumber;
+        const double log_scale_gradient_coefficient = 0.5 *
+            (static_cast<double>(wave_squared) / signature.enstrophy -
+             1.0 / signature.energy);
+        double coefficient = 0.0;
+        for (int feature = 0;
+             feature < weights.profile_feature_count;
+             ++feature) {
+            const std::size_t index = static_cast<std::size_t>(feature);
+            const double centered = log_rescaled_wave -
+                smoothSpectrumFeatureCenter(weights, feature);
+            const double kernel = std::exp(
+                -0.5 * centered * centered * inverse_width_squared);
+            const double feature_gradient_coefficient =
+                (kernel - signature.features[index]) / signature.energy +
+                signature.scale_derivative_sums[index] *
+                    log_scale_gradient_coefficient;
+            coefficient += log_feature_weights[index] *
+                feature_gradient_coefficient /
+                (signature.features[index] + weights.profile_log_floor);
+        }
+        gradient[i] = state[i] * coefficient;
+    }
+    return gradient;
+}
+
+inline OptimizationState smoothSpectrumShapePenaltyGradient(
+    const PseudospectralSystem& system,
+    const OptimizationState& state,
+    const StateObjectiveWeights& weights,
+    const SmoothSpectrumShapeComparison& comparison,
+    bool with_respect_to_final) {
+    const double inverse_count =
+        1.0 / static_cast<double>(comparison.log_feature_differences.size());
+    std::vector<double> feature_weights =
+        comparison.log_feature_differences;
+    const double sign = with_respect_to_final ? 1.0 : -1.0;
+    for (std::size_t feature = 0;
+         feature < feature_weights.size();
+         ++feature) {
+        feature_weights[feature] *= sign * inverse_count;
+    }
+    return smoothSpectrumLogFeatureGradient(
+        system,
+        state,
+        weights,
+        with_respect_to_final ? comparison.final : comparison.initial,
+        feature_weights);
+}
+
 inline void validateStateObjectiveWeights(
     const StateObjectiveWeights& weights) {
     if (!std::isfinite(weights.characteristic_scale_weight) ||
@@ -200,6 +423,7 @@ inline void validateStateObjectiveWeights(
         weights.cutoff_fraction_threshold >= 1.0) {
         throw std::invalid_argument("State-objective weights are invalid");
     }
+    validateSmoothSpectrumParameters(weights);
 }
 
 inline StateObjectiveValue evaluateStateObjective(
@@ -223,10 +447,14 @@ inline StateObjectiveValue evaluateStateObjective(
         final_sums.cutoff_energy / final_sums.energy;
     value.cutoff_penalty = std::log1p(
         cutoff_fraction / weights.cutoff_fraction_threshold);
+    value.profile_shape_penalty = compareSmoothSpectrumShapes(
+        system, initial, final, weights).penalty;
     value.total = value.critical_log_growth +
                   weights.characteristic_scale_weight *
                       value.characteristic_log_growth -
-                  weights.cutoff_penalty_weight * value.cutoff_penalty;
+                  weights.cutoff_penalty_weight * value.cutoff_penalty -
+                  weights.profile_shape_penalty_weight *
+                      value.profile_shape_penalty;
     if (!std::isfinite(value.total)) {
         throw std::runtime_error("State objective became non-finite");
     }
@@ -305,6 +533,7 @@ inline OptimizationState stateLogCutoffPenaltyGradient(
 
 inline OptimizationState terminalStateObjectiveGradient(
     const PseudospectralSystem& system,
+    const OptimizationState& initial,
     const OptimizationState& final,
     const StateObjectiveWeights& weights) {
     validateStateObjectiveWeights(weights);
@@ -318,12 +547,20 @@ inline OptimizationState terminalStateObjectiveGradient(
         stateLogCutoffPenaltyGradient(
             system, final, weights.cutoff_fraction_threshold),
         -weights.cutoff_penalty_weight);
+    const SmoothSpectrumShapeComparison comparison =
+        compareSmoothSpectrumShapes(system, initial, final, weights);
+    gradient = addOptimizationStates(
+        gradient,
+        smoothSpectrumShapePenaltyGradient(
+            system, final, weights, comparison, true),
+        -weights.profile_shape_penalty_weight);
     return gradient;
 }
 
 inline OptimizationState initialStateObjectiveGradient(
     const PseudospectralSystem& system,
     const OptimizationState& initial,
+    const OptimizationState& final,
     const StateObjectiveWeights& weights) {
     validateStateObjectiveWeights(weights);
     OptimizationState gradient = scaleOptimizationState(
@@ -332,6 +569,13 @@ inline OptimizationState initialStateObjectiveGradient(
         gradient,
         stateLogCharacteristicGradient(system, initial),
         -weights.characteristic_scale_weight);
+    const SmoothSpectrumShapeComparison comparison =
+        compareSmoothSpectrumShapes(system, initial, final, weights);
+    gradient = addOptimizationStates(
+        gradient,
+        smoothSpectrumShapePenaltyGradient(
+            system, initial, weights, comparison, false),
+        -weights.profile_shape_penalty_weight);
     return gradient;
 }
 
@@ -384,6 +628,79 @@ inline OptimizationState stateEnergySphereStep(
     trial = addOptimizationStates(
         trial, sphere_direction, std::sin(angle));
     return normalizeOptimizationEnergy(system, trial, state_energy);
+}
+
+inline std::uint64_t deterministicStateMix(std::uint64_t value) {
+    value += UINT64_C(0x9e3779b97f4a7c15);
+    value = (value ^ (value >> 30U)) * UINT64_C(0xbf58476d1ce4e5b9);
+    value = (value ^ (value >> 27U)) * UINT64_C(0x94d049bb133111eb);
+    return value ^ (value >> 31U);
+}
+
+inline double deterministicStateCoordinate(std::uint64_t key) {
+    const std::uint64_t word = deterministicStateMix(key);
+    const double unit = static_cast<double>(word >> 11U) /
+                        9007199254740992.0;
+    return 2.0 * unit - 1.0;
+}
+
+inline OptimizationState deterministicOptimizationDirection(
+    const PseudospectralSystem& system,
+    const OptimizationState& state,
+    int bandwidth,
+    int start_index) {
+    requireOptimizationState(system, state);
+    if (start_index < 1) {
+        throw std::invalid_argument(
+            "Deterministic optimization start index must be positive");
+    }
+    OptimizationState raw = system.zeroState();
+    const std::vector<WaveVector>& modes = system.gridModes();
+    const std::uint64_t start_key = deterministicStateMix(
+        static_cast<std::uint64_t>(start_index));
+    for (std::size_t i = 0; i < raw.size(); ++i) {
+        const WaveVector& wave = modes[i];
+        if (wave.normSquared() == 0 ||
+            stateMaximumComponent(wave) > bandwidth) {
+            continue;
+        }
+        std::uint64_t key = start_key;
+        key ^= deterministicStateMix(
+            static_cast<std::uint64_t>(wave.x + 4096));
+        key ^= deterministicStateMix(
+            static_cast<std::uint64_t>(wave.y + 8192));
+        key ^= deterministicStateMix(
+            static_cast<std::uint64_t>(wave.z + 16384));
+        const double values[6] = {
+            deterministicStateCoordinate(key + UINT64_C(0)),
+            deterministicStateCoordinate(key + UINT64_C(1)),
+            deterministicStateCoordinate(key + UINT64_C(2)),
+            deterministicStateCoordinate(key + UINT64_C(3)),
+            deterministicStateCoordinate(key + UINT64_C(4)),
+            deterministicStateCoordinate(key + UINT64_C(5))};
+        raw[i] = ComplexVector(
+            Complex(values[0], values[1]),
+            Complex(values[2], values[3]),
+            Complex(values[4], values[5]));
+    }
+    return stateEnergySphereDirection(system, state, raw, bandwidth);
+}
+
+inline OptimizationState deterministicOptimizationStart(
+    const PseudospectralSystem& system,
+    const OptimizationState& base_state,
+    int bandwidth,
+    int start_index,
+    double angle) {
+    if (start_index < 0 || !std::isfinite(angle) || angle < 0.0 ||
+        angle >= 1.0) {
+        throw std::invalid_argument(
+            "Deterministic optimization start parameters are invalid");
+    }
+    if (start_index == 0 || angle == 0.0) return base_state;
+    const OptimizationState direction = deterministicOptimizationDirection(
+        system, base_state, bandwidth, start_index);
+    return stateEnergySphereStep(system, base_state, direction, angle);
 }
 
 inline OptimizationState liftOptimizationState(

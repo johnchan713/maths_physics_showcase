@@ -767,6 +767,19 @@ void testRescaledSpectrumProfile() {
         ns_cascade::spectrumProfileL1Distance(unit_profile, evolved_profile);
     expect(distance >= 0.0 && distance <= 2.0 + 2e-15,
            "Rescaled-profile L1 distance is outside its mathematical range");
+
+    expect(ns_cascade::completedForwardProfileScaleWindows(
+               std::exp(0.0099), 1.0, 0.01) == 0,
+           "Profile window completed before its fixed scale threshold");
+    expect(ns_cascade::completedForwardProfileScaleWindows(
+               std::exp(0.01), 1.0, 0.01) == 1,
+           "Profile window missed its exact fixed scale threshold");
+    expect(ns_cascade::completedForwardProfileScaleWindows(
+               std::exp(0.04068), 1.0, 0.01) == 4,
+           "Profile windows accumulated threshold-crossing overshoot");
+    expect(ns_cascade::completedForwardProfileScaleWindows(
+               0.9, 1.0, 0.01) == 0,
+           "Backward spectral motion created a forward profile window");
 }
 
 ns_cascade::SimulationCheckpoint makeTestCheckpoint(

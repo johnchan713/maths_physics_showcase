@@ -55,6 +55,9 @@ struct Options {
     int diagnostic_every = 5;
     double initial_energy = 10.0;
     SeedFamily seed_family = SeedFamily::WavePackets;
+    int start_count = 1;
+    int start_offset = 0;
+    double start_angle = 0.35;
     int iterations = 2;
     double gradient_check_angle = 0.002;
     double gradient_tolerance = 0.01;
@@ -126,6 +129,18 @@ struct PairAssessment {
     ns_cascade::PairedSearchScore score;
 };
 
+struct StartResult {
+    bool usable = false;
+    int start_index = 0;
+    int accepted_steps = 0;
+    int best_iteration = 0;
+    int trajectory_count = 0;
+    ns_cascade::OptimizationState best_state;
+    Evaluation best_coarse;
+    Evaluation best_fine;
+    PairAssessment best_pair;
+};
+
 template <typename T>
 T parseNumber(const std::string& text, const std::string& flag) {
     std::istringstream stream(text);
@@ -167,6 +182,9 @@ void printUsage(const char* program) {
         << "  --energy E                  Fixed initial energy (default: 10)\n"
         << "  --initial-family NAME       wave-packets, vortex-tubes, or "
            "orthogonal-bundle\n"
+        << "  --starts N                  Deterministic sphere starts (default: 1)\n"
+        << "  --start-offset I            First deterministic start index (default: 0)\n"
+        << "  --start-angle A             Non-base start angle (default: 0.35)\n"
         << "  --iterations N              Maximum accepted steps (default: 2)\n"
         << "  --gradient-check-angle A    Geodesic FD check angle (default: 0.002)\n"
         << "  --gradient-tolerance R      Relative adjoint/FD gate (default: 0.01)\n"
@@ -174,6 +192,7 @@ void printUsage(const char* program) {
         << "  --minimum-line-angle A      Backtracking stop (default: 0.002)\n"
         << "  --scale-weight W            k_rms-growth reward (default: 0.15)\n"
         << "  --cutoff-weight W           Smooth cutoff cost (default: 0.04)\n"
+        << "  --profile-shape-weight W    Smooth rescaled-shape cost (default: 0.05)\n"
         << "  --cutoff-threshold F        Hard cutoff gate (default: 0.01)\n"
         << "  --profile-scale-window X    log(k_rms) window (default: 0.01)\n"
         << "  --state-input PATH          Resume or replay a saved coefficient CSV\n"
@@ -228,6 +247,15 @@ Options parseOptions(int argc, char** argv) {
                 parseNumber<double>(requireValue(i, argc, argv), flag);
         } else if (flag == "--initial-family") {
             options.seed_family = parseSeedFamily(requireValue(i, argc, argv));
+        } else if (flag == "--starts") {
+            options.start_count =
+                parseNumber<int>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--start-offset") {
+            options.start_offset =
+                parseNumber<int>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--start-angle") {
+            options.start_angle =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
         } else if (flag == "--iterations") {
             options.iterations = parseNumber<int>(requireValue(i, argc, argv), flag);
         } else if (flag == "--gradient-check-angle") {
@@ -248,6 +276,9 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--cutoff-weight") {
             options.objective_weights.cutoff_penalty_weight =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--profile-shape-weight") {
+            options.objective_weights.profile_shape_penalty_weight =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
         } else if (flag == "--cutoff-threshold") {
             options.objective_weights.cutoff_fraction_threshold =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
@@ -267,12 +298,16 @@ Options parseOptions(int argc, char** argv) {
 
     if (options.grid_size < 8 || options.fine_grid_size <= options.grid_size ||
         options.cutoff < 0 || options.fine_cutoff < 0 ||
-        options.seed_bandwidth < 1 || options.iterations < 0 ||
+        options.seed_bandwidth < 1 || options.start_count < 1 ||
+        options.start_count > 64 || options.start_offset < 0 ||
+        options.start_offset > 1000000 - options.start_count ||
+        options.iterations < 0 ||
         options.diagnostic_every < 1 || options.output.empty() ||
         options.state_output.empty() || options.output == options.state_output ||
         (!options.state_input.empty() &&
          (options.state_input == options.output ||
-          options.state_input == options.state_output))) {
+          options.state_input == options.state_output ||
+          options.start_count != 1 || options.start_offset != 0))) {
         throw std::invalid_argument("State-optimizer integer or path is invalid");
     }
     const double positive[] = {
@@ -283,6 +318,7 @@ Options parseOptions(int argc, char** argv) {
         options.target_cfl,
         options.diffusion_safety,
         options.initial_energy,
+        options.start_angle,
         options.gradient_check_angle,
         options.gradient_tolerance,
         options.initial_line_angle,
@@ -300,6 +336,7 @@ Options parseOptions(int argc, char** argv) {
         }
     }
     if (options.minimum_line_angle > options.initial_line_angle ||
+        options.start_angle >= 1.0 ||
         options.gradient_check_angle >= 0.25 ||
         options.initial_line_angle >= 1.0 ||
         options.profile_log_scale_window >= 1.0 ||
@@ -501,10 +538,12 @@ Evaluation evaluateTrajectory(
             result.peak_cutoff_fraction, cutoff_fraction);
         const double characteristic_wavenumber =
             std::sqrt(enstrophy / energy);
-        const double forward_log_scale = std::log(
-            characteristic_wavenumber /
-            profile_anchor.characteristic_wavenumber);
-        if (forward_log_scale >= options.profile_log_scale_window) {
+        const int completed_profile_windows =
+            ns_cascade::completedForwardProfileScaleWindows(
+                characteristic_wavenumber,
+                initial_profile.characteristic_wavenumber,
+                options.profile_log_scale_window);
+        if (completed_profile_windows > result.profile_scale_windows) {
             const ns_cascade::SpectrumProfile current_profile =
                 ns_cascade::rescaledSpectrumProfile(
                     system,
@@ -522,7 +561,7 @@ Evaluation evaluateTrajectory(
                 result.first_profile_drift =
                     change.l1_per_log_scale_change;
             }
-            ++result.profile_scale_windows;
+            result.profile_scale_windows = completed_profile_windows;
             result.latest_profile_drift =
                 change.l1_per_log_scale_change;
             result.minimum_profile_drift = std::min(
@@ -740,6 +779,7 @@ ns_cascade::OptimizationState fullInitialGradient(
     ns_cascade::OptimizationState gradient =
         ns_cascade::terminalStateObjectiveGradient(
             system,
+            initial,
             evaluation.final_state,
             options.objective_weights);
     for (std::size_t step = evaluation.trajectory.size(); step-- > 0;) {
@@ -751,7 +791,10 @@ ns_cascade::OptimizationState fullInitialGradient(
     return ns_cascade::addOptimizationStates(
         gradient,
         ns_cascade::initialStateObjectiveGradient(
-            system, initial, options.objective_weights),
+            system,
+            initial,
+            evaluation.final_state,
+            options.objective_weights),
         1.0);
 }
 
@@ -839,6 +882,19 @@ PairAssessment assessPair(const Evaluation& coarse,
     return assessment;
 }
 
+bool pairPreferred(const PairAssessment& candidate,
+                   const PairAssessment& incumbent) {
+    if (candidate.score.refinement_eligible !=
+        incumbent.score.refinement_eligible) {
+        return candidate.score.refinement_eligible;
+    }
+    if (candidate.preliminary_cross_resolution_ok !=
+        incumbent.preliminary_cross_resolution_ok) {
+        return candidate.preliminary_cross_resolution_ok;
+    }
+    return candidate.score.total > incumbent.score.total;
+}
+
 void writeTraceRow(std::ostream& output,
                    int iteration,
                    const char* stage,
@@ -850,7 +906,8 @@ void writeTraceRow(std::ostream& output,
                    double gradient_slope,
                    double line_angle,
                    int trajectory_count,
-                   const PairAssessment* pair = nullptr) {
+                   const PairAssessment* pair = nullptr,
+                   int start_index = 0) {
     output << iteration << ',' << stage << ',' << resolution << ','
            << seedFamilyName(options.seed_family) << ','
            << options.seed_bandwidth << ','
@@ -861,6 +918,7 @@ void writeTraceRow(std::ostream& output,
            << value.objective.critical_log_growth << ','
            << value.objective.characteristic_log_growth << ','
            << value.objective.cutoff_penalty << ','
+           << value.objective.profile_shape_penalty << ','
            << ratio(value.peak_h_half, value.initial_h_half) << ','
            << ratio(value.final_h_half, value.initial_h_half) << ','
            << ratio(value.peak_l3, value.initial_l3) << ','
@@ -888,6 +946,7 @@ void writeTraceRow(std::ostream& output,
                           ? "true" : "false")
            << ',' << (pair != nullptr && pair->score.refinement_eligible
                           ? "true" : "false")
+           << ',' << start_index
            << '\n';
 }
 
@@ -920,46 +979,38 @@ void writeState(const std::string& path,
     }
 }
 
-int run(const Options& options) {
-    const ns_cascade::PseudospectralSystem coarse_system(
-        options.grid_size, options.viscosity, options.cutoff);
-    const ns_cascade::PseudospectralSystem fine_system(
-        options.fine_grid_size, options.viscosity, options.fine_cutoff);
-    if (options.seed_bandwidth > coarse_system.cutoff()) {
-        throw std::invalid_argument(
-            "Seed bandwidth exceeds the coarse retained cutoff");
-    }
-
-    ns_cascade::OptimizationState current_state =
-        initialState(options, coarse_system);
-    std::ofstream trace(options.output.c_str());
-    if (!trace) throw std::runtime_error("Could not open state-optimizer CSV");
-    trace << std::setprecision(17)
-          << "iteration,stage,resolution,initial_family,seed_bandwidth,"
-             "real_degrees_of_freedom,objective,valid,steps,"
-             "critical_log_growth,characteristic_log_growth,cutoff_penalty,"
-             "peak_h_half_ratio,final_h_half_ratio,peak_l3_ratio,"
-             "final_l3_ratio,peak_vorticity_ratio,characteristic_ratio,"
-             "profile_scale_windows,first_profile_drift,latest_profile_drift,"
-             "minimum_profile_drift,latest_profile_window_time,"
-             "profile_stationarity_improving,search_score,"
-             "peak_cutoff_fraction,max_divergence_defect,max_reality_defect,"
-             "max_energy_balance_residual,max_cfl_bound,max_viscous_number,"
-             "constrained_gradient_norm,gradient_relative_error,"
-             "gradient_slope,line_angle,trajectory_count,pair_search_score,"
-             "preliminary_cross_resolution_ok,refinement_eligible\n";
-
+StartResult optimizeStart(
+    const Options& options,
+    const ns_cascade::PseudospectralSystem& coarse_system,
+    const ns_cascade::PseudospectralSystem& fine_system,
+    ns_cascade::OptimizationState current_state,
+    int start_index,
+    std::ostream& trace) {
     int trajectory_count = 0;
     int accepted_steps = 0;
     Evaluation current = evaluateTrajectory(
         coarse_system, current_state, options, true, true);
     ++trajectory_count;
-    if (!current.valid) {
-        throw std::runtime_error(
-            "Initial state fails coarse fixed-step or resolution gates: " +
-            current.failure);
-    }
     const double nan = std::numeric_limits<double>::quiet_NaN();
+    if (!current.valid) {
+        writeTraceRow(trace,
+                      0,
+                      "initial-rejected",
+                      "coarse",
+                      current,
+                      options,
+                      nan,
+                      nan,
+                      nan,
+                      0.0,
+                      trajectory_count,
+                      nullptr,
+                      start_index);
+        StartResult rejected;
+        rejected.start_index = start_index;
+        rejected.trajectory_count = trajectory_count;
+        return rejected;
+    }
     writeTraceRow(trace,
                   0,
                   "initial",
@@ -970,7 +1021,9 @@ int run(const Options& options) {
                   nan,
                   nan,
                   0.0,
-                  trajectory_count);
+                  trajectory_count,
+                  nullptr,
+                  start_index);
 
     const ns_cascade::OptimizationState initial_fine_state =
         ns_cascade::liftOptimizationState(
@@ -991,7 +1044,8 @@ int run(const Options& options) {
                   nan,
                   0.0,
                   trajectory_count,
-                  &initial_pair);
+                  &initial_pair,
+                  start_index);
     ns_cascade::OptimizationState best_state = current_state;
     Evaluation best_coarse = current;
     best_coarse.trajectory.clear();
@@ -1067,10 +1121,12 @@ int run(const Options& options) {
                       gradient_relative_error,
                       gradient_slope,
                       0.0,
-                      trajectory_count);
+                      trajectory_count,
+                      nullptr,
+                      start_index);
         if (!check_plus.valid || !check_minus.valid ||
             gradient_relative_error > options.gradient_tolerance) {
-            std::cout << "iteration " << iteration
+            std::cout << "start " << start_index << " iteration " << iteration
                       << " gradient rejected: relative error="
                       << gradient_relative_error << '\n';
             break;
@@ -1114,8 +1170,10 @@ int run(const Options& options) {
                           gradient_relative_error,
                           gradient_slope,
                           0.0,
-                          trajectory_count);
-            std::cout << "iteration " << iteration
+                          trajectory_count,
+                          nullptr,
+                          start_index);
+            std::cout << "start " << start_index << " iteration " << iteration
                       << " stopped: no valid jointly improving step\n";
             break;
         }
@@ -1132,7 +1190,9 @@ int run(const Options& options) {
                       gradient_relative_error,
                       gradient_slope,
                       line_angle,
-                      trajectory_count);
+                      trajectory_count,
+                      nullptr,
+                      start_index);
         const ns_cascade::OptimizationState accepted_fine_state =
             ns_cascade::liftOptimizationState(
                 coarse_system, current_state, fine_system);
@@ -1152,13 +1212,10 @@ int run(const Options& options) {
                       nan,
                       0.0,
                       trajectory_count,
-                      &accepted_pair);
+                      &accepted_pair,
+                      start_index);
         const bool accepted_pair_preferred =
-            (accepted_pair.preliminary_cross_resolution_ok &&
-             !best_pair.preliminary_cross_resolution_ok) ||
-            (accepted_pair.preliminary_cross_resolution_ok ==
-                 best_pair.preliminary_cross_resolution_ok &&
-             accepted_pair.score.total > best_pair.score.total);
+            pairPreferred(accepted_pair, best_pair);
         if (accepted_pair_preferred) {
             best_state = current_state;
             best_coarse = current;
@@ -1167,7 +1224,7 @@ int run(const Options& options) {
             best_iteration = iteration;
         }
         std::cout << std::setprecision(10)
-                  << "iteration " << iteration
+                  << "start " << start_index << " iteration " << iteration
                   << " objective=" << current.objective.total
                   << " H1/2="
                   << ratio(current.peak_h_half, current.initial_h_half)
@@ -1184,7 +1241,7 @@ int run(const Options& options) {
 
     writeTraceRow(trace,
                   best_iteration,
-                  "selected",
+                  "start-selected",
                   "coarse",
                   best_coarse,
                   options,
@@ -1193,10 +1250,11 @@ int run(const Options& options) {
                   nan,
                   0.0,
                   trajectory_count,
-                  &best_pair);
+                  &best_pair,
+                  start_index);
     writeTraceRow(trace,
                   best_iteration,
-                  "fine-validation",
+                  "start-fine-validation",
                   "fine",
                   best_fine,
                   options,
@@ -1205,13 +1263,142 @@ int run(const Options& options) {
                   nan,
                   0.0,
                   trajectory_count,
-                  &best_pair);
+                  &best_pair,
+                  start_index);
+    if (!trace) {
+        throw std::runtime_error("Failed while writing state-optimizer CSV");
+    }
+    StartResult result;
+    result.usable = true;
+    result.start_index = start_index;
+    result.accepted_steps = accepted_steps;
+    result.best_iteration = best_iteration;
+    result.trajectory_count = trajectory_count;
+    result.best_state = best_state;
+    result.best_coarse = best_coarse;
+    result.best_fine = best_fine;
+    result.best_pair = best_pair;
+    return result;
+}
+
+int run(const Options& options) {
+    const ns_cascade::PseudospectralSystem coarse_system(
+        options.grid_size, options.viscosity, options.cutoff);
+    const ns_cascade::PseudospectralSystem fine_system(
+        options.fine_grid_size, options.viscosity, options.fine_cutoff);
+    if (options.seed_bandwidth > coarse_system.cutoff()) {
+        throw std::invalid_argument(
+            "Seed bandwidth exceeds the coarse retained cutoff");
+    }
+
+    const ns_cascade::OptimizationState base_state =
+        initialState(options, coarse_system);
+    std::ofstream trace(options.output.c_str());
+    if (!trace) throw std::runtime_error("Could not open state-optimizer CSV");
+    trace << std::setprecision(17)
+          << "iteration,stage,resolution,initial_family,seed_bandwidth,"
+             "real_degrees_of_freedom,objective,valid,steps,"
+             "critical_log_growth,characteristic_log_growth,cutoff_penalty,"
+             "profile_shape_penalty,peak_h_half_ratio,final_h_half_ratio,"
+             "peak_l3_ratio,final_l3_ratio,peak_vorticity_ratio,"
+             "characteristic_ratio,profile_scale_windows,first_profile_drift,"
+             "latest_profile_drift,minimum_profile_drift,"
+             "latest_profile_window_time,profile_stationarity_improving,"
+             "search_score,peak_cutoff_fraction,max_divergence_defect,"
+             "max_reality_defect,max_energy_balance_residual,max_cfl_bound,"
+             "max_viscous_number,constrained_gradient_norm,"
+             "gradient_relative_error,gradient_slope,line_angle,"
+             "trajectory_count,pair_search_score,"
+             "preliminary_cross_resolution_ok,refinement_eligible,"
+             "start_index\n";
+
+    StartResult selected;
+    bool have_selected = false;
+    int total_accepted_steps = 0;
+    int total_trajectories = 0;
+    for (int start_number = 0;
+         start_number < options.start_count;
+         ++start_number) {
+        const int start_index = options.start_offset + start_number;
+        const ns_cascade::OptimizationState start_state =
+            ns_cascade::deterministicOptimizationStart(
+                coarse_system,
+                base_state,
+                options.seed_bandwidth,
+                start_index,
+                options.start_angle);
+        const StartResult candidate = optimizeStart(
+            options,
+            coarse_system,
+            fine_system,
+            start_state,
+            start_index,
+            trace);
+        total_accepted_steps += candidate.accepted_steps;
+        total_trajectories += candidate.trajectory_count;
+        if (!candidate.usable) {
+            std::cout << "start " << start_index
+                      << " rejected by its initial coarse gate\n";
+            continue;
+        }
+        const bool candidate_preferred =
+            !have_selected ||
+            pairPreferred(candidate.best_pair, selected.best_pair);
+        if (candidate_preferred) {
+            selected = candidate;
+            have_selected = true;
+        }
+        std::cout << std::setprecision(10)
+                  << "start " << start_index
+                  << " best pair-score=" << candidate.best_pair.score.total
+                  << " H1/2="
+                  << ratio(candidate.best_fine.peak_h_half,
+                           candidate.best_fine.initial_h_half)
+                  << " profile-drift="
+                  << candidate.best_fine.latest_profile_drift
+                  << " shape-penalty="
+                  << candidate.best_fine.objective.profile_shape_penalty
+                  << " globally-selected="
+                  << (candidate_preferred ? "yes" : "no") << '\n';
+    }
+    if (!have_selected) {
+        throw std::runtime_error(
+            "Every deterministic start failed its initial coarse gate");
+    }
+
+    const double nan = std::numeric_limits<double>::quiet_NaN();
+    writeTraceRow(trace,
+                  selected.best_iteration,
+                  "selected",
+                  "coarse",
+                  selected.best_coarse,
+                  options,
+                  nan,
+                  nan,
+                  nan,
+                  0.0,
+                  total_trajectories,
+                  &selected.best_pair,
+                  selected.start_index);
+    writeTraceRow(trace,
+                  selected.best_iteration,
+                  "fine-validation",
+                  "fine",
+                  selected.best_fine,
+                  options,
+                  nan,
+                  nan,
+                  nan,
+                  0.0,
+                  total_trajectories,
+                  &selected.best_pair,
+                  selected.start_index);
     if (!trace) {
         throw std::runtime_error("Failed while writing state-optimizer CSV");
     }
     writeState(options.state_output,
                coarse_system,
-               best_state,
+               selected.best_state,
                options);
 
     std::cout << std::setprecision(12)
@@ -1222,28 +1409,36 @@ int run(const Options& options) {
               << ns_cascade::stateOptimizationDegreesOfFreedom(
                      options.seed_bandwidth)
               << '\n'
-              << "  accepted steps/selected iteration/trajectories: "
-              << accepted_steps << '/' << best_iteration << '/'
-              << trajectory_count << '\n'
+              << "  starts/selected start/iteration: "
+              << options.start_count << '/' << selected.start_index << '/'
+              << selected.best_iteration << '\n'
+              << "  accepted steps/trajectories: "
+              << total_accepted_steps << '/' << total_trajectories << '\n'
               << "  coarse objective/H1/2/k_rms/drift/cutoff: "
-              << best_coarse.objective.total << '/'
-              << ratio(best_coarse.peak_h_half, best_coarse.initial_h_half)
+              << selected.best_coarse.objective.total << '/'
+              << ratio(selected.best_coarse.peak_h_half,
+                       selected.best_coarse.initial_h_half)
               << '/'
-              << ratio(best_coarse.final_characteristic_wavenumber,
-                       best_coarse.initial_characteristic_wavenumber)
-              << '/' << best_coarse.latest_profile_drift << '/'
-              << best_coarse.peak_cutoff_fraction << '\n'
+              << ratio(
+                     selected.best_coarse.final_characteristic_wavenumber,
+                     selected.best_coarse.initial_characteristic_wavenumber)
+              << '/' << selected.best_coarse.latest_profile_drift << '/'
+              << selected.best_coarse.peak_cutoff_fraction << '\n'
               << "  fine objective/H1/2/k_rms/drift/cutoff: "
-              << best_fine.objective.total << '/'
-              << ratio(best_fine.peak_h_half, best_fine.initial_h_half) << '/'
-              << ratio(best_fine.final_characteristic_wavenumber,
-                       best_fine.initial_characteristic_wavenumber)
-              << '/' << best_fine.latest_profile_drift << '/'
-              << best_fine.peak_cutoff_fraction << '\n'
-              << "  cross-resolution/refinement-eligible: "
-              << (best_pair.preliminary_cross_resolution_ok ? "yes" : "no")
+              << selected.best_fine.objective.total << '/'
+              << ratio(selected.best_fine.peak_h_half,
+                       selected.best_fine.initial_h_half)
               << '/'
-              << (best_pair.score.refinement_eligible ? "yes" : "no")
+              << ratio(selected.best_fine.final_characteristic_wavenumber,
+                       selected.best_fine.initial_characteristic_wavenumber)
+              << '/' << selected.best_fine.latest_profile_drift << '/'
+              << selected.best_fine.peak_cutoff_fraction << '\n'
+              << "  cross-resolution/refinement-eligible: "
+              << (selected.best_pair.preliminary_cross_resolution_ok
+                      ? "yes" : "no")
+              << '/'
+              << (selected.best_pair.score.refinement_eligible
+                      ? "yes" : "no")
               << '\n'
               << "  outputs: " << options.output << " and "
               << options.state_output << '\n'
