@@ -1298,6 +1298,16 @@ ratios were below one. The leading frozen packet subsequently reached
 See the [full experimental record](results/README.md) for the exact data,
 checksums, limitations and reproduction commands.
 
+The subsequent frozen-field continuation reaches `T=.10` on `N=64/128`
+with 9.91% H1/2 growth and about 2.02x sampled vorticity. The pointwise
+vorticity discrepancy decreases from 16.23% on `32/64` to 4.63% on `64/128`,
+passing the preliminary gate while leaving a material uncertainty.
+The `N=64` independent trajectory and a new timestep-refinement check pass;
+L3 still decreases. The evolved 128-grid checkpoint is archived in
+[the resolution record](results/frozen_continuations_resolution/README.md).
+The same record links a critical production–diffusion budget and checked
+local adjoint source for a proposed late-growth search objective.
+
 ### Checkpointed continuation of a frozen Fourier field
 
 The optional FFTW target `navier_stokes_continue` loads the optimized CSV
@@ -1319,7 +1329,8 @@ replaces its checksummed checkpoint after every observation. For example:
 The restart restores the backend, viscosity, cutoff, adaptive timestep controls,
 sampling grids, observation clock and initial normalization measurements.
 Scientific overrides are rejected. Final times are absolute multiples of the
-saved observation interval; splitting at those times produces the same
+saved observation interval. With the same executable, FFTW build and
+floating-point platform, splitting at those times produces the same
 checkpoint bytes as an uninterrupted run. Evidence files contain the shared
 boundary row, so discard that duplicate when joining segments. Existing
 evidence and input files are protected against output aliases and overwrites.

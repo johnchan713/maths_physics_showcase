@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue_memory",
+    "--restart",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations_resolution/fine128.chk",
+    "--final-time",
+    ".1",
+    "--output",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations_resolution/fine128_resumed_t100.csv",
+    "--checkpoint-output",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations_resolution/fine128.chk"
+  ],
+  "start_time": 0.03,
+  "reason": "Resume with verified compact storage; original run deliberately stopped after saving t=.03. All scientific settings remain in checkpoint.",
+  "source_commit": "930a0eb47e264075a049dbb942861b46c87fbd35",
+  "solver_sha256": "69e6036439aa9bebe58249edeeaf2135eefb0768fc128d2807e8d2b379ef3139"
+}

@@ -1,0 +1,13 @@
+{
+  "restored_bytes_equal_original": true,
+  "existing_output_protected": true,
+  "restored_sha256": "1b3f01637ce4686df5d10c02119ee947cb4442a10064fbf9cab399fec11d2a9b",
+  "grid": 128,
+  "time": 0.1,
+  "finite_fourier_doubles": 12582912,
+  "serialized_text_fields": 0,
+  "public_initial_state_sha256": "5f3dc4449abd58f5ae5e1aca3443b2a0fa7ad06029f9dadae939ff2b9a3b51d8",
+  "checkpoint_format": "NSCONT1, numerical metadata plus Fourier doubles only",
+  "source_commit": "930a0eb47e264075a049dbb942861b46c87fbd35",
+  "scope": "Generated numerical research data derived exclusively from the already public initial Fourier field and public solver source"
+}

@@ -1,0 +1,32 @@
+{
+  "command": [
+    "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue_memory",
+    "--state-input",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/checkpoint-discovery/state.csv",
+    "--grid",
+    "64",
+    "--sampling-grid",
+    "64",
+    "--dense-sampling-grid",
+    "128",
+    "--viscosity",
+    ".02",
+    "--dt",
+    ".0000625",
+    "--observation-interval",
+    ".01",
+    "--final-time",
+    ".1",
+    "--output",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations_resolution/timestep64/evidence.csv",
+    "--checkpoint-output",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations_resolution/timestep64/final.chk"
+  ],
+  "source_commit": "930a0eb47e264075a049dbb942861b46c87fbd35",
+  "solver_sha256": "69e6036439aa9bebe58249edeeaf2135eefb0768fc128d2807e8d2b379ef3139",
+  "require_step_count_factor_at_least": 1.9,
+  "ratio_agreement_tolerance": 0.001,
+  "stretching_relative_agreement_tolerance": 0.02,
+  "returncode": 0,
+  "wall_seconds": 246.42911286399976
+}

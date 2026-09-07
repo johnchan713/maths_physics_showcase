@@ -108,6 +108,15 @@ evolved checkpoints are saved, along with an independent leading-field
 `N=64, T=.10` replay and a separately computed critical production–diffusion
 budget for designing the next search objective.
 
+The subsequent [64/128 check through T=.10](frozen_continuations_resolution/README.md)
+passes the preliminary continuation gates for the leading frozen field.
+H1/2 grows 9.91%, sampled vorticity reaches about 2.02 times its initial
+value, and the vorticity discrepancy decreases from 16.23% to 4.63% after
+raising the evolution resolution. A new `N=64` timestep refinement and
+independent trajectory pass. The final 128-grid state is archived and can
+be restored without rerunning the beginning. L3 still falls, and the
+remaining pointwise uncertainty is not a rigorous continuum error bound.
+
 A proof would additionally require rigorous control of the unresolved
 Fourier tail and of the limiting PDE mechanism; none of these finite runs
 supplies that control.

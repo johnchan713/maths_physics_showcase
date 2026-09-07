@@ -1,0 +1,27 @@
+{
+  "original_segment": {
+    "command_record": "commands.json",
+    "solver_source_archive": "../frozen_continuations/solver_source.tar.gz",
+    "requested_time": 0.1,
+    "completed_time": 0.03,
+    "exit_code": 130,
+    "reason": "Deliberately interrupted after the independent 64-grid oracle finished, to resume with the verified compact implementation."
+  },
+  "compact_benchmark": {
+    "completed_time": 0.03,
+    "exit_code": 0,
+    "identity_record": "compact_resume_benchmark/identity.json",
+    "note": "Original and compact storage produced identical complete 128-grid checkpoint bytes at t=.03."
+  },
+  "final_segment": {
+    "command_record": "fine128_resume_command.json",
+    "completion_record": "fine128_resume_completion.json",
+    "exit_code": 0,
+    "completed_time": 0.1,
+    "source_commit": "930a0eb47e264075a049dbb942861b46c87fbd35"
+  },
+  "evidence": "fine128_evidence.csv",
+  "boundary_row_identity": true,
+  "scientific_configuration_overrides_on_restart": false,
+  "independent_oracle_note": "The oracle64 files are the same replay also archived in frozen_continuations/independent64, not a second run."
+}

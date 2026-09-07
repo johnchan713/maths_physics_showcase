@@ -1,0 +1,43 @@
+{
+  "time": 0.1,
+  "evolution_grid": 128,
+  "cutoff": 42,
+  "viscosity": 0.02,
+  "sampling_grids": [
+    128,
+    256
+  ],
+  "final_maxima": [
+    141.44984860468745,
+    141.44984860468747
+  ],
+  "initial_maxima": [
+    69.8981440717518,
+    69.93712427834272
+  ],
+  "amplification_ratios": [
+    2.023656714826168,
+    2.022528808043798
+  ],
+  "final_relative_sampling_shift": 2.0093135277814745e-16,
+  "native_numpy_vs_fftw_relative_error": 2.0093135277814745e-16,
+  "checkpoint_sha256": "1b3f01637ce4686df5d10c02119ee947cb4442a10064fbf9cab399fec11d2a9b",
+  "initial_state_sha256": "5f3dc4449abd58f5ae5e1aca3443b2a0fa7ad06029f9dadae939ff2b9a3b51d8",
+  "analysis_sha256": "571324b1a48a29f78e5ac151e0a172d6ef82ce49e573513539463455313355b0",
+  "reader_sha256": "37a839584790fd92b343b78445fe5fdbd224383beea7e6fc9bea4b80500713a4",
+  "numpy_version": "2.3.5",
+  "command": [
+    "research/navier_stokes_cascade/results/frozen_continuations_resolution/sample_checkpoint_maximum.py",
+    "--checkpoint",
+    "research/navier_stokes_cascade/results/frozen_continuations_resolution/fine128.chk",
+    "--sha256",
+    "1b3f01637ce4686df5d10c02119ee947cb4442a10064fbf9cab399fec11d2a9b",
+    "--initial-state",
+    "research/navier_stokes_cascade/results/robust_amplification_verified/checkpoint-discovery/state.csv",
+    "--sampling-grid",
+    "256",
+    "--output",
+    "research/navier_stokes_cascade/results/frozen_continuations_resolution/sampling_t100.json"
+  ],
+  "scope": "Endpoint samples of the same truncated field; no additional evolution modes or uniform continuum bound"
+}

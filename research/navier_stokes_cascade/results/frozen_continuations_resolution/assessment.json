@@ -1,0 +1,57 @@
+{
+  "status": "continue-finite-amplification",
+  "failures": [],
+  "numerical_failures": [],
+  "maximum_trajectory_relative_gaps": {
+    "h_half_ratio": 1.4097577219057868e-06,
+    "l3_dense_ratio": 1.3980229308025611e-05,
+    "enstrophy_ratio": 0.00014415138405507848,
+    "k_rms_ratio": 7.223731180861825e-05,
+    "vorticity_dense_ratio": 0.04627120056462314,
+    "late_stretching": 0.004554406864066014
+  },
+  "late_h_half_gains": [
+    1.0185618337501803,
+    1.0185631744296417
+  ],
+  "sampling_shift": {
+    "l3_sample": 5.635005266244205e-08,
+    "vorticity_sample": 0.012239482148210364
+  },
+  "endpoints": [
+    {
+      "grid": 64.0,
+      "time": 0.1,
+      "step": 834.0,
+      "h_half_ratio": 1.0991181734656272,
+      "l3_dense_ratio": 0.976061783436875,
+      "vorticity_dense_ratio": 1.9300196891005004,
+      "enstrophy_ratio": 1.6822561139053829,
+      "k_rms_ratio": 1.3131858707008124,
+      "production_to_dissipation": 6.707380621249018,
+      "peak_cutoff_fraction": 1.3301300882775304e-05
+    },
+    {
+      "grid": 128.0,
+      "time": 0.1,
+      "step": 1433.0,
+      "h_half_ratio": 1.099119722958144,
+      "l3_dense_ratio": 0.9760754291951971,
+      "vorticity_dense_ratio": 2.0236567148261684,
+      "enstrophy_ratio": 1.6824986484142226,
+      "k_rms_ratio": 1.3132807385710168,
+      "production_to_dissipation": 6.652871113860692,
+      "peak_cutoff_fraction": 7.2978031643778255e-09
+    }
+  ],
+  "initial_state_sha256": "5f3dc4449abd58f5ae5e1aca3443b2a0fa7ad06029f9dadae939ff2b9a3b51d8",
+  "common_sampling_grid": 128,
+  "independent64_verdict": "pass",
+  "timestep64_verdict": "pass",
+  "scope": "Preliminary finite-amplification resolution screen, not a continuum error bound",
+  "endpoint_sampling_128_to_256": {
+    "final_relative_shift": 2.0093135277814745e-16,
+    "amplification_ratio_relative_shift": 0.0005573607292711431,
+    "scope": "Only the final snapshot and its initial normalization; equal grid maxima do not certify the continuous maximum."
+  }
+}

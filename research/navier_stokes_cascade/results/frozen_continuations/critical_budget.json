@@ -2,7 +2,7 @@
   "equation": "Q=||u||_Hhalf^2; Q'=2 Re sum |k| conj(u_k).N_k - 2 nu sum |k|^3 |u_k|^2",
   "measure": "Normalized periodic volume (2*pi)^-3 dx",
   "numpy_version": "2.3.5",
-  "analysis_sha256": "11a3c277e17707d69b1a908631d2b9ef12604b7405f0acfa78fe5513d94785a5",
+  "analysis_sha256": "37a839584790fd92b343b78445fe5fdbd224383beea7e6fc9bea4b80500713a4",
   "analytic_shear_test": "passed",
   "interpretation": "Instantaneous finite-mode critical-norm budget; sampled spatial maxima and floating-point values are not continuum error bounds.",
   "candidates": [

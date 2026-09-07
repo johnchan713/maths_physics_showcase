@@ -1,0 +1,16 @@
+{
+  "accepted_step_counts": [
+    834.0,
+    1604.0
+  ],
+  "step_count_factor": 1.9232613908872902,
+  "maximum_trajectory_relative_gaps": {
+    "h_half_ratio": 7.263700700765659e-14,
+    "l3_dense_ratio": 7.600496274819941e-14,
+    "vorticity_dense_ratio": 6.453475393195104e-12,
+    "enstrophy_ratio": 1.4816118166045185e-12,
+    "k_rms_ratio": 7.884595896634513e-13,
+    "stretching": 2.9207619983672352e-12
+  },
+  "verdict": "pass"
+}

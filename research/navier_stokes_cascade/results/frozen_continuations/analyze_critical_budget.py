@@ -59,7 +59,8 @@ def budget(coefficients, viscosity):
 
 
 def load_checkpoint(path, expected_sha256):
-    raw = gzip.decompress(path.read_bytes())
+    stored = path.read_bytes()
+    raw = stored if stored[:8] == b"NSCONT1\n" else gzip.decompress(stored)
     # The campaign manifest records the exact bytes emitted by the validated
     # C++ checkpoint writer, including its internal checksum. SHA-256 also
     # detects any changed header, metadata, coefficient or trailing byte here.
