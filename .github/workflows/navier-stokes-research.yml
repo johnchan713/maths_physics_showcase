@@ -50,6 +50,7 @@ jobs:
           navier_stokes_candidate_score_tests
           navier_stokes_parameter_optimizer_tests
           navier_stokes_state_optimizer_tests
+          navier_stokes_late_growth_tests
           navier_stokes_candidate_evidence_tests
           navier_stokes_continue
           navier_stokes_continuation_tests
@@ -67,6 +68,38 @@ jobs:
             research/navier_stokes_cascade/tests/test_continuation.cpp \
             -lfftw3 -o navier_stokes_continuation_sanitized
           ./navier_stokes_continuation_sanitized
+
+      - name: Sanitize late-growth trajectory adjoint
+        run: |
+          c++ -std=c++11 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer \
+            -Wall -Wextra -Wpedantic -Werror \
+            -I research/navier_stokes_cascade/include \
+            research/navier_stokes_cascade/tests/test_late_growth.cpp \
+            -o navier_stokes_late_growth_sanitized
+          ./navier_stokes_late_growth_sanitized
+
+      - name: Exercise late-growth discovery and held-out checks
+        run: |
+          python3 research/navier_stokes_cascade/scripts/robust_search.py \
+            --optimizer ./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+            --oracle ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare \
+            --growth-objective late-rate --families wave-packets --starts 1 --bandwidth 2 \
+            --discovery-time 0.005 --holdout-time 0.01 --max-finalists 1 \
+            --output-dir navier_stokes_late_smoke
+          python3 - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+          m = json.loads(Path('navier_stokes_late_smoke/manifest.json').read_text())
+          assert len(m['runs']) == 4
+          assert all('late_growth' in r['result'] for r in m['runs'])
+          assert all(not r['result']['numerical_failures'] for r in m['runs'])
+          assert m['runs'][-1]['result']['late_growth']['samples'] == 9
+          assert m['finalists'][0]['status'] == 'screening-only'
+          rows = list(csv.DictReader(Path('navier_stokes_late_smoke/wave-packets-0-discovery/trace.csv').open()))
+          assert any(r['stage'] == 'accepted' for r in rows)
+          assert all(float(r['gradient_relative_error']) < 0.01 for r in rows if r['stage'] == 'gradient-check')
+          PY
 
       - name: Run independent FFTW trajectory comparison
         run: >-
@@ -351,6 +384,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_late_smoke/
             navier_stokes_convergence.csv
             navier_stokes_fft_convergence.csv
             navier_stokes_candidate_search.csv

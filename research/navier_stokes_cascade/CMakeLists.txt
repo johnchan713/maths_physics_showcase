@@ -87,6 +87,9 @@ else()
 endif()
 
 if(BUILD_TESTING)
+    add_executable(navier_stokes_late_growth_tests tests/test_late_growth.cpp)
+    target_link_libraries(navier_stokes_late_growth_tests PRIVATE ns_cascade)
+    add_test(NAME navier_stokes_late_growth COMMAND navier_stokes_late_growth_tests)
     add_executable(navier_stokes_candidate_evidence_tests
         tests/test_candidate_evidence.cpp
     )
@@ -95,6 +98,10 @@ if(BUILD_TESTING)
              COMMAND navier_stokes_candidate_evidence_tests)
     find_package(Python3 COMPONENTS Interpreter)
     if(Python3_Interpreter_FOUND)
+        add_test(NAME navier_stokes_late_growth_cli
+                 COMMAND ${Python3_EXECUTABLE}
+                         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_late_growth_cli.py
+                         --optimizer $<TARGET_FILE:navier_stokes_state_optimize>)
         add_test(NAME navier_stokes_robust_search
                  COMMAND ${Python3_EXECUTABLE}
                          ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_robust_search.py)

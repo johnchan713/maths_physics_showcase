@@ -21,6 +21,7 @@ enum class SmoothSpectrumPathAggregation {
 };
 
 struct StateObjectiveWeights {
+    double endpoint_critical_weight = 1.0;
     double characteristic_scale_weight = 0.15;
     double cutoff_penalty_weight = 0.04;
     double cutoff_fraction_threshold = 0.01;
@@ -518,7 +519,9 @@ inline OptimizationState smoothSpectrumShapePenaltyGradient(
 
 inline void validateStateObjectiveWeights(
     const StateObjectiveWeights& weights) {
-    if (!std::isfinite(weights.characteristic_scale_weight) ||
+    if (!std::isfinite(weights.endpoint_critical_weight) ||
+        weights.endpoint_critical_weight < 0.0 ||
+        !std::isfinite(weights.characteristic_scale_weight) ||
         weights.characteristic_scale_weight < 0.0 ||
         !std::isfinite(weights.cutoff_penalty_weight) ||
         weights.cutoff_penalty_weight < 0.0 ||
@@ -554,7 +557,7 @@ inline StateObjectiveValue evaluateStateObjective(
     value.profile_shape_penalty = compareSmoothSpectrumShapes(
         system, initial, final, weights).penalty;
     value.profile_path_penalty = 0.0;
-    value.total = value.critical_log_growth +
+    value.total = weights.endpoint_critical_weight * value.critical_log_growth +
                   weights.characteristic_scale_weight *
                       value.characteristic_log_growth -
                   weights.cutoff_penalty_weight * value.cutoff_penalty -
@@ -642,7 +645,8 @@ inline OptimizationState terminalStateObjectiveGradient(
     const OptimizationState& final,
     const StateObjectiveWeights& weights) {
     validateStateObjectiveWeights(weights);
-    OptimizationState gradient = stateLogCriticalGradient(system, final);
+    OptimizationState gradient = scaleOptimizationState(
+        stateLogCriticalGradient(system, final), weights.endpoint_critical_weight);
     gradient = addOptimizationStates(
         gradient,
         stateLogCharacteristicGradient(system, final),
@@ -669,7 +673,7 @@ inline OptimizationState initialStateObjectiveGradient(
     const StateObjectiveWeights& weights) {
     validateStateObjectiveWeights(weights);
     OptimizationState gradient = scaleOptimizationState(
-        stateLogCriticalGradient(system, initial), -1.0);
+        stateLogCriticalGradient(system, initial), -weights.endpoint_critical_weight);
     gradient = addOptimizationStates(
         gradient,
         stateLogCharacteristicGradient(system, initial),

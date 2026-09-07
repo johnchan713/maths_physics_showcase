@@ -234,6 +234,7 @@ inline void writeOptimizationStateCsv(
                << std::real(state[i].y) << ',' << std::imag(state[i].y) << ','
                << std::real(state[i].z) << ',' << std::imag(state[i].z) << '\n';
     }
+    output.close();
     if (!output) {
         throw std::runtime_error("Failed while writing optimization-state CSV");
     }

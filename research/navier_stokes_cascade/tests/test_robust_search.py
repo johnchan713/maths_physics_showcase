@@ -113,6 +113,65 @@ class ScientificGates(unittest.TestCase):
         repeat["steps"] = {"coarse": 200, "fine": 200}
         self.assertEqual(SEARCH.perturbation_failures(reference, repeat, "half-dt"), [])
 
+    def test_late_rate_clock_aggregation_and_negative_minimum(self):
+        horizon, temperature, samples = 0.1, 1.0, 3
+        rates = [-0.01, 0.8, 1.0]
+        exponentials = [math.exp(-(rate - min(rates)) / temperature) for rate in rates]
+        weights = [e / sum(exponentials) for e in exponentials]
+        soft = min(rates) - temperature * math.log(sum(exponentials) / samples)
+        self.assertGreater(soft, 0)
+        trace, rows = traces(), []
+        for row in trace:
+            row.update(growth_objective="late-rate", horizon=str(horizon), late_window_start="0.5",
+                       late_rate_samples=str(samples), late_rate_temperature=str(temperature),
+                       late_rate_minimum=str(min(rates)), late_rate_maximum=str(max(rates)),
+                       late_rate_soft_minimum=str(soft))
+            for i, (rate, weight) in enumerate(zip(rates, weights)):
+                rows.append(dict(resolution=row["resolution"], snapshot=str(i),
+                                 time=str(horizon * (0.5 + 0.5 * i / (samples - 1))),
+                                 critical_log_rate=str(rate), soft_minimum_weight=str(weight)))
+
+        def assess_late(evidence_rows=rows, trace_rows=trace):
+            result = SEARCH.assess(trace_rows, self.evidence())
+            SEARCH.add_late_growth_assessment(result, evidence_rows, trace_rows, horizon, 0.5, samples, temperature)
+            return result
+
+        result = assess_late()
+        self.assertEqual(result["numerical_failures"], [])
+        self.assertIn("non-positive sampled late critical rate", result["physics_failures"])
+        self.assertEqual(len(SEARCH.pareto_vector(result)), 7)
+        for key, value in (("time", "0.03"), ("soft_minimum_weight", "0.99"),
+                           ("critical_log_rate", "nan"), ("snapshot", "0.5")):
+            corrupted = copy.deepcopy(rows)
+            corrupted[1][key] = value
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                assess_late(corrupted)
+        with self.assertRaises(ValueError):
+            assess_late(rows[:-1])
+        bad_trace = copy.deepcopy(trace)
+        bad_trace[0]["late_rate_soft_minimum"] = "4"
+        with self.assertRaises(ValueError):
+            assess_late(rows, bad_trace)
+        repeated = copy.deepcopy(result)
+        repeated["late_growth"]["evidence"]["fine"]["minimum"] += 0.1
+        self.assertIn("sampling: fine late critical rate",
+                      SEARCH.perturbation_failures(result, repeated, "sampling"))
+
+    def test_late_rate_cross_resolution_gate_is_separate_from_norms(self):
+        trace = traces()
+        rows = []
+        for row, rate in zip(trace, (0.2, 0.5)):
+            row.update(growth_objective="late-rate", horizon="0.1", late_window_start="0.5",
+                       late_rate_samples="3", late_rate_temperature="0.1",
+                       late_rate_minimum=str(rate), late_rate_maximum=str(rate),
+                       late_rate_soft_minimum=str(rate))
+            for i in range(3):
+                rows.append(dict(resolution=row["resolution"], snapshot=str(i), time=str(0.05 + 0.025 * i),
+                                 critical_log_rate=str(rate), soft_minimum_weight=str(1 / 3)))
+        result = SEARCH.assess(trace, self.evidence())
+        SEARCH.add_late_growth_assessment(result, rows, trace, 0.1, 0.5, 3, 0.1)
+        self.assertIn("cross-resolution late critical rate", result["numerical_failures"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,5 +1,6 @@
 #include "ns_cascade/candidate_score.hpp"
 #include "ns_cascade/candidate_evidence.hpp"
+#include "ns_cascade/late_growth.hpp"
 #include "ns_cascade/optimization_state_csv.hpp"
 #include "ns_cascade/spectral_profile.hpp"
 #include "ns_cascade/state_optimizer.hpp"
@@ -79,6 +80,9 @@ struct Options {
     double minimum_line_angle = 0.002;
     double armijo_fraction = 1e-4;
     ns_cascade::StateObjectiveWeights objective_weights;
+    bool late_growth_objective = false;
+    ns_cascade::LateGrowthOptions late_growth;
+    std::string late_rate_output;
     int profile_path_samples = 8;
     int profile_bin_count = 32;
     double profile_maximum_coordinate = 4.0;
@@ -106,6 +110,9 @@ struct Evaluation {
     std::vector<double> time_steps;
     std::vector<ns_cascade::OptimizationState> profile_path_states;
     std::vector<int> profile_path_state_indices;
+    std::vector<ns_cascade::OptimizationState> late_growth_states;
+    std::vector<int> late_growth_state_indices;
+    ns_cascade::LateGrowthSummary late_growth;
     double initial_energy = 0.0;
     double final_energy = 0.0;
     double initial_h_half = 0.0;
@@ -213,6 +220,12 @@ void printUsage(const char* program) {
         << "  --line-angle A              Initial ascent angle (default: 0.12)\n"
         << "  --minimum-line-angle A      Backtracking stop (default: 0.002)\n"
         << "  --scale-weight W            k_rms-growth reward (default: 0.15)\n"
+        << "  --growth-objective NAME     endpoint (default) or late-rate; the latter\n"
+           "                              replaces endpoint H growth with T * soft-min rate\n"
+        << "  --late-window-start F       Window begins at F*T (default: 0.5)\n"
+        << "  --late-rate-samples N       Samples including both window ends (default: 5)\n"
+        << "  --late-rate-temperature R   Soft-min temperature in 1/time (default: 0.1)\n"
+        << "  --late-rate-output PATH     Selected fixed-time rates and adjoint weights\n"
         << "  --cutoff-weight W           Smooth cutoff cost (default: 0.04)\n"
         << "  --profile-shape-weight W    Smooth rescaled-shape cost (default: 0.05)\n"
         << "  --profile-path-weight W     Smooth-maximum path cost (default: 0.05)\n"
@@ -300,6 +313,23 @@ Options parseOptions(int argc, char** argv) {
         } else if (flag == "--minimum-line-angle") {
             options.minimum_line_angle =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--growth-objective") {
+            const std::string objective = requireValue(i, argc, argv);
+            if (objective != "endpoint" && objective != "late-rate") {
+                throw std::invalid_argument("Unknown growth objective: " + objective);
+            }
+            options.late_growth_objective = objective == "late-rate";
+        } else if (flag == "--late-window-start") {
+            options.late_growth.start_fraction =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--late-rate-samples") {
+            options.late_growth.samples =
+                parseNumber<int>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--late-rate-temperature") {
+            options.late_growth.temperature =
+                parseNumber<double>(requireValue(i, argc, argv), flag);
+        } else if (flag == "--late-rate-output") {
+            options.late_rate_output = requireValue(i, argc, argv);
         } else if (flag == "--scale-weight") {
             options.objective_weights.characteristic_scale_weight =
                 parseNumber<double>(requireValue(i, argc, argv), flag);
@@ -352,6 +382,22 @@ Options parseOptions(int argc, char** argv) {
     if (options.amplification_track) {
         options.objective_weights.profile_shape_penalty_weight = 0.0;
         options.objective_weights.profile_path_penalty_weight = 0.0;
+    }
+    ns_cascade::validateLateGrowthOptions(options.late_growth);
+    if (options.late_growth_objective) {
+        if (!options.amplification_track) {
+            throw std::invalid_argument("Late-rate objective requires --search-track amplification");
+        }
+        options.objective_weights.endpoint_critical_weight = 0.0;
+        ns_cascade::lateGrowthObservationTimes(options.late_growth, options.final_time);
+    }
+    if (!options.late_rate_output.empty() &&
+        (!options.late_growth_objective ||
+         options.late_rate_output == options.output ||
+         options.late_rate_output == options.state_output ||
+         options.late_rate_output == options.state_input ||
+         options.late_rate_output == options.evidence_output)) {
+        throw std::invalid_argument("Invalid late-rate output mode or path");
     }
     if (options.evidence_grid_size == 0) {
         options.evidence_grid_size = options.fine_grid_size;
@@ -545,6 +591,9 @@ Evaluation evaluateTrajectory(
         16.0 * std::numeric_limits<double>::epsilon() *
         std::max(1.0, options.final_time);
     double time = 0.0;
+    const std::vector<double> late_times = options.late_growth_objective
+        ? ns_cascade::lateGrowthObservationTimes(options.late_growth, options.final_time)
+        : std::vector<double>();
     while (time < options.final_time) {
         if (result.steps >= 1000000) {
             throw std::runtime_error(
@@ -554,11 +603,15 @@ Evaluation evaluateTrajectory(
         const double next_path_time = options.final_time *
             static_cast<double>(result.profile_path_states.size() + 1U) /
             static_cast<double>(options.profile_path_samples);
+        const double next_late_time = result.late_growth_states.size() < late_times.size()
+            ? late_times[result.late_growth_states.size()]
+            : std::numeric_limits<double>::infinity();
+        const double next_observation_time = std::min(next_path_time, next_late_time);
         const double proposed = std::min(
             std::min(fixed_time_step ? options.fixed_time_step
                                      : options.fine_maximum_time_step,
                      remaining),
-            next_path_time - time);
+            next_observation_time - time);
         const ns_cascade::AdaptiveStepInfo safe =
             system.chooseAdaptiveTimeStep(
                 state,
@@ -586,8 +639,8 @@ Evaluation evaluateTrajectory(
         }
         system.stepRungeKutta4(state, dt);
         time += dt;
-        if (std::abs(time - next_path_time) <= time_tolerance) {
-            time = next_path_time;
+        if (std::abs(time - next_observation_time) <= time_tolerance) {
+            time = next_observation_time;
         }
         if (options.final_time - time <= time_tolerance) {
             time = options.final_time;
@@ -601,6 +654,11 @@ Evaluation evaluateTrajectory(
             if (time + time_tolerance < target_time) break;
             result.profile_path_states.push_back(state);
             result.profile_path_state_indices.push_back(result.steps);
+        }
+        while (result.late_growth_states.size() < late_times.size() &&
+               time + time_tolerance >= late_times[result.late_growth_states.size()]) {
+            result.late_growth_states.push_back(state);
+            result.late_growth_state_indices.push_back(result.steps);
         }
         result.maximum_cfl_bound = std::max(
             result.maximum_cfl_bound, safe.advective_cfl_upper_bound);
@@ -686,6 +744,16 @@ Evaluation evaluateTrajectory(
     result.objective.total -=
         options.objective_weights.profile_path_penalty_weight *
         result.objective.profile_path_penalty;
+    if (options.late_growth_objective) {
+        result.late_growth = ns_cascade::evaluateLateGrowth(
+            system, result.late_growth_states, options.late_growth);
+        // Multiplying a rate by T makes the reward dimensionless, like the
+        // historical endpoint log-growth term. T and the sampling clock are fixed.
+        result.objective.total += options.final_time * result.late_growth.soft_minimum;
+    }
+    if (!std::isfinite(result.objective.total)) {
+        throw std::runtime_error("Trajectory objective became non-finite");
+    }
     const ns_cascade::SpectrumProfile final_profile =
         ns_cascade::rescaledSpectrumProfile(
             system,
@@ -776,13 +844,21 @@ ns_cascade::OptimizationState fullInitialGradient(
     const ns_cascade::OptimizationState& initial,
     const Evaluation& evaluation,
     const Options& options) {
-    if (!evaluation.completed ||
+    if (!evaluation.completed || evaluation.steps < 1 ||
+        evaluation.trajectory.size() != static_cast<std::size_t>(evaluation.steps) ||
         evaluation.trajectory.size() != evaluation.time_steps.size() ||
         evaluation.profile_path_states.size() !=
             evaluation.profile_path_state_indices.size() ||
         evaluation.profile_path_states.empty()) {
         throw std::invalid_argument(
             "Adjoint gradient requires a complete stored trajectory");
+    }
+    if (options.late_growth_objective &&
+        (evaluation.late_growth_states.size() !=
+             static_cast<std::size_t>(options.late_growth.samples) ||
+         evaluation.late_growth_state_indices.size() != evaluation.late_growth_states.size() ||
+         evaluation.late_growth.gradient_weights.size() != evaluation.late_growth_states.size())) {
+        throw std::invalid_argument("Adjoint gradient requires complete late-growth sources");
     }
     ns_cascade::OptimizationState gradient =
         ns_cascade::terminalStateObjectiveGradient(
@@ -798,6 +874,16 @@ ns_cascade::OptimizationState fullInitialGradient(
             options.objective_weights);
     for (std::size_t step = evaluation.trajectory.size(); step-- > 0;) {
         const int state_index = static_cast<int>(step + 1U);
+        for (std::size_t snapshot = 0; snapshot < evaluation.late_growth_states.size(); ++snapshot) {
+            if (!options.late_growth_objective ||
+                evaluation.late_growth_state_indices[snapshot] != state_index) continue;
+            // Inject the source BEFORE reversing the step ending at this state.
+            // This includes the terminal observation exactly once.
+            gradient = ns_cascade::addOptimizationStates(
+                gradient,
+                ns_cascade::stateCriticalLogRateGradient(system, evaluation.late_growth_states[snapshot]),
+                options.final_time * evaluation.late_growth.gradient_weights[snapshot]);
+        }
         for (std::size_t snapshot = 0;
              snapshot < path_comparison.snapshots.size();
              ++snapshot) {
@@ -1019,7 +1105,30 @@ void writeTraceRow(std::ostream& output,
            << ',' << (pair == nullptr ?
                           std::numeric_limits<double>::quiet_NaN() :
                           pair->selection_score)
+           << ',' << (options.late_growth_objective ? "late-rate" : "endpoint")
+           << ',' << options.final_time << ',' << options.late_growth.start_fraction
+           << ',' << options.late_growth.samples << ',' << options.late_growth.temperature
+           << ',' << (options.late_growth_objective && value.completed
+                          ? value.late_growth.minimum : std::numeric_limits<double>::quiet_NaN())
+           << ',' << (options.late_growth_objective && value.completed
+                          ? value.late_growth.maximum : std::numeric_limits<double>::quiet_NaN())
+           << ',' << (options.late_growth_objective && value.completed
+                          ? value.late_growth.soft_minimum : std::numeric_limits<double>::quiet_NaN())
            << '\n';
+}
+
+void writeLateRateRows(std::ostream& output, const char* resolution,
+                      const Evaluation& evaluation, const Options& options) {
+    const std::vector<double> times = ns_cascade::lateGrowthObservationTimes(
+        options.late_growth, options.final_time);
+    if (!evaluation.completed || evaluation.late_growth.rates.size() != times.size()) {
+        throw std::runtime_error("Cannot export incomplete late-growth evidence");
+    }
+    for (std::size_t i = 0; i < times.size(); ++i) {
+        output << resolution << ',' << i << ',' << times[i] << ','
+               << evaluation.late_growth.rates[i] << ','
+               << evaluation.late_growth.gradient_weights[i] << '\n';
+    }
 }
 
 void writeState(const std::string& path,
@@ -1078,7 +1187,7 @@ StartResult optimizeStart(
     int trajectory_count = 0;
     int accepted_steps = 0;
     Evaluation current = evaluateTrajectory(
-        coarse_system, current_state, options, true, true);
+        coarse_system, current_state, options, true, options.iterations > 0);
     ++trajectory_count;
     const double nan = std::numeric_limits<double>::quiet_NaN();
     if (!current.valid) {
@@ -1417,7 +1526,9 @@ int run(const Options& options) {
              "gradient_relative_error,gradient_slope,line_angle,"
              "trajectory_count,pair_search_score,"
              "preliminary_cross_resolution_ok,refinement_eligible,"
-             "start_index,search_track,selection_score\n";
+             "start_index,search_track,selection_score,growth_objective,horizon,"
+             "late_window_start,late_rate_samples,late_rate_temperature,"
+             "late_rate_minimum,late_rate_maximum,late_rate_soft_minimum\n";
 
     StartResult selected;
     bool have_selected = false;
@@ -1505,10 +1616,22 @@ int run(const Options& options) {
     if (!trace) {
         throw std::runtime_error("Failed while writing state-optimizer CSV");
     }
+    trace.close();
+    if (!trace) throw std::runtime_error("Failed closing state-optimizer CSV");
     writeState(options.state_output,
                coarse_system,
                selected.best_state,
                options);
+    if (!options.late_rate_output.empty()) {
+        std::ofstream rates(options.late_rate_output.c_str());
+        if (!rates) throw std::runtime_error("Could not open late-rate CSV");
+        rates << std::setprecision(17)
+              << "resolution,snapshot,time,critical_log_rate,soft_minimum_weight\n";
+        writeLateRateRows(rates, "coarse", selected.best_coarse, options);
+        writeLateRateRows(rates, "fine", selected.best_fine, options);
+        rates.close();
+        if (!rates) throw std::runtime_error("Failed writing late-rate CSV");
+    }
     if (!options.evidence_output.empty()) {
         std::ofstream evidence(options.evidence_output.c_str());
         if (!evidence) throw std::runtime_error("Could not open evidence CSV");
@@ -1525,6 +1648,7 @@ int run(const Options& options) {
                 coarse_system, selected.best_state, fine_system);
         writeEvidenceRows(evidence, "fine", fine_system, sampling_system,
                           fine_initial, selected.best_fine, options);
+        evidence.close();
         if (!evidence) throw std::runtime_error("Failed writing evidence CSV");
     }
 
@@ -1577,6 +1701,7 @@ int run(const Options& options) {
 
 }  // namespace
 
+#ifndef NS_CASCADE_STATE_OPTIMIZE_NO_MAIN
 int main(int argc, char** argv) {
     try {
         return run(parseOptions(argc, argv));
@@ -1585,3 +1710,4 @@ int main(int argc, char** argv) {
         return 1;
     }
 }
+#endif

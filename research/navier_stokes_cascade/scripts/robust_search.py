@@ -32,6 +32,8 @@ LIMITS = {
     "sampling_vorticity_relative": 0.02,
     "stretch_perturbation_relative": 0.02,
     "gain_to_error_factor": 3.0,
+    "cross_late_rate_dimensionless": 0.002,
+    "perturbation_late_rate_dimensionless": 0.001,
 }
 COMPARISONS = ("h_final", "l3_final", "vorticity_final", "enstrophy_final",
                "scale_final", "stretch_late_min")
@@ -163,10 +165,66 @@ def assess(trace_rows, evidence):
     }
 
 
+def add_late_growth_assessment(result, rows, trace_rows, horizon, start_fraction, samples, temperature):
+    """Validate the independent rate clock, not only the aggregate optimizer score.
+
+    The normalized soft minimum is optimistic: min(gamma) <= softmin(gamma).
+    Require the actual sampled minimum positive, and compare every common rate.
+    This is still a finite sampling gate, not a continuous-time certificate.
+    """
+    if len(rows) != 2 * samples:
+        raise ValueError("incomplete or duplicate late-rate evidence")
+    by_grid = {}
+    for grid, stage in (("coarse", "selected"), ("fine", "fine-validation")):
+        series = [row for row in rows if row["resolution"] == grid]
+        if len(series) != samples:
+            raise ValueError("unbalanced late-rate evidence")
+        for i, row in enumerate(series):
+            expected_time = horizon * (start_fraction + (1 - start_fraction) * i / (samples - 1))
+            if number(row, "snapshot") != i or abs(number(row, "time") - expected_time) > 1e-12:
+                raise ValueError("late-rate clock mismatch")
+        rates = [number(row, "critical_log_rate") for row in series]
+        minimum = min(rates)
+        exponentials = [math.exp(-(rate - minimum) / temperature) for rate in rates]
+        normalizer = sum(exponentials)
+        weights = [e / normalizer for e in exponentials]
+        soft_minimum = minimum - temperature * math.log(normalizer / samples)
+        for row, weight in zip(series, weights):
+            if abs(number(row, "soft_minimum_weight") - weight) > 1e-12:
+                raise ValueError("late-rate adjoint weight mismatch")
+        selected = [row for row in trace_rows if row["resolution"] == grid and row["stage"] == stage]
+        if len(selected) != 1 or selected[0]["growth_objective"] != "late-rate":
+            raise ValueError("late-rate objective/trace mismatch")
+        row = selected[0]
+        for key, expected in (("horizon", horizon), ("late_window_start", start_fraction),
+                              ("late_rate_samples", samples), ("late_rate_temperature", temperature),
+                              ("late_rate_minimum", minimum), ("late_rate_maximum", max(rates)),
+                              ("late_rate_soft_minimum", soft_minimum)):
+            if abs(number(row, key) - expected) > 1e-11 * max(1, abs(expected)):
+                raise ValueError("late-rate aggregate/trace mismatch")
+        by_grid[grid] = {"minimum": minimum, "maximum": max(rates), "soft_minimum": soft_minimum,
+                         "rates": rates}
+    disagreement = horizon * max(abs(a - b) for a, b in
+                                zip(by_grid["coarse"]["rates"], by_grid["fine"]["rates"]))
+    conservative_minimum = min(grid["minimum"] for grid in by_grid.values())
+    result["late_growth"] = {"horizon": horizon, "start_fraction": start_fraction, "samples": samples,
+                             "temperature": temperature, "evidence": by_grid,
+                             "conservative_minimum": conservative_minimum,
+                             "cross_dimensionless": disagreement}
+    if disagreement > LIMITS["cross_late_rate_dimensionless"]:
+        result["numerical_failures"].append("cross-resolution late critical rate")
+    if conservative_minimum <= 0:
+        result["physics_failures"].append("non-positive sampled late critical rate")
+
+
 def pareto_vector(result):
     m = result["conservative"]
-    return (m["h_final"], m["h_late"], m["scale_final"], m["stretch_late_min"],
-            -result["peak_cutoff"], -max(result["cross_relative"].values()))
+    vector = (m["h_final"], m["h_late"], m["scale_final"], m["stretch_late_min"],
+              -result["peak_cutoff"], -max(result["cross_relative"].values()))
+    if "late_growth" in result:
+        late = result["late_growth"]
+        vector += (late["horizon"] * late["conservative_minimum"],)
+    return vector
 
 
 def dominates(left, right):
@@ -185,7 +243,8 @@ def select_finalists(runs, budget):
         for other in usable if other is not r)]
     # Round-robin objectives plus family diversity reserve room for exploration.
     chosen = []
-    for axis in (0, 1, 2, 3, 4, 5):
+    axes = (6, 0, 1, 2, 3, 4, 5) if usable and "late_growth" in usable[0]["result"] else (0, 1, 2, 3, 4, 5)
+    for axis in axes:
         remaining = [r for r in frontier if r not in chosen]
         if not remaining or len(chosen) >= budget:
             break
@@ -199,6 +258,15 @@ def select_finalists(runs, budget):
 def perturbation_failures(reference, repeat, label):
     failures = []
     for resolution in ("coarse", "fine"):
+        if "late_growth" in reference:
+            if "late_growth" not in repeat:
+                failures.append(f"{label}: missing late-rate evidence")
+            else:
+                late, other = reference["late_growth"], repeat["late_growth"]
+                difference = late["horizon"] * abs(late["evidence"][resolution]["minimum"] -
+                                                   other["evidence"][resolution]["minimum"])
+                if difference > LIMITS["perturbation_late_rate_dimensionless"]:
+                    failures.append(f"{label}: {resolution} late critical rate")
         if label == "half-dt" and repeat["steps"][resolution] < 1.9 * reference["steps"][resolution]:
             failures.append(f"half-dt: {resolution} trajectory did not materially refine its steps")
         for key in COMPARISONS + ("h_late",):
@@ -257,6 +325,12 @@ def run(args):
                    "--evidence-grid", str(sample_grid), "--output", str(directory / "trace.csv"),
                    "--evidence-output", str(directory / "evidence.csv"),
                    "--state-output", str(directory / "state.csv")]
+        late_samples = args.late_rate_samples if stage != "sampling" else 2 * args.late_rate_samples - 1
+        if args.growth_objective == "late-rate":
+            command += ["--growth-objective", "late-rate", "--late-window-start", str(args.late_window_start),
+                        "--late-rate-samples", str(late_samples),
+                        "--late-rate-temperature", str(args.late_rate_temperature),
+                        "--late-rate-output", str(directory / "late-rates.csv")]
         if source:
             command += ["--state-input", str(Path(source).resolve())]
         entry = {"id": name, "seed": seed["id"], "family": seed["family"], "stage": stage,
@@ -274,6 +348,11 @@ def run(args):
             evidence = summarize_evidence(read_rows(directory / "evidence.csv"),
                                           horizon, samples, sample_grid, args.viscosity, args.energy)
             entry["result"] = assess(read_rows(directory / "trace.csv"), evidence)
+            if args.growth_objective == "late-rate":
+                add_late_growth_assessment(entry["result"], read_rows(directory / "late-rates.csv"),
+                                           read_rows(directory / "trace.csv"), horizon,
+                                           args.late_window_start, late_samples, args.late_rate_temperature)
+                entry["late_rates_sha256"] = sha256(directory / "late-rates.csv")
             entry["state"] = str(directory.relative_to(output) / "state.csv")
             entry["state_sha256"] = sha256(directory / "state.csv")
             entry["evidence_sha256"] = sha256(directory / "evidence.csv")
@@ -376,11 +455,18 @@ def main():
     parser.add_argument("--discovery-time", type=float, default=0.04)
     parser.add_argument("--holdout-time", type=float, default=0.06)
     parser.add_argument("--timeout", type=float, default=1800.0)
+    parser.add_argument("--growth-objective", choices=("endpoint", "late-rate"), default="endpoint")
+    parser.add_argument("--late-window-start", type=float, default=0.5)
+    parser.add_argument("--late-rate-samples", type=int, default=5)
+    parser.add_argument("--late-rate-temperature", type=float, default=0.1)
     args = parser.parse_args()
     if (any(f not in FAMILIES for f in args.families.split(",")) or
             len(set(args.families.split(","))) != len(args.families.split(",")) or
             not 1 <= args.starts <= 64 or not 0 <= args.iterations <= 20 or
             not 0 <= args.max_finalists <= 6 or args.bandwidth < 1 or
+            not math.isfinite(args.late_window_start) or not 0 < args.late_window_start < 1 or
+            not 2 <= args.late_rate_samples <= 32 or
+            not math.isfinite(args.late_rate_temperature) or args.late_rate_temperature <= 0 or
             args.grid < 8 or args.fine_grid <= args.grid or
             args.grid & (args.grid - 1) or args.fine_grid & (args.fine_grid - 1) or
             any(not math.isfinite(v) or v <= 0 for v in
