@@ -12,7 +12,12 @@ growth reaches 14.55%, but its relative growth rate keeps falling and L3
 decreases by 2.34%. The `32/64` spatial gates pass narrowly at `.10`, with
 vorticity and late-stretching discrepancies of 9.09% and 9.42%. The report
 and archive audit record the independent-solver and smaller-step checks.
-The next comparison is `64/128` at the same horizon before going longer.
+The [completed 64/128 follow-up](late_growth_resolution128/README.md) passes
+all retained spatial and additional endpoint sampling gates. Through `.10`,
+the H1/2 ratio gap is `0.00022%`, the common-sampling vorticity gap is `4.21%`
+and the late-stretching gap is `0.73%`. Fine-grid H1/2 still grows `14.55%`,
+while L3 falls `2.33%` and the relative H1/2 growth rate declines to `1.027`.
+Actual fine-grid states at `.08` and `.10` are archived with verified restoration.
 
 The [matched late-growth pilot](late_growth_pilot/README.md) integrates the
 critical-rate source into the full discrete adjoint. Four matched starts

@@ -19,8 +19,12 @@ The unchanged field subsequently reaches 14.55% H1/2 growth through
 `T=.10` on `N=64`; L3 decreases by 2.34% and relative H1/2 growth slows.
 The `32/64` pointwise and stretching gates pass narrowly. See the
 [frozen continuation and validation record](../results/late_growth_continuation/README.md)
-for the numerical limitations, checks and evolved restart states. A `128`
-evolution is the next comparison before increasing the horizon further.
+for the numerical limitations, checks and evolved restart states. The
+[completed 128-grid replay](../results/late_growth_resolution128/README.md)
+reproduces `14.55%` H1/2 growth through `.10` and passes the retained comparison
+and endpoint sampling gates. Vorticity reaches `1.982` times its initial value
+on `256` physical samples, but differs by `4.47%` from the 64-grid evolution
+on those same samples. L3 and the relative critical growth rate still decline.
 
 For this field, replay with `--search-track amplification --growth-objective
 late-rate --grid 32 --fine-grid 64 --seed-bandwidth 3 --iterations 0

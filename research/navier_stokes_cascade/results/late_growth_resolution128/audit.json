@@ -1,0 +1,247 @@
+{
+  "status": "archive-integrity-passed",
+  "scientific_status": "passed-preliminary-finite-amplification-resolution-gates",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "checkpoints": [
+    {
+      "index": "reference128/t080_checkpoint.json",
+      "grid": 128,
+      "time": 0.08,
+      "restored_bytes": 100663792,
+      "restored_sha256": "226027f11909ef1daf1d778b2685b3167e81d096353c989b58f1c8da37f1d25c",
+      "parts": 10
+    },
+    {
+      "index": "reference128/t100_checkpoint.json",
+      "grid": 128,
+      "time": 0.1,
+      "restored_bytes": 100663792,
+      "restored_sha256": "8ac19073fd0661ce0f657b87dbfae98e70556d909349f77f87deb475aa01a02a",
+      "parts": 10
+    }
+  ],
+  "scope": "Archive identity and declared empirical outcomes; an integrity pass does not convert a scientific gate failure into a pass",
+  "maximum_snapshot_diagnostic_relative_error": 8.6408955882753e-13,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 40,
+      "sha256": "3261f446d48493893aba01e1013426247e9edf61d0df374a446731eca2423481"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10660,
+      "sha256": "7a627fb82270486ac65eb593316ec2871a0810e6507c731bfca0f2e7e97a66c4"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 6349,
+      "sha256": "cfcfbacaab942a61020952a36a7d4b50e8b8d9996c62cc4eda2b090f47ceb9d0"
+    },
+    {
+      "path": "archive.py",
+      "bytes": 4082,
+      "sha256": "970425389ec2634cbcf36891e482b95ca95395a2b4f37dba020057759ed34e37"
+    },
+    {
+      "path": "assessment.json",
+      "bytes": 8468,
+      "sha256": "99cb232b86dda631d5148e42cd15862117d18648896bdc5f4cee38051984a489"
+    },
+    {
+      "path": "audit.py",
+      "bytes": 9600,
+      "sha256": "c5447642e97b7c79d9dc8d3472b3533c17fa10d09746d1d787ebd3f1a2e599f7"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 2676,
+      "sha256": "565a43f074de50feba61ebdbb6cd0f2060e02a0a8c6441bd3654943d1705fd3b"
+    },
+    {
+      "path": "reference128/manifest.json",
+      "bytes": 19702,
+      "sha256": "b14bc3cacdf0458d2ea77f31e1d5d43fa950c6398492ddf9725b320a845b4336"
+    },
+    {
+      "path": "reference128/t040.csv",
+      "bytes": 3516,
+      "sha256": "e3084a00fc0dd937051f1a960701f1aff6db0bcfabe9af498a633df87658533d"
+    },
+    {
+      "path": "reference128/t040.log",
+      "bytes": 418,
+      "sha256": "048934b3212b8096931c63cce08bdf6d1d438bd18566535ed3da5c12c98bc160"
+    },
+    {
+      "path": "reference128/t050.csv",
+      "bytes": 1875,
+      "sha256": "64d158bf9958498882fba2d073b81ea13f45c21e507ce811b62e2ada153e1d67"
+    },
+    {
+      "path": "reference128/t050.log",
+      "bytes": 130,
+      "sha256": "aff52a5cb0fbbddfd7d41a492799c238ca8beba7e6178e9961f6abc73e66b87d"
+    },
+    {
+      "path": "reference128/t060.csv",
+      "bytes": 1878,
+      "sha256": "62112b537c7622d03d1e05a5499b62948d115d36908173fcb88f8f20e576735a"
+    },
+    {
+      "path": "reference128/t060.log",
+      "bytes": 129,
+      "sha256": "f533a834757077970f3af49ccbf26fd317416cf81aa6a0a31eab683539e73efc"
+    },
+    {
+      "path": "reference128/t070.csv",
+      "bytes": 1882,
+      "sha256": "a7ecd1dc612673a1ca28c39647808a9e24bb9355c403baee68e12d19a0ed598a"
+    },
+    {
+      "path": "reference128/t070.log",
+      "bytes": 130,
+      "sha256": "c6239175c7220b3a139ec770ba60a4b03d4680a54cff2fc5feb5e277796e32d2"
+    },
+    {
+      "path": "reference128/t080.csv",
+      "bytes": 1886,
+      "sha256": "e91d4f6a125be0e80354a021fba1efd337e28d966b524a7a9a8c90e9e816d51f"
+    },
+    {
+      "path": "reference128/t080.log",
+      "bytes": 131,
+      "sha256": "3cbb868b6a1b8c7f8bbcf23ddf62209efc35c8e55202b07f0276fa7b8863a8b1"
+    },
+    {
+      "path": "reference128/t080_checkpoint.json",
+      "bytes": 2201,
+      "sha256": "1fe707a9e52b30f02c2873fc6fc2b88247836c8abf1aa54bf5512e2c9f840e88"
+    },
+    {
+      "path": "reference128/t080_state/part-000.gzchunk",
+      "bytes": 3145728,
+      "sha256": "682e5405511aef78656180ddb040dcf34ff91c2c6de5157e2a4cbca979174e3a"
+    },
+    {
+      "path": "reference128/t080_state/part-001.gzchunk",
+      "bytes": 3145728,
+      "sha256": "6a33a678820a2bb20d26f3b64689a949cd0ce38cfd035e1d760ad976abf4b38f"
+    },
+    {
+      "path": "reference128/t080_state/part-002.gzchunk",
+      "bytes": 3145728,
+      "sha256": "4b3a4d4d7484483336c62a7357dfa5e5d798bd53c393f6ef47838e609b168652"
+    },
+    {
+      "path": "reference128/t080_state/part-003.gzchunk",
+      "bytes": 3145728,
+      "sha256": "bc70a885bab5099f3ec07f42e6c060294cb479adecc47b5665b8189e1a2721f2"
+    },
+    {
+      "path": "reference128/t080_state/part-004.gzchunk",
+      "bytes": 3145728,
+      "sha256": "c5606271f9ec46d823b673694aeb693265952e3469e8059e6adf0072d9a62f4f"
+    },
+    {
+      "path": "reference128/t080_state/part-005.gzchunk",
+      "bytes": 3145728,
+      "sha256": "117fb6067a86b48bdcb0ca184993b107e39f150dadce09f0bd197fd68531a6c2"
+    },
+    {
+      "path": "reference128/t080_state/part-006.gzchunk",
+      "bytes": 3145728,
+      "sha256": "36bea9fda1cf11524c17dd12c6621340c63fd8f3f308aa699593cfd0d4b98742"
+    },
+    {
+      "path": "reference128/t080_state/part-007.gzchunk",
+      "bytes": 3145728,
+      "sha256": "c76f3a30cc6072ced4b7e48a779d2304b5ef902122f1e8d2b3d147b574cfddfb"
+    },
+    {
+      "path": "reference128/t080_state/part-008.gzchunk",
+      "bytes": 3145728,
+      "sha256": "0e5c490dab1d4ae9b3115e8e39478a276cf068819fe75065a0711284455e96a2"
+    },
+    {
+      "path": "reference128/t080_state/part-009.gzchunk",
+      "bytes": 480095,
+      "sha256": "9f1be421755c78adc8827653e24ab1b961d42054976899e456fdc8a730a658d3"
+    },
+    {
+      "path": "reference128/t090.csv",
+      "bytes": 1885,
+      "sha256": "cd7dbea089f926cbddf770ce0fd854aaff5042a4e15e6a9d78124750a178f294"
+    },
+    {
+      "path": "reference128/t090.log",
+      "bytes": 131,
+      "sha256": "60b1387680e68510cdae3e70422c435254fb6dd191aa4b6267cde3c089dc1ec3"
+    },
+    {
+      "path": "reference128/t100.csv",
+      "bytes": 1884,
+      "sha256": "d00b9ecb8e4784b0d0ca8b2d5c4b1f4d7b8b47586dddc4a97128f50aa28ebdc4"
+    },
+    {
+      "path": "reference128/t100.log",
+      "bytes": 130,
+      "sha256": "e81bee4ec4b4dd1d768b7e2c1129d16cce449ec0a75167c6fd534ee11d572890"
+    },
+    {
+      "path": "reference128/t100_checkpoint.json",
+      "bytes": 2234,
+      "sha256": "574fc2abe56aa1b0d651c28721712378fedc4ba512fa23f69dc045dd17578d73"
+    },
+    {
+      "path": "reference128/t100_state/part-000.gzchunk",
+      "bytes": 3145728,
+      "sha256": "01ae2c3cd7690a2f15c9332f2e5b5b13d997fc60fe753303a838f49f6c308578"
+    },
+    {
+      "path": "reference128/t100_state/part-001.gzchunk",
+      "bytes": 3145728,
+      "sha256": "db958f65dae5dcf730622430a7b1aa3bbd3cfd0d5136947e4e9cdd11d691e91a"
+    },
+    {
+      "path": "reference128/t100_state/part-002.gzchunk",
+      "bytes": 3145728,
+      "sha256": "a2cd460b7a658c6c2bd222a99604999eedc04c0534043eff8f3a579aa8730884"
+    },
+    {
+      "path": "reference128/t100_state/part-003.gzchunk",
+      "bytes": 3145728,
+      "sha256": "4abdaf718124efc49e7a6919608a9af48f84b4e054e24c9d9669f147484d1bb8"
+    },
+    {
+      "path": "reference128/t100_state/part-004.gzchunk",
+      "bytes": 3145728,
+      "sha256": "2e60b9dc043319cfe5b4a0ec876d67dfd48e2edb2cded9fce353eeadf31f52d9"
+    },
+    {
+      "path": "reference128/t100_state/part-005.gzchunk",
+      "bytes": 3145728,
+      "sha256": "5bdbb81e6440d61577ba89226164230e9781ba594bdd349a8f7e79c886b81990"
+    },
+    {
+      "path": "reference128/t100_state/part-006.gzchunk",
+      "bytes": 3145728,
+      "sha256": "6feb9dabae5fa4e9ca33434944cbed7acc2054bea3b01a032c36da7b49b0c3d4"
+    },
+    {
+      "path": "reference128/t100_state/part-007.gzchunk",
+      "bytes": 3145728,
+      "sha256": "0f03b11a950989965650538dbf872ab246f057ba724fd1f89de8c2f7923a4bf4"
+    },
+    {
+      "path": "reference128/t100_state/part-008.gzchunk",
+      "bytes": 3145728,
+      "sha256": "e7ab5d8fe2a510c565c73f7b8a3886442007a3f4f641154cfd9c8ab7c61df734"
+    },
+    {
+      "path": "reference128/t100_state/part-009.gzchunk",
+      "bytes": 388804,
+      "sha256": "4ce21aa373a45e2d2c033b1ccfeae1c9300f229c6d57f02f4f5e0e0ed1614d41"
+    }
+  ]
+}

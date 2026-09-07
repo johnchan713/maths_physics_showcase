@@ -1,0 +1,66 @@
+{
+  "format": "split-gzip",
+  "checkpoint_format": "NSCONT1",
+  "grid": 128,
+  "cutoff": 42,
+  "time": 0.08,
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "original_path": "t080.chk.gz",
+  "compressed_bytes": 28791647,
+  "compressed_sha256": "c284da074d7d6189ca31d2477b9b4b344a3900f7952da50e141801349e249599",
+  "uncompressed_bytes": 100663792,
+  "uncompressed_sha256": "226027f11909ef1daf1d778b2685b3167e81d096353c989b58f1c8da37f1d25c",
+  "trajectory_status_when_packed": "running",
+  "parts": [
+    {
+      "path": "t080_state/part-000.gzchunk",
+      "bytes": 3145728,
+      "sha256": "682e5405511aef78656180ddb040dcf34ff91c2c6de5157e2a4cbca979174e3a"
+    },
+    {
+      "path": "t080_state/part-001.gzchunk",
+      "bytes": 3145728,
+      "sha256": "6a33a678820a2bb20d26f3b64689a949cd0ce38cfd035e1d760ad976abf4b38f"
+    },
+    {
+      "path": "t080_state/part-002.gzchunk",
+      "bytes": 3145728,
+      "sha256": "4b3a4d4d7484483336c62a7357dfa5e5d798bd53c393f6ef47838e609b168652"
+    },
+    {
+      "path": "t080_state/part-003.gzchunk",
+      "bytes": 3145728,
+      "sha256": "bc70a885bab5099f3ec07f42e6c060294cb479adecc47b5665b8189e1a2721f2"
+    },
+    {
+      "path": "t080_state/part-004.gzchunk",
+      "bytes": 3145728,
+      "sha256": "c5606271f9ec46d823b673694aeb693265952e3469e8059e6adf0072d9a62f4f"
+    },
+    {
+      "path": "t080_state/part-005.gzchunk",
+      "bytes": 3145728,
+      "sha256": "117fb6067a86b48bdcb0ca184993b107e39f150dadce09f0bd197fd68531a6c2"
+    },
+    {
+      "path": "t080_state/part-006.gzchunk",
+      "bytes": 3145728,
+      "sha256": "36bea9fda1cf11524c17dd12c6621340c63fd8f3f308aa699593cfd0d4b98742"
+    },
+    {
+      "path": "t080_state/part-007.gzchunk",
+      "bytes": 3145728,
+      "sha256": "c76f3a30cc6072ced4b7e48a779d2304b5ef902122f1e8d2b3d147b574cfddfb"
+    },
+    {
+      "path": "t080_state/part-008.gzchunk",
+      "bytes": 3145728,
+      "sha256": "0e5c490dab1d4ae9b3115e8e39478a276cf068819fe75065a0711284455e96a2"
+    },
+    {
+      "path": "t080_state/part-009.gzchunk",
+      "bytes": 480095,
+      "sha256": "9f1be421755c78adc8827653e24ab1b961d42054976899e456fdc8a730a658d3"
+    }
+  ]
+}

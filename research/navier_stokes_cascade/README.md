@@ -1366,8 +1366,13 @@ now reaches held-out `.08` and `.10`, with fine-grid H1/2 gains of 11.97%
 and 14.55%. A smaller-step replay and the 945-step independent trajectory
 pass, but L3 decreases and relative H1/2 growth keeps slowing. The `32/64`
 vorticity and late-stretching gaps approach the 10% screening limit at `.10`.
-The evolved states are preserved; `64/128` comparison at the same horizon
-is the next step before extending time further.
+The subsequent [64/128 comparison](results/late_growth_resolution128/README.md)
+passes the retained resolution and endpoint sampling checks. At `.10`, the
+H1/2 ratio gap is `0.00022%`, while sampled vorticity and late stretching
+differ by `4.21%` and `0.73%`. Denser physical sampling gives fine-grid
+vorticity `1.982` times its initial value. The remaining pointwise discrepancy,
+decreasing L3 and slowing relative critical growth remain material limits;
+this result supports another bounded continuation, not a singularity claim.
 
 ### Checkpointed continuation of a frozen Fourier field
 
