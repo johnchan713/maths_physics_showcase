@@ -1,0 +1,1132 @@
+{
+  "purpose": "Frozen-field finite-amplification continuation; no PDE singularity claim",
+  "solver_sha256": "688fec1927d001c11a123dcbe2e9b971fdc9ba259a25e673f972b929e6d6ce6d",
+  "source_sha256": {
+    "src/continue.cpp": "a5b9d2e46f2b2fc3b05606fe41821638435226b3e18212e8c419c919e7342686",
+    "scripts/continue_candidates.py": "e6b56fc678afe278a6d99e64a181cad55e83f900b4381013fc8b72d0e720710e",
+    "include/ns_cascade/candidate_evidence.hpp": "b4e7fd0779a468716adf88ed510a7bf4b375e08107ce2165f20c0ad309a80251",
+    "include/ns_cascade/candidate_score.hpp": "060c4f606beb30a412ad1e904c1abce4188fff026c50e3db3b2da0f9ac337781",
+    "include/ns_cascade/checkpoint.hpp": "1d63abef93b08ec3a529923453b3ce5eca1e1a614fbe99b65d233d4c014cf654",
+    "include/ns_cascade/continuation.hpp": "c118bbd89977e91bec493e6df2a6528ec3253bda1eb408eea722555f1854797b",
+    "include/ns_cascade/fftw_reference.hpp": "4c532bcbaeec0c7dcf35d1bc2409e2a6ab006138b4cd756cba3d136e477c201d",
+    "include/ns_cascade/galerkin.hpp": "84a5404d4367d4a1b73bf9209f23acd0351687e9809177ddc45b0360a19c1dec",
+    "include/ns_cascade/optimization_state_csv.hpp": "30901a4766631c185201d04e53578c3c3c050586be5272b1f56e7acd8cdf58f5",
+    "include/ns_cascade/parameter_optimizer.hpp": "b30c211df1feadf473c3b9ef778ed4545ef89e7521a1e84c8327a08e9a7fa478",
+    "include/ns_cascade/pseudospectral.hpp": "48133d8e48d999292793680b01c2c13f6afa003c0b4fbf5a6004413d3a9e2da0",
+    "include/ns_cascade/spectral_profile.hpp": "20f6165296fc493000586f9d381398595a4b39e245a98fbde1e291546ac0f488",
+    "include/ns_cascade/state_optimizer.hpp": "8d54d4690b8074cb89cfb7ebd4f24884771f83334350aba6cd5ce6d2e0e7635a"
+  },
+  "settings": {
+    "grids": [
+      32,
+      64
+    ],
+    "viscosity": 0.02,
+    "maximum_dt": 0.000125,
+    "cfl": 0.4,
+    "observation_interval": 0.01,
+    "cutoff_limit": 0.008,
+    "sampling_grid": 64,
+    "dense_sampling_grid": 128,
+    "stage_endpoints": [
+      0.08,
+      0.1,
+      0.12,
+      0.16
+    ]
+  },
+  "gates": {
+    "h_half_relative_gap": 0.02,
+    "l3_relative_gap": 0.02,
+    "enstrophy_relative_gap": 0.05,
+    "k_rms_relative_gap": 0.05,
+    "vorticity_relative_gap": 0.1,
+    "late_stretching_relative_gap": 0.1,
+    "late_h_half_gain_minimum": 1.001,
+    "late_production_to_dissipation_minimum": 1.0,
+    "late_window_duration": 0.02,
+    "sampling_shift_is_reported_separately": true
+  },
+  "candidates": [
+    {
+      "name": "checkpoint",
+      "initial_state": "results/robust_amplification_verified/checkpoint-discovery/state.csv",
+      "initial_state_sha256": "5f3dc4449abd58f5ae5e1aca3443b2a0fa7ad06029f9dadae939ff2b9a3b51d8",
+      "runs": [
+        {
+          "grid": 32,
+          "endpoint": 0.08,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.08",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-32/t080.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-32/current.chk",
+            "--state-input",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/checkpoint-discovery/state.csv",
+            "--grid",
+            "32",
+            "--sampling-grid",
+            "64",
+            "--dense-sampling-grid",
+            "128",
+            "--viscosity",
+            "0.02",
+            "--dt",
+            "0.000125",
+            "--observation-interval",
+            "0.01",
+            "--cutoff-limit",
+            "0.008"
+          ],
+          "evidence": "checkpoint/grid-32/t080.csv",
+          "log": "checkpoint/grid-32/t080.log",
+          "returncode": 0,
+          "wall_seconds": 10.357609356000467,
+          "log_sha256": "f462814d6d1f3e3adaa5cdbdcbc2f43b4db1385a62d27055c50b2e45f981ca4d",
+          "evidence_sha256": "622448bc2ab1c575adc592f601fcd2c1af214135da6639e415459c9167c5b88c"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.08,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.08",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-64/t080.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-64/current.chk",
+            "--state-input",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/checkpoint-discovery/state.csv",
+            "--grid",
+            "64",
+            "--sampling-grid",
+            "64",
+            "--dense-sampling-grid",
+            "128",
+            "--viscosity",
+            "0.02",
+            "--dt",
+            "0.000125",
+            "--observation-interval",
+            "0.01",
+            "--cutoff-limit",
+            "0.008"
+          ],
+          "evidence": "checkpoint/grid-64/t080.csv",
+          "log": "checkpoint/grid-64/t080.log",
+          "returncode": 0,
+          "wall_seconds": 95.69506228299724,
+          "log_sha256": "90fb3bccee37884f8ee26a32dbe95576f39ce4b6b28ca703d1a14c144f557140",
+          "evidence_sha256": "3d40b648d1813976a77aa95e5afd66a0b756c4b613c6673379931e69899ac097"
+        },
+        {
+          "grid": 32,
+          "endpoint": 0.1,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.1",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-32/t100.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-32/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-32/current.chk"
+          ],
+          "evidence": "checkpoint/grid-32/t100.csv",
+          "log": "checkpoint/grid-32/t100.log",
+          "returncode": 0,
+          "wall_seconds": 2.9159600060011144,
+          "log_sha256": "7c990d5e5c8108c1944455b99861e606db41c14c919413aeac7d17d6be837b92",
+          "evidence_sha256": "dadf1a529a3f364f7caebbfe5e48abc726bff066cfb01f6ca718d3a547b1cee8"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.1,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.1",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-64/t100.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-64/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-64/current.chk"
+          ],
+          "evidence": "checkpoint/grid-64/t100.csv",
+          "log": "checkpoint/grid-64/t100.log",
+          "returncode": 0,
+          "wall_seconds": 27.35290698300014,
+          "log_sha256": "3ff53b7640a5114297e7af19030cf8313c1b708f251ecf9f504906d257dc2560",
+          "evidence_sha256": "403d575e7a472c3a5e9145e67ac47f8df709ba661914e5001a06148b44165342"
+        }
+      ],
+      "stages": [
+        {
+          "endpoint": 0.08,
+          "status": "continue-finite-amplification",
+          "failures": [],
+          "numerical_failures": [],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 4.02889701037614e-05,
+            "l3_dense_ratio": 0.00021412813125199043,
+            "enstrophy_ratio": 0.0011608115410916555,
+            "k_rms_ratio": 0.000581944480909215,
+            "vorticity_dense_ratio": 0.06431413171450022,
+            "late_stretching": 0.023065140629586433
+          },
+          "late_h_half_gains": [
+            1.0204065735020054,
+            1.020443901718669
+          ],
+          "sampling_shift": {
+            "l3_sample": 2.339895400270413e-09,
+            "vorticity_sample": 0.006163581195146683
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.08,
+              "step": 640.0,
+              "h_half_ratio": 1.0790448401937303,
+              "l3_dense_ratio": 0.9863831978660503,
+              "vorticity_dense_ratio": 1.5102264434610133,
+              "enstrophy_ratio": 1.493309729295018,
+              "k_rms_ratio": 1.2334291777657702,
+              "production_to_dissipation": 9.64887895344896,
+              "peak_cutoff_fraction": 0.00027620578458888487
+            },
+            {
+              "grid": 64.0,
+              "time": 0.08,
+              "step": 645.0,
+              "h_half_ratio": 1.0790883155506148,
+              "l3_dense_ratio": 0.9865944554931086,
+              "vorticity_dense_ratio": 1.6140314764273085,
+              "enstrophy_ratio": 1.4950451950118413,
+              "k_rms_ratio": 1.2341473830239496,
+              "production_to_dissipation": 9.500616478273527,
+              "peak_cutoff_fraction": 6.710447741208237e-07
+            }
+          ]
+        },
+        {
+          "endpoint": 0.1,
+          "status": "resolution-or-run-failure",
+          "failures": [
+            "cross-resolution vorticity_dense_ratio"
+          ],
+          "numerical_failures": [
+            "cross-resolution vorticity_dense_ratio"
+          ],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 0.00018872292349602886,
+            "l3_dense_ratio": 0.0004559836334392972,
+            "enstrophy_ratio": 0.005958118684241965,
+            "k_rms_ratio": 0.0029946343460179846,
+            "vorticity_dense_ratio": 0.16228251282469663,
+            "late_stretching": 0.08142969195362693
+          },
+          "late_h_half_gains": [
+            1.018410638498921,
+            1.0185618337501803
+          ],
+          "sampling_shift": {
+            "l3_sample": 5.635005266244205e-08,
+            "vorticity_sample": 0.012239482148210364
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.1,
+              "step": 800.0,
+              "h_half_ratio": 1.0989107446706632,
+              "l3_dense_ratio": 0.9756167152384022,
+              "vorticity_dense_ratio": 1.6168112441521314,
+              "enstrophy_ratio": 1.672233032321443,
+              "k_rms_ratio": 1.3092533591897062,
+              "production_to_dissipation": 7.225760460767655,
+              "peak_cutoff_fraction": 0.0010827417344074798
+            },
+            {
+              "grid": 64.0,
+              "time": 0.1,
+              "step": 834.0,
+              "h_half_ratio": 1.0991181734656272,
+              "l3_dense_ratio": 0.976061783436875,
+              "vorticity_dense_ratio": 1.9300196891005004,
+              "enstrophy_ratio": 1.6822561139053829,
+              "k_rms_ratio": 1.3131858707008124,
+              "production_to_dissipation": 6.707380621249018,
+              "peak_cutoff_fraction": 1.3301300882775304e-05
+            }
+          ]
+        }
+      ],
+      "checkpoints": [
+        {
+          "grid": 32,
+          "path": "checkpoint/grid-32/current.chk.gz",
+          "sha256": "45ab6632c02db1d28d72576f7039377f1da5d99d3055fb9a95e022ebd4bbcc30",
+          "uncompressed_sha256": "6b742c64936e72fca4efbae7f5caec9edd3d1905d7caa2a6ab8c0c71c6e154c7",
+          "uncompressed_bytes": 1573360
+        },
+        {
+          "grid": 64,
+          "path": "checkpoint/grid-64/current.chk.gz",
+          "sha256": "62fd55cd772e81aff42812b44258ec71bcd0404ce768e8d79a52a83aa41297dd",
+          "uncompressed_sha256": "769ac0c95faeb2542ba4a064f5a1cbbd6306af6dd3707e13c3927028b2c10c65",
+          "uncompressed_bytes": 12583408
+        }
+      ]
+    },
+    {
+      "name": "wave-packets-0",
+      "initial_state": "results/robust_amplification_verified/wave-packets-0-discovery/state.csv",
+      "initial_state_sha256": "7f9ca928f626fbb8b2651e1f6f89eb8b894e780bbdcc963ff9f3d6f743f3f13a",
+      "runs": [
+        {
+          "grid": 32,
+          "endpoint": 0.08,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.08",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/t080.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/current.chk",
+            "--state-input",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/wave-packets-0-discovery/state.csv",
+            "--grid",
+            "32",
+            "--sampling-grid",
+            "64",
+            "--dense-sampling-grid",
+            "128",
+            "--viscosity",
+            "0.02",
+            "--dt",
+            "0.000125",
+            "--observation-interval",
+            "0.01",
+            "--cutoff-limit",
+            "0.008"
+          ],
+          "evidence": "wave-packets-0/grid-32/t080.csv",
+          "log": "wave-packets-0/grid-32/t080.log",
+          "returncode": 0,
+          "wall_seconds": 11.647441589000664,
+          "log_sha256": "2782b5c3cb5520c20d961801350844abd23b67491d19d0864dab1b9ab5cf6a5c",
+          "evidence_sha256": "f45cebf26eeeff66d992cdf9e7e932b0a2b6c810c70f2d744df60ee2f67b9343"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.08,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.08",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/t080.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/current.chk",
+            "--state-input",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/wave-packets-0-discovery/state.csv",
+            "--grid",
+            "64",
+            "--sampling-grid",
+            "64",
+            "--dense-sampling-grid",
+            "128",
+            "--viscosity",
+            "0.02",
+            "--dt",
+            "0.000125",
+            "--observation-interval",
+            "0.01",
+            "--cutoff-limit",
+            "0.008"
+          ],
+          "evidence": "wave-packets-0/grid-64/t080.csv",
+          "log": "wave-packets-0/grid-64/t080.log",
+          "returncode": 0,
+          "wall_seconds": 100.68402048499775,
+          "log_sha256": "bc9b02de3f1ace9598f83894bfe2dbf0b818f4a0d5fba9fe69802db8b33b35cd",
+          "evidence_sha256": "25651def9c636666f8694150c4ba7ae7b8e37997b7f5c8ccde58c946dea9a243"
+        },
+        {
+          "grid": 32,
+          "endpoint": 0.1,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.1",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/t100.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/current.chk"
+          ],
+          "evidence": "wave-packets-0/grid-32/t100.csv",
+          "log": "wave-packets-0/grid-32/t100.log",
+          "returncode": 0,
+          "wall_seconds": 3.170816328998626,
+          "log_sha256": "537c78da960ceea43ab4b55e08487b76d537870af8e7b0b8373df12d531b1090",
+          "evidence_sha256": "e24fb0b6beb1c91acc8ab1704bd4334ef2f8ca275471dc08289dd571e13abca7"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.1,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.1",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/t100.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/current.chk"
+          ],
+          "evidence": "wave-packets-0/grid-64/t100.csv",
+          "log": "wave-packets-0/grid-64/t100.log",
+          "returncode": 0,
+          "wall_seconds": 25.99326932099939,
+          "log_sha256": "a583f03877b78cfaa8d572b8e02125dd6b3993c50d41698663a68fbbaae096bb",
+          "evidence_sha256": "26ef12011923c4e8c93725e56ed150c3a745db826c604aac081171e2629085b8"
+        },
+        {
+          "grid": 32,
+          "endpoint": 0.12,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.12",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/t120.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/current.chk"
+          ],
+          "evidence": "wave-packets-0/grid-32/t120.csv",
+          "log": "wave-packets-0/grid-32/t120.log",
+          "returncode": 0,
+          "wall_seconds": 3.7888644370032125,
+          "log_sha256": "7aa620a948be3aee060545b3aa8d2b77745877ca21bd990e8214202af7e8cafc",
+          "evidence_sha256": "18f437c89c494a251a8921075958f0efb7f74a732895e6266517867161e9df67"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.12,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.12",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/t120.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/current.chk"
+          ],
+          "evidence": "wave-packets-0/grid-64/t120.csv",
+          "log": "wave-packets-0/grid-64/t120.log",
+          "returncode": 0,
+          "wall_seconds": 28.962478896999528,
+          "log_sha256": "2bc108749496e7cda5865478992ced35584057f100002c57406965ef73f723d0",
+          "evidence_sha256": "fcc49535581c8c70bd1582e10110ae230e0207c72ca94ef1ef281f538c278228"
+        },
+        {
+          "grid": 32,
+          "endpoint": 0.16,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.16",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/t160.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/current.chk"
+          ],
+          "evidence": "wave-packets-0/grid-32/t160.csv",
+          "log": "wave-packets-0/grid-32/t160.log",
+          "returncode": 0,
+          "wall_seconds": 5.563325593000627,
+          "log_sha256": "82f15670d420e07d5a5df536a49fb4ec9dd04ae6a901e0d31a01aae663389cf3",
+          "evidence_sha256": "668b96ad11a2c0b8621c52ae06f2263d227a28a9fc760b7ef447e3c1f8ac6539"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.16,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.16",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/t160.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/current.chk"
+          ],
+          "evidence": "wave-packets-0/grid-64/t160.csv",
+          "log": "wave-packets-0/grid-64/t160.log",
+          "returncode": 0,
+          "wall_seconds": 69.08871967600135,
+          "log_sha256": "fadd02eccd9596e62f1f8e7cae53d238491448a0a033bea9a3a0d582fae28328",
+          "evidence_sha256": "99d488fa17ed1859c43ae56c257a36b3742e3075192dda9c576360bfad9eb14a"
+        }
+      ],
+      "stages": [
+        {
+          "endpoint": 0.08,
+          "status": "continue-finite-amplification",
+          "failures": [],
+          "numerical_failures": [],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 1.0059130488145505e-05,
+            "l3_dense_ratio": 6.234072709110563e-05,
+            "enstrophy_ratio": 0.0003477310387795759,
+            "k_rms_ratio": 0.00017421571261476635,
+            "vorticity_dense_ratio": 0.014904196371488307,
+            "late_stretching": 0.0074758151768739775
+          },
+          "late_h_half_gains": [
+            1.020296498158133,
+            1.0203059521647848
+          ],
+          "sampling_shift": {
+            "l3_sample": 1.7591871438486392e-09,
+            "vorticity_sample": 0.0037309634753959963
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.08,
+              "step": 640.0,
+              "h_half_ratio": 1.07290229566728,
+              "l3_dense_ratio": 0.9849763119038976,
+              "vorticity_dense_ratio": 1.4137449302225806,
+              "enstrophy_ratio": 1.492364984760837,
+              "k_rms_ratio": 1.2313147615889446,
+              "production_to_dissipation": 11.291756472944394,
+              "peak_cutoff_fraction": 0.00011482300502024886
+            },
+            {
+              "grid": 64.0,
+              "time": 0.08,
+              "step": 640.0,
+              "h_half_ratio": 1.072913088240037,
+              "l3_dense_ratio": 0.9850377198715665,
+              "vorticity_dense_ratio": 1.3926741981633473,
+              "enstrophy_ratio": 1.4928841069021075,
+              "k_rms_ratio": 1.2315293133458751,
+              "production_to_dissipation": 11.226094870110732,
+              "peak_cutoff_fraction": 8.541800799935913e-08
+            }
+          ]
+        },
+        {
+          "endpoint": 0.1,
+          "status": "continue-finite-amplification",
+          "failures": [],
+          "numerical_failures": [],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 6.249406157421781e-05,
+            "l3_dense_ratio": 0.00014680972776507137,
+            "enstrophy_ratio": 0.0021490915241543693,
+            "k_rms_ratio": 0.001078254144068122,
+            "vorticity_dense_ratio": 0.018738468358274054,
+            "late_stretching": 0.03423988462171182
+          },
+          "late_h_half_gains": [
+            1.0184313713418969,
+            1.0184847760581466
+          ],
+          "sampling_shift": {
+            "l3_sample": 1.3688653682219906e-08,
+            "vorticity_sample": 0.004034106931633385
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.1,
+              "step": 800.0,
+              "h_half_ratio": 1.0926773562922971,
+              "l3_dense_ratio": 0.9748729435976641,
+              "vorticity_dense_ratio": 1.5302961103758643,
+              "enstrophy_ratio": 1.6706701288657642,
+              "k_rms_ratio": 1.3062145426290659,
+              "production_to_dissipation": 8.400804650605012,
+              "peak_cutoff_fraction": 0.0005065021594717953
+            },
+            {
+              "grid": 64.0,
+              "time": 0.1,
+              "step": 802.0,
+              "h_half_ratio": 1.0927456464060086,
+              "l3_dense_ratio": 0.9750160854437346,
+              "vorticity_dense_ratio": 1.5595191098702925,
+              "enstrophy_ratio": 1.6742682846454562,
+              "k_rms_ratio": 1.3076244941587776,
+              "production_to_dissipation": 8.142548319287883,
+              "peak_cutoff_fraction": 2.3994007023432047e-06
+            }
+          ]
+        },
+        {
+          "endpoint": 0.12,
+          "status": "continue-finite-amplification",
+          "failures": [],
+          "numerical_failures": [],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 0.0002011444151538921,
+            "l3_dense_ratio": 0.00017153588254394472,
+            "enstrophy_ratio": 0.0072926041458901015,
+            "k_rms_ratio": 0.003669159099317687,
+            "vorticity_dense_ratio": 0.07906108992007747,
+            "late_stretching": 0.08849319267889347
+          },
+          "late_h_half_gains": [
+            1.0160563139808974,
+            1.0161972188903232
+          ],
+          "sampling_shift": {
+            "l3_sample": 7.105490286845855e-08,
+            "vorticity_sample": 0.007361641160521186
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.12,
+              "step": 960.0,
+              "h_half_ratio": 1.1102217270047432,
+              "l3_dense_ratio": 0.9637772850336551,
+              "vorticity_dense_ratio": 1.6095149467954863,
+              "enstrophy_ratio": 1.860205479685259,
+              "k_rms_ratio": 1.3823782553387756,
+              "production_to_dissipation": 6.271281748596389,
+              "peak_cutoff_fraction": 0.001421773639422911
+            },
+            {
+              "grid": 64.0,
+              "time": 0.12,
+              "step": 986.0,
+              "h_half_ratio": 1.1104450868322946,
+              "l3_dense_ratio": 0.9639354607620679,
+              "vorticity_dense_ratio": 1.7476891563369894,
+              "enstrophy_ratio": 1.8738708782206335,
+              "k_rms_ratio": 1.3874691002128436,
+              "production_to_dissipation": 5.768175477361744,
+              "peak_cutoff_fraction": 2.0766094206645557e-05
+            }
+          ]
+        },
+        {
+          "endpoint": 0.16,
+          "status": "resolution-or-run-failure",
+          "failures": [
+            "cross-resolution late stretching",
+            "cross-resolution vorticity_dense_ratio"
+          ],
+          "numerical_failures": [
+            "cross-resolution late stretching",
+            "cross-resolution vorticity_dense_ratio"
+          ],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 0.0005980862125217879,
+            "l3_dense_ratio": 0.00017153588254394472,
+            "enstrophy_ratio": 0.02847779445690847,
+            "k_rms_ratio": 0.014480281834407761,
+            "vorticity_dense_ratio": 0.20641218993178856,
+            "late_stretching": 0.21646102802548292
+          },
+          "late_h_half_gains": [
+            1.0116543170064836,
+            1.011835869300587
+          ],
+          "sampling_shift": {
+            "l3_sample": 1.6394263636684066e-07,
+            "vorticity_sample": 0.007361641160521186
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.16,
+              "step": 1284.0,
+              "h_half_ratio": 1.1385528240598872,
+              "l3_dense_ratio": 0.9406294802000164,
+              "vorticity_dense_ratio": 1.6107795571891343,
+              "enstrophy_ratio": 2.2547161104640967,
+              "k_rms_ratio": 1.5324954878214458,
+              "production_to_dissipation": 3.8319178319821674,
+              "peak_cutoff_fraction": 0.005302293364799243
+            },
+            {
+              "grid": 64.0,
+              "time": 0.16,
+              "step": 1446.0,
+              "h_half_ratio": 1.1392341843183615,
+              "l3_dense_ratio": 0.9406640199256495,
+              "vorticity_dense_ratio": 2.0297433210959763,
+              "enstrophy_ratio": 2.320807592044369,
+              "k_rms_ratio": 1.5550125071814624,
+              "production_to_dissipation": 3.1397237108163205,
+              "peak_cutoff_fraction": 0.0001758355996441868
+            }
+          ]
+        }
+      ],
+      "checkpoints": [
+        {
+          "grid": 32,
+          "path": "wave-packets-0/grid-32/current.chk.gz",
+          "sha256": "6d7a7d7b00db0b301cf248a8325f3e174b099d53f530b91b7b0e7fb7880551af",
+          "uncompressed_sha256": "844c6e52df29e3763238dd97e246225d218d453fc12b2b63a367709319ad14f9",
+          "uncompressed_bytes": 1573360
+        },
+        {
+          "grid": 64,
+          "path": "wave-packets-0/grid-64/current.chk.gz",
+          "sha256": "fd8689e85621fcf087b59e9dec10f761c03c12161ce6078b71baa071e3eedaaa",
+          "uncompressed_sha256": "4b0953144eb34be9786d0cda52faf5ed820a2746477ca90faffd6475b0eea0e6",
+          "uncompressed_bytes": 12583408
+        }
+      ]
+    },
+    {
+      "name": "vortex-tubes-0",
+      "initial_state": "results/robust_amplification_verified/vortex-tubes-0-discovery/state.csv",
+      "initial_state_sha256": "fe312eee30e09287223f3e1ba9226d1b519d216fe2045e065696524d7cc297f7",
+      "runs": [
+        {
+          "grid": 32,
+          "endpoint": 0.08,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.08",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/t080.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/current.chk",
+            "--state-input",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/vortex-tubes-0-discovery/state.csv",
+            "--grid",
+            "32",
+            "--sampling-grid",
+            "64",
+            "--dense-sampling-grid",
+            "128",
+            "--viscosity",
+            "0.02",
+            "--dt",
+            "0.000125",
+            "--observation-interval",
+            "0.01",
+            "--cutoff-limit",
+            "0.008"
+          ],
+          "evidence": "vortex-tubes-0/grid-32/t080.csv",
+          "log": "vortex-tubes-0/grid-32/t080.log",
+          "returncode": 0,
+          "wall_seconds": 11.607637103999878,
+          "log_sha256": "a69e0902e6b6d385fc25efb88182bd2d640d0cba915089801694b2f3566c52e9",
+          "evidence_sha256": "d4b1e167e2f4e7bb7628dc72e06f4df851c061fae5c8b648fc84a89ea5f4a5cd"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.08,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.08",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/t080.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/current.chk",
+            "--state-input",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/vortex-tubes-0-discovery/state.csv",
+            "--grid",
+            "64",
+            "--sampling-grid",
+            "64",
+            "--dense-sampling-grid",
+            "128",
+            "--viscosity",
+            "0.02",
+            "--dt",
+            "0.000125",
+            "--observation-interval",
+            "0.01",
+            "--cutoff-limit",
+            "0.008"
+          ],
+          "evidence": "vortex-tubes-0/grid-64/t080.csv",
+          "log": "vortex-tubes-0/grid-64/t080.log",
+          "returncode": 0,
+          "wall_seconds": 101.60973389800347,
+          "log_sha256": "9d19d2e82f7b0d9193305ec696dbb982e53ce2795d39901bfd82dd258edfaeb8",
+          "evidence_sha256": "c935a3b6f5ab7b2577fea35291b7cd061ea310817cc19b1ff65da7835ee7ae2d"
+        },
+        {
+          "grid": 32,
+          "endpoint": 0.1,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.1",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/t100.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/current.chk"
+          ],
+          "evidence": "vortex-tubes-0/grid-32/t100.csv",
+          "log": "vortex-tubes-0/grid-32/t100.log",
+          "returncode": 0,
+          "wall_seconds": 3.4438816259971645,
+          "log_sha256": "a7b2945fae02ec74bf8733628251e2daf6dbbe3b42ebbad8ed756bfe2f150731",
+          "evidence_sha256": "1ed1dd3544cc91709be6067e32d31bf6002db9fdef1293e7561e07f84f4c7af6"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.1,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.1",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/t100.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/current.chk"
+          ],
+          "evidence": "vortex-tubes-0/grid-64/t100.csv",
+          "log": "vortex-tubes-0/grid-64/t100.log",
+          "returncode": 0,
+          "wall_seconds": 26.33709257100054,
+          "log_sha256": "1907a6430fb6056e35e3ac589b7eadf19da75fdfb0e022567ccab3722e86d0f0",
+          "evidence_sha256": "c2e77697b1bd8a4172e7a03fdade8c45a38948cebfc7ca200b69405c71540bca"
+        },
+        {
+          "grid": 32,
+          "endpoint": 0.12,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.12",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/t120.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/current.chk"
+          ],
+          "evidence": "vortex-tubes-0/grid-32/t120.csv",
+          "log": "vortex-tubes-0/grid-32/t120.log",
+          "returncode": 0,
+          "wall_seconds": 3.254929959999572,
+          "log_sha256": "b4ce0a53710077fbbc0413a714c4d869a91457950483b34cbb2078f82b8061be",
+          "evidence_sha256": "a68ff91c5511e52ae407b0b7c55278e300555fc36422c86145708fcfb2781a15"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.12,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.12",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/t120.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/current.chk"
+          ],
+          "evidence": "vortex-tubes-0/grid-64/t120.csv",
+          "log": "vortex-tubes-0/grid-64/t120.log",
+          "returncode": 0,
+          "wall_seconds": 27.76419828100188,
+          "log_sha256": "a5d83fbda9388455a41fa76df89795f40f07b69248a979f6c3fa13ed856a03f3",
+          "evidence_sha256": "2e3768f36579d8697c8fbc533bed2bfdfd70d10628030a6f13460171e9833ae4"
+        },
+        {
+          "grid": 32,
+          "endpoint": 0.16,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.16",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/t160.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/current.chk"
+          ],
+          "evidence": "vortex-tubes-0/grid-32/t160.csv",
+          "log": "vortex-tubes-0/grid-32/t160.log",
+          "returncode": 0,
+          "wall_seconds": 5.96732380800313,
+          "log_sha256": "351f36f93eb204816aa21acbf78b1291daf04e52e971784b0c8d8b06ae2cfe38",
+          "evidence_sha256": "8945d07dda0b915f398584bab7d25659b388073f2e385491665cb9c4c0c489d3"
+        },
+        {
+          "grid": 64,
+          "endpoint": 0.16,
+          "command": [
+            "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue",
+            "--final-time",
+            "0.16",
+            "--output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/t160.csv",
+            "--checkpoint-output",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/current.chk",
+            "--restart",
+            "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/current.chk"
+          ],
+          "evidence": "vortex-tubes-0/grid-64/t160.csv",
+          "log": "vortex-tubes-0/grid-64/t160.log",
+          "returncode": 0,
+          "wall_seconds": 67.13785300100062,
+          "log_sha256": "60f79cbf4dd4fd88bf95e9c9fde099f2ee810fed75553e329f43762c4401e2b7",
+          "evidence_sha256": "0f0a7f658b65d13cb48442bcf86fe7a89d0304c1dc670a567e9f0f5ad05a8894"
+        }
+      ],
+      "stages": [
+        {
+          "endpoint": 0.08,
+          "status": "continue-finite-amplification",
+          "failures": [],
+          "numerical_failures": [],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 1.0490831900258979e-05,
+            "l3_dense_ratio": 3.4828465980527445e-05,
+            "enstrophy_ratio": 0.0003529118195496518,
+            "k_rms_ratio": 0.00017702236996523262,
+            "vorticity_dense_ratio": 0.01584277388323614,
+            "late_stretching": 0.008628288296565388
+          },
+          "late_h_half_gains": [
+            1.0121011675475686,
+            1.0121102859952302
+          ],
+          "sampling_shift": {
+            "l3_sample": 2.4504546497457653e-08,
+            "vorticity_sample": 0.004780392729654412
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.08,
+              "step": 640.0,
+              "h_half_ratio": 1.027878266298116,
+              "l3_dense_ratio": 0.9798693033072171,
+              "vorticity_dense_ratio": 1.3308999224616043,
+              "enstrophy_ratio": 1.1904062682315268,
+              "k_rms_ratio": 1.103916870383749,
+              "production_to_dissipation": 8.343737033433412,
+              "peak_cutoff_fraction": 0.00012664567041936249
+            },
+            {
+              "grid": 64.0,
+              "time": 0.08,
+              "step": 640.0,
+              "h_half_ratio": 1.0278890497093487,
+              "l3_dense_ratio": 0.9799034318405572,
+              "vorticity_dense_ratio": 1.3098147759288286,
+              "enstrophy_ratio": 1.190826524987228,
+              "k_rms_ratio": 1.1041123229638679,
+              "production_to_dissipation": 8.302366495102786,
+              "peak_cutoff_fraction": 2.4770346137379785e-07
+            }
+          ]
+        },
+        {
+          "endpoint": 0.1,
+          "status": "continue-finite-amplification",
+          "failures": [],
+          "numerical_failures": [],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 4.685789983665734e-05,
+            "l3_dense_ratio": 0.00019879219725466452,
+            "enstrophy_ratio": 0.001680553106066472,
+            "k_rms_ratio": 0.0008442860055286321,
+            "vorticity_dense_ratio": 0.04173627267219471,
+            "late_stretching": 0.0296025557379774
+          },
+          "late_h_half_gains": [
+            1.0140275660698115,
+            1.014064445007266
+          ],
+          "sampling_shift": {
+            "l3_sample": 2.4504546497457653e-08,
+            "vorticity_sample": 0.010951697401557582
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.1,
+              "step": 800.0,
+              "h_half_ratio": 1.0422968965903363,
+              "l3_dense_ratio": 0.9720624086322237,
+              "vorticity_dense_ratio": 1.4806647997783697,
+              "enstrophy_ratio": 1.299404754873892,
+              "k_rms_ratio": 1.1573667526977207,
+              "production_to_dissipation": 7.4234887524434,
+              "peak_cutoff_fraction": 0.0005086197971681522
+            },
+            {
+              "grid": 64.0,
+              "time": 0.1,
+              "step": 800.0,
+              "h_half_ratio": 1.0423457387225565,
+              "l3_dense_ratio": 0.9722556854762329,
+              "vorticity_dense_ratio": 1.418867369958699,
+              "enstrophy_ratio": 1.3015921496037404,
+              "k_rms_ratio": 1.1583447269402543,
+              "production_to_dissipation": 7.250449330651367,
+              "peak_cutoff_fraction": 3.0861924070219126e-06
+            }
+          ]
+        },
+        {
+          "endpoint": 0.12,
+          "status": "continue-finite-amplification",
+          "failures": [],
+          "numerical_failures": [],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 0.00015091813694823495,
+            "l3_dense_ratio": 0.0005890012258114029,
+            "enstrophy_ratio": 0.0055134436427805005,
+            "k_rms_ratio": 0.0027771138010855537,
+            "vorticity_dense_ratio": 0.0506020187516036,
+            "late_stretching": 0.07314766790121488
+          },
+          "late_h_half_gains": [
+            1.014488166181401,
+            1.014593749995033
+          ],
+          "sampling_shift": {
+            "l3_sample": 3.714746158877882e-08,
+            "vorticity_sample": 0.011282337522672643
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.12,
+              "step": 960.0,
+              "h_half_ratio": 1.0573978672384956,
+              "l3_dense_ratio": 0.9627418950265672,
+              "vorticity_dense_ratio": 1.5902770357897393,
+              "enstrophy_ratio": 1.4271282678724813,
+              "k_rms_ratio": 1.217578234256296,
+              "production_to_dissipation": 6.141528714842184,
+              "peak_cutoff_fraction": 0.0014982626347232535
+            },
+            {
+              "grid": 64.0,
+              "time": 0.12,
+              "step": 975.0,
+              "h_half_ratio": 1.0575574718418617,
+              "l3_dense_ratio": 0.9633092853764894,
+              "vorticity_dense_ratio": 1.5130051694457967,
+              "enstrophy_ratio": 1.4350402815901484,
+              "k_rms_ratio": 1.2209690041283585,
+              "production_to_dissipation": 5.782456614994599,
+              "peak_cutoff_fraction": 1.579862373138695e-05
+            }
+          ]
+        },
+        {
+          "endpoint": 0.16,
+          "status": "resolution-or-run-failure",
+          "failures": [
+            "cross-resolution late stretching",
+            "cross-resolution vorticity_dense_ratio"
+          ],
+          "numerical_failures": [
+            "cross-resolution late stretching",
+            "cross-resolution vorticity_dense_ratio"
+          ],
+          "maximum_trajectory_relative_gaps": {
+            "h_half_ratio": 0.0006198002883423475,
+            "l3_dense_ratio": 0.0016421695854870549,
+            "enstrophy_ratio": 0.025179278390903392,
+            "k_rms_ratio": 0.012815973942844188,
+            "vorticity_dense_ratio": 0.19828656428166846,
+            "late_stretching": 0.20941142839096952
+          },
+          "late_h_half_gains": [
+            1.012333624259088,
+            1.0126060094989273
+          ],
+          "sampling_shift": {
+            "l3_sample": 4.560188486259445e-07,
+            "vorticity_sample": 0.013699010891117068
+          },
+          "endpoints": [
+            {
+              "grid": 32.0,
+              "time": 0.16,
+              "step": 1284.0,
+              "h_half_ratio": 1.0851465089904775,
+              "l3_dense_ratio": 0.9420618496716581,
+              "vorticity_dense_ratio": 1.8027545071374638,
+              "enstrophy_ratio": 1.7130485174929206,
+              "k_rms_ratio": 1.3459739880703956,
+              "production_to_dissipation": 4.0852455191804165,
+              "peak_cutoff_fraction": 0.006222433822306811
+            },
+            {
+              "grid": 64.0,
+              "time": 0.16,
+              "step": 1409.0,
+              "h_half_ratio": 1.0858195002298077,
+              "l3_dense_ratio": 0.9436114196455182,
+              "vorticity_dense_ratio": 2.248627036569749,
+              "enstrophy_ratio": 1.7572959617284927,
+              "k_rms_ratio": 1.3634479008399865,
+              "production_to_dissipation": 3.478734413132326,
+              "peak_cutoff_fraction": 0.0001251898057077293
+            }
+          ]
+        }
+      ],
+      "checkpoints": [
+        {
+          "grid": 32,
+          "path": "vortex-tubes-0/grid-32/current.chk.gz",
+          "sha256": "d9f36edb41a5c3d8b7480f95685bcabf1b05974e0c357a25efc307765813dc8c",
+          "uncompressed_sha256": "fc3a07f37b3db33d5df62d061b464e4d2b3829b2bf340d6e8f8ac9461d36851b",
+          "uncompressed_bytes": 1573360
+        },
+        {
+          "grid": 64,
+          "path": "vortex-tubes-0/grid-64/current.chk.gz",
+          "sha256": "d60300062456dc5446421931451cdcb6ee2da14880e72939a4218669a143771a",
+          "uncompressed_sha256": "96044fbc244df8ce4a033535c69f0e259ab7218c2ff81710fd1af482d9c88247",
+          "uncompressed_bytes": 12583408
+        }
+      ]
+    }
+  ],
+  "source_archive": {
+    "path": "solver_source.tar.gz",
+    "sha256": "adf2fb5909857c44e3add8ac78ebd8063d75917baf86790426c957ed1f6f96ba",
+    "base_git_commit": "faaf93f49ee7d94067e089c8080df0de462594b3"
+  }
+}

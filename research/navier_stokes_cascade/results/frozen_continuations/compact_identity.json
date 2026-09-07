@@ -1,0 +1,29 @@
+{
+  "test": "full 1284-step N32 T=.16 checkpoint identity, original vs compact implementation",
+  "bit_identical": true,
+  "sha256": "844c6e52df29e3763238dd97e246225d218d453fc12b2b63a367709319ad14f9",
+  "wall_seconds": 22.30921886700162,
+  "command": [
+    "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_continue_memory",
+    "--state-input",
+    "research/navier_stokes_cascade/results/robust_amplification_verified/wave-packets-0-discovery/state.csv",
+    "--grid",
+    "32",
+    "--sampling-grid",
+    "64",
+    "--dense-sampling-grid",
+    "128",
+    "--viscosity",
+    ".02",
+    "--dt",
+    ".000125",
+    "--observation-interval",
+    ".01",
+    "--final-time",
+    ".16",
+    "--output",
+    "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/compact-full-replay/evidence.csv",
+    "--checkpoint-output",
+    "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/compact-full-replay/final.chk"
+  ]
+}

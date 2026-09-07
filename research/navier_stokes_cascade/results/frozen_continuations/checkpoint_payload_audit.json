@@ -1,0 +1,80 @@
+{
+  "scope": "Only generated numerical research checkpoints; no user documents, messages, credentials, or environment variables are serialized.",
+  "format": "NSCONT1, fixed numeric metadata followed by six IEEE-754 float64 values per Fourier grid point; no strings or opaque user payload fields.",
+  "public_initial_commit": "faaf93f49ee7d94067e089c8080df0de462594b3",
+  "source_archive_sha256": "adf2fb5909857c44e3add8ac78ebd8063d75917baf86790426c957ed1f6f96ba",
+  "checkpoints": [
+    {
+      "path": "research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-32/current.chk.gz",
+      "sha256": "45ab6632c02db1d28d72576f7039377f1da5d99d3055fb9a95e022ebd4bbcc30",
+      "uncompressed_sha256": "6b742c64936e72fca4efbae7f5caec9edd3d1905d7caa2a6ab8c0c71c6e154c7",
+      "public_initial_state_sha256": "5f3dc4449abd58f5ae5e1aca3443b2a0fa7ad06029f9dadae939ff2b9a3b51d8",
+      "grid": 32,
+      "time": 0.1,
+      "step": 800,
+      "finite_fourier_doubles": 196608,
+      "serialized_text_fields": 0,
+      "serialized_private_inputs": 0
+    },
+    {
+      "path": "research/navier_stokes_cascade/results/frozen_continuations/checkpoint/grid-64/current.chk.gz",
+      "sha256": "62fd55cd772e81aff42812b44258ec71bcd0404ce768e8d79a52a83aa41297dd",
+      "uncompressed_sha256": "769ac0c95faeb2542ba4a064f5a1cbbd6306af6dd3707e13c3927028b2c10c65",
+      "public_initial_state_sha256": "5f3dc4449abd58f5ae5e1aca3443b2a0fa7ad06029f9dadae939ff2b9a3b51d8",
+      "grid": 64,
+      "time": 0.1,
+      "step": 834,
+      "finite_fourier_doubles": 1572864,
+      "serialized_text_fields": 0,
+      "serialized_private_inputs": 0
+    },
+    {
+      "path": "research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-32/current.chk.gz",
+      "sha256": "6d7a7d7b00db0b301cf248a8325f3e174b099d53f530b91b7b0e7fb7880551af",
+      "uncompressed_sha256": "844c6e52df29e3763238dd97e246225d218d453fc12b2b63a367709319ad14f9",
+      "public_initial_state_sha256": "7f9ca928f626fbb8b2651e1f6f89eb8b894e780bbdcc963ff9f3d6f743f3f13a",
+      "grid": 32,
+      "time": 0.16,
+      "step": 1284,
+      "finite_fourier_doubles": 196608,
+      "serialized_text_fields": 0,
+      "serialized_private_inputs": 0
+    },
+    {
+      "path": "research/navier_stokes_cascade/results/frozen_continuations/wave-packets-0/grid-64/current.chk.gz",
+      "sha256": "fd8689e85621fcf087b59e9dec10f761c03c12161ce6078b71baa071e3eedaaa",
+      "uncompressed_sha256": "4b0953144eb34be9786d0cda52faf5ed820a2746477ca90faffd6475b0eea0e6",
+      "public_initial_state_sha256": "7f9ca928f626fbb8b2651e1f6f89eb8b894e780bbdcc963ff9f3d6f743f3f13a",
+      "grid": 64,
+      "time": 0.16,
+      "step": 1446,
+      "finite_fourier_doubles": 1572864,
+      "serialized_text_fields": 0,
+      "serialized_private_inputs": 0
+    },
+    {
+      "path": "research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-32/current.chk.gz",
+      "sha256": "d9f36edb41a5c3d8b7480f95685bcabf1b05974e0c357a25efc307765813dc8c",
+      "uncompressed_sha256": "fc3a07f37b3db33d5df62d061b464e4d2b3829b2bf340d6e8f8ac9461d36851b",
+      "public_initial_state_sha256": "fe312eee30e09287223f3e1ba9226d1b519d216fe2045e065696524d7cc297f7",
+      "grid": 32,
+      "time": 0.16,
+      "step": 1284,
+      "finite_fourier_doubles": 196608,
+      "serialized_text_fields": 0,
+      "serialized_private_inputs": 0
+    },
+    {
+      "path": "research/navier_stokes_cascade/results/frozen_continuations/vortex-tubes-0/grid-64/current.chk.gz",
+      "sha256": "d60300062456dc5446421931451cdcb6ee2da14880e72939a4218669a143771a",
+      "uncompressed_sha256": "96044fbc244df8ce4a033535c69f0e259ab7218c2ff81710fd1af482d9c88247",
+      "public_initial_state_sha256": "fe312eee30e09287223f3e1ba9226d1b519d216fe2045e065696524d7cc297f7",
+      "grid": 64,
+      "time": 0.16,
+      "step": 1409,
+      "finite_fourier_doubles": 1572864,
+      "serialized_text_fields": 0,
+      "serialized_private_inputs": 0
+    }
+  ]
+}

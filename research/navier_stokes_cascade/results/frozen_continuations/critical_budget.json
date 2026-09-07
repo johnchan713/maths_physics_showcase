@@ -1,0 +1,145 @@
+{
+  "equation": "Q=||u||_Hhalf^2; Q'=2 Re sum |k| conj(u_k).N_k - 2 nu sum |k|^3 |u_k|^2",
+  "measure": "Normalized periodic volume (2*pi)^-3 dx",
+  "numpy_version": "2.3.5",
+  "analysis_sha256": "11a3c277e17707d69b1a908631d2b9ef12604b7405f0acfa78fe5513d94785a5",
+  "analytic_shear_test": "passed",
+  "interpretation": "Instantaneous finite-mode critical-norm budget; sampled spatial maxima and floating-point values are not continuum error bounds.",
+  "candidates": [
+    {
+      "name": "checkpoint",
+      "time": 0.1,
+      "grid": 64,
+      "cutoff": 21,
+      "dense_sampling_grid": 128,
+      "checkpoint_sha256": "769ac0c95faeb2542ba4a064f5a1cbbd6306af6dd3707e13c3927028b2c10c65",
+      "initial": {
+        "energy": 9.999999999999996,
+        "enstrophy": 47.58986744525844,
+        "h_half": 6.410826410136645,
+        "h_half_squared_nonlinear_production": 56.3220528786148,
+        "h_half_squared_viscous_destruction": 9.890359454043018,
+        "h_half_squared_net_rate": 46.431693424571776,
+        "h_half_logarithmic_rate": 0.5648803828176415,
+        "critical_production_to_dissipation": 5.694641649812966,
+        "enstrophy_stretching": 147.3899408061364,
+        "enstrophy_viscous_destruction": 14.256471975347171,
+        "sampled_vorticity_native": 69.86700881616989,
+        "nonlinear_energy_residual": 2.6645352591003757e-15
+      },
+      "final": {
+        "energy": 9.755279407391303,
+        "enstrophy": 80.05834546973256,
+        "h_half": 7.046255814314575,
+        "h_half_squared_nonlinear_production": 113.45105376498734,
+        "h_half_squared_viscous_destruction": 27.352353879289613,
+        "h_half_squared_net_rate": 86.09869988569773,
+        "h_half_logarithmic_rate": 0.8670612659069766,
+        "critical_production_to_dissipation": 4.147761990272036,
+        "enstrophy_stretching": 561.3745906592999,
+        "enstrophy_viscous_destruction": 83.69505509809122,
+        "sampled_vorticity_native": 134.06328173610638,
+        "nonlinear_energy_residual": 2.6645352591003757e-15
+      },
+      "numpy_vs_fftw_relative_errors": {
+        "energy": 3.4597450815230214e-15,
+        "enstrophy": 2.130074704665182e-15,
+        "h_half": 3.1512424580717556e-15,
+        "sampled_vorticity_native": 0.0,
+        "enstrophy_stretching": 9.315695120886131e-15,
+        "enstrophy_viscous_destruction": 1.3583459332020795e-15
+      },
+      "pair_status": "resolution-or-run-failure"
+    },
+    {
+      "name": "wave-packets-0",
+      "time": 0.16,
+      "grid": 64,
+      "cutoff": 21,
+      "dense_sampling_grid": 128,
+      "checkpoint_sha256": "4b0953144eb34be9786d0cda52faf5ed820a2746477ca90faffd6475b0eea0e6",
+      "initial": {
+        "energy": 10.0,
+        "enstrophy": 40.678345689402015,
+        "h_half": 6.209064510101753,
+        "h_half_squared_nonlinear_production": 36.35160915022357,
+        "h_half_squared_viscous_destruction": 7.4807603951673105,
+        "h_half_squared_net_rate": 28.870848755056258,
+        "h_half_logarithmic_rate": 0.37443566781517046,
+        "critical_production_to_dissipation": 4.859346808341473,
+        "enstrophy_stretching": 96.18650453825269,
+        "enstrophy_viscous_destruction": 9.299308105911932,
+        "sampled_vorticity_native": 71.20757528748629,
+        "nonlinear_energy_residual": 1.3322676295501878e-15
+      },
+      "final": {
+        "energy": 9.597792657392723,
+        "enstrophy": 94.40661350776877,
+        "h_half": 7.073578542545878,
+        "h_half_squared_nonlinear_production": 99.70561100269407,
+        "h_half_squared_viscous_destruction": 45.56843746599026,
+        "h_half_squared_net_rate": 54.13717353670381,
+        "h_half_logarithmic_rate": 0.5409874892913352,
+        "critical_production_to_dissipation": 2.188041033382125,
+        "enstrophy_stretching": 694.8344050346316,
+        "enstrophy_viscous_destruction": 221.3043149755252,
+        "sampled_vorticity_native": 144.63997543168725,
+        "nonlinear_energy_residual": 2.6645352591003757e-15
+      },
+      "numpy_vs_fftw_relative_errors": {
+        "energy": 1.1104783586038322e-14,
+        "enstrophy": 6.322183116857219e-15,
+        "h_half": 2.7623818857562472e-15,
+        "sampled_vorticity_native": 1.9649968375324737e-16,
+        "enstrophy_stretching": 3.272343364055212e-15,
+        "enstrophy_viscous_destruction": 1.3741814791950692e-14
+      },
+      "pair_status": "resolution-or-run-failure"
+    },
+    {
+      "name": "vortex-tubes-0",
+      "time": 0.16,
+      "grid": 64,
+      "cutoff": 21,
+      "dense_sampling_grid": 128,
+      "checkpoint_sha256": "96044fbc244df8ce4a033535c69f0e259ab7218c2ff81710fd1af482d9c88247",
+      "initial": {
+        "energy": 10.000000000000007,
+        "enstrophy": 68.06903126190264,
+        "h_half": 7.086864356289608,
+        "h_half_squared_nonlinear_production": 13.66041215917386,
+        "h_half_squared_viscous_destruction": 15.685267112470488,
+        "h_half_squared_net_rate": -2.024854953296627,
+        "h_half_logarithmic_rate": -0.020158382537486298,
+        "critical_production_to_dissipation": 0.8709072061841537,
+        "enstrophy_stretching": 37.68596879729061,
+        "enstrophy_viscous_destruction": 23.74057017911681,
+        "sampled_vorticity_native": 61.33184828266385,
+        "nonlinear_energy_residual": 8.881784197001252e-16
+      },
+      "final": {
+        "energy": 9.452959903913044,
+        "enstrophy": 119.61743375531219,
+        "h_half": 7.695055513542828,
+        "h_half_squared_nonlinear_production": 124.97144745326437,
+        "h_half_squared_viscous_destruction": 55.15370964605219,
+        "h_half_squared_net_rate": 69.81773780721218,
+        "h_half_logarithmic_rate": 0.5895386230892273,
+        "critical_production_to_dissipation": 2.26587564563229,
+        "enstrophy_stretching": 845.2216385116453,
+        "enstrophy_viscous_destruction": 242.96814247184727,
+        "sampled_vorticity_native": 137.31783315338683,
+        "nonlinear_energy_residual": 2.220446049250313e-16
+      },
+      "numpy_vs_fftw_relative_errors": {
+        "energy": 3.570392796719023e-15,
+        "enstrophy": 1.5444329935678964e-15,
+        "h_half": 1.269641602910707e-15,
+        "sampled_vorticity_native": 2.069775554836812e-16,
+        "enstrophy_stretching": 6.994278532591711e-15,
+        "enstrophy_viscous_destruction": 2.1055878542041833e-15
+      },
+      "pair_status": "resolution-or-run-failure"
+    }
+  ]
+}

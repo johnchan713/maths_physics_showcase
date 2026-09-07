@@ -1,0 +1,9 @@
+time=0.01 steps=80 H_ratio=1.006671705 vort_dense_ratio=1.041172788 cutoff_peak=2.172207507e-21
+time=0.02 steps=160 H_ratio=1.015097752 vort_dense_ratio=1.087502838 cutoff_peak=1.613450093e-16
+time=0.03 steps=240 H_ratio=1.024817191 vort_dense_ratio=1.13789446 cutoff_peak=1.331962541e-13
+time=0.04 steps=320 H_ratio=1.035376194 vort_dense_ratio=1.19110363 cutoff_peak=1.479989577e-11
+time=0.05 steps=400 H_ratio=1.04636995 vort_dense_ratio=1.25281344 cutoff_peak=5.132086602e-10
+time=0.06 steps=480 H_ratio=1.057469513 vort_dense_ratio=1.336539031 cutoff_peak=8.634297305e-09
+time=0.07 steps=561 H_ratio=1.068430811 vort_dense_ratio=1.460753567 cutoff_peak=9.109980444e-08
+time=0.08 steps=645 H_ratio=1.079088316 vort_dense_ratio=1.614031476 cutoff_peak=6.710447741e-07
+Requested continuation completed

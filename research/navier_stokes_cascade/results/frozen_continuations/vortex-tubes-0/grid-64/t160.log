@@ -1,0 +1,5 @@
+time=0.13 steps=1073 H_ratio=1.065048854 vort_dense_ratio=1.623519683 cutoff_peak=2.95160385e-05
+time=0.14 steps=1178 H_ratio=1.07230205 vort_dense_ratio=1.8037933 cutoff_peak=5.048299115e-05
+time=0.15 steps=1290 H_ratio=1.079238449 vort_dense_ratio=2.033077975 cutoff_peak=8.094894193e-05
+time=0.16 steps=1409 H_ratio=1.0858195 vort_dense_ratio=2.248627037 cutoff_peak=0.0001251898057
+Requested continuation completed

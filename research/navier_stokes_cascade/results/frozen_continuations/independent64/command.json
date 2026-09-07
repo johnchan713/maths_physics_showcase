@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_fftw_compare",
+    "--state-input",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/robust_amplification_verified/checkpoint-discovery/state.csv",
+    "--grid",
+    "64",
+    "--viscosity",
+    ".02",
+    "--energy",
+    "10",
+    "--dt",
+    ".000125",
+    "--final-time",
+    ".10",
+    "--diagnostic-every",
+    "80",
+    "--output",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/frozen_continuations_resolution/oracle64_t100.csv"
+  ],
+  "initial_state_sha256": "5f3dc4449abd58f5ae5e1aca3443b2a0fa7ad06029f9dadae939ff2b9a3b51d8",
+  "oracle_sha256": "0f37c062b4fad0033864fe071690d3b4faa20a7df458602928648a8d88e7122b",
+  "files_archived_from": "results/frozen_continuations_resolution"
+}

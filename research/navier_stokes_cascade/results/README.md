@@ -95,9 +95,19 @@ extra step because it also lands on fixed evidence-snapshot times. Both
 reach the same final physical time. See `fftw.csv`, `fftw.log` and the zero
 return codes in `commands.json` for the recorded check.
 
-The next useful experiment is to continue the frozen finalists while
-monitoring late critical growth and reducing the remaining pointwise
-vorticity discrepancy. Longer continuations should use the existing
-checksummed restart path. A proof would additionally require rigorous
-control of the unresolved Fourier tail and of the limiting PDE mechanism;
-none of these finite runs supplies that control.
+## Checkpointed frozen-field continuations
+
+The bounded `32/64` continuation campaign is complete; see
+[`frozen_continuations/README.md`](frozen_continuations/README.md).
+The fresh packet and tube pass the continuation-stage gates through `T=.12`
+with about 11.04% and 5.76% fine-grid H1/2 growth. The prior packet exceeds
+the vorticity convergence tolerance at `.10`; the other two do so by `.16`.
+All three still grow H1/2 at those endpoints, so a resolution limit stops
+inference before any demonstrated critical-norm turnover. Their actual
+evolved checkpoints are saved, along with an independent leading-field
+`N=64, T=.10` replay and a separately computed critical production–diffusion
+budget for designing the next search objective.
+
+A proof would additionally require rigorous control of the unresolved
+Fourier tail and of the limiting PDE mechanism; none of these finite runs
+supplies that control.
