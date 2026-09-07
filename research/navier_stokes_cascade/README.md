@@ -1298,6 +1298,65 @@ ratios were below one. The leading frozen packet subsequently reached
 See the [full experimental record](results/README.md) for the exact data,
 checksums, limitations and reproduction commands.
 
+### Checkpointed continuation of a frozen Fourier field
+
+The optional FFTW target `navier_stokes_continue` loads the optimized CSV
+coefficients unchanged and saves the **evolved state**, rather than another
+copy of the initial field. It observes on a fixed physical clock and atomically
+replaces its checksummed checkpoint after every observation. For example:
+
+```sh
+./build/research/navier_stokes_cascade/navier_stokes_continue \
+  --state-input research/navier_stokes_cascade/candidates/wave_k3_amplification_t004_screening.csv \
+  --grid 64 --sampling-grid 64 --dense-sampling-grid 128 \
+  --viscosity 0.02 --dt 0.000125 --observation-interval 0.01 \
+  --final-time 0.08 --output continuation-08.csv --checkpoint-output current.chk
+./build/research/navier_stokes_cascade/navier_stokes_continue \
+  --restart current.chk --final-time 0.10 \
+  --output continuation-10.csv --checkpoint-output current.chk
+```
+
+The restart restores the backend, viscosity, cutoff, adaptive timestep controls,
+sampling grids, observation clock and initial normalization measurements.
+Scientific overrides are rejected. Final times are absolute multiples of the
+saved observation interval; splitting at those times produces the same
+checkpoint bytes as an uninterrupted run. Evidence files contain the shared
+boundary row, so discard that duplicate when joining segments. Existing
+evidence and input files are protected against output aliases and overwrites.
+The `NSCONT1` format is distinct from the benchmark solver's `NSCCHK2` format;
+neither executable silently interprets the other's restart.
+
+At every accepted step the continuation checks finite, positive, nonincreasing
+unforced energy and cutoff-shell energy. Exceeding the default cutoff fraction
+`0.008` saves the stopped state and returns exit code 2, including between
+scheduled observations. Such a checkpoint cannot resume. Other numerical or
+I/O failures return 1 and leave the last successfully published checkpoint.
+Fourier constraints and the full enstrophy budget are checked at observations.
+The CFL rule controls stability heuristically; it is not a local error estimator.
+
+Primary and denser physical samples are measured on the **same** evolving
+Fourier field. Padding changes neither its spectral budget nor its dynamics.
+This separates quadrature/maximum sampling changes from evolution-cutoff
+changes. The CSV reports both sampling grids, absolute values and ratios to
+their own initial measurements. BKM integration uses the primary samples on
+the frozen observation clock and remains sampled finite-run telemetry.
+
+The FFTW continuation uses compact RK4 storage while preserving the original
+stage arithmetic. The four-derivative reference path remains available to the
+independent trajectory checker. Tests cover exact shear diffusion, dense
+maximum sampling, interacting radix-2/FFTW evolution, coefficient-by-coefficient
+compact/full RK4 identity, checkpoint corruption, output protection, unchanged
+restart controls and an inter-observation cutoff stop. Clean Ubuntu CI also
+runs ASan and UBSan over the continuation and restart tests.
+
+`scripts/continue_candidates.py --solver PATH --output-dir NEW_DIRECTORY`
+replays the three frozen finalists on `32/64`, checks stages at
+`T=0.08,0.10,0.12,0.16`, and pauses each pair when its empirical growth or
+convergence gates fail. It retains commands, hashes, all stage evidence and
+compressed final checkpoints. A failed resolution comparison is a reason to
+raise the cutoff or pause inference, not a rejection of all singularity
+mechanisms for that initial field.
+
 Use `--help` for all parameters. The direct backend still grows quadratically
 in the retained mode count; use it to audit small cases and the FFT backend to
 explore larger ones.

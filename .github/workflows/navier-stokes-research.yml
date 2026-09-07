@@ -51,11 +51,22 @@ jobs:
           navier_stokes_parameter_optimizer_tests
           navier_stokes_state_optimizer_tests
           navier_stokes_candidate_evidence_tests
+          navier_stokes_continue
+          navier_stokes_continuation_tests
           navier_stokes_fftw_compare
           navier_stokes_fftw_tests
 
       - name: Run invariant tests
         run: ctest --test-dir build --output-on-failure
+
+      - name: Sanitize saved-field continuation and restart
+        run: |
+          c++ -std=c++11 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer \
+            -Wall -Wextra -Wpedantic -Werror \
+            -I research/navier_stokes_cascade/include \
+            research/navier_stokes_cascade/tests/test_continuation.cpp \
+            -lfftw3 -o navier_stokes_continuation_sanitized
+          ./navier_stokes_continuation_sanitized
 
       - name: Run independent FFTW trajectory comparison
         run: >-

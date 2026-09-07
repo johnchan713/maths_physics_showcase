@@ -48,6 +48,19 @@ option(NS_CASCADE_REQUIRE_FFTW_REFERENCE
        "Fail configuration when the independent FFTW oracle is unavailable" OFF)
 find_library(NS_CASCADE_FFTW3_LIBRARY NAMES fftw3 fftw3.so.3 libfftw3.so.3)
 if(NS_CASCADE_FFTW3_LIBRARY)
+    add_executable(navier_stokes_continue src/continue.cpp)
+    target_link_libraries(navier_stokes_continue PRIVATE ns_cascade ${NS_CASCADE_FFTW3_LIBRARY})
+    if(BUILD_TESTING)
+        add_executable(navier_stokes_continuation_tests tests/test_continuation.cpp)
+        target_link_libraries(navier_stokes_continuation_tests PRIVATE ns_cascade ${NS_CASCADE_FFTW3_LIBRARY})
+        add_test(NAME navier_stokes_continuation COMMAND navier_stokes_continuation_tests)
+        find_package(Python3 COMPONENTS Interpreter)
+        if(Python3_Interpreter_FOUND)
+            add_test(NAME navier_stokes_continuation_cli
+                     COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_continuation_cli.py
+                             --solver $<TARGET_FILE:navier_stokes_continue>)
+        endif()
+    endif()
     add_executable(navier_stokes_fftw_compare
         src/fftw_compare.cpp
     )

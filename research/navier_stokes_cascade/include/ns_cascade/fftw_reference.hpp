@@ -219,6 +219,16 @@ public:
                              velocity_y[i] * vorticity_x[i];
         }
 
+        // These physical fields have no remaining readers. Releasing them
+        // before the forward transforms/derivative reduces peak storage;
+        // transform inputs and the independent projection are unchanged.
+        std::vector<Complex>().swap(velocity_x);
+        std::vector<Complex>().swap(velocity_y);
+        std::vector<Complex>().swap(velocity_z);
+        std::vector<Complex>().swap(vorticity_x);
+        std::vector<Complex>().swap(vorticity_y);
+        std::vector<Complex>().swap(vorticity_z);
+
         nonlinear_x = forwardTransform(nonlinear_x);
         nonlinear_y = forwardTransform(nonlinear_y);
         nonlinear_z = forwardTransform(nonlinear_z);
@@ -269,6 +279,37 @@ public:
                 (first[index] + second[index] * 2.0 +
                  third[index] * 2.0 + fourth[index]) *
                 (time_step / 6.0);
+        }
+    }
+
+    // Preserve the original RK4 arithmetic order while retaining only one
+    // weighted derivative per active mode. The original four-derivative path
+    // remains available to the oracle. This avoids a large peak allocation at
+    // N=128 without changing the equation, timestep or Fourier truncation.
+    void stepRungeKutta4Compact(State& state, double time_step) const {
+        requireCompatible(state);
+        if (!std::isfinite(time_step) || time_step <= 0.0) {
+            throw std::invalid_argument("Reference time step must be finite and positive");
+        }
+        State stage = rightHandSide(state);
+        std::vector<ComplexVector> accumulated(retained_indices_.size());
+        for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+            const std::size_t index = retained_indices_[n];
+            accumulated[n] = stage[index];
+            stage[index] = state[index] + stage[index] * (0.5 * time_step);
+        }
+        for (int stage_number = 0; stage_number < 3; ++stage_number) {
+            const State derivative = rightHandSide(stage);
+            for (std::size_t n = 0; n < retained_indices_.size(); ++n) {
+                const std::size_t index = retained_indices_[n];
+                if (stage_number == 2) {
+                    state[index] += (accumulated[n] + derivative[index]) * (time_step / 6.0);
+                } else {
+                    accumulated[n] += derivative[index] * 2.0;
+                    stage[index] = state[index] + derivative[index] *
+                        (stage_number == 0 ? 0.5 * time_step : time_step);
+                }
+            }
         }
     }
 
