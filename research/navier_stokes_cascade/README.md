@@ -1361,6 +1361,14 @@ slightly and the relative critical-growth rate slows near the endpoint.
 See the pilot record for failures, source provenance and the exact new
 initial coefficient checkpoint; this is not a singularity claim.
 
+The [frozen-field continuation](results/late_growth_continuation/README.md)
+now reaches held-out `.08` and `.10`, with fine-grid H1/2 gains of 11.97%
+and 14.55%. A smaller-step replay and the 945-step independent trajectory
+pass, but L3 decreases and relative H1/2 growth keeps slowing. The `32/64`
+vorticity and late-stretching gaps approach the 10% screening limit at `.10`.
+The evolved states are preserved; `64/128` comparison at the same horizon
+is the next step before extending time further.
+
 ### Checkpointed continuation of a frozen Fourier field
 
 The optional FFTW target `navier_stokes_continue` loads the optimized CSV

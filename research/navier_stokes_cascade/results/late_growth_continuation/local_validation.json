@@ -1,0 +1,50 @@
+{
+  "core_source_commit": "61d35c942d8b48c523df0a440b85696955a64f48",
+  "core_source_changed": false,
+  "compiler": "13.3.0",
+  "flags": [
+    "-std=c++11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror",
+    "-l:libfftw3.so.3"
+  ],
+  "freshly_compiled": {
+    "navier_stokes_fftw_compare": "83c7a11e8c156c39d8c18aa2e0df59420c0bf9449ee2539e94e136a1ca0bc8ea",
+    "navier_stokes_continue": "3bc968559635109d627fdd2d7e45e47b8aa3b387e563824f58c0b4020d0c5c9a"
+  },
+  "completed_local_checks": [
+    {
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_continuation"
+      ],
+      "returncode": 0,
+      "observed_output": "Continuation analytic, independent evolution, restart, corruption and stop gates passed",
+      "executable_sha256": "6d8640bba0b938e288c32f2249cb9cbb45cdc24dfdae476c9acf321a811de1f2"
+    },
+    {
+      "command": [
+        "python3",
+        "research/navier_stokes_cascade/tests/test_continuation_cli.py",
+        "--solver",
+        "/workspace/scratch/3529ca692852/ns-long-horizon-build/navier_stokes_continue"
+      ],
+      "returncode": 0,
+      "observed_summary": "Ran 1 test in 0.336s; OK"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "research/navier_stokes_cascade/results/late_growth_continuation/run.py",
+        "research/navier_stokes_cascade/results/late_growth_continuation/assess.py",
+        "research/navier_stokes_cascade/results/late_growth_continuation/audit.py"
+      ],
+      "returncode": 0
+    }
+  ],
+  "note": "Local test summaries transcribed from the actual completed tool output; this file does not claim a fresh CMake or sanitizer run. Clean Ubuntu CI is a separate check."
+}

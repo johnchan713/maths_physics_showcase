@@ -1,0 +1,25 @@
+{
+  "purpose": "Held-out .08 and .10 continuation of the frozen late-rate candidate; no optimization or proof claim",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "code_commit": "61d35c942d8b48c523df0a440b85696955a64f48",
+  "primary_grids": [32, 64],
+  "viscosity": 0.02,
+  "maximum_dt": 0.000125,
+  "sampling_grids": [64, 128],
+  "observation_interval": 0.01,
+  "critical_budget_times": [0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10],
+  "assessment_horizons": [0.08, 0.10],
+  "cutoff_fraction_limit_every_step": 0.008,
+  "gate_implementation": "scripts/continue_candidates.py:assess_pair",
+  "additional_gates": {
+    "minimum_sampled_late_gamma": 0,
+    "maximum_horizon_times_cross_gamma_gap": 0.002,
+    "timestep_relative_diagnostic_change": 0.001,
+    "minimum_step_count_increase_under_refinement": 1.5,
+    "maximum_horizon_times_timestep_gamma_gap": 0.001,
+    "maximum_spatial_sampling_vorticity_shift": 0.02
+  },
+  "resolution_rule": "Individual trajectories may reach .10 if their own cutoff and invariant gates pass. A failed pair is not promoted; if needed, run the same initial coefficients from t=0 on grid 128 and assess 64/128. Stop resolution escalation at 128 in this campaign.",
+  "validation": "Run the independent radix2/FFTW full trajectory on grid 64 through .10; rerun grid 64 from t=0 with a materially smaller timestep and .005 observations, comparing common physical times. These do not constitute a full grid-128 timestep or independent-trajectory test.",
+  "interpretation": "All thresholds are empirical finite-amplification screening criteria. Positive finite sampled growth and small retained-edge energy do not certify a PDE singularity or bound absent Fourier modes."
+}

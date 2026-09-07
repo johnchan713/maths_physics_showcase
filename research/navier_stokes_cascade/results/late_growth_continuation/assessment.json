@@ -1,0 +1,186 @@
+{
+  "scope": "Empirical finite-amplification comparisons; absent/incomplete legs are not passes",
+  "pairs": {
+    "32/64": {
+      "0.08": {
+        "status": "continue-finite-amplification",
+        "failures": [],
+        "numerical_failures": [],
+        "maximum_trajectory_relative_gaps": {
+          "h_half_ratio": 7.415682049828576e-05,
+          "l3_dense_ratio": 0.00047410041825310086,
+          "enstrophy_ratio": 0.002147965392765266,
+          "k_rms_ratio": 0.001077991266409544,
+          "vorticity_dense_ratio": 0.024804431992762926,
+          "late_stretching": 0.03239340663250534
+        },
+        "late_h_half_gains": [
+          1.0275177410456022,
+          1.027585676664848
+        ],
+        "sampling_shift": {
+          "l3_sample": 1.6129414722118866e-08,
+          "vorticity_sample": 0.0031120858782132123
+        },
+        "endpoints": [
+          {
+            "grid": 32.0,
+            "time": 0.08,
+            "step": 640.0,
+            "h_half_ratio": 1.1195709197196964,
+            "l3_dense_ratio": 0.9889012715298452,
+            "vorticity_dense_ratio": 1.5803685761206456,
+            "enstrophy_ratio": 1.7463552398887667,
+            "k_rms_ratio": 1.3365143552097687,
+            "production_to_dissipation": 9.22781423300481,
+            "peak_cutoff_fraction": 0.0005489712729004652
+          },
+          {
+            "grid": 64.0,
+            "time": 0.08,
+            "step": 662.0,
+            "h_half_ratio": 1.1196539496966642,
+            "l3_dense_ratio": 0.9893703324182519,
+            "vorticity_dense_ratio": 1.6205657900497323,
+            "enstrophy_ratio": 1.7501144251072764,
+            "k_rms_ratio": 1.337956660804951,
+            "production_to_dissipation": 8.974793934949169,
+            "peak_cutoff_fraction": 1.4593553909874025e-06
+          }
+        ],
+        "late_critical_rates": [
+          [
+            1.5693361525870957,
+            1.5327611055092591,
+            1.4575031983510338,
+            1.3593175746193953,
+            1.2489027207558303
+          ],
+          [
+            1.5693942846174747,
+            1.5330540885419184,
+            1.4586092390433765,
+            1.36242163305736,
+            1.2551454618493336
+          ]
+        ],
+        "late_critical_rate_times": [
+          0.04,
+          0.05,
+          0.06,
+          0.07,
+          0.08
+        ],
+        "horizon_times_maximum_gamma_gap": 0.000499419287480265
+      },
+      "0.1": {
+        "status": "continue-finite-amplification",
+        "failures": [],
+        "numerical_failures": [],
+        "maximum_trajectory_relative_gaps": {
+          "h_half_ratio": 0.00024044646918942986,
+          "l3_dense_ratio": 0.0005898545987897699,
+          "enstrophy_ratio": 0.008927702996011741,
+          "k_rms_ratio": 0.004498361401577383,
+          "vorticity_dense_ratio": 0.09088694181354208,
+          "late_stretching": 0.0942020663465485
+        },
+        "late_h_half_gains": [
+          1.022930889760675,
+          1.0231010334894275
+        ],
+        "sampling_shift": {
+          "l3_sample": 7.097399865028408e-08,
+          "vorticity_sample": 0.01345230473198819
+        },
+        "endpoints": [
+          {
+            "grid": 32.0,
+            "time": 0.1,
+            "step": 800.0,
+            "h_half_ratio": 1.1452436770590462,
+            "l3_dense_ratio": 0.9760905101674492,
+            "vorticity_dense_ratio": 1.7220900121988023,
+            "enstrophy_ratio": 2.0063772006575116,
+            "k_rms_ratio": 1.4384015874775729,
+            "production_to_dissipation": 6.423973957184091,
+            "peak_cutoff_fraction": 0.0021294322242065133
+          },
+          {
+            "grid": 64.0,
+            "time": 0.1,
+            "step": 880.0,
+            "h_half_ratio": 1.1455191130851765,
+            "l3_dense_ratio": 0.976621199353397,
+            "vorticity_dense_ratio": 1.8942528618322891,
+            "enstrophy_ratio": 2.0244508969959005,
+            "k_rms_ratio": 1.4449012756048436,
+            "production_to_dissipation": 5.782149132435279,
+            "peak_cutoff_fraction": 3.21403431992952e-05
+          }
+        ],
+        "late_critical_rates": [
+          [
+            1.5327611055092591,
+            1.4575031983510338,
+            1.3593175746193953,
+            1.2489027207558303,
+            1.1336269984183034,
+            1.0180225732891024
+          ],
+          [
+            1.5330540885419184,
+            1.4586092390433765,
+            1.36242163305736,
+            1.2551454618493336,
+            1.14240179038331,
+            1.0266941656917001
+          ]
+        ],
+        "late_critical_rate_times": [
+          0.05,
+          0.06,
+          0.07,
+          0.08,
+          0.09,
+          0.1
+        ],
+        "horizon_times_maximum_gamma_gap": 0.0008774791965006524
+      }
+    }
+  },
+  "timestep": {
+    "0.08": {
+      "status": "passed",
+      "failures": [],
+      "maximum_relative_gaps_at_common_times": {
+        "h_half_ratio": 1.5009412793874227e-13,
+        "l3_dense_ratio": 1.2415263064160135e-13,
+        "vorticity_dense_ratio": 5.083594249903185e-12,
+        "enstrophy_ratio": 2.27688682683207e-12,
+        "k_rms_ratio": 1.2007060943694268e-12
+      },
+      "reference_steps": 662.0,
+      "refined_steps": 1284.0,
+      "step_count_factor": 1.9395770392749245,
+      "horizon_times_maximum_gamma_gap": 3.806910342518677e-13,
+      "refined_observation_interval": 0.005
+    },
+    "0.1": {
+      "status": "passed",
+      "failures": [],
+      "maximum_relative_gaps_at_common_times": {
+        "h_half_ratio": 1.5009412793874227e-13,
+        "l3_dense_ratio": 1.2415263064160135e-13,
+        "vorticity_dense_ratio": 5.083594249903185e-12,
+        "enstrophy_ratio": 2.27688682683207e-12,
+        "k_rms_ratio": 1.2007060943694268e-12
+      },
+      "reference_steps": 880.0,
+      "refined_steps": 1608.0,
+      "step_count_factor": 1.8272727272727274,
+      "horizon_times_maximum_gamma_gap": 7.44826422760525e-13,
+      "refined_observation_interval": 0.005
+    }
+  }
+}

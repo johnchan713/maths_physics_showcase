@@ -6,6 +6,14 @@ singularity claim. The gates and equations are documented in the
 
 ## Late-growth objective comparison
 
+The [frozen late-growth continuation](late_growth_continuation/README.md)
+extends the same field through held-out `.08` and `.10`. Fine-grid H1/2
+growth reaches 14.55%, but its relative growth rate keeps falling and L3
+decreases by 2.34%. The `32/64` spatial gates pass narrowly at `.10`, with
+vorticity and late-stretching discrepancies of 9.09% and 9.42%. The report
+and archive audit record the independent-solver and smaller-step checks.
+The next comparison is `64/128` at the same horizon before going longer.
+
 The [matched late-growth pilot](late_growth_pilot/README.md) integrates the
 critical-rate source into the full discrete adjoint. Four matched starts
 with two iterations each improve their weakest sampled late growth by

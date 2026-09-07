@@ -15,6 +15,13 @@ cutoff gate, and no singularity is established. See the
 The SHA-256 digest of this coefficient file is
 `893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef`.
 
+The unchanged field subsequently reaches 14.55% H1/2 growth through
+`T=.10` on `N=64`; L3 decreases by 2.34% and relative H1/2 growth slows.
+The `32/64` pointwise and stretching gates pass narrowly. See the
+[frozen continuation and validation record](../results/late_growth_continuation/README.md)
+for the numerical limitations, checks and evolved restart states. A `128`
+evolution is the next comparison before increasing the horizon further.
+
 For this field, replay with `--search-track amplification --growth-objective
 late-rate --grid 32 --fine-grid 64 --seed-bandwidth 3 --iterations 0
 --final-time .06 --dt .000125 --fine-max-dt .000125`, and distinct fresh
