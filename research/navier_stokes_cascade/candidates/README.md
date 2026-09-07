@@ -4,6 +4,23 @@ These full-precision Fourier coefficient files preserve reproducible search
 checkpoints. They are numerical screening artifacts, not certified solutions,
 proof data, or candidates that passed every promotion gate.
 
+`wave_k3_late_rate_t004_screening.csv` is the leading frozen initial field
+from the matched late-growth pilot. Two fixed-energy ascent steps optimize
+the weakest sampled late critical-growth rate through `T=.04`. It reaches
+about 8.96% H1/2 growth in the separate `N=32/64, T=.06` replay, passing
+timestep, denser-sampling and independent FFTW checks; L3 remains
+below its initial value. The original `16/32` held-out screen failed its
+cutoff gate, and no singularity is established. See the
+[complete pilot and validation status](../results/late_growth_pilot/README.md).
+The SHA-256 digest of this coefficient file is
+`893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef`.
+
+For this field, replay with `--search-track amplification --growth-objective
+late-rate --grid 32 --fine-grid 64 --seed-bandwidth 3 --iterations 0
+--final-time .06 --dt .000125 --fine-max-dt .000125`, and distinct fresh
+output paths. Raising the writing grid changes the CSV's `source_grid`
+and `simulation_cutoff` metadata, not the initial Fourier coefficients.
+
 `wave_k3_t008_screening.csv` is the best paired state from the first
 684-variable, fixed-energy adjoint pilot. It passed timestep, cutoff, and
 coarse/fine agreement checks, but its rescaled-profile drift remained about

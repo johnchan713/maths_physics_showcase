@@ -1,0 +1,12 @@
+start 0 iteration 1 objective=0.02452269327 H1/2=1.020625826 k_rms=1.061674071 profile-drift=9.458899173 cutoff=0.00240540753 pair-score=-0.2382964102 selected=yes gradient-error=7.585177688e-06
+start 0 iteration 2 objective=0.03611782154 H1/2=1.030285639 k_rms=1.083956413 profile-drift=10.90575795 cutoff=0.002745869413 pair-score=-0.2530275607 selected=yes gradient-error=7.65985425e-06
+start 0 best pair-score=-0.2530275607 H1/2=1.030443795 profile-drift=10.93731629 shape-penalty=0.0357469074 path-penalty=0.0202957985 globally-selected=yes
+Adjoint Fourier-state optimization complete
+  family/bandwidth/real-dofs: orthogonal-bundle/3/684
+  starts/selected start/iteration: 1/0/2
+  accepted steps/trajectories: 2/11
+  coarse objective/H1/2/k_rms/drift/cutoff: 0.0361178215392/1.03028563897/1.08395641281/10.9057579539/0.00274586941279
+  fine objective/H1/2/k_rms/drift/cutoff: 0.0461466617091/1.03044379494/1.08494121845/10.9373162862/2.08425630278e-06
+  cross-resolution/refinement-eligible: yes/no
+  outputs: /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/late/orthogonal-bundle-0-discovery/trace.csv and /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/late/orthogonal-bundle-0-discovery/state.csv
+This constrained floating-point candidate is not a PDE proof. Profile eligibility refers only to the profile route; amplification requires separate robustness checks.

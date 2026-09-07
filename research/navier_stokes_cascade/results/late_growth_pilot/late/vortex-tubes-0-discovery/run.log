@@ -1,0 +1,12 @@
+start 0 iteration 1 objective=0.01006199586 H1/2=1.006806862 k_rms=1.029273408 profile-drift=8.979876327 cutoff=0.001050716635 pair-score=-0.2259180565 selected=yes gradient-error=9.910606419e-06
+start 0 iteration 2 objective=0.02138587681 H1/2=1.016339518 k_rms=1.051214168 profile-drift=7.502350948 cutoff=0.001569223688 pair-score=-0.2075736885 selected=yes gradient-error=7.724882116e-06
+start 0 best pair-score=-0.2075736885 H1/2=1.016541414 profile-drift=5.469210106 shape-penalty=0.02730528074 path-penalty=0.0130982748 globally-selected=yes
+Adjoint Fourier-state optimization complete
+  family/bandwidth/real-dofs: vortex-tubes/3/684
+  starts/selected start/iteration: 1/0/2
+  accepted steps/trajectories: 2/11
+  coarse objective/H1/2/k_rms/drift/cutoff: 0.0213858768112/1.0163395182/1.05121416813/7.50235094844/0.00156922368766
+  fine objective/H1/2/k_rms/drift/cutoff: 0.0275838811109/1.01654141395/1.05221653697/5.46921010563/3.12426004699e-06
+  cross-resolution/refinement-eligible: yes/no
+  outputs: /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/late/vortex-tubes-0-discovery/trace.csv and /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/late/vortex-tubes-0-discovery/state.csv
+This constrained floating-point candidate is not a PDE proof. Profile eligibility refers only to the profile route; amplification requires separate robustness checks.

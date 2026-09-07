@@ -1,0 +1,12 @@
+start 0 iteration 1 objective=0.05555507421 H1/2=1.046888972 k_rms=1.122135317 profile-drift=6.693547706 cutoff=0.002078240863 pair-score=-0.1553875032 selected=yes gradient-error=8.487760898e-06
+start 0 iteration 2 objective=0.06578375583 H1/2=1.055889128 k_rms=1.140124607 profile-drift=6.968873547 cutoff=0.002296771281 pair-score=-0.1629533494 selected=yes gradient-error=7.240257405e-06
+start 0 best pair-score=-0.1629533494 H1/2=1.056122494 profile-drift=6.700001096 shape-penalty=0.03626115005 path-penalty=0.02129579701 globally-selected=yes
+Adjoint Fourier-state optimization complete
+  family/bandwidth/real-dofs: wave-packets/3/684
+  starts/selected start/iteration: 1/0/2
+  accepted steps/trajectories: 2/11
+  coarse objective/H1/2/k_rms/drift/cutoff: 0.0657837558293/1.05588912786/1.14012460692/6.968873547/0.00229677128061
+  fine objective/H1/2/k_rms/drift/cutoff: 0.0744374677605/1.05612249443/1.14145964126/6.70000109559/3.22149013161e-06
+  cross-resolution/refinement-eligible: yes/no
+  outputs: /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/endpoint/checkpoint-discovery/trace.csv and /workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/endpoint/checkpoint-discovery/state.csv
+This constrained floating-point candidate is not a PDE proof. Profile eligibility refers only to the profile route; amplification requires separate robustness checks.

@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_replay_clock_cadence_and_gradient_gate (__main__.LateGrowthCli.test_replay_clock_cadence_and_gradient_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/tests/test_late_growth_cli.py", line 44, in test_replay_clock_cadence_and_gradient_gate
+    self.assertEqual((folder / (name + "-evidence.csv")).read_bytes(),
+AssertionError: b'resolution,grid,cutoff,sampling_grid,snap[5231 chars]13\n' != b''
+
+----------------------------------------------------------------------
+Ran 1 test in 5.750s
+
+FAILED (failures=1)

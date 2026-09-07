@@ -1,0 +1,513 @@
+{
+  "scope": "separate frozen-field resolution follow-up; numerical screening only",
+  "state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "optimizer_sha256": "424978f9700cc75bbc76beeaff9fccfc8e656d64398c12e4f2adc53f2c759d6c",
+  "oracle_sha256": "0f37c062b4fad0033864fe071690d3b4faa20a7df458602928648a8d88e7122b",
+  "thresholds": {
+    "cutoff_margin": 0.008,
+    "cross_h_final": 0.02,
+    "cross_l3_final": 0.02,
+    "cross_vorticity_final": 0.1,
+    "cross_enstrophy_final": 0.05,
+    "cross_scale_final": 0.05,
+    "cross_stretch_late_min": 0.1,
+    "minimum_h_final": 1.005,
+    "minimum_h_late": 1.001,
+    "minimum_scale_final": 1.05,
+    "minimum_stretch_late": 1.0,
+    "perturbation_relative": 0.001,
+    "sampling_vorticity_relative": 0.02,
+    "stretch_perturbation_relative": 0.02,
+    "gain_to_error_factor": 3.0,
+    "cross_late_rate_dimensionless": 0.002,
+    "perturbation_late_rate_dimensionless": 0.001
+  },
+  "horizon": 0.06,
+  "runs": [
+    {
+      "stage": "holdout",
+      "returncode": 0,
+      "returncode_provenance": "Recovered from the original driver control flow: it reached the CSV identity check only after subprocess returncode 0; the later ValueError occurred before saving that status.",
+      "postprocessing_failure": "The initial raw-CSV hash check incorrectly compared source_grid=16, cutoff=5 metadata with source_grid=32, cutoff=10. All 342 physical coefficient rows and constraints were subsequently verified identical after excluding only those two metadata columns.",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/state_optimize",
+        "--grid",
+        "32",
+        "--fine-grid",
+        "64",
+        "--seed-bandwidth",
+        "3",
+        "--energy",
+        "10",
+        "--viscosity",
+        "0.02",
+        "--state-input",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/late/checkpoint-discovery/state.csv",
+        "--iterations",
+        "0",
+        "--final-time",
+        "0.06",
+        "--dt",
+        "0.000125",
+        "--fine-max-dt",
+        "0.000125",
+        "--search-track",
+        "amplification",
+        "--growth-objective",
+        "late-rate",
+        "--late-window-start",
+        "0.5",
+        "--late-rate-temperature",
+        "0.1",
+        "--late-rate-samples",
+        "5",
+        "--profile-path-samples",
+        "8",
+        "--evidence-grid",
+        "64",
+        "--diagnostic-every",
+        "40",
+        "--output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/holdout/trace.csv",
+        "--state-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/holdout/state.csv",
+        "--evidence-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/holdout/evidence.csv",
+        "--late-rate-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/holdout/late-rates.csv"
+      ],
+      "reassessed_existing_output": true,
+      "coefficient_identity": true,
+      "output_initial_csv_sha256": "83bd89d78f677e3929a0cf7c4aabf90185488d1e1552c5d182283dbc5734e559",
+      "result": {
+        "evidence": {
+          "coarse": {
+            "h_final": 1.089587921450797,
+            "l3_final": 0.9985172884958482,
+            "vorticity_final": 1.369796763880156,
+            "enstrophy_final": 1.5085026419068988,
+            "scale_final": 1.237828696902959,
+            "h_late": 1.0472487258176026,
+            "h_late_min_step": 1.0112261973514889,
+            "stretch_late_min": 13.007520154833665,
+            "vorticity_peak_sampled": 1.369796763880156
+          },
+          "fine": {
+            "h_final": 1.0895966877726906,
+            "l3_final": 0.9986390977734333,
+            "vorticity_final": 1.344960506376311,
+            "enstrophy_final": 1.508814118732491,
+            "scale_final": 1.2379567336590767,
+            "h_late": 1.0472571168178337,
+            "h_late_min_step": 1.0112316380232746,
+            "stretch_late_min": 12.975675456507311,
+            "vorticity_peak_sampled": 1.344960506376311
+          }
+        },
+        "conservative": {
+          "h_final": 1.089587921450797,
+          "l3_final": 0.9985172884958482,
+          "vorticity_final": 1.344960506376311,
+          "enstrophy_final": 1.5085026419068988,
+          "scale_final": 1.237828696902959,
+          "h_late": 1.0472487258176026,
+          "h_late_min_step": 1.0112261973514889,
+          "stretch_late_min": 12.975675456507311,
+          "vorticity_peak_sampled": 1.344960506376311
+        },
+        "cross_relative": {
+          "h_final": 8.045474065660934e-06,
+          "l3_final": 0.00012197527400707661,
+          "vorticity_final": 0.018131344852569623,
+          "enstrophy_final": 0.00020643817003379857,
+          "scale_final": 0.00010342587316373151,
+          "stretch_late_min": 0.0024481759741514482
+        },
+        "steps": {
+          "coarse": 480,
+          "fine": 493
+        },
+        "peak_cutoff": 7.721435054606719e-05,
+        "numerical_failures": [],
+        "physics_failures": [],
+        "profile_route_eligible": false,
+        "native_grid_vorticity_disagreement": 0.006124438935460725,
+        "late_growth": {
+          "horizon": 0.06,
+          "start_fraction": 0.5,
+          "samples": 5,
+          "temperature": 0.1,
+          "evidence": {
+            "coarse": {
+              "minimum": 1.45750319835103,
+              "maximum": 1.5701166531305872,
+              "soft_minimum": 1.5208071707615558,
+              "rates": [
+                1.5469549354279224,
+                1.5701166531305872,
+                1.557075341737454,
+                1.516864042767661,
+                1.45750319835103
+              ]
+            },
+            "fine": {
+              "minimum": 1.458609239043324,
+              "maximum": 1.5701535149830363,
+              "soft_minimum": 1.5213345229157513,
+              "rates": [
+                1.5469630115857016,
+                1.5701535149830363,
+                1.557210942037505,
+                1.5172833398473524,
+                1.458609239043324
+              ]
+            }
+          },
+          "conservative_minimum": 1.45750319835103,
+          "cross_dimensionless": 6.636244153764182e-05
+        }
+      },
+      "files": {
+        "evidence.csv": "dc4e61a4921adc7df2752c4e5c133ffb2c9a83aaecf3e473181b2d82caca8fec",
+        "late-rates.csv": "877c39826edfaa9869c0d179dcc04e34c33d27e6b13c0ac37a8ccfe4a607546f",
+        "run.log": "224dc3ace996c2807374747cd8282e7f0d8229a596e1e695dc1dc10dba1f9012",
+        "state.csv": "83bd89d78f677e3929a0cf7c4aabf90185488d1e1552c5d182283dbc5734e559",
+        "trace.csv": "b12354ada05b70456faf388f3614ff31b4033332fdacdd3857edb0ccb347d80d"
+      }
+    },
+    {
+      "stage": "half-dt",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/state_optimize_final",
+        "--grid",
+        "32",
+        "--fine-grid",
+        "64",
+        "--seed-bandwidth",
+        "3",
+        "--energy",
+        "10",
+        "--viscosity",
+        "0.02",
+        "--state-input",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/late/checkpoint-discovery/state.csv",
+        "--iterations",
+        "0",
+        "--final-time",
+        "0.06",
+        "--dt",
+        "6.25e-05",
+        "--fine-max-dt",
+        "6.085192697768763e-05",
+        "--search-track",
+        "amplification",
+        "--growth-objective",
+        "late-rate",
+        "--late-window-start",
+        "0.5",
+        "--late-rate-temperature",
+        "0.1",
+        "--late-rate-samples",
+        "5",
+        "--profile-path-samples",
+        "8",
+        "--evidence-grid",
+        "64",
+        "--diagnostic-every",
+        "40",
+        "--output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/half-dt/trace.csv",
+        "--state-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/half-dt/state.csv",
+        "--evidence-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/half-dt/evidence.csv",
+        "--late-rate-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/half-dt/late-rates.csv"
+      ],
+      "executable_sha256": "5d26ba790018872fae9b7f5c7084d45838166e6ac9f0a06c9aeacf27e7f35b84",
+      "returncode": 0,
+      "coefficient_identity": true,
+      "output_initial_csv_sha256": "83bd89d78f677e3929a0cf7c4aabf90185488d1e1552c5d182283dbc5734e559",
+      "result": {
+        "evidence": {
+          "coarse": {
+            "h_final": 1.0895879214509456,
+            "l3_final": 0.99851728849574,
+            "vorticity_final": 1.3697967638785482,
+            "enstrophy_final": 1.508502641909114,
+            "scale_final": 1.237828696903913,
+            "h_late": 1.0472487258176824,
+            "h_late_min_step": 1.0112261973515042,
+            "stretch_late_min": 13.00752015471646,
+            "vorticity_peak_sampled": 1.3697967638785482
+          },
+          "fine": {
+            "h_final": 1.0895966877728323,
+            "l3_final": 0.9986390977733255,
+            "vorticity_final": 1.3449605063799266,
+            "enstrophy_final": 1.5088141187345716,
+            "scale_final": 1.2379567336599713,
+            "h_late": 1.047257116817906,
+            "h_late_min_step": 1.0112316380232855,
+            "stretch_late_min": 12.975675456382161,
+            "vorticity_peak_sampled": 1.3449605063799266
+          }
+        },
+        "conservative": {
+          "h_final": 1.0895879214509456,
+          "l3_final": 0.99851728849574,
+          "vorticity_final": 1.3449605063799266,
+          "enstrophy_final": 1.508502641909114,
+          "scale_final": 1.237828696903913,
+          "h_late": 1.0472487258176824,
+          "h_late_min_step": 1.0112261973515042,
+          "stretch_late_min": 12.975675456382161,
+          "vorticity_peak_sampled": 1.3449605063799266
+        },
+        "cross_relative": {
+          "h_final": 8.04547405934252e-06,
+          "l3_final": 0.00012197527400753447,
+          "vorticity_final": 0.018131344848777656,
+          "enstrophy_final": 0.00020643816994418476,
+          "scale_final": 0.00010342587311576664,
+          "stretch_late_min": 0.002448175974784221
+        },
+        "steps": {
+          "coarse": 960,
+          "fine": 992
+        },
+        "peak_cutoff": 7.721435056353298e-05,
+        "numerical_failures": [],
+        "physics_failures": [],
+        "profile_route_eligible": false,
+        "native_grid_vorticity_disagreement": 0.006124438939382078,
+        "late_growth": {
+          "horizon": 0.06,
+          "start_fraction": 0.5,
+          "samples": 5,
+          "temperature": 0.1,
+          "evidence": {
+            "coarse": {
+              "minimum": 1.4575031983501554,
+              "maximum": 1.5701166531311486,
+              "soft_minimum": 1.5208071707614417,
+              "rates": [
+                1.546954935428603,
+                1.5701166531311486,
+                1.557075341737829,
+                1.5168640427676117,
+                1.4575031983501554
+              ]
+            },
+            "fine": {
+              "minimum": 1.4586092390425858,
+              "maximum": 1.570153514983625,
+              "soft_minimum": 1.5213345229157065,
+              "rates": [
+                1.546963011586398,
+                1.570153514983625,
+                1.5572109420379074,
+                1.5172833398473298,
+                1.4586092390425858
+              ]
+            }
+          },
+          "conservative_minimum": 1.4575031983501554,
+          "cross_dimensionless": 6.636244154582193e-05
+        }
+      },
+      "files": {
+        "evidence.csv": "2ec72ff46f5de0a3d50e9371537fef15620279b2915ea3ffc323f2520fc5716a",
+        "late-rates.csv": "da1f8285c572453447f19262b33de98b31f2c628309b9d7365940ea01dd78da6",
+        "run.log": "e965eb13598e2d0a3098ea93abbf15f988c2f27c92be3077159fdff895889858",
+        "state.csv": "83bd89d78f677e3929a0cf7c4aabf90185488d1e1552c5d182283dbc5734e559",
+        "trace.csv": "18b12e5ce899369d40c2c546abbc3c26ef3e399f12f3ea9b81b144e3f1cbb570"
+      }
+    },
+    {
+      "stage": "sampling",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/state_optimize_final",
+        "--grid",
+        "32",
+        "--fine-grid",
+        "64",
+        "--seed-bandwidth",
+        "3",
+        "--energy",
+        "10",
+        "--viscosity",
+        "0.02",
+        "--state-input",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/late/checkpoint-discovery/state.csv",
+        "--iterations",
+        "0",
+        "--final-time",
+        "0.06",
+        "--dt",
+        "0.000125",
+        "--fine-max-dt",
+        "0.000125",
+        "--search-track",
+        "amplification",
+        "--growth-objective",
+        "late-rate",
+        "--late-window-start",
+        "0.5",
+        "--late-rate-temperature",
+        "0.1",
+        "--late-rate-samples",
+        "9",
+        "--profile-path-samples",
+        "16",
+        "--evidence-grid",
+        "128",
+        "--diagnostic-every",
+        "40",
+        "--output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/sampling/trace.csv",
+        "--state-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/sampling/state.csv",
+        "--evidence-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/sampling/evidence.csv",
+        "--late-rate-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/sampling/late-rates.csv"
+      ],
+      "executable_sha256": "5d26ba790018872fae9b7f5c7084d45838166e6ac9f0a06c9aeacf27e7f35b84",
+      "returncode": 0,
+      "coefficient_identity": true,
+      "output_initial_csv_sha256": "83bd89d78f677e3929a0cf7c4aabf90185488d1e1552c5d182283dbc5734e559",
+      "result": {
+        "evidence": {
+          "coarse": {
+            "h_final": 1.089587921450797,
+            "l3_final": 0.9985172932710326,
+            "vorticity_final": 1.3674551594554272,
+            "enstrophy_final": 1.508502641906899,
+            "scale_final": 1.2378286969029593,
+            "h_late": 1.0472487258176024,
+            "h_late_min_step": 1.0055413473502823,
+            "stretch_late_min": 13.00752015483366,
+            "vorticity_peak_sampled": 1.3674551594554272
+          },
+          "fine": {
+            "h_final": 1.0895966877726904,
+            "l3_final": 0.9986391032188013,
+            "vorticity_final": 1.344423140080017,
+            "enstrophy_final": 1.508814118732491,
+            "scale_final": 1.2379567336590767,
+            "h_late": 1.0472571168178335,
+            "h_late_min_step": 1.0055446938478207,
+            "stretch_late_min": 12.975675456507311,
+            "vorticity_peak_sampled": 1.344423140080017
+          }
+        },
+        "conservative": {
+          "h_final": 1.089587921450797,
+          "l3_final": 0.9985172932710326,
+          "vorticity_final": 1.344423140080017,
+          "enstrophy_final": 1.508502641906899,
+          "scale_final": 1.2378286969029593,
+          "h_late": 1.0472487258176024,
+          "h_late_min_step": 1.0055413473502823,
+          "stretch_late_min": 12.975675456507311,
+          "vorticity_peak_sampled": 1.344423140080017
+        },
+        "cross_relative": {
+          "h_final": 8.04547406545715e-06,
+          "l3_final": 0.00012197594443895126,
+          "vorticity_final": 0.01684297961520167,
+          "enstrophy_final": 0.00020643817003365142,
+          "scale_final": 0.00010342587316355214,
+          "stretch_late_min": 0.0024481759741510393
+        },
+        "steps": {
+          "coarse": 480,
+          "fine": 495
+        },
+        "peak_cutoff": 7.721435054606717e-05,
+        "numerical_failures": [],
+        "physics_failures": [],
+        "profile_route_eligible": false,
+        "native_grid_vorticity_disagreement": 0.006124438935460397,
+        "late_growth": {
+          "horizon": 0.06,
+          "start_fraction": 0.5,
+          "samples": 9,
+          "temperature": 0.1,
+          "evidence": {
+            "coarse": {
+              "minimum": 1.45750319835103,
+              "maximum": 1.5701166531305863,
+              "soft_minimum": 1.5267866395911975,
+              "rates": [
+                1.546954935427922,
+                1.563636165772318,
+                1.5701166531305863,
+                1.5675446140480087,
+                1.5570753417374532,
+                1.5398304267824785,
+                1.5168640427676607,
+                1.4891374805599775,
+                1.45750319835103
+              ]
+            },
+            "fine": {
+              "minimum": 1.458609239043326,
+              "maximum": 1.5701535149830366,
+              "soft_minimum": 1.5272403801378116,
+              "rates": [
+                1.5469630115857016,
+                1.5636539557322504,
+                1.5701535149830366,
+                1.5676170115338286,
+                1.5572109420375055,
+                1.540073724913685,
+                1.517283339847353,
+                1.4898321997475843,
+                1.458609239043326
+              ]
+            }
+          },
+          "conservative_minimum": 1.45750319835103,
+          "cross_dimensionless": 6.636244153776172e-05
+        }
+      },
+      "files": {
+        "evidence.csv": "cc9cb2f7e218e69ebbf8e755d2b0f66a20493bc682f834003ba6d8a802ca55f1",
+        "late-rates.csv": "66b3d4bb8a0968f3263593b8cdcc69b49625ef111dce27b6702bf2f3f4ccffe0",
+        "run.log": "90c263765f9f76eee99f182a4b02c5cf0bae670e7dd36e9e504b4037d069c530",
+        "state.csv": "83bd89d78f677e3929a0cf7c4aabf90185488d1e1552c5d182283dbc5734e559",
+        "trace.csv": "92d0dec341ac959d7a9a60e3f1a66f1cd992efb4ca01e2364adb9a39b446a59e"
+      }
+    }
+  ],
+  "failures": [],
+  "resume_optimizer_sha256": "5d26ba790018872fae9b7f5c7084d45838166e6ac9f0a06c9aeacf27e7f35b84",
+  "gain_error": {
+    "minimum_gain": 0.08958792145079708,
+    "observed_spread": 8.766322035169694e-06,
+    "passed": true
+  },
+  "oracle_command": [
+    "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_fftw_compare",
+    "--grid",
+    "64",
+    "--viscosity",
+    "0.02",
+    "--energy",
+    "10",
+    "--final-time",
+    "0.06",
+    "--dt",
+    "0.000125",
+    "--state-input",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/late/checkpoint-discovery/state.csv",
+    "--diagnostic-every",
+    "40",
+    "--output",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_pilot/leader_32_64/fftw.csv"
+  ],
+  "oracle_returncode": 0,
+  "status": "validated-finite-amplification-shortlist"
+}

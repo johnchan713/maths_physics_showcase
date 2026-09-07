@@ -1,0 +1,133 @@
+{
+  "scope": "local regression results; clean CMake and ASan+UBSan are separate CI checks",
+  "strict_build_flags": [
+    "-std=c++11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror"
+  ],
+  "ubsan_flags": [
+    "-O1",
+    "-g",
+    "-fsanitize=undefined",
+    "-fno-omit-frame-pointer"
+  ],
+  "runs": [
+    {
+      "name": "test_late_growth",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_late_growth"
+      ],
+      "returncode": 0,
+      "executable_sha256": "dd9c8d0dc5ad19b602183f3db7d351aec8016406f56df075cee281bfa1a8c38c",
+      "log_sha256": "6f9b677ef2992e6287be6ac3c88b777a41a19b718191ff29d4365399041861c6"
+    },
+    {
+      "name": "test_late_growth_ubsan",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_late_growth_ubsan"
+      ],
+      "returncode": 0,
+      "executable_sha256": "bf148cab9d5f29f6bf61613aa2342a56d1c6616d8774fcda11df1a0a7b655746",
+      "log_sha256": "6f9b677ef2992e6287be6ac3c88b777a41a19b718191ff29d4365399041861c6"
+    },
+    {
+      "name": "test_state_optimizer",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_state_optimizer"
+      ],
+      "returncode": 0,
+      "executable_sha256": "a45df4ca669dc540634287af65582a0c32b884399dc39ec7e4237af9006ac69a",
+      "log_sha256": "cf75fe489f60dcc52d3ce06c1337d838dbdc7f207440b85e9efe7fadb8b03093"
+    },
+    {
+      "name": "test_galerkin",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_galerkin"
+      ],
+      "returncode": 0,
+      "executable_sha256": "d8389381a6864624e8133f9db4efdcf04f37406c741f2295e956435c8866264d",
+      "log_sha256": "41c4294c7dcffb37bed32a509329dc61206e624a25029e55573b03c26e99a8ac"
+    },
+    {
+      "name": "test_pseudospectral",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_pseudospectral"
+      ],
+      "returncode": 0,
+      "executable_sha256": "8d6e76a683fc0babbb9ac60e41340d72cf899acb9aff63174472cf3a3316e302",
+      "log_sha256": "9d05f1b8438e6ee8053355e7b7fbf65e2a4c19c8fbcc5e5a6ab1c28c092f1aff"
+    },
+    {
+      "name": "test_candidate_score",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_candidate_score"
+      ],
+      "returncode": 0,
+      "executable_sha256": "929bf681a4d010e93c87a6b9e72268909bacbd4f9fda281a7911ca506981f2a4",
+      "log_sha256": "0bcb831b1143d5554c3e618ee995ab48b8532722b9f20b2668d62f8d307d9a96"
+    },
+    {
+      "name": "test_parameter_optimizer",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_parameter_optimizer"
+      ],
+      "returncode": 0,
+      "executable_sha256": "6a0b46c08a39508ad14bebf90d7e0bc1a484697f1f07ca7a5ec6add429b8d66e",
+      "log_sha256": "fffe6606ca623c82df8ceecaed9416c1e0573b64a02a97a98758b8760d805ef3"
+    },
+    {
+      "name": "test_candidate_evidence",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_candidate_evidence"
+      ],
+      "returncode": 0,
+      "executable_sha256": "d44d6c3f52faab0047d116c1e135d6924b79a174fa40806c54991cd8f357168e",
+      "log_sha256": "107681969eaacfa9bb955cf7e089f5e7b47ba9252c928af3fc35962497a2d756"
+    },
+    {
+      "name": "test_fftw",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_fftw"
+      ],
+      "returncode": 0,
+      "executable_sha256": "786d18fa3212ba51e7e63010c3c30ee49abeb5e57ada56903e7e32c6a691fc79",
+      "log_sha256": "2e77ff874cf030564f7d71a1fd2e647b70727c497a2cec5c2d2b49ffa20d2374"
+    },
+    {
+      "name": "test_continuation",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/test_continuation"
+      ],
+      "returncode": 0,
+      "executable_sha256": "6d8640bba0b938e288c32f2249cb9cbb45cdc24dfdae476c9acf321a811de1f2",
+      "log_sha256": "64928bc90fdc49020b15a241a1c7958b97a8f1d01b48bf38a62bfd0c02642063"
+    },
+    {
+      "name": "robust_search",
+      "command": [
+        "python3",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/tests/test_robust_search.py"
+      ],
+      "returncode": 0,
+      "executable_sha256": null,
+      "log_sha256": "44da5ff3d8732677572559b618a09686fa21efd87af4d2b415dc65f98118d47f"
+    },
+    {
+      "name": "late_growth_cli",
+      "command": [
+        "python3",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/tests/test_late_growth_cli.py",
+        "--optimizer",
+        "/workspace/scratch/3529ca692852/ns-late-growth-build.Trfde5/state_optimize",
+        "--legacy-optimizer",
+        "/workspace/scratch/3529ca692852/ns-robust-build.t7H5uL/navier_stokes_state_optimize"
+      ],
+      "returncode": 1,
+      "executable_sha256": null,
+      "log_sha256": "4b3c8616fa0d7009d82c0dc4dbb3c37d2ed104bd59620a35e283195672ab6612"
+    }
+  ]
+}

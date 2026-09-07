@@ -4,6 +4,19 @@ These records support numerical finite-amplification experiments, not a PDE
 singularity claim. The gates and equations are documented in the
 [research README](../README.md#robust-amplification-search).
 
+## Late-growth objective comparison
+
+The [matched late-growth pilot](late_growth_pilot/README.md) integrates the
+critical-rate source into the full discrete adjoint. Four matched starts
+with two iterations each improve their weakest sampled late growth by
+1.7--2.8% against endpoint-objective controls. These are small finite
+improvements. Neither low-grid arm passes all held-out checks; the raw
+failures and the separate frozen-leader resolution follow-up are retained.
+That follow-up passes all declared `32/64, T=.06` checks, with 8.96%
+H1/2 growth and independent full-state disagreement `1.41e-15`. The
+logarithmic growth rate already slows, and L3 remains slightly below its
+initial value. A finite-amplification label is not a proof claim.
+
 ## Verified seven-seed pilot
 
 [`robust_amplification_verified/manifest.json`](robust_amplification_verified/manifest.json)

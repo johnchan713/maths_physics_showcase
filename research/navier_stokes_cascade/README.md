@@ -1308,6 +1308,59 @@ L3 still decreases. The evolved 128-grid checkpoint is archived in
 The same record links a critical production–diffusion budget and checked
 local adjoint source for a proposed late-growth search objective.
 
+### Late-window critical-growth optimization
+
+The local critical-rate gradient is now integrated into the **full reverse
+discrete RK4 trajectory**. `--growth-objective late-rate` replaces the endpoint
+H1/2 reward with `T * Phi`, where `gamma=d log(||u||_(H1/2))/dt` includes
+viscosity and `Phi=-tau log(mean(exp(-gamma/tau)))` over fixed late times.
+The weakest sampled rates get the largest adjoint weights. The endpoint
+scale reward and cutoff penalty remain; the new mode requires the
+`amplification` track. The default `endpoint` mode remains reproducible.
+
+```sh
+python3 research/navier_stokes_cascade/scripts/robust_search.py \
+  --optimizer ./build/research/navier_stokes_cascade/navier_stokes_state_optimize \
+  --oracle ./build/research/navier_stokes_cascade/navier_stokes_fftw_compare \
+  --growth-objective late-rate --late-window-start .5 \
+  --late-rate-samples 5 --late-rate-temperature .1 \
+  --starts 1 --iterations 2 --max-finalists 2 \
+  --discovery-time .04 --holdout-time .06 --output-dir new-late-search
+```
+
+The window starts at `.5T` and includes both ends; temperature has units of
+inverse time. These choices are fixed before discovery. The optimizer lands
+on each observation time even when it splits a timestep. The clock is
+independent of diagnostic printing and distinct from profile snapshots.
+`--late-rate-output` exposes every selected rate and its adjoint weight;
+the search driver retains it automatically. The doubled-sampling holdout
+also doubles the number of late-window intervals.
+
+Importantly, `Phi >= min(gamma)`: a positive smooth objective can hide a
+negative sampled rate. The robust driver separately requires the **actual
+sampled minimum** positive and compares all common rates between evolution
+grids. The normalized rate discrepancy `T*max|gamma_coarse-gamma_fine|`
+must be at most `.002`; the minimum's change under timestep/sampling
+perturbation must be at most `.001/T`. These are empirical screening gates,
+not continuous-time bounds or singularity criteria. Early decay is allowed,
+so delayed-growth fields are not discarded solely on their initial rate.
+
+The [matched four-start pilot](results/late_growth_pilot/README.md) finds
+small improvements in weakest sampled late growth, but both low-resolution
+search arms fail their complete held-out validation. Full-trajectory
+finite differences test aligned and split observation clocks, the terminal
+source, fixed-energy projection, and diagnostic-cadence independence. CLI
+checks also preserve historical endpoint evidence and reject an over-tight
+gradient check without accepting an update.
+
+The leading new field passes a separate frozen `32/64, T=.06` follow-up:
+about 8.96% H1/2 growth, positive sampled late rates, actual timestep
+refinement, doubled spatial/time samples, and a 491-step independent FFTW
+trajectory agreeing to `1.41e-15` in the whole state. L3 still decreases
+slightly and the relative critical-growth rate slows near the endpoint.
+See the pilot record for failures, source provenance and the exact new
+initial coefficient checkpoint; this is not a singularity claim.
+
 ### Checkpointed continuation of a frozen Fourier field
 
 The optional FFTW target `navier_stokes_continue` loads the optimized CSV

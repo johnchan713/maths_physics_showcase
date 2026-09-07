@@ -1,0 +1,121 @@
+{
+  "scope": "clean Ubuntu code validation; not independent validation of every research candidate",
+  "commit": "cf60620976ed26f7381d386813ef40968227a587",
+  "url": "https://github.com/johnchan713/maths_physics_showcase/actions/runs/34096901426",
+  "jobs": [
+    {
+      "id": 101662462622,
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install independent FFT oracle",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure CMake",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build research targets",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run invariant tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Sanitize saved-field continuation and restart",
+          "conclusion": "success"
+        },
+        {
+          "name": "Sanitize late-growth trajectory adjoint",
+          "conclusion": "success"
+        },
+        {
+          "name": "Exercise late-growth discovery and held-out checks",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run independent FFTW trajectory comparison",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run amplification discovery and held-out screening smoke",
+          "conclusion": "success"
+        },
+        {
+          "name": "Replay smooth-maximum local candidate through independent FFTW",
+          "conclusion": "success"
+        },
+        {
+          "name": "Replay amplification finalist through independent FFTW",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run convergence smoke comparison",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run FFT convergence smoke comparison",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run candidate-search smoke comparison",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify candidate search exercised profile windows",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run checked-gradient optimizer smoke test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify optimizer accepted a checked improving step",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run tangent-linear convergence check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run reverse discrete-adjoint convergence check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run constrained Fourier-state optimizer smoke test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify state optimizer accepted a checked joint improvement",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify checkpoint restart is bit-for-bit reproducible",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain convergence CSV",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}
