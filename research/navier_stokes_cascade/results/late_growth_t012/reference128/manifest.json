@@ -1,0 +1,195 @@
+{
+  "status": "completed-trajectory-awaiting-crosschecks",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "solver_sha256": "3bc968559635109d627fdd2d7e45e47b8aa3b387e563824f58c0b4020d0c5c9a",
+  "protocol_sha256": "5e564242ca8adf97c4c897b43f69c8c3a47a73eef4b5617139024aaa15a3916d",
+  "extension_source_sha256": "0cdd45ccbac0f391387359130c8cf8eae08a97b7f965801a4bc67dbe90b1aff2",
+  "restorer_source_sha256": "24e83f7e998cdb3099e559abcd7faf3754e7219c31e37f984401e4e9f45cf15f",
+  "comparison_source_sha256": "f0396c0c6e917ae7b184653c46591e5f4b5149aedf4265f8d047f0d389e92084",
+  "source_sha256": {
+    "results/late_growth_continuation/run.py": "165cc0d2dc699b3e770174e692ac6ad06bf348216cbe780dbefa1ef23c10f34f",
+    "src/continue.cpp": "a5b9d2e46f2b2fc3b05606fe41821638435226b3e18212e8c419c919e7342686",
+    "scripts/continue_candidates.py": "e6b56fc678afe278a6d99e64a181cad55e83f900b4381013fc8b72d0e720710e",
+    "results/frozen_continuations/analyze_critical_budget.py": "37a839584790fd92b343b78445fe5fdbd224383beea7e6fc9bea4b80500713a4",
+    "include/ns_cascade/candidate_evidence.hpp": "b4e7fd0779a468716adf88ed510a7bf4b375e08107ce2165f20c0ad309a80251",
+    "include/ns_cascade/candidate_score.hpp": "060c4f606beb30a412ad1e904c1abce4188fff026c50e3db3b2da0f9ac337781",
+    "include/ns_cascade/checkpoint.hpp": "1d63abef93b08ec3a529923453b3ce5eca1e1a614fbe99b65d233d4c014cf654",
+    "include/ns_cascade/continuation.hpp": "a5a71d9cdb0ab27bbfb3c39ea2cda19b00196407eda2e525178ec383f51b95ad",
+    "include/ns_cascade/fftw_reference.hpp": "eb8c3d1f6e402e1c570277526cda98309aa2996daacafcb1b54df04a1b5f7520",
+    "include/ns_cascade/galerkin.hpp": "84a5404d4367d4a1b73bf9209f23acd0351687e9809177ddc45b0360a19c1dec",
+    "include/ns_cascade/late_growth.hpp": "97413fd81fcacd36b207df72ebd03351352e16a96838a82de326abb71148e648",
+    "include/ns_cascade/optimization_state_csv.hpp": "9edb11c595fb8dc3fb1181e0606c007b010f24f6563a0008374f60219edebf79",
+    "include/ns_cascade/parameter_optimizer.hpp": "b30c211df1feadf473c3b9ef778ed4545ef89e7521a1e84c8327a08e9a7fa478",
+    "include/ns_cascade/pseudospectral.hpp": "48133d8e48d999292793680b01c2c13f6afa003c0b4fbf5a6004413d3a9e2da0",
+    "include/ns_cascade/spectral_profile.hpp": "20f6165296fc493000586f9d381398595a4b39e245a98fbde1e291546ac0f488",
+    "include/ns_cascade/state_optimizer.hpp": "2c40b452578c44ad4db8dc6eac2d348f3c0c6b027e9234f3da643f4e0a4ee086"
+  },
+  "source_history": {
+    "path": "results/late_growth_resolution128/reference128",
+    "manifest_sha256": "b14bc3cacdf0458d2ea77f31e1d5d43fa950c6398492ddf9725b320a845b4336",
+    "checkpoint_archive": {
+      "format": "split-gzip",
+      "path": "results/late_growth_resolution128/reference128/t100_checkpoint.json",
+      "sha256": "574fc2abe56aa1b0d651c28721712378fedc4ba512fa23f69dc045dd17578d73"
+    },
+    "checkpoint_sha256": "8ac19073fd0661ce0f657b87dbfae98e70556d909349f77f87deb475aa01a02a"
+  },
+  "settings": {
+    "grid": 128,
+    "sampling_grid": 128,
+    "dense_sampling_grid": 128,
+    "maximum_dt": 0.000125,
+    "observation_interval": 0.01,
+    "viscosity": 0.02,
+    "cutoff_limit": 0.008,
+    "cfl": 0.4,
+    "endpoints": [
+      0.11,
+      0.12
+    ],
+    "start_time": 0.1
+  },
+  "numpy_version": "2.3.5",
+  "analytic_shear_check": "passed",
+  "restart_verification": {
+    "time": 0.1,
+    "grid": 128,
+    "cutoff": 42,
+    "checkpoint_sha256": "8ac19073fd0661ce0f657b87dbfae98e70556d909349f77f87deb475aa01a02a",
+    "checkpoint_bytes": 100663792,
+    "numpy_vs_csv_relative_errors": {
+      "energy": 8.620879748732506e-13,
+      "enstrophy": 2.4118425908388526e-13,
+      "h_half": 4.449353996224523e-13,
+      "enstrophy_stretching": 8.56471650099863e-14,
+      "enstrophy_viscous_destruction": 3.9216587718038335e-14,
+      "sampled_vorticity_native": 0.0
+    },
+    "energy": 9.696847108262528,
+    "enstrophy": 106.94189333110992,
+    "h_half": 7.533645016316038,
+    "h_half_squared_nonlinear_production": 160.14797105313045,
+    "h_half_squared_viscous_destruction": 43.58766592106115,
+    "h_half_squared_net_rate": 116.56030513206929,
+    "h_half_logarithmic_rate": 1.0268579623569405,
+    "critical_production_to_dissipation": 3.6741579910051674,
+    "enstrophy_stretching": 931.8248896069002,
+    "enstrophy_viscous_destruction": 163.06580949416633,
+    "sampled_vorticity_native": 163.24331916625073,
+    "nonlinear_energy_residual": 8.881784197001252e-16
+  },
+  "runs": [
+    {
+      "endpoint": 0.11,
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-long-horizon-build/navier_stokes_continue",
+        "--restart",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_t012/reference128/current.chk",
+        "--final-time",
+        "0.11",
+        "--output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_t012/reference128/t110.csv",
+        "--checkpoint-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_t012/reference128/current.chk"
+      ],
+      "restart_sha256": "8ac19073fd0661ce0f657b87dbfae98e70556d909349f77f87deb475aa01a02a",
+      "returncode": 0,
+      "wall_seconds": 615.2160297649989,
+      "log_sha256": "1f3c75d0365e366ed4fe1750debda9dc2e674823469d2b2da9eea70f677d6357",
+      "evidence_sha256": "577804a7677538e069979943a42976291979f1020a66e52ddf2d5caf9ca2206c",
+      "checkpoint_sha256": "01ca32e9551a8942b9ca21b2701b242cec46ce006843fc430be76d3d0500f676"
+    },
+    {
+      "endpoint": 0.12,
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-long-horizon-build/navier_stokes_continue",
+        "--restart",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_t012/reference128/current.chk",
+        "--final-time",
+        "0.12",
+        "--output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_t012/reference128/t120.csv",
+        "--checkpoint-output",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/results/late_growth_t012/reference128/current.chk"
+      ],
+      "restart_sha256": "01ca32e9551a8942b9ca21b2701b242cec46ce006843fc430be76d3d0500f676",
+      "returncode": 0,
+      "wall_seconds": 697.3698857780018,
+      "log_sha256": "1cdf8074c0cef5c94a8c44babed4d57d17e9d4f20d62de044162765bbe3646d4",
+      "evidence_sha256": "a451f2b039e8736a4129141a9dc43185a8e077e3a6135eb2b7e4cc5f409331a9",
+      "checkpoint_sha256": "63ab8fc7e053d921f66da275ee7501612564e4dfa37d33c7566f28f6247bea93"
+    }
+  ],
+  "budgets": [
+    {
+      "time": 0.11,
+      "grid": 128,
+      "cutoff": 42,
+      "checkpoint_sha256": "01ca32e9551a8942b9ca21b2701b242cec46ce006843fc430be76d3d0500f676",
+      "checkpoint_bytes": 100663792,
+      "numpy_vs_csv_relative_errors": {
+        "energy": 7.090698810005134e-13,
+        "enstrophy": 1.4222071118488426e-13,
+        "h_half": 2.7426653246507987e-13,
+        "enstrophy_stretching": 1.633026156671832e-14,
+        "enstrophy_viscous_destruction": 7.413868338840911e-14,
+        "sampled_vorticity_native": 0.0
+      },
+      "energy": 9.65250828670328,
+      "enstrophy": 114.8093827666257,
+      "h_half": 7.606947479606283,
+      "h_half_squared_nonlinear_production": 157.0461204924279,
+      "h_half_squared_viscous_destruction": 51.78103525941406,
+      "h_half_squared_net_rate": 105.26508523301382,
+      "h_half_logarithmic_rate": 0.9095645284408622,
+      "critical_production_to_dissipation": 3.0328887729967913,
+      "enstrophy_stretching": 1030.33573063462,
+      "enstrophy_viscous_destruction": 227.33171027507822,
+      "sampled_vorticity_native": 176.701359259551,
+      "nonlinear_energy_residual": 4.440892098500626e-16
+    },
+    {
+      "time": 0.12,
+      "grid": 128,
+      "cutoff": 42,
+      "checkpoint_sha256": "63ab8fc7e053d921f66da275ee7501612564e4dfa37d33c7566f28f6247bea93",
+      "checkpoint_bytes": 100663792,
+      "numpy_vs_csv_relative_errors": {
+        "energy": 5.109936190190468e-13,
+        "enstrophy": 5.362437454582043e-14,
+        "h_half": 1.339456591066687e-13,
+        "enstrophy_stretching": 6.195941859373643e-15,
+        "enstrophy_viscous_destruction": 3.463661339435561e-15,
+        "sampled_vorticity_native": 0.0
+      },
+      "energy": 9.604961323558031,
+      "enstrophy": 122.96342183384336,
+      "h_half": 7.671935309039688,
+      "h_half_squared_nonlinear_production": 154.585074031539,
+      "h_half_squared_viscous_destruction": 61.371035472416814,
+      "h_half_squared_net_rate": 93.21403855912217,
+      "h_half_logarithmic_rate": 0.7918473443211856,
+      "critical_production_to_dissipation": 2.51886045007367,
+      "enstrophy_stretching": 1137.6129890690586,
+      "enstrophy_viscous_destruction": 311.81598098483653,
+      "sampled_vorticity_native": 188.48515460143295,
+      "nonlinear_energy_residual": 0.0
+    }
+  ],
+  "checkpoints": [
+    {
+      "time": 0.11,
+      "path": "t110.chk.gz",
+      "sha256": "6c809c0d609e79fe0cb88a33c6e076fa8bff7caaf317e137f7b698dbb19d8d15",
+      "uncompressed_sha256": "01ca32e9551a8942b9ca21b2701b242cec46ce006843fc430be76d3d0500f676",
+      "uncompressed_bytes": 100663792
+    },
+    {
+      "time": 0.12,
+      "path": "t120.chk.gz",
+      "sha256": "831e1673ec45207c0007e498cd5685771bf3161dc4fb1c995fce3e9d04c0d37c",
+      "uncompressed_sha256": "63ab8fc7e053d921f66da275ee7501612564e4dfa37d33c7566f28f6247bea93",
+      "uncompressed_bytes": 100663792
+    }
+  ]
+}

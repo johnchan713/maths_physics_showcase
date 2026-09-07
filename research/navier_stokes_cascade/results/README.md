@@ -6,6 +6,14 @@ singularity claim. The gates and equations are documented in the
 
 ## Late-growth objective comparison
 
+The [frozen .10-to-.12 continuation](late_growth_t012/README.md) passes the
+unchanged `64/128` and endpoint sampling gates. Fine-grid H1/2 grows `16.65%`,
+while L3 falls `3.77%` and relative critical growth slows to `.792`. The worst
+common-sampling vorticity gap is `7.19%` at `.11`; the denser endpoint gap at
+`.12` is `2.13%`. All four new evolved states are archived with verified
+restoration and independent snapshot budgets. These remain preliminary
+finite-amplification results, not a proof or certified PDE error bound.
+
 The [frozen late-growth continuation](late_growth_continuation/README.md)
 extends the same field through held-out `.08` and `.10`. Fine-grid H1/2
 growth reaches 14.55%, but its relative growth rate keeps falling and L3

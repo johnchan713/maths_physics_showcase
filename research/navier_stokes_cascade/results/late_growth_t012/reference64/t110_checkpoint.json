@@ -1,0 +1,26 @@
+{
+  "grid": 64,
+  "cutoff": 21,
+  "time": 0.11,
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "compressed_sha256": "6f8030536be9244ad6e5f7d128d674489c42753ee2487c8bc81bd7d9aeaf2725",
+  "uncompressed_sha256": "81f1b5c0c59000fbf2e464211b4b6af2a175a305310fddcc011facf4a098e4fb",
+  "uncompressed_bytes": 12583408,
+  "format": "split-gzip",
+  "checkpoint_format": "NSCONT1",
+  "original_path": "t110.chk.gz",
+  "compressed_bytes": 3726498,
+  "trajectory_status_when_packed": "completed-trajectory-awaiting-crosschecks",
+  "parts": [
+    {
+      "path": "t110_state/part-000.gzchunk",
+      "bytes": 3145728,
+      "sha256": "9662fb040ea9f83f7845fa4bf39586fc22b9620ebdf5ee6fecd8456de5b2bc0e"
+    },
+    {
+      "path": "t110_state/part-001.gzchunk",
+      "bytes": 580770,
+      "sha256": "f7bcee0c0c93a8c6fb7ec44613a962f6cdc3a87e0197f38e13896264c63f21c4"
+    }
+  ]
+}

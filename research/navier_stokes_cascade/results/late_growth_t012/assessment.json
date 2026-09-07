@@ -1,0 +1,289 @@
+{
+  "status": "passed-preliminary-finite-amplification-continuation-gates",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "protocol_sha256": "5e564242ca8adf97c4c897b43f69c8c3a47a73eef4b5617139024aaa15a3916d",
+  "analysis_sha256": "653d4b89794c56c6b119bbdcbe214f034f7ff1c2b2591c3d8482867ac43d824b",
+  "sampler_source_sha256": "571324b1a48a29f78e5ac151e0a172d6ef82ce49e573513539463455313355b0",
+  "checkpoint_reader_sha256": "37a839584790fd92b343b78445fe5fdbd224383beea7e6fc9bea4b80500713a4",
+  "extension_manifests": {
+    "64": "fc11361ffbb4c2dce6df7838a87edde4efc94d188bb0e2f3409afaa2cb996736",
+    "128": "a1b352ad7e9208cd331665985379cbdd2efa22a296d9817662be5f33075a9cd0"
+  },
+  "pairs": {
+    "0.11": {
+      "status": "continue-finite-amplification",
+      "failures": [],
+      "numerical_failures": [],
+      "maximum_trajectory_relative_gaps": {
+        "h_half_ratio": 2.804901991152301e-06,
+        "l3_dense_ratio": 7.951669705495495e-05,
+        "enstrophy_ratio": 0.0007624539517815674,
+        "k_rms_ratio": 0.0003828310772513859,
+        "vorticity_dense_ratio": 0.07188081602020378,
+        "late_stretching": 0.01761103368112014
+      },
+      "late_h_half_gains": [
+        1.0207418360793172,
+        1.02074386489316
+      ],
+      "sampling_shift": {
+        "l3_sample": 7.097399865028408e-08,
+        "vorticity_sample": 0.01345230473198819
+      },
+      "endpoints": [
+        {
+          "grid": 64.0,
+          "time": 0.11,
+          "step": 1005.0,
+          "h_half_ratio": 1.1566643009659432,
+          "l3_dense_ratio": 0.9694928762767879,
+          "vorticity_dense_ratio": 1.9865988622838329,
+          "enstrophy_ratio": 2.1723136771783675,
+          "k_rms_ratio": 1.5001701211738665,
+          "production_to_dissipation": 4.657278428825858,
+          "peak_cutoff_fraction": 8.226739890879464e-05
+        },
+        {
+          "grid": 128.0,
+          "time": 0.11,
+          "step": 1824.0,
+          "h_half_ratio": 1.1566675453050441,
+          "l3_dense_ratio": 0.9695699732786267,
+          "vorticity_dense_ratio": 2.1404566316205766,
+          "enstrophy_ratio": 2.1739712301338425,
+          "k_rms_ratio": 1.5007446528660024,
+          "production_to_dissipation": 4.532300968430415,
+          "peak_cutoff_fraction": 1.0391162801096855e-07
+        }
+      ],
+      "late_critical_rates": [
+        [
+          1.4586092390433765,
+          1.36242163305736,
+          1.2551454618493336,
+          1.14240179038331,
+          1.0266941656917001,
+          0.9097654020999284
+        ],
+        [
+          1.4586097326125547,
+          1.3624270834356522,
+          1.2551788234307997,
+          1.1424995982474608,
+          1.0268579623569405,
+          0.9095645284408622
+        ]
+      ],
+      "late_critical_rate_times": [
+        0.06,
+        0.07,
+        0.08,
+        0.09,
+        0.1,
+        0.11
+      ],
+      "horizon_times_maximum_gamma_gap": 2.209610249727989e-05
+    },
+    "0.12": {
+      "status": "continue-finite-amplification",
+      "failures": [],
+      "numerical_failures": [],
+      "maximum_trajectory_relative_gaps": {
+        "h_half_ratio": 7.544130805053688e-06,
+        "l3_dense_ratio": 0.00012142720100624122,
+        "enstrophy_ratio": 0.0014862143655684555,
+        "k_rms_ratio": 0.000747701567078736,
+        "vorticity_dense_ratio": 0.07188081602020378,
+        "late_stretching": 0.02930359700357279
+      },
+      "late_h_half_gains": [
+        1.0183662572694854,
+        1.0183563590302611
+      ],
+      "sampling_shift": {
+        "l3_sample": 7.097399865028408e-08,
+        "vorticity_sample": 0.01345230473198819
+      },
+      "endpoints": [
+        {
+          "grid": 64.0,
+          "time": 0.12,
+          "step": 1141.0,
+          "h_half_ratio": 1.1665580118232115,
+          "l3_dense_ratio": 0.9621747236070094,
+          "vorticity_dense_ratio": 2.2397962702809546,
+          "enstrophy_ratio": 2.324911446630194,
+          "k_rms_ratio": 1.5557991179783077,
+          "production_to_dissipation": 3.8286704823471513,
+          "peak_cutoff_fraction": 0.0001350871623331167
+        },
+        {
+          "grid": 128.0,
+          "time": 0.12,
+          "step": 2104.0,
+          "h_half_ratio": 1.1665492111569786,
+          "l3_dense_ratio": 0.9622915719791467,
+          "vorticity_dense_ratio": 2.283198617256024,
+          "enstrophy_ratio": 2.3283719064058803,
+          "k_rms_ratio": 1.5569632618490763,
+          "production_to_dissipation": 3.648347289564967,
+          "peak_cutoff_fraction": 4.453897007416857e-07
+        }
+      ],
+      "late_critical_rates": [
+        [
+          1.4586092390433765,
+          1.36242163305736,
+          1.2551454618493336,
+          1.14240179038331,
+          1.0266941656917001,
+          0.9097654020999284,
+          0.7940723526681784
+        ],
+        [
+          1.4586097326125547,
+          1.3624270834356522,
+          1.2551788234307997,
+          1.1424995982474608,
+          1.0268579623569405,
+          0.9095645284408622,
+          0.7918473443211856
+        ]
+      ],
+      "late_critical_rate_times": [
+        0.06,
+        0.07,
+        0.08,
+        0.09,
+        0.1,
+        0.11,
+        0.12
+      ],
+      "horizon_times_maximum_gamma_gap": 0.00026700100163913555
+    }
+  },
+  "sampling": [
+    {
+      "grid": 64,
+      "cutoff": 21,
+      "time": 0.11,
+      "viscosity": 0.02,
+      "sampling_grids": [
+        128,
+        256
+      ],
+      "initial_maxima": [
+        82.55311350352721,
+        82.60944618679963
+      ],
+      "final_maxima": [
+        163.9999213640953,
+        164.68664863594088
+      ],
+      "amplification_ratios": [
+        1.9865988622838329,
+        1.993557108027878
+      ],
+      "raw_relative_shift": 0.004169902524179048,
+      "ratio_relative_shift": 0.003490366900463946,
+      "numpy_vs_fftw_relative_errors": {
+        "maximum": 0.0,
+        "ratio": 0.0
+      },
+      "checkpoint_sha256": "81f1b5c0c59000fbf2e464211b4b6af2a175a305310fddcc011facf4a098e4fb"
+    },
+    {
+      "grid": 64,
+      "cutoff": 21,
+      "time": 0.12,
+      "viscosity": 0.02,
+      "sampling_grids": [
+        128,
+        256
+      ],
+      "initial_maxima": [
+        82.55311350352721,
+        82.60944618679963
+      ],
+      "final_maxima": [
+        184.90215572528058,
+        185.13819494438835
+      ],
+      "amplification_ratios": [
+        2.2397962702809546,
+        2.241126208808455
+      ],
+      "raw_relative_shift": 0.0012749352945709974,
+      "ratio_relative_shift": 0.0005934241999728288,
+      "numpy_vs_fftw_relative_errors": {
+        "maximum": 0.0,
+        "ratio": 0.0
+      },
+      "checkpoint_sha256": "1f821899f568af664009b389278d3bcf38b3756b3de1cc1d0cd4ad1db4f280bd"
+    },
+    {
+      "grid": 128,
+      "cutoff": 42,
+      "time": 0.11,
+      "viscosity": 0.02,
+      "sampling_grids": [
+        128,
+        256
+      ],
+      "initial_maxima": [
+        82.55311350352721,
+        82.60944618679963
+      ],
+      "final_maxima": [
+        176.701359259551,
+        176.88939045430678
+      ],
+      "amplification_ratios": [
+        2.1404566316205766,
+        2.141273166924733
+      ],
+      "raw_relative_shift": 0.001062987408531725,
+      "ratio_relative_shift": 0.00038133168470475047,
+      "numpy_vs_fftw_relative_errors": {
+        "maximum": 0.0,
+        "ratio": 0.0
+      },
+      "checkpoint_sha256": "01ca32e9551a8942b9ca21b2701b242cec46ce006843fc430be76d3d0500f676"
+    },
+    {
+      "grid": 128,
+      "cutoff": 42,
+      "time": 0.12,
+      "viscosity": 0.02,
+      "sampling_grids": [
+        128,
+        256
+      ],
+      "initial_maxima": [
+        82.55311350352721,
+        82.60944618679963
+      ],
+      "final_maxima": [
+        188.4851546014329,
+        189.16508582396744
+      ],
+      "amplification_ratios": [
+        2.2831986172560237,
+        2.289872339734855
+      ],
+      "raw_relative_shift": 0.0035943801128675338,
+      "ratio_relative_shift": 0.002914451763544114,
+      "numpy_vs_fftw_relative_errors": {
+        "maximum": 3.0158034982122597e-16,
+        "ratio": 1.945031003845712e-16
+      },
+      "checkpoint_sha256": "63ab8fc7e053d921f66da275ee7501612564e4dfa37d33c7566f28f6247bea93"
+    }
+  ],
+  "sampling_failures": [],
+  "scope": "Frozen-field empirical continuation; no new independent or refined-timestep evolution beyond .10 is claimed",
+  "cross_grid_vorticity_gap_on_256_samples": {
+    "0.11": 0.06898515386946304,
+    "0.12": 0.021287706777594523
+  }
+}

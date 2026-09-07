@@ -1374,6 +1374,14 @@ vorticity `1.982` times its initial value. The remaining pointwise discrepancy,
 decreasing L3 and slowing relative critical growth remain material limits;
 this result supports another bounded continuation, not a singularity claim.
 
+The [next frozen continuation](results/late_growth_t012/README.md) now reaches
+`.12` on both grids and passes the same preliminary gates. Fine-grid H1/2 grows
+`16.65%`, L3 falls `3.77%`, and densely sampled vorticity reaches `2.290` times
+its initial value. The worst common-sampling vorticity gap is `7.19%` at `.11`;
+the denser-sampling endpoint gap at `.12` is `2.13%`. Relative critical growth
+slows further to `.792`. The new evolved states, budget checks and complete
+resolution/sampling assessment are preserved; finite growth is not a blow-up proof.
+
 ### Checkpointed continuation of a frozen Fourier field
 
 The optional FFTW target `navier_stokes_continue` loads the optimized CSV

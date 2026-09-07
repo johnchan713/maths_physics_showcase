@@ -1,0 +1,49 @@
+{
+  "purpose": "Continue the unchanged late-growth field from its verified .10 states to .12 on 64 and 128 evolution grids",
+  "preceding_commit": "96829fb2cd74d3c39699a6866fb601ed81596843",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "initial_energy": 10,
+  "initial_fourier_bandwidth": 3,
+  "start_time": 0.10,
+  "endpoints": [0.11, 0.12],
+  "evolution_grids": [64, 128],
+  "cutoffs": [21, 42],
+  "viscosity": 0.02,
+  "maximum_time_step": 0.000125,
+  "cfl_target": 0.4,
+  "observation_interval": 0.01,
+  "common_physical_sampling_grid": 128,
+  "source_histories": {
+    "64": "results/late_growth_continuation/reference64",
+    "128": "results/late_growth_resolution128/reference128"
+  },
+  "source_checkpoints": {
+    "64": {"format": "gzip", "path": "results/late_growth_continuation/reference64/t100.chk.gz"},
+    "128": {"format": "split-gzip", "path": "results/late_growth_resolution128/reference128/t100_checkpoint.json"}
+  },
+  "reference_rule": "Restore each grid's own full evolved .10 checkpoint from its checksummed published archive. Retain original baselines, clock, configuration and accumulated diagnostics. Do not refit coefficients, pad an evolved coarse field, or override restart settings.",
+  "comparison_implementation": "../late_growth_continuation/assess.py:paired",
+  "retained_gates": {
+    "maximum_h_half_ratio_gap": 0.02,
+    "maximum_l3_ratio_gap": 0.02,
+    "maximum_enstrophy_ratio_gap": 0.05,
+    "maximum_characteristic_wavenumber_ratio_gap": 0.05,
+    "maximum_sampled_vorticity_ratio_gap": 0.10,
+    "maximum_stretching_gap_in_final_0.02_window": 0.10,
+    "minimum_h_half_gain_in_final_0.02_window": 1.001,
+    "minimum_sampled_late_stretching_to_destruction": 1.0,
+    "minimum_sampled_late_critical_rate": 0.0,
+    "maximum_horizon_times_late_critical_rate_gap": 0.002,
+    "maximum_cutoff_energy_fraction_each_step": 0.008
+  },
+  "additional_sampling": {
+    "sample_grids": [128, 256],
+    "times": [0.11, 0.12],
+    "maximum_raw_vorticity_sampling_shift": 0.02,
+    "maximum_vorticity_amplification_ratio_sampling_shift": 0.02,
+    "maximum_cross_evolution_vorticity_ratio_gap_on_256_samples": 0.10
+  },
+  "validation_scope": "Use the unchanged verified FFTW executable; independently recompute the critical budgets at restored .10 and new .11/.12 states using NumPy FFTs. Prior full independent-solver and smaller-timestep validation reaches .10 on grid 64. No new full independent or smaller-timestep trajectory is claimed by this extension.",
+  "stop_rule": "Each leg stops on the existing per-step cutoff or invariant failure. Complete at most the two declared intervals through .12, then assess both .11 and .12 with unchanged thresholds. Any failed spatial or sampling gate pauses promotion of this grid pair; no trajectory beyond .12 or grid above 128 is part of this experiment.",
+  "interpretation": "Finite-amplification screening, not a certified PDE Fourier tail or a proof or disproof of regularity. A resolution failure limits the numerical evidence; it does not reject the underlying initial field as a possible mechanism."
+}

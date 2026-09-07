@@ -26,6 +26,13 @@ and endpoint sampling gates. Vorticity reaches `1.982` times its initial value
 on `256` physical samples, but differs by `4.47%` from the 64-grid evolution
 on those same samples. L3 and the relative critical growth rate still decline.
 
+The [unchanged-field extension to .12](../results/late_growth_t012/README.md)
+also passes the preliminary gates. H1/2 grows `16.65%` and densely sampled
+vorticity reaches `2.290` times its initial value, while L3 falls `3.77%` and
+relative H1/2 growth slows further to `.792`. The archived comparison records
+both the worst pointwise gap at `.11` and the closer endpoint agreement at
+`.12`. No new initial coefficient candidate is introduced.
+
 For this field, replay with `--search-track amplification --growth-objective
 late-rate --grid 32 --fine-grid 64 --seed-bandwidth 3 --iterations 0
 --final-time .06 --dt .000125 --fine-max-dt .000125`, and distinct fresh

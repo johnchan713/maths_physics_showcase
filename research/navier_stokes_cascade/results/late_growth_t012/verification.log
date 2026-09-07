@@ -1,0 +1,20 @@
+test_corrupted_part_is_rejected (__main__.ArchiveIdentityTests.test_corrupted_part_is_rejected) ... ok
+test_part_cannot_escape_archive_directory (__main__.ArchiveIdentityTests.test_part_cannot_escape_archive_directory) ... ok
+test_valid_parts_pass (__main__.ArchiveIdentityTests.test_valid_parts_pass) ... ok
+test_wrong_combined_identity_is_rejected (__main__.ArchiveIdentityTests.test_wrong_combined_identity_is_rejected) ... ok
+test_changed_boundary_is_rejected (__main__.ObservationClockTests.test_changed_boundary_is_rejected) ... ok
+test_duplicate_endpoint_is_rejected (__main__.ObservationClockTests.test_duplicate_endpoint_is_rejected) ... ok
+test_missing_observation_is_rejected (__main__.ObservationClockTests.test_missing_observation_is_rejected) ... ok
+test_nonadvancing_step_is_rejected (__main__.ObservationClockTests.test_nonadvancing_step_is_rejected) ... ok
+test_shifted_clock_is_rejected (__main__.ObservationClockTests.test_shifted_clock_is_rejected) ... ok
+test_valid_restart_preserves_all_rows (__main__.ObservationClockTests.test_valid_restart_preserves_all_rows) ... ok
+test_clean_checks_pass (__main__.ScientificStatusTests.test_clean_checks_pass) ... ok
+test_missing_comparison_is_not_a_pass (__main__.ScientificStatusTests.test_missing_comparison_is_not_a_pass) ... ok
+test_resolution_failure_takes_precedence (__main__.ScientificStatusTests.test_resolution_failure_takes_precedence) ... ok
+test_sampling_failure_is_not_a_pass (__main__.ScientificStatusTests.test_sampling_failure_is_not_a_pass) ... ok
+test_stalled_growth_does_not_pass (__main__.ScientificStatusTests.test_stalled_growth_does_not_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.002s
+
+OK
