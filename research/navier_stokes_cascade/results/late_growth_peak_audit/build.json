@@ -1,0 +1,23 @@
+{
+  "compiler": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "command": [
+    "c++",
+    "-std=c++11",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror",
+    "-I",
+    "research/navier_stokes_cascade/include",
+    "research/navier_stokes_cascade/results/late_growth_peak_audit/benchmark.cpp",
+    "/lib/x86_64-linux-gnu/libfftw3.so.3",
+    "-o",
+    "/workspace/scratch/3529ca692852/ns-peak-audit-build.QNYoO1/benchmark"
+  ],
+  "source_sha256": "ae39bab0ab8d87d0b317660610875ef68c5daa9a20cde83a1e9a657473aaf390",
+  "binary_sha256": "6ea07423b47709b7fe13590981ebb1b89f4055a526e8a5048bc3a0f944725e99",
+  "fftw_library": "/lib/x86_64-linux-gnu/libfftw3.so.3.6.10",
+  "fftw_library_sha256": "b5cc02c4d360b5b20111cb0a251f8368af8c9ce3145357f5ba54c51ac4ca9b35",
+  "link_note": "The unversioned -lfftw3 developer linker name is unavailable here; this build directly links the same installed libfftw3.so.3 used by the verified continuation executable."
+}

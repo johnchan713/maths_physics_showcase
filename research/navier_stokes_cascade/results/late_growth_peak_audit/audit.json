@@ -1,0 +1,131 @@
+{
+  "status": "input-and-diagnostic-audit-passed",
+  "scientific_status": "original-t014-resolution-failure-retained",
+  "capacity_scope": "Two steps only; no completed .14 grid-256 evolution",
+  "verification_scope": "Verify input identity, spectral arithmetic and recorded vectors by direct sums.\n\nThe audit recomputes spectral norms and Fourier values at recorded locations.\nIt does not repeat every 256-grid maximum search or certify continuous maxima.\n",
+  "cases": [
+    {
+      "time": 0.12,
+      "direct_fourier_relative_error": 1.202022102761897e-15,
+      "scalar_peak_gap": 0.021287706777594406,
+      "maximum_sampled_vector_difference_over_fine_peak": 0.19636659336441642
+    },
+    {
+      "time": 0.13,
+      "direct_fourier_relative_error": 1.3941117396321916e-15,
+      "scalar_peak_gap": 0.02526021897280899,
+      "maximum_sampled_vector_difference_over_fine_peak": 0.22373533505695342
+    },
+    {
+      "time": 0.14,
+      "direct_fourier_relative_error": 1.1128612305125573e-15,
+      "scalar_peak_gap": 0.12654151681464162,
+      "maximum_sampled_vector_difference_over_fine_peak": 0.21338765737530282
+    }
+  ],
+  "prior_assessment_sha256": {
+    "results/late_growth_t012/assessment.json": "a8a5b2b35b26c0ab0f7e3cdb331d715e6c3e545a5e922a91f1736784e83f8521",
+    "results/late_growth_t014/assessment.json": "082576ee398c79a8fb7685b754ba9d6b037228947dd13368fefd92df37a18de3"
+  },
+  "cost_projection": {
+    "model": "Prior 128-grid step count times cutoff ratio, assuming comparable velocity bounds; not a completed run or confidence interval",
+    "modeled_steps": 5563.452380952381,
+    "stepping_hours_from_each_probe_step": [
+      151.97602680381266,
+      143.6617368151752
+    ],
+    "max_dt_step_count": 1120,
+    "max_dt_only_scenario_hours": [
+      30.59487856911111,
+      28.921096868533333
+    ],
+    "excluded": "Initialization, observations, checkpoint I/O, changes in machine load, and differences in the actual fine trajectory"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "23694787cde6720f551849c0e5d3bb447dc12b5b3c7438c4301d2729b861f5bc",
+      "bytes": 50
+    },
+    {
+      "path": "README.md",
+      "sha256": "84404e07f1e710beb08e0bbbf55b04e88cf14ad72fa8c350762abc5605cf6c2d",
+      "bytes": 9635
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "1621d36197e974f52b278b79caef9c4e9db16219f45062fc167912faf8a10018",
+      "bytes": 13062
+    },
+    {
+      "path": "audit.py",
+      "sha256": "10a67815fa39a754dc1293af335b5b6a0ba4680a1355ea29ed8f4bbdebbd41ed",
+      "bytes": 12692
+    },
+    {
+      "path": "benchmark.cpp",
+      "sha256": "ae39bab0ab8d87d0b317660610875ef68c5daa9a20cde83a1e9a657473aaf390",
+      "bytes": 5167
+    },
+    {
+      "path": "build.json",
+      "sha256": "2ba54f8fb22f59a4b65401a8ffe3048292d0fe75422b650ed48201854b04a218",
+      "bytes": 1177
+    },
+    {
+      "path": "diagnosis.json",
+      "sha256": "677474ecfc1de4b7356680e4dfa4eb8a3c98f43ac4adeb1b394f746cdeece60b",
+      "bytes": 26490
+    },
+    {
+      "path": "probe.json",
+      "sha256": "106915c334a40fc462d78538afcfbebb23b1770ef5dd6dbc1c44ec607bcb3d03",
+      "bytes": 2508
+    },
+    {
+      "path": "probe.log",
+      "sha256": "bb3c42cc32a5a2be664f24e3402d223cacddb9bad6d099d2a4dcc31a58a89fb0",
+      "bytes": 144
+    },
+    {
+      "path": "probe.py",
+      "sha256": "67b5e60cfa7289b61cacc7e521371b14d2700d4f39f7fcb964478f4b74b994ad",
+      "bytes": 2912
+    },
+    {
+      "path": "probe.stdout",
+      "sha256": "dba960206433a534cad603d73abf14c482dd6150ceb72340bb79a227b5f4f63e",
+      "bytes": 828
+    },
+    {
+      "path": "probe_controls.json",
+      "sha256": "2a9c1d0aa6552b11610a6354dcf88f553cd82d816b52666c6840565027e938f4",
+      "bytes": 4554
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "fc675d82ce574b31315e2a32102aa0a90faa7b9a709429bdcc84f5710f223865",
+      "bytes": 5876
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "2833d45b1264558371a16dae7ca61f7677724606006737d84a049b031a49c9d8",
+      "bytes": 4668
+    },
+    {
+      "path": "test_probe.py",
+      "sha256": "986dc29ad41ee8f127aa3f63726c3a3174a505d1eda75424969694adfd3ee66a",
+      "bytes": 2367
+    },
+    {
+      "path": "ubsan_controls.json",
+      "sha256": "16b2ebefb1c917d751400bb992cfebb18752fbd298a641ec26fda3f132f7ae91",
+      "bytes": 4572
+    },
+    {
+      "path": "verification.log",
+      "sha256": "3c07196a493432eba1f663a11d9ffdd628f83da498a36ad4854f02359b8b5bc0",
+      "bytes": 2141
+    }
+  ]
+}

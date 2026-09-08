@@ -1,0 +1,36 @@
+Verification record for the bounded peak audit
+
+PASS: benchmark.cpp compiled with C++11, -O3, -Wall -Wextra -Wpedantic -Werror.
+Compiler, exact command, source/binary and FFTW library hashes: build.json.
+PASS: test_analysis.py -v: 13 tests, no failures.
+PASS: release probe controls: resolved 32/64, expected failure 16/32, invalid pair 16/64.
+Raw commands, exit codes and measurements: probe_controls.json.
+PASS: bounded 128/256 probe, two steps each; no .14 production replay.
+Raw timing, resource report and measurements: probe.json, probe.stdout, probe.log.
+
+PASS: separate undefined-behavior sanitizer build and three controls.
+Compiler flags: -std=c++11 -O1 -g -fsanitize=undefined
+  -fno-omit-frame-pointer -Wall -Wextra -Wpedantic -Werror
+Source: benchmark.cpp; include: ../../include; link: /lib/x86_64-linux-gnu/libfftw3.so.3
+Binary SHA-256: 5bab38e14270d8e4fa84ab3c14b7f2730c1b8f760dab58435a84288e1c829463
+Raw control output: ubsan_controls.json. No UBSan runtime errors in captured stderr.
+
+INCOMPLETE: combined AddressSanitizer/UBSan control run.
+Flags: -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer
+  -Wall -Wextra -Wpedantic -Werror
+The resolved control reached both numerical evolutions, then LeakSanitizer
+failed during process inspection. The remaining controls did not complete.
+Observed messages included:
+  Can't open /proc/7/task for reading.
+  LeakSanitizer has encountered a fatal error.
+  LeakSanitizer does not work under ptrace (strace, gdb, etc)
+Attempts to set ASAN_OPTIONS=detect_leaks=0 through the shell and Python
+environment did not resolve the runtime failure. An intermediate Python
+wrapper attempt also failed to import probe; it was not a numerical test.
+No AddressSanitizer-clean or leak-clean claim is made for this turn.
+
+The final input and numerical-identity verification is recorded separately
+in audit.json. Its scope excludes repetition of every dense maximum search,
+continuous extrema, and unresolved PDE tails. GitHub CI independently builds
+the probe, reruns the small controls and analytic tests, and writes its own
+audit report without overwriting the recorded local report.

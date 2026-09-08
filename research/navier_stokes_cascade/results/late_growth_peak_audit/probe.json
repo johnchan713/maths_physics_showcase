@@ -1,0 +1,76 @@
+{
+  "status": "short-probe-passed",
+  "command": [
+    "/workspace/scratch/3529ca692852/ns-peak-audit-build.QNYoO1/benchmark",
+    "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/candidates/wave_k3_late_rate_t004_screening.csv",
+    "128",
+    "256"
+  ],
+  "binary_sha256": "6ea07423b47709b7fe13590981ebb1b89f4055a526e8a5048bc3a0f944725e99",
+  "protocol_sha256": "fc675d82ce574b31315e2a32102aa0a90faa7b9a709429bdcc84f5710f223865",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "settings": {
+    "grids": [
+      128,
+      256
+    ],
+    "cutoffs": [
+      42,
+      85
+    ],
+    "steps_each": 2,
+    "time_step": 1e-05,
+    "final_time": 2e-05,
+    "viscosity": 0.02,
+    "address_space_cap_bytes": 8589934592,
+    "timeout_seconds": 300,
+    "maximum_relative_state_l2_gap": 1e-10,
+    "scope": "Capacity and cost probe only. Step times exclude initialization and diagnostics. No .14 finer-grid claim."
+  },
+  "scope": "Two tiny RK4 steps, not a full finer-grid evolution through .14",
+  "returncode": 0,
+  "measurements": {
+    "probes": [
+      {
+        "grid": 128,
+        "cutoff": 42,
+        "steps": 2,
+        "final_time": 2e-05,
+        "rk4_seconds": [
+          2.437079068,
+          2.467093448
+        ],
+        "initial_energy": 9.99999999999999,
+        "initial_h_half": 6.5766066580506,
+        "final_energy": 9.999957749417131,
+        "final_h_half": 6.576731558629448,
+        "divergence_defect": 1.2162873585351636e-16,
+        "reality_defect": 0,
+        "cutoff_fraction": 3.435023863929953e-41
+      },
+      {
+        "grid": 256,
+        "cutoff": 85,
+        "steps": 2,
+        "final_time": 2e-05,
+        "rk4_seconds": [
+          98.340681115,
+          92.960668506
+        ],
+        "initial_energy": 9.99999999999999,
+        "initial_h_half": 6.5766066580506,
+        "final_energy": 9.999957749417131,
+        "final_h_half": 6.576731558629448,
+        "divergence_defect": 1.2162873585351636e-16,
+        "reality_defect": 1.8666066531855375e-20,
+        "cutoff_fraction": 2.2149795038043441e-41
+      }
+    ],
+    "relative_state_l2_gap": 1.1335059819702648e-18,
+    "maximum_coefficient_gap": 3.469446951953614e-18
+  },
+  "wall_seconds": 199.10759400800453,
+  "maximum_child_rss_kib": 5297148,
+  "stdout_sha256": "dba960206433a534cad603d73abf14c482dd6150ceb72340bb79a227b5f4f63e",
+  "log_sha256": "bb3c42cc32a5a2be664f24e3402d223cacddb9bad6d099d2a4dcc31a58a89fb0"
+}

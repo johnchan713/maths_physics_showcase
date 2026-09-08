@@ -42,6 +42,15 @@ remains unchanged. Further time promotion of this grid pair is paused pending
 finer evolution checks at the same horizon; no converged local maximum or
 singularity claim follows from the larger fine-grid vorticity.
 
+The [subsequent snapshot diagnosis and cost probe](../results/late_growth_peak_audit/README.md)
+retain that failure and introduce no new coefficients. The maximum sampled
+vorticity-vector difference is `21.34%` of the fine peak, larger than the
+scalar-peak gap. Modes absent from the coarse grid have a disproportionate
+effect on vorticity despite their small energy, and shared modes also differ.
+The short 128/256 capacity test passes; it is not a full `.14` replay. Its
+measured cost makes a validated performance improvement the next practical
+step before higher-resolution continuation.
+
 For this field, replay with `--search-track amplification --growth-objective
 late-rate --grid 32 --fine-grid 64 --seed-bandwidth 3 --iterations 0
 --final-time .06 --dt .000125 --fine-max-dt .000125`, and distinct fresh

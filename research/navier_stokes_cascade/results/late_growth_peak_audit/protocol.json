@@ -1,0 +1,117 @@
+{
+  "purpose": "Diagnose the frozen .14 local-vorticity resolution failure and measure the next supported grid's cost before a full replay",
+  "preceding_commit": "15f06adeb78c6f359e1be1098fe10a68ae292635",
+  "initial_state": "candidates/wave_k3_late_rate_t004_screening.csv",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "cost_probe": {
+    "grids": [
+      128,
+      256
+    ],
+    "cutoffs": [
+      42,
+      85
+    ],
+    "steps_each": 2,
+    "time_step": 0.00001,
+    "final_time": 0.00002,
+    "viscosity": 0.02,
+    "address_space_cap_bytes": 8589934592,
+    "timeout_seconds": 300,
+    "maximum_relative_state_l2_gap": 1e-10,
+    "scope": "Capacity and cost probe only. Step times exclude initialization and diagnostics. No .14 finer-grid claim."
+  },
+  "snapshot_audit": {
+    "times": [
+      0.12,
+      0.13,
+      0.14
+    ],
+    "grids": [
+      64,
+      128
+    ],
+    "shared_cutoff": 21,
+    "sampling_grid": 256,
+    "identity_tolerance": 1e-10,
+    "cutoff_sweep": [
+      21,
+      28,
+      35,
+      42
+    ],
+    "equation": "curl(u128-u64)=curl(P21 u128-u64)+curl((I-P21)u128)",
+    "scope": "Post-hoc decomposition of saved Fourier fields. Filtering is not a new evolution, and does not change the original 10% gate or promote the failed pair."
+  },
+  "checkpoints": [
+    {
+      "grid": 64,
+      "time": 0.12,
+      "index": "results/late_growth_t012/reference64/t120_checkpoint.json",
+      "index_sha256": "537f9ec4ed90c79859c97fb59e5ab8e0905a953dd946517e669a1cd1c803bc94",
+      "state_sha256": "1f821899f568af664009b389278d3bcf38b3756b3de1cc1d0cd4ad1db4f280bd"
+    },
+    {
+      "grid": 128,
+      "time": 0.12,
+      "index": "results/late_growth_t012/reference128/t120_checkpoint.json",
+      "index_sha256": "d52dd6169e60a3e45b7ff2b4cbb73b7308e73879833b06833ac89a82083ca1d0",
+      "state_sha256": "63ab8fc7e053d921f66da275ee7501612564e4dfa37d33c7566f28f6247bea93"
+    },
+    {
+      "grid": 64,
+      "time": 0.13,
+      "index": "results/late_growth_t014/reference64/t130_checkpoint.json",
+      "index_sha256": "899ee09fe7643d25bba2f487d19b77eff9d267052b041840d17499d80d41acfb",
+      "state_sha256": "483381ee39697a851655d8059295f0e0a9132eb03adaa281b7ca41c26a60b253"
+    },
+    {
+      "grid": 128,
+      "time": 0.13,
+      "index": "results/late_growth_t014/reference128/t130_checkpoint.json",
+      "index_sha256": "2c78ca18a3738b96abc8004f62f6f7035a4d769db1fc6ba9443e9811d4385dd6",
+      "state_sha256": "ce6c0d0c7f91513661d9b3f26368b13ee8d07717ee114cffd6f3ec5dec1ff2fe"
+    },
+    {
+      "grid": 64,
+      "time": 0.14,
+      "index": "results/late_growth_t014/reference64/t140_checkpoint.json",
+      "index_sha256": "199e958d6a61ad2fe238721db5789f23e92ad14fb726bfdac8e9fff15d26b9fb",
+      "state_sha256": "d3c97a360bd2c9adf46822a3e301d858abec1f67b626ccf76206a6f4e58f6a89"
+    },
+    {
+      "grid": 128,
+      "time": 0.14,
+      "index": "results/late_growth_t014/reference128/t140_checkpoint.json",
+      "index_sha256": "b367a0e22464c5947dfa2c212144d37ecc02009d020e53a8ac125ed7c5e4b0b6",
+      "state_sha256": "5ce2041cb744a7f1c9fb0e07c7eda166f06ca61ac8eba4cf42bd31da59f715b6"
+    }
+  ],
+  "source_sha256": {
+    "include/ns_cascade/candidate_evidence.hpp": "b4e7fd0779a468716adf88ed510a7bf4b375e08107ce2165f20c0ad309a80251",
+    "include/ns_cascade/candidate_score.hpp": "060c4f606beb30a412ad1e904c1abce4188fff026c50e3db3b2da0f9ac337781",
+    "include/ns_cascade/checkpoint.hpp": "1d63abef93b08ec3a529923453b3ce5eca1e1a614fbe99b65d233d4c014cf654",
+    "include/ns_cascade/continuation.hpp": "a5a71d9cdb0ab27bbfb3c39ea2cda19b00196407eda2e525178ec383f51b95ad",
+    "include/ns_cascade/fftw_reference.hpp": "eb8c3d1f6e402e1c570277526cda98309aa2996daacafcb1b54df04a1b5f7520",
+    "include/ns_cascade/galerkin.hpp": "84a5404d4367d4a1b73bf9209f23acd0351687e9809177ddc45b0360a19c1dec",
+    "include/ns_cascade/late_growth.hpp": "97413fd81fcacd36b207df72ebd03351352e16a96838a82de326abb71148e648",
+    "include/ns_cascade/optimization_state_csv.hpp": "9edb11c595fb8dc3fb1181e0606c007b010f24f6563a0008374f60219edebf79",
+    "include/ns_cascade/parameter_optimizer.hpp": "b30c211df1feadf473c3b9ef778ed4545ef89e7521a1e84c8327a08e9a7fa478",
+    "include/ns_cascade/pseudospectral.hpp": "48133d8e48d999292793680b01c2c13f6afa003c0b4fbf5a6004413d3a9e2da0",
+    "include/ns_cascade/spectral_profile.hpp": "20f6165296fc493000586f9d381398595a4b39e245a98fbde1e291546ac0f488",
+    "include/ns_cascade/state_optimizer.hpp": "2c40b452578c44ad4db8dc6eac2d348f3c0c6b027e9234f3da643f4e0a4ee086",
+    "results/late_growth_peak_audit/benchmark.cpp": "ae39bab0ab8d87d0b317660610875ef68c5daa9a20cde83a1e9a657473aaf390",
+    "results/late_growth_peak_audit/probe.py": "67b5e60cfa7289b61cacc7e521371b14d2700d4f39f7fcb964478f4b74b994ad",
+    "results/frozen_continuations_resolution/restore_checkpoint.py": "24e83f7e998cdb3099e559abcd7faf3754e7219c31e37f984401e4e9f45cf15f",
+    "results/frozen_continuations_resolution/sample_checkpoint_maximum.py": "571324b1a48a29f78e5ac151e0a172d6ef82ce49e573513539463455313355b0",
+    "results/frozen_continuations/analyze_critical_budget.py": "37a839584790fd92b343b78445fe5fdbd224383beea7e6fc9bea4b80500713a4"
+  },
+  "machine_observation": {
+    "logical_cpus": 9,
+    "reported_physical_bytes": 23109910528,
+    "reported_available_bytes": 20645978112,
+    "scope": "OS reports, not a verified container memory limit"
+  },
+  "validation_scope": "Check all input hashes, analytic Fourier test fields, sampled curl linearity, Parseval splitting, and direct Fourier evaluation at selected sample locations. No PDE error bound or singularity proof.",
+  "promotion_rule": "The existing .14 vorticity failure is retained regardless of the diagnosis or the short benchmark. No evolution beyond .14 or full 256-grid .14 replay is authorized by this bounded protocol."
+}

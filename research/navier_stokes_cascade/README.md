@@ -1392,6 +1392,19 @@ neither rescues the local-peak disagreement. The archived states and failed
 assessment pause further time promotion of this grid pair. A finer evolution
 comparison at `.14` is needed before a longer continuation can be promoted.
 
+The [snapshot decomposition and capacity probe](results/late_growth_peak_audit/README.md)
+now identify a small-energy, large-vorticity contribution from modes absent
+on the coarse grid. At `.14`, those modes carry only `0.02687%` of fine energy,
+yet filtering them out lowers the sampled fine peak by `15.59%`. Shared-mode
+error remains substantial. The maximum sampled vorticity-vector difference
+is `21.34%` of the fine peak, compared with the `12.65%` scalar-peak gap.
+This post-hoc diagnostic does not relabel the prior gates or promote the pair.
+Two short 128/256 RK4 steps agree to `1.13e-18` in relative whole-state L2,
+but the measured 256-grid cost is `93–98 s` per step. A rough same-horizon
+replay model is about six days of stepping; no such full replay was launched.
+The next prerequisite is a faster validated high-resolution backend, followed
+by a same-initial-field `.14` comparison and prospective vector-field checks.
+
 ### Checkpointed continuation of a frozen Fourier field
 
 The optional FFTW target `navier_stokes_continue` loads the optimized CSV

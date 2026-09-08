@@ -6,6 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Late-growth objective comparison
 
+The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)
+explain why low energy contamination does not rescue the failed `.14` peak
+comparison. Modes absent from the coarse grid carry only `0.02687%` of fine
+energy, but removing them lowers the fine sampled vorticity peak by `15.59%`.
+The maximum sampled vector difference is `21.34%` of the fine peak, exceeding
+the `12.65%` scalar-peak gap; shared Fourier modes differ as well. Two tiny
+128/256 steps pass, but measured 256-grid step costs are `93–98 s`, making
+a full same-field replay a multi-day task under a rough cost model. No full
+256-grid `.14` evolution or new candidate is claimed. The next prerequisite
+is a faster, independently validated high-resolution backend, with a
+prospective vector-field agreement check in future search protocols.
+
 The [frozen .12-to-.14 continuation](late_growth_t014/README.md) passes all
 declared checks at `.13` but fails the local-vorticity agreement gate at `.14`.
 The `64/128` discrepancy is `12.39%` on common physical samples and `12.65%`

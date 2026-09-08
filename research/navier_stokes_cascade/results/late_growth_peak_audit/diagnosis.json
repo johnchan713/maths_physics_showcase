@@ -1,0 +1,932 @@
+{
+  "status": "diagnosis-complete-original-resolution-failure-retained",
+  "protocol_sha256": "fc675d82ce574b31315e2a32102aa0a90faa7b9a709429bdcc84f5710f223865",
+  "analysis_sha256": "1621d36197e974f52b278b79caef9c4e9db16219f45062fc167912faf8a10018",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "numpy_version": "2.3.5",
+  "initial_vorticity_maximum": {
+    "maximum": 82.60944618679963,
+    "index": [
+      130,
+      127,
+      122
+    ]
+  },
+  "cases": [
+    {
+      "time": 0.12,
+      "sampling_grid": 256,
+      "sources": {
+        "64": {
+          "grid": 64,
+          "time": 0.12,
+          "index": "results/late_growth_t012/reference64/t120_checkpoint.json",
+          "index_sha256": "537f9ec4ed90c79859c97fb59e5ab8e0905a953dd946517e669a1cd1c803bc94",
+          "state_sha256": "1f821899f568af664009b389278d3bcf38b3756b3de1cc1d0cd4ad1db4f280bd"
+        },
+        "128": {
+          "grid": 128,
+          "time": 0.12,
+          "index": "results/late_growth_t012/reference128/t120_checkpoint.json",
+          "index_sha256": "d52dd6169e60a3e45b7ff2b4cbb73b7308e73879833b06833ac89a82083ca1d0",
+          "state_sha256": "63ab8fc7e053d921f66da275ee7501612564e4dfa37d33c7566f28f6247bea93"
+        }
+      },
+      "snapshot_relative_errors": {
+        "coarse": {
+          "energy": 5.548199812470367e-16,
+          "enstrophy": 6.0185730716187715e-15,
+          "h_half": 3.588836738717809e-15
+        },
+        "fine": {
+          "energy": 5.109936190190468e-13,
+          "enstrophy": 5.362437454582043e-14,
+          "h_half": 1.339456591066687e-13
+        }
+      },
+      "norms": {
+        "coarse": {
+          "velocity_l2_squared": 19.21008867136654,
+          "h_half_squared": 58.85947946994911,
+          "vorticity_l2_squared": 245.56134365973423
+        },
+        "fine": {
+          "velocity_l2_squared": 19.209922647116063,
+          "h_half_squared": 58.858591386089884,
+          "vorticity_l2_squared": 245.9268436676867
+        },
+        "extra": {
+          "velocity_l2_squared": 0.0021109707005769777,
+          "h_half_squared": 0.06619099480810138,
+          "vorticity_l2_squared": 2.128251198083552
+        },
+        "shared_error": {
+          "velocity_l2_squared": 0.001558062955974692,
+          "h_half_squared": 0.04048628581615726,
+          "vorticity_l2_squared": 1.06224668804363
+        },
+        "total_error": {
+          "velocity_l2_squared": 0.00366903365655167,
+          "h_half_squared": 0.10667728062425863,
+          "vorticity_l2_squared": 3.190497886127182
+        }
+      },
+      "peaks": {
+        "coarse": {
+          "maximum": 185.13819494438835,
+          "index": [
+            133,
+            125,
+            126
+          ]
+        },
+        "fine": {
+          "maximum": 189.16508582396744,
+          "index": [
+            139,
+            127,
+            116
+          ]
+        },
+        "shared_error": {
+          "maximum": 16.065633302751714,
+          "index": [
+            150,
+            75,
+            98
+          ]
+        },
+        "extra": {
+          "maximum": 40.232346405276,
+          "index": [
+            136,
+            131,
+            112
+          ]
+        },
+        "total_error": {
+          "maximum": 37.14570348673995,
+          "index": [
+            131,
+            133,
+            114
+          ]
+        },
+        "filtered_fine": {
+          "maximum": 184.76227680956416,
+          "index": [
+            129,
+            127,
+            125
+          ]
+        }
+      },
+      "pointwise": [
+        {
+          "location": "coarse_peak",
+          "index": [
+            133,
+            125,
+            126
+          ],
+          "coordinates": [
+            3.2643111166206444,
+            3.067961575771282,
+            3.0925052683774528
+          ],
+          "vectors": {
+            "coarse": [
+              -46.40013137133472,
+              -36.05001171258779,
+              175.56644238439048
+            ],
+            "fine": [
+              -34.0280766895565,
+              -41.773773909221916,
+              165.69572536828986
+            ],
+            "shared_error": [
+              -0.28804164150551703,
+              0.9075167781251494,
+              -0.47648158918217864
+            ],
+            "extra": [
+              12.660096323283728,
+              -6.631278974759274,
+              -9.394235426918456
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.014314971147864761,
+            "extra": 1.014314971147865
+          }
+        },
+        {
+          "location": "fine_peak",
+          "index": [
+            139,
+            127,
+            116
+          ],
+          "coordinates": [
+            3.411573272257666,
+            3.117048960983623,
+            2.84706834231575
+          ],
+          "vectors": {
+            "coarse": [
+              -60.50512282991113,
+              -28.274258778568488,
+              149.2010019134218
+            ],
+            "fine": [
+              -77.30452810996584,
+              -26.985897347962478,
+              170.52624716685025
+            ],
+            "shared_error": [
+              2.0330073852271946,
+              0.017204542995991376,
+              -2.1551111178043634
+            ],
+            "extra": [
+              -18.83241266528191,
+              1.2711568876100152,
+              23.480356371232784
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.1084273452327638,
+            "extra": 1.1084273452327638
+          }
+        },
+        {
+          "location": "maximum_vector_difference",
+          "index": [
+            131,
+            133,
+            114
+          ],
+          "coordinates": [
+            3.215223731408304,
+            3.2643111166206444,
+            2.7979809571034093
+          ],
+          "vectors": {
+            "coarse": [
+              -49.467656949613186,
+              -32.39502756377331,
+              127.86399371181786
+            ],
+            "fine": [
+              -73.91178145342434,
+              -29.500658060785142,
+              155.6832440602215
+            ],
+            "shared_error": [
+              1.9849846549023644,
+              0.13146190277581027,
+              -2.0796393760787977
+            ],
+            "extra": [
+              -26.429109158713523,
+              2.7629076002123574,
+              29.89888972448242
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.0768187191002163,
+            "extra": 1.0768187191002165
+          }
+        }
+      ],
+      "filtered_fine": [
+        {
+          "cutoff": 21,
+          "maximum": 184.76227680956416,
+          "index": [
+            129,
+            127,
+            125
+          ],
+          "relative_maximum_gap_to_full": 0.023274955815580253,
+          "removed_energy_fraction": 0.00010988959921143238
+        },
+        {
+          "cutoff": 28,
+          "maximum": 182.3790651154865,
+          "index": [
+            131,
+            127,
+            124
+          ],
+          "relative_maximum_gap_to_full": 0.03587353701621164,
+          "removed_energy_fraction": 1.755661095481642e-05
+        },
+        {
+          "cutoff": 35,
+          "maximum": 186.76494982016223,
+          "index": [
+            138,
+            127,
+            117
+          ],
+          "relative_maximum_gap_to_full": 0.012688049664929845,
+          "removed_energy_fraction": 2.4867369541325957e-06
+        },
+        {
+          "cutoff": 42,
+          "maximum": 189.16508582396744,
+          "index": [
+            139,
+            127,
+            116
+          ],
+          "relative_maximum_gap_to_full": 0.0,
+          "removed_energy_fraction": 0.0
+        }
+      ],
+      "high_mode_fractions_of_fine_squared_norms": {
+        "velocity_l2_squared": 0.00010988959921157686,
+        "h_half_squared": 0.001124576603845541,
+        "vorticity_l2_squared": 0.00865400119134368
+      },
+      "shared_mode_fractions_of_squared_error": {
+        "velocity_l2_squared": 0.42465212963977894,
+        "h_half_squared": 0.37952116494944277,
+        "vorticity_l2_squared": 0.3329407277348329
+      },
+      "fourier_identity_maximum_coefficient_error": 0.0,
+      "spectral_split_relative_errors": {
+        "velocity_l2_squared": 1.1820029729620833e-16,
+        "h_half_squared": 0.0,
+        "vorticity_l2_squared": 0.0
+      },
+      "sampled_curl_identity_relative_error": 4.131824886879209e-16,
+      "direct_fourier_relative_errors": {
+        "coarse": 9.767937251394155e-16,
+        "fine": 1.202022102761897e-15,
+        "shared_error": 1.0946898678910133e-16,
+        "extra": 7.888064264356464e-16
+      },
+      "sampled_vorticity_relative_gap": 0.021287706777594406,
+      "vorticity_amplification_ratios": {
+        "coarse": 2.241126208808455,
+        "fine": 2.289872339734855,
+        "filtered_fine": 2.236575662204207
+      },
+      "original_endpoint_vorticity_gate_failed": false
+    },
+    {
+      "time": 0.13,
+      "sampling_grid": 256,
+      "sources": {
+        "64": {
+          "grid": 64,
+          "time": 0.13,
+          "index": "results/late_growth_t014/reference64/t130_checkpoint.json",
+          "index_sha256": "899ee09fe7643d25bba2f487d19b77eff9d267052b041840d17499d80d41acfb",
+          "state_sha256": "483381ee39697a851655d8059295f0e0a9132eb03adaa281b7ca41c26a60b253"
+        },
+        "128": {
+          "grid": 128,
+          "time": 0.13,
+          "index": "results/late_growth_t014/reference128/t130_checkpoint.json",
+          "index_sha256": "2c78ca18a3738b96abc8004f62f6f7035a4d769db1fc6ba9443e9811d4385dd6",
+          "state_sha256": "ce6c0d0c7f91513661d9b3f26368b13ee8d07717ee114cffd6f3ec5dec1ff2fe"
+        }
+      },
+      "snapshot_relative_errors": {
+        "coarse": {
+          "energy": 2.78883664940851e-15,
+          "enstrophy": 1.5185161921797987e-14,
+          "h_half": 5.860856997320062e-15
+        },
+        "fine": {
+          "energy": 2.863257870235688e-13,
+          "enstrophy": 3.0308228393110366e-15,
+          "h_half": 6.619631329157941e-14
+        }
+      },
+      "norms": {
+        "coarse": {
+          "velocity_l2_squared": 19.108578909887047,
+          "h_half_squared": 59.733578901012194,
+          "vorticity_l2_squared": 262.03469813151827
+        },
+        "fine": {
+          "velocity_l2_squared": 19.108230251375904,
+          "h_half_squared": 59.72797558206749,
+          "vorticity_l2_squared": 262.5715544073873
+        },
+        "extra": {
+          "velocity_l2_squared": 0.0031957368569802786,
+          "h_half_squared": 0.10202480345211704,
+          "vorticity_l2_squared": 3.3541919534192086
+        },
+        "shared_error": {
+          "velocity_l2_squared": 0.00262590242870403,
+          "h_half_squared": 0.06756578305206559,
+          "vorticity_l2_squared": 1.7605938319330998
+        },
+        "total_error": {
+          "velocity_l2_squared": 0.005821639285684309,
+          "h_half_squared": 0.16959058650418263,
+          "vorticity_l2_squared": 5.114785785352307
+        }
+      },
+      "peaks": {
+        "coarse": {
+          "maximum": 198.72205648999358,
+          "index": [
+            129,
+            126,
+            128
+          ]
+        },
+        "fine": {
+          "maximum": 203.87190546442886,
+          "index": [
+            133,
+            127,
+            122
+          ]
+        },
+        "shared_error": {
+          "maximum": 20.757045840752475,
+          "index": [
+            157,
+            74,
+            103
+          ]
+        },
+        "extra": {
+          "maximum": 48.467304785543455,
+          "index": [
+            133,
+            133,
+            109
+          ]
+        },
+        "total_error": {
+          "maximum": 45.613349077783525,
+          "index": [
+            129,
+            134,
+            112
+          ]
+        },
+        "filtered_fine": {
+          "maximum": 195.24109074234443,
+          "index": [
+            129,
+            126,
+            128
+          ]
+        }
+      },
+      "pointwise": [
+        {
+          "location": "coarse_peak",
+          "index": [
+            129,
+            126,
+            128
+          ],
+          "coordinates": [
+            3.1661363461959633,
+            3.0925052683774528,
+            3.141592653589793
+          ],
+          "vectors": {
+            "coarse": [
+              -44.814470466174065,
+              -37.77010109495108,
+              189.8829598350673
+            ],
+            "fine": [
+              -32.33228301260907,
+              -48.21736691406199,
+              190.54777579475365
+            ],
+            "shared_error": [
+              0.4866553683226675,
+              0.6132347168463084,
+              -3.406431542977055
+            ],
+            "extra": [
+              11.995532085242338,
+              -11.06050053595722,
+              4.071247502663351
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.009784579881822126,
+            "extra": 1.009784579881822
+          }
+        },
+        {
+          "location": "fine_peak",
+          "index": [
+            133,
+            127,
+            122
+          ],
+          "coordinates": [
+            3.2643111166206444,
+            3.117048960983623,
+            2.9943304979527716
+          ],
+          "vectors": {
+            "coarse": [
+              -49.43570704023978,
+              -32.829664497118614,
+              177.14866315995772
+            ],
+            "fine": [
+              -59.158160162861904,
+              -35.958208384432055,
+              191.75785035722515
+            ],
+            "shared_error": [
+              1.2031154098661359,
+              0.20052956219188325,
+              -3.0870480964289113
+            ],
+            "extra": [
+              -10.92556853248827,
+              -3.3290734495053123,
+              17.696235293696333
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.18072467688752974,
+            "extra": 1.18072467688753
+          }
+        },
+        {
+          "location": "maximum_vector_difference",
+          "index": [
+            129,
+            134,
+            112
+          ],
+          "coordinates": [
+            3.1661363461959633,
+            3.2888548092268146,
+            2.748893571891069
+          ],
+          "vectors": {
+            "coarse": [
+              -42.973067009265286,
+              -36.31769066562933,
+              128.48876038548968
+            ],
+            "fine": [
+              -70.5600900717588,
+              -36.201433808967565,
+              164.81396178870926
+            ],
+            "shared_error": [
+              1.5104511550752098,
+              0.7300185658208291,
+              -1.77891331896336
+            ],
+            "extra": [
+              -29.09747421756871,
+              -0.613761709159067,
+              38.10411472218294
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.05104513528212647,
+            "extra": 1.0510451352821264
+          }
+        }
+      ],
+      "filtered_fine": [
+        {
+          "cutoff": 21,
+          "maximum": 195.24109074234443,
+          "index": [
+            129,
+            126,
+            128
+          ],
+          "relative_maximum_gap_to_full": 0.042334497744665085,
+          "removed_energy_fraction": 0.00016724399983336635
+        },
+        {
+          "cutoff": 28,
+          "maximum": 207.00527542093207,
+          "index": [
+            132,
+            125,
+            127
+          ],
+          "relative_maximum_gap_to_full": 0.015136667170108073,
+          "removed_energy_fraction": 3.2438670720780216e-05
+        },
+        {
+          "cutoff": 35,
+          "maximum": 204.9953343154963,
+          "index": [
+            129,
+            127,
+            126
+          ],
+          "relative_maximum_gap_to_full": 0.005480265464668776,
+          "removed_energy_fraction": 6.287736846077863e-06
+        },
+        {
+          "cutoff": 42,
+          "maximum": 203.87190546442886,
+          "index": [
+            133,
+            127,
+            122
+          ],
+          "relative_maximum_gap_to_full": 0.0,
+          "removed_energy_fraction": 0.0
+        }
+      ],
+      "high_mode_fractions_of_fine_squared_norms": {
+        "velocity_l2_squared": 0.00016724399983353598,
+        "h_half_squared": 0.0017081577344260199,
+        "vorticity_l2_squared": 0.012774391959515477
+      },
+      "shared_mode_fractions_of_squared_error": {
+        "velocity_l2_squared": 0.4510589371555965,
+        "h_half_squared": 0.3984052679150279,
+        "vorticity_l2_squared": 0.3442165333639344
+      },
+      "fourier_identity_maximum_coefficient_error": 0.0,
+      "spectral_split_relative_errors": {
+        "velocity_l2_squared": 0.0,
+        "h_half_squared": 0.0,
+        "vorticity_l2_squared": 3.472983843208781e-16
+      },
+      "sampled_curl_identity_relative_error": 3.833765165217831e-16,
+      "direct_fourier_relative_errors": {
+        "coarse": 1.1155834169323342e-15,
+        "fine": 1.3941117396321916e-15,
+        "shared_error": 7.297223666321128e-17,
+        "extra": 7.667578676245206e-16
+      },
+      "sampled_vorticity_relative_gap": 0.02526021897280899,
+      "vorticity_amplification_ratios": {
+        "coarse": 2.4055609335600154,
+        "fine": 2.4679006442365674,
+        "filtered_fine": 2.363423309979077
+      },
+      "original_endpoint_vorticity_gate_failed": false
+    },
+    {
+      "time": 0.14,
+      "sampling_grid": 256,
+      "sources": {
+        "64": {
+          "grid": 64,
+          "time": 0.14,
+          "index": "results/late_growth_t014/reference64/t140_checkpoint.json",
+          "index_sha256": "199e958d6a61ad2fe238721db5789f23e92ad14fb726bfdac8e9fff15d26b9fb",
+          "state_sha256": "d3c97a360bd2c9adf46822a3e301d858abec1f67b626ccf76206a6f4e58f6a89"
+        },
+        "128": {
+          "grid": 128,
+          "time": 0.14,
+          "index": "results/late_growth_t014/reference128/t140_checkpoint.json",
+          "index_sha256": "b367a0e22464c5947dfa2c212144d37ecc02009d020e53a8ac125ed7c5e4b0b6",
+          "state_sha256": "5ce2041cb744a7f1c9fb0e07c7eda166f06ca61ac8eba4cf42bd31da59f715b6"
+        }
+      },
+      "snapshot_relative_errors": {
+        "coarse": {
+          "energy": 9.349028761141304e-15,
+          "enstrophy": 3.2641208497293676e-15,
+          "h_half": 5.7102661512617454e-15
+        },
+        "fine": {
+          "energy": 1.5632061470396053e-13,
+          "enstrophy": 5.942602775876232e-14,
+          "h_half": 1.941719715850966e-15
+        }
+      },
+      "norms": {
+        "coarse": {
+          "velocity_l2_squared": 19.000442557023405,
+          "h_half_squared": 60.482222365717504,
+          "vorticity_l2_squared": 278.6338936710424
+        },
+        "fine": {
+          "velocity_l2_squared": 18.999852585674162,
+          "h_half_squared": 60.46794308121618,
+          "vorticity_l2_squared": 279.30990734793875
+        },
+        "extra": {
+          "velocity_l2_squared": 0.005105595903125735,
+          "h_half_squared": 0.1609533212521702,
+          "vorticity_l2_squared": 5.241380665945808
+        },
+        "shared_error": {
+          "velocity_l2_squared": 0.004271419831027174,
+          "h_half_squared": 0.10848244885720013,
+          "vorticity_l2_squared": 2.7976477166622864
+        },
+        "total_error": {
+          "velocity_l2_squared": 0.009377015734152908,
+          "h_half_squared": 0.2694357701093703,
+          "vorticity_l2_squared": 8.039028382608095
+        }
+      },
+      "peaks": {
+        "coarse": {
+          "maximum": 200.7922594904468,
+          "index": [
+            127,
+            126,
+            131
+          ]
+        },
+        "fine": {
+          "maximum": 229.88185856091374,
+          "index": [
+            130,
+            126,
+            127
+          ]
+        },
+        "shared_error": {
+          "maximum": 24.691189111331532,
+          "index": [
+            159,
+            73,
+            102
+          ]
+        },
+        "extra": {
+          "maximum": 52.220215074738654,
+          "index": [
+            133,
+            133,
+            107
+          ]
+        },
+        "total_error": {
+          "maximum": 49.053951271394084,
+          "index": [
+            133,
+            133,
+            107
+          ]
+        },
+        "filtered_fine": {
+          "maximum": 194.0505292999939,
+          "index": [
+            147,
+            117,
+            131
+          ]
+        }
+      },
+      "pointwise": [
+        {
+          "location": "coarse_peak",
+          "index": [
+            127,
+            126,
+            131
+          ],
+          "coordinates": [
+            3.117048960983623,
+            3.0925052683774528,
+            3.215223731408304
+          ],
+          "vectors": {
+            "coarse": [
+              -41.09598667867269,
+              -34.98495239307731,
+              193.40295875771756
+            ],
+            "fine": [
+              -39.773906182162904,
+              -48.62529741323061,
+              218.11679196930524
+            ],
+            "shared_error": [
+              0.760017113019423,
+              -0.1834613719970483,
+              -7.946456191198806
+            ],
+            "extra": [
+              0.5620633834903568,
+              -13.45688364815625,
+              32.66028940278651
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.24152871515080615,
+            "extra": 1.241528715150806
+          }
+        },
+        {
+          "location": "fine_peak",
+          "index": [
+            130,
+            126,
+            127
+          ],
+          "coordinates": [
+            3.1906800388021335,
+            3.0925052683774528,
+            3.117048960983623
+          ],
+          "vectors": {
+            "coarse": [
+              -44.256483021272366,
+              -35.63614260124395,
+              189.04202808747388
+            ],
+            "fine": [
+              -47.48379681936929,
+              -43.603418659400674,
+              220.6574263791043
+            ],
+            "shared_error": [
+              1.6026494527626787,
+              2.085093593332381,
+              -5.225593239786795
+            ],
+            "extra": [
+              -4.829963250859599,
+              -10.052369651489101,
+              36.84099153141718
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.17420288117652982,
+            "extra": 1.17420288117653
+          }
+        },
+        {
+          "location": "maximum_vector_difference",
+          "index": [
+            133,
+            133,
+            107
+          ],
+          "coordinates": [
+            3.2643111166206444,
+            3.2643111166206444,
+            2.6261751088602177
+          ],
+          "vectors": {
+            "coarse": [
+              -46.000170207247145,
+              -36.142694123953135,
+              125.091993760019
+            ],
+            "fine": [
+              -72.63153861585289,
+              -39.59621166846099,
+              166.14237218204084
+            ],
+            "shared_error": [
+              2.3930514931995246,
+              0.6338055493014352,
+              -2.1679938488361183
+            ],
+            "extra": [
+              -29.02441990180528,
+              -4.087323093809288,
+              43.21837227085797
+            ]
+          },
+          "projected_error_fractions": {
+            "shared": -0.0643796274426262,
+            "extra": 1.0643796274426263
+          }
+        }
+      ],
+      "filtered_fine": [
+        {
+          "cutoff": 21,
+          "maximum": 194.0505292999939,
+          "index": [
+            147,
+            117,
+            131
+          ],
+          "relative_maximum_gap_to_full": 0.15586845123502993,
+          "removed_energy_fraction": 0.00026871765873481834
+        },
+        {
+          "cutoff": 28,
+          "maximum": 222.13748950717712,
+          "index": [
+            135,
+            123,
+            129
+          ],
+          "relative_maximum_gap_to_full": 0.03368847416763219,
+          "removed_energy_fraction": 4.7859819212403565e-05
+        },
+        {
+          "cutoff": 35,
+          "maximum": 230.3497046844182,
+          "index": [
+            133,
+            124,
+            129
+          ],
+          "relative_maximum_gap_to_full": 0.002031025497277832,
+          "removed_energy_fraction": 1.0710334205632499e-05
+        },
+        {
+          "cutoff": 42,
+          "maximum": 229.88185856091374,
+          "index": [
+            130,
+            126,
+            127
+          ],
+          "relative_maximum_gap_to_full": 0.0,
+          "removed_energy_fraction": 0.0
+        }
+      ],
+      "high_mode_fractions_of_fine_squared_norms": {
+        "velocity_l2_squared": 0.0002687176587346441,
+        "h_half_squared": 0.0026617958715081367,
+        "vorticity_l2_squared": 0.018765466344223068
+      },
+      "shared_mode_fractions_of_squared_error": {
+        "velocity_l2_squared": 0.4555201731687232,
+        "h_half_squared": 0.40262823608448334,
+        "vorticity_l2_squared": 0.34800818998410454
+      },
+      "fourier_identity_maximum_coefficient_error": 0.0,
+      "spectral_split_relative_errors": {
+        "velocity_l2_squared": 1.8499739417719093e-16,
+        "h_half_squared": 2.0602740018047542e-16,
+        "vorticity_l2_squared": 0.0
+      },
+      "sampled_curl_identity_relative_error": 3.709084693545689e-16,
+      "direct_fourier_relative_errors": {
+        "coarse": 8.0473266780702395e-16,
+        "fine": 1.1128612305125573e-15,
+        "shared_error": 8.500076330823085e-17,
+        "extra": 4.2210253671381026e-16
+      },
+      "sampled_vorticity_relative_gap": 0.12654151681464162,
+      "vorticity_amplification_ratios": {
+        "coarse": 2.430621057989031,
+        "fine": 2.7827551106092168,
+        "filtered_fine": 2.349011381352194
+      },
+      "original_endpoint_vorticity_gate_failed": true
+    }
+  ],
+  "original_vorticity_limit": 0.1,
+  "scope": "Snapshot diagnosis only. Filtering does not replay a trajectory or certify missing PDE modes.",
+  "projection_note": "Signed contributions along the vector error at one fixed point; not fractions of the difference between separate global maxima. They may be negative or greater than one."
+}

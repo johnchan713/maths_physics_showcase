@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "binary_sha256": "6ea07423b47709b7fe13590981ebb1b89f4055a526e8a5048bc3a0f944725e99",
+  "source_sha256": "986dc29ad41ee8f127aa3f63726c3a3174a505d1eda75424969694adfd3ee66a",
+  "initial_state_sha256": "893ef61450d670936dc851d28ab3cf7c1aa315c6ff23934646e74137c40ac6ef",
+  "controls": [
+    {
+      "name": "resolved-short-control",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-peak-audit-build.QNYoO1/benchmark",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/candidates/wave_k3_late_rate_t004_screening.csv",
+        "32",
+        "64"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "measurements": {
+        "probes": [
+          {
+            "grid": 32,
+            "cutoff": 10,
+            "steps": 2,
+            "final_time": 2e-05,
+            "rk4_seconds": [
+              0.014140175,
+              0.011515183
+            ],
+            "initial_energy": 9.99999999999999,
+            "initial_h_half": 6.5766066580506,
+            "final_energy": 9.999957749417131,
+            "final_h_half": 6.576731558629448,
+            "divergence_defect": 1.2162873585351636e-16,
+            "reality_defect": 0,
+            "cutoff_fraction": 2.3344031786174426e-26
+          },
+          {
+            "grid": 64,
+            "cutoff": 21,
+            "steps": 2,
+            "final_time": 2e-05,
+            "rk4_seconds": [
+              0.154145624,
+              0.139146669
+            ],
+            "initial_energy": 9.99999999999999,
+            "initial_h_half": 6.5766066580506,
+            "final_energy": 9.999957749417131,
+            "final_h_half": 6.576731558629448,
+            "divergence_defect": 1.2162873585351636e-16,
+            "reality_defect": 0,
+            "cutoff_fraction": 6.646817296153597e-41
+          }
+        ],
+        "relative_state_l2_gap": 5.230825955098268e-14,
+        "maximum_coefficient_gap": 3.319952759807018e-14
+      },
+      "stderr": "grid=32 step=1 RK4_seconds=0.0141402\ngrid=32 step=2 RK4_seconds=0.0115152\ngrid=64 step=1 RK4_seconds=0.154146\ngrid=64 step=2 RK4_seconds=0.139147\n"
+    },
+    {
+      "name": "underresolved-short-control",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-peak-audit-build.QNYoO1/benchmark",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/candidates/wave_k3_late_rate_t004_screening.csv",
+        "16",
+        "32"
+      ],
+      "expected_returncode": 1,
+      "returncode": 1,
+      "measurements": {
+        "probes": [
+          {
+            "grid": 16,
+            "cutoff": 5,
+            "steps": 2,
+            "final_time": 2e-05,
+            "rk4_seconds": [
+              0.001286312,
+              0.001858299
+            ],
+            "initial_energy": 9.99999999999999,
+            "initial_h_half": 6.5766066580506,
+            "final_energy": 9.999957749417142,
+            "final_h_half": 6.576731558479995,
+            "divergence_defect": 1.6711069443220838e-16,
+            "reality_defect": 0,
+            "cutoff_fraction": 4.4222859588134407e-10
+          },
+          {
+            "grid": 32,
+            "cutoff": 10,
+            "steps": 2,
+            "final_time": 2e-05,
+            "rk4_seconds": [
+              0.017841818,
+              0.012423094
+            ],
+            "initial_energy": 9.99999999999999,
+            "initial_h_half": 6.5766066580506,
+            "final_energy": 9.999957749417131,
+            "final_h_half": 6.576731558629448,
+            "divergence_defect": 1.2162873585351636e-16,
+            "reality_defect": 0,
+            "cutoff_fraction": 2.3344031786174426e-26
+          }
+        ],
+        "relative_state_l2_gap": 6.034617590510134e-06,
+        "maximum_coefficient_gap": 3.4321341788469053e-06
+      },
+      "stderr": "grid=16 step=1 RK4_seconds=0.00128631\ngrid=16 step=2 RK4_seconds=0.0018583\ngrid=32 step=1 RK4_seconds=0.0178418\ngrid=32 step=2 RK4_seconds=0.0124231\nShort-probe state agreement failed\n"
+    },
+    {
+      "name": "invalid-grid-pair",
+      "command": [
+        "/workspace/scratch/3529ca692852/ns-peak-audit-build.QNYoO1/benchmark",
+        "/workspace/scratch/3529ca692852/maths_physics_showcase/research/navier_stokes_cascade/candidates/wave_k3_late_rate_t004_screening.csv",
+        "16",
+        "64"
+      ],
+      "expected_returncode": 1,
+      "returncode": 1,
+      "measurements": null,
+      "stderr": "Probe needs a nested pair from 16/32 through 128/256\n"
+    }
+  ]
+}

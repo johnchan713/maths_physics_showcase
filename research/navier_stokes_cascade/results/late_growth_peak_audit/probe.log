@@ -1,0 +1,4 @@
+grid=128 step=1 RK4_seconds=2.43708
+grid=128 step=2 RK4_seconds=2.46709
+grid=256 step=1 RK4_seconds=98.3407
+grid=256 step=2 RK4_seconds=92.9607

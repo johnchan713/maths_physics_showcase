@@ -33,6 +33,18 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/audit.py
           git diff --exit-code -- research/navier_stokes_cascade/results/late_growth_t014/audit.json
 
+      - name: Verify peak decomposition and bounded-probe controls
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_peak_audit/test_analysis.py -v
+          c++ -std=c++11 -O3 -Wall -Wextra -Wpedantic -Werror \
+            -I research/navier_stokes_cascade/include \
+            research/navier_stokes_cascade/results/late_growth_peak_audit/benchmark.cpp \
+            -lfftw3 -o navier_stokes_peak_probe
+          /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_peak_audit/test_probe.py \
+            --binary ./navier_stokes_peak_probe --output navier_stokes_peak_probe_controls.json
+          /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_peak_audit/audit.py \
+            --output navier_stokes_peak_audit_ci.json
+
       - name: Configure CMake
         run: >-
           cmake -S . -B build
@@ -390,6 +402,8 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_peak_probe_controls.json
+            navier_stokes_peak_audit_ci.json
             navier_stokes_late_smoke/
             navier_stokes_convergence.csv
             navier_stokes_fft_convergence.csv
