@@ -1,0 +1,59 @@
+Frozen extension helper regression checks
+test_corrupted_part_is_rejected (__main__.ArchiveIdentityTests.test_corrupted_part_is_rejected) ... ok
+test_part_cannot_escape_archive_directory (__main__.ArchiveIdentityTests.test_part_cannot_escape_archive_directory) ... ok
+test_valid_parts_pass (__main__.ArchiveIdentityTests.test_valid_parts_pass) ... ok
+test_wrong_combined_identity_is_rejected (__main__.ArchiveIdentityTests.test_wrong_combined_identity_is_rejected) ... ok
+test_changed_parent_budget_is_rejected (__main__.InheritedHistoryTests.test_changed_parent_budget_is_rejected) ... ok
+test_duplicate_budget_is_rejected (__main__.InheritedHistoryTests.test_duplicate_budget_is_rejected) ... ok
+test_keeps_full_budgets_and_immediate_parent_restart (__main__.InheritedHistoryTests.test_keeps_full_budgets_and_immediate_parent_restart) ... ok
+test_mixed_initial_fields_are_rejected (__main__.InheritedHistoryTests.test_mixed_initial_fields_are_rejected) ... ok
+test_truncated_history_is_rejected (__main__.InheritedHistoryTests.test_truncated_history_is_rejected) ... ok
+test_wrong_grid_is_rejected (__main__.InheritedHistoryTests.test_wrong_grid_is_rejected) ... ok
+test_changed_boundary_is_rejected (__main__.ObservationClockTests.test_changed_boundary_is_rejected) ... ok
+test_duplicate_endpoint_is_rejected (__main__.ObservationClockTests.test_duplicate_endpoint_is_rejected) ... ok
+test_missing_observation_is_rejected (__main__.ObservationClockTests.test_missing_observation_is_rejected) ... ok
+test_nonadvancing_step_is_rejected (__main__.ObservationClockTests.test_nonadvancing_step_is_rejected) ... ok
+test_shifted_clock_is_rejected (__main__.ObservationClockTests.test_shifted_clock_is_rejected) ... ok
+test_valid_restart_preserves_all_rows (__main__.ObservationClockTests.test_valid_restart_preserves_all_rows) ... ok
+test_clean_checks_pass (__main__.ScientificStatusTests.test_clean_checks_pass) ... ok
+test_missing_comparison_is_not_a_pass (__main__.ScientificStatusTests.test_missing_comparison_is_not_a_pass) ... ok
+test_resolution_failure_takes_precedence (__main__.ScientificStatusTests.test_resolution_failure_takes_precedence) ... ok
+test_sampling_failure_is_not_a_pass (__main__.ScientificStatusTests.test_sampling_failure_is_not_a_pass) ... ok
+test_stalled_growth_does_not_pass (__main__.ScientificStatusTests.test_stalled_growth_does_not_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.007s
+
+OK
+
+Generic published-part restoration, coarse states
+[
+  {
+    "grid": 64,
+    "time": 0.13,
+    "restored_sha256": "483381ee39697a851655d8059295f0e0a9132eb03adaa281b7ca41c26a60b253",
+    "restored_bytes": 12583408
+  },
+  {
+    "grid": 64,
+    "time": 0.14,
+    "restored_sha256": "d3c97a360bd2c9adf46822a3e301d858abec1f67b626ccf76206a6f4e58f6a89",
+    "restored_bytes": 12583408
+  }
+]
+
+Generic published-part restoration, first fine state
+{
+  "grid": 128,
+  "time": 0.13,
+  "restored_sha256": "ce6c0d0c7f91513661d9b3f26368b13ee8d07717ee114cffd6f3ec5dec1ff2fe",
+  "restored_bytes": 100663792
+}
+
+Generic published-part restoration, final fine state
+{
+  "grid": 128,
+  "time": 0.14,
+  "restored_sha256": "5ce2041cb744a7f1c9fb0e07c7eda166f06ca61ac8eba4cf42bd31da59f715b6",
+  "restored_bytes": 100663792
+}

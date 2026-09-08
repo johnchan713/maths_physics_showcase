@@ -1382,6 +1382,16 @@ the denser-sampling endpoint gap at `.12` is `2.13%`. Relative critical growth
 slows further to `.792`. The new evolved states, budget checks and complete
 resolution/sampling assessment are preserved; finite growth is not a blow-up proof.
 
+The [subsequent .14 continuation](results/late_growth_t014/README.md) reaches
+both declared targets. All checks pass at `.13`, but the `64/128` pair fails
+local-vorticity agreement at `.14`: `12.39%` on common physical samples and
+`12.65%` on doubled samples, exceeding the fixed `10%` limit. The fine-grid
+H1/2 gain is `18.24%`, L3 falls `5.23%`, and relative critical growth slows to
+`.557`. The global norm gap is only `0.0118%`, and cutoff loading remains low;
+neither rescues the local-peak disagreement. The archived states and failed
+assessment pause further time promotion of this grid pair. A finer evolution
+comparison at `.14` is needed before a longer continuation can be promoted.
+
 ### Checkpointed continuation of a frozen Fourier field
 
 The optional FFTW target `navier_stokes_continue` loads the optimized CSV

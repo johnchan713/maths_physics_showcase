@@ -33,6 +33,15 @@ relative H1/2 growth slows further to `.792`. The archived comparison records
 both the worst pointwise gap at `.11` and the closer endpoint agreement at
 `.12`. No new initial coefficient candidate is introduced.
 
+The [extension to .14](../results/late_growth_t014/README.md) passes the
+declared checks at `.13` but fails the `64/128` vorticity agreement gate at
+`.14`: the discrepancy is `12.39%`, and remains `12.65%` with denser physical
+sampling, above the fixed `10%` limit. Fine H1/2 growth reaches `18.24%`, but
+its relative rate falls to `.557` and L3 decreases `5.23%`. The initial field
+remains unchanged. Further time promotion of this grid pair is paused pending
+finer evolution checks at the same horizon; no converged local maximum or
+singularity claim follows from the larger fine-grid vorticity.
+
 For this field, replay with `--search-track amplification --growth-objective
 late-rate --grid 32 --fine-grid 64 --seed-bandwidth 3 --iterations 0
 --final-time .06 --dt .000125 --fine-max-dt .000125`, and distinct fresh

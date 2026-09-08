@@ -6,6 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Late-growth objective comparison
 
+The [frozen .12-to-.14 continuation](late_growth_t014/README.md) passes all
+declared checks at `.13` but fails the local-vorticity agreement gate at `.14`.
+The `64/128` discrepancy is `12.39%` on common physical samples and `12.65%`
+on doubled samples, above the unchanged `10%` limit. Fine H1/2 grows `18.24%`,
+but L3 falls `5.23%` and relative critical growth slows to `.557`. All four
+new states are archived. Further time promotion of this grid pair pauses;
+the next requirement is a finer evolution comparison at this same horizon.
+The failed numerical gate neither proves nor rules out a PDE singularity.
+
 The [frozen .10-to-.12 continuation](late_growth_t012/README.md) passes the
 unchanged `64/128` and endpoint sampling gates. Fine-grid H1/2 grows `16.65%`,
 while L3 falls `3.77%` and relative critical growth slows to `.792`. The worst
