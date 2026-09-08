@@ -4,6 +4,16 @@ These records support numerical finite-amplification experiments, not a PDE
 singularity claim. The gates and equations are documented in the
 [research README](../README.md#robust-amplification-search).
 
+## Separate paper reproduction track
+
+The [paper building-block audit](paper_profile_audit/README.md) checks
+explicit similarity identities, a scalar comparison function and the
+viscous exterior from the user-supplied OpenAI manuscript. The source-bound
+record passes 29 tests and 25 numerical/algebraic gates, including deliberate
+missing-term controls. It does not reproduce the nonlinear matched profile,
+verify the complete proof, or promote a search candidate. The unforced
+research results below are unchanged.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

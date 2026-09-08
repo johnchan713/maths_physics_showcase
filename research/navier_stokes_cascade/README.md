@@ -9,8 +9,8 @@ that transfer.
 
 ## Exact scope
 
-The Clay problem concerns smooth, divergence-free initial data for the
-three-dimensional incompressible equations
+The existing numerical search studies smooth, divergence-free initial data
+for the unforced three-dimensional incompressible equations
 
 ```text
 partial_t u + (u . grad)u = -grad p + nu Delta u,
@@ -18,9 +18,11 @@ div u = 0,
 u(0) = u_0,
 ```
 
-on R^3 or the periodic three-torus, with positive viscosity. A resolution must
-either prove global smoothness for every allowed datum or rigorously construct
-one allowed smooth datum whose solution breaks down in finite time. Weak
+on the periodic three-torus, with positive viscosity. The full
+[Clay formulation](https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf)
+also covers R^3 and allows suitably smooth forcing in its breakdown
+alternatives C and D. A resolution must prove one of its precise alternatives;
+the existing unforced numerical search is only one research route. Weak
 non-uniqueness from singular data, blow-up for a modified/averaged equation,
 or a large finite numerical value does not settle that statement.
 
@@ -33,6 +35,14 @@ shell spectrum is weaker than a self-similar velocity field and proves
 neither singularity nor regularity. Historical statements below about a
 candidate being rejected or not worth refining refer to that earlier route
 and its chosen compute budget.
+
+A separate [paper building-block audit](results/paper_profile_audit/README.md)
+checks explicit similarity identities, a scalar comparison function and a
+viscous exterior from the user-supplied OpenAI manuscript. It retains the full
+momentum residual and deliberately tests omitted terms. Its 29 regression
+tests and 25 audit gates pass, but the nonlinear matched profile, correction
+construction and complete proof remain unverified. No new numerical
+candidate is promoted, and the earlier `.14` resolution failure is unchanged.
 
 ## What is implemented
 

@@ -1,0 +1,2606 @@
+{
+  "axis_samples": 9,
+  "checks": {
+    "axis-divergence": {
+      "kind": "at-most",
+      "limit": 1e-10,
+      "value": 4.985461047507854e-16
+    },
+    "axis-finite": {
+      "kind": "exact",
+      "limit": 1.0,
+      "value": 1.0
+    },
+    "cartesian-cylindrical": {
+      "kind": "at-most",
+      "limit": 1e-10,
+      "value": 9.322424509632105e-16
+    },
+    "centrifugal-balance": {
+      "kind": "at-most",
+      "limit": 1e-10,
+      "value": 1.5103246285307168e-15
+    },
+    "coordinate-derivatives": {
+      "kind": "at-most",
+      "limit": 1e-10,
+      "value": 6.125965503847391e-16
+    },
+    "coordinate-map": {
+      "kind": "at-most",
+      "limit": 1e-10,
+      "value": 9.516197353929913e-16
+    },
+    "core-exact-positive-lower-bound": {
+      "kind": "exact",
+      "limit": 1.0,
+      "value": 1.0
+    },
+    "core-exact-recurrence": {
+      "kind": "exact",
+      "limit": 1.0,
+      "value": 1.0
+    },
+    "core-reference": {
+      "kind": "at-most",
+      "limit": 1e-12,
+      "value": 1.1102230246251565e-16
+    },
+    "detect-omitted-axial-viscosity": {
+      "kind": "at-least",
+      "limit": 0.0001,
+      "value": 1.754335036154389
+    },
+    "detect-omitted-swirl-curvature": {
+      "kind": "at-least",
+      "limit": 0.0001,
+      "value": 0.7813544075581871
+    },
+    "detect-reversed-stress-sign": {
+      "kind": "at-least",
+      "limit": 0.0001,
+      "value": 2.0
+    },
+    "divergence": {
+      "kind": "at-most",
+      "limit": 1e-10,
+      "value": 1.3975018973132395e-15
+    },
+    "fd-0-decreasing": {
+      "kind": "exact",
+      "limit": 1.0,
+      "value": 1.0
+    },
+    "fd-0-finest-error": {
+      "kind": "at-most",
+      "limit": 1e-06,
+      "value": 1.6802790583845717e-09
+    },
+    "fd-0-reduction": {
+      "kind": "at-least",
+      "limit": 4.0,
+      "value": 255.77053550309483
+    },
+    "fd-1-decreasing": {
+      "kind": "exact",
+      "limit": 1.0,
+      "value": 1.0
+    },
+    "fd-1-finest-error": {
+      "kind": "at-most",
+      "limit": 1e-06,
+      "value": 2.719522333098343e-09
+    },
+    "fd-1-reduction": {
+      "kind": "at-least",
+      "limit": 4.0,
+      "value": 251.27491201484185
+    },
+    "heat-curvature-identity": {
+      "kind": "at-most",
+      "limit": 1e-09,
+      "value": 7.7725997768245e-16
+    },
+    "heat-full-residual": {
+      "kind": "at-most",
+      "limit": 1e-09,
+      "value": 8.515072332558003e-16
+    },
+    "heat-ode": {
+      "kind": "at-most",
+      "limit": 1e-09,
+      "value": 2.6020852139652106e-17
+    },
+    "heat-positive-decreasing": {
+      "kind": "exact",
+      "limit": 1.0,
+      "value": 1.0
+    },
+    "heat-reference": {
+      "kind": "at-most",
+      "limit": 1e-09,
+      "value": 9.042992049623777e-13
+    },
+    "integrated-stress": {
+      "kind": "at-most",
+      "limit": 1e-10,
+      "value": 4.789481766898328e-15
+    }
+  },
+  "core_comparison": [
+    {
+      "alternating_truncation_bound_excludes_roundoff": 0.0,
+      "bessel_reference": 1.0,
+      "series": 1.0,
+      "z": 0.0
+    },
+    {
+      "alternating_truncation_bound_excludes_roundoff": 6.19339465637879e-81,
+      "bessel_reference": 0.9752074674443041,
+      "series": 0.9752074674443041,
+      "z": 0.1
+    },
+    {
+      "alternating_truncation_bound_excludes_roundoff": 6.193394656378782e-57,
+      "bessel_reference": 0.7699866217445037,
+      "series": 0.7699866217445036,
+      "z": 1.0
+    },
+    {
+      "alternating_truncation_bound_excludes_roundoff": 1.0390791992331261e-49,
+      "bessel_reference": 0.5767248077568734,
+      "series": 0.5767248077568734,
+      "z": 2.0
+    },
+    {
+      "alternating_truncation_bound_excludes_roundoff": 3.153125932394475e-42,
+      "bessel_reference": 0.2711140554036644,
+      "series": 0.27111405540366446,
+      "z": 4.1
+    }
+  ],
+  "core_lower_bound": "305719/1152000",
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.12.13",
+    "scipy": "1.17.0"
+  },
+  "finite_difference": [
+    {
+      "coarse_to_fine_reduction": 255.77053550309483,
+      "normalized_errors": [
+        4.297658745576579e-07,
+        2.6818821966918364e-08,
+        1.6802790583845717e-09
+      ],
+      "relative_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "similarity_point": [
+        0.2,
+        -0.6,
+        0.7,
+        0.4
+      ]
+    },
+    {
+      "coarse_to_fine_reduction": 251.27491201484185,
+      "normalized_errors": [
+        6.833477349716836e-07,
+        4.330679515367858e-08,
+        2.719522333098343e-09
+      ],
+      "relative_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "similarity_point": [
+        0.7,
+        0.5,
+        1.4,
+        0.0
+      ]
+    }
+  ],
+  "full_proof_verified": false,
+  "heat_exterior": [
+    {
+      "K": 1.9396244986573241,
+      "Kr": -2.6714500653852333,
+      "full_residual": [
+        0.0,
+        -3.9968028886505635e-15,
+        0.0
+      ],
+      "h": 0.005,
+      "normalized_error": 8.043688400629609e-16,
+      "omitted_curvature_normalized_gap": 0.736519583847459,
+      "point": [
+        0.7,
+        0.2,
+        0.0,
+        0.2
+      ],
+      "term_scale": 4.968868371800329
+    },
+    {
+      "K": 1.1427099642558303,
+      "Kr": -0.9304249836700212,
+      "full_residual": [
+        4.440892098500626e-16,
+        3.885780586188048e-16,
+        0.0
+      ],
+      "h": 0.005,
+      "normalized_error": 4.336190734904907e-16,
+      "omitted_curvature_normalized_gap": 0.729260581775032,
+      "point": [
+        1.2,
+        -0.3,
+        0.5,
+        0.8
+      ],
+      "term_scale": 1.0241459313016164
+    },
+    {
+      "K": 6.399144807572674,
+      "Kr": -28.71358904061333,
+      "full_residual": [
+        -2.842170943040401e-14,
+        8.526512829121202e-14,
+        0.0
+      ],
+      "h": 0.005,
+      "normalized_error": 5.20556150897795e-16,
+      "omitted_curvature_normalized_gap": 0.7813544075581871,
+      "point": [
+        0.2,
+        0.1,
+        -0.5,
+        0.95
+      ],
+      "term_scale": 163.79621707313726
+    },
+    {
+      "K": 1.9372238401598576,
+      "Kr": -2.673852358474982,
+      "full_residual": [
+        0.0,
+        -1.9984014443252818e-15,
+        0.0
+      ],
+      "h": 0.009,
+      "normalized_error": 4.0318183258290636e-16,
+      "omitted_curvature_normalized_gap": 0.7374322981971688,
+      "point": [
+        0.7,
+        0.2,
+        0.0,
+        0.2
+      ],
+      "term_scale": 4.956576122299236
+    },
+    {
+      "K": 1.142207571817576,
+      "Kr": -0.9352818579519627,
+      "full_residual": [
+        2.220446049250313e-16,
+        7.771561172376096e-16,
+        0.0
+      ],
+      "h": 0.009,
+      "normalized_error": 7.595010610890831e-16,
+      "omitted_curvature_normalized_gap": 0.7295813422137132,
+      "point": [
+        1.2,
+        -0.3,
+        0.5,
+        0.8
+      ],
+      "term_scale": 1.0232455977391395
+    },
+    {
+      "K": 6.459307104073147,
+      "Kr": -29.060584050170696,
+      "full_residual": [
+        0.0,
+        1.4210854715202004e-13,
+        0.0
+      ],
+      "h": 0.009,
+      "normalized_error": 8.515072332558003e-16,
+      "omitted_curvature_normalized_gap": 0.7740768350907279,
+      "point": [
+        0.2,
+        0.1,
+        -0.5,
+        0.95
+      ],
+      "term_scale": 166.89059305891928
+    }
+  ],
+  "heat_profile": [
+    {
+      "Z": 0.0,
+      "derivatives": [
+        0.9999999999999998,
+        -0.005024999999999997,
+        0.010125500625,
+        -0.06100639440314062
+      ],
+      "h": 0.005,
+      "ode_normalized_error": 1.734723475976807e-18,
+      "quad_error_estimates_not_certified_bounds": [
+        9.129953843007884e-15,
+        6.892001742465707e-16,
+        1.0861832277340503e-15,
+        2.1726352754981055e-15
+      ],
+      "special_function_reference": [
+        1.0,
+        -0.005025,
+        0.010125500624999999,
+        -0.06100639440314061
+      ]
+    },
+    {
+      "Z": 0.001,
+      "derivatives": [
+        0.9999949800526113,
+        -0.005014904880812848,
+        0.010064858902726608,
+        -0.060279466630213586
+      ],
+      "h": 0.005,
+      "ode_normalized_error": 7.123485875043337e-18,
+      "quad_error_estimates_not_certified_bounds": [
+        1.0132021947728261e-14,
+        7.849533486976291e-16,
+        9.42916421759628e-16,
+        2.1512013235858087e-15
+      ],
+      "special_function_reference": [
+        0.9999949800526132,
+        -0.00501490488081285,
+        0.010064858902726606,
+        -0.06027946663021354
+      ]
+    },
+    {
+      "Z": 0.1,
+      "derivatives": [
+        0.999540184822901,
+        -0.004234264157676454,
+        0.006266182463434266,
+        -0.024677349694941134
+      ],
+      "h": 0.005,
+      "ode_normalized_error": 1.951563910473908e-18,
+      "quad_error_estimates_not_certified_bounds": [
+        9.463976544581343e-15,
+        4.7009775601974434e-18,
+        8.956175600688096e-16,
+        2.225326759913112e-15
+      ],
+      "special_function_reference": [
+        0.9995401848229016,
+        -0.004234264157388191,
+        0.006266182463434349,
+        -0.024677349694941113
+      ]
+    },
+    {
+      "Z": 1.0,
+      "derivatives": [
+        0.9970129702027108,
+        -0.0020166177591232847,
+        0.0010600292796924626,
+        -0.001247211491181841
+      ],
+      "h": 0.005,
+      "ode_normalized_error": 1.5178830414797062e-18,
+      "quad_error_estimates_not_certified_bounds": [
+        1.0354703748777234e-14,
+        4.843329172815158e-17,
+        9.416787755325077e-16,
+        4.3931556240846025e-16
+      ],
+      "special_function_reference": [
+        0.9970129702027112,
+        -0.002016617759123287,
+        0.001060029279692474,
+        -0.0012472114911818526
+      ]
+    },
+    {
+      "Z": 10.0,
+      "derivatives": [
+        0.9899597311477187,
+        -0.00039546397188582196,
+        3.369742157773551e-05,
+        -5.880942368958145e-06
+      ],
+      "h": 0.005,
+      "ode_normalized_error": 4.7704895589362195e-18,
+      "quad_error_estimates_not_certified_bounds": [
+        9.575317445105829e-15,
+        1.1064501989620834e-17,
+        1.4515375707911178e-16,
+        8.372177742672474e-16
+      ],
+      "special_function_reference": [
+        0.9899597311477193,
+        -0.00039546397188582153,
+        3.369742157773545e-05,
+        -5.880942368956991e-06
+      ]
+    },
+    {
+      "Z": 0.0,
+      "derivatives": [
+        1.0000000000000033,
+        -0.009081000000000002,
+        0.018407922560999993,
+        -0.11127738292297246
+      ],
+      "h": 0.009,
+      "ode_normalized_error": 2.6020852139652106e-17,
+      "quad_error_estimates_not_certified_bounds": [
+        1.55114485879069e-14,
+        1.2092234309248857e-15,
+        2.8706009240286495e-15,
+        7.365836124423496e-15
+      ],
+      "special_function_reference": [
+        1.0,
+        -0.009080999999999999,
+        0.018407922560999997,
+        -0.1112773829229724
+      ]
+    },
+    {
+      "Z": 0.001,
+      "derivatives": [
+        0.9999909281854712,
+        -0.009062647493522232,
+        0.018297311893009344,
+        -0.1099483789234823
+      ],
+      "h": 0.009,
+      "ode_normalized_error": 5.248331946473402e-18,
+      "quad_error_estimates_not_certified_bounds": [
+        8.257893492842521e-15,
+        1.4000477265027332e-15,
+        3.6022337239353504e-15,
+        7.362447282936067e-15
+      ],
+      "special_function_reference": [
+        0.999990928185471,
+        -0.009062647493522225,
+        0.01829731189300933,
+        -0.10994837892348222
+      ]
+    },
+    {
+      "Z": 0.1,
+      "derivatives": [
+        0.9991694593844103,
+        -0.00764453906778435,
+        0.011374919099340184,
+        -0.044926169539170245
+      ],
+      "h": 0.009,
+      "ode_normalized_error": 1.3145951341386741e-18,
+      "quad_error_estimates_not_certified_bounds": [
+        8.369486648151204e-15,
+        8.487143285700715e-18,
+        6.414095041089953e-16,
+        7.637480118357747e-15
+      ],
+      "special_function_reference": [
+        0.9991694593843613,
+        -0.007644539066880051,
+        0.01137491909934044,
+        -0.04492616953917015
+      ]
+    },
+    {
+      "Z": 1.0,
+      "derivatives": [
+        0.9946158243369027,
+        -0.0036274523527380846,
+        0.0019155448997601268,
+        -0.0022590645643556497
+      ],
+      "h": 0.009,
+      "ode_normalized_error": 6.505213034913027e-19,
+      "quad_error_estimates_not_certified_bounds": [
+        8.92745242469462e-15,
+        8.938611740225485e-17,
+        6.872392194710178e-16,
+        1.1660821731369506e-15
+      ],
+      "special_function_reference": [
+        0.9946158243369028,
+        -0.0036274523527380816,
+        0.0019155448997601394,
+        -0.002259064564355561
+      ]
+    },
+    {
+      "Z": 10.0,
+      "derivatives": [
+        0.9819750764461334,
+        -0.0007063844109284449,
+        6.0439061542571497e-05,
+        -1.0569821362342129e-05
+      ],
+      "h": 0.009,
+      "ode_normalized_error": 2.168404344971009e-17,
+      "quad_error_estimates_not_certified_bounds": [
+        9.708604511855397e-15,
+        2.448074844584227e-17,
+        5.394218829074524e-16,
+        1.1578646104922561e-15
+      ],
+      "special_function_reference": [
+        0.981975076446133,
+        -0.000706384410928445,
+        6.043906154257128e-05,
+        -1.0569821362338415e-05
+      ]
+    }
+  ],
+  "illustrative_scaling_not_measured_error": {
+    "h": 0.005,
+    "log10_tau_for_factor_point_one": -100.0,
+    "tau_power_2h": {
+      "0.05": 0.9704869503929601,
+      "1e-06": 0.8709635899560806
+    }
+  },
+  "manufactured_samples": [
+    {
+      "axial_second_derivatives": [
+        65.50472122518677,
+        139.24429212537467
+      ],
+      "full_cartesian_residual": [
+        135.1787370028445,
+        -83.5613678385574,
+        -290.3807269229725
+      ],
+      "full_residual_over_term_scale": 1.6505987847625347,
+      "identity_errors": {
+        "cartesian-cylindrical": 0.0,
+        "centrifugal-balance": 8.892121778725379e-16,
+        "coordinate-derivatives": 3.3306690738754696e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 0.0,
+        "integrated-stress": 9.402666361842666e-17
+      },
+      "leading_tangential_residual": [
+        -18.05664661337063,
+        -151.13643479759781
+      ],
+      "physical_point": [
+        0.14142135623730953,
+        0.0,
+        -0.13618880292594743,
+        0.968
+      ],
+      "similarity_point": [
+        0.05,
+        -0.6,
+        0.2,
+        0.0
+      ],
+      "term_scale": 175.92447638009648
+    },
+    {
+      "axial_second_derivatives": [
+        65.50472122518677,
+        139.24429212537467
+      ],
+      "full_cartesian_residual": [
+        157.04819121662902,
+        -24.32403684259766,
+        -290.3807269229725
+      ],
+      "full_residual_over_term_scale": 1.6505987847625347,
+      "identity_errors": {
+        "cartesian-cylindrical": 9.787739610536638e-17,
+        "centrifugal-balance": 1.0162424889971853e-15,
+        "coordinate-derivatives": 3.1133661626077433e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.2128582975395922e-16,
+        "integrated-stress": 2.3506665904606665e-16
+      },
+      "leading_tangential_residual": [
+        -18.05664661337066,
+        -151.13643479759781
+      ],
+      "physical_point": [
+        0.13025769494917244,
+        0.055072070112974214,
+        -0.13618880292594743,
+        0.968
+      ],
+      "similarity_point": [
+        0.05,
+        -0.6,
+        0.2,
+        0.4
+      ],
+      "term_scale": 175.92447638009648
+    },
+    {
+      "axial_second_derivatives": [
+        166.20251929271535,
+        185.64854365802245
+      ],
+      "full_cartesian_residual": [
+        258.66370359396353,
+        -211.0904005435462,
+        -213.60003608526668
+      ],
+      "full_residual_over_term_scale": 1.034672540572525,
+      "identity_errors": {
+        "cartesian-cylindrical": 4.3951600530732194e-16,
+        "centrifugal-balance": 1.394145810951431e-15,
+        "coordinate-derivatives": 2.448131184715717e-16,
+        "coordinate-map": 5.551115123125783e-16,
+        "divergence": 1.4638726290778094e-16,
+        "integrated-stress": 6.331711062855741e-16
+      },
+      "leading_tangential_residual": [
+        -44.88788125083079,
+        -27.951492427244233
+      ],
+      "physical_point": [
+        0.264575131106459,
+        0.0,
+        -0.13618880292594743,
+        0.968
+      ],
+      "similarity_point": [
+        0.05,
+        -0.6,
+        0.7,
+        0.0
+      ],
+      "term_scale": 249.9957169548877
+    },
+    {
+      "axial_second_derivatives": [
+        166.20251929271538,
+        185.64854365802245
+      ],
+      "full_cartesian_residual": [
+        320.4475218016605,
+        -93.69874348012848,
+        -213.60003608526662
+      ],
+      "full_residual_over_term_scale": 1.0093841563942465,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.5477521274757107e-16,
+        "centrifugal-balance": 1.5103246285307168e-15,
+        "coordinate-derivatives": 1.7589293659769456e-16,
+        "coordinate-map": 4.440892098500626e-16,
+        "divergence": 1.463872629077809e-16,
+        "integrated-stress": 1.89951331885672e-15
+      },
+      "leading_tangential_residual": [
+        -44.887881250830844,
+        -27.951492427244176
+      ],
+      "physical_point": [
+        0.2436898332453588,
+        0.10303040897157115,
+        -0.13618880292594743,
+        0.968
+      ],
+      "similarity_point": [
+        0.05,
+        -0.6,
+        0.7,
+        0.4
+      ],
+      "term_scale": 317.4683491628927
+    },
+    {
+      "axial_second_derivatives": [
+        363.6579566929399,
+        267.5942301500609
+      ],
+      "full_cartesian_residual": [
+        372.8288224327372,
+        -443.3361772117632,
+        -56.01520408792538
+      ],
+      "full_residual_over_term_scale": 0.851841368920096,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.846522466425492e-16,
+        "centrifugal-balance": 1.0314164656546157e-15,
+        "coordinate-derivatives": 3.6779362998586065e-16,
+        "coordinate-map": 6.344131569286609e-16,
+        "divergence": 3.4845200409064114e-16,
+        "integrated-stress": 8.059884751163536e-16
+      },
+      "leading_tangential_residual": [
+        -79.67822051882331,
+        211.5790260621356
+      ],
+      "physical_point": [
+        0.3741657386773941,
+        0.0,
+        -0.13618880292594743,
+        0.968
+      ],
+      "similarity_point": [
+        0.05,
+        -0.6,
+        1.4,
+        0.0
+      ],
+      "term_scale": 520.4445256912015
+    },
+    {
+      "axial_second_derivatives": [
+        363.6579566929401,
+        267.594230150061
+      ],
+      "full_cartesian_residual": [
+        516.0413249980809,
+        -263.15327806346335,
+        -56.01520408792521
+      ],
+      "full_residual_over_term_scale": 0.9340391230662921,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.2030568525115469e-16,
+        "centrifugal-balance": 7.73562349240962e-16,
+        "coordinate-derivatives": 1.8389681499293032e-16,
+        "coordinate-map": 3.1720657846433045e-16,
+        "divergence": 3.484520040906411e-16,
+        "integrated-stress": 4.029942375581767e-16
+      },
+      "leading_tangential_residual": [
+        -79.67822051882331,
+        211.57902606213582
+      ],
+      "physical_point": [
+        0.3446294671880244,
+        0.14570700170444253,
+        -0.13618880292594743,
+        0.968
+      ],
+      "similarity_point": [
+        0.05,
+        -0.6,
+        1.4,
+        0.4
+      ],
+      "term_scale": 552.4836297049364
+    },
+    {
+      "axial_second_derivatives": [
+        -117.77747189519931,
+        -31.50144437595766
+      ],
+      "full_cartesian_residual": [
+        -124.32937781563552,
+        104.42553752510102,
+        21.014862970242785
+      ],
+      "full_residual_over_term_scale": 1.105617106061533,
+      "identity_errors": {
+        "cartesian-cylindrical": 4.572002197670407e-16,
+        "centrifugal-balance": 4.639249300957285e-16,
+        "coordinate-derivatives": 4.3148115910176274e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 2.4535315461329457e-16,
+        "integrated-stress": 9.312881213413457e-16
+      },
+      "leading_tangential_residual": [
+        -13.351934370098249,
+        -10.48658140571488
+      ],
+      "physical_point": [
+        0.14142135623730953,
+        0.0,
+        0.0,
+        0.95
+      ],
+      "similarity_point": [
+        0.05,
+        0.0,
+        0.2,
+        0.0
+      ],
+      "term_scale": 112.45247304333586
+    },
+    {
+      "axial_second_derivatives": [
+        -117.77747189519933,
+        -31.501444375957668
+      ],
+      "full_cartesian_residual": [
+        -155.18016003234413,
+        47.76614918292441,
+        21.014862970242785
+      ],
+      "full_residual_over_term_scale": 1.1319015426303123,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.8315298440522344e-16,
+        "centrifugal-balance": 4.639249300957284e-16,
+        "coordinate-derivatives": 4.3148115910176274e-16,
+        "coordinate-map": 8.326672684688674e-17,
+        "divergence": 2.4535315461329457e-16,
+        "integrated-stress": 4.789481766898328e-15
+      },
+      "leading_tangential_residual": [
+        -13.35193437009832,
+        -10.48658140571489
+      ],
+      "physical_point": [
+        0.13025769494917244,
+        0.055072070112974214,
+        0.0,
+        0.95
+      ],
+      "similarity_point": [
+        0.05,
+        0.0,
+        0.2,
+        0.4
+      ],
+      "term_scale": 137.0968712276304
+    },
+    {
+      "axial_second_derivatives": [
+        -253.8844945119426,
+        -70.61347036899271
+      ],
+      "full_cartesian_residual": [
+        -246.64134672438803,
+        211.48680161611895,
+        76.51411990958911
+      ],
+      "full_residual_over_term_scale": 1.0776646165268784,
+      "identity_errors": {
+        "cartesian-cylindrical": 6.914098501618415e-16,
+        "centrifugal-balance": 1.2954596342669938e-15,
+        "coordinate-derivatives": 1.1711305693079735e-16,
+        "coordinate-map": 7.771561172376096e-16,
+        "divergence": 1.1328806373726102e-16,
+        "integrated-stress": 4.3992362649383567e-16
+      },
+      "leading_tangential_residual": [
+        -42.39769289582355,
+        5.900649540596419
+      ],
+      "physical_point": [
+        0.264575131106459,
+        0.0,
+        0.0,
+        0.95
+      ],
+      "similarity_point": [
+        0.05,
+        0.0,
+        0.7,
+        0.0
+      ],
+      "term_scale": 228.86651648568483
+    },
+    {
+      "axial_second_derivatives": [
+        -253.88449451194262,
+        -70.61347036899272
+      ],
+      "full_cartesian_residual": [
+        -309.52856368168256,
+        98.74557932884923,
+        76.51411990958914
+      ],
+      "full_residual_over_term_scale": 1.1092435405946839,
+      "identity_errors": {
+        "cartesian-cylindrical": 5.509354437408119e-16,
+        "centrifugal-balance": 8.636397561779958e-16,
+        "coordinate-derivatives": 1.1711305693079735e-16,
+        "coordinate-map": 6.661338147750939e-16,
+        "divergence": 1.1328806373726102e-16,
+        "integrated-stress": 5.027698588500976e-16
+      },
+      "leading_tangential_residual": [
+        -42.39769289582358,
+        5.900649540596419
+      ],
+      "physical_point": [
+        0.2436898332453588,
+        0.10303040897157115,
+        0.0,
+        0.95
+      ],
+      "similarity_point": [
+        0.05,
+        0.0,
+        0.7,
+        0.4
+      ],
+      "term_scale": 279.04472945205447
+    },
+    {
+      "axial_second_derivatives": [
+        -447.7889527844575,
+        -136.4947455343134
+      ],
+      "full_cartesian_residual": [
+        -365.8495843140994,
+        352.8768663016241,
+        169.72912790952114
+      ],
+      "full_residual_over_term_scale": 1.0154902554011724,
+      "identity_errors": {
+        "cartesian-cylindrical": 9.322424509632105e-16,
+        "centrifugal-balance": 9.796215682121872e-16,
+        "coordinate-derivatives": 1.8091084819821557e-16,
+        "coordinate-map": 9.516197353929913e-16,
+        "divergence": 0.0,
+        "integrated-stress": 5.24042757317353e-16
+      },
+      "leading_tangential_residual": [
+        -94.91208648283327,
+        33.23438237520773
+      ],
+      "physical_point": [
+        0.3741657386773941,
+        0.0,
+        0.0,
+        0.95
+      ],
+      "similarity_point": [
+        0.05,
+        0.0,
+        1.4,
+        0.0
+      ],
+      "term_scale": 360.26892662753266
+    },
+    {
+      "axial_second_derivatives": [
+        -447.7889527844576,
+        -136.49474553431344
+      ],
+      "full_cartesian_residual": [
+        -474.3865060981366,
+        182.5525785784916,
+        169.7291279095212
+      ],
+      "full_residual_over_term_scale": 1.0589194514518443,
+      "identity_errors": {
+        "cartesian-cylindrical": 7.189507053438246e-16,
+        "centrifugal-balance": 9.796215682121874e-16,
+        "coordinate-derivatives": 3.618216963964311e-16,
+        "coordinate-map": 7.930164461608261e-16,
+        "divergence": 2.046494054608586e-16,
+        "integrated-stress": 8.98359012544033e-16
+      },
+      "leading_tangential_residual": [
+        -94.91208648283333,
+        33.23438237520776
+      ],
+      "physical_point": [
+        0.3446294671880244,
+        0.14570700170444253,
+        0.0,
+        0.95
+      ],
+      "similarity_point": [
+        0.05,
+        0.0,
+        1.4,
+        0.4
+      ],
+      "term_scale": 447.991115327727
+    },
+    {
+      "axial_second_derivatives": [
+        -8.415188249405336,
+        -125.43106891008776
+      ],
+      "full_cartesian_residual": [
+        84.77141364090238,
+        -1.1147256604066769,
+        178.33919348351674
+      ],
+      "full_residual_over_term_scale": 2.7066467155605323,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.187376692160596e-16,
+        "centrifugal-balance": 4.313551327545336e-16,
+        "coordinate-derivatives": 5.382581643400727e-16,
+        "coordinate-map": 1.3877787807814457e-16,
+        "divergence": 7.059557338257621e-16,
+        "integrated-stress": 2.3502057530964705e-16
+      },
+      "leading_tangential_residual": [
+        -9.529913909812027,
+        52.90812457342898
+      ],
+      "physical_point": [
+        0.14142135623730953,
+        0.0,
+        0.11349066910495618,
+        0.9625
+      ],
+      "similarity_point": [
+        0.05,
+        0.5,
+        0.2,
+        0.0
+      ],
+      "term_scale": 65.88935026438558
+    },
+    {
+      "axial_second_derivatives": [
+        -8.415188249405334,
+        -125.43106891008776
+      ],
+      "full_cartesian_residual": [
+        78.51373712992378,
+        31.984813050386435,
+        178.33919348351674
+      ],
+      "full_residual_over_term_scale": 2.752927391966485,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.593688346080298e-16,
+        "centrifugal-balance": 4.3135513275453333e-16,
+        "coordinate-derivatives": 5.382581643400727e-16,
+        "coordinate-map": 1.6653345369377348e-16,
+        "divergence": 8.236150227967225e-16,
+        "integrated-stress": 1.0743797728441003e-15
+      },
+      "leading_tangential_residual": [
+        -9.529913909812025,
+        52.90812457342895
+      ],
+      "physical_point": [
+        0.13025769494917244,
+        0.055072070112974214,
+        0.11349066910495618,
+        0.9625
+      ],
+      "similarity_point": [
+        0.05,
+        0.5,
+        0.2,
+        0.4
+      ],
+      "term_scale": 64.78165534039914
+    },
+    {
+      "axial_second_derivatives": [
+        8.513904023063247,
+        -128.71036675561453
+      ],
+      "full_cartesian_residual": [
+        230.90842797760448,
+        -49.5501125935661,
+        73.36703885123086
+      ],
+      "full_residual_over_term_scale": 1.5071517815912685,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.6925948973799164e-16,
+        "centrifugal-balance": 8.14007194534964e-16,
+        "coordinate-derivatives": 4.3904296662960296e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.3975018973132395e-15,
+        "integrated-stress": 1.0271051816583204e-15
+      },
+      "leading_tangential_residual": [
+        -41.03620857050285,
+        -55.343327904383685
+      ],
+      "physical_point": [
+        0.264575131106459,
+        0.0,
+        0.11349066910495618,
+        0.9625
+      ],
+      "similarity_point": [
+        0.05,
+        0.5,
+        0.7,
+        0.0
+      ],
+      "term_scale": 153.20847627822107
+    },
+    {
+      "axial_second_derivatives": [
+        8.513904023063247,
+        -128.71036675561453
+      ],
+      "full_cartesian_residual": [
+        231.97646890408942,
+        44.28130128975028,
+        73.36703885123083
+      ],
+      "full_residual_over_term_scale": 1.3379730613386527,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.1440964136656106e-16,
+        "centrifugal-balance": 2.03501798633741e-16,
+        "coordinate-derivatives": 3.3733577179255087e-16,
+        "coordinate-map": 2.220446049250313e-16,
+        "divergence": 2.220446049250313e-16,
+        "integrated-stress": 5.135525908291602e-16
+      },
+      "leading_tangential_residual": [
+        -41.036208570502865,
+        -55.3433279043837
+      ],
+      "physical_point": [
+        0.2436898332453588,
+        0.10303040897157115,
+        0.11349066910495618,
+        0.9625
+      ],
+      "similarity_point": [
+        0.05,
+        0.5,
+        0.7,
+        0.4
+      ],
+      "term_scale": 173.37902802915562
+    },
+    {
+      "axial_second_derivatives": [
+        82.4254084454005,
+        -124.95821214329297
+      ],
+      "full_cartesian_residual": [
+        490.3620815542379,
+        -191.39938899130502,
+        -134.25858632423171
+      ],
+      "full_residual_over_term_scale": 1.5706849112757275,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.3184263628475805e-16,
+        "centrifugal-balance": 4.696911615580416e-16,
+        "coordinate-derivatives": 3.5506486477324707e-16,
+        "coordinate-map": 3.1720657846433035e-16,
+        "divergence": 4.343979973846007e-16,
+        "integrated-stress": 2.1928910162020032e-16
+      },
+      "leading_tangential_residual": [
+        -108.97398054590454,
+        -259.21679846752465
+      ],
+      "physical_point": [
+        0.3741657386773941,
+        0.0,
+        0.11349066910495618,
+        0.9625
+      ],
+      "similarity_point": [
+        0.05,
+        0.5,
+        1.4,
+        0.0
+      ],
+      "term_scale": 312.19634061166374
+    },
+    {
+      "axial_second_derivatives": [
+        82.42540844540054,
+        -124.95821214329297
+      ],
+      "full_cartesian_residual": [
+        526.1878190375528,
+        14.66547745399427,
+        -134.25858632423177
+      ],
+      "full_residual_over_term_scale": 1.4013024213977996,
+      "identity_errors": {
+        "cartesian-cylindrical": 5.401438118121016e-17,
+        "centrifugal-balance": 1.0568051135055937e-15,
+        "coordinate-derivatives": 1.7753243238662353e-16,
+        "coordinate-map": 4.758098676964954e-16,
+        "divergence": 4.3439799738460053e-16,
+        "integrated-stress": 2.1928910162020032e-16
+      },
+      "leading_tangential_residual": [
+        -108.97398054590457,
+        -259.2167984675247
+      ],
+      "physical_point": [
+        0.3446294671880244,
+        0.14570700170444253,
+        0.11349066910495618,
+        0.9625
+      ],
+      "similarity_point": [
+        0.05,
+        0.5,
+        1.4,
+        0.4
+      ],
+      "term_scale": 375.49911496811677
+    },
+    {
+      "axial_second_derivatives": [
+        8.245042824077522,
+        17.526601596170654
+      ],
+      "full_cartesian_residual": [
+        17.058907791397747,
+        -10.486532854639641,
+        -36.28815899424609
+      ],
+      "full_residual_over_term_scale": 1.6434889183448547,
+      "identity_errors": {
+        "cartesian-cylindrical": 9.790283600123735e-17,
+        "centrifugal-balance": 6.440179409275688e-16,
+        "coordinate-derivatives": 2.220446049250313e-16,
+        "coordinate-map": 5.551115123125783e-17,
+        "divergence": 1.2128582975395915e-16,
+        "integrated-stress": 2.367016769597269e-16
+      },
+      "leading_tangential_residual": [
+        -2.2414900305621153,
+        -18.761557398075436
+      ],
+      "physical_point": [
+        0.28284271247461906,
+        0.0,
+        -0.2704961562966236,
+        0.872
+      ],
+      "similarity_point": [
+        0.2,
+        -0.6,
+        0.2,
+        0.0
+      ],
+      "term_scale": 22.079953560497152
+    },
+    {
+      "axial_second_derivatives": [
+        8.245042824077522,
+        17.526601596170657
+      ],
+      "full_cartesian_residual": [
+        19.795942807767346,
+        -3.015684781016066,
+        -36.28815899424609
+      ],
+      "full_residual_over_term_scale": 1.6434889183448544,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.671356350046401e-17,
+        "centrifugal-balance": 9.016251172985958e-16,
+        "coordinate-derivatives": 2.220446049250313e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.2128582975395915e-16,
+        "integrated-stress": 9.468067078389078e-17
+      },
+      "leading_tangential_residual": [
+        -2.241490030562119,
+        -18.761557398075432
+      ],
+      "physical_point": [
+        0.2605153898983449,
+        0.11014414022594843,
+        -0.2704961562966236,
+        0.872
+      ],
+      "similarity_point": [
+        0.2,
+        -0.6,
+        0.2,
+        0.4
+      ],
+      "term_scale": 22.079953560497156
+    },
+    {
+      "axial_second_derivatives": [
+        20.919818654401148,
+        23.367478924549125
+      ],
+      "full_cartesian_residual": [
+        32.652756766023735,
+        -26.492045905184767,
+        -26.837281095269294
+      ],
+      "full_residual_over_term_scale": 1.0424990380582078,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.176057417912852e-16,
+        "centrifugal-balance": 1.1780061343531335e-16,
+        "coordinate-derivatives": 1.2325796418582095e-16,
+        "coordinate-map": 2.220446049250313e-16,
+        "divergence": 2.9277452581556167e-16,
+        "integrated-stress": 1.434544109122073e-15
+      },
+      "leading_tangential_residual": [
+        -5.572227250783612,
+        -3.4698021707201683
+      ],
+      "physical_point": [
+        0.529150262212918,
+        0.0,
+        -0.2704961562966236,
+        0.872
+      ],
+      "similarity_point": [
+        0.2,
+        -0.6,
+        0.7,
+        0.0
+      ],
+      "term_scale": 31.321618125273105
+    },
+    {
+      "axial_second_derivatives": [
+        20.91981865440115,
+        23.367478924549125
+      ],
+      "full_cartesian_residual": [
+        40.39166920460998,
+        -11.685207722967007,
+        -26.83728109526929
+      ],
+      "full_residual_over_term_scale": 1.009635459880075,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.5182637893014063e-16,
+        "centrifugal-balance": 3.5340184030593993e-16,
+        "coordinate-derivatives": 1.2325796418582093e-16,
+        "coordinate-map": 2.7755575615628914e-17,
+        "divergence": 0.0,
+        "integrated-stress": 3.1878757980490527e-16
+      },
+      "leading_tangential_residual": [
+        -5.572227250783616,
+        -3.4698021707201647
+      ],
+      "physical_point": [
+        0.4873796664907176,
+        0.2060608179431423,
+        -0.2704961562966236,
+        0.872
+      ],
+      "similarity_point": [
+        0.2,
+        -0.6,
+        0.7,
+        0.4
+      ],
+      "term_scale": 40.00619115478346
+    },
+    {
+      "axial_second_derivatives": [
+        45.773424726780384,
+        33.68193690159491
+      ],
+      "full_cartesian_residual": [
+        47.095749447979394,
+        -55.664405082657964,
+        -7.417244029821845
+      ],
+      "full_residual_over_term_scale": 0.85327256523257,
+      "identity_errors": {
+        "cartesian-cylindrical": 5.105903743729881e-16,
+        "centrifugal-balance": 7.843608772215173e-16,
+        "coordinate-derivatives": 1.7630557474579394e-16,
+        "coordinate-map": 1.9825411154020653e-17,
+        "divergence": 0.0,
+        "integrated-stress": 5.410630455334415e-16
+      },
+      "leading_tangential_residual": [
+        -9.890980355877609,
+        26.264692871773065
+      ],
+      "physical_point": [
+        0.7483314773547882,
+        0.0,
+        -0.2704961562966236,
+        0.872
+      ],
+      "similarity_point": [
+        0.2,
+        -0.6,
+        1.4,
+        0.0
+      ],
+      "term_scale": 65.23637035896724
+    },
+    {
+      "axial_second_derivatives": [
+        45.773424726780384,
+        33.681936901594916
+      ],
+      "full_cartesian_residual": [
+        65.0547981527526,
+        -32.93036359619654,
+        -7.4172440298218305
+      ],
+      "full_residual_over_term_scale": 0.9349081555312297,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.1844437487660878e-16,
+        "centrifugal-balance": 1.0458145029620231e-15,
+        "coordinate-derivatives": 3.3306690738754696e-16,
+        "coordinate-map": 1.586032892321652e-16,
+        "divergence": 1.742260020453203e-16,
+        "integrated-stress": 5.410630455334409e-16
+      },
+      "leading_tangential_residual": [
+        -9.890980355877595,
+        26.264692871773093
+      ],
+      "physical_point": [
+        0.6892589343760488,
+        0.29141400340888507,
+        -0.2704961562966236,
+        0.872
+      ],
+      "similarity_point": [
+        0.2,
+        -0.6,
+        1.4,
+        0.4
+      ],
+      "term_scale": 69.58415943626828
+    },
+    {
+      "axial_second_derivatives": [
+        -14.824584874565055,
+        -3.9650692811467065
+      ],
+      "full_cartesian_residual": [
+        -15.749239491438525,
+        13.167121646750996,
+        2.663301119046079
+      ],
+      "full_residual_over_term_scale": 1.1040765496016178,
+      "identity_errors": {
+        "cartesian-cylindrical": 4.511600297565856e-16,
+        "centrifugal-balance": 1.1760027019537238e-16,
+        "coordinate-derivatives": 1.4482744930080844e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 0.0,
+        "integrated-stress": 1.339665346409372e-16
+      },
+      "leading_tangential_residual": [
+        -1.6574632278140555,
+        -1.3017681621006276
+      ],
+      "physical_point": [
+        0.28284271247461906,
+        0.0,
+        0.0,
+        0.8
+      ],
+      "similarity_point": [
+        0.2,
+        0.0,
+        0.2,
+        0.0
+      ],
+      "term_scale": 14.264626394901057
+    },
+    {
+      "axial_second_derivatives": [
+        -14.824584874565055,
+        -3.965069281146707
+      ],
+      "full_cartesian_residual": [
+        -19.633528865427976,
+        5.9946794167354565,
+        2.663301119046079
+      ],
+      "full_residual_over_term_scale": 1.1297085933648334,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.6190271276768326e-16,
+        "centrifugal-balance": 3.52800810586117e-16,
+        "coordinate-derivatives": 1.4482744930080844e-16,
+        "coordinate-map": 1.3877787807814457e-16,
+        "divergence": 0.0,
+        "integrated-stress": 2.143464554254991e-15
+      },
+      "leading_tangential_residual": [
+        -1.657463227814059,
+        -1.3017681621006303
+      ],
+      "physical_point": [
+        0.2605153898983449,
+        0.11014414022594843,
+        0.0,
+        0.8
+      ],
+      "similarity_point": [
+        0.2,
+        0.0,
+        0.2,
+        0.4
+      ],
+      "term_scale": 17.379286110367254
+    },
+    {
+      "axial_second_derivatives": [
+        -31.95630010276823,
+        -8.888078237102885
+      ],
+      "full_cartesian_residual": [
+        -31.251685516659382,
+        26.693196272932397,
+        9.620564584224176
+      ],
+      "full_residual_over_term_scale": 1.076536915541943,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.4104211853533303e-16,
+        "centrifugal-balance": 2.1892392947505663e-16,
+        "coordinate-derivatives": 7.370477666285915e-18,
+        "coordinate-map": 5.551115123125783e-17,
+        "divergence": 1.1328806373726085e-16,
+        "integrated-stress": 6.750225330271175e-16
+      },
+      "leading_tangential_residual": [
+        -5.263103829835821,
+        0.7324863471212915
+      ],
+      "physical_point": [
+        0.529150262212918,
+        0.0,
+        0.0,
+        0.8
+      ],
+      "similarity_point": [
+        0.2,
+        0.0,
+        0.7,
+        0.0
+      ],
+      "term_scale": 29.02983173682146
+    },
+    {
+      "axial_second_derivatives": [
+        -31.95630010276823,
+        -8.888078237102885
+      ],
+      "full_cartesian_residual": [
+        -39.179528769764644,
+        12.416082324012459,
+        9.620564584224178
+      ],
+      "full_residual_over_term_scale": 1.1073533579882198,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.3601670784548244e-16,
+        "centrifugal-balance": 4.3784785895011315e-16,
+        "coordinate-derivatives": 1.1792764266057462e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.1328806373726085e-16,
+        "integrated-stress": 6.750225330271166e-16
+      },
+      "leading_tangential_residual": [
+        -5.263103829835828,
+        0.7324863471212932
+      ],
+      "physical_point": [
+        0.4873796664907176,
+        0.2060608179431423,
+        0.0,
+        0.8
+      ],
+      "similarity_point": [
+        0.2,
+        0.0,
+        0.7,
+        0.4
+      ],
+      "term_scale": 35.38123444258471
+    },
+    {
+      "axial_second_derivatives": [
+        -56.362946407549586,
+        -17.180517696169602
+      ],
+      "full_cartesian_residual": [
+        -46.39118284369476,
+        44.58088630600295,
+        21.306119662082583
+      ],
+      "full_residual_over_term_scale": 1.0152665187500893,
+      "identity_errors": {
+        "cartesian-cylindrical": 4.594899454196649e-16,
+        "centrifugal-balance": 6.208103598096997e-16,
+        "coordinate-derivatives": 2.220446049250313e-16,
+        "coordinate-map": 1.586032892321652e-16,
+        "divergence": 0.0,
+        "integrated-stress": 6.030717290831236e-16
+      },
+      "leading_tangential_residual": [
+        -11.782060101546612,
+        4.125601965912981
+      ],
+      "physical_point": [
+        0.7483314773547882,
+        0.0,
+        0.0,
+        0.8
+      ],
+      "similarity_point": [
+        0.2,
+        0.0,
+        1.4,
+        0.0
+      ],
+      "term_scale": 45.693600632873896
+    },
+    {
+      "axial_second_derivatives": [
+        -56.3629464075496,
+        -17.18051769616961
+      ],
+      "full_cartesian_residual": [
+        -60.08972382691718,
+        22.996137933807564,
+        21.30611966208259
+      ],
+      "full_residual_over_term_scale": 1.0577565404614253,
+      "identity_errors": {
+        "cartesian-cylindrical": 4.729878525032011e-16,
+        "centrifugal-balance": 9.932965756955191e-16,
+        "coordinate-derivatives": 1.8343626952743503e-16,
+        "coordinate-map": 3.1720657846433035e-16,
+        "divergence": 2.0464940546085833e-16,
+        "integrated-stress": 4.523037968123426e-16
+      },
+      "leading_tangential_residual": [
+        -11.78206010154662,
+        4.125601965912981
+      ],
+      "physical_point": [
+        0.6892589343760488,
+        0.29141400340888507,
+        0.0,
+        0.8
+      ],
+      "similarity_point": [
+        0.2,
+        0.0,
+        1.4,
+        0.4
+      ],
+      "term_scale": 56.80865258531442
+    },
+    {
+      "axial_second_derivatives": [
+        -1.0592150640638531,
+        -15.787938873569939
+      ],
+      "full_cartesian_residual": [
+        10.738397984133673,
+        -0.12379568418556186,
+        22.355771556259956
+      ],
+      "full_residual_over_term_scale": 2.7067952373696333,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.9729267114085433e-17,
+        "centrifugal-balance": 2.1868831300627312e-16,
+        "coordinate-derivatives": 4.065015344591836e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 3.3306690738754696e-16,
+        "integrated-stress": 2.70463168783511e-16
+      },
+      "leading_tangential_residual": [
+        -1.1830107482494159,
+        6.5678326826900175
+      ],
+      "physical_point": [
+        0.28284271247461906,
+        0.0,
+        0.2254134635805197,
+        0.85
+      ],
+      "similarity_point": [
+        0.2,
+        0.5,
+        0.2,
+        0.0
+      ],
+      "term_scale": 8.259129189980582
+    },
+    {
+      "axial_second_derivatives": [
+        -1.0592150640638538,
+        -15.787938873569939
+      ],
+      "full_cartesian_residual": [
+        9.93892783138525,
+        4.067705766102669,
+        22.355771556259956
+      ],
+      "full_residual_over_term_scale": 2.7067952373696333,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.5891706845634173e-16,
+        "centrifugal-balance": 2.1868831300627298e-16,
+        "coordinate-derivatives": 4.065015344591836e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.1102230246251565e-16,
+        "integrated-stress": 4.733105453711447e-16
+      },
+      "leading_tangential_residual": [
+        -1.1830107482494165,
+        6.567832682690014
+      ],
+      "physical_point": [
+        0.2605153898983449,
+        0.11014414022594843,
+        0.2254134635805197,
+        0.85
+      ],
+      "similarity_point": [
+        0.2,
+        0.5,
+        0.2,
+        0.4
+      ],
+      "term_scale": 8.259129189980582
+    },
+    {
+      "axial_second_derivatives": [
+        1.0716403635842005,
+        -16.20070226930022
+      ],
+      "full_cartesian_residual": [
+        29.220080257403243,
+        -6.165734210153614,
+        9.33057181750593
+      ],
+      "full_residual_over_term_scale": 1.4978829167051841,
+      "identity_errors": {
+        "cartesian-cylindrical": 4.863386612910319e-16,
+        "centrifugal-balance": 0.0,
+        "coordinate-derivatives": 2.2645475175945075e-16,
+        "coordinate-map": 3.3306690738754696e-16,
+        "divergence": 7.771561172376096e-16,
+        "integrated-stress": 1.2928115789535807e-16
+      },
+      "leading_tangential_residual": [
+        -5.094093846569415,
+        -6.870130451794289
+      ],
+      "physical_point": [
+        0.529150262212918,
+        0.0,
+        0.2254134635805197,
+        0.85
+      ],
+      "similarity_point": [
+        0.2,
+        0.5,
+        0.7,
+        0.0
+      ],
+      "term_scale": 19.50758629498035
+    },
+    {
+      "axial_second_derivatives": [
+        1.0716403635842022,
+        -16.200702269300223
+      ],
+      "full_cartesian_residual": [
+        29.314526161961677,
+        5.699817935602012,
+        9.330571817505925
+      ],
+      "full_residual_over_term_scale": 1.3337729392228022,
+      "identity_errors": {
+        "cartesian-cylindrical": 8.483505963631553e-16,
+        "centrifugal-balance": 4.1268515575800697e-16,
+        "coordinate-derivatives": 4.3904296662960296e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 8.881784197001252e-16,
+        "integrated-stress": 1.0342492631628636e-15
+      },
+      "leading_tangential_residual": [
+        -5.094093846569419,
+        -6.870130451794296
+      ],
+      "physical_point": [
+        0.4873796664907176,
+        0.2060608179431423,
+        0.2254134635805197,
+        0.85
+      ],
+      "similarity_point": [
+        0.2,
+        0.5,
+        0.7,
+        0.4
+      ],
+      "term_scale": 21.978648164089634
+    },
+    {
+      "axial_second_derivatives": [
+        10.374840312473449,
+        -15.728420655356713
+      ],
+      "full_cartesian_residual": [
+        61.99369858175936,
+        -23.90249559722836,
+        -16.449861500807387
+      ],
+      "full_residual_over_term_scale": 1.5606507134507381,
+      "identity_errors": {
+        "cartesian-cylindrical": 4.58461264299637e-16,
+        "centrifugal-balance": 2.381239029176835e-16,
+        "coordinate-derivatives": 2.220446049250313e-16,
+        "coordinate-map": 1.5860328923216522e-16,
+        "divergence": 4.343979973846019e-16,
+        "integrated-stress": 2.2081437794341298e-16
+      },
+      "leading_tangential_residual": [
+        -13.527655284754914,
+        -32.1782821561641
+      ],
+      "physical_point": [
+        0.7483314773547882,
+        0.0,
+        0.2254134635805197,
+        0.85
+      ],
+      "similarity_point": [
+        0.2,
+        0.5,
+        1.4,
+        0.0
+      ],
+      "term_scale": 39.72298096393764
+    },
+    {
+      "axial_second_derivatives": [
+        10.374840312473452,
+        -15.728420655356713
+      ],
+      "full_cartesian_residual": [
+        66.40804785014302,
+        2.1258269813581236,
+        -16.449861500807398
+      ],
+      "full_residual_over_term_scale": 1.3962892990103706,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.0699647990910938e-16,
+        "centrifugal-balance": 4.762478058353669e-16,
+        "coordinate-derivatives": 1.1102230246251565e-16,
+        "coordinate-map": 7.930164461608261e-17,
+        "divergence": 8.687959947692032e-16,
+        "integrated-stress": 0.0
+      },
+      "leading_tangential_residual": [
+        -13.527655284754914,
+        -32.17828215616411
+      ],
+      "physical_point": [
+        0.6892589343760488,
+        0.29141400340888507,
+        0.2254134635805197,
+        0.85
+      ],
+      "similarity_point": [
+        0.2,
+        0.5,
+        1.4,
+        0.4
+      ],
+      "term_scale": 47.56037871035048
+    },
+    {
+      "axial_second_derivatives": [
+        1.267100870776627,
+        2.693493850560751
+      ],
+      "full_cartesian_residual": [
+        2.627842365476531,
+        -1.6072852792150112,
+        -5.540880730638257
+      ],
+      "full_residual_over_term_scale": 1.6371135033975492,
+      "identity_errors": {
+        "cartesian-cylindrical": 0.0,
+        "centrifugal-balance": 2.135063112610622e-16,
+        "coordinate-derivatives": 3.3306690738754696e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 3.3306690738754696e-16,
+        "integrated-stress": 5.068822723427794e-16
+      },
+      "leading_tangential_residual": [
+        -0.34018440843838427,
+        -2.847386880077506
+      ],
+      "physical_point": [
+        0.529150262212918,
+        0.0,
+        -0.5028920616798184,
+        0.552
+      ],
+      "similarity_point": [
+        0.7,
+        -0.6,
+        0.2,
+        0.0
+      ],
+      "term_scale": 3.3845428060663516
+    },
+    {
+      "axial_second_derivatives": [
+        1.2671008707766271,
+        2.6934938505607513
+      ],
+      "full_cartesian_residual": [
+        3.046309470277713,
+        -0.45707775910766957,
+        -5.540880730638257
+      ],
+      "full_residual_over_term_scale": 1.637113503397549,
+      "identity_errors": {
+        "cartesian-cylindrical": 8.01477655699165e-17,
+        "centrifugal-balance": 2.1350631126106216e-16,
+        "coordinate-derivatives": 2.220446049250313e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 3.3306690738754696e-16,
+        "integrated-stress": 4.2890038429004413e-16
+      },
+      "leading_tangential_residual": [
+        -0.3401844084383845,
+        -2.8473868800775057
+      ],
+      "physical_point": [
+        0.4873796664907176,
+        0.2060608179431423,
+        -0.5028920616798184,
+        0.552
+      ],
+      "similarity_point": [
+        0.7,
+        -0.6,
+        0.2,
+        0.4
+      ],
+      "term_scale": 3.384542806066352
+    },
+    {
+      "axial_second_derivatives": [
+        3.214964554953243,
+        3.5911217837080676
+      ],
+      "full_cartesian_residual": [
+        5.031473179899684,
+        -4.060645242864534,
+        -4.117723545371337
+      ],
+      "full_residual_over_term_scale": 1.04961971737339,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.5304905261080356e-16,
+        "centrifugal-balance": 1.9526765358927138e-16,
+        "coordinate-derivatives": 2.220446049250313e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.1102230246251565e-16,
+        "integrated-stress": 1.3322676295501878e-15
+      },
+      "leading_tangential_residual": [
+        -0.8456806879112917,
+        -0.5266017616632697
+      ],
+      "physical_point": [
+        0.9899494936611665,
+        0.0,
+        -0.5028920616798184,
+        0.552
+      ],
+      "similarity_point": [
+        0.7,
+        -0.6,
+        0.7,
+        0.0
+      ],
+      "term_scale": 4.793615341459706
+    },
+    {
+      "axial_second_derivatives": [
+        3.2149645549532444,
+        3.591121783708068
+      ],
+      "full_cartesian_residual": [
+        6.215583427557075,
+        -1.7807539985989242,
+        -4.117723545371337
+      ],
+      "full_residual_over_term_scale": 1.009856178676546,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.786192780717787e-16,
+        "centrifugal-balance": 3.9053530717854277e-16,
+        "coordinate-derivatives": 2.220446049250313e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 0.0,
+        "integrated-stress": 1.7763568394002505e-15
+      },
+      "leading_tangential_residual": [
+        -0.8456806879112904,
+        -0.5266017616632692
+      ],
+      "physical_point": [
+        0.9118038646442068,
+        0.3855044907908194,
+        -0.5028920616798184,
+        0.552
+      ],
+      "similarity_point": [
+        0.7,
+        -0.6,
+        0.7,
+        0.4
+      ],
+      "term_scale": 6.154919441798957
+    },
+    {
+      "axial_second_derivatives": [
+        7.034474843521623,
+        5.176251050245975
+      ],
+      "full_cartesian_residual": [
+        7.261319644678656,
+        -8.53560010188206,
+        -1.1901351694810156
+      ],
+      "full_residual_over_term_scale": 0.8545590434205161,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.0811153500602395e-16,
+        "centrifugal-balance": 2.1669427064906832e-16,
+        "coordinate-derivatives": 2.8038620212771775e-16,
+        "coordinate-map": 7.930164461608261e-17,
+        "divergence": 3.0489550357931067e-16,
+        "integrated-stress": 1.1140900644485007e-16
+      },
+      "leading_tangential_residual": [
+        -1.5011252583604398,
+        3.9861158807649595
+      ],
+      "physical_point": [
+        1.4,
+        0.0,
+        -0.5028920616798184,
+        0.552
+      ],
+      "similarity_point": [
+        0.7,
+        -0.6,
+        1.4,
+        0.0
+      ],
+      "term_scale": 9.988309371482265
+    },
+    {
+      "axial_second_derivatives": [
+        7.034474843521623,
+        5.176251050245975
+      ],
+      "full_cartesian_residual": [
+        10.01203753198486,
+        -5.034117255246615,
+        -1.1901351694810156
+      ],
+      "full_residual_over_term_scale": 0.935686063668474,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.661331672587267e-16,
+        "centrifugal-balance": 2.1669427064906832e-16,
+        "coordinate-derivatives": 2.8038620212771775e-16,
+        "coordinate-map": 7.930164461608261e-17,
+        "divergence": 0.0,
+        "integrated-stress": 2.2281801288970015e-16
+      },
+      "leading_tangential_residual": [
+        -1.5011252583604398,
+        3.9861158807649595
+      ],
+      "physical_point": [
+        1.289485391604039,
+        0.5451856792321107,
+        -0.5028920616798184,
+        0.552
+      ],
+      "similarity_point": [
+        0.7,
+        -0.6,
+        1.4,
+        0.4
+      ],
+      "term_scale": 10.700210167426686
+    },
+    {
+      "axial_second_derivatives": [
+        -2.278247039373626,
+        -0.6093531405511841
+      ],
+      "full_cartesian_residual": [
+        -2.434331826110555,
+        2.026698676465717,
+        0.41178758098584883
+      ],
+      "full_residual_over_term_scale": 1.102704791561266,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.824275577744898e-16,
+        "centrifugal-balance": 3.898711246546171e-16,
+        "coordinate-derivatives": 4.0839770025649276e-16,
+        "coordinate-map": 5.551115123125783e-17,
+        "divergence": 2.1468401028663245e-16,
+        "integrated-stress": 1.1102230246251565e-16
+      },
+      "leading_tangential_residual": [
+        -0.2515483629079096,
+        -0.19756555956533534
+      ],
+      "physical_point": [
+        0.529150262212918,
+        0.0,
+        0.0,
+        0.30000000000000004
+      ],
+      "similarity_point": [
+        0.7,
+        0.0,
+        0.2,
+        0.0
+      ],
+      "term_scale": 2.2076006604305247
+    },
+    {
+      "axial_second_derivatives": [
+        -2.278247039373627,
+        -0.6093531405511842
+      ],
+      "full_cartesian_residual": [
+        -3.0314017304386622,
+        0.9187396331366828,
+        0.4117875809858489
+      ],
+      "full_residual_over_term_scale": 1.1277629031234162,
+      "identity_errors": {
+        "cartesian-cylindrical": 7.32481619626509e-17,
+        "centrifugal-balance": 3.898711246546171e-16,
+        "coordinate-derivatives": 6.125965503847391e-16,
+        "coordinate-map": 2.7755575615628914e-17,
+        "divergence": 2.1468401028663245e-16,
+        "integrated-stress": 2.7755575615628914e-16
+      },
+      "leading_tangential_residual": [
+        -0.2515483629079096,
+        -0.19756555956533545
+      ],
+      "physical_point": [
+        0.4873796664907176,
+        0.2060608179431423,
+        0.0,
+        0.30000000000000004
+      ],
+      "similarity_point": [
+        0.7,
+        0.0,
+        0.2,
+        0.4
+      ],
+      "term_scale": 2.687977873756078
+    },
+    {
+      "axial_second_derivatives": [
+        -4.911054624091314,
+        -1.3659227628115904
+      ],
+      "full_cartesian_residual": [
+        -4.831725905578322,
+        4.112288696743648,
+        1.4770900806613876
+      ],
+      "full_residual_over_term_scale": 1.0755326491538706,
+      "identity_errors": {
+        "cartesian-cylindrical": 3.6764437265562e-16,
+        "centrifugal-balance": 1.8144541346812102e-16,
+        "coordinate-derivatives": 1.7728007689263208e-16,
+        "coordinate-map": 0.0,
+        "divergence": 0.0,
+        "integrated-stress": 2.220446049250313e-16
+      },
+      "leading_tangential_residual": [
+        -0.7987659273476666,
+        0.11116731784979716
+      ],
+      "physical_point": [
+        0.9899494936611665,
+        0.0,
+        0.0,
+        0.30000000000000004
+      ],
+      "similarity_point": [
+        0.7,
+        0.0,
+        0.7,
+        0.0
+      ],
+      "term_scale": 4.4924028195512955
+    },
+    {
+      "axial_second_derivatives": [
+        -4.911054624091314,
+        -1.3659227628115904
+      ],
+      "full_cartesian_residual": [
+        -6.051714912721971,
+        1.906106022009459,
+        1.4770900806613876
+      ],
+      "full_residual_over_term_scale": 1.1056778990153764,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.9352949783969115e-16,
+        "centrifugal-balance": 3.6289082693624205e-16,
+        "coordinate-derivatives": 1.7728007689263208e-16,
+        "coordinate-map": 0.0,
+        "divergence": 0.0,
+        "integrated-stress": 8.881784197001252e-16
+      },
+      "leading_tangential_residual": [
+        -0.7987659273476675,
+        0.11116731784979739
+      ],
+      "physical_point": [
+        0.9118038646442068,
+        0.3855044907908194,
+        0.0,
+        0.30000000000000004
+      ],
+      "similarity_point": [
+        0.7,
+        0.0,
+        0.7,
+        0.4
+      ],
+      "term_scale": 5.473307296918134
+    },
+    {
+      "axial_second_derivatives": [
+        -8.661875989774837,
+        -2.640307563914365
+      ],
+      "full_cartesian_residual": [
+        -7.177188760114329,
+        6.873747070537576,
+        3.266438148967374
+      ],
+      "full_residual_over_term_scale": 1.0150672423896354,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.475003652226577e-16,
+        "centrifugal-balance": 2.0581248051058421e-16,
+        "coordinate-derivatives": 2.8442776710258063e-16,
+        "coordinate-map": 0.0,
+        "divergence": 3.5813645955650204e-16,
+        "integrated-stress": 9.93416537414968e-16
+      },
+      "leading_tangential_residual": [
+        -1.7881289192372627,
+        0.626130585053009
+      ],
+      "physical_point": [
+        1.4,
+        0.0,
+        0.0,
+        0.30000000000000004
+      ],
+      "similarity_point": [
+        0.7,
+        0.0,
+        1.4,
+        0.0
+      ],
+      "term_scale": 7.070653509828615
+    },
+    {
+      "axial_second_derivatives": [
+        -8.661875989774837,
+        -2.640307563914365
+      ],
+      "full_cartesian_residual": [
+        -9.287391803194923,
+        3.53621135991376,
+        3.266438148967374
+      ],
+      "full_residual_over_term_scale": 1.0567279010145798,
+      "identity_errors": {
+        "cartesian-cylindrical": 2.868981211908986e-16,
+        "centrifugal-balance": 4.1162496102116833e-16,
+        "coordinate-derivatives": 2.8442776710258063e-16,
+        "coordinate-map": 0.0,
+        "divergence": 3.5813645955650204e-16,
+        "integrated-stress": 2.4835413435374225e-16
+      },
+      "leading_tangential_residual": [
+        -1.788128919237261,
+        0.626130585053009
+      ],
+      "physical_point": [
+        1.289485391604039,
+        0.5451856792321107,
+        0.0,
+        0.30000000000000004
+      ],
+      "similarity_point": [
+        0.7,
+        0.0,
+        1.4,
+        0.4
+      ],
+      "term_scale": 8.788820465777391
+    },
+    {
+      "axial_second_derivatives": [
+        -0.16278051656635167,
+        -2.4262955961913812
+      ],
+      "full_cartesian_residual": [
+        1.659829480278709,
+        -0.016761576453154126,
+        3.4230764185102256
+      ],
+      "full_residual_over_term_scale": 2.6666325175757115,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.297339455960311e-16,
+        "centrifugal-balance": 0.0,
+        "coordinate-derivatives": 2.904370001479747e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.6653345369377348e-16,
+        "integrated-stress": 6.661338147750939e-16
+      },
+      "leading_tangential_residual": [
+        -0.17954209301950602,
+        0.9967808223188444
+      ],
+      "physical_point": [
+        0.529150262212918,
+        0.0,
+        0.4190767180665153,
+        0.4750000000000001
+      ],
+      "similarity_point": [
+        0.7,
+        0.5,
+        0.2,
+        0.0
+      ],
+      "term_scale": 1.2836700955039024
+    },
+    {
+      "axial_second_derivatives": [
+        -0.16278051656635167,
+        -2.4262955961913812
+      ],
+      "full_cartesian_residual": [
+        1.535331456297667,
+        0.6309296104561659,
+        3.423076418510225
+      ],
+      "full_residual_over_term_scale": 2.6666325175757115,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.9460091839404669e-16,
+        "centrifugal-balance": 3.625002663638929e-16,
+        "coordinate-derivatives": 2.904370001479747e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.1102230246251565e-16,
+        "integrated-stress": 6.661338147750939e-16
+      },
+      "leading_tangential_residual": [
+        -0.17954209301950558,
+        0.9967808223188439
+      ],
+      "physical_point": [
+        0.4873796664907176,
+        0.2060608179431423,
+        0.4190767180665153,
+        0.4750000000000001
+      ],
+      "similarity_point": [
+        0.7,
+        0.5,
+        0.2,
+        0.4
+      ],
+      "term_scale": 1.2836700955039024
+    },
+    {
+      "axial_second_derivatives": [
+        0.16469004064983211,
+        -2.4897292094926042
+      ],
+      "full_cartesian_residual": [
+        4.512369240202151,
+        -0.9378058154678237,
+        1.4470695358949994
+      ],
+      "full_residual_over_term_scale": 1.4896878707015517,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.9683194623947384e-16,
+        "centrifugal-balance": 1.710179168129699e-16,
+        "coordinate-derivatives": 4.3904296662960296e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.6653345369377348e-16,
+        "integrated-stress": 4.2591961796870126e-16
+      },
+      "leading_tangential_residual": [
+        -0.773115774817992,
+        -1.0426596735976048
+      ],
+      "physical_point": [
+        0.9899494936611665,
+        0.0,
+        0.4190767180665153,
+        0.4750000000000001
+      ],
+      "similarity_point": [
+        0.7,
+        0.5,
+        0.7,
+        0.0
+      ],
+      "term_scale": 3.0290702696512537
+    },
+    {
+      "axial_second_derivatives": [
+        0.16469004064983217,
+        -2.4897292094926042
+      ],
+      "full_cartesian_residual": [
+        4.521366083755529,
+        0.8934229928275859,
+        1.447069535894999
+      ],
+      "full_residual_over_term_scale": 1.3300129270806522,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.9644028004969419e-16,
+        "centrifugal-balance": 0.0,
+        "coordinate-derivatives": 4.3904296662960296e-16,
+        "coordinate-map": 1.1102230246251565e-16,
+        "divergence": 1.734723475976807e-16,
+        "integrated-stress": 2.1295980898435063e-16
+      },
+      "leading_tangential_residual": [
+        -0.7731157748179918,
+        -1.0426596735976048
+      ],
+      "physical_point": [
+        0.9118038646442068,
+        0.3855044907908194,
+        0.4190767180665153,
+        0.4750000000000001
+      ],
+      "similarity_point": [
+        0.7,
+        0.5,
+        0.7,
+        0.4
+      ],
+      "term_scale": 3.3994903295262127
+    },
+    {
+      "axial_second_derivatives": [
+        1.594408843543441,
+        -2.4171488170012445
+      ],
+      "full_cartesian_residual": [
+        9.565393508695166,
+        -3.6474616556715818,
+        -2.4664552725128104
+      ],
+      "full_residual_over_term_scale": 1.5517671831363626,
+      "identity_errors": {
+        "cartesian-cylindrical": 4.642665348230317e-17,
+        "centrifugal-balance": 1.973584620244291e-16,
+        "coordinate-derivatives": 3.3306690738754696e-16,
+        "coordinate-map": 1.586032892321652e-16,
+        "divergence": 0.0,
+        "integrated-stress": 2.7280418419068763e-16
+      },
+      "leading_tangential_residual": [
+        -2.0530528121281413,
+        -4.883604089514055
+      ],
+      "physical_point": [
+        1.4,
+        0.0,
+        0.4190767180665153,
+        0.4750000000000001
+      ],
+      "similarity_point": [
+        0.7,
+        0.5,
+        1.4,
+        0.0
+      ],
+      "term_scale": 6.164193709369481
+    },
+    {
+      "axial_second_derivatives": [
+        1.594408843543441,
+        -2.4171488170012445
+      ],
+      "full_cartesian_residual": [
+        10.230699324733505,
+        0.36540502552572196,
+        -2.4664552725128104
+      ],
+      "full_residual_over_term_scale": 1.3918027151442758,
+      "identity_errors": {
+        "cartesian-cylindrical": 1.7363005040190857e-16,
+        "centrifugal-balance": 3.947169240488583e-16,
+        "coordinate-derivatives": 3.3306690738754696e-16,
+        "coordinate-map": 1.586032892321652e-16,
+        "divergence": 1.1102230246251565e-16,
+        "integrated-stress": 1.818694561271251e-16
+      },
+      "leading_tangential_residual": [
+        -2.0530528121281395,
+        -4.883604089514055
+      ],
+      "physical_point": [
+        1.289485391604039,
+        0.5451856792321107,
+        0.4190767180665153,
+        0.4750000000000001
+      ],
+      "similarity_point": [
+        0.7,
+        0.5,
+        1.4,
+        0.4
+      ],
+      "term_scale": 7.350682114219744
+    }
+  ],
+  "new_candidate": false,
+  "paper": {
+    "equations": [
+      "4.2",
+      "4.5",
+      "4.7",
+      "4.11",
+      "4.12",
+      "4.16",
+      "A.32-A.37",
+      "B.11-B.13"
+    ],
+    "pages": 166,
+    "sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "title": "Finite Time Blowup for Navier-Stokes",
+    "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+    "visually_checked_pages": [
+      25,
+      26,
+      27,
+      138,
+      147
+    ]
+  },
+  "paper_bytes_verified_in_this_run": true,
+  "prior_unforced_status": "unchanged-resolution-failure",
+  "source_sha256": {
+    "profiles.py": "e0ae41902d11c67b1bf9123f48e82ab94243e9c3bbaca4ddbf2dec579bd5f558",
+    "protocol.json": "3bdcf67a3d3f91247d7a36a9149b3c61aa7c151a7532ee9584be2f1843c94532",
+    "run_audit.py": "464b5db8d5c73043c1e29746cfdbf002e1860e04944c92aa75537768f72989f3",
+    "test_profiles.py": "52bf6f0233e76774803ad8f330df451f91eb080da1caa8eb82aa3c4bbf947b7a"
+  },
+  "status": "building-block-audit-passed",
+  "unverified_obligations": [
+    "Select all parameters in the paper's prescribed order with explicit valid bounds",
+    "Construct the nonlinear inner profile and match its five radial moments to the exterior",
+    "Establish the admissible stress cone and realize the required oscillatory waves",
+    "Verify residual-improvement estimates at every stage with derivative losses uniform in the stage",
+    "Control the infinite correction sum and every Cartesian space-time derivative of its residual",
+    "Complete localization, smooth forcing extension, and global uniqueness comparison"
+  ]
+}

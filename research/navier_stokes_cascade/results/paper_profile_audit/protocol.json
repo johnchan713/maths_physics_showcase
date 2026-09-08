@@ -1,0 +1,64 @@
+{
+  "track": "separate-forced-paper-building-block-audit",
+  "parent_commit": "3386bd8223d56b2c7dac1fee0f8a998ddd93f78d",
+  "paper": {
+    "title": "Finite Time Blowup for Navier-Stokes",
+    "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+    "sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "pages": 166,
+    "equations": ["4.2", "4.5", "4.7", "4.11", "4.12", "4.16", "A.32-A.37", "B.11-B.13"],
+    "visually_checked_pages": [25, 26, 27, 138, 147]
+  },
+  "scope": "Explicit building blocks and residual bookkeeping only. No complete inner/annular profile, correction iteration, smooth global forcing, or blowup proof is reproduced.",
+  "fixtures": {
+    "description": "Manufactured polynomial profiles; NOT the profiles asserted by Theorem 4.6 or Proposition B.2",
+    "h": 0.005,
+    "viscosity": 1.0,
+    "F": [[0, 0, 1.0], [1, 0, 0.12], [0, 1, 0.08], [2, 0, 0.03], [1, 1, -0.02]],
+    "U": [[0, 0, 0.1], [0, 1, 0.7], [1, 0, 0.25], [1, 1, 0.12], [0, 2, -0.05], [2, 0, 0.03]],
+    "axis_pressure": [[0, 0, -1.0], [0, 1, 0.2], [0, 2, 0.1]],
+    "q": [0.05, 0.2, 0.7],
+    "eta": [-0.6, 0.0, 0.5],
+    "X": [0.2, 0.7, 1.4],
+    "theta": [0.0, 0.4]
+  },
+  "finite_difference": {
+    "similarity_points": [[0.2, -0.6, 0.7, 0.4], [0.7, 0.5, 1.4, 0.0]],
+    "relative_steps": [0.02, 0.01, 0.005],
+    "stencil_order": 4,
+    "maximum_normalized_error": 0.000001,
+    "minimum_coarse_to_fine_error_reduction": 4.0
+  },
+  "heat": {
+    "h": [0.005, 0.009],
+    "Z": [0.0, 0.001, 0.1, 1.0, 10.0],
+    "derivative_orders": [0, 1, 2, 3],
+    "physical_points": [[0.7, 0.2, 0.0, 0.2], [1.2, -0.3, 0.5, 0.8], [0.2, 0.1, -0.5, 0.95]],
+    "maximum_identity_error": 0.000000001,
+    "maximum_reference_error": 0.000000001,
+    "scope": "The exact exterior is used only away from the axis. It is neither an axis-regular nor a finite-energy whole-space candidate on its own."
+  },
+  "core_comparison": {
+    "terms": 24,
+    "z": [0.0, 0.1, 1.0, 2.0, 4.1],
+    "maximum_reference_error": 0.000000000001,
+    "scope": "The explicit scalar comparison function, not the nonlinear axis profile"
+  },
+  "maximum_algebraic_identity_error": 0.0000000001,
+  "negative_control_minimum_normalized_gap": 0.0001,
+  "required_negative_controls": ["omitted-axial-viscosity", "omitted-swirl-curvature", "reversed-stress-sign"],
+  "unchanged_local_archive": {
+    "path": "results/late_growth_t014/reference128/t140_state/part-000.gzchunk",
+    "sha256_before": "e4848edc0047cc523eb3520a1b80ff557c8292a63f1d4b203048666021f6f176",
+    "action": "Leave untouched, do not use as input, and exclude from publication"
+  },
+  "unverified_obligations": [
+    "Select all parameters in the paper's prescribed order with explicit valid bounds",
+    "Construct the nonlinear inner profile and match its five radial moments to the exterior",
+    "Establish the admissible stress cone and realize the required oscillatory waves",
+    "Verify residual-improvement estimates at every stage with derivative losses uniform in the stage",
+    "Control the infinite correction sum and every Cartesian space-time derivative of its residual",
+    "Complete localization, smooth forcing extension, and global uniqueness comparison"
+  ],
+  "status_rule": "Passing these checks can only produce building-block-audit-passed, never proof-verified or candidate-promoted. The earlier unforced .14 resolution failure is unchanged."
+}

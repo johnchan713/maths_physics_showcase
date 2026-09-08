@@ -24,8 +24,15 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Install independent FFT and snapshot checks
-        run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy
+      - name: Install independent FFT, snapshot and paper checks
+        run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy
+
+      - name: Audit explicit paper building blocks without proof promotion
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/paper_profile_audit/test_profiles.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/paper_profile_audit/run_audit.py \
+            --verify-record research/navier_stokes_cascade/results/paper_profile_audit/evidence.json \
+            --output navier_stokes_paper_profile_audit_ci.json
 
       - name: Verify frozen t014 history and published archive
         run: |
@@ -403,6 +410,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
             navier_stokes_late_smoke/
