@@ -129,6 +129,13 @@ No threading or backend optimization was introduced in this experiment.
 - Thirteen analytic/adversarial tests cover Fourier curl normalization,
   direct sums, embedding, filters, Parseval splitting, vector cancellation,
   signed projections, and invalid/nonfinite inputs.
+- Five audit-comparison regressions cover the cross-NumPy roundoff first
+  caught by [the initial CI run](https://github.com/johnchan713/maths_physics_showcase/actions/runs/34228219350).
+  For a tiny removed-energy fraction computed as `1 - E_filtered/E_full`,
+  the two builds differed by `4.44e-16` in absolute value. Only that fraction
+  comparison now permits an absolute budget of `64 * machine epsilon`
+  (about `1.42e-14`) in addition to the original relative check. Material
+  discrepancies and nonfinite values still fail; no scientific gate changes.
 - The short `32/64` control passes (`5.23e-14` relative state gap). An
   initially attempted `16/32` smoke failed because generated modes are lost
   at the coarser cutoff; it is retained as a discovered negative control
@@ -149,6 +156,7 @@ From the repository root, with NumPy and FFTW development files installed:
 
 ```sh
 python3 research/navier_stokes_cascade/results/late_growth_peak_audit/test_analysis.py -v
+python3 research/navier_stokes_cascade/results/late_growth_peak_audit/test_audit.py -v
 c++ -std=c++11 -O3 -Wall -Wextra -Wpedantic -Werror \
   -I research/navier_stokes_cascade/include \
   research/navier_stokes_cascade/results/late_growth_peak_audit/benchmark.cpp \

@@ -34,3 +34,13 @@ in audit.json. Its scope excludes repetition of every dense maximum search,
 continuous extrema, and unresolved PDE tails. GitHub CI independently builds
 the probe, reruns the small controls and analytic tests, and writes its own
 audit report without overwriting the recorded local report.
+
+INITIAL CI FAILURE: run 34228219350 passed all 13 analytic tests and three
+probe controls, then caught a portability defect in the arithmetic audit.
+The removed-energy calculation 1 - E_filtered/E_full differed by 4.44e-16
+between NumPy builds. A relative-only comparison of the tiny 2.4867e-6
+fraction rejected this roundoff. The correction adds a 64-epsilon absolute
+budget only to that comparison. The stored experiment measurements,
+protocol and scientific gate thresholds are unchanged. Five new regression
+tests cover the observed values, zero, material errors and invalid inputs.
+PASS: test_audit.py -v: all five regression tests pass locally.

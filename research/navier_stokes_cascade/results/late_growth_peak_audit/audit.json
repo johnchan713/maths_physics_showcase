@@ -49,8 +49,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "84404e07f1e710beb08e0bbbf55b04e88cf14ad72fa8c350762abc5605cf6c2d",
-      "bytes": 9635
+      "sha256": "7be68c8dc7475d13e517cb57811dd3b204a4f24d12104435270ef4764e97a8af",
+      "bytes": 10282
     },
     {
       "path": "analyze.py",
@@ -59,8 +59,8 @@
     },
     {
       "path": "audit.py",
-      "sha256": "10a67815fa39a754dc1293af335b5b6a0ba4680a1355ea29ed8f4bbdebbd41ed",
-      "bytes": 12692
+      "sha256": "f8ae734897326420218cdc2ed6b7f63b84f3eb0451ccf3925e34eece0b29a297",
+      "bytes": 13217
     },
     {
       "path": "benchmark.cpp",
@@ -113,6 +113,11 @@
       "bytes": 4668
     },
     {
+      "path": "test_audit.py",
+      "sha256": "3f7fe1c55ee1f609c94467b3477568ffa7defd5e4019b0a1dc5a8a25db39fc64",
+      "bytes": 1519
+    },
+    {
       "path": "test_probe.py",
       "sha256": "986dc29ad41ee8f127aa3f63726c3a3174a505d1eda75424969694adfd3ee66a",
       "bytes": 2367
@@ -124,8 +129,8 @@
     },
     {
       "path": "verification.log",
-      "sha256": "3c07196a493432eba1f663a11d9ffdd628f83da498a36ad4854f02359b8b5bc0",
-      "bytes": 2141
+      "sha256": "c8354f0a44d7c038c368872742126f7b201f862054735ccd542b109cde8ad234",
+      "bytes": 2793
     }
   ]
 }

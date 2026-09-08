@@ -16,8 +16,10 @@ from analyze import (ROOT, RESEARCH, direct_curl, embed, frequencies, low_pass, 
                      reader, relative, restorer, save, sha, spectral_norms)
 
 
-def close(a, b, tolerance=1e-10):
-    if not math.isfinite(a) or not math.isfinite(b) or relative(a, b) > tolerance:
+def close(a, b, tolerance=1e-10, absolute_tolerance=0.):
+    if any(not math.isfinite(v) for v in (a, b, tolerance, absolute_tolerance)) or min(tolerance, absolute_tolerance) < 0:
+        raise ValueError("Comparison needs finite values and nonnegative tolerances")
+    if relative(a, b) > tolerance and abs(a - b) > absolute_tolerance:
         raise ValueError("Recorded arithmetic differs: %r versus %r" % (a, b))
 
 
@@ -161,7 +163,11 @@ def main():
                 close(float(np.linalg.norm(values[0])), filtered["maximum"])
                 close(relative(filtered["maximum"], scale), filtered["relative_maximum_gap_to_full"])
                 removed = max(0., 1 - spectral_norms(coefficients)["velocity_l2_squared"] / case["norms"]["fine"]["velocity_l2_squared"])
-                close(removed, filtered["removed_energy_fraction"])
+                # A 1 - E_filtered/E_full subtraction loses relative accuracy
+                # for tiny removed fractions. Permit only unit-scale roundoff;
+                # this is arithmetic verification, not a scientific gate change.
+                close(removed, filtered["removed_energy_fraction"],
+                      absolute_tolerance=64 * np.finfo(float).eps)
             report["cases"].append({"time": case["time"], "direct_fourier_relative_error": direct_error,
                                     "scalar_peak_gap": gap,
                                     "maximum_sampled_vector_difference_over_fine_peak": case["peaks"]["total_error"]["maximum"] / scale})

@@ -36,6 +36,7 @@ jobs:
       - name: Verify peak decomposition and bounded-probe controls
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_peak_audit/test_analysis.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_peak_audit/test_audit.py -v
           c++ -std=c++11 -O3 -Wall -Wextra -Wpedantic -Werror \
             -I research/navier_stokes_cascade/include \
             research/navier_stokes_cascade/results/late_growth_peak_audit/benchmark.cpp \
