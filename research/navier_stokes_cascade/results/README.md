@@ -14,6 +14,14 @@ missing-term controls. It does not reproduce the nonlinear matched profile,
 verify the complete proof, or promote a search candidate. The unforced
 research results below are unchanged.
 
+The [outer pressure pilot](outer_pressure_pilot/README.md) constructs the
+scheduled pressure and two angular moment corrections. The subsequent
+[axial stress audit](axial_stress_audit/README.md) retains its failed `Md=4`
+stress condition and bounds the axial ratios positively at `Md=64` over
+every angle and the entire stage. It also records a separate failure of the
+old later-stage `lambda`; the complete outer cone and matched construction
+remain open.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

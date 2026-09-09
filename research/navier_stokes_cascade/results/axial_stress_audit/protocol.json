@@ -1,0 +1,34 @@
+{
+  "track": "axial-stress-ratio-bound",
+  "parent_commit": "1b3fda937cf89ff6fb9321748e26c302a748256a",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "paper_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "equations": ["4.9", "4.11", "4.16", "4.20-4.21", "Lemma 4.5", "A.5-A.7", "A.23-A.26"],
+  "Md_candidates": [4, 8, 16, 32, 64, 128, 256],
+  "selected_Md": 64,
+  "finite_parameters": "Td=exp(Md)+10, log(P*)=Td+1; the axial bound is uniform for 0<h<=exp(-2*Td) with h<lambda<0.1. Choose lambda and then h in the paper's order. The old Md=4 numerical controls retain h=exp(-2*Td). Remaining swirl shapes are as in the preceding protocol. Lambda_inner and log(g) are NOT recomputed.",
+  "interval_boxes": [256, 512, 1024],
+  "interval_digits": [30, 50],
+  "finite_remainder_upper": "2e-28",
+  "moment_digits": 80,
+  "moment_orders": [32, 48],
+  "ode_eta": ["0", "0.000000000001", "0.2", "0.5", "1"],
+  "ode_y": ["0", "1", "midpoint", "10"],
+  "ode_max_steps": [0.02, 0.01],
+  "checks": {
+    "maximum_bsw_upper": "0.6",
+    "minimum_second_margin": "0.8",
+    "independent_ode_relative_error": "1e-8",
+    "moment_quadrature_relative_error": "1e-12",
+    "positive_Q_identity_relative_error": "1e-65",
+    "interval_precision_gap": "1e-28"
+  },
+  "scope": "An analytic reduction and outward interval evaluation bound the two A.24 ratios over the complete axial stage and every eta. This is not a formal proof-assistant certificate. No finite XR, full outer cone, corrected pulse, matched axis, full residual bound, or Navier-Stokes blowup claim is produced.",
+  "unverified": [
+    "A sufficiently small lambda after the new Md and P*, followed by a sufficiently small h",
+    "Stress inequalities on every later outer stage",
+    "Axial pulse M/J/S closure and heat compensation",
+    "Five-moment annular attachment and recalculation of the inner amplitude",
+    "Finite XR, uniform analytic tails, full residual corrections and smooth forcing"
+  ]
+}

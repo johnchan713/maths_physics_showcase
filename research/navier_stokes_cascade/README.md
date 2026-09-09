@@ -62,6 +62,15 @@ an insufficient-precision failure are retained explicitly. The axial pulse's
 M/J/S closure, global cone thresholds, heat compensation and five-moment axis
 annulus remain open; this checkpoint does not promote a global solution.
 
+The [axial stress audit](results/axial_stress_audit/README.md) reproduces a
+stress-cone failure for the pilot's `Md=4` choice and obtains positive bounds
+for both axial stress ratios at `Md=64`, over the complete axial interval
+and all angles. An analytic reduction and outward interval arithmetic retain
+the finite-parameter remainders and the small-angle memory term. The old
+`lambda=1e-5` also fails a later necessary cone condition by more than `1e27`;
+retuning that parameter is the next prerequisite. No complete outer cone,
+matched profile, or blowup result is claimed.
+
 ## What is implemented
 
 Three numerical paths now evolve a mean-zero, real, divergence-free velocity
