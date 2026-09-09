@@ -44,6 +44,16 @@ tests and 25 audit gates pass, but the nonlinear matched profile, correction
 construction and complete proof remain unverified. No new numerical
 candidate is promoted, and the earlier `.14` resolution failure is unchanged.
 
+The subsequent [nonlinear axis pilot](results/nonlinear_axis_pilot/README.md)
+constructs finite Taylor approximations to the manuscript's nonlinear inner
+equations using an explicitly labelled analytic pressure seed. Thirteen
+numerical gates pass, including degree/precision refinements and a full
+momentum-residual crosscheck. The seed is not the completed outer schedule's
+pressure; the annular connection and five-moment matching remain unbuilt.
+Direct attachment to the heat exterior fails, and the full base-flow residual
+is not small. This is reusable local construction machinery, not a matched
+paper profile, a proof, or a new candidate.
+
 ## What is implemented
 
 Three numerical paths now evolve a mean-zero, real, divergence-free velocity

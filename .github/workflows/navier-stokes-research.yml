@@ -25,7 +25,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install independent FFT, snapshot and paper checks
-        run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy
+        run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
+
+      - name: Check nonlinear axis pilot and preserve unmatched status
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/nonlinear_axis_pilot/test_pilot.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/nonlinear_axis_pilot/run.py \
+            --verify-record research/navier_stokes_cascade/results/nonlinear_axis_pilot/evidence.json \
+            --output navier_stokes_nonlinear_axis_pilot_ci.json
 
       - name: Audit explicit paper building blocks without proof promotion
         run: |
@@ -410,6 +417,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_nonlinear_axis_pilot_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

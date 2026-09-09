@@ -1,0 +1,41 @@
+{
+  "track": "nonlinear-axis-pilot-not-complete-paper-profile",
+  "parent_commit": "e48a121f2b3700beccdc56f9484f84d14535c393",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "paper_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "equations": ["4.7", "4.9", "4.13", "4.15", "B.1-B.3", "B.12-B.15"],
+  "parameters": {"h": "0.005", "j": "0.05", "sigma": "0.002", "Lambda": "65536", "pressure_scale": "13"},
+  "pressure_scope": "Pi0=-13/(1+eta^2)^2 is a fixed analytic pressure seed, NOT the pressure of the fully constructed A.2 outer schedule. Its sign and monotonicity fit the qualitative axis hypotheses. All ordered global parameter choices remain unverified.",
+  "normalization": "Choose log(C)=Lambda*(2*M+1), M=4*(1+8*h)*(2*(0.5-h)+5*(8+j))/sigma^2. A conservative pole-free strip and path bound give |g|<=exp(-Lambda) there. Keep arbitrary-exponent arithmetic; never replace g by zero.",
+  "radial_degrees": [12, 18, 24],
+  "decimal_precisions": [60, 90],
+  "eta_samples": ["-1", "-0.5", "Hzero-0.002", "Hzero", "Hzero+0.002", "0", "0.5", "1"],
+  "radial_samples": ["0", "0.5", "2", "4", "4.1"],
+  "eta_derivatives_retained": 3,
+  "checks": {
+    "maximum_leading_residual": "1e-12",
+    "maximum_degree_difference": "1e-12",
+    "maximum_precision_difference": "1e-30",
+    "minimum_Phi": "0.25",
+    "maximum_axis_error": "1e-40",
+    "minimum_negative_control_gap": "1e-6"
+  },
+  "matching_scope": "Compute actual inner endpoint fields and all five cumulative moments. Test necessary conditions for DIRECT joining to the exact heat exterior. No collar or five-moment correction is silently assumed.",
+  "matching_checks": {"maximum_normalized_U": "1e-10", "maximum_normalized_M": "1e-10", "maximum_heat_angular_slope_gap": "1e-8"},
+  "physical_checks": {
+    "checker": "Full Cartesian derivative arithmetic versus component-separated cylindrical physical finite differences. The initially attempted mixed-Cartesian stencil loses the tiny swirl by absorption; retained as a rejected negative control. Scientific tolerances are unchanged.",
+    "eta": ["Hzero", "0", "0.5"], "Y": "2", "q": "0.2",
+    "finite_difference_eta": "0.5", "relative_steps": ["0.02", "0.01", "0.005"],
+    "maximum_divergence": "1e-40", "maximum_leading_error": "1e-12",
+    "maximum_finest_fd_error": "1e-6", "minimum_fd_reduction": "4"
+  },
+  "eta_derivative_check": {"eta": ["Hzero", "0", "0.5"], "Y": "2", "step": "1e-8", "maximum_error": "1e-10"},
+  "status_rule": "Report local numerical checks and direct-join failure separately. Never emit proof-verified, matched-paper-profile, or candidate-promoted. Retain the earlier unforced .14 resolution failure.",
+  "unverified": [
+    "The full A.2 outer schedule and its pressure datum",
+    "Global parameter order and quantitative threshold hypotheses",
+    "Uniform error bounds between sampled eta values and an infinite-series tail bound",
+    "The B.5-B.8 connecting collar, five-moment correction, and stress cone",
+    "Oscillatory waves, all-order correction sums, localization and smooth forcing"
+  ]
+}
