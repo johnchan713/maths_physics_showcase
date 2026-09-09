@@ -1,0 +1,39 @@
+{
+  "track": "pulse-moment-closure",
+  "parent_commit": "7748c2652212096b58af60b101c2b7b98ee09580",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "paper_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "equations": ["4.15", "A.1-A.3", "A.5-A.20"],
+  "selected_Md": 64,
+  "parameter_family": "T=exp(Md)+10; log(P*)=T+1; lambda=exp(-4T); h=lambda^2; Tw=240T; Tf=1000; co=0.001. The proof reduction uses T>=64 and lambda<=exp(-256).",
+  "interval_digits": [60, 80],
+  "shape_boxes": [512, 1024],
+  "amplitude_bracket": ["1.0100502", "1.0100504"],
+  "claimed_remainder_bound": "1e-100",
+  "fixture_Md": 4,
+  "fixture_lambdas": ["0.0001", "0.00001"],
+  "fixture_h": "exp(-2T)",
+  "large_lambda_control": "0.001",
+  "fixture_angles": ["-1", "0", "0.5", "1"],
+  "fixture_digits": [100, 140],
+  "fixture_orders": [32, 48],
+  "incoming_moment_panels": 16,
+  "failed_incoming_panels": [4, 8],
+  "ode_max_steps": [0.01, 0.005],
+  "family_diagnostic_digits": [280, 320],
+  "family_diagnostic_orders": [32, 48],
+  "checks": {
+    "linear_moment_relative_error": "1e-70",
+    "quadrature_relative_gap": "1e-20",
+    "independent_source_error": "1e-9",
+    "quadratic_relative_residual": "1e-70",
+    "family_increment_relative_gap": "1e-30"
+  },
+  "scope": "An explicit analytic reduction with outward interval constants establishes smooth M=J=0 corrections and a unique S(infinity)=0 amplitude for the stated reference schedule at Md=64, including the pressure-preserving angular edits. This is moment closure, not a pulse stress-cone certificate or a complete Navier-Stokes profile. Moderate-lambda Md=4 fixtures test actual correction equations and are not globally admissible candidates. The new-family Md=4 diagnostic retains the finite amplitude increment with a positive bound on omitted axial-bump energy.",
+  "unverified": [
+    "Stress cone throughout the corrected pulse and subsequent exterior stages",
+    "Heat compensation and five-moment axis-annulus attachment",
+    "Compatible global radius, full PDE corrections and smooth forcing",
+    "A Navier-Stokes blowup candidate or theorem"
+  ]
+}

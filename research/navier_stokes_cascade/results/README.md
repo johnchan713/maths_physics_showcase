@@ -28,6 +28,14 @@ stages, and a sufficient radius floor on those stages plus the axial one.
 It preserves the old parameter failure and checks the energy scale and
 finite-h terms independently. The full matched profile is still unverified.
 
+The [pulse moment audit](pulse_moment_audit/README.md) establishes reference
+M/J/S closure through an explicit analytic reduction and outward constants.
+It includes the later angular edits in the energy budget and brackets the
+unique pulse strength in `[1.0100502,1.0100504]` uniformly in angle.
+Computable fixtures test the actual correction equations and retain tiny
+terms and failed controls. The pulse stress cone and complete PDE
+construction remain unverified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

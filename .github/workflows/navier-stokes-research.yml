@@ -55,6 +55,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/intermediate_decay_audit/evidence.json \
             --output navier_stokes_intermediate_decay_audit_ci.json
 
+      - name: Close pulse moments and preserve the pending cone test
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/pulse_moment_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/pulse_moment_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/pulse_moment_audit/evidence.json \
+            --output navier_stokes_pulse_moment_audit_ci.json
+
       - name: Audit explicit paper building blocks without proof promotion
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/paper_profile_audit/test_profiles.py -v
@@ -442,6 +449,7 @@ jobs:
             navier_stokes_outer_pressure_pilot_ci.json
             navier_stokes_axial_stress_audit_ci.json
             navier_stokes_intermediate_decay_audit_ci.json
+            navier_stokes_pulse_moment_audit_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

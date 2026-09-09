@@ -78,8 +78,19 @@ on both following U=0 stages, across all angles and their full lengths.
 Together with the axial bound, `XR>=100` suffices for the appropriate cone
 on these three reference pieces. The audit retains the old lambda failure,
 a corrected energy-scale error, and a nonzero finite-h effect that ordinary
-arithmetic erases. Pulse moment closure, the later stages and global matching
-remain open.
+arithmetic erases. That checkpoint leaves pulse moments, later stages and
+global matching open.
+
+The [pulse moment audit](results/pulse_moment_audit/README.md) now gives an
+explicit analytic moment-closure argument at the new parameters. Two axial
+corrections set M=J=0; a unique smooth pulse strength sets S(infinity)=0.
+Outward interval bounds place that strength in `[1.0100502,1.0100504]` over
+every angle, including the effect of the later pressure-preserving angular
+edits. Scaled numerical fixtures and an independent end-patch ODE check
+exercise the corrections, while a tiny finite amplitude increment and
+deliberate failures remain recorded. The corrected pulse's stress cone,
+heat and annular matching, full PDE corrections and smooth forcing remain
+unverified; this is not a global profile or blowup result.
 
 ## What is implemented
 
