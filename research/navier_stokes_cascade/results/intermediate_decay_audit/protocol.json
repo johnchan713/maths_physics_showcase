@@ -1,0 +1,41 @@
+{
+  "track": "intermediate-decay-stress-bound",
+  "parent_commit": "ceb373b15012fd4fcbd5e74aacb0c58d68ea9c28",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "paper_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "equations": ["4.9", "4.16", "Lemma 4.5", "A.5-A.9", "A.23-A.27"],
+  "selected_Md": 64,
+  "parameter_family": "T=exp(Md)+10; log(P*)=T+1; lambda=exp(-4T); h=lambda^2=exp(-8T); Tw=240T. Choose Md, P*, lambda, then h. These choices certify only the stages in scope, not every later sufficiently-small threshold.",
+  "interval_digits": [60, 80],
+  "claimed_lambda_w_squared_upper": "1e-42",
+  "diagnostic_Md": 4,
+  "diagnostic_digits": [280, 320],
+  "diagnostic_orders": [32, 48],
+  "ramp_samples": ["0", "0.5", "1"],
+  "power_samples": ["0", "1", "T", "3T", "4T", "Tw/2", "Tw"],
+  "angles": ["0", "sqrt_delta", "sqrt_lambda", "0.5", "1", "-0.5", "-sqrt_delta"],
+  "source_ode_max_steps": [0.02, 0.01],
+  "checks": {
+    "interval_precision_relative_gap": "1e-50",
+    "moment_source_relative_gap": "1e-100",
+    "independent_ode_relative_gap": "1e-9",
+    "energy_scale_relative_gap": "1e-100",
+    "quadrature_relative_gap": "1e-20",
+    "precision_relative_gap": "1e-40",
+    "pole_increment_relative_gap": "1e-40",
+    "maximum_pilot_tail_error": "1e-800"
+  },
+  "retained_controls": [
+    "The old Md=4, lambda=1e-5, h=exp(-2T) necessary-cone failure",
+    "An initial diagnostic implementation omitted exp(-T) from E^2; its energy-scale failure is retained",
+    "Dropping h erases a nonzero pole increment of order h*y",
+    "Binary64 rounds the new lambda and h to zero and loses a-2"
+  ],
+  "scope": "An analytic reduction and outward interval arithmetic bound the two intermediate U=0 stages over all angles and their entire lengths, with the preceding axial bound inherited at Md=64. XR>=100 suffices for the cone on these three stages; the global radius remains subject to later matching constraints. The computable Md=4 diagnostic uses a power-law pressure continuation with explicit error <=lambda^8. It does not construct the full new outer pressure schedule, solve the pulse moments, match the axis, or verify a Navier-Stokes blowup theorem.",
+  "unverified": [
+    "Axial pulse M/J/S closure and its stress bounds",
+    "Later angular interpolation, exterior transition and heat compensation at the new parameters",
+    "Five-moment annular attachment and the new inner-amplitude precision strategy",
+    "The globally compatible XR, profile corrections, full residual bounds and smooth forcing"
+  ]
+}

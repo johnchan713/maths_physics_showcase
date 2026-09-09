@@ -71,6 +71,16 @@ the finite-parameter remainders and the small-angle memory term. The old
 retuning that parameter is the next prerequisite. No complete outer cone,
 matched profile, or blowup result is claimed.
 
+The [intermediate decay audit](results/intermediate_decay_audit/README.md)
+now chooses `lambda=exp(-4Td)` and `h=lambda^2` after `Md=64`. An analytic
+reduction and outward interval arithmetic bound `lambda*w^2` below `1e-42`
+on both following U=0 stages, across all angles and their full lengths.
+Together with the axial bound, `XR>=100` suffices for the appropriate cone
+on these three reference pieces. The audit retains the old lambda failure,
+a corrected energy-scale error, and a nonzero finite-h effect that ordinary
+arithmetic erases. Pulse moment closure, the later stages and global matching
+remain open.
+
 ## What is implemented
 
 Three numerical paths now evolve a mean-zero, real, divergence-free velocity

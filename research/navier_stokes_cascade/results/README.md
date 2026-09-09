@@ -22,6 +22,12 @@ every angle and the entire stage. It also records a separate failure of the
 old later-stage `lambda`; the complete outer cone and matched construction
 remain open.
 
+The [intermediate decay audit](intermediate_decay_audit/README.md) supplies
+explicit new lambda/h choices, all-angle stress bounds on the next two
+stages, and a sufficient radius floor on those stages plus the axial one.
+It preserves the old parameter failure and checks the energy scale and
+finite-h terms independently. The full matched profile is still unverified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)
