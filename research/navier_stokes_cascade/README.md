@@ -54,6 +54,14 @@ Direct attachment to the heat exterior fails, and the full base-flow residual
 is not small. This is reusable local construction machinery, not a matched
 paper profile, a proof, or a new candidate.
 
+The [outer pressure pilot](results/outer_pressure_pilot/README.md) now builds
+the complete unedited swirl schedule from Appendix A.2, evaluates its axis
+pressure integral, solves the two pressure-preserving angular bump equations,
+and couples that datum to the nonlinear inner equations. Tiny tail terms and
+an insufficient-precision failure are retained explicitly. The axial pulse's
+M/J/S closure, global cone thresholds, heat compensation and five-moment axis
+annulus remain open; this checkpoint does not promote a global solution.
+
 ## What is implemented
 
 Three numerical paths now evolve a mean-zero, real, divergence-free velocity

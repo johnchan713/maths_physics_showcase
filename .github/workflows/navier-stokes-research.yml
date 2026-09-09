@@ -34,6 +34,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/nonlinear_axis_pilot/evidence.json \
             --output navier_stokes_nonlinear_axis_pilot_ci.json
 
+      - name: Reproduce scheduled outer pressure and inner coupling
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/outer_pressure_pilot/test_outer.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/outer_pressure_pilot/audit.py \
+            --verify-record research/navier_stokes_cascade/results/outer_pressure_pilot/evidence.json \
+            --output navier_stokes_outer_pressure_pilot_ci.json
+
       - name: Audit explicit paper building blocks without proof promotion
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/paper_profile_audit/test_profiles.py -v
@@ -418,6 +425,7 @@ jobs:
           name: navier-stokes-convergence
           path: |
             navier_stokes_nonlinear_axis_pilot_ci.json
+            navier_stokes_outer_pressure_pilot_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

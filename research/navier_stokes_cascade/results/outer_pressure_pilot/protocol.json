@@ -1,0 +1,48 @@
+{
+  "track": "scheduled-outer-pressure-and-inner-coupling-pilot",
+  "parent_commit": "bbd3e397fbe0306d4e474d6f736548ce7a17bc06",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "paper_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "equations": ["A.5-A.13", "A.21-A.23", "B.1-B.3", "B.12-B.15"],
+  "parameters": {
+    "Md": "4", "lambda": "0.00001", "Tf": "200", "co": "0.001",
+    "pressure_log_offset": "1", "h_exponent_factor": "2",
+    "j": "0.05", "sigma": "0.002", "Lambda_over_P_squared": "65536"
+  },
+  "derived_parameters": "Td=exp(Md)+10, log(P*)=Td+1, h=exp(-2*Td), Lambda=65536*P*^2. These finite pilot choices satisfy explicit ordering inequalities but do not certify any unspecified sufficiently-small/large threshold in A.6 or B.40.",
+  "quadrature_orders": [16, 24, 32],
+  "quadrature_panels": 4,
+  "angular_moment_panels": 8,
+  "rejected_angular_moment_panels": 4,
+  "angular_quadrature_rationale": "The first four-panel construction missed the actual interpolation discrepancy by 8.96e-11 relatively, failing the predeclared 1e-12 independent-integral limit. Refine this concentrated kernel to eight panels and retain the failed four-panel control; the limit is unchanged.",
+  "decimal_precisions": [120, 160],
+  "rejected_precision": 60,
+  "precision_rationale": "The first 60-digit probe resolves normalized fields but loses absolute accuracy in log(g), whose measured magnitude is about 5.14e69. Retain that failure. Use 120/160 digits and check expm1 of the log-amplitude difference; do not relax scientific tolerances.",
+  "eta_samples": ["-1", "-0.5", "Hzero", "0", "0.5", "1"],
+  "pressure_jet_order": 28,
+  "radial_degrees": [12, 18, 24],
+  "radial_samples": ["0", "0.5", "2", "4", "4.1"],
+  "eta_derivatives_retained": 3,
+  "physical_check": {"eta": "0.5", "Y": "2", "q": "0.2", "digits": 180, "steps": ["0.02", "0.01", "0.005"], "maximum_error": "1e-6", "minimum_reduction": "4"},
+  "checks": {
+    "quadrature_refinement": "1e-14",
+    "independent_quadrature": "1e-12",
+    "pressure_derivatives": "1e-12",
+    "angular_moment_correction": "1e-40",
+    "leading_equations": "1e-10",
+    "radial_refinement": "1e-10",
+    "precision_refinement": "1e-30",
+    "minimum_Phi": "0.25",
+    "negative_control": "1e-6"
+  },
+  "scope": "Construct the entire unedited swirl schedule in A.2, evaluate A.21 stage by stage, solve A.11's two actual angular bump equations, and couple the scheduled pressure to B.15. The axial pulse's M/J/S closure, global cone and threshold verification, heat compensation and annular axis attachment are not claimed.",
+  "unverified": [
+    "Quantified global smallness and largeness thresholds, including the Md choice",
+    "The axial pulse amplitudes and total M, J, S closure",
+    "Stress cone margins over the full outer schedule",
+    "Heat replacement and three-moment compensation",
+    "Axis-to-reference annulus and its five-moment restoration",
+    "Uniform analytic-series tail bounds and errors between eta samples",
+    "Full momentum correction, oscillatory waves, localization and smooth forcing"
+  ]
+}
