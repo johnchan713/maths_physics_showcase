@@ -52,6 +52,14 @@ independent equation paths. At terminal coordinate 3 the reference has
 included. Heat replacement and its compensation, the endpoint collar, axis
 attachment and the full PDE construction remain unverified.
 
+The [compensated heat exterior](heat_exterior_audit/README.md) constructs
+the exact small three-moment correction of the reference flow, bounds its
+stress perturbation through terminal coordinate 1/2, and checks the positive
+backward stress and smooth outer-edge direction. Exact analytic existence
+is distinguished from finite Taylor and graded-root numerical surrogates.
+The regular axis, five-moment attachment, full PDE corrections and admissible
+smooth forcing remain unverified. No blow-up result is promoted.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

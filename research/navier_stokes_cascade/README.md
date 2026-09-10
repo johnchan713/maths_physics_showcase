@@ -7,6 +7,12 @@ finite-stage transfer of energy toward high frequencies can be organized into
 an accumulating cascade, or whether viscosity and geometric depletion prevent
 that transfer.
 
+The [active research goal](GOAL.md) is an actual finite-time blow-up result
+for the stated Navier-Stokes equations. Current work focuses on completing
+and testing the manuscript-based construction, beginning with its first
+unclosed obligation. Test counts and small reference parameters do not
+measure how close the construction is to a proof.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data
@@ -111,6 +117,18 @@ controls retain finite terms and the explicit failure of the infinite
 reference tail's cone. Heat replacement and its endpoint collar, axis
 attachment, full PDE corrections and smooth forcing remain unverified;
 there is still no complete profile or blowup result.
+
+The [compensated heat exterior](results/heat_exterior_audit/README.md)
+restores the three moments changed by the heat replacement. An explicit
+relative-bump construction bounds its coefficients and preserves the
+reference cone through terminal coordinate 1/2 at `XR>=100`. Positive
+backward-stress formulas cover the remaining open terminal interval and
+factor its smooth vanishing edge. The numerical implementation retains
+Taylor and nonlinear-root truncation budgets, the infinite angular tail,
+and the nonzero angular derivative at poles where the edit value is zero.
+This closes the outer-reference heat step. The next construction is the
+regular axis and its annular attachment with all five matching moments;
+full PDE corrections, smooth forcing and blow-up remain unverified.
 
 ## What is implemented
 
