@@ -33,8 +33,16 @@ M/J/S closure through an explicit analytic reduction and outward constants.
 It includes the later angular edits in the energy budget and brackets the
 unique pulse strength in `[1.0100502,1.0100504]` uniformly in angle.
 Computable fixtures test the actual correction equations and retain tiny
-terms and failed controls. The pulse stress cone and complete PDE
-construction remain unverified.
+terms and failed controls. Its original evidence does not assert a pulse
+stress cone or complete PDE construction.
+
+The [corrected pulse stress audit](pulse_stress_audit/README.md) adds
+all-angle, whole-pulse bounds on the two stress margins (`>1.48`, `>.82`)
+and an explicit sufficient finite-radius condition (`XR>=100`). All finite
+corrections are retained. Independent source/moment checks and deliberate
+cancellation, missing-term and small-radius failures accompany the analytic
+reduction. Later outer stages, heat replacement, axis attachment and the
+global Navier-Stokes construction remain unverified.
 
 ## Late-growth objective comparison
 

@@ -1,0 +1,25 @@
+{
+  "parent_commit": "856f4fff414aeaa27cc2e04a2f09a55222e7d4e9",
+  "source_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "source_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "selected_Md": 64,
+  "interval_digits": [60, 90],
+  "XR_sufficient_lower": 100,
+  "claimed_w_remainder_upper": "1e-48",
+  "claimed_bsw_upper": "0.52",
+  "claimed_second_expression_upper": "1.18",
+  "synthetic_lambda": "0.02",
+  "synthetic_angles": ["-1", "-0.3", "0", "0.3", "1"],
+  "synthetic_bulk_steps": [2, 1],
+  "synthetic_patch_steps": ["0.04", "0.02"],
+  "cancellation_digits": [80, 180, 260],
+  "checks": {
+    "source_moment_normalized_gap": "1e-9",
+    "ode_refinement_normalized_gap": "1e-9",
+    "algebra_absolute_gap": "1e-80",
+    "high_precision_relative_gap": "1e-60",
+    "interval_relative_gap": "1e-50",
+    "omitted_term_detectable": "1e-6"
+  },
+  "scope": "Analytic all-angle corrected reference pulse cone with outward constants; synthetic diagnostics are not PDE candidates. Later outer stages and global construction remain unverified."
+}

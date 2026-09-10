@@ -88,9 +88,19 @@ Outward interval bounds place that strength in `[1.0100502,1.0100504]` over
 every angle, including the effect of the later pressure-preserving angular
 edits. Scaled numerical fixtures and an independent end-patch ODE check
 exercise the corrections, while a tiny finite amplitude increment and
-deliberate failures remain recorded. The corrected pulse's stress cone,
+deliberate failures remain recorded. That checkpoint left the corrected
+pulse's stress cone and the subsequent construction unverified.
+
+The [corrected pulse stress audit](results/pulse_stress_audit/README.md)
+now bounds both stress-test margins above `1.48` and `.82`, uniformly over
+the whole pulse and every angle. It retains the signed end corrections,
+finite h, incoming memory, angular derivatives, pressure and energy terms.
+An explicit finite-radius check extends the sufficient `XR>=100` floor to
+this pulse. Independent source-equation controls expose insufficient
+precision and missing-term failures. This analytic reduction with outward
+constants is not a proof-assistant certificate. The post-pulse stages,
 heat and annular matching, full PDE corrections and smooth forcing remain
-unverified; this is not a global profile or blowup result.
+unverified; there is still no complete profile or blowup result.
 
 ## What is implemented
 
