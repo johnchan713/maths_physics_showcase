@@ -41,8 +41,16 @@ all-angle, whole-pulse bounds on the two stress margins (`>1.48`, `>.82`)
 and an explicit sufficient finite-radius condition (`XR>=100`). All finite
 corrections are retained. Independent source/moment checks and deliberate
 cancellation, missing-term and small-radius failures accompany the analytic
-reduction. Later outer stages, heat replacement, axis attachment and the
-global Navier-Stokes construction remain unverified.
+reduction. Its original scope leaves the later construction unverified.
+
+The [post-pulse stress audit](post_pulse_stress_audit/README.md) covers the
+reference interval from pulse end through terminal coordinate `1/2`, with
+`Q>=h/2000`, `abs(w)<1e-440`, and sufficient `XR>=100`. Actual partial
+pressure corrections and finite-h terminal cancellation are checked through
+independent equation paths. At terminal coordinate 3 the reference has
+`Pc=0`, so the infinite-tail cone is explicitly rejected, not silently
+included. Heat replacement and its compensation, the endpoint collar, axis
+attachment and the full PDE construction remain unverified.
 
 ## Late-growth objective comparison
 

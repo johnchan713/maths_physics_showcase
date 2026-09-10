@@ -1,0 +1,30 @@
+{
+  "parent_commit": "6e1104dcbd88f708e593bb7a5f61b52bd8a1dab6",
+  "source_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "source_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "selected_Md": 64,
+  "interval_digits": [60, 90],
+  "terminal_cone_endpoint": "0.5",
+  "XR_sufficient_lower": 100,
+  "claimed_w_upper": "1e-440",
+  "patch_fixture_lambda": "0.0001",
+  "patch_fixture_h": "exp(-2*(exp(4)+10))",
+  "patch_fixture_digits": 280,
+  "patch_orders": [32, 48],
+  "patch_integration_panels": 4,
+  "patch_moment_panels": 32,
+  "patch_angles": ["-1", "0", "0.5", "1"],
+  "terminal_digits": [280, 320],
+  "terminal_orders": [32, 48],
+  "terminal_panels": 8,
+  "ode_steps": [0.02, 0.01],
+  "checks": {
+    "interval_relative_gap": "1e-50",
+    "patch_moment_relative_error": "1e-100",
+    "patch_quadrature_relative_gap": "1e-20",
+    "independent_ode_normalized_gap": "1e-9",
+    "terminal_refinement_relative_gap": "1e-30",
+    "finite_h_difference_relative_gap": "1e-40"
+  },
+  "scope": "Post-pulse reference cone through terminal coordinate 1/2 only. Heat replacement, endpoint collar, axis attachment, full PDE corrections and smooth forcing are unverified."
+}

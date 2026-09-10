@@ -98,9 +98,19 @@ finite h, incoming memory, angular derivatives, pressure and energy terms.
 An explicit finite-radius check extends the sufficient `XR>=100` floor to
 this pulse. Independent source-equation controls expose insufficient
 precision and missing-term failures. This analytic reduction with outward
-constants is not a proof-assistant certificate. The post-pulse stages,
-heat and annular matching, full PDE corrections and smooth forcing remain
-unverified; there is still no complete profile or blowup result.
+constants is not a proof-assistant certificate. That checkpoint left the
+post-pulse stages and the subsequent construction unverified.
+
+The [post-pulse stress audit](results/post_pulse_stress_audit/README.md)
+extends the finite reference cone through the first half-unit of the terminal
+interval, including both angular correction patches. For the fixed
+`h=lambda^2` schedule it proves `Q>=h/2000`, `abs(w)<1e-440`, and a sufficient
+`XR>=100` radius condition. The small bound reflects extreme reference decay,
+not proximity to a full blowup proof. Partial-pressure and terminal-source
+controls retain finite terms and the explicit failure of the infinite
+reference tail's cone. Heat replacement and its endpoint collar, axis
+attachment, full PDE corrections and smooth forcing remain unverified;
+there is still no complete profile or blowup result.
 
 ## What is implemented
 
