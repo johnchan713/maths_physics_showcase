@@ -68,6 +68,16 @@ and chooses compatible axis data. Actual nonlinear axis entry, its activation
 collar and the later full stress realization remain unverified. The numerical
 entry fixtures are explicitly manufactured, and no blow-up result is claimed.
 
+The [analytic core attachment](axis_core_attachment/README.md) supplies a
+contraction for the full infinite axis series, an explicit finite parameter
+schedule, and continuation/moment bounds meeting the earlier annulus's
+acceptance conditions. The five entry bounds are below `2.55e-17` in the
+specified C1 norm. This gives an analytic matched leading-profile argument,
+with interval checks and exact source identities. It has not received an
+independent peer review or a proof-assistant certificate. Full stress
+realization, the full PDE corrections, smooth forcing and blow-up remain
+unverified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

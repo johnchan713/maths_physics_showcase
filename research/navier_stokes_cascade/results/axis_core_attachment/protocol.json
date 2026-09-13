@@ -1,0 +1,11 @@
+{
+  "source_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "7a258d209025806db0897843cb1abe92d2c4b2be",
+  "epsilon": "1e-16",
+  "j": "1e-18",
+  "sigma": "1e-20",
+  "interval_digits": [80, 110],
+  "pressure_scales": ["P16", "Md4", "Md64"],
+  "finite_weight_index_limit": 16,
+  "status": "analytic-core-and-reference-attachment-bounded"
+}

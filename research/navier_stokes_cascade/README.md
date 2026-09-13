@@ -13,6 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
+The latest [analytic core attachment](results/axis_core_attachment/README.md)
+provides an exact-series existence argument and quantitative bounds joining
+that core to the reference exterior. Its five normalized incoming moment
+bounds are below `2.55e-17`, inside the existing `1e-16` acceptance ball.
+The current first unclosed obligation is the full stress realization in
+Appendix C, followed by the full PDE corrections and admissible smooth force.
+The goal document and earlier audit narratives retain their checkpoint
+statuses; this paragraph records the latest construction. No blow-up result
+or completed Navier-Stokes solution is claimed.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data
