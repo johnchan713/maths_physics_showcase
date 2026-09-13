@@ -17,8 +17,12 @@ The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
 that core to the reference exterior. Its five normalized incoming moment
 bounds are below `2.55e-17`, inside the existing `1e-16` acceptance ball.
-The current first unclosed obligation is the full stress realization in
-Appendix C, followed by the full PDE corrections and admissible smooth force.
+The new [conditional stress realization](results/stress_realization_audit/README.md)
+checks the prescribed-mean shear loop and gives a stable five-moment repair,
+retaining the inverse-lambda loss in its incoming error budget. Its actual
+joined-profile bounds and finite modulation frequency remain uninstantiated.
+That is the current first unclosed obligation, before the full PDE
+corrections and admissible smooth force.
 The goal document and earlier audit narratives retain their checkpoint
 statuses; this paragraph records the latest construction. No blow-up result
 or completed Navier-Stokes solution is claimed.

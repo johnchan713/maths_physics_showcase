@@ -78,6 +78,15 @@ independent peer review or a proof-assistant certificate. Full stress
 realization, the full PDE corrections, smooth forcing and blow-up remain
 unverified.
 
+The [conditional stress-realization audit](stress_realization_audit/README.md)
+checks the admissible shear loop, including its correct weighted mean and
+smooth zero-pressure limit. A divided-difference formulation bounds the
+five-moment correction inverse uniformly while explicitly retaining the
+inverse-lambda cost in the incoming discrepancy. It gives a conditional
+finite-frequency acceptance formula, not a selected frequency for the actual
+joined profile. Manufactured all-phase bounds and diagnostic roots do not
+promote full stress realization, the PDE corrections, or blow-up.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

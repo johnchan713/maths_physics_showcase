@@ -1,0 +1,17 @@
+{
+  "status": "conditional-stress-realization-bounded-global-frequency-uninstantiated",
+  "source_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "source_pages": [29, 31, 38, 127, 128, 129, 158, 159, 160, 161, 162, 163, 164, 165],
+  "interval_digits": [80, 110],
+  "fixture_digits": 80,
+  "fixture_a": "0.8",
+  "fixture_ts": "0.2",
+  "fixture_p1": "10",
+  "fixture_p2": ["-1", "-0.25", "-1e-30", "0", "1e-30", "0.25", "1"],
+  "fixture_d0": "1",
+  "fixture_mu_cap": "64",
+  "fixture_delta": "1e-8",
+  "repair_lambda": "0.01",
+  "quadrature_rules": [[32, 8], [48, 12]],
+  "actual_joined_profile_frequency_selected": false
+}
