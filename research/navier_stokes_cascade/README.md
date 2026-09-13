@@ -130,6 +130,16 @@ This closes the outer-reference heat step. The next construction is the
 regular axis and its annular attachment with all five matching moments;
 full PDE corrections, smooth forcing and blow-up remain unverified.
 
+The [five-moment annulus](results/axis_matching_audit/README.md) now has an
+explicit conditional construction: a uniform inverse bound, an exact small
+root argument, and bounds preserving the strict relaxed stress condition.
+Its incoming moment and axial-offset tolerance is `1e-16` in the stated
+normalized C1 norm. `XR>=10000` suffices for this joining patch; the earlier
+exterior floor of 100 is insufficient there. Compatible axis data are fixed,
+but an actual nonlinear axis and activation continuation reaching this entry
+ball remain unverified. The later conversion to fully admissible stress is
+also still required. Manufactured joining fixtures do not supply that axis.
+
 ## What is implemented
 
 Three numerical paths now evolve a mean-zero, real, divergence-free velocity

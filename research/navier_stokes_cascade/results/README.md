@@ -60,6 +60,14 @@ is distinguished from finite Taylor and graded-root numerical surrogates.
 The regular axis, five-moment attachment, full PDE corrections and admissible
 smooth forcing remain unverified. No blow-up result is promoted.
 
+The [five-moment annulus](axis_matching_audit/README.md) gives quantitative
+acceptance bounds and constructs the small correction conditional on incoming
+axis data meeting them. It bounds the strict relaxed stress inequalities,
+shows why the joining patch needs a larger radius than the exterior floor,
+and chooses compatible axis data. Actual nonlinear axis entry, its activation
+collar and the later full stress realization remain unverified. The numerical
+entry fixtures are explicitly manufactured, and no blow-up result is claimed.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)
