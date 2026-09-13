@@ -1,0 +1,9 @@
+{
+  "status": "joined-stress-proposal-reviewed-derivative-budget-open",
+  "parent_commit": "95560e73396c4916bb3313d021be9c400b76da41",
+  "source_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "scale": "Md64",
+  "interval_digits": [80, 110],
+  "actual_joined_profile_frequency_selected": false,
+  "review_type": "same-agent mathematical and computational review"
+}

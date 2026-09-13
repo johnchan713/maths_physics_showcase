@@ -104,6 +104,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/stress_realization_audit/evidence.json \
             --output navier_stokes_stress_realization_audit_ci.json
 
+      - name: Check joined-stress construction and the open derivative budget
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/joined_stress_construction/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/joined_stress_construction/audit.py \
+            --verify-record research/navier_stokes_cascade/results/joined_stress_construction/evidence.json \
+            --output navier_stokes_joined_stress_construction_ci.json
+
       - name: Audit explicit paper building blocks without proof promotion
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/paper_profile_audit/test_profiles.py -v
@@ -498,6 +505,7 @@ jobs:
             navier_stokes_axis_matching_audit_ci.json
             navier_stokes_axis_core_attachment_ci.json
             navier_stokes_stress_realization_audit_ci.json
+            navier_stokes_joined_stress_construction_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

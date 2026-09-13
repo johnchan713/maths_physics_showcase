@@ -1,0 +1,366 @@
+{
+  "C1_counterexamples": [
+    {
+      "C1_upper": "101/2000000000000000000",
+      "derivative_sup": "1/20000000000000000",
+      "k": 100,
+      "second_derivative_sup": "1/200000000000000",
+      "value_sup": "1/2000000000000000000"
+    },
+    {
+      "C1_upper": "100000001/2000000000000000000000000",
+      "derivative_sup": "1/20000000000000000",
+      "k": 100000000,
+      "second_derivative_sup": "1/200000000",
+      "value_sup": "1/2000000000000000000000000"
+    },
+    {
+      "C1_upper": "10000000000000001/200000000000000000000000000000000",
+      "derivative_sup": "1/20000000000000000",
+      "k": 10000000000000000,
+      "second_derivative_sup": "1/2",
+      "value_sup": "1/200000000000000000000000000000000"
+    },
+    {
+      "C1_upper": "1000000000000000000000001/20000000000000000000000000000000000000000",
+      "derivative_sup": "1/20000000000000000",
+      "k": 1000000000000000000000000,
+      "second_derivative_sup": "50000000",
+      "value_sup": "1/20000000000000000000000000000000000000000"
+    }
+  ],
+  "cap_comparisons": {
+    "G_dominates_delta_inverse": true,
+    "G_dominates_shear_excursion": true,
+    "cap_Z_coefficient": true,
+    "cap_log_polynomial": true,
+    "delta_below_gamma_half": true,
+    "delta_quadratic_budget": true
+  },
+  "derivative_transfer": [
+    {
+      "actual_target_curvature_supplied": false,
+      "checks": {
+        "Jacobian_inverse_below_1001": true,
+        "curvature_offset_below_3e_minus19": true,
+        "joining_zeta_C2_below_one": true,
+        "step_third_below_1e6": true
+      },
+      "curvature_bound_at_zero_target_curvature": {
+        "lower": "0.00000000000000000025200003024000362880043545605225472627056715246805829616699554003946480473577656771195420185862775637458726765156709155",
+        "upper": "0.000000000000000000252000030240003628800435456052254726270567152468058296166995540039464804735776569997928984423177720806154364262249010454"
+      },
+      "interval_digits": 80,
+      "joining_zeta_C2_upper": {
+        "lower": "0.259384134588792772619591205437628462505752481624439590412657953245372987598795959391878181221529353716870976610913792734",
+        "upper": "0.259384134588792772619591205437628462505752481624439590412657953245372987598795960973207872706107837369157084301416643891"
+      },
+      "small_root_Jacobian_inverse_upper": {
+        "lower": "1000.00012000001440000172800020736002488320298598435831812299817475978097117371654047322687924060317481248946919700376718",
+        "upper": "1000.00012000001440000172800020736002488320298598435831812299817475978097117371654263226901801421433115907743489710365996"
+      },
+      "step_third_edge_upper": {
+        "lower": "5.58543842929367838393717564192123878713841711058480160655832131313906027524651499439148737705452675347270613645120729824",
+        "upper": "5.58543842929367838393717564192123878713841711058480160655832131313906027524651509559658763206754970721901702864338977225"
+      },
+      "step_third_middle_upper": {
+        "lower": "745700.908194888990499415739470609155108469237412995986384189402022049484326576230037193271411922676073002334368685762778",
+        "upper": "745700.908194888990499415739470609155108469237412995986384189402022049484326576237775200296776545060419173603437843778498"
+      }
+    },
+    {
+      "actual_target_curvature_supplied": false,
+      "checks": {
+        "Jacobian_inverse_below_1001": true,
+        "curvature_offset_below_3e_minus19": true,
+        "joining_zeta_C2_below_one": true,
+        "step_third_below_1e6": true
+      },
+      "curvature_bound_at_zero_target_curvature": {
+        "lower": "0.000000000000000000252000030240003628800435456052254726270567152468058296166995540039464804735776568293188195182583421910010629200519157533",
+        "upper": "0.000000000000000000252000030240003628800435456052254726270567152468058296166995540039464804735776568293188195182583421910010629202683136896"
+      },
+      "interval_digits": 110,
+      "joining_zeta_C2_upper": {
+        "lower": "0.259384134588792772619591205437628462505752481624439590412657953245372987598795959958442645389791007183590537182288988718",
+        "upper": "0.259384134588792772619591205437628462505752481624439590412657953245372987598795959958442645389791007183590537183120621499"
+      },
+      "small_root_Jacobian_inverse_upper": {
+        "lower": "1000.00012000001440000172800020736002488320298598435831812299817475978097117371654084598490151818818218258186190904841574",
+        "upper": "1000.00012000001440000172800020736002488320298598435831812299817475978097117371654084598490151818818218258186191075159968"
+      },
+      "step_third_edge_upper": {
+        "lower": "5.58543842929367838393717564192123878713841711058480160655832131313906027524651504744679970224500717274374609080765605449",
+        "upper": "5.58543842929367838393717564192123878713841711058480160655832131313906027524651504744679970224500717274374609088749280149"
+      },
+      "step_third_middle_upper": {
+        "lower": "745700.908194888990499415739470609155108469237412995986384189402022049484326576233297769648935629731240156480207761914557",
+        "upper": "745700.908194888990499415739470609155108469237412995986384189402022049484326576233297769648935629731240156480214738155959"
+      }
+    }
+  ],
+  "endpoint_rounding_review": {
+    "digits": 80,
+    "exact_offset_order_preserved": "0 < tc/4 < tc/2 < tc, because tc>0",
+    "manufactured_scale": true,
+    "rounded_offsets_collapse": true
+  },
+  "gates": {
+    "C1_smallness_does_not_bound_C2": true,
+    "all_actual_geometry_checks": true,
+    "all_universal_derivative_constants": true,
+    "exact_polynomial_cap_comparisons": true,
+    "frozen_parent_sources_unchanged": true,
+    "narrow_endpoint_rounding_failure_retained": true,
+    "second_derivative_identity_and_missing_term_controls": true,
+    "signed_variance_derivative_controls": true,
+    "unproved_actual_frequency_rejected": true
+  },
+  "geometry": [
+    {
+      "checks": {
+        "C_at_least_2pow16": true,
+        "activation_quadratic_gap_above_Cminus1024": true,
+        "activation_ratio_below_Cminus28": true,
+        "activation_step_lower_C401": true,
+        "compact_ends_below_C12": true,
+        "compact_starts_above_inverse_C": true,
+        "first_collar_vs_above_2p29": true,
+        "first_outer_ramp_floor": true,
+        "h_inverse_below_C": true,
+        "inherited_parameter_checks": true,
+        "lambda_inverse_below_C": true,
+        "left_offsets_strictly_ordered": true,
+        "modulation_stops_before_repair": true,
+        "reference_error_below_one_millionth": true,
+        "repair_ends_before_heat_patch": true,
+        "reserved_repair_fits": true,
+        "strengthened_shape_barrier": true
+      },
+      "endpoint_offsets_materialized": false,
+      "field_derivative_envelope_verified": false,
+      "interval_digits": 80,
+      "locations": {
+        "Tw": "240*Td",
+        "Xa": "4/Lambda",
+        "compact_right": "rhop * exp(5)",
+        "known_inner_collar_end": "Xa * exp(tc)",
+        "modulation_left": "Xa * exp(tc/2)",
+        "modulation_right": "XR * exp(Td+3)",
+        "protected_core_end": "Xa * exp(tc/4)",
+        "repair_left_rhop": "XR * exp(Td+Tw-23)",
+        "repair_support": "rhop * exp((.45,2.55))",
+        "tc": "C^(-20)/(10*sqrt(log(C)))"
+      },
+      "log_scales": {
+        "C": {
+          "lower": "3.2913904286019263021546041864085800526635236465566942425031753287417745305412666453458215642710412957187340553892817686e+88732167033343771143512341785462",
+          "upper": "3.29139042860192630215460418640858005266352364657808881933637169960744131363028000409100954149202927167654562225829897742e+88732167033343771143512341785462"
+        },
+        "Xa": {
+          "lower": "-3192396329375547844049534238574.8234065476237135067550609260129040203529441292128343103422783823950094328082185775540817",
+          "upper": "-3192396329375547844049534238574.82340654762371350675506092601290402035294412921274343634213524774304065456833542717020198"
+        },
+        "left_offset": {
+          "lower": "-6.5827808572038526043092083728171601053270472931561776386727433992148826272605600425977447140528895467398274059126341585e+88732167033343771143512341785463",
+          "upper": "-6.58278085720385260430920837281716010532704729311338848500635065748354906108253328274955259829542928296360591968717056712e+88732167033343771143512341785463"
+        },
+        "protected_offset": {
+          "lower": "-6.5827808572038526043092083728171601053270472931561776386727433992148826272605600425977447140528895467398274059126341585e+88732167033343771143512341785463",
+          "upper": "-6.58278085720385260430920837281716010532704729311338848500635065748354906108253328274955259829542928296360591968717056712e+88732167033343771143512341785463"
+        },
+        "tc": {
+          "lower": "-6.58278085720385260430920837281716010532704729315617763867274339921488262726056003200829067372401846877467781779077686507e+88732167033343771143512341785463",
+          "upper": "-6.58278085720385260430920837281716010532704729311338848500635065748354906108253328274955259829542928296360591968717056712e+88732167033343771143512341785463"
+        }
+      }
+    },
+    {
+      "checks": {
+        "C_at_least_2pow16": true,
+        "activation_quadratic_gap_above_Cminus1024": true,
+        "activation_ratio_below_Cminus28": true,
+        "activation_step_lower_C401": true,
+        "compact_ends_below_C12": true,
+        "compact_starts_above_inverse_C": true,
+        "first_collar_vs_above_2p29": true,
+        "first_outer_ramp_floor": true,
+        "h_inverse_below_C": true,
+        "inherited_parameter_checks": true,
+        "lambda_inverse_below_C": true,
+        "left_offsets_strictly_ordered": true,
+        "modulation_stops_before_repair": true,
+        "reference_error_below_one_millionth": true,
+        "repair_ends_before_heat_patch": true,
+        "reserved_repair_fits": true,
+        "strengthened_shape_barrier": true
+      },
+      "endpoint_offsets_materialized": false,
+      "field_derivative_envelope_verified": false,
+      "interval_digits": 110,
+      "locations": {
+        "Tw": "240*Td",
+        "Xa": "4/Lambda",
+        "compact_right": "rhop * exp(5)",
+        "known_inner_collar_end": "Xa * exp(tc)",
+        "modulation_left": "Xa * exp(tc/2)",
+        "modulation_right": "XR * exp(Td+3)",
+        "protected_core_end": "Xa * exp(tc/4)",
+        "repair_left_rhop": "XR * exp(Td+Tw-23)",
+        "repair_support": "rhop * exp((.45,2.55))",
+        "tc": "C^(-20)/(10*sqrt(log(C)))"
+      },
+      "log_scales": {
+        "C": {
+          "lower": "3.29139042860192630215460418640858005266352364656871430841469892019496339757668263830578219802912019612700332338860967962e+88732167033343771143512341785462",
+          "upper": "3.29139042860192630215460418640858005266352364656871430841469892019496339757669951565102965380633592633120819587368439065e+88732167033343771143512341785462"
+        },
+        "Xa": {
+          "lower": "-3192396329375547844049534238574.82340654762371350675506092601290402035294412921279474685240092955172820310270779286886353",
+          "upper": "-3192396329375547844049534238574.82340654762371350675506092601290402035294412921279474685240092955172820310270772118191751"
+        },
+        "left_offset": {
+          "lower": "-6.58278085720385260430920837281716010532704729313742861682939784038992679515339903130205930761267185266241639177660640335e+88732167033343771143512341785463",
+          "upper": "-6.58278085720385260430920837281716010532704729313742861682939784038992679515336527661156439605824039225400664677513095766e+88732167033343771143512341785463"
+        },
+        "protected_offset": {
+          "lower": "-6.58278085720385260430920837281716010532704729313742861682939784038992679515339903130205930761267185266241639177660640335e+88732167033343771143512341785463",
+          "upper": "-6.58278085720385260430920837281716010532704729313742861682939784038992679515336527661156439605824039225400664677513095766e+88732167033343771143512341785463"
+        },
+        "tc": {
+          "lower": "-6.58278085720385260430920837281716010532704729313742861682939784038992679515339903130205930761267185266241639176825279705e+88732167033343771143512341785463",
+          "upper": "-6.58278085720385260430920837281716010532704729313742861682939784038992679515336527661156439605824039225400664677513095766e+88732167033343771143512341785463"
+        }
+      }
+    }
+  ],
+  "implicit_second_derivative_review": {
+    "actual_target_C2_verified": false,
+    "checks": {
+      "frozen_zeta_detected": true,
+      "missing_cross_detected": true,
+      "second_derivative_identity": true
+    },
+    "correct_absolute_error": "3.30930042979912744111005561542278044180621962803097358281280169765830669573282291008928867e-81",
+    "frozen_zeta_absolute_error": "0.0417941673560304270448319289825139482888841982099111514834753168487100799829526258527975115",
+    "manufactured_target": true,
+    "omitted_cross_absolute_error": "0.0206031067761674540985802875140359058845895184161438661044851708138322955792148927990190206",
+    "quadrature_order": 16,
+    "quadrature_panels": 4
+  },
+  "inherited_provenance": {
+    "axis_core_attachment": true,
+    "axis_matching_audit": true,
+    "stress_realization_audit": true
+  },
+  "open_obligations": {
+    "actual_compact_jet_envelope": "Derive a uniform mixed-derivative bound and positive denominator bounds for the actual fields, cumulative moments, and ps throughout the selected compact interval.",
+    "actual_modulation_error_constants": "Propagate fixed-phase loop derivatives through the modulated fields and the original pressure formula to certify Cstate and the transformed discrepancy D, retaining 1/lambda.",
+    "actual_repair_error_constants": "Bound the correction-to-state map by Ccorr on a positive-field neighborhood and justify its coefficient tolerance.",
+    "actual_target_C2_transfer": "Bound the actual five incoming moment functions and their second angular derivatives from the exact core and shape transition, including normalization derivatives."
+  },
+  "promotion": {
+    "accepted": false,
+    "actual_joined_profile_frequency_selected": false,
+    "blowup_verified": false,
+    "full_PDE_corrections_verified": false,
+    "full_admissible_stress_realized": false,
+    "missing": [
+      "actual_target_C2_transfer",
+      "actual_compact_jet_envelope",
+      "actual_modulation_error_constants",
+      "actual_repair_error_constants"
+    ],
+    "reason": "The symbolic frequency is a proposal; its actual input and error bounds have not been proved.",
+    "smooth_force_verified": false
+  },
+  "proposed_construction": {
+    "Ccorr_proposal": "A^128",
+    "Cstate_proposal": "H^16",
+    "D_proposal_including_inverse_lambda": "H^16",
+    "G": "exp(A^32)",
+    "H": "exp(G^4)",
+    "N_proposal": "1+floor(H^32)",
+    "Z": "16*(1+2048*A^5)^2",
+    "certified_for_actual_joined_profile": false,
+    "coefficient_tolerance_proposal": "A^(-128)",
+    "d0": "1/(16*A)",
+    "delta_loop": "exp(-A^20)",
+    "envelope_proposal": "A=C^4096 (UNPROVED for the required actual jets)",
+    "epsilon_proposal": "G^(-64)",
+    "mu_cap": "64*A^(3/2)*exp(Z)"
+  },
+  "protocol": {
+    "actual_joined_profile_frequency_selected": false,
+    "interval_digits": [
+      80,
+      110
+    ],
+    "parent_commit": "95560e73396c4916bb3313d021be9c400b76da41",
+    "review_type": "same-agent mathematical and computational review",
+    "scale": "Md64",
+    "source_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "status": "joined-stress-proposal-reviewed-derivative-budget-open"
+  },
+  "signed_variance_derivative_review": {
+    "actual_loop_derivative_envelope_verified": false,
+    "check": true,
+    "manufactured_input": true,
+    "rows": [
+      {
+        "lower_bound": "0.00390625",
+        "mu": "1.0",
+        "p": "0.0",
+        "passed": true,
+        "slope": "0.0883883476483184405501055452631061299106044922110592545735424836244207799038816899856077695"
+      },
+      {
+        "lower_bound": "0.00390624999999999999996093750000000000000019531249999999999999934895833333333333333557819306",
+        "mu": "0.25",
+        "p": "0.00000000000000000000999999999999999999999999999999999999999999999999999999999999999999999999999999999383466577",
+        "passed": true,
+        "slope": "0.0883883476483184405501055452631061299106043368409169040137837041420169971001377063834751554"
+      },
+      {
+        "lower_bound": "0.00000968262569010296259002018527662760895119718588099197285499462502451638370427339915143504808",
+        "mu": "2.0",
+        "p": "0.75",
+        "passed": true,
+        "slope": "0.0537964816387334540018700688469487620671487724110641048104522642565117104713982725436257305"
+      },
+      {
+        "lower_bound": "0.00000968262569010296259002018527662760895119718588099197285499462502451638370427339915143504808",
+        "mu": "2.0",
+        "p": "-0.75",
+        "passed": true,
+        "slope": "0.0537964816387334540018700688469487620671487724110641048104522642565117104713982725436257305"
+      }
+    ],
+    "zero_amplitude_slope": "0.0883883476483184405501055452631061299106044922110592545735424836244207799038816898538302952"
+  },
+  "source_hashes": {
+    "results/axis_core_attachment/README.md": "5e10233d5cde81565c9d47de909b5d7a727a780797d52e3c946f27ddd08b052a",
+    "results/axis_core_attachment/bounds.py": "1ed95922c119b890ab9538e843649a1460e85c98a12ecaa357d3c35280a94431",
+    "results/axis_core_attachment/evidence.json": "ca01303533a81f3b83e16100038ec6778d6268bcd0a8f70c4ffc023a712123d7",
+    "results/axis_matching_audit/README.md": "8c85355003ec18989854c4916fd3c3549bea452988f20879de58d2cf748bfd1e",
+    "results/axis_matching_audit/evidence.json": "d4cec538779a94c8a29cffe29d13c90316b81c54dc0a5e76beb80ffd8417f291",
+    "results/axis_matching_audit/moments.py": "80aca811e81638f47c6af94cf54fcd7f5a2b98afef905b34203173e31fbfe266",
+    "results/heat_exterior_audit/README.md": "e5128b15a8ec398102a29ab6377de23c807d41d69408c142ce41f70e9a64934f",
+    "results/heat_exterior_audit/evidence.json": "92b39415d9c7a851ce7f2c6ba325b1a7a8fe27f3c175136f35615b175a038a56",
+    "results/intermediate_decay_audit/evidence.json": "f30b5619e8b20d2196d449abbc14c646ecaf0c663527ccc49824891c1d8a8af2",
+    "results/joined_stress_construction/README.md": "a36423dc3699d236623c8a664e966b9cbb6f32a2e1daa7e8c4407f43a3dad81f",
+    "results/joined_stress_construction/audit.py": "9216697b4bdb3858d515b02da2012e283d0d4e3a8409b923808d6851fffebbf4",
+    "results/joined_stress_construction/construction.py": "18718e4314b1d9fa26f85c25f5014cbe59dc63d2c5fd0d952384e652bc1e3cca",
+    "results/joined_stress_construction/protocol.json": "ac9dafd72444d7f7fd550ee60a2fc377df4a37203457f49c9737208f4ce058d1",
+    "results/joined_stress_construction/requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "results/joined_stress_construction/review.py": "9dfd21eb938ff4ceab9d624967600052903ed8d081b2f3c2b778355e041a43cf",
+    "results/joined_stress_construction/test_audit.py": "98972dd7d0217902150195493b37453d9c16ee1824087972839d90c7e194b3f0",
+    "results/outer_pressure_pilot/schedule.py": "8b76461a06628ab4c4f1962a11f35dd011b9383880626fd5e7a32ea98a1fdc6e",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7",
+    "results/stress_realization_audit/bounds.py": "94c5ee914bec4eb91579ab41e4bccb3a9baecbb3564b3a8fcebc226f5c8bb9f0",
+    "results/stress_realization_audit/evidence.json": "8280839e76a55394393c841e2fe2330f80324a80a69db5dd6b76502fe39efb7b",
+    "results/stress_realization_audit/loop.py": "635d8156d99268a1d0a22fad730a683e269b8c2330e4125343ea0d3a14c208a0",
+    "results/stress_realization_audit/repair.py": "68e1bf778757ffc31d74ef84c54f21a3bfe25d677a3655bd04a5c1905f3c9d12"
+  },
+  "status": "joined-stress-proposal-reviewed-derivative-budget-open"
+}

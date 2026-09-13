@@ -87,6 +87,15 @@ finite-frequency acceptance formula, not a selected frequency for the actual
 joined profile. Manufactured all-phase bounds and diagnostic roots do not
 promote full stress realization, the PDE corrections, or blow-up.
 
+The [joined-stress construction and review](joined_stress_construction/README.md)
+fixes actual support locations, preserves the tiny inner offsets symbolically,
+and derives the exact second-angular-derivative equation for the joining
+coefficients. Its proposed finite frequency is not certified: a C1 acceptance
+record does not supply the required actual C2 moment bound. The review retains
+that gap and the remaining pressure-error estimates, with controls for omitted
+derivative terms and rounded-away collar separation. No stress or blow-up
+promotion follows from its passing checks.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

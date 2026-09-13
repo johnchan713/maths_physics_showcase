@@ -17,12 +17,16 @@ The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
 that core to the reference exterior. Its five normalized incoming moment
 bounds are below `2.55e-17`, inside the existing `1e-16` acceptance ball.
-The new [conditional stress realization](results/stress_realization_audit/README.md)
+The [conditional stress realization](results/stress_realization_audit/README.md)
 checks the prescribed-mean shear loop and gives a stable five-moment repair,
-retaining the inverse-lambda loss in its incoming error budget. Its actual
-joined-profile bounds and finite modulation frequency remain uninstantiated.
-That is the current first unclosed obligation, before the full PDE
-corrections and admissible smooth force.
+retaining the inverse-lambda loss in its incoming error budget. The subsequent
+[joined-stress construction and review](results/joined_stress_construction/README.md)
+fixes the actual modulation/repair locations and derives the second angular
+derivative equation for the matching coefficients. Review leaves its proposed
+frequency uncertified: the actual C2 moment transfer and full pressure-error
+bounds are still missing. The next calculation is to transfer the exact core's
+higher-derivative bounds to the normalized incoming moments. Full PDE
+corrections and admissible smooth forcing follow only after stress realization.
 The goal document and earlier audit narratives retain their checkpoint
 statuses; this paragraph records the latest construction. No blow-up result
 or completed Navier-Stokes solution is claimed.
