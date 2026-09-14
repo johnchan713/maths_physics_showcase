@@ -106,6 +106,15 @@ and the axis factor is retained in the pressure integral. These are analytic
 bounds with outward constant checks, not sampled data or independent peer
 review. Three later stress estimates and the blow-up claim remain unverified.
 
+The subsequent [compact input envelope](compact_jet_envelope/README.md) bounds
+the actual field/moment mixed jets through order two and the integrated
+pressure/stress-coordinate jets through order one, throughout the selected
+compact region. Explicit inverse-width factors and positive denominators fit
+inside `A=C^4096`; the original required margins and repair normalizations are
+also covered. This closes the second estimate in the joined-stress review.
+The loop/modulation and repair-to-state error estimates remain open, and the
+proposed oscillation frequency, full stress and blow-up are not certified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

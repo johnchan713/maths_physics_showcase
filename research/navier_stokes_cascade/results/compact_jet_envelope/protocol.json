@@ -1,0 +1,14 @@
+{
+  "status": "actual-compact-input-envelope-bounded",
+  "parent_commit": "028333027590ae2bad71f5be74d699f4cb979c3d",
+  "source_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "source_pages": [26, 27, 28, 29, 30, 31, 145, 146, 147, 148, 150, 154, 155, 156],
+  "scale": "Md64",
+  "interval_digits": [80, 110],
+  "radial_derivative": "d/dy = X*d/dX, y=log(X)",
+  "mixed_norm": "sum_{r+s<=k} sup(abs(d_y^r d_eta^s f))/(r!s!)",
+  "field_and_moment_order": 2,
+  "stress_coordinate_order": 1,
+  "envelope": "C^4096",
+  "actual_joined_profile_frequency_selected": false
+}

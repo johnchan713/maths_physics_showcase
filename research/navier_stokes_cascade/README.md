@@ -25,11 +25,15 @@ fixes the actual modulation/repair locations and derives the second angular
 derivative equation for the matching coefficients. The latest
 [actual C2 transfer](results/angular_c2_transfer/README.md) now bounds the
 actual core-to-annulus moment transfer and the same exact joining correction
-through second angular derivatives. This closes the first estimate left open
-by that review. The whole compact mixed-derivative/denominator envelope and
-the modulation/repair pressure-error constants remain unverified, so its
-proposed frequency is still uncertified. Full PDE corrections and admissible
-smooth forcing follow only after stress realization.
+through second angular derivatives. The subsequent
+[compact input envelope](results/compact_jet_envelope/README.md) bounds the
+actual fields and all five moments through mixed logarithmic-radial/angular
+order two, and the pressure/stress coordinates through order one. It retains
+the narrow-cutoff losses and positive denominators, justifying the proposed
+input envelope `A=C^4096`. These close the first two estimates left open by
+the review. The fixed-phase loop and modulation/repair pressure-error constants
+remain unverified, so the proposed frequency is still uncertified. Full PDE
+corrections and admissible smooth forcing follow only after stress realization.
 The goal document and earlier audit narratives retain their checkpoint
 statuses; this paragraph records the latest construction. No blow-up result
 or completed Navier-Stokes solution is claimed.

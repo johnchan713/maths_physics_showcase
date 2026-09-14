@@ -125,6 +125,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/paper_profile_audit/evidence.json \
             --output navier_stokes_paper_profile_audit_ci.json
 
+      - name: Bound compact mixed jets without certifying the frequency
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/compact_jet_envelope/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/compact_jet_envelope/audit.py \
+            --verify-record research/navier_stokes_cascade/results/compact_jet_envelope/evidence.json \
+            --output navier_stokes_compact_jet_envelope_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -514,6 +521,7 @@ jobs:
             navier_stokes_stress_realization_audit_ci.json
             navier_stokes_joined_stress_construction_ci.json
             navier_stokes_angular_c2_transfer_ci.json
+            navier_stokes_compact_jet_envelope_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
