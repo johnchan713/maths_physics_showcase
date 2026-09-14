@@ -1,0 +1,12 @@
+{
+  "status": "actual-C2-moment-transfer-and-matching-bounded",
+  "parent_commit": "86f5b77183ed9f93f8faa3fd4bee548596bf5b53",
+  "source_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "source_pages": [145, 146, 147, 148, 150, 154, 155, 156],
+  "scale": "Md64",
+  "interval_digits": [80, 110],
+  "angular_norm": "sup(abs(f)) + sup(abs(f_eta)) + sup(abs(f_etaeta))/2",
+  "entry_epsilon": "1e-16",
+  "target_C2_bound_over_epsilon": "0.286",
+  "actual_joined_profile_frequency_selected": false
+}

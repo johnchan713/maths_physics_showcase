@@ -22,11 +22,14 @@ checks the prescribed-mean shear loop and gives a stable five-moment repair,
 retaining the inverse-lambda loss in its incoming error budget. The subsequent
 [joined-stress construction and review](results/joined_stress_construction/README.md)
 fixes the actual modulation/repair locations and derives the second angular
-derivative equation for the matching coefficients. Review leaves its proposed
-frequency uncertified: the actual C2 moment transfer and full pressure-error
-bounds are still missing. The next calculation is to transfer the exact core's
-higher-derivative bounds to the normalized incoming moments. Full PDE
-corrections and admissible smooth forcing follow only after stress realization.
+derivative equation for the matching coefficients. The latest
+[actual C2 transfer](results/angular_c2_transfer/README.md) now bounds the
+actual core-to-annulus moment transfer and the same exact joining correction
+through second angular derivatives. This closes the first estimate left open
+by that review. The whole compact mixed-derivative/denominator envelope and
+the modulation/repair pressure-error constants remain unverified, so its
+proposed frequency is still uncertified. Full PDE corrections and admissible
+smooth forcing follow only after stress realization.
 The goal document and earlier audit narratives retain their checkpoint
 statuses; this paragraph records the latest construction. No blow-up result
 or completed Navier-Stokes solution is claimed.

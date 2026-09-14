@@ -96,6 +96,16 @@ that gap and the remaining pressure-error estimates, with controls for omitted
 derivative terms and rounded-away collar separation. No stress or blow-up
 promotion follows from its passing checks.
 
+The [actual C2 moment transfer](angular_c2_transfer/README.md) closes that
+review's first quantitative gap by carrying the exact core's angular bounds
+through the shape transition, all five original moment integrals, their
+normalizations, and the same exact joining correction. The actual normalized
+target has factorial C2 norm at most `2.86e-17`; joining-coefficient second
+derivatives are below `5.721e-14`. The C1 normalization factor 12 becomes 20,
+and the axis factor is retained in the pressure integral. These are analytic
+bounds with outward constant checks, not sampled data or independent peer
+review. Three later stress estimates and the blow-up claim remain unverified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)
