@@ -31,8 +31,12 @@ actual fields and all five moments through mixed logarithmic-radial/angular
 order two, and the pressure/stress coordinates through order one. It retains
 the narrow-cutoff losses and positive denominators, justifying the proposed
 input envelope `A=C^4096`. These close the first two estimates left open by
-the review. The fixed-phase loop and modulation/repair pressure-error constants
-remain unverified, so the proposed frequency is still uncertified. Full PDE
+the review. The subsequent [loop and modulation bounds](results/loop_modulation_bounds/README.md)
+derive first slow derivatives including the moving inverse phase, and bound
+the state and normalized five-moment errors by `H^16/N`, retaining the
+inverse-lambda loss. This supplies the third estimate, conditional on the
+preceding analytic construction. The actual repair-to-state bound and its
+positive-field neighborhood remain open, so the frequency is still uncertified. Full PDE
 corrections and admissible smooth forcing follow only after stress realization.
 The goal document and earlier audit narratives retain their checkpoint
 statuses; this paragraph records the latest construction. No blow-up result

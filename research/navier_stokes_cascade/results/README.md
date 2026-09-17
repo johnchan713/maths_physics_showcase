@@ -115,6 +115,15 @@ also covered. This closes the second estimate in the joined-stress review.
 The loop/modulation and repair-to-state error estimates remain open, and the
 proposed oscillation frequency, full stress and blow-up are not certified.
 
+The later [fixed-phase loop and modulation estimate](loop_modulation_bounds/README.md)
+supplies first slow derivative bounds for the loop and its inverse phase map,
+then propagates them through the original cumulative moments and pressure
+coordinates. It justifies `Cstate=D=H^16` with the inverse-lambda loss and
+normalization derivatives retained. Manufactured implicit differentiation and
+field checks detect omitted phase and exponential terms. The repair-to-state
+estimate and its positive-field neighborhood remain open; the proposed
+frequency, full PDE corrections, smooth forcing and blow-up remain unverified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

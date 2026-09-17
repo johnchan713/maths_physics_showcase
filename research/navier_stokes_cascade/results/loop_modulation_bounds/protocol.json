@@ -1,0 +1,16 @@
+{
+  "status": "fixed-phase-loop-and-modulation-errors-bounded",
+  "parent_commit": "bb72b484feb0437800ea0a8cf9a2c7e1aefab527",
+  "source_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "input_envelope": "A=C^4096",
+  "hierarchy": {"G": "exp(A^32)", "H": "exp(G^4)"},
+  "slow_derivative_order": 1,
+  "moment_error_angular_order": 1,
+  "pressure_state_error_order": 0,
+  "Cstate": "H^16",
+  "D_including_inverse_lambda": "H^16",
+  "interval_digits": [80, 110],
+  "diagnostic_digits": 70,
+  "diagnostic_steps": ["1e-5", "1e-7", "1e-9"],
+  "actual_joined_profile_frequency_selected": false
+}
