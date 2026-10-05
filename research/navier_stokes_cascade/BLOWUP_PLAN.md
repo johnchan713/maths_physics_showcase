@@ -95,6 +95,33 @@ omitted terms and numerical cancellation errors but cannot supply those
 estimates. The exact C2 counterexample exposes a missing bound, not an
 irreparable obstruction to the construction.
 
+## A six-hour research block
+
+These are focused-work budgets, not promises that a mathematical argument
+will close on schedule. Begin with the finalized leading profile at
+research commit `c55ca1e6a19a452bb406841e180d7dcb0f827656`, retaining the fixed
+N and all previous conditional dependencies.
+
+| Time budget | Work and reviewable output | How it advances the blow-up argument |
+|---|---|---|
+| Hours 0–2 | Differentiate the actual moment, phase-map and repair equations to the required angular order. Record the final radial derivative costs and either an explicit third-angular moment bound and annular K, or the precise input preventing that bound. Include the regular axis representation. | Controls the viscous term missing from the current C2 estimate. This is required before the base residual budget applies to the actual field. |
+| Hours 2–4 | Use the derived coupled system to construct first inner coefficients from the finalized leading profile, specify compatible axis traces, and attempt a local existence and derivative bound for F1,U1,Pi1. Retain V1's D+2h term and the radial pressure correction. If the first block remains open, trace the missing inputs instead of treating them as bounded. | A successful correction removes the next singular residual coefficient while preserving incompressibility and radial momentum balance. Formal coefficients alone do not establish existence. |
+| Hours 4–5 | Set up the five-moment annular extension. Recompute the corrected residual with its quadratic terms and axial viscosity. If existence and bounds are available, prove the expected extra q^(2h) gain in the augmented residual after separating retained annular stress. At a protected core point, check q^(2h) abs(E1)<=E0/2 from actual bounds. Otherwise retain the corresponding open inequality. | Tests whether the correction is compatible with the exterior and reduces physical error while preserving the leading velocity growth in the finite corrected field. This is not yet a lower bound for the infinite corrected sum. |
+| Hours 5–6 | Review the derivation against separate physical-coordinate calculations and deliberate omitted-term controls. Check inherited hashes, reproduce the evidence, and push a scoped checkpoint with the next unclosed inequality. | Makes a successful estimate reproducible and a failed estimate actionable. Test counts do not measure distance to a singularity proof. |
+
+The end-of-session report must distinguish an identity, a manufactured
+numerical check, a formal coefficient, and a bound for the actual continuum
+profile. If a time box expires with an open argument, publish that gap and
+continue useful work that does not assume it is solved. No numerical
+threshold is to be relaxed to manufacture progress.
+
+The useful outcome in six hours is a new justified estimate or a sharper
+obstruction, with the first correction attempted where its inputs permit.
+There is no defensible estimate in hours or percent for the complete proof.
+Even success in every block leaves all-order background and wave corrections,
+divergence-preserving summation, forcing smoothness through T, and the energy
+and blow-up estimates for the same complete field to establish.
+
 ## Accepted leading-profile frequency, conditional on the foundation
 
 The [repair-state estimate](results/repair_state_bounds/README.md) bounds the
