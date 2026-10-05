@@ -1,0 +1,286 @@
+{
+  "error_ledger": {
+    "Ccorr": "A^128",
+    "Cstate": "H^16",
+    "D": "H^16",
+    "N": "1+floor(H^32)",
+    "checks": {
+      "coefficient_norm_conversion": true,
+      "p1_below_common": true,
+      "p2_below_common": true,
+      "radial_width_loss": true
+    },
+    "coefficient_norm": "max_j max(sup|c_j|,sup|c_j_eta|)",
+    "epsilon": "G^(-64)",
+    "field_angular_norm": "sup|f|+sup|f_eta|",
+    "field_error": "1280*A*s",
+    "inherited_input_review_completed": false,
+    "moment_angular_order": 1,
+    "moment_error": "10240*A^4*s",
+    "p1_coefficient": 112,
+    "p1_power": 7,
+    "p2_coefficient": 200,
+    "p2_power": 8,
+    "pressure_state_derivative_order": 0,
+    "r": "A^(-128)",
+    "radial_field_error": "4000000*A*s",
+    "state_coefficient": 327680,
+    "state_power": 9
+  },
+  "flags": {
+    "actual_high_frequency_profile_numerically_resolved": false,
+    "actual_repair_error_constants_bounded": true,
+    "blowup_verified": false,
+    "conditional_leading_cone_argument_completed": true,
+    "formal_proof_assistant_certificate": false,
+    "frequency_acceptance_given_inherited_estimates": true,
+    "full_PDE_corrections_verified": false,
+    "full_physical_stress_wave_construction_verified": false,
+    "independent_foundation_review_completed": false,
+    "positive_repair_neighborhood_bounded": true,
+    "relies_on_inherited_analytic_construction": true,
+    "smooth_force_verified": false
+  },
+  "gates": {
+    "bump_derivative_and_neighborhood_controls": true,
+    "inherited_bytes_preserved": true,
+    "manufactured_diagnostics_explicit": true,
+    "norm_conversion_and_state_arithmetic": true,
+    "original_moment_and_pressure_equations": true,
+    "physical_PDE_and_blowup_unverified": true,
+    "preceding_repair_obligation_matches": true,
+    "scalar_and_frequency_checks": true
+  },
+  "inherited_provenance": {
+    "results/angular_c2_transfer/README.md": true,
+    "results/angular_c2_transfer/bounds.py": true,
+    "results/angular_c2_transfer/evidence.json": true,
+    "results/axial_stress_audit/README.md": true,
+    "results/axial_stress_audit/bounds.py": true,
+    "results/axial_stress_audit/evidence.json": true,
+    "results/axis_core_attachment/README.md": true,
+    "results/axis_core_attachment/bounds.py": true,
+    "results/axis_core_attachment/evidence.json": true,
+    "results/axis_matching_audit/README.md": true,
+    "results/axis_matching_audit/bounds.py": true,
+    "results/axis_matching_audit/evidence.json": true,
+    "results/compact_jet_envelope/README.md": true,
+    "results/compact_jet_envelope/audit.py": true,
+    "results/compact_jet_envelope/bounds.py": true,
+    "results/compact_jet_envelope/evidence.json": true,
+    "results/compact_jet_envelope/jets.py": true,
+    "results/compact_jet_envelope/protocol.json": true,
+    "results/compact_jet_envelope/requirements.txt": true,
+    "results/compact_jet_envelope/review.py": true,
+    "results/compact_jet_envelope/test_audit.py": true,
+    "results/intermediate_decay_audit/README.md": true,
+    "results/intermediate_decay_audit/bounds.py": true,
+    "results/intermediate_decay_audit/evidence.json": true,
+    "results/joined_stress_construction/README.md": true,
+    "results/joined_stress_construction/construction.py": true,
+    "results/joined_stress_construction/evidence.json": true,
+    "results/loop_modulation_bounds/README.md": true,
+    "results/loop_modulation_bounds/audit.py": true,
+    "results/loop_modulation_bounds/bounds.py": true,
+    "results/loop_modulation_bounds/protocol.json": true,
+    "results/loop_modulation_bounds/requirements.txt": true,
+    "results/loop_modulation_bounds/review.py": true,
+    "results/loop_modulation_bounds/test_audit.py": true,
+    "results/stress_realization_audit/README.md": true,
+    "results/stress_realization_audit/evidence.json": true,
+    "results/stress_realization_audit/loop.py": true
+  },
+  "protocol": {
+    "Ccorr": "A^128",
+    "acceptance_conditional_on_inherited_estimates": true,
+    "bump_width": "0.1",
+    "coefficient_norm": "max_j max(sup|c_j|,sup|c_j_eta|)",
+    "coefficient_radius": "A^(-128)",
+    "diagnostic_digits": 70,
+    "field_angular_norm": "sup|f|+sup|f_eta|",
+    "input_envelope": "A=C^4096",
+    "interval_digits": [
+      80,
+      110
+    ],
+    "lambda_domain": "0<lambda<=0.01",
+    "moment_angular_error_order": 1,
+    "parent_commit": "89e00da7d41e8ee0dfb77548e7c299308e73eb55",
+    "patch": "X=rhop*exp(y), 0<y<5",
+    "pressure_state_error_order": 0,
+    "selected_N": "1+floor(H^32)",
+    "status": "repair-state-bound-and-conditional-frequency-acceptance"
+  },
+  "remaining_obligations": [
+    "independent_review_of_inherited_continuum_estimates",
+    "full_physical_residual_and_correction_budget",
+    "convergence_of_the_PDE_corrections",
+    "admissible_smooth_forcing_through_the_singular_time",
+    "blowup_lower_bound_for_the_complete_field"
+  ],
+  "resolved_obligations": [
+    "actual_repair_error_constants"
+  ],
+  "reviews": {
+    "bumps": {
+      "checks": {
+        "e_angular_derivative_required": true,
+        "perturbed_denominator_required": true,
+        "unrestricted_coefficients_break_positivity": true,
+        "width_squared_cost": true
+      },
+      "manufactured": true,
+      "records": [
+        {
+          "denominator_omission_error": "0.00000091886280362673668142456770752842445215352416404086602700063360538",
+          "normalization_derivative_omission_error": "0.0000004471740787897162597545599447496762503138285266543278972669513929",
+          "radial_bump_derivative": "116.99428817008005687089799829759983411578399084681426931229392071",
+          "width": "0.1"
+        },
+        {
+          "denominator_omission_error": "0.0000018399637502375920270172450226453861540861316263208201652733734719",
+          "normalization_derivative_omission_error": "0.0000008943481575794325195091198894993525006276570533086557945339027858",
+          "radial_bump_derivative": "467.97715268032022748359199319039933646313596338725707724917568286",
+          "width": "0.05"
+        }
+      ]
+    },
+    "moments_and_pressure": {
+      "U_square_contribution": "0.000000022654484080991597522213963895036025684988861183352119226585293509",
+      "checks": {
+        "U_square_term_required": true,
+        "all_five_moment_changes": true,
+        "fifth_pressure_moment_required": true,
+        "original_source_ODEs": true,
+        "target_angular_derivatives_required": true
+      },
+      "dropped_pressure_moment_error": "0.00024713550176269573001412750043261887589391157430137295229054957008",
+      "frozen_target_angular_error": "0.000037958740711910160475689381701051166253441844264129717569599725541",
+      "manufactured": true,
+      "ordinary_moment_map_error": "3.8690035126823111921730856345345790078599681632674540604906191546e-75",
+      "original_source_ODE_error": "9.0556790788267123675091192908877917806825311981391381895826148899e-72"
+    }
+  },
+  "scalar_bounds": [
+    {
+      "checks": {
+        "active_fourth_gap_above_Gminus4": true,
+        "active_third_gap_above_half_inverse_A": true,
+        "chosen_Ccorr_dominates_raw_bound": true,
+        "coefficient_threshold_log_constant": true,
+        "contraction_frequency_comparison": true,
+        "contraction_threshold_log_constant": true,
+        "epsilon_below_cone_Lipschitz_tolerance": true,
+        "epsilon_below_first_coordinate_half": true,
+        "exact_C1_quadratic_map": true,
+        "exact_bump_radial_bound": true,
+        "exact_bump_value_bound": true,
+        "exact_five_row_inverse": true,
+        "field_perturbation_below_one": true,
+        "incoming_memory_frequency_comparison": true,
+        "incoming_memory_log_constant": true,
+        "inherited_loop_cap_and_delta_comparisons": true,
+        "positive_swirl_neighborhood": true,
+        "pressure_state_prefactor_below_A11": true,
+        "radius_frequency_comparison": true,
+        "shear_error_below_A6": true,
+        "state_frequency_comparison": true,
+        "state_threshold_log_constant": true
+      },
+      "exact_repair_inverse_bounds": {
+        "E_inverse_upper": {
+          "lower": "787.561849359039236066812779940495654566793396548158063097872530470310964633044125524481253518711243044417109589347873117",
+          "upper": "787.56184935903923606681277994049565456679339654815806309787253047031096463304418273909793101940688622899820064199503176"
+        },
+        "U_inverse_upper": {
+          "lower": "1.47846162745980563537467848596007973962147368244940451489310976008261116265872665188551472095540515742236194525024477919",
+          "upper": "1.47846162745980563537467848596007973962147368244940451489310976008261116265872668562054813929307947533779890931430560386"
+        },
+        "quadratic_C1_upper": {
+          "lower": "44475.466094858357375873547417110436702793756606313705413829567542210232740532713219287183617708892057765526793884408332",
+          "upper": "44475.4660948583573758735474171104367027937566063137054138295675422102327405327135647339258214866770732196013059003911767"
+        }
+      },
+      "huge_frequency_materialized": false,
+      "interval_digits": 80,
+      "relative_swirl_error_at_endpoint": {
+        "lower": "1.70113472972992513194847568257399849528498119974714621418818227138638454168091160425483178726558357052061798577684670325e-604",
+        "upper": "1.70113472972992513194847568257399849528498119974714621418818227138638454168091160425483178726558357052061798577684670325e-604"
+      },
+      "shear_to_A6_ratio": {
+        "lower": "0.000001192093762869550488403547205962240695953369140625",
+        "upper": "0.000001192093762869550488403547205962240695953369140625"
+      }
+    },
+    {
+      "checks": {
+        "active_fourth_gap_above_Gminus4": true,
+        "active_third_gap_above_half_inverse_A": true,
+        "chosen_Ccorr_dominates_raw_bound": true,
+        "coefficient_threshold_log_constant": true,
+        "contraction_frequency_comparison": true,
+        "contraction_threshold_log_constant": true,
+        "epsilon_below_cone_Lipschitz_tolerance": true,
+        "epsilon_below_first_coordinate_half": true,
+        "exact_C1_quadratic_map": true,
+        "exact_bump_radial_bound": true,
+        "exact_bump_value_bound": true,
+        "exact_five_row_inverse": true,
+        "field_perturbation_below_one": true,
+        "incoming_memory_frequency_comparison": true,
+        "incoming_memory_log_constant": true,
+        "inherited_loop_cap_and_delta_comparisons": true,
+        "positive_swirl_neighborhood": true,
+        "pressure_state_prefactor_below_A11": true,
+        "radius_frequency_comparison": true,
+        "shear_error_below_A6": true,
+        "state_frequency_comparison": true,
+        "state_threshold_log_constant": true
+      },
+      "exact_repair_inverse_bounds": {
+        "E_inverse_upper": {
+          "lower": "787.561849359039236066812779940495654566793396548158063097872530470310964633044149949863902163166320627751545514412792859",
+          "upper": "787.561849359039236066812779940495654566793396548158063097872530470310964633044149949863902163166320627751545556992391259"
+        },
+        "U_inverse_upper": {
+          "lower": "1.47846162745980563537467848596007973962147368244940451489310976008261116265872666488406450760127807794239796872920579243",
+          "upper": "1.47846162745980563537467848596007973962147368244940451489310976008261116265872666488406450760127807794239796875914457256"
+        },
+        "quadratic_C1_upper": {
+          "lower": "44475.4660948583573758735474171104367027937566063137054138295675422102327405327134101147706948739114693616155186342317781",
+          "upper": "44475.4660948583573758735474171104367027937566063137054138295675422102327405327134101147706948739114693616155189612430938"
+        }
+      },
+      "huge_frequency_materialized": false,
+      "interval_digits": 110,
+      "relative_swirl_error_at_endpoint": {
+        "lower": "1.70113472972992513194847568257399849528498119974714621418818227138638454168091160425483178726558357052061798577684670325e-604",
+        "upper": "1.70113472972992513194847568257399849528498119974714621418818227138638454168091160425483178726558357052061798577684670325e-604"
+      },
+      "shear_to_A6_ratio": {
+        "lower": "0.000001192093762869550488403547205962240695953369140625",
+        "upper": "0.000001192093762869550488403547205962240695953369140625"
+      }
+    }
+  ],
+  "source_hashes": {
+    "results/compact_jet_envelope/README.md": "b0597dab919b3cf0a233b066d14a977385f530b2575d137fc75b3c53d996d915",
+    "results/compact_jet_envelope/bounds.py": "1b2fb4b1d65d45d8ab0042fa14ba8fa1eb61f39ab5040b4c3095dee2ce93ffcd",
+    "results/compact_jet_envelope/evidence.json": "304c78d3a0882d80305c1e37b0e5badc926c6f2e8abed6ecd37776a4cf5931fd",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/loop_modulation_bounds/bounds.py": "8df1510b2b70a58a72a3ff93492719405a8eec90ce26622cf38d05bf48334081",
+    "results/loop_modulation_bounds/evidence.json": "89822b9058906cb2638d8a74f5a024f876b7af7faad4ece73fde71d48f0fbfb1",
+    "results/repair_state_bounds/README.md": "163dce199a65acd22ef68ee7d906a112c1f8dbcb698000f40df848a424af8a4c",
+    "results/repair_state_bounds/audit.py": "e166c146c5203598dd7beadc2ba915f1e30aef2e1271c2e8f85f75e729b376a5",
+    "results/repair_state_bounds/bounds.py": "b1856cdac09f9171913640e286899c6ecdf414a952a442fe0002404552382497",
+    "results/repair_state_bounds/protocol.json": "2c4dfe9d9b1a6682c0fe2de3181ee9d8ffe62ec42e13a430c6ed13b8fa808fe7",
+    "results/repair_state_bounds/requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "results/repair_state_bounds/review.py": "dcdd675b653997a9a06fbb73952ae88d565f3b9022e14f0843f5de1a97d11e15",
+    "results/repair_state_bounds/test_audit.py": "3ac4adcb7bac971b22966e7a744fd2b91b2218b0b415abbeeee64cbec32401e8",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7",
+    "results/stress_realization_audit/bounds.py": "94c5ee914bec4eb91579ab41e4bccb3a9baecbb3564b3a8fcebc226f5c8bb9f0",
+    "results/stress_realization_audit/evidence.json": "8280839e76a55394393c841e2fe2330f80324a80a69db5dd6b76502fe39efb7b",
+    "results/stress_realization_audit/repair.py": "68e1bf778757ffc31d74ef84c54f21a3bfe25d677a3655bd04a5c1905f3c9d12"
+  },
+  "status": "repair-state-bound-and-conditional-frequency-acceptance"
+}

@@ -148,7 +148,15 @@ before claiming a resolution.
 
 ## Practical next decision
 
-The next useful result is either a valid repair estimate enabling the leading
-stress construction, or a concrete failure that changes that construction.
-That is the nearest measurable step toward the target. Full PDE correction,
-smooth forcing and a blow-up lower bound remain beyond it.
+The subsequent [repair-state estimate](results/repair_state_bounds/README.md)
+records a correction-to-state bound and accepts a finite frequency conditional
+on the preceding continuum estimates. This supplies the analytic repair and
+leading-cone acceptance arguments for milestones 1–2. Milestone 0 remains
+open to independent scrutiny; those conditional results are not an end-to-end
+proof or a numerically resolved singular flow.
+
+The next construction package is milestone 3: derive the full physical
+residual and track every derivative/scale cost with N fixed. Then construct
+the physical waves and mean corrections, and verify residual improvement
+and convergence. Smooth forcing and a lower bound for the complete velocity
+remain separate gates. A failure must revise the affected construction.

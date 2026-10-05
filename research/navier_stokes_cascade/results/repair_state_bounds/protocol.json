@@ -1,0 +1,18 @@
+{
+  "status": "repair-state-bound-and-conditional-frequency-acceptance",
+  "parent_commit": "89e00da7d41e8ee0dfb77548e7c299308e73eb55",
+  "input_envelope": "A=C^4096",
+  "coefficient_norm": "max_j max(sup|c_j|,sup|c_j_eta|)",
+  "field_angular_norm": "sup|f|+sup|f_eta|",
+  "patch": "X=rhop*exp(y), 0<y<5",
+  "bump_width": "0.1",
+  "lambda_domain": "0<lambda<=0.01",
+  "Ccorr": "A^128",
+  "coefficient_radius": "A^(-128)",
+  "selected_N": "1+floor(H^32)",
+  "acceptance_conditional_on_inherited_estimates": true,
+  "pressure_state_error_order": 0,
+  "moment_angular_error_order": 1,
+  "interval_digits": [80, 110],
+  "diagnostic_digits": 70
+}

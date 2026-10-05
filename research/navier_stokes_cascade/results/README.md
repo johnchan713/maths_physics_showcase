@@ -124,6 +124,16 @@ field checks detect omitted phase and exponential terms. The repair-to-state
 estimate and its positive-field neighborhood remain open; the proposed
 frequency, full PDE corrections, smooth forcing and blow-up remain unverified.
 
+The subsequent [repair-state estimate](repair_state_bounds/README.md) bounds
+the five correcting bumps on a positive-field coefficient neighborhood and
+propagates their changes through the moments and original pressure formulas.
+It retains inverse-width factors, normalization derivatives and the incoming
+modulation memory. The proposed repair constants suffice, and the finite
+frequency criterion is met conditional on the earlier continuum estimates.
+This completes a conditional leading-cone argument, not the physical wave
+construction or a blow-up proof. The full residual/correction budget,
+convergence, smooth forcing and complete-field divergence remain open.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

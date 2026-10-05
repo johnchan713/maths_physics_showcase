@@ -42,7 +42,13 @@ derive first slow derivatives including the moving inverse phase, and bound
 the state and normalized five-moment errors by `H^16/N`, retaining the
 inverse-lambda loss. This supplies the third estimate, conditional on the
 preceding analytic construction. The actual repair-to-state bound and its
-positive-field neighborhood remain open, so the frequency is still uncertified. Full PDE
+positive-field neighborhood were open at that checkpoint. The later
+[repair-state estimate](results/repair_state_bounds/README.md) now derives
+that neighborhood and the correction-to-state bound, including width losses
+and incoming moment errors. It accepts `N=1+floor(H^32)` analytically,
+conditional on the preceding continuum estimates, completing a conditional
+leading-cone argument. The actual high-frequency flow has not been numerically
+resolved and the inherited foundation has not had independent review. Full PDE
 corrections and admissible smooth forcing follow only after stress realization.
 The goal document and earlier audit narratives retain their checkpoint
 statuses; this paragraph records the latest construction. No blow-up result
