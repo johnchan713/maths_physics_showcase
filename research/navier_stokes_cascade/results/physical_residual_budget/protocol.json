@@ -1,0 +1,18 @@
+{
+  "status": "physical-residual-derived-with-open-C3-and-correction-bounds",
+  "parent_commit": "753501b7c205e6c9073e1c939bbc340dfbf65dc1",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "source_equations": ["4.2", "4.3-4.7", "4.11-4.12", "5.1-5.6", "5.26", "5.41"],
+  "fixed_N": "1+floor(H^32)",
+  "scope": "Unlocalized axisymmetric base and finite coefficient identities; manufactured physical crosschecks; actual derivative constants, coefficient solvability, waves and summation remain open.",
+  "physical_sample_count": 324,
+  "maximum_identity_error": 2e-11,
+  "negative_control_minimum_gap": 1e-4,
+  "maximum_finite_difference_error": 1e-6,
+  "minimum_finite_difference_refinement": 4,
+  "C2_counterexample_frequencies": [8, 32, 128, 512],
+  "phase_counterexample_frequencies": [8, 64, 512],
+  "diagnostic_cutoff": "exp(-sigma); not compactly supported",
+  "required_actual_angular_order_for_full_base_residual": 3,
+  "actual_profile_numerically_resolved": false
+}

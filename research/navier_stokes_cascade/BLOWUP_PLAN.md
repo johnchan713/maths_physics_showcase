@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
-Planning checkpoint: 2026-10-05, based on research commit
-`b822f89792dd408a6e55f33f2de737f08de6dfb9`.
+Updated: 2026-10-05, following research commit
+`753501b7c205e6c9073e1c939bbc340dfbf65dc1`.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -59,34 +59,47 @@ unverified earlier hypothesis as established. A failed argument sends the
 affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
-## Immediate work package: the correction patch
+## Immediate work package: actual residual jets and the first correction
 
-Use the first reserved repair patch already selected in the construction:
-X=rhop exp(y), 0<y<5, with input U=0 and
-E=e(eta) exp[(-1/2-lambda)y]. Keep lambda strictly positive. Use the existing
-two U bumps and three E bumps, with their disjoint supports and exact integrals.
+The [physical residual calculation](results/physical_residual_budget/README.md)
+now gives exact formulas for the unlocalized base and the first positive
+order. It does not pass milestone 3: its constants are conditional on an
+actual final-profile derivative bound. The earlier C2 bound cannot supply
+the third angular moment derivative in radial axial diffusion.
 
-1. Write the exact perturbed fields in terms of the five coefficient functions.
-   Derive a coefficient neighborhood where E remains positive uniformly.
-2. Differentiate the actual bumps. Retain their inverse-width factors and
-   angular derivatives of e and of the coefficients. Bound the resulting
-   changes in a and b with the perturbed E in the denominator.
-3. Integrate all five moment changes, including quadratic terms. Bound their
-   first angular derivatives, then propagate them through the original pressure
-   formulas. Incoming modulation errors must remain in the comparison domain.
-4. Prove Ccorr and r in the norms used by the acceptance criterion. Test the
-   proposed Ccorr=A^128 and r=A^-128; replace them with derived bounds if needed.
-   Their size alone is not a proof.
-5. Combine with the exact small-root condition. Preserve the inverse-lambda
-   loss when normalizing and combining the M/J rows. Establish exact matching
-   of all five moments beyond the patch, not just agreement on a finite grid.
-6. Review the frequency criterion against these bounds and the original cone
-   gaps. Accept N only after all inputs are justified. Otherwise retain the
-   failed condition and revise the construction.
+1. Bound the finalized modulated/repaired fields through the radial and angular
+   orders entering the exact physical residual. Retain phase derivatives of
+   N log X, logarithmic-to-ordinary radial conversion, moving phase maps,
+   bump widths and inverse normalizations. N remains fixed.
+2. Derive the actual third angular moment bound entering Z_-D Z_0 V. State
+   each norm and domain; C2 control of U alone is insufficient. Evaluate a
+   valid annular K for the new component bounds, and bound the axis through
+   the regular Cartesian coefficients F,U,v0,Pi.
+3. Solve the coupled F1,U1,Pi1 equations with lambda=2h on a common inner
+   interval, with compatible regular traces and explicit angular losses.
+   Include V1's D+lambda factor and Pi1_X=2F0F1-Omega0/(2X).
+4. Extend this coefficient into the annulus, restore all five positive-order
+   compatibility moments and retain the required higher-order stress. Prove
+   support and exterior properties for the same corrected fields.
+5. Recompute the full residual with this coefficient, including quadratic
+   products, axial diffusion of the correction and the full wave covariance
+   when waves are introduced. Prove actual improvement in absolute physical
+   units and after fixed derivative orders.
+6. Establish the all-order solvability, derivative constants and summation
+   argument. Cutoffs must act on divergence-preserving potentials; include
+   their product-rule terms. Finite truncations do not give a smooth force
+   through the singular time.
 
-The existing constants for this criterion are beta=1000 and qstar=10^5;
-they also need their stated hypotheses checked. With verified constants, the
-sufficient condition from the prior stress note is
+These steps require continuum estimates. Manufactured crosschecks reject
+omitted terms and numerical cancellation errors but cannot supply those
+estimates. The exact C2 counterexample exposes a missing bound, not an
+irreparable obstruction to the construction.
+
+## Accepted leading-profile frequency, conditional on the foundation
+
+The [repair-state estimate](results/repair_state_bounds/README.md) bounds the
+first reserved repair patch and gives Ccorr=A^128 and r=A^-128. With the
+inherited beta=1000, qstar=10^5 and Cstate=D=H^16, its sufficient criterion is
 
 \[
 N>\max\left\{1,
@@ -94,11 +107,12 @@ N>\max\left\{1,
 16\beta^2q_*D,\frac{4\beta D}{r}\right\}.
 \]
 
-The latest work bounds Cstate and D by H^16 conditional on the preceding
-profile estimates. The proposed N=1+floor(H^32) is still unaccepted.
-Large radial frequencies create large higher radial derivatives. Once N is
-fixed, later physical-scale choices must absorb those constants without
-changing N or relying on circular parameter choices.
+N=1+floor(H^32) meets this criterion analytically, conditional on the earlier
+continuum estimates. The epsilon in this criterion is the cone-state
+tolerance, distinct from the physical expansion parameter q^(2h).
+Large radial frequencies create large higher radial derivatives. Later
+physical-scale choices must absorb those constants without changing N or
+relying on circular parameter choices.
 
 This work package should produce a derivation, exact equation checks,
 outward checks where numerical constants are used, negative controls for
@@ -122,8 +136,8 @@ field. Checking those properties on different surrogates is insufficient.
 
 ## Resource allocation and decision rules
 
-Prioritize the analytic repair and dependency review, followed by the exact
-residual and correction construction. Spend numerical effort on specific
+Prioritize the actual derivative bounds, dependency review and coupled
+correction construction. Spend numerical effort on specific
 algebraic, integration or stability questions that can reject an erroneous
 argument. Do not optimize test counts, extreme parameter values or isolated
 vorticity peaks as a measure of progress.
@@ -155,8 +169,13 @@ leading-cone acceptance arguments for milestones 1–2. Milestone 0 remains
 open to independent scrutiny; those conditional results are not an end-to-end
 proof or a numerically resolved singular flow.
 
-The next construction package is milestone 3: derive the full physical
-residual and track every derivative/scale cost with N fixed. Then construct
-the physical waves and mean corrections, and verify residual improvement
-and convergence. Smooth forcing and a lower bound for the complete velocity
-remain separate gates. A failure must revise the affected construction.
+The [physical residual budget](results/physical_residual_budget/README.md)
+now identifies every unlocalized base term and derives the first correction
+system. The earliest outstanding construction inequality is an actual
+post-modulation derivative bound, including the third angular moment
+derivative required by radial axial diffusion. Milestone 3 remains open.
+After bounding those inputs, solve and extend the first background correction,
+then verify all-order background summation, physical waves, mean corrections,
+residual improvement and convergence. Smooth forcing and a lower bound for
+the complete velocity remain separate gates. A failure must revise the
+affected construction.

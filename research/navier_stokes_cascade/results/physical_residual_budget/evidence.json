@@ -1,0 +1,474 @@
+{
+  "conditional_constant_ledger": {
+    "actual_K_evaluated": false,
+    "axial_coefficient": "20",
+    "axial_second_polynomial": [
+      22,
+      18,
+      4
+    ],
+    "checks": {
+      "axial_component": true,
+      "axial_outward": true,
+      "omega_outward": true,
+      "radial_component": true,
+      "second_operator_dominated": true,
+      "theta_component": true,
+      "theta_outward": true
+    },
+    "conditional_on_final_profile_K": true,
+    "nonnegative_polynomial_difference": [
+      10,
+      46,
+      28
+    ],
+    "omega_coefficient": "17/2",
+    "physical_component_coefficients": [
+      42,
+      440,
+      148
+    ],
+    "proposed_inertial_coefficients": [
+      10,
+      20,
+      20
+    ],
+    "proposed_polynomial": [
+      32,
+      64,
+      32
+    ],
+    "required_inputs": [
+      "F,U,Pi,V ordinary mixed C2 jets",
+      "X and X^-1",
+      "L^-1",
+      "nu"
+    ],
+    "theta_coefficient": "35/2",
+    "viscous_coefficients": [
+      32,
+      200,
+      128
+    ]
+  },
+  "fixtures": {
+    "base": {
+      "F": [
+        [
+          0,
+          0,
+          1.0
+        ],
+        [
+          1,
+          0,
+          0.12
+        ],
+        [
+          0,
+          1,
+          0.08
+        ],
+        [
+          2,
+          0,
+          0.03
+        ],
+        [
+          1,
+          1,
+          -0.02
+        ]
+      ],
+      "U": [
+        [
+          0,
+          0,
+          0.1
+        ],
+        [
+          0,
+          1,
+          0.7
+        ],
+        [
+          1,
+          0,
+          0.25
+        ],
+        [
+          1,
+          1,
+          0.12
+        ],
+        [
+          0,
+          2,
+          -0.05
+        ],
+        [
+          2,
+          0,
+          0.03
+        ]
+      ],
+      "axis_pressure": [
+        [
+          0,
+          0,
+          -1.0
+        ],
+        [
+          0,
+          1,
+          0.2
+        ],
+        [
+          0,
+          2,
+          0.1
+        ]
+      ]
+    },
+    "correction": {
+      "F": [
+        [
+          0,
+          0,
+          0.07
+        ],
+        [
+          1,
+          1,
+          -0.04
+        ],
+        [
+          0,
+          2,
+          0.025
+        ],
+        [
+          2,
+          0,
+          0.015
+        ]
+      ],
+      "Pi": [
+        [
+          0,
+          0,
+          0.04
+        ],
+        [
+          0,
+          1,
+          0.02
+        ],
+        [
+          1,
+          1,
+          0.08
+        ],
+        [
+          2,
+          0,
+          0.03
+        ]
+      ],
+      "U": [
+        [
+          0,
+          0,
+          -0.09
+        ],
+        [
+          0,
+          1,
+          0.11
+        ],
+        [
+          1,
+          0,
+          0.06
+        ],
+        [
+          1,
+          2,
+          -0.02
+        ],
+        [
+          0,
+          3,
+          0.013
+        ]
+      ]
+    }
+  },
+  "flags": {
+    "actual_high_frequency_profile_numerically_resolved": false,
+    "actual_post_modulation_C3_bound_verified": false,
+    "blowup_verified": false,
+    "first_correction_for_actual_profile_solved": false,
+    "first_positive_order_equations_derived": true,
+    "formal_proof_assistant_certificate": false,
+    "full_PDE_corrections_verified": false,
+    "full_physical_residual_budget_verified": false,
+    "full_physical_stress_wave_construction_verified": false,
+    "full_unlocalized_axisymmetric_residual_identity_derived": true,
+    "independent_foundation_review_completed": false,
+    "inherited_C2_does_not_bound_full_residual": true,
+    "physical_derivative_exponent_ledger_derived": true,
+    "relies_on_inherited_analytic_construction": true,
+    "smooth_force_verified": false
+  },
+  "gates": {
+    "C2_and_large_N_insufficiency_detected": true,
+    "actual_PDE_and_blowup_unverified": true,
+    "conditional_operator_constant_arithmetic": true,
+    "derivative_loss_and_finite_order_limits": true,
+    "divergence_preserving_cutoff_product_rule": true,
+    "inherited_bytes_preserved": true,
+    "manufactured_fixtures_and_noncompact_cutoff_explicit": true,
+    "physical_coordinate_and_coefficient_identities": true,
+    "scalar_stencil_and_omission_controls": true
+  },
+  "inherited_provenance": {
+    "results/compact_jet_envelope/README.md": true,
+    "results/compact_jet_envelope/bounds.py": true,
+    "results/compact_jet_envelope/evidence.json": true,
+    "results/loop_modulation_bounds/README.md": true,
+    "results/loop_modulation_bounds/bounds.py": true,
+    "results/loop_modulation_bounds/evidence.json": true,
+    "results/repair_state_bounds/README.md": true,
+    "results/repair_state_bounds/audit.py": true,
+    "results/repair_state_bounds/bounds.py": true,
+    "results/repair_state_bounds/protocol.json": true,
+    "results/repair_state_bounds/requirements.txt": true,
+    "results/repair_state_bounds/review.py": true,
+    "results/repair_state_bounds/test_audit.py": true,
+    "results/stress_realization_audit/README.md": true,
+    "results/stress_realization_audit/bounds.py": true,
+    "results/stress_realization_audit/evidence.json": true,
+    "results/stress_realization_audit/repair.py": true
+  },
+  "protocol": {
+    "C2_counterexample_frequencies": [
+      8,
+      32,
+      128,
+      512
+    ],
+    "actual_profile_numerically_resolved": false,
+    "diagnostic_cutoff": "exp(-sigma); not compactly supported",
+    "fixed_N": "1+floor(H^32)",
+    "maximum_finite_difference_error": 1e-06,
+    "maximum_identity_error": 2e-11,
+    "minimum_finite_difference_refinement": 4,
+    "negative_control_minimum_gap": 0.0001,
+    "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "parent_commit": "753501b7c205e6c9073e1c939bbc340dfbf65dc1",
+    "phase_counterexample_frequencies": [
+      8,
+      64,
+      512
+    ],
+    "physical_sample_count": 324,
+    "required_actual_angular_order_for_full_base_residual": 3,
+    "scope": "Unlocalized axisymmetric base and finite coefficient identities; manufactured physical crosschecks; actual derivative constants, coefficient solvability, waves and summation remain open.",
+    "source_equations": [
+      "4.2",
+      "4.3-4.7",
+      "4.11-4.12",
+      "5.1-5.6",
+      "5.26",
+      "5.41"
+    ],
+    "status": "physical-residual-derived-with-open-C3-and-correction-bounds"
+  },
+  "remaining_obligations": [
+    "actual_post_modulation_radial_and_C3_angular_bounds",
+    "positive_order_solvability_and_five_moment_extension",
+    "full_wave_covariance_and_all_nonlinear_interactions",
+    "all_order_PDE_correction_summation",
+    "localization_and_smooth_forcing_through_T",
+    "complete_field_blowup_lower_bound_and_energy",
+    "independent_review_of_inherited_continuum_estimates"
+  ],
+  "resolved_obligations": [
+    "unlocalized_axisymmetric_residual_identity",
+    "first_positive_order_coefficient_equations",
+    "physical_derivative_exponent_ledger"
+  ],
+  "reviews": {
+    "cutoff": {
+      "checks": {
+        "naive_product_rejected": true,
+        "potential_product_preserves_divergence": true
+      },
+      "diagnostic_cutoff_is_compact": false,
+      "manufactured": true,
+      "naive_divergence": 0.7363704197977395,
+      "streamfunction_divergence": 2.220446049250313e-16
+    },
+    "derivative_gap": {
+      "C2_counterexample": [
+        {
+          "C2_component_bounds": [
+            "1/64",
+            "1/8",
+            "1"
+          ],
+          "formula_error": 8.881784197001252e-16,
+          "m": 8,
+          "radial_axial_diffusion_coefficient": "49/8",
+          "third_angular_amplitude": 8
+        },
+        {
+          "C2_component_bounds": [
+            "1/1024",
+            "1/32",
+            "1"
+          ],
+          "formula_error": 3.552713678800501e-15,
+          "m": 32,
+          "radial_axial_diffusion_coefficient": "721/32",
+          "third_angular_amplitude": 32
+        },
+        {
+          "C2_component_bounds": [
+            "1/16384",
+            "1/128",
+            "1"
+          ],
+          "formula_error": 0.0,
+          "m": 128,
+          "radial_axial_diffusion_coefficient": "11473/128",
+          "third_angular_amplitude": 128
+        },
+        {
+          "C2_component_bounds": [
+            "1/262144",
+            "1/512",
+            "1"
+          ],
+          "formula_error": 0.0,
+          "m": 512,
+          "radial_axial_diffusion_coefficient": "183505/512",
+          "third_angular_amplitude": 512
+        }
+      ],
+      "checks": {
+        "C2_is_uniform": true,
+        "larger_N_not_a_C2_smallness_argument": true,
+        "radial_viscosity_formula": true,
+        "radial_viscosity_unbounded_in_C2_family": true,
+        "third_derivative_grows": true
+      },
+      "fixed_phase_counterexample": [
+        {
+          "N": 8,
+          "first_y_amplitude": 1,
+          "second_y_amplitude": 8,
+          "value_amplitude": "1/8"
+        },
+        {
+          "N": 64,
+          "first_y_amplitude": 1,
+          "second_y_amplitude": 64,
+          "value_amplitude": "1/64"
+        },
+        {
+          "N": 512,
+          "first_y_amplitude": 1,
+          "second_y_amplitude": 512,
+          "value_amplitude": "1/512"
+        }
+      ],
+      "manufactured": true
+    },
+    "exponents": {
+      "checks": {
+        "every_extra_time_derivative_needs_more_orders": true,
+        "finite_order_not_all_derivatives": true,
+        "radial_residual_still_singular_at_order_one": true,
+        "tangential_axial_diffusion_still_singular": true
+      },
+      "h": "1/200",
+      "manufactured_parameter_example": true,
+      "rows": [
+        {
+          "minimum_sufficient_correction_order": 151,
+          "time_derivatives": 0
+        },
+        {
+          "minimum_sufficient_correction_order": 251,
+          "time_derivatives": 1
+        },
+        {
+          "minimum_sufficient_correction_order": 351,
+          "time_derivatives": 2
+        }
+      ]
+    },
+    "omissions": {
+      "checks": {
+        "missing_positive_order_lambda": true,
+        "missing_symmetric_rz_axial_divergence": true,
+        "omitted_axial_diffusion": true,
+        "omitted_swirl_curvature": true,
+        "reversed_leading_stress_sign": true,
+        "scalar_only_stencil_accuracy": true,
+        "scalar_only_stencil_refinement": true,
+        "wrong_second_axial_power": true
+      },
+      "finite_difference_errors": [
+        2.6094618995499705e-07,
+        1.6214568105212577e-08,
+        1.0641194122776434e-09
+      ],
+      "manufactured": true,
+      "negative_control_gaps": {
+        "missing_positive_order_lambda": 0.00016921190826594407,
+        "missing_symmetric_rz_axial_divergence": 0.4702568339615749,
+        "omitted_axial_diffusion": 1.7311454709967709,
+        "omitted_swirl_curvature": 5.855983032444219,
+        "reversed_leading_stress_sign": 5.534515299390242,
+        "wrong_second_axial_power": 0.01683785403358029
+      }
+    },
+    "physical": {
+      "checks": {
+        "base": true,
+        "divergence": true,
+        "finite_correction": true,
+        "full_symmetric_stress": true,
+        "leading_stress": true,
+        "old_ansatz": true
+      },
+      "manufactured": true,
+      "maxima": {
+        "base": 5.432352860307287e-15,
+        "divergence": 2.7200464103316335e-15,
+        "finite_correction": 5.417905813347299e-15,
+        "full_symmetric_stress": 4.518245302149846e-14,
+        "leading_stress": 5.551115123125783e-16,
+        "old_ansatz": 0.0
+      },
+      "physical_sample_count": 324
+    }
+  },
+  "source_hashes": {
+    "results/paper_profile_audit/profiles.py": "e0ae41902d11c67b1bf9123f48e82ab94243e9c3bbaca4ddbf2dec579bd5f558",
+    "results/paper_profile_audit/protocol.json": "3bdcf67a3d3f91247d7a36a9149b3c61aa7c151a7532ee9584be2f1843c94532",
+    "results/physical_residual_budget/README.md": "9d383e348cedba9cb7980f2566b10af67b0ab8f9b1ec08c391f9ce6f9b2a4e4c",
+    "results/physical_residual_budget/audit.py": "eb7f17c87f578653ef98de16604cfb9a591764c627831616e23f04446616725a",
+    "results/physical_residual_budget/bounds.py": "d270a532e4bf84b0aa0664f5e8d4796ba16e39a76ebc9365491d3da00de75a23",
+    "results/physical_residual_budget/protocol.json": "371969edb45c85702f347494f6a7f4fe06b744be27c279455e2c52f1851e6741",
+    "results/physical_residual_budget/requirements.txt": "6bd31e587c06276bf231cec25395b5d4a0b1e38c4d2b00813b2dd96aad14f17a",
+    "results/physical_residual_budget/residual.py": "9c1046109a5ba2b95839f96b2d4ae2007d8393ba04577edcd06228bcdfc47a18",
+    "results/physical_residual_budget/review.py": "b80d8e11c1b4817329442506e73a51f66562c1485c9cca25119c3320bc0ee76f",
+    "results/physical_residual_budget/test_audit.py": "d63dd695269574db5c64c9b35a98008af5fc08a1848692a5d298f76dba24ceb0",
+    "results/repair_state_bounds/evidence.json": "78d12a7000cf0ef78a60ea05ee76ef292e551d5f5c9e6d72af6b35eca015632a"
+  },
+  "status": "physical-residual-derived-with-open-C3-and-correction-bounds"
+}

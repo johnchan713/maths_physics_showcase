@@ -146,6 +146,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/repair_state_bounds/evidence.json \
             --output navier_stokes_repair_state_bounds_ci.json
 
+      - name: Check full base residual and preserve the open actual derivative budget
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/physical_residual_budget/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/physical_residual_budget/audit.py \
+            --verify-record research/navier_stokes_cascade/results/physical_residual_budget/evidence.json \
+            --output navier_stokes_physical_residual_budget_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v

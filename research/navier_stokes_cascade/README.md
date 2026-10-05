@@ -15,9 +15,9 @@ measure how close the construction is to a proof.
 
 The [blow-up plan](BLOWUP_PLAN.md) records the current route, ordered proof
 obligations, and pass/fail conditions. Its immediate work package is the
-five-moment correction-to-state estimate, alongside a review of the inherited
-mathematical bounds. Full residual corrections, smooth forcing and an actual
-blow-up lower bound each have separate acceptance conditions.
+actual post-modulation derivative budget and first background correction,
+alongside a review of the inherited mathematical bounds. Smooth forcing and
+an actual blow-up lower bound each have separate acceptance conditions.
 
 The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
@@ -53,6 +53,17 @@ corrections and admissible smooth forcing follow only after stress realization.
 The goal document and earlier audit narratives retain their checkpoint
 statuses; this paragraph records the latest construction. No blow-up result
 or completed Navier-Stokes solution is claimed.
+
+The subsequent [physical residual budget](results/physical_residual_budget/README.md)
+derives every component of the unlocalized axisymmetric base residual and
+the coupled first positive-order correction equations. Manufactured Cartesian
+checks retain all viscosity, pressure, curvature and finite-series products.
+The radial axial-diffusion term needs a third angular moment derivative;
+an exact family shows that the inherited C2 bound alone cannot control it.
+Conditional annular constants, physical derivative losses and the
+divergence-preserving cutoff product rule are recorded. The actual final-profile
+constant and first correction solution remain open, so the full residual
+milestone, PDE correction sum, smooth forcing and blow-up are not verified.
 
 ## Exact scope
 

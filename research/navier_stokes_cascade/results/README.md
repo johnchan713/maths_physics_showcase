@@ -134,6 +134,17 @@ This completes a conditional leading-cone argument, not the physical wave
 construction or a blow-up proof. The full residual/correction budget,
 convergence, smooth forcing and complete-field divergence remain open.
 
+The later [physical residual budget](physical_residual_budget/README.md)
+derives the full unlocalized base residual, all products in finite coefficient
+sums and the coupled first correction equations. It gives conditional annular
+constants and a physical derivative exponent ledger. Six omission controls,
+a scalar stencil and 324 manufactured physical points check the algebra;
+16 focused tests and nine gates pass. An exact C2-bounded family has unbounded
+radial axial diffusion, exposing the needed third angular moment estimate.
+Fixed-frequency radial losses and divergence-preserving cutoff terms are
+retained. The actual derivative constant, first correction solution, full
+wave tensor, all-order summation, smooth force and blow-up remain unverified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)
