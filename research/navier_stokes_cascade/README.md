@@ -13,6 +13,12 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
+The [blow-up plan](BLOWUP_PLAN.md) records the current route, ordered proof
+obligations, and pass/fail conditions. Its immediate work package is the
+five-moment correction-to-state estimate, alongside a review of the inherited
+mathematical bounds. Full residual corrections, smooth forcing and an actual
+blow-up lower bound each have separate acceptance conditions.
+
 The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
 that core to the reference exterior. Its five normalized incoming moment
