@@ -65,6 +65,19 @@ divergence-preserving cutoff product rule are recorded. The actual final-profile
 constant and first correction solution remain open, so the full residual
 milestone, PDE correction sum, smooth forcing and blow-up are not verified.
 
+The later [first inner correction](results/first_correction_construction/README.md)
+extends the actual unmodulated incoming-moment transfer to factorial angular
+C3 and constructs the first background coefficient on `X<=3/Lambda`,
+conditional on the inherited analytic core. A regular six-variable system,
+the actual core envelope `C_op=C^16` and a sparse Picard majorant give a
+convergent analytic correction. Independent physical coefficient assembly,
+manufactured radial refinement and linear five-moment controls check the
+algebra. The leading swirl survives this one core correction at sufficiently
+small q. The finalized post-modulation estimate needs original moment C4
+inputs; actual annular extension and support, physical waves, the infinite
+sum, smooth force and complete-field blow-up remain open. This does not
+change any earlier frozen audit or promote its diagnostic data.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data

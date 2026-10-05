@@ -153,6 +153,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/physical_residual_budget/evidence.json \
             --output navier_stokes_physical_residual_budget_ci.json
 
+      - name: Check conditional actual inner correction and retain global gaps
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/first_correction_construction/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/first_correction_construction/audit.py \
+            --verify-record research/navier_stokes_cascade/results/first_correction_construction/evidence.json \
+            --output navier_stokes_first_correction_construction_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -545,6 +552,8 @@ jobs:
             navier_stokes_compact_jet_envelope_ci.json
             navier_stokes_loop_modulation_bounds_ci.json
             navier_stokes_repair_state_bounds_ci.json
+            navier_stokes_physical_residual_budget_ci.json
+            navier_stokes_first_correction_construction_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

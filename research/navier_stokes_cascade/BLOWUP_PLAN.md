@@ -1,7 +1,8 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-05, following research commit
-`753501b7c205e6c9073e1c939bbc340dfbf65dc1`.
+`5a94f20dfc1de702a507cc9764bfc4a68ff01ab8` and the first-inner-correction
+checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -67,6 +68,24 @@ order. It does not pass milestone 3: its constants are conditional on an
 actual final-profile derivative bound. The earlier C2 bound cannot supply
 the third angular moment derivative in radial axial diffusion.
 
+The executed [first-correction checkpoint](results/first_correction_construction/README.md)
+now gives a conditional actual inner analytic coefficient on `X<=3/Lambda`,
+strictly inside the protected leading core. Its six-variable system has an
+explicit actual-core envelope `C_op=C^16`; a sparse Picard argument proves
+convergence without requiring a tiny product of radius and operator bound.
+The original incoming moment transfer extends to factorial C3, and the first
+positive-order five-moment map has a linear inverse. A protected-core lower
+bound survives this one correction at sufficiently small q. These are
+conditional continuum arguments and separate manufactured algebra checks;
+they are not a completed global first correction or blow-up proof.
+
+The next derivative work is sharper: the loop's third slow derivative needs
+stress-coordinate C3, and those coordinates already differentiate the moments.
+Thus original moment C4 input is needed. The new unmodulated C3 transfer does
+not close the finalized post-modulation bound. In parallel, the constructed
+coefficient can be extended into the annulus only after checking the actual
+I3 support/memory hypotheses, higher-order stress and all five tails.
+
 1. Bound the finalized modulated/repaired fields through the radial and angular
    orders entering the exact physical residual. Retain phase derivatives of
    N log X, logarithmic-to-ordinary radial conversion, moving phase maps,
@@ -75,9 +94,9 @@ the third angular moment derivative in radial axial diffusion.
    each norm and domain; C2 control of U alone is insufficient. Evaluate a
    valid annular K for the new component bounds, and bound the axis through
    the regular Cartesian coefficients F,U,v0,Pi.
-3. Solve the coupled F1,U1,Pi1 equations with lambda=2h on a common inner
-   interval, with compatible regular traces and explicit angular losses.
-   Include V1's D+lambda factor and Pi1_X=2F0F1-Omega0/(2X).
+3. Review the constructed inner F1,U1,Pi1 coefficient, its core operator
+   envelope and sparse angular-loss bound. Carry it beyond `X=3/Lambda`
+   while retaining V1's D+lambda factor and Pi1_X=2F0F1-Omega0/(2X).
 4. Extend this coefficient into the annulus, restore all five positive-order
    compatibility moments and retain the required higher-order stress. Prove
    support and exterior properties for the same corrected fields.
@@ -121,6 +140,24 @@ There is no defensible estimate in hours or percent for the complete proof.
 Even success in every block leaves all-order background and wave corrections,
 divergence-preserving summation, forcing smoothness through T, and the energy
 and blow-up estimates for the same complete field to establish.
+
+### Executed work and the next block
+
+The first-correction checkpoint executes the core part of this block. It gives
+the C3 transfer before modulation, identifies the extra C4 loop input, derives
+and constructs a conditional actual first inner background coefficient, checks
+the linear patch moments and supplies a one-correction core lower bound.
+It does not complete the final-profile residual estimate or global extension.
+
+| Next focused budget | Concrete output | Why it matters |
+|---|---|---|
+| 0–2 hours | Original angular C4 moment transfer; then the loop's third slow derivative and moving-phase costs, or a precise failed inequality | Supplies the missing input for the final third-angular viscous bound |
+| 2–4 hours | Actual I3 support/memory ledger and extension of the convergent core coefficient, with five linear moment corrections and higher stress tails | Turns the local background coefficient into a compatible global coefficient |
+| 4–6 hours | Full residual of that extended coefficient, with quadratic terms, its axial diffusion and the required physical wave interactions; reproduce and push | Tests an actual residual gain for the same field and records the next all-order obligation |
+
+These are time budgets for research outputs, not completion deadlines or a
+measure of distance to a blow-up proof. If either analytic input remains open,
+retain it explicitly while progressing on independent equations.
 
 ## Accepted leading-profile frequency, conditional on the foundation
 

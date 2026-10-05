@@ -145,6 +145,19 @@ Fixed-frequency radial losses and divergence-preserving cutoff terms are
 retained. The actual derivative constant, first correction solution, full
 wave tensor, all-order summation, smooth force and blow-up remain unverified.
 
+The subsequent [first inner correction](first_correction_construction/README.md)
+supplies a conditional convergent analytic first background coefficient for
+the actual core on `X<=3/Lambda`. It extends the incoming unmodulated C3
+transfer, bounds the actual core matrices by `C^16`, and uses their sparse
+angular-derivative block to control the Picard series. A first-order patch
+correction uses the earlier five-moment matrix linearly, with no small-target
+restriction; its actual annular support hypotheses remain open. Independent
+system/residual identities and manufactured recurrence refinement check the
+algebra. A lower bound survives this one background correction on the core.
+The post-modulation derivative gap is now traced to original moment C4 and
+loop C3 inputs. Global extension, waves, summation, force, energy and blow-up
+of the complete field remain unverified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)
