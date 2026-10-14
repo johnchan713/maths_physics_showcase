@@ -139,6 +139,16 @@ global field or its constants. The physical mean solve and complete
 nonlinear residual cycle remain open. Covariance and linear gains alone
 do not give smooth forcing or a complete-field blow-up proof.
 
+The [compact-mean checkpoint](results/compact_mean_corrections/README.md)
+now supplies the conditional radial-path, pressure, temporal and signed
+five-equation mean maps. It derives the complete mean balances from every
+covariance entry and retains the moving axial pressure-bump moment. Exact
+recomputation of the same velocity yields a conditional compatibility-defect
+gain, with radial memory, viscosity and the new velocity square retained.
+Actual primary mean initialization, all wave/mean interactions and the
+complete residual cycle are still open. The preceding pulse checkpoint's
+32 tests and frozen evidence reproduce; its conditional scope is unchanged.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
@@ -152,9 +162,11 @@ do not give smooth forcing or a complete-field blow-up proof.
 4. Verify the signed higher-stress corrections and weighted edge estimates
    at the wave interface. Inverse edge-distance powers remain; small q alone
    does not prove uniform cone stability at the flat stress boundaries.
-5. Construct the physical mean corrections, enforce the exact integral
-   constraints and control every wave/background and wave/wave interaction.
-   Prove improvement of the full residual in fixed physical derivative norms.
+5. Apply the compact mean maps to the actual primary wave covariance and
+   verify initialization and every current-size hypothesis. Then control
+   all wave/background, wave/wave and wave/mean interactions and source
+   support after the complete ordered cycle. Prove improvement of the full
+   residual in fixed physical derivative norms.
 6. Sum the full divergence-preserving correction sequence, then localize and
    initialize the SAME field. Establish smooth compact forcing through T,
    energy control and a lower bound surviving the physical wave corrections.
@@ -212,9 +224,9 @@ flat augmented background error does not cancel the stress by itself.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Derive the physical mean pressure source and compatibility integrals from the complete exact-curl covariance, retaining the axial pressure term | Identifies the mean equations left after the new conditional pulse/linear bounds |
-| 2–4 hours | Construct compact divergence-free mean updates for the auxiliary oscillation and moment defects, with the actual radial memory and edge weights | Tests solvability without changing the prescribed inner/outer pressure data |
-| 4–6 hours | Recompute the same field's nonlinear, old/new wave and mean interactions; prove a positive gain for a complete cycle or isolate the blocking inequality, then push | Addresses the full residual improvement that covariance and linear gains do not establish |
+| 0–2 hours | Apply the new conditional mean maps to the primary covariance; prove the initial wave, mean and compatibility-defect orders for the same field | Supplies the input state needed before a cycle gain can be used |
+| 2–4 hours | Bound the sourced wave and signed stress increments, their quadratic covariance and their interactions with the complete current means | Tests the nonzero-harmonic and stress gains missing from the mean-only checkpoint |
+| 4–6 hours | Verify support, smooth source extension and pulse envelopes after mean operations; close all three full-cycle inequalities or retain the exact failure, then push | Addresses the full residual improvement that pulse, covariance and compatibility-defect gains do not establish |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,

@@ -226,6 +226,17 @@ and truncated covariance quadrature are diagnostics. Actual global values,
 the physical mean solve, all nonlinear interactions, a complete residual
 cycle and blow-up remain unverified. Earlier evidence is unchanged.
 
+The [compact mean corrections](compact_mean_corrections/README.md) continue
+with the full six-entry covariance, radial phase-path primitives, compact
+pressure and divergence-free mean maps. The integrated axial equation keeps
+the full derivative of the moving pressure-bump moment times its radial
+defect. A fixed signed five-equation map preserves the velocity moments;
+its exact nonlinear defect changes have a conditional positive epsilon
+gain under the stated current-size bounds. These mean maps and manufactured
+checks do not supply actual primary initialization, nonzero-harmonic source
+closure or a complete residual-cycle gain. Forcing, energy and blow-up
+remain open, and all earlier records remain frozen.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

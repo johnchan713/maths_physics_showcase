@@ -145,6 +145,19 @@ and stiff-pulse checks do not evaluate the actual global background or
 select its constants. The complete nonlinear mean/residual cycle, forcing,
 energy and blow-up remain open; all prior records stay frozen.
 
+The [compact mean corrections](results/compact_mean_corrections/README.md)
+now derive the complete six-entry covariance mean balances, phase-path
+radial inverses, compact pressure and divergence-free mean velocity maps.
+The axial compatibility identity retains the full derivative of the moving
+pressure-bump moment times its radial defect. A fixed signed five-equation
+inverse preserves both velocity moments; recomputing the same field retains
+its nonlinear remainders and gives a conditional gain for the three scalar
+compatibility defects. This supplies the mean maps under explicit size and
+foundation hypotheses, not the actual primary mean initialization or a gain
+for a complete wave/mean residual cycle. Manufactured curls, edge-split
+pressure quadrature, Fourier path identities and bump matrices crosscheck
+the formulas; the actual global fields remain unevaluated.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data

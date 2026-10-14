@@ -195,6 +195,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/actual_band_pulse_bounds/evidence.json \
             --output navier_stokes_actual_band_pulse_bounds_ci.json
 
+      - name: Check compact means and conditional compatibility-defect gain
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/compact_mean_corrections/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/compact_mean_corrections/audit.py \
+            --verify-record research/navier_stokes_cascade/results/compact_mean_corrections/evidence.json \
+            --output navier_stokes_compact_mean_corrections_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -594,6 +601,7 @@ jobs:
             navier_stokes_background_summation_ci.json
             navier_stokes_physical_wave_interface_ci.json
             navier_stokes_actual_band_pulse_bounds_ci.json
+            navier_stokes_compact_mean_corrections_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

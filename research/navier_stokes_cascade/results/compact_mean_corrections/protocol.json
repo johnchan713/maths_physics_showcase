@@ -1,0 +1,39 @@
+{
+  "actual_profile_frequency_and_parameters": "unchanged inherited N, h and positive lambda",
+  "diagnostic_data": "manufactured compact curls and means, finite Fourier modes and fixed bump moments",
+  "diagnostic_kappa": "1/100000",
+  "diagnostic_moment_lambdas": [
+    ".2",
+    ".05",
+    ".001"
+  ],
+  "diagnostic_normalized_epsilon": 0.13,
+  "diagnostic_patch_amplitudes": [
+    "1.3",
+    "-.8"
+  ],
+  "diagnostic_precision": 80,
+  "diagnostic_pressure_nodes_per_support_segment": 96,
+  "diagnostic_pressure_z_five_point_step": 0.002,
+  "diagnostic_radial_inverse_exponent": 2,
+  "diagnostic_radial_scales": [
+    1,
+    8,
+    64,
+    512
+  ],
+  "diagnostic_radial_source": "degree-16 polynomial in U with C7 zero extension; not the C-infinity continuum source",
+  "diagnostic_refined_pressure_nodes_per_support_segment": 128,
+  "diagnostic_refined_pressure_z_five_point_step": 0.001,
+  "integrated_identity_absolute_tolerance": 1e-08,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "6498412c39cf120bea94b90c1f25fc33bf2cea8a",
+  "physical_identity_relative_tolerance": 2e-10,
+  "scope": "Conditional compact mean maps and slow compatibility-defect gain. Actual global mean initialization, complete residual cycle, forcing, energy and blow-up remain open.",
+  "source_equations": [
+    "6.2",
+    "6.6",
+    "8.1-8.27"
+  ],
+  "status": "conditional-compact-mean-inverses-and-compatibility-defect-gain"
+}
