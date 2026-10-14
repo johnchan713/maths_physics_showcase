@@ -1,0 +1,763 @@
+{
+  "flags": {
+    "actual_band_phase_and_pulse_uniform_bounds_verified": false,
+    "actual_band_support_descent_and_all_cross_interactions_verified": false,
+    "actual_mean_correctors_constructed": false,
+    "blowup_verified": false,
+    "compact_manufactured_physical_wave_checked_in_two_coordinates": true,
+    "complete_field_blowup_lower_bound_verified": false,
+    "complete_field_energy_verified": false,
+    "conditional_moving_normal_pulse_propagator_argument_supplied": true,
+    "exact_real_curl_and_full_covariance_identity_supplied": true,
+    "formal_proof_assistant_certificate": false,
+    "full_PDE_corrections_verified": false,
+    "full_cylindrical_mean_residual_interface_supplied": true,
+    "full_physical_residual_improvement_verified": false,
+    "full_physical_stress_wave_construction_verified": false,
+    "generic_kinematic_wave_residual_obstruction_supplied": true,
+    "independent_foundation_review_completed": false,
+    "normalized_reference_shear_viscosity_pulse_checked": true,
+    "smooth_force_verified": false,
+    "uniform_actual_signed_inverse_and_edge_weights_verified": false
+  },
+  "gates": {
+    "all_inherited_bytes_preserved": true,
+    "full_covariance": true,
+    "full_residual": true,
+    "mean_pressure": true,
+    "physical_coordinates": true,
+    "reference_and_identity_results_not_promoted_to_actual_waves": true,
+    "reference_pulses": true
+  },
+  "inherited_provenance": {
+    "angular_c2_transfer:results/angular_c2_transfer/README.md": true,
+    "angular_c2_transfer:results/angular_c2_transfer/audit.py": true,
+    "angular_c2_transfer:results/angular_c2_transfer/bounds.py": true,
+    "angular_c2_transfer:results/angular_c2_transfer/jets.py": true,
+    "angular_c2_transfer:results/angular_c2_transfer/protocol.json": true,
+    "angular_c2_transfer:results/angular_c2_transfer/requirements.txt": true,
+    "angular_c2_transfer:results/angular_c2_transfer/review.py": true,
+    "angular_c2_transfer:results/angular_c2_transfer/test_audit.py": true,
+    "angular_c2_transfer:results/axial_stress_audit/bounds.py": true,
+    "angular_c2_transfer:results/axis_core_attachment/README.md": true,
+    "angular_c2_transfer:results/axis_core_attachment/bounds.py": true,
+    "angular_c2_transfer:results/axis_core_attachment/evidence.json": true,
+    "angular_c2_transfer:results/axis_matching_audit/README.md": true,
+    "angular_c2_transfer:results/axis_matching_audit/annulus.py": true,
+    "angular_c2_transfer:results/axis_matching_audit/bounds.py": true,
+    "angular_c2_transfer:results/axis_matching_audit/evidence.json": true,
+    "angular_c2_transfer:results/axis_matching_audit/moments.py": true,
+    "angular_c2_transfer:results/joined_stress_construction/README.md": true,
+    "angular_c2_transfer:results/joined_stress_construction/construction.py": true,
+    "angular_c2_transfer:results/joined_stress_construction/evidence.json": true,
+    "annular_first_correction:GOAL.md": true,
+    "annular_first_correction:results/annular_first_correction/README.md": true,
+    "annular_first_correction:results/annular_first_correction/audit.py": true,
+    "annular_first_correction:results/annular_first_correction/checks.py": true,
+    "annular_first_correction:results/annular_first_correction/extension.py": true,
+    "annular_first_correction:results/annular_first_correction/fixtures.py": true,
+    "annular_first_correction:results/annular_first_correction/protocol.json": true,
+    "annular_first_correction:results/annular_first_correction/requirements.txt": true,
+    "annular_first_correction:results/annular_first_correction/test_audit.py": true,
+    "annular_first_correction:results/axis_core_attachment/evidence.json": true,
+    "annular_first_correction:results/first_correction_construction/evidence.json": true,
+    "annular_first_correction:results/heat_exterior_audit/evidence.json": true,
+    "annular_first_correction:results/higher_jet_budget/evidence.json": true,
+    "annular_first_correction:results/repair_state_bounds/evidence.json": true,
+    "annular_first_correction:results/stress_realization_audit/evidence.json": true,
+    "axial_stress_audit:axial_stress_audit/README.md": true,
+    "axial_stress_audit:axial_stress_audit/audit.py": true,
+    "axial_stress_audit:axial_stress_audit/bounds.py": true,
+    "axial_stress_audit:axial_stress_audit/diagnostics.py": true,
+    "axial_stress_audit:axial_stress_audit/protocol.json": true,
+    "axial_stress_audit:axial_stress_audit/requirements.txt": true,
+    "axial_stress_audit:axial_stress_audit/test_audit.py": true,
+    "axial_stress_audit:outer_pressure_pilot/evidence.json": true,
+    "axial_stress_audit:outer_pressure_pilot/protocol.json": true,
+    "axial_stress_audit:outer_pressure_pilot/schedule.py": true,
+    "axis_core_attachment:results/axis_core_attachment/README.md": true,
+    "axis_core_attachment:results/axis_core_attachment/audit.py": true,
+    "axis_core_attachment:results/axis_core_attachment/bounds.py": true,
+    "axis_core_attachment:results/axis_core_attachment/identities.py": true,
+    "axis_core_attachment:results/axis_core_attachment/protocol.json": true,
+    "axis_core_attachment:results/axis_core_attachment/requirements.txt": true,
+    "axis_core_attachment:results/axis_core_attachment/test_audit.py": true,
+    "axis_core_attachment:results/axis_matching_audit/README.md": true,
+    "axis_core_attachment:results/axis_matching_audit/annulus.py": true,
+    "axis_core_attachment:results/axis_matching_audit/bounds.py": true,
+    "axis_core_attachment:results/axis_matching_audit/evidence.json": true,
+    "axis_core_attachment:results/axis_matching_audit/moments.py": true,
+    "axis_core_attachment:results/heat_exterior_audit/evidence.json": true,
+    "axis_core_attachment:results/outer_pressure_pilot/schedule.py": true,
+    "axis_matching_audit:results/axial_stress_audit/bounds.py": true,
+    "axis_matching_audit:results/axis_matching_audit/README.md": true,
+    "axis_matching_audit:results/axis_matching_audit/annulus.py": true,
+    "axis_matching_audit:results/axis_matching_audit/audit.py": true,
+    "axis_matching_audit:results/axis_matching_audit/bounds.py": true,
+    "axis_matching_audit:results/axis_matching_audit/moments.py": true,
+    "axis_matching_audit:results/axis_matching_audit/protocol.json": true,
+    "axis_matching_audit:results/axis_matching_audit/requirements.txt": true,
+    "axis_matching_audit:results/axis_matching_audit/test_audit.py": true,
+    "axis_matching_audit:results/heat_exterior_audit/README.md": true,
+    "axis_matching_audit:results/heat_exterior_audit/bounds.py": true,
+    "axis_matching_audit:results/heat_exterior_audit/evidence.json": true,
+    "axis_matching_audit:results/heat_exterior_audit/protocol.json": true,
+    "axis_matching_audit:results/outer_pressure_pilot/schedule.py": true,
+    "background_summation:GOAL.md": true,
+    "background_summation:results/annular_first_correction/evidence.json": true,
+    "background_summation:results/axis_core_attachment/evidence.json": true,
+    "background_summation:results/background_summation/README.md": true,
+    "background_summation:results/background_summation/audit.py": true,
+    "background_summation:results/background_summation/checks.py": true,
+    "background_summation:results/background_summation/hierarchy.py": true,
+    "background_summation:results/background_summation/protocol.json": true,
+    "background_summation:results/background_summation/requirements.txt": true,
+    "background_summation:results/background_summation/summation.py": true,
+    "background_summation:results/background_summation/test_audit.py": true,
+    "background_summation:results/first_correction_construction/evidence.json": true,
+    "background_summation:results/heat_exterior_audit/evidence.json": true,
+    "background_summation:results/higher_jet_budget/evidence.json": true,
+    "background_summation:results/physical_residual_budget/evidence.json": true,
+    "background_summation:results/stress_realization_audit/evidence.json": true,
+    "compact_jet_envelope:results/angular_c2_transfer/README.md": true,
+    "compact_jet_envelope:results/angular_c2_transfer/bounds.py": true,
+    "compact_jet_envelope:results/angular_c2_transfer/evidence.json": true,
+    "compact_jet_envelope:results/axial_stress_audit/README.md": true,
+    "compact_jet_envelope:results/axial_stress_audit/bounds.py": true,
+    "compact_jet_envelope:results/axial_stress_audit/evidence.json": true,
+    "compact_jet_envelope:results/axis_core_attachment/README.md": true,
+    "compact_jet_envelope:results/axis_core_attachment/bounds.py": true,
+    "compact_jet_envelope:results/axis_core_attachment/evidence.json": true,
+    "compact_jet_envelope:results/axis_matching_audit/README.md": true,
+    "compact_jet_envelope:results/axis_matching_audit/bounds.py": true,
+    "compact_jet_envelope:results/axis_matching_audit/evidence.json": true,
+    "compact_jet_envelope:results/compact_jet_envelope/README.md": true,
+    "compact_jet_envelope:results/compact_jet_envelope/audit.py": true,
+    "compact_jet_envelope:results/compact_jet_envelope/bounds.py": true,
+    "compact_jet_envelope:results/compact_jet_envelope/jets.py": true,
+    "compact_jet_envelope:results/compact_jet_envelope/protocol.json": true,
+    "compact_jet_envelope:results/compact_jet_envelope/requirements.txt": true,
+    "compact_jet_envelope:results/compact_jet_envelope/review.py": true,
+    "compact_jet_envelope:results/compact_jet_envelope/test_audit.py": true,
+    "compact_jet_envelope:results/intermediate_decay_audit/README.md": true,
+    "compact_jet_envelope:results/intermediate_decay_audit/bounds.py": true,
+    "compact_jet_envelope:results/intermediate_decay_audit/evidence.json": true,
+    "compact_jet_envelope:results/joined_stress_construction/README.md": true,
+    "compact_jet_envelope:results/joined_stress_construction/construction.py": true,
+    "compact_jet_envelope:results/joined_stress_construction/evidence.json": true,
+    "compact_jet_envelope:results/stress_realization_audit/README.md": true,
+    "first_correction_construction:GOAL.md": true,
+    "first_correction_construction:results/angular_c2_transfer/evidence.json": true,
+    "first_correction_construction:results/axis_core_attachment/evidence.json": true,
+    "first_correction_construction:results/first_correction_construction/README.md": true,
+    "first_correction_construction:results/first_correction_construction/audit.py": true,
+    "first_correction_construction:results/first_correction_construction/checks.py": true,
+    "first_correction_construction:results/first_correction_construction/majorant.py": true,
+    "first_correction_construction:results/first_correction_construction/protocol.json": true,
+    "first_correction_construction:results/first_correction_construction/requirements.txt": true,
+    "first_correction_construction:results/first_correction_construction/series.py": true,
+    "first_correction_construction:results/first_correction_construction/system.py": true,
+    "first_correction_construction:results/first_correction_construction/test_audit.py": true,
+    "first_correction_construction:results/first_correction_construction/transfer.py": true,
+    "first_correction_construction:results/nonlinear_axis_pilot/inner.py": true,
+    "first_correction_construction:results/outer_pressure_pilot/schedule.py": true,
+    "first_correction_construction:results/physical_residual_budget/evidence.json": true,
+    "first_correction_construction:results/stress_realization_audit/evidence.json": true,
+    "heat_exterior_audit:GOAL.md": true,
+    "heat_exterior_audit:results/axial_stress_audit/bounds.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/README.md": true,
+    "heat_exterior_audit:results/heat_exterior_audit/audit.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/bounds.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/construction.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/exterior.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/protocol.json": true,
+    "heat_exterior_audit:results/heat_exterior_audit/requirements.txt": true,
+    "heat_exterior_audit:results/heat_exterior_audit/test_audit.py": true,
+    "heat_exterior_audit:results/intermediate_decay_audit/README.md": true,
+    "heat_exterior_audit:results/intermediate_decay_audit/bounds.py": true,
+    "heat_exterior_audit:results/intermediate_decay_audit/evidence.json": true,
+    "heat_exterior_audit:results/intermediate_decay_audit/protocol.json": true,
+    "heat_exterior_audit:results/outer_pressure_pilot/schedule.py": true,
+    "heat_exterior_audit:results/post_pulse_stress_audit/README.md": true,
+    "heat_exterior_audit:results/post_pulse_stress_audit/bounds.py": true,
+    "heat_exterior_audit:results/post_pulse_stress_audit/evidence.json": true,
+    "heat_exterior_audit:results/post_pulse_stress_audit/protocol.json": true,
+    "heat_exterior_audit:results/pulse_moment_audit/README.md": true,
+    "heat_exterior_audit:results/pulse_moment_audit/bounds.py": true,
+    "heat_exterior_audit:results/pulse_moment_audit/evidence.json": true,
+    "heat_exterior_audit:results/pulse_moment_audit/protocol.json": true,
+    "heat_exterior_audit:results/pulse_stress_audit/README.md": true,
+    "heat_exterior_audit:results/pulse_stress_audit/bounds.py": true,
+    "heat_exterior_audit:results/pulse_stress_audit/evidence.json": true,
+    "heat_exterior_audit:results/pulse_stress_audit/protocol.json": true,
+    "higher_jet_budget:GOAL.md": true,
+    "higher_jet_budget:results/axis_core_attachment/evidence.json": true,
+    "higher_jet_budget:results/compact_jet_envelope/evidence.json": true,
+    "higher_jet_budget:results/first_correction_construction/evidence.json": true,
+    "higher_jet_budget:results/higher_jet_budget/README.md": true,
+    "higher_jet_budget:results/higher_jet_budget/audit.py": true,
+    "higher_jet_budget:results/higher_jet_budget/higher_bounds.py": true,
+    "higher_jet_budget:results/higher_jet_budget/higher_checks.py": true,
+    "higher_jet_budget:results/higher_jet_budget/higher_jets.py": true,
+    "higher_jet_budget:results/higher_jet_budget/protocol.json": true,
+    "higher_jet_budget:results/higher_jet_budget/requirements.txt": true,
+    "higher_jet_budget:results/higher_jet_budget/test_audit.py": true,
+    "higher_jet_budget:results/loop_modulation_bounds/evidence.json": true,
+    "higher_jet_budget:results/physical_residual_budget/evidence.json": true,
+    "higher_jet_budget:results/repair_state_bounds/evidence.json": true,
+    "intermediate_decay_audit:axial_stress_audit/bounds.py": true,
+    "intermediate_decay_audit:axial_stress_audit/diagnostics.py": true,
+    "intermediate_decay_audit:axial_stress_audit/evidence.json": true,
+    "intermediate_decay_audit:axial_stress_audit/protocol.json": true,
+    "intermediate_decay_audit:intermediate_decay_audit/README.md": true,
+    "intermediate_decay_audit:intermediate_decay_audit/audit.py": true,
+    "intermediate_decay_audit:intermediate_decay_audit/bounds.py": true,
+    "intermediate_decay_audit:intermediate_decay_audit/protocol.json": true,
+    "intermediate_decay_audit:intermediate_decay_audit/reference.py": true,
+    "intermediate_decay_audit:intermediate_decay_audit/requirements.txt": true,
+    "intermediate_decay_audit:intermediate_decay_audit/test_audit.py": true,
+    "intermediate_decay_audit:outer_pressure_pilot/protocol.json": true,
+    "intermediate_decay_audit:outer_pressure_pilot/schedule.py": true,
+    "joined_stress_construction:results/axis_core_attachment/README.md": true,
+    "joined_stress_construction:results/axis_core_attachment/bounds.py": true,
+    "joined_stress_construction:results/axis_core_attachment/evidence.json": true,
+    "joined_stress_construction:results/axis_matching_audit/README.md": true,
+    "joined_stress_construction:results/axis_matching_audit/evidence.json": true,
+    "joined_stress_construction:results/axis_matching_audit/moments.py": true,
+    "joined_stress_construction:results/heat_exterior_audit/README.md": true,
+    "joined_stress_construction:results/heat_exterior_audit/evidence.json": true,
+    "joined_stress_construction:results/intermediate_decay_audit/evidence.json": true,
+    "joined_stress_construction:results/joined_stress_construction/README.md": true,
+    "joined_stress_construction:results/joined_stress_construction/audit.py": true,
+    "joined_stress_construction:results/joined_stress_construction/construction.py": true,
+    "joined_stress_construction:results/joined_stress_construction/protocol.json": true,
+    "joined_stress_construction:results/joined_stress_construction/requirements.txt": true,
+    "joined_stress_construction:results/joined_stress_construction/review.py": true,
+    "joined_stress_construction:results/joined_stress_construction/test_audit.py": true,
+    "joined_stress_construction:results/outer_pressure_pilot/schedule.py": true,
+    "joined_stress_construction:results/stress_realization_audit/README.md": true,
+    "joined_stress_construction:results/stress_realization_audit/bounds.py": true,
+    "joined_stress_construction:results/stress_realization_audit/evidence.json": true,
+    "joined_stress_construction:results/stress_realization_audit/loop.py": true,
+    "joined_stress_construction:results/stress_realization_audit/repair.py": true,
+    "loop_modulation_bounds:results/compact_jet_envelope/README.md": true,
+    "loop_modulation_bounds:results/compact_jet_envelope/evidence.json": true,
+    "loop_modulation_bounds:results/joined_stress_construction/README.md": true,
+    "loop_modulation_bounds:results/joined_stress_construction/evidence.json": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/README.md": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/audit.py": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/bounds.py": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/protocol.json": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/requirements.txt": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/review.py": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/test_audit.py": true,
+    "loop_modulation_bounds:results/stress_realization_audit/README.md": true,
+    "loop_modulation_bounds:results/stress_realization_audit/evidence.json": true,
+    "loop_modulation_bounds:results/stress_realization_audit/loop.py": true,
+    "outer_pressure_pilot:../nonlinear_axis_pilot/inner.py": true,
+    "outer_pressure_pilot:../nonlinear_axis_pilot/physical.py": true,
+    "outer_pressure_pilot:../nonlinear_axis_pilot/protocol.json": true,
+    "outer_pressure_pilot:audit.py": true,
+    "outer_pressure_pilot:coupling.py": true,
+    "outer_pressure_pilot:protocol.json": true,
+    "outer_pressure_pilot:schedule.py": true,
+    "outer_pressure_pilot:test_outer.py": true,
+    "paper_profile_audit:profiles.py": true,
+    "paper_profile_audit:protocol.json": true,
+    "paper_profile_audit:run_audit.py": true,
+    "paper_profile_audit:test_profiles.py": true,
+    "physical_residual_budget:results/paper_profile_audit/profiles.py": true,
+    "physical_residual_budget:results/paper_profile_audit/protocol.json": true,
+    "physical_residual_budget:results/physical_residual_budget/README.md": true,
+    "physical_residual_budget:results/physical_residual_budget/audit.py": true,
+    "physical_residual_budget:results/physical_residual_budget/bounds.py": true,
+    "physical_residual_budget:results/physical_residual_budget/protocol.json": true,
+    "physical_residual_budget:results/physical_residual_budget/requirements.txt": true,
+    "physical_residual_budget:results/physical_residual_budget/residual.py": true,
+    "physical_residual_budget:results/physical_residual_budget/review.py": true,
+    "physical_residual_budget:results/physical_residual_budget/test_audit.py": true,
+    "physical_residual_budget:results/repair_state_bounds/evidence.json": true,
+    "post_pulse_stress_audit:axial_stress_audit/bounds.py": true,
+    "post_pulse_stress_audit:outer_pressure_pilot/schedule.py": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/README.md": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/audit.py": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/bounds.py": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/diagnostics.py": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/protocol.json": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/requirements.txt": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/test_audit.py": true,
+    "post_pulse_stress_audit:pulse_moment_audit/README.md": true,
+    "post_pulse_stress_audit:pulse_moment_audit/bounds.py": true,
+    "post_pulse_stress_audit:pulse_moment_audit/evidence.json": true,
+    "post_pulse_stress_audit:pulse_moment_audit/protocol.json": true,
+    "post_pulse_stress_audit:pulse_stress_audit/README.md": true,
+    "post_pulse_stress_audit:pulse_stress_audit/bounds.py": true,
+    "post_pulse_stress_audit:pulse_stress_audit/evidence.json": true,
+    "post_pulse_stress_audit:pulse_stress_audit/protocol.json": true,
+    "pulse_moment_audit:axial_stress_audit/bounds.py": true,
+    "pulse_moment_audit:intermediate_decay_audit/evidence.json": true,
+    "pulse_moment_audit:intermediate_decay_audit/protocol.json": true,
+    "pulse_moment_audit:outer_pressure_pilot/schedule.py": true,
+    "pulse_moment_audit:pulse_moment_audit/README.md": true,
+    "pulse_moment_audit:pulse_moment_audit/audit.py": true,
+    "pulse_moment_audit:pulse_moment_audit/bounds.py": true,
+    "pulse_moment_audit:pulse_moment_audit/protocol.json": true,
+    "pulse_moment_audit:pulse_moment_audit/pulse.py": true,
+    "pulse_moment_audit:pulse_moment_audit/requirements.txt": true,
+    "pulse_moment_audit:pulse_moment_audit/test_audit.py": true,
+    "pulse_stress_audit:axial_stress_audit/README.md": true,
+    "pulse_stress_audit:axial_stress_audit/bounds.py": true,
+    "pulse_stress_audit:axial_stress_audit/evidence.json": true,
+    "pulse_stress_audit:intermediate_decay_audit/README.md": true,
+    "pulse_stress_audit:intermediate_decay_audit/bounds.py": true,
+    "pulse_stress_audit:intermediate_decay_audit/evidence.json": true,
+    "pulse_stress_audit:outer_pressure_pilot/schedule.py": true,
+    "pulse_stress_audit:pulse_moment_audit/README.md": true,
+    "pulse_stress_audit:pulse_moment_audit/bounds.py": true,
+    "pulse_stress_audit:pulse_moment_audit/evidence.json": true,
+    "pulse_stress_audit:pulse_moment_audit/protocol.json": true,
+    "pulse_stress_audit:pulse_moment_audit/pulse.py": true,
+    "pulse_stress_audit:pulse_stress_audit/README.md": true,
+    "pulse_stress_audit:pulse_stress_audit/audit.py": true,
+    "pulse_stress_audit:pulse_stress_audit/bounds.py": true,
+    "pulse_stress_audit:pulse_stress_audit/diagnostics.py": true,
+    "pulse_stress_audit:pulse_stress_audit/protocol.json": true,
+    "pulse_stress_audit:pulse_stress_audit/requirements.txt": true,
+    "pulse_stress_audit:pulse_stress_audit/test_audit.py": true,
+    "repair_state_bounds:results/compact_jet_envelope/README.md": true,
+    "repair_state_bounds:results/compact_jet_envelope/bounds.py": true,
+    "repair_state_bounds:results/compact_jet_envelope/evidence.json": true,
+    "repair_state_bounds:results/loop_modulation_bounds/README.md": true,
+    "repair_state_bounds:results/loop_modulation_bounds/bounds.py": true,
+    "repair_state_bounds:results/loop_modulation_bounds/evidence.json": true,
+    "repair_state_bounds:results/repair_state_bounds/README.md": true,
+    "repair_state_bounds:results/repair_state_bounds/audit.py": true,
+    "repair_state_bounds:results/repair_state_bounds/bounds.py": true,
+    "repair_state_bounds:results/repair_state_bounds/protocol.json": true,
+    "repair_state_bounds:results/repair_state_bounds/requirements.txt": true,
+    "repair_state_bounds:results/repair_state_bounds/review.py": true,
+    "repair_state_bounds:results/repair_state_bounds/test_audit.py": true,
+    "repair_state_bounds:results/stress_realization_audit/README.md": true,
+    "repair_state_bounds:results/stress_realization_audit/bounds.py": true,
+    "repair_state_bounds:results/stress_realization_audit/evidence.json": true,
+    "repair_state_bounds:results/stress_realization_audit/repair.py": true,
+    "stress_realization_audit:results/axis_core_attachment/evidence.json": true,
+    "stress_realization_audit:results/axis_matching_audit/evidence.json": true,
+    "stress_realization_audit:results/heat_exterior_audit/evidence.json": true,
+    "stress_realization_audit:results/intermediate_decay_audit/evidence.json": true,
+    "stress_realization_audit:results/outer_pressure_pilot/schedule.py": true,
+    "stress_realization_audit:results/stress_realization_audit/README.md": true,
+    "stress_realization_audit:results/stress_realization_audit/audit.py": true,
+    "stress_realization_audit:results/stress_realization_audit/bounds.py": true,
+    "stress_realization_audit:results/stress_realization_audit/loop.py": true,
+    "stress_realization_audit:results/stress_realization_audit/protocol.json": true,
+    "stress_realization_audit:results/stress_realization_audit/repair.py": true,
+    "stress_realization_audit:results/stress_realization_audit/requirements.txt": true,
+    "stress_realization_audit:results/stress_realization_audit/test_audit.py": true
+  },
+  "protocol": {
+    "actual_viscosity": 1,
+    "angular_quadrature_nodes": "8*k+1",
+    "coordinates": [
+      "r",
+      "theta",
+      "z",
+      "t"
+    ],
+    "covariance_frequencies": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "fixture_angular_multipliers": [
+      1,
+      2
+    ],
+    "manufactured_points": [
+      [
+        1.04,
+        -0.63,
+        -0.34,
+        0.31
+      ],
+      [
+        1.3,
+        0.27,
+        0.2,
+        0.47
+      ],
+      [
+        1.61,
+        1.17,
+        -0.12,
+        0.62
+      ],
+      [
+        1.79,
+        -2.1,
+        0.38,
+        0.71
+      ]
+    ],
+    "maximum_coordinate_covariance_residual_relative_error": 2e-10,
+    "maximum_reference_constraint_principal_energy_error": 2e-09,
+    "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "parent_commit": "25f59628da5bc7c2efb66816075ddd98d7e340c1",
+    "physical_coordinate_frequencies": [
+      8,
+      23
+    ],
+    "potential_Taylor_order": 3,
+    "reference_epsilon_times_k_squared": 1,
+    "reference_pulse_lengths": [
+      40,
+      100,
+      240
+    ],
+    "scope": "Exact curl, covariance, mean/residual and conditional pulse identities; compact manufactured physical waves and reference ODE diagnostics. Actual band-uniform pulse bounds, mean correctors, full residual improvement, forcing, energy and blow-up remain open.",
+    "source_equations": [
+      "7.2-7.16",
+      "7.24-7.41",
+      "8.3",
+      "9.1-9.2"
+    ],
+    "status": "physical-wave-interface-with-open-actual-pulse-and-mean-bounds"
+  },
+  "remaining_obligations": [
+    "uniform_actual_band_phase_frames_pulses_and_all_fixed_derivatives",
+    "actual_positive_primary_and_signed_higher_stress_with_edge_weights",
+    "actual_mean_corrections_integral_constraints_and_all_interactions",
+    "full_physical_residual_improvement_and_divergence_preserving_sum",
+    "localization_initialization_and_smooth_compact_forcing_through_T",
+    "complete_field_energy_and_blowup_lower_bound",
+    "independent_review_of_inherited_continuum_estimates"
+  ],
+  "resolved_obligations": [
+    "exact_real_curl_carrier_and_quadratic_full_covariance_correction",
+    "exact_full_mean_tensor_divergence_and_radial_pressure_defect",
+    "exact_signed_increment_identity_retaining_all_remainders",
+    "conditional_moving_normal_principal_equation_and_propagator_lemma",
+    "manufactured_physical_residual_and_reference_pulse_crosschecks",
+    "kinematic_matching_alone_has_no_full_residual_improvement"
+  ],
+  "reviews": {
+    "full_covariance": {
+      "checks": {
+        "angular_mean_cross_terms_require_a_reason": true,
+        "curl_covariance_error_positive_semidefinite": true,
+        "full_six_entry_covariance": true,
+        "full_tensor_mean_divergence": true,
+        "real_curl_covariance_error_is_quadratic": true,
+        "signed_inverse_and_all_covariance_increment_terms": true,
+        "signed_linear_inverse_does_not_remove_quadratic_remainder": true
+      },
+      "maximum_angular_covariance_relative_error": 2.9871108486193246e-16,
+      "maximum_full_tensor_divergence_relative_error": 6.60941110222314e-15,
+      "maximum_k_squared_covariance_remainder_relative_error": 5.389584724391309e-13,
+      "maximum_signed_full_increment_relative_error": 4.959799054046679e-16,
+      "minimum_k_squared_remainder_eigenvalue": -9.860167300195953e-14,
+      "omitted_signed_quadratic_increment_gap": 0.5331095104485607,
+      "unsupported_same_frequency_mean_cross_gap": 2.219900302053494
+    },
+    "full_residual": {
+      "actual_background_or_pulse_evaluated": false,
+      "checks": {
+        "finite_frequency_values_approach_derived_limit": true,
+        "full_mean_residual_is_full_tensor_divergence": true,
+        "full_residual_includes_all_wave_background_and_wave_wave_terms": true,
+        "kinematic_covariance_matching_does_not_reduce_residual": true,
+        "uncancelled_viscosity_has_k_squared_scale": true
+      },
+      "exact_leading_viscous_rms_limit_divided_by_k_squared": 35.91595734680041,
+      "full_actual_residual_improvement_verified": false,
+      "maximum_full_mean_residual_relative_error": 1.2333643633277972e-12,
+      "maximum_full_residual_decomposition_relative_error": 8.116579575898774e-17,
+      "rows": [
+        {
+          "full_increment_rms": 2344.0943525023536,
+          "full_increment_rms_divided_by_k_squared": 36.626474257849274,
+          "k": 8,
+          "linear_increment_rms": 2344.8936985616747,
+          "mean_increment": [
+            -0.16255548579386878,
+            3.807430553727493,
+            -0.5251319148267446
+          ],
+          "nonlinear_rms": 64.01874086878603,
+          "principal_cross_covariance": [
+            1.1882752131876733,
+            0.39384699666837364
+          ],
+          "viscous_rms": 2343.7230225781886
+        },
+        {
+          "full_increment_rms": 9233.135519462356,
+          "full_increment_rms_divided_by_k_squared": 36.06693562289983,
+          "k": 16,
+          "linear_increment_rms": 9240.76023198433,
+          "mean_increment": [
+            -0.1710190439289786,
+            3.8013404377677418,
+            -0.512664678555331
+          ],
+          "nonlinear_rms": 126.96993597255258,
+          "principal_cross_covariance": [
+            1.1882752131876733,
+            0.39384699666837364
+          ],
+          "viscous_rms": 9239.58595335332
+        },
+        {
+          "full_increment_rms": 36820.166488707466,
+          "full_increment_rms_divided_by_k_squared": 35.957193836628385,
+          "k": 32,
+          "linear_increment_rms": 36824.216709025524,
+          "mean_increment": [
+            -0.17313493345617634,
+            3.7998179087922477,
+            -0.5095478694895086
+          ],
+          "nonlinear_rms": 253.40659023165367,
+          "principal_cross_covariance": [
+            1.1882752131876733,
+            0.39384699666837364
+          ],
+          "viscous_rms": 36823.04100823696
+        },
+        {
+          "full_increment_rms": 147173.49453909407,
+          "full_increment_rms_divided_by_k_squared": 35.93102894020851,
+          "k": 64,
+          "linear_increment_rms": 147158.03823809288,
+          "mean_increment": [
+            -0.1736639058452421,
+            3.7994372765252233,
+            -0.5087686672178132
+          ],
+          "nonlinear_rms": 506.5466010330513,
+          "principal_cross_covariance": [
+            1.1882752131876733,
+            0.39384699666837364
+          ],
+          "viscous_rms": 147156.86193281313
+        }
+      ]
+    },
+    "mean_pressure": {
+      "actual_mean_corrector_constructed": false,
+      "checks": {
+        "pressure_primitive_need_not_vanish_inside_wave_support": true,
+        "radial_pressure_leaves_axial_defect": true,
+        "tangential_flux_matching_leaves_full_mean_terms": true,
+        "theta_z_flux_cannot_be_discarded": true
+      },
+      "inner_pressure_constant": -0.7640819950529555,
+      "inner_pressure_z": -0.25053760048469237,
+      "mean_defect_after_radial_pressure": [
+        0.0,
+        0.1442361457505575,
+        -0.5503225845549737
+      ],
+      "pressure_z": 0.3764152391524917,
+      "principal_mean_defect_before_pressure": [
+        -0.17384022997105064,
+        0.1442361457505575,
+        -0.9267378237074655
+      ],
+      "quadrature_error_estimates": [
+        9.463610534552053e-13,
+        1.1602436154083858e-12
+      ],
+      "radial_pressure_primitive": -1.347662969486409
+    },
+    "physical_coordinates": {
+      "advection_connection_omission_gap": 7.700913327098533,
+      "checks": {
+        "advection_connections_cannot_be_discarded": true,
+        "curl_remainder_cannot_be_discarded": true,
+        "exact_curl_through_required_derivatives": true,
+        "exact_divergence": true,
+        "full_physical_residual_independent_coordinates": true,
+        "global_angular_periodicity": true,
+        "pressure_cannot_be_discarded": true,
+        "radial_curl_connection_cannot_be_discarded": true,
+        "smooth_compact_support_fixture": true,
+        "transverse_principal_amplitude": true,
+        "vector_laplacian_connections_cannot_be_discarded": true
+      },
+      "maximum_cartesian_cylindrical_full_residual_relative_error": 1.545671685458815e-16,
+      "maximum_curl_value_gradient_hessian_relative_error": 2.2838109689384014e-16,
+      "maximum_normal_amplitude_error": 4.440892098500626e-16,
+      "maximum_periodic_derivative_relative_error": 5.438421030058145e-14,
+      "maximum_scaled_divergence_error": 8.926380201204723e-16,
+      "outside_support_jet_error": 0.0,
+      "pressure_omission_gap": 4.682028838929625,
+      "principal_only_divergence_gap": 2.857483007422923,
+      "radial_curl_connection_omission_gap": 0.23035372662127784,
+      "samples": 8,
+      "scalar_laplacian_omission_gap": 45.81857608360272
+    },
+    "reference_pulses": {
+      "actual_band_coefficients_evaluated": false,
+      "checks": {
+        "complex_pressure_principal_equation": true,
+        "continuum_gaussian_bound_sample_crosscheck": true,
+        "covariance_directions_approach_reference": true,
+        "moving_normal_constraint": true,
+        "moving_normal_omission_detected": true,
+        "positive_covariance_inverse_in_reference_fixture": true,
+        "pressure_i_omission_detected": true,
+        "shear_viscosity_energy_identity": true,
+        "signed_linear_inverse_retained": true,
+        "viscous_damping_omission_detected": true,
+        "weight_has_reference_sqrt_length_scale": true
+      },
+      "gaussian_constants": [
+        0.6879558181235742,
+        4.313033559656509
+      ],
+      "maximum_gaussian_inequality_defect": 0.0,
+      "maximum_normal_constraint_error": 1.6804167852512854e-14,
+      "maximum_normalized_energy_error": 2.7977620220553945e-14,
+      "maximum_normalized_principal_equation_error": 1.0877919644084146e-15,
+      "minimum_moving_normal_omission_gap": 0.0018115158047310163,
+      "minimum_pressure_i_omission_gap": 0.13360074031195826,
+      "minimum_viscosity_omission_gap": 0.9906596754071368,
+      "rows": [
+        {
+          "covariance_columns": [
+            [
+              0.12376248432575174,
+              0.015109017439611091
+            ],
+            [
+              -0.015109017439611395,
+              -0.12376248432575203
+            ]
+          ],
+          "covariance_quadrature_error_estimates": [
+            2.0284650057921857e-13,
+            2.028458660574881e-13
+          ],
+          "direction_errors": [
+            0.021225259687304383,
+            0.02122525968730316
+          ],
+          "length": 40,
+          "positive_squared_amplitudes": [
+            7.767899189697222,
+            11.672644071482859
+          ],
+          "sampled_cutoff_principal_residual_max": 0.02495303874052618,
+          "signed_inverse_error": 2.2887833992611187e-16,
+          "signed_linear_solution": [
+            -10.722963327716744,
+            3.5944345721641335
+          ],
+          "sqrt_length_times_weights": [
+            0.327582635109588,
+            0.32758263510958874
+          ],
+          "weights": [
+            0.051795362443307,
+            0.05179536244330711
+          ]
+        },
+        {
+          "covariance_columns": [
+            [
+              0.07823812269430183,
+              0.009452185191223386
+            ],
+            [
+              -0.00945218519122443,
+              -0.07823812269430283
+            ]
+          ],
+          "covariance_quadrature_error_estimates": [
+            7.892930094605425e-14,
+            7.893325830757204e-14
+          ],
+          "direction_errors": [
+            0.008542211287613505,
+            0.00854221128764328
+          ],
+          "length": 100,
+          "positive_squared_amplitudes": [
+            12.309646023825236,
+            18.477535626157252
+          ],
+          "sampled_cutoff_principal_residual_max": 0.000128000008489851,
+          "signed_inverse_error": 0.0,
+          "signed_linear_solution": [
+            -16.95237519518563,
+            5.663220013366929
+          ],
+          "sqrt_length_times_weights": [
+            0.32571474936212513,
+            0.325714749362134
+          ],
+          "weights": [
+            0.03257147493621251,
+            0.0325714749362134
+          ]
+        },
+        {
+          "covariance_columns": [
+            [
+              0.05048536254589775,
+              0.00607458122003807
+            ],
+            [
+              -0.006074581220038105,
+              -0.05048536254589758
+            ]
+          ],
+          "covariance_quadrature_error_estimates": [
+            9.471624221296298e-15,
+            9.462245247155683e-15
+          ],
+          "direction_errors": [
+            0.003557622665055009,
+            0.0035576226650436164
+          ],
+          "length": 240,
+          "positive_squared_amplitudes": [
+            19.089572251149793,
+            28.64274956633678
+          ],
+          "sampled_cutoff_principal_residual_max": 3.9239457119626556e-09,
+          "signed_inverse_error": 5.551115123125783e-17,
+          "signed_linear_solution": [
+            -26.265488661413784,
+            8.762828160938222
+          ],
+          "sqrt_length_times_weights": [
+            0.32493457224198286,
+            0.3249345722419802
+          ],
+          "weights": [
+            0.020974436448337172,
+            0.020974436448337002
+          ]
+        }
+      ],
+      "uniform_actual_pulse_or_parameter_derivative_bound_verified": false
+    }
+  },
+  "source_hashes": {
+    "GOAL.md": "367d737e6c2342598d2b3670cc6d2183d384485071a512d3f00b404a13407f5f",
+    "results/background_summation/evidence.json": "a2e55ad429914b2ce33aff913efd43165d2fd1f2fb88f13a6edfffc887b23853",
+    "results/physical_wave_interface/README.md": "0e5b4805705264df6ab647f480b8d2963a0de89e5567c3d57481c2b8a7ee3f11",
+    "results/physical_wave_interface/audit.py": "48258157b18347ed87d234fc9f978859536af71ecdbd234f4d98ba0c52fe46d7",
+    "results/physical_wave_interface/checks.py": "0fd344b53790a5b564d2de3149bb1cb6fefd33036ac5f1fbe4647bf0935accee",
+    "results/physical_wave_interface/jets.py": "88e2ab66fe9a84bd7d1e9e0f37c8175d16c883497d3447dab6afcd1dc5f30d66",
+    "results/physical_wave_interface/protocol.json": "4a3d5b10eefb12d43159e6e01c2c7099c41faea867a4b3c0327a175dd1a12a20",
+    "results/physical_wave_interface/pulses.py": "10784d99bc40ef8c996a2bbe0c8b412a11f58d9784f3bef7050991fd9cc31dcf",
+    "results/physical_wave_interface/requirements.txt": "2872240ad39db3fa61ea202cac35a5579c482437efa38edec506dbdc0f870942",
+    "results/physical_wave_interface/test_audit.py": "ff555ae3e64526f152cb056d6f476eab9071c212cfa65d5c581c6a554831a14a",
+    "results/physical_wave_interface/waves.py": "ac6ae963c20e69ce2658c09d299bc14c1c1966021132d72ae169fc6b73b4c237"
+  },
+  "status": "physical-wave-interface-with-open-actual-pulse-and-mean-bounds"
+}

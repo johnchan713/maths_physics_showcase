@@ -197,6 +197,20 @@ scalar asymptotic-summation controls and exact exponent budgets. They do
 not numerically realize the actual all-order profile or verify physical
 waves, full-field residual decay, admissible forcing, energy or blow-up.
 
+The next [physical wave interface](physical_wave_interface/README.md)
+supplies exact real curl/covariance identities, the complete cylindrical
+linearized residual and the mean tensor terms left after two stress entries
+are matched. It isolates a quadratic inverse-frequency covariance correction
+for real primary carriers. Compact physical curls and momentum agree in
+Cartesian and cylindrical coordinates, and a separate reference pulse ODE
+checks moving-normal pressure, shear–viscosity balance, integrated positive
+covariance weights and signed increments. The full signed covariance identity
+retains its quadratic remainder. A manufactured physical field with fixed
+matched covariance has a residual growing like frequency squared, showing
+why the actual pulse dynamics and mean corrections are necessary. The
+actual band-uniform derivative/support/edge estimates, physical mean solve,
+full residual improvement, forcing, energy and blow-up remain unverified.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

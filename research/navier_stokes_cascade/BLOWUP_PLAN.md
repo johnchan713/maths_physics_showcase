@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-14, following research commit
-`305b9288a86877ba994514e514835a0c8e0f036d` and the background-summation checkpoint.
+`25f59628da5bc7c2efb66816075ddd98d7e340c1` and the physical-wave-interface checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -113,16 +113,29 @@ convergence of the raw series. Actual coefficient values and cutoff scales
 have not been numerically materialized. The bare momentum residual still
 contains the annular stress divergence, so this does not give smooth forcing.
 
+The [physical-wave interface](results/physical_wave_interface/README.md)
+now supplies exact real curl and full covariance formulas, the complete
+physical linearized residual, the uncancelled mean system and a conditional
+moving-normal pulse propagator argument. For real primary cosine carriers,
+the mean covariance error from the curl is quadratic in inverse frequency.
+That exact cancellation does not bound the actual amplitude derivatives.
+Two-coordinate physical fixtures and a separate reference pulse check the
+algebra. Neither fixture is the actual summed-background band field. The
+mean pressure calculation also retains axial defects and possible inner
+pressure constants. Kinematic covariance matching alone can leave a
+frequency-squared viscous residual; no actual full residual gain is claimed.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
 2. Review the all-order background induction and asymptotic summation against
    their dependencies. Keep the common collar, the lower-order pressure
    sources, arbitrary coefficient growth and the curl-cutoff commutator.
-3. Construct the physical waves against this background. Derive their FULL
-   covariance tensor and divergence, including diagonal, radial, angular and
-   axial contributions. The prescribed tangential stress operator is not
-   interchangeable with that tensor divergence.
+3. Apply the exact physical-wave interface to the ACTUAL summed background.
+   Verify uniform phase/frame comparisons, support/descent and pulse bounds
+   in every fixed derivative order. Retain discrete frequencies and all
+   remaining terms of the full physical linearized operator. The exact curl
+   and covariance identities do not supply those estimates.
 4. Verify the signed higher-stress corrections and weighted edge estimates
    at the wave interface. Inverse edge-distance powers remain; small q alone
    does not prove uniform cone stability at the flat stress boundaries.
@@ -175,8 +188,8 @@ The higher-jet checkpoint now adds the conditional final compact derivative
 estimate, including C4 inputs and all third-order inverse-phase terms. The
 annular checkpoint now adds the conditional global first coefficient, corrects
 the I3 radial-memory premise, closes the first signed stress tails and derives
-the relative augmented-background remainder gain. The next task is the
-higher-order background induction and the physical wave construction.
+the relative augmented-background remainder gain. At that checkpoint the
+next tasks were higher-order background induction and physical waves.
 None of these checkpoints completes a decaying full residual or blow-up proof.
 
 The background-summation checkpoint subsequently completes that background
@@ -186,9 +199,9 @@ flat augmented background error does not cancel the stress by itself.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Derive the physical wave ansatz and its complete covariance/divergence against the summed background | Tests the actual cancellation of the retained annular stress |
-| 2–4 hours | Trace signed stress corrections, boundary weights and support separation through the wave amplitudes and potentials | Identifies the estimates needed to control radial and edge errors |
-| 4–6 hours | Compute physical residual and mean-constraint defects for that same wave field; add omission controls, reproduce and push | Replaces tangential-stress bookkeeping with a checked full-field interaction budget |
+| 0–2 hours | Verify actual band phase/frame comparisons and weighted pulse bounds from the summed background, with fixed discrete labels and frequencies | Supplies the uniform inputs that the new exact interface and reference pulse do not establish |
+| 2–4 hours | Carry the actual integrated covariance and signed inverse through support separation and edge-weighted derivatives; bound the full linear remainder | Tests whether the pulse cancels the leading viscosity and retains the needed derivative gain |
+| 4–6 hours | Construct the physical mean corrections with the full tensor, axial pressure defect and integral constraints; recompute all interactions and push | Targets a positive gain for the full residual, beyond covariance matching |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,

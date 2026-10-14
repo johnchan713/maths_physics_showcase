@@ -181,6 +181,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/background_summation/evidence.json \
             --output navier_stokes_background_summation_ci.json
 
+      - name: Check physical curl covariance and full residual interface
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/physical_wave_interface/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/physical_wave_interface/audit.py \
+            --verify-record research/navier_stokes_cascade/results/physical_wave_interface/evidence.json \
+            --output navier_stokes_physical_wave_interface_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -578,6 +585,7 @@ jobs:
             navier_stokes_higher_jet_budget_ci.json
             navier_stokes_annular_first_correction_ci.json
             navier_stokes_background_summation_ci.json
+            navier_stokes_physical_wave_interface_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

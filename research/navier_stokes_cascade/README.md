@@ -119,6 +119,19 @@ checks do not evaluate the actual infinite coefficient sequence or prove
 the full physical wave construction. Smooth forcing, complete-field energy
 and blow-up remain open; no earlier audit or GOAL.md is rewritten.
 
+The [physical wave interface](results/physical_wave_interface/README.md)
+now derives exact real curl carriers, their full covariance tensor, the
+complete cylindrical linearized residual and the uncancelled mean terms.
+For real cosine carriers the mean curl covariance correction is quadratic
+in the inverse frequency; uniform actual amplitude bounds are still needed.
+Compact manufactured curls agree with independent Cartesian momentum, and
+a moving-normal reference pulse retains shear, pressure and viscosity with
+positive integrated covariance weights and a signed linear inverse. A
+separate physical fixture proves why kinematic stress matching alone does
+not improve the full residual. Actual band-uniform pulse/edge estimates,
+mean corrections and full residual improvement remain open, together with
+smooth forcing, complete-field energy and blow-up.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data
