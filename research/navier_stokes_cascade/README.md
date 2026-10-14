@@ -78,6 +78,17 @@ inputs; actual annular extension and support, physical waves, the infinite
 sum, smooth force and complete-field blow-up remain open. This does not
 change any earlier frozen audit or promote its diagnostic data.
 
+The subsequent [higher-jet budget](results/higher_jet_budget/README.md) derives
+the missing original C4 reference/moment transfer and propagates third-order
+derivatives through the same loop, moving inverse phase and final nonlinear
+moment repair. It gives a conditional actual compact-annular profile bound
+`K=H^64` at the unchanged `N=1+floor(H^32)`. Radial losses proportional to N
+are retained. This supplies the compact background derivative estimate, not
+residual decay: its explicit physical upper bounds are still singular.
+The global first-coefficient extension, physical wave tensor, infinite sum,
+admissible forcing, energy and complete-field blow-up remain open. Earlier
+audit flags retain their historical scope and are not rewritten.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data

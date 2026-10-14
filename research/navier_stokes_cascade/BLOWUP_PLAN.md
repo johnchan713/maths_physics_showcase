@@ -1,8 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
-Updated: 2026-10-05, following research commit
-`5a94f20dfc1de702a507cc9764bfc4a68ff01ab8` and the first-inner-correction
-checkpoint.
+Updated: 2026-10-14, following research commit
+`007e62724850fbe98707d5c50578e47b35768c4d` and the higher-jet checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -60,13 +59,17 @@ unverified earlier hypothesis as established. A failed argument sends the
 affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
-## Immediate work package: actual residual jets and the first correction
+## Immediate work package: extend the first correction and derive its full residual
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
-now gives exact formulas for the unlocalized base and the first positive
-order. It does not pass milestone 3: its constants are conditional on an
-actual final-profile derivative bound. The earlier C2 bound cannot supply
-the third angular moment derivative in radial axial diffusion.
+gives exact formulas for the unlocalized base and the first positive order.
+The subsequent [higher-jet budget](results/higher_jet_budget/README.md) now
+instantiates its derivative constant on the selected compact annulus:
+`K=H^64`, conditional on the inherited analytic leading profile. It derives
+the original C4 transfer and third-order loop, inverse-phase and final repair
+bounds at the same N. This closes the compact background derivative gap;
+it does not pass the full physical residual milestone, because wave tensor,
+global coefficient extension and localization terms are still missing.
 
 The executed [first-correction checkpoint](results/first_correction_construction/README.md)
 now gives a conditional actual inner analytic coefficient on `X<=3/Lambda`,
@@ -79,27 +82,25 @@ bound survives this one correction at sufficiently small q. These are
 conditional continuum arguments and separate manufactured algebra checks;
 they are not a completed global first correction or blow-up proof.
 
-The next derivative work is sharper: the loop's third slow derivative needs
-stress-coordinate C3, and those coordinates already differentiate the moments.
-Thus original moment C4 input is needed. The new unmodulated C3 transfer does
-not close the finalized post-modulation bound. In parallel, the constructed
-coefficient can be extended into the annulus only after checking the actual
-I3 support/memory hypotheses, higher-order stress and all five tails.
+The finalized compact C3 estimate includes the original C4 input that the
+earlier checkpoint lacked. It also retains the positive N loss in second
+radial derivatives. Its physical background residual upper bounds are still
+singular as q tends to zero; bounded profile constants do not prove residual
+decay. The next construction task is the actual annular extension, its I3
+support/memory hypotheses, higher-order stress and all five tails.
 
-1. Bound the finalized modulated/repaired fields through the radial and angular
-   orders entering the exact physical residual. Retain phase derivatives of
-   N log X, logarithmic-to-ordinary radial conversion, moving phase maps,
-   bump widths and inverse normalizations. N remains fixed.
-2. Derive the actual third angular moment bound entering Z_-D Z_0 V. State
-   each norm and domain; C2 control of U alone is insufficient. Evaluate a
-   valid annular K for the new component bounds, and bound the axis through
-   the regular Cartesian coefficients F,U,v0,Pi.
-3. Review the constructed inner F1,U1,Pi1 coefficient, its core operator
-   envelope and sparse angular-loss bound. Carry it beyond `X=3/Lambda`
-   while retaining V1's D+lambda factor and Pi1_X=2F0F1-Omega0/(2X).
-4. Extend this coefficient into the annulus, restore all five positive-order
-   compatibility moments and retain the required higher-order stress. Prove
-   support and exterior properties for the same corrected fields.
+1. Review the higher-jet derivation and inherited foundation, retaining its
+   exact compact domain and fixed N. Extend estimates when needed by the
+   complete physical residual; do not treat singular upper bounds as decay.
+2. Carry the convergent inner F1,U1,Pi1 coefficient beyond `X=3/Lambda` with
+   a divergence-preserving extension. Retain V1's D+lambda factor and
+   Pi1_X=2F0F1-Omega0/(2X).
+3. Verify that the actual positive-order patch I3 has the required leading
+   U0=M0=0, power-law swirl, zero Omega0 and separated support. Form the
+   actual five incoming discrepancies with all normalizations.
+4. Restore those five compatibility moments using the LINEAR positive-order
+   inverse, not the nonlinear leading repair. Derive higher stress tails,
+   compact support and the unchanged exterior for the same extended fields.
 5. Recompute the full residual with this coefficient, including quadratic
    products, axial diffusion of the correction and the full wave covariance
    when waves are introduced. Prove actual improvement in absolute physical
@@ -147,12 +148,15 @@ The first-correction checkpoint executes the core part of this block. It gives
 the C3 transfer before modulation, identifies the extra C4 loop input, derives
 and constructs a conditional actual first inner background coefficient, checks
 the linear patch moments and supplies a one-correction core lower bound.
-It does not complete the final-profile residual estimate or global extension.
+The higher-jet checkpoint now adds the conditional final compact derivative
+estimate, including C4 inputs and all third-order inverse-phase terms. The
+next task is the global first coefficient and its physical wave interactions.
+Neither checkpoint completes a decaying full residual or blow-up proof.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Original angular C4 moment transfer; then the loop's third slow derivative and moving-phase costs, or a precise failed inequality | Supplies the missing input for the final third-angular viscous bound |
-| 2–4 hours | Actual I3 support/memory ledger and extension of the convergent core coefficient, with five linear moment corrections and higher stress tails | Turns the local background coefficient into a compatible global coefficient |
+| 0–2 hours | Actual I3 support/memory ledger and divergence-preserving extension of the convergent core coefficient | Establishes that the local coefficient can reach the reserved repair patch |
+| 2–4 hours | Actual five incoming discrepancies, linear restoration and higher stress tails, or a precise failed support identity | Makes the same coefficient compatible with the exterior |
 | 4–6 hours | Full residual of that extended coefficient, with quadratic terms, its axial diffusion and the required physical wave interactions; reproduce and push | Tests an actual residual gain for the same field and records the next all-order obligation |
 
 These are time budgets for research outputs, not completion deadlines or a

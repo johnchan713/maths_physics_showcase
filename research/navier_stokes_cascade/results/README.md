@@ -158,6 +158,17 @@ The post-modulation derivative gap is now traced to original moment C4 and
 loop C3 inputs. Global extension, waves, summation, force, energy and blow-up
 of the complete field remain unverified.
 
+The later [higher-jet budget](higher_jet_budget/README.md) supplies a
+conditional original C4 transfer, mixed input envelope, third-order loop and
+inverse-phase bounds, and a C3 bound for the same final leading moment
+repair. The accepted frequency is unchanged. It retains the N-dependent
+radial losses and gives the actual compact-background annular envelope
+`K=H^64`, instantiating the earlier conditional residual inequalities there.
+These upper bounds remain singular in physical time. Independent source
+integrals, higher implicit/phase derivatives, exact rational moment checks
+and omission controls accompany the analytic argument. The global first
+correction, physical waves, summation, force, energy and blow-up remain open.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)
