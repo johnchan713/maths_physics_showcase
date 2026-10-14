@@ -167,6 +167,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/higher_jet_budget/evidence.json \
             --output navier_stokes_higher_jet_budget_ci.json
 
+      - name: Check first annular extension with radial memory and pressure retained
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/annular_first_correction/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/annular_first_correction/audit.py \
+            --verify-record research/navier_stokes_cascade/results/annular_first_correction/evidence.json \
+            --output navier_stokes_annular_first_correction_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -562,6 +569,7 @@ jobs:
             navier_stokes_physical_residual_budget_ci.json
             navier_stokes_first_correction_construction_ci.json
             navier_stokes_higher_jet_budget_ci.json
+            navier_stokes_annular_first_correction_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

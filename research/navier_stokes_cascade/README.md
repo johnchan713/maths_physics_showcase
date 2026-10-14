@@ -89,6 +89,21 @@ The global first-coefficient extension, physical wave tensor, infinite sum,
 admissible forcing, energy and complete-field blow-up remain open. Earlier
 audit flags retain their historical scope and are not rewritten.
 
+The later [annular first correction](results/annular_first_correction/README.md)
+continues the same coefficient into the preserved analytic-parameter collar
+before cutting it off, and specifies the conditional global five-moment solve.
+It corrects an overstrong premise in the work plan: I3 has U0=0 but retains
+leading radial memory and a nonzero Omega0. The linear inverse still applies;
+the incoming pressure and fifth moments must retain that source through the
+outer axial pulse. The repaired velocities vanish on the later mean patch,
+but pressure is only guaranteed to vanish beyond Xv. Conservative identities
+close the signed first tangential stress tails. The first augmented BACKGROUND
+residual gains a relative q^(2h) factor while its physical bound stays singular.
+Manufactured global integrations and omitted-term controls check these
+identities; they do not evaluate the actual huge-frequency profile. Full
+physical waves, all-order induction and summation, admissible forcing, energy,
+and complete-field blow-up remain open. Earlier frozen audits are unchanged.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data

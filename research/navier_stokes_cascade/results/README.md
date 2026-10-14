@@ -169,6 +169,20 @@ integrals, higher implicit/phase derivatives, exact rational moment checks
 and omission controls accompany the analytic argument. The global first
 correction, physical waves, summation, force, energy and blow-up remain open.
 
+The subsequent [annular first correction](annular_first_correction/README.md)
+conditionally completes the first background coefficient's global extension
+and five linear matching moments. It continues the coefficient beyond Xa
+into the preserved collar before a cutoff, and retains the actual nonzero
+radial memory on I3. The old plan's extra M0=Omega0=0 premise is removed,
+not assumed proved. Pressure's lower-order source is integrated through the
+outer pulse; pressure support is larger than velocity support. The signed
+tangential stress closes by conservative moment identities and the inherited
+heat exterior. A relative q^(2h) augmented-background exponent gain retains
+all quadratic and axial-viscous remainder terms, but does not yield absolute
+residual decay. Separate finite fixtures test global moments, radial memory,
+stress integrals and remainders. Full waves, all-order background induction,
+summation, smooth forcing, energy and complete-field blow-up remain open.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

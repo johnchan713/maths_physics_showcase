@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-14, following research commit
-`007e62724850fbe98707d5c50578e47b35768c4d` and the higher-jet checkpoint.
+`4a5a098862090231505d1976378574d6034ee9cb` and the annular first-correction checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -59,7 +59,7 @@ unverified earlier hypothesis as established. A failed argument sends the
 affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
-## Immediate work package: extend the first correction and derive its full residual
+## Immediate work package: higher coefficients and the full physical residual
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
@@ -86,25 +86,38 @@ The finalized compact C3 estimate includes the original C4 input that the
 earlier checkpoint lacked. It also retains the positive N loss in second
 radial derivatives. Its physical background residual upper bounds are still
 singular as q tends to zero; bounded profile constants do not prove residual
-decay. The next construction task is the actual annular extension, its I3
-support/memory hypotheses, higher-order stress and all five tails.
+decay.
+
+The [annular first-correction checkpoint](results/annular_first_correction/README.md)
+now continues the same coefficient beyond Xa into the preserved analytic-eta
+collar, specifies the five actual incoming discrepancies, solves them linearly,
+and closes the signed first tangential stress tails, conditionally on the
+inherited leading construction. An important correction to the earlier plan:
+I3 has U0=0 but NOT the earlier plan's extra M0=Omega0=0 premise. Its reference radial memory
+gives V0=-mu and Omega0=-mu^2/(2X), mu>0. Zero memory is unnecessary for
+the inverse; that source must instead be retained in the pressure and fifth
+moment through the whole leading axial support. Velocities vanish beyond
+the positive-order patch, while pressure can extend through Xv. The exact
+first augmented-background remainder gains q^(2h), but still has the singular
+sufficient bound C_m q^(-3/2+2h-m). This is not the full wave residual.
 
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
-2. Carry the convergent inner F1,U1,Pi1 coefficient beyond `X=3/Lambda` with
-   a divergence-preserving extension. Retain V1's D+lambda factor and
-   Pi1_X=2F0F1-Omega0/(2X).
-3. Verify that the actual positive-order patch I3 has the required leading
-   U0=M0=0, power-law swirl, zero Omega0 and separated support. Form the
-   actual five incoming discrepancies with all normalizations.
-4. Restore those five compatibility moments using the LINEAR positive-order
-   inverse, not the nonlinear leading repair. Derive higher stress tails,
-   compact support and the unchanged exterior for the same extended fields.
-5. Recompute the full residual with this coefficient, including quadratic
-   products, axial diffusion of the correction and the full wave covariance
-   when waves are introduced. Prove actual improvement in absolute physical
-   units and after fixed derivative orders.
+2. Review the global first coefficient's collar, moment and pressure support
+   argument. Do not substitute the earlier core-only C^16 envelope for its
+   finite collar constant, or cut off the pressure at the end of I3.
+3. Extend the coefficient induction to order two and then all orders, using
+   already finalized lower orders, preserving the same analytic-eta rectangle
+   and five moments. Keep every shifted exponent and lower-order pressure source.
+4. Bound the fixed-derivative remainder constants and signed stress tails
+   required by the physical wave construction. A signed two-component stress
+   is not a full positive wave covariance tensor. Tail estimates allow
+   inverse powers of the edge distance; small q alone does not establish
+   uniform cone stability of T0+q^(2h)T1 at the flat stress edges.
+5. Construct the physical wave and mean corrections and recompute the full
+   residual with their complete tensor divergence, cross interactions and
+   localization. A relative background exponent gain is not smooth forcing.
 6. Establish the all-order solvability, derivative constants and summation
    argument. Cutoffs must act on divergence-preserving potentials; include
    their product-rule terms. Finite truncations do not give a smooth force
@@ -144,20 +157,23 @@ and blow-up estimates for the same complete field to establish.
 
 ### Executed work and the next block
 
-The first-correction checkpoint executes the core part of this block. It gives
+The first-correction checkpoint executes the core part of the historical block. It gives
 the C3 transfer before modulation, identifies the extra C4 loop input, derives
 and constructs a conditional actual first inner background coefficient, checks
 the linear patch moments and supplies a one-correction core lower bound.
 The higher-jet checkpoint now adds the conditional final compact derivative
 estimate, including C4 inputs and all third-order inverse-phase terms. The
-next task is the global first coefficient and its physical wave interactions.
-Neither checkpoint completes a decaying full residual or blow-up proof.
+annular checkpoint now adds the conditional global first coefficient, corrects
+the I3 radial-memory premise, closes the first signed stress tails and derives
+the relative augmented-background remainder gain. The next task is the
+higher-order background induction and the physical wave construction.
+None of these checkpoints completes a decaying full residual or blow-up proof.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Actual I3 support/memory ledger and divergence-preserving extension of the convergent core coefficient | Establishes that the local coefficient can reach the reserved repair patch |
-| 2–4 hours | Actual five incoming discrepancies, linear restoration and higher stress tails, or a precise failed support identity | Makes the same coefficient compatible with the exterior |
-| 4–6 hours | Full residual of that extended coefficient, with quadratic terms, its axial diffusion and the required physical wave interactions; reproduce and push | Tests an actual residual gain for the same field and records the next all-order obligation |
+| 0–2 hours | Derive and review the second coefficient from the finalized first coefficient, retaining radial and axial source shifts | Tests the induction rather than repeating a formal first-order solve |
+| 2–4 hours | Prove common support, five-moment restoration and fixed-derivative finite-truncation bounds at general order, or identify the failed estimate | Supplies the prerequisites for a divergence-preserving asymptotic sum |
+| 4–6 hours | Audit the summation cutoff product terms and the physical stress-to-wave interface; reproduce and push | Separates a completed background expansion from the still-unproved full-field residual improvement |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,
@@ -238,12 +254,15 @@ open to independent scrutiny; those conditional results are not an end-to-end
 proof or a numerically resolved singular flow.
 
 The [physical residual budget](results/physical_residual_budget/README.md)
-now identifies every unlocalized base term and derives the first correction
-system. The earliest outstanding construction inequality is an actual
-post-modulation derivative bound, including the third angular moment
-derivative required by radial axial diffusion. Milestone 3 remains open.
-After bounding those inputs, solve and extend the first background correction,
-then verify all-order background summation, physical waves, mean corrections,
-residual improvement and convergence. Smooth forcing and a lower bound for
-the complete velocity remain separate gates. A failure must revise the
-affected construction.
+identifies every unlocalized base term and the first correction system. The
+[higher-jet estimate](results/higher_jet_budget/README.md) supplies its actual
+compact-background derivative bound conditionally, and the
+[annular extension](results/annular_first_correction/README.md) now supplies
+the conditional global first coefficient, matching moments and signed stress
+tails. The earliest new construction tasks are all-order background induction
+with fixed-derivative bounds and divergence-preserving summation, followed
+by the actual physical wave covariance and mean corrections. Milestone 3
+remains open for the full field: a signed-stress background exponent gain
+cannot substitute for that physical residual. Smooth forcing and a lower
+bound for the complete velocity remain separate gates. A failure must revise
+the affected construction.
