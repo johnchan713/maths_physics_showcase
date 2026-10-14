@@ -132,6 +132,19 @@ not improve the full residual. Actual band-uniform pulse/edge estimates,
 mean corrections and full residual improvement remain open, together with
 smooth forcing, complete-field energy and blow-up.
 
+The [actual-band pulse bounds](results/actual_band_pulse_bounds/README.md)
+now derive the phase/frame comparison from the inherited normalized
+background, including rounding errors accumulated over a whole pulse.
+An invariant ratio interval gives a positive radial pulse lower bound;
+fixed-order Duhamel estimates, covariance-column bounds and a quantitative
+cone inverse give conditional primary amplitudes and signed edge estimates.
+Exact curls then have a relative primary covariance gain, and the full
+linear wave operator has a gain with pressure and viscosity retained.
+These are conditional continuum arguments. Huge-band manufactured phase
+and stiff-pulse checks do not evaluate the actual global background or
+select its constants. The complete nonlinear mean/residual cycle, forcing,
+energy and blow-up remain open; all prior records stay frozen.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data

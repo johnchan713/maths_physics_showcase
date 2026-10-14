@@ -211,6 +211,21 @@ why the actual pulse dynamics and mean corrections are necessary. The
 actual band-uniform derivative/support/edge estimates, physical mean solve,
 full residual improvement, forcing, energy and blow-up remain unverified.
 
+The later [actual-band pulse bounds](actual_band_pulse_bounds/README.md)
+instantiate that interface's phase and frame hypotheses using the inherited
+background estimates. They derive a common small-q domain, a positive
+pulse lower bound, all fixed-order polynomial derivative losses, positive
+primary covariance weights and a signed inverse with flat edge weights.
+A full linear harmonic decomposition retains the fast radial multiplier,
+pressure and viscosity; its conditional gain is positive. The real primary
+curl covariance has a sharper relative gain, but its physical upper bound
+remains singular. A manufactured huge-band fixture keeps integer rounding
+and shrinking-box offsets at arbitrary precision and resolves the pulse
+in Gaussian coordinates. Its numerical background, comparison constants
+and truncated covariance quadrature are diagnostics. Actual global values,
+the physical mean solve, all nonlinear interactions, a complete residual
+cycle and blow-up remain unverified. Earlier evidence is unchanged.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

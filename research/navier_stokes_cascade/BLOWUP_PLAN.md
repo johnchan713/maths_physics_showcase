@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-14, following research commit
-`25f59628da5bc7c2efb66816075ddd98d7e340c1` and the physical-wave-interface checkpoint.
+`9c490d8732da619500584458f9bf71f31079a8aa` and the actual-band-pulse checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -125,17 +125,30 @@ mean pressure calculation also retains axial defects and possible inner
 pressure constants. Kinematic covariance matching alone can leave a
 frequency-squared viscous residual; no actual full residual gain is claimed.
 
+The [actual-band pulse checkpoint](results/actual_band_pulse_bounds/README.md)
+now derives the phase/frame comparisons from the inherited background
+bounds, with whole-pulse rounding costs and one common small-q domain.
+An invariant ratio interval gives a positive radial pulse lower bound.
+Fixed-order derivative estimates, Gaussian covariance concentration and
+a quantitative cone inverse give conditional primary and signed edge
+bounds. The full linear wave operator gains a positive epsilon power,
+with pressure and viscosity retained. Exact real curls also give a relative
+primary covariance gain. These statements depend on the prior continuum
+estimates and support geometry; finite fixtures do not evaluate the actual
+global field or its constants. The physical mean solve and complete
+nonlinear residual cycle remain open. Covariance and linear gains alone
+do not give smooth forcing or a complete-field blow-up proof.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
 2. Review the all-order background induction and asymptotic summation against
    their dependencies. Keep the common collar, the lower-order pressure
    sources, arbitrary coefficient growth and the curl-cutoff commutator.
-3. Apply the exact physical-wave interface to the ACTUAL summed background.
-   Verify uniform phase/frame comparisons, support/descent and pulse bounds
-   in every fixed derivative order. Retain discrete frequencies and all
-   remaining terms of the full physical linearized operator. The exact curl
-   and covariance identities do not supply those estimates.
+3. Review the new conditional actual-band phase/pulse/linear estimates and
+   their exact dependencies, including frozen integer choices, the common
+   support geometry and temporal zero extension required for sourced linear
+   residuals. Do not replace continuum inputs by the huge-band fixtures.
 4. Verify the signed higher-stress corrections and weighted edge estimates
    at the wave interface. Inverse edge-distance powers remain; small q alone
    does not prove uniform cone stability at the flat stress boundaries.
@@ -199,9 +212,9 @@ flat augmented background error does not cancel the stress by itself.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Verify actual band phase/frame comparisons and weighted pulse bounds from the summed background, with fixed discrete labels and frequencies | Supplies the uniform inputs that the new exact interface and reference pulse do not establish |
-| 2–4 hours | Carry the actual integrated covariance and signed inverse through support separation and edge-weighted derivatives; bound the full linear remainder | Tests whether the pulse cancels the leading viscosity and retains the needed derivative gain |
-| 4–6 hours | Construct the physical mean corrections with the full tensor, axial pressure defect and integral constraints; recompute all interactions and push | Targets a positive gain for the full residual, beyond covariance matching |
+| 0–2 hours | Derive the physical mean pressure source and compatibility integrals from the complete exact-curl covariance, retaining the axial pressure term | Identifies the mean equations left after the new conditional pulse/linear bounds |
+| 2–4 hours | Construct compact divergence-free mean updates for the auxiliary oscillation and moment defects, with the actual radial memory and edge weights | Tests solvability without changing the prescribed inner/outer pressure data |
+| 4–6 hours | Recompute the same field's nonlinear, old/new wave and mean interactions; prove a positive gain for a complete cycle or isolate the blocking inequality, then push | Addresses the full residual improvement that covariance and linear gains do not establish |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,
