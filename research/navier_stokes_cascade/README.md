@@ -104,6 +104,21 @@ identities; they do not evaluate the actual huge-frequency profile. Full
 physical waves, all-order induction and summation, admissible forcing, energy,
 and complete-field blow-up remain open. Earlier frozen audits are unchanged.
 
+The subsequent [background summation](results/background_summation/README.md)
+supplies a conditional all-order coefficient induction and a smooth,
+divergence-free asymptotic background for q>0. The general pressure source
+retains radial axial viscosity starting at order two; the same sparse system
+and five linear moments work on the common collar and support. A logarithmic
+cutoff recipe handles arbitrarily growing coefficient constants, and cutoffs
+act on Stokes streamfunction potentials with their exact curl commutator.
+The remaining AUGMENTED background error is flat in every fixed physical
+derivative, and the background core lower bound survives the whole sum.
+The bare momentum residual still includes the retained annular stress.
+Independent manufactured coefficient, moment, curl and scalar summation
+checks do not evaluate the actual infinite coefficient sequence or prove
+the full physical wave construction. Smooth forcing, complete-field energy
+and blow-up remain open; no earlier audit or GOAL.md is rewritten.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data

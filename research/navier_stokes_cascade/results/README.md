@@ -183,6 +183,20 @@ residual decay. Separate finite fixtures test global moments, radial memory,
 stress integrals and remainders. Full waves, all-order background induction,
 summation, smooth forcing, energy and complete-field blow-up remain open.
 
+The later [background summation](background_summation/README.md) conditionally
+extends that construction to every order on the same collar, restoring the
+same five moments and deriving common higher stress support. It retains
+the shifted radial axial-viscosity source at order two. Fixed physical
+derivative losses stay independent of truncation order. Streamfunction
+cutoffs and a logarithmic diagonal scale choice give a smooth divergence-free
+background with flat AUGMENTED error and a surviving background core swirl
+lower bound. The retained signed stress still contributes to the bare
+momentum residual. The checks cover 216 coefficient-system cases, 48
+conservative-moment cases and 96 potential-cutoff cases, with separate
+scalar asymptotic-summation controls and exact exponent budgets. They do
+not numerically realize the actual all-order profile or verify physical
+waves, full-field residual decay, admissible forcing, energy or blow-up.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

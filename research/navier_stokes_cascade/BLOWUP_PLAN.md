@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-14, following research commit
-`4a5a098862090231505d1976378574d6034ee9cb` and the annular first-correction checkpoint.
+`305b9288a86877ba994514e514835a0c8e0f036d` and the background-summation checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -59,7 +59,7 @@ unverified earlier hypothesis as established. A failed argument sends the
 affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
-## Immediate work package: higher coefficients and the full physical residual
+## Immediate work package: physical waves and the retained background stress
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
@@ -101,27 +101,37 @@ the positive-order patch, while pressure can extend through Xv. The exact
 first augmented-background remainder gains q^(2h), but still has the singular
 sufficient bound C_m q^(-3/2+2h-m). This is not the full wave residual.
 
+The [background-summation checkpoint](results/background_summation/README.md)
+now supplies the conditional general-order induction, common higher stress
+support, and fixed-derivative finite residual losses. It retains the radial
+axial-viscosity term entering pressure at order two. A logarithmic cutoff
+choice and the exact streamfunction curl product rule yield a smooth
+divergence-free background for q>0, with a flat AUGMENTED error and a core
+swirl lower bound surviving all background orders. The argument requires
+finite coefficient bounds at each order, not uniform bounds in order or
+convergence of the raw series. Actual coefficient values and cutoff scales
+have not been numerically materialized. The bare momentum residual still
+contains the annular stress divergence, so this does not give smooth forcing.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
-2. Review the global first coefficient's collar, moment and pressure support
-   argument. Do not substitute the earlier core-only C^16 envelope for its
-   finite collar constant, or cut off the pressure at the end of I3.
-3. Extend the coefficient induction to order two and then all orders, using
-   already finalized lower orders, preserving the same analytic-eta rectangle
-   and five moments. Keep every shifted exponent and lower-order pressure source.
-4. Bound the fixed-derivative remainder constants and signed stress tails
-   required by the physical wave construction. A signed two-component stress
-   is not a full positive wave covariance tensor. Tail estimates allow
-   inverse powers of the edge distance; small q alone does not establish
-   uniform cone stability of T0+q^(2h)T1 at the flat stress edges.
-5. Construct the physical wave and mean corrections and recompute the full
-   residual with their complete tensor divergence, cross interactions and
-   localization. A relative background exponent gain is not smooth forcing.
-6. Establish the all-order solvability, derivative constants and summation
-   argument. Cutoffs must act on divergence-preserving potentials; include
-   their product-rule terms. Finite truncations do not give a smooth force
-   through the singular time.
+2. Review the all-order background induction and asymptotic summation against
+   their dependencies. Keep the common collar, the lower-order pressure
+   sources, arbitrary coefficient growth and the curl-cutoff commutator.
+3. Construct the physical waves against this background. Derive their FULL
+   covariance tensor and divergence, including diagonal, radial, angular and
+   axial contributions. The prescribed tangential stress operator is not
+   interchangeable with that tensor divergence.
+4. Verify the signed higher-stress corrections and weighted edge estimates
+   at the wave interface. Inverse edge-distance powers remain; small q alone
+   does not prove uniform cone stability at the flat stress boundaries.
+5. Construct the physical mean corrections, enforce the exact integral
+   constraints and control every wave/background and wave/wave interaction.
+   Prove improvement of the full residual in fixed physical derivative norms.
+6. Sum the full divergence-preserving correction sequence, then localize and
+   initialize the SAME field. Establish smooth compact forcing through T,
+   energy control and a lower bound surviving the physical wave corrections.
 
 These steps require continuum estimates. Manufactured crosschecks reject
 omitted terms and numerical cancellation errors but cannot supply those
@@ -169,11 +179,16 @@ the relative augmented-background remainder gain. The next task is the
 higher-order background induction and the physical wave construction.
 None of these checkpoints completes a decaying full residual or blow-up proof.
 
+The background-summation checkpoint subsequently completes that background
+induction and asymptotic realization conditionally. The remaining first
+interface is now the retained signed stress and the actual physical waves;
+flat augmented background error does not cancel the stress by itself.
+
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Derive and review the second coefficient from the finalized first coefficient, retaining radial and axial source shifts | Tests the induction rather than repeating a formal first-order solve |
-| 2–4 hours | Prove common support, five-moment restoration and fixed-derivative finite-truncation bounds at general order, or identify the failed estimate | Supplies the prerequisites for a divergence-preserving asymptotic sum |
-| 4–6 hours | Audit the summation cutoff product terms and the physical stress-to-wave interface; reproduce and push | Separates a completed background expansion from the still-unproved full-field residual improvement |
+| 0–2 hours | Derive the physical wave ansatz and its complete covariance/divergence against the summed background | Tests the actual cancellation of the retained annular stress |
+| 2–4 hours | Trace signed stress corrections, boundary weights and support separation through the wave amplitudes and potentials | Identifies the estimates needed to control radial and edge errors |
+| 4–6 hours | Compute physical residual and mean-constraint defects for that same wave field; add omission controls, reproduce and push | Replaces tangential-stress bookkeeping with a checked full-field interaction budget |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,
@@ -259,10 +274,10 @@ identifies every unlocalized base term and the first correction system. The
 compact-background derivative bound conditionally, and the
 [annular extension](results/annular_first_correction/README.md) now supplies
 the conditional global first coefficient, matching moments and signed stress
-tails. The earliest new construction tasks are all-order background induction
-with fixed-derivative bounds and divergence-preserving summation, followed
-by the actual physical wave covariance and mean corrections. Milestone 3
-remains open for the full field: a signed-stress background exponent gain
-cannot substitute for that physical residual. Smooth forcing and a lower
-bound for the complete velocity remain separate gates. A failure must revise
-the affected construction.
+tails. The [background summation](results/background_summation/README.md)
+now supplies the conditional all-order background and flat augmented error.
+The earliest new construction tasks are the actual physical wave covariance,
+signed stress corrections and mean interactions. Milestone 3 remains open
+for the full field: retained stress is still a source in the bare momentum
+equation. Smooth forcing and a lower bound for the complete velocity remain
+separate gates. A failure must revise the affected construction.
