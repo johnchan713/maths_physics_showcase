@@ -18,8 +18,14 @@ obligations, and pass/fail conditions. The latest comparison lemma closes
 the downstream conditional implication from the localized field to exclusion
 of a global smooth bounded-energy competitor. The global support geometry
 now has an explicit construction. Its radius-explicit pulse/source replay
-retains the small-support covariance cost on one common domain. Immediate
-work is to audit the actual leading-profile and summed-background inputs.
+retains the small-support covariance cost on one common domain. The new
+[background-jet foundation audit](results/background_jet_foundation/README.md)
+derives the required summed-field jets from an explicit leading-profile
+certificate. It retains the Bell-number cost of changing scale-derivative
+conventions, the axis limits and cutoff curl, and proves the normalized
+moment inverse bound on the actual bump supports. The leading certificate,
+strict pulse gaps and weighted edges still require direct review; no
+unconditional pulse estimate or complete residual improvement is claimed.
 
 The [15 October external-criticism review](EXTERNAL_REVIEW_2026-10-15.md)
 confirms two written/Lean statement differences and rechecks the matching

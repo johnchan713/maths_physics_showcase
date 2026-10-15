@@ -1,0 +1,42 @@
+{
+  "E_bump_centers": [
+    "1/2",
+    "3/2",
+    "5/2"
+  ],
+  "U_bump_centers": [
+    "1",
+    "2"
+  ],
+  "actual_N_h": "same fixed inherited N and h; neither reselected",
+  "actual_patch_exponent_range": "0<ell_patch<=1/100",
+  "bump_width": "1/10",
+  "common_collar": "0<=X<=Xa*exp(tc/4); keep through Xa*exp(tc/8)",
+  "derivative_convention": "Euler q*d_q at fixed X,eta; Stirling conversion from q^j*d_q^j",
+  "diagnostic_patch_exponents": [
+    "0.005",
+    "1e-30"
+  ],
+  "exact_derivative_orders": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "input": "leading-profile regularity, common analytic collar, reserved patch and exterior identities",
+  "interval_precision": 60,
+  "normalized_diagonal": "C_(n,m)*q^(n*h)<=2^-n for every m<=n and all q<=a_n^-1",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "94e1f3376d6813376d5369bba9c3b949a9802dd4",
+  "precision": 80,
+  "radial_cutoff_jet_order": "m+1",
+  "sampled_diagnostics_are_not_continuum_proofs": true,
+  "status": "background-jet-construction-audited-relative-to-leading-profile"
+}

@@ -76,7 +76,14 @@ potential under localization; retain the actual qstar domain margin;
 and trace axis values and mean-pressure bump support. Treat the separate
 AI-assisted mismatch list as leads, not verified errors. Smooth force jets
 vanishing at the event do not establish an unforced neighborhood or analytic
-forcing. The next actual background-jet gate remains inequality (23).
+forcing. The new [background-jet foundation audit](results/background_jet_foundation/README.md)
+derives inequality (23) relative to a precise leading-profile certificate,
+using the same fixed N,h. It supplies the scale-derivative conversion costs,
+regular axis values, common-collar coefficient solve, a continuum bound for
+the actual moment inverse, and the normalized cutoff schedule. The immediate
+gate is now verification of that leading certificate and the strict growth,
+cone and edge bounds, equation (14) of the new note. They are not supplied by
+the background induction or by taking a later first band.
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
@@ -240,12 +247,27 @@ to the defining profile/background equations at the SAME fixed N and h.
 This removes the geometry-radius mismatch, not the conditional foundation
 or the unconditional complete-residual/blow-up gate.
 
+The subsequent [background-jet audit](results/background_jet_foundation/README.md)
+checks the construction behind (23). Euler and frozen scale jets differ by
+triangular Stirling transforms; the diagonal schedule explicitly absorbs
+their Bell-number constants and the extra radial cutoff derivative. The
+actual positive-order moment matrix has a continuum inverse norm below 1000
+throughout 0<ell_patch<=.01. The all-order coefficient construction and band
+pullback then give (23) relative to the stated leading-profile smoothness,
+analytic collar, reserved patch and exterior identities. This narrows the
+dependency; it does not independently prove those leading identities, the
+strict pulse gaps or the weighted first-stress edge bounds. The next batch
+must review those defining maps and inequalities rather than adding another
+downstream conditional consequence.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
-2. Review the all-order background induction and asymptotic summation against
-   their dependencies. Keep the common collar, the lower-order pressure
-   sources, arbitrary coefficient growth and the curl-cutoff commutator.
+2. Use the explicit background-jet construction and verify its remaining
+   LEADING-profile certificate on the common collar. Preserve lower-order
+   pressure sources, arbitrary coefficient growth, the Stirling conversion
+   constants and the curl-cutoff commutator. A finite low-order jet budget
+   cannot substitute for the all-fixed-order regularity premise.
 3. Use the radius-explicit pulse/source replay and audit its remaining
    actual background-jet, strict gap and weighted source hypotheses directly.
    Retain frozen integer choices, the uniform value threshold and temporal
