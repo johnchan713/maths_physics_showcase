@@ -16,8 +16,9 @@ measure how close the construction is to a proof.
 The [blow-up plan](BLOWUP_PLAN.md) records the current route, ordered proof
 obligations, and pass/fail conditions. The latest comparison lemma closes
 the downstream conditional implication from the localized field to exclusion
-of a global smooth bounded-energy competitor. The immediate work is to
-audit the global auxiliary atlas/support and inherited continuum foundation.
+of a global smooth bounded-energy competitor. The global support geometry
+now has an explicit construction. Immediate work is to replay the primary
+pulse/source estimates with it and audit the inherited analytic foundation.
 
 The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
@@ -214,6 +215,19 @@ failed shortcuts. Periodic algebra fixtures do not prove whole-space
 estimates. The global pulse/support/atlas and leading-profile inputs
 remain unverified independently; no unconditional or unforced blow-up
 result is claimed. The next work must test those premises directly.
+
+The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
+now gives a 1,250-color rule, rational centers with denominator 2,003,
+and a fixed positive radius proving closed support separation across ALL
+bands. Exact covering-copy counts, Haar identities, label counts, evaluated
+derivatives and lifted pulse paths supply the common-chart geometry.
+All 33 tests, 13 gates and 404 inherited byte checks pass. Visual PDF
+inspection rejected a text-extraction false alarm and confirmed the
+existing radial normalization; no normalization repair was made.
+The earlier manufactured pulse radius is not this global support radius.
+Full phase/frame/source estimates with these fixed constants, and the
+leading-profile/background/inverse foundation, still require direct review.
+No unconditional blow-up result is claimed and earlier evidence is unchanged.
 
 ## Exact scope
 

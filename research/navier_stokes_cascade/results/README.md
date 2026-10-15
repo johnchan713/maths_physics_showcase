@@ -287,6 +287,18 @@ starting with global auxiliary support/atlas existence and compatibility.
 The leading profile and all-order physical estimates still need independent
 review. No unconditional or unforced singularity is claimed.
 
+The [constructive auxiliary support audit](auxiliary_geometry_audit/README.md)
+then replaces abstract separation with 1,250 explicit colors, rational
+centers of denominator 2,003 and a fixed positive rectangle radius.
+The all-band proof includes closed preimage separation, exact covering
+counts, Haar/pullback compatibility, label counts and lifted pulse paths.
+Its 33 tests, 13 gates and 404 inherited byte checks pass. Visual PDF
+inspection rejects a missing-parentheses text-extraction false alarm:
+the existing radial normalization is correct and unchanged. Actual pulse
+and source estimates must still be replayed with this global radius, not
+the earlier manufactured fixture radius. Leading-profile/background/
+inverse review and the full analytic construction remain open.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

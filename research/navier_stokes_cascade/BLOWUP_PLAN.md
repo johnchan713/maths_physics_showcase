@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-15, following research commit
-`b510fd042c9f41709b5e685cd84ee865352e5f31` and the global-solution-comparison checkpoint.
+`464244c7334eb0a73579431e5155f1699565f61a` and the constructive-auxiliary-geometry checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -59,7 +59,7 @@ unverified earlier hypothesis as established. A failed argument sends the
 affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
-## Immediate work package: global auxiliary atlas and continuum foundation
+## Immediate work package: pulse/source replay and analytic foundation
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
@@ -194,6 +194,18 @@ Next, reconstruct those defining maps and test their actual coverage,
 separation, bounded overlap and compatibility rather than adding another
 dependent conditional transfer theorem.
 
+The [constructive geometry checkpoint](results/auxiliary_geometry_audit/README.md)
+now supplies an explicit all-band support construction: 1,250 residue
+colors, centers c_n=(0,n/2003) and r0<=1/6057072. It proves closed
+separation of interacting absolute preimages, bounded common coverings,
+Haar compatibility, polynomial label counts and compatible lifted paths.
+Visual source inspection rejects an initially suspected normalization
+mismatch caused by missing extracted parentheses. The old diagnostic
+r0=.04 is not a globally validated support radius. Next, replay the
+primary phase/frame/source estimates with the explicit geometric constants,
+then directly audit the leading profile and background/mean inverses.
+Pure geometry does not independently validate the analytic construction.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
@@ -211,12 +223,12 @@ dependent conditional transfer theorem.
    the inherited profile, pulse and support premises. Preserve the exact
    radial pressure/flux identities, flat-term bookkeeping and fixed-stage
    quantifiers; its normalized gain is not a fixed-scale contraction.
-6. Review the full sum, localization, force extension and general comparison
-   lemma as a downstream chain. Prioritize the unresolved upstream atlas:
-   compatible Cartesian potential representatives, closed separation of
-   interacting labels, bounded overlap and uniform derivatives after
-   physical evaluation. Keep the conditional exclusion separate from an
-   independently verified construction and unconditional theorem.
+6. Review the full sum, localization, force extension and comparison as a
+   downstream chain. Insert the explicit support geometry into the actual
+   pulse/phase and source estimates; trace every constant and threshold
+   before iteration. Audit the inherited profile and all-order analytic
+   inverses directly. Keep conditional exclusion separate from a verified
+   construction and unconditional theorem.
 
 These steps require continuum estimates. Manufactured crosschecks reject
 omitted terms and numerical cancellation errors but cannot supply those
@@ -271,9 +283,9 @@ flat augmented background error does not cancel the stress by itself.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Reconstruct the actual dyadic charts, auxiliary maps, label choices and physical support sets from their definitions | Replaces a repeated global-geometry premise with a reviewable construction |
-| 2–4 hours | Check required coverage, closed separation of interacting labels and bounded overlap, including band boundaries | These properties are needed by the same-label nonlinear cancellation and assembled physical bounds |
-| 4–6 hours | Audit coordinate-transition compatibility and all fixed physical derivative bounds; publish the first proved estimate or exact incompatible overlap | Tests the foundation on which every downstream conditional result depends |
+| 0–2 hours | Insert r0<=1/6057072 and the common-covering constants into the actual pulse phase/frame comparison, retaining accumulated rounding errors | Checks that the explicit global geometry fits the local pulse estimates rather than a manufactured radius |
+| 2–4 hours | Trace source and signed-covariance localization through every copy and temporal cutoff; derive a common pre-iteration threshold or its blocking inequality | Connects geometric compatibility to the actual global coefficient estimates |
+| 4–6 hours | Directly review the first inherited leading-profile/background/inverse bound not yet independently checked, then publish the estimate or obstruction | Continues the foundation audit; downstream conditional agreement is not a proof of its inputs |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,

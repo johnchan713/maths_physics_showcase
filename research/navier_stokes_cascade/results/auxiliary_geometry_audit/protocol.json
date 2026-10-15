@@ -1,0 +1,47 @@
+{
+  "canonical_radial_exponent": "2*((1+h)*rho_g-h*kappa_s)",
+  "center_congruence_margin": "3/8012; not a uniform absolute-torus Euclidean distance",
+  "centers": "c_n=(0,n/2003), n=1,...,1250",
+  "color_period": 5,
+  "colors": 1250,
+  "diagnostic_bands": [
+    16,
+    17,
+    32,
+    160,
+    1600,
+    1000000,
+    1000000000,
+    1000000000000
+  ],
+  "diagnostic_data": "exact integer/rational geometry, high precision floor/path identities and manufactured scalar evaluated on the actual absolute map",
+  "diagnostic_h_values": [
+    "1/200",
+    "9/1000"
+  ],
+  "diagnostic_jet_bands": [
+    16,
+    20,
+    24
+  ],
+  "diagnostic_relative_tolerance": 2e-12,
+  "maximum_common_torus_copies": 2744,
+  "maximum_common_transition_matrix_norm": 188,
+  "maximum_covering_difference": 3,
+  "minimum_band": 16,
+  "neighboring_band_difference": 4,
+  "original_pointwise_slow_overlap_bound": 162,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "464244c7334eb0a73579431e5155f1699565f61a",
+  "prime_denominator": 2003,
+  "radius_upper_bound": "1/6057072",
+  "rejected_text_extraction_variant": "2*(1+h)*rho_g-h*kappa_s",
+  "scope": "Constructive pure support/covering geometry and preservation of compatibility by the specified physical operators. Full pulse/background/nonlinear estimates and unconditional blow-up remain unverified.",
+  "source_equations": [
+    "6.1-6.22",
+    "Lemmas 6.1-6.3"
+  ],
+  "status": "constructive-all-band-auxiliary-supports-and-common-chart-geometry",
+  "tensor_mesh": "delta_ell=ell^-6=S_ell^-3; original halfwidth delta, doubled halfwidth 2*delta",
+  "visual_source_check": "PDF page 63 equation (6.2); outer 2 multiplies both terms"
+}
