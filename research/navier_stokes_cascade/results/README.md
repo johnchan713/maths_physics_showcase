@@ -299,6 +299,18 @@ and source estimates must still be replayed with this global radius, not
 the earlier manufactured fixture radius. Leading-profile/background/
 inverse review and the full analytic construction remain open.
 
+The [radius-explicit pulse/source replay](geometric_pulse_replay/README.md)
+then uses that global radius and proves the conditional length-based bounds:
+phase/frame errors O(1/L), a positive radial pulse, a common inverse domain,
+all fixed jets and flat cutoff tails. The full Haar weights include transverse
+area and scale as r0^(3/2)/sqrt(S), with the compensating inverse/root costs.
+Its 38 tests, 12 gates and 415 inherited byte checks pass, including separate
+two-frame/three-component source solves and the nonzero-source counterexample
+to averaging covering copies. The actual profile/background constants remain
+unverified independently. The next task is the actual common-collar jet
+inequality and strict leading gap/edge/inverse dependency audit at fixed N,h;
+no unconditional complete residual improvement or blow-up is asserted.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

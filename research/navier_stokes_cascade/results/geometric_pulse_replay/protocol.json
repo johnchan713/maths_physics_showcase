@@ -1,0 +1,33 @@
+{
+  "ODE_solver": "Radau after division by exact reference P; separate 2-frame and 3-component sourced equations",
+  "actual_h": "fixed inherited h in (0,1/100)",
+  "actual_leading_radial_frequency": "unchanged inherited N=1+floor(H^32)",
+  "actual_profile_constants_or_actual_qstar_numerically_evaluated": false,
+  "covariance_quadrature": "full pulse in (v-L/2)/sqrt(L), with relative pulse and transverse cutoffs",
+  "diagnostic_bands": [
+    51600,
+    103200
+  ],
+  "diagnostic_frame_bound_is_sampled_not_interval_certified": true,
+  "diagnostic_frame_entry_bound_times_length": 30,
+  "diagnostic_h": "1/200",
+  "diagnostic_precision": 100,
+  "diagnostic_radii": [
+    "1/6057072",
+    "1/12114144"
+  ],
+  "global_radius": "1/6057072",
+  "maximum_independent_sourced_ODE_error": 2e-08,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "1d7a71fd249cdb136f2f8658f5fa85afb740f5dc",
+  "relative_refinement_tolerance": 3e-08,
+  "scope": "Conditional radius-explicit pulse/source estimates; actual strict profile gaps, summed background jets and all-order mean inverse foundation remain unverified independently. No unconditional full residual improvement or blow-up.",
+  "source_equations": [
+    "6.10-6.22",
+    "7.2-7.29",
+    "Proposition 7.2",
+    "Lemmas 7.1,7.4,7.5"
+  ],
+  "status": "conditional-pulse-and-source-replay-with-explicit-global-geometry",
+  "transverse_cutoff": "beta(2*xi/r0), closed support [-r0/2,r0/2] strictly inside (-r0,r0)"
+}

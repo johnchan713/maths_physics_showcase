@@ -17,8 +17,9 @@ The [blow-up plan](BLOWUP_PLAN.md) records the current route, ordered proof
 obligations, and pass/fail conditions. The latest comparison lemma closes
 the downstream conditional implication from the localized field to exclusion
 of a global smooth bounded-energy competitor. The global support geometry
-now has an explicit construction. Immediate work is to replay the primary
-pulse/source estimates with it and audit the inherited analytic foundation.
+now has an explicit construction. Its radius-explicit pulse/source replay
+retains the small-support covariance cost on one common domain. Immediate
+work is to audit the actual leading-profile and summed-background inputs.
 
 The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
@@ -228,6 +229,20 @@ The earlier manufactured pulse radius is not this global support radius.
 Full phase/frame/source estimates with these fixed constants, and the
 leading-profile/background/inverse foundation, still require direct review.
 No unconditional blow-up result is claimed and earlier evidence is unchanged.
+
+The [geometric pulse replay](results/geometric_pulse_replay/README.md) now
+uses the globally admissible radius in the phase, moving frame, positive
+pulse and sourced inverse. Writing errors as O(1/L), L=2*r0/ci, shows that
+the small radius requires a finite later first band. Full Haar covariance
+weights scale as r0^(3/2)/sqrt(S); inversion and amplitude costs are retained.
+The common-domain, all-fixed-jet and flat-tail arguments remain conditional
+on actual leading-profile gaps, edge bounds and summed-background estimates.
+Its 38 tests, 12 gates and 415 inherited byte checks include independent
+two/three-component source solves and a failure of averaging covering copies.
+Manufactured background diagnostics do not verify the actual global field.
+The next gate is the explicit common-collar background-jet inequality (23)
+and the inherited leading/profile/mean-inverse foundation, at fixed N and h.
+No unconditional complete residual gain or blow-up result is claimed.
 
 ## Exact scope
 

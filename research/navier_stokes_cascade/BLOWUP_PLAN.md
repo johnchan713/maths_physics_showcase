@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-15, following research commit
-`464244c7334eb0a73579431e5155f1699565f61a` and the constructive-auxiliary-geometry checkpoint.
+`1d7a71fd249cdb136f2f8658f5fa85afb740f5dc` and the radius-explicit pulse/source replay.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -59,7 +59,7 @@ unverified earlier hypothesis as established. A failed argument sends the
 affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
-## Immediate work package: pulse/source replay and analytic foundation
+## Immediate work package: actual leading-profile and background foundation
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
@@ -206,16 +206,33 @@ primary phase/frame/source estimates with the explicit geometric constants,
 then directly audit the leading profile and background/mean inverses.
 Pure geometry does not independently validate the analytic construction.
 
+The [radius-explicit pulse/source replay](results/geometric_pulse_replay/README.md)
+now carries the explicit r0 through the actual phase and moving frame,
+positive homogeneous pulse, full Haar covariance and common sourced inverse.
+Errors are O(1/L), L=2*r0/ci, so a finite later first band handles the small
+radius without changing h, N or epsilon orders. The covariance is
+r0^(3/2)/sqrt(S); its inverse and amplitude costs are explicitly retained.
+All fixed jets and cutoff tails follow on the same inverse domain under the
+stated background, leading-gap and source-edge assumptions. Its manufactured
+fixture uses the admissible global radius; separate projected/frame solves
+do not evaluate the actual global leading profile. The next analytic gate
+is inequality (23) there: all normalized actual background jets must have
+uniform bounds on the common closed collar, with the strict leading cone
+and edge gaps. Directly trace that input and the all-order mean inverses
+to the defining profile/background equations at the SAME fixed N and h.
+This removes the geometry-radius mismatch, not the conditional foundation
+or the unconditional complete-residual/blow-up gate.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
 2. Review the all-order background induction and asymptotic summation against
    their dependencies. Keep the common collar, the lower-order pressure
    sources, arbitrary coefficient growth and the curl-cutoff commutator.
-3. Review the new conditional actual-band phase/pulse/linear estimates and
-   their exact dependencies, including frozen integer choices, the common
-   support geometry and temporal zero extension required for sourced linear
-   residuals. Do not replace continuum inputs by the huge-band fixtures.
+3. Use the radius-explicit pulse/source replay and audit its remaining
+   actual background-jet, strict gap and weighted source hypotheses directly.
+   Retain frozen integer choices, the uniform value threshold and temporal
+   zero extension. Do not replace inequality (23) by huge-band fixtures.
 4. Verify the signed higher-stress corrections and weighted edge estimates
    at the wave interface. Inverse edge-distance powers remain; small q alone
    does not prove uniform cone stability at the flat stress boundaries.
