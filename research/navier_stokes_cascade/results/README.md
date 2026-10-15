@@ -261,6 +261,19 @@ review, physical localization/initialization, admissible global smooth
 forcing, whole-space conclusions and independent foundation review remain
 open. Earlier evidence is unchanged and no blow-up theorem is claimed.
 
+The [physical localization and compact force extension](localized_force_extension/README.md)
+then uses the inherited uniform physical jet bounds to derive endpoint
+limits, expands the complete localization error and realizes all terminal
+force jets with shrinking time cutoffs. This supplies a CONDITIONAL smooth
+compact force through t=1, zero initial datum, whole-space energy and
+dissipation control, and the surviving core growth of the same field.
+Its 34 tests and ten gates pass, with 382 inherited source-byte checks.
+The failed 64-node energy quadrature is retained; 96 nodes pass the
+unchanged tolerance. The actual global field and terminal constants are
+unevaluated. Pressure-controlled comparison with an arbitrary global
+smooth bounded-energy solution and independent foundation/global-atlas
+review remain open. No unconditional blow-up result is promoted.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

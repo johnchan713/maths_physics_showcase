@@ -1,0 +1,53 @@
+{
+  "actual_profile_parameters": "unchanged inherited N, h, positive lambda, common qstar and global atlas hypotheses",
+  "actual_viscosity": "1; other positive viscosities are algebra diagnostics only",
+  "diagnostic_data": "manufactured full curls with Cartesian base, gamma integral, terminal jets, synthetic scale constants and smooth compact energy fixture",
+  "diagnostic_energy_quadrature": 96,
+  "diagnostic_force_jet_terms": 8,
+  "diagnostic_heat_arguments": [
+    0.0,
+    0.3,
+    2.0
+  ],
+  "diagnostic_heat_h": "1/200",
+  "diagnostic_jet_points": [
+    [
+      1.12,
+      -0.4,
+      -0.19,
+      0.64
+    ],
+    [
+      1.3,
+      0.27,
+      0.25,
+      0.72
+    ],
+    [
+      1.44,
+      -0.9,
+      0.31,
+      0.8
+    ]
+  ],
+  "diagnostic_positive_viscosities": [
+    0.4,
+    1.0,
+    1.7
+  ],
+  "diagnostic_wave_frequency": 19,
+  "energy_integration_tolerance": 2e-09,
+  "extension_diagonal": "spatial_order+time_order<=floor(j/2)",
+  "localization_domain": "tau0=qstar/16, z0=(qstar/16)^D; q<=3*qstar/8",
+  "other_diagnostic_relative_tolerance": 2e-10,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "cef7a529973f9ff43d9107cd132663f6bfee7b6a",
+  "retained_failed_energy_quadrature": 64,
+  "scope": "Conditional endpoint limits, full physical localization, zero datum, smooth compact force, whole-space energy/dissipation and surviving core growth. Actual field evaluation, global-solution comparison and independent foundation/atlas review remain open.",
+  "source_equations": [
+    "9.15-9.21",
+    "10.1-10.14"
+  ],
+  "status": "conditional-physical-localization-compact-force-and-whole-space-energy",
+  "terminal_extension": "sum chi0(b_j*sigma)*sigma^j/j!*F_j; b_0=2, b_j increasing dyadic integers"
+}

@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-15, following research commit
-`d80f6ff1b45b6111a400f04db463a9e3afd84ccf` and the full-potential-realization checkpoint.
+`cef7a529973f9ff43d9107cd132663f6bfee7b6a` and the physical-localization/force checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -59,7 +59,7 @@ unverified earlier hypothesis as established. A failed argument sends the
 affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
-## Immediate work package: physical waves and the retained background stress
+## Immediate work package: global-solution comparison and foundation review
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
@@ -171,6 +171,16 @@ manufactured identity checks. The closed-time auxiliary atlas, admissible
 global forcing, whole-space energy and solution-exclusion argument remain
 unverified, as does independent review of the inherited foundation.
 
+The later [localization/force checkpoint](results/localized_force_extension/README.md)
+shows that the inherited UNIFORM physical jets already imply one-sided
+terminal limits away from the origin. It retains every physical cutoff
+term, realizes all terminal force jets and obtains a conditional smooth
+compact force, zero initial datum, whole-space energy/dissipation control
+and the surviving complete-field growth. It does not independently certify
+the global atlas or earlier profile bounds. The remaining analytic transfer
+is comparison with an arbitrary global smooth bounded-energy solution;
+its pressure and fluxes at infinity require their own justified estimates.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
@@ -188,11 +198,12 @@ unverified, as does independent review of the inherited foundation.
    the inherited profile, pulse and support premises. Preserve the exact
    radial pressure/flux identities, flat-term bookkeeping and fixed-stage
    quantifiers; its normalized gain is not a fixed-scale contraction.
-6. Review the full potential sum and fixed-stage comparison, then check the
-   closed-time auxiliary atlas and its one-sided potential jets away from
-   the singular point. Localize and initialize the SAME field with every
-   curl, pressure, viscosity and nonlinear term retained. Establish smooth
-   compact forcing through T and the whole-space energy/comparison argument.
+6. Review the full potential sum, endpoint transfer and exact localization
+   of the SAME field, including all cutoff terms and terminal force jets.
+   Recover the pressure gradient of an arbitrary competing global smooth
+   bounded-energy solution from its equation, control all fluxes at spatial
+   infinity, and prove comparison on every fixed [0,T] with T<1 before
+   attempting the global-solution contradiction.
 
 These steps require continuum estimates. Manufactured crosschecks reject
 omitted terms and numerical cancellation errors but cannot supply those
@@ -247,9 +258,9 @@ flat augmented background error does not cancel the stress by itself.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Check the closed-time label choices, atlas transitions and one-sided jets of the realized potentials on q>=c>0 | Flatness at the singular corner does not establish endpoint regularity elsewhere |
-| 2–4 hours | Derive the exact spatial and temporal localization residual for the complete potentials, direct swirl and pressure | Preserves divergence while retaining every new curl, pressure and viscous term |
-| 4–6 hours | Construct the smooth compact force extension through T and establish the resulting whole-space energy budget, or record the exact obstruction, then push | Connects the conditional local construction to admissible data and forcing; the global-solution contradiction is a further separate gate |
+| 0–2 hours | Derive the difference equation and recover its pressure gradient under only smoothness and bounded kinetic energy | A decay assumption on the competing pressure cannot be silently added |
+| 2–4 hours | Bound the nonlocal pressure and transport fluxes on expanding balls, with every radius power explicit | Makes an energy comparison possible without assuming decay of the competing solution's derivatives |
+| 4–6 hours | Prove the fixed-T comparison or isolate its exact blocking inequality; then audit the route from the surviving lower bound to a global-solution contradiction and push | Tests the last conditional transfer while keeping independent foundation review separate |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,

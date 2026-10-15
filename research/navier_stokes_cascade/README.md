@@ -16,8 +16,9 @@ measure how close the construction is to a proof.
 The [blow-up plan](BLOWUP_PLAN.md) records the current route, ordered proof
 obligations, and pass/fail conditions. The latest conditional checkpoint
 realizes the full potential sequence with flat local equation error.
-The immediate work is endpoint geometry and physical localization for
-admissible forcing, alongside independent review of the inherited bounds.
+The latest localization result supplies smooth compact forcing and
+whole-space energy conditionally. The immediate work is global-solution
+comparison, alongside independent review of the inherited bounds.
 
 The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
@@ -184,6 +185,21 @@ not the actual infinite coefficient sequence. Endpoint atlas review,
 localization, initialization, admissible global forcing, whole-space
 conclusions and independent foundation review remain open. No blow-up
 theorem is claimed and earlier frozen records retain their historical scope.
+
+The subsequent [physical localization and force extension](results/localized_force_extension/README.md)
+derives terminal limits from the existing uniform physical derivative
+bounds, expands every localization curl, pressure, viscous and transport
+term, and matches all terminal force jets with shrinking time cutoffs.
+It gives a CONDITIONAL smooth compact force through t=1 and a whole-space
+field with zero initial datum, bounded kinetic energy, finite total
+dissipation and the surviving core lower bound. Its 34 tests, ten gates
+and 382 inherited byte checks preserve a failed coarse energy quadrature
+and its successful refinement at the same tolerance. The actual infinite
+field and terminal constants are not numerically evaluated. Comparison
+with an arbitrary global smooth bounded-energy solution, including its
+pressure and fluxes at spatial infinity, remains open. The foundation and
+global atlas still require independent review; no unconditional blow-up
+result is claimed.
 
 ## Exact scope
 

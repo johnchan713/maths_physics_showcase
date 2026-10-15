@@ -216,6 +216,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/full_potential_realization/evidence.json \
             --output navier_stokes_full_potential_realization_ci.json
 
+      - name: Check conditional localization, smooth compact force and whole-space energy
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/localized_force_extension/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/localized_force_extension/audit.py \
+            --verify-record research/navier_stokes_cascade/results/localized_force_extension/evidence.json \
+            --output navier_stokes_localized_force_extension_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -618,6 +625,7 @@ jobs:
             navier_stokes_compact_mean_corrections_ci.json
             navier_stokes_residual_cycle_closure_ci.json
             navier_stokes_full_potential_realization_ci.json
+            navier_stokes_localized_force_extension_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
