@@ -1,0 +1,864 @@
+{
+  "conditional_proof": {
+    "all_finite_states_use_fixed_primary_denominators_and_one_domain": true,
+    "angular_harmonic_bound": "M_next<=2*max(M,1); finite at every fixed stage",
+    "complete_cycle_gain": "1/10 in declared normalized residual orders",
+    "distinct_closed_label_supports_are_an_inherited_premise": true,
+    "flat_velocities_remain_in_all_actual_products": true,
+    "initial_orders": [
+      "1-3*kappa",
+      "2-3*kappa",
+      "1.9-3*kappa"
+    ],
+    "longitudinal_identity": "n.a=i*div_star(a)/(k*m) for the COMPLETE curl amplitude",
+    "mean_operations_may_fill_auxiliary_torus": true,
+    "moving_axial_pressure_product_retained": "epsilon*partial_Z(Jz+c_rho*P)",
+    "no_uniform_stage_constant_or_raw_series_convergence_claim": true,
+    "old_new_and_new_square_covariances_retained": true,
+    "physical_bound": "C_jm*q^(h*B_j-K_m); j fixed before q tends to zero",
+    "physical_jet_loss": "K_m=2*A+3/2+2*m; independent of finite stage",
+    "pressure_recomputed_after_every_velocity_change": true,
+    "same_label_wave_wave_order": "alpha+alpha_prime-kappa",
+    "stage_orders": [
+      "B=7/10+j/10",
+      "C=B+1/2"
+    ],
+    "subsequent_nonzero_sources_retain_a_wave_factor_and_its_P_envelope": true,
+    "wave_mean_order": "alpha+mu-1/2; radial mean has order mu+1"
+  },
+  "flags": {
+    "actual_global_profile_and_field_numerically_evaluated": false,
+    "admissible_smooth_compact_force_verified": false,
+    "blowup_verified": false,
+    "complete_curl_longitudinal_and_nonlinear_estimates_derived": true,
+    "complete_field_blowup_lower_bound_verified": false,
+    "complete_field_energy_verified": false,
+    "complete_infinite_wave_and_mean_potential_sum_verified": false,
+    "conditional_common_domain_and_stage_independent_physical_jet_loss_supplied": true,
+    "conditional_complete_finite_cycle_order_gain_supplied": true,
+    "conditional_initial_corrected_state_supplied": true,
+    "diagnostic_success_is_not_a_continuum_proof": true,
+    "fixed_scale_residual_norm_contraction_verified": false,
+    "formal_proof_assistant_certificate": false,
+    "inherited_foundation_and_global_auxiliary_geometry_independently_verified": false,
+    "low_stage_physical_residual_proved_to_decay": false,
+    "source_closure_proved_given_inherited_support_geometry": true,
+    "unconditional_complete_residual_construction_verified": false
+  },
+  "gates": {
+    "all_inherited_bytes_preserved": true,
+    "all_stage_cycle_orders": true,
+    "complete_signed_covariance": true,
+    "conditional_finite_result_not_promoted": true,
+    "fixed_physical_jet_loss": true,
+    "full_residual_increment": true,
+    "initial_state_orders": true,
+    "longitudinal_and_transport": true,
+    "sharp_missing_hypothesis_controls": true,
+    "source_support_and_flat_memory": true
+  },
+  "inherited_provenance": {
+    "actual_band_pulse_bounds:GOAL.md": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/README.md": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/audit.py": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/bounds.py": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/charts.py": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/diagnostics.py": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/protocol.json": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/requirements.txt": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/test_audit.py": true,
+    "actual_band_pulse_bounds:results/background_summation/evidence.json": true,
+    "actual_band_pulse_bounds:results/physical_wave_interface/evidence.json": true,
+    "angular_c2_transfer:results/angular_c2_transfer/README.md": true,
+    "angular_c2_transfer:results/angular_c2_transfer/audit.py": true,
+    "angular_c2_transfer:results/angular_c2_transfer/bounds.py": true,
+    "angular_c2_transfer:results/angular_c2_transfer/jets.py": true,
+    "angular_c2_transfer:results/angular_c2_transfer/protocol.json": true,
+    "angular_c2_transfer:results/angular_c2_transfer/requirements.txt": true,
+    "angular_c2_transfer:results/angular_c2_transfer/review.py": true,
+    "angular_c2_transfer:results/angular_c2_transfer/test_audit.py": true,
+    "angular_c2_transfer:results/axial_stress_audit/bounds.py": true,
+    "angular_c2_transfer:results/axis_core_attachment/README.md": true,
+    "angular_c2_transfer:results/axis_core_attachment/bounds.py": true,
+    "angular_c2_transfer:results/axis_core_attachment/evidence.json": true,
+    "angular_c2_transfer:results/axis_matching_audit/README.md": true,
+    "angular_c2_transfer:results/axis_matching_audit/annulus.py": true,
+    "angular_c2_transfer:results/axis_matching_audit/bounds.py": true,
+    "angular_c2_transfer:results/axis_matching_audit/evidence.json": true,
+    "angular_c2_transfer:results/axis_matching_audit/moments.py": true,
+    "angular_c2_transfer:results/joined_stress_construction/README.md": true,
+    "angular_c2_transfer:results/joined_stress_construction/construction.py": true,
+    "angular_c2_transfer:results/joined_stress_construction/evidence.json": true,
+    "annular_first_correction:GOAL.md": true,
+    "annular_first_correction:results/annular_first_correction/README.md": true,
+    "annular_first_correction:results/annular_first_correction/audit.py": true,
+    "annular_first_correction:results/annular_first_correction/checks.py": true,
+    "annular_first_correction:results/annular_first_correction/extension.py": true,
+    "annular_first_correction:results/annular_first_correction/fixtures.py": true,
+    "annular_first_correction:results/annular_first_correction/protocol.json": true,
+    "annular_first_correction:results/annular_first_correction/requirements.txt": true,
+    "annular_first_correction:results/annular_first_correction/test_audit.py": true,
+    "annular_first_correction:results/axis_core_attachment/evidence.json": true,
+    "annular_first_correction:results/first_correction_construction/evidence.json": true,
+    "annular_first_correction:results/heat_exterior_audit/evidence.json": true,
+    "annular_first_correction:results/higher_jet_budget/evidence.json": true,
+    "annular_first_correction:results/repair_state_bounds/evidence.json": true,
+    "annular_first_correction:results/stress_realization_audit/evidence.json": true,
+    "axial_stress_audit:axial_stress_audit/README.md": true,
+    "axial_stress_audit:axial_stress_audit/audit.py": true,
+    "axial_stress_audit:axial_stress_audit/bounds.py": true,
+    "axial_stress_audit:axial_stress_audit/diagnostics.py": true,
+    "axial_stress_audit:axial_stress_audit/protocol.json": true,
+    "axial_stress_audit:axial_stress_audit/requirements.txt": true,
+    "axial_stress_audit:axial_stress_audit/test_audit.py": true,
+    "axial_stress_audit:outer_pressure_pilot/evidence.json": true,
+    "axial_stress_audit:outer_pressure_pilot/protocol.json": true,
+    "axial_stress_audit:outer_pressure_pilot/schedule.py": true,
+    "axis_core_attachment:results/axis_core_attachment/README.md": true,
+    "axis_core_attachment:results/axis_core_attachment/audit.py": true,
+    "axis_core_attachment:results/axis_core_attachment/bounds.py": true,
+    "axis_core_attachment:results/axis_core_attachment/identities.py": true,
+    "axis_core_attachment:results/axis_core_attachment/protocol.json": true,
+    "axis_core_attachment:results/axis_core_attachment/requirements.txt": true,
+    "axis_core_attachment:results/axis_core_attachment/test_audit.py": true,
+    "axis_core_attachment:results/axis_matching_audit/README.md": true,
+    "axis_core_attachment:results/axis_matching_audit/annulus.py": true,
+    "axis_core_attachment:results/axis_matching_audit/bounds.py": true,
+    "axis_core_attachment:results/axis_matching_audit/evidence.json": true,
+    "axis_core_attachment:results/axis_matching_audit/moments.py": true,
+    "axis_core_attachment:results/heat_exterior_audit/evidence.json": true,
+    "axis_core_attachment:results/outer_pressure_pilot/schedule.py": true,
+    "axis_matching_audit:results/axial_stress_audit/bounds.py": true,
+    "axis_matching_audit:results/axis_matching_audit/README.md": true,
+    "axis_matching_audit:results/axis_matching_audit/annulus.py": true,
+    "axis_matching_audit:results/axis_matching_audit/audit.py": true,
+    "axis_matching_audit:results/axis_matching_audit/bounds.py": true,
+    "axis_matching_audit:results/axis_matching_audit/moments.py": true,
+    "axis_matching_audit:results/axis_matching_audit/protocol.json": true,
+    "axis_matching_audit:results/axis_matching_audit/requirements.txt": true,
+    "axis_matching_audit:results/axis_matching_audit/test_audit.py": true,
+    "axis_matching_audit:results/heat_exterior_audit/README.md": true,
+    "axis_matching_audit:results/heat_exterior_audit/bounds.py": true,
+    "axis_matching_audit:results/heat_exterior_audit/evidence.json": true,
+    "axis_matching_audit:results/heat_exterior_audit/protocol.json": true,
+    "axis_matching_audit:results/outer_pressure_pilot/schedule.py": true,
+    "background_summation:GOAL.md": true,
+    "background_summation:results/annular_first_correction/evidence.json": true,
+    "background_summation:results/axis_core_attachment/evidence.json": true,
+    "background_summation:results/background_summation/README.md": true,
+    "background_summation:results/background_summation/audit.py": true,
+    "background_summation:results/background_summation/checks.py": true,
+    "background_summation:results/background_summation/hierarchy.py": true,
+    "background_summation:results/background_summation/protocol.json": true,
+    "background_summation:results/background_summation/requirements.txt": true,
+    "background_summation:results/background_summation/summation.py": true,
+    "background_summation:results/background_summation/test_audit.py": true,
+    "background_summation:results/first_correction_construction/evidence.json": true,
+    "background_summation:results/heat_exterior_audit/evidence.json": true,
+    "background_summation:results/higher_jet_budget/evidence.json": true,
+    "background_summation:results/physical_residual_budget/evidence.json": true,
+    "background_summation:results/stress_realization_audit/evidence.json": true,
+    "compact_jet_envelope:results/angular_c2_transfer/README.md": true,
+    "compact_jet_envelope:results/angular_c2_transfer/bounds.py": true,
+    "compact_jet_envelope:results/angular_c2_transfer/evidence.json": true,
+    "compact_jet_envelope:results/axial_stress_audit/README.md": true,
+    "compact_jet_envelope:results/axial_stress_audit/bounds.py": true,
+    "compact_jet_envelope:results/axial_stress_audit/evidence.json": true,
+    "compact_jet_envelope:results/axis_core_attachment/README.md": true,
+    "compact_jet_envelope:results/axis_core_attachment/bounds.py": true,
+    "compact_jet_envelope:results/axis_core_attachment/evidence.json": true,
+    "compact_jet_envelope:results/axis_matching_audit/README.md": true,
+    "compact_jet_envelope:results/axis_matching_audit/bounds.py": true,
+    "compact_jet_envelope:results/axis_matching_audit/evidence.json": true,
+    "compact_jet_envelope:results/compact_jet_envelope/README.md": true,
+    "compact_jet_envelope:results/compact_jet_envelope/audit.py": true,
+    "compact_jet_envelope:results/compact_jet_envelope/bounds.py": true,
+    "compact_jet_envelope:results/compact_jet_envelope/jets.py": true,
+    "compact_jet_envelope:results/compact_jet_envelope/protocol.json": true,
+    "compact_jet_envelope:results/compact_jet_envelope/requirements.txt": true,
+    "compact_jet_envelope:results/compact_jet_envelope/review.py": true,
+    "compact_jet_envelope:results/compact_jet_envelope/test_audit.py": true,
+    "compact_jet_envelope:results/intermediate_decay_audit/README.md": true,
+    "compact_jet_envelope:results/intermediate_decay_audit/bounds.py": true,
+    "compact_jet_envelope:results/intermediate_decay_audit/evidence.json": true,
+    "compact_jet_envelope:results/joined_stress_construction/README.md": true,
+    "compact_jet_envelope:results/joined_stress_construction/construction.py": true,
+    "compact_jet_envelope:results/joined_stress_construction/evidence.json": true,
+    "compact_jet_envelope:results/stress_realization_audit/README.md": true,
+    "compact_mean_corrections:GOAL.md": true,
+    "compact_mean_corrections:results/actual_band_pulse_bounds/evidence.json": true,
+    "compact_mean_corrections:results/background_summation/evidence.json": true,
+    "compact_mean_corrections:results/compact_mean_corrections/README.md": true,
+    "compact_mean_corrections:results/compact_mean_corrections/audit.py": true,
+    "compact_mean_corrections:results/compact_mean_corrections/mean_system.py": true,
+    "compact_mean_corrections:results/compact_mean_corrections/operators.py": true,
+    "compact_mean_corrections:results/compact_mean_corrections/protocol.json": true,
+    "compact_mean_corrections:results/compact_mean_corrections/requirements.txt": true,
+    "compact_mean_corrections:results/compact_mean_corrections/reviews.py": true,
+    "compact_mean_corrections:results/compact_mean_corrections/test_audit.py": true,
+    "compact_mean_corrections:results/physical_wave_interface/evidence.json": true,
+    "first_correction_construction:GOAL.md": true,
+    "first_correction_construction:results/angular_c2_transfer/evidence.json": true,
+    "first_correction_construction:results/axis_core_attachment/evidence.json": true,
+    "first_correction_construction:results/first_correction_construction/README.md": true,
+    "first_correction_construction:results/first_correction_construction/audit.py": true,
+    "first_correction_construction:results/first_correction_construction/checks.py": true,
+    "first_correction_construction:results/first_correction_construction/majorant.py": true,
+    "first_correction_construction:results/first_correction_construction/protocol.json": true,
+    "first_correction_construction:results/first_correction_construction/requirements.txt": true,
+    "first_correction_construction:results/first_correction_construction/series.py": true,
+    "first_correction_construction:results/first_correction_construction/system.py": true,
+    "first_correction_construction:results/first_correction_construction/test_audit.py": true,
+    "first_correction_construction:results/first_correction_construction/transfer.py": true,
+    "first_correction_construction:results/nonlinear_axis_pilot/inner.py": true,
+    "first_correction_construction:results/outer_pressure_pilot/schedule.py": true,
+    "first_correction_construction:results/physical_residual_budget/evidence.json": true,
+    "first_correction_construction:results/stress_realization_audit/evidence.json": true,
+    "heat_exterior_audit:GOAL.md": true,
+    "heat_exterior_audit:results/axial_stress_audit/bounds.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/README.md": true,
+    "heat_exterior_audit:results/heat_exterior_audit/audit.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/bounds.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/construction.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/exterior.py": true,
+    "heat_exterior_audit:results/heat_exterior_audit/protocol.json": true,
+    "heat_exterior_audit:results/heat_exterior_audit/requirements.txt": true,
+    "heat_exterior_audit:results/heat_exterior_audit/test_audit.py": true,
+    "heat_exterior_audit:results/intermediate_decay_audit/README.md": true,
+    "heat_exterior_audit:results/intermediate_decay_audit/bounds.py": true,
+    "heat_exterior_audit:results/intermediate_decay_audit/evidence.json": true,
+    "heat_exterior_audit:results/intermediate_decay_audit/protocol.json": true,
+    "heat_exterior_audit:results/outer_pressure_pilot/schedule.py": true,
+    "heat_exterior_audit:results/post_pulse_stress_audit/README.md": true,
+    "heat_exterior_audit:results/post_pulse_stress_audit/bounds.py": true,
+    "heat_exterior_audit:results/post_pulse_stress_audit/evidence.json": true,
+    "heat_exterior_audit:results/post_pulse_stress_audit/protocol.json": true,
+    "heat_exterior_audit:results/pulse_moment_audit/README.md": true,
+    "heat_exterior_audit:results/pulse_moment_audit/bounds.py": true,
+    "heat_exterior_audit:results/pulse_moment_audit/evidence.json": true,
+    "heat_exterior_audit:results/pulse_moment_audit/protocol.json": true,
+    "heat_exterior_audit:results/pulse_stress_audit/README.md": true,
+    "heat_exterior_audit:results/pulse_stress_audit/bounds.py": true,
+    "heat_exterior_audit:results/pulse_stress_audit/evidence.json": true,
+    "heat_exterior_audit:results/pulse_stress_audit/protocol.json": true,
+    "higher_jet_budget:GOAL.md": true,
+    "higher_jet_budget:results/axis_core_attachment/evidence.json": true,
+    "higher_jet_budget:results/compact_jet_envelope/evidence.json": true,
+    "higher_jet_budget:results/first_correction_construction/evidence.json": true,
+    "higher_jet_budget:results/higher_jet_budget/README.md": true,
+    "higher_jet_budget:results/higher_jet_budget/audit.py": true,
+    "higher_jet_budget:results/higher_jet_budget/higher_bounds.py": true,
+    "higher_jet_budget:results/higher_jet_budget/higher_checks.py": true,
+    "higher_jet_budget:results/higher_jet_budget/higher_jets.py": true,
+    "higher_jet_budget:results/higher_jet_budget/protocol.json": true,
+    "higher_jet_budget:results/higher_jet_budget/requirements.txt": true,
+    "higher_jet_budget:results/higher_jet_budget/test_audit.py": true,
+    "higher_jet_budget:results/loop_modulation_bounds/evidence.json": true,
+    "higher_jet_budget:results/physical_residual_budget/evidence.json": true,
+    "higher_jet_budget:results/repair_state_bounds/evidence.json": true,
+    "intermediate_decay_audit:axial_stress_audit/bounds.py": true,
+    "intermediate_decay_audit:axial_stress_audit/diagnostics.py": true,
+    "intermediate_decay_audit:axial_stress_audit/evidence.json": true,
+    "intermediate_decay_audit:axial_stress_audit/protocol.json": true,
+    "intermediate_decay_audit:intermediate_decay_audit/README.md": true,
+    "intermediate_decay_audit:intermediate_decay_audit/audit.py": true,
+    "intermediate_decay_audit:intermediate_decay_audit/bounds.py": true,
+    "intermediate_decay_audit:intermediate_decay_audit/protocol.json": true,
+    "intermediate_decay_audit:intermediate_decay_audit/reference.py": true,
+    "intermediate_decay_audit:intermediate_decay_audit/requirements.txt": true,
+    "intermediate_decay_audit:intermediate_decay_audit/test_audit.py": true,
+    "intermediate_decay_audit:outer_pressure_pilot/protocol.json": true,
+    "intermediate_decay_audit:outer_pressure_pilot/schedule.py": true,
+    "joined_stress_construction:results/axis_core_attachment/README.md": true,
+    "joined_stress_construction:results/axis_core_attachment/bounds.py": true,
+    "joined_stress_construction:results/axis_core_attachment/evidence.json": true,
+    "joined_stress_construction:results/axis_matching_audit/README.md": true,
+    "joined_stress_construction:results/axis_matching_audit/evidence.json": true,
+    "joined_stress_construction:results/axis_matching_audit/moments.py": true,
+    "joined_stress_construction:results/heat_exterior_audit/README.md": true,
+    "joined_stress_construction:results/heat_exterior_audit/evidence.json": true,
+    "joined_stress_construction:results/intermediate_decay_audit/evidence.json": true,
+    "joined_stress_construction:results/joined_stress_construction/README.md": true,
+    "joined_stress_construction:results/joined_stress_construction/audit.py": true,
+    "joined_stress_construction:results/joined_stress_construction/construction.py": true,
+    "joined_stress_construction:results/joined_stress_construction/protocol.json": true,
+    "joined_stress_construction:results/joined_stress_construction/requirements.txt": true,
+    "joined_stress_construction:results/joined_stress_construction/review.py": true,
+    "joined_stress_construction:results/joined_stress_construction/test_audit.py": true,
+    "joined_stress_construction:results/outer_pressure_pilot/schedule.py": true,
+    "joined_stress_construction:results/stress_realization_audit/README.md": true,
+    "joined_stress_construction:results/stress_realization_audit/bounds.py": true,
+    "joined_stress_construction:results/stress_realization_audit/evidence.json": true,
+    "joined_stress_construction:results/stress_realization_audit/loop.py": true,
+    "joined_stress_construction:results/stress_realization_audit/repair.py": true,
+    "loop_modulation_bounds:results/compact_jet_envelope/README.md": true,
+    "loop_modulation_bounds:results/compact_jet_envelope/evidence.json": true,
+    "loop_modulation_bounds:results/joined_stress_construction/README.md": true,
+    "loop_modulation_bounds:results/joined_stress_construction/evidence.json": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/README.md": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/audit.py": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/bounds.py": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/protocol.json": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/requirements.txt": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/review.py": true,
+    "loop_modulation_bounds:results/loop_modulation_bounds/test_audit.py": true,
+    "loop_modulation_bounds:results/stress_realization_audit/README.md": true,
+    "loop_modulation_bounds:results/stress_realization_audit/evidence.json": true,
+    "loop_modulation_bounds:results/stress_realization_audit/loop.py": true,
+    "outer_pressure_pilot:../nonlinear_axis_pilot/inner.py": true,
+    "outer_pressure_pilot:../nonlinear_axis_pilot/physical.py": true,
+    "outer_pressure_pilot:../nonlinear_axis_pilot/protocol.json": true,
+    "outer_pressure_pilot:audit.py": true,
+    "outer_pressure_pilot:coupling.py": true,
+    "outer_pressure_pilot:protocol.json": true,
+    "outer_pressure_pilot:schedule.py": true,
+    "outer_pressure_pilot:test_outer.py": true,
+    "paper_profile_audit:profiles.py": true,
+    "paper_profile_audit:protocol.json": true,
+    "paper_profile_audit:run_audit.py": true,
+    "paper_profile_audit:test_profiles.py": true,
+    "physical_residual_budget:results/paper_profile_audit/profiles.py": true,
+    "physical_residual_budget:results/paper_profile_audit/protocol.json": true,
+    "physical_residual_budget:results/physical_residual_budget/README.md": true,
+    "physical_residual_budget:results/physical_residual_budget/audit.py": true,
+    "physical_residual_budget:results/physical_residual_budget/bounds.py": true,
+    "physical_residual_budget:results/physical_residual_budget/protocol.json": true,
+    "physical_residual_budget:results/physical_residual_budget/requirements.txt": true,
+    "physical_residual_budget:results/physical_residual_budget/residual.py": true,
+    "physical_residual_budget:results/physical_residual_budget/review.py": true,
+    "physical_residual_budget:results/physical_residual_budget/test_audit.py": true,
+    "physical_residual_budget:results/repair_state_bounds/evidence.json": true,
+    "physical_wave_interface:GOAL.md": true,
+    "physical_wave_interface:results/background_summation/evidence.json": true,
+    "physical_wave_interface:results/physical_wave_interface/README.md": true,
+    "physical_wave_interface:results/physical_wave_interface/audit.py": true,
+    "physical_wave_interface:results/physical_wave_interface/checks.py": true,
+    "physical_wave_interface:results/physical_wave_interface/jets.py": true,
+    "physical_wave_interface:results/physical_wave_interface/protocol.json": true,
+    "physical_wave_interface:results/physical_wave_interface/pulses.py": true,
+    "physical_wave_interface:results/physical_wave_interface/requirements.txt": true,
+    "physical_wave_interface:results/physical_wave_interface/test_audit.py": true,
+    "physical_wave_interface:results/physical_wave_interface/waves.py": true,
+    "post_pulse_stress_audit:axial_stress_audit/bounds.py": true,
+    "post_pulse_stress_audit:outer_pressure_pilot/schedule.py": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/README.md": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/audit.py": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/bounds.py": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/diagnostics.py": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/protocol.json": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/requirements.txt": true,
+    "post_pulse_stress_audit:post_pulse_stress_audit/test_audit.py": true,
+    "post_pulse_stress_audit:pulse_moment_audit/README.md": true,
+    "post_pulse_stress_audit:pulse_moment_audit/bounds.py": true,
+    "post_pulse_stress_audit:pulse_moment_audit/evidence.json": true,
+    "post_pulse_stress_audit:pulse_moment_audit/protocol.json": true,
+    "post_pulse_stress_audit:pulse_stress_audit/README.md": true,
+    "post_pulse_stress_audit:pulse_stress_audit/bounds.py": true,
+    "post_pulse_stress_audit:pulse_stress_audit/evidence.json": true,
+    "post_pulse_stress_audit:pulse_stress_audit/protocol.json": true,
+    "pulse_moment_audit:axial_stress_audit/bounds.py": true,
+    "pulse_moment_audit:intermediate_decay_audit/evidence.json": true,
+    "pulse_moment_audit:intermediate_decay_audit/protocol.json": true,
+    "pulse_moment_audit:outer_pressure_pilot/schedule.py": true,
+    "pulse_moment_audit:pulse_moment_audit/README.md": true,
+    "pulse_moment_audit:pulse_moment_audit/audit.py": true,
+    "pulse_moment_audit:pulse_moment_audit/bounds.py": true,
+    "pulse_moment_audit:pulse_moment_audit/protocol.json": true,
+    "pulse_moment_audit:pulse_moment_audit/pulse.py": true,
+    "pulse_moment_audit:pulse_moment_audit/requirements.txt": true,
+    "pulse_moment_audit:pulse_moment_audit/test_audit.py": true,
+    "pulse_stress_audit:axial_stress_audit/README.md": true,
+    "pulse_stress_audit:axial_stress_audit/bounds.py": true,
+    "pulse_stress_audit:axial_stress_audit/evidence.json": true,
+    "pulse_stress_audit:intermediate_decay_audit/README.md": true,
+    "pulse_stress_audit:intermediate_decay_audit/bounds.py": true,
+    "pulse_stress_audit:intermediate_decay_audit/evidence.json": true,
+    "pulse_stress_audit:outer_pressure_pilot/schedule.py": true,
+    "pulse_stress_audit:pulse_moment_audit/README.md": true,
+    "pulse_stress_audit:pulse_moment_audit/bounds.py": true,
+    "pulse_stress_audit:pulse_moment_audit/evidence.json": true,
+    "pulse_stress_audit:pulse_moment_audit/protocol.json": true,
+    "pulse_stress_audit:pulse_moment_audit/pulse.py": true,
+    "pulse_stress_audit:pulse_stress_audit/README.md": true,
+    "pulse_stress_audit:pulse_stress_audit/audit.py": true,
+    "pulse_stress_audit:pulse_stress_audit/bounds.py": true,
+    "pulse_stress_audit:pulse_stress_audit/diagnostics.py": true,
+    "pulse_stress_audit:pulse_stress_audit/protocol.json": true,
+    "pulse_stress_audit:pulse_stress_audit/requirements.txt": true,
+    "pulse_stress_audit:pulse_stress_audit/test_audit.py": true,
+    "repair_state_bounds:results/compact_jet_envelope/README.md": true,
+    "repair_state_bounds:results/compact_jet_envelope/bounds.py": true,
+    "repair_state_bounds:results/compact_jet_envelope/evidence.json": true,
+    "repair_state_bounds:results/loop_modulation_bounds/README.md": true,
+    "repair_state_bounds:results/loop_modulation_bounds/bounds.py": true,
+    "repair_state_bounds:results/loop_modulation_bounds/evidence.json": true,
+    "repair_state_bounds:results/repair_state_bounds/README.md": true,
+    "repair_state_bounds:results/repair_state_bounds/audit.py": true,
+    "repair_state_bounds:results/repair_state_bounds/bounds.py": true,
+    "repair_state_bounds:results/repair_state_bounds/protocol.json": true,
+    "repair_state_bounds:results/repair_state_bounds/requirements.txt": true,
+    "repair_state_bounds:results/repair_state_bounds/review.py": true,
+    "repair_state_bounds:results/repair_state_bounds/test_audit.py": true,
+    "repair_state_bounds:results/stress_realization_audit/README.md": true,
+    "repair_state_bounds:results/stress_realization_audit/bounds.py": true,
+    "repair_state_bounds:results/stress_realization_audit/evidence.json": true,
+    "repair_state_bounds:results/stress_realization_audit/repair.py": true,
+    "stress_realization_audit:results/axis_core_attachment/evidence.json": true,
+    "stress_realization_audit:results/axis_matching_audit/evidence.json": true,
+    "stress_realization_audit:results/heat_exterior_audit/evidence.json": true,
+    "stress_realization_audit:results/intermediate_decay_audit/evidence.json": true,
+    "stress_realization_audit:results/outer_pressure_pilot/schedule.py": true,
+    "stress_realization_audit:results/stress_realization_audit/README.md": true,
+    "stress_realization_audit:results/stress_realization_audit/audit.py": true,
+    "stress_realization_audit:results/stress_realization_audit/bounds.py": true,
+    "stress_realization_audit:results/stress_realization_audit/loop.py": true,
+    "stress_realization_audit:results/stress_realization_audit/protocol.json": true,
+    "stress_realization_audit:results/stress_realization_audit/repair.py": true,
+    "stress_realization_audit:results/stress_realization_audit/requirements.txt": true,
+    "stress_realization_audit:results/stress_realization_audit/test_audit.py": true
+  },
+  "protocol": {
+    "actual_profile_parameters": "unchanged inherited N, h, positive lambda and fixed inverse maps",
+    "all_stage_inequalities": "affine half-line proof on B>=7/10; not a stage scan",
+    "cycle_order_gain": "1/10",
+    "diagnostic_covariance_frequencies": [
+      11,
+      29
+    ],
+    "diagnostic_data": "manufactured compact curls and means plus separate Cartesian missing-hypothesis examples",
+    "diagnostic_float_relative_tolerance": 2e-10,
+    "diagnostic_frequencies": [
+      16,
+      64,
+      256,
+      1024
+    ],
+    "diagnostic_jet_points": [
+      [
+        1.12,
+        -0.4,
+        -0.19,
+        0.36
+      ],
+      [
+        1.3,
+        0.27,
+        0.2,
+        0.47
+      ],
+      [
+        1.66,
+        -0.9,
+        0.31,
+        0.64
+      ]
+    ],
+    "diagnostic_physical_h": "1/200",
+    "fixed_kappa": "1/100000",
+    "minimum_B": "7/10",
+    "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "parent_commit": "73116848b1e53cad36e3c0e314aaaac452518a2e",
+    "primary_real_covariance_remainder_order": "2-2*kappa",
+    "scope": "Conditional initialization, source closure and complete finite-cycle order gain with a fixed physical jet loss. Actual global evaluation, independent foundation review, infinite realization, forcing, energy and blow-up remain open.",
+    "source_equations": [
+      "6.8-6.32",
+      "7.39-7.42",
+      "9.1-9.10",
+      "Propositions 9.3-9.6"
+    ],
+    "status": "conditional-initial-state-and-complete-finite-cycle-order-gain",
+    "total_mean_order": "9/10",
+    "total_wave_remainder_order": "17/25"
+  },
+  "remaining_obligations": [
+    "full_wave_and_mean_potential_cutoff_sum_with_all_curl_commutators",
+    "smooth_realized_residual_through_singular_time_and_localization_initialization",
+    "complete_field_energy_and_surviving_velocity_lower_bound",
+    "independent_inherited_profile_background_and_global_auxiliary_geometry_review"
+  ],
+  "reviews": {
+    "all_stage_cycle_orders": {
+      "all_half_line_margins": {
+        "averaged_covariance_remainders:axial_pressure_and_flux": "41499/50000",
+        "averaged_covariance_remainders:new_curl_cross": "32997/100000",
+        "averaged_covariance_remainders:old_primary_remainder": "499/50000",
+        "averaged_covariance_remainders:retained_moment_bump": "82999/100000",
+        "averaged_covariance_remainders:signed_square": "2997/100000",
+        "final_defects": "19999/25000",
+        "final_mean_rows:improved_auxiliary_average": "7/100",
+        "final_mean_rows:temporal_and_slow_mean_errors": "22499/25000",
+        "five_map_input_at_least_0.9": "14999/50000",
+        "mean_updates:wave_cross": "19999/50000",
+        "preserve_total_mean": "14999/50000",
+        "preserve_total_wave_remainder": "1999/100000",
+        "step1_wave:linear": "39997/100000",
+        "step1_wave:new_wave_square": "59999/100000",
+        "step1_wave:old_wave_cross": "39999/100000",
+        "step1_wave:total_mean_cross": "3/10",
+        "step2_wave:linear": "9999/25000",
+        "step2_wave:old_wave_cross": "19999/50000",
+        "step2_wave:signed_square": "59997/100000",
+        "step2_wave:total_mean_cross": "29999/100000"
+      },
+      "checks": {
+        "all_half_line_margins_nonnegative": true,
+        "declared_gain_is_positive": true
+      },
+      "final_defect_order": {
+        "constant": "34999/25000",
+        "slope": "1"
+      },
+      "fixed_background_primary_and_inverse_maps": true,
+      "kappa": "1/100000",
+      "mean_and_defect_target": {
+        "constant": "3/5",
+        "slope": "1"
+      },
+      "minimum_B": "7/10",
+      "minimum_margin": "499/50000",
+      "parameter_domain": "every B>=7/10, not a finite list of stages",
+      "requested_gain": "1/10",
+      "temporal_and_moment_increment_order": {
+        "constant": "24999/50000",
+        "slope": "1"
+      },
+      "term_groups": {
+        "averaged_covariance_remainders": {
+          "axial_pressure_and_flux": {
+            "constant": "74999/50000",
+            "slope": "1"
+          },
+          "new_curl_cross": {
+            "constant": "99997/100000",
+            "slope": "1"
+          },
+          "old_primary_remainder": {
+            "constant": "33999/50000",
+            "slope": "1"
+          },
+          "retained_moment_bump": {
+            "constant": "149999/100000",
+            "slope": "1"
+          },
+          "signed_square": {
+            "constant": "-3/100000",
+            "slope": "2"
+          }
+        },
+        "final_mean_rows": {
+          "improved_auxiliary_average": {
+            "constant": "67/100",
+            "slope": "1"
+          },
+          "temporal_and_slow_mean_errors": {
+            "constant": "37499/25000",
+            "slope": "1"
+          }
+        },
+        "step1_wave": {
+          "linear": {
+            "constant": "49997/100000",
+            "slope": "1"
+          },
+          "new_wave_square": {
+            "constant": "-1/100000",
+            "slope": "2"
+          },
+          "old_wave_cross": {
+            "constant": "49999/100000",
+            "slope": "1"
+          },
+          "total_mean_cross": {
+            "constant": "2/5",
+            "slope": "1"
+          }
+        },
+        "step2_wave": {
+          "linear": {
+            "constant": "12499/25000",
+            "slope": "1"
+          },
+          "old_wave_cross": {
+            "constant": "24999/50000",
+            "slope": "1"
+          },
+          "signed_square": {
+            "constant": "-3/100000",
+            "slope": "2"
+          },
+          "total_mean_cross": {
+            "constant": "39999/100000",
+            "slope": "1"
+          }
+        }
+      },
+      "theorem_is_conditional": true,
+      "unconditionally_verified_blowup": false,
+      "wave_target": {
+        "constant": "1/10",
+        "slope": "1"
+      }
+    },
+    "complete_signed_covariance": {
+      "checks": {
+        "complete_covariance_change_has_all_remainders": true,
+        "new_curl_remainder_is_retained": true,
+        "old_wave_remainder_is_retained": true,
+        "signed_increment_square_is_retained": true,
+        "signed_primary_linear_inverse_matches_target": true
+      },
+      "maximum_complete_covariance_increment_relative_error": 6.468912941454903e-16,
+      "maximum_prescribed_signed_cross_covariance_relative_error": 2.6432693138862895e-16,
+      "new_curl_cross_gap": 0.0018143670142475234,
+      "old_remainder_cross_gap": 0.18116481688416508,
+      "signed_increment_square_gap": 0.5334127746009243
+    },
+    "fixed_physical_jet_loss": {
+      "checks": {
+        "normalized_gain_not_promoted_to_low_stage_absolute_decay": true,
+        "physical_derivative_cost_is_below_two": true,
+        "stage_independent_jet_loss": true,
+        "strict_order_gain_is_positive": true
+      },
+      "phase_time_cost_upper_bound_at_h_limit": "41/40",
+      "power_slope_in_stage": "1/2000",
+      "rows": [
+        {
+          "derivative_order": 0,
+          "fixed_loss": "251/100",
+          "initial_power": "-5013/2000",
+          "one_cycle_power": "-1253/500"
+        },
+        {
+          "derivative_order": 1,
+          "fixed_loss": "451/100",
+          "initial_power": "-9013/2000",
+          "one_cycle_power": "-2253/500"
+        },
+        {
+          "derivative_order": 3,
+          "fixed_loss": "851/100",
+          "initial_power": "-17013/2000",
+          "one_cycle_power": "-4253/500"
+        },
+        {
+          "derivative_order": 8,
+          "fixed_loss": "1851/100",
+          "initial_power": "-37013/2000",
+          "one_cycle_power": "-9253/500"
+        }
+      ]
+    },
+    "full_residual_increment": {
+      "checks": {
+        "full_actual_velocity_increment_identity": true,
+        "new_velocity_square_is_not_discarded": true,
+        "nonlinear_increment_has_all_three_products": true,
+        "old_new_cross_terms_are_not_discarded": true,
+        "pressure_is_not_discarded": true,
+        "viscosity_is_not_discarded": true
+      },
+      "maximum_exact_nonlinear_increment_relative_error": 9.169887413919971e-17,
+      "maximum_same_field_full_residual_increment_relative_error": 9.835487303800357e-16,
+      "omitted_new_velocity_square_gap": 12.212345252219933,
+      "omitted_old_new_cross_gap": 75.88084488957658,
+      "omitted_pressure_gap": 0.3609576886223797,
+      "omitted_viscosity_gap": 968.4973995414842
+    },
+    "initial_state_orders": {
+      "B0": "7/10",
+      "C0": "6/5",
+      "actual_global_fields_evaluated": false,
+      "checks": {
+        "all_initial_state_margins_strict": true
+      },
+      "margins": {
+        "defects": "69997/100000",
+        "primary_remainder": "31999/100000",
+        "tangential_mean": "79997/100000",
+        "total_mean": "9999/100000",
+        "total_radial_mean": "9999/100000",
+        "wave": "29997/100000"
+      },
+      "orders": {
+        "exact_primary_wave_remainder": "99999/100000",
+        "induced_radial_increment": "199999/100000",
+        "primary_averaged_mean": "199997/100000",
+        "primary_linear_wave": "99997/100000",
+        "primary_wave_nonlinearity": "99999/100000",
+        "raw_full_mean": "99999/100000",
+        "temporal_mean_increment": "99999/100000",
+        "total_mean_velocity_and_pressure": "99999/100000",
+        "total_radial_mean_velocity": "199999/100000",
+        "updated_compatibility_defects": "189997/100000",
+        "updated_tangential_mean": "199997/100000",
+        "updated_wave_residual": "99997/100000"
+      },
+      "theorem_is_conditional": true
+    },
+    "longitudinal_and_transport": {
+      "checks": {
+        "all_harmonic_signs_and_zero_output_checked": true,
+        "cylindrical_connection_is_present": true,
+        "direct_cartesian_transport_agrees": true,
+        "dropping_curl_breaks_divergence": true,
+        "exact_complex_curl_incompressibility": true,
+        "full_curl_longitudinal_identity": true,
+        "same_label_transport_has_no_half_power_loss": true,
+        "without_longitudinal_control_fast_loss_returns": true
+      },
+      "frequency_rows": [
+        {
+          "full_curl_transport_coefficient": 2.4388336156006454,
+          "k": 16,
+          "longitudinal_perturbation_coefficient": 27.61280609851927
+        },
+        {
+          "full_curl_transport_coefficient": 2.383188903399317,
+          "k": 64,
+          "longitudinal_perturbation_coefficient": 108.64963042322435
+        },
+        {
+          "full_curl_transport_coefficient": 2.379668675647478,
+          "k": 256,
+          "longitudinal_perturbation_coefficient": 434.1497415473773
+        },
+        {
+          "full_curl_transport_coefficient": 2.379448491497677,
+          "k": 1024,
+          "longitudinal_perturbation_coefficient": 1736.4867968697224
+        }
+      ],
+      "maximum_cartesian_cylindrical_transport_relative_error": 2.2853296420917838e-14,
+      "maximum_exact_longitudinal_identity_relative_error": 4.3109101171125623e-16,
+      "maximum_scaled_complex_curl_divergence": 4.652081358698633e-16,
+      "omitted_cylindrical_connection_gap": 0.13838593765075266,
+      "principal_only_divergence_gap": 2.4590183367392364
+    },
+    "sharp_missing_hypothesis_controls": {
+      "checks": {
+        "closed_support_separation_is_needed": true,
+        "dropping_mean_advection_of_phase_is_invalid": true,
+        "mean_wave_half_power_loss_is_sharp": true,
+        "same_label_incompressibility_cannot_be_used_for_different_phases": true
+      },
+      "rows": [
+        {
+          "cross_rms_over_k": 0.7071067811865476,
+          "k": 4,
+          "mean_wave_coefficient": 0.04736614270344993,
+          "mean_wave_exact_scale_ratio": 1.0,
+          "omitted_phase_derivative_scale_ratio": 4.0,
+          "overlapping_distinct_label_cross_rms": 2.8284271247461903
+        },
+        {
+          "cross_rms_over_k": 0.7071067811865476,
+          "k": 16,
+          "mean_wave_coefficient": 0.002243551474603583,
+          "mean_wave_exact_scale_ratio": 1.0,
+          "omitted_phase_derivative_scale_ratio": 16.0,
+          "overlapping_distinct_label_cross_rms": 11.313708498984761
+        },
+        {
+          "cross_rms_over_k": 0.7071067811865476,
+          "k": 64,
+          "mean_wave_coefficient": 0.00010626837930860882,
+          "mean_wave_exact_scale_ratio": 1.0,
+          "omitted_phase_derivative_scale_ratio": 64.0,
+          "overlapping_distinct_label_cross_rms": 45.254833995939045
+        }
+      ]
+    },
+    "source_support_and_flat_memory": {
+      "auxiliary_bump_mean": 0.0063870284849740135,
+      "checks": {
+        "angular_harmonics_remain_finite_and_band_independent": true,
+        "mean_wave_product_keeps_wave_support": true,
+        "separated_support_products_vanish": true,
+        "temporal_inverse_can_fill_auxiliary_torus": true,
+        "temporal_inverse_fourier_identity": true,
+        "zero_mean_flat_velocity_is_retained_in_later_products": true
+      },
+      "finite_harmonic_rows": [
+        {
+          "count": 4,
+          "maximum_residual_harmonic": 2,
+          "stage": 0
+        },
+        {
+          "count": 8,
+          "maximum_residual_harmonic": 4,
+          "stage": 1
+        },
+        {
+          "count": 16,
+          "maximum_residual_harmonic": 8,
+          "stage": 2
+        },
+        {
+          "count": 32,
+          "maximum_residual_harmonic": 16,
+          "stage": 3
+        },
+        {
+          "count": 64,
+          "maximum_residual_harmonic": 32,
+          "stage": 4
+        },
+        {
+          "count": 128,
+          "maximum_residual_harmonic": 64,
+          "stage": 5
+        },
+        {
+          "count": 256,
+          "maximum_residual_harmonic": 128,
+          "stage": 6
+        }
+      ],
+      "flat_product_rows": [
+        {
+          "ell": 1,
+          "expected_mean": 0.18393972058572117,
+          "flat_factor": 0.36787944117144233,
+          "mean_after_product": 0.18393972058572117,
+          "mean_of_old_correction": -1.3664283380001927e-17
+        },
+        {
+          "ell": 3,
+          "expected_mean": 6.170490204333978e-05,
+          "flat_factor": 0.00012340980408667956,
+          "mean_after_product": 6.170490204333978e-05,
+          "mean_of_old_correction": -2.5020050134280873e-21
+        },
+        {
+          "ell": 8,
+          "expected_mean": 8.01905445274319e-29,
+          "flat_factor": 1.603810890548638e-28,
+          "mean_after_product": 8.019054452743191e-29,
+          "mean_of_old_correction": -6.898700132060638e-45
+        }
+      ],
+      "maximum_finite_fourier_inverse_error": 8.673617379884035e-19,
+      "mean_times_wave_outside_wave_support": -0.0,
+      "separated_closed_support_product": 0.0,
+      "temporal_inverse_outside_original_rectangle": -0.0063870284849740135,
+      "temporal_source_outside_original_rectangle": 0.0
+    }
+  },
+  "source_hashes": {
+    "GOAL.md": "367d737e6c2342598d2b3670cc6d2183d384485071a512d3f00b404a13407f5f",
+    "results/actual_band_pulse_bounds/evidence.json": "02d59fe4906a7bab5272200a9135fbd63ecce3e04bb1ec88e31e7671bdf4f23d",
+    "results/background_summation/evidence.json": "a2e55ad429914b2ce33aff913efd43165d2fd1f2fb88f13a6edfffc887b23853",
+    "results/compact_mean_corrections/evidence.json": "4fd1df529447d9bcb3c225e36f34b3825a0717895b384c8ded1eb9a637176be1",
+    "results/residual_cycle_closure/README.md": "d7f38a2a27c68fa52578a493d26b051871b2b3dbe1ab20760fa2ff2c14ae2151",
+    "results/residual_cycle_closure/audit.py": "7175bd6e3e6990388007f66a63ec5ccfa488ec893faa8718eb4125eec70384eb",
+    "results/residual_cycle_closure/cycle_bounds.py": "3364752ea38efb258122a1aba79368349ca42618959244d96a3fb7b3d679be0d",
+    "results/residual_cycle_closure/interaction_checks.py": "a911c137d02278f0a5b60b027cfaadcf7d2ae1a185e05257724756338840e77c",
+    "results/residual_cycle_closure/protocol.json": "0972de17d28f07addfadf4a7c3db11591d05e5a2a4a0705596be9bd6147fc8a3",
+    "results/residual_cycle_closure/requirements.txt": "6bd31e587c06276bf231cec25395b5d4a0b1e38c4d2b00813b2dd96aad14f17a",
+    "results/residual_cycle_closure/support_checks.py": "96931a53c6f6b9eff40ca1e0142ef433685d03580271e064b8bdba924331f681",
+    "results/residual_cycle_closure/test_audit.py": "05900e895fbe7c903ded062ccf19a9bbccb53470c2eb583c7871935d83245f59"
+  },
+  "status": "conditional-initial-state-and-complete-finite-cycle-order-gain"
+}

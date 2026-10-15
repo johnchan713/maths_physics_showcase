@@ -149,6 +149,17 @@ Actual primary mean initialization, all wave/mean interactions and the
 complete residual cycle are still open. The preceding pulse checkpoint's
 32 tests and frozen evidence reproduce; its conditional scope is unchanged.
 
+The [finite-cycle checkpoint](results/residual_cycle_closure/README.md) now
+constructs the conditional initial state and closes all three residual
+order inequalities through the complete four-step cycle. The proof uses
+the full-curl longitudinal identity, retains every signed covariance
+remainder and mean interaction, and tracks sources after auxiliary-time
+inversion fills the torus. All-stage affine bounds give a 1/10 normalized
+order gain, with a common domain and fixed physical jet losses. The
+leading/profile/support foundation is still conditional, low-stage
+physical residual bounds can remain singular, and the infinite full-field
+realization, forcing, energy and actual blow-up remain open.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
@@ -162,11 +173,10 @@ complete residual cycle are still open. The preceding pulse checkpoint's
 4. Verify the signed higher-stress corrections and weighted edge estimates
    at the wave interface. Inverse edge-distance powers remain; small q alone
    does not prove uniform cone stability at the flat stress boundaries.
-5. Apply the compact mean maps to the actual primary wave covariance and
-   verify initialization and every current-size hypothesis. Then control
-   all wave/background, wave/wave and wave/mean interactions and source
-   support after the complete ordered cycle. Prove improvement of the full
-   residual in fixed physical derivative norms.
+5. Review the new conditional initialization and finite-cycle proof against
+   the inherited profile, pulse and support premises. Preserve the exact
+   radial pressure/flux identities, flat-term bookkeeping and fixed-stage
+   quantifiers; its normalized gain is not a fixed-scale contraction.
 6. Sum the full divergence-preserving correction sequence, then localize and
    initialize the SAME field. Establish smooth compact forcing through T,
    energy control and a lower bound surviving the physical wave corrections.
@@ -224,9 +234,9 @@ flat augmented background error does not cancel the stress by itself.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Apply the new conditional mean maps to the primary covariance; prove the initial wave, mean and compatibility-defect orders for the same field | Supplies the input state needed before a cycle gain can be used |
-| 2–4 hours | Bound the sourced wave and signed stress increments, their quadratic covariance and their interactions with the complete current means | Tests the nonzero-harmonic and stress gains missing from the mean-only checkpoint |
-| 4–6 hours | Verify support, smooth source extension and pulse envelopes after mean operations; close all three full-cycle inequalities or retain the exact failure, then push | Addresses the full residual improvement that pulse, covariance and compatibility-defect gains do not establish |
+| 0–2 hours | Bound the complete wave and mean potentials at every finite stage, including their physical jets and the new q-cutoff curl terms | Supplies the inputs for an infinite divergence-preserving realization rather than an unproved raw series |
+| 2–4 hours | Choose shrinking potential cutoffs, then compare with one fixed finite state using the new stage-independent residual jet loss | Tests whether the realized full residual is flat without substituting a growing stage into an uncontrolled constant |
+| 4–6 hours | Check support and the inner velocity lower bound of that realized field; derive the full energy and localization/initialization budgets, or retain the exact missing estimate, then push | Connects the finite-cycle result to a complete field and admissible force; neither follows from order arithmetic alone |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,

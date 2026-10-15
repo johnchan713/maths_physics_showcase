@@ -237,6 +237,17 @@ checks do not supply actual primary initialization, nonzero-harmonic source
 closure or a complete residual-cycle gain. Forcing, energy and blow-up
 remain open, and all earlier records remain frozen.
 
+The [conditional finite-cycle closure](residual_cycle_closure/README.md)
+adds the initial state, complete-curl nonlinear estimates, source/support
+closure and a 1/10 order gain for all four correction operations together.
+It retains the signed increment square, full old/new mean and wave fields,
+moving axial pressure moment, viscosity and flat velocity memory. Exact
+affine inequalities hold for every B>=0.7 rather than a finite stage scan.
+Independent Cartesian transport and missing-hypothesis examples test the
+algebra. The conclusion is conditional on the inherited bounds and global
+support geometry; its fixed physical jet loss does not imply low-stage
+absolute decay, a convergent infinite series, smooth forcing or blow-up.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

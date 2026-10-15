@@ -158,6 +158,19 @@ for a complete wave/mean residual cycle. Manufactured curls, edge-split
 pressure quadrature, Fourier path identities and bump matrices crosscheck
 the formulas; the actual global fields remain unevaluated.
 
+The [finite residual cycle](results/residual_cycle_closure/README.md) now
+derives conditional initialization and improvement of every residual
+component through all four updates. Exact incompressibility of complete
+curl amplitudes cancels the fast same-phase quadratic loss; mean advection
+keeps its half-power loss. The source argument retains the wave support
+and pulse envelope after mean operations fill the auxiliary torus. The
+full wave, tangential mean and pressure/flux defect orders improve by 1/10
+per finite cycle, with one common domain and a stage-independent physical
+jet loss. This remains conditional on the inherited continuum foundation
+and support geometry. The physical low-stage bound can still be singular;
+an infinite potential sum, admissible forcing, energy and complete-field
+blow-up remain unverified. All earlier records are preserved.
+
 ## Exact scope
 
 The existing numerical search studies smooth, divergence-free initial data
