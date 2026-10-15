@@ -21,6 +21,13 @@ now has an explicit construction. Its radius-explicit pulse/source replay
 retains the small-support covariance cost on one common domain. Immediate
 work is to audit the actual leading-profile and summed-background inputs.
 
+The [15 October external-criticism review](EXTERNAL_REVIEW_2026-10-15.md)
+confirms two written/Lean statement differences and rechecks the matching
+repo estimates directly. It identifies no formula correction in that
+limited check and adds explicit derivative-convention, localization and
+support checks before further downstream claims. Neither the manuscript
+nor its formalization is treated as an independently validated foundation.
+
 The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
 that core to the reference exterior. Its five normalized incoming moment

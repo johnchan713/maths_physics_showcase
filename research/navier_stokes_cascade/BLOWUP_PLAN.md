@@ -3,6 +3,15 @@
 Updated: 2026-10-15, following research commit
 `1d7a71fd249cdb136f2f8658f5fa85afb740f5dc` and the radius-explicit pulse/source replay.
 
+External scrutiny checked 2026-10-15: see the
+[criticism and local impact review](EXTERNAL_REVIEW_2026-10-15.md).
+The reported written/Lean mismatches do not by themselves establish a
+false written proof. The two cited formal statements were inspected, and
+the repo's inverse-derivative and pressure-flux arguments rechecked directly.
+No formula change was identified in that limited check. Formal statement
+correspondence remains unverified; prior Lean compilation cannot discharge
+an actual profile, background, localization or comparison hypothesis.
+
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
 route is the supplied manuscript's forced construction. This is a research
@@ -60,6 +69,14 @@ affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
 ## Immediate work package: actual leading-profile and background foundation
+
+Before another downstream advance, apply the external-review checklist:
+distinguish Euler from frozen scale derivatives; preserve the selected
+potential under localization; retain the actual qstar domain margin;
+and trace axis values and mean-pressure bump support. Treat the separate
+AI-assisted mismatch list as leads, not verified errors. Smooth force jets
+vanishing at the event do not establish an unforced neighborhood or analytic
+forcing. The next actual background-jet gate remains inequality (23).
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
