@@ -248,6 +248,19 @@ algebra. The conclusion is conditional on the inherited bounds and global
 support geometry; its fixed physical jet loss does not imply low-stage
 absolute decay, a convergent infinite series, smooth forcing or blow-up.
 
+The [full-potential realization](full_potential_realization/README.md)
+then constructs a conditional smooth divergence-free local field by cutting
+the complete wave/mean potentials and retaining their exact curls. A uniform
+cutoff derivative estimate and fixed-stage comparison make its COMPLETE
+residual flat in all Cartesian space--time derivatives. Annular support
+preserves the inherited core lower bound and heat exterior; the local
+kinetic-energy integral is finite. All 28 tests and ten gates pass, including
+370 inherited source-byte checks. Actual infinite stage constants are not
+evaluated, and raw uncut series convergence is not assumed. Endpoint atlas
+review, physical localization/initialization, admissible global smooth
+forcing, whole-space conclusions and independent foundation review remain
+open. Earlier evidence is unchanged and no blow-up theorem is claimed.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

@@ -14,10 +14,10 @@ unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
 The [blow-up plan](BLOWUP_PLAN.md) records the current route, ordered proof
-obligations, and pass/fail conditions. Its immediate work package is the
-actual post-modulation derivative budget and first background correction,
-alongside a review of the inherited mathematical bounds. Smooth forcing and
-an actual blow-up lower bound each have separate acceptance conditions.
+obligations, and pass/fail conditions. The latest conditional checkpoint
+realizes the full potential sequence with flat local equation error.
+The immediate work is endpoint geometry and physical localization for
+admissible forcing, alongside independent review of the inherited bounds.
 
 The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
@@ -170,6 +170,20 @@ jet loss. This remains conditional on the inherited continuum foundation
 and support geometry. The physical low-stage bound can still be singular;
 an infinite potential sum, admissible forcing, energy and complete-field
 blow-up remain unverified. All earlier records are preserved.
+
+The subsequent [full-potential realization](results/full_potential_realization/README.md)
+now sums the complete wave and mean potentials using shrinking q cutoffs.
+Uniform cutoff derivative bounds retain every curl commutator. Comparison
+with one fixed finite stage proves conditional flatness of the COMPLETE
+local residual in every Cartesian space--time derivative, with arbitrary
+growth of stage constants allowed. The construction preserves exact
+divergence, the core lower bound and heat exterior; a direct radial/axial
+integral bounds its local kinetic energy. Its 28 tests and ten evidence
+gates check the algebra, rational budgets and 370 inherited source hashes,
+not the actual infinite coefficient sequence. Endpoint atlas review,
+localization, initialization, admissible global forcing, whole-space
+conclusions and independent foundation review remain open. No blow-up
+theorem is claimed and earlier frozen records retain their historical scope.
 
 ## Exact scope
 

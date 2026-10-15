@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
-Updated: 2026-10-14, following research commit
-`9c490d8732da619500584458f9bf71f31079a8aa` and the actual-band-pulse checkpoint.
+Updated: 2026-10-15, following research commit
+`d80f6ff1b45b6111a400f04db463a9e3afd84ccf` and the full-potential-realization checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -160,6 +160,17 @@ leading/profile/support foundation is still conditional, low-stage
 physical residual bounds can remain singular, and the infinite full-field
 realization, forcing, energy and actual blow-up remain open.
 
+The subsequent [full-potential realization](results/full_potential_realization/README.md)
+supplies the conditional infinite LOCAL field: sum complete potentials,
+retain all cutoff curls and compare with a single fixed finite stage.
+The complete local residual is flat in every physical jet, with no raw-series
+convergence assumption or uniform stage constants. Annular support preserves
+the inherited core growth, and the radial/axial energy integral is locally
+finite since D-2h>0. These are conditional continuum implications plus
+manufactured identity checks. The closed-time auxiliary atlas, admissible
+global forcing, whole-space energy and solution-exclusion argument remain
+unverified, as does independent review of the inherited foundation.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
@@ -177,9 +188,11 @@ realization, forcing, energy and actual blow-up remain open.
    the inherited profile, pulse and support premises. Preserve the exact
    radial pressure/flux identities, flat-term bookkeeping and fixed-stage
    quantifiers; its normalized gain is not a fixed-scale contraction.
-6. Sum the full divergence-preserving correction sequence, then localize and
-   initialize the SAME field. Establish smooth compact forcing through T,
-   energy control and a lower bound surviving the physical wave corrections.
+6. Review the full potential sum and fixed-stage comparison, then check the
+   closed-time auxiliary atlas and its one-sided potential jets away from
+   the singular point. Localize and initialize the SAME field with every
+   curl, pressure, viscosity and nonlinear term retained. Establish smooth
+   compact forcing through T and the whole-space energy/comparison argument.
 
 These steps require continuum estimates. Manufactured crosschecks reject
 omitted terms and numerical cancellation errors but cannot supply those
@@ -234,9 +247,9 @@ flat augmented background error does not cancel the stress by itself.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Bound the complete wave and mean potentials at every finite stage, including their physical jets and the new q-cutoff curl terms | Supplies the inputs for an infinite divergence-preserving realization rather than an unproved raw series |
-| 2–4 hours | Choose shrinking potential cutoffs, then compare with one fixed finite state using the new stage-independent residual jet loss | Tests whether the realized full residual is flat without substituting a growing stage into an uncontrolled constant |
-| 4–6 hours | Check support and the inner velocity lower bound of that realized field; derive the full energy and localization/initialization budgets, or retain the exact missing estimate, then push | Connects the finite-cycle result to a complete field and admissible force; neither follows from order arithmetic alone |
+| 0–2 hours | Check the closed-time label choices, atlas transitions and one-sided jets of the realized potentials on q>=c>0 | Flatness at the singular corner does not establish endpoint regularity elsewhere |
+| 2–4 hours | Derive the exact spatial and temporal localization residual for the complete potentials, direct swirl and pressure | Preserves divergence while retaining every new curl, pressure and viscous term |
+| 4–6 hours | Construct the smooth compact force extension through T and establish the resulting whole-space energy budget, or record the exact obstruction, then push | Connects the conditional local construction to admissible data and forcing; the global-solution contradiction is a further separate gate |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,
