@@ -85,6 +85,19 @@ gate is now verification of that leading certificate and the strict growth,
 cone and edge bounds, equation (14) of the new note. They are not supplied by
 the background induction or by taking a later first band.
 
+The [outer-edge stability checkpoint](results/outer_edge_stability/README.md)
+now checks the explicit heat-tail formulas directly on terminal y in
+[1/2,3). It derives positive growth, the correct cone orientation and the
+outer weighted edge factors, and proves that the first axial-viscous stress
+has T1theta>0 and T1z=0 there. Its ratio to T0theta is bounded by
+`2*Xb/.98^2+7` and extends with limit `2*eta^2*Xb/L^2`. A nonnegative
+Borel cutoff therefore preserves the outer background stress cone without
+requiring smallness of that correction. This sharper formula does not turn
+generic signed weighted perturbations into cone-preserving ones. The next
+direct work is the inner analytic collar and its stress direction, then the
+compact modulation/repair and exact global moment identification. No global
+leading-profile certificate or unconditional residual gain is inferred.
+
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
 The subsequent [higher-jet budget](results/higher_jet_budget/README.md) now

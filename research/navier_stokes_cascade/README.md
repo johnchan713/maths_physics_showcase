@@ -27,6 +27,15 @@ moment inverse bound on the actual bump supports. The leading certificate,
 strict pulse gaps and weighted edges still require direct review; no
 unconditional pulse estimate or complete residual improvement is claimed.
 
+The subsequent [direct outer-edge audit](results/outer_edge_stability/README.md)
+checks the exact heat tail, its strict growth and oriented cone, and the
+first axial-viscous stress. That correction is angular-positive and
+axial-zero on the terminal interval; a nonnegative Borel cutoff preserves
+the background stress cone there. Its ratio to the leading angular stress
+extends smoothly to the flat edge, with limit `2*eta^2*Xb/L^2`. The large Xb
+cost is retained. Inner/compact profile estimates and the global exact-moment
+identification of the backward stresses remain explicit foundation gates.
+
 The [15 October external-criticism review](EXTERNAL_REVIEW_2026-10-15.md)
 confirms two written/Lean statement differences and rechecks the matching
 repo estimates directly. It identifies no formula correction in that

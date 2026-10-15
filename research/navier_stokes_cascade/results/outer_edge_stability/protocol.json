@@ -1,0 +1,50 @@
+{
+  "actual_schedule": "Md=64, T=exp(64)+10, h=exp(-8*T)",
+  "cutoff": "chi(s)=1-sigma(2*s-1), 0<=chi<=1",
+  "diagnostic_Xtail": 1000,
+  "diagnostic_amplitude": "1e-10",
+  "diagnostic_h": ".005",
+  "diagnostic_precision": 80,
+  "diagnostics_are_not_continuum_proofs": true,
+  "edge_ratio_limit": "2*eta^2*Xb/L^2",
+  "first_stress": "T1theta=alpha*r*K*fprime/2 + integral r_v^3*K_v*C*fprime/(2*r^2); T1z=0",
+  "flat_deltas": [
+    ".3",
+    ".03",
+    ".001",
+    "1e-7"
+  ],
+  "flat_eta": [
+    "-1",
+    "0",
+    ".5",
+    "1"
+  ],
+  "global_identification_inputs": [
+    "leading exact total moments",
+    "positive-order exact moments and common supports"
+  ],
+  "interval_precision": 70,
+  "kernel": "exact Gamma integral; numerical Tricomi U with independent positive integration",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "f31516d84c8d46137e41c0882f5006e5d938d30a",
+  "physical_q": [
+    "1",
+    ".4",
+    ".2",
+    ".7"
+  ],
+  "proof_domain": "1/2<=y=log(X/Xtail)<3, -1<=eta<=1, Xtail>=100",
+  "proof_h_range": "0<h<1/100",
+  "radial_difference_step": "1e-8",
+  "same_fixed_N_and_h": true,
+  "source_equations": [
+    "4.2",
+    "4.11",
+    "5.3",
+    "5.9",
+    "A.47-A.56"
+  ],
+  "status": "outer-heat-edge-and-first-viscous-stress-stability-audited",
+  "uniform_ratio_bound": "2*Xb/.98^2+7"
+}

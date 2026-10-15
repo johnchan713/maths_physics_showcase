@@ -251,6 +251,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/background_jet_foundation/evidence.json \
             --output navier_stokes_background_jet_foundation_ci.json
 
+      - name: Check exact outer heat edge and the positive first viscous stress
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/outer_edge_stability/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/outer_edge_stability/audit.py \
+            --verify-record research/navier_stokes_cascade/results/outer_edge_stability/evidence.json \
+            --output navier_stokes_outer_edge_stability_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -658,6 +665,7 @@ jobs:
             navier_stokes_auxiliary_geometry_audit_ci.json
             navier_stokes_geometric_pulse_replay_ci.json
             navier_stokes_background_jet_foundation_ci.json
+            navier_stokes_outer_edge_stability_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
