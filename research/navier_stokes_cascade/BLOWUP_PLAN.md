@@ -1,7 +1,7 @@
 # Plan toward a verified finite-time blow-up
 
 Updated: 2026-10-15, following research commit
-`cef7a529973f9ff43d9107cd132663f6bfee7b6a` and the physical-localization/force checkpoint.
+`b510fd042c9f41709b5e685cd84ee865352e5f31` and the global-solution-comparison checkpoint.
 
 The objective is a mathematical construction for the original three-dimensional
 incompressible Navier–Stokes equations at positive viscosity. Our immediate
@@ -59,7 +59,7 @@ unverified earlier hypothesis as established. A failed argument sends the
 affected construction back for revision; it does not prove the manuscript
 impossible unless the obstruction itself is proved.
 
-## Immediate work package: global-solution comparison and foundation review
+## Immediate work package: global auxiliary atlas and continuum foundation
 
 The [physical residual calculation](results/physical_residual_budget/README.md)
 gives exact formulas for the unlocalized base and the first positive order.
@@ -181,6 +181,19 @@ the global atlas or earlier profile bounds. The remaining analytic transfer
 is comparison with an arbitrary global smooth bounded-energy solution;
 its pressure and fluxes at infinity require their own justified estimates.
 
+The subsequent [comparison checkpoint](results/global_solution_comparison/README.md)
+now supplies that general lemma under smoothness and bounded kinetic energy,
+without imposing pressure decay or global derivative bounds on the competitor.
+Time-averaged momentum removes the harmonic pressure-gradient ambiguity;
+a weighted commutator and expanding-ball energy estimate give
+`E_R(t)<=K_T R^(-4/3)`. Thus the preceding conditional construction would
+exclude a global smooth bounded-energy solution. The downstream transfer
+is no longer the first open argument. The profile, uniform physical jets,
+and especially global label-support/atlas existence remain conditional.
+Next, reconstruct those defining maps and test their actual coverage,
+separation, bounded overlap and compatibility rather than adding another
+dependent conditional transfer theorem.
+
 1. Review the higher-jet derivation and inherited foundation, retaining its
    exact compact domain and fixed N. Extend estimates when needed by the
    complete physical residual; do not treat singular upper bounds as decay.
@@ -198,12 +211,12 @@ its pressure and fluxes at infinity require their own justified estimates.
    the inherited profile, pulse and support premises. Preserve the exact
    radial pressure/flux identities, flat-term bookkeeping and fixed-stage
    quantifiers; its normalized gain is not a fixed-scale contraction.
-6. Review the full potential sum, endpoint transfer and exact localization
-   of the SAME field, including all cutoff terms and terminal force jets.
-   Recover the pressure gradient of an arbitrary competing global smooth
-   bounded-energy solution from its equation, control all fluxes at spatial
-   infinity, and prove comparison on every fixed [0,T] with T<1 before
-   attempting the global-solution contradiction.
+6. Review the full sum, localization, force extension and general comparison
+   lemma as a downstream chain. Prioritize the unresolved upstream atlas:
+   compatible Cartesian potential representatives, closed separation of
+   interacting labels, bounded overlap and uniform derivatives after
+   physical evaluation. Keep the conditional exclusion separate from an
+   independently verified construction and unconditional theorem.
 
 These steps require continuum estimates. Manufactured crosschecks reject
 omitted terms and numerical cancellation errors but cannot supply those
@@ -258,9 +271,9 @@ flat augmented background error does not cancel the stress by itself.
 
 | Next focused budget | Concrete output | Why it matters |
 |---|---|---|
-| 0–2 hours | Derive the difference equation and recover its pressure gradient under only smoothness and bounded kinetic energy | A decay assumption on the competing pressure cannot be silently added |
-| 2–4 hours | Bound the nonlocal pressure and transport fluxes on expanding balls, with every radius power explicit | Makes an energy comparison possible without assuming decay of the competing solution's derivatives |
-| 4–6 hours | Prove the fixed-T comparison or isolate its exact blocking inequality; then audit the route from the surviving lower bound to a global-solution contradiction and push | Tests the last conditional transfer while keeping independent foundation review separate |
+| 0–2 hours | Reconstruct the actual dyadic charts, auxiliary maps, label choices and physical support sets from their definitions | Replaces a repeated global-geometry premise with a reviewable construction |
+| 2–4 hours | Check required coverage, closed separation of interacting labels and bounded overlap, including band boundaries | These properties are needed by the same-label nonlinear cancellation and assembled physical bounds |
+| 4–6 hours | Audit coordinate-transition compatibility and all fixed physical derivative bounds; publish the first proved estimate or exact incompatible overlap | Tests the foundation on which every downstream conditional result depends |
 
 These are time budgets for research outputs, not completion deadlines or a
 measure of distance to a blow-up proof. If either analytic input remains open,

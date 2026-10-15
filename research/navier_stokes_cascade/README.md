@@ -14,11 +14,10 @@ unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
 The [blow-up plan](BLOWUP_PLAN.md) records the current route, ordered proof
-obligations, and pass/fail conditions. The latest conditional checkpoint
-realizes the full potential sequence with flat local equation error.
-The latest localization result supplies smooth compact forcing and
-whole-space energy conditionally. The immediate work is global-solution
-comparison, alongside independent review of the inherited bounds.
+obligations, and pass/fail conditions. The latest comparison lemma closes
+the downstream conditional implication from the localized field to exclusion
+of a global smooth bounded-energy competitor. The immediate work is to
+audit the global auxiliary atlas/support and inherited continuum foundation.
 
 The latest [analytic core attachment](results/axis_core_attachment/README.md)
 provides an exact-series existence argument and quantitative bounds joining
@@ -200,6 +199,21 @@ with an arbitrary global smooth bounded-energy solution, including its
 pressure and fluxes at spatial infinity, remains open. The foundation and
 global atlas still require independent review; no unconditional blow-up
 result is claimed.
+
+The later [global-solution comparison](results/global_solution_comparison/README.md)
+recovers the difference pressure gradient from the equation and finite
+energy, with no pressure decay or global competitor derivative bound.
+A weighted commutator estimate and exact flux powers give a radius-independent
+comparison error `C_T R^(-4/3)`, which tends to zero on expanding balls.
+The general comparison lemma then gives equality with any hypothetical
+global smooth bounded-energy solution on every fixed interval before t=1.
+Applied to the inherited field, its core growth yields a CONDITIONAL
+exclusion implication. Its 34 tests, ten gates and 394 inherited source
+checks audit exponents, pressure signs, all weighted energy fluxes and
+failed shortcuts. Periodic algebra fixtures do not prove whole-space
+estimates. The global pulse/support/atlas and leading-profile inputs
+remain unverified independently; no unconditional or unforced blow-up
+result is claimed. The next work must test those premises directly.
 
 ## Exact scope
 

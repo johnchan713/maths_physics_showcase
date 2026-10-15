@@ -274,6 +274,19 @@ unevaluated. Pressure-controlled comparison with an arbitrary global
 smooth bounded-energy solution and independent foundation/global-atlas
 review remain open. No unconditional blow-up result is promoted.
 
+The [global-solution comparison](global_solution_comparison/README.md)
+then proves a general comparison lemma with no pressure decay or global
+competitor derivative assumption. Pressure-gradient recovery and a weighted
+commutator estimate give `E_R(t)<=K_T R^(-4/3)`, so any smooth bounded-energy
+competitor agrees with the compact constructed solution before t=1.
+Together with the inherited lower bound this supplies a CONDITIONAL
+global-exclusion implication. All 34 tests, ten gates and 394 inherited
+source-byte checks pass; Fourier fixtures audit algebra rather than the
+whole-space limit. The unresolved gate is now the continuum foundation,
+starting with global auxiliary support/atlas existence and compatibility.
+The leading profile and all-order physical estimates still need independent
+review. No unconditional or unforced singularity is claimed.
+
 ## Late-growth objective comparison
 
 The [peak-error decomposition and bounded cost probe](late_growth_peak_audit/README.md)

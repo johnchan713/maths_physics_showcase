@@ -1,0 +1,36 @@
+{
+  "absorbed_energy_remainder_radius_power": "-4/3",
+  "actual_profile_parameters": "unchanged; comparison lemma does not use pulse-specific parameters",
+  "actual_viscosity": "1",
+  "commutator_Lp": "4/3",
+  "commutator_radius_power": "-3/4",
+  "competitor_hypotheses": "smooth on every compact set; uniform L2 on each fixed [0,T]; same force and datum",
+  "cutoff_power": 8,
+  "diagnostic_energy_radii": [
+    2,
+    8,
+    32,
+    128
+  ],
+  "diagnostic_float_relative_tolerance": 2e-12,
+  "diagnostic_intervals": "one instantaneous PDE jet; no global flow trajectory or infinity solve",
+  "diagnostic_periodic_grid": 32,
+  "diagnostic_radial_radii": [
+    1,
+    3,
+    19
+  ],
+  "no_global_competitor_gradient_assumption": true,
+  "no_pressure_growth_or_decay_assumption": true,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "b510fd042c9f41709b5e685cd84ee865352e5f31",
+  "primary_reference_location": "Knapp, Advanced Real Analysis, Chapter III sections 5-6",
+  "primary_standard_input_reference": "https://www.math.stonybrook.edu/~aknapp/download/a2-1-realanal-clickable.pdf",
+  "scope": "General finite-energy comparison lemma and conditional exclusion for the inherited localized field. Foundation/global-atlas validity remains open; periodic algebra checks do not certify whole-space bounds or unconditional blow-up.",
+  "source_equations": [
+    "10.15-10.21",
+    "Lemma 10.5"
+  ],
+  "standard_external_input": "classical Riesz transforms bounded on Lp, 1<p<infinity; applied twice at p=3/2",
+  "status": "general-finite-energy-comparison-and-conditional-global-solution-exclusion"
+}
