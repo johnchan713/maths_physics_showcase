@@ -1,0 +1,20 @@
+{
+  "parent_commit": "cf7a30cb7dddd82278f9e47031ad97458e3eed45",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "same_fixed_parameters_axis_datum_roots_and_supports": true,
+  "source_equations": ["4.7", "4.11", "4.15-4.16", "A.11", "A.34-A.46"],
+  "global_rows": ["M", "renormalized_I", "J", "S", "Cp"],
+  "global_targets": ["0", "0", "0", "0", "-Pi0"],
+  "renormalized_I": "integral_0^infinity(H-Hpow), Hpow=k*X^-h, k independent of eta",
+  "pressure_defect": "Pi0+Cp(infinity)",
+  "pure_heat_only_after_all_leading_edits": true,
+  "completed_exact_root_and_compact_input_hypotheses_explicit": true,
+  "leading_stress_not_complete_PDE_residual": true,
+  "positive_order_support_premise_not_closed": true,
+  "diagnostic_h": "1/8, not selected actual h",
+  "diagnostic_digits": [50, 70],
+  "diagnostic_quadrature_orders": [24, 36],
+  "diagnostic_Taylor_degree": 12,
+  "diagnostic_small_Z_threshold": "1e-6",
+  "diagnostics_are_not_actual_profile_supremum_or_exact_root_proofs": true
+}

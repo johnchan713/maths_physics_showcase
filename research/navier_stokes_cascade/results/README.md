@@ -6,7 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [shape/join and exact leading pressure ledger](shape_join_pressure/README.md).
+Latest checkpoint: [renormalized global moments and signed stress](global_moment_stress/README.md).
+For profiles completed by the specified exact roots, the global M/J/S and
+renormalized I equations identify forward and backward leading stresses.
+An exact five-defect map retains exterior radial-velocity and signed stress
+memory, including the growing pressure term. This does not close the
+remaining compact input/regional cone hypotheses, positive-order supports,
+uniform physical pulses or complete residual.
+
+The preceding [shape/join and exact leading pressure ledger](shape_join_pressure/README.md):
 The actual shape source and C2 joining entry are audited; the same exact
 root has C2 coefficient norm at most `5.72e-14`. A signed Cp ledger gives
 the backward-pressure identity for leading profiles completed by the exact

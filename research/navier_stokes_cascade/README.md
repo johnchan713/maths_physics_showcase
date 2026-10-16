@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [shape/join and pressure-ledger audit](results/shape_join_pressure/README.md)
+The latest [global moment and signed-stress audit](results/global_moment_stress/README.md)
+derives `M(infinity)=J(infinity)=S(infinity)=0`, zero renormalized I and
+normalized leading pressure for profiles completed by the stated exact
+correction roots. It identifies their forward and backward leading stresses
+and gives an exact five-defect map for imperfect restoration. A pointwise
+small heat edit can have a nonvanishing integrated angular-moment limit;
+the power subtraction and finite positive h are retained. Compact input
+hypotheses, remaining regional cone audits, positive-order/reserved-mean
+supports and all-scale pulse/full-residual estimates are still open.
+
+The preceding [shape/join and pressure-ledger audit](results/shape_join_pressure/README.md)
 derives `Sq>1`, `p1>2.5` through the shape transition, and actual C2
 entry into the same exact five-moment join with coefficient norm at most
 `5.72e-14`. The exact Cp ledger identifies backward leading pressure for
