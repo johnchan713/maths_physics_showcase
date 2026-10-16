@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [first real signed covariance update](results/real_signed_covariance_update/README.md)
+The latest [post-signed full angular-mean relaxation](results/post_signed_mean_relaxation/README.md)
+uses current fast/slow mean maps and recomputes pressure/defects after each.
+Full angular-mean tangential residuals reach `M_(3-6kappa)` and all three
+defects reach `S_(3-3kappa)`, using the retained analytical lemmas. The old
+slow Haar mean is NOT zero; its surviving cross terms limit the defect gain.
+All axial pressure memory and flat velocities remain. The nonzero-angular
+residual is not cancelled, and later complex-wave cycles, complete residual
+improvement and blow-up remain unverified.
+
+The preceding [first real signed covariance update](results/real_signed_covariance_update/README.md)
 joins the actual fixed-primary signed inverse with complete curl and axial
 pressure recomputation. Phase-locked real coefficients give covariance error
 and auxiliary-averaged tangential residual order `3-6kappa`, retaining the

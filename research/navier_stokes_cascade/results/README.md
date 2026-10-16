@@ -6,7 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [first phase-locked real signed covariance update](real_signed_covariance_update/README.md).
+Latest checkpoint: [post-signed full angular-mean relaxation](post_signed_mean_relaxation/README.md).
+The current fast/slow updates give full angular-mean tangential residuals
+`M_(3-6kappa)` and recomputed defects `S_(3-3kappa)` using the retained
+analytical lemmas. Old slow means and old/new fast correlations survive
+and are retained, with full axial pressure memory. The nonzero-angular
+residual, later complex-wave cycles and complete residual closure remain
+separate obligations; no blow-up is claimed.
+
+The preceding [first phase-locked real signed covariance update](real_signed_covariance_update/README.md):
 The actual fixed-primary signed inverse, full curl and recomputed axial
 pressure give initial covariance error and auxiliary-averaged tangential
 residual order `3-6kappa`. The signed square, all six covariances and both
