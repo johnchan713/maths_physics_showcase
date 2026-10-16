@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [post-signed full angular-mean relaxation](post_signed_mean_relaxation/README.md).
+Latest checkpoint: [first sourced wave and flat-tail obstruction](first_sourced_wave_update/README.md).
+One first sourced inverse gives regular normalized residual order `3/2-6kappa`
+using the retained analytical lemmas, with exact potential/pressure cutoff
+tails kept additive. An exact homogeneous-pulse counterexample rules out
+presuming that forward inversion preserves physical flatness. Complete
+complex covariance and axial mean pressure are recomputed; prior stronger
+mean/defect orders do not survive this wave step. Later generic signed/mean
+cycles, full residual construction and blow-up remain unverified.
+
+The preceding [post-signed full angular-mean relaxation](post_signed_mean_relaxation/README.md):
 The current fast/slow updates give full angular-mean tangential residuals
 `M_(3-6kappa)` and recomputed defects `S_(3-3kappa)` using the retained
 analytical lemmas. Old slow means and old/new fast correlations survive

@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [post-signed full angular-mean relaxation](results/post_signed_mean_relaxation/README.md)
+The latest [first sourced wave and flat-tail obstruction](results/first_sourced_wave_update/README.md)
+joins the current regular source to one pulse inverse and full potential/pressure
+cutoff. Its regular normalized residual reaches `3/2-6kappa`, using the
+retained analytical lemmas. An exact counterexample shows that a physically
+flat source need not have a flat forward response; designated cutoff tails
+remain exact additive residuals and are not inverted. All six covariances
+and full axial mean pressure are recomputed, regenerating mean residuals
+and defects. Later generic complex-wave/mean cycles, complete residual
+construction and blow-up remain unverified.
+
+The preceding [post-signed full angular-mean relaxation](results/post_signed_mean_relaxation/README.md)
 uses current fast/slow mean maps and recomputes pressure/defects after each.
 Full angular-mean tangential residuals reach `M_(3-6kappa)` and all three
 defects reach `S_(3-3kappa)`, using the retained analytical lemmas. The old
