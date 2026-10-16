@@ -258,6 +258,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/outer_edge_stability/evidence.json \
             --output navier_stokes_outer_edge_stability_ci.json
 
+      - name: Check conditional inner flat activation and retain the exact-core premise
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/inner_collar_activation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/inner_collar_activation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/inner_collar_activation/evidence.json \
+            --output navier_stokes_inner_collar_activation_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v

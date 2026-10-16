@@ -1,0 +1,32 @@
+{
+  "actual_core_tolerance_cannot_replace_exact_identity": true,
+  "diagnostic_cone_is_activated_excess_not_full_seed_stress": true,
+  "diagnostic_h": ".005",
+  "diagnostic_precision": 80,
+  "diagnostic_width_max": ".01",
+  "diagnostics_are_not_continuum_proofs": true,
+  "field_factor": "t1*ea*s^3",
+  "manufactured_seed_exact_axis_solution": false,
+  "moment_factor": "t1^2*ea*s^6",
+  "normalized_direction_error": "O(t1*s^3)",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "da0b3fe4a297f0367b75d095fac029103aa0153c",
+  "physical_radial_derivatives_uniform_in_t1": false,
+  "primitive_seed_Xa": 2,
+  "quadrature_orders": [
+    24,
+    40
+  ],
+  "same_fixed_N_and_h": true,
+  "source_equations": [
+    "4.7-4.11",
+    "4.15-4.16",
+    "4.20-4.23",
+    "B.26-B.31",
+    "7.1"
+  ],
+  "squared_cone_loss": "O(t1^2*s^6)",
+  "status": "inner-flat-activation-and-conditional-cone-audited",
+  "theorem_dimensionless_domain": "0<=s=y/t1<=1/4, 0<t1<=tbar, 0<=kappa0<=1/2",
+  "theorem_seed_is_exact_zero_stress_core": true
+}
