@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [complete-covariance initial mean update](results/complete_covariance_initial_means/README.md)
+The latest [first real signed covariance update](results/real_signed_covariance_update/README.md)
+joins the actual fixed-primary signed inverse with complete curl and axial
+pressure recomputation. Phase-locked real coefficients give covariance error
+and auxiliary-averaged tangential residual order `3-6kappa`, retaining the
+signed square and every curl term. It verifies this substep's generated
+source/support bounds and signed physical jets using the retained analytical
+lemmas. The full unaveraged means and current defects still need correction;
+later complex-amplitude cycles, complete residual improvement and blow-up
+remain unverified.
+
+The preceding [complete-covariance initial mean update](results/complete_covariance_initial_means/README.md)
 joins the actual primary curl covariance to one compact pressure/fast/slow
 mean step. Exact zero-Haar fast means sharpen the recomputed compatibility
 defects to `S_2`; the angular-mean annular residual is `M_(2-3kappa)` plus

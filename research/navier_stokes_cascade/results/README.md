@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [actual-primary complete-covariance initial mean update](complete_covariance_initial_means/README.md).
+Latest checkpoint: [first phase-locked real signed covariance update](real_signed_covariance_update/README.md).
+The actual fixed-primary signed inverse, full curl and recomputed axial
+pressure give initial covariance error and auxiliary-averaged tangential
+residual order `3-6kappa`. The signed square, all six covariances and both
+pressure tails are retained. This substep's source/support and physical
+jet estimates use the stated analytical lemmas. Full unaveraged means,
+current compatibility defects, later complex-wave cycles and complete
+residual improvement still need work; no blow-up follows.
+
+The preceding [actual-primary complete-covariance initial mean update](complete_covariance_initial_means/README.md):
 For the fixed actual complete primary curl, one pressure/fast/slow mean
 update leaves recomputed defects in `S_2` and an angular-mean annular
 residual in `M_(2-3kappa)` plus retained flat errors. This initial gain uses
