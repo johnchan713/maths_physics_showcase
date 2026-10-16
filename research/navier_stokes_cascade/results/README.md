@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current complex-state full mean relaxation](complex_mean_relaxation/README.md).
+Latest checkpoint: [current-seeded finite-stage induction](finite_stage_induction/README.md).
+The current state closes a CONDITIONAL repeatable four-step hierarchy with
+gain `1/2-3kappa` at every finite stage. The proof uses affine bounds on the
+whole half-line, exact Gaussian-tail exclusion, complete interactions and
+pressure/moment recomputation. It is a finite-stage milestone under the
+retained analytical premises; arbitrary stage constants prevent a direct
+single-field conclusion. Infinite potential/diagonal realization, endpoint
+and admissible-force obligations, independent review and blow-up remain open.
+
+The preceding [current complex-state full mean relaxation](complex_mean_relaxation/README.md):
 Fresh current fast/slow maps give full tangential angular-mean order
 `2-6kappa` and recomputed defect order `5/2-3kappa`, using the retained
 analytical lemmas. Accumulated slow means, current fast correlations, all

@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current complex-state full mean relaxation](results/complex_mean_relaxation/README.md)
+The latest [current-seeded finite-stage induction](results/finite_stage_induction/README.md)
+reaches the conditional finite-cycle milestone. The complete four-operation
+cycle repeats at every finite stage with gain `1/2-3kappa`, using the
+explicit retained analytical premises. Affine half-line bounds retain all
+interactions, pressure/moment recomputation and exact excluded Gaussian
+tails. Stage constants may grow arbitrarily; arbitrarily high finite residual
+orders do not yet give one realized infinite field or admissible smooth
+force. Complete potential/diagonal realization, endpoint/global checks,
+independent foundation review and blow-up remain unverified.
+
+The preceding [current complex-state full mean relaxation](results/complex_mean_relaxation/README.md)
 uses fresh fast/slow maps with pressure and defect recomputation after each.
 Full angular-mean tangential rows reach `M_(2-6kappa)` and defects
 `S_(5/2-3kappa)`, using the retained analytical lemmas. Accumulated old
