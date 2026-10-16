@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [generic complex-wave signed covariance update](results/complex_signed_covariance_update/README.md)
+The latest [current complex-state full mean relaxation](results/complex_mean_relaxation/README.md)
+uses fresh fast/slow maps with pressure and defect recomputation after each.
+Full angular-mean tangential rows reach `M_(2-6kappa)` and defects
+`S_(5/2-3kappa)`, using the retained analytical lemmas. Accumulated old
+slow means and fast correlations survive. Reusing prefast targets would
+leave a defect-change bound short by `2kappa`. The nonzero regular wave
+residual stays at `3/2-6kappa`; later finite-stage induction, complete
+residual construction and blow-up remain unverified.
+
+The preceding [generic complex-wave signed covariance update](results/complex_signed_covariance_update/README.md)
 uses the current old-wave remainder, retaining its cross term and the signed
 square. Auxiliary-averaged tangential residuals reach `M_(2-6kappa)` using
 the retained analytical lemmas; full means and defects are recomputed but

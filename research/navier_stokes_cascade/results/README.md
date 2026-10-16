@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [generic complex-wave signed covariance update](complex_signed_covariance_update/README.md).
+Latest checkpoint: [current complex-state full mean relaxation](complex_mean_relaxation/README.md).
+Fresh current fast/slow maps give full tangential angular-mean order
+`2-6kappa` and recomputed defect order `5/2-3kappa`, using the retained
+analytical lemmas. Accumulated slow means, current fast correlations, all
+six fixed complex covariances and complete axial pressure stay. A precise
+`2kappa` shortfall blocks the defect estimate with prefast targets.
+The nonzero regular residual remains `3/2-6kappa`; later finite-stage
+closure and blow-up remain unverified.
+
+The preceding [generic complex-wave signed covariance update](complex_signed_covariance_update/README.md):
 The current generic signed correction gives auxiliary-averaged tangential
 order `2-6kappa`, retaining the old complex-error cross, full signed square,
 all six covariances and axial pressure. Full means/defects await relaxation;

@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check current complex-state fast and slow mean relaxation
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/complex_mean_relaxation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/complex_mean_relaxation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/complex_mean_relaxation/evidence.json \
+            --output navier_stokes_complex_mean_relaxation_ci.json
+
       - name: Check current complex-wave signed covariance and scoped replay repair
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/complex_signed_covariance_update/test_audit.py -v
@@ -746,6 +753,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_complex_mean_relaxation_ci.json
             navier_stokes_complex_signed_covariance_update_ci.json
             navier_stokes_first_sourced_wave_update_ci.json
             navier_stokes_post_signed_mean_relaxation_ci.json
