@@ -1,0 +1,67 @@
+{
+  "activated_growth_lower": "17/8",
+  "activation_K": "C^2*exp(.8*B)<C^3",
+  "angular_source_lower": "2.5+.95*Lambda*L*chi",
+  "completed_global_pressure_identification_not_implied_by_reference_datum": true,
+  "core_exit_Y": 4,
+  "core_real_interval": "0<=Y<=4.1",
+  "diagnostic_eta": ".23",
+  "diagnostic_gauges": [
+    1,
+    2,
+    4
+  ],
+  "diagnostic_precision": 140,
+  "diagnostic_pressure_atoms": [
+    [
+      "1",
+      "2.5"
+    ],
+    [
+      ".3",
+      "1.2"
+    ]
+  ],
+  "diagnostic_s": ".18",
+  "diagnostic_width": ".01",
+  "diagnostics_are_not_continuum_or_proof_assistant_certificates": true,
+  "fixed_profile_constants_uniform_as_C_tends_to_infinity": false,
+  "h_range": "0<h<=1/100",
+  "inner_s": "1/(10*sqrt(log C))",
+  "interval_digits": [
+    100,
+    160
+  ],
+  "interval_scales": [
+    "P16",
+    "Md4",
+    "Md64"
+  ],
+  "j": "1e-18",
+  "lambda_squared_lower": "exp(-4*Lambda*M)/(680*Lambda*C^2)",
+  "local_leading_cone_is_unconditional_global_pulse_or_residual_estimate": false,
+  "manufactured_fixtures_are_actual_core": false,
+  "native_collar_growth_lower": "9/4",
+  "native_exit_growth_lower": "2.3",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "3108ba7d550f074afc1199188609c898195b525d",
+  "physical_radial_derivatives_uniform_in_width": false,
+  "pressure_range": "P>=16",
+  "quadrature_order": 24,
+  "reference_pressure_measure": "positive on [0,1], mass<5, ideal atom>=5/2 at theta=1",
+  "same_fixed_N_h_Lambda_C_and_reference_datum": true,
+  "sigma": "1e-20",
+  "source_equations": [
+    "A.21",
+    "B.17-B.31",
+    "4.16",
+    "7.1"
+  ],
+  "squared_cone_loss_upper": "(32/81)*C^-31*s^6<1/2",
+  "status": "core-growth-and-quantitative-inner-activation-audited",
+  "two_exit_sectors": [
+    "chi>.99",
+    "chi<=.99"
+  ],
+  "unchanged_width_and_kappa0": "C^-20"
+}
