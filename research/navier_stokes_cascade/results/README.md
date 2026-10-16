@@ -6,7 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [all-order weighted edges and relative background stress](weighted_background_edges/README.md).
+Latest checkpoint: [audited-background physical primary-pulse transfer](physical_pulse_transfer/README.md).
+Complete primary curl velocities, wave pressures and all fixed physical
+derivative/support bounds transfer to every sufficiently late band using
+the retained analytical lemmas. The domain margin includes enlarged charts;
+radial graph cancellation is specific to the phase. Nonlinear generated
+sources still need their own class/support estimates, and complete-wave
+covariance means and the full residual remain unverified.
+
+The preceding [all-order weighted edges and relative background stress](weighted_background_edges/README.md):
 The same leading construction has joined all-fixed-order edge weights, and
 the actual stress coefficients admit smooth quotients by `|T0|` at both
 edges. Additional finite cutoff requirements yield a relative `O(q^(2h))`

@@ -1,0 +1,34 @@
+{
+  "actual_first_band_and_coefficient_constants_numerically_evaluated": false,
+  "all_later_bands_not_a_finite_band_scan": true,
+  "common_potential_loss": "2A+(m+1)*(1+3h/2)",
+  "complete_covariance_means_and_full_residual_not_inferred": true,
+  "derivative_graph": "radial graph cancels in phase but not amplitudes; fast auxiliary time retained",
+  "diagnostic_graph_bands": [
+    160,
+    1024
+  ],
+  "diagnostic_h": "1/200",
+  "diagnostics_are_not_continuum_proofs": true,
+  "enlarged_background_margin": "4Q<qstar",
+  "fixed_labels_carriers_covers_Q_epsilon_S_during_differentiation": true,
+  "manufactured_derivative_lift_translation_not_actual_map_change": true,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "7c325b42d7e517d60a9208bd562012a4fb357f1b",
+  "physical_rescalings": [
+    "Q^-A velocity",
+    "Q^-2A pressure",
+    "Q^(1/2-A) fixed vector potential"
+  ],
+  "primary_normalized_exponents": [
+    "1/2 velocity",
+    "1 pressure",
+    "1 potential"
+  ],
+  "radius": "1/6057072",
+  "same_Md64_h_N_width_and_global_geometry": true,
+  "source_inverse_has_explicit_unverified_input_class_obligation": true,
+  "spatial_harmonic_loss": "1/2+h/2",
+  "temporal_harmonic_loss": "1+3h/2",
+  "working_domain": "q<=2^(-ell0-2)"
+}

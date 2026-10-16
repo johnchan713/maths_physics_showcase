@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [weighted background edges](results/weighted_background_edges/README.md)
+The latest [physical primary-pulse transfer](results/physical_pulse_transfer/README.md)
+uses the audited background/geometry to derive complete primary curl velocity,
+wave pressure and all fixed physical derivative/support bounds on every
+sufficiently late dyadic scale. Spatial and temporal derivative losses are
+`1/2+h/2` and `1+3h/2`; the first-band condition retains `4Q<qstar` for
+enlarged charts. Radial graph derivatives cancel for the phase, not amplitudes.
+The sourced inverse retains explicit input-class and endpoint-support
+hypotheses. Complete covariance means (including axial velocity and both
+pressure tails), nonlinear generated-source bounds and full residual
+improvement remain open; no blow-up result follows.
+
+The preceding [weighted background edges](results/weighted_background_edges/README.md)
 join all fixed-order leading/first-stress edge bounds and derive the stronger
 smooth relative comparison `(That-T0)/|T0|=O(q^(2h))`, including every fixed
 Euler/profile jet. This uses the actual first-stress factorization, common
