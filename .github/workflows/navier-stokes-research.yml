@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check actual-primary complete-covariance initial mean gain
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/complete_covariance_initial_means/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/complete_covariance_initial_means/audit.py \
+            --verify-record research/navier_stokes_cascade/results/complete_covariance_initial_means/evidence.json \
+            --output navier_stokes_complete_covariance_initial_means_ci.json
+
       - name: Check all-later-band physical primary pulse transfer
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/physical_pulse_transfer/test_audit.py -v
@@ -711,6 +718,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_complete_covariance_initial_means_ci.json
             navier_stokes_nonlinear_axis_pilot_ci.json
             navier_stokes_outer_pressure_pilot_ci.json
             navier_stokes_axial_stress_audit_ci.json

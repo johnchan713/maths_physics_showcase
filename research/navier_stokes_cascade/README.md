@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [physical primary-pulse transfer](results/physical_pulse_transfer/README.md)
+The latest [complete-covariance initial mean update](results/complete_covariance_initial_means/README.md)
+joins the actual primary curl covariance to one compact pressure/fast/slow
+mean step. Exact zero-Haar fast means sharpen the recomputed compatibility
+defects to `S_2`; the angular-mean annular residual is `M_(2-3kappa)` plus
+retained flat errors. Full axial velocity, the moving pressure moment and
+both background pressure tails are retained. The sharper gain is INITIAL
+only, using the stated analytical inverse lemmas. Signed covariance wave
+updates, later generated-source estimates and full residual closure remain
+open; no blow-up claim follows.
+
+The preceding [physical primary-pulse transfer](results/physical_pulse_transfer/README.md)
 uses the audited background/geometry to derive complete primary curl velocity,
 wave pressure and all fixed physical derivative/support bounds on every
 sufficiently late dyadic scale. Spatial and temporal derivative losses are

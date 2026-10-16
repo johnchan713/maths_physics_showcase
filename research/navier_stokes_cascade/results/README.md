@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [audited-background physical primary-pulse transfer](physical_pulse_transfer/README.md).
+Latest checkpoint: [actual-primary complete-covariance initial mean update](complete_covariance_initial_means/README.md).
+For the fixed actual complete primary curl, one pressure/fast/slow mean
+update leaves recomputed defects in `S_2` and an angular-mean annular
+residual in `M_(2-3kappa)` plus retained flat errors. This initial gain uses
+exact zero-Haar fast means and the retained analytical inverse lemmas;
+axial velocity, moving pressure moments and both background tails stay.
+Later signed covariance waves, generated-source bounds, full residual and
+blow-up remain unverified.
+
+The preceding [audited-background physical primary-pulse transfer](physical_pulse_transfer/README.md):
 Complete primary curl velocities, wave pressures and all fixed physical
 derivative/support bounds transfer to every sufficiently late band using
 the retained analytical lemmas. The domain margin includes enlarged charts;
