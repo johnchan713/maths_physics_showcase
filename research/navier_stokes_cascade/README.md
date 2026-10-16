@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-state complete-potential realization](results/current_potential_realization/README.md)
+The latest [current-field punctured terminal jets](results/current_endpoint_jets/README.md)
+joins the realized field to compatible one-sided potential, direct-swirl,
+velocity and pressure jets at t=1 AWAY FROM the singular origin,
+CONDITIONALLY on the inherited uniform physical estimates. Closed-time
+labels are already selected; an explicit observation-cylinder margin keeps
+every active enlarged chart admissible. Exact heat/pressure terminal jets
+have zero-radius time Taylor series, so future gluing must be smooth rather
+than analytic. Current-field localization, admissible forcing, global energy
+and independent foundation review remain open; no blow-up is verified.
+
+The preceding [current-state complete-potential realization](results/current_potential_realization/README.md)
 joins the actual finite hierarchy to ONE real divergence-free local field
 with complete residual flatness in every fixed Cartesian space--time jet,
 CONDITIONALLY on the retained analytical premises. Full wave/mean curls,
@@ -21,7 +31,7 @@ direct axisymmetric swirl and complete pressure are cut with one diagonal
 sequence; every commutator and exact excluded Gaussian tail is retained.
 Arbitrary finite-stage constants are allowed. This is a bounded local
 realization milestone, not an unconditional construction. Closed-time
-endpoint jets, current-field localization/initialization, admissible smooth
+endpoint foundation checks, current-field localization/initialization, admissible smooth
 forcing, global energy and independent foundation review remain open;
 blow-up is not verified.
 

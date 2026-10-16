@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-state complete-potential realization](current_potential_realization/README.md).
+Latest checkpoint: [current-field punctured terminal jets](current_endpoint_jets/README.md).
+The current complete potentials, direct swirl, velocity and pressure have
+compatible one-sided terminal jets away from the origin, CONDITIONALLY on
+the inherited uniform all-order physical estimates. Closed labels and a
+strict observation-cylinder chart margin are retained. Exact heat/pressure
+time jets prove zero Taylor radius: smooth, not analytic, future gluing is
+needed. Current localization/force/energy and independent foundation review
+remain open; neither origin regularity nor blow-up is established.
+
+The preceding [current-state complete-potential realization](current_potential_realization/README.md):
 The actual finite hierarchy now yields ONE real divergence-free local field
 with complete all-fixed-jet residual flatness, CONDITIONALLY on the retained
 analytical premises. Complete wave/mean curls, separately divergence-safe
@@ -14,7 +23,7 @@ direct swirl and full pressure are diagonally cut on whole intervals, with
 arbitrary stage constants and every interaction retained. Gaussian tails
 are compared at one fixed finite state, never inverted or separately summed.
 This reaches the conditional local-realization milestone. Closed-time
-endpoint jets, localization/initialization, admissible global force and
+endpoint foundation checks, localization/initialization, admissible global force and
 energy, independent foundation review and blow-up remain unverified.
 
 The preceding [current-seeded finite-stage induction](finite_stage_induction/README.md):
