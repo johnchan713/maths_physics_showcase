@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [coefficient support audit](results/coefficient_support_audit/README.md)
+The latest [weighted background edges](results/weighted_background_edges/README.md)
+join all fixed-order leading/first-stress edge bounds and derive the stronger
+smooth relative comparison `(That-T0)/|T0|=O(q^(2h))`, including every fixed
+Euler/profile jet. This uses the actual first-stress factorization, common
+interior supports and additional finite Borel cutoff requirements, not a
+generic weighted-smallness inference. With the inherited analytical lemmas,
+one common small-q domain preserves the background growth/oriented cone.
+Uniform physical pulses, complete covariance means (including both pressure
+tails and full axial velocity), and the full residual remain unverified.
+
+The preceding [coefficient support audit](results/coefficient_support_audit/README.md)
 derives common supports for every finite formal coefficient and exact leading
 velocity on the untouched reserved mean patch, using the analytic collar and
 linear inverse lemmas. Pressure is different: orders one and two retain

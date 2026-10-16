@@ -1,0 +1,24 @@
+{
+  "actual_cutoff_constants_or_scales_numerically_evaluated": false,
+  "additional_free_cutoff_requirements": [
+    "Tn/zeta jets through n",
+    "Tn/abs(T0) jets through n"
+  ],
+  "common_q_domain_for_every_fixed_jet": true,
+  "cone_domain_uses_only_value_and_first_velocity_jet_comparison": true,
+  "derivative_family": "Euler q*d_q at fixed X,eta; partial_X; partial_eta",
+  "diagnostic_h": "1/200",
+  "diagnostics_are_not_continuum_proofs": true,
+  "distance": "min(1,ya,yb)",
+  "exact_weight": "exp(-t1^2/ya^2-4/yb^2)",
+  "finite_N_not_reselected_for_higher_derivatives": true,
+  "inner_exponent": "t1^2/ya^2",
+  "mean_pressure_orders_one_and_two_not_discarded": true,
+  "normalized_stress": "That=q^(A+1/2)*Tphysical",
+  "outer_exponent": "4/yb^2",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "ede56e1149c4ea3728f1376039755a951f6fd71f",
+  "relative_estimate": "D^I[(That-T0)/abs(T0)]=O_I(q^(2h)) on the closed active annulus",
+  "same_Md64_h_N_and_width": true,
+  "total_order_weight_loss": "3*m+3"
+}

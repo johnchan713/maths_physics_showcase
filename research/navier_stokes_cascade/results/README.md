@@ -6,7 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [formal coefficient supports and exact mean velocity](coefficient_support_audit/README.md).
+Latest checkpoint: [all-order weighted edges and relative background stress](weighted_background_edges/README.md).
+The same leading construction has joined all-fixed-order edge weights, and
+the actual stress coefficients admit smooth quotients by `|T0|` at both
+edges. Additional finite cutoff requirements yield a relative `O(q^(2h))`
+comparison and preserve the background cone on one common small-q domain,
+using the retained analytical lemmas. Physical pulses, complete covariance
+means and the full residual remain separate; no blow-up follows.
+
+The preceding [formal coefficient supports and exact mean velocity](coefficient_support_audit/README.md):
 The same untouched I3/I4 patches support the exact linear moment solve at
 every finite formal order. Positive velocities vanish before I4, even in
 potential-cutoff transitions, but first and second pressure tails remain.
