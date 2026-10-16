@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [global moment and signed-stress audit](results/global_moment_stress/README.md)
+The latest [regional cone join](results/regional_cone_join/README.md)
+supplies the remaining compact input margins at the same Md64 parameters,
+corrects a sign-sensitive negative-source comparison on the first outer
+ramp (the required `p1>.5XR` floor survives), and joins the finite-frequency
+leading value/cone estimate to the protected collars and heat-compensated
+exterior. Exact five-moment restoration is retained at `Xrep=Xstar`.
+This is a leading value/direction result using the preceding analytic
+lemmas, not an all-order or physical wave certificate. Positive-order
+and reserved-mean supports, all-scale pulse derivatives, complete means
+and the full residual remain open.
+
+The preceding [global moment and signed-stress audit](results/global_moment_stress/README.md)
 derives `M(infinity)=J(infinity)=S(infinity)=0`, zero renormalized I and
 normalized leading pressure for profiles completed by the stated exact
 correction roots. It identifies their forward and backward leading stresses

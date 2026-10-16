@@ -1,0 +1,23 @@
+{
+  "parent_commit": "1cbfe7e7ca29321ce510ac6e07e5e24be9b9015c",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "same_parameters_widths_roots_supports_and_frequency": true,
+  "selected_family": "Md64, T=exp(64)+10, lambda=exp(-4T), h=lambda^2",
+  "original_required_gap_floor": "C^-1024 > Aenv^-1",
+  "Aenv": "C^4096",
+  "original_a_floor": "C^-22",
+  "original_Pc_minus_two_floor": ".1",
+  "original_third_fourth_required_only_where_vs_at_least_two": true,
+  "corrected_first_ramp_floor": "1.1*exp(-.6)-(.01/.98)*(exp(1)-1) > .586 > .5",
+  "old_outer_ramp_stronger_kernel_inference_superseded": true,
+  "negative_control_is_comparison_model_not_actual_ramp": true,
+  "left_collar_vs_floor": "2.29",
+  "right_collar_vs_minus_two": "2*lambda > C^-1",
+  "compact_final_gap_floor": "kappa/2, kappa=G^-4",
+  "accepted_N": "1+floor(Hhier^32)",
+  "compact_right_equals_heat_compensation_left": true,
+  "later_cone_uses_heat_compensated_profile_with_exact_pressure_memory": true,
+  "diagnostic_interval_digits": [100, 160],
+  "actual_frequency_or_profile_numerically_resolved": false,
+  "leading_value_cone_is_not_all_scale_physical_pulse_or_full_residual": true
+}

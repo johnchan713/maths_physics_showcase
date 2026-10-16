@@ -6,7 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [renormalized global moments and signed stress](global_moment_stress/README.md).
+Latest checkpoint: [regional cone input and leading value join](regional_cone_join/README.md).
+The remaining compact input margins are derived at the common Md64
+parameters, with the negative-source outer-ramp comparison corrected.
+The same finite-frequency cone joins the inner collar and compensated
+exterior using exact moment restoration. All-order edge bounds, future
+coefficient/mean supports, physical pulses and the full residual remain
+separate obligations; no blow-up claim follows.
+
+The preceding [renormalized global moments and signed stress](global_moment_stress/README.md):
 For profiles completed by the specified exact roots, the global M/J/S and
 renormalized I equations identify forward and backward leading stresses.
 An exact five-defect map retains exterior radial-velocity and signed stress

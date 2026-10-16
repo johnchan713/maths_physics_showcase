@@ -307,6 +307,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/global_moment_stress/evidence.json \
             --output navier_stokes_global_moment_stress_ci.json
 
+      - name: Check corrected regional input gaps and the leading cone join
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/regional_cone_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/regional_cone_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/regional_cone_join/evidence.json \
+            --output navier_stokes_regional_cone_join_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -722,6 +729,7 @@ jobs:
             navier_stokes_reduced_continuation_margins_ci.json
             navier_stokes_shape_join_pressure_ci.json
             navier_stokes_global_moment_stress_ci.json
+            navier_stokes_regional_cone_join_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
