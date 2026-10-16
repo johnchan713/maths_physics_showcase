@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [first sourced wave and flat-tail obstruction](first_sourced_wave_update/README.md).
+Latest checkpoint: [generic complex-wave signed covariance update](complex_signed_covariance_update/README.md).
+The current generic signed correction gives auxiliary-averaged tangential
+order `2-6kappa`, retaining the old complex-error cross, full signed square,
+all six covariances and axial pressure. Full means/defects await relaxation;
+the nonzero regular residual remains `3/2-6kappa`. The parent CI roundoff
+replay error is corrected with a narrowly scoped adapter, not rewritten
+frozen evidence or relaxed mathematical gates. All estimates use the
+retained analytical lemmas; later cycles and blow-up remain unverified.
+
+The preceding [first sourced wave and flat-tail obstruction](first_sourced_wave_update/README.md):
 One first sourced inverse gives regular normalized residual order `3/2-6kappa`
 using the retained analytical lemmas, with exact potential/pressure cutoff
 tails kept additive. An exact homogeneous-pulse counterexample rules out

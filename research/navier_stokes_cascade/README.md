@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [first sourced wave and flat-tail obstruction](results/first_sourced_wave_update/README.md)
+The latest [generic complex-wave signed covariance update](results/complex_signed_covariance_update/README.md)
+uses the current old-wave remainder, retaining its cross term and the signed
+square. Auxiliary-averaged tangential residuals reach `M_(2-6kappa)` using
+the retained analytical lemmas; full means and defects are recomputed but
+not relaxed, and the nonzero regular residual stays at `3/2-6kappa`.
+It also corrects the observed parent CI replay failure with a three-field
+roundoff adapter, preserving every historical byte and mathematical gate.
+Fresh mean relaxation, later cycles, complete residual construction and
+blow-up remain unverified.
+
+The preceding [first sourced wave and flat-tail obstruction](results/first_sourced_wave_update/README.md)
 joins the current regular source to one pulse inverse and full potential/pressure
 cutoff. Its regular normalized residual reaches `3/2-6kappa`, using the
 retained analytical lemmas. An exact counterexample shows that a physically

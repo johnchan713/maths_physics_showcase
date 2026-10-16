@@ -27,10 +27,17 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
-      - name: Check first sourced wave and exact flat-tail obstruction
+      - name: Check current complex-wave signed covariance and scoped replay repair
         run: |
-          /usr/bin/python3 research/navier_stokes_cascade/results/first_sourced_wave_update/test_audit.py -v
-          /usr/bin/python3 research/navier_stokes_cascade/results/first_sourced_wave_update/audit.py \
+          /usr/bin/python3 research/navier_stokes_cascade/results/complex_signed_covariance_update/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/complex_signed_covariance_update/audit.py \
+            --verify-record research/navier_stokes_cascade/results/complex_signed_covariance_update/evidence.json \
+            --output navier_stokes_complex_signed_covariance_update_ci.json
+
+      - name: Check first sourced wave with scoped roundoff replay compatibility
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/complex_signed_covariance_update/replay.py --tests
+          /usr/bin/python3 research/navier_stokes_cascade/results/complex_signed_covariance_update/replay.py \
             --verify-record research/navier_stokes_cascade/results/first_sourced_wave_update/evidence.json \
             --output navier_stokes_first_sourced_wave_update_ci.json
 
@@ -739,6 +746,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_complex_signed_covariance_update_ci.json
             navier_stokes_first_sourced_wave_update_ci.json
             navier_stokes_post_signed_mean_relaxation_ci.json
             navier_stokes_real_signed_covariance_update_ci.json
