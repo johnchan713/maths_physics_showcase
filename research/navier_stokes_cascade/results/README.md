@@ -6,7 +6,14 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [whole activation and compact pressure bridge](compact_pressure_bridge/README.md).
+Latest checkpoint: [reduced continuation and both final tapers](reduced_continuation_margins/README.md).
+At unchanged width, `Pc>11/5`, `a>C^-22` and `vs<=4/5` hold from
+activation end through Xi=110, relative to the exact core's fixed reference
+datum. A source barrier replaces an invalid extension of width-small
+field comparisons past the tapers. Shape/join/outer and global-pressure
+inputs remain open; no unconditional pulse or full residual claim follows.
+
+The preceding [whole activation and compact pressure bridge](compact_pressure_bridge/README.md)
 The same `C^-20` width gives `Pc>11/5` on the entire first activation,
 and squared cone loss `<C^-30` wherever growth exceeds two. The exact
 five-moment pressure-memory map and conditional quantitative compact pulse

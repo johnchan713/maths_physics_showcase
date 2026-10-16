@@ -1,0 +1,49 @@
+{
+  "Xcut": 100,
+  "Xi": 110,
+  "actual_Pc_lower": "11/5",
+  "actual_a_lower": "C^-22",
+  "actual_v_upper": "4/5",
+  "comparison_constant": "C^4*exp(100*B)",
+  "comparison_only_through": "100*exp(2*C^-20)",
+  "continuation_interval": "[Xa*exp(C^-20),110]",
+  "diagnostic_digits": 75,
+  "diagnostic_power_exponents": [
+    ".5",
+    ".1"
+  ],
+  "final_barrier_p1": "5/2",
+  "final_source_lower": "1",
+  "fixed_reference_datum_and_parameters_unchanged": true,
+  "giant_actual_profile_numerically_materialized": false,
+  "interval_digits": [
+    100,
+    160
+  ],
+  "interval_scales": [
+    "P16",
+    "Md4",
+    "Md64"
+  ],
+  "log_sum_negligible_tail_interval": [
+    "0",
+    "1e-200"
+  ],
+  "numerical_checks_are_not_continuum_supremum_proofs": true,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "ed1bafb7a24150b8e9353ea25d7c8487e29bba10",
+  "pressure_and_pressure_eta_kept": true,
+  "reference_axial_source_error": "100*uerr+5*C^-2*exp(B)<j/100",
+  "reference_growth_range": [
+    "2.3",
+    "C^3/2"
+  ],
+  "reference_source_lower": "2.4+.94*Lambda*L*chi",
+  "source_equations": [
+    "4.9",
+    "4.16",
+    "B.22-B.29"
+  ],
+  "wide_log_sum_enclosure": "max(lower)..max(upper)+log(n)",
+  "width_and_kappa0": "C^-20"
+}

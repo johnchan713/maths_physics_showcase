@@ -13,7 +13,15 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [whole-activation and compact pressure bridge](results/compact_pressure_bridge/README.md)
+The latest [reduced-continuation margin audit](results/reduced_continuation_margins/README.md)
+supplies `Pc>11/5`, `a>C^-22`, and `vs<=4/5` after first activation
+through both final tapers and the final constant-shear segment. It retains
+complete pressure memory, proves reference growth by two sectors, and uses
+a source barrier where a width-small field comparison would be invalid.
+Shape/join/outer dependencies, completed global backward pressure and
+unconditional physical pulse/residual estimates still require audit.
+
+The preceding [whole-activation and compact pressure bridge](results/compact_pressure_bridge/README.md)
 extends the fixed-width activation estimate over the whole first transition,
 retaining both pressure terms: `Pc>11/5` and squared cone loss `<C^-30`
 where growth exceeds two. It derives the exact pressure-memory propagation
