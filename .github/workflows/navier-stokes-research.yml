@@ -293,6 +293,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/reduced_continuation_margins/evidence.json \
             --output navier_stokes_reduced_continuation_margins_ci.json
 
+      - name: Check actual shape join entry and the exact leading pressure ledger
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/shape_join_pressure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/shape_join_pressure/audit.py \
+            --verify-record research/navier_stokes_cascade/results/shape_join_pressure/evidence.json \
+            --output navier_stokes_shape_join_pressure_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -706,6 +713,7 @@ jobs:
             navier_stokes_core_growth_activation_ci.json
             navier_stokes_compact_pressure_bridge_ci.json
             navier_stokes_reduced_continuation_margins_ci.json
+            navier_stokes_shape_join_pressure_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

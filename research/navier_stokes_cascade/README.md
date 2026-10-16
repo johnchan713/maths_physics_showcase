@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [reduced-continuation margin audit](results/reduced_continuation_margins/README.md)
+The latest [shape/join and pressure-ledger audit](results/shape_join_pressure/README.md)
+derives `Sq>1`, `p1>2.5` through the shape transition, and actual C2
+entry into the same exact five-moment join with coefficient norm at most
+`5.72e-14`. The exact Cp ledger identifies backward leading pressure for
+profiles completed by those repairs; it does not certify all compact inputs
+or the full corrected pressure. Raw I diverges in the tail, so renormalized
+I and the remaining global signed stress/moment identities are next, along
+with the retained outer regional inputs and reserved supports.
+
+The preceding [reduced-continuation margin audit](results/reduced_continuation_margins/README.md)
 supplies `Pc>11/5`, `a>C^-22`, and `vs<=4/5` after first activation
 through both final tapers and the final constant-shear segment. It retains
 complete pressure memory, proves reference growth by two sectors, and uses

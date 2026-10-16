@@ -6,7 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [reduced continuation and both final tapers](reduced_continuation_margins/README.md).
+Latest checkpoint: [shape/join and exact leading pressure ledger](shape_join_pressure/README.md).
+The actual shape source and C2 joining entry are audited; the same exact
+root has C2 coefficient norm at most `5.72e-14`. A signed Cp ledger gives
+the backward-pressure identity for leading profiles completed by the exact
+repairs, with remaining compact-input hypotheses explicit. Renormalized I,
+other global moments and signed stresses, outer inputs, and reserved supports
+remain open; no unconditional physical pulse or full residual claim follows.
+
+The preceding [reduced continuation and both final tapers](reduced_continuation_margins/README.md) checkpoint:
 At unchanged width, `Pc>11/5`, `a>C^-22` and `vs<=4/5` hold from
 activation end through Xi=110, relative to the exact core's fixed reference
 datum. A source barrier replaces an invalid extension of width-small

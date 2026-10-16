@@ -1,0 +1,49 @@
+{
+  "Cp_edit_totals": [
+    "angular:0",
+    "axial:0",
+    "heat+compensation:0",
+    "axis+join:0",
+    "modulation+repair:0"
+  ],
+  "backward_pressure_scope": "completed leading swirl using defined exact repair roots, not full corrected pressure",
+  "compact_modulation_input_hypotheses_remain_dependencies": true,
+  "diagnostics_are_continuum_supremum_certificates": false,
+  "entry_C2_upper": ".255*epsilon",
+  "exact_coefficient_C2_upper": "5.72e-14",
+  "interval_digits": [
+    100,
+    160
+  ],
+  "interval_scales": [
+    "P16",
+    "Md4",
+    "Md64"
+  ],
+  "inverse_f_squared_C2_norm": 20,
+  "join_Pc_lower": "3.32",
+  "join_radius_floor": 10000,
+  "join_vs_upper": "1",
+  "manufactured_fixtures_are_actual_profile": false,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "a8371b14e525bbb03656909f90120221ae63009f",
+  "pressure_equality_is_functional_in_eta": true,
+  "raw_I_infinite_tail": "diverges as X^(1-h); use renormalized I",
+  "raw_second_derivative_factor": 2,
+  "same_fixed_parameters_datum_and_exact_roots": true,
+  "shape_Pc_lower": "5/2",
+  "shape_a_range": [
+    ".7",
+    ".9"
+  ],
+  "shape_length": "2000*B",
+  "shape_source_lower": "1",
+  "shape_vs_upper": ".9",
+  "source_equations": [
+    "4.15-4.16",
+    "A.11",
+    "B.32-B.39",
+    "C.17"
+  ],
+  "target_C2_upper": ".286*epsilon"
+}
