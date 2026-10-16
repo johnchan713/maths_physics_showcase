@@ -1,0 +1,19 @@
+{
+  "parent_commit": "d065d09fa2f16710ea590454ebe5389e5edfb909",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "source_equations": ["9.15-9.21", "Lemma 9.8", "Proposition 9.9"],
+  "actual_finite_hierarchy": "B_j=3/2-6*kappa+j*(1/2-3*kappa)",
+  "increment_gain": "g_j=h*(1/2-3*kappa)*j",
+  "tail_gain": "g_j/2",
+  "representative": "Delta u_j=curl(A_j)+b_j*e_theta; partial_theta b_j=0",
+  "complete_pressure": "p_j=p^[j]-p^[j-1] after all four operations",
+  "uniform_physical_losses": "ell_m=2*A+2*m; L_m=ell_(m+1); H_m=L_m+1; K_m=2*A+3/2+2*m",
+  "scale_requirements": "finite list of physical jets through m=j; whole interval 0<q<=1/a_j",
+  "fixed_comparison": "J>=m+2; h*delta*(J+1)/2>=N+1+L_(m+2)+H_(m+2); h*B_J-K_m>=N+1",
+  "domain": "same inherited 0<q<qstar<1 and t<1; no closed-time endpoint assertion",
+  "same_h_N_lambda_width_labels_and_fixed_primary_roots": true,
+  "stage_constants_may_grow_arbitrarily_fast": true,
+  "flat_tail_ledger_compared_at_one_fixed_stage_never_forward_inverted": true,
+  "manufactured_diagnostics_not_actual_global_field_evaluation": true,
+  "claim": "conditional local realization and all-fixed-jet complete residual flatness only"
+}

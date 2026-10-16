@@ -6,14 +6,26 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-seeded finite-stage induction](finite_stage_induction/README.md).
+Latest checkpoint: [current-state complete-potential realization](current_potential_realization/README.md).
+The actual finite hierarchy now yields ONE real divergence-free local field
+with complete all-fixed-jet residual flatness, CONDITIONALLY on the retained
+analytical premises. Complete wave/mean curls, separately divergence-safe
+direct swirl and full pressure are diagonally cut on whole intervals, with
+arbitrary stage constants and every interaction retained. Gaussian tails
+are compared at one fixed finite state, never inverted or separately summed.
+This reaches the conditional local-realization milestone. Closed-time
+endpoint jets, localization/initialization, admissible global force and
+energy, independent foundation review and blow-up remain unverified.
+
+The preceding [current-seeded finite-stage induction](finite_stage_induction/README.md):
 The current state closes a CONDITIONAL repeatable four-step hierarchy with
 gain `1/2-3kappa` at every finite stage. The proof uses affine bounds on the
 whole half-line, exact Gaussian-tail exclusion, complete interactions and
 pressure/moment recomputation. It is a finite-stage milestone under the
 retained analytical premises; arbitrary stage constants prevent a direct
-single-field conclusion. Infinite potential/diagonal realization, endpoint
-and admissible-force obligations, independent review and blow-up remain open.
+single-field conclusion by themselves. The latest checkpoint supplies the
+conditional diagonal join; endpoint and admissible-force obligations,
+independent review and blow-up remain open.
 
 The preceding [current complex-state full mean relaxation](complex_mean_relaxation/README.md):
 Fresh current fast/slow maps give full tangential angular-mean order
