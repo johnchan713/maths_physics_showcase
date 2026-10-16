@@ -1,0 +1,43 @@
+{
+  "coefficient_space": "all radial degrees and all eta derivatives",
+  "common_eta_radius": "3*rho/8 on |Y|<=5",
+  "core_real_interval": "0<=Y<=4.1",
+  "exact_pressure_identification_is_an_input": true,
+  "finite_diagnostics_are_not_all_index_or_existence_proofs": true,
+  "formal_diagnostic_degrees": [
+    2,
+    3,
+    4
+  ],
+  "formal_diagnostic_eta_order": 2,
+  "formal_diagnostics_are_actual_core": false,
+  "h_range": "0<h<=1/100",
+  "interval_digits": [
+    80,
+    120
+  ],
+  "interval_scales": [
+    "P16",
+    "Md4",
+    "Md64"
+  ],
+  "j": "1e-18",
+  "normalized_jet_orders": [
+    2,
+    6
+  ],
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "5ac315d13e54797b3a8c692a3d465e41d55642ea",
+  "rho": "sigma/2048",
+  "same_fixed_N_and_h": true,
+  "same_selected_Lambda_and_C_formulas": true,
+  "sigma": "1e-20",
+  "source_equations": [
+    "4.9-4.13",
+    "B.1-B.16"
+  ],
+  "status": "core-contraction-and-exact-stress-audited-for-pressure-family",
+  "theorem_pressure_family": "exact positive measure on [0,1], mass<5; P>=16",
+  "universal_contraction_ceiling": "1e-50",
+  "zero_leading_stress_is_zero_complete_residual": false
+}

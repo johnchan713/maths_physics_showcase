@@ -265,6 +265,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/inner_collar_activation/evidence.json \
             --output navier_stokes_inner_collar_activation_ci.json
 
+      - name: Audit nonlinear analytic core contraction and exact leading stress cancellation
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_contraction_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_contraction_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_contraction_audit/evidence.json \
+            --output navier_stokes_core_contraction_audit_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
