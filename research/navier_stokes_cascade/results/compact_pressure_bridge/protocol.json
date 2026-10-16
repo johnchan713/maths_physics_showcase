@@ -1,0 +1,32 @@
+{
+  "activation_Pc_lower": "11/5",
+  "activation_s_interval": [
+    "0",
+    "1"
+  ],
+  "activation_squared_cone_loss_upper": "C^-30",
+  "compact_Fmin": "C^-11",
+  "compact_R": "4*G^3",
+  "compact_kappa": "G^-4",
+  "compact_squared_cone_deficit": "kappa/(64*R^6)",
+  "diagnostic_operator_digits": 50,
+  "diagnostic_operator_orders": [
+    48,
+    72
+  ],
+  "diagnostics_are_not_continuum_certificates": true,
+  "fixtures_are_not_actual_core_or_actual_pulses": true,
+  "local_forward_pressure_equality_is_not_global_backward_normalization": true,
+  "original_compact_input_margins_remain_hypotheses": true,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "08c4c30d8a9f8de4ebd00b7484db6ab55530fe24",
+  "pressure_memory_rows": [
+    "M",
+    "I",
+    "J",
+    "S",
+    "Cp"
+  ],
+  "same_fixed_parameters_and_axis_datum": true,
+  "unchanged_width": "C^-20"
+}

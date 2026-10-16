@@ -6,6 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
+Latest checkpoint: [whole activation and compact pressure bridge](compact_pressure_bridge/README.md).
+The same `C^-20` width gives `Pc>11/5` on the entire first activation,
+and squared cone loss `<C^-30` wherever growth exceeds two. The exact
+five-moment pressure-memory map and conditional quantitative compact pulse
+value bounds are derived. Uniform margins on the later reduced-shear
+continuation and final tapers remain the next input gate. Global pressure
+normalization, unconditional pulses, full residual improvement and blow-up
+are not promoted.
+
 The [paper building-block audit](paper_profile_audit/README.md) checks
 explicit similarity identities, a scalar comparison function and the
 viscous exterior from the user-supplied OpenAI manuscript. The source-bound

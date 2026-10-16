@@ -13,6 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
+The latest [whole-activation and compact pressure bridge](results/compact_pressure_bridge/README.md)
+extends the fixed-width activation estimate over the whole first transition,
+retaining both pressure terms: `Pc>11/5` and squared cone loss `<C^-30`
+where growth exceeds two. It derives the exact pressure-memory propagation
+map and quantitative compact pulse value bounds conditional on the earlier
+compact input margins. The reduced-shear continuation and both final tapers
+still require direct uniform margin checks; whole-profile admissibility,
+global backward pressure normalization, unconditional pulse derivatives,
+complete residual improvement and blow-up remain unverified.
+
 The [blow-up plan](BLOWUP_PLAN.md) records the current route, ordered proof
 obligations, and pass/fail conditions. The latest comparison lemma closes
 the downstream conditional implication from the localized field to exclusion
