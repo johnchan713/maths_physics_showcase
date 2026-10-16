@@ -1,0 +1,20 @@
+{
+  "parent_commit": "e4e38b2309d3a9d426c820b659df2a1bf80e15fc",
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "source_under_audit": ["9.15-9.21", "10.1-10.14"],
+  "official_definition": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf; equations (4),(5),(7), alternative (C); checked 2026-10-16",
+  "actual_viscosity": "1; other positive viscosities in manufactured identities only",
+  "current_input": "complete current A,B,p0 and all fixed Cartesian residual/endpoint jets, not older hypothetical hierarchy",
+  "observation_domain": "q_e=min(qstar/16,2^(-ell0-2)); tau0=q_e/16; z0=(q_e/16)^D; r0<R0",
+  "localized_field": "u=curl(c*A)+c*B=c*u0+d; p=c*p0; d=grad(c) cross A; c axisymmetric",
+  "pressure": "same full p_B tails and every wave/mean pressure difference; forced Poisson includes -div f",
+  "force_extension": "sum_(j>=0) chi0(b_j*sigma)*sigma^j/j!*F_j; b0=2; increasing dyadic bj",
+  "extension_diagonal": "spatial_order+time_order<=floor(j/2); derivative tail bounded by sum 2^-j",
+  "energy_bound": "||u(t)||_2^2+2*integral_0^t ||grad u||_2^2<=F(t)^2; F(t)=integral_0^t ||f||_2",
+  "same_parameters_width_and_labels": true,
+  "diagnostic_field": "manufactured complete current-endpoint potential/direct swirl/pressure on actual implicit q, including t=1 away from origin",
+  "diagnostic_positive_viscosities": [0.6, 1.0, 1.7],
+  "diagnostic_cutoff_scales": {"radial": 0.55, "axial": 0.4, "time": 0.0015},
+  "actual_terminal_norms_scales_and_global_field_not_evaluated": true,
+  "scope": "conditional current compact smooth force, zero datum, preterminal energy/dissipation and preserved core growth; not global competitor exclusion or unconditional blow-up"
+}

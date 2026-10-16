@@ -13,15 +13,25 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-field punctured terminal jets](results/current_endpoint_jets/README.md)
+The latest [current localized field and compact force](results/current_localized_force/README.md)
+joins the SAME current field to zero initial velocity and ONE smooth compact
+global force, CONDITIONALLY on the retained analytical premises. All twelve
+localization terms and the force-divergence pressure term stay. Smooth
+terminal-jet gluing precedes the energy argument; whole-space energy and
+preterminal dissipation are bounded and the conditional core growth survives.
+This is not global competitor exclusion or an unconditional construction.
+Pressure recovery/comparison at spatial infinity and independent analytic
+foundation review remain open; no blow-up is verified.
+
+The preceding [current-field punctured terminal jets](results/current_endpoint_jets/README.md)
 joins the realized field to compatible one-sided potential, direct-swirl,
 velocity and pressure jets at t=1 AWAY FROM the singular origin,
 CONDITIONALLY on the inherited uniform physical estimates. Closed-time
 labels are already selected; an explicit observation-cylinder margin keeps
 every active enlarged chart admissible. Exact heat/pressure terminal jets
 have zero-radius time Taylor series, so future gluing must be smooth rather
-than analytic. Current-field localization, admissible forcing, global energy
-and independent foundation review remain open; no blow-up is verified.
+than analytic for those fields. Its then-open current force/energy join is
+supplied conditionally above; independent foundation review remains open.
 
 The preceding [current-state complete-potential realization](results/current_potential_realization/README.md)
 joins the actual finite hierarchy to ONE real divergence-free local field

@@ -6,14 +6,23 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-field punctured terminal jets](current_endpoint_jets/README.md).
+Latest checkpoint: [current localized field and compact force](current_localized_force/README.md).
+The SAME current realized field now has a conditional zero-datum,
+divergence-free compact localization and ONE smooth compact global force.
+Every curl, pressure, viscous and nonlinear term stays, including force
+divergence in the pressure identity. Terminal force gluing is proved before
+whole-space energy/dissipation bounds; the conditional core growth survives.
+Global competitor comparison and independent analytic foundation review
+remain open. No unconditional admissible solution or blow-up is established.
+
+The preceding [current-field punctured terminal jets](current_endpoint_jets/README.md):
 The current complete potentials, direct swirl, velocity and pressure have
 compatible one-sided terminal jets away from the origin, CONDITIONALLY on
 the inherited uniform all-order physical estimates. Closed labels and a
 strict observation-cylinder chart margin are retained. Exact heat/pressure
 time jets prove zero Taylor radius: smooth, not analytic, future gluing is
-needed. Current localization/force/energy and independent foundation review
-remain open; neither origin regularity nor blow-up is established.
+needed for those fields. The then-open current force/energy join is supplied
+conditionally above; origin regularity and blow-up are not established.
 
 The preceding [current-state complete-potential realization](current_potential_realization/README.md):
 The actual finite hierarchy now yields ONE real divergence-free local field
