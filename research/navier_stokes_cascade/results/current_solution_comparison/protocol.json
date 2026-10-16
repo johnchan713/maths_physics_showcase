@@ -1,0 +1,15 @@
+{
+  "parent_commit": "236056afbfd2d20e1839733708fdc53371835bc4",
+  "current_input": "current_localized_force; never substitute the historical localized field",
+  "general_lemma": "global_solution_comparison sections 1-6, reproduced with its own comparator",
+  "viscosity": "1",
+  "cutoff_power": 8,
+  "negative_Sobolev_orders": [2, 3],
+  "commutator_Lp": "4/3",
+  "commutator_radius_power": "-3/4",
+  "energy_radius_decay": "4/3",
+  "order_of_limits": "fix T<1, then R->infinity; only afterward approach t=1 along protected core",
+  "external_input": "Riesz Lp boundedness, Knapp Advanced Real Analysis III.5-6, Theorem 3.26 and Riesz example printed pp83,93 (PDF pp113,123), checked 2026-10-16",
+  "source": "https://www.math.stonybrook.edu/~aknapp/download/a2-1-realanal-clickable.pdf",
+  "scope": "conditional current competitor exclusion, not an independent construction or blow-up theorem"
+}

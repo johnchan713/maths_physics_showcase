@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check same-current-field pressure recovery and finite-energy comparison
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/current_solution_comparison/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/current_solution_comparison/audit.py \
+            --verify-record research/navier_stokes_cascade/results/current_solution_comparison/evidence.json \
+            --output navier_stokes_current_solution_comparison_ci.json
+
       - name: Check current-field localization compact smooth force and energy
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/current_localized_force/test_audit.py -v
@@ -781,6 +788,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_current_solution_comparison_ci.json
             navier_stokes_current_localized_force_ci.json
             navier_stokes_current_endpoint_jets_ci.json
             navier_stokes_current_potential_realization_ci.json

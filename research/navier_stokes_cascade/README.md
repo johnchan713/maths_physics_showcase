@@ -13,15 +13,22 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current localized field and compact force](results/current_localized_force/README.md)
+The latest [same-current-field pressure recovery and comparison](results/current_solution_comparison/README.md)
+joins the general finite-energy comparison lemma to the SAME current localized
+field, full pressure, compact force and zero datum. All spatial-infinity
+fluxes vanish at fixed T<1, without assumed competitor pressure decay or
+global derivative bounds. This closes the CONDITIONAL downstream exclusion
+implication. Independent validation of the inherited analytical foundation
+is the next gate; no unconditional construction or blow-up is established.
+
+The preceding [current localized field and compact force](results/current_localized_force/README.md)
 joins the SAME current field to zero initial velocity and ONE smooth compact
 global force, CONDITIONALLY on the retained analytical premises. All twelve
 localization terms and the force-divergence pressure term stay. Smooth
 terminal-jet gluing precedes the energy argument; whole-space energy and
 preterminal dissipation are bounded and the conditional core growth survives.
-This is not global competitor exclusion or an unconditional construction.
-Pressure recovery/comparison at spatial infinity and independent analytic
-foundation review remain open; no blow-up is verified.
+Its then-open current-field comparison join is supplied conditionally above.
+Independent analytical foundation review remains open; no blow-up is verified.
 
 The preceding [current-field punctured terminal jets](results/current_endpoint_jets/README.md)
 joins the realized field to compatible one-sided potential, direct-swirl,

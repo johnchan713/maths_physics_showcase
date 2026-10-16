@@ -6,14 +6,23 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current localized field and compact force](current_localized_force/README.md).
+Latest checkpoint: [same-current-field pressure recovery and comparison](current_solution_comparison/README.md).
+The general lemma now applies to the SAME current localized field, full
+pressure, compact force and zero datum. Exact forced/difference pressure
+checks distinguish retaining force divergence before subtraction from its
+cancellation afterward. Fixed-interval expanding-ball bounds close the
+CONDITIONAL global competitor-exclusion implication. Independent analytical
+foundation review remains open; no unconditional blow-up is established.
+
+The preceding [current localized field and compact force](current_localized_force/README.md):
 The SAME current realized field now has a conditional zero-datum,
 divergence-free compact localization and ONE smooth compact global force.
 Every curl, pressure, viscous and nonlinear term stays, including force
 divergence in the pressure identity. Terminal force gluing is proved before
 whole-space energy/dissipation bounds; the conditional core growth survives.
-Global competitor comparison and independent analytic foundation review
-remain open. No unconditional admissible solution or blow-up is established.
+Its current global-competitor comparison join is supplied conditionally
+above. Independent analytic foundation review remains open. No unconditional
+admissible solution or blow-up is established.
 
 The preceding [current-field punctured terminal jets](current_endpoint_jets/README.md):
 The current complete potentials, direct swirl, velocity and pressure have
