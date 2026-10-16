@@ -1,0 +1,26 @@
+{
+  "actual_second_pressure_constant_not_evaluated": true,
+  "exceptional_pressure_orders": [
+    1,
+    2
+  ],
+  "finite_coefficients_not_uniform_in_order": true,
+  "fixed_parameters_and_all_historical_evidence_unchanged": true,
+  "full_lower_pressure_source_integrated_through_Xv": true,
+  "inherited_analytic_lemmas_are_explicit_dependencies": true,
+  "manufactured_h": 0.005,
+  "manufactured_profiles_not_actual_solution": true,
+  "mean_pressure_not_equal_to_leading_pressure": true,
+  "no_full_residual_or_blowup_claim": true,
+  "paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "3adeeaa46c64ee2dc6d47dcaf951baaf946cfc05",
+  "positive_bump_last_edge": "rho3*exp(2.55)",
+  "positive_order_velocity_cutoffs_are_potential_cutoffs": true,
+  "positive_velocity_edge": "rho3*exp(3)",
+  "pressure_order3_and_above_edge": "Xvel",
+  "raw_inverse_costs": [
+    "lambda^-1",
+    "e(eta)^-1"
+  ],
+  "reserved_mean_interval": "rho3*exp((6,11))"
+}

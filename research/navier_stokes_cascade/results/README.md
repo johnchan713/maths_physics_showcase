@@ -6,7 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [regional cone input and leading value join](regional_cone_join/README.md).
+Latest checkpoint: [formal coefficient supports and exact mean velocity](coefficient_support_audit/README.md).
+The same untouched I3/I4 patches support the exact linear moment solve at
+every finite formal order. Positive velocities vanish before I4, even in
+potential-cutoff transitions, but first and second pressure tails remain.
+This uses the inherited analytic collar and continuum inverse lemmas;
+all-order weighted edges, actual physical pulses, complete covariance
+means and the full residual remain open.
+
+The preceding [regional cone input and leading value join](regional_cone_join/README.md):
 The remaining compact input margins are derived at the common Md64
 parameters, with the negative-source outer-ramp comparison corrected.
 The same finite-frequency cone joins the inner collar and compensated

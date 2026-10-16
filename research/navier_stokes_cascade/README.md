@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [regional cone join](results/regional_cone_join/README.md)
+The latest [coefficient support audit](results/coefficient_support_audit/README.md)
+derives common supports for every finite formal coefficient and exact leading
+velocity on the untouched reserved mean patch, using the analytic collar and
+linear inverse lemmas. Pressure is different: orders one and two retain
+tails through the leading axial support; higher pressure orders stop with
+the positive velocities. Both exceptional pressures are retained on the
+mean patch. All-order weighted leading edges, uniform actual pulses,
+complete covariance means and the full residual remain unverified.
+
+The preceding [regional cone join](results/regional_cone_join/README.md)
 supplies the remaining compact input margins at the same Md64 parameters,
 corrects a sign-sensitive negative-source comparison on the first outer
 ramp (the required `p1>.5XR` floor survives), and joins the finite-frequency

@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check formal coefficient supports and retain mean pressure tails
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/coefficient_support_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/coefficient_support_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/coefficient_support_audit/evidence.json \
+            --output navier_stokes_coefficient_support_audit_ci.json
+
       - name: Check nonlinear axis pilot and preserve unmatched status
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/nonlinear_axis_pilot/test_pilot.py -v
