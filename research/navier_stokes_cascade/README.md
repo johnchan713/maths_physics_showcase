@@ -13,6 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
+The latest [current same-root global pressure and moment foundation](results/global_pressure_moment_foundation/README.md)
+proves that the annular and compact transformed zero rows are exactly the
+original `M,R,J,S,Cp` zero rows (using the retained `lambda>0`), traces the
+same exact roots through the original core gauge, and obtains the complete
+leading backward pressure and zero exterior signed-stress defects.  The same
+roots, frequency and `C^-20` width join the frozen inner/compact/outer
+leading-value cone.  This closes that current pressure/moment stream relative
+to retained core and compact-input estimates.  Finite coefficient/reserved
+support and uniform actual-pulse lemmas, complete covariance means and the
+full residual remain; no unconditional construction or blow-up follows.
+
 The latest [actual matching-root foundation](results/matching_root_foundation/README.md)
 supplies the existing annular and compact five-moment roots relative to retained
 core and compact-input estimates. Continuum inverse bounds are 610 and 800;

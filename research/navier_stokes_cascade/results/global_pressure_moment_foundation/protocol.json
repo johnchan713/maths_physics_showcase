@@ -1,0 +1,11 @@
+{
+  "parent_commit": "29b1f5f281650f5fae082d5d4a90a1f0d66e9ae3",
+  "parameters": "same Md64,T=exp(64)+10,lambda=exp(-4T),h=lambda^2,Tw=240T,Tf=1000,co=.001,width C^-20",
+  "rows": "original global defects (M,R,J,S,Cp); R is the renormalized heat moment with the unchanged final power tail",
+  "annular_transform": "(M,J-4eta I,I,-(S-8eta M),Cp), with nonzero positive normalizers omitted only for zero-row equivalence",
+  "compact_transform": "(M,(M-J)/lambda,I,-S,Cp), with retained 0<lambda<=.01",
+  "pressure": "Pi_axis=-Cp_id(infinity); same Pi_axis+Cp gauge at every join; no reset; Pi=-tail Cp",
+  "exterior": "zero five functional defects imply zero V0 and signed weighted stress defects; full pressure X term and eta derivative retained",
+  "cone": "same accepted annular and compact roots, unchanged N and C^-20, so the frozen regional leading-value cone join applies",
+  "scope": "current same-root global leading pressure/moment/stress join relative to retained core and compact-input estimates; finite-background/pulse and complete covariance/residual obligations remain"
+}
