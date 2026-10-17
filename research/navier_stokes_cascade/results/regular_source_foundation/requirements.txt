@@ -1,0 +1,4 @@
+# New exact controls use the standard library; inherited replays also need:
+mpmath>=1.3.0
+numpy>=1.24
+scipy>=1.10

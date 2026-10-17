@@ -1,0 +1,12 @@
+{
+  "parent_commit": "10b5bdff358cd6c54474be533dec1618f829d940",
+  "unchanged_parameters": "Md64; unit viscosity; fixed h,N,positive lambda,t1=C^-20; original radius supports and carriers",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "regular_linear_gain": "1/2-kappa; old 1/2-3*kappa remains conservative",
+  "curl_principal_order": "alpha+1/2-kappa; c_i*N_t is a coefficient derivative, not another Dr",
+  "nonlinear_orders": "same-label alpha+alpha_prime-kappa; mean-wave alpha+mu-1/2",
+  "complete_divergence": "div_star(a)+i*k*m*n.a=0; complete amplitude is generally not transverse",
+  "initial_regular_source": "primary W_(1/2); means M_(1-kappa), radial M_(2-kappa); source W_(1-kappa)",
+  "exact_tail_split": "psi*regular_linear_remainder + (1-psi)*f + T_psi; last two additive, not inverse sources",
+  "scope": "initial supported source and regular operator grammar relative to retained analytical inputs; full later complex iteration and residual remain open"
+}

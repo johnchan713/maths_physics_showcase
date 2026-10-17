@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [compact mean inverse foundation](compact_mean_foundation/README.md).
+Latest checkpoint: [regular harmonic-source foundation](regular_source_foundation/README.md).
+The full regular linear operator has sufficient gain 1/2-kappa; the older
+three-kappa loss remains conservative. Complete same-label curl transport
+and the genuine mean-wave half-frequency loss supply the actual initial
+regular source W_(1-kappa), with closed support and full endpoint extension.
+All pressure, viscosity and graph/frame terms stay; designated flat tails
+are additive, never inverse sources. Next independently join the actual
+first sourced correction, complex covariance and recomputed mean defects,
+then the later full residual iteration. No unconditional blow-up follows.
+
+The preceding [compact mean inverse foundation](compact_mean_foundation/README.md).
 The shifted radial and zero-Haar temporal maps now have independently
 derived all-fixed-order estimates and physical chart consistency. Exact
 five-map conditioning separates the nonsingular angular block from the

@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [compact mean inverse foundation](results/compact_mean_foundation/README.md)
+The latest [regular harmonic-source foundation](results/regular_source_foundation/README.md)
+independently derives a sufficient linear gain 1/2-kappa, charging each
+graph derivative once and retaining every viscous/pressure/frame term.
+Complete-curl divergence controls same-label nonlinear transport; mean-wave
+transport retains its half-power loss. The actual primary-plus-initial-mean
+regular source is W_(1-kappa), with full endpoint support; physically flat
+tails remain additive and are never forward-inverted. This does not promote
+the full later complex covariance/mean iteration or its residual rate.
+Retained core/pulse dependencies and unconditional blow-up remain open.
+
+The preceding [compact mean inverse foundation](results/compact_mean_foundation/README.md)
 independently supplies all-fixed-order shifted radial and zero-Haar temporal
 inverses, chart consistency, and the five-moment map relative to the reviewed
 core/primary inputs. The angular block stays nonsingular at lambda=0; the
