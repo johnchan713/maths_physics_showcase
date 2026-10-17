@@ -1,0 +1,10 @@
+{
+  "parent_commit": "760ee0033020260296c1f6f3f3a264cfc0f4402c",
+  "unchanged_frequency": "N=1+floor(H^32)",
+  "annular_map": "B constant, Q_eta U-square coefficient exp(6/5)*(1+eta^2)^2/P^2",
+  "heat_domain": "Z=2*(1-eta^2)/X>=0, fixed h>0, one-sided pole jets not global analyticity",
+  "reserved_fields": "U0=0,M0=mu*eta,V0=-mu; e3 positive; full K3(eta) pressure memory retained",
+  "input_join": "whole compact smooth pre-modulation input derived from exact core and finite defining maps",
+  "no_parameter_support_or_historical_evidence_change": true,
+  "scope": "all-order leading regularity/global moment foundation relative to exact core and retained finite existence/gap bounds; weighted first-stress and physical pulse/residual foundation open"
+}

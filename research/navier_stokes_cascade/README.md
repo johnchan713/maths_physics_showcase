@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [all-order modulation and same-repair map estimate](results/modulation_repair_all_order/README.md)
+The latest [annular/exterior foundation](results/annular_exterior_foundation/README.md)
+supplies the remaining compact smooth input to that fixed-N map theorem,
+relative to the retained exact core and finite existence/inverse bounds.
+It retains eta derivatives of the earlier annular quadratic map, derives
+all-order Gamma heat/moment majorants and the one-sided, nonanalytic pole
+jets, and identifies the actual reserved M0=mu*eta,V0=-mu and pressure
+memory. The resulting leading regularity and physical leading-jet bounds
+do not supply the stronger weighted first-stress/flat-edge quotient needed
+next. Uniform actual pulses, full residual closure and blow-up remain open.
+
+The preceding [all-order modulation and same-repair map estimate](results/modulation_repair_all_order/README.md)
 derives smooth signed variance roots, moving phase inverses and every fixed
 derivative of the SAME accepted five-row repair without reselecting N or
 contracting in infinitely many norms. Field errors have radial power N^(r-1),

@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check annular exterior all-order input Gamma tails and reserved leading memory
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/annular_exterior_foundation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/annular_exterior_foundation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/annular_exterior_foundation/evidence.json \
+            --output navier_stokes_annular_exterior_foundation_ci.json
+
       - name: Check all-order finite-N modulation moving phase and same exact repair maps
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/modulation_repair_all_order/test_audit.py -v
@@ -816,6 +823,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_annular_exterior_foundation_ci.json
             navier_stokes_modulation_repair_all_order_ci.json
             navier_stokes_prescribed_continuation_foundation_ci.json
             navier_stokes_activated_collar_foundation_ci.json

@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [all-order modulation and SAME exact repair maps](modulation_repair_all_order/README.md).
+Latest checkpoint: [annular/exterior leading foundation](annular_exterior_foundation/README.md).
+Nonconstant-Q annular jets and the finite exterior maps supply the remaining
+smooth compact input, relative to the exact core and retained finite-root
+existence bounds. Gamma majorants justify all fixed moment derivatives,
+without analyticity at the heat poles. Reserved axial velocity is zero but
+M0=mu*eta,V0=-mu and pressure memory remain. The next independent gate is
+the all-order weighted first-stress/flat-edge join, not an unconditional
+actual-pulse, complete residual or blow-up claim.
+
+The preceding [all-order modulation and SAME exact repair maps](modulation_repair_all_order/README.md).
 A signed root and pointwise inverse recursions propagate every fixed order
 through the moving phase and existing repair at the unchanged N. Complete
 pressure memory stays; moment radial errors gain one order over field errors.
