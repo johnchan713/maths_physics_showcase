@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current coefficient-support foundation](results/coefficient_support_foundation/README.md)
+The latest [sourced-inverse foundation](results/sourced_inverse_foundation/README.md)
+constructs the finite linear pulse inverse explicitly from the reviewed
+moving-frame inputs. It sharpens high-harmonic velocity and fixed parameter
+jet bounds by `1/(m^2-1)`, with an explicit recurrence retaining damping
+derivatives. Full smooth entrance support gives the same pulse-jet gain;
+generic sources need entrance compatibility. Direct normal-source pressure
+only gains `1/(k*m)`, and uncut exits are not declared zero. The accepted
+domain, frequency, width and historical evidence remain unchanged. Actual
+leading/core/frame and original-primary-root inputs, generated covariance/
+mean targets and the full residual still require their stated reviews;
+there is no unconditional pulse-family or blow-up theorem.
+
+The preceding [current coefficient-support foundation](results/coefficient_support_foundation/README.md)
 sharpens the actual positive-order linear moment inverse to 800 and derives
 explicit all-fixed-angular-jet bounds with the retained `1/lambda` and
 reciprocal-amplitude costs. General conservative stress totals retain

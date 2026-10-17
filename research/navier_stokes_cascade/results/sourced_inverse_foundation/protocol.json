@@ -1,0 +1,13 @@
+{
+  "parent_commit": "93103d22e03b2996ad8cf18ef31f77d090c22896",
+  "fixed_choices": "same Md64,h,N,positive lambda,original roots,r0,width C^-20,frequency,supports and accepted band domain",
+  "frame_inputs": "lambda>0; d>=dstar>0; ||E||+|d-dref|<=H/L; all fixed coefficient jets polynomial in S",
+  "propagator": "||Vm(v,w)||<=exp(H)*P(v)/P(w)*exp[-(m^2-1)dstar*(v-w)]",
+  "residence": "ell_m=L for |m|=1; min(L,1/((m^2-1)dstar)) for |m|>=2",
+  "high_jet_recursion": "ZI=C0[FI/dstar+sum binomial(I,J)(RJ/(3dstar)+dJ/dstar)Z_(I-J)]",
+  "pulse_jet_condition": "all required entrance source jets vanish; full smooth temporal zero extension suffices",
+  "pressure": "i*(n.Kt-nprime.t+n.f)/(k*m*|n|^2); direct normal source only 1/(k*m)",
+  "supports": "full lifted path parameter supports; uncut exit may be nonzero; cut potential AND pressure before curl",
+  "physical_powers": "-A+h*alpha-a*sx-b*st; -2A+h*(alpha+1/2)-a*sx-b*st; 1/2-A+h*(alpha+1/2)-a*sx-b*st",
+  "scope": "explicit linear sourced inverse from retained frame inputs, not all nonlinear sources, infinite harmonics, unconditional pulses, residual or blowup"
+}
