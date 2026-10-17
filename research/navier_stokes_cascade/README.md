@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-input complex signed/mean foundation](results/current_complex_foundation/README.md)
+The latest [current-source finite induction foundation](results/finite_induction_foundation/README.md)
+joins the stronger current seed and all later supported source expressions
+to the complete four-operation cycle for every finite stage, relative to
+retained exact-core and finite analytic lemmas. Its regular residual order
+is B_j=3/2-2kappa+j(1/2-kappa); full tangential means/defects reach at least
+B_j+1/2. Complete pressure, viscosity, all interactions and exact additive
+tails stay. Stage constants may grow, so this does not yet realize one
+field satisfying every target. Next independently join complete potentials,
+direct swirl and pressure to a diagonal realization, then its downstream
+force/comparison arguments. No unconditional residual or blow-up follows.
+
+The preceding [current-input complex signed/mean foundation](results/current_complex_foundation/README.md)
 joins the sharper first-sourced state to the unchanged generic complex signed
 correction and fresh fast/slow means. Relative to retained core/finite-map
 lemmas, full tangential means reach 2-2kappa and recomputed defects 5/2-kappa;

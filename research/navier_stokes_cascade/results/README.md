@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-input complex signed/mean foundation](current_complex_foundation/README.md).
+Latest checkpoint: [current-source finite induction foundation](finite_induction_foundation/README.md).
+The reviewed current seed and all later regular source expressions now
+close the complete finite cycle with gain 1/2-kappa, relative to retained
+exact-core and finite analytic lemmas. B_j=3/2-2kappa+j(1/2-kappa); full
+tangential means and defects have order at least B_j+1/2. Pressure,
+viscosity, all interactions, old Haar means and exact additive tails stay.
+Finite-stage constants may grow; a single realized field needs its own
+diagonal argument. Next independently join complete potentials/direct
+swirl/pressure and then the existing downstream force/comparison route.
+No unconditional residual or blow-up follows.
+
+The preceding [current-input complex signed/mean foundation](current_complex_foundation/README.md).
 The sharper current first-sourced inputs now join the SAME generic signed
 correction and freshly recomputed fast/slow mean maps. Relative to retained
 core/finite-map lemmas, full tangential means reach 2-2kappa and defects

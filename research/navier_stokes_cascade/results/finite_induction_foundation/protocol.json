@@ -1,0 +1,16 @@
+{
+  "parent_commit": "89f9c856d8800a71f16c36e23819babb61aa0c63",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "unchanged_parameters": "Md64; unit viscosity; original h,N,positive lambda,width C_setup^-20,roots,geometry,carriers and operation order",
+  "current_seed": "B0=3/2-2*kappa; full mean B0+1/2; defects 5/2-kappa; rho=mu=1-kappa; Haar tangent 1 radial 2",
+  "all_finite_orders": "B_j=3/2-2*kappa+j*(1/2-kappa), C_j=B_j+1/2",
+  "gain_obstruction": "s<=min(1/2-kappa,rho-1/2,mu-1/2)=1/2-kappa",
+  "proof_domain": "entire B>=B0 by affine slopes and boundary margins, supported-source expression induction and retained analytic maps",
+  "cycle": "regular sourced wave; current generic signed covariance; fresh fast mean; current slow five-map",
+  "pressure": "all six covariance entries, axial mean velocity and pressure, both Pi1/Pi2, whole derivative of Jz+c_rho*P",
+  "source_split": "regular supported expression only; designated Gaussian linear tails additive never forward-inverted; actual flat velocities stay in products",
+  "harmonics": "M_j<=4*2^j; finite stage constants may grow; same qstar and enlarged charts 4Q<qstar",
+  "physical_bound": "for each fixed finite j,m: |R(U_j)|_m<=C_jm*q^(h*B_j-(2*A+3/2+2*m))",
+  "quantifier": "for each fixed target and jet there exists a finite state; one simultaneous realized field requires a separate diagonal argument",
+  "scope": "all-finite current-source foundation join relative to retained exact-core and finite analytic lemmas; no unconditional realization force or blow-up"
+}
