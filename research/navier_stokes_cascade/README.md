@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [physical primary-pulse foundation](results/physical_pulse_foundation/README.md)
+The latest [compact mean inverse foundation](results/compact_mean_foundation/README.md)
+independently supplies all-fixed-order shifted radial and zero-Haar temporal
+inverses, chart consistency, and the five-moment map relative to the reviewed
+core/primary inputs. The angular block stays nonsingular at lambda=0; the
+axial correction has a necessary 1/lambda loss and fails there for nonzero
+angular-flux targets. Actual lambda remains positive and unchanged. Complete
+axial/radial velocity and pressure moments, including Pi1/Pi2, stay. The next
+independent gate is every nonlinear harmonic source's class, envelope and
+full endpoint support, then the complete covariance/residual iteration.
+No unconditional full residual or blow-up is established.
+
+The preceding [physical primary-pulse foundation](results/physical_pulse_foundation/README.md)
 joins those actual background inputs to all fixed physical derivatives of
 complete primary curls, pressures and fixed potentials on every used scale,
 relative to the retained exact core and finite-map lemmas. It keeps the

@@ -1,0 +1,12 @@
+{
+  "parent_commit": "372574a3e9f08bba9d31c351ce04298cd709a0ab",
+  "unchanged_parameters": "Md64; unit viscosity; fixed lambda>0,h,N,t1=C^-20; original geometry and primary carriers",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "compact_remainder": "norm_m(A_e f)<=C_mp*M^(-p)*norm_(m+2p+3)(f); zero radial Haar moment required",
+  "temporal_inverse": "zero Haar input; norm_m(u)<=C_m*S*norm_(m+4)(f)",
+  "exact_floor_relation": "M=c_i^rho_g*epsilon^(-kappa); M^(-1)<(Tg*S)^rho_g*epsilon^kappa",
+  "axial_scaled_identity": "(1-q_lambda)*s1=Jtheta_q/(a*mu_(1-2lambda)*g); s0=-g*s1",
+  "physical_reserved_swirl": "a(eta)*s^(lambda-h)*R^(-1-2lambda)",
+  "pressure_moment": "int R*bar(p_m)=-int R^2*bar(g_r)/2+c_rho*P; differentiate WHOLE c_rho*P",
+  "scope": "compact mean foundation and sharp conditioning, relative to core and primary inputs; all generated sources and complete residual remain open"
+}

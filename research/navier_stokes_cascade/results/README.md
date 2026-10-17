@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [actual primary physical-pulse foundation](physical_pulse_foundation/README.md).
+Latest checkpoint: [compact mean inverse foundation](compact_mean_foundation/README.md).
+The shifted radial and zero-Haar temporal maps now have independently
+derived all-fixed-order estimates and physical chart consistency. Exact
+five-map conditioning separates the nonsingular angular block from the
+necessary axial 1/lambda loss; lambda=0 cannot correct a nonzero angular-flux
+target under zero axial flux. The actual positive lambda is unchanged.
+Full axial/radial velocity, all covariance entries and the moving pressure
+moment remain. All generated harmonic inputs and complete residual closure
+still require independent review; no unconditional blow-up follows.
+
+The preceding [actual primary physical-pulse foundation](physical_pulse_foundation/README.md).
 Every fixed physical jet of complete primary curls, pressures and fixed
 potentials is bounded uniformly over all used bands/labels/copies, relative
 to retained exact-core and finite-map lemmas. Independent higher-order

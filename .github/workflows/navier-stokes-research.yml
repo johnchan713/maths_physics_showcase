@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check compact mean inverse foundation pressure moments and sharp axial conditioning
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/compact_mean_foundation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/compact_mean_foundation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/compact_mean_foundation/evidence.json \
+            --output navier_stokes_compact_mean_foundation_ci.json
+
       - name: Check actual primary physical pulse jets complete curls and common domain tails
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/physical_pulse_foundation/test_audit.py -v
@@ -837,6 +844,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_compact_mean_foundation_ci.json
             navier_stokes_physical_pulse_foundation_ci.json
             navier_stokes_weighted_stress_foundation_ci.json
             navier_stokes_annular_exterior_foundation_ci.json
