@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check actual annular and compact repair roots full norms and pressure memory
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/matching_root_foundation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/matching_root_foundation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/matching_root_foundation/evidence.json \
+            --output navier_stokes_matching_root_foundation_ci.json
+
       - name: Check actual axial moment inverse complete strength equation and fixed jets
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/axial_root_foundation/test_audit.py -v
@@ -914,6 +921,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_matching_root_foundation_ci.json
             navier_stokes_axial_root_foundation_ci.json
             navier_stokes_root_foundation_ci.json
             navier_stokes_comparison_foundation_ci.json

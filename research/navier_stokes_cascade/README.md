@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [axial moment and strength foundation](results/axial_root_foundation/README.md)
+The latest [actual matching-root foundation](results/matching_root_foundation/README.md)
+supplies the existing annular and compact five-moment roots relative to retained
+core and compact-input estimates. Continuum inverse bounds are 610 and 800;
+the same roots have full factorial C2 radius below 349epsilon and full sum C1
+radius at most 1600D/N. The annular quartic eta coefficient, repair's 1/lambda
+target loss, normalization derivatives and all five pressure-memory rows stay.
+The original frequency and width are unchanged. Next independently trace the
+complete-core backward-pressure identity through all same-root joins and the
+original gauge. Finite-background and actual-pulse lemmas remain; no
+unconditional construction, full residual or blow-up follows.
+
+The preceding [axial moment and strength foundation](results/axial_root_foundation/README.md)
 independently closes the actual reference M,J and complete S-strength roots.
 The scaled inverse satisfies lambda*||B^-1||<4, and the SAME accepted strength
 has Jacobian above .49 and |A_eta|<Tlambda/30. Complete prefix/post energy,

@@ -1,0 +1,10 @@
+{
+  "parent_commit": "655f9510308d39d001415d176bf259e085baf638",
+  "parameters": "same Md64,T=exp(64)+10,lambda=exp(-4T),h=lambda^2,Tw=240T,Tf=1000,co=.001,width C^-20",
+  "annular": "P>=16; actual five normalized rows; beta610,q50; full factorial C2 target<.286epsilon, epsilon=1e-16; same root radius348.92epsilon",
+  "repair": "0<lambda<=.01; same original e in deltaU and deltaE; beta800,q25000; full sum C1 target<=D/N, root<=1600D/N; unchanged N",
+  "jets": "annular triple convolution retains quartic Q_eta jets; repair Q constant only after complete original-e normalization",
+  "pressure": "same Pi_axis+Cp; all M,J,I,S,Cp rows and fixed eta jets restored; no pressure reset",
+  "diagnostics": "exact Catalan versus implicit polynomial series through degree8; actual existing quadrature maps on manufactured finite inputs",
+  "scope": "matching-root lemmas relative to retained core/compact-input estimates; global backward pressure identification and finite-pulse lemmas remain"
+}

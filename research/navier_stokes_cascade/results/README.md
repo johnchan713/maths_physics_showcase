@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [axial moment and strength foundation](axial_root_foundation/README.md).
+Latest checkpoint: [actual matching-root foundation](matching_root_foundation/README.md).
+The actual annular and compact-repair maps have continuum inverse bounds 610
+and 800, relative to retained core and compact-input estimates. The SAME roots
+have full factorial C2 radius below 349epsilon and full sum C1 radius at most
+1600D/N. Quartic eta coefficient derivatives, the repair's 1/lambda target loss,
+normalizer derivatives and complete five-row pressure memory remain. The
+existing frequency, gauge and width stay. Next trace the complete-core global
+backward-pressure identification through every same-root join. Remaining
+finite-background/pulse and complete residual obligations preclude an
+unconditional construction or blow-up claim.
+
+The preceding [axial moment and strength foundation](axial_root_foundation/README.md).
 The actual reference M,J and full S-strength equations now have independent
 root bounds: scaled inverse below 4, same strength bracket, root Jacobian
 above .49 and |A_eta|<Tlambda/30. All later energy stages and all three
