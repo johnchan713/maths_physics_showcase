@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [reference correction-root foundation](root_foundation/README.md).
+Latest checkpoint: [axial moment and strength foundation](axial_root_foundation/README.md).
+The actual reference M,J and full S-strength equations now have independent
+root bounds: scaled inverse below 4, same strength bracket, root Jacobian
+above .49 and |A_eta|<Tlambda/30. All later energy stages and all three
+nonzero affine end-bump energy increments stay. Fixed one-sided jets and
+the heat attachment's complete net moment identities remain. Next audit
+annular/compact-repair targets, inverses and gaps and complete-core global
+pressure identification. Finite-pulse lemmas and unconditional construction
+remain open.
+
+The preceding [reference correction-root foundation](root_foundation/README.md).
 The actual angular and heat correction maps have uniform positive-bump
 inverse norms below 3 and 15, with full C1 roots bounded by 4200 lambda^30
 and 1920 h^4/Xstar. Uniqueness identifies the SAME previously accepted

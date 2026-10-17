@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [reference correction-root foundation](results/root_foundation/README.md)
+The latest [axial moment and strength foundation](results/axial_root_foundation/README.md)
+independently closes the actual reference M,J and complete S-strength roots.
+The scaled inverse satisfies lambda*||B^-1||<4, and the SAME accepted strength
+has Jacobian above .49 and |A_eta|<Tlambda/30. Complete prefix/post energy,
+the nonzero affine end-bump terms and all fixed one-sided jets remain.
+Heat compensation preserves the full moment identities. Next audit the
+annular/compact-repair targets, inverses and gaps and complete-core global
+pressure identification. Remaining finite-pulse lemmas still apply; no
+unconditional construction, residual or blow-up follows.
+
+The preceding [reference correction-root foundation](results/root_foundation/README.md)
 independently supplies the actual angular and heat moment roots and positive
 unique terminal wait. Rational positive-bump bounds give inverse norms below
 3 and 15, sharpening the SAME accepted roots to 4200 lambda^30 and

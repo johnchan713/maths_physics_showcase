@@ -1,0 +1,17 @@
+{
+  "parent_commit": "a41b941add8dc9c0368e3cea7c4f0aed979a1f78",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parameters": "same Md64,T=exp(64)+10,lambda=exp(-4T),h=lambda^2,Tw=240T,Tf=1000,co=1/1000,width C_setup^-20 and unit viscosity",
+  "matrix": "B_ij=b(si)*exp(2si*j); s1=1/2-lambda,s2=1/2-2lambda; positive bump mass 3/10, width 3/10",
+  "inverse": "0<lambda<=1/100; scaled infinity inverse norm lambda*||B^-1||<4; lambda=0 singular",
+  "targets": "0<=Amp<=6/5; full eta C1 norm and strength derivative <=200exp(-4/(5lambda)); coefficient bound 800exp(-4/(5lambda))/lambda<=lambda^20",
+  "prefix": "F1<=11/6 independently; Ka,Ja<=4,K2a<=16; full normalized s0<=500T and abs s0_eta<1",
+  "continuation": "all eight later stages and signed angular edits; R<=256T and abs R_eta<=1024T; terminal waiting and nonzero end bump retained",
+  "scalar": "F=Amp^2*K-(1-exp(-26))/4+lambda*s0-lambda*exp(-26)*R/2+lambda*sum(wj*cj(Amp,eta)^2)",
+  "shape": "1024 positive monotone boxes, 80 interval digits; 0.2450496182718<K<0.2450496221363; no quadrature-based enclosure",
+  "roots": "same 1.0100502<Amp<1.0100504; unique positive root, Jacobian>49/100, abs Amp_eta<Tlambda/30; all fixed one-sided jets",
+  "composition": "actual coefficients max component full eta C1 norm<=2lambda^20; fixed trial bound is distinct",
+  "heat": "complete net pressure, energy and renormalized-I correction identities retained; S-strength equation unchanged by the heat attachment and compensation",
+  "diagnostics": "exact polynomial two-moment and affine energy identities; moderate-parameter actual bump matrices and stable solver; proxy scalar discriminant controls",
+  "scope": "reference axial two-moment and scalar strength roots; annular/repair, global pressure identification and finite-pulse lemmas still required"
+}
