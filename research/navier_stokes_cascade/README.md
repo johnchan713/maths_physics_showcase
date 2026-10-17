@@ -13,13 +13,22 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [local all-order core foundation](results/core_all_order_foundation/README.md)
+The latest [actual flat-activation collar foundation](results/activated_collar_foundation/README.md)
+propagates one common parameter-analytic strip through the ACTUAL activated
+leading fields, all five moments and full pressure. It supplies every fixed
+radial jet on the background collar, retaining incoming traces and explicit
+width costs C^(20r). Radial smoothness is not upgraded to radial analyticity.
+This closes the first-collar certificate relative to the same exact core;
+later global continuation/modulation/repair, full pressure identification,
+background/pulse estimates and unconditional blow-up remain unverified.
+
+The preceding [local all-order core foundation](results/core_all_order_foundation/README.md)
 derives an explicit joint analytic majorant, a common zero-free reciprocal
 neighborhood, and anisotropic Cartesian core bounds uniform in physical
 scale. It keeps the full local pressure and axis quotients. The unchanged
 actual leading core stops at Y=4, not the seed's extension to 4.1. The next
-foundation gate is the actual flat activation collar required by the
-background construction. The global conditional route is not promoted;
+foundation gate was the actual flat activation collar, supplied relatively
+above. The global conditional route is not promoted;
 unconditional pulse bounds, residual closure and blow-up remain unverified.
 
 The preceding [same-current-field pressure recovery and comparison](results/current_solution_comparison/README.md)

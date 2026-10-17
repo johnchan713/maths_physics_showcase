@@ -6,15 +6,24 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [local all-order core foundation](core_all_order_foundation/README.md).
+Latest checkpoint: [actual flat-activation collar foundation](activated_collar_foundation/README.md).
+Actual forward-integrated fields, five moments and full incoming pressure
+now satisfy the common parameter-strip, all-fixed-order collar estimate,
+relative to the exact pressure-family core. Difference gains t1^(1-r) for
+fields and t1^(2-r) for moments keep the width losses explicit. Radial
+analyticity is not asserted. Later global profile and pressure identification,
+full background/pulse estimates, residual closure and blow-up remain open.
+
+The preceding [local all-order core foundation](core_all_order_foundation/README.md):
 An explicit mixed-derivative majorant and zero-free reciprocal neighborhood
 give all-fixed-order Cartesian bounds uniform over positive physical
 scales in the unchanged leading core. Full pressure and regular axis
 quotients stay. Exact independent rational jets check 280 coordinate
 identities, not the actual enormous field. The seed's Y<=4.1 interval is
 not substituted for the finalized leading core's Y<=4 interval. The actual
-flat activation collar and the remaining global analytic foundation are
-still open; no unconditional pulse, residual or blow-up claim is made.
+flat activation collar is supplied relatively above; the remaining global
+analytic foundation is still open. No unconditional pulse, residual or
+blow-up claim is made.
 
 The preceding [same-current-field pressure recovery and comparison](current_solution_comparison/README.md):
 The general lemma now applies to the SAME current localized field, full
