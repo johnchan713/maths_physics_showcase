@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-source single-field realization](realization_foundation/README.md).
+Latest checkpoint: [current-source terminal-jet foundation](endpoint_foundation/README.md).
+The SAME current field now has compatible one-sided potential/direct-swirl,
+velocity and full pressure jets on punctured terminal compacts, relative
+to retained exact-core and finite analytic lemmas. Full enlarged chart
+coverage, regular Cartesian seed factors and mixed physical heat/pressure
+majorants supply the uniform next-derivative bounds. Pressure memory and
+fixed gauge stay. Next join localization/zero initialization, admissible
+smooth forcing, energy/dissipation and global comparison. Neither a future
+analytic heat formula nor unconditional residual/blow-up is inferred.
+
+The preceding [current-source single-field realization](realization_foundation/README.md).
 The reviewed complete finite potentials, direct swirl and fixed-gauge
 pressure now join ONE real smooth divergence-free local field for t<1,
 q>0, relative to retained exact-core and finite analytic lemmas. One

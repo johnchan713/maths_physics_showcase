@@ -1,0 +1,17 @@
+{
+  "parent_commit": "b87f53726641b240050a71789c025401e359abaa",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "unchanged_parameters": "Md64; unit viscosity; same h,N,positive lambda,width C_setup^-20,roots,geometry,labels,cutoff sequences and pressure gauge",
+  "domain": "same current realization restricted to a late observation cylinder; t<=1 away from x=0; no future velocity assertion",
+  "enlarged_window": "1/4<=q/Q<=4; ceil(log2(1/(4*qmax)))<=ell<=floor(log2(4/c)); ell>=ell0",
+  "observation": "q_e=min(qstar/16,2^(-ell0-2)); tau<=q_e/16; |z|<=(q_e/16)^D; 4Q<=16q<=6q_e<=3qstar/8",
+  "seed": "A_theta e_theta=(1/2)*q^(-A)*(M/X)*(-y,x,0); B=q^(-A-1/2)*F*(-y,x,0); p=q^(-2A)*Pi near axis",
+  "endpoint_input": "all fixed complete physical representative jets bounded uniformly on enlarged punctured compacts, including NEXT time derivative",
+  "exterior": "K=C*r^(-1-2h)*H(4*tau/r^2); p=-integral_r^infinity K(rho,tau)^2/rho d rho; same fixed gauge",
+  "radial_recursion": "c_(n+1,k)=-(a+n+2*k)*c_(n,k)+2*c_(n,k-1)",
+  "pressure_convolution": "F_j=(-1)^j*H^(j); G_j=sum binomial(j,k)*F_k*F_(j-k); G_j_prime=-G_(j+1)",
+  "finite_Taylor": "G(1-tau)=sum_(j=0)^k (-tau)^j*F_j/j! plus remainder <=M_(k+1)*tau^(k+1)/(k+1)!",
+  "diagnostics": "36 exact terminal pressure identities; 24 nonterminal Gamma heat and 18 pressure product comparisons; polynomial seed and finite Taylor controls",
+  "numerical_relative_error_threshold": "2e-40",
+  "scope": "compatible punctured one-sided terminal jets relative to retained exact-core and finite analytic lemmas; no admissible global force or blow-up"
+}

@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-source single-field realization](results/realization_foundation/README.md)
+The latest [current-source terminal-jet foundation](results/endpoint_foundation/README.md)
+joins the SAME realized field to compatible one-sided potential, direct-swirl,
+velocity and full pressure jets at t=1 away from the origin, relative to
+retained exact-core and finite analytic lemmas. It covers the full enlarged
+1/4<=q/Q<=4 charts, supplies regular Cartesian seed potentials and all-fixed
+mixed exterior heat/pressure majorants. The fixed pressure gauge and both
+base tails remain. Next join complete localization/zero initialization,
+smooth admissible forcing, energy/dissipation and global comparison for
+this same field. No future analytic heat continuation, unconditional
+residual theorem or blow-up is claimed.
+
+The preceding [current-source single-field realization](results/realization_foundation/README.md)
 joins the complete finite-stage potentials, direct swirl and fixed-gauge
 pressure to ONE smooth divergence-free local field for t<1 and q>0,
 relative to retained exact-core and finite analytic lemmas. One cutoff

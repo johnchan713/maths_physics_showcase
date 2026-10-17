@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check current-source punctured terminal jets enlarged charts and mixed heat pressure bounds
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/endpoint_foundation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/endpoint_foundation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/endpoint_foundation/evidence.json \
+            --output navier_stokes_endpoint_foundation_ci.json
+
       - name: Check current-source single local realization complete cutoff pressure and residual
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/realization_foundation/test_audit.py -v
@@ -879,6 +886,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_endpoint_foundation_ci.json
             navier_stokes_realization_foundation_ci.json
             navier_stokes_finite_induction_foundation_ci.json
             navier_stokes_current_complex_foundation_ci.json
