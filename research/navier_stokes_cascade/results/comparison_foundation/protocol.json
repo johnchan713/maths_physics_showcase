@@ -1,0 +1,19 @@
+{
+  "parent_commit": "44fc3767b90e07f11df62b4726d2d48a3d8e85ec",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "unchanged_parameters": "Md64; unit viscosity; same h,N,positive lambda,width C_setup^-20,roots,geometry,labels,cutoff sequences and pressure gauge",
+  "current_input": "force_foundation: same u=curl(c*A)+c*B, p=c*p0, zero datum, compact smooth global force and preterminal energy",
+  "competitor": "same force/datum; smooth on compact sets; sup_[0,T] ||v||_2 finite for each T<1; no global pressure derivative or dissipation assumption",
+  "pressure": "g=vv-uu=ww+h; h=w tensor u+u tensor w; -Delta(P-p)=DDg; pi_star=sum R_i R_j g_ij",
+  "recovery": "L1 stress gives H^-2 pressure; time-averaged momentum gives H^-3 harmonic gradient, whose weighted L2 Fourier function supported at zero vanishes",
+  "cutoff": "chi_R=phi(x/R)^8; E_R=int chi_R*|w|^2; D_R^2=int chi_R*|grad w|^2; B_R=||phi_R^4*w||_6",
+  "compact_cross": "support(h) subset K subset B_L; R>=max(1,2L); |pi_h|<=16/(4*pi)*R^-3*sum ||h_ij||_1 on cutoff annulus; flux O(R^-5/2)",
+  "quadratic_pressure": "main L^(3/2) norm <=C*B_R*W_T; commutator L^(4/3) norm <=C*R^-3/4*W_T^2; pressure flux <=C_T*(R^-1*B_R^3/2+R^-7/4*B_R^3/4)",
+  "energy": "0.5*E_R_prime+0.5*D_R^2<=||grad u||_infinity*E_R+C_T*R^-2; E_R(0)=0",
+  "limits": "fix T<1, then R->infinity; E_R<=2*C_T*T*exp(2*T*L_T)*R^-2; only afterward approach the protected terminal core",
+  "historical": "older valid R^-4/3 estimate preserved; no historical localized field substituted for the current one",
+  "external_input": "Riesz Lp boundedness, Knapp Advanced Real Analysis III.5 Theorem 3.26 and III.6 Riesz example, printed pp83,93; checked 2026-10-17",
+  "source": "https://www.math.stonybrook.edu/~aknapp/download/a2-1-realanal-clickable.pdf",
+  "diagnostics": "9 exact stress identities, 3 complete local weighted-energy identities, 60 compact exterior tensor-kernel controls and exact radius exponents; not actual whole-space flows",
+  "scope": "same-current-field global competitor exclusion relative to retained core and finite analytic lemmas; no unconditional breakdown theorem"
+}

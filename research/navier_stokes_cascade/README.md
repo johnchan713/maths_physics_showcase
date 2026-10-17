@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-source compact-force and energy foundation](results/force_foundation/README.md)
+The latest [current-source pressure comparison foundation](results/comparison_foundation/README.md)
+joins the SAME compact-force field and zero datum to pressure recovery and
+comparison with every smooth finite-energy global competitor, relative to
+retained core and finite analytic lemmas. Separating the compact mixed
+stress gives pressure flux O(R^-5/2) and improves the full expanding-ball
+energy error from R^-4/3 to R^-2. The proof uses local competitor
+smoothness and its uniform L2 bound, with no assumed pressure decay or
+global derivative bound. Radius tends to infinity at fixed T<1 before
+the protected terminal core is approached. Next independently discharge
+the retained core/pressure identification and finite defining, existence,
+inverse and gap lemmas. The exclusion implication remains conditional.
+
+The preceding [current-source compact-force and energy foundation](results/force_foundation/README.md)
 joins the SAME current field to complete axisymmetric localization, zero
 initial data, a compact smooth global force and whole-space preterminal
 energy/dissipation bounds, relative to retained core and finite analytic

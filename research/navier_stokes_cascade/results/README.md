@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-source compact-force and energy foundation](force_foundation/README.md).
+Latest checkpoint: [current-source pressure comparison foundation](comparison_foundation/README.md).
+The SAME compact-force field now joins pressure recovery and finite-energy
+competitor comparison, relative to retained core and finite analytic
+lemmas. Compact mixed stress has pressure flux O(R^-5/2), improving the
+complete expanding-ball energy remainder from R^-4/3 to R^-2. No competitor
+pressure decay or global derivative bound is assumed. Next discharge the
+retained core/pressure identification and finite defining, existence,
+inverse and gap dependencies before unconditional theorem assessment.
+
+The preceding [current-source compact-force and energy foundation](force_foundation/README.md).
 The SAME current field now joins axisymmetric localization, zero initial
 data, complete pressure-aware forcing and preterminal energy/dissipation,
 relative to retained core and finite analytic lemmas. All twelve cutoff
