@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [prescribed continuation foundation](results/prescribed_continuation_foundation/README.md)
+The latest [all-order modulation and same-repair map estimate](results/modulation_repair_all_order/README.md)
+derives smooth signed variance roots, moving phase inverses and every fixed
+derivative of the SAME accepted five-row repair without reselecting N or
+contracting in infinitely many norms. Field errors have radial power N^(r-1),
+while moments and full pressure gain an order, N^max(r-2,-1). This is relative
+to a smooth input on the WHOLE compact rectangle; the independently reviewed
+inner/shape input is not silently extended to the remaining exterior prefix.
+That annular/exterior and global-moment/support foundation join is next.
+Unconditional actual-pulse bounds, full residual closure and blow-up remain open.
+
+The preceding [prescribed continuation foundation](results/prescribed_continuation_foundation/README.md)
 derives finite all-fixed-order seminorm bounds through the reference taper,
 two final tapers and the shape transition for the PRE-MODULATION leading
 profile, relative to the same exact core. Its integrated stress coordinates

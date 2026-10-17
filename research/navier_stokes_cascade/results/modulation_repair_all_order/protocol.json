@@ -1,0 +1,12 @@
+{
+  "parent_commit": "9f4ae8973fdd1384530085505010597033e206cf",
+  "unchanged_frequency": "N=1+floor(H^32)",
+  "unchanged_repair": "same C1 small root of exact Bc+Q(c,c)=z_N",
+  "input": "C-infinity pre-modulation profile on WHOLE compact modulation-through-repair rectangle with positive floors",
+  "root": "signed F=d0*mu*sqrt(R2(mu*p)), not unsigned sqrt(V)",
+  "field_frequency_power": "N^(r-1)",
+  "moment_pressure_frequency_power": "N^max(r-2,-1)",
+  "repair_angular_frequency_power": "N^-1 for every fixed k via the pointwise Jacobian",
+  "no_parameter_support_or_frozen_evidence_change": true,
+  "scope": "all-order MAP theorem relative to smooth input; annular/exterior independent input audit remains open"
+}

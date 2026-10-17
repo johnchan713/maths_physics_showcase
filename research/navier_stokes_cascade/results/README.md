@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [prescribed continuation through shape](prescribed_continuation_foundation/README.md).
+Latest checkpoint: [all-order modulation and SAME exact repair maps](modulation_repair_all_order/README.md).
+A signed root and pointwise inverse recursions propagate every fixed order
+through the moving phase and existing repair at the unchanged N. Complete
+pressure memory stays; moment radial errors gain one order over field errors.
+No simultaneous high-norm smallness or global complex-eta analyticity is
+claimed. The whole compact smooth-input premise still needs the remaining
+annular/exterior foundation audit; no unconditional pulse, residual or blow-up
+conclusion is established.
+
+The preceding [prescribed continuation through shape](prescribed_continuation_foundation/README.md).
 Explicit seminorm recursion supplies all fixed jets of the PRE-MODULATION
 continuation, retaining the original five moments and full pressure. After
 the reference taper, physical shear is not its integrated stress coordinate;
