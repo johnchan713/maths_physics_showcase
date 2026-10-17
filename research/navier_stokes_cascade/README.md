@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [sourced-inverse foundation](results/sourced_inverse_foundation/README.md)
+The latest [primary-covariance foundation](results/primary_covariance_foundation/README.md)
+gives an explicit positive-root condition `eta<gamma/(2-gamma)` for the
+normalized two-column primary covariance matrix and an invertible boundary
+witness where positivity fails. The safe budget `eta<=gamma/4` gives
+normalized inverse below 3, retaining the physical Haar cost
+`r0^-3/2 S^1/2`, original stress target and reciprocal-root jet costs.
+Explicit freezing and pulse-length budgets join the retained global cone.
+The outer `T0/zeta` pole of order three is preserved: normalized roots
+need not be bounded at the edge, although the full half-weighted roots
+extend smoothly by zero. Exact-core/frame and full nonlinear covariance,
+mean, residual and realization obligations remain; no unconditional pulse
+or blow-up theorem is claimed.
+
+The preceding [sourced-inverse foundation](results/sourced_inverse_foundation/README.md)
 constructs the finite linear pulse inverse explicitly from the reviewed
 moving-frame inputs. It sharpens high-harmonic velocity and fixed parameter
 jet bounds by `1/(m^2-1)`, with an explicit recurrence retaining damping

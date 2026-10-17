@@ -1,0 +1,14 @@
+{
+  "parent_commit": "b17351e44a98b0ca8ef02a936ea7a0d0e94a4fc4",
+  "fixed_choices": "same Md64,h,N,positive matching lambda,unit viscosity,original primary roots,r0,frequency,width C^-20,supports and gauge",
+  "normalized_matrix": "C=[[1+a,1+b],[-1+c,1+d]]; entry errors <=eta; target (V,W), V>0, |W|<=(1-gamma)V",
+  "sharp_positive_threshold": "eta<gamma/(2-gamma); determinant 2 witness loses positivity at equality",
+  "safe_budget": "eta<=gamma/4: detC>=9/8, inverse2<=20/9<3, gamma*V/8<=h_sigma*y_sigma<=3V",
+  "freezing": "tau<=gamma0/8 retains gamma=gamma0/2; exact half-margin threshold gamma0/(4-gamma0)",
+  "length": "L>=[4*Cdir*max(Amin^-1,u^-1)/gamma]^2; existing padded length dominates",
+  "Haar_scale": "s0=r0^2/sqrt(L); H_inverse2<=3/(s0*jmin*min(A,u))",
+  "weighted_roots": "y=(zeta/s0)*b; b>=gamma*vstar/(8*jmax); sqrt(y)=sqrt(zeta)*L^(1/4)/r0*sqrt(b)",
+  "edge": "outer T0/zeta has delta^-3 pole; root/sqrt(zeta) may grow delta^-3/2; half constants t1^2/2 and 2 unchanged",
+  "signed": "d=H^-1(Sigma/epsilon); delta_a=d/(2*a_original); no updated square root; retain signed square",
+  "scope": "finite primary root foundation relative to reviewed leading and frame inputs; not unconditional pulses full covariance mean residual or blowup"
+}
