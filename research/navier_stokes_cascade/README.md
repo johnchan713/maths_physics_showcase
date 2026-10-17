@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-source terminal-jet foundation](results/endpoint_foundation/README.md)
+The latest [current-source compact-force and energy foundation](results/force_foundation/README.md)
+joins the SAME current field to complete axisymmetric localization, zero
+initial data, a compact smooth global force and whole-space preterminal
+energy/dissipation bounds, relative to retained core and finite analytic
+lemmas. All twelve localization terms, both pressure tails and the fixed
+gauge stay. One Borel sequence controls every fixed mixed force jet on its
+whole support; no future velocity or analytic heat extension is asserted.
+The enlarged chart margin remains valid. Separate energy and dissipation
+extrema must not be combined with one fixed-time budget. Next recover
+competitor pressure and close the same-data/force global comparison;
+discharge retained analytic dependencies before any unconditional claim.
+
+The preceding [current-source terminal-jet foundation](results/endpoint_foundation/README.md)
 joins the SAME realized field to compatible one-sided potential, direct-swirl,
 velocity and full pressure jets at t=1 away from the origin, relative to
 retained exact-core and finite analytic lemmas. It covers the full enlarged

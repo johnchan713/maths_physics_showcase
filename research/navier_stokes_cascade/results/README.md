@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-source terminal-jet foundation](endpoint_foundation/README.md).
+Latest checkpoint: [current-source compact-force and energy foundation](force_foundation/README.md).
+The SAME current field now joins axisymmetric localization, zero initial
+data, complete pressure-aware forcing and preterminal energy/dissipation,
+relative to retained core and finite analytic lemmas. All twelve cutoff
+terms remain; one whole-support Borel sequence matches all fixed mixed
+force jets. Separate energy and dissipation extrema cannot share one
+fixed-time budget. Next recover pressure and prove the global competitor
+comparison for this same datum and force. No future velocity, discharged
+analytic dependencies or unconditional breakdown theorem is inferred.
+
+The preceding [current-source terminal-jet foundation](endpoint_foundation/README.md).
 The SAME current field now has compatible one-sided potential/direct-swirl,
 velocity and full pressure jets on punctured terminal compacts, relative
 to retained exact-core and finite analytic lemmas. Full enlarged chart

@@ -1,0 +1,18 @@
+{
+  "parent_commit": "4899fa23a49f654c53bd3332c4c269bf9072e744",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "unchanged_parameters": "Md64; unit viscosity; same h,N,positive lambda,width C_setup^-20,roots,geometry,labels,cutoff sequences and pressure gauge",
+  "domain": "same current realization restricted to the existing late observation cylinder; cutoff support closure lies inside its domain",
+  "enlarged_observation": "1/4<=q/Q<=4; q_e=min(qstar/16,2^(-ell0-2)); tau0=q_e/16; z0=(q_e/16)^D; 4Q<=16q<=6q_e<=3qstar/8",
+  "localization": "c=chi_r(r^2)*chi_z(z)*chi_t(t); u=curl(c*A)+c*B=c*u0+grad(c) cross A; p=c*p0; full fixed gauge",
+  "derivative_orders": "force C^m needs A C^(m+3), B C^(m+2), p0 C^(m+1); uniform next time jet reserves one additional order",
+  "pressure": "-Delta p=partial_i partial_j(u_i*u_j)-div f; force need not be divergence free",
+  "corner": "all fixed force jets are uniformly O(q^N) for every N; q<=2*tau+4*abs(z)^(1/D); all terminal force jets flat at origin",
+  "extension": "sigma=t-1; f_plus=sum chi0(b_j*sigma)*sigma^j/j!*F_j; b0=2; increasing b_j=2^n_j; one sequence for a+m<=floor(j/2)",
+  "whole_support": "||D_x^a partial_sigma^m T_j||<=C_jam*b_j^(m-j)<=2^(-j); tail<=2^(1-J), J>=max(1,2*(a+m))",
+  "force_support": "K x [1-tau0,3/2]; smooth compact force on R3 x (0,infinity), zero initial datum",
+  "energy": "E(t)+2*integral_0^t D <= (integral_0^t ||f||_2)^2; separately sup E<=F(1)^2 and total D<=F(1)^2/2; do not add separate extrema with same budget",
+  "growth": "on inherited protected core and localization plateau: u_theta >= (e0/2)*tau^(-A), relative to retained core lemma",
+  "diagnostics": "9 exact localization vector components at 3 positive viscosities; 12 nonzero omission controls; 98 Leibniz and 49 terminal factorial controls; exact compact polynomial energy integrals",
+  "scope": "compact smooth global force and preterminal energy relative to retained exact-core and finite analytic lemmas; no global comparison or unconditional blow-up"
+}
