@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [regular harmonic-source foundation](regular_source_foundation/README.md).
+Latest checkpoint: [first sourced-pulse foundation](first_sourced_foundation/README.md).
+The SAME first forward correction now has all-fixed-jet bounds with the
+actual B=1-kappa input, after the unchanged signed/mean prefix. Complete
+complex covariance, second-harmonic squares and recomputed mean pressure
+give C=3/2-kappa for Haar means/defects and D=3/2-2kappa for full mean and
+regular nonzero rows, relative to retained core/pulse lemmas. Old means and
+both background pressure tails remain; the old-wave error is only B, not D.
+Next audit the current generic signed target and fast/slow relaxation, then
+later families and the full residual. No unconditional blow-up follows.
+
+The preceding [regular harmonic-source foundation](regular_source_foundation/README.md).
 The full regular linear operator has sufficient gain 1/2-kappa; the older
 three-kappa loss remains conservative. Complete same-label curl transport
 and the genuine mean-wave half-frequency loss supply the actual initial

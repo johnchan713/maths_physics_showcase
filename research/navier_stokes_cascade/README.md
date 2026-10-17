@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [regular harmonic-source foundation](results/regular_source_foundation/README.md)
+The latest [first sourced-pulse foundation](results/first_sourced_foundation/README.md)
+joins the unchanged signed/mean prefix and first forward solve to all fixed
+physical jets, complete complex covariance and current mean pressure/defects.
+Relative to retained core/pulse lemmas, its regular nonzero/full mean order
+is D=3/2-2kappa; covariance, Haar mean and defects have order C=3/2-kappa.
+All second-harmonic squares, nonzero old means, Pi1/Pi2 and the moving pressure
+moment remain. The complete old-wave error stays B=1-kappa, not D. Next
+join the current generic complex signed target and fast/slow mean relaxation;
+all later families and unconditional full residual/blow-up remain open.
+
+The preceding [regular harmonic-source foundation](results/regular_source_foundation/README.md)
 independently derives a sufficient linear gain 1/2-kappa, charging each
 graph derivative once and retaining every viscous/pressure/frame term.
 Complete-curl divergence controls same-label nonlinear transport; mean-wave

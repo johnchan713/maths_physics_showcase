@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check first sourced pulse foundation complete complex covariance and current pressure
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/first_sourced_foundation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/first_sourced_foundation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/first_sourced_foundation/evidence.json \
+            --output navier_stokes_first_sourced_foundation_ci.json
+
       - name: Check regular harmonic source foundation full viscous operator and endpoint tails
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/regular_source_foundation/test_audit.py -v
@@ -851,6 +858,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_first_sourced_foundation_ci.json
             navier_stokes_regular_source_foundation_ci.json
             navier_stokes_compact_mean_foundation_ci.json
             navier_stokes_physical_pulse_foundation_ci.json

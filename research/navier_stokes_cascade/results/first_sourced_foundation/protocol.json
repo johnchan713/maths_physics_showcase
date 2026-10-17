@@ -1,0 +1,13 @@
+{
+  "parent_commit": "9dbaa3cf768f3009f4f17d9b5c5b47e4df613a6b",
+  "unchanged_parameters": "Md64; unit viscosity; fixed h,N,positive lambda,t1=C^-20; original radius roots supports carriers and operation order",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "source_order": "B=1-kappa; same source after unchanged real signed and post-signed mean prefix",
+  "covariance_pressure_defect_order": "C=B+1/2=3/2-kappa",
+  "regular_nonzero_and_full_mean_order": "D=C-kappa=3/2-2*kappa",
+  "complete_old_wave_error": "rho=B, not D; original W0_as is fixed",
+  "pressure": "i*(n.Kt-nprime.t+n.f)/(k*m*|n|^2); pressure and potential order C",
+  "physical_powers": "u:-A+hB; p:-2A+hC; potential:1/2-A+hC; subtract a*sx+b*st",
+  "exact_tail_split": "psi*uncut_regular_remainder + (1-psi)*f + T_psi; tails additive not forward sources",
+  "scope": "ONE finite sourced/covariance/pressure join relative to exact core and finite lemmas; later complex induction and unconditional full residual remain open"
+}
