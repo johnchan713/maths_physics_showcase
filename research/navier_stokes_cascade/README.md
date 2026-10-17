@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [primary-covariance foundation](results/primary_covariance_foundation/README.md)
+The latest [leading-frame foundation](results/leading_frame_foundation/README.md)
+derives uniform swirl, shear, growth and frame-denominator floors on the
+same closed annulus from the reviewed core/regional construction. The
+specified moving-frame left inverse is bounded by `sqrt(2)*G^2`, with
+the finite radial-span cost retained in the swirl floor. An explicit
+axial-carrier floor survives both signs; nonzero angular frequency does
+not imply a uniform angular-component floor. One value domain serves
+every fixed derivative order. Exact-core analytical dependencies and
+generated complete covariance/mean/residual inputs remain; no unconditional
+pulse-family or blow-up theorem is claimed.
+
+The preceding [primary-covariance foundation](results/primary_covariance_foundation/README.md)
 gives an explicit positive-root condition `eta<gamma/(2-gamma)` for the
 normalized two-column primary covariance matrix and an invertible boundary
 witness where positivity fails. The safe budget `eta<=gamma/4` gives

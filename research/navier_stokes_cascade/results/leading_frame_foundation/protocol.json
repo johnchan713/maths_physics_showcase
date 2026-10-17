@@ -1,0 +1,13 @@
+{
+  "parent_commit": "889f2e5ba0837a3ea90abdacd7ae37d92f366b3d",
+  "fixed_choices": "same Md64,h,N,matching lambda>0,unit viscosity,original tilt,carriers,primary roots,r0,frequency,width C^-20,supports,gauge",
+  "regional": "alpha=1/(2G^3); nu=1/(2G^4); Ab=Bb=4Aenv; Vb=Ab+Bb^2/alpha",
+  "swirl": "fstar=exp(-2Lambda*M)/(4C)*exp[-Ab*log(Xb/Xa)/2]; F<=2exp(2Lambda*M)/C",
+  "spectral": "gstar^2=fstar^2*alpha*(2+nu); nstar^2=alpha/Vb; lambda_star^2=2alpha*fstar^2*nu/Vb; cstar^2=nu/2",
+  "chart": "leading F,g,lambda multiply by s^(-1-h); N,K,c0 unchanged; 1/4<=s<=4",
+  "frame": "specified Bleft=M^-1[er^T;Na^T]; norm2<=nu^-1/2=sqrt(2)*G^2",
+  "rounding": "nearest NONZERO angular integer costs 1/k, not 1/(2k); no uniform |p/R| floor",
+  "axial": "Ls>=2u/(gstar*nstar) gives pz<=-Bs*nstar/2; moving normal retains epsilon*v term",
+  "support": "one common value domain before fixed jets; no derivative-dependent start; no new support or width",
+  "scope": "leading/frame floors derived from reviewed current exact-core/regional maps, not all nonlinear inputs or blowup"
+}
