@@ -1,0 +1,15 @@
+{
+  "parent_commit": "07b30739332662b1bca55018fa735bb0391ae5d5",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "unchanged_parameters": "Md64; unit viscosity; same h,N,positive lambda,width C_setup^-20,roots,geometry,carriers and operation order",
+  "current_hierarchy": "B_j=3/2-2*kappa+j*(1/2-kappa); delta=1/2-kappa; B_(j-1)=delta*j+rho; rho=1-kappa",
+  "representatives": "Delta u_j=curl(A_j)+b_j*e_theta; partial_theta b_j=0; full p_j=p^[j]-p^[j-1] in fixed compact gauge",
+  "physical_losses": "ell_m=2*A+2*m; L_m=ell_(m+1); H_m=L_m+1; K_m=2*A+3/2+2*m",
+  "diagonal": "one a_j>=2*a_(j-1); finite lists through m=j; whole interval 0<q<=1/a_j; g_j=h*delta*j",
+  "tail": "2^(-J)*q^(h*delta*(J+1)/2-L_m) for q<=1/(2*a_J), fixed J>=max(1,m)",
+  "comparison": "fix m,N then J>=m+2 with h*delta*(J+1)/2>=N+1+L_(m+2)+H_(m+2) and h*B_J-K_m>=N+1",
+  "full_residual": "e_t-Delta e+grad pi+u_J.grad e+e.grad u_J+e.grad e",
+  "pressure": "full telescoping differences after all four operations, both background Pi1/Pi2, axial memory; gauge fixed before cutoff",
+  "domain": "same 0<q<qstar<1, t<1; no one-sided endpoint or global force conclusion",
+  "scope": "single local realization and complete all-fixed-jet flat residual relative to retained exact-core and finite analytic lemmas"
+}

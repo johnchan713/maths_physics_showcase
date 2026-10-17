@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-source finite induction foundation](results/finite_induction_foundation/README.md)
+The latest [current-source single-field realization](results/realization_foundation/README.md)
+joins the complete finite-stage potentials, direct swirl and fixed-gauge
+pressure to ONE smooth divergence-free local field for t<1 and q>0,
+relative to retained exact-core and finite analytic lemmas. One cutoff
+sequence handles arbitrary stage constants; the complete residual is flat
+in every fixed Cartesian jet, retaining pressure, viscosity and all
+interactions. The protected core/exterior stay exact. Next join the
+closed-time atlas and one-sided jets, then localization, admissible global
+force, energy and comparison for this SAME field. These conclusions remain
+relative to retained lemmas; no unconditional residual or blow-up follows.
+
+The preceding [current-source finite induction foundation](results/finite_induction_foundation/README.md)
 joins the stronger current seed and all later supported source expressions
 to the complete four-operation cycle for every finite stage, relative to
 retained exact-core and finite analytic lemmas. Its regular residual order

@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-source finite induction foundation](finite_induction_foundation/README.md).
+Latest checkpoint: [current-source single-field realization](realization_foundation/README.md).
+The reviewed complete finite potentials, direct swirl and fixed-gauge
+pressure now join ONE real smooth divergence-free local field for t<1,
+q>0, relative to retained exact-core and finite analytic lemmas. One
+diagonal sequence controls arbitrary stage constants and all fixed jets;
+the COMPLETE residual is flat, including cutoff curls, pressure, viscosity
+and every nonlinear group. Next join the endpoint atlas and one-sided jets,
+then localization, admissible force, energy and global comparison to this
+same field. No unconditional residual or blow-up claim is made.
+
+The preceding [current-source finite induction foundation](finite_induction_foundation/README.md).
 The reviewed current seed and all later regular source expressions now
 close the complete finite cycle with gain 1/2-kappa, relative to retained
 exact-core and finite analytic lemmas. B_j=3/2-2kappa+j(1/2-kappa); full

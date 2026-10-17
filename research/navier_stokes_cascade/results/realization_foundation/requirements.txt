@@ -1,0 +1,4 @@
+# Exact controls are standard library; historical replays and scale diagnostics:
+mpmath>=1.3.0
+numpy>=1.24
+scipy>=1.10
