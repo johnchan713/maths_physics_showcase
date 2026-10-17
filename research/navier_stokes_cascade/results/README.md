@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [actual weighted-stress/background foundation join](weighted_stress_foundation/README.md).
+Latest checkpoint: [actual primary physical-pulse foundation](physical_pulse_foundation/README.md).
+Every fixed physical jet of complete primary curls, pressures and fixed
+potentials is bounded uniformly over all used bands/labels/copies, relative
+to retained exact-core and finite-map lemmas. Independent higher-order
+pullbacks retain graph and frame derivatives, and square completion proves
+all Gaussian cutoff tails flat on one unchanged starting-band domain.
+This is not verification of all nonlinear generated source inputs. Next
+audit complete-wave covariance means with radial/axial velocity and Pi1/Pi2,
+then actual source classes and the complete viscous/cutoff residual.
+
+The preceding [actual weighted-stress/background foundation join](weighted_stress_foundation/README.md).
 Exact inner and outer factorizations supply smooth T1/|T0| jets and the
 stronger normalized O(q^(2h)) background estimate on one domain, relative
 to the retained exact core and finite defining-map lemmas. The eta=0 cubic

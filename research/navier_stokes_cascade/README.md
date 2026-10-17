@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [weighted-stress foundation join](results/weighted_stress_foundation/README.md)
+The latest [physical primary-pulse foundation](results/physical_pulse_foundation/README.md)
+joins those actual background inputs to all fixed physical derivatives of
+complete primary curls, pressures and fixed potentials on every used scale,
+relative to the retained exact core and finite-map lemmas. It keeps the
+radial graph, differentiated graph coefficients, moving-normal pressure
+and actual Haar radius costs; only the PHASE has radial graph cancellation.
+Gaussian cutoff tails have all-order flat bounds on the SAME starting-band
+domain. The sourced inverse still requires its explicit input/support
+bounds; all generated nonlinear sources and complete covariance means/full
+residual remain to be independently verified. No unconditional blow-up.
+
+The preceding [weighted-stress foundation join](results/weighted_stress_foundation/README.md)
 connects those actual leading inputs to the formal coefficient/support maps,
 independently removes both exact flat factors and obtains smooth T1/|T0|
 jets on the closed active annulus. The eta=0 outer quotient has the nonzero

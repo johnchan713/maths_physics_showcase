@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath
 
+      - name: Check actual primary physical pulse jets complete curls and common domain tails
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/physical_pulse_foundation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/physical_pulse_foundation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/physical_pulse_foundation/evidence.json \
+            --output navier_stokes_physical_pulse_foundation_ci.json
+
       - name: Check actual weighted stress edge quotients and background foundation join
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/weighted_stress_foundation/test_audit.py -v
@@ -830,6 +837,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_physical_pulse_foundation_ci.json
             navier_stokes_weighted_stress_foundation_ci.json
             navier_stokes_annular_exterior_foundation_ci.json
             navier_stokes_modulation_repair_all_order_ci.json

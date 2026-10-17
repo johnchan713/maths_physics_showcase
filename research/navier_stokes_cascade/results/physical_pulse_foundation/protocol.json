@@ -1,0 +1,11 @@
+{
+  "parent_commit": "585342bc4225cd69cf07a0a9a24d65ef01729804",
+  "unchanged_parameters": "Md64; unit viscosity; fixed h,N,t1=C^-20; r0=1/6057072",
+  "enlarged_chart": "1/4<=q/Q<=4; T>=0; 4Q<qstar; representatives in closed active intersection",
+  "physical_losses": "sx=1/2+h/2; st=1+3h/2",
+  "primary_powers": "velocity Q^(-(a+1)*sx-b*st); pressure Q^(-(a+2)*sx-b*st); fixed potential Q^(-a*sx-b*st)",
+  "tail_same_start": "D=B+max(0,Lambda+K); exp(D*ell-a0*ell^2)<=exp(D^2/(4*a0))",
+  "source_mapping_not_generated_source_verification": true,
+  "discrete_data_frozen_before_all_differentiation": true,
+  "scope": "uniform actual PRIMARY pulse foundation relative to exact core and finite lemmas; complete means generated sources full residual and blow-up not promoted"
+}
