@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [first sourced-pulse foundation](results/first_sourced_foundation/README.md)
+The latest [current-input complex signed/mean foundation](results/current_complex_foundation/README.md)
+joins the sharper first-sourced state to the unchanged generic complex signed
+correction and fresh fast/slow means. Relative to retained core/finite-map
+lemmas, full tangential means reach 2-2kappa and recomputed defects 5/2-kappa;
+regular nonzero rows remain D=3/2-2kappa. All three covariance errors tie;
+fast mean-wave transport ties D, and stale slow targets miss the defect
+bound by 2kappa. Complete pressure, axial covariance and accumulated old
+means stay. Next independently audit later source families and finite-stage
+induction; no unconditional full residual or blow-up follows.
+
+The preceding [first sourced-pulse foundation](results/first_sourced_foundation/README.md)
 joins the unchanged signed/mean prefix and first forward solve to all fixed
 physical jets, complete complex covariance and current mean pressure/defects.
 Relative to retained core/pulse lemmas, its regular nonzero/full mean order

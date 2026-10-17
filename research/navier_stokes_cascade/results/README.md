@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [first sourced-pulse foundation](first_sourced_foundation/README.md).
+Latest checkpoint: [current-input complex signed/mean foundation](current_complex_foundation/README.md).
+The sharper current first-sourced inputs now join the SAME generic signed
+correction and freshly recomputed fast/slow mean maps. Relative to retained
+core/finite-map lemmas, full tangential means reach 2-2kappa and defects
+5/2-kappa, while the regular nonzero residual stays D=3/2-2kappa. All three
+generic covariance errors tie; fast mean-wave transport only ties D. Stale
+prefast slow targets miss the new defect estimate by 2kappa. Full pressure,
+axial covariance and accumulated old means remain. Next independently
+audit later source families and finite-stage induction; no unconditional
+full residual or blow-up follows.
+
+The preceding [first sourced-pulse foundation](first_sourced_foundation/README.md).
 The SAME first forward correction now has all-fixed-jet bounds with the
 actual B=1-kappa input, after the unchanged signed/mean prefix. Complete
 complex covariance, second-harmonic squares and recomputed mean pressure

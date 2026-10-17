@@ -1,0 +1,13 @@
+{
+  "parent_commit": "bd707aadc121c83563490495c412ab4c7d15e026",
+  "unchanged_parameters": "Md64; unit viscosity; fixed h,N,positive lambda,t1=C_setup^-20; original radius roots supports carriers and operation order",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "current_input": "B=rho=mu=1-kappa; C=3/2-kappa; D=H=C-kappa",
+  "generic_covariance_error": "nu=min(rho+C-1/2,C+1/2-kappa,2C-1)=2-2*kappa; all three tie",
+  "mean_refresh": "current signed state -> fast at H -> recompute pressure/defects -> slow at C -> recompute again",
+  "stale_target_obstruction": "mu+H=5/2-3*kappa < C+1=5/2-kappa by 2*kappa",
+  "final_seed": "nonzero D; full tangential mean nu=D+1/2; defects C+1; old error rho=B; Haar tangential 1 radial 2",
+  "pressure": "all six W entries, full p_B including Pi1/Pi2, current p_m and whole derivative of Jz+c_rho*P",
+  "exact_tails": "actual flat velocities retained in products; designated Gaussian tails additive, never inverse sources",
+  "scope": "ONE current-input finite signed/mean join relative to exact core and finite lemmas; later families, full residual and blow-up remain open"
+}
