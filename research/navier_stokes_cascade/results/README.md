@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [current-source pressure comparison foundation](comparison_foundation/README.md).
+Latest checkpoint: [reference correction-root foundation](root_foundation/README.md).
+The actual angular and heat correction maps have uniform positive-bump
+inverse norms below 3 and 15, with full C1 roots bounded by 4200 lambda^30
+and 1920 h^4/Xstar. Uniqueness identifies the SAME previously accepted
+roots. Complete pressure/energy/angular tails and all fixed one-sided eta
+jets stay; the terminal scalar wait is positive, finite and unique. Next
+audit the axial two-moment/strength solve, annular and compact-repair maps
+and complete-core pressure identification. Other finite-pulse lemmas stay
+open; no unconditional residual or breakdown result is inferred.
+
+The preceding [current-source pressure comparison foundation](comparison_foundation/README.md).
 The SAME compact-force field now joins pressure recovery and finite-energy
 competitor comparison, relative to retained core and finite analytic
 lemmas. Compact mixed stress has pressure flux O(R^-5/2), improving the

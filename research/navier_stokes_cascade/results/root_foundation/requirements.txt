@@ -1,0 +1,4 @@
+# Rational bounds use the standard library; bump diagnostics and old replays:
+mpmath>=1.3.0
+numpy>=1.24
+scipy>=1.10

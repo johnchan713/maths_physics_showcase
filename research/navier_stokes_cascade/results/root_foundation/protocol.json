@@ -1,0 +1,18 @@
+{
+  "parent_commit": "bf4794ad6e0dc309acab0cc6e84ad74a8ea558a1",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "unchanged_parameters": "Md64; unit viscosity; same h,N,positive lambda,width C_setup^-20,roots,geometry,labels,cutoff sequences and pressure gauge",
+  "actual_parameters": "T=exp(64)+10>=64; lambda=exp(-4T)<=exp(-256); h=lambda^2; Xstar>=100; co=1/1000",
+  "bump": "beta_j(y)=sigma_prime((y-center_j)/(3/10)+1/2); exact mass 3/10; sup sigma_prime<=64; sup abs sigma_second<=20000",
+  "angular": "centers 0,2 in local first-bump coordinates; rates 1-lambda,-1-2lambda; pressure row factor two and quadratic row factor one",
+  "heat": "centers 1/2,5/2,9/2; rates -1-2lambda,-2lambda,1-lambda; pressure and minus-S quadratic factor 1/2; I row linear",
+  "uniform_matrix": "0<=lambda<=1/100; positive masses and Lagrange polynomial inverse; inverse norms <3 angular, <15 heat; quadratic norms <32 and <29",
+  "targets": "angular C1<=700*lambda^30 only on 0<lambda<=exp(-256); heat C1<=64*h^4/Xstar from all three complete infinite heat integrals",
+  "Banach_norm": "max_j(sup abs c_j+sup abs partial_eta c_j); constant B and Q; contraction requires 8*beta^2*q*delta<1",
+  "roots": "angular max C1<=4200*lambda^30; heat max C1<=1920*h^4/Xstar; subsets of original uniqueness balls",
+  "jets": "same roots; pointwise Jacobian inverse <=6 angular, <=30 heat; d_k<=2beta*(z_k+q*sum_(j=1)^(k-1) d_j*d_(k-j))",
+  "waiting": "q_w=(1-h)*I/(XH)-1; omega=log(q_before/qp)/(1-h); qp=rho/(1-rho)*integral exp((1-h)*(1+2v))*sigma_prime(v) dv; rho=h/1000",
+  "pressure": "angular Cp change zero; heat Cp, S and renormalized I changes cancel heat edit exactly as eta functions; other exact roots still required for full Pi_axis+Cp_infinity=0",
+  "diagnostics": "44 exact inverse-product components, exact disjoint relative-square moment controls, 12 Catalan jet orders, terminal integrating-factor control and six moderate-parameter bump-integral comparisons",
+  "scope": "two reference correction roots and scalar waiting root; remaining axial strength, annular/repair and finite pulse lemmas explicit; no unconditional construction"
+}

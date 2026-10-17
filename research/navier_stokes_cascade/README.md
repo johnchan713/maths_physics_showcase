@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-source pressure comparison foundation](results/comparison_foundation/README.md)
+The latest [reference correction-root foundation](results/root_foundation/README.md)
+independently supplies the actual angular and heat moment roots and positive
+unique terminal wait. Rational positive-bump bounds give inverse norms below
+3 and 15, sharpening the SAME accepted roots to 4200 lambda^30 and
+1920 h^4/Xstar in the full C1 norm. Complete infinite heat integrals,
+pressure rows, fixed eta jets and radial slope gaps remain. Next audit the
+axial two-moment/strength root, then annular and compact-repair maps and
+complete-core pressure identification. Other finite-pulse lemmas remain;
+no unconditional construction, residual or blow-up follows.
+
+The preceding [current-source pressure comparison foundation](results/comparison_foundation/README.md)
 joins the SAME compact-force field and zero datum to pressure recovery and
 comparison with every smooth finite-energy global competitor, relative to
 retained core and finite analytic lemmas. Separating the compact mixed
