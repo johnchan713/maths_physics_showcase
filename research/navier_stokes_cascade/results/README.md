@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [annular/exterior leading foundation](annular_exterior_foundation/README.md).
+Latest checkpoint: [actual weighted-stress/background foundation join](weighted_stress_foundation/README.md).
+Exact inner and outer factorizations supply smooth T1/|T0| jets and the
+stronger normalized O(q^(2h)) background estimate on one domain, relative
+to the retained exact core and finite defining-map lemmas. The eta=0 cubic
+outer jet detects omitted axial-viscosity terms. Actual leading inputs now
+feed the formal coefficient and common-support maps; pressure memory and
+the first two I4 pressure orders remain. Next independently join all-scale
+actual physical pulses, then complete covariance means and residuals.
+
+The preceding [annular/exterior leading foundation](annular_exterior_foundation/README.md).
 Nonconstant-Q annular jets and the finite exterior maps supply the remaining
 smooth compact input, relative to the exact core and retained finite-root
 existence bounds. Gamma majorants justify all fixed moment derivatives,

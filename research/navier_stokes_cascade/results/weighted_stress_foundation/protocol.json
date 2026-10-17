@@ -1,0 +1,12 @@
+{
+  "parent_commit": "a779312a3036c03ca7abea540b18e19785c9bc03",
+  "unchanged_parameters": "Md64; t1=C^-20; fixed h and N=1+floor(H^32)",
+  "exact_weight": "exp(-t1^2/ya^2-4/yb^2)",
+  "total_order_loss": "3*m+3",
+  "first_stress_quotient": "(b1/sqrt(b0^2+yb^12*bz^2),0)",
+  "eta_zero_cubic": "W1theta(delta,0)=Xb*delta^3/8+O(delta^4)",
+  "derivative_family": "Euler q*d_q at fixed X,eta; partial_X; partial_eta",
+  "one_diagonal_schedule_all_earlier_constraints_and_new_finite_quotient_seminorms": true,
+  "retain_exact_core_and_finite_lemmas_not_manuscript_conclusion": true,
+  "scope": "weighted leading/first-stress and normalized background foundation; actual pulses complete means residual and blow-up not promoted"
+}

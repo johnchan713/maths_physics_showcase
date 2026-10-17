@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [annular/exterior foundation](results/annular_exterior_foundation/README.md)
+The latest [weighted-stress foundation join](results/weighted_stress_foundation/README.md)
+connects those actual leading inputs to the formal coefficient/support maps,
+independently removes both exact flat factors and obtains smooth T1/|T0|
+jets on the closed active annulus. The eta=0 outer quotient has the nonzero
+cubic Xb*delta_b^3/8 despite its zero endpoint value; the full axial
+viscosity term is essential. One admissible diagonal schedule yields all
+fixed relative background jets O(q^(2h)) and a common strict cone domain,
+relative to the exact core and retained finite existence/inverse/gap lemmas.
+Actual all-scale pulses, complete means/residual and blow-up remain open.
+
+The preceding [annular/exterior foundation](results/annular_exterior_foundation/README.md)
 supplies the remaining compact smooth input to that fixed-N map theorem,
 relative to the retained exact core and finite existence/inverse bounds.
 It retains eta derivatives of the earlier annular quadratic map, derives
