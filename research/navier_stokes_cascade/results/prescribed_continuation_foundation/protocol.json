@@ -1,0 +1,11 @@
+{
+  "parent_commit": "bde6e3d9d212a706b54d8688941379400f60f79d",
+  "fixed_width": "t1=kappa0=C^-20",
+  "final_eta_strip": "rho/(12800*S)",
+  "domain": "0<=X<=Xsep=110*exp(2000*B), pre-modulation prescribed profile",
+  "reference_coordinates": "original five forward moments and full Pi_axis+Cp, not flattened physical shear",
+  "actual_maps": "known reference p1_r,ns_r -> prescribed slopes -> primitives and exponentials -> actual five moments -> shape",
+  "no_parameter_support_or_frozen_evidence_change": true,
+  "numerical_diagnostic": "independent exact rational bivariate jets plus legacy raw second jets",
+  "scope": "relative finite all-order seminorm theorem; final modulation/repair and global foundation remain open"
+}

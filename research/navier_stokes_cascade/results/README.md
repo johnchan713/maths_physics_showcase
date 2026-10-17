@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Separate paper reproduction track
 
-Latest checkpoint: [actual flat-activation collar foundation](activated_collar_foundation/README.md).
+Latest checkpoint: [prescribed continuation through shape](prescribed_continuation_foundation/README.md).
+Explicit seminorm recursion supplies all fixed jets of the PRE-MODULATION
+continuation, retaining the original five moments and full pressure. After
+the reference taper, physical shear is not its integrated stress coordinate;
+copying the first-collar formula past that boundary would define the wrong
+field. The same finite-N modulation, phase inverse and exact repair remain
+to be audited at all fixed orders. No unconditional pulse, residual or
+blow-up claim follows.
+
+The preceding [actual flat-activation collar foundation](activated_collar_foundation/README.md).
 Actual forward-integrated fields, five moments and full incoming pressure
 now satisfy the common parameter-strip, all-fixed-order collar estimate,
 relative to the exact pressure-family core. Difference gains t1^(1-r) for

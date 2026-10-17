@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [actual flat-activation collar foundation](results/activated_collar_foundation/README.md)
+The latest [prescribed continuation foundation](results/prescribed_continuation_foundation/README.md)
+derives finite all-fixed-order seminorm bounds through the reference taper,
+two final tapers and the shape transition for the PRE-MODULATION leading
+profile, relative to the same exact core. Its integrated stress coordinates
+must not be replaced by the flattened reference's physical shear. Full
+incoming moments and eta-dependent pressure stay; fixed-width derivative
+costs are explicit. All-order finite-N modulation/phase/exact repair is the
+next foundation gate. Final global-profile/pulse bounds, complete residual
+closure and unconditional blow-up remain unverified.
+
+The preceding [actual flat-activation collar foundation](results/activated_collar_foundation/README.md)
 propagates one common parameter-analytic strip through the ACTUAL activated
 leading fields, all five moments and full pressure. It supplies every fixed
 radial jet on the background collar, retaining incoming traces and explicit
