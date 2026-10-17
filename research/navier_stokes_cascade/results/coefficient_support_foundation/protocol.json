@@ -1,0 +1,28 @@
+{
+  "parent_commit": "135c9da9a41f070ce0d583ba2a70d9a8fe21d490",
+  "fixed_choices": "same Md64,lambda=exp(-4T)>0,h=lambda^2,N=1+floor(H^32),width C^-20,root branches,gauge and supports",
+  "ordinary_rows": [
+    "M",
+    "I",
+    "Cp",
+    "J",
+    "S"
+  ],
+  "positive_order_map": "B*c_n=-z_n; no quadratic current-order term; ||B^-1||_infinity<800",
+  "amplitude": "e(eta)=e_star/(1+eta^2), e_star>0; factorial reciprocal Ck costs 2,4,5 divided by e_star",
+  "jet_bound": "||c_n||_k<=800 max(mu1/rho,(mu1/rho+K*Wk*mu4)/lambda,K*mu2,Wk*mu5/rho,Wk*mu3)",
+  "geometry": "all I3 bumps end at y3=2.55; Xvel=rho3 exp(3); I4 has 6<y3<11",
+  "support_rows": [
+    "n1: velocity Xvel, pressure Xv, stress Xb",
+    "n2: velocity Xvel, pressure Xv, stress Xv",
+    "n>=3: velocity pressure stress Xvel"
+  ],
+  "mean_pressure": [
+    "Pi1=K1(eta)-mu^2/(4X)",
+    "Pi2=K2(eta)",
+    "Pi_n=0 for n>=3"
+  ],
+  "signed_totals": "current moments plus shifted Z_(a-D)Z_a and Z_(g-D)Z_g of previous-order angular and axial moments",
+  "checks": "48 independent exact-rational integrated identities; 8 non-small manufactured ordinary-integrand repairs and second jets",
+  "scope": "coefficient/support foundation relative to retained finalized leading inputs; no uniform-in-order norms, unconditional pulse/residual/blowup or zero reserved pressure"
+}

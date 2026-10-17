@@ -13,6 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
+The latest [current coefficient-support foundation](results/coefficient_support_foundation/README.md)
+sharpens the actual positive-order linear moment inverse to 800 and derives
+explicit all-fixed-angular-jet bounds with the retained `1/lambda` and
+reciprocal-amplitude costs. General conservative stress totals retain
+previous-order axial viscosity; the same global identities give the finite
+coefficient supports and exact reserved-mean velocity. Pressure still has
+the exceptional `Pi1,Pi2` tails and leading radial memory is nonzero there.
+The result remains relative to retained finalized leading/core inputs.
+Next: remaining uniform actual-pulse and complete covariance/mean/residual
+lemmas; no unconditional pulse theorem, residual or blow-up follows.
+
 The latest [current same-root global pressure and moment foundation](results/global_pressure_moment_foundation/README.md)
 proves that the annular and compact transformed zero rows are exactly the
 original `M,R,J,S,Cp` zero rows (using the retained `lambda>0`), traces the
