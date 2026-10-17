@@ -1,0 +1,21 @@
+{
+  "parent_commit": "19e184739d019e14c3e151a9f3a49dbe7a2d9f65",
+  "source": "repository core_contraction_audit defining coefficient norm and core map; no final manuscript theorem is input",
+  "retained_pressure": "exact positive measure on [0,1], mass<5, P>=16; full Pi0 plus p/Lambda",
+  "h_range": "0<h<=1/100",
+  "rho": "sigma/2048",
+  "same_Lambda_C_h_N_and_width": true,
+  "joint_majorant": "norm*(r+k)!*20^(-r)*rho^(-k)*(1-|Y|/20-|zeta|/rho)^(-r-k-1)",
+  "majorant_domain": "|Y|<=5, complex eta displacement<=rho/8",
+  "reciprocal_polydisc": ["1/(100*S)", "rho/(100*S)"],
+  "reciprocal_upper": "5",
+  "seed_real_interval": "0<=Y<=4.1",
+  "actual_unchanged_leading_interval": "0<=Y<=4",
+  "physical_scale": "0<q<=1; q=0 singular event excluded",
+  "physical_weight": "(alpha_x+alpha_y)/2+(1/2-h)*alpha_z+j",
+  "diagnostic_h": "1/200",
+  "diagnostic_Lambda": 3,
+  "diagnostic_order": 4,
+  "diagnostic_arithmetic": "exact rational truncated multivariate Taylor algebra",
+  "scope": "local core foundation only; actual flat activation collar, global leading profile, full background/pulses and blow-up remain unverified"
+}

@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [same-current-field pressure recovery and comparison](results/current_solution_comparison/README.md)
+The latest [local all-order core foundation](results/core_all_order_foundation/README.md)
+derives an explicit joint analytic majorant, a common zero-free reciprocal
+neighborhood, and anisotropic Cartesian core bounds uniform in physical
+scale. It keeps the full local pressure and axis quotients. The unchanged
+actual leading core stops at Y=4, not the seed's extension to 4.1. The next
+foundation gate is the actual flat activation collar required by the
+background construction. The global conditional route is not promoted;
+unconditional pulse bounds, residual closure and blow-up remain unverified.
+
+The preceding [same-current-field pressure recovery and comparison](results/current_solution_comparison/README.md)
 joins the general finite-energy comparison lemma to the SAME current localized
 field, full pressure, compact force and zero datum. All spatial-infinity
 fluxes vanish at fixed T<1, without assumed competitor pressure decay or
