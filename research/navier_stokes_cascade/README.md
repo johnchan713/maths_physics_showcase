@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-target and moment audit](results/current_target_moment_audit/README.md)
+The latest [current-target cycle bridge](results/current_target_cycle_bridge/README.md)
+derives the missing higher-order target cancellation from exact CURRENT-state
+differences through signed covariance and fast/slow mean updates, conditional
+on the accepted canonical initial input and reviewed operator estimates.
+It retains all six covariance entries, changed axial pressure, nonzero old
+mean correlations and a generally nonzero moving-compensator derivative
+commutator. The target order advances by 1/2-kappa on the whole accepted
+half-line; it is not inferred from raw support/moment conditions or protocol
+stamps. The parent's countercontrol remains valid. Next audit the complete
+nonzero-angular residual, exact cutoff/pressure tail reclassification and
+all physical-jet/support costs with these same current inputs. Initial
+analytical premises and unconditional pulse/residual/blow-up claims remain open.
+
+The preceding [current-target and moment audit](results/current_target_moment_audit/README.md)
 derives exact current pressure/flux moments and both full integrated residual
 identities, keeping all six covariance entries, radial time/axial transport,
 old-new mean correlations and the whole moving pressure-bump derivative.
