@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [complete harmonic-source foundation](results/harmonic_closure_foundation/README.md)
+The latest [Gaussian/Haar-mass foundation](results/gaussian_mass_foundation/README.md)
+derives explicit whole-pulse Gaussian curvature and radial amplitude factors
+from the current spectral floors and reviewed frame errors. It quantifies
+the true primary Haar mass, concentration and cutoff-tail rate
+`a0=c*r0/25`, retaining angular averaging and radius costs. Every fixed
+tail jet is flat on the same accepted scale domain. The positive tilt is
+essential: no uniform Gaussian concentration persists as tilt tends to zero.
+Actual frame/column comparison inputs and the complete core/covariance/mean/
+residual join remain; no unconditional construction or blow-up is claimed.
+
+The preceding [complete harmonic-source foundation](results/harmonic_closure_foundation/README.md)
 quantifies the generated-mode costs in the complete curl, transport,
 covariance and regular viscous/pressure remainder. Weighted absolute sums
 give bounds independent of mode count, conditional on the reviewed pulse

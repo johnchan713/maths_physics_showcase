@@ -1,0 +1,14 @@
+{
+  "Haar": "h_sigma=r0^2/sqrt(L)*j_sigma; jminus=Jmin*exp(-2/3)*xminus^2*exp(-C); jplus=Jmax*xplus^2*sqrt(pi/c)",
+  "amplitude": "D=Cd+9CE/8; xminus=(7/8)exp(-D); xplus=(9/8)exp(D); original L>=8CE/mu",
+  "concentration": "Cdir=D0+D1*xplus^2*exp(C)/(2*xminus^2*c); L>=25 and original cone acceptance length",
+  "curvature": "c=lambda_minus*u^2/2*[(1+9u^2/4)^-2+2*(1+u^2)^-2]; C=3*lambda_plus*u^2/2*[(1+u^2/4)^-1+2*(1+u^2)^-1]",
+  "fixed_choices": "Md64; original h,N,lambda>0,positive tilt,roots,carriers,width C^-20,r0=1/6057072,supports,gauge,unit viscosity",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "memory": "nprime and normal-source pressure; Pi1/Pi2; current axial velocity and whole moving pressure moment; exact additive Gaussian tails never forwarded",
+  "parent_commit": "a70298fb0db13af479b2547b52e5bf1454b99e6d",
+  "scope": "conditional Gaussian/Haar/tail input estimate, not all actual frame constants or complete residual, infinite summability or blow-up",
+  "spectral": "lambda_star/16 <= lambda0 <= 16*lambda_upper on same enlarged charts",
+  "support": "original cutoff plateau 1/5 and support inside 1/3, safely contained in older 2/5 enlargement; no support change",
+  "tail": "P<=exp(-cL/50)<=exp(-a0*ell^2); a0=c*r0/25; square completion controls every fixed jet and target on same domain"
+}
