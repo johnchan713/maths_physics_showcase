@@ -1,0 +1,14 @@
+{
+  "band_inputs": "f=fstar/5,Fbar=5fupper,t=alpha*fstar/5,Gbar=5fupper*(Ab+Bb),d=alpha*nu*fstar^2/25; direction margins invariant",
+  "compact": "H0>=kappa/(10R^3)=1/(640G^13); 1-rho^2>=kappa/(64R^6)=1/(2^18 G^22); R=4G^3,kappa=G^-4",
+  "domain": "closed [Xa,Xb] x [-1,1], using the smooth limiting unit leading stress at Xa and Xb",
+  "exterior": "D/p>1/4,D/p<=14000,|J|/p<2000,fourth/p^2>=4/5 give H0>1/64000 and deficit>=1/490000000",
+  "global_constants": "omega_star=1/(640G^13); epsilon_star=1/(2^18 G^22)",
+  "hierarchy": "C>=2; Aenv=C^4096; G=exp(Aenv^32)>C^4096; actual giant parameters not evaluated",
+  "inner": "H0>=9/(32C^4),rho^2<=1/2; global orientation comparison 180G^13/C^4>180C^53244",
+  "obstruction": "existential admissibility of old u does not imply the conservative explicit sufficient gate; failed gate is uncertified, not actual cone failure",
+  "parent_commit": "1f031a3c84cfafc8461bdb531d05adde904581b9",
+  "same_tilt": "delta_u=epsilon_star-(1-epsilon_star)/u^2; delta_u>0 suffices with gamma_u=delta_u/2; padded existing u^2>=2/epsilon_star gives gamma=epsilon_star/4",
+  "scope": "conditional leading direction and fixed-tilt input estimates only; no changed tilt or actual old-first-band or unconditional pulse/residual/blowup acceptance",
+  "terminal": "N=(-1,0), |Tz/Ttheta|<=4h^4,c0^2<=h give H0>1/2 and rho^2<=16h^9<1/2"
+}

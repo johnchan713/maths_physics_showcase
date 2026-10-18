@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [explicit compact leading-stress floor](results/regional_stress_floor/README.md)
+The latest [global leading direction margin](results/leading_cone_margin/README.md)
+derives explicit orientation omega_star=1/(640G^13) and raw-cone deficit
+epsilon_star=1/(2^18 G^22), retaining finite-radius terms and both smooth
+edge limits. For the SAME fixed tilt, the sufficient test is
+u^2>(1-epsilon_star)/epsilon_star; a padded test yields gamma=epsilon_star/4.
+Existential admissibility of u alone does not verify this conservative
+quantitative gate, and failure of the gate is not actual cone failure.
+The chart interface retains all band factors, including the squared
+discriminant factor. Actual collar/jet bounds and combined scale acceptance
+remain unverified; no tilt, frame, pressure memory or old first band is changed.
+
+The preceding [explicit compact leading-stress floor](results/regional_stress_floor/README.md)
 removes the free stress-amplitude floor from the preceding first-coefficient
 estimate: tau_star=f_star/(64G^10) works on the original [Xinner,Xc] interval,
 relative to the retained same-profile leading lemmas. The three-region join
