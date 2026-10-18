@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [leading-frame foundation](results/leading_frame_foundation/README.md)
+The latest [complete harmonic-source foundation](results/harmonic_closure_foundation/README.md)
+quantifies the generated-mode costs in the complete curl, transport,
+covariance and regular viscous/pressure remainder. Weighted absolute sums
+give bounds independent of mode count, conditional on the reviewed pulse
+inputs. An exact real complete-curl example proves that incompressibility
+removes the carrier factor but leaves a necessary harmonic-ratio loss.
+The sourced velocity gains two harmonic indices; full pressure gains one.
+All six covariance entries, negative-mode pairs, current axial means and
+pressure memory remain. Infinite nonlinear weighted sums and the remaining
+core/construction dependencies are still open; no unconditional residual
+or blow-up theorem follows.
+
+The preceding [leading-frame foundation](results/leading_frame_foundation/README.md)
 derives uniform swirl, shear, growth and frame-denominator floors on the
 same closed annulus from the reviewed core/regional construction. The
 specified moving-frame left inverse is bounded by `sqrt(2)*G^2`, with

@@ -1,0 +1,13 @@
+{
+  "covariance": "all six symmetric entries and every matched negative-mode pair; old-new and new squares retained",
+  "fixed_choices": "Md64; original h,N,lambda>0,unit viscosity,tilt,roots,carriers,width C^-20,supports,gauge",
+  "inverse": "full-path envelope-normalized N^W: velocity gains 2 indices; potential 3 with k^-1; complete pressure 1 with k^-1; full entrance compatibility",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "memory": "full Pi1,Pi2; current axial velocity and pressure; whole derivative Jz+c_rho*P; actual A0,A1 velocities",
+  "norm": "N_sj=sum_m (1+abs(m))^s coefficient_jet_norm_j(a_m)",
+  "parent_commit": "0c1399dca354f460b80c2b22ef80f63ea285fc95",
+  "regular_linear": "gains one harmonic index and epsilon^(1/2-kappa), with complete viscosity and pressure",
+  "scope": "finite count-independent estimates relative to reviewed maps; no infinite nonlinear summability or unconditional proof",
+  "support": "same accepted 4Q<qstar charts, full endpoint extension; exact Gaussian linear tails additive never forward-inverted",
+  "transport": "same-phase complete divergence removes k but leaves n/m; one angular derivative is necessary for generic uniform bounds"
+}

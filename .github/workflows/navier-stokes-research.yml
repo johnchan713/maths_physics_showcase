@@ -62,6 +62,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/leading_frame_foundation/evidence.json \
             --output navier_stokes_leading_frame_foundation_ci.json
 
+      - name: Check complete harmonic closure necessary transport loss and full covariance
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/harmonic_closure_foundation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/harmonic_closure_foundation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/harmonic_closure_foundation/evidence.json \
+            --output navier_stokes_harmonic_closure_foundation_ci.json
+
       - name: Check actual annular and compact repair roots full norms and pressure memory
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/matching_root_foundation/test_audit.py -v
@@ -961,6 +968,7 @@ jobs:
             navier_stokes_sourced_inverse_foundation_ci.json
             navier_stokes_primary_covariance_foundation_ci.json
             navier_stokes_leading_frame_foundation_ci.json
+            navier_stokes_harmonic_closure_foundation_ci.json
             navier_stokes_matching_root_foundation_ci.json
             navier_stokes_axial_root_foundation_ci.json
             navier_stokes_root_foundation_ci.json

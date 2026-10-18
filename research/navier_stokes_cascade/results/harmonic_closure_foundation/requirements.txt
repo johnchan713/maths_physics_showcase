@@ -1,0 +1,5 @@
+# New harmonic controls use only the Python standard library.
+# Focused dependency replays additionally use the established environment:
+numpy>=1.24
+scipy>=1.10
+mpmath>=1.3
