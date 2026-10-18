@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [canonical-primary foundation](results/canonical_primary_foundation/README.md)
+The latest [canonical initial-mean join](results/canonical_initial_mean_join/README.md)
+supplies the rebuilt canonical family's complete real six-entry covariance
+and fresh pressure/fast-mean/slow-five-map inputs. Conditional initial defects
+are S2 and tangential angular-mean residuals M_(2-3kappa), retaining viscosity,
+axial velocity and the whole moving pressure moment. A same-plane example
+shows that matching two momentum fluxes does not fix tangential variance;
+inverse-length closeness is not an extra epsilon-power gain, so old mean
+targets cannot be transplanted. Later complex signed/sourced states and the
+full residual still require consistent rebuilding. No unconditional proof
+is claimed, and all historical evidence remains unchanged.
+
+The preceding [canonical-primary foundation](results/canonical_primary_foundation/README.md)
 constructs the manuscript reference-mixing primary and its positive principal
 covariance roots separately from the inherited family. It derives conditional
 whole-pulse, full-pressure, physical-Haar and relative-root comparison bounds,

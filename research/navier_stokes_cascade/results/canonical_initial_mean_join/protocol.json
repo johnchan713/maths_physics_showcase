@@ -1,0 +1,16 @@
+{
+  "canonical_inputs": "W in M1; selected Haar flux error M_(2-2kappa); full real curl square not generic linear cross",
+  "construction": "canonical reference-mixing real primary with its own rebuilt positive roots; same Md64,h,N,lambda>0,carriers,r0,width C^-20,gauge,unit viscosity",
+  "diagnostic_scope": "exact Fraction quadrature and polynomial means; finite endpoint regularity and plane-wave counterexample not actual giant canonical realization",
+  "full_curl": "w=sqrt(epsilon)*(A cos(kPhi)-B sin(kPhi)/k); B=curl_*(n cross A/|n|^2); all cutoff and cylindrical derivatives",
+  "initial_result": "three defects S2, radial mean M2 and full tangential angular-mean residual M_(2-3kappa), plus retained flat terms; not nonzero-angular residual",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "memory": "int R*bar(pm)=-int R^2*bar(gr)/2+c_rho*P; whole partial_Z(Jz+c_rho*P); current axial velocity; same complete Pi1/Pi2 base subtraction",
+  "moment": "Jtheta=int R^2*(Gv+Vgamma+gamma*v+Wtheta z); Jz=int R*(2Ggamma+gamma^2+Wzz)-int R^2*gr/2",
+  "obstruction": "same transverse plane and rebuilt positive weights can leave eta/2*(0,1,-1) tensor (0,1,-1); epsilon/L is not epsilon^(1+delta)*S^B",
+  "order": "pressure from zero means; fast zero-Haar velocity; recompute full pressure and three defects; slow fixed five-map on current targets; recompute again",
+  "parent_commit": "d3c4dd1b00337d54d446888355802a9d8a824bf8",
+  "real_covariance": "W=epsilon/2*(A tensor A+B tensor B/k^2); all six entries; mixed quadratures vanish only for real primary",
+  "remaining": "later canonical signed/sourced complex states and full residual require fresh consistent construction; no unconditional theorem",
+  "support": "same accepted enlarged charts and full I4 potential hull; actual A0/A1 velocities retained in products; Gaussian cutoff tails additive not inverse sources"
+}
