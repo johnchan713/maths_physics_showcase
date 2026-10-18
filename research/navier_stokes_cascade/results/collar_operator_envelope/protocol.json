@@ -1,0 +1,14 @@
+{
+  "Picard": "sigma=2delta,Delta=d=delta/4,z=2Ccol*b,beta=e*z^2/Delta,M=(z+beta)exp(beta)",
+  "activation": "j1=25S,j2=1600S/t+1000S^2,E=exp(25ell S); K given by README equation (4)",
+  "angular": "H=K(1+delta^-1+2delta^-2) bounds radial orders 0..2 and eta orders 0..2 on 2delta",
+  "arithmetic": "E<=2^ceil(50ell S); rational fixtures store the exponent separately, not actual core values",
+  "domain": "real 0<=X<=Xa exp(tc/4), common complex eta strip; actual flat activation and unchanged core through Xa",
+  "full_source": "W=512(1+x)H^2,Z=128(1+x)^2H; f=(0,0,0,-xi*w0,-2CF,2eta X*w0/L-2CU)",
+  "inputs": "S>=2, 0<rho<=1, Lambda>0, t=C^-20<=.01, ell=tc/4<t/20, construction viscosity=1",
+  "operator": "Ccol=4096(1+x+b)^3 H^2 bounds infinity row norms A0,A1 and vector source on 2delta",
+  "parent_commit": "1e910ccc6aa4da81eefb1d05e76e010943d0e91b",
+  "pressure": "Pi=Pi_r(Xa)+int_0^y X F_a^2; Pcore+ell*x*K^2 value bound preserves incoming Pi_axis",
+  "reference": "x=4.1/Lambda,b=1+x,B=2(256S+9+S/Lambda)(1+Lambda)^2; delta=rho/(800S)",
+  "scope": "conditional local collar input only; global pressure source integrals, fixed tilt, full scale acceptance and full residual remain open"
+}

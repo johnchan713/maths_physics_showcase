@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check explicit actual activation collar operator and full pressure source envelope
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/collar_operator_envelope/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/collar_operator_envelope/audit.py \
+            --verify-record research/navier_stokes_cascade/results/collar_operator_envelope/evidence.json \
+            --output navier_stokes_collar_operator_envelope_ci.json
+
       - name: Check global leading direction margins and unchanged tilt compatibility
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/leading_cone_margin/test_audit.py -v
@@ -1110,6 +1117,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_collar_operator_envelope_ci.json
             navier_stokes_leading_cone_margin_ci.json
             navier_stokes_regional_stress_floor_ci.json
             navier_stokes_first_seminorm_bound_ci.json

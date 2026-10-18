@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [global leading direction margin](results/leading_cone_margin/README.md)
+The latest [actual activated-collar operator envelope](results/collar_operator_envelope/README.md)
+removes the unspecified local C_col input from the first-coefficient estimate.
+It derives explicit first/second radial and angular complex-strip bounds
+for the actual flat activation, with unchanged C^-20 width, then bounds
+the six-variable matrices and full pressure/shifted-axial source by
+C_col=4096(1+x+b)^3 H^2. The common strip and sparse Picard inputs are
+explicit; the actual huge parameters are not numerically materialized.
+The conditional estimate keeps incoming pressure and regular axis values.
+Full future pressure integrals, global leading/cutoff/repair-bump inputs,
+the unchanged-tilt test and combined scale acceptance remain open.
+It is not an unconditional pulse bound, complete residual gain or proof.
+
+The preceding [global leading direction margin](results/leading_cone_margin/README.md)
 derives explicit orientation omega_star=1/(640G^13) and raw-cone deficit
 epsilon_star=1/(2^18 G^22), retaining finite-radius terms and both smooth
 edge limits. For the SAME fixed tilt, the sufficient test is
