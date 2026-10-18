@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [frame/column foundation](results/frame_column_foundation/README.md)
+The latest [canonical-primary foundation](results/canonical_primary_foundation/README.md)
+constructs the manuscript reference-mixing primary and its positive principal
+covariance roots separately from the inherited family. It derives conditional
+whole-pulse, full-pressure, physical-Haar and relative-root comparison bounds,
+with an explicit common value-acceptance condition. Reusing old roots generally
+leaves a covariance defect; rebuilding the canonical roots restores the exact
+principal target. No physical pulses or root values are declared identical.
+Historical evidence is unchanged. Later complete covariance, fresh mean and
+repair maps must consistently use one family before the full viscous/cutoff/
+interaction residual join; no unconditional pulse or blow-up theorem is claimed.
+
+The preceding [frame/column foundation](results/frame_column_foundation/README.md)
 derives an exact two-coordinate projected-frame identity and explicit
 operator-norm, damping and primary-column error constants from the current
 phase and background jet bounds. Moving-normal pressure, the frame derivative

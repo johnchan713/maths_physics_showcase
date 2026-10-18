@@ -1,0 +1,15 @@
+{
+  "Haar": "s0=r0^2/sqrt(L); |DeltaH_sigma|<=s0 CH/L; CH=2Jmax Tstar CDelta sqrt(pi/c); angular half and actual cutoffs retained",
+  "canonical": "equations 7.8 and Lemma 7.4: Br=U Mr(sref); zr(0)=P(0)*eplus, distinct from Ba entrance",
+  "canonical_column": "CEr=CEref; D0r=Ds+Sref*Da+cmax*(1+Sref)*(Da+16CEr/(7mu)); D1=u*(1+cmax)",
+  "correction": "yr=Hr^-1 T, ar=sqrt(yr); stale roots leave DeltaH*ya; equality Hr*yr=T is principal covariance only",
+  "domain": "common normal, both frame Riccati and cone, and root-comparison VALUE thresholds; no jet-dependent band or giant numeric acceptance claim",
+  "fixed": "same original phase, carriers, positive tilt, target, r0=1/6057072, width C^-20, cutoffs, gauge, unit viscosity; no historical pulse overwrite",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "memory": "full moving-normal pressure; background Pi1/Pi2, axial velocity and whole pressure moment; Gaussian cutoff tails stay additive",
+  "parent_commit": "817edc46cb8ba64db62f3e7c0287c45522ef5eab",
+  "pressure": "|pir-pia|<=Pstar CDelta P/(kL); full nprime and normal-source terms remain in forced inverse",
+  "pulse": "B0=2W0 max(1,cmax W0); Tstar=B0 exp(Cd+max(CEa,CEr)); CDelta=B0 Ds exp(Cd+CEa); |tr-ta|<=CDelta P/L",
+  "roots": "theta=12CH/(ja_minus*min(Amin,u)*L); kappa=24ja_plus/(gamma*ja_minus); theta<=1/(2kappa+1); relative squared-amplitude error R=kappa*theta/(1-theta)<=1/2",
+  "scope": "conditional canonical primary/root reconstruction and quantitative comparison, not automatic nonlinear map identification or complete residual"
+}
