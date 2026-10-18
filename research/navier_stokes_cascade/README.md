@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [complete current residual-ledger audit](results/current_residual_ledger_audit/README.md)
+The latest [explicit background gap certificate](results/background_gap_certificate/README.md)
+replaces the unspecified background continuity radius with explicit swirl,
+shear, discriminant, orientation and same-tilt cone bounds. Its sufficient
+value gate is Cval*q^(2h)<=r_star, with the full 4Q chart cost retained.
+It requires the actual smooth relative-stress input at both flat edges;
+positive swirl/shear or small absolute errors alone do not suffice.
+It does not redefine the frozen pulse frame or certify the historical first
+band. The canonical initial route was already completed and is not counted
+again. Next independently discharge the actual regional and weighted-error
+inputs to this gate; no unconditional pulse, residual or blow-up is claimed.
+
+The preceding [complete current residual-ledger audit](results/current_residual_ledger_audit/README.md)
 derives the exact nonzero-angular split into the next regular source and
 retained cutoff tails, including full wave pressure, cutoff curls, both
 old-new interaction orientations and new squares. Recomputed angular-zero

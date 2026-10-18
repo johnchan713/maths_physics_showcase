@@ -1,0 +1,12 @@
+{
+  "cone": "Phi=u^2 H^2-(1+u^2)c^2 J^2; actual margin omega^2*gamma*(2-gamma)/16, existing u unchanged",
+  "discriminant": "D=norm_g^2+2F*gtheta; lambda2=-2F*gtheta*D/norm_g^2; c2=D/(-2F*gtheta)",
+  "domain": "Cval*q^(2h)<=radius; whole dyadic chart needs ell>=2+log2(Cval/radius)/(2h), combined with every previous gate",
+  "floors": "F>=f/2,minus_gtheta>=t/2,D>=d/2,lambda2>=f*t*d/[4(Gbar+1)^2], c2>=d/[4(Fbar+1)(Gbar+1)]",
+  "inputs": "f<=F0<=Fbar, minus_gtheta>=t, norm_g0<=Gbar,D0>=d; H0>=omega; same u cone ratio<=1-gamma; normalized error<=Cval*q^(2h)",
+  "memory": "full Pi1/Pi2 pressure, axial velocities, A0/A1, normal wave pressure, temporal Gaussian vs regular spatial cutoff distinction all unchanged",
+  "parent_commit": "165b75afee625f8ec597e117e4986452907e7a3c",
+  "quantifiers": "one value domain, every fixed smooth jet with order dependent constants; real smoothness not complex heat/modulation analyticity",
+  "radius": "min(1/2,f/2,t/2,d/(2LD),omega/(2LH),mphi/(2Lphi)) with explicit LD,LP,Lc,LH,Lphi",
+  "scope": "conditional explicit background value-gap interface only; original first band, actual constants, primitive leading/core premises and unconditional theorem not certified"
+}
