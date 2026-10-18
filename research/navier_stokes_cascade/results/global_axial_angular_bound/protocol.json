@@ -1,0 +1,12 @@
+{
+  "angular_root": "|deltaI|3<2^21, |z|3<=2^29 lambda^30, |c_ang|3<=2^32 lambda^30; same pointwise root",
+  "axis": "collar envelope proof at ell=tc/2<t/20; Kaxis=K(ell)*(1+delta^-1+delta^-2+delta^-3)",
+  "complete_energy": "|R|3<=8192T, including angular energy increments, infinite reference tail and unchanged waiting; later heat compensation has exact net S zero",
+  "global_bound": "KU<=max(Kaxis,2Ahi,352); use same Xv and u2=KU,v2=36KU in signed Q0,Q1",
+  "norm": "factorial C_eta^3 on closed [-1,1], one-sided endpoint jets; no derivative-order-uniform claim",
+  "parameters": "same T>=64,lambda=exp(-4T),C>1e9,t=C^-20,Ahi=(C^4096)^256 and unchanged N",
+  "parent_commit": "0ba0d99a92c7e6de0158f91a11a49709f805ec64",
+  "pulse": "|f|3<16,R0<=11,disjoint supports imply |U|3<=352; no actual giant profile sampled",
+  "scope": "conditional explicit global axial/source-moment input; full first stress, same tilt, scale gates, actual pulses and complete residual remain open",
+  "strength": "epsilon=8192Tlambda<2^-20; normalized jets <=(9,279,15939)epsilon, |Amp|3<2, |c_end|3<=4lambda^20"
+}

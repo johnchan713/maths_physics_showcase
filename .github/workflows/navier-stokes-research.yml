@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check global axial angular bound complete energy and same strength root jets
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/global_axial_angular_bound/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/global_axial_angular_bound/audit.py \
+            --verify-record research/navier_stokes_cascade/results/global_axial_angular_bound/evidence.json \
+            --output navier_stokes_global_axial_angular_bound_ci.json
+
       - name: Check signed full pressure source moments axis viscosity and future support
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/signed_pressure_source_moments/test_audit.py -v
@@ -1124,6 +1131,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_global_axial_angular_bound_ci.json
             navier_stokes_signed_pressure_source_moments_ci.json
             navier_stokes_collar_operator_envelope_ci.json
             navier_stokes_leading_cone_margin_ci.json

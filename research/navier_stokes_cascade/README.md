@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [signed full-pressure source moments](results/signed_pressure_source_moments/README.md)
+The latest [global third-angular axial bound](results/global_axial_angular_bound/README.md)
+joins the actual axis-side activation, existing compact modulation/repair
+jets and the later same-root reference pulse into an explicit global KU.
+It derives C3 bounds for the complete post-pulse energy and positive axial
+strength, retaining both affine end-bump terms. The pressure-source moment
+inputs Q0,Q1 now follow from fixed construction parameters, conditional on
+the retained core/regional lemmas, without materializing the huge values.
+Exact heat/compensation moment identities preserve the full strength equation;
+no pointwise power-tail formula is assigned to the heat-modified profile.
+Separate pointwise stress/shifted-axial and cutoff/bump inputs, fixed tilt and
+scale gates remain open. No unconditional pulse, residual or blow-up follows.
+
+The preceding [signed full-pressure source moments](results/signed_pressure_source_moments/README.md)
 derives a conservative radial flux and exact full-support formulas for the
 two source integrals needed by the first-coefficient repair. The unweighted
 total retains 2nu*v(0); the weighted viscosity total cancels only at the full
