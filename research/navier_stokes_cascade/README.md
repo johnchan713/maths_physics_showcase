@@ -13,7 +13,22 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [canonical compact-force join](results/canonical_force_join/README.md)
+The latest [canonical comparison join](results/canonical_comparison_join/README.md)
+checks the ordinary pressure-recovery and expanding-ball comparison hypotheses
+on the SAME canonical field, zero datum and compact force. Relative to retained
+analytical premises, every admissible smooth finite-energy global competitor
+agrees with that field before terminal time; retained positive-core growth
+then gives a conditional exclusion implication. The complete energy and local
+dissipation remainders decay as R^-2, without added competitor pressure,
+global derivative or energy-inequality assumptions. A new mixed-pressure
+moment expansion has an explicit R^-4 error; a compact divergence-free tensor
+witness shows why support and incompressibility alone do not remove its R^-3
+leading moment. This is not a same-force fluid counterexample or an
+unconditional blow-up theorem. Next trace exact-core pressure-family/global
+backward-pressure identification and discharge retained analytical premises.
+Historical fields and frozen evidence are unchanged.
+
+The preceding [canonical compact-force join](results/canonical_force_join/README.md)
 localizes the SAME canonical field with complete potential/pressure terms,
 zero initial velocity, one smooth compact global FORCE and preterminal
 energy/dissipation bounds, conditional on retained analytical premises.

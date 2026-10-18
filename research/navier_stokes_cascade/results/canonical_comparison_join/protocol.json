@@ -1,0 +1,19 @@
+{
+  "parent_commit": "634356dff6d7b6c0b350c714cd11403d52c216ae",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "fixed": "Md64,unit viscosity,original h,N,positive lambda,pulse radius,width C_setup^-20,labels,carriers,supports,qstar,both diagonal schedules,fixed operator gauges",
+  "field": "canonical_force_join: THIS u=curl(c*Ac)+c*Bc,p=c*pc,full twelve-term force and zero datum; not historical force or field",
+  "competitor": "same datum and force; smooth on compact sets; finite sup_[0,T] L2 for every T<1; no global pressure gradient dissipation or solution energy inequality premise",
+  "pressure": "g=vv-uu=ww+h,h=wu+uw; -Delta pi=DDg only AFTER same force cancels; individual -Delta p=DD(uu)-div f",
+  "recovery": "pi_star in H^-2; time-averaged momentum puts harmonic gradient difference in H^-3; Fourier weighted L2 function supported at zero is zero",
+  "multipole": "pi_h=k(x):M+error; M=int h; |error|<=384/(4*pi)*L*H_T*R^-4 for R>=max(1,2L); directional derivative <=24/(4*pi)*r^-4",
+  "witness": "V=(-x2,x1,0)*rho(|x|^2) smooth compact radial; u=w=V tensor only; M=2a diag(1,1,0),axis contraction -4a/(4*pi*R^3),a>0",
+  "cutoff": "phi_R^8; local Sobolev only; quadratic main L^(3/2); commutator L^(4/3) with both near cancellation and far cap",
+  "radius": "Young decays 4,14/5; offsets and mixed flux 5/2; complete Laplacian remainder 2",
+  "energy": "0.5 E_R_prime+0.5 D_R^2<=L_T E_R+C_T R^-2; E_R<=2 C_T T exp(2 L_T T) R^-2",
+  "dissipation": "integral_0^t D_R^2<=2 C_T t*(1+2 L_T T exp(2 L_T T))*R^-2",
+  "order": "fix T<1,then R->infinity,then approach protected core; no uniform terminal comparison constant",
+  "core": "tau<=min(tau0/2,rL^2/(8*Xin)); canonical localization radius rL, retained e0,Aexp positive",
+  "external": "Riesz Lp boundedness; Knapp Advanced Real Analysis III.5 Theorem 3.26 and III.6 Example 1, printed pp83,93; rechecked 2026-10-18",
+  "scope": "conditional canonical downstream comparison/exclusion implication only; exact-core pressure identification and retained analytical premises remain"
+}

@@ -1,0 +1,3666 @@
+{
+  "flags": {
+    "Poisson_alone_used_to_remove_harmonic_pressure_gradient": false,
+    "actual_infinite_fields_or_competitor_numerically_evaluated": false,
+    "all_historical_fields_sources_and_frozen_evidence_preserved": true,
+    "canonical_global_competitor_comparison_and_exclusion_relative_to_retained_premises": true,
+    "canonical_protected_path_uses_same_localization_radius": true,
+    "compact_divergence_free_tensor_witness_has_nonzero_trace_free_moment": true,
+    "compact_mixed_pressure_moment_expansion_with_uniform_radius_four_error": true,
+    "compactness_and_divergence_freedom_assumed_to_force_moment_isotropy": false,
+    "comparison_constants_claimed_uniform_through_terminal_time": false,
+    "complete_expanding_ball_energy_and_integrated_local_dissipation_decay_radius_two": true,
+    "formal_certificate": false,
+    "full_individual_forced_pressure_and_exact_difference_cancellation_retained": true,
+    "future_velocity_or_pressure_constructed": false,
+    "individual_pressure_replaced_by_unforced_Riesz_formula": false,
+    "no_global_competitor_gradient_dissipation_or_energy_inequality_hypothesis_added": true,
+    "old_special_field_identified_with_canonical_field": false,
+    "ordinary_comparison_hypotheses_checked_on_canonical_force_parent": true,
+    "retained_core_background_and_finite_analytical_premises_discharged": false,
+    "same_canonical_complete_field_force_zero_datum_and_pressure_used": true,
+    "tensor_witness_claimed_same_force_NS_flow_pair": false,
+    "time_averaged_momentum_recovers_gradient_without_pressure_growth_hypothesis": true,
+    "unconditional_admissibility_residual_or_blowup_proved": false
+  },
+  "gates": {
+    "canonical_force_comparison_interface": true,
+    "complete_radius_two_budget": true,
+    "exact_compact_pressure_exterior": true,
+    "exact_complete_difference_energy": true,
+    "fixed_interval_energy_dissipation_and_canonical_core": true,
+    "historical_recursive_source_bytes": true,
+    "new_compact_mixed_moment_controls": true,
+    "pressure_gradient_and_retained_mixed_memory": true
+  },
+  "inherited_provenance": {
+    "bindings": {
+      "results/activated_collar_foundation/evidence.json:results/activated_collar_foundation/.gitignore": true,
+      "results/activated_collar_foundation/evidence.json:results/activated_collar_foundation/README.md": true,
+      "results/activated_collar_foundation/evidence.json:results/activated_collar_foundation/activation_bounds.py": true,
+      "results/activated_collar_foundation/evidence.json:results/activated_collar_foundation/activation_checks.py": true,
+      "results/activated_collar_foundation/evidence.json:results/activated_collar_foundation/audit.py": true,
+      "results/activated_collar_foundation/evidence.json:results/activated_collar_foundation/protocol.json": true,
+      "results/activated_collar_foundation/evidence.json:results/activated_collar_foundation/requirements.txt": true,
+      "results/activated_collar_foundation/evidence.json:results/activated_collar_foundation/test_audit.py": true,
+      "results/activated_collar_foundation/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/activated_collar_foundation/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/activated_collar_foundation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/activated_collar_foundation/evidence.json:results/core_all_order_foundation/evidence.json": true,
+      "results/activated_collar_foundation/evidence.json:results/core_growth_activation/evidence.json": true,
+      "results/activated_collar_foundation/evidence.json:results/inner_collar_activation/evidence.json": true,
+      "results/actual_band_pulse_bounds/evidence.json:GOAL.md": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/actual_band_pulse_bounds/README.md": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/actual_band_pulse_bounds/audit.py": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/actual_band_pulse_bounds/bounds.py": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/actual_band_pulse_bounds/charts.py": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/actual_band_pulse_bounds/diagnostics.py": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/actual_band_pulse_bounds/protocol.json": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/actual_band_pulse_bounds/requirements.txt": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/actual_band_pulse_bounds/test_audit.py": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/background_summation/evidence.json": true,
+      "results/actual_band_pulse_bounds/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/angular_c2_transfer/evidence.json:results/angular_c2_transfer/README.md": true,
+      "results/angular_c2_transfer/evidence.json:results/angular_c2_transfer/audit.py": true,
+      "results/angular_c2_transfer/evidence.json:results/angular_c2_transfer/bounds.py": true,
+      "results/angular_c2_transfer/evidence.json:results/angular_c2_transfer/jets.py": true,
+      "results/angular_c2_transfer/evidence.json:results/angular_c2_transfer/protocol.json": true,
+      "results/angular_c2_transfer/evidence.json:results/angular_c2_transfer/requirements.txt": true,
+      "results/angular_c2_transfer/evidence.json:results/angular_c2_transfer/review.py": true,
+      "results/angular_c2_transfer/evidence.json:results/angular_c2_transfer/test_audit.py": true,
+      "results/angular_c2_transfer/evidence.json:results/axial_stress_audit/bounds.py": true,
+      "results/angular_c2_transfer/evidence.json:results/axis_core_attachment/README.md": true,
+      "results/angular_c2_transfer/evidence.json:results/axis_core_attachment/bounds.py": true,
+      "results/angular_c2_transfer/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/angular_c2_transfer/evidence.json:results/axis_matching_audit/README.md": true,
+      "results/angular_c2_transfer/evidence.json:results/axis_matching_audit/annulus.py": true,
+      "results/angular_c2_transfer/evidence.json:results/axis_matching_audit/bounds.py": true,
+      "results/angular_c2_transfer/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/angular_c2_transfer/evidence.json:results/axis_matching_audit/moments.py": true,
+      "results/angular_c2_transfer/evidence.json:results/joined_stress_construction/README.md": true,
+      "results/angular_c2_transfer/evidence.json:results/joined_stress_construction/construction.py": true,
+      "results/angular_c2_transfer/evidence.json:results/joined_stress_construction/evidence.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/annular_exterior_foundation/.gitignore": true,
+      "results/annular_exterior_foundation/evidence.json:results/annular_exterior_foundation/README.md": true,
+      "results/annular_exterior_foundation/evidence.json:results/annular_exterior_foundation/audit.py": true,
+      "results/annular_exterior_foundation/evidence.json:results/annular_exterior_foundation/exterior_bounds.py": true,
+      "results/annular_exterior_foundation/evidence.json:results/annular_exterior_foundation/exterior_checks.py": true,
+      "results/annular_exterior_foundation/evidence.json:results/annular_exterior_foundation/protocol.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/annular_exterior_foundation/requirements.txt": true,
+      "results/annular_exterior_foundation/evidence.json:results/annular_exterior_foundation/test_audit.py": true,
+      "results/annular_exterior_foundation/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/core_all_order_foundation/coordinate_checks.py": true,
+      "results/annular_exterior_foundation/evidence.json:results/global_moment_stress/evidence.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/modulation_repair_all_order/evidence.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/modulation_repair_all_order/map_checks.py": true,
+      "results/annular_exterior_foundation/evidence.json:results/pulse_moment_audit/evidence.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/regional_cone_join/evidence.json": true,
+      "results/annular_exterior_foundation/evidence.json:results/shape_join_pressure/evidence.json": true,
+      "results/annular_first_correction/evidence.json:GOAL.md": true,
+      "results/annular_first_correction/evidence.json:results/annular_first_correction/README.md": true,
+      "results/annular_first_correction/evidence.json:results/annular_first_correction/audit.py": true,
+      "results/annular_first_correction/evidence.json:results/annular_first_correction/checks.py": true,
+      "results/annular_first_correction/evidence.json:results/annular_first_correction/extension.py": true,
+      "results/annular_first_correction/evidence.json:results/annular_first_correction/fixtures.py": true,
+      "results/annular_first_correction/evidence.json:results/annular_first_correction/protocol.json": true,
+      "results/annular_first_correction/evidence.json:results/annular_first_correction/requirements.txt": true,
+      "results/annular_first_correction/evidence.json:results/annular_first_correction/test_audit.py": true,
+      "results/annular_first_correction/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/annular_first_correction/evidence.json:results/first_correction_construction/evidence.json": true,
+      "results/annular_first_correction/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/annular_first_correction/evidence.json:results/higher_jet_budget/evidence.json": true,
+      "results/annular_first_correction/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/annular_first_correction/evidence.json:results/stress_realization_audit/evidence.json": true,
+      "results/auxiliary_geometry_audit/evidence.json:GOAL.md": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/auxiliary_geometry_audit/.gitignore": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/auxiliary_geometry_audit/README.md": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/auxiliary_geometry_audit/audit.py": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/auxiliary_geometry_audit/checks.py": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/auxiliary_geometry_audit/geometry.py": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/auxiliary_geometry_audit/protocol.json": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/auxiliary_geometry_audit/requirements.txt": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/auxiliary_geometry_audit/test_audit.py": true,
+      "results/auxiliary_geometry_audit/evidence.json:results/global_solution_comparison/evidence.json": true,
+      "results/axial_root_foundation/evidence.json:results/annular_exterior_foundation/evidence.json": true,
+      "results/axial_root_foundation/evidence.json:results/axial_root_foundation/.gitignore": true,
+      "results/axial_root_foundation/evidence.json:results/axial_root_foundation/README.md": true,
+      "results/axial_root_foundation/evidence.json:results/axial_root_foundation/audit.py": true,
+      "results/axial_root_foundation/evidence.json:results/axial_root_foundation/axial_bounds.py": true,
+      "results/axial_root_foundation/evidence.json:results/axial_root_foundation/axial_checks.py": true,
+      "results/axial_root_foundation/evidence.json:results/axial_root_foundation/protocol.json": true,
+      "results/axial_root_foundation/evidence.json:results/axial_root_foundation/requirements.txt": true,
+      "results/axial_root_foundation/evidence.json:results/axial_root_foundation/test_audit.py": true,
+      "results/axial_root_foundation/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/axial_root_foundation/evidence.json:results/core_all_order_foundation/evidence.json": true,
+      "results/axial_root_foundation/evidence.json:results/global_moment_stress/evidence.json": true,
+      "results/axial_root_foundation/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/axial_root_foundation/evidence.json:results/modulation_repair_all_order/evidence.json": true,
+      "results/axial_root_foundation/evidence.json:results/pulse_moment_audit/bounds.py": true,
+      "results/axial_root_foundation/evidence.json:results/pulse_moment_audit/evidence.json": true,
+      "results/axial_root_foundation/evidence.json:results/pulse_moment_audit/pulse.py": true,
+      "results/axial_root_foundation/evidence.json:results/root_foundation/evidence.json": true,
+      "results/axis_core_attachment/evidence.json:results/axis_core_attachment/README.md": true,
+      "results/axis_core_attachment/evidence.json:results/axis_core_attachment/audit.py": true,
+      "results/axis_core_attachment/evidence.json:results/axis_core_attachment/bounds.py": true,
+      "results/axis_core_attachment/evidence.json:results/axis_core_attachment/identities.py": true,
+      "results/axis_core_attachment/evidence.json:results/axis_core_attachment/protocol.json": true,
+      "results/axis_core_attachment/evidence.json:results/axis_core_attachment/requirements.txt": true,
+      "results/axis_core_attachment/evidence.json:results/axis_core_attachment/test_audit.py": true,
+      "results/axis_core_attachment/evidence.json:results/axis_matching_audit/README.md": true,
+      "results/axis_core_attachment/evidence.json:results/axis_matching_audit/annulus.py": true,
+      "results/axis_core_attachment/evidence.json:results/axis_matching_audit/bounds.py": true,
+      "results/axis_core_attachment/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/axis_core_attachment/evidence.json:results/axis_matching_audit/moments.py": true,
+      "results/axis_core_attachment/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/axis_core_attachment/evidence.json:results/outer_pressure_pilot/schedule.py": true,
+      "results/background_jet_foundation/evidence.json:EXTERNAL_REVIEW_2026-10-15.md": true,
+      "results/background_jet_foundation/evidence.json:GOAL.md": true,
+      "results/background_jet_foundation/evidence.json:results/background_jet_foundation/.gitignore": true,
+      "results/background_jet_foundation/evidence.json:results/background_jet_foundation/README.md": true,
+      "results/background_jet_foundation/evidence.json:results/background_jet_foundation/audit.py": true,
+      "results/background_jet_foundation/evidence.json:results/background_jet_foundation/diagnostics.py": true,
+      "results/background_jet_foundation/evidence.json:results/background_jet_foundation/foundation.py": true,
+      "results/background_jet_foundation/evidence.json:results/background_jet_foundation/protocol.json": true,
+      "results/background_jet_foundation/evidence.json:results/background_jet_foundation/requirements.txt": true,
+      "results/background_jet_foundation/evidence.json:results/background_jet_foundation/test_audit.py": true,
+      "results/background_jet_foundation/evidence.json:results/background_summation/evidence.json": true,
+      "results/background_jet_foundation/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/background_summation/evidence.json:GOAL.md": true,
+      "results/background_summation/evidence.json:results/annular_first_correction/evidence.json": true,
+      "results/background_summation/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/background_summation/evidence.json:results/background_summation/README.md": true,
+      "results/background_summation/evidence.json:results/background_summation/audit.py": true,
+      "results/background_summation/evidence.json:results/background_summation/checks.py": true,
+      "results/background_summation/evidence.json:results/background_summation/hierarchy.py": true,
+      "results/background_summation/evidence.json:results/background_summation/protocol.json": true,
+      "results/background_summation/evidence.json:results/background_summation/requirements.txt": true,
+      "results/background_summation/evidence.json:results/background_summation/summation.py": true,
+      "results/background_summation/evidence.json:results/background_summation/test_audit.py": true,
+      "results/background_summation/evidence.json:results/first_correction_construction/evidence.json": true,
+      "results/background_summation/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/background_summation/evidence.json:results/higher_jet_budget/evidence.json": true,
+      "results/background_summation/evidence.json:results/physical_residual_budget/evidence.json": true,
+      "results/background_summation/evidence.json:results/stress_realization_audit/evidence.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/annular_exterior_foundation/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/annular_exterior_foundation/evidence.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/auxiliary_geometry_audit/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/auxiliary_geometry_audit/evidence.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_endpoint_join/.gitignore": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_endpoint_join/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_endpoint_join/audit.py": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_endpoint_join/endpoint_bounds.py": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_endpoint_join/endpoint_checks.py": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_endpoint_join/protocol.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_endpoint_join/requirements.txt": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_endpoint_join/test_audit.py": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_local_realization/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_local_realization/evidence.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_primary_foundation/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/canonical_primary_foundation/evidence.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/compact_mean_foundation/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/core_all_order_foundation/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/core_all_order_foundation/evidence.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/endpoint_foundation/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/endpoint_foundation/evidence.json": true,
+      "results/canonical_endpoint_join/evidence.json:results/endpoint_foundation/terminal_bounds.py": true,
+      "results/canonical_endpoint_join/evidence.json:results/endpoint_foundation/terminal_checks.py": true,
+      "results/canonical_endpoint_join/evidence.json:results/physical_pulse_foundation/README.md": true,
+      "results/canonical_endpoint_join/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_finite_cycle_join/.gitignore": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_finite_cycle_join/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_finite_cycle_join/audit.py": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_finite_cycle_join/cycle_bounds.py": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_finite_cycle_join/freshness.py": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_finite_cycle_join/protocol.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_finite_cycle_join/requirements.txt": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_finite_cycle_join/test_audit.py": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_initial_mean_join/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_initial_mean_join/evidence.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_primary_foundation/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/canonical_primary_foundation/evidence.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/current_complex_foundation/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/current_complex_foundation/evidence.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/finite_induction_foundation/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/finite_induction_foundation/evidence.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/first_sourced_foundation/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/first_sourced_foundation/evidence.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/harmonic_closure_foundation/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/harmonic_closure_foundation/evidence.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/regular_source_foundation/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/regular_source_foundation/evidence.json": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/sourced_inverse_foundation/README.md": true,
+      "results/canonical_finite_cycle_join/evidence.json:results/sourced_inverse_foundation/evidence.json": true,
+      "results/canonical_force_join/evidence.json:results/canonical_endpoint_join/README.md": true,
+      "results/canonical_force_join/evidence.json:results/canonical_endpoint_join/evidence.json": true,
+      "results/canonical_force_join/evidence.json:results/canonical_force_join/.gitignore": true,
+      "results/canonical_force_join/evidence.json:results/canonical_force_join/README.md": true,
+      "results/canonical_force_join/evidence.json:results/canonical_force_join/audit.py": true,
+      "results/canonical_force_join/evidence.json:results/canonical_force_join/force_bounds.py": true,
+      "results/canonical_force_join/evidence.json:results/canonical_force_join/force_checks.py": true,
+      "results/canonical_force_join/evidence.json:results/canonical_force_join/protocol.json": true,
+      "results/canonical_force_join/evidence.json:results/canonical_force_join/requirements.txt": true,
+      "results/canonical_force_join/evidence.json:results/canonical_force_join/test_audit.py": true,
+      "results/canonical_force_join/evidence.json:results/canonical_local_realization/README.md": true,
+      "results/canonical_force_join/evidence.json:results/canonical_local_realization/evidence.json": true,
+      "results/canonical_force_join/evidence.json:results/current_localized_force/README.md": true,
+      "results/canonical_force_join/evidence.json:results/current_localized_force/evidence.json": true,
+      "results/canonical_force_join/evidence.json:results/endpoint_foundation/README.md": true,
+      "results/canonical_force_join/evidence.json:results/endpoint_foundation/evidence.json": true,
+      "results/canonical_force_join/evidence.json:results/force_foundation/README.md": true,
+      "results/canonical_force_join/evidence.json:results/force_foundation/evidence.json": true,
+      "results/canonical_force_join/evidence.json:results/force_foundation/localized_bounds.py": true,
+      "results/canonical_force_join/evidence.json:results/force_foundation/localized_checks.py": true,
+      "results/canonical_force_join/evidence.json:results/localized_force_extension/README.md": true,
+      "results/canonical_force_join/evidence.json:results/localized_force_extension/evidence.json": true,
+      "results/canonical_force_join/evidence.json:results/physical_pulse_foundation/README.md": true,
+      "results/canonical_force_join/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/canonical_force_join/evidence.json:results/realization_foundation/README.md": true,
+      "results/canonical_force_join/evidence.json:results/realization_foundation/evidence.json": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_initial_mean_join/.gitignore": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_initial_mean_join/README.md": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_initial_mean_join/audit.py": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_initial_mean_join/mean_checks.py": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_initial_mean_join/protocol.json": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_initial_mean_join/real_covariance.py": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_initial_mean_join/requirements.txt": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_initial_mean_join/test_audit.py": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_primary_foundation/README.md": true,
+      "results/canonical_initial_mean_join/evidence.json:results/canonical_primary_foundation/evidence.json": true,
+      "results/canonical_initial_mean_join/evidence.json:results/compact_mean_foundation/README.md": true,
+      "results/canonical_initial_mean_join/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/canonical_initial_mean_join/evidence.json:results/complete_covariance_initial_means/README.md": true,
+      "results/canonical_initial_mean_join/evidence.json:results/complete_covariance_initial_means/evidence.json": true,
+      "results/canonical_initial_mean_join/evidence.json:results/harmonic_closure_foundation/README.md": true,
+      "results/canonical_initial_mean_join/evidence.json:results/harmonic_closure_foundation/evidence.json": true,
+      "results/canonical_initial_mean_join/evidence.json:results/physical_wave_interface/README.md": true,
+      "results/canonical_initial_mean_join/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/canonical_local_realization/evidence.json:results/background_summation/README.md": true,
+      "results/canonical_local_realization/evidence.json:results/background_summation/evidence.json": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_finite_cycle_join/README.md": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_finite_cycle_join/evidence.json": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_local_realization/.gitignore": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_local_realization/README.md": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_local_realization/audit.py": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_local_realization/gauge_checks.py": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_local_realization/protocol.json": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_local_realization/realization.py": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_local_realization/requirements.txt": true,
+      "results/canonical_local_realization/evidence.json:results/canonical_local_realization/test_audit.py": true,
+      "results/canonical_local_realization/evidence.json:results/compact_mean_foundation/README.md": true,
+      "results/canonical_local_realization/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/canonical_local_realization/evidence.json:results/finite_induction_foundation/README.md": true,
+      "results/canonical_local_realization/evidence.json:results/finite_induction_foundation/evidence.json": true,
+      "results/canonical_local_realization/evidence.json:results/physical_pulse_foundation/README.md": true,
+      "results/canonical_local_realization/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/canonical_local_realization/evidence.json:results/realization_foundation/README.md": true,
+      "results/canonical_local_realization/evidence.json:results/realization_foundation/evidence.json": true,
+      "results/canonical_local_realization/evidence.json:results/realization_foundation/realized_checks.py": true,
+      "results/canonical_primary_foundation/evidence.json:results/canonical_primary_foundation/.gitignore": true,
+      "results/canonical_primary_foundation/evidence.json:results/canonical_primary_foundation/README.md": true,
+      "results/canonical_primary_foundation/evidence.json:results/canonical_primary_foundation/audit.py": true,
+      "results/canonical_primary_foundation/evidence.json:results/canonical_primary_foundation/canonical_bounds.py": true,
+      "results/canonical_primary_foundation/evidence.json:results/canonical_primary_foundation/canonical_checks.py": true,
+      "results/canonical_primary_foundation/evidence.json:results/canonical_primary_foundation/protocol.json": true,
+      "results/canonical_primary_foundation/evidence.json:results/canonical_primary_foundation/requirements.txt": true,
+      "results/canonical_primary_foundation/evidence.json:results/canonical_primary_foundation/test_audit.py": true,
+      "results/canonical_primary_foundation/evidence.json:results/frame_column_foundation/README.md": true,
+      "results/canonical_primary_foundation/evidence.json:results/frame_column_foundation/evidence.json": true,
+      "results/canonical_primary_foundation/evidence.json:results/gaussian_mass_foundation/README.md": true,
+      "results/canonical_primary_foundation/evidence.json:results/gaussian_mass_foundation/evidence.json": true,
+      "results/canonical_primary_foundation/evidence.json:results/geometric_pulse_replay/README.md": true,
+      "results/canonical_primary_foundation/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/canonical_primary_foundation/evidence.json:results/physical_pulse_foundation/README.md": true,
+      "results/canonical_primary_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/canonical_primary_foundation/evidence.json:results/primary_covariance_foundation/README.md": true,
+      "results/canonical_primary_foundation/evidence.json:results/primary_covariance_foundation/evidence.json": true,
+      "results/coefficient_support_audit/evidence.json:results/annular_first_correction/evidence.json": true,
+      "results/coefficient_support_audit/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/coefficient_support_audit/evidence.json:results/background_summation/evidence.json": true,
+      "results/coefficient_support_audit/evidence.json:results/coefficient_support_audit/.gitignore": true,
+      "results/coefficient_support_audit/evidence.json:results/coefficient_support_audit/README.md": true,
+      "results/coefficient_support_audit/evidence.json:results/coefficient_support_audit/audit.py": true,
+      "results/coefficient_support_audit/evidence.json:results/coefficient_support_audit/protocol.json": true,
+      "results/coefficient_support_audit/evidence.json:results/coefficient_support_audit/requirements.txt": true,
+      "results/coefficient_support_audit/evidence.json:results/coefficient_support_audit/supports.py": true,
+      "results/coefficient_support_audit/evidence.json:results/coefficient_support_audit/test_audit.py": true,
+      "results/coefficient_support_audit/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/coefficient_support_audit/evidence.json:results/outer_edge_stability/evidence.json": true,
+      "results/coefficient_support_audit/evidence.json:results/regional_cone_join/evidence.json": true,
+      "results/coefficient_support_foundation/evidence.json:results/annular_first_correction/extension.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/annular_first_correction/fixtures.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/background_summation/hierarchy.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/.gitignore": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/README.md": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/audit.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/conservative_checks.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/linear_checks.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/protocol.json": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/requirements.txt": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/support_bounds.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/coefficient_support_foundation/test_audit.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/global_pressure_moment_foundation/evidence.json": true,
+      "results/coefficient_support_foundation/evidence.json:results/matching_root_foundation/matching_bounds.py": true,
+      "results/coefficient_support_foundation/evidence.json:results/weighted_stress_foundation/evidence.json": true,
+      "results/compact_jet_envelope/evidence.json:results/angular_c2_transfer/README.md": true,
+      "results/compact_jet_envelope/evidence.json:results/angular_c2_transfer/bounds.py": true,
+      "results/compact_jet_envelope/evidence.json:results/angular_c2_transfer/evidence.json": true,
+      "results/compact_jet_envelope/evidence.json:results/axial_stress_audit/README.md": true,
+      "results/compact_jet_envelope/evidence.json:results/axial_stress_audit/bounds.py": true,
+      "results/compact_jet_envelope/evidence.json:results/axial_stress_audit/evidence.json": true,
+      "results/compact_jet_envelope/evidence.json:results/axis_core_attachment/README.md": true,
+      "results/compact_jet_envelope/evidence.json:results/axis_core_attachment/bounds.py": true,
+      "results/compact_jet_envelope/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/compact_jet_envelope/evidence.json:results/axis_matching_audit/README.md": true,
+      "results/compact_jet_envelope/evidence.json:results/axis_matching_audit/bounds.py": true,
+      "results/compact_jet_envelope/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/compact_jet_envelope/evidence.json:results/compact_jet_envelope/README.md": true,
+      "results/compact_jet_envelope/evidence.json:results/compact_jet_envelope/audit.py": true,
+      "results/compact_jet_envelope/evidence.json:results/compact_jet_envelope/bounds.py": true,
+      "results/compact_jet_envelope/evidence.json:results/compact_jet_envelope/jets.py": true,
+      "results/compact_jet_envelope/evidence.json:results/compact_jet_envelope/protocol.json": true,
+      "results/compact_jet_envelope/evidence.json:results/compact_jet_envelope/requirements.txt": true,
+      "results/compact_jet_envelope/evidence.json:results/compact_jet_envelope/review.py": true,
+      "results/compact_jet_envelope/evidence.json:results/compact_jet_envelope/test_audit.py": true,
+      "results/compact_jet_envelope/evidence.json:results/intermediate_decay_audit/README.md": true,
+      "results/compact_jet_envelope/evidence.json:results/intermediate_decay_audit/bounds.py": true,
+      "results/compact_jet_envelope/evidence.json:results/intermediate_decay_audit/evidence.json": true,
+      "results/compact_jet_envelope/evidence.json:results/joined_stress_construction/README.md": true,
+      "results/compact_jet_envelope/evidence.json:results/joined_stress_construction/construction.py": true,
+      "results/compact_jet_envelope/evidence.json:results/joined_stress_construction/evidence.json": true,
+      "results/compact_jet_envelope/evidence.json:results/stress_realization_audit/README.md": true,
+      "results/compact_mean_corrections/evidence.json:GOAL.md": true,
+      "results/compact_mean_corrections/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/compact_mean_corrections/evidence.json:results/background_summation/evidence.json": true,
+      "results/compact_mean_corrections/evidence.json:results/compact_mean_corrections/README.md": true,
+      "results/compact_mean_corrections/evidence.json:results/compact_mean_corrections/audit.py": true,
+      "results/compact_mean_corrections/evidence.json:results/compact_mean_corrections/mean_system.py": true,
+      "results/compact_mean_corrections/evidence.json:results/compact_mean_corrections/operators.py": true,
+      "results/compact_mean_corrections/evidence.json:results/compact_mean_corrections/protocol.json": true,
+      "results/compact_mean_corrections/evidence.json:results/compact_mean_corrections/requirements.txt": true,
+      "results/compact_mean_corrections/evidence.json:results/compact_mean_corrections/reviews.py": true,
+      "results/compact_mean_corrections/evidence.json:results/compact_mean_corrections/test_audit.py": true,
+      "results/compact_mean_corrections/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/compact_mean_foundation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_corrections/README.md": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_corrections/mean_system.py": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_corrections/operators.py": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_foundation/.gitignore": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_foundation/README.md": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_foundation/audit.py": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_foundation/mean_maps.py": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_foundation/protocol.json": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_foundation/requirements.txt": true,
+      "results/compact_mean_foundation/evidence.json:results/compact_mean_foundation/test_audit.py": true,
+      "results/compact_mean_foundation/evidence.json:results/complete_covariance_initial_means/evidence.json": true,
+      "results/compact_mean_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/compact_mean_foundation/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/compact_pressure_bridge/evidence.json:results/compact_pressure_bridge/.gitignore": true,
+      "results/compact_pressure_bridge/evidence.json:results/compact_pressure_bridge/README.md": true,
+      "results/compact_pressure_bridge/evidence.json:results/compact_pressure_bridge/audit.py": true,
+      "results/compact_pressure_bridge/evidence.json:results/compact_pressure_bridge/bridge.py": true,
+      "results/compact_pressure_bridge/evidence.json:results/compact_pressure_bridge/protocol.json": true,
+      "results/compact_pressure_bridge/evidence.json:results/compact_pressure_bridge/requirements.txt": true,
+      "results/compact_pressure_bridge/evidence.json:results/compact_pressure_bridge/test_audit.py": true,
+      "results/compact_pressure_bridge/evidence.json:results/core_growth_activation/evidence.json": true,
+      "results/compact_pressure_bridge/evidence.json:results/loop_modulation_bounds/evidence.json": true,
+      "results/compact_pressure_bridge/evidence.json:results/outer_edge_stability/evidence.json": true,
+      "results/compact_pressure_bridge/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/comparison_foundation/.gitignore": true,
+      "results/comparison_foundation/evidence.json:results/comparison_foundation/README.md": true,
+      "results/comparison_foundation/evidence.json:results/comparison_foundation/audit.py": true,
+      "results/comparison_foundation/evidence.json:results/comparison_foundation/compact_bounds.py": true,
+      "results/comparison_foundation/evidence.json:results/comparison_foundation/compact_checks.py": true,
+      "results/comparison_foundation/evidence.json:results/comparison_foundation/protocol.json": true,
+      "results/comparison_foundation/evidence.json:results/comparison_foundation/requirements.txt": true,
+      "results/comparison_foundation/evidence.json:results/comparison_foundation/test_audit.py": true,
+      "results/comparison_foundation/evidence.json:results/core_all_order_foundation/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/core_contraction_audit/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/current_solution_comparison/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/endpoint_foundation/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/finite_induction_foundation/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/force_foundation/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/global_solution_comparison/comparison_bounds.py": true,
+      "results/comparison_foundation/evidence.json:results/global_solution_comparison/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/realization_foundation/evidence.json": true,
+      "results/comparison_foundation/evidence.json:results/realization_foundation/realized_checks.py": true,
+      "results/complete_covariance_initial_means/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/complete_covariance_initial_means/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/complete_covariance_initial_means/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/complete_covariance_initial_means/evidence.json:results/complete_covariance_initial_means/.gitignore": true,
+      "results/complete_covariance_initial_means/evidence.json:results/complete_covariance_initial_means/README.md": true,
+      "results/complete_covariance_initial_means/evidence.json:results/complete_covariance_initial_means/audit.py": true,
+      "results/complete_covariance_initial_means/evidence.json:results/complete_covariance_initial_means/means.py": true,
+      "results/complete_covariance_initial_means/evidence.json:results/complete_covariance_initial_means/protocol.json": true,
+      "results/complete_covariance_initial_means/evidence.json:results/complete_covariance_initial_means/requirements.txt": true,
+      "results/complete_covariance_initial_means/evidence.json:results/complete_covariance_initial_means/test_audit.py": true,
+      "results/complete_covariance_initial_means/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/complete_covariance_initial_means/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/complete_covariance_initial_means/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/complete_covariance_initial_means/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/complete_covariance_initial_means/evidence.json:results/weighted_background_edges/evidence.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/complex_mean_relaxation/.gitignore": true,
+      "results/complex_mean_relaxation/evidence.json:results/complex_mean_relaxation/README.md": true,
+      "results/complex_mean_relaxation/evidence.json:results/complex_mean_relaxation/audit.py": true,
+      "results/complex_mean_relaxation/evidence.json:results/complex_mean_relaxation/protocol.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/complex_mean_relaxation/relaxation.py": true,
+      "results/complex_mean_relaxation/evidence.json:results/complex_mean_relaxation/requirements.txt": true,
+      "results/complex_mean_relaxation/evidence.json:results/complex_mean_relaxation/test_audit.py": true,
+      "results/complex_mean_relaxation/evidence.json:results/complex_signed_covariance_update/evidence.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/first_sourced_wave_update/evidence.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/post_signed_mean_relaxation/evidence.json": true,
+      "results/complex_mean_relaxation/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/complex_signed_covariance_update/.gitignore": true,
+      "results/complex_signed_covariance_update/evidence.json:results/complex_signed_covariance_update/README.md": true,
+      "results/complex_signed_covariance_update/evidence.json:results/complex_signed_covariance_update/audit.py": true,
+      "results/complex_signed_covariance_update/evidence.json:results/complex_signed_covariance_update/covariance.py": true,
+      "results/complex_signed_covariance_update/evidence.json:results/complex_signed_covariance_update/protocol.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/complex_signed_covariance_update/replay.py": true,
+      "results/complex_signed_covariance_update/evidence.json:results/complex_signed_covariance_update/requirements.txt": true,
+      "results/complex_signed_covariance_update/evidence.json:results/complex_signed_covariance_update/test_audit.py": true,
+      "results/complex_signed_covariance_update/evidence.json:results/first_sourced_wave_update/evidence.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/post_signed_mean_relaxation/evidence.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/real_signed_covariance_update/evidence.json": true,
+      "results/complex_signed_covariance_update/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/core_all_order_foundation/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/core_all_order_foundation/evidence.json:results/core_all_order_foundation/.gitignore": true,
+      "results/core_all_order_foundation/evidence.json:results/core_all_order_foundation/README.md": true,
+      "results/core_all_order_foundation/evidence.json:results/core_all_order_foundation/audit.py": true,
+      "results/core_all_order_foundation/evidence.json:results/core_all_order_foundation/coordinate_checks.py": true,
+      "results/core_all_order_foundation/evidence.json:results/core_all_order_foundation/foundation.py": true,
+      "results/core_all_order_foundation/evidence.json:results/core_all_order_foundation/protocol.json": true,
+      "results/core_all_order_foundation/evidence.json:results/core_all_order_foundation/requirements.txt": true,
+      "results/core_all_order_foundation/evidence.json:results/core_all_order_foundation/test_audit.py": true,
+      "results/core_all_order_foundation/evidence.json:results/core_contraction_audit/evidence.json": true,
+      "results/core_all_order_foundation/evidence.json:results/core_growth_activation/evidence.json": true,
+      "results/core_all_order_foundation/evidence.json:results/current_solution_comparison/evidence.json": true,
+      "results/core_all_order_foundation/evidence.json:results/paper_profile_audit/evidence.json": true,
+      "results/core_contraction_audit/evidence.json:GOAL.md": true,
+      "results/core_contraction_audit/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/core_contraction_audit/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/core_contraction_audit/evidence.json:results/core_contraction_audit/.gitignore": true,
+      "results/core_contraction_audit/evidence.json:results/core_contraction_audit/README.md": true,
+      "results/core_contraction_audit/evidence.json:results/core_contraction_audit/audit.py": true,
+      "results/core_contraction_audit/evidence.json:results/core_contraction_audit/checks.py": true,
+      "results/core_contraction_audit/evidence.json:results/core_contraction_audit/core.py": true,
+      "results/core_contraction_audit/evidence.json:results/core_contraction_audit/protocol.json": true,
+      "results/core_contraction_audit/evidence.json:results/core_contraction_audit/requirements.txt": true,
+      "results/core_contraction_audit/evidence.json:results/core_contraction_audit/test_audit.py": true,
+      "results/core_contraction_audit/evidence.json:results/inner_collar_activation/evidence.json": true,
+      "results/core_growth_activation/evidence.json:GOAL.md": true,
+      "results/core_growth_activation/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/core_growth_activation/evidence.json:results/core_contraction_audit/evidence.json": true,
+      "results/core_growth_activation/evidence.json:results/core_growth_activation/.gitignore": true,
+      "results/core_growth_activation/evidence.json:results/core_growth_activation/README.md": true,
+      "results/core_growth_activation/evidence.json:results/core_growth_activation/audit.py": true,
+      "results/core_growth_activation/evidence.json:results/core_growth_activation/diagnostics.py": true,
+      "results/core_growth_activation/evidence.json:results/core_growth_activation/growth.py": true,
+      "results/core_growth_activation/evidence.json:results/core_growth_activation/protocol.json": true,
+      "results/core_growth_activation/evidence.json:results/core_growth_activation/requirements.txt": true,
+      "results/core_growth_activation/evidence.json:results/core_growth_activation/test_audit.py": true,
+      "results/core_growth_activation/evidence.json:results/inner_collar_activation/evidence.json": true,
+      "results/current_complex_foundation/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/current_complex_foundation/evidence.json:results/complex_mean_relaxation/evidence.json": true,
+      "results/current_complex_foundation/evidence.json:results/complex_signed_covariance_update/evidence.json": true,
+      "results/current_complex_foundation/evidence.json:results/current_complex_foundation/.gitignore": true,
+      "results/current_complex_foundation/evidence.json:results/current_complex_foundation/README.md": true,
+      "results/current_complex_foundation/evidence.json:results/current_complex_foundation/audit.py": true,
+      "results/current_complex_foundation/evidence.json:results/current_complex_foundation/complex_join_bounds.py": true,
+      "results/current_complex_foundation/evidence.json:results/current_complex_foundation/complex_join_checks.py": true,
+      "results/current_complex_foundation/evidence.json:results/current_complex_foundation/protocol.json": true,
+      "results/current_complex_foundation/evidence.json:results/current_complex_foundation/requirements.txt": true,
+      "results/current_complex_foundation/evidence.json:results/current_complex_foundation/test_audit.py": true,
+      "results/current_complex_foundation/evidence.json:results/first_sourced_foundation/evidence.json": true,
+      "results/current_complex_foundation/evidence.json:results/first_sourced_foundation/sourced_checks.py": true,
+      "results/current_complex_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/current_complex_foundation/evidence.json:results/post_signed_mean_relaxation/evidence.json": true,
+      "results/current_complex_foundation/evidence.json:results/post_signed_mean_relaxation/relax.py": true,
+      "results/current_complex_foundation/evidence.json:results/real_signed_covariance_update/evidence.json": true,
+      "results/current_complex_foundation/evidence.json:results/regular_source_foundation/evidence.json": true,
+      "results/current_endpoint_jets/evidence.json:results/auxiliary_geometry_audit/evidence.json": true,
+      "results/current_endpoint_jets/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/current_endpoint_jets/evidence.json:results/current_endpoint_jets/.gitignore": true,
+      "results/current_endpoint_jets/evidence.json:results/current_endpoint_jets/README.md": true,
+      "results/current_endpoint_jets/evidence.json:results/current_endpoint_jets/audit.py": true,
+      "results/current_endpoint_jets/evidence.json:results/current_endpoint_jets/endpoint.py": true,
+      "results/current_endpoint_jets/evidence.json:results/current_endpoint_jets/endpoint_checks.py": true,
+      "results/current_endpoint_jets/evidence.json:results/current_endpoint_jets/protocol.json": true,
+      "results/current_endpoint_jets/evidence.json:results/current_endpoint_jets/requirements.txt": true,
+      "results/current_endpoint_jets/evidence.json:results/current_endpoint_jets/test_audit.py": true,
+      "results/current_endpoint_jets/evidence.json:results/current_potential_realization/evidence.json": true,
+      "results/current_endpoint_jets/evidence.json:results/finite_stage_induction/evidence.json": true,
+      "results/current_endpoint_jets/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/current_endpoint_jets/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/current_endpoint_jets/evidence.json:results/localized_force_extension/evidence.json": true,
+      "results/current_endpoint_jets/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/current_localized_force/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/current_localized_force/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/current_localized_force/evidence.json:results/current_endpoint_jets/evidence.json": true,
+      "results/current_localized_force/evidence.json:results/current_localized_force/.gitignore": true,
+      "results/current_localized_force/evidence.json:results/current_localized_force/README.md": true,
+      "results/current_localized_force/evidence.json:results/current_localized_force/audit.py": true,
+      "results/current_localized_force/evidence.json:results/current_localized_force/current_checks.py": true,
+      "results/current_localized_force/evidence.json:results/current_localized_force/forcing.py": true,
+      "results/current_localized_force/evidence.json:results/current_localized_force/protocol.json": true,
+      "results/current_localized_force/evidence.json:results/current_localized_force/requirements.txt": true,
+      "results/current_localized_force/evidence.json:results/current_localized_force/test_audit.py": true,
+      "results/current_localized_force/evidence.json:results/current_potential_realization/evidence.json": true,
+      "results/current_localized_force/evidence.json:results/finite_stage_induction/evidence.json": true,
+      "results/current_localized_force/evidence.json:results/full_potential_realization/evidence.json": true,
+      "results/current_localized_force/evidence.json:results/localized_force_extension/evidence.json": true,
+      "results/current_localized_force/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/current_potential_realization/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/current_potential_realization/evidence.json:results/background_summation/evidence.json": true,
+      "results/current_potential_realization/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/current_potential_realization/evidence.json:results/complex_mean_relaxation/evidence.json": true,
+      "results/current_potential_realization/evidence.json:results/current_potential_realization/.gitignore": true,
+      "results/current_potential_realization/evidence.json:results/current_potential_realization/README.md": true,
+      "results/current_potential_realization/evidence.json:results/current_potential_realization/audit.py": true,
+      "results/current_potential_realization/evidence.json:results/current_potential_realization/protocol.json": true,
+      "results/current_potential_realization/evidence.json:results/current_potential_realization/realization.py": true,
+      "results/current_potential_realization/evidence.json:results/current_potential_realization/requirements.txt": true,
+      "results/current_potential_realization/evidence.json:results/current_potential_realization/test_audit.py": true,
+      "results/current_potential_realization/evidence.json:results/finite_stage_induction/evidence.json": true,
+      "results/current_potential_realization/evidence.json:results/first_sourced_wave_update/evidence.json": true,
+      "results/current_potential_realization/evidence.json:results/full_potential_realization/evidence.json": true,
+      "results/current_potential_realization/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/current_solution_comparison/evidence.json:results/current_localized_force/evidence.json": true,
+      "results/current_solution_comparison/evidence.json:results/current_solution_comparison/.gitignore": true,
+      "results/current_solution_comparison/evidence.json:results/current_solution_comparison/README.md": true,
+      "results/current_solution_comparison/evidence.json:results/current_solution_comparison/audit.py": true,
+      "results/current_solution_comparison/evidence.json:results/current_solution_comparison/comparison.py": true,
+      "results/current_solution_comparison/evidence.json:results/current_solution_comparison/polynomial_checks.py": true,
+      "results/current_solution_comparison/evidence.json:results/current_solution_comparison/protocol.json": true,
+      "results/current_solution_comparison/evidence.json:results/current_solution_comparison/requirements.txt": true,
+      "results/current_solution_comparison/evidence.json:results/current_solution_comparison/test_audit.py": true,
+      "results/current_solution_comparison/evidence.json:results/global_solution_comparison/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/annular_exterior_foundation/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/annular_exterior_foundation/exterior_bounds.py": true,
+      "results/endpoint_foundation/evidence.json:results/auxiliary_geometry_audit/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/core_all_order_foundation/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/current_endpoint_jets/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/endpoint_foundation/.gitignore": true,
+      "results/endpoint_foundation/evidence.json:results/endpoint_foundation/README.md": true,
+      "results/endpoint_foundation/evidence.json:results/endpoint_foundation/audit.py": true,
+      "results/endpoint_foundation/evidence.json:results/endpoint_foundation/protocol.json": true,
+      "results/endpoint_foundation/evidence.json:results/endpoint_foundation/requirements.txt": true,
+      "results/endpoint_foundation/evidence.json:results/endpoint_foundation/terminal_bounds.py": true,
+      "results/endpoint_foundation/evidence.json:results/endpoint_foundation/terminal_checks.py": true,
+      "results/endpoint_foundation/evidence.json:results/endpoint_foundation/test_audit.py": true,
+      "results/endpoint_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/realization_foundation/evidence.json": true,
+      "results/endpoint_foundation/evidence.json:results/realization_foundation/realized_checks.py": true,
+      "results/finite_induction_foundation/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/finite_induction_foundation/evidence.json:results/current_complex_foundation/complex_join_bounds.py": true,
+      "results/finite_induction_foundation/evidence.json:results/current_complex_foundation/evidence.json": true,
+      "results/finite_induction_foundation/evidence.json:results/current_potential_realization/evidence.json": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_induction_foundation/.gitignore": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_induction_foundation/README.md": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_induction_foundation/audit.py": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_induction_foundation/finite_bounds.py": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_induction_foundation/finite_checks.py": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_induction_foundation/protocol.json": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_induction_foundation/requirements.txt": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_induction_foundation/test_audit.py": true,
+      "results/finite_induction_foundation/evidence.json:results/finite_stage_induction/evidence.json": true,
+      "results/finite_induction_foundation/evidence.json:results/first_sourced_foundation/evidence.json": true,
+      "results/finite_induction_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/finite_induction_foundation/evidence.json:results/regular_source_foundation/evidence.json": true,
+      "results/finite_induction_foundation/evidence.json:results/regular_source_foundation/source_bounds.py": true,
+      "results/finite_induction_foundation/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/finite_stage_induction/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/finite_stage_induction/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/finite_stage_induction/evidence.json:results/complex_mean_relaxation/evidence.json": true,
+      "results/finite_stage_induction/evidence.json:results/complex_signed_covariance_update/evidence.json": true,
+      "results/finite_stage_induction/evidence.json:results/finite_stage_induction/.gitignore": true,
+      "results/finite_stage_induction/evidence.json:results/finite_stage_induction/README.md": true,
+      "results/finite_stage_induction/evidence.json:results/finite_stage_induction/audit.py": true,
+      "results/finite_stage_induction/evidence.json:results/finite_stage_induction/induction.py": true,
+      "results/finite_stage_induction/evidence.json:results/finite_stage_induction/protocol.json": true,
+      "results/finite_stage_induction/evidence.json:results/finite_stage_induction/requirements.txt": true,
+      "results/finite_stage_induction/evidence.json:results/finite_stage_induction/test_audit.py": true,
+      "results/finite_stage_induction/evidence.json:results/first_sourced_wave_update/evidence.json": true,
+      "results/finite_stage_induction/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/finite_stage_induction/evidence.json:results/post_signed_mean_relaxation/evidence.json": true,
+      "results/finite_stage_induction/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/first_correction_construction/evidence.json:GOAL.md": true,
+      "results/first_correction_construction/evidence.json:results/angular_c2_transfer/evidence.json": true,
+      "results/first_correction_construction/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/README.md": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/audit.py": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/checks.py": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/majorant.py": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/protocol.json": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/requirements.txt": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/series.py": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/system.py": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/test_audit.py": true,
+      "results/first_correction_construction/evidence.json:results/first_correction_construction/transfer.py": true,
+      "results/first_correction_construction/evidence.json:results/nonlinear_axis_pilot/inner.py": true,
+      "results/first_correction_construction/evidence.json:results/outer_pressure_pilot/schedule.py": true,
+      "results/first_correction_construction/evidence.json:results/physical_residual_budget/evidence.json": true,
+      "results/first_correction_construction/evidence.json:results/stress_realization_audit/evidence.json": true,
+      "results/first_sourced_foundation/evidence.json:results/actual_band_pulse_bounds/bounds.py": true,
+      "results/first_sourced_foundation/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/first_sourced_foundation/evidence.json:results/complete_covariance_initial_means/evidence.json": true,
+      "results/first_sourced_foundation/evidence.json:results/complete_covariance_initial_means/means.py": true,
+      "results/first_sourced_foundation/evidence.json:results/complex_signed_covariance_update/evidence.json": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_foundation/.gitignore": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_foundation/README.md": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_foundation/audit.py": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_foundation/protocol.json": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_foundation/requirements.txt": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_foundation/sourced_bounds.py": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_foundation/sourced_checks.py": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_foundation/test_audit.py": true,
+      "results/first_sourced_foundation/evidence.json:results/first_sourced_wave_update/evidence.json": true,
+      "results/first_sourced_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/first_sourced_foundation/evidence.json:results/post_signed_mean_relaxation/evidence.json": true,
+      "results/first_sourced_foundation/evidence.json:results/real_signed_covariance_update/evidence.json": true,
+      "results/first_sourced_foundation/evidence.json:results/regular_source_foundation/evidence.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/first_sourced_wave_update/.gitignore": true,
+      "results/first_sourced_wave_update/evidence.json:results/first_sourced_wave_update/README.md": true,
+      "results/first_sourced_wave_update/evidence.json:results/first_sourced_wave_update/audit.py": true,
+      "results/first_sourced_wave_update/evidence.json:results/first_sourced_wave_update/protocol.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/first_sourced_wave_update/requirements.txt": true,
+      "results/first_sourced_wave_update/evidence.json:results/first_sourced_wave_update/sources.py": true,
+      "results/first_sourced_wave_update/evidence.json:results/first_sourced_wave_update/test_audit.py": true,
+      "results/first_sourced_wave_update/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/post_signed_mean_relaxation/evidence.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/real_signed_covariance_update/evidence.json": true,
+      "results/first_sourced_wave_update/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/force_foundation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/force_foundation/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/force_foundation/evidence.json:results/current_localized_force/evidence.json": true,
+      "results/force_foundation/evidence.json:results/current_localized_force/forcing.py": true,
+      "results/force_foundation/evidence.json:results/endpoint_foundation/evidence.json": true,
+      "results/force_foundation/evidence.json:results/finite_induction_foundation/evidence.json": true,
+      "results/force_foundation/evidence.json:results/force_foundation/.gitignore": true,
+      "results/force_foundation/evidence.json:results/force_foundation/README.md": true,
+      "results/force_foundation/evidence.json:results/force_foundation/audit.py": true,
+      "results/force_foundation/evidence.json:results/force_foundation/localized_bounds.py": true,
+      "results/force_foundation/evidence.json:results/force_foundation/localized_checks.py": true,
+      "results/force_foundation/evidence.json:results/force_foundation/protocol.json": true,
+      "results/force_foundation/evidence.json:results/force_foundation/requirements.txt": true,
+      "results/force_foundation/evidence.json:results/force_foundation/test_audit.py": true,
+      "results/force_foundation/evidence.json:results/global_moment_stress/evidence.json": true,
+      "results/force_foundation/evidence.json:results/localized_force_extension/evidence.json": true,
+      "results/force_foundation/evidence.json:results/realization_foundation/evidence.json": true,
+      "results/force_foundation/evidence.json:results/realization_foundation/realized_checks.py": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/.gitignore": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/README.md": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/audit.py": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/frame_budget.py": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/frame_identity.py": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/phase_checks.py": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/protocol.json": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/requirements.txt": true,
+      "results/frame_column_foundation/evidence.json:results/frame_column_foundation/test_audit.py": true,
+      "results/frame_column_foundation/evidence.json:results/gaussian_mass_foundation/README.md": true,
+      "results/frame_column_foundation/evidence.json:results/gaussian_mass_foundation/evidence.json": true,
+      "results/frame_column_foundation/evidence.json:results/geometric_pulse_replay/README.md": true,
+      "results/frame_column_foundation/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/frame_column_foundation/evidence.json:results/leading_frame_foundation/README.md": true,
+      "results/frame_column_foundation/evidence.json:results/leading_frame_foundation/evidence.json": true,
+      "results/frame_column_foundation/evidence.json:results/physical_pulse_foundation/README.md": true,
+      "results/frame_column_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/frame_column_foundation/evidence.json:results/primary_covariance_foundation/README.md": true,
+      "results/frame_column_foundation/evidence.json:results/primary_covariance_foundation/evidence.json": true,
+      "results/full_potential_realization/evidence.json:GOAL.md": true,
+      "results/full_potential_realization/evidence.json:results/background_summation/evidence.json": true,
+      "results/full_potential_realization/evidence.json:results/full_potential_realization/.gitignore": true,
+      "results/full_potential_realization/evidence.json:results/full_potential_realization/README.md": true,
+      "results/full_potential_realization/evidence.json:results/full_potential_realization/audit.py": true,
+      "results/full_potential_realization/evidence.json:results/full_potential_realization/cutoff_checks.py": true,
+      "results/full_potential_realization/evidence.json:results/full_potential_realization/protocol.json": true,
+      "results/full_potential_realization/evidence.json:results/full_potential_realization/realization_bounds.py": true,
+      "results/full_potential_realization/evidence.json:results/full_potential_realization/requirements.txt": true,
+      "results/full_potential_realization/evidence.json:results/full_potential_realization/test_audit.py": true,
+      "results/full_potential_realization/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/full_potential_realization/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/gaussian_mass_foundation/evidence.json:results/gaussian_mass_foundation/.gitignore": true,
+      "results/gaussian_mass_foundation/evidence.json:results/gaussian_mass_foundation/README.md": true,
+      "results/gaussian_mass_foundation/evidence.json:results/gaussian_mass_foundation/audit.py": true,
+      "results/gaussian_mass_foundation/evidence.json:results/gaussian_mass_foundation/gaussian_bounds.py": true,
+      "results/gaussian_mass_foundation/evidence.json:results/gaussian_mass_foundation/gaussian_checks.py": true,
+      "results/gaussian_mass_foundation/evidence.json:results/gaussian_mass_foundation/protocol.json": true,
+      "results/gaussian_mass_foundation/evidence.json:results/gaussian_mass_foundation/requirements.txt": true,
+      "results/gaussian_mass_foundation/evidence.json:results/gaussian_mass_foundation/test_audit.py": true,
+      "results/gaussian_mass_foundation/evidence.json:results/geometric_pulse_replay/README.md": true,
+      "results/gaussian_mass_foundation/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/gaussian_mass_foundation/evidence.json:results/harmonic_closure_foundation/README.md": true,
+      "results/gaussian_mass_foundation/evidence.json:results/harmonic_closure_foundation/evidence.json": true,
+      "results/gaussian_mass_foundation/evidence.json:results/leading_frame_foundation/README.md": true,
+      "results/gaussian_mass_foundation/evidence.json:results/leading_frame_foundation/evidence.json": true,
+      "results/gaussian_mass_foundation/evidence.json:results/physical_pulse_foundation/README.md": true,
+      "results/gaussian_mass_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/gaussian_mass_foundation/evidence.json:results/primary_covariance_foundation/README.md": true,
+      "results/gaussian_mass_foundation/evidence.json:results/primary_covariance_foundation/evidence.json": true,
+      "results/geometric_pulse_replay/evidence.json:GOAL.md": true,
+      "results/geometric_pulse_replay/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/geometric_pulse_replay/evidence.json:results/auxiliary_geometry_audit/evidence.json": true,
+      "results/geometric_pulse_replay/evidence.json:results/geometric_pulse_replay/.gitignore": true,
+      "results/geometric_pulse_replay/evidence.json:results/geometric_pulse_replay/README.md": true,
+      "results/geometric_pulse_replay/evidence.json:results/geometric_pulse_replay/audit.py": true,
+      "results/geometric_pulse_replay/evidence.json:results/geometric_pulse_replay/diagnostics.py": true,
+      "results/geometric_pulse_replay/evidence.json:results/geometric_pulse_replay/estimates.py": true,
+      "results/geometric_pulse_replay/evidence.json:results/geometric_pulse_replay/protocol.json": true,
+      "results/geometric_pulse_replay/evidence.json:results/geometric_pulse_replay/requirements.txt": true,
+      "results/geometric_pulse_replay/evidence.json:results/geometric_pulse_replay/test_audit.py": true,
+      "results/global_moment_stress/evidence.json:results/global_moment_stress/.gitignore": true,
+      "results/global_moment_stress/evidence.json:results/global_moment_stress/README.md": true,
+      "results/global_moment_stress/evidence.json:results/global_moment_stress/audit.py": true,
+      "results/global_moment_stress/evidence.json:results/global_moment_stress/ledger.py": true,
+      "results/global_moment_stress/evidence.json:results/global_moment_stress/protocol.json": true,
+      "results/global_moment_stress/evidence.json:results/global_moment_stress/requirements.txt": true,
+      "results/global_moment_stress/evidence.json:results/global_moment_stress/test_audit.py": true,
+      "results/global_moment_stress/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/global_moment_stress/evidence.json:results/outer_edge_stability/evidence.json": true,
+      "results/global_moment_stress/evidence.json:results/pulse_moment_audit/evidence.json": true,
+      "results/global_moment_stress/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/global_moment_stress/evidence.json:results/shape_join_pressure/evidence.json": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_moment_stress/evidence.json": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_moment_stress/ledger.py": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_pressure_moment_foundation/.gitignore": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_pressure_moment_foundation/README.md": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_pressure_moment_foundation/audit.py": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_pressure_moment_foundation/identities.py": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_pressure_moment_foundation/protocol.json": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_pressure_moment_foundation/requirements.txt": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/global_pressure_moment_foundation/test_audit.py": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/matching_root_foundation/evidence.json": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/regional_cone_join/cones.py": true,
+      "results/global_pressure_moment_foundation/evidence.json:results/regional_cone_join/evidence.json": true,
+      "results/global_solution_comparison/evidence.json:GOAL.md": true,
+      "results/global_solution_comparison/evidence.json:results/global_solution_comparison/.gitignore": true,
+      "results/global_solution_comparison/evidence.json:results/global_solution_comparison/README.md": true,
+      "results/global_solution_comparison/evidence.json:results/global_solution_comparison/audit.py": true,
+      "results/global_solution_comparison/evidence.json:results/global_solution_comparison/comparison_bounds.py": true,
+      "results/global_solution_comparison/evidence.json:results/global_solution_comparison/pressure_checks.py": true,
+      "results/global_solution_comparison/evidence.json:results/global_solution_comparison/protocol.json": true,
+      "results/global_solution_comparison/evidence.json:results/global_solution_comparison/requirements.txt": true,
+      "results/global_solution_comparison/evidence.json:results/global_solution_comparison/test_audit.py": true,
+      "results/global_solution_comparison/evidence.json:results/localized_force_extension/evidence.json": true,
+      "results/harmonic_closure_foundation/evidence.json:results/compact_mean_foundation/README.md": true,
+      "results/harmonic_closure_foundation/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/harmonic_closure_foundation/evidence.json:results/finite_induction_foundation/README.md": true,
+      "results/harmonic_closure_foundation/evidence.json:results/finite_induction_foundation/evidence.json": true,
+      "results/harmonic_closure_foundation/evidence.json:results/harmonic_closure_foundation/.gitignore": true,
+      "results/harmonic_closure_foundation/evidence.json:results/harmonic_closure_foundation/README.md": true,
+      "results/harmonic_closure_foundation/evidence.json:results/harmonic_closure_foundation/audit.py": true,
+      "results/harmonic_closure_foundation/evidence.json:results/harmonic_closure_foundation/mode_bounds.py": true,
+      "results/harmonic_closure_foundation/evidence.json:results/harmonic_closure_foundation/mode_checks.py": true,
+      "results/harmonic_closure_foundation/evidence.json:results/harmonic_closure_foundation/protocol.json": true,
+      "results/harmonic_closure_foundation/evidence.json:results/harmonic_closure_foundation/requirements.txt": true,
+      "results/harmonic_closure_foundation/evidence.json:results/harmonic_closure_foundation/test_audit.py": true,
+      "results/harmonic_closure_foundation/evidence.json:results/leading_frame_foundation/README.md": true,
+      "results/harmonic_closure_foundation/evidence.json:results/leading_frame_foundation/evidence.json": true,
+      "results/harmonic_closure_foundation/evidence.json:results/primary_covariance_foundation/README.md": true,
+      "results/harmonic_closure_foundation/evidence.json:results/primary_covariance_foundation/evidence.json": true,
+      "results/harmonic_closure_foundation/evidence.json:results/regular_source_foundation/README.md": true,
+      "results/harmonic_closure_foundation/evidence.json:results/regular_source_foundation/evidence.json": true,
+      "results/harmonic_closure_foundation/evidence.json:results/sourced_inverse_foundation/README.md": true,
+      "results/harmonic_closure_foundation/evidence.json:results/sourced_inverse_foundation/evidence.json": true,
+      "results/higher_jet_budget/evidence.json:GOAL.md": true,
+      "results/higher_jet_budget/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/higher_jet_budget/evidence.json:results/compact_jet_envelope/evidence.json": true,
+      "results/higher_jet_budget/evidence.json:results/first_correction_construction/evidence.json": true,
+      "results/higher_jet_budget/evidence.json:results/higher_jet_budget/README.md": true,
+      "results/higher_jet_budget/evidence.json:results/higher_jet_budget/audit.py": true,
+      "results/higher_jet_budget/evidence.json:results/higher_jet_budget/higher_bounds.py": true,
+      "results/higher_jet_budget/evidence.json:results/higher_jet_budget/higher_checks.py": true,
+      "results/higher_jet_budget/evidence.json:results/higher_jet_budget/higher_jets.py": true,
+      "results/higher_jet_budget/evidence.json:results/higher_jet_budget/protocol.json": true,
+      "results/higher_jet_budget/evidence.json:results/higher_jet_budget/requirements.txt": true,
+      "results/higher_jet_budget/evidence.json:results/higher_jet_budget/test_audit.py": true,
+      "results/higher_jet_budget/evidence.json:results/loop_modulation_bounds/evidence.json": true,
+      "results/higher_jet_budget/evidence.json:results/physical_residual_budget/evidence.json": true,
+      "results/higher_jet_budget/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/inner_collar_activation/evidence.json:GOAL.md": true,
+      "results/inner_collar_activation/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/inner_collar_activation/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/inner_collar_activation/evidence.json:results/inner_collar_activation/.gitignore": true,
+      "results/inner_collar_activation/evidence.json:results/inner_collar_activation/README.md": true,
+      "results/inner_collar_activation/evidence.json:results/inner_collar_activation/audit.py": true,
+      "results/inner_collar_activation/evidence.json:results/inner_collar_activation/collar.py": true,
+      "results/inner_collar_activation/evidence.json:results/inner_collar_activation/protocol.json": true,
+      "results/inner_collar_activation/evidence.json:results/inner_collar_activation/requirements.txt": true,
+      "results/inner_collar_activation/evidence.json:results/inner_collar_activation/review.py": true,
+      "results/inner_collar_activation/evidence.json:results/inner_collar_activation/test_audit.py": true,
+      "results/inner_collar_activation/evidence.json:results/outer_edge_stability/evidence.json": true,
+      "results/joined_stress_construction/evidence.json:results/axis_core_attachment/README.md": true,
+      "results/joined_stress_construction/evidence.json:results/axis_core_attachment/bounds.py": true,
+      "results/joined_stress_construction/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/joined_stress_construction/evidence.json:results/axis_matching_audit/README.md": true,
+      "results/joined_stress_construction/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/joined_stress_construction/evidence.json:results/axis_matching_audit/moments.py": true,
+      "results/joined_stress_construction/evidence.json:results/heat_exterior_audit/README.md": true,
+      "results/joined_stress_construction/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/joined_stress_construction/evidence.json:results/intermediate_decay_audit/evidence.json": true,
+      "results/joined_stress_construction/evidence.json:results/joined_stress_construction/README.md": true,
+      "results/joined_stress_construction/evidence.json:results/joined_stress_construction/audit.py": true,
+      "results/joined_stress_construction/evidence.json:results/joined_stress_construction/construction.py": true,
+      "results/joined_stress_construction/evidence.json:results/joined_stress_construction/protocol.json": true,
+      "results/joined_stress_construction/evidence.json:results/joined_stress_construction/requirements.txt": true,
+      "results/joined_stress_construction/evidence.json:results/joined_stress_construction/review.py": true,
+      "results/joined_stress_construction/evidence.json:results/joined_stress_construction/test_audit.py": true,
+      "results/joined_stress_construction/evidence.json:results/outer_pressure_pilot/schedule.py": true,
+      "results/joined_stress_construction/evidence.json:results/stress_realization_audit/README.md": true,
+      "results/joined_stress_construction/evidence.json:results/stress_realization_audit/bounds.py": true,
+      "results/joined_stress_construction/evidence.json:results/stress_realization_audit/evidence.json": true,
+      "results/joined_stress_construction/evidence.json:results/stress_realization_audit/loop.py": true,
+      "results/joined_stress_construction/evidence.json:results/stress_realization_audit/repair.py": true,
+      "results/leading_frame_foundation/evidence.json:results/core_growth_activation/README.md": true,
+      "results/leading_frame_foundation/evidence.json:results/core_growth_activation/evidence.json": true,
+      "results/leading_frame_foundation/evidence.json:results/global_pressure_moment_foundation/evidence.json": true,
+      "results/leading_frame_foundation/evidence.json:results/heat_exterior_audit/README.md": true,
+      "results/leading_frame_foundation/evidence.json:results/leading_frame_foundation/.gitignore": true,
+      "results/leading_frame_foundation/evidence.json:results/leading_frame_foundation/README.md": true,
+      "results/leading_frame_foundation/evidence.json:results/leading_frame_foundation/audit.py": true,
+      "results/leading_frame_foundation/evidence.json:results/leading_frame_foundation/frame_checks.py": true,
+      "results/leading_frame_foundation/evidence.json:results/leading_frame_foundation/frame_floors.py": true,
+      "results/leading_frame_foundation/evidence.json:results/leading_frame_foundation/protocol.json": true,
+      "results/leading_frame_foundation/evidence.json:results/leading_frame_foundation/requirements.txt": true,
+      "results/leading_frame_foundation/evidence.json:results/leading_frame_foundation/test_audit.py": true,
+      "results/leading_frame_foundation/evidence.json:results/loop_modulation_bounds/README.md": true,
+      "results/leading_frame_foundation/evidence.json:results/outer_edge_stability/README.md": true,
+      "results/leading_frame_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/leading_frame_foundation/evidence.json:results/primary_covariance_foundation/evidence.json": true,
+      "results/leading_frame_foundation/evidence.json:results/regional_cone_join/README.md": true,
+      "results/leading_frame_foundation/evidence.json:results/regional_cone_join/evidence.json": true,
+      "results/leading_frame_foundation/evidence.json:results/repair_state_bounds/README.md": true,
+      "results/localized_force_extension/evidence.json:GOAL.md": true,
+      "results/localized_force_extension/evidence.json:results/full_potential_realization/evidence.json": true,
+      "results/localized_force_extension/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/.gitignore": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/README.md": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/audit.py": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/endpoint_bounds.py": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/force_checks.py": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/localization_checks.py": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/protocol.json": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/requirements.txt": true,
+      "results/localized_force_extension/evidence.json:results/localized_force_extension/test_audit.py": true,
+      "results/loop_modulation_bounds/evidence.json:results/compact_jet_envelope/README.md": true,
+      "results/loop_modulation_bounds/evidence.json:results/compact_jet_envelope/evidence.json": true,
+      "results/loop_modulation_bounds/evidence.json:results/joined_stress_construction/README.md": true,
+      "results/loop_modulation_bounds/evidence.json:results/joined_stress_construction/evidence.json": true,
+      "results/loop_modulation_bounds/evidence.json:results/loop_modulation_bounds/README.md": true,
+      "results/loop_modulation_bounds/evidence.json:results/loop_modulation_bounds/audit.py": true,
+      "results/loop_modulation_bounds/evidence.json:results/loop_modulation_bounds/bounds.py": true,
+      "results/loop_modulation_bounds/evidence.json:results/loop_modulation_bounds/protocol.json": true,
+      "results/loop_modulation_bounds/evidence.json:results/loop_modulation_bounds/requirements.txt": true,
+      "results/loop_modulation_bounds/evidence.json:results/loop_modulation_bounds/review.py": true,
+      "results/loop_modulation_bounds/evidence.json:results/loop_modulation_bounds/test_audit.py": true,
+      "results/loop_modulation_bounds/evidence.json:results/stress_realization_audit/README.md": true,
+      "results/loop_modulation_bounds/evidence.json:results/stress_realization_audit/evidence.json": true,
+      "results/loop_modulation_bounds/evidence.json:results/stress_realization_audit/loop.py": true,
+      "results/matching_root_foundation/evidence.json:results/annular_exterior_foundation/evidence.json": true,
+      "results/matching_root_foundation/evidence.json:results/axial_root_foundation/evidence.json": true,
+      "results/matching_root_foundation/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/matching_root_foundation/evidence.json:results/axis_matching_audit/moments.py": true,
+      "results/matching_root_foundation/evidence.json:results/loop_modulation_bounds/evidence.json": true,
+      "results/matching_root_foundation/evidence.json:results/matching_root_foundation/.gitignore": true,
+      "results/matching_root_foundation/evidence.json:results/matching_root_foundation/README.md": true,
+      "results/matching_root_foundation/evidence.json:results/matching_root_foundation/audit.py": true,
+      "results/matching_root_foundation/evidence.json:results/matching_root_foundation/matching_bounds.py": true,
+      "results/matching_root_foundation/evidence.json:results/matching_root_foundation/matching_checks.py": true,
+      "results/matching_root_foundation/evidence.json:results/matching_root_foundation/protocol.json": true,
+      "results/matching_root_foundation/evidence.json:results/matching_root_foundation/requirements.txt": true,
+      "results/matching_root_foundation/evidence.json:results/matching_root_foundation/test_audit.py": true,
+      "results/matching_root_foundation/evidence.json:results/modulation_repair_all_order/evidence.json": true,
+      "results/matching_root_foundation/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/matching_root_foundation/evidence.json:results/shape_join_pressure/evidence.json": true,
+      "results/matching_root_foundation/evidence.json:results/stress_realization_audit/evidence.json": true,
+      "results/matching_root_foundation/evidence.json:results/stress_realization_audit/repair.py": true,
+      "results/modulation_repair_all_order/evidence.json:results/compact_jet_envelope/evidence.json": true,
+      "results/modulation_repair_all_order/evidence.json:results/core_all_order_foundation/coordinate_checks.py": true,
+      "results/modulation_repair_all_order/evidence.json:results/higher_jet_budget/evidence.json": true,
+      "results/modulation_repair_all_order/evidence.json:results/loop_modulation_bounds/evidence.json": true,
+      "results/modulation_repair_all_order/evidence.json:results/modulation_repair_all_order/.gitignore": true,
+      "results/modulation_repair_all_order/evidence.json:results/modulation_repair_all_order/README.md": true,
+      "results/modulation_repair_all_order/evidence.json:results/modulation_repair_all_order/all_order_maps.py": true,
+      "results/modulation_repair_all_order/evidence.json:results/modulation_repair_all_order/audit.py": true,
+      "results/modulation_repair_all_order/evidence.json:results/modulation_repair_all_order/map_checks.py": true,
+      "results/modulation_repair_all_order/evidence.json:results/modulation_repair_all_order/protocol.json": true,
+      "results/modulation_repair_all_order/evidence.json:results/modulation_repair_all_order/requirements.txt": true,
+      "results/modulation_repair_all_order/evidence.json:results/modulation_repair_all_order/test_audit.py": true,
+      "results/modulation_repair_all_order/evidence.json:results/prescribed_continuation_foundation/evidence.json": true,
+      "results/modulation_repair_all_order/evidence.json:results/regional_cone_join/evidence.json": true,
+      "results/modulation_repair_all_order/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/modulation_repair_all_order/evidence.json:results/stress_realization_audit/evidence.json": true,
+      "results/modulation_repair_all_order/evidence.json:results/stress_realization_audit/loop.py": true,
+      "results/outer_edge_stability/evidence.json:GOAL.md": true,
+      "results/outer_edge_stability/evidence.json:results/annular_first_correction/evidence.json": true,
+      "results/outer_edge_stability/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/outer_edge_stability/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/outer_edge_stability/evidence.json:results/outer_edge_stability/.gitignore": true,
+      "results/outer_edge_stability/evidence.json:results/outer_edge_stability/README.md": true,
+      "results/outer_edge_stability/evidence.json:results/outer_edge_stability/audit.py": true,
+      "results/outer_edge_stability/evidence.json:results/outer_edge_stability/diagnostics.py": true,
+      "results/outer_edge_stability/evidence.json:results/outer_edge_stability/protocol.json": true,
+      "results/outer_edge_stability/evidence.json:results/outer_edge_stability/requirements.txt": true,
+      "results/outer_edge_stability/evidence.json:results/outer_edge_stability/tail.py": true,
+      "results/outer_edge_stability/evidence.json:results/outer_edge_stability/test_audit.py": true,
+      "results/physical_pulse_foundation/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/physical_pulse_foundation/evidence.json:results/auxiliary_geometry_audit/evidence.json": true,
+      "results/physical_pulse_foundation/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/physical_pulse_foundation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/physical_pulse_foundation/evidence.json:results/core_all_order_foundation/coordinate_checks.py": true,
+      "results/physical_pulse_foundation/evidence.json:results/geometric_pulse_replay/estimates.py": true,
+      "results/physical_pulse_foundation/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_foundation/.gitignore": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_foundation/README.md": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_foundation/audit.py": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_foundation/protocol.json": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_foundation/pulse_bounds.py": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_foundation/pulse_checks.py": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_foundation/requirements.txt": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_foundation/test_audit.py": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_pulse_transfer/transfer.py": true,
+      "results/physical_pulse_foundation/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/physical_pulse_foundation/evidence.json:results/weighted_stress_foundation/evidence.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/auxiliary_geometry_audit/evidence.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/physical_pulse_transfer/.gitignore": true,
+      "results/physical_pulse_transfer/evidence.json:results/physical_pulse_transfer/README.md": true,
+      "results/physical_pulse_transfer/evidence.json:results/physical_pulse_transfer/audit.py": true,
+      "results/physical_pulse_transfer/evidence.json:results/physical_pulse_transfer/protocol.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/physical_pulse_transfer/requirements.txt": true,
+      "results/physical_pulse_transfer/evidence.json:results/physical_pulse_transfer/test_audit.py": true,
+      "results/physical_pulse_transfer/evidence.json:results/physical_pulse_transfer/transfer.py": true,
+      "results/physical_pulse_transfer/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/physical_pulse_transfer/evidence.json:results/weighted_background_edges/evidence.json": true,
+      "results/physical_residual_budget/evidence.json:results/paper_profile_audit/profiles.py": true,
+      "results/physical_residual_budget/evidence.json:results/paper_profile_audit/protocol.json": true,
+      "results/physical_residual_budget/evidence.json:results/physical_residual_budget/README.md": true,
+      "results/physical_residual_budget/evidence.json:results/physical_residual_budget/audit.py": true,
+      "results/physical_residual_budget/evidence.json:results/physical_residual_budget/bounds.py": true,
+      "results/physical_residual_budget/evidence.json:results/physical_residual_budget/protocol.json": true,
+      "results/physical_residual_budget/evidence.json:results/physical_residual_budget/requirements.txt": true,
+      "results/physical_residual_budget/evidence.json:results/physical_residual_budget/residual.py": true,
+      "results/physical_residual_budget/evidence.json:results/physical_residual_budget/review.py": true,
+      "results/physical_residual_budget/evidence.json:results/physical_residual_budget/test_audit.py": true,
+      "results/physical_residual_budget/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/physical_wave_interface/evidence.json:GOAL.md": true,
+      "results/physical_wave_interface/evidence.json:results/background_summation/evidence.json": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/README.md": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/audit.py": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/checks.py": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/jets.py": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/protocol.json": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/pulses.py": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/requirements.txt": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/test_audit.py": true,
+      "results/physical_wave_interface/evidence.json:results/physical_wave_interface/waves.py": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/complete_covariance_initial_means/evidence.json": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/post_signed_mean_relaxation/.gitignore": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/post_signed_mean_relaxation/README.md": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/post_signed_mean_relaxation/audit.py": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/post_signed_mean_relaxation/protocol.json": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/post_signed_mean_relaxation/relax.py": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/post_signed_mean_relaxation/requirements.txt": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/post_signed_mean_relaxation/test_audit.py": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/real_signed_covariance_update/evidence.json": true,
+      "results/post_signed_mean_relaxation/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/activated_collar_foundation/evidence.json": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/compact_jet_envelope/evidence.json": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/compact_jet_envelope/jets.py": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/core_all_order_foundation/coordinate_checks.py": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/core_all_order_foundation/evidence.json": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/prescribed_continuation_foundation/.gitignore": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/prescribed_continuation_foundation/README.md": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/prescribed_continuation_foundation/audit.py": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/prescribed_continuation_foundation/continuation_bounds.py": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/prescribed_continuation_foundation/continuation_checks.py": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/prescribed_continuation_foundation/protocol.json": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/prescribed_continuation_foundation/requirements.txt": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/prescribed_continuation_foundation/test_audit.py": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/reduced_continuation_margins/evidence.json": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/prescribed_continuation_foundation/evidence.json:results/shape_join_pressure/evidence.json": true,
+      "results/primary_covariance_foundation/evidence.json:results/auxiliary_geometry_audit/geometry.py": true,
+      "results/primary_covariance_foundation/evidence.json:results/geometric_pulse_replay/estimates.py": true,
+      "results/primary_covariance_foundation/evidence.json:results/global_pressure_moment_foundation/evidence.json": true,
+      "results/primary_covariance_foundation/evidence.json:results/physical_pulse_foundation/pulse_bounds.py": true,
+      "results/primary_covariance_foundation/evidence.json:results/primary_covariance_foundation/.gitignore": true,
+      "results/primary_covariance_foundation/evidence.json:results/primary_covariance_foundation/README.md": true,
+      "results/primary_covariance_foundation/evidence.json:results/primary_covariance_foundation/audit.py": true,
+      "results/primary_covariance_foundation/evidence.json:results/primary_covariance_foundation/covariance_bounds.py": true,
+      "results/primary_covariance_foundation/evidence.json:results/primary_covariance_foundation/covariance_checks.py": true,
+      "results/primary_covariance_foundation/evidence.json:results/primary_covariance_foundation/protocol.json": true,
+      "results/primary_covariance_foundation/evidence.json:results/primary_covariance_foundation/requirements.txt": true,
+      "results/primary_covariance_foundation/evidence.json:results/primary_covariance_foundation/test_audit.py": true,
+      "results/primary_covariance_foundation/evidence.json:results/sourced_inverse_foundation/evidence.json": true,
+      "results/primary_covariance_foundation/evidence.json:results/weighted_stress_foundation/evidence.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/complete_covariance_initial_means/evidence.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/physical_pulse_transfer/evidence.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/real_signed_covariance_update/.gitignore": true,
+      "results/real_signed_covariance_update/evidence.json:results/real_signed_covariance_update/README.md": true,
+      "results/real_signed_covariance_update/evidence.json:results/real_signed_covariance_update/audit.py": true,
+      "results/real_signed_covariance_update/evidence.json:results/real_signed_covariance_update/protocol.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/real_signed_covariance_update/requirements.txt": true,
+      "results/real_signed_covariance_update/evidence.json:results/real_signed_covariance_update/signed.py": true,
+      "results/real_signed_covariance_update/evidence.json:results/real_signed_covariance_update/test_audit.py": true,
+      "results/real_signed_covariance_update/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/real_signed_covariance_update/evidence.json:results/weighted_background_edges/evidence.json": true,
+      "results/realization_foundation/evidence.json:results/background_summation/evidence.json": true,
+      "results/realization_foundation/evidence.json:results/background_summation/summation.py": true,
+      "results/realization_foundation/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/realization_foundation/evidence.json:results/current_complex_foundation/evidence.json": true,
+      "results/realization_foundation/evidence.json:results/current_potential_realization/evidence.json": true,
+      "results/realization_foundation/evidence.json:results/finite_induction_foundation/evidence.json": true,
+      "results/realization_foundation/evidence.json:results/finite_induction_foundation/finite_bounds.py": true,
+      "results/realization_foundation/evidence.json:results/full_potential_realization/evidence.json": true,
+      "results/realization_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/realization_foundation/evidence.json:results/realization_foundation/.gitignore": true,
+      "results/realization_foundation/evidence.json:results/realization_foundation/README.md": true,
+      "results/realization_foundation/evidence.json:results/realization_foundation/audit.py": true,
+      "results/realization_foundation/evidence.json:results/realization_foundation/protocol.json": true,
+      "results/realization_foundation/evidence.json:results/realization_foundation/realized_bounds.py": true,
+      "results/realization_foundation/evidence.json:results/realization_foundation/realized_checks.py": true,
+      "results/realization_foundation/evidence.json:results/realization_foundation/requirements.txt": true,
+      "results/realization_foundation/evidence.json:results/realization_foundation/test_audit.py": true,
+      "results/realization_foundation/evidence.json:results/regular_source_foundation/evidence.json": true,
+      "results/reduced_continuation_margins/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/reduced_continuation_margins/evidence.json:results/compact_jet_envelope/evidence.json": true,
+      "results/reduced_continuation_margins/evidence.json:results/compact_pressure_bridge/evidence.json": true,
+      "results/reduced_continuation_margins/evidence.json:results/core_growth_activation/evidence.json": true,
+      "results/reduced_continuation_margins/evidence.json:results/reduced_continuation_margins/.gitignore": true,
+      "results/reduced_continuation_margins/evidence.json:results/reduced_continuation_margins/README.md": true,
+      "results/reduced_continuation_margins/evidence.json:results/reduced_continuation_margins/audit.py": true,
+      "results/reduced_continuation_margins/evidence.json:results/reduced_continuation_margins/continuation.py": true,
+      "results/reduced_continuation_margins/evidence.json:results/reduced_continuation_margins/protocol.json": true,
+      "results/reduced_continuation_margins/evidence.json:results/reduced_continuation_margins/requirements.txt": true,
+      "results/reduced_continuation_margins/evidence.json:results/reduced_continuation_margins/test_audit.py": true,
+      "results/regional_cone_join/evidence.json:results/axial_stress_audit/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/compact_jet_envelope/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/compact_pressure_bridge/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/global_moment_stress/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/intermediate_decay_audit/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/loop_modulation_bounds/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/outer_edge_stability/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/reduced_continuation_margins/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/regional_cone_join/.gitignore": true,
+      "results/regional_cone_join/evidence.json:results/regional_cone_join/README.md": true,
+      "results/regional_cone_join/evidence.json:results/regional_cone_join/audit.py": true,
+      "results/regional_cone_join/evidence.json:results/regional_cone_join/cones.py": true,
+      "results/regional_cone_join/evidence.json:results/regional_cone_join/protocol.json": true,
+      "results/regional_cone_join/evidence.json:results/regional_cone_join/requirements.txt": true,
+      "results/regional_cone_join/evidence.json:results/regional_cone_join/test_audit.py": true,
+      "results/regional_cone_join/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/regional_cone_join/evidence.json:results/shape_join_pressure/evidence.json": true,
+      "results/regular_source_foundation/evidence.json:results/actual_band_pulse_bounds/diagnostics.py": true,
+      "results/regular_source_foundation/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/regular_source_foundation/evidence.json:results/compact_mean_foundation/evidence.json": true,
+      "results/regular_source_foundation/evidence.json:results/finite_stage_induction/evidence.json": true,
+      "results/regular_source_foundation/evidence.json:results/first_sourced_wave_update/evidence.json": true,
+      "results/regular_source_foundation/evidence.json:results/geometric_pulse_replay/evidence.json": true,
+      "results/regular_source_foundation/evidence.json:results/modulation_repair_all_order/map_checks.py": true,
+      "results/regular_source_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/regular_source_foundation/evidence.json:results/physical_wave_interface/evidence.json": true,
+      "results/regular_source_foundation/evidence.json:results/regular_source_foundation/.gitignore": true,
+      "results/regular_source_foundation/evidence.json:results/regular_source_foundation/README.md": true,
+      "results/regular_source_foundation/evidence.json:results/regular_source_foundation/audit.py": true,
+      "results/regular_source_foundation/evidence.json:results/regular_source_foundation/protocol.json": true,
+      "results/regular_source_foundation/evidence.json:results/regular_source_foundation/requirements.txt": true,
+      "results/regular_source_foundation/evidence.json:results/regular_source_foundation/source_bounds.py": true,
+      "results/regular_source_foundation/evidence.json:results/regular_source_foundation/source_checks.py": true,
+      "results/regular_source_foundation/evidence.json:results/regular_source_foundation/test_audit.py": true,
+      "results/regular_source_foundation/evidence.json:results/residual_cycle_closure/evidence.json": true,
+      "results/repair_state_bounds/evidence.json:results/compact_jet_envelope/README.md": true,
+      "results/repair_state_bounds/evidence.json:results/compact_jet_envelope/bounds.py": true,
+      "results/repair_state_bounds/evidence.json:results/compact_jet_envelope/evidence.json": true,
+      "results/repair_state_bounds/evidence.json:results/loop_modulation_bounds/README.md": true,
+      "results/repair_state_bounds/evidence.json:results/loop_modulation_bounds/bounds.py": true,
+      "results/repair_state_bounds/evidence.json:results/loop_modulation_bounds/evidence.json": true,
+      "results/repair_state_bounds/evidence.json:results/repair_state_bounds/README.md": true,
+      "results/repair_state_bounds/evidence.json:results/repair_state_bounds/audit.py": true,
+      "results/repair_state_bounds/evidence.json:results/repair_state_bounds/bounds.py": true,
+      "results/repair_state_bounds/evidence.json:results/repair_state_bounds/protocol.json": true,
+      "results/repair_state_bounds/evidence.json:results/repair_state_bounds/requirements.txt": true,
+      "results/repair_state_bounds/evidence.json:results/repair_state_bounds/review.py": true,
+      "results/repair_state_bounds/evidence.json:results/repair_state_bounds/test_audit.py": true,
+      "results/repair_state_bounds/evidence.json:results/stress_realization_audit/README.md": true,
+      "results/repair_state_bounds/evidence.json:results/stress_realization_audit/bounds.py": true,
+      "results/repair_state_bounds/evidence.json:results/stress_realization_audit/evidence.json": true,
+      "results/repair_state_bounds/evidence.json:results/stress_realization_audit/repair.py": true,
+      "results/residual_cycle_closure/evidence.json:GOAL.md": true,
+      "results/residual_cycle_closure/evidence.json:results/actual_band_pulse_bounds/evidence.json": true,
+      "results/residual_cycle_closure/evidence.json:results/background_summation/evidence.json": true,
+      "results/residual_cycle_closure/evidence.json:results/compact_mean_corrections/evidence.json": true,
+      "results/residual_cycle_closure/evidence.json:results/residual_cycle_closure/README.md": true,
+      "results/residual_cycle_closure/evidence.json:results/residual_cycle_closure/audit.py": true,
+      "results/residual_cycle_closure/evidence.json:results/residual_cycle_closure/cycle_bounds.py": true,
+      "results/residual_cycle_closure/evidence.json:results/residual_cycle_closure/interaction_checks.py": true,
+      "results/residual_cycle_closure/evidence.json:results/residual_cycle_closure/protocol.json": true,
+      "results/residual_cycle_closure/evidence.json:results/residual_cycle_closure/requirements.txt": true,
+      "results/residual_cycle_closure/evidence.json:results/residual_cycle_closure/support_checks.py": true,
+      "results/residual_cycle_closure/evidence.json:results/residual_cycle_closure/test_audit.py": true,
+      "results/root_foundation/evidence.json:results/annular_exterior_foundation/evidence.json": true,
+      "results/root_foundation/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/root_foundation/evidence.json:results/comparison_foundation/evidence.json": true,
+      "results/root_foundation/evidence.json:results/core_all_order_foundation/evidence.json": true,
+      "results/root_foundation/evidence.json:results/global_moment_stress/evidence.json": true,
+      "results/root_foundation/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/root_foundation/evidence.json:results/modulation_repair_all_order/evidence.json": true,
+      "results/root_foundation/evidence.json:results/outer_pressure_pilot/schedule.py": true,
+      "results/root_foundation/evidence.json:results/pulse_moment_audit/evidence.json": true,
+      "results/root_foundation/evidence.json:results/realization_foundation/realized_checks.py": true,
+      "results/root_foundation/evidence.json:results/root_foundation/.gitignore": true,
+      "results/root_foundation/evidence.json:results/root_foundation/README.md": true,
+      "results/root_foundation/evidence.json:results/root_foundation/audit.py": true,
+      "results/root_foundation/evidence.json:results/root_foundation/protocol.json": true,
+      "results/root_foundation/evidence.json:results/root_foundation/requirements.txt": true,
+      "results/root_foundation/evidence.json:results/root_foundation/root_bounds.py": true,
+      "results/root_foundation/evidence.json:results/root_foundation/root_checks.py": true,
+      "results/root_foundation/evidence.json:results/root_foundation/test_audit.py": true,
+      "results/shape_join_pressure/evidence.json:results/angular_c2_transfer/evidence.json": true,
+      "results/shape_join_pressure/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/shape_join_pressure/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/shape_join_pressure/evidence.json:results/pulse_moment_audit/evidence.json": true,
+      "results/shape_join_pressure/evidence.json:results/reduced_continuation_margins/evidence.json": true,
+      "results/shape_join_pressure/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/shape_join_pressure/evidence.json:results/shape_join_pressure/.gitignore": true,
+      "results/shape_join_pressure/evidence.json:results/shape_join_pressure/README.md": true,
+      "results/shape_join_pressure/evidence.json:results/shape_join_pressure/audit.py": true,
+      "results/shape_join_pressure/evidence.json:results/shape_join_pressure/protocol.json": true,
+      "results/shape_join_pressure/evidence.json:results/shape_join_pressure/requirements.txt": true,
+      "results/shape_join_pressure/evidence.json:results/shape_join_pressure/shape.py": true,
+      "results/shape_join_pressure/evidence.json:results/shape_join_pressure/test_audit.py": true,
+      "results/sourced_inverse_foundation/evidence.json:results/coefficient_support_foundation/evidence.json": true,
+      "results/sourced_inverse_foundation/evidence.json:results/first_sourced_foundation/sourced_bounds.py": true,
+      "results/sourced_inverse_foundation/evidence.json:results/physical_pulse_foundation/evidence.json": true,
+      "results/sourced_inverse_foundation/evidence.json:results/physical_pulse_foundation/pulse_bounds.py": true,
+      "results/sourced_inverse_foundation/evidence.json:results/regular_source_foundation/source_bounds.py": true,
+      "results/sourced_inverse_foundation/evidence.json:results/sourced_inverse_foundation/.gitignore": true,
+      "results/sourced_inverse_foundation/evidence.json:results/sourced_inverse_foundation/README.md": true,
+      "results/sourced_inverse_foundation/evidence.json:results/sourced_inverse_foundation/audit.py": true,
+      "results/sourced_inverse_foundation/evidence.json:results/sourced_inverse_foundation/inverse_bounds.py": true,
+      "results/sourced_inverse_foundation/evidence.json:results/sourced_inverse_foundation/inverse_checks.py": true,
+      "results/sourced_inverse_foundation/evidence.json:results/sourced_inverse_foundation/protocol.json": true,
+      "results/sourced_inverse_foundation/evidence.json:results/sourced_inverse_foundation/requirements.txt": true,
+      "results/sourced_inverse_foundation/evidence.json:results/sourced_inverse_foundation/test_audit.py": true,
+      "results/stress_realization_audit/evidence.json:results/axis_core_attachment/evidence.json": true,
+      "results/stress_realization_audit/evidence.json:results/axis_matching_audit/evidence.json": true,
+      "results/stress_realization_audit/evidence.json:results/heat_exterior_audit/evidence.json": true,
+      "results/stress_realization_audit/evidence.json:results/intermediate_decay_audit/evidence.json": true,
+      "results/stress_realization_audit/evidence.json:results/outer_pressure_pilot/schedule.py": true,
+      "results/stress_realization_audit/evidence.json:results/stress_realization_audit/README.md": true,
+      "results/stress_realization_audit/evidence.json:results/stress_realization_audit/audit.py": true,
+      "results/stress_realization_audit/evidence.json:results/stress_realization_audit/bounds.py": true,
+      "results/stress_realization_audit/evidence.json:results/stress_realization_audit/loop.py": true,
+      "results/stress_realization_audit/evidence.json:results/stress_realization_audit/protocol.json": true,
+      "results/stress_realization_audit/evidence.json:results/stress_realization_audit/repair.py": true,
+      "results/stress_realization_audit/evidence.json:results/stress_realization_audit/requirements.txt": true,
+      "results/stress_realization_audit/evidence.json:results/stress_realization_audit/test_audit.py": true,
+      "results/weighted_background_edges/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/core_contraction_audit/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/core_growth_activation/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/inner_collar_activation/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/loop_modulation_bounds/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/outer_edge_stability/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/regional_cone_join/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/repair_state_bounds/evidence.json": true,
+      "results/weighted_background_edges/evidence.json:results/weighted_background_edges/.gitignore": true,
+      "results/weighted_background_edges/evidence.json:results/weighted_background_edges/README.md": true,
+      "results/weighted_background_edges/evidence.json:results/weighted_background_edges/audit.py": true,
+      "results/weighted_background_edges/evidence.json:results/weighted_background_edges/edges.py": true,
+      "results/weighted_background_edges/evidence.json:results/weighted_background_edges/protocol.json": true,
+      "results/weighted_background_edges/evidence.json:results/weighted_background_edges/requirements.txt": true,
+      "results/weighted_background_edges/evidence.json:results/weighted_background_edges/test_audit.py": true,
+      "results/weighted_stress_foundation/evidence.json:results/annular_exterior_foundation/evidence.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/background_jet_foundation/evidence.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/background_jet_foundation/foundation.py": true,
+      "results/weighted_stress_foundation/evidence.json:results/coefficient_support_audit/evidence.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/global_moment_stress/evidence.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/inner_collar_activation/evidence.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/outer_edge_stability/evidence.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/outer_edge_stability/tail.py": true,
+      "results/weighted_stress_foundation/evidence.json:results/regional_cone_join/evidence.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_background_edges/edges.py": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_background_edges/evidence.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_stress_foundation/.gitignore": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_stress_foundation/README.md": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_stress_foundation/audit.py": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_stress_foundation/edge_bounds.py": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_stress_foundation/edge_checks.py": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_stress_foundation/protocol.json": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_stress_foundation/requirements.txt": true,
+      "results/weighted_stress_foundation/evidence.json:results/weighted_stress_foundation/test_audit.py": true
+    },
+    "records": 84
+  },
+  "protocol": {
+    "competitor": "same datum and force; smooth on compact sets; finite sup_[0,T] L2 for every T<1; no global pressure gradient dissipation or solution energy inequality premise",
+    "core": "tau<=min(tau0/2,rL^2/(8*Xin)); canonical localization radius rL, retained e0,Aexp positive",
+    "cutoff": "phi_R^8; local Sobolev only; quadratic main L^(3/2); commutator L^(4/3) with both near cancellation and far cap",
+    "dissipation": "integral_0^t D_R^2<=2 C_T t*(1+2 L_T T exp(2 L_T T))*R^-2",
+    "energy": "0.5 E_R_prime+0.5 D_R^2<=L_T E_R+C_T R^-2; E_R<=2 C_T T exp(2 L_T T) R^-2",
+    "external": "Riesz Lp boundedness; Knapp Advanced Real Analysis III.5 Theorem 3.26 and III.6 Example 1, printed pp83,93; rechecked 2026-10-18",
+    "field": "canonical_force_join: THIS u=curl(c*Ac)+c*Bc,p=c*pc,full twelve-term force and zero datum; not historical force or field",
+    "fixed": "Md64,unit viscosity,original h,N,positive lambda,pulse radius,width C_setup^-20,labels,carriers,supports,qstar,both diagonal schedules,fixed operator gauges",
+    "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "multipole": "pi_h=k(x):M+error; M=int h; |error|<=384/(4*pi)*L*H_T*R^-4 for R>=max(1,2L); directional derivative <=24/(4*pi)*r^-4",
+    "order": "fix T<1,then R->infinity,then approach protected core; no uniform terminal comparison constant",
+    "parent_commit": "634356dff6d7b6c0b350c714cd11403d52c216ae",
+    "pressure": "g=vv-uu=ww+h,h=wu+uw; -Delta pi=DDg only AFTER same force cancels; individual -Delta p=DD(uu)-div f",
+    "radius": "Young decays 4,14/5; offsets and mixed flux 5/2; complete Laplacian remainder 2",
+    "recovery": "pi_star in H^-2; time-averaged momentum puts harmonic gradient difference in H^-3; Fourier weighted L2 function supported at zero is zero",
+    "scope": "conditional canonical downstream comparison/exclusion implication only; exact-core pressure identification and retained analytical premises remain",
+    "witness": "V=(-x2,x1,0)*rho(|x|^2) smooth compact radial; u=w=V tensor only; M=2a diag(1,1,0),axis contraction -4a/(4*pi*R^3),a>0"
+  },
+  "remaining_obligations": [
+    "trace_exact_core_pressure_family_to_completed_global_backward_pressure_at_same_parameters_and_prove_first_outstanding_defining_map_identity_or_precise_obstruction",
+    "independently_discharge_retained_background_and_finite_defining_existence_inverse_gap_premises_before_unconditional_admissibility_residual_or_blowup_claims"
+  ],
+  "reviews": {
+    "canonical_force_comparison_interface": {
+      "checks": {
+        "analytical_premises_not_discharged": true,
+        "canonical_field_and_full_gauge": true,
+        "comparison_not_assumed_from_parent": true,
+        "divergence_preserved": true,
+        "fixed_T_compact_smoothness_supplies_L6_and_strain": true,
+        "force_pressure_equation_keeps_all_terms": true,
+        "no_extra_global_competitor_derivative_pressure_or_energy_inequality_hypothesis": true,
+        "no_old_field_substitution": true,
+        "preterminal_energy": true,
+        "protected_core_is_retained_not_proved": true,
+        "same_zero_datum_and_smooth_force": true
+      },
+      "competitor": "smooth on compact sets; same force and datum; finite sup_[0,T] L2 for each T<1 only",
+      "field": "THIS u=curl(c*Ac)+c*Bc, p=c*pc; one canonical force and zero datum"
+    },
+    "complete_radius_two_budget": {
+      "checks": {
+        "R_minus_two_is_scope_of_coarse_uniform_L2_laplacian_bound_not_universal_optimal_rate": true,
+        "commutator_near_and_far_integrals_both_kept": true,
+        "eighth_cutoff_power_preserved": true,
+        "every_remaining_flux_decays_at_least_two": true,
+        "exact_absorption_decays": true,
+        "old_unsplit_estimate_reproduced": true,
+        "only_local_competitor_derivatives_used_in_cutoff_Sobolev": true,
+        "quadratic_main_has_B_to_three_halves_without_linear_B_to_one_half": true,
+        "same_commutator_kernel_matches_old_exact_ledger": true
+      },
+      "commutator_kernel": {
+        "far": "-2",
+        "integral": "4",
+        "near": "-2/3",
+        "norm_decay": "3/4"
+      },
+      "current": {
+        "other_decays": [
+          "5/2",
+          "5/2",
+          "2",
+          "5/2"
+        ],
+        "rows": [
+          {
+            "offset": "5/2",
+            "power": "3/2",
+            "radius": "1",
+            "term": "quadratic_pressure_and_transport",
+            "young": "4"
+          },
+          {
+            "offset": "5/2",
+            "power": "3/4",
+            "radius": "7/4",
+            "term": "quadratic_commutator",
+            "young": "14/5"
+          }
+        ],
+        "worst": "2"
+      },
+      "energy": "0.5*E_R_prime+0.5*D_R^2<=||grad u||_infinity*E_R+C_T*R^-2",
+      "unsplit_control": {
+        "other_decays": [
+          "5/2",
+          "5/2",
+          "2",
+          "3/2"
+        ],
+        "rows": [
+          {
+            "offset": "5/2",
+            "power": "3/2",
+            "radius": "1",
+            "term": "quadratic_pressure_and_transport",
+            "young": "4"
+          },
+          {
+            "offset": "5/2",
+            "power": "3/4",
+            "radius": "7/4",
+            "term": "quadratic_commutator",
+            "young": "14/5"
+          },
+          {
+            "offset": "3/2",
+            "power": "1/2",
+            "radius": "1",
+            "term": "unsplit_linear_pressure",
+            "young": "4/3"
+          }
+        ],
+        "worst": "4/3"
+      }
+    },
+    "exact_compact_pressure_exterior": {
+      "checks": {
+        "Hessian_sign_trace_and_eigenvalue_exact": true,
+        "annular_L2_preserving_scaling_has_zero_norm_power": true,
+        "coarse_laplacian_flux_has_exact_radius_minus_two": true,
+        "every_separated_kernel_value_bounded_by_sixteen_mass_over_R_cubed": true,
+        "inverse_four_pi_kept_separate_from_radius_power": true,
+        "no_universal_better_rate_claim_for_a_fixed_solution": true
+      },
+      "exact_kernel_direction_controls": 4,
+      "exact_separated_exterior_controls": 60,
+      "exterior_point_tensor_kernel_controls_not_actual_L1_stresses_or_flows": true,
+      "rows": [
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "-4/9"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "-96/125"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "-3/2"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "-32/9"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "-12"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "-3/16"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "-96/343"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "-4/9"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "-96/125"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "-3/2"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "-3/128"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "-32/1125"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "-12/343"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "-96/2197"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "-1/18"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "52/225"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "1248/3125"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "39/50"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "416/225"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "156/25"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "39/400"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "1248/8575"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "52/225"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "1248/3125"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "39/50"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "39/3200"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "416/28125"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "156/8575"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "96/4225"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "13/450"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "4/3"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "288/125"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "9/2"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "32/3"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "36"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "9/16"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "288/343"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "4/3"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "288/125"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "9/2"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "9/128"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "32/375"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "36/343"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "288/2197"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "1/6"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "4/3"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "288/125"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "9/2"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "32/3"
+        },
+        {
+          "bound_without_inverse_four_pi": "128",
+          "radius": "2",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "36"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "9/16"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "288/343"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "4/3"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "288/125"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/27",
+          "radius": "3",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "9/2"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "-1",
+          "value_without_inverse_four_pi": "9/128"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "-1/2",
+          "value_without_inverse_four_pi": "32/375"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "0",
+          "value_without_inverse_four_pi": "36/343"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "1/2",
+          "value_without_inverse_four_pi": "288/2197"
+        },
+        {
+          "bound_without_inverse_four_pi": "1024/343",
+          "radius": "7",
+          "source_radius": "1",
+          "value_without_inverse_four_pi": "1/6"
+        }
+      ]
+    },
+    "exact_complete_difference_energy": {
+      "checks": {
+        "all_nine_stress_components_retain_both_mixed_terms": true,
+        "complete_local_energy_flux_divergence_identity": true,
+        "full_forced_difference_pressure_keeps_minus_div_H": true,
+        "same_force_condition_means_H_zero_not_an_added_pressure_hypothesis": true,
+        "time_viscous_strain_laplacian_transport_pressure_force_omissions_detected": true
+      },
+      "exact_stress_components": 9,
+      "exact_weighted_local_energy_identities": 3,
+      "manufactured_local_polynomials_and_difference_residual_not_whole_space_solutions": true,
+      "nonzero_terms": [
+        "dissipation",
+        "force",
+        "laplacian",
+        "pressure",
+        "strain",
+        "time",
+        "transport"
+      ]
+    },
+    "fixed_interval_energy_dissipation_and_canonical_core": {
+      "checks": {
+        "canonical_localization_radius_not_old_pulse_radius": true,
+        "conditional_core_growth_only_after_velocity_identification": true,
+        "energy_and_dissipation_both_decay_with_radius_two": true,
+        "fix_T_then_take_radius_then_terminal_limit": true,
+        "local_dissipation_integrated_without_competitor_global_gradient_assumption": true,
+        "no_future_velocity_or_pressure_constructed": true,
+        "no_uniform_constants_as_T_tends_to_one": true,
+        "zero_strain_no_division_required": true
+      },
+      "dissipation": "integral_0^t D_R^2<=2*C_T*t*(1+2*L_T*T*exp(2*L_T*T))*R^-2",
+      "energy": "E_R(t)<=2*C_T*T*exp(2*L_T*T)*R^-2",
+      "protected_path": "tau<=min(tau0/2,rL^2/(8*Xin)); SAME canonical localization radius rL"
+    },
+    "new_compact_mixed_moment_controls": {
+      "actual_same_force_NS_trajectories": false,
+      "axis_value_without_inverse_four_pi": "-4",
+      "checks": {
+        "all_point_remainder_bounds_hold": true,
+        "compact_divergence_free_witness_uses_radial_parity_and_positive_a": true,
+        "differentiated_kernel_trace_zero": true,
+        "directional_derivative_bound_24": true,
+        "inverse_four_pi_retained_and_segment_separation_required": true,
+        "isotropic_part_drops_but_full_moment_does_not": true,
+        "mixed_flux_generic_decay": true,
+        "mixed_flux_isotropic_decay_only_if_moment_isotropic": true,
+        "no_same_force_flow_counterexample_claim": true,
+        "nonzero_trace_free_moment": true
+      },
+      "derivative_controls": 16,
+      "normalized_moment": [
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "point_remainder_controls": 162,
+      "rows": [
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            0
+          ],
+          "error": "-19/108",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            1
+          ],
+          "error": "19/216",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            2
+          ],
+          "error": "19/216",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            0
+          ],
+          "error": "7/4",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            1
+          ],
+          "error": "-7/8",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "2",
+          "bound": "24",
+          "component": [
+            2,
+            2
+          ],
+          "error": "-7/8",
+          "y": "1"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            0
+          ],
+          "error": "-61/500",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            1
+          ],
+          "error": "61/1000",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            2
+          ],
+          "error": "61/1000",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            0
+          ],
+          "error": "37/108",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            1
+          ],
+          "error": "-37/216",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "2",
+          "bound": "12",
+          "component": [
+            2,
+            2
+          ],
+          "error": "-37/216",
+          "y": "1/2"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            0
+          ],
+          "error": "-37/864",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            1
+          ],
+          "error": "37/1728",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            2
+          ],
+          "error": "37/1728",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            0
+          ],
+          "error": "19/108",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            1
+          ],
+          "error": "-19/216",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "3",
+          "bound": "128/27",
+          "component": [
+            2,
+            2
+          ],
+          "error": "-19/216",
+          "y": "1"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            0
+          ],
+          "error": "-254/9261",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            1
+          ],
+          "error": "127/9261",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            2
+          ],
+          "error": "127/9261",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            0
+          ],
+          "error": "182/3375",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            1
+          ],
+          "error": "-91/3375",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "3",
+          "bound": "64/27",
+          "component": [
+            2,
+            2
+          ],
+          "error": "-91/3375",
+          "y": "1/2"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            0
+          ],
+          "error": "-169/87808",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            1
+          ],
+          "error": "169/175616",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            2
+          ],
+          "error": "169/175616",
+          "y": "-1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            0
+          ],
+          "error": "127/37044",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            1
+          ],
+          "error": "-127/74088",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "1"
+        },
+        {
+          "L": "1",
+          "R": "7",
+          "bound": "384/2401",
+          "component": [
+            2,
+            2
+          ],
+          "error": "-127/74088",
+          "y": "1"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            0
+          ],
+          "error": "-1262/1157625",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            1
+          ],
+          "error": "631/1157625",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            2
+          ],
+          "error": "631/1157625",
+          "y": "-1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            2
+          ],
+          "error": "0",
+          "y": "0"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            0
+          ],
+          "error": "1094/753571",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            1
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            0,
+            2
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            0
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            1
+          ],
+          "error": "-547/753571",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            1,
+            2
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            0
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            1
+          ],
+          "error": "0",
+          "y": "1/2"
+        },
+        {
+          "L": "1/2",
+          "R": "7",
+          "bound": "192/2401",
+          "component": [
+            2,
+            2
+          ],
+          "error": "-547/753571",
+          "y": "1/2"
+        }
+      ],
+      "witness": "V=(-x2,x1,0)*rho(|x|^2); compact smooth radial nonzero rho; u=w=V only as tensor witness"
+    },
+    "pressure_gradient_and_retained_mixed_memory": {
+      "checks": {
+        "Hessian_component_bound_two_times_inverse_four_pi_r_cubed": true,
+        "L1_Fourier_bound_embeds_in_H_minus_two_not_critical_H_minus_three_halves": true,
+        "common_force_cancels_once_in_difference": true,
+        "cross_flux_decay_is_five_halves": true,
+        "individual_forced_pressure_retains_minus_div_f": true,
+        "kernel_identity_distribution_zero_outside_compact_cross_support": true,
+        "no_false_L1_stress_to_L1_pressure_bound_used": true,
+        "pressure_gradient_recovered_before_any_pressure_flux_substitution": true,
+        "separation_is_R_minus_L_at_least_R_over_two": true,
+        "time_averaged_momentum_excludes_harmonic_gradients_without_assuming_pressure_tempered": true
+      },
+      "compact_cross": "on R<=|x|<=2R, R>=max(1,2L): |pi_h|<=16/(4*pi)*R^-3*sum ||h_ij||_1",
+      "mixed_flux": "|integral pi_h*w dot grad chi_R|<=C*R^-5/2*sum ||h_ij||_1*W_T",
+      "recovery": "pi_star=sum R_i R_j g_ij in L_infinity_t H^-2; time-averaged harmonic gradient in H^-3 is zero",
+      "stress": "g=w tensor w+h; h=w tensor u+u tensor w; support(h) subset K"
+    }
+  },
+  "source_hashes": {
+    "results/canonical_comparison_join/.gitignore": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+    "results/canonical_comparison_join/README.md": "9a57faa0bc407d316e02995d31c669df12d6c0fb6a5e28e6544bd4dc247ab802",
+    "results/canonical_comparison_join/audit.py": "3fb0304e76360bc83190eec5a2900bcea9d2ae43772dae28dd9c4c1c35fdbb79",
+    "results/canonical_comparison_join/join_bounds.py": "fcbe69e4ac9275075fe00a7022e79dd911f4d571cef04ebb3ed3babdef7b0c95",
+    "results/canonical_comparison_join/protocol.json": "2580c3471f77cf5c4e8cf3855bedc72fad1c0f485ef1cfb62d4db1e5901bccce",
+    "results/canonical_comparison_join/requirements.txt": "2f334caec0672e643d789b4732cafff46876af91423e60d2b6205d8ffa9e9ac0",
+    "results/canonical_comparison_join/test_audit.py": "814f7619cfe2fb6b376172ecbe7793a34c6b1fa238c475b45a1c46cf26f3cae2",
+    "results/canonical_endpoint_join/README.md": "863e9ef1f7956a9df5105873e1f82a7164492d36c5b577da810c22aca74a7019",
+    "results/canonical_endpoint_join/evidence.json": "d6c57381c49f164967c2515867e6046c1dee832263264ff4ed0da0f4fae4be4a",
+    "results/canonical_force_join/README.md": "b25505b55fb611474eed9564c68ba44ed7725403c49244af46e182f56b95cd63",
+    "results/canonical_force_join/evidence.json": "4af3d5a9f478fcf271c1e810e40d4b48fe86a5a33a10d84b3ae48ac775af10b3",
+    "results/canonical_local_realization/README.md": "2feccfd8c154364458da5e5c2366c50e7d7ed8e804473b7658eba02b52fd32c8",
+    "results/canonical_local_realization/evidence.json": "dd24a12408a5e0f8ed6ac12b621783b020f353fb80bf3add44a134237212614c",
+    "results/comparison_foundation/README.md": "f8e801cb10c97f6678e784b6c1c246be7ed8f0487fc5834aded3a9d8b4452a81",
+    "results/comparison_foundation/compact_bounds.py": "af1402c8ca5b06964cb53bfc4675cd74dd222a3f1d631fa62969c10146175e76",
+    "results/comparison_foundation/compact_checks.py": "7434a795160178f172281b625d2b090a42fa44289dbe0825a10d201dca8b6e77",
+    "results/comparison_foundation/evidence.json": "8375a9e06205b9817bd114a22320915f264fd760ae85d385a474f776ecebd0ca",
+    "results/core_all_order_foundation/README.md": "db2334588db56d7251950fad6e4cff6e6306df145b32f85d8b70a3dd42a415a7",
+    "results/core_all_order_foundation/evidence.json": "97a357bf4a494a0b1dc676994245f7bc0de8f1fde4d169a6f1e25b09e69196c1",
+    "results/core_contraction_audit/README.md": "29d504122e83a45ab7c36c98a90d1857ebc5fa82c248b302308881ad99abcb86",
+    "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+    "results/global_pressure_moment_foundation/README.md": "d473b97f5200affbf5035a9ca585bd5d860c472a9ad098d60158815f7290ad1b",
+    "results/global_pressure_moment_foundation/evidence.json": "1fa0851e09081c1e9ea7e198c7e2f747ffb6aab7391f9141d2717a178e58503e",
+    "results/global_solution_comparison/README.md": "e60a03b1a9bf8f8a8de32dac39ba87fccf935bd1f784d2b917303c6e5f016dab",
+    "results/global_solution_comparison/comparison_bounds.py": "a9d3401047b83cb52db3794b9e27548cf93407b07d30673cec5adcb7ed172f3b",
+    "results/global_solution_comparison/evidence.json": "fda47288fea382c0ac443924de71b16f732119f7ea9942fa58a0a94c656c13ed"
+  },
+  "status": "conditional-canonical-pressure-recovery-mixed-moment-and-global-comparison"
+}
