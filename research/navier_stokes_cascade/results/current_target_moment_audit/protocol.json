@@ -1,0 +1,11 @@
+{
+  "current": "Haar products averaged after multiplication, six full covariance entries, actual means and same complete base",
+  "domain": "unchanged corrected initial selector includes ell^6>=8*Cfreeze/gamma0 and frozen margin Lreq; no field or force identification",
+  "inequality": "[Xi_e]_m<=C_m([Ae]_m+[he]_m); higher order needs [Ae+Ie he]_m<=C_jm epsilon^alpha_j",
+  "moments": "P=tau int B+int(U-F)/R-epsilon partial_Z int H; Qg=tau int R^2 B+int R(F+U)-epsilon partial_Z int R^2 H",
+  "obstruction": "compact smooth swirl control at a(T0)=0,a_prime(T0)=1 has Xi_theta=epsilon^(mu+1) psi/R^2, no higher exponent follows from raw state",
+  "parent_commit": "08caced6f10105d98faf59af4e251af26c3a2791",
+  "pressure": "compact pbar primitive has zero total by construction; int R pbar=-Qg/2+c_rho P; actual unaveraged A0 retained",
+  "scope": "functional target membership and exact current identities, not all later epsilon-order cancellations or unconditional proof",
+  "signed": "Xi_e=-Ae-Ie he, with he=epsilon partial_Z He-tau ue-sigma_e Me and exact zero weighted integral"
+}

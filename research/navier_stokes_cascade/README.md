@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [source-envelope and weighted-edge audit](results/source_envelope_edge_audit/README.md)
+The latest [current-target and moment audit](results/current_target_moment_audit/README.md)
+derives exact current pressure/flux moments and both full integrated residual
+identities, keeping all six covariance entries, radial time/axial transport,
+old-new mean correlations and the whole moving pressure-bump derivative.
+The signed target is exactly a radial flux plus a compensated primitive;
+this gives all-fixed-jet full-zeta functional membership relative to current
+field bounds. A smooth compact swirl control shows why support and the two
+velocity moments alone cannot give arbitrarily improving epsilon orders.
+Next prove the explicit weighted cancellation inequality for the ACTUAL
+current targets at each canonical substep; exponent tables or historical
+targets do not establish it. The control is not a counterexample to that
+construction. No unconditional pulse, residual or blow-up theorem is claimed.
+
+The preceding [source-envelope and weighted-edge audit](results/source_envelope_edge_audit/README.md)
 corrects a missing displayed condition in the tail selector: target-direction
 freezing needs ell^6>=8*Cfreeze/gamma0 in addition to pulse-length bounds,
 and those bounds must use the certified frozen cone margin. Use the corrected
