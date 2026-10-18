@@ -1,0 +1,17 @@
+{
+  "compact": "T0=F(p1-a,p2+b); t=-b/a; D=p1+t p2-v; J=p2-t p1; norm^2=F^2(D^2+J^2)/(1+t^2); D>=kappa/2, R=4G^3, kappa=G^-4",
+  "cover": [
+    "[Xinner,Xminus] protected inner",
+    "[Xminus,Xrep] compact modulation plus exact repair",
+    "[Xrep,Xc] same-pressure compensated exterior"
+  ],
+  "domain": "Xinner=Xa exp(tc/16)<=X<=Xc, terminal heat coordinate y=1/2; eta in [-1,1]; viscosity normalized to one",
+  "exterior": "Xrep=Xstar; p1=XQ/L>=hXstar/4000>10^12; a<5; angular stress alone exceeds F; exact global moments identify this same stress",
+  "first_relative": "A_W<=64G^10/f_star*(Xc Htheta/2+sqrt(Xc) Hz); all previous pressure and jet costs unchanged",
+  "floor": "tau_star=f_star/(64G^10); log tau_star=log f_star-log64-10C^131072",
+  "gate": "2h(ell-2)>=log2(Cstar/r_Kc) remains sufficient for the whole 4Q chart; same-tilt radius and other value gates remain inputs",
+  "inner": "s>=1/(160sqrt(log C)); |T0|>=(9/16) f_star C^-25602; G>C^4096 makes inner/common>36 C^15358",
+  "leading_swirl": "f_star=exp(-2Lambda M)/(4C)*exp[-(Ab/2)log(Xb/Xa)]; Ab=4Aenv; Aenv=C^4096",
+  "parent_commit": "5136b026a5626b21a283fba4f74a9ee424d66060",
+  "scope": "conditional leading amplitude floor, not a cone/derivative/full-background/wave/residual bound or actual old-first-band acceptance"
+}

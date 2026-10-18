@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [quantitative first-coefficient bound](results/first_seminorm_bound/README.md)
+The latest [explicit compact leading-stress floor](results/regional_stress_floor/README.md)
+removes the free stress-amplitude floor from the preceding first-coefficient
+estimate: tau_star=f_star/(64G^10) works on the original [Xinner,Xc] interval,
+relative to the retained same-profile leading lemmas. The three-region join
+keeps the actual tc/16 inner offset, compact modulation/repair D margin and
+compensated exterior finite-radius terms with exact pressure/moment matching.
+It is not a floor at either flat edge, a same-tilt cone margin or a derivative
+bound. Actual collar/jet/source envelopes and the combined scale acceptance
+test remain to be certified; no unconditional proof is promoted.
+
+The preceding [quantitative first-coefficient bound](results/first_seminorm_bound/README.md)
 propagates the actual collar Picard envelope through angular Cauchy estimates,
 radial cutoff jets and the exact linear five-moment repair. Its amplitude
 retains the complete later radial-pressure source and nonconstant angular
