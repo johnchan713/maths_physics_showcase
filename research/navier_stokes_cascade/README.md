@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [explicit background gap certificate](results/background_gap_certificate/README.md)
+The latest [regional weighted-value input join](results/regional_weighted_gate/README.md)
+derives the background error constant from finite first-coefficient seminorms
+and the shared velocity/stress Borel budget. Orders n>=2 contribute at most
+q^(2h)/2; exact band radial derivatives retain the inverse-radius term.
+It uses the preceding explicit small-error gate only on the compact part,
+and joins the already proved nonnegative first-stress outer cone stability.
+A large harmless outer correction is not a cone failure. Actual primitive
+regional bounds and first-coefficient seminorm values remain to be justified;
+the historical first band and unconditional proof are not certified.
+
+The preceding [explicit background gap certificate](results/background_gap_certificate/README.md)
 replaces the unspecified background continuity radius with explicit swirl,
 shear, discriminant, orientation and same-tilt cone bounds. Its sufficient
 value gate is Cval*q^(2h)<=r_star, with the full 4Q chart cost retained.

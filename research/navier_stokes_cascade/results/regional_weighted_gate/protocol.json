@@ -1,0 +1,13 @@
+{
+  "chart": "whole q<=4Q requires ell>=2+log2(C_Kc/r_Kc)/(2h), combined with every prior accepted-tail inequality",
+  "common_schedule": "one c_n dominates velocity and Euclidean relative-stress seminorms; all previous physical potential and higher-jet requirements retained",
+  "constant": "C_K=max(1,5B_E/Lr,5[Hr(B_EX+B_UX)+B_E/Lr],B_W)",
+  "first_data": "A_E,A_EX,A_UX,A_W are actual first-coefficient sup seminorms on compact Kc; each B=A+1/2",
+  "memory": "full pressure/moment sources, radial cutoff commutator, Pi1/Pi2,A0/A1,viscosity and all interactions unchanged",
+  "outer_limit": "W1(Xb,+/-1)=2Xb/(1-2h)^2 can fail a sufficient global small-error test without actual cone failure",
+  "parent_commit": "0c7ff52961d301880d0078d462ea8fe402328855",
+  "pullback": "dF=s^-A e/R; dgtheta=s^-A[(R/s)e_X-e/R]; dgz=s^-A(R/s)u_X; s^-1-h<5",
+  "regional_gate": "compact C_Kc*q^(2h)<=r_Kc and exact outer nonnegative angular T1 preserve this cone interface; other global magnitude or map-domain gates remain",
+  "scope": "conditional finite-seminorm input and regional cover only; actual seminorm values, primitive regional hypotheses and historical first band remain unverified",
+  "tail": "sum_(n>=2) 2^-n q^(nh)=q^(2h)/[4(1-q^h/2)]<=q^(2h)/2 for 0<q<=1"
+}
