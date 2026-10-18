@@ -1,0 +1,15 @@
+{
+  "acceptance": "original normal floors, L>=8CE/mu, L>=25 and primary-cone value inequalities; no derivative-dependent band or numeric first-band claim",
+  "column": "ttan/x=-s*a+c0*w*(1-q)/(1+q)*b; |q|<=1/8; D0 and D1 explicit; Cdir=D0+D1*Gaussian_moment_factor",
+  "connection": "Bleft*(An*B-Bprime)=M^-1*H*M-M^-1*Mprime; M^-1*Mprime=ssprime/[2(1+s^2)]*[[1,-1],[-1,1]]",
+  "exact_frame": "H11=s*(a.g-sprime)/(1+s^2); H12=(2F*btheta-s*omega)/(1+s^2); H21=-(2F*btheta+b.g)+s*omega; H22=0",
+  "fixed_choices": "Md64; original h,N,positive tilt,lambda>0,roots,carriers,r0,width C_setup^-20,supports,gauge,unit viscosity",
+  "frame_convention": "sections 2-4 use inherited actual-sa mixing; manuscript (7.8) uses sref mixing; T=Ma^-1*Mr; zr(0)=T(0)^-1*za(0), not reset eplus",
+  "manuscript_budget": "CEref=kMref*(DH+2*Fmax*Ds)+Sref*u; full time-dependent generator and forcing transform",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "memory": "full nprime and source-normal pressure; Pi1/Pi2; axial velocity and whole moving pressure moment; additive Gaussian tails never forward-inverted",
+  "operator": "CE=kM*DH+S0*S1+lambda_plus*Ds; Cd=4*Dn*(2*Nref+Dn); Euclidean operator not entrywise norm",
+  "parent_commit": "255ae2e44292419235dd9b7e1a340f20e690dc39",
+  "primitive": "same phase; full 1/k rounding and epsilon*v axial term; Db,Dbox,Mz from actual reviewed background jets",
+  "scope": "explicit frame/column comparison relative to current core/background jet bounds; complete covariance/mean/residual join and unconditional proof remain"
+}

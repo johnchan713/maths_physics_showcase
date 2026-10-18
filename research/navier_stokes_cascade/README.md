@@ -13,7 +13,22 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [Gaussian/Haar-mass foundation](results/gaussian_mass_foundation/README.md)
+The latest [frame/column foundation](results/frame_column_foundation/README.md)
+derives an exact two-coordinate projected-frame identity and explicit
+operator-norm, damping and primary-column error constants from the current
+phase and background jet bounds. Moving-normal pressure, the frame derivative
+and the secondary frame coordinate all contribute; omission controls detect
+each. The same value-acceptance and cone inequalities retain the original
+repository radius, carriers, roots and width. A newly identified convention
+mismatch is explicit: manuscript (7.8) mixes with reference s, while inherited
+replays mix with actual sa. Exact conjugacy requires transporting entrance
+data; resetting the growing coordinate changes the physical primary.
+Separate operator bounds are supplied, but exact canonical-primary/root
+identification remains an obligation. The remaining current covariance/mean/
+residual join and core/background dependencies stay explicit; no unconditional
+construction or blow-up theorem is claimed.
+
+The preceding [Gaussian/Haar-mass foundation](results/gaussian_mass_foundation/README.md)
 derives explicit whole-pulse Gaussian curvature and radial amplitude factors
 from the current spectral floors and reviewed frame errors. It quantifies
 the true primary Haar mass, concentration and cutoff-tail rate
