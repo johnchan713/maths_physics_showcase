@@ -1,0 +1,13 @@
+{
+  "parent_commit": "ffd0b394d7f0e5df08c9d171937ae3fb1d362d8e",
+  "correction": "target freezing needs ell^6>=8*Cfreeze/gamma0, separate from Ls length bounds; historical evidence preserved",
+  "selector": "Eplus=ceil(max(16,ell_old,512/h^2,sqrt(max(Lreq,Lcarrier)/(2r0)),(8*Cfreeze/gamma0)^(1/6)))",
+  "margin": "Lreq evaluated at gamma0/2 or smaller; Cfreeze from actual smooth limiting direction not T0/zeta",
+  "normalization": "P>0; nonnegative Bell recurrence bounds P*D^I(P^-1); quotient jets bounded by finite convolution with source jets",
+  "grammar": "linear complete remainder; complete same-label curl products; mean times wave; finite harmonic n/m retained; additive flat tails excluded",
+  "edges": "zeta=exp(-t1^2/ya^2-4/yb^2),t1=C_setup^-20; oriented primitive gains x^3/a near left and symmetric right only with zero total",
+  "signed": "Xi has full zeta jets, reciprocal root loses zeta^(-1/2); delta_a<=C epsilon^(alpha-1) s0^(-1/2) sqrt(zeta) times finite edge powers",
+  "pressure": "full n.K.t-nprime.t+n.f; actual Pi1/Pi2,axial means,all six covariance entries and moving pressure moment retained",
+  "remaining": "actual current Xi weighted jets and both complete tangential moment identities with whole partial_Z(Jz+c_rho*Pmean)",
+  "scope": "source functional estimates relative to current targets, corrected initial acceptance contract; no unconditional full cycle or identification with old force"
+}

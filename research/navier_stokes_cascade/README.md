@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [certified-tail reconstruction](results/certified_tail_reconstruction/README.md)
+The latest [source-envelope and weighted-edge audit](results/source_envelope_edge_audit/README.md)
+corrects a missing displayed condition in the tail selector: target-direction
+freezing needs ell^6>=8*Cfreeze/gamma0 in addition to pulse-length bounds,
+and those bounds must use the certified frozen cone margin. Use the corrected
+initial selector; the historical first band, field and force are not thereby
+recertified or identified with a corrected instance. The new estimates give
+all-fixed mixed quotient-jet bounds for f/P, signed reciprocal-root half-weight
+cancellation, and a quantitative two-edge primitive bound requiring the exact
+zero total. Full pressure memory and actual width costs remain. Generated
+regular-source membership is supplied relative to current target/moment jets;
+actual later full-covariance mean/signed targets still require verification.
+No unconditional pulse, complete residual or blow-up theorem is claimed.
+
+The preceding [certified-tail reconstruction](results/certified_tail_reconstruction/README.md)
 propagates the accepted tail from actual finite real value budgets through
 fresh realization and force-extension diagonals, localization, energy and
 same-force comparison, conditional on the retained finite-map/source/edge
