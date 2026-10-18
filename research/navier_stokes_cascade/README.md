@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [canonical finite-cycle bridge](results/canonical_finite_cycle_join/README.md)
+The latest [canonical local realization](results/canonical_local_realization/README.md)
+joins the canonical finite states to ONE locally finite divergence-free
+field, with a complete all-fixed-jet flat residual CONDITIONAL on retained
+core/background and analytical premises. Whole-interval shrinking cutoffs
+use complete operator-defined potentials, separate direct swirl and full
+fixed-gauge pressure differences. Exact controls show why equal uncut
+states do not license arbitrary stage-dependent potential/pressure gauges.
+This is not the historical realized field or an unconditional residual or
+blow-up theorem. Its own closed-time endpoint, localization, force, energy
+and global comparison joins remain.
+
+The preceding [canonical finite-cycle bridge](results/canonical_finite_cycle_join/README.md)
 rebuilds the signed/sourced/mean seed on the canonical roots and applies the
 reviewed operator estimates to that same family at every finite cycle.
 Conditional regular orders are B_j=3/2-2kappa+j*(1/2-kappa), with full mean

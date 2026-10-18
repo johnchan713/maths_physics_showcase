@@ -1,0 +1,16 @@
+{
+  "canonical_input": "own B0=3/2-2kappa,delta=1/2-kappa,rho=1-kappa; same Hc/ac, current sources and means",
+  "compare": "fix m,N before J; J>=m+2; h*delta*(J+1)/2>=N+1+L_(m+2)+H_(m+2); hB_J-K_m>=N+1",
+  "cut": "V_j=curl(chi(a_j*q)*A_j)+chi(a_j*q)*b_j*e_theta; P_j=chi(a_j*q)*p_j",
+  "gauge": "grad chi cross grad phi and c_j(t) grad chi retained; a common c(t) cancels from pressure increments",
+  "loss": "g_j=h*delta*j; ell_m=2A+2m; L_m=ell_(m+1); H_m=L_m+1; K_m=2A+3/2+2m",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "orders": "B_(j-1)=delta*j+rho; wave velocity B-kappa; potential C-kappa; full mean/swirl/pressure C-2kappa; radial C+1-2kappa",
+  "parent_commit": "20bb5a62a4770cc93fb7372705b1991d03905a4e",
+  "representatives": "Delta u_j=curl(A_j)+b_j*e_theta,partial_theta b_j=0; p_j=p_c^[j]-p_c^[j-1], fixed operator potential/pressure gauges",
+  "residual": "e_t-Delta e+grad pi+u_J.grad e+e.grad u_J+e.grad e; Gaussian ledger at ONE fixed finite state",
+  "scale": "log(a_j)>max(previous+1,log(qstar^-1)+1,1,2*(logC_upper+j)/gamma+P^2/gamma^2); gamma=g_j/2",
+  "scope": "one canonical field for t<1,q>0 with complete all-fixed-jet flat residual CONDITIONAL on retained analytic premises; no endpoint/global/unconditional theorem",
+  "tail": "2^-J*q^(h*delta*(J+1)/2-L_m),q<=1/(2*a_J),fixed J>=max(1,m)",
+  "unchanged": "Md64,unit viscosity,original h,N,fixed positive lambda,radius,width C_setup^-20,carriers,supports,qstar"
+}

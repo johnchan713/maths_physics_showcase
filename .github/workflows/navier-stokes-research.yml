@@ -104,6 +104,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/canonical_finite_cycle_join/evidence.json \
             --output navier_stokes_canonical_finite_cycle_join_ci.json
 
+      - name: Check canonical local realization fixed gauges and all jet cutoff bounds
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/audit.py \
+            --verify-record research/navier_stokes_cascade/results/canonical_local_realization/evidence.json \
+            --output navier_stokes_canonical_local_realization_ci.json
+
       - name: Check actual annular and compact repair roots full norms and pressure memory
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/matching_root_foundation/test_audit.py -v
@@ -1009,6 +1016,7 @@ jobs:
             navier_stokes_canonical_primary_foundation_ci.json
             navier_stokes_canonical_initial_mean_join_ci.json
             navier_stokes_canonical_finite_cycle_join_ci.json
+            navier_stokes_canonical_local_realization_ci.json
             navier_stokes_matching_root_foundation_ci.json
             navier_stokes_axial_root_foundation_ci.json
             navier_stokes_root_foundation_ci.json
