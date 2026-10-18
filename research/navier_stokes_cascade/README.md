@@ -13,7 +13,25 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-target cycle bridge](results/current_target_cycle_bridge/README.md)
+The latest [complete current residual-ledger audit](results/current_residual_ledger_audit/README.md)
+derives the exact nonzero-angular split into the next regular source and
+retained cutoff tails, including full wave pressure, cutoff curls, both
+old-new interaction orientations and new squares. Recomputed angular-zero
+mean pressure does not reclassify that nonzero residual, but still changes
+the full mean equation; both Pi1/Pi2 memories remain. Quantitative Gaussian
+constants give every fixed physical tail power on the same accepted domain,
+without treating physical flatness as normalized-source improvement.
+Only the temporal pulse cutoff is assigned to Gaussian-flat tails; spatial
+and slow localizer derivatives stay in the regular remainder. The generic
+spatial cutoff diagnostic is not a Gaussian-flatness certificate.
+Together with the current target bridge and listed operator/seed inputs,
+this supplies a conditional finite-cycle residual bound, not an unconditional
+theorem. Next identify and independently discharge those actual initial,
+core/background and common-domain inverse premises before promoting the
+same accepted-tail single-field/force construction. Historical first-band
+and old-force acceptance remain unverified.
+
+The preceding [current-target cycle bridge](results/current_target_cycle_bridge/README.md)
 derives the missing higher-order target cancellation from exact CURRENT-state
 differences through signed covariance and fast/slow mean updates, conditional
 on the accepted canonical initial input and reviewed operator estimates.

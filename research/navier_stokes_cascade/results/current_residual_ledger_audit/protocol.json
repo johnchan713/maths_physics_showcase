@@ -1,0 +1,16 @@
+{
+  "Gaussian": "q^-D ell^b exp(-c ell^2)<=n! (2/c)^n exp((D+N)^2/(2c)) q^N, ell>=1,n=ceil(b/2)",
+  "classification": "Gaussian-ledger psi is temporal with frozen Ls and grad_x v_pulse=0; spatial/transverse/slow localizers stay inside uncut potential/pressure and regular r; diagonal/localization cutoffs have separate estimates",
+  "cutoff": "vpsi=curl(psi A)=psi v+grad psi cross A; pressure psi pi; Tpsi retains time transport viscosity pressure and L_B cutoff curl",
+  "domain": "same corrected initial tail with ell^6>=8*Cfreeze/gamma0 and frozen-margin Lreq; actual C_setup^-20 width and radius retained",
+  "exact_wave": "Gnew_reg=psi*r+Pperp[mean-new, new-mean, oldwave-new, new-oldwave, new-new]; Tnew=Told+(1-psi)*CURRENT_f+Tpsi",
+  "mean": "actual angular-zero mean update changes nonzero residual by N(d,w)+N(w,d); exact nonzero tail ledger unchanged",
+  "obstruction": "physical flatness does not imply W_(B+delta): exp(h delta ell)<=C ell^a fails; old tails never inverse sources",
+  "orders": "B>=3/2-2kappa; complete linear/cross/fast rows B+1/2-kappa, squares 2B-kappa, slow mean B+1/2",
+  "parent_commit": "62cce31db067535582f9b22d4ea0727a3c158f04",
+  "physical": "conditional fixed j,m residual q^(h Bnext-Km),Km=2A+3/2+2m; full base/exterior bounds still explicit inputs",
+  "pressure": "full n.Kt-nprime.t+n.f normal pressure; pure pressure pi grad psi nonzero; same full Pi1/Pi2 base and current mean moments retained",
+  "projection": "nonzero angular projection of cylindrical components, not auxiliary Haar; full mean pressures angular zero only in this projection",
+  "scope": "conditional complete finite ledger and fixed-jet bound only; retained initial/core/background/inverse hypotheses and single-field forcing remain unpromoted",
+  "validation": "exact independent cylindrical Fourier residual checks; relevant historical numerical evidence replayed separately, recursive hashes alone do not reexecute it"
+}
