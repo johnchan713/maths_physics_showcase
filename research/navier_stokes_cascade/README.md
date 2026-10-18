@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [regional weighted-value input join](results/regional_weighted_gate/README.md)
+The latest [quantitative first-coefficient bound](results/first_seminorm_bound/README.md)
+propagates the actual collar Picard envelope through angular Cauchy estimates,
+radial cutoff jets and the exact linear five-moment repair. Its amplitude
+retains the complete later radial-pressure source and nonconstant angular
+normalizers. Full first pressure and shifted leading axial viscosity enter
+the compact stress bound; the exact inner zero avoids division at the flat
+edge. This supplies a formula for the previous gate's finite constant C*,
+not an evaluation of the actual primitive envelopes or leading stress floor.
+The remaining sufficient chart inequality is 2h(ell-2)>=log2(C*/r_Kc), together
+with every other accepted-tail gate. No historical first-band, unconditional
+pulse, complete residual or blow-up conclusion is promoted.
+
+The preceding [regional weighted-value input join](results/regional_weighted_gate/README.md)
 derives the background error constant from finite first-coefficient seminorms
 and the shared velocity/stress Borel budget. Orders n>=2 contribute at most
 q^(2h)/2; exact band radial derivatives retain the inverse-radius term.

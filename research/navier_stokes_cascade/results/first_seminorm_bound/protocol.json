@@ -1,0 +1,11 @@
+{
+  "collar": "M=(z+beta)exp(beta); z=2*Ccol*a_col; beta=e*z^2/Delta; Delta+d<sigma; actual collar Ccol NOT core C^16",
+  "gate": "Cstar from derived first seminorm bounds and previous shared Borel budget; sufficient whole-chart inequality 2h(ell-2)>=log2(Cstar/r_Kc)",
+  "jets": "J=M(1+1/d); Jeta=M(1/d+2/d^2); H=Ccol(1+1/d)(J+Jeta+1); Jx=J/(2a); Jxx=H/(4a^2)+J/a^3; Xa=a^2",
+  "parent_commit": "b29ca142b37c4200d5a90b824cb2824f70cc0688",
+  "pressure": "Pi1(0)=0; Pi1_X=2F0F1-Omega0/(2X); complete pressure Z_-1 retained; no direct pressure cutoff or zero radial-memory assumption",
+  "radii": "Xa=a^2; Xc=c^2; sqrt(2X) bounded below by a and above by 2c; rho supplied as rho_root^2; p lower patch radius and rp^2<=2p",
+  "repair": "five C_eta^1 ordinary moments include int_0^Xv |Omega0/X|_1 and int_0^Xv X|Omega0/X|_1; inverse 800; reciprocal jet cost 4/e_star; lambda^-1 kept",
+  "scope": "analytical finite input bound conditional on primitive leading/collar lemmas; diagnostic constants are not selected-profile values or historical first-band acceptance",
+  "stress": "T1=0 through Xinner>Xa; Ttheta=-int x*a_theta dx/X; Tz=-int a_z dx/sqrt(2X); tau=min_[Xinner,Xc] |T0|>0"
+}

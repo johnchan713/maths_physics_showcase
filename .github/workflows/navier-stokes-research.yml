@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check collar linear repair full pressure and quantitative first seminorm input
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/first_seminorm_bound/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/first_seminorm_bound/audit.py \
+            --verify-record research/navier_stokes_cascade/results/first_seminorm_bound/evidence.json \
+            --output navier_stokes_first_seminorm_bound_ci.json
+
       - name: Check shared Borel finite seminorm constant and regional weighted gap join
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/regional_weighted_gate/test_audit.py -v
@@ -1089,6 +1096,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_first_seminorm_bound_ci.json
             navier_stokes_regional_weighted_gate_ci.json
             navier_stokes_background_gap_certificate_ci.json
             navier_stokes_current_residual_ledger_audit_ci.json
