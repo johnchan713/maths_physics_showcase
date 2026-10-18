@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [canonical local realization](results/canonical_local_realization/README.md)
+The latest [canonical endpoint join](results/canonical_endpoint_join/README.md)
+derives compatible one-sided potential, direct-swirl, velocity and full
+pressure jets for the SAME canonical field on punctured terminal compacts,
+conditional on retained analytical premises. The unchanged nonzero heat
+exterior has sharp Gevrey-2 terminal growth, including complete pressure;
+no such order is claimed for the interior. An exact zero-residual bounded
+velocity counterexample shows why residual flatness cannot replace uniform
+next-derivative bounds. Canonical localization, admissible global force,
+energy and comparison remain; no origin regularity or unconditional
+blow-up result is claimed. Historical evidence is unchanged.
+
+The preceding [canonical local realization](results/canonical_local_realization/README.md)
 joins the canonical finite states to ONE locally finite divergence-free
 field, with a complete all-fixed-jet flat residual CONDITIONAL on retained
 core/background and analytical premises. Whole-interval shrinking cutoffs

@@ -1,0 +1,17 @@
+{
+  "Gevrey_scope": "sharp order 2 at fixed h>0,r>0,C!=0 for EXTERIOR heat and complete pressure; no full-interior Gevrey assertion",
+  "blocking_inequality": "sup_(Eplus x [1-delta,1)) |D_x^alpha partial_t^j(Ac,Bc,pc)|<infinity, including NEXT time derivative",
+  "closed_atlas": "1/4<=q/Q<=4,T>=0; frozen closed meshes; L=1-2h*eta^2>=1-2h; no 1/(1-eta^2)",
+  "diagnostics": "exact factorial/atlas/trace/oscillatory controls and reused independent positive Gamma mixed heat/pressure checks, not actual canonical fields",
+  "exterior": "K=C*r^(-1-2h)*H(4*tau/r^2), p=-integral_r^infinity K^2/rho; full Leibniz S_j",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "observation": "q_e=min(qstar/16,2^(-ell0-2)); tau<=q_e/16; |z|<=(q_e/16)^D; enlarged 4Q<=16q<=6q_e",
+  "obstruction": "u=sin(1/tau)*e1,p=-x1*cos(1/tau)/tau^2; full residual zero and bounded velocity but unequal terminal subsequences",
+  "parent_commit": "4b9bdd40944f851fc0aebc10fb47bf22f30b4e37",
+  "representatives": "Ac=Aseed+sum chi*Aj; Bc=Bseed+sum chi*bj*e_theta; uc=curl Ac+Bc; pc=p0+sum chi*(pc_j-pc_jminus1)",
+  "same_field": "canonical_local_realization; own canonical Br entrance,Hc/ac and all current generated source/mean maps; not old realized fields",
+  "scope": "conditional same-canonical-field punctured one-sided C-infinity jets; no origin regularity,future velocity,global force,energy,comparison or unconditional theorem",
+  "sharp_bounds": "h*(j!)^2/j<=A_j<=h*(j+1)*(j!)^2; 2A_j<=S_j<=3*2^j*(j!)^2; pressure divisor 2+4h+2j retained",
+  "trace": "uniform Cauchy limits; finite Taylor remainder M_(alpha,k+1)*tau^(k+1)/(k+1)!; potential m+2 for velocity Cauchy",
+  "unchanged": "Md64,unit viscosity,original h,N,positive lambda,radius,width C_setup^-20,carriers,labels,supports,qstar,both diagonal schedules,fixed operator gauges"
+}
