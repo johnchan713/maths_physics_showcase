@@ -1,0 +1,13 @@
+{
+  "parent_commit": "e34f6a5810cd2e59564a3540470d20f67f0cb5b7",
+  "domain": "E=ceil(max(16,ell_old,512/h^2,sqrt(Lreq/(2r0)))); qv=min(qstar/64,2^(-E-2)); actual finite real budgets, not manufactured values",
+  "realization": "fresh a_j_sharp; fixed-gauge complete potential, separate direct swirl and pressure differences; whole-interval constraints on 0<q<=1/a_j_sharp",
+  "scale": "s_j>max(previous+1,ln(1/qv)+1,1,2(c+j)/gamma+P^2/gamma^2); optional old log scale only a lower bound",
+  "observation": "qe=qv/16,tau0=qe/16,z0=(qe/16)^D; q<=3qv/128,4Q<=3qv/8<qv on support closure",
+  "force": "new c_sharp and f_sharp; all twelve residual terms, full pressure gradient and unit viscosity; old force values/norms not reused",
+  "Borel": "new n_j>max(previous+1,2,(c_jam_sharp+j+2)/(j-m)); optional old exponent only lower bound; one sequence for all fixed jets",
+  "obstruction": "old exponents require c_jam_sharp+(m-j)*n_j_old<=-j-2; old norm inequalities do not imply new ones",
+  "comparison": "new datum zero,new compact force,new energy and R^-2 comparison constants; fix T then radius limit then protected core",
+  "fixed": "old qstar,h,N,lambda,pulse radius,width C_setup^-20,phase labels/carriers,operator gauges and historical schedules unchanged as historical objects",
+  "scope": "distinct conditional existential tail witness; old first band not verified; actual finite-cycle/source/edge hypotheses remain; no unconditional theorem"
+}

@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [canonical value-domain certificate](results/canonical_value_domain/README.md)
+The latest [certified-tail reconstruction](results/certified_tail_reconstruction/README.md)
+propagates the accepted tail from actual finite real value budgets through
+fresh realization and force-extension diagonals, localization, energy and
+same-force comparison, conditional on the retained finite-map/source/edge
+estimates. It does not numerically instantiate the actual giant fields.
+The old first band remains unverified, but is not an extra premise for this
+DISTINCT existential tail witness. The old schedules, field and force remain
+historical objects: new cutoffs can change terminal norms and forces, so
+old scale inequalities cannot simply be reused. Full pressure, axial means,
+viscosity and all interactions remain. Next audit actual generated-source
+inverse-class and weighted-edge hypotheses through signed/mean updates.
+No unconditional pulse, complete residual or blow-up result is claimed.
+
+The preceding [canonical value-domain certificate](results/canonical_value_domain/README.md)
 gives an exact dyadic all-later-band bound for both frame/cone domains and
 relative root comparison, retaining the physical radius and whole-pulse
 rounding/axial costs. One value threshold works for every fixed jet order.
