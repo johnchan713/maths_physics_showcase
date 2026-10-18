@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [leading core-pressure identification](results/core_pressure_identification/README.md)
+The latest [canonical value-domain certificate](results/canonical_value_domain/README.md)
+gives an exact dyadic all-later-band bound for both frame/cone domains and
+relative root comparison, retaining the physical radius and whole-pulse
+rounding/axial costs. One value threshold works for every fixed jet order.
+Canonical positive roots use their own cone gate; closeness to historical
+roots is a stronger, separate condition, not necessary for their existence.
+The old first band and localized force are NOT thereby certified: actual
+outward norm enclosures and the existing minimum-band inequality remain.
+A certified observation tail is described without replacing qstar, fields,
+supports, localization or schedules. Complete pressure memory remains.
+No unconditional pulse, residual or blow-up theorem is claimed.
+
+The preceding [leading core-pressure identification](results/core_pressure_identification/README.md)
 traces the exact reference datum through the same-root leading moment ledger.
 That leading backward-pressure identity is already closed relative to the
 accepted leading maps; it is not equality with the full corrected pressure.

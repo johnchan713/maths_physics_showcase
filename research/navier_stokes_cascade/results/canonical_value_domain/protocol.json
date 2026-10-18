@@ -1,0 +1,12 @@
+{
+  "parent_commit": "edf21536d1268a5d8061d663427128c361ec4970",
+  "certificate": "Ls>=Lreq<=2^M; ell>=2^B; B=max(4,b(ell_old),b(512/h^2),ceil((M+b(1/(2r0)))/2))",
+  "exact": "b(x)=ceil(log2(x)) by exact integer bit lengths; exp(x)<=2^(2x); sqrt(pi/c)<=2(1+1/c)",
+  "smallness": "3 ell^4 exp(-h ell/4)<=3*8!*4^8/(h^8 ell^4)<1 for ell>=512/h^2",
+  "scale": "Ls=2r0/ci>=2r0 ell^2, not log(1/Q); original radius and width C_setup^-20 retained",
+  "distinction": "canonical own cone gives positive roots; relative comparison with historical roots is stronger and not necessary for existence",
+  "domain": "qtail=min(qstar/64,2^(-E-2)), E=2^B, is observation only; old field and localized force never replaced",
+  "missing": "actual outward norm enclosures and old minimum contributing band have not been supplied numerically; eventual acceptance does not verify old first band",
+  "pressure": "complete moving-normal/source-normal pressure, axial means and Pi1/Pi2 memory unchanged",
+  "scope": "conditional analytical value certificate; exact rational and mpmath fixtures not actual construction or continuum proof"
+}
