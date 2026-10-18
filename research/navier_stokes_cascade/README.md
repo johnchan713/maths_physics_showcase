@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [actual activated-collar operator envelope](results/collar_operator_envelope/README.md)
+The latest [signed full-pressure source moments](results/signed_pressure_source_moments/README.md)
+derives a conservative radial flux and exact full-support formulas for the
+two source integrals needed by the first-coefficient repair. The unweighted
+total retains 2nu*v(0); the weighted viscosity total cancels only at the full
+support edge. Explicit finite-endpoint corrections prevent truncating future
+pressure memory. For this repair input, bounds in one global third-angular
+axial norm replace the stronger absolute-source integrals and avoid global
+second radial derivatives. The actual full-stage angular norm still needs
+quantification; separate pointwise stress/axial-source bounds, fixed-tilt and
+scale gates remain open. Local I4 pressure memory and all historical evidence
+are retained; no unconditional pulse, residual or blow-up claim is made.
+
+The preceding [actual activated-collar operator envelope](results/collar_operator_envelope/README.md)
 removes the unspecified local C_col input from the first-coefficient estimate.
 It derives explicit first/second radial and angular complex-strip bounds
 for the actual flat activation, with unchanged C^-20 width, then bounds

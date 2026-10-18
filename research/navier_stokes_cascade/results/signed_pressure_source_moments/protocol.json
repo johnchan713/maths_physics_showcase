@@ -1,0 +1,14 @@
+{
+  "I0": "2nu v(0)+(Deta a0_eta+d b0_eta-2Aeta b0)/L+c0/2",
+  "I1": "(-a1+Deta a1_eta+d b1_eta+2Deta b1)/L-c1/2",
+  "axial_input": "KU=sup_[0,Xv] |U|_3; u2<=KU,v2<=36KU; actual full-stage KU not evaluated",
+  "diagnostics": "80 exact manufactured polynomial cases, 320 scalar moment/first-angular-jet identities; 18 floating retained-source comparisons at tolerance 2e-10",
+  "domain": "full leading axial support [0,Xv] and eta in [-1,1]; regular v=V/X and exact functional M_infinity=0",
+  "flux": "J=(1-2eta U)V/L+X*v^2-2nu V_X; w0=J_X+(Deta v_eta+d(Uv)_eta-2Aeta Uv)/L+v^2/2",
+  "integrals": "a_j=int X^j v,b_j=int X^j Uv,c_j=int X^j v^2, through full Xv",
+  "norm": "C_eta^k=sum sup|partial_eta^j|/j!; Q0,Q1 given by README (8),(9), not int absolute w0",
+  "parent_commit": "a70349e4b48b41c08033921824951ce286766195",
+  "scope": "conditional source-moment simplification and repair input only; no complete first stress, actual pulse, full residual or blowup certificate",
+  "source": "same retained regular six-variable first-correction source, not final manuscript theorem",
+  "support": "arbitrary finite endpoint requires both explicit boundary corrections; axis term still retained"
+}
