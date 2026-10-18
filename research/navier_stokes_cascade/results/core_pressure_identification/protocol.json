@@ -1,0 +1,18 @@
+{
+  "parent_commit": "0b16f1b18aa6277dc507e39fd7cecbd9a6e4016a",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "fixed": "same Md64,P,h,Lambda,C,N,positive lambda,width C_setup^-20,leading roots,pulse labels,supports,qstar and gauges",
+  "reference": "Pi_axis=-1/2 int E_id,sched(y,eta)^2 dy; y=log(X/XR); dX/X=dy cancels radial attachment scale",
+  "family": "exact positive pushforward measure on [0,1], mass<5, inner atom>=5/2 at theta=1; diagnostic quadrature not substituted",
+  "leading": "same-root leading ledger Pi_axis+Cp_infinity=0 and all fixed eta jets; leading physical field not rebuilt by canonical wave-root change",
+  "defect": "delta=Pi_forward-Pi_backward=Pi_axis+Cp_infinity; Delta(r*Tz)=X*K_A(delta)/L",
+  "operator": "K_A delta=4A eta delta-(1-eta^2)delta_prime; A=1/2+h,0<h<=1/100",
+  "inverse": "p=2A; (d^p delta)_prime=-d^(p-1)g; weighted integral g=0; right and left endpoint integrals recover unique smooth bounded delta",
+  "value_bound": "||delta||_infinity<=||K_A delta||_infinity<=||Gamma||_infinity, Gamma=(K_A delta)/L, L=1-2h eta^2",
+  "jets": "K_(A+k/2) delta^(k)=g^(k)-k(4A+k-1)delta^(k-1); B0=G0,Bk=2^k*(Gk+k*(4A+k-1)*B_(k-1))",
+  "source_jets": "Gk=||Gamma^k||+4hk||Gamma^(k-1)||+2hk(k-1)||Gamma^(k-2)||; negative indices zero",
+  "endpoint": "nonzero delta=d^(-2A) has zero operator on open interval but nonvanishing weighted endpoint trace; g=1 fails compatibility",
+  "pressure_memory": "on I4, q^(2A)p_B=Pi0+chi(c1q)q^(2h)(K1-mu^2/(4X))+chi(c2q)q^(4h)K2; no full-pressure collapse",
+  "next_gate": "theta=12CH/(ja_minus*min(Amin,u)*L)<=1/(2*kappa+1),kappa=24ja_plus/(gamma*ja_minus),plus common normal/Riccati/cone thresholds; actual domain acceptance not proved here",
+  "scope": "leading datum compatibility relative to same accepted leading maps; new regular angular inverse is analytical; no unconditional full construction or blowup"
+}

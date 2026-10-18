@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [canonical comparison join](results/canonical_comparison_join/README.md)
+The latest [leading core-pressure identification](results/core_pressure_identification/README.md)
+traces the exact reference datum through the same-root leading moment ledger.
+That leading backward-pressure identity is already closed relative to the
+accepted leading maps; it is not equality with the full corrected pressure.
+A new bounded angular inverse controls a pressure-normalization defect by
+its axial pressure-stress defect, with explicit all-fixed-jet bounds and a
+weighted endpoint compatibility condition. An exact singular homogeneous
+mode shows why bounded endpoint traces are essential. The exceptional Pi1/Pi2
+background pressure memory remains. Next audit actual canonical common
+value/root acceptance on the unchanged domain, rather than promoting
+manufactured diagnostic inputs. Retained analytical construction premises
+remain; no unconditional pulse, complete residual or blow-up result is claimed.
+
+The preceding [canonical comparison join](results/canonical_comparison_join/README.md)
 checks the ordinary pressure-recovery and expanding-ball comparison hypotheses
 on the SAME canonical field, zero datum and compact force. Relative to retained
 analytical premises, every admissible smooth finite-energy global competitor
