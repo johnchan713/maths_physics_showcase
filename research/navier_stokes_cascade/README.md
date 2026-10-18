@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [canonical initial-mean join](results/canonical_initial_mean_join/README.md)
+The latest [canonical finite-cycle bridge](results/canonical_finite_cycle_join/README.md)
+rebuilds the signed/sourced/mean seed on the canonical roots and applies the
+reviewed operator estimates to that same family at every finite cycle.
+Conditional regular orders are B_j=3/2-2kappa+j*(1/2-kappa), with full mean
+order B_j+1/2, complete pressure, viscosity, interactions and exact additive
+tails retained. This is not an identification with historical fields or an
+unconditional residual theorem. A growing-constant counterexample shows
+that improving finite-stage orders does not license an arbitrary j(q) or
+one limiting field. A controlled canonical realization and the retained
+analytical premises remain; historical evidence is unchanged.
+
+The preceding [canonical initial-mean join](results/canonical_initial_mean_join/README.md)
 supplies the rebuilt canonical family's complete real six-entry covariance
 and fresh pressure/fast-mean/slow-five-map inputs. Conditional initial defects
 are S2 and tangential angular-mean residuals M_(2-3kappa), retaining viscosity,

@@ -1,0 +1,4 @@
+# Exact new controls; independently reproduced dependency suites require:
+numpy>=1.24
+scipy>=1.10
+mpmath>=1.3
