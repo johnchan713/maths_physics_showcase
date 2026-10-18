@@ -1,0 +1,18 @@
+{
+  "Borel": "f_plus=sum chi0(b_j*sigma)*sigma^j/j!*F_j; b0=2,b_j=2^n_j; ONE sequence, whole-support constraints a+m<=floor(j/2)",
+  "corner": "all alpha,j,N: |D_x^alpha partial_t^j f_minus|<=C*(tau+abs(z)^(1/D))^N on fixed plateau box, uniformly in r",
+  "energy": "E(t)+2*integral_0^t D<=F(t)^2; separately sup E<=F(1)^2,total D<=F(1)^2/2; do not combine extrema with same budget",
+  "exact_scale": "rational c>=max(0,log2 C); integer n>max(previous+1,2,(c+j+2)/(j-m)); no huge power materialization or floating acceptance",
+  "flat_disk": "D_x^alpha F_j(x1,x2,0)=0 for r<rL/2, all alpha,j; future mixed force jets <=C_N*abs(z)^N on smaller disk x [0,1/2]",
+  "force_support": "K x [1-tau0,3/2], zero initial velocity; smooth compact global force only, no future velocity or pressure",
+  "full_force": "all twelve terms of localized R_1 including full pc*grad c, time, vector viscosity and every nonlinear cross/square; d dot grad c=0 exactly",
+  "localization": "c=chi_r(r^2)*chi_z(z)*chi_t(t); u=curl(c*Ac)+c*Bc=c*u0+grad c cross Ac; p=c*pc; support closure defined inside observed domain",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "official_source": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf, checked 2026-10-18, equations (4),(5),(7), alternative (C)",
+  "parent_commit": "99b5b2a72c16324a0c9389defa5e1d7a9cdfe76f",
+  "pressure": "-Delta p=partial_i partial_j(u_i*u_j)-div f; no solenoidal-force requirement or compact Leray projection",
+  "requirements": "force m: Ac m+3,Bc m+2,pc m+1; next-time Cauchy reserves one more; complete Gaussian ledger kept",
+  "same_field": "canonical_local_realization plus canonical_endpoint_join, own canonical Hc/ac and complete current pressure targets; not old force or old global field",
+  "scope": "conditional same-canonical-field compact force, protected flat disk and preterminal energy; competitor comparison and retained analytic premises remain",
+  "unchanged": "Md64,unit viscosity,original h,N,positive lambda,pulse radius,width C_setup^-20,labels,carriers,supports,qstar,both diagonal schedules,fixed operator gauges"
+}

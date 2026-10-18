@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [canonical endpoint join](results/canonical_endpoint_join/README.md)
+The latest [canonical compact-force join](results/canonical_force_join/README.md)
+localizes the SAME canonical field with complete potential/pressure terms,
+zero initial velocity, one smooth compact global FORCE and preterminal
+energy/dissipation bounds, conditional on retained analytical premises.
+All terminal force jets are flat along the protected equatorial disk;
+an exact dyadic Borel construction preserves that flat disk in the future
+force without assuming analytic or Gevrey growth of the complete force.
+It constructs no future velocity. Global competitor pressure recovery and
+comparison for this same force, plus independent discharge of retained
+core/background and finite analytical premises, remain before any
+unconditional admissibility, residual or blow-up claim.
+
+The preceding [canonical endpoint join](results/canonical_endpoint_join/README.md)
 derives compatible one-sided potential, direct-swirl, velocity and full
 pressure jets for the SAME canonical field on punctured terminal compacts,
 conditional on retained analytical premises. The unchanged nonzero heat
