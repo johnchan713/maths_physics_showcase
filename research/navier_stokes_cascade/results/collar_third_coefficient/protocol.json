@@ -1,0 +1,13 @@
+{
+  "J3": "Ceta=1+2/delta;J3=Ceta[V2/(8a^3)+3V1/(8a^4)+3M/(8a^5)],0<a<=sqrt(Xa) on cutoff collar;all bounds affine in unevaluated M",
+  "Picard": "C>=1,Cxi>=0 on2delta;z=2Cb,beta=e z^2/(delta/2),M=(z+beta)exp beta on3delta/2,using retained cross-point sparse derivative block proof",
+  "derivative": "B=C+3/a,Bxi=Cxi+3/a^2,M1=2M/delta,M2=8M/delta^2;V1=BM+CM1+C;V1eta=(C/delta)M+(B+C/delta)M1+CM2+C/delta;V2=Bxi M+B V1+Cxi M1+C V1eta+Cxi",
+  "diagnostic": "18 original-system manufactured matrix/source value and centered-difference xi derivative comparisons,exact product/coordinate checks,toy M<=2^4000 at C=2,b=2,loss1/8;not selected solution",
+  "leading": "same actual squared-flat activation t=C^-20,tc=t/(10sqrt(log C)),ell=tc/4<t/20;core radial orders<=3,zero-free reciprocal,actual Fa=Fr exp J,Ua_y=(1-ea)Ur_y",
+  "operator": "positive value/xi derivative pairs of every original A0,A1 row and source;regular w0 keeps radial viscosity,full shifted axial operators keep coefficient derivatives;nu=1",
+  "parent_commit": "2fcf54abdc2b3faf661d73e0feae79197f96c565",
+  "pressure": "source=(0,0,0,-xi*w0,-2CF,2eta X*w0/L-2CU);both pressure columns retained;local estimate never erases full future moment/inverse costs through Xv",
+  "scope": "inner J3 input discharged relative to retained core/Picard;unchanged cutoff L3,actual scale,all pulses,higher coefficients,complete covariance/residual and unconditional foundations remain open",
+  "separated": "actual K3,H3 bounded by rational factors times E<=2^ceil(50ell S);positive operator value/xi derivative polynomials degree<=2 in H3,so both factor bounds multiply by E^2",
+  "third_activation": "Jyyy<=30400S/t^2+128000S^2/t+50000S^3;full Bell and logarithmic Jacobian terms;no radial analyticity across flat join"
+}

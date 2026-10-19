@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [higher cutoff/repair jet interface](results/cutoff_higher_jet_interface/README.md)
+The latest [third inner-coefficient collar bound](results/collar_third_coefficient/README.md)
+quantifies the actual activated leading third radial jets and derivatives of
+the full six-variable matrix/source, then derives an explicit J3 for the
+same first coefficient on the positive cutoff collar. Angular strip losses,
+the singular diagonal, inverse-radius Jacobians, pressure coupling and both
+shifted viscosities are retained; no radial analyticity is assumed. This
+discharges the local J3 input relative to the retained core/Picard hypotheses,
+not the unchanged cutoff's L3, actual scale acceptance or all-order pulse,
+covariance/mean and complete residual obligations. Enormous exponential
+factors are kept symbolic; diagnostic fixtures are not the selected solution.
+Construction choices and historical evidence are unchanged.
+
+The preceding [higher cutoff/repair jet interface](results/cutoff_higher_jet_interface/README.md)
 gives explicit all-finite-order bounds for the five actual repair bumps and
 propagates supplied cutoff/collar jets to repaired coefficients and physical
 radial derivatives, with logarithmic Jacobians and scale losses retained.
