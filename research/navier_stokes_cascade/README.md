@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [current-frame value freezing](results/current_frame_freezing/README.md)
+The latest [sharp complete cutoff/current-scale floor](results/sharp_current_scale_floor/README.md)
+solves the minimum of all four fixed affine cost rows and joins it to the
+mixed current-frame budget. The derivative row can raise the stress-only
+infimum; a dominating constant row can instead make the full minimum
+attainable. The exact boundary test and required-deficit floor exclude
+impossible proposed shape/scale certificates before evaluating the old
+cutoff. They remain bounds for that sufficient program: auxiliary shape
+existence does not identify the unchanged cutoff or certify the historical
+first band, actual PDE error, all-scale pulses or the complete residual.
+Full pressure/viscosity inputs, construction choices and frozen evidence
+are retained.
+
+The preceding [current-frame value freezing](results/current_frame_freezing/README.md)
 extends the leading comparison using two endpoint value errors. It gives a
 mixed mesh/background bound, charges the band normalization and the smaller
 current orientation floor, and joins the compact cone to the exact outer

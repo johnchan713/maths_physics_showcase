@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check sharp complete cutoff floor and coupled current frame scale certificate
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/sharp_current_scale_floor/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/sharp_current_scale_floor/audit.py \
+            --verify-record research/navier_stokes_cascade/results/sharp_current_scale_floor/evidence.json \
+            --output navier_stokes_sharp_current_scale_floor_ci.json
+
       - name: Check mixed current frame freezing and complete compact outer cone cover
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/current_frame_freezing/test_audit.py -v
@@ -1187,6 +1194,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_sharp_current_scale_floor_ci.json
             navier_stokes_current_frame_freezing_ci.json
             navier_stokes_leading_frame_freezing_ci.json
             navier_stokes_same_tilt_deficit_ci.json

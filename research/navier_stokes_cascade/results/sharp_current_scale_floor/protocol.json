@@ -1,0 +1,15 @@
+{
+  "attainment": "I=max(C0,V);some smooth shape attains I iff C0>V;otherwise every smooth-shape cost strictly exceeds I",
+  "crossing": "a=P-D1,b=G0-S0; t*=Q/b if a=0,else(b-sqrt(b^2-4aQ))/(2a)=2Q/(b+sqrt(b^2-4aQ))",
+  "decay_factor": "exact mathematical S=2^(2h(ell-2));rational diagnostic S=2^floor(2h(ell-2)) is a conservative error-decay factor,not unrounded physical equivalence",
+  "deficit_floor": "dinf=max(16Lpsi*I/(omega^2*S),72kappa*Cmesh/(omega^2*ell^6)+576kappa*Cpert*I/(omega^2*S));strict for smooth shapes when C0<=V;certificate floor,not a physical error lower bound",
+  "diagnostics": "10 exact optimizer regimes,414 independent exact budget comparisons,stationary/crossing/constant equality controls,mixed-bound obstruction and complete global-jet pressure composition;auxiliary fixtures only",
+  "exact_decision": "Cstar<=B possible iff B>I or(B=I and C0>V);exact rational quadratic-field sign arithmetic cross-checked with original capped quadratic",
+  "fixed_program": "Cstar=max(C0,D0+D1M,A0+A1M+A2N),C0=max(1,Rv),D1>0,A2>0,A1>=0;all other complete envelope inputs held fixed",
+  "mixed_budget": "H=gammaB/8-Cmesh/ell^6;Beff=S*min(rb/8,omega^2*d0/(16Lpsi),H/(8Cpert));require H>0,positive chart gate,and full shape decision at Beff",
+  "optimizer": "P=A1+A2,Q=A2,S0=A0+A1+2A2,G0=D0+D1;ts=sqrt(Q/P);if g(ts)<=f(ts),V=S0+2sqrt(PQ);otherwise unique crossing t* in(0,ts),V=G0+D1t*",
+  "parent_commit": "bbfe73f645de9184bc4cd4e52bd8cb8d64a099c2",
+  "pressure": "full affine rows keep corrected tc,all future pressure moments,pointwise source,and shifted axial/swirl viscosities;complete pointwise target and compact/outer sign cover unchanged",
+  "scope": "sharp smooth-shape result for fixed sufficient affine program;actual cutoff/deficit/first band,all pulses,nonlinear frames,full covariance/residual and unconditional foundations remain open",
+  "shape_class": "smooth K=1 before0,K=0 after1,0<=K<=1;capacity>1;existential restriction1<M<=2,N>M^2/(M-1),not reassigned norms of unchanged K"
+}
