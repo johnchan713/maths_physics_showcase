@@ -13,7 +13,21 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [finite-head and radial-frame jet bound](results/finite_head_frame_jets/README.md)
+The latest [higher pressure-source moment bound](results/higher_pressure_source_moments/README.md)
+derives the full ordered radial-source flux and its two signed moments at
+every finite order, with the previous-order axial viscosity retained from
+pressure order two. Its weighted total generally does not vanish when the
+radial-viscosity boundary cancels. Explicit conditional second-repair bounds
+retain F1 squared, U1 squared and U1F1, the unchanged inverse-800 costs and
+complete future pressure memory. The resulting input still needs actual
+full-support U1 third-angular and U0 fourth-angular bounds, plus the second
+inner coefficient estimate before H2,3 can be evaluated. Manufactured
+algebraic/float checks are not actual PDE solutions or continuum proof.
+Actual cutoff/scale acceptance, complete physical pulses, covariance/means,
+residual closure and independent inherited-foundation checks remain open.
+Historical evidence and construction choices are unchanged.
+
+The preceding [finite-head and radial-frame jet bound](results/finite_head_frame_jets/README.md)
 turns the diagonal Borel prescription into an explicit finite-head formula:
 third radial derivatives retain the second coefficient's own third-jet norm,
 unless a stronger SAME-schedule stage-two budget has separately been checked.

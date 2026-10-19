@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check higher ordered pressure source moments complete axial viscosity and second repair
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/higher_pressure_source_moments/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/higher_pressure_source_moments/audit.py \
+            --verify-record research/navier_stokes_cascade/results/higher_pressure_source_moments/evidence.json \
+            --output navier_stokes_higher_pressure_source_moments_ci.json
+
       - name: Check finite head third jet Borel inputs and radial current spectral frame bounds
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/finite_head_frame_jets/test_audit.py -v
@@ -1215,6 +1222,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_higher_pressure_source_moments_ci.json
             navier_stokes_finite_head_frame_jets_ci.json
             navier_stokes_collar_third_coefficient_ci.json
             navier_stokes_cutoff_higher_jet_interface_ci.json

@@ -1,0 +1,12 @@
+{
+  "angular_operator": "T_b=(d partial_eta+2b eta)/L;int X^j Z_(a-D)Z_a f=T_(a+j+1-D)T_(a+j+1) int X^j f only after full compact support",
+  "boundaries": "axis 2nu v_k(0) retained;actual positive-order zero U axis jets imply it vanishes;finite R requires J_k(R),R J_k(R)+2nu V_k(R) and differentiated axial endpoint flux",
+  "diagnostics": "48 Fraction compact C4 endpoint fixtures at k=0,1,3;192 integrated scalar jet identities;27 independent original floating hierarchy samples;not actual PDE profiles or interval certificates",
+  "flux": "J_k=(V_k-2eta sum U_i V_j)/L+X sum v_i v_j-2nu V_kX;remainder=(-lambda_k v_k+Deta v_keta+d B_keta+2(lambda_k-A)eta B_k)/L+C_k/2-shifted viscosity",
+  "hierarchy": "k=n-1;lambda_j=2hj;all ordered i+j=k;w_k has -nu Z_(lambda_(k-1)-1-D) Z_(lambda_(k-1)-1) v_(k-1) for k>=1",
+  "norms": "Ceta1 signed totals from all U_i Ceta2,v_i Ceta2 and previous v Ceta3;regular average sufficient U_i Ceta3 and previous U Ceta4;not absolute or pointwise bounds",
+  "parent_commit": "39dca194ea7dbe3f8e505ecaaa42729ca5e64754",
+  "repair": "Pi2_X=2F0F2+F1^2-w1/2;ordinary moments retain U1F1,U1^2,F1^2;unchanged exact B inverse800 with amplitude and lambda_patch inverse costs",
+  "scope": "conditional global source/repair input only;actual U1 Ceta3,U0 Ceta4,second inner J3,H23,cutoff,scale,complete pulses,covariance,means,residual and independent foundations remain open",
+  "support": "same full Xv;functional M_j infinity zero;common endpoint independenteta;no Xcut I3 I4 truncation or incoming pressure reset"
+}
