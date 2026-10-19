@@ -1,0 +1,10 @@
+{
+  "axial": "full shifted Z_(k-D)Z_k U bound 64Xv^2 R2+704Xv R1+1664KU; all coordinate derivatives retained",
+  "compact": "weighted J3_N pullback<=H/N; same leading repair J3<H^20/N; native E,U J3<H^4*N^2<H^70",
+  "global_inputs": "KU=max(Kaxis,2Ahi,352); R1=max(Kaxis,H^2/Xa),R2=max(Kaxis,H^3*N/Xa^2)",
+  "parent_commit": "dfcf62462a6a10da6313be53638f3ab2b25d9583",
+  "reference": "same taper and complete pulse U J3<1e110<H, using actual width .3 unnormalized end bumps and both affine coefficients",
+  "scope": "conditional leading axial/source inputs; actual global swirl, cutoff shape, complete first-stress acceptance, full residual and blow-up remain open",
+  "selective": "|U_y|2<H^2; |U_yy-U_y|1<H^3*N, after axis region; original N=1+floor(H^32)",
+  "source": "VX and VXX divergence identities lower derivative demand; separate w0 C1 and absolute integrals retain viscosity=1 and full future support Xv"
+}

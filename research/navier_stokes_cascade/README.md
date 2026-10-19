@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [cutoff and exact repair derivative audit](results/cutoff_repair_derivative_budget/README.md)
+The latest [global axial/source envelope](results/global_axial_source_envelope/README.md)
+joins new mixed third-order modulation/repair bounds to every later axial
+reference stage. An exact divergence identity avoids an unnecessary fourth
+mixed derivative demand and yields separate pointwise and absolute
+pressure-source bounds, retaining viscosity and the full future support.
+The complete shifted axial U viscosity is also bounded with coordinate
+derivatives retained. These are conditional leading-field inputs, not a
+complete residual improvement. Global swirl/shifted-swirl estimates, the
+actual cutoff shape, full Cstar and fixed-tilt/scale acceptance remain open.
+
+The preceding [cutoff and exact repair derivative audit](results/cutoff_repair_derivative_budget/README.md)
 supplies analytical bounds for the five retained unit-mass repair bumps and
 their first two logarithmic derivatives, then propagates their full
 inverse-radius costs into the first coefficient. It isolates a missing input:
