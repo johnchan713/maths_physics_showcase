@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [global third-angular axial bound](results/global_axial_angular_bound/README.md)
+The latest [cutoff and exact repair derivative audit](results/cutoff_repair_derivative_budget/README.md)
+supplies analytical bounds for the five retained unit-mass repair bumps and
+their first two logarithmic derivatives, then propagates their full
+inverse-radius costs into the first coefficient. It isolates a missing input:
+the retained inner cutoff has no specified shape or derivative budget.
+Even monotone smooth cutoffs with the same allowed window have unbounded
+derivative costs across admissible choices. This is a gap in a uniform
+estimate, not nonexistence of a suitable cutoff. Its actual two shape norms,
+pointwise leading/shifted-axial inputs, fixed tilt and scale gates remain open.
+No field, root, width, support, pressure memory or historical record is changed.
+
+The preceding [global third-angular axial bound](results/global_axial_angular_bound/README.md)
 joins the actual axis-side activation, existing compact modulation/repair
 jets and the later same-root reference pulse into an explicit global KU.
 It derives C3 bounds for the complete post-pulse energy and positive axial

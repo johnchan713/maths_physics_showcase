@@ -1,0 +1,10 @@
+{
+  "actual_bumps": "same five dy-unit-mass width 1/10 bumps; (B0,B1,B2)<=(320,121600,220000000)",
+  "actual_step": "squared-flat logistic, derivatives <=(32,1216,220000) proved by global real-variable envelopes",
+  "composition": "same inverse 800 and first seminorm extended_jets; rho3 lower radius, r=sqrt(rho3); pressure reconstructed, never cut",
+  "cutoff": "same Xkeep=Xa exp(tc/8),Xcut=Xa exp(3tc/16),tc=C^-20; normalized log width Delta=tc/16",
+  "obstruction": "K_n=1-sigma(n(s-1/2)+1/2), norms >=8n and >=16n^2; auxiliary family, no actual cutoff replaced",
+  "parent_commit": "ec57a0079d884edb2b1be30a587f98455628b1ef",
+  "scope": "conditional first-jet input and precise cutoff-shape gap; no same-field scale, full residual or blow-up certificate",
+  "shape": "L1=sup|K_prime|,L2=sup|K_second|; necessary L1>=1,L2>=4 are not upper bounds"
+}
