@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [sharp cutoff-shape feasibility](results/cutoff_shape_feasibility/README.md)
+The latest [same-tilt deficit radius](results/same_tilt_deficit/README.md)
+derives an explicit cone radius directly from the original fixed tilt's raw
+deficit. Original strict admissibility already gives qualitative positivity,
+conditional on the leading lemmas; it need not pass the later stronger
+coarse sufficient tilt test. The new normalized estimate joins the complete
+cutoff/pressure/viscosity bound to the independent representative-freezing
+condition, exposing the quantitative deficit required at a retained scale.
+It does not compute the actual deficit, cutoff norms or freezing constant.
+All construction choices and historical evidence are unchanged; actual scale
+acceptance, uniform physical pulses and the complete residual remain open.
+
+The preceding [sharp cutoff-shape feasibility](results/cutoff_shape_feasibility/README.md)
 derives an exact joint constraint on the two derivative enclosures: the
 clipped-slope capacity must be strictly greater than one. It proves this
 continuum statement by an endpoint comparison and an interior smooth

@@ -1,0 +1,13 @@
+{
+  "cone_margin": "gamma_B=omega^2*d0/(9kappa), gamma_frozen=gamma_B/2; no tilt or physical pulse is renormalized",
+  "deficit_radius": "for valid 0<d0<=kappa-Ract, rd=min(rb,omega^2*d0/(2Lpsi));Psi>=omega^2*d0/2; oriented_unit_stress>=omega/3",
+  "diagnostics": "96 exact rational perturbations,3 legacy constant/radius comparisons,4 fixed-tilt thin-margin controls,symbolic identities and complete pressure-shape-freezing composition; not actual profile samples",
+  "freezing": "same-coordinate tau_freeze<=Cfreeze ell^-6;ell^6>=72kappa*Cfreeze/(omega^2*d0), independently of background error",
+  "normalized_polynomial": "Psi=kappa*H^2-c^2*J^2=Phi/(1+u^2);Lpsi=3kappa LH+4Lc+3cbar2 LH; geometry constants exactly those of retained gap certificate",
+  "original_tilt": "same u>0 fixed before manuscript (7.2),printed page74; kappa=u^2/(1+u^2)>Ract=sup c0^2*(K0.n0)^2/H0^2,including flat-edge limits; actual deficit positive but unquantified",
+  "parent_commit": "abfaf6c133a1b24a88c3eb55f54ac0546178a770",
+  "precise_joint_gate": "E=Cstar(M,N)*2^(-2h*(ell-2));E<=rb;Ract+max(2Lpsi E/omega^2,72kappa Cfreeze/(omega^2 ell^6))<=kappa",
+  "rational_controls": "replace exponent by its integer floor for a conservative error upper bound; exact sixth-root ceiling; later witness is conditional, not old first-band acceptance",
+  "scope": "conditional same-tilt value radius and joint quantitative obstruction; actual d0,cutoff,Cfreeze,retained scale and complete physical pulses/residual/blowup not verified",
+  "thin_margin_family": "fixed F=1,g=(-82/25,0),c^2=16/25,D=2624/625,u=3/4; unit directions n(z) and n(-z),0<z<=1/32; deficit<=3z and relative error=4z/(1+z^2)"
+}
