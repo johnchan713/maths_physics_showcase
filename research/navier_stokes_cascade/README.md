@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [global axial/source envelope](results/global_axial_source_envelope/README.md)
+The latest [global swirl and same-heat-root envelope](results/global_swirl_envelope/README.md)
+derives a C3 target for the complete heat correction and identifies the same
+accepted root by common pointwise uniqueness. It bounds the original later
+reference/heat swirl in mixed third order, preserving the actual normalized
+two-unit terminal taper, and supplies the remaining global F, radial and
+shifted-swirl inputs to the first-stress estimate. These complete its
+primitive leading-field inputs relative to retained lemmas, not its actual
+scale acceptance. The unchanged coefficient-cutoff shape, full Cstar/tilt/
+scale gates, physical pulses and complete residual remain unverified.
+
+The preceding [global axial/source envelope](results/global_axial_source_envelope/README.md)
 joins new mixed third-order modulation/repair bounds to every later axial
 reference stage. An exact divergence identity avoids an unnecessary fourth
 mixed derivative demand and yields separate pointwise and absolute
