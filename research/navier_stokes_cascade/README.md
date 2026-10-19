@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [leading-reference frame freezing](results/leading_frame_freezing/README.md)
+The latest [current-frame value freezing](results/current_frame_freezing/README.md)
+extends the leading comparison using two endpoint value errors. It gives a
+mixed mesh/background bound, charges the band normalization and the smaller
+current orientation floor, and joins the compact cone to the exact outer
+sign cover without requiring a new global small-stress condition. A smooth
+small-oscillation control shows why value closeness alone cannot justify
+discarding the background term. No current derivative estimate is needed
+for this value step, but arbitrary nonlinear frames must still satisfy its
+hypotheses. The actual cutoff/deficit and retained-scale inequalities, all
+physical pulses, full covariance/means and complete residual remain open.
+Construction choices and historical evidence are unchanged.
+
+The preceding [leading-reference frame freezing](results/leading_frame_freezing/README.md)
 bounds Cfreeze explicitly from the global F/U jets, endpoint frame floors
 and retained doubled-box geometry. The complete target stays at the
 evaluation point, so its magnitude cancels and no direction derivative or

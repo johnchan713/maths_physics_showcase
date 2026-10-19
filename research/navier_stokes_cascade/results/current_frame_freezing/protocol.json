@@ -1,0 +1,14 @@
+{
+  "diagnostics": "192 exact current-two-endpoint controls with both target components,three tilts,eight signs,two distances/errors,two magnitudes;four oscillation controls,symbolic compact/outer identities,and auxiliary full-cost later witness",
+  "endpoint_floors": "F>=f/2,-gtheta>=t/2,F<=Fbar+1,|g|<=Gbar+1;c2lower=d/[4(Fbar+1)(Gbar+1)],c2upper=2[(Gbar+1)^2+2(Fbar+1)(Gbar+1)]/(ft);rational cmin=min(1,c2lower),cmax=max(1,c2upper)",
+  "global_cover": "compact epsilon<=rd gives orientation omega/3 and gammaB=omega^2*d0/(9kappa);outer current velocity equals leading and nonnegative angular stress increment improves orientation/cone without global relative-stress smallness",
+  "later_witness": "E<=min(rd/8,gammaB/(128Cpert));ell^6>=max(Dbox/dchart,16Cmesh/gammaB);original dyadic witness and exact sixth-root ceilings,not original first-band acceptance",
+  "mixed_freezing": "tau<=Cmesh ell^-6+8Cpert E;Cmesh=Dbox*max(LV(JF,Jg),LW(JF,Jg)),Cpert=max(LV(2,2),LW(2,2));use current endpoint floors and omega/3",
+  "normalization": "current band F,g divided by B=s^(-1-h);B^-1<8 on1/4<=s<=4;native endpoint error epsilon=8E;no cutoff or current perturbation differentiated",
+  "obstruction": "rational rotations+a,-a at distance a^2 have shear error<=8a and relative W error=4acw/[u(1-a^2)];value-only closeness does not bound slope uniformly;not actual PDE fields",
+  "parent_commit": "cd07a79f66c18f731a2a634eb35c7ee6ffffbd63",
+  "pointwise_target": "complete target stays at evaluation point in both coordinates;amplitude cancels;pressure-sensitive orientation and all compact/full-source premises retained;no representative stress frozen",
+  "precise_gate": "8E<=rb;ell^6>=Dbox/dchart;Ract+max(16Lpsi E/omega^2,72kappa*(Cmesh ell^-6+8Cpert E)/omega^2)<=kappa;E=Cstar(M,N)*2^(-2h(ell-2))",
+  "scope": "conditional current-background VALUE freezing only;no actual scale,arbitrary generated frames,current derivatives,all physical pulses,complete covariance/residual,unconditional foundations or blowup certificate",
+  "two_point": "current differences bounded by leading JF*d+2epsilon,Jg*d+2epsilon;parent coordinate costs are linear separately,not their maximum"
+}
