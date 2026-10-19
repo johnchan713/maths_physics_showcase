@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check explicit leading frame freezing with pointwise full target and chart geometry
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/leading_frame_freezing/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/leading_frame_freezing/audit.py \
+            --verify-record research/navier_stokes_cascade/results/leading_frame_freezing/evidence.json \
+            --output navier_stokes_leading_frame_freezing_ci.json
+
       - name: Check same original tilt deficit radius and joint freezing scale gate
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/same_tilt_deficit/test_audit.py -v
@@ -1173,6 +1180,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_leading_frame_freezing_ci.json
             navier_stokes_same_tilt_deficit_ci.json
             navier_stokes_cutoff_shape_feasibility_ci.json
             navier_stokes_cutoff_cone_scale_gate_ci.json

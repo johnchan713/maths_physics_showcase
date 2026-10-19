@@ -1,0 +1,15 @@
+{
+  "boxes": "retained halfwidth delta=ell^-6;original representative to k-fold box distance<2(k+1)delta;Dbox=4 original,6 doubled",
+  "countercontrol": "m(y)=exp(-1/y^2),distance=y^3;amplitude ratio tends to exp(2),frame error zero; not actual PDE data",
+  "diagnostics": "216 exact rational endpoint controls, three tilts, all sign choices, three distances, magnitudes1/10^40/10^200; symbolic identities and auxiliary complete global-jet/pressure/deficit join",
+  "frame_jets": "|DeltaF|<=JF*d,|Deltag|<=JG*d;LC=LD/(2ft)+Dbar*LP/(2f^2*t^2),LN=2JG/t",
+  "frame_values": "both endpoints f<=F<=Fbar,-gtheta>=t,|g|<=Gbar,cmin<=|c0|<=cmax,-N.n>=omega at evaluation point; native profiles after common positive band factor cancels",
+  "freezing": "Cfreeze=Dbox*max(LV,LW);ell^6>=max(Dbox/dchart,8Cfreeze/gamma0);frozen margin gamma0/2; other length,column,inverse and carrier gates separate",
+  "full_jets": "global swirl native all-radius mixed envelope extends to 2Xb; axial derivatives extend by zero beyond actual Xv, not the pressure source; gz,X includes U_X/sqrt(2X)",
+  "join": "leading-only Cfreeze composes conditionally with same-tilt dreq and full Cstar; not a certificate for an arbitrary perturbed frame or original first band",
+  "parent_commit": "b0f179b085aa0a64f281fd9ada47951c28e0e196",
+  "positive_chart": "T>=0;1/4<=s<=4,Xa<=X<=Xb at representative; enlarge to 1/8<=s<=8,Xa/2<=X<=2Xb;dchart=min(1/288,Xa/(4KX));KX=8b+288b^2,Keta=14",
+  "relative_coordinates": "LV=cmax*LN/(cmin*omega)+LC/(2cmin^2);LW=cmax*(1+u)*LN/(u*omega); no stress or unit-direction derivative",
+  "scope": "conditional leading-reference analytic estimate; no actual scale, all pulses, complete covariance/residual, unconditional foundations or blowup certification",
+  "target": "T(p)=m(p)n(p) stays at evaluation point in both V0,W0 and Vf,Wf; freeze only N,K,|c0|; both target components and complete pressure-sensitive orientation retained"
+}

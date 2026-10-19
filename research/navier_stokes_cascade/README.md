@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [same-tilt deficit radius](results/same_tilt_deficit/README.md)
+The latest [leading-reference frame freezing](results/leading_frame_freezing/README.md)
+bounds Cfreeze explicitly from the global F/U jets, endpoint frame floors
+and retained doubled-box geometry. The complete target stays at the
+evaluation point, so its magnitude cancels and no direction derivative or
+flat-edge amplitude floor is needed. Its pressure-sensitive orientation and
+cone remain premises. The resulting independent chart/freezing tests join
+the prior full-cost deficit gate conditionally, not as actual first-band
+acceptance. A flat-amplitude countercontrol explains why freezing the stress
+itself would be invalid. Perturbed/nonlinear frames need their own jet and
+value inputs; actual uniform pulses, covariance/mean corrections and the
+complete residual remain open. Historical evidence and choices are unchanged.
+
+The preceding [same-tilt deficit radius](results/same_tilt_deficit/README.md)
 derives an explicit cone radius directly from the original fixed tilt's raw
 deficit. Original strict admissibility already gives qualitative positivity,
 conditional on the leading lemmas; it need not pass the later stronger
