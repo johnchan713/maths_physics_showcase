@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check finite head third jet Borel inputs and radial current spectral frame bounds
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/finite_head_frame_jets/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/finite_head_frame_jets/audit.py \
+            --verify-record research/navier_stokes_cascade/results/finite_head_frame_jets/evidence.json \
+            --output navier_stokes_finite_head_frame_jets_ci.json
+
       - name: Check actual activated third leading jet full source derivatives and inner coefficient J3
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/collar_third_coefficient/test_audit.py -v
@@ -1208,6 +1215,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_finite_head_frame_jets_ci.json
             navier_stokes_collar_third_coefficient_ci.json
             navier_stokes_cutoff_higher_jet_interface_ci.json
             navier_stokes_sharp_current_scale_floor_ci.json

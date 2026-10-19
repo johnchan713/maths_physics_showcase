@@ -1,0 +1,13 @@
+{
+  "diagnostics": "exact radius/shear,normal,quotient,physical-chain identities;five manufactured spectral profiles;four abstract second-coefficient controls;not selected enormous fields",
+  "diagonal": "original Cn,m q^(nh)<=2^-n for m<=n on whole support;chi independentX,eta;not a claim every derivative norm is budgeted at every n",
+  "finite_head": "J=max(2,m),head n=1..J-1;error<=sum Hn,m z^(2n)+(z/2)^J/(1-z/2),z=q^h<=1;whole q2h constant<=sum head+2^(1-J)",
+  "parent_commit": "79e54e2be7c0b250516e1e0cc2eb9462ffb3bf98",
+  "physical": "fixed physical z,t,X=r^2/(2q);radial factors q^-1/2 Rhi H1 and q^-1(H1+Rhi^2 H2);N,K,c band invariant,lambda additionally scales s^-1-h",
+  "pressure": "actual H1,3,H2,3 depend on complete globally finalized coefficients and full lower-order pressure/moment memory;no velocity-only inference for relative stress or covariance",
+  "profile": "E1=Rprof F1,deltaF=e/Rprof,g=(2X FX,Rprof UX);all radius product and lower shear terms retained;positive fixed native annulus",
+  "scalar_control": "auxiliary U2,N=a N^-2 psi(X)sin(N(X-1/2)),a=1/(1+2P1+P2);jets<=2 bounded1,central third=aN;profile-budget countercontrol,not actual PDE family",
+  "scope": "quantitative refinement of original finite-head proof,not an original Borel omission or schedule replacement;actual H23,cutoff/scale,all pulse maps,complete covariance/residual and unconditional foundations remain open",
+  "spectral": "given current floors f<=F<=Fmax,-gtheta>=t,|g|<=G,D=|g|^2+2F gtheta>=d>0;N=g/|g|,K=rot N,c=-sqrt(D/(-2F gtheta));explicit quotient and normal C2 estimates from TOTAL jet inputs",
+  "third": "B3(z)=H1,3+z^2 H2,3+z/[8(1-z/2)];H2,3 remains required unless SAME n2 third budget separately verified;old half tail still valid at orders1,2"
+}

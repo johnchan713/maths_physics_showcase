@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [third inner-coefficient collar bound](results/collar_third_coefficient/README.md)
+The latest [finite-head and radial-frame jet bound](results/finite_head_frame_jets/README.md)
+turns the diagonal Borel prescription into an explicit finite-head formula:
+third radial derivatives retain the second coefficient's own third-jet norm,
+unless a stronger SAME-schedule stage-two budget has separately been checked.
+The old value/first-radial half-tail estimate is unchanged. Radius/shear
+product rules then give conditional first/second radial bounds for the
+current spectral frame and growth rate, with physical scale losses retained.
+Abstract controls explain why the second input cannot be inferred from
+lower-order budgets; they are not actual PDE counterexamples or a defect in
+the original finite-head proof. Actual second-coefficient/cutoff inputs,
+value/scale acceptance, all phase/potential pulse jets, full covariance/means
+and residual closure remain open. Historical evidence and choices are unchanged.
+
+The preceding [third inner-coefficient collar bound](results/collar_third_coefficient/README.md)
 quantifies the actual activated leading third radial jets and derivatives of
 the full six-variable matrix/source, then derives an explicit J3 for the
 same first coefficient on the positive cutoff collar. Angular strip losses,
