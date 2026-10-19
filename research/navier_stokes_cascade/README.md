@@ -13,7 +13,21 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [sharp complete cutoff/current-scale floor](results/sharp_current_scale_floor/README.md)
+The latest [higher cutoff/repair jet interface](results/cutoff_higher_jet_interface/README.md)
+gives explicit all-finite-order bounds for the five actual repair bumps and
+propagates supplied cutoff/collar jets to repaired coefficients and physical
+radial derivatives, with logarithmic Jacobians and scale losses retained.
+A smooth monotone auxiliary family passes a common two-jet affine bound
+while its third jets diverge; disjoint exact repair cannot remove the local
+viscous second-stress-derivative cost when the inner coefficient is nonzero.
+That nondegeneracy is not verified for the actual profile. This explains why
+the original all-jet Borel requirements cannot be replaced by the recent
+low-order Cstar, not a failure of that prescription or an actual PDE field.
+Unchanged higher cutoff/collar jets, actual scale acceptance, complete
+physical pulses, covariance/means and full residual remain open. Full pressure
+memory, construction choices and historical evidence are unchanged.
+
+The preceding [sharp complete cutoff/current-scale floor](results/sharp_current_scale_floor/README.md)
 solves the minimum of all four fixed affine cost rows and joins it to the
 mixed current-frame budget. The derivative row can raise the stress-only
 infimum; a dominating constant row can instead make the full minimum

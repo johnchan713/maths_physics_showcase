@@ -1,0 +1,15 @@
+{
+  "actual_bumps": "same beta=10sigma_prime(10(y-c)+1/2),squared-flat sigma;Bell/logistic recurrence gives explicit finite Dm;Bm=10^(m+1)D_(m+1);old first three bounds retained",
+  "auxiliary_control": "Kn=1-sigma+a/n^2 psi sin(n(s-1/2));psi supported[1/4,3/4],one[3/8,5/8];fixed a>0,all Kn monotone,values[0,1],M<33,N<1217,central third=3712-an",
+  "diagnostics": "orders0..8 independent logarithmic/physical identities,orders0..5 actual bump budgets,old low-order calculator comparison,six exact rational auxiliary controls and full-pressure differences",
+  "fixed_width": "tc=C^-20/(10sqrt(log C));Delta=tc/16;no cutoff or field replaced",
+  "log_jets": "dX^m[X^-alpha b(log X)]=X^(-m-alpha) product_(i<m)(Dy-alpha-i)b;all Jacobian terms retained",
+  "nondegeneracy": "unbounded third velocity/second stress control requires nonzero fixed inner F1 or U1 at chosen plateau point;not verified for actual profile;no complete-sum cancellation claim",
+  "parent_commit": "f84076cef9550e7bd146493ce9a5a4f7afdc5b3d",
+  "physical_radial": "fixed physical z,t;X=r^2/(2q);d_r^m(Hf)=H q^-m/2 sum_k m!R^(2k-m)/(2^(m-k)(m-k)!(2k-m)!) dX^k f;not all Cartesian/axial/time/potential jets",
+  "repair_pressure": "order-one leading w0 fixed;full source moments through Xv in every absolute ledger;cancel only same source in differences;repair coefficients O(n^-2),bumps vanish on cutoff collar",
+  "repaired_jets": "km=Xkeep^-m sum_j |s(m,j)|Delta^-j Lj;Pm=sum binom(m,j)kj Jm-j;Sm=Pm+Cp max(Um,Fm);disjoint exact repair supports",
+  "schedule": "original all-jet Borel prescription already retains order-dependent constants and extra radial curl cutoff derivative;low Cstar alone cannot substitute",
+  "scope": "conditional finite-order interface plus continuum norm-class obstruction;actual cutoff/scale/pulses/full covariance/residual and unconditional foundations remain open",
+  "viscous_principal": "T1theta_vis=2nu X F1X,T1z_vis=2nu X U1X/sqrt(2X);second X derivative has principal coefficients2nu X and nu sqrt(2X);other full residual terms remain"
+}
