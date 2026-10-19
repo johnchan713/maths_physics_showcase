@@ -1,0 +1,13 @@
+{
+  "capacity": "A=integral_0^1 min(M,Ns,N(1-s));A=M-M^2/N when 2M<=N,else N/4; existence of SOME smooth shape iff A>1",
+  "class_specification": "smooth K=1 on s<=0,K=0 on s>=1,0<=K<=1; M,N are upper enclosures of sup|Kprime|,sup|Ksecond|, not necessarily exact norms",
+  "diagnostics": "25 exact capacity controls,4 strict frontier/padding controls,15 weighted infimum approximations,symbolic identities and complete inherited row composition; not actual-profile samples",
+  "eliminated_gate": "constant rows<=B;cap=min(1,(B-D0)/D1-1)>0;beta=B-A0-A1-2A2>0;P=A1+A2,Q=A2;t0=min(cap,beta/(2P));P*t0^2-beta*t0+Q<0",
+  "negative_controls": "old relaxed corner can pass while no smooth shape satisfies the certificate; exact capacity/frontier equality rejected; loose upper enclosures need not obey N>=M^2",
+  "parent_commit": "355dce1e76bf0e6d97ec7da84aa06e0fddff5522",
+  "rational_budget_witness": "M=1+t0;Nlo=M^2/t0;Nhi=(B-A0-A1M)/A2;N=(Nlo+Nhi)/2; only auxiliary shape enclosure existence",
+  "retained_geometry": "s=log(X/Xkeep)/Delta,Delta=tc/16=C^-20/(160 sqrt(log C)); allowed window and actual cutoff unchanged",
+  "scope": "new continuum cutoff lemma; its Navier-Stokes application conditional on retained full row estimates; actual cutoff,tilt,scale,pulses,complete residual and blowup not verified",
+  "smooth_witness": "eps=(A-1)/(16A);shrink height and support by 1-2eps,mass m=(1-2eps)^2A>1; nonnegative smooth convolution supported within eps/2; normalize mass; upper jets (1-2eps)M/m,N/m",
+  "weighted_cost": "Rw>A0+A1+2A2+2sqrt(A2(A1+A2)); sharp unattained infimum for the stress row only, not necessarily the full max"
+}

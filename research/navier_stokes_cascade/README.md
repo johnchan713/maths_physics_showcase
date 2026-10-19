@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [combined cutoff/cone/scale gate](results/cutoff_cone_scale_gate/README.md)
+The latest [sharp cutoff-shape feasibility](results/cutoff_shape_feasibility/README.md)
+derives an exact joint constraint on the two derivative enclosures: the
+clipped-slope capacity must be strictly greater than one. It proves this
+continuum statement by an endpoint comparison and an interior smooth
+approximation, obtains a sharp unattained viscous stress-row infimum, and
+eliminates shape variables from the four affine scale inequalities by a
+rational quadratic test. A relaxed corner can pass while no smooth cutoff
+can satisfy that sufficient certificate. Auxiliary shape existence is not
+identification of the unchanged cutoff; actual tilt/scale acceptance, physical
+pulses and the complete residual remain unverified. No field or historical
+evidence is changed.
+
+The preceding [combined cutoff/cone/scale gate](results/cutoff_cone_scale_gate/README.md)
 corrects a historical width misidentification: the coefficient collar uses
 tc=C^-20/(10 sqrt(log C)), not the native width C^-20. With all primitive
 leading inputs supplied, the complete first-stress bound is exactly a maximum
