@@ -1,0 +1,13 @@
+{
+  "combined_gate": "Cstar=max(Ru,Rv,Rd,Rw), four nonnegative affine rows; pressure and shifted viscosities enter constant rows once",
+  "compressed_shapes": "Kn=1-sigma(n(s-1/2)+1/2);L1>=8n,L2>=16n^2; n=1+ceil(B/(16A2)) defeats this finite fixed certificate, not actual stress",
+  "correction": "historical cutoff README/protocol tc=C^-20 is wrong: native t1=C^-20, tc=t1/(10 sqrt(log C)), Delta=tc/16",
+  "diagnostics": "twelve auxiliary rational complete-interface comparisons, symbolic identities and exact boundary/dyadic controls; no actual-profile samples",
+  "later_witness": "m=max(0,ceil(log2(Cstar/r)));ell_suf=2+ceil(m/(2h)); conditional on unchanged Borel tail and all other gates",
+  "parent_commit": "4de29921a9af3fc05e5ade7badb9a0c2361919ba",
+  "scale_region": "every row<=r_Kc*2^(2h*(ell-2)); L1>=1,L2>=4 necessary not sufficient for an actual shape",
+  "scope": "corrected conditional gate and precise uniform-certificate obstruction; unchanged cutoff shape, tilt, existing scale, all physical pulses and complete residual not verified",
+  "shape_jets": "S=s0;Sx=x0+x1 L1;Sxx=z0+z1 L1+z2 L2; coefficients independent of shape derivatives; positive-order repair additive",
+  "unchanged_geometry": "Xinner=Xa exp(tc/16),Xkeep=Xa exp(tc/8),Xcut=Xa exp(3tc/16),analytic edge Xa exp(tc/4),leading modulation Xa exp(tc/2)",
+  "viscous_obstruction": "dRw/dL2=nu*c^3*(c+2)*J/(tau*Delta^2*Xkeep^2)>0 for positive nu,J; actual nu=1"
+}

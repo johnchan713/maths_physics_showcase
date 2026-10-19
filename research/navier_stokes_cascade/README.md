@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [global swirl and same-heat-root envelope](results/global_swirl_envelope/README.md)
+The latest [combined cutoff/cone/scale gate](results/cutoff_cone_scale_gate/README.md)
+corrects a historical width misidentification: the coefficient collar uses
+tc=C^-20/(10 sqrt(log C)), not the native width C^-20. With all primitive
+leading inputs supplied, the complete first-stress bound is exactly a maximum
+of four affine rows in the unchanged cutoff's two shape norms. A positive
+viscous second-shape cost gives a precise obstruction to certifying a fixed
+scale uniformly from smoothness/support alone. An explicit feasible region
+and conditional later-band witness are derived, retaining full pressure
+memory. Actual cutoff-shape, same-tilt and retained-scale acceptance, physical
+pulses and the complete residual remain unverified. Historical evidence and
+all construction choices are unchanged; the width correction is documented
+in the new checkpoint, not silently patched into frozen records.
+
+The preceding [global swirl and same-heat-root envelope](results/global_swirl_envelope/README.md)
 derives a C3 target for the complete heat correction and identifies the same
 accepted root by common pointwise uniqueness. It bounds the original later
 reference/heat swirl in mixed third order, preserving the actual normalized
