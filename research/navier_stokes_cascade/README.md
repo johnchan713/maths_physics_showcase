@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [pre-modulation mixed-input audit](results/premodulation_mixed_shear/README.md)
+The latest [reference fifth-source transfer](results/reference_fifth_transfer/README.md)
+derives the full axis-pressure C6 bound, preserves sixth angular reference
+inputs using the same positive radial taper, and bounds reference Sq,Sn,p1,ns
+in C5 within the unchanged attachment budget. It also bounds the genuine
+core-Xa fifth moment traces without resetting either pressure memory.
+These are conditional reference/core estimates: propagation through the
+actual prescribed continuation, joining root and outer prefix is next.
+The variance-cutoff shape gap, compact gate, FINAL global jets and full
+pulse/covariance/residual obligations remain open.
+
+The preceding [pre-modulation mixed-input audit](results/premodulation_mixed_shear/README.md)
 bounds the actual native mixed derivatives YE,YU and a,bs,ts,vs in C4,
 relative to retained regional estimates. It also corrects a quantitative
 premise: the manuscript's variance-cutoff window does not specify its

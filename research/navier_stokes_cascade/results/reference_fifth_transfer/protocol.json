@@ -1,0 +1,13 @@
+{
+  "parent_commit": "7a282097f781d13dc410e64d606109aff676f6c2",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "domain": "reference and native X0=Xa=4/Lambda through Xi=110,eta[-1,1];not actual prescribed profile or final compact modulation",
+  "norms": "factorial angular Ck=sum sup abs derivative_j/j!,K=Kold;0<h<=.01;retained Md64 parameters and radial width C^-20 unchanged",
+  "axis": "exact positive measure mass<5;Pi_axis=-P2 integral f^(2theta),f=1/(1+eta2);coefficient cap binomial(j+3,3);C6<=1050P2",
+  "reference": "B22 uses explicit radial 1-sigma;logRr and Ur are positive averages of native logPhi and Unat;C6 needs no mixed seventh input or derivative of radial cutoff",
+  "tame": "Rr C6<=3K7,inverse<=15K6;regular F C6<=1e8 exp(-Lambda)Lambda6K49<.01;E C6<1;Ur C6<K;complete Pi C6<=1200P2<K",
+  "sources": "Sq C5<=1e4 Lambda K10,Sn C5<=1e3K2;Pi_eta needs Pi C6;axis and cumulative Cp both retained",
+  "transfer": "p1r C5<=1e8 X Lambda K24,nsr C5<=1e5K3,both<Bold/100;variation formula cancels phi_star but not its angular gradient or pressure memory",
+  "entry": "at core Xa only:M C5<=aK,I<=a2,J<=a2K,S<=aK2+a2/2,Cp<=a;all<K;not reset or transferred to later actual entry",
+  "scope": "conditional analytic estimates plus finite exact rational/interval diagnostics;variance shape,actual full fifth fields,compact gate,FINAL jets,pulses,covariance,residual and independent foundations remain open"
+}
