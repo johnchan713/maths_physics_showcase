@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [mixed-shape cone bridge](results/mixed_shape_cone_bridge/README.md)
+The latest [native mixed-fourth boundary](results/native_mixed_fourth_boundary/README.md)
+bounds complete PREMOD joint-fourth pressure coordinates by A^1547, retaining
+the full axis and cumulative pressure. It identifies the fifth mixed field
+inputs still needed by native fourth shears and derives the exact fourth
+fixed-frequency FIELD transfer with a linear, unverified slow-jet seminorm
+Gamma. Conditional on the retained shape gate, Gamma<=N H^128/(4 A^256)
+is sufficient for a separate compact field budget; neither condition has
+been evaluated on the actual loop. Third-order primitive/source bounds do
+not remove Gamma. FINAL global jets, all-scale pulses and full residual
+closure remain open.
+
+The preceding [mixed-shape cone bridge](results/mixed_shape_cone_bridge/README.md)
 derives a fresh joint third-order moving-loop bound with the cutoff premise
 explicit. The earlier sufficient fourth-angular shape gate implies this
 mixed gate too, conditionally allowing the SAME N and exact five-row repair
