@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [nested second-coefficient axis estimate](results/axis_second_coefficient/README.md)
+The latest [fourth-angular axial input interface](results/fourth_angular_axial_interface/README.md)
+raises the SAME reference angular root, complete strength energy and later
+reference axial pulse to fourth angular order, retaining both affine end
+corrections. It gives an explicit inequality for the remaining compact
+loop-primitive and normalized five-moment target jets. These actual B4,Z4
+inputs are not evaluated, and the old C3 budget is not relabelled C4.
+The global leading U0 C4, finalized first U1 C3, cutoff/final H2,3, retained
+scale, full physical pulses, covariance/means and complete residual remain
+open. Full pressure/heat-compensation memory, roots, supports, frequency,
+construction choices and historical evidence are unchanged.
+
+The preceding [nested second-coefficient axis estimate](results/axis_second_coefficient/README.md)
 uses a smaller analytic seed disk to bound the full second source from the
 first core solution, retaining the extra leading angular jet and the true
 nested Picard exponential. Reflection parity and Cauchy estimates give
