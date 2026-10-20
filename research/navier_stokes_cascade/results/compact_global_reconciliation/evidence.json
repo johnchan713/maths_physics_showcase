@@ -1,0 +1,144 @@
+{
+  "flags": {
+    "all_five_global_moment_rows_and_complete_pressure_memory_retained": true,
+    "explicit_cutoff_discharges_mixed_third_and_joint_fourth_loop_gates": true,
+    "fifth_gate_discharges_F5_and_complete_compact_fourth_map_budget": true,
+    "finite_coefficient_support_and_reserved_mean_velocity_consequence_reached": true,
+    "global_FINAL_all_order_leading_profile_or_all_physical_scale_join": false,
+    "independent_core_native_regional_or_root_foundation_review": false,
+    "same_N_same_root_repaired_state_and_inner_outer_value_cone_joined": true,
+    "same_gauge_exterior_leading_stresses_joined": true,
+    "uniform_all_family_pulses_complete_covariance_axial_pressure_means_residual_or_blowup": false
+  },
+  "gates": {
+    "all_five_rows_are_required": true,
+    "annular_transform_exactly_invertible": true,
+    "compact_transform_exactly_invertible_for_positive_lambda": true,
+    "complete_compact_C4_H925_below_H1024": true,
+    "complete_compact_pressure_flux_interface_available": true,
+    "cone_perturbation_below_half_gap": true,
+    "fifth_gate_implies_F5": true,
+    "finite_coefficient_support_consequence_available": true,
+    "global_five_moments_and_pressure_memory_available": true,
+    "joint_fourth_compact_field_interface_available": true,
+    "pressure_defect_negative_control_nonzero": true,
+    "regional_same_frequency_value_join_available": true,
+    "same_N_exact_repair_bridge_available": true,
+    "selected_Z4_Z5_gates_closed": true
+  },
+  "inherited_provenance": {
+    "frozen_records": {
+      "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+      "results/explicit_variance_cutoff/evidence.json": "82d046cac7f274a262a550349e7c84589c745ae264fb6ebb4d1ab991a8436c1a",
+      "results/fifth_loop_input_gate/evidence.json": "937202f0e30242c2104d9f3801068eb2994f6b3c64369d402299d5cb93043c85",
+      "results/final_fifth_moment_interface/evidence.json": "a3b0149e9427c90bcbcbf6aa62e8bbe7b7d3fd715b4b29ed7465b88c0a35e15e",
+      "results/global_pressure_moment_foundation/evidence.json": "1fa0851e09081c1e9ea7e198c7e2f747ffb6aab7391f9141d2717a178e58503e",
+      "results/joint_fourth_loop_gamma/evidence.json": "48cd46d893f6f52e0ea945c4dfbf6dd2b8b3fc881ae101f0fe62c04798755efe",
+      "results/mixed_shape_cone_bridge/evidence.json": "8679c4e9533ba737e8eab1cec12a2cdb1e45ae3d10b931e1fbce47d30a144284",
+      "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d"
+    },
+    "statuses": {
+      "coefficient_support_foundation": "current-linear-coefficient-jets-reserved-velocity-and-exceptional-pressure-supports-joined-relative-to-leading-inputs",
+      "explicit_variance_cutoff": "explicit-source-admissible-variance-cutoff-and-Z4-Z5-gates",
+      "fifth_loop_input_gate": "tame-fifth-moving-loop-original-native-and-cutoff-input-gate",
+      "final_fifth_moment_interface": "tame-FINAL-fifth-moment-and-complete-compact-fourth-map-interface",
+      "global_pressure_moment_foundation": "current-same-root-global-pressure-moments-and-leading-exterior-stresses-joined-relative-to-retained-inputs",
+      "joint_fourth_loop_gamma": "joint-fourth-moving-loop-Gamma-and-conditional-compact-field-gate",
+      "mixed_shape_cone_bridge": "mixed-third-loop-and-exact-repair-cone-bridge-under-explicit-shape-gate",
+      "regional_cone_join": "regional-input-gaps-and-leading-value-cone-joined"
+    }
+  },
+  "parent_commit": "b295e7c7179e638f4f2122b5477a8edbab7d7d03",
+  "protocol": {
+    "chain": "explicit Z4/Z5 -> mixed J3 and joint J4 loops -> tame fifth moments -> same N/root repaired state -> regional value cone -> exact five global defects -> exterior stress",
+    "compact_fourth": "The fifth gate gives log Lambda5<G^2. Since N>H^32, this implies Lambda5<N H^260/A^1044 and hence the complete compact ordinary fourth pressure/flux bound H^925<H^1024.",
+    "cone": "The selected cutoff satisfies the mixed gate. The existing bridge therefore gives the same-N repaired state error below G^-64/2 and cone gaps at least G^-4/2, joined to the protected inner and compensated outer regions.",
+    "global": "The same exact five-row root restores M,R,J,S,Cp; the triangular transformed rows are equivalent because lambda>0. Full pressure memory then makes all three exterior stress differences vanish.",
+    "pressure": "The axis datum and Cp row are retained. A nonzero angular pressure defect produces X(4A eta p-(1-eta^2)p_eta)/L in the axial stress and cannot be dropped.",
+    "scope": "Analytical implication relative to the retained core/native/regional/root premises. It is not an independent foundation review, an all-scale pulse/covariance/residual theorem, or a blow-up proof."
+  },
+  "remaining_obligations": [
+    "discharge retained exact-core/native/regional/root premises rather than merely replaying their conditional estimates",
+    "finish actual higher-coefficient and all-scale pulse-family defining/existence/inverse/gap/value/derivative/support estimates",
+    "join complete-wave covariance means with radial and axial velocity and exceptional pressure tails",
+    "prove the complete residual including viscosity, every cutoff and every interaction, then the distinct realization/comparison obligations"
+  ],
+  "reviews": {
+    "bounds": {
+      "F5_log_lower_available": "292G^4-1044logA",
+      "Lambda5_log_upper": "G^2",
+      "compact_ordinary_C4_upper": "H^925",
+      "compact_target": "H^1024",
+      "cone_gap_lower": "G^-4/2",
+      "cone_minimum_G_slack": 1152921504069976064,
+      "fifth_minimum_G_slack": 2580,
+      "state_error_upper": "G^-64/2"
+    },
+    "checks": {
+      "all_five_rows_are_required": true,
+      "annular_transform_exactly_invertible": true,
+      "compact_transform_exactly_invertible_for_positive_lambda": true,
+      "complete_compact_C4_H925_below_H1024": true,
+      "cone_perturbation_below_half_gap": true,
+      "fifth_gate_implies_F5": true,
+      "pressure_defect_negative_control_nonzero": true
+    },
+    "identities": {
+      "annular_inverse": [
+        "2",
+        "3",
+        "5",
+        "7",
+        "11"
+      ],
+      "annular_rows": [
+        "2",
+        "-1/7",
+        "3",
+        "-1/7",
+        "11"
+      ],
+      "compact_inverse": [
+        "2",
+        "3",
+        "5",
+        "7",
+        "11"
+      ],
+      "compact_rows": [
+        "2",
+        "-300",
+        "3",
+        "-7",
+        "11"
+      ],
+      "pressure_defect_control_at_eta0_X13": "-13"
+    }
+  },
+  "source_hashes": {
+    "results/coefficient_support_foundation/README.md": "df4b656a5e83d45e45c19b3330b66537e35acd24782d818818b59c0ac848d84d",
+    "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+    "results/compact_global_reconciliation/.gitignore": "5b766b14b9706ccdf215e7bbb779557885e41f6450b96a9062430854f3e0dcc6",
+    "results/compact_global_reconciliation/README.md": "64d2e735f6d3d75c5b8a56f7abe6c44fbc56109dfdedcc02f994c4739745f08d",
+    "results/compact_global_reconciliation/audit.py": "158bc37fd6551661d77822845c089b51d77d2c5219d76ed8594e4383ee73f1ac",
+    "results/compact_global_reconciliation/join.py": "dffee7fc1738f441b9d7530d6d3e44c834e972a51375629f66ea7dc5a2547ab2",
+    "results/compact_global_reconciliation/protocol.json": "eb84fb23dd09090394b42346f5c3429dfd990ab198e43ef7e8433f5f22ee32be",
+    "results/compact_global_reconciliation/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/compact_global_reconciliation/test_audit.py": "1422502267925b2e4619cf29f394105d6baf2d603db775809536c6612d3eba8b",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/explicit_variance_cutoff/evidence.json": "82d046cac7f274a262a550349e7c84589c745ae264fb6ebb4d1ab991a8436c1a",
+    "results/fifth_loop_input_gate/README.md": "601fd2ba9e53d552fc0d0ff0959158975beb7ba84366e9116a113ddf14e7b58c",
+    "results/fifth_loop_input_gate/evidence.json": "937202f0e30242c2104d9f3801068eb2994f6b3c64369d402299d5cb93043c85",
+    "results/final_fifth_moment_interface/README.md": "c0cb7ff58462578325dfbb94c790fb4fff1a87bdb8a5a12a74a15f15262a7db5",
+    "results/final_fifth_moment_interface/evidence.json": "a3b0149e9427c90bcbcbf6aa62e8bbe7b7d3fd715b4b29ed7465b88c0a35e15e",
+    "results/global_pressure_moment_foundation/README.md": "d473b97f5200affbf5035a9ca585bd5d860c472a9ad098d60158815f7290ad1b",
+    "results/global_pressure_moment_foundation/evidence.json": "1fa0851e09081c1e9ea7e198c7e2f747ffb6aab7391f9141d2717a178e58503e",
+    "results/joint_fourth_loop_gamma/README.md": "3674a1be26d5cf74bee0a75565be4461a7cb13e47c6a22b79a76bd4ec9f3ce40",
+    "results/joint_fourth_loop_gamma/evidence.json": "48cd46d893f6f52e0ea945c4dfbf6dd2b8b3fc881ae101f0fe62c04798755efe",
+    "results/mixed_shape_cone_bridge/README.md": "ebcb3f831be1e6ea0ab2a7eae4103b83bcaffa8f97a0c003a02d998d07d3d81e",
+    "results/mixed_shape_cone_bridge/evidence.json": "8679c4e9533ba737e8eab1cec12a2cdb1e45ae3d10b931e1fbce47d30a144284",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d"
+  },
+  "status": "explicit-cutoff-to-same-root-compact-cone-and-global-pressure-reconciliation"
+}
