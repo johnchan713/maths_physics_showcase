@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check actual native fifth fields same annular root and full fourth pressure inputs
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/actual_fifth_native/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/actual_fifth_native/audit.py \
+            --verify-record research/navier_stokes_cascade/results/actual_fifth_native/evidence.json \
+            --output navier_stokes_actual_fifth_native_ci.json
+
       - name: Check sixth reference pressure fifth sources and full incoming memory
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/reference_fifth_transfer/test_audit.py -v
@@ -1285,6 +1292,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_actual_fifth_native_ci.json
             navier_stokes_reference_fifth_transfer_ci.json
             navier_stokes_premodulation_mixed_shear_ci.json
             navier_stokes_fifth_moment_volterra_ci.json

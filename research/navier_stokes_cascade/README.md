@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [reference fifth-source transfer](results/reference_fifth_transfer/README.md)
+The latest [actual native fifth-input bound](results/actual_fifth_native/README.md)
+propagates the reference sources through the actual continuation, shape,
+same earlier annular root and outer compact prefix. It bounds pure fifth
+fields and all six entering fifth traces, retains complete forward pressure,
+and derives a distinct native fourth pressure envelope A^1546. These are
+conditional PREMOD estimates, not FINAL modulated/repaired field bounds.
+The variance-cutoff budget, fourth scalar/q5/moving-phase maps, compact gate,
+global jets and full pulse/covariance/residual closure remain open.
+
+The preceding [reference fifth-source transfer](results/reference_fifth_transfer/README.md)
 derives the full axis-pressure C6 bound, preserves sixth angular reference
 inputs using the same positive radial taper, and bounds reference Sq,Sn,p1,ns
 in C5 within the unchanged attachment budget. It also bounds the genuine

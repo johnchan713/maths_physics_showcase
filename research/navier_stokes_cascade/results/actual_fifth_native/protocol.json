@@ -1,0 +1,12 @@
+{
+  "parent_commit": "0963f1379a76c213f16db60a5acb52c3cd0cb658",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "domain": "actual PREMOD native input Xminus=Xa exp(tc/2)..Xrep=rhop exp5,eta[-1,1];fields extend to axis only for forward moments;NOT FINAL modulation or compact repair",
+  "parameters": "Kold,Bold,Xa4/Lambda,Xi110,deltaC^-20,Tsh2000B,XR110(CP)^10,Xsep110expTsh,A=C4096>=2^16,Bn=Ahi=A256;all choices unchanged",
+  "continuation": "same actual prescribed slopes including kappa beta theta and final .8 shear;logCE C5<=1e11LambdaK25<B/100;gC5<=j+K/Lambda+1e8K3delta<3e-18;no inverse kappa or reference zero shear shortcut",
+  "moments": "core CE/sqrtX C5<expB,shape Eb=exp204B/C;all five genuine axis-forward moments and same Pi_axis retained;Cp core integrable then finite log length;Cp C5<=C^-2exp412B",
+  "annular": "C5 inversef5,inversef2=25,energy8125;target<2.86e-17;eta-dependent quadratic C5<=100,inverse1000,same rootC5<=5.72e-14;relative E bumps width.08 and value64 unchanged",
+  "cover": "SUM continuation_shape,ideal_restoration,annular,outerprefix bounds;E5<=1+21P+22P+1000A<A2,U5<=36<A;FE<=A2,FU<=A;all six actual fifth entrance traces<=A8",
+  "pressure": "retained C4 Bn and YE<=Bn2,YU<=Bn;complete Volterra B1,B2<=A517;R0=10000A1544;native p1,p2 C4<=A1546,NOT assigned old Ahi=A256;axis Cp and U-square memory retained",
+  "scope": "conditional analytical derivations with finite manufactured rational and two-precision interval checks;variance cutoff budget,fourth scalar/q5/moving phase,compact acceptance,FINAL global jets,pulses,covariance,residual and independent foundations remain open"
+}
