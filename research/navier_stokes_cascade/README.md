@@ -13,7 +13,7 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [compact/global reconciliation checkpoint](results/compact_global_reconciliation/README.md)
+The preceding [compact/global reconciliation checkpoint](results/compact_global_reconciliation/README.md)
 propagates the newly fixed cutoff through the mixed-third, joint-fourth and
 tame-fifth loop interfaces. It proves the complete compact ordinary fourth
 pressure/flux budget, uses the same frequency and exact five-row root to join
@@ -22,6 +22,17 @@ global defects with complete pressure memory so the exterior leading stresses
 agree. The result is relative to the retained core/native/regional/root
 premises. Higher all-scale pulse-family, full covariance/axial-pressure mean,
 complete residual, realization/comparison and blow-up obligations remain.
+
+The latest [explicit coefficient-cutoff checkpoint](results/explicit_coefficient_cutoff/README.md)
+separates that modulation variance cutoff from the distinct radial coefficient
+cutoff used by the higher coefficients and pulse frames. The latter had only
+been chosen qualitatively. One admissible C-infinity member is now fixed at
+the same `C^-20` window, with `L1<729`, `L2<2916`, `L3<58320` and an exact
+all-fixed-order physical-jet formula. This closes the cutoff-only part of the
+second-coefficient and pulse-jet inputs. It also isolates the actual next
+obstructions: the raw-deficit mixed first-scale inequality and the finalized
+global first `U1` third-angular/full second-repair bound needed for `H2,3`.
+No all-family pulse, covariance/mean, residual or blow-up conclusion follows.
 
 The preceding [explicit variance-cutoff checkpoint](results/explicit_variance_cutoff/README.md)
 corrects an inherited premise: printed (C.9) specifies an admissible smooth

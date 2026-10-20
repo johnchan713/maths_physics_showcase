@@ -1,0 +1,436 @@
+{
+  "dependency_evidence_sha256": {
+    "results/axis_second_coefficient/evidence.json": "392ecb791db67bdeace62110adf74a6573a2b706edb95efd7ca4c0468541b631",
+    "results/compact_global_reconciliation/evidence.json": "1b218ecb397f9dde3acad6f632e5ba533ae25aeb0cf02986c989ffe896f6003d",
+    "results/cutoff_higher_jet_interface/evidence.json": "64cba74730fc6c63fa7f32fa2a74f56c078a147a4a5b1d5c62c9803daee526bf",
+    "results/cutoff_repair_derivative_budget/evidence.json": "4f2db5db17ea3fdea289319fd051bd3dd9d7e8b8de57c9a923edb28ed7a4493b",
+    "results/finite_head_frame_jets/evidence.json": "9a48d96a37db75d7f72f39e9c850c2d165b1bd0eb84d4c790d63c387a0f73a9c",
+    "results/higher_pressure_source_moments/evidence.json": "667dde96b93423063d6cbe64e1013d75818aa72c2d90364a4a3c98d475d357f8",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/second_coefficient_source/evidence.json": "efab34edf5911c95149e53773f420897fb43379d4fe19f0f8280bdd56e87c083",
+    "results/sharp_current_scale_floor/evidence.json": "3721d79d6c7d3b7ab1a27236e683a83caa9b098046762874d4f6c61271be9d27"
+  },
+  "flags": {
+    "actual_first_scale_raw_deficit_and_mixed_gate_verified": false,
+    "all_fixed_normalized_and_physical_coefficient_cutoff_jets_enclosed": true,
+    "coefficient_and_variance_cutoffs_are_not_conflated": true,
+    "cutoff_only_input_to_H23_and_pulse_jet_dictionary_discharged": true,
+    "global_first_U1_Ceta3_and_finalized_second_H23_verified": false,
+    "qualitative_coefficient_cutoff_is_now_reproducibly_specialized": true,
+    "same_Cminus20_width_keep_cut_support_roots_gauges_and_pressure_memory_retained": true,
+    "uniform_complete_pulse_family_covariance_means_residual_or_blowup_verified": false
+  },
+  "gates": {
+    "all_consequences_are_strict_booleans": true,
+    "all_fixed_orders_have_finite_bounds_but_no_order_uniform_cap": true,
+    "all_flags_are_strict_booleans": true,
+    "first_eight_bump_majorants_exact": true,
+    "nine_frozen_dependency_records_bound": true,
+    "normalized_cutoff_is_Cinfinity_flat_decreasing_and_in_unit_range": true,
+    "normalized_first_three_strict_caps_exact": true,
+    "physical_cutoff_uses_same_keep_cut_window": true,
+    "third_physical_jet_keeps_log_jacobian_terms": true,
+    "third_stirling_row_exact": true
+  },
+  "protocol": {
+    "H23_boundary": "the cutoff product part of H2,3 is now explicit, but finalized H2,3 still requires global first U1 C_eta^3, full-support Q10,Q11, the second five-row repair and its bump jets",
+    "choice": "phi=exp(-1/s-1/(1-s)); K=1-integral(phi)/total; kappa(X)=K(log(X/Xkeep)/Delta), Delta=tc/16, with the same Xkeep,Xcut and tc=C^-20",
+    "correction": "The coefficient cutoff in Lemma 5.2 Step 1 was qualitatively chosen but not assigned a formula. It is not the variance cutoff fixed in the parent stream. The repeated wording unchanged cutoff is specialized here to one reproducible admissible member.",
+    "first_blocker": "H=gammaB/8-Cm ell^-6 must be positive and Cstar(729,2916)<=2^(2h(ell-2))*min(rb/8,omega^2 d0/(16Lpsi),H/(8Cp)); neither d0 nor the old first-band endpoint constants are supplied by cutoff smoothness",
+    "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "normalized_bounds": "sup|K'|<729, sup|K''|<2916, sup|K'''|<58320; every fixed higher jet follows from the same exact polynomial recurrence",
+    "parent_commit": "61ee5de6493e359c9a4e6056d5923ef9dc794d89",
+    "physical_bounds": "partial_X^m kappa=X^-m sum_j s(m,j) Delta^-j K^(j); replacing X by Xkeep gives an explicit finite bound at every fixed m",
+    "scope": "analytical construction specialization and exact dependency boundary; not a numerical actual-profile evaluation, all-family pulse proof, complete residual theorem or blowup proof"
+  },
+  "remaining_obligations": [
+    "supply the actual raw same-tilt deficit d0 and endpoint constants and verify the displayed mixed first-scale inequality with Cstar(729,2916)",
+    "quantify the finalized global first U1 C_eta^3 norm, feed the complete full-support Q10,Q11 moments to the second repair, and close H2,3",
+    "then audit every pulse-family defining inverse gap value derivative and support estimate, complete covariance means including axial velocity and both pressure tails, and the full viscous cutoff interaction residual"
+  ],
+  "reviews": {
+    "consequences": {
+      "M_N_and_every_fixed_higher_cutoff_jet_are_now_quantified": true,
+      "actual_first_scale_mixed_gate_is_verified": false,
+      "all_family_pulse_covariance_mean_residual_or_blowup_is_verified": false,
+      "coefficient_cutoff_is_distinct_from_variance_modulation_cutoff": true,
+      "coefficient_cutoff_previously_was_only_qualitatively_chosen": true,
+      "cutoff_part_of_second_coefficient_H23_is_now_discharged": true,
+      "explicit_admissible_member_is_now_fixed_at_the_same_window": true,
+      "finalized_second_coefficient_H23_is_verified": false
+    },
+    "first_unclosed_mixed_gate": {
+      "H": "gammaB/8-Cm*ell^-6",
+      "M": 729,
+      "N": 2916,
+      "budget": "2^(2h(ell-2))*min(rb/8,omega^2*d0/(16Lpsi),H/(8Cp))",
+      "required": "H>0 and Cstar(729,2916)<=budget"
+    },
+    "selected_coefficient_cutoff": {
+      "bump": "phi(s)=exp(-1/s-1/(1-s)) for 0<s<1; zero otherwise",
+      "bump_rows": [
+        {
+          "integer_majorant": 1,
+          "order": 0,
+          "term_count": 1
+        },
+        {
+          "integer_majorant": 4,
+          "order": 1,
+          "term_count": 2
+        },
+        {
+          "integer_majorant": 80,
+          "order": 2,
+          "term_count": 5
+        },
+        {
+          "integer_majorant": 3600,
+          "order": 3,
+          "term_count": 10
+        },
+        {
+          "integer_majorant": 292320,
+          "order": 4,
+          "term_count": 18
+        },
+        {
+          "integer_majorant": 37704960,
+          "order": 5,
+          "term_count": 28
+        },
+        {
+          "integer_majorant": 7139819520,
+          "order": 6,
+          "term_count": 43
+        },
+        {
+          "integer_majorant": 1867003084800,
+          "order": 7,
+          "term_count": 58
+        }
+      ],
+      "checks": {
+        "all_fixed_orders_have_finite_bounds_but_no_order_uniform_cap": true,
+        "first_eight_bump_majorants_exact": true,
+        "normalized_cutoff_is_Cinfinity_flat_decreasing_and_in_unit_range": true,
+        "normalized_first_three_strict_caps_exact": true,
+        "physical_cutoff_uses_same_keep_cut_window": true,
+        "third_physical_jet_keeps_log_jacobian_terms": true,
+        "third_stirling_row_exact": true
+      },
+      "cutoff": "K(s)=1-integral_0^s(phi)/integral_0^1(phi), extended by 1 left and 0 right",
+      "integral_lower": "exp(-9/2)/3",
+      "integral_reciprocal_strict_upper": 729,
+      "normalized_derivative_strict_upper": [
+        1,
+        729,
+        2916,
+        58320,
+        2624400,
+        213101280,
+        27486915840,
+        5204928430080,
+        1361045248819200
+      ],
+      "physical": "kappa(X)=K(log(X/Xkeep)/Delta), Delta=tc/16",
+      "physical_derivative_upper_polynomials": [
+        {
+          "order": 0,
+          "terms": [
+            {
+              "coefficient": 1,
+              "delta_power": 0
+            }
+          ],
+          "x_factor": "Xkeep^-0"
+        },
+        {
+          "order": 1,
+          "terms": [
+            {
+              "coefficient": 729,
+              "delta_power": -1
+            }
+          ],
+          "x_factor": "Xkeep^-1"
+        },
+        {
+          "order": 2,
+          "terms": [
+            {
+              "coefficient": 729,
+              "delta_power": -1
+            },
+            {
+              "coefficient": 2916,
+              "delta_power": -2
+            }
+          ],
+          "x_factor": "Xkeep^-2"
+        },
+        {
+          "order": 3,
+          "terms": [
+            {
+              "coefficient": 1458,
+              "delta_power": -1
+            },
+            {
+              "coefficient": 8748,
+              "delta_power": -2
+            },
+            {
+              "coefficient": 58320,
+              "delta_power": -3
+            }
+          ],
+          "x_factor": "Xkeep^-3"
+        },
+        {
+          "order": 4,
+          "terms": [
+            {
+              "coefficient": 4374,
+              "delta_power": -1
+            },
+            {
+              "coefficient": 32076,
+              "delta_power": -2
+            },
+            {
+              "coefficient": 349920,
+              "delta_power": -3
+            },
+            {
+              "coefficient": 2624400,
+              "delta_power": -4
+            }
+          ],
+          "x_factor": "Xkeep^-4"
+        },
+        {
+          "order": 5,
+          "terms": [
+            {
+              "coefficient": 17496,
+              "delta_power": -1
+            },
+            {
+              "coefficient": 145800,
+              "delta_power": -2
+            },
+            {
+              "coefficient": 2041200,
+              "delta_power": -3
+            },
+            {
+              "coefficient": 26244000,
+              "delta_power": -4
+            },
+            {
+              "coefficient": 213101280,
+              "delta_power": -5
+            }
+          ],
+          "x_factor": "Xkeep^-5"
+        },
+        {
+          "order": 6,
+          "terms": [
+            {
+              "coefficient": 87480,
+              "delta_power": -1
+            },
+            {
+              "coefficient": 798984,
+              "delta_power": -2
+            },
+            {
+              "coefficient": 13122000,
+              "delta_power": -3
+            },
+            {
+              "coefficient": 223074000,
+              "delta_power": -4
+            },
+            {
+              "coefficient": 3196519200,
+              "delta_power": -5
+            },
+            {
+              "coefficient": 27486915840,
+              "delta_power": -6
+            }
+          ],
+          "x_factor": "Xkeep^-6"
+        },
+        {
+          "order": 7,
+          "terms": [
+            {
+              "coefficient": 524880,
+              "delta_power": -1
+            },
+            {
+              "coefficient": 5143824,
+              "delta_power": -2
+            },
+            {
+              "coefficient": 94711680,
+              "delta_power": -3
+            },
+            {
+              "coefficient": 1928934000,
+              "delta_power": -4
+            },
+            {
+              "coefficient": 37292724000,
+              "delta_power": -5
+            },
+            {
+              "coefficient": 577225232640,
+              "delta_power": -6
+            },
+            {
+              "coefficient": 5204928430080,
+              "delta_power": -7
+            }
+          ],
+          "x_factor": "Xkeep^-7"
+        },
+        {
+          "order": 8,
+          "terms": [
+            {
+              "coefficient": 3674160,
+              "delta_power": -1
+            },
+            {
+              "coefficient": 38106288,
+              "delta_power": -2
+            },
+            {
+              "coefficient": 765858240,
+              "delta_power": -3
+            },
+            {
+              "coefficient": 17764563600,
+              "delta_power": -4
+            },
+            {
+              "coefficient": 417678508800,
+              "delta_power": -5
+            },
+            {
+              "coefficient": 8850786900480,
+              "delta_power": -6
+            },
+            {
+              "coefficient": 145737996042240,
+              "delta_power": -7
+            },
+            {
+              "coefficient": 1361045248819200,
+              "delta_power": -8
+            }
+          ],
+          "x_factor": "Xkeep^-8"
+        }
+      ],
+      "signed_stirling_rows": [
+        [
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          2,
+          -3,
+          1
+        ],
+        [
+          0,
+          -6,
+          11,
+          -6,
+          1
+        ],
+        [
+          0,
+          24,
+          -50,
+          35,
+          -10,
+          1
+        ],
+        [
+          0,
+          -120,
+          274,
+          -225,
+          85,
+          -15,
+          1
+        ],
+        [
+          0,
+          720,
+          -1764,
+          1624,
+          -735,
+          175,
+          -21,
+          1
+        ],
+        [
+          0,
+          -5040,
+          13068,
+          -13132,
+          6769,
+          -1960,
+          322,
+          -28,
+          1
+        ]
+      ]
+    }
+  },
+  "source_hashes": {
+    "results/axis_second_coefficient/README.md": "07151b5d8e0c1acb7bc1a67812413fd8d65ba85387b0709cfff6c07dc01e9cb9",
+    "results/axis_second_coefficient/evidence.json": "392ecb791db67bdeace62110adf74a6573a2b706edb95efd7ca4c0468541b631",
+    "results/compact_global_reconciliation/README.md": "64d2e735f6d3d75c5b8a56f7abe6c44fbc56109dfdedcc02f994c4739745f08d",
+    "results/compact_global_reconciliation/evidence.json": "1b218ecb397f9dde3acad6f632e5ba533ae25aeb0cf02986c989ffe896f6003d",
+    "results/cutoff_higher_jet_interface/README.md": "202c28f7cd98684a293df6b1246b40d5f37f9403e4278aee67237e64ca84d02e",
+    "results/cutoff_higher_jet_interface/evidence.json": "64cba74730fc6c63fa7f32fa2a74f56c078a147a4a5b1d5c62c9803daee526bf",
+    "results/cutoff_repair_derivative_budget/README.md": "66988d07ee3979d1b03025be1e0bc8fd599a3d81c6c36a450b3d1312349416ff",
+    "results/cutoff_repair_derivative_budget/evidence.json": "4f2db5db17ea3fdea289319fd051bd3dd9d7e8b8de57c9a923edb28ed7a4493b",
+    "results/explicit_coefficient_cutoff/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/explicit_coefficient_cutoff/README.md": "728c8c352fef842ed8d69449867f3d3378ea79e3865d98b08abc597a35d2fb20",
+    "results/explicit_coefficient_cutoff/audit.py": "9d83e946520ee9ed8a3a4c4a0b41a89555a0ecaf20a5007f6f9f84b1a261e4ee",
+    "results/explicit_coefficient_cutoff/cutoff.py": "5fd0553f2e98cd1302c3f089e15a0ca97145681f713e057ed745111c47bcc45f",
+    "results/explicit_coefficient_cutoff/protocol.json": "57771d4b5d97ad7d08a490a38ccfcac5f1da01b9ff3adf006edcb877b8b650b0",
+    "results/explicit_coefficient_cutoff/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/explicit_coefficient_cutoff/test_audit.py": "f06f715557468246819e94251fff1c8bae02cb44a493186220ca9a6cb4588ffe",
+    "results/finite_head_frame_jets/README.md": "2f739c3f0faa8383484063bc1a1adf28b6a141559dc6729669a99dcd9b58c953",
+    "results/finite_head_frame_jets/evidence.json": "9a48d96a37db75d7f72f39e9c850c2d165b1bd0eb84d4c790d63c387a0f73a9c",
+    "results/higher_pressure_source_moments/README.md": "83a3deb3328f051fbd0ed3d11ba845c154fcbebac4b4d8331f219f9a2508b05a",
+    "results/higher_pressure_source_moments/evidence.json": "667dde96b93423063d6cbe64e1013d75818aa72c2d90364a4a3c98d475d357f8",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/second_coefficient_source/README.md": "c7065bbf83f4093db37e863702a85278fdd0066ffd2612168371058f3aefabba",
+    "results/second_coefficient_source/evidence.json": "efab34edf5911c95149e53773f420897fb43379d4fe19f0f8280bdd56e87c083",
+    "results/sharp_current_scale_floor/README.md": "538afc7caf4fab9e8a8df3cf94ef18b346b28b450702cfe208c2fd5471b9aeef",
+    "results/sharp_current_scale_floor/evidence.json": "3721d79d6c7d3b7ab1a27236e683a83caa9b098046762874d4f6c61271be9d27"
+  },
+  "status": "explicit-coefficient-cutoff-all-fixed-jets-and-pulse-gate-boundary"
+}

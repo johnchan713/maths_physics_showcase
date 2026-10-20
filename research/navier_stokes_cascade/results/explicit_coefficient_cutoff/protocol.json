@@ -1,0 +1,11 @@
+{
+  "H23_boundary": "the cutoff product part of H2,3 is now explicit, but finalized H2,3 still requires global first U1 C_eta^3, full-support Q10,Q11, the second five-row repair and its bump jets",
+  "choice": "phi=exp(-1/s-1/(1-s)); K=1-integral(phi)/total; kappa(X)=K(log(X/Xkeep)/Delta), Delta=tc/16, with the same Xkeep,Xcut and tc=C^-20",
+  "correction": "The coefficient cutoff in Lemma 5.2 Step 1 was qualitatively chosen but not assigned a formula. It is not the variance cutoff fixed in the parent stream. The repeated wording unchanged cutoff is specialized here to one reproducible admissible member.",
+  "first_blocker": "H=gammaB/8-Cm ell^-6 must be positive and Cstar(729,2916)<=2^(2h(ell-2))*min(rb/8,omega^2 d0/(16Lpsi),H/(8Cp)); neither d0 nor the old first-band endpoint constants are supplied by cutoff smoothness",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "normalized_bounds": "sup|K'|<729, sup|K''|<2916, sup|K'''|<58320; every fixed higher jet follows from the same exact polynomial recurrence",
+  "parent_commit": "61ee5de6493e359c9a4e6056d5923ef9dc794d89",
+  "physical_bounds": "partial_X^m kappa=X^-m sum_j s(m,j) Delta^-j K^(j); replacing X by Xkeep gives an explicit finite bound at every fixed m",
+  "scope": "analytical construction specialization and exact dependency boundary; not a numerical actual-profile evaluation, all-family pulse proof, complete residual theorem or blowup proof"
+}

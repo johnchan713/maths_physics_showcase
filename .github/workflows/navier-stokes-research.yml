@@ -41,6 +41,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/compact_global_reconciliation/evidence.json \
             --output navier_stokes_compact_global_reconciliation_ci.json
 
+      - name: Check explicit coefficient cutoff all fixed jets and pulse gate boundary
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/explicit_coefficient_cutoff/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/explicit_coefficient_cutoff/audit.py \
+            --verify-record research/navier_stokes_cascade/results/explicit_coefficient_cutoff/evidence.json \
+            --output navier_stokes_explicit_coefficient_cutoff_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
