@@ -1,0 +1,13 @@
+{
+  "parent_commit": "66ff8c49955a1b17e04a617d42681633cc19b51b",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "domain": "same compact PREMOD native data and actual circle loop,eta[-1,1],uniform y as parameter;new estimates angular and auxiliary-phase only,not fourth y or full joint J4",
+  "parameters": "A=C4096>=2^16,G=expA32,H=expG4,N=1+floorH32,d0=1/(16A),deltaL=exp(-A20);all unchanged;nativep2C4<=A1546 and nativea_bs_ts_vsC4<=A2583<G",
+  "unproved_condition": "S:actual sCeta4<=G;Z sufficient:logZ+12log10+20673logA+8A20<=A32;Z=max1,raw derivatives1..4 of unchanged variance shape on unit transition;Z1e100 auxiliary only",
+  "scalar": "q joint5<exp4G,R joint4<exp5G,R2C4<exp10G and >=exp(-2G)/2,sqrtR2C4<exp60G,signedFpartial4<exp64G,Fmu^-1<exp10G;no division by p mu s or Vmu",
+  "implicit": "normalized mu exponents80,240,400,560;phase exponents11000,33000,55000,77000;all partitions and p2 fourth jet retained;not p1 as a separate root argument",
+  "moving": "fixed-angle t joint4<exp4000G,w<exp10000G,Phi<exp10010G,Theta positive C4<exp80000G;full moving g sources<exp350000G;periodic primitives angularC4<exp400000G<H CONDITIONALLY on S",
+  "compact": "all five original target normalizers<=A5,raw moment affine coefficients<=A515,ZH Za Zb<=A522,alpha beta ch<=A525<G;C4 target<=3A522H/N<H16/N gives SAME small root and r;Kknown<A259<G;conditional compactcost<G+1<H<K=H64",
+  "memory": "actual native p2 includes all five entering fifth moments and same axis datum;only modulation differences cancel identical axis;exact repair restores Cp as well as other rows;no positive-order future-pressure reset",
+  "scope": "conditional analytic estimate plus exact finite and manufactured numerical diagnostics;actual shape S/Z remains unverified;no unconditional compact/radial/FINAL/global/pulse/covariance/residual/blowup or independent foundation claim"
+}

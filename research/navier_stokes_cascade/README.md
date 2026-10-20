@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [actual native fifth-input bound](results/actual_fifth_native/README.md)
+The latest [fourth scalar/moving-loop shape gate](results/fourth_loop_shape_gate/README.md)
+derives the required q5, signed fourth root and complete fourth moving inverse
+estimates. If the UNCHANGED variance target has angular C4 norm <=G, the
+primitives fit H and the same normalized five-row angular compact gate has
+headroom at the retained N. This is a conditional implication: the actual
+cutoff-shape inequality is still unverified. Radial/state acceptance, FINAL
+global mixed jets, first/second coefficient inputs and complete physical
+pulse/covariance/residual closure remain open.
+
+The preceding [actual native fifth-input bound](results/actual_fifth_native/README.md)
 propagates the reference sources through the actual continuation, shape,
 same earlier annular root and outer compact prefix. It bounds pure fifth
 fields and all six entering fifth traces, retains complete forward pressure,
