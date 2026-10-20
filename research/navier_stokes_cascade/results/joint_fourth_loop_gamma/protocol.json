@@ -1,0 +1,12 @@
+{
+  "boundary": "original radial flux normalized fourth angular principal term -5(1-eta2)/(1-2h eta2)*M_(0,5);FINAL fifth angular memory and full global flux_pressureC4 remain unbounded;no PREMOD-to-FINAL promotion",
+  "condition": "J:s joint(y,eta)J4<=G;parent raw shape bound1e12 Z deltaL^-8 A13685;old sufficient explicit Z gate power20673 implies J with spare6988logA;actual Z and J unverified",
+  "field": "same N=1+floorH32 and exact five-row root;fieldJ4<=32Bn N3 H+2Bn Gamma/N+2<H128 under J;Gamma is not dropped,old K=H64 unchanged,K2 is separate fourth FIELD budget;repair derivative width.1 and all pressure memories retained",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "moving": "full y_eta_theta fixed angle sourceJ4<exp20000G,wJ4<exp10000G,PhiJ4<exp10010G;three external colors y_eta_varphi counts6,45,324,2268 and inverse exponents11000,33000,55000,77000;positive ThetaJ4<exp80000G,moving sourceJ4<exp350000G",
+  "native": "same PREMOD full pressure p2J4<A1547,native EJ5_UJ5<A5,a_bsJ4<A262,inverse_aJ4<A1054,tsJ4<A1316,vsJ4<A1579<G;not old Bn pressure label or FINAL jets",
+  "parent_commit": "4bca4deafaf306be4fbd87e4d33a99ef7bfa5707",
+  "primitive": "exact leading zero means with full variance and axial density;phase-free integration norm2,positive phase normalized derivative g_(k-1)/k norm1;FULL joint operator<=3,primitiveJ4<exp400000G<H;Gamma<2H CONDITIONAL on J",
+  "scalar": "retain q5,R4 and regular signed F(mu,p2),Fpartials4<exp64G,Fmu inverse<exp10G;no division by p2,mu or Vmu at zero;two slow colors counts4,20,96,448,mu exponents80,240,400,560",
+  "scope": "conditional analytical joint fourth Gamma and field gate;finite symbolic/rational/interval diagnostics not continuum proof;no actual cutoff or unconditional FINAL global pulse covariance mean residual or blowup acceptance"
+}

@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [actual native mixed-fifth cover](results/native_fifth_mixed_cover/README.md)
+The latest [joint fourth-loop Gamma checkpoint](results/joint_fourth_loop_gamma/README.md)
+derives full (y,eta,phase) fourth source/primitive bounds and Gamma<2H,
+CONDITIONAL on the actual variance target's joint J4 bound. This closes
+the same-frequency compact FIELD interface below K^2=H^128 using the same
+exact repair, with K unchanged. Actual cutoff acceptance, FINAL fifth angular
+moment inputs and complete global fourth flux/pressure estimates remain open;
+neither the field-only bound nor the leading-loop means are complete physical
+pulse, covariance/mean or residual closure.
+
+The preceding [actual native mixed-fifth cover](results/native_fifth_mixed_cover/README.md)
 supplies the eight missing fifth mixed field inputs: both PREMOD fields have
 joint J5 norm <A^5 under the retained native/core hypotheses. It proves the
 extra sixth step derivative needed by the earlier relative annular bumps,
