@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [fifth-moment Volterra estimate](results/fifth_moment_volterra/README.md)
+The latest [pre-modulation mixed-input audit](results/premodulation_mixed_shear/README.md)
+bounds the actual native mixed derivatives YE,YU and a,bs,ts,vs in C4,
+relative to retained regional estimates. It also corrects a quantitative
+premise: the manuscript's variance-cutoff window does not specify its
+derivative budget. Earlier parameter-only loop H estimates need an actual
+shape enclosure or a separate justified composition estimate; the radial
+squared-flat step cannot silently supply it. No cutoff, root or frequency
+is replaced. Pure fifth fields/entering moments, the variance-shape gate,
+FINAL global jets, full pulse/covariance/residual closure remain open.
+
+The preceding [fifth-moment Volterra estimate](results/fifth_moment_volterra/README.md)
 reduces both pressure combinations to pure fifth field jets and entering
 data. Combining the complete energy and pressure rows gives a local swirl
 kernel with a quadratic length bound, without erasing accumulated pressure.

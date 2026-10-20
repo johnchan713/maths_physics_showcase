@@ -1,0 +1,14 @@
+{
+  "parent_commit": "04a9058da056821a2f4833c10550ec958a9424c1",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "source_correction": "printedp160 C9 specifies smooth bounded variance cutoff and plateau windows,no formula or derivative cap;not the explicit radial sigma;old parameter-only loop jets require shape budget or independent actual composition bound",
+  "native": "same PREMODULATION rectangle Xa exp(tc/2)..rhop exp5,eta[-1,1];Bn=Ahi=A256,A=C4096;originalC4 field norm<=Bn and reference/annularC4 premises retained",
+  "continuation": "Ey=E(1-a)/2,Uy=-kappa beta X nsr/2;referencep1r C4<Bold/100,nsr<=1e8Kold8;no kappa_y for one defining radial slope;referencephysicala=0 afterflattening not substituted foractualprescription",
+  "annular": "earlierrelative E0(1+h),h3coeffs and2additiveU coeffs;d4=5.72e-14,beta=sigma_prime((t-c)/.08+.5),no unit-mass prefactor;beta0<=64,beta_y<=250000;h0=3d4beta0,h1=3d4beta_y;Ey/P<1,Uy<1,aC4<1",
+  "cover": "five regional log-slope C4 bounds Bold,1,.1,1,1000 and Uy bounds Bold,0,1,1,8;SUM not max;log-slope<=Bold+1003<C,Uy<=Bold+10<C,a<=2Bold+2007<C;YE<=Bn2,YU<=Bn",
+  "algebra": "nativea C4<=A,inversea<=A10,bs<=A1286,ts<=A1296,vs<=A2583;positivefloors and complete bs square retained;not FINAL modulated derivatives",
+  "shape": "actual K(t)=zetaL(2+deltaL/8+(deltaL/8)t),Z=max(1,raw shape derivatives1..4);family1-sigma(n(t-.5)+.5) gives H1>=8n,H4>=7424n4 via sigma_third(.5)=-3712 and MVT;not replacement or actual profile failure",
+  "target": "s=zetaL(vs)*sqrt((2+deltaL/2-vs)/a),support deltaL/4<=radicand numerator<=3;C4<=1e12 Z deltaL^-8 A20673;no sqrt of negative value off support",
+  "gate": "logZ+12log10+20673logA+8A20<=A32 sufficient for sC4<=G;Z<=1e100 is auxiliary sufficient example ONLY;1e120A30000deltaL^-8<G for allA>=2^16;unchangedN",
+  "scope": "actual pure fifth fields/entering data variance shape pressure fourth scalar moving phase compact gate FINAL global jets pulse covariance residual and independentfoundations remainopen"
+}
