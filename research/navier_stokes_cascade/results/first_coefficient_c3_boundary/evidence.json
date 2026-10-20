@@ -1,0 +1,240 @@
+{
+  "dependency_evidence_sha256": {
+    "results/axis_first_coefficient/evidence.json": "63714bd8dc8d49bd02155cdd53b6ff442a453cd8d046d3ba70d0d068d90bb23f",
+    "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+    "results/compact_global_reconciliation/evidence.json": "1b218ecb397f9dde3acad6f632e5ba533ae25aeb0cf02986c989ffe896f6003d",
+    "results/explicit_coefficient_cutoff/evidence.json": "b8dbd4ac8db98696aeb8b25bea96f91ab43940c60af2fdf4730bc6bd424805b4",
+    "results/final_fifth_moment_interface/evidence.json": "a3b0149e9427c90bcbcbf6aa62e8bbe7b7d3fd715b4b29ed7465b88c0a35e15e",
+    "results/fourth_angular_axial_interface/evidence.json": "ebd3b49578d62dfcf7582474dd124d9c492b4107634711fca830f563c0b5bfcc",
+    "results/native_sixth_angular/evidence.json": "4162b159f7988e43f4b21d34f1ccb55e0ad03c8c9495482a6625ded5bc19f453",
+    "results/signed_pressure_source_moments/evidence.json": "9ee82436bd1067d32469ffd1c569bd2ac07f71f1f4a636a0fef8069e0c1361e9"
+  },
+  "flags": {
+    "complete_covariance_axial_pressure_means_residual_or_blowup_verified": false,
+    "finalized_global_first_K13_second_repair_and_H23_closed": false,
+    "full_support_signed_leading_Ceta3_pressure_moment_bounds_reduced_to_K05": true,
+    "prior_roadmap_Ceta4_sufficiency_for_constructing_K13_corrected": true,
+    "raw_deficit_first_band_and_uniform_pulse_family_verified": false,
+    "selected_eta_independent_coefficient_cutoff_propagated_through_Ceta3": true,
+    "selected_parameter_whole_support_leading_K05_quantified": false,
+    "unchanged_linear_inverse800_first_repair_Ceta3_formula_retained": true,
+    "whole_inner_first_coefficient_X3_Ceta3_bound_derived": true
+  },
+  "gates": {
+    "C4_countercontrol_is_uniform": true,
+    "C5_countercontrol_grows": true,
+    "all_scope_flags_are_strict_booleans": true,
+    "axis_viscosity_retained_in_I0": true,
+    "eight_frozen_dependency_records_bound": true,
+    "historical_Ceta1_count_requires_leading_U_Ceta3": true,
+    "linear_repair_uses_W3_five_over_e_star": true,
+    "local_third_angular_loss_strictly_exceeds_second": true,
+    "reciprocal_neumann_cap_below_25_over_23": true,
+    "regular_v4_cost_below_29": true,
+    "signed_Ceta3_moments_require_leading_U_Ceta5": true,
+    "third_cutoff_jet_is_charged": true,
+    "weighted_radial_viscosity_has_no_axis_term": true
+  },
+  "protocol": {
+    "correction": "The finalized leading C_eta^4 bound is sufficient for the k=1 shifted-viscosity source after K1,3 is known, but not for constructing the first repair in C_eta^3; the signed leading source moments require whole-support U0 C_eta^5.",
+    "derivative_ladder": "Signed leading I0,I1 in C_eta^k need a,b in C_eta^(k+1), hence v in C_eta^(k+1), hence U0 in C_eta^(k+2) because v contains the eta derivative of the regular radial average.",
+    "global_boundary": "Supply an explicit selected-parameter K0,5=sup_[0,Xv]|U0|Ceta5; then V4<29K0,5, the displayed Q03,Q13 bounds, five ordinary discrepancies and the unchanged inverse-800 formula quantify the full first repair and K1,3.",
+    "local_result": "The existing 3delta/2 complex first-coefficient strips give Ceta3 factor 1+2/delta+4/delta^2+8/delta^3 through radial order three; the eta-independent selected cutoff propagates it by the exact binomial product and retains kappa_3 J0.",
+    "parent_commit": "df9bd482678a6c9cf502233bbc080c455c902630",
+    "pressure_memory": "Q03,Q13 are full-support signed totals through Xv; axis viscosity remains in Q03, weighted radial viscosity cancels only in Q13, and neither is an absolute-source bound.",
+    "scope": "Analytical local C3 extension and exact conditional global-repair boundary; no selected whole-support K0,5, finalized K1,3, H2,3, all-family pulse, covariance/mean, residual or blowup conclusion."
+  },
+  "remaining_obligations": [
+    "extend the finalized later axial/reference leading stage from C_eta^4 to C_eta^5 and join it to native and FINAL compact fifth rows into one whole-support K0,5 majorant",
+    "insert K0,5 into Q03,Q13 and the inverse-800 repair to close global K1,3, then evaluate full-support Q10,Q11 and the second repair H2,3",
+    "verify the separate raw-deficit first-band inequality or a certified later tail, all pulse defining/inverse/gap/value/derivative/support estimates, complete covariance means and the full residual"
+  ],
+  "reviews": {
+    "checks": {
+      "C4_countercontrol_is_uniform": true,
+      "C5_countercontrol_grows": true,
+      "axis_viscosity_retained_in_I0": true,
+      "historical_Ceta1_count_requires_leading_U_Ceta3": true,
+      "linear_repair_uses_W3_five_over_e_star": true,
+      "local_third_angular_loss_strictly_exceeds_second": true,
+      "reciprocal_neumann_cap_below_25_over_23": true,
+      "regular_v4_cost_below_29": true,
+      "signed_Ceta3_moments_require_leading_U_Ceta5": true,
+      "third_cutoff_jet_is_charged": true,
+      "weighted_radial_viscosity_has_no_axis_term": true
+    },
+    "countercontrol": [
+      {
+        "Ceta4_upper": "65/24",
+        "n": 1,
+        "normalized_fifth_at_zero": "1/120",
+        "uniform_Ceta4_cap": "65/24"
+      },
+      {
+        "Ceta4_upper": "297/4096",
+        "n": 8,
+        "normalized_fifth_at_zero": "1/15",
+        "uniform_Ceta4_cap": "65/24"
+      },
+      {
+        "Ceta4_upper": "2234563/50331648",
+        "n": 64,
+        "normalized_fifth_at_zero": "8/15",
+        "uniform_Ceta4_cap": "65/24"
+      },
+      {
+        "Ceta4_upper": "2885812737/68719476736",
+        "n": 512,
+        "normalized_fifth_at_zero": "64/15",
+        "uniform_Ceta4_cap": "65/24"
+      }
+    ],
+    "cutoff_fixture": [
+      [
+        "585/73",
+        "1170/73",
+        "1755/73"
+      ],
+      [
+        "427635/73",
+        "854685/73",
+        "1282320/73"
+      ],
+      [
+        "3413475/73",
+        "5973435/73",
+        "9386325/73"
+      ],
+      [
+        "48193470/73",
+        "89988210/73",
+        "136901700/73"
+      ]
+    ],
+    "derivative_ladder": [
+      {
+        "a_b_moment_order": 1,
+        "leading_U_order": 2,
+        "reason": "I0,I1 contain one eta derivative of a,b; v contains one eta derivative of the regular radial average of U",
+        "regular_v_order": 1,
+        "target_signed_moment_order": 0
+      },
+      {
+        "a_b_moment_order": 2,
+        "leading_U_order": 3,
+        "reason": "I0,I1 contain one eta derivative of a,b; v contains one eta derivative of the regular radial average of U",
+        "regular_v_order": 2,
+        "target_signed_moment_order": 1
+      },
+      {
+        "a_b_moment_order": 3,
+        "leading_U_order": 4,
+        "reason": "I0,I1 contain one eta derivative of a,b; v contains one eta derivative of the regular radial average of U",
+        "regular_v_order": 3,
+        "target_signed_moment_order": 2
+      },
+      {
+        "a_b_moment_order": 4,
+        "leading_U_order": 5,
+        "reason": "I0,I1 contain one eta derivative of a,b; v contains one eta derivative of the regular radial average of U",
+        "regular_v_order": 4,
+        "target_signed_moment_order": 3
+      },
+      {
+        "a_b_moment_order": 5,
+        "leading_U_order": 6,
+        "reason": "I0,I1 contain one eta derivative of a,b; v contains one eta derivative of the regular radial average of U",
+        "regular_v_order": 5,
+        "target_signed_moment_order": 4
+      },
+      {
+        "a_b_moment_order": 6,
+        "leading_U_order": 7,
+        "reason": "I0,I1 contain one eta derivative of a,b; v contains one eta derivative of the regular radial average of U",
+        "regular_v_order": 6,
+        "target_signed_moment_order": 5
+      }
+    ],
+    "local_fixture": {
+      "Ceta2_factor": "73",
+      "Ceta3_factor": "585",
+      "radial_Ceta3_bounds": [
+        [
+          "585/73",
+          "1170/73",
+          "1755/73"
+        ],
+        [
+          "1170/73",
+          "1755/73",
+          "2925/73"
+        ],
+        [
+          "1755/73",
+          "2925/73",
+          "4095/73"
+        ],
+        [
+          "2925/73",
+          "4095/73",
+          "6435/73"
+        ]
+      ]
+    },
+    "repair_fixture": {
+      "W3": "5/29",
+      "coefficient_Ceta3": "521143480000/29",
+      "normalized_rows": [
+        "143/2",
+        "651429350/29",
+        "36179",
+        "1367725895/118784",
+        "172297465/29696"
+      ]
+    },
+    "repair_moments_fixture": [
+      "143",
+      "1573",
+      "34459493/1024",
+      "56628",
+      "273545179/2048"
+    ],
+    "source_fixture": {
+      "I0_Ceta3": "29480805/512",
+      "I1_Ceta3": "207650779/1024",
+      "reciprocal_cap": "25/24",
+      "signed_full_support_only": true,
+      "v4": "1299/16"
+    }
+  },
+  "source_hashes": {
+    "results/axis_first_coefficient/README.md": "aa6f920ba99023d4ec6a0dbf7cb8597bbab0c0d9ea3c104fe8ba1fc95e77bd6e",
+    "results/axis_first_coefficient/axis_bounds.py": "15155430b06284c0c8e3b78ebf9a95ed3f3f8bb5911ab263cd9501ac24b0882a",
+    "results/axis_first_coefficient/evidence.json": "63714bd8dc8d49bd02155cdd53b6ff442a453cd8d046d3ba70d0d068d90bb23f",
+    "results/coefficient_support_foundation/README.md": "df4b656a5e83d45e45c19b3330b66537e35acd24782d818818b59c0ac848d84d",
+    "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+    "results/coefficient_support_foundation/support_bounds.py": "203bdc755196f4686cfa43b8212d362ae80e4069005c9ef7787007180e3038c7",
+    "results/compact_global_reconciliation/README.md": "64d2e735f6d3d75c5b8a56f7abe6c44fbc56109dfdedcc02f994c4739745f08d",
+    "results/compact_global_reconciliation/evidence.json": "1b218ecb397f9dde3acad6f632e5ba533ae25aeb0cf02986c989ffe896f6003d",
+    "results/explicit_coefficient_cutoff/README.md": "728c8c352fef842ed8d69449867f3d3378ea79e3865d98b08abc597a35d2fb20",
+    "results/explicit_coefficient_cutoff/cutoff.py": "5fd0553f2e98cd1302c3f089e15a0ca97145681f713e057ed745111c47bcc45f",
+    "results/explicit_coefficient_cutoff/evidence.json": "b8dbd4ac8db98696aeb8b25bea96f91ab43940c60af2fdf4730bc6bd424805b4",
+    "results/final_fifth_moment_interface/README.md": "c0cb7ff58462578325dfbb94c790fb4fff1a87bdb8a5a12a74a15f15262a7db5",
+    "results/final_fifth_moment_interface/evidence.json": "a3b0149e9427c90bcbcbf6aa62e8bbe7b7d3fd715b4b29ed7465b88c0a35e15e",
+    "results/first_coefficient_c3_boundary/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/first_coefficient_c3_boundary/README.md": "96500186a923f20f4f82261eddf6ee76d62e52b0590528a5bd123f18823f6cc8",
+    "results/first_coefficient_c3_boundary/audit.py": "615c29f9fcf92eaf61fbab79a92ad2f10e0b57a41001ac022ebad4c79bb90f1e",
+    "results/first_coefficient_c3_boundary/boundary.py": "1c07d759cec05e79fd11114a84090ab37912b77717cc96f6b5b61e8cf79e3f60",
+    "results/first_coefficient_c3_boundary/protocol.json": "bcf6f513b51f4841ad90f3ff02f13cf812a1b736cc0452927503119442597c2a",
+    "results/first_coefficient_c3_boundary/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/first_coefficient_c3_boundary/test_audit.py": "7412ba7495f1cbf06cb7cde1f7f74b5eb3f7ef02bc2504eeba059bc8ca5c706c",
+    "results/fourth_angular_axial_interface/README.md": "2303f09767c7aa171f1b88fcea5ceba33334435daec9250ed21c8252d7262523",
+    "results/fourth_angular_axial_interface/evidence.json": "ebd3b49578d62dfcf7582474dd124d9c492b4107634711fca830f563c0b5bfcc",
+    "results/native_sixth_angular/README.md": "c670b5f76f84f7234de355eddd084bd647e277362b8942d7a129eef00182eed1",
+    "results/native_sixth_angular/evidence.json": "4162b159f7988e43f4b21d34f1ccb55e0ad03c8c9495482a6625ded5bc19f453",
+    "results/signed_pressure_source_moments/README.md": "1a4d2a5dd23917b197f7edb489b34ed77047ef08fca630bfb16a72228244f959",
+    "results/signed_pressure_source_moments/evidence.json": "9ee82436bd1067d32469ffd1c569bd2ac07f71f1f4a636a0fef8069e0c1361e9",
+    "results/signed_pressure_source_moments/moments.py": "e48a8e08a79a68805d10e2aa1f208ff147ad8cab698c61d1c1cfffe07a156a1e"
+  },
+  "status": "local-first-C3-and-exact-global-leading-C5-repair-boundary"
+}

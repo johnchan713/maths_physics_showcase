@@ -13,6 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
+The latest [global first-coefficient C3 boundary checkpoint](results/first_coefficient_c3_boundary/README.md)
+extends the whole-inner first coefficient through `X^3 C_eta^3` and propagates
+it through the selected eta-independent coefficient cutoff.  Keeping the full
+signed pressure memory and the unchanged inverse-800 repair exposes a corrected
+derivative ladder: constructing the repair in `C_eta^3` needs a quantitative
+whole-support leading `U0` bound in `C_eta^5`, not merely the newly joined
+fourth-order bound.  Explicit formulas reduce the missing global repair to
+that one higher leading input; current native and FINAL compact fifth rows do
+not yet cover the later axial/reference stage.  Global `K1,3`, the second
+repair and `H2,3` therefore remain conditional, as do all pulse-family,
+covariance/mean, residual and blow-up obligations.
+
 The preceding [compact/global reconciliation checkpoint](results/compact_global_reconciliation/README.md)
 propagates the newly fixed cutoff through the mixed-third, joint-fourth and
 tame-fifth loop interfaces. It proves the complete compact ordinary fourth

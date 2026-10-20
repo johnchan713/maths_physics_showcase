@@ -48,6 +48,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/explicit_coefficient_cutoff/evidence.json \
             --output navier_stokes_explicit_coefficient_cutoff_ci.json
 
+      - name: Check local first coefficient C3 and exact global leading C5 boundary
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/first_coefficient_c3_boundary/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/first_coefficient_c3_boundary/audit.py \
+            --verify-record research/navier_stokes_cascade/results/first_coefficient_c3_boundary/evidence.json \
+            --output navier_stokes_first_coefficient_c3_boundary_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v

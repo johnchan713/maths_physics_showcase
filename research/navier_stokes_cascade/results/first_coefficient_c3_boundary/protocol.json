@@ -1,0 +1,9 @@
+{
+  "correction": "The finalized leading C_eta^4 bound is sufficient for the k=1 shifted-viscosity source after K1,3 is known, but not for constructing the first repair in C_eta^3; the signed leading source moments require whole-support U0 C_eta^5.",
+  "derivative_ladder": "Signed leading I0,I1 in C_eta^k need a,b in C_eta^(k+1), hence v in C_eta^(k+1), hence U0 in C_eta^(k+2) because v contains the eta derivative of the regular radial average.",
+  "global_boundary": "Supply an explicit selected-parameter K0,5=sup_[0,Xv]|U0|Ceta5; then V4<29K0,5, the displayed Q03,Q13 bounds, five ordinary discrepancies and the unchanged inverse-800 formula quantify the full first repair and K1,3.",
+  "local_result": "The existing 3delta/2 complex first-coefficient strips give Ceta3 factor 1+2/delta+4/delta^2+8/delta^3 through radial order three; the eta-independent selected cutoff propagates it by the exact binomial product and retains kappa_3 J0.",
+  "parent_commit": "df9bd482678a6c9cf502233bbc080c455c902630",
+  "pressure_memory": "Q03,Q13 are full-support signed totals through Xv; axis viscosity remains in Q03, weighted radial viscosity cancels only in Q13, and neither is an absolute-source bound.",
+  "scope": "Analytical local C3 extension and exact conditional global-repair boundary; no selected whole-support K0,5, finalized K1,3, H2,3, all-family pulse, covariance/mean, residual or blowup conclusion."
+}

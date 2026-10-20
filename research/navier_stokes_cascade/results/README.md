@@ -4,6 +4,18 @@ These records support numerical finite-amplification experiments, not a PDE
 singularity claim. The gates and equations are documented in the
 [research README](../README.md#robust-amplification-search).
 
+## Active cascade continuation
+
+Latest checkpoint: [global first-coefficient C3 boundary](first_coefficient_c3_boundary/README.md).
+The local whole-inner first coefficient now has an explicit `X^3 C_eta^3`
+bound and the selected coefficient cutoff propagates it exactly.  The audit
+corrects the next global dependency: the full signed leading pressure moments
+in `C_eta^3`, and hence the inverse-800 first repair, require a quantitative
+whole-support leading `U0` `C_eta^5` bound.  Current finalized estimates leave
+the later axial/reference stage at fourth order.  Explicit conditional
+`Q03,Q13` and repair formulas are recorded; `K1,3`, `H2,3`, all-scale pulses,
+complete covariance/means, the residual and blow-up remain unproved.
+
 ## Separate paper reproduction track
 
 Latest checkpoint: [actual matching-root foundation](matching_root_foundation/README.md).
