@@ -1,0 +1,633 @@
+{
+  "flags": {
+    "actual_PREMOD_native_fields_jointJ5_A5_derived_under_retained_hypotheses": true,
+    "actual_raw_variance_cutoff_Z_budget_verified": false,
+    "eight_missing_fifth_mixed_field_inputs_supplied": true,
+    "first_C3_second_H23_uniform_actual_pulses_complete_covariance_means_residual_or_blowup_verified": false,
+    "full_axis_Cp_axial_pressure_and_reference_ns_not_p2_retained": true,
+    "full_fourth_moving_loop_and_slow_primitive_Gamma_enclosed": false,
+    "independent_foundation_review_or_formal_certificate": false,
+    "native_fourth_mixed_shears_and_joint_target_shape_majorant_derived": true,
+    "old_Bn_root_widths_supports_frequency_pressure_gauge_and_history_unchanged": true,
+    "old_sufficient_explicit_Z_gate_implies_new_joint_target_gate": true,
+    "original_sigma_sixth_derivative_and_earlier_relative_width_point08_cost_proved": true,
+    "unconditional_FINAL_field_or_global_leading_C4_accepted": false
+  },
+  "gates": {
+    "Bell6_coefficients_positive": true,
+    "Bell6_factor_count_at_most_six": true,
+    "Bell6_weighted_order_six": true,
+    "actual_parameter_comparisons": true,
+    "additive_U_sigma6_principal_exact": true,
+    "all_logistic_derivative_l1_caps": true,
+    "all_positive_exponent_rows_fit": true,
+    "all_prescribed_shear_total4_jets_exact": true,
+    "both_U_and_E_square_density_retained": true,
+    "complete_Pi_has_axis_and_Cp": true,
+    "complete_sixth_Bell_sum203": true,
+    "dropping_E_in_reference_ns_conversion_changes_flow": true,
+    "dropping_X_in_reference_ns_conversion_changes_flow": true,
+    "dropping_axis_source_changes_original_ODE": true,
+    "dropping_sigma6_changes_fifth_radial_jet": true,
+    "eight_missing_coefficients_match_independent_polynomial_expansion": true,
+    "field_to_shear_J4_constant_fits_one_A": true,
+    "fifth_radial_E_nonzero_in_every_stage": true,
+    "fifth_radial_U_nonzero_before_axial_stop": true,
+    "five_regional_norms_SUMMED_not_maximized": true,
+    "full_pressure_J4_A1547_is_retained_not_rederived_or_reset": true,
+    "historical_source_bytes": true,
+    "incorrect_unit_mass_prefactor_rejected": true,
+    "inverse_a_J4_A_power1054": true,
+    "joint_target_auxiliary_positive_majorant": true,
+    "joint_target_power_and_constant_exact": true,
+    "native_shear_J4_A_power262": true,
+    "new_native_fifth_still_below_unchanged_Bn": true,
+    "original_p2_to_ns_full_source_ODE_exact": true,
+    "p1_original_forward_density_ODE_exact": true,
+    "p2_original_forward_density_ODE_exact": true,
+    "radial_derivative_order_reduction_has_factor_at_most_five": true,
+    "relative_E_sigma6_principal_exact": true,
+    "sixth_step_outward_comparisons": true,
+    "stopped_U_has_zero_positive_radial_jets": true,
+    "ts_J4_A_power1316": true,
+    "vs_J4_A_power1579": true,
+    "width_point08_not_later_point1": true,
+    "wrong_p2_y_plus_p2_equation_rejected": true
+  },
+  "inherited_provenance": {
+    "all_bindings_verified": true,
+    "binding_count": 2328,
+    "binding_result_sha256": "23a933b7287ef4b676956c4cc65b7143eaa4d13fedd44f493e9100629e94d4b1",
+    "frozen_records": {
+      "results/activated_collar_foundation/evidence.json": "6c9fb413715e705daf377bc9c444f4b6230e99d7de830590281da60ae9d3ad04",
+      "results/actual_band_pulse_bounds/evidence.json": "02d59fe4906a7bab5272200a9135fbd63ecce3e04bb1ec88e31e7671bdf4f23d",
+      "results/actual_cutoff_pullback/evidence.json": "2e1e84ed1a3eb2aedc523b55313014f8ea4981f1e68f2d70df86679e5d5092c7",
+      "results/actual_fifth_native/evidence.json": "067c5e13b675e92d3fb14ffebc6a10d07d679c83640b937acfa30d7a6c0f8d82",
+      "results/angular_c2_transfer/evidence.json": "7aa28625f697cab17d2e8932924a3d0eb62ab959c13a0d6b6069d870ac4be70c",
+      "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+      "results/annular_first_correction/evidence.json": "0377f6e04e066ad4f4a1ab34fc6ef5e41f6c136adf101aaab923f5ffb32aada2",
+      "results/auxiliary_geometry_audit/evidence.json": "67b5e15b26af7e98f1dae7297f0bc299a63787f46f9dad3cf8faaa60944546e5",
+      "results/axial_root_foundation/evidence.json": "0ca0e15d6a1b6b9c39ec7e09f3869ae0e710219bc32a0f650a47b0ef94f1ebad",
+      "results/axial_stress_audit/evidence.json": "73146b599d6e7151264e5c3d664b05f062fe13ac7afbae07bcd06ab89a745f5a",
+      "results/axis_core_attachment/evidence.json": "ca01303533a81f3b83e16100038ec6778d6268bcd0a8f70c4ffc023a712123d7",
+      "results/axis_first_coefficient/evidence.json": "63714bd8dc8d49bd02155cdd53b6ff442a453cd8d046d3ba70d0d068d90bb23f",
+      "results/axis_matching_audit/evidence.json": "d4cec538779a94c8a29cffe29d13c90316b81c54dc0a5e76beb80ffd8417f291",
+      "results/axis_second_coefficient/evidence.json": "392ecb791db67bdeace62110adf74a6573a2b706edb95efd7ca4c0468541b631",
+      "results/background_gap_certificate/evidence.json": "817bdf4eeccd85458485509c86350fd0787aa8bdb8106cb8a34017283152b90c",
+      "results/background_jet_foundation/evidence.json": "8d5ceba47fc1f3759d7f25301396584274d264c91af9c67823197d8192fa800d",
+      "results/background_summation/evidence.json": "a2e55ad429914b2ce33aff913efd43165d2fd1f2fb88f13a6edfffc887b23853",
+      "results/canonical_comparison_join/evidence.json": "7fafb6d41574edea1a0a69b9ba8266f2dee1605bbfe89da9168e51136584a2cd",
+      "results/canonical_endpoint_join/evidence.json": "d6c57381c49f164967c2515867e6046c1dee832263264ff4ed0da0f4fae4be4a",
+      "results/canonical_finite_cycle_join/evidence.json": "2845cf27e214aac6784cc378e668c9aa4f8f135c1108871c7b0a7d1eb7c52ab6",
+      "results/canonical_force_join/evidence.json": "4af3d5a9f478fcf271c1e810e40d4b48fe86a5a33a10d84b3ae48ac775af10b3",
+      "results/canonical_initial_mean_join/evidence.json": "445ea6c3d05a86cbadce2637771c45493b37612741981e1ea8bcba8cc83c7bcb",
+      "results/canonical_local_realization/evidence.json": "dd24a12408a5e0f8ed6ac12b621783b020f353fb80bf3add44a134237212614c",
+      "results/canonical_primary_foundation/evidence.json": "84e7fc53acc26a6be459669ab952d60eee30b83f7581eeb124edfd26fa829d5c",
+      "results/canonical_value_domain/evidence.json": "490935110199b5f61c24514a377e70147a5cd81425ced38c1321be3e59d3dbd9",
+      "results/certified_tail_reconstruction/evidence.json": "1784eba419ea2c7e6efabfd801f3d5eb599a0c214f4adfb9e56c5e3befbb7f35",
+      "results/coefficient_support_audit/evidence.json": "beb3c70b9412f7c9c4ac57cc8e00e86c487894d969e1ba7e4801a88975a810b3",
+      "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+      "results/collar_operator_envelope/evidence.json": "6284e397f6cdee992a5be197017222b322f577f995ff178059c0d5a30e467693",
+      "results/collar_third_coefficient/evidence.json": "7bb1ce2631d91486190db4ced7da1db37a6b306b8ff12208067bd5e28d82b49a",
+      "results/compact_jet_envelope/evidence.json": "304c78d3a0882d80305c1e37b0e5badc926c6f2e8abed6ecd37776a4cf5931fd",
+      "results/compact_mean_corrections/evidence.json": "4fd1df529447d9bcb3c225e36f34b3825a0717895b384c8ded1eb9a637176be1",
+      "results/compact_mean_foundation/evidence.json": "4aac9ac6ed533ea1bd275490c794e9123db45ff47b4b65c7f1206b4f6b25a2c9",
+      "results/compact_pressure_bridge/evidence.json": "ee32047ced47a6a76a566a9895c17041adbe362a48571be2ac910ca468aa6b7c",
+      "results/comparison_foundation/evidence.json": "8375a9e06205b9817bd114a22320915f264fd760ae85d385a474f776ecebd0ca",
+      "results/complete_covariance_initial_means/evidence.json": "64d6891cdfd7e17bcb6ff8d50eef18c8e1ecbebf5a2f122c0a1ef49870060def",
+      "results/complex_mean_relaxation/evidence.json": "0551c6cd18b5c3861a7e8d0656df524c601e068a42645c7753a2ec028f2d6386",
+      "results/complex_signed_covariance_update/evidence.json": "7a979855563cdca53538ca1fabfd41dcbe880c7b58c131cdc2e199caaa698e0e",
+      "results/core_all_order_foundation/evidence.json": "97a357bf4a494a0b1dc676994245f7bc0de8f1fde4d169a6f1e25b09e69196c1",
+      "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+      "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+      "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a",
+      "results/current_complex_foundation/evidence.json": "aaadbcdba8e80efc6d5cc1da760091de45b00598cc8e624123d191d77d0de573",
+      "results/current_endpoint_jets/evidence.json": "de61c70e5aea7ef14663e8fa4d34736bcf50399db4660c1eb3f01827c2e7e6d6",
+      "results/current_frame_freezing/evidence.json": "47f78485017d33a74df8688873f4b6df1d66e2c4cc22ace18cca32d5a6dc28e8",
+      "results/current_localized_force/evidence.json": "70f3240badb5a8c7d55c2df150b550fec815ecd84314800edd3d5057bb3e6cb1",
+      "results/current_potential_realization/evidence.json": "b58c4da2a766c071875e9fb1a346644c66c32374f458147f7e51220927fffdb6",
+      "results/current_residual_ledger_audit/evidence.json": "d7ec24ec9270889d1ae0038ecdfd02996485a5c2e2af3e7d12386b200c2869e3",
+      "results/current_solution_comparison/evidence.json": "1af26af85962ff01bc9cd7166e8b6475d4632eab557e2567c526661342c969f2",
+      "results/current_target_cycle_bridge/evidence.json": "402de981f9b3b1c2ae57360e8602552e9b595e444113b33d4fcb4ffd2d2d6c14",
+      "results/current_target_moment_audit/evidence.json": "1d265466edb12722bdfd84425a5c4287b4e39d382aa36b1b46b375903daafb7f",
+      "results/cutoff_composition_obstruction/evidence.json": "38b68d9b2b9cb9dfab09520be8d1580718b2144313bb5cd119bef1d1982e0caa",
+      "results/cutoff_cone_scale_gate/evidence.json": "cf156649d7f0f41151538f18a380f4d5426fc7c146a7b59f0690d05abbc1ee56",
+      "results/cutoff_higher_jet_interface/evidence.json": "64cba74730fc6c63fa7f32fa2a74f56c078a147a4a5b1d5c62c9803daee526bf",
+      "results/cutoff_repair_derivative_budget/evidence.json": "4f2db5db17ea3fdea289319fd051bd3dd9d7e8b8de57c9a923edb28ed7a4493b",
+      "results/cutoff_shape_feasibility/evidence.json": "a16b51e1b90f5b2f7062dce88ec36c6d86d7ed224ef0c5f198723ba4f08735ba",
+      "results/endpoint_foundation/evidence.json": "1325b04b9c7e8a81e13df85f3f3aef2b8de1d0fa2a0d4cd28868552901ef03f7",
+      "results/fifth_moment_volterra/evidence.json": "1d33d885af3257a7a9a4934bbe162745417f3dd9a0a8c024195ab610e28f3e49",
+      "results/finite_head_frame_jets/evidence.json": "9a48d96a37db75d7f72f39e9c850c2d165b1bd0eb84d4c790d63c387a0f73a9c",
+      "results/finite_induction_foundation/evidence.json": "28216ac2ed2a7ed267b62eaaaccb11e543c95f0c0dadc9c762b24178ae4563fb",
+      "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+      "results/first_correction_construction/evidence.json": "8b13809adfd46f52e1701a096556f8c0178b7894203b02ed127a5b42e79f6997",
+      "results/first_seminorm_bound/evidence.json": "988820278123697c55b4ffb1c6d25615491fb7586e8ed99a43f92ff51591a979",
+      "results/first_sourced_foundation/evidence.json": "79c48c09868edef6f8efed9ec9df8a7ffd7c3dffc520fd91685259754a7c003a",
+      "results/first_sourced_wave_update/evidence.json": "78c2f7d3432d121698077f9275e859e69a4396fe5d6b32ed237f80eeeb13edce",
+      "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc",
+      "results/fourth_angular_axial_interface/evidence.json": "ebd3b49578d62dfcf7582474dd124d9c492b4107634711fca830f563c0b5bfcc",
+      "results/fourth_loop_shape_gate/evidence.json": "d70fd490c7b8d912ca834fb516d534f4ca9e09502f86a631bab059f0d83d3fbe",
+      "results/fourth_pressure_input_boundary/evidence.json": "157a559392ee0e4f53336fa8420e9cc439813ab9bfea9b0b96712159ecfa523a",
+      "results/fourth_target_normalization/evidence.json": "b284501dbeab54a9776618ca497d9f643532d48367eff9e5f7aff715f8404965",
+      "results/frame_column_foundation/evidence.json": "82e80512c7e404b757043f3a4ea93d7ec81babf08a8ffd58917b19320b4abf1d",
+      "results/full_potential_realization/evidence.json": "2de9e0491306251f240786a87768fd7907fb22dbc551ff5d99231ea2f64ffb27",
+      "results/gaussian_mass_foundation/evidence.json": "21e0e591fd6ffd2915d89219142e748454061f050f0526a42cf8c5b819e49a50",
+      "results/geometric_pulse_replay/evidence.json": "759b4a0fa65111e7516085974cede2891942914dcf373f5cd6ded2ed63be37e5",
+      "results/global_axial_angular_bound/evidence.json": "ab015d2c2b19a0fa83a81a149ef0d2f3bcde7e51d7a11cacbe0fc63bfa3cb97a",
+      "results/global_axial_source_envelope/evidence.json": "83f8eb3c4d995595c5257e153077c0e7ac7c2e9e0e967740f007e49fac16de93",
+      "results/global_moment_stress/evidence.json": "0b1ce61f32a75e46817d99351dac0512dbb7f1a503a0158612a953f6d8a6636e",
+      "results/global_pressure_moment_foundation/evidence.json": "1fa0851e09081c1e9ea7e198c7e2f747ffb6aab7391f9141d2717a178e58503e",
+      "results/global_solution_comparison/evidence.json": "fda47288fea382c0ac443924de71b16f732119f7ea9942fa58a0a94c656c13ed",
+      "results/global_swirl_envelope/evidence.json": "5868fa5e33e20100c9765d43b7c34bfb3440d1debaf0cfae60ebda67b4cb225e",
+      "results/harmonic_closure_foundation/evidence.json": "bee87556b2fc772fd29abea8db5c20eb47ecd04643c22e397697ac8b6bba0062",
+      "results/heat_exterior_audit/evidence.json": "92b39415d9c7a851ce7f2c6ba325b1a7a8fe27f3c175136f35615b175a038a56",
+      "results/higher_jet_budget/evidence.json": "e7a99a0f17b6ebb3f3d7b527f79069d3ad579f983aa47f224a0af24755c8cd98",
+      "results/higher_pressure_source_moments/evidence.json": "667dde96b93423063d6cbe64e1013d75818aa72c2d90364a4a3c98d475d357f8",
+      "results/inner_collar_activation/evidence.json": "7a17699476a8febb2f573c3b4b857cfa02b2b67436d5388a9c71233717babe3a",
+      "results/intermediate_decay_audit/evidence.json": "f30b5619e8b20d2196d449abbc14c646ecaf0c663527ccc49824891c1d8a8af2",
+      "results/joined_stress_construction/evidence.json": "245fdc5bf917a8ec2f3d31b1536b6c3c3fdfb198153fe791e25b27d3a6b5f4a7",
+      "results/leading_cone_margin/evidence.json": "378a5a82c562a1a9973835f7517d7342c6c117ed269aef95ddce49dfd5bebd1d",
+      "results/leading_frame_foundation/evidence.json": "fec0aee5eecb7873d2e76abd50a24e2f2a4ff236f97380e9bc36629d1ba30fba",
+      "results/leading_frame_freezing/evidence.json": "5d8a4fe7f0b385c64edf6d1fd1bd4c05a6b8f4297cf4ca84bcf6fc1a704009bf",
+      "results/localized_force_extension/evidence.json": "fe63f5a0081b100f310630a9319b34eaf5cef15a01a7ec51d9d67388b065d5dc",
+      "results/loop_modulation_bounds/evidence.json": "89822b9058906cb2638d8a74f5a024f876b7af7faad4ece73fde71d48f0fbfb1",
+      "results/matching_root_foundation/evidence.json": "22fd0e2a826ae3916a99dbd68eeb09f9e2836ae383364057e2e8bdbb67071bd5",
+      "results/mixed_shape_cone_bridge/evidence.json": "8679c4e9533ba737e8eab1cec12a2cdb1e45ae3d10b931e1fbce47d30a144284",
+      "results/modulation_repair_all_order/evidence.json": "05ac3c9c9a3784abb2818d7b91f23c171ec4427d53173fba4cbc7fe062f2c16e",
+      "results/native_mixed_fourth_boundary/evidence.json": "48debac3b88dc070b3acbc22dc192d0c7b583f74987a93be83d14c8947054d04",
+      "results/nonlinear_axis_pilot/evidence.json": "c7a99b02556a241e8ef15298c7389fd1f26fc34e5a5d417ff4b7c362b14b6db9",
+      "results/outer_edge_stability/evidence.json": "391084b0fa93c41e794eb442dbb9d882740fe1e37d3acc2c3c60871c5105b898",
+      "results/outer_pressure_pilot/evidence.json": "f58669cb2809d4ae7fdfe835a26d8882c0dcc555f3d8a5adf006df9bf28f098a",
+      "results/paper_profile_audit/evidence.json": "bc8466d81d5a93a3dff7e45c04dde2b9b3d0b19cd84fdf6c1c6b62446ef18b21",
+      "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+      "results/physical_pulse_transfer/evidence.json": "4fd33b054abaa66aa34052eccf97086a1db9ea8325afe857b1de35e03e63fc85",
+      "results/physical_residual_budget/evidence.json": "a9aed6f563704521a0ef7216ba4c3988c387cad4e62b6d06fea7e2acc943c165",
+      "results/physical_wave_interface/evidence.json": "a82f1c9f723964762f5b0ef265dffbab0df23ce92ca3ede7e084699c4382375f",
+      "results/post_pulse_stress_audit/evidence.json": "d4b92e716d35bfb4ddaa0f2affc0e7eaeec2499bf5f900bd276c1ddcb5d59581",
+      "results/post_signed_mean_relaxation/evidence.json": "b9e434faec88944679141dda99a8832198b35a8b0c5fcedd6d93268f47cfcef8",
+      "results/premodulation_mixed_shear/evidence.json": "afaf07749e77c2d0c0054e3b8ad9645149d8341b84efc991e9d8c4968a0ceee2",
+      "results/prescribed_continuation_foundation/evidence.json": "33a4bbbac554dd669d2177dc86d8c1370b947082d3f24fb78309ffdab2e2fc80",
+      "results/primary_covariance_foundation/evidence.json": "f7d2bfe276e1aec8b203662f1ef5779ea408023c0d5d04e108a33bcc95139190",
+      "results/pulse_moment_audit/evidence.json": "60d4348f7839ad849abd3086d1fd7ec18a77f1a9788807a456516f916270e832",
+      "results/pulse_stress_audit/evidence.json": "70a93c545eebd032610246310dc15c61693db3de8ebdf8273dc4effcce7324de",
+      "results/real_signed_covariance_update/evidence.json": "35fb38c5ac67d0254557ff2b6af10e256285c0263fd92042ce76eed0e2461d03",
+      "results/realization_foundation/evidence.json": "d9a67ebe145fd2d31abb87d1fe700ff8025b5802a726cff961e4461fb5166d64",
+      "results/reduced_continuation_margins/evidence.json": "7b197dcefe6342e21b329489f99eeb48498332f7d224d165450acdbd14991b33",
+      "results/reference_fifth_transfer/evidence.json": "d646d3263486fab58cb70065c691016ba0177aa7657c99735406c9a2f00f9422",
+      "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+      "results/regional_stress_floor/evidence.json": "ac6e28a042667db642c3358cb41421fdff53a1ea6fa19fa6d0333bade6e8565d",
+      "results/regional_weighted_gate/evidence.json": "4417ffa7e693f8ba13cb1a922b6a8fbd2761e7e74de7af84d94eb5c9d4f010cd",
+      "results/regular_source_foundation/evidence.json": "91f71ce32b4427f504553f4d8dfe5d555ae8822ec3f8e8da75123f729e487e28",
+      "results/repair_state_bounds/evidence.json": "78d12a7000cf0ef78a60ea05ee76ef292e551d5f5c9e6d72af6b35eca015632a",
+      "results/residual_cycle_closure/evidence.json": "e76a63c5ba89cbfcc04240705473ff5f6feace60696b3df6bba6d2b2ea8832df",
+      "results/root_foundation/evidence.json": "dc3533a665e4cfc318cb2f069b1de76c83f3ada673dddbd5cb69b891b97c84ff",
+      "results/same_tilt_deficit/evidence.json": "197d678280f2180c9c8ac511821712f9c55ed7e4f054e6b1ff5c4096cf4cca1b",
+      "results/second_coefficient_source/evidence.json": "efab34edf5911c95149e53773f420897fb43379d4fe19f0f8280bdd56e87c083",
+      "results/shape_join_pressure/evidence.json": "f050948e240aa2f50652624001d026d47eab260b369f713c4d44ef3499bf1d47",
+      "results/sharp_current_scale_floor/evidence.json": "3721d79d6c7d3b7ab1a27236e683a83caa9b098046762874d4f6c61271be9d27",
+      "results/signed_pressure_source_moments/evidence.json": "9ee82436bd1067d32469ffd1c569bd2ac07f71f1f4a636a0fef8069e0c1361e9",
+      "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea",
+      "results/sourced_inverse_foundation/evidence.json": "15afc498fa42605b0fcbaaff81b4245ceb388e447527e63395eeb45348c41827",
+      "results/stress_realization_audit/evidence.json": "8280839e76a55394393c841e2fe2330f80324a80a69db5dd6b76502fe39efb7b",
+      "results/weighted_background_edges/evidence.json": "04eb035805766e43a80c93bb0a215bfb05e1be60364c18da7791d70c7a0abc2c",
+      "results/weighted_stress_foundation/evidence.json": "5033fd870260a6561b9e4a2c342a9cc67365d077c8acc802e32a2a08de59882a"
+    }
+  },
+  "protocol": {
+    "actual": "both cutoff factors charged in axial slope;a_prescribedJ4<C1024,bJ4<C8192;positive logEJ5<C2048,Evalue<1 gives fieldJ5<C16384;five region powers16384,16384,128,128,256 SUM to<A5;earlier same root Ceta5 suffices without sixth angular root jets",
+    "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "native": "same PREMOD rectangle and actual retained Md64 core/regional/root/floor premises;C>=1e9,A=C4096,Bn=A256 unchanged;finite native mixed core packet through6,not FINAL",
+    "parent_commit": "1548fb8b06b5855585d3568980393a973ccc8e95",
+    "reference": "split pure angular from radial rows;positive logE and U J4<C128,EJ4<C1024,MJ4<C132,fullPiJ4<C2050;original SqJ3<C272,SnJ3<C2060,p1J4<C512,nsJ4<C4096 using p1y=X Sq/L-ell p1,nsy=Sn/L-ns;full axis and Cp kept",
+    "scope": "conditional-native analytical estimates and exact manufactured/interval checks;no full fourth loop/Gamma enclosure,actual cutoff acceptance,FINAL global derivatives,physical pulse covariance mean residual or blowup acceptance",
+    "shear": "new native EJ5,UJ5<A5 and retained inverseEJ4<A256 give a,bsJ4<A262;inverse_aJ4<A1054,tsJ4<A1316,vsJ4<A1579;parent full pressure p1,p2J4<A1547 retained separately",
+    "step": "same squared-flat sigma;logistic coefficient recurrence through6,Bell6=203;central2^6*6!*203*(1e12)^6 and edge406*10080^6*4^18*exp(16/9-16) below1e150;relative .08 beta=sigma prime needs sigma6 and radialJ5<C20,not unit-mass .1",
+    "target": "joint two-color finite scalar composition yields sJ4<=1e12 Z deltaL^-8 A13685;old explicit sufficient shape gate power20673 implies new one with gap6988logA;unchanged actual rawZ not enclosed and bare angular target not promoted"
+  },
+  "remaining_obligations": [
+    "propagate_complete_joint_fourth_native_inputs_through_signed_root_moving_phase_and_zero_mean_primitive_to_enclose_parent_Gamma_under_explicit_shape_condition",
+    "enclose_unchanged_actual_raw_cutoff_Z;bare_angular_target_gate_does_not_supply_joint_target_or_unconditional_FINAL_acceptance",
+    "prove_FINAL_global_leading_C4_first_C3_second_H23_all_scale_actual_pulses_supports_complete_covariance_axial_pressure_means_and_full_viscous_cutoff_interaction_residual"
+  ],
+  "reviews": {
+    "annular": {
+      "checks": {
+        "additive_U_sigma6_principal_exact": true,
+        "dropping_sigma6_changes_fifth_radial_jet": true,
+        "incorrect_unit_mass_prefactor_rejected": true,
+        "relative_E_sigma6_principal_exact": true,
+        "width_point08_not_later_point1": true
+      },
+      "sigma6_coefficient": "15625/6144",
+      "sixth_angular_root_derivative_required": false
+    },
+    "checks": {
+      "Bell6_coefficients_positive": true,
+      "Bell6_factor_count_at_most_six": true,
+      "Bell6_weighted_order_six": true,
+      "actual_parameter_comparisons": true,
+      "additive_U_sigma6_principal_exact": true,
+      "all_logistic_derivative_l1_caps": true,
+      "all_positive_exponent_rows_fit": true,
+      "all_prescribed_shear_total4_jets_exact": true,
+      "both_U_and_E_square_density_retained": true,
+      "complete_Pi_has_axis_and_Cp": true,
+      "complete_sixth_Bell_sum203": true,
+      "dropping_E_in_reference_ns_conversion_changes_flow": true,
+      "dropping_X_in_reference_ns_conversion_changes_flow": true,
+      "dropping_axis_source_changes_original_ODE": true,
+      "dropping_sigma6_changes_fifth_radial_jet": true,
+      "eight_missing_coefficients_match_independent_polynomial_expansion": true,
+      "field_to_shear_J4_constant_fits_one_A": true,
+      "fifth_radial_E_nonzero_in_every_stage": true,
+      "fifth_radial_U_nonzero_before_axial_stop": true,
+      "five_regional_norms_SUMMED_not_maximized": true,
+      "full_pressure_J4_A1547_is_retained_not_rederived_or_reset": true,
+      "incorrect_unit_mass_prefactor_rejected": true,
+      "inverse_a_J4_A_power1054": true,
+      "joint_target_auxiliary_positive_majorant": true,
+      "joint_target_power_and_constant_exact": true,
+      "native_shear_J4_A_power262": true,
+      "new_native_fifth_still_below_unchanged_Bn": true,
+      "original_p2_to_ns_full_source_ODE_exact": true,
+      "p1_original_forward_density_ODE_exact": true,
+      "p2_original_forward_density_ODE_exact": true,
+      "radial_derivative_order_reduction_has_factor_at_most_five": true,
+      "relative_E_sigma6_principal_exact": true,
+      "sixth_step_outward_comparisons": true,
+      "stopped_U_has_zero_positive_radial_jets": true,
+      "ts_J4_A_power1316": true,
+      "vs_J4_A_power1579": true,
+      "width_point08_not_later_point1": true,
+      "wrong_p2_y_plus_p2_equation_rejected": true
+    },
+    "complete_pressure_identity": {
+      "actual_incoming_axis_or_moments_set_zero": false,
+      "checks": {
+        "both_U_and_E_square_density_retained": true,
+        "complete_Pi_has_axis_and_Cp": true,
+        "dropping_axis_source_changes_original_ODE": true,
+        "p1_original_forward_density_ODE_exact": true,
+        "p2_original_forward_density_ODE_exact": true,
+        "wrong_p2_y_plus_p2_equation_rejected": true
+      },
+      "native_not_FINAL_pressure": true
+    },
+    "exponents": {
+      "checks": {
+        "all_positive_exponent_rows_fit": true,
+        "field_to_shear_J4_constant_fits_one_A": true,
+        "five_regional_norms_SUMMED_not_maximized": true,
+        "full_pressure_J4_A1547_is_retained_not_rederived_or_reset": true,
+        "inverse_a_J4_A_power1054": true,
+        "native_shear_J4_A_power262": true,
+        "new_native_fifth_still_below_unchanged_Bn": true,
+        "radial_derivative_order_reduction_has_factor_at_most_five": true,
+        "ts_J4_A_power1316": true,
+        "vs_J4_A_power1579": true
+      },
+      "full_native_field_J5_A_power": 5,
+      "region_C_powers": [
+        16384,
+        16384,
+        128,
+        128,
+        256
+      ],
+      "rows": [
+        {
+          "accepted": true,
+          "name": "reference_positive_log_J4",
+          "raw_C_power": 80,
+          "selected_C_power": 128
+        },
+        {
+          "accepted": true,
+          "name": "reference_U_J4",
+          "raw_C_power": 80,
+          "selected_C_power": 128
+        },
+        {
+          "accepted": true,
+          "name": "reference_E_J4_value_sensitive",
+          "raw_C_power": 513,
+          "selected_C_power": 1024
+        },
+        {
+          "accepted": true,
+          "name": "reference_M_J4_full_incoming",
+          "raw_C_power": 131,
+          "selected_C_power": 132
+        },
+        {
+          "accepted": true,
+          "name": "reference_full_Pi_J4",
+          "raw_C_power": 2049,
+          "selected_C_power": 2050
+        },
+        {
+          "accepted": true,
+          "name": "reference_W_J3",
+          "raw_C_power": 137,
+          "selected_C_power": 140
+        },
+        {
+          "accepted": true,
+          "name": "reference_Hc_J3",
+          "raw_C_power": 130,
+          "selected_C_power": 130
+        },
+        {
+          "accepted": true,
+          "name": "reference_Sq_J3",
+          "raw_C_power": 269,
+          "selected_C_power": 272
+        },
+        {
+          "accepted": true,
+          "name": "reference_Sn_J3",
+          "raw_C_power": 2053,
+          "selected_C_power": 2060
+        },
+        {
+          "accepted": true,
+          "name": "reference_p1_J4_original_ODE",
+          "raw_C_power": 276,
+          "selected_C_power": 512
+        },
+        {
+          "accepted": true,
+          "name": "reference_ns_J4_original_ODE",
+          "raw_C_power": 2062,
+          "selected_C_power": 4096
+        },
+        {
+          "accepted": true,
+          "name": "actual_prescribed_a_J4",
+          "raw_C_power": 613,
+          "selected_C_power": 1024
+        },
+        {
+          "accepted": true,
+          "name": "actual_prescribed_b_J4_two_cutoffs",
+          "raw_C_power": 4298,
+          "selected_C_power": 8192
+        },
+        {
+          "accepted": true,
+          "name": "actual_positive_log_E_J5",
+          "raw_C_power": 1025,
+          "selected_C_power": 2048
+        },
+        {
+          "accepted": true,
+          "name": "actual_continuation_E_J5_value_sensitive",
+          "raw_C_power": 10241,
+          "selected_C_power": 16384
+        },
+        {
+          "accepted": true,
+          "name": "actual_continuation_U_J5",
+          "raw_C_power": 8193,
+          "selected_C_power": 16384
+        },
+        {
+          "accepted": true,
+          "name": "SUM_five_region_field_J5",
+          "raw_C_power": 16385,
+          "selected_C_power": 20480
+        }
+      ],
+      "shear_A_powers": {
+        "a": 262,
+        "bs": 262,
+        "inverse_a": 1054,
+        "p1": 1547,
+        "p2": 1547,
+        "ts": 1316,
+        "vs": 1579
+      }
+    },
+    "fixtures": {
+      "checks": {
+        "all_prescribed_shear_total4_jets_exact": true,
+        "eight_missing_coefficients_match_independent_polynomial_expansion": true,
+        "fifth_radial_E_nonzero_in_every_stage": true,
+        "fifth_radial_U_nonzero_before_axial_stop": true,
+        "stopped_U_has_zero_positive_radial_jets": true
+      },
+      "manufactured_not_actual_parameter_profile": true,
+      "rows": [
+        {
+          "E_missing_four_indices_exact": true,
+          "E_pure_radial_fifth_nonzero": true,
+          "U_missing_four_indices_exact": true,
+          "U_pure_radial_fifth_nonzero": true,
+          "shear_E_total4_exact": true,
+          "shear_U_total4_exact": true,
+          "stage": "activation"
+        },
+        {
+          "E_missing_four_indices_exact": true,
+          "E_pure_radial_fifth_nonzero": true,
+          "U_missing_four_indices_exact": true,
+          "U_pure_radial_fifth_nonzero": true,
+          "shear_E_total4_exact": true,
+          "shear_U_total4_exact": true,
+          "stage": "axial_taper"
+        },
+        {
+          "E_missing_four_indices_exact": true,
+          "E_pure_radial_fifth_nonzero": true,
+          "U_missing_four_indices_exact": true,
+          "U_pure_radial_fifth_nonzero": false,
+          "shear_E_total4_exact": true,
+          "shear_U_total4_exact": true,
+          "stage": "shear_blend"
+        }
+      ]
+    },
+    "parameters": [
+      {
+        "actual_C_G_H_N_Z_or_Gamma_materialized": false,
+        "checks": {
+          "C_at_least_1e9": true,
+          "K_old_below_C": true,
+          "P_and_twice_P_below_C2": true,
+          "P_below_C": true,
+          "actual_pure_angular_log_CE_five_below_C": true,
+          "actual_sigma5_cutoff_J4_C100": true,
+          "core_native_U_and_log_packet_below_C4": true,
+          "earlier_sigma5_cutoff_J3_C75": true,
+          "largest_new_native_power_below_G": true,
+          "native_star_packet_10LambdaK8_below_C2": true,
+          "old_explicit_Z_gate_implies_new_joint_target_gate": true,
+          "one_hundred_K_native_slope_constant_below_C4": true,
+          "ratio_A32_over_logA_increases": true,
+          "reference_X_and_inverse_J3_below_C2": true,
+          "retained_core_parameter_checks": true
+        },
+        "interval_digits": 80
+      },
+      {
+        "actual_C_G_H_N_Z_or_Gamma_materialized": false,
+        "checks": {
+          "C_at_least_1e9": true,
+          "K_old_below_C": true,
+          "P_and_twice_P_below_C2": true,
+          "P_below_C": true,
+          "actual_pure_angular_log_CE_five_below_C": true,
+          "actual_sigma5_cutoff_J4_C100": true,
+          "core_native_U_and_log_packet_below_C4": true,
+          "earlier_sigma5_cutoff_J3_C75": true,
+          "largest_new_native_power_below_G": true,
+          "native_star_packet_10LambdaK8_below_C2": true,
+          "old_explicit_Z_gate_implies_new_joint_target_gate": true,
+          "one_hundred_K_native_slope_constant_below_C4": true,
+          "ratio_A32_over_logA_increases": true,
+          "reference_X_and_inverse_J3_below_C2": true,
+          "retained_core_parameter_checks": true
+        },
+        "interval_digits": 110
+      }
+    ],
+    "reference_ns": {
+      "checks": {
+        "dropping_E_in_reference_ns_conversion_changes_flow": true,
+        "dropping_X_in_reference_ns_conversion_changes_flow": true,
+        "original_p2_to_ns_full_source_ODE_exact": true
+      }
+    },
+    "step": {
+      "Bell6_coefficient_sum": 203,
+      "checks": {
+        "Bell6_coefficients_positive": true,
+        "Bell6_factor_count_at_most_six": true,
+        "Bell6_weighted_order_six": true,
+        "all_logistic_derivative_l1_caps": true,
+        "complete_sixth_Bell_sum203": true
+      },
+      "logistic_rows": [
+        {
+          "accepted": true,
+          "bound": 1,
+          "coefficient_l1": 1,
+          "order": 0
+        },
+        {
+          "accepted": true,
+          "bound": 2,
+          "coefficient_l1": 2,
+          "order": 1
+        },
+        {
+          "accepted": true,
+          "bound": 8,
+          "coefficient_l1": 6,
+          "order": 2
+        },
+        {
+          "accepted": true,
+          "bound": 48,
+          "coefficient_l1": 26,
+          "order": 3
+        },
+        {
+          "accepted": true,
+          "bound": 384,
+          "coefficient_l1": 150,
+          "order": 4
+        },
+        {
+          "accepted": true,
+          "bound": 3840,
+          "coefficient_l1": 1082,
+          "order": 5
+        },
+        {
+          "accepted": true,
+          "bound": 46080,
+          "coefficient_l1": 9366,
+          "order": 6
+        }
+      ],
+      "maximum_edge_derivative_constant": 10080
+    },
+    "step_intervals": [
+      {
+        "actual_huge_C_or_profile_materialized": false,
+        "checks": {
+          "central_Bell_bound_below_1e150": true,
+          "central_all_six_phase_derivatives_below_1e12": true,
+          "edge_Bell_bound_below_1e150": true,
+          "edge_maximum_t9_exp_minus_t_decreases": true,
+          "edge_n6_geometric_ratio_below_half": true,
+          "fixed_sigma6_constant_fits_C17": true,
+          "relative_width_point08_J5_fits_C20": true
+        },
+        "interval_digits": 80
+      },
+      {
+        "actual_huge_C_or_profile_materialized": false,
+        "checks": {
+          "central_Bell_bound_below_1e150": true,
+          "central_all_six_phase_derivatives_below_1e12": true,
+          "edge_Bell_bound_below_1e150": true,
+          "edge_maximum_t9_exp_minus_t_decreases": true,
+          "edge_n6_geometric_ratio_below_half": true,
+          "fixed_sigma6_constant_fits_C17": true,
+          "relative_width_point08_J5_fits_C20": true
+        },
+        "interval_digits": 110
+      }
+    ],
+    "target": {
+      "Z_linear": true,
+      "actual_Gamma_or_FINAL_field_accepted": false,
+      "actual_Z_enclosed": false,
+      "coefficient": 168000000000,
+      "power": 13685,
+      "raw_below_majorant": true
+    }
+  },
+  "source_hashes": {
+    "results/actual_fifth_native/README.md": "c9583b183830fa831a39196c1bf695e565733653699e2f4510ac48e891a67941",
+    "results/actual_fifth_native/evidence.json": "067c5e13b675e92d3fb14ffebc6a10d07d679c83640b937acfa30d7a6c0f8d82",
+    "results/axis_core_attachment/README.md": "5e10233d5cde81565c9d47de909b5d7a727a780797d52e3c946f27ddd08b052a",
+    "results/axis_core_attachment/bounds.py": "1ed95922c119b890ab9538e843649a1460e85c98a12ecaa357d3c35280a94431",
+    "results/axis_core_attachment/evidence.json": "ca01303533a81f3b83e16100038ec6778d6268bcd0a8f70c4ffc023a712123d7",
+    "results/axis_matching_audit/README.md": "8c85355003ec18989854c4916fd3c3549bea452988f20879de58d2cf748bfd1e",
+    "results/axis_matching_audit/evidence.json": "d4cec538779a94c8a29cffe29d13c90316b81c54dc0a5e76beb80ffd8417f291",
+    "results/compact_jet_envelope/README.md": "b0597dab919b3cf0a233b066d14a977385f530b2575d137fc75b3c53d996d915",
+    "results/compact_jet_envelope/evidence.json": "304c78d3a0882d80305c1e37b0e5badc926c6f2e8abed6ecd37776a4cf5931fd",
+    "results/core_all_order_foundation/coordinate_checks.py": "bbc81d687982f8985f7e5f916a57a023875a8f7e2b853a127aedcd6457e1646f",
+    "results/fourth_loop_shape_gate/README.md": "b4d367a2e28cf09af7bc68de521ab8daff259e9df1a47c3e4411bac3e377bcf6",
+    "results/fourth_loop_shape_gate/evidence.json": "d70fd490c7b8d912ca834fb516d534f4ca9e09502f86a631bab059f0d83d3fbe",
+    "results/harmonic_closure_foundation/audit.py": "1fbb1bbf3e8000f78cd028451ddc30ae25546f3ba5c52b490ace9183541093da",
+    "results/higher_jet_budget/README.md": "28c3c88dd9fa896ce0f07d3550b27a530b1bf56e03824ed508eb63e090e39852",
+    "results/higher_jet_budget/evidence.json": "e7a99a0f17b6ebb3f3d7b527f79069d3ad579f983aa47f224a0af24755c8cd98",
+    "results/higher_jet_budget/higher_bounds.py": "8fb84cbc1b867f9d8d1cced225c98626e5077f48cb4ff6b0f911df78d827b6af",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/modulation_repair_all_order/evidence.json": "05ac3c9c9a3784abb2818d7b91f23c171ec4427d53173fba4cbc7fe062f2c16e",
+    "results/native_fifth_mixed_cover/.gitignore": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+    "results/native_fifth_mixed_cover/README.md": "0111695b7ebfd55a0a541f21342a1520efd5bd2608862f5661953c23896ecc11",
+    "results/native_fifth_mixed_cover/audit.py": "d107fb412a8947430c86e2ce0276821638b8e8e1c33035fdd372f40b9e32743b",
+    "results/native_fifth_mixed_cover/mixed_bounds.py": "39a0ecfbe15c4f5a32bcdd57fab9f5837867b061365aaf4d2b4f37511259624f",
+    "results/native_fifth_mixed_cover/protocol.json": "8da051f1b430a8ef168aabe3e2cbb0a810ed7bcb5673718c69b0ccac51788ad7",
+    "results/native_fifth_mixed_cover/requirements.txt": "96464f405b58137236b9c10c698be08a780ff7d062dd918ac40c0460f1b0831f",
+    "results/native_fifth_mixed_cover/test_audit.py": "4baa22f22d149e2026cfb4ffda05ff451700d07d39f3b71c73de96f0a003c21a",
+    "results/native_mixed_fourth_boundary/README.md": "45abdce5d60f596ae73ef85b17127912f0b50ad608ac0010dcdb4c71e7771a5e",
+    "results/native_mixed_fourth_boundary/boundary.py": "38102db2fef5f98755104fc9f699fb6290947bf3a9253201c6642a4010b554e3",
+    "results/native_mixed_fourth_boundary/evidence.json": "48debac3b88dc070b3acbc22dc192d0c7b583f74987a93be83d14c8947054d04",
+    "results/premodulation_mixed_shear/README.md": "c09e80d441df22d0d524c4d85d9736576ee640f3f8fe0afa9ad789723f9db105",
+    "results/premodulation_mixed_shear/evidence.json": "afaf07749e77c2d0c0054e3b8ad9645149d8341b84efc991e9d8c4968a0ceee2",
+    "results/prescribed_continuation_foundation/README.md": "fa32edfdb1093b444542dda0b98db4efe3ae02d07550ba5d08ad9ccab2698728",
+    "results/prescribed_continuation_foundation/continuation_checks.py": "5c999cf99078fec7105146c6ba2180f8b80d456ce93cdc0bd18daed833925360",
+    "results/prescribed_continuation_foundation/evidence.json": "33a4bbbac554dd669d2177dc86d8c1370b947082d3f24fb78309ffdab2e2fc80",
+    "results/reference_fifth_transfer/README.md": "834c72e173b5758b15225d77a4ffcb3ae671e052d2133dc349ffd9e706850361",
+    "results/reference_fifth_transfer/evidence.json": "d646d3263486fab58cb70065c691016ba0177aa7657c99735406c9a2f00f9422",
+    "results/shape_join_pressure/README.md": "6120069fc0b45b2a5cdf25584a1eeb6bbfc363589a1dc8658e1af45093935cff",
+    "results/shape_join_pressure/evidence.json": "f050948e240aa2f50652624001d026d47eab260b369f713c4d44ef3499bf1d47"
+  },
+  "status": "actual-native-joint-fifth-cover-and-fourth-shear-shape-interface"
+}

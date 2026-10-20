@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [native mixed-fourth boundary](results/native_mixed_fourth_boundary/README.md)
+The latest [actual native mixed-fifth cover](results/native_fifth_mixed_cover/README.md)
+supplies the eight missing fifth mixed field inputs: both PREMOD fields have
+joint J5 norm <A^5 under the retained native/core hypotheses. It proves the
+extra sixth step derivative needed by the earlier relative annular bumps,
+then derives native fourth mixed shears and a full joint fourth variance
+target bound with the actual cutoff shape explicit. The earlier sufficient
+raw-shape gate implies this new joint gate too; its actual premise remains
+unverified. Full fourth moving-loop/Gamma propagation and FINAL global,
+physical-pulse, covariance/mean and residual closure remain open.
+
+The preceding [native mixed-fourth boundary](results/native_mixed_fourth_boundary/README.md)
 bounds complete PREMOD joint-fourth pressure coordinates by A^1547, retaining
 the full axis and cumulative pressure. It identifies the fifth mixed field
 inputs still needed by native fourth shears and derives the exact fourth
