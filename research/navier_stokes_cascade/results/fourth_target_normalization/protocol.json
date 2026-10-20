@@ -1,0 +1,13 @@
+{
+  "densities": "N times full C4 differences:DU=H+b4,DE=Ahi(12H+3a4),DU2=Ahi(6H+4b4),DE2=Ahi^2(114H+18a4),DUE=Ahi^2(38H+6a4+3b4);both squares and complete product retained;linear in highest jets",
+  "diagnostics": "fifteen manufactured density/target fourth jets ateta endpoints/interior and3phases;direct differentiation vsLeibniz andoriginal precondition_target;moving lift fourth9/512;symbolicexponentialpartitions;not actual loop/PDE or interval certification",
+  "gate": "parentB4<=H+b4,r=2000H^16/N,Kknown=Ahi+6400Ar+960000000000Ar^2;(3200000A Za)a4+(1+3200000A Zb)b4<=N(K-Kknown)-(1+3200000A ZH)H;equivalent only to substituted sufficient majorant,not necessity for actual field",
+  "inputs": "same nativeE,U Ceta4<=Ahi,compact A^-1<X<A,length<A;actual primitivejointJ3<=H,N>=H,selectedN>H^32 unchanged;actuala4,b4 are fourth normalized eta jets at fixed external phase with full internal moving inverse phase",
+  "normalizers": "samee=e_star/(1+eta^2),rhop>0,srho>=1/(sqrt2 rhop^1.5),0<lambda<=.01;wM=5/(rhop e_star),wJ=25srho/e_star^2,wI=5srho/e_star,wS=25/(rhop e_star^2),wCp=25/e_star^2;all C4 derivatives charged",
+  "parent_commit": "4f093b36c10abea2fb4c8e6b31bb522418df7963",
+  "pressure": "leading modulation five-density target ONLY;not replacement forfullhigherw1 shifted viscosities,P2 F1^2 orPi1/Pi2 I4 memory;all five exact repair rows restore eta-functions andsame future pressure",
+  "raw": "mM=A DU,mJ=2A^2 DUE,mI=2A^2 DE,mS=A(DU2+DE2/2),mCp=A^2 DE2/2;complete forward incoming differences;Pi_axis unchanged,deltaPi=deltaCp notPi_axis=0",
+  "scope": "actuala4,b4,substitutedgate,globalleadingC4,firstC3,H23,cutoff/scale,pulses,covariance means,residual andindependentfoundations remainopen",
+  "tame": "E_N=E exp(a),U_N=U+b;a=Acal/N,b=Bcal/N;lowerC3<=t=H/N<=1;exp(a)-1 C4<=(12H+3a4)/N,exp(2a)-1 C4<=(114H+18a4)/N;b^2 C4<=(4H+2b4)/N;b exp(a) C4<=(26H+3a4+3b4)/N",
+  "transform": "normalize FIRST then(m,(m-j)/lambda,i,-s,c);row C4 boundmax[wM mM,(wM mM+wJ mJ)/lambda,wI mI,wS mS,wCp mCp];componentwise coefficientmax givesZH,Za,Zb withZ4<=ZH H+Za a4+Zb b4"
+}

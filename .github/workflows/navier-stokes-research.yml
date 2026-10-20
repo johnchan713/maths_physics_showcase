@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check tame fourth loop density moments normalized five row target and primitive gate
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/fourth_target_normalization/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/fourth_target_normalization/audit.py \
+            --verify-record research/navier_stokes_cascade/results/fourth_target_normalization/evidence.json \
+            --output navier_stokes_fourth_target_normalization_ci.json
+
       - name: Check same reference fourth angular root energy axial pulse and explicit compact input gate
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/fourth_angular_axial_interface/test_audit.py -v
@@ -1250,6 +1257,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_fourth_target_normalization_ci.json
             navier_stokes_fourth_angular_axial_interface_ci.json
             navier_stokes_axis_second_coefficient_ci.json
             navier_stokes_second_coefficient_source_ci.json

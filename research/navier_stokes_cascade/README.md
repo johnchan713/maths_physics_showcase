@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [fourth-angular axial input interface](results/fourth_angular_axial_interface/README.md)
+The latest [fourth-order normalized target bound](results/fourth_target_normalization/README.md)
+bounds all five complete modulation-density and moment differences, then
+charges every normalizer derivative and the inverse-lambda M-J row. The
+target Z4 is now explicitly affine in the two primitives' highest angular
+jets; a substituted compact C4 inequality leaves only those moving-phase
+primitive inputs. They are not yet quantified at the actual parameters.
+All roots, frequency, supports, pressure gauges and historical evidence
+are unchanged. Global leading C4, finalized first C3 and second H2,3,
+cutoff/scale acceptance, full physical pulses, covariance/means and complete
+residual closure remain open; no unconditional blow-up claim is made.
+
+The preceding [fourth-angular axial input interface](results/fourth_angular_axial_interface/README.md)
 raises the SAME reference angular root, complete strength energy and later
 reference axial pulse to fourth angular order, retaining both affine end
 corrections. It gives an explicit inequality for the remaining compact
