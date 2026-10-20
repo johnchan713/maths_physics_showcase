@@ -13,7 +13,15 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [actual cutoff-window pullback](results/actual_cutoff_pullback/README.md)
+The latest [mixed-shape cone bridge](results/mixed_shape_cone_bridge/README.md)
+derives a fresh joint third-order moving-loop bound with the cutoff premise
+explicit. The earlier sufficient fourth-angular shape gate implies this
+mixed gate too, conditionally allowing the SAME N and exact five-row repair
+to join the retained leading value cones. This does not verify the actual
+cutoff condition or FINAL mixed/global/pulse/covariance/residual bounds;
+older unqualified joint-H/frequency readings must retain this shape premise.
+
+The preceding [actual cutoff-window pullback](results/actual_cutoff_pullback/README.md)
 proves that the retained native axial taper crosses the entire variance
 window nondegenerately. An exact fourth-order inverse pullback gives the
 necessary estimate Z<=192*deltaL^(-1/2)*S. This excludes an angular-flatness
