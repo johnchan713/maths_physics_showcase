@@ -1,0 +1,10 @@
+{
+  "choice": "phi=exp(-1/t-1/(1-t));K=1-integral(phi)/total;zetaL(v)=K(8(v-2)/deltaL-1);C-infinity flat, decreasing, same exact window",
+  "consequence": "under the retained native/regional/root premises, actual target J and B5 now hold for this fixed admissible source choice; same N and exact five-row repair/frequency gate follow",
+  "correction": "C.9 says let zetaL be a smooth nonnegative function with range and plateaus; it does not select a quantitative shape. Earlier actual-retained wording is corrected without editing frozen evidence.",
+  "derivative": "phi^(n)=P_n(u,v)phi,u=1/t,v=1/(1-t);u^a exp(-u)<=a!;integral(phi)>exp(-9/2)/3 and e<3 give inverse<729;B0..4=1,4,80,3600,292320",
+  "gates": "Z4<3000000,Z5<1e9;fourth log gate <9A20<A32;fifth gate divided by G is <1100001<G using G>A32;combine parent R5<A32",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "parent_commit": "e1fbc36677e27239c2da686d75080c3e1d74c068",
+  "scope": "analytical source-completion checkpoint;historical compressed-cutoff obstruction remains valid for the class;not FINAL joint/global pulse covariance mean residual or blowup proof"
+}

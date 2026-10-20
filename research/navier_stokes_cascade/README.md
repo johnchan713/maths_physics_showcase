@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [native sixth-angular checkpoint](results/native_sixth_angular/README.md)
+The latest [explicit variance-cutoff checkpoint](results/explicit_variance_cutoff/README.md)
+corrects an inherited premise: printed (C.9) specifies an admissible smooth
+cutoff class, not an already selected quantitative shape. It now freezes one
+explicit C-infinity member at the SAME `deltaL` window, proves
+`Z4<3,000,000` and `Z5<1,000,000,000`, and discharges the fourth target and
+fifth frequency gates using the previous `R5<A^32`. The compressed-cutoff
+obstruction remains valid for the unrestricted class. Complete FINAL joint
+and global physical-scale joins, pulse/covariance/mean and residual closure,
+and blow-up remain unproved.
+
+The preceding [native sixth-angular checkpoint](results/native_sixth_angular/README.md)
 derives a seventh core/reference packet, propagates the ACTUAL sixth angular
 fields and moments through the SAME earlier annular root, and bounds native
 fifth shear/pressure inputs by R5<A^32 under the retained foundation. It
