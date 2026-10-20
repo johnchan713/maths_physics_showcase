@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [joint fourth-loop Gamma checkpoint](results/joint_fourth_loop_gamma/README.md)
+The latest [FINAL fifth-moment interface](results/final_fifth_moment_interface/README.md)
+retains an explicit fifth angular primitive seminorm Lambda5 and propagates
+it affinely through all five moments, the SAME pointwise repair Jacobian,
+and the COMPLETE compact fourth pressure/flux maps. It gives a sufficient
+Lambda5 inequality, not an enclosure of that actual input. A protected-support
+functional control shows that uniform fourth primitive bounds alone cannot
+control the partial fifth moment. Actual cutoff/high-input gates and global,
+pulse, covariance/mean and residual closure remain open.
+
+The preceding [joint fourth-loop Gamma checkpoint](results/joint_fourth_loop_gamma/README.md)
 derives full (y,eta,phase) fourth source/primitive bounds and Gamma<2H,
 CONDITIONAL on the actual variance target's joint J4 bound. This closes
 the same-frequency compact FIELD interface below K^2=H^128 using the same
