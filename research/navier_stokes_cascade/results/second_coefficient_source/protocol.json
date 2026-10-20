@@ -1,0 +1,13 @@
+{
+  "derivatives": "leading X<=3 eta<=3;first X<=3 eta<=2;v0 eta2 needs Ubar0 eta3;all needed leading v costs<=20 and first v eta1<=12 by uniform endpoint majorant",
+  "diagnostics": "nine manufactured original hierarchy source/value/gradient comparisons;symbolic U0=eta^3 produces w1=6 at eta0;exponent/viscosity omission controls;not actual PDE fields or interval certification",
+  "exponents": "current matrix lambda2=4h;lower lambda1=2h;radial previous a=-1;theta first -1+h;axial first -1/2+h;current pressure coefficient -1+2h",
+  "first_input": "actual eta-independent cutoff binomial jets through3 times whole-inner first Ceta2 bound;multiply by2 for raw eta-second jets;on delta/2;disjoint I3 repair cannot feed backward into forward inner averages",
+  "leading_upgrade": "same K3 E on4delta;H0=K3 E sum_(k=0)^3 k! delta^-k on2delta;no changed activation or new radial derivative input",
+  "pair": "positive pair(value,xi gradient),X=(x,2b),xi=(b,1);each full source/row polynomial degree<=2 in H0,H1;T scalar>=max(1,H0,H1),Q2<=qT^2,Q2xi<=qxiT^2",
+  "parent_commit": "6bc32141ce0df0ebe51f6d1ea55c599c232166a5",
+  "scope": "actual cutoff norms,T,second axis/global repair/final H23,physical pulse/scale/covariance/mean/residual and independent foundations remain open;no global pressure truncation or reset",
+  "solution": "retained delta<=1/1600,delta2=delta/4;z2=2bqT^2,B2=6z2^2/delta2;M2=(z2+B2)exp(B2) on3delta2/2;NOT evaluated atT1",
+  "source": "w1=Omega1/X with both (0,1),(1,0),radial viscosity and -Z_(-1-D)Z_-1 v0;P2=F1^2-w1/2;full theta/axial sources with lower exponents",
+  "third": "reuse same D0/sparseA1 xi differentiation on xi>=a>0;Ceta1 J2_r<=T^p(A_r M2+B_r),p=(0,0,2,4);A,B calculated atq,qxi,delta2;not a second-axis or finalized H23 bound"
+}

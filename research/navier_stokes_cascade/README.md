@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [axis-safe first-coefficient jet bound](results/axis_first_coefficient/README.md)
+The latest [complete second inner source bound](results/second_coefficient_source/README.md)
+retains both ordered interactions, all viscosities and the distinct
+current/lower exponents, then bounds every source/operator xi derivative.
+The leading radial axial viscosity needs a third angular derivative of U0;
+the same leading Cauchy envelope supplies it explicitly. Combining the
+axis/collar first input with the unchanged cutoff gives a conditional
+positive-radius third-jet estimate for the second inner solution, with its
+true source-dependent Picard exponential kept symbolic. Actual cutoff norms,
+global second repair/final H2,3, second-axis jets, retained-scale acceptance,
+all physical pulses, covariance/means and full residual closure remain open.
+No pressure memory, construction choice or historical evidence is changed.
+
+The preceding [axis-safe first-coefficient jet bound](results/axis_first_coefficient/README.md)
 uses the analytic seed core, regular complex-ray Volterra inverse and exact
 reflection parity to derive first-coefficient radial jets at the axis.
 A Cauchy estimate joins the existing positive-radius bound into an explicit
