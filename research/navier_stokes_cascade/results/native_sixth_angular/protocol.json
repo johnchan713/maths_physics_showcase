@@ -1,0 +1,13 @@
+{
+  "actual": "actual slopes not flattened reference physical shear;logCE_C6<=J6=1e11LambdaKold27<Bold/100;g_C6<3e-18;shapeE_C6<=same Eb exp204Bold/C;regular core Cp integral before using Xa floor",
+  "cover": "SUM all native pure angular regions E_C6<A2,U_C6<A;first_radial_C5 E_y U_y<A5 using actual slopes and charged fixed width beta_y;no sigma7 and no complete J6 claim;full original moments_and_axis C6<A8 at every partial radius",
+  "gate": "under separate unverified J,Lambda5<exp(1100000G+10A20)*Z5*A32;remaining Z5gate logZ5+32logA+10A20+1100000G<=G2;actual Z4_Z5 J and gate unverified;not K_N reselection or global acceptance",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "native": "D7=11(1+S)(1+rho^-1)^7;Y derivative C6 costs18;N7=1e30(1+S)^10(1+rho^-1)^64<Kold;axisC7<=1650P2;starlogC7<=10LambdaKold9",
+  "parent_commit": "1ebd014108a145266238882a7c3b447946088270",
+  "premises": "retained exact core coefficient certificate and native_regional_existence_positive_floors_prior_roots;native estimates do not assume variance cutoff J;no manuscript final theorem premise",
+  "pressure": "inverseE_C5<A17,a_bs_C5<A23;complete W<A10,Ns<A12,Hx_inverse<A18,Qs<A29,p1_p2_C5<A31;derivative moment6 cost6,full axis_Cp and nonzero -WU retained;R5<A32,p1 not loop argument",
+  "reference": "same eta_independent monotone positive taper average through7;T7=1e10 exp(-Lambda)Lambda7Kold64;fullPiC7<2000P2<Kold;complete sourceC6 Sq<=1e4LambdaKold12 Sn<=1e3Kold2;reference p1C6<=1e8X LambdaKold26 nsC6<=1e5Kold3;full incoming data",
+  "root": "same EARLIER eta_dependent Q,C6 normalizers5_25,target<2.86e-17,quadratic<=100,rootC6<=5.72e-14 inside same C1 uniqueness ball;retain Q_eta through4 and both energy squares;no unit mass change",
+  "scope": "conditional native analytical enclosure only;PREMOD not FINAL,specified sixth angular plus one radial fifth not complete J6;exact/outward checks diagnostics not continuum proof;no global pulse covariance mean residual blowup"
+}

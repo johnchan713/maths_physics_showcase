@@ -13,7 +13,17 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [fifth moving-loop input gate](results/fifth_loop_input_gate/README.md)
+The latest [native sixth-angular checkpoint](results/native_sixth_angular/README.md)
+derives a seventh core/reference packet, propagates the ACTUAL sixth angular
+fields and moments through the SAME earlier annular root, and bounds native
+fifth shear/pressure inputs by R5<A^32 under the retained foundation. It
+retains full axis/Cp and axial pressure memory. The remaining fifth-loop
+inequality has the raw cutoff Z5 explicit; the separate fourth target gate
+also remains unverified. This is PREMOD angular/one-radial input work, not
+complete joint J6, FINAL global acceptance, physical pulse/covariance/mean
+or residual closure, or a blow-up claim.
+
+The preceding [fifth moving-loop input gate](results/fifth_loop_input_gate/README.md)
 derives an affine fifth signed-root/moving-inverse/primitive bound from the
 original native scalar fifth jets and the unchanged cutoff's raw Z5. It
 reduces Lambda5 acceptance to an explicit sufficient inequality, while

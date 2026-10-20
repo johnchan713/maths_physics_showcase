@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/audit.py \
+            --verify-record research/navier_stokes_cascade/results/native_sixth_angular/evidence.json \
+            --output navier_stokes_native_sixth_angular_ci.json
+
       - name: Check tame fifth moving loop original native cutoff gate and full pressure sixth input boundary
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/fifth_loop_input_gate/test_audit.py -v
