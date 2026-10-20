@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [complete second inner source bound](results/second_coefficient_source/README.md)
+The latest [nested second-coefficient axis estimate](results/axis_second_coefficient/README.md)
+uses a smaller analytic seed disk to bound the full second source from the
+first core solution, retaining the extra leading angular jet and the true
+nested Picard exponential. Reflection parity and Cauchy estimates give
+conditional axis-safe second-coefficient third radial jets, joined to the
+positive collar with separate core/collar constants. This closes the local
+pre-cut inner axis gap relative to retained hypotheses, not finalized global
+H2,3. Actual cutoff norms, global repair/angular inputs, retained-scale
+acceptance, complete physical pulses, covariance/means and residual closure
+remain open. Full pressure memory, construction choices and historical
+evidence are unchanged; no analyticity across flat cutoffs is assumed.
+
+The preceding [complete second inner source bound](results/second_coefficient_source/README.md)
 retains both ordered interactions, all viscosities and the distinct
 current/lower exponents, then bounds every source/operator xi derivative.
 The leading radial axial viscosity needs a third angular derivative of U0;
