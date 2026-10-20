@@ -13,7 +13,15 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [fourth scalar/moving-loop shape gate](results/fourth_loop_shape_gate/README.md)
+The latest [moving-loop composition obstruction](results/cutoff_composition_obstruction/README.md)
+shows that the moving inverse and zero-mean primitive do not automatically
+suppress the missing variance-cutoff budget. An auxiliary local family has
+uniform native C4 bounds but unbounded first angular primitive derivatives.
+This is a nonimplication for the generic loop interface, NOT an actual
+global pressure-compatible counterexample or disproof of the actual H bound.
+The unchanged cutoff/composition condition still needs its own proof.
+
+The preceding [fourth scalar/moving-loop shape gate](results/fourth_loop_shape_gate/README.md)
 derives the required q5, signed fourth root and complete fourth moving inverse
 estimates. If the UNCHANGED variance target has angular C4 norm <=G, the
 primitives fit H and the same normalized five-row angular compact gate has

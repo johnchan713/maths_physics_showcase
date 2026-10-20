@@ -1,0 +1,11 @@
+{
+  "parent_commit": "117160fffb9824fb26831b72ab8ce03638eba082",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "family": "auxiliary local eta[-1,1],0<delta<=1,n>=1 integer;a=E=1,vs=2+3delta/16+delta*eta/8,bs=sqrt(vs-1),p2=0 scalar slice;not global pressure realization",
+  "cutoff": "auxiliary zeta_n(v)=1-sigma(n*(8*(v-2)/delta-3/2)+1/2);permitted plateaus;never substituted for actual variance cutoff",
+  "bounds": "native normalized C4 norms<3 independent of n;sfirst>=2sqrt5*n*sqrt(delta);moving zero-mean A_eta norm>sqrt10*n*sqrt(delta)/(6pi)",
+  "moving": "signed p2=0 branch,t=ts+sqrt2*s*sin(theta),v=vs+s^2;fixed-origin inverse and zero-mean primitive;moving derivative=(v/vs)*frozen derivative at theta=pi",
+  "fourth": "raw complete Deta4(zeta(vs)*h);principal h*zeta4*(vs_eta)^4;no claimed actual transversality or cancellation exclusion",
+  "memory": "no actual pressure datum or five-moment/future tail changed;no physical field,root,cutoff,frequency,width or support edited",
+  "scope": "analytical nonimplication for generic interface only;manufactured floating quadrature diagnostics;actual S/Z and actual primitive H neither proved nor disproved;parent implication still conditional"
+}
