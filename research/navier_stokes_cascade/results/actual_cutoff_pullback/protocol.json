@@ -1,0 +1,12 @@
+{
+  "parent_commit": "8c34b682cd1d1ee593f190ae46efabe65a647f1f",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "native": "actual PREMOD axial taper E=P1*f*exp(-y/2),U=k(y)*eta,Md64;earlier annular edits ended with exact native match;slice y0=exp32-1 before final eleven flat units",
+  "geometry": "a=2,vs=2+beta*eta^2*(1+eta^2)^2,beta=.5exp(y0-64)/P1^2;exp(-65)A^-2<beta<1;A=C4096,deltaL=exp(-A20);r=sqrt(deltaL/beta)<1e-6",
+  "pullback": "eta(t)=inverse_of_eta_plus_eta_cubed(r*sqrt((1+t)/8));actual s(eta(t))=sqrt(deltaL)*K(t)*sqrt(3-t)/4;full inverse through C4 retained",
+  "bound": "normalized inverse coefficients<=1,3,16,105;etaC4<=126r<1;K_C4<=8deltaL^-1/2*S;Z<=192deltaL^-1/2*S",
+  "necessary": "S<=G implies logZ<=A32+A20/2+log192;necessary only,not actual Z enclosure or acceptance of S or failure of H",
+  "sufficient_retained": "prior logZ+12log10+20673logA+8A20<=A32 implies S<=G;not evaluated for actual cutoff",
+  "memory": "actual full p2 never set to zero;no axis/Cp/axial datum,future pressure tail,moment root,support,width C^-20,cutoff or N altered",
+  "scope": "analytical actual-native estimate relative to retained matching and parameter premises;80/110 outward comparisons plus manufactured noninterval inverse diagnostics;no unconditional FINAL physical pulse covariance residual or blowup"
+}

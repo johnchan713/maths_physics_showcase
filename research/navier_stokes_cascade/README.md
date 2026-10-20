@@ -13,7 +13,15 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [moving-loop composition obstruction](results/cutoff_composition_obstruction/README.md)
+The latest [actual cutoff-window pullback](results/actual_cutoff_pullback/README.md)
+proves that the retained native axial taper crosses the entire variance
+window nondegenerately. An exact fourth-order inverse pullback gives the
+necessary estimate Z<=192*deltaL^(-1/2)*S. This excludes an angular-flatness
+bypass on that actual region, but neither encloses the selected Z nor proves
+S<=G (or its failure). The earlier sufficient gate and all FINAL global,
+pulse, covariance/mean and residual limits remain conditional/open.
+
+The preceding [moving-loop composition obstruction](results/cutoff_composition_obstruction/README.md)
 shows that the moving inverse and zero-mean primitive do not automatically
 suppress the missing variance-cutoff budget. An auxiliary local family has
 uniform native C4 bounds but unbounded first angular primitive derivatives.
