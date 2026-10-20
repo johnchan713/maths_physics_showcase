@@ -13,7 +13,16 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [FINAL fifth-moment interface](results/final_fifth_moment_interface/README.md)
+The latest [fifth moving-loop input gate](results/fifth_loop_input_gate/README.md)
+derives an affine fifth signed-root/moving-inverse/primitive bound from the
+original native scalar fifth jets and the unchanged cutoff's raw Z5. It
+reduces Lambda5 acceptance to an explicit sufficient inequality, while
+identifying the missing total-order-six field and full sixth pressure/moment
+rows. Actual native/cutoff inputs and the separate joint fourth target gate
+remain unverified. No fifth y bound, global physical-scale acceptance,
+pulse/covariance/mean/residual closure or blow-up claim follows.
+
+The preceding [FINAL fifth-moment interface](results/final_fifth_moment_interface/README.md)
 retains an explicit fifth angular primitive seminorm Lambda5 and propagates
 it affinely through all five moments, the SAME pointwise repair Jacobian,
 and the COMPLETE compact fourth pressure/flux maps. It gives a sufficient

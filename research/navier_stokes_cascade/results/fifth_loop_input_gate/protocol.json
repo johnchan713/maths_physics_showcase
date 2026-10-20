@@ -1,0 +1,13 @@
+{
+  "cutoff": "active radicand>=deltaL/4;scalar vpartialC5<=100G8,raw_cutoff_sqrt_product<1e10 Z5 deltaL^-10;target partialC5<1e24G48 Z5 deltaL^-10<expG Z5 deltaL^-10;tame s5<exp1000G Z5 deltaL^-10 R5",
+  "gate": "Lambda5<exp(1100000G+10A20)*Z5*R5;B5:logZ5+logR5+10A20+1100000G<=G2;J_AND_B5=>Lambda5<expG2<H=>same_F5=>compactordinaryC4<H925<H1024;not K replacement,global acceptance or J verification",
+  "inputs": "R5=1+sup|a5|+sup|bs5|+sup|E5|+sup|p2_5|;T5=R5+sup|s5|;raw Z5=max(1,sup|Kshape^(j)|,1..5),not factorial;no actual enclosure",
+  "manuscript_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "moving": "degree-five eta_theta or eta_externalphase jets at FIXED y,uniform in y;top jets linear;fixed_t5<exp20000G*T5,fixed_sources_w5<exp100000G*T5,Phi5<exp100010G*T5,positiveTheta5<exp600010G*T5,movedsources5<exp700000G*T5;no new fifth_y rows",
+  "native_boundary": "a5=-2E_(1,5)/E+lower,bs5=2U_(1,5)/E+lower;p2_5=6/(LE)*[((1-eta2)U-Deta)M6-(1-eta2)S6-X(1-eta2)Pi6]+lower;Pi6 full_axis_plus_Cp,no axis reset;nonzero_U*M6 retained,p1 not signed root argument",
+  "parent_commit": "0657b89fddc9b290f204f3d0fd719238949ad61f",
+  "premises": "retained native/core/regional/floor/value/root premises AND unverified parent J:target jointJ4<=G;lower scalar_nativeC4<G,muC4<exp600G,ThetaJ4<exp80000G;no final theorem premise",
+  "primitive": "exact weighted zero means with E_bs and variance;fixed_external_phase zero_mean_integral cost2_each,sum4;Lambda5<exp1000000G*T5;not physical covariance mean closure",
+  "scope": "conditional tame original-input gate ONLY;actual R5_Z5_T5_Lambda5_B5_and_J remain unverified;history unchanged;finite exact/outward diagnostics not continuum proof or actual profile failure;no global pulse covariance residual blowup",
+  "signed_root": "qJ6<exp4G,RJ5<exp5G,R2C5<exp10G,sqrtC5<exp71G,FpartialC5<exp100G,Fmu_inverse<exp10G;mu5=(s5-Fp*p5-lower)/Fmu<exp3200G*T5;no p,mu,Vmu division"
+}
