@@ -1,0 +1,13 @@
+{
+  "Cauchy": "core X disks radius1/(2Lambda),4.5<5;radial factors r!(2Lambda)^r;factorial angular C2 factor1+2/delta+4/delta^2",
+  "convergence": "same sparse variable-kernel word argument on complex rays;z=2Cb,beta*=6z^2/delta;Mcore=(z+beta*)exp(beta*);normal convergence and uniqueness on smaller eta domains",
+  "core": "analytic SEED |Lambda X|<=5;actual unchanged restriction only real X<=Xa=4/Lambda;delta=rho/(800S);no Phi or F reciprocal needed in literal first system",
+  "cutoff": "same eta-independent kappa;binomial product keeps actual kappa third jet;no global exact repair angular bound supplied or future pressure reset",
+  "diagnostics": "all structural reflection/kernel identities;12 manufactured analytic six-system orders and72 scalar recurrences;three original floating structure samples;not selected PDE coefficients or finite truncation proof",
+  "envelope": "B=2(256S+9+S/Lambda)(1+Lambda)^2,H=B(1+delta^-1+2delta^-2);same complete complex absolute row/source bounds with x=5/Lambda,b=1+x",
+  "inverse": "Gg=xi int_0^1 t^D0 g(t xi)dt;integer D0=(0,0,2,0,3,1);kernel norm<=1;no inverse xi estimate at axis",
+  "join": "a=min(1,Xa),a^2<=Xa;positive scalar p_r Mcollar+q_r plus core r!(2Lambda)^r Mcore;separate Mcore,Mcollar,1 triples;pre-cutoff entire inner interval only",
+  "parent_commit": "d93abfc5528b2b6b4826144973ba5aeed574eed9",
+  "parity": "P0=diag(1,1,1,1,-1,-1);A_j(-xi)=-P0 A_j(xi)P0,f(-xi)=-P0 f(xi);first four even and last two odd;only even components descend to holomorphic X",
+  "scope": "conditional on retained infinite-core/Picard inputs;no radial analyticity across flat joins;actual cutoff,global repair,second H23,all-scale pulses,covariance means,residual and independent foundations remain open"
+}

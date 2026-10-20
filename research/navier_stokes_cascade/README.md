@@ -13,7 +13,19 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [higher pressure-source moment bound](results/higher_pressure_source_moments/README.md)
+The latest [axis-safe first-coefficient jet bound](results/axis_first_coefficient/README.md)
+uses the analytic seed core, regular complex-ray Volterra inverse and exact
+reflection parity to derive first-coefficient radial jets at the axis.
+A Cauchy estimate joins the existing positive-radius bound into an explicit
+whole-inner-interval regular F1,U1 bound through X order three and angular
+order two. The complex extension is used only to estimate the unchanged core;
+no radial analyticity across flat activation or cutoffs is asserted.
+Full pressure and viscosity terms and separate core/collar constants remain.
+The actual cutoff jets, global repair angular inputs, second coefficient H2,3,
+retained-scale acceptance, all physical pulses, covariance/means and residual
+closure remain open. Historical evidence and construction choices are unchanged.
+
+The preceding [higher pressure-source moment bound](results/higher_pressure_source_moments/README.md)
 derives the full ordered radial-source flux and its two signed moments at
 every finite order, with the previous-order axial viscosity retained from
 pressure order two. Its weighted total generally does not vanish when the
