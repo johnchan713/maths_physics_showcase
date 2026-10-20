@@ -1,0 +1,185 @@
+{
+  "dependency_evidence_sha256": {
+    "results/compact_global_reconciliation/evidence.json": "1b218ecb397f9dde3acad6f632e5ba533ae25aeb0cf02986c989ffe896f6003d",
+    "results/final_fifth_moment_interface/evidence.json": "a3b0149e9427c90bcbcbf6aa62e8bbe7b7d3fd715b4b29ed7465b88c0a35e15e",
+    "results/first_coefficient_c3_boundary/evidence.json": "514adaa145183dab274369cd5417a63d66a73e8dd34367745739ec187525f352",
+    "results/fourth_angular_axial_interface/evidence.json": "ebd3b49578d62dfcf7582474dd124d9c492b4107634711fca830f563c0b5bfcc",
+    "results/global_axial_source_envelope/evidence.json": "83f8eb3c4d995595c5257e153077c0e7ac7c2e9e0e967740f007e49fac16de93",
+    "results/native_sixth_angular/evidence.json": "4162b159f7988e43f4b21d34f1ccb55e0ad03c8c9495482a6625ded5bc19f453",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d"
+  },
+  "flags": {
+    "complete_covariance_means_residual_or_blowup_verified": false,
+    "complete_later_reference_energy_and_strength_Ceta5_bounded": true,
+    "finalized_global_first_K13_closed": false,
+    "later_reference_axial_pulse_Ceta5_bounded": true,
+    "native_FINAL_compact_and_later_regions_joined_in_whole_support_K05": true,
+    "same_later_reference_angular_root_lifted_to_Ceta5": true,
+    "second_signed_moments_repair_and_H23_closed": false,
+    "selected_parameter_whole_support_leading_K05_quantified": true,
+    "uniform_actual_physical_pulse_family_verified": false
+  },
+  "gates": {
+    "F5_makes_compact_difference_below_H261": true,
+    "all_five_normalized_strength_jets_below_12epsilon": true,
+    "all_scope_flags_are_strict_booleans": true,
+    "constant_and_taper_regions_fit_132": true,
+    "fifth_chain_rule_has_three_terms": true,
+    "fifth_interpolation_raw_bound_is_complete": true,
+    "fifth_strength_norm_below_two": true,
+    "interpolation_C5_below_72": true,
+    "interpolation_energy_fits_1125T": true,
+    "later_pulse_C5_is_132": true,
+    "later_reference_132_below_H262_for_H_at_least_two": true,
+    "log_C5_fits_same_eight_budget": true,
+    "native_plus_compact_difference_below_H262": true,
+    "native_premod_C6_implies_C5_below_A": true,
+    "prefix_polynomial_C5_is_99": true,
+    "reciprocal_C5_bound_is_six": true,
+    "same_coefficient_epsilon_budget_survives": true,
+    "same_root_uniqueness_ball": true,
+    "selected_cutoff_discharges_F5": true,
+    "seven_frozen_dependency_records_bound": true,
+    "three_region_max_below_H262": true,
+    "unedited_and_interpolation_energy_fit_8192T": true
+  },
+  "protocol": {
+    "energy": "The exact fifth interpolation derivative has coefficients 120,160,32 and raw cap 3936, giving |g_theta|5<72; complete reference energy remains |R|5<=8192T.",
+    "global_join": "Native PREMOD gives U Ceta6<A; the selected cutoff discharges F5 so the FINAL compact difference is <H^261; adding the native field and joining the later reference gives K0,5<H^262 on [0,Xv].",
+    "later_cover": "The complete later reference axial cover 4eta, taper, zero pieces and pulse has |U0|Ceta5<=132.",
+    "later_root": "The same accepted angular correction root has Ceta5 norm at most 2^32 lambda^30; no root, frequency, width or schedule is reselected.",
+    "parent_commit": "a0c7b2a48a0f36a3adf73a89624de29c05666b6c",
+    "scope": "Analytical selected-parameter leading fifth-angular join relative to retained foundations; global K1,3, second repair H2,3, all-scale pulses, covariance means, complete residual and blowup remain open.",
+    "strength": "The unchanged positive quadratic strength recurrence has all five normalized jets <=12 epsilon, hence |Amp|5<2 and |ci|5<=4lambda^20."
+  },
+  "remaining_obligations": [
+    "insert K0,5=H^262 into the full-support Q03,Q13 formulas and assemble the explicit local/cutoff and inverse-800 constants into finalized K1,3",
+    "use K1,3 with the leading Ceta4 row to evaluate Q10,Q11, complete the second repair and quantify H2,3",
+    "audit all physical-scale pulse value/derivative/support bounds, complete-wave covariance means including axial velocity and exceptional pressure tails, and every viscosity/cutoff/interaction residual term"
+  ],
+  "reviews": {
+    "checks": {
+      "F5_makes_compact_difference_below_H261": true,
+      "all_five_normalized_strength_jets_below_12epsilon": true,
+      "constant_and_taper_regions_fit_132": true,
+      "fifth_chain_rule_has_three_terms": true,
+      "fifth_interpolation_raw_bound_is_complete": true,
+      "fifth_strength_norm_below_two": true,
+      "interpolation_C5_below_72": true,
+      "interpolation_energy_fits_1125T": true,
+      "later_pulse_C5_is_132": true,
+      "later_reference_132_below_H262_for_H_at_least_two": true,
+      "log_C5_fits_same_eight_budget": true,
+      "native_plus_compact_difference_below_H262": true,
+      "native_premod_C6_implies_C5_below_A": true,
+      "prefix_polynomial_C5_is_99": true,
+      "reciprocal_C5_bound_is_six": true,
+      "same_coefficient_epsilon_budget_survives": true,
+      "same_root_uniqueness_ball": true,
+      "selected_cutoff_discharges_F5": true,
+      "three_region_max_below_H262": true,
+      "unedited_and_interpolation_energy_fit_8192T": true
+    },
+    "later_reference": {
+      "angular_root_Ceta5": "2^32 lambda^30, SAME accepted root",
+      "checks": {
+        "all_five_normalized_strength_jets_below_12epsilon": true,
+        "constant_and_taper_regions_fit_132": true,
+        "fifth_chain_rule_has_three_terms": true,
+        "fifth_interpolation_raw_bound_is_complete": true,
+        "fifth_strength_norm_below_two": true,
+        "interpolation_C5_below_72": true,
+        "interpolation_energy_fits_1125T": true,
+        "later_pulse_C5_is_132": true,
+        "log_C5_fits_same_eight_budget": true,
+        "prefix_polynomial_C5_is_99": true,
+        "reciprocal_C5_bound_is_six": true,
+        "same_coefficient_epsilon_budget_survives": true,
+        "same_root_uniqueness_ball": true,
+        "unedited_and_interpolation_energy_fit_8192T": true
+      },
+      "complete_energy_Ceta5": "8192 T",
+      "end_coefficients_Ceta5": "<=4 lambda^20",
+      "fifth_power_terms": [
+        [
+          5,
+          0,
+          5,
+          32
+        ],
+        [
+          3,
+          1,
+          4,
+          160
+        ],
+        [
+          1,
+          2,
+          3,
+          120
+        ]
+      ],
+      "interpolation_Ceta5": "1052/15",
+      "later_reference_U_Ceta5": 132,
+      "log_Ceta5": "167/30",
+      "normalized_strength_jets": [
+        "2",
+        "9/1048576",
+        "4718727/549755813888",
+        "4948085448207/576460752303423488",
+        "5188592097146985597/604462909807314587353088",
+        "5440788816645069213454017/633825300114114700748351602688"
+      ],
+      "prefix_polynomial_Ceta5": "99",
+      "raw_derivative_caps": [
+        1,
+        4,
+        12,
+        56,
+        408,
+        3936
+      ],
+      "strength_Ceta5": "<2"
+    },
+    "whole_support": {
+      "FINAL_compact_U_Ceta5": "<A+H^261<H^262",
+      "FINAL_compact_difference_Ceta5": "D5=(H^24+A^784 Lambda5)/N < H^261",
+      "checks": {
+        "F5_makes_compact_difference_below_H261": true,
+        "later_reference_132_below_H262_for_H_at_least_two": true,
+        "native_plus_compact_difference_below_H262": true,
+        "native_premod_C6_implies_C5_below_A": true,
+        "selected_cutoff_discharges_F5": true,
+        "three_region_max_below_H262": true
+      },
+      "later_reference_U_Ceta5": "<=132<H^262",
+      "native_PREMOD_U_Ceta5": "<A (from the stronger Ceta6 bound)",
+      "whole_support_K05": "sup_[0,Xv] |U0|Ceta5 < H^262"
+    }
+  },
+  "source_hashes": {
+    "results/compact_global_reconciliation/README.md": "64d2e735f6d3d75c5b8a56f7abe6c44fbc56109dfdedcc02f994c4739745f08d",
+    "results/compact_global_reconciliation/evidence.json": "1b218ecb397f9dde3acad6f632e5ba533ae25aeb0cf02986c989ffe896f6003d",
+    "results/final_fifth_moment_interface/README.md": "c0cb7ff58462578325dfbb94c790fb4fff1a87bdb8a5a12a74a15f15262a7db5",
+    "results/final_fifth_moment_interface/evidence.json": "a3b0149e9427c90bcbcbf6aa62e8bbe7b7d3fd715b4b29ed7465b88c0a35e15e",
+    "results/first_coefficient_c3_boundary/README.md": "96500186a923f20f4f82261eddf6ee76d62e52b0590528a5bd123f18823f6cc8",
+    "results/first_coefficient_c3_boundary/evidence.json": "514adaa145183dab274369cd5417a63d66a73e8dd34367745739ec187525f352",
+    "results/fourth_angular_axial_interface/README.md": "2303f09767c7aa171f1b88fcea5ceba33334435daec9250ed21c8252d7262523",
+    "results/fourth_angular_axial_interface/evidence.json": "ebd3b49578d62dfcf7582474dd124d9c492b4107634711fca830f563c0b5bfcc",
+    "results/global_axial_source_envelope/README.md": "0b5b3e686c738bb0dcc4d657bd210ad973fffb2b98eee966fcdf4a1be2d1579d",
+    "results/global_axial_source_envelope/evidence.json": "83f8eb3c4d995595c5257e153077c0e7ac7c2e9e0e967740f007e49fac16de93",
+    "results/global_leading_c5/.gitignore": "5b766b14b9706ccdf215e7bbb779557885e41f6450b96a9062430854f3e0dcc6",
+    "results/global_leading_c5/README.md": "b14150967e466e9070d27694bcd9c6bd5719ae1b062f7db723f8b1bbbeff0db8",
+    "results/global_leading_c5/audit.py": "5612ce5a1857ccd86113a03dd248c160058cc49460393fb420405fe8f9d2e41e",
+    "results/global_leading_c5/leading5.py": "a5976b678bd7d29f0e9a9a611e2b3089482131bfbb30ccace4f692380cea8454",
+    "results/global_leading_c5/protocol.json": "964d506acbacc24470772f56a542353ab6d4f2db61ffef361cee36a1b3f571ce",
+    "results/global_leading_c5/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/global_leading_c5/test_audit.py": "5c29900e076405dee264a6d4d1e2f690b36fe061179ca7cb837dd31c723c9528",
+    "results/native_sixth_angular/README.md": "c670b5f76f84f7234de355eddd084bd647e277362b8942d7a129eef00182eed1",
+    "results/native_sixth_angular/evidence.json": "4162b159f7988e43f4b21d34f1ccb55e0ad03c8c9495482a6625ded5bc19f453",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d"
+  },
+  "status": "same-reference-fifth-angular-and-selected-whole-support-leading-K05"
+}

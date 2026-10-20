@@ -6,13 +6,22 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest checkpoint: [global first-coefficient C3 boundary](first_coefficient_c3_boundary/README.md).
+Latest checkpoint: [global leading fifth-angular bound](global_leading_c5/README.md).
+The same later axial/reference root now has a complete `C_eta^5` energy and
+strength audit, with later axial norm at most 132. The selected fifth cutoff
+gate joins this to the native and FINAL compact rows, proving the quantitative
+whole-support certificate `K0,5<H^262`. This supplies the corrected missing
+input but does not yet assemble global `K1,3`, the second repair or `H2,3`;
+all-scale pulses, complete covariance/means, residual closure and blow-up
+remain unproved.
+
+Preceding checkpoint: [global first-coefficient C3 boundary](first_coefficient_c3_boundary/README.md).
 The local whole-inner first coefficient now has an explicit `X^3 C_eta^3`
 bound and the selected coefficient cutoff propagates it exactly.  The audit
 corrects the next global dependency: the full signed leading pressure moments
 in `C_eta^3`, and hence the inverse-800 first repair, require a quantitative
-whole-support leading `U0` `C_eta^5` bound.  Current finalized estimates leave
-the later axial/reference stage at fourth order.  Explicit conditional
+whole-support leading `U0` `C_eta^5` bound. The next checkpoint supplies this
+missing later fifth-order row. Explicit conditional
 `Q03,Q13` and repair formulas are recorded; `K1,3`, `H2,3`, all-scale pulses,
 complete covariance/means, the residual and blow-up remain unproved.
 
