@@ -13,7 +13,18 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [fourth-order normalized target bound](results/fourth_target_normalization/README.md)
+The latest [fourth pressure/moving-phase input audit](results/fourth_pressure_input_boundary/README.md)
+extracts the exact fifth-moment combinations in fourth pressure-coordinate
+jets, including axial U, both pressure memories and all lower denominator
+derivatives. A compatible-field symbolic limit shows that C4 native inputs
+alone cannot control C4 pressure coordinates; this is not a failure of the
+selected profile. The full fourth moving-inverse formula identifies the
+remaining native inputs and transfers them into the unchanged compact gate.
+Actual fifth-moment combinations, mixed shear jets, scalar fourth constants
+and that gate remain unquantified. All global/pulse/covariance/residual and
+independent-foundation limits below still apply.
+
+The preceding [fourth-order normalized target bound](results/fourth_target_normalization/README.md)
 bounds all five complete modulation-density and moment differences, then
 charges every normalizer derivative and the inverse-lambda M-J row. The
 target Z4 is now explicitly affine in the two primitives' highest angular

@@ -1,0 +1,12 @@
+{
+  "parent_commit": "187149d4cdd64da1d82d405dc3cfbfd3c92519f5",
+  "pressure": "original bridge.forward;Pi=Pi_axis+Cp;normalized moment fifth jets m5,i5,j5,s5,c5,k5;R1,R2 evaluate ONLY these fifth coefficients as zero,all lower denominators intact",
+  "principal": "p1_4=R1+5/L*(d*m5-(D*eta*i5+d*j5)/Hx);p2_4=R2+5/(L*E)*((d*U-D*eta)*m5-d*s5-X*d*(c5+k5));factor5=5!/4!",
+  "counterexample": "manufactured patch 1<=X<=2,E=1,U=eps*n^-4*sin(n*(eta-1/2));all exact forward moments and C4 norms uniform;delta(p2)_4/n -> -D*eps/(48*(1-h/2));not selected profile or cone failure",
+  "root": "same signed F(mu,p2)=s;mu4=(s4-Fp*p2_4-RF)/Fmu;Fmu(0)=d0/sqrt2;never Vmu;scalar partials4 require q5;not a new varying p1 argument",
+  "moving": "q4=-(Phi40/24+R4(Phi))/w;g_pullback4=g40/24-g01*Phi40/(24*w)+R4(g)-g01*R4(Phi)/w;all fourth Taylor partitions and complete phase integral retained",
+  "primitive": "period-one zero-mean antiderivative sup norm<=2;actuala4<=2LA,b4<=2LB;LA/LB are full source expressions of equation7,not evaluated",
+  "gate": "parentalpha=3200000*A*Za,beta=1+3200000*A*Zb,R=N*(K-Kknown)-(1+3200000*A*ZH)*H;2alphaLA+2betaLB<=R sufficient only;N and all parameters unchanged",
+  "checks": "35 exact original-forward principal splits,4 exact compatible-field controls and symbolic infinite-n limit,all fourth mixed phase partitions;inverse toy raw405/512 checked by Lagrange inversion differs from previous explicit-lift raw9/512;not continuum proof",
+  "scope": "actual native higher inputs/scalar constants/compact gate globalC4/H23 physicalpulse covariance means residual and independentfoundations remainopen"
+}
