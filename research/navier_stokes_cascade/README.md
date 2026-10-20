@@ -13,7 +13,15 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [fourth pressure/moving-phase input audit](results/fourth_pressure_input_boundary/README.md)
+The latest [fifth-moment Volterra estimate](results/fifth_moment_volterra/README.md)
+reduces both pressure combinations to pure fifth field jets and entering
+data. Combining the complete energy and pressure rows gives a local swirl
+kernel with a quadratic length bound, without erasing accumulated pressure.
+Explicit lower-remainder and mixed-shear estimates leave the precise actual
+native high inputs to quantify before the unchanged compact gate can be
+accepted. Global/pulse/covariance/residual closure remains open.
+
+The preceding [fourth pressure/moving-phase input audit](results/fourth_pressure_input_boundary/README.md)
 extracts the exact fifth-moment combinations in fourth pressure-coordinate
 jets, including axial U, both pressure memories and all lower denominator
 derivatives. A compatible-field symbolic limit shows that C4 native inputs

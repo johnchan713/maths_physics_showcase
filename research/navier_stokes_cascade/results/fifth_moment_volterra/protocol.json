@@ -1,0 +1,14 @@
+{
+  "parent_commit": "e85d339f19d696a915a047a923cb0303f4824acd",
+  "moments": "all normalized fifth jets;M,I,J,S,Cp genuine forward integrals from fixed radial a with all incoming fifth traces;Pi_axis retained;Lu,Le,Lue contain every lower convolution",
+  "T1": "Tin1+int d(1-sqrt(2x)E/Hx)u5-int sqrt(2x)(Deta+dU)e5/Hx-d int sqrt(2x)Lue/Hx",
+  "T2": "Tin2+int[d(U(X)-2U(x))-Deta]u5+d int(1-X/x)E e5-d intLu+(d/2)int(1-X/x)Le",
+  "memory": "Tin1=dMin5-(Deta Iin5+dJin5)/Hx;Tin2=(dU(X)-Deta)Min5-dSin5-Xd(Cpin5+axis5);no resets at U=0,modulation end or X=a",
+  "kernel": "kappa=Xlog(X/a)-(X-a)<=ell^2/(2a);local quadratic swirl cost only,not zero total pressure or whole long interval smallness",
+  "inputs": "A^-1<=a<=X<=A,values E,U,E^-1,Hx^-1<=A,C4 fields/moments/axis<=B=Ahi and lower pressure/shear C3<=B;FE,FU pure fifth/120;YE,YU y_eta4/24 remain actual inputs",
+  "remainder": "truncated derivative moments C4<=4B,Pi<=2B,Pi_eta<=8B;Einv<=5A5B4,Hxinv<=5A6B4,Linv<=25/23<2;W21AB,Q156A7B5,N91AB2,R1<=2496A8B5,R2<=7280A7B6<=R0=10000A8B6",
+  "pressure": "B1,B2 explicit positive equation4 linear in FE,FU and entering fifth bounds;|p1|4<=B+R0+10supB1,|p2|4<=B+R0+10A supB2;no actual input or gate evaluated",
+  "shear": "highest angular fourth a,bs <=2A YE,YU +10A5B5;all lower denominator jets retained;not primitive a4,b4 or J5 inferred from J4",
+  "checks": "twelve exact manufactured comparisons of both combined rows vs differentiated five genuine forward integrals,nonzero incoming/axis,pressure-drop controls,original-forward remainder and shear controls;not actual PDE samples",
+  "scope": "same N widths roots support pressure gauge;native high inputs fourth scalar q5 moving-phase constants gate globalH23 fullpulse covariance means residual independentfoundations remainopen"
+}

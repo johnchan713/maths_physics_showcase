@@ -27,6 +27,13 @@ jobs:
       - name: Install independent FFT, snapshot and paper checks
         run: sudo apt-get update && sudo apt-get install -y libfftw3-dev python3-numpy python3-scipy python3-mpmath python3-sympy
 
+      - name: Check fifth forward moment Volterra kernels pressure memory and fourth input majorants
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/fifth_moment_volterra/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/fifth_moment_volterra/audit.py \
+            --verify-record research/navier_stokes_cascade/results/fifth_moment_volterra/evidence.json \
+            --output navier_stokes_fifth_moment_volterra_ci.json
+
       - name: Check exact fourth pressure principal rows fifth moment input boundary and moving inverse
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/fourth_pressure_input_boundary/test_audit.py -v
@@ -1264,6 +1271,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_fifth_moment_volterra_ci.json
             navier_stokes_fourth_pressure_input_boundary_ci.json
             navier_stokes_fourth_target_normalization_ci.json
             navier_stokes_fourth_angular_axial_interface_ci.json
