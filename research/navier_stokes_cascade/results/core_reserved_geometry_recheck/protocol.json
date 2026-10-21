@@ -1,0 +1,7 @@
+{
+  "parent_commit": "4c082f5a3d343643dced20f22497badc33d695d8",
+  "input": "same accepted chart, fixed reserved q-profile hull, physical compensator, common primary tail and unchanged setup width",
+  "new_result": "uniform explicit holomorphic coordinate and compensator jet majorants, moving-hull logarithmic weight comparison and substitution into fresh slow dynamic budget",
+  "scope": "coordinate/geometry constants only; actual generated-field input norms, wider-wave supports and full residual remain unproved",
+  "arithmetic": "exact rational Taylor coefficients and support/moment certificates; all-order coordinate proof in README.md"
+}
