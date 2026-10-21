@@ -1,0 +1,9 @@
+{
+  "annular_root": "same five-row root; beta=610, q=50, factorial C2 target below 0.286 epsilon",
+  "compact_root": "same five-row root; beta=800, q=25000, full C1 target at most H^16/N with N=1+floor(H^32)",
+  "continuation": "original core traces, corrected post-taper slopes, five forward moments, and complete Pi_axis+Cp memory",
+  "profile_order": "Xsep < XR exp(-8) < annular patch < explicit outer prefix < rho_p exp(5)=Xrep",
+  "rows": ["M", "I_or_R", "J", "S", "Cp"],
+  "scope": "pre-modulation continuation and same-root compatibility; compact modulation, exact repair application, and cone join remain next",
+  "width": "C^-20 unchanged"
+}

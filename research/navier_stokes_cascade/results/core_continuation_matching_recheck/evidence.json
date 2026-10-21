@@ -1,0 +1,191 @@
+{
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/core_activation_volterra_recheck/evidence.json": "fe89046be2824d6d88d96e5fd0d660ea28cc14e965b36f33145c4e482fbfae88",
+    "results/global_pressure_moment_foundation/evidence.json": "1fa0851e09081c1e9ea7e198c7e2f747ffb6aab7391f9141d2717a178e58503e",
+    "results/matching_root_foundation/evidence.json": "22fd0e2a826ae3916a99dbd68eeb09f9e2836ae383364057e2e8bdbb67071bd5",
+    "results/prescribed_continuation_foundation/evidence.json": "33a4bbbac554dd669d2177dc86d8c1370b947082d3f24fb78309ffdab2e2fc80",
+    "results/shape_join_pressure/evidence.json": "f050948e240aa2f50652624001d026d47eab260b369f713c4d44ef3499bf1d47"
+  },
+  "flags": {
+    "all_five_forward_moments_and_complete_pressure_memory_retained": true,
+    "annular_root_contraction_and_same_root_inclusion_rederived": true,
+    "both_transformed_zero_sets_keep_the_fifth_pressure_row": true,
+    "compact_modulation_and_exact_repair_application_rederived_here": false,
+    "compact_root_contraction_and_same_root_inclusion_rederived": true,
+    "formal_proof_assistant_or_external_peer_certificate": false,
+    "inner_compact_outer_cone_join_rederived_here": false,
+    "outer_prefix_supplies_same_profile_to_compact_repair_patch": true,
+    "post_taper_continuation_slopes_corrected_and_rederived": true,
+    "unconditional_pulse_residual_force_or_blowup_proved": false
+  },
+  "gates": {
+    "all_exact_continuation_matching_and_pressure_checks_pass": true,
+    "all_frozen_dependencies_bound": true,
+    "compact_and_later_frontier_retained": true,
+    "scope_flags_are_strict_booleans": true
+  },
+  "parent_commit": "96865d42b7977ee08cc27ae886d6f07aff0acb8e",
+  "protocol": {
+    "annular_root": "same five-row root; beta=610, q=50, factorial C2 target below 0.286 epsilon",
+    "compact_root": "same five-row root; beta=800, q=25000, full C1 target at most H^16/N with N=1+floor(H^32)",
+    "continuation": "original core traces, corrected post-taper slopes, five forward moments, and complete Pi_axis+Cp memory",
+    "profile_order": "Xsep < XR exp(-8) < annular patch < explicit outer prefix < rho_p exp(5)=Xrep",
+    "rows": [
+      "M",
+      "I_or_R",
+      "J",
+      "S",
+      "Cp"
+    ],
+    "scope": "pre-modulation continuation and same-root compatibility; compact modulation, exact repair application, and cone join remain next",
+    "width": "C^-20 unchanged"
+  },
+  "remaining_obligations": [
+    "independently audit compact modulation, moving phase and application of the same exact repair on this fixed profile",
+    "join the repaired compact cone bounds to the independently checked inner and annular/exterior bounds",
+    "retrace global pressure/moment identities, coefficient supports and untouched reserved means",
+    "prove uniform actual-pulse and covariance-mean estimates and the complete viscosity/cutoff/interaction residual before any blow-up claim"
+  ],
+  "review": {
+    "annular": {
+      "Q_eta_normalized_derivatives": [
+        "4",
+        "8",
+        "8",
+        "4",
+        "1"
+      ],
+      "beta": "610",
+      "contraction": "532103/125000000000000",
+      "delta": "143/5000000000000000000",
+      "epsilon": "1/10000000000000000",
+      "old_C1_radius": "3/5000000000000",
+      "old_C2_radius": "143/2500000000000000",
+      "pointwise_inverse": "1220",
+      "q": "50",
+      "radius": "8723/250000000000000000"
+    },
+    "checks": {
+      "all_five_forward_rows_retained": true,
+      "annular_contraction_is_strict": true,
+      "annular_quadratic_eta_derivatives_stop_at_degree_four": true,
+      "annular_root_is_inside_both_old_uniqueness_balls": true,
+      "both_transforms_keep_fifth_pressure_row": true,
+      "compact_contraction_coefficient_fits_binary_bound": true,
+      "compact_contraction_is_below_2^-219": true,
+      "complete_pressure_memory_retained": true,
+      "first_collar_shortcut_is_not_extended_past_taper": true,
+      "flattened_reference_has_zero_physical_shear": true,
+      "missing_pressure_row_has_detectable_eta_slope_defect": true,
+      "reserved_zero_U_does_not_erase_accumulated_M": true,
+      "same_profile_reaches_repair_endpoint_before_heat_edit": true,
+      "shape_slope_matches_final_continuation": true,
+      "transforms_are_five_by_five": true
+    },
+    "compact": {
+      "H_binary_floor": 65536,
+      "H_inverse_power": 16,
+      "beta": "800",
+      "binary_coefficient_bound": 137438953472,
+      "contraction_binary_upper_exponent": -219,
+      "contraction_coefficient": "128000000000",
+      "lambda_must_be_positive": true,
+      "pointwise_inverse": "1600",
+      "q": "25000",
+      "root_over_target": "1600"
+    },
+    "continuation": {
+      "actual_slopes": [
+        "a=kappa*p1_r; U_y=-kappa*X*ns_r/2",
+        "a=kappa0*p1_r; U_y=-beta*kappa0*X*ns_r/2",
+        "a=(1-theta)*kappa0*p1_r+(4/5)*theta; U_y=0",
+        "a=4/5; U_y=0"
+      ],
+      "moment_densities": [
+        "X*U",
+        "sqrt(2)*X^(3/2)*E",
+        "sqrt(2)*X^(3/2)*U*E",
+        "X*(U^2-E^2/2)",
+        "E^2/2"
+      ],
+      "pressure": "Pi=Pi_axis+Cp",
+      "reference_after_taper": {
+        "Dy_log_Er": "1/2",
+        "Dy_log_Fr": "0",
+        "first_collar_shortcut_valid_after_taper": false,
+        "physical_a_r": "0"
+      },
+      "shape_join_slope": "1/10"
+    },
+    "profile": {
+      "annular_supports_disjoint": true,
+      "compact_supports_disjoint": true,
+      "heat_compensation_starts_at": "Xrep",
+      "prefix_M": "mu*eta with mu>0",
+      "reserved_M_is_zero": false,
+      "reserved_U": "0",
+      "strict_order": [
+        "Xsep<XR*exp(-8)",
+        "XR*exp(-8)<XR*exp(-7)",
+        "XR*exp(-7)<XR*exp(-6)",
+        "XR*exp(-6)<XR*exp(-5)",
+        "XR*exp(-5)<rho_p",
+        "rho_p<rho_p*exp(5)=Xrep"
+      ],
+      "whole_compact_input": "finite fixed mixed jets on [Xminus,Xrep]x[-1,1]"
+    },
+    "transforms": {
+      "annular": [
+        "M",
+        "J-4*eta*I",
+        "I",
+        "-(S-8*eta*M)",
+        "Cp"
+      ],
+      "annular_inverse": [
+        "r1",
+        "r3",
+        "r2+4*eta*r3",
+        "8*eta*r1-r4",
+        "r5"
+      ],
+      "compact": [
+        "M",
+        "(M-J)/lambda",
+        "I",
+        "-S",
+        "Cp"
+      ],
+      "compact_inverse": [
+        "r1",
+        "r3",
+        "r1-lambda*r2",
+        "-r4",
+        "r5"
+      ]
+    }
+  },
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/core_activation_volterra_recheck/README.md": "78c2e1fa5a645c142c9478ba0e781d7db36512843b2a497112f81ddc8676d21a",
+    "results/core_activation_volterra_recheck/evidence.json": "fe89046be2824d6d88d96e5fd0d660ea28cc14e965b36f33145c4e482fbfae88",
+    "results/core_continuation_matching_recheck/.gitignore": "77918ee4b4fafb0264a4a2a1c7ef6888eb001951ce69907db5e7f3162d9960ac",
+    "results/core_continuation_matching_recheck/README.md": "2d01af07c0760e17765f1478da3b16a9fa02862fc62c21a9150f922df4af288b",
+    "results/core_continuation_matching_recheck/audit.py": "f88f5cb66d7d48e384c1d3cdc3a96b12f313bce115d19b1ac28c01d3b51d011a",
+    "results/core_continuation_matching_recheck/proof_checks.py": "20c61db7405d0b976c096dfe464636c0b0a395cd8bb3d56892bc29735ea3361e",
+    "results/core_continuation_matching_recheck/protocol.json": "d854dd5c82160e9055d8c6a56d9acb8b844d8c20a609c3823e8456c122bc914e",
+    "results/core_continuation_matching_recheck/requirements.txt": "07a6aed809ced5650c222557b496d27f6b06ee37f5a966ed27d1a6e669c10394",
+    "results/core_continuation_matching_recheck/test_audit.py": "444a2f0cb2a70b05868bb370e20c1e6de9b1bab1b1f6a66e5ac25472d274ba93",
+    "results/global_pressure_moment_foundation/README.md": "d473b97f5200affbf5035a9ca585bd5d860c472a9ad098d60158815f7290ad1b",
+    "results/global_pressure_moment_foundation/evidence.json": "1fa0851e09081c1e9ea7e198c7e2f747ffb6aab7391f9141d2717a178e58503e",
+    "results/matching_root_foundation/README.md": "071203671f89e0152ff82d5ff85b55ffc31ccc9b8064f1ffd09461e2e052c925",
+    "results/matching_root_foundation/evidence.json": "22fd0e2a826ae3916a99dbd68eeb09f9e2836ae383364057e2e8bdbb67071bd5",
+    "results/prescribed_continuation_foundation/README.md": "fa32edfdb1093b444542dda0b98db4efe3ae02d07550ba5d08ad9ccab2698728",
+    "results/prescribed_continuation_foundation/evidence.json": "33a4bbbac554dd669d2177dc86d8c1370b947082d3f24fb78309ffdab2e2fc80",
+    "results/shape_join_pressure/README.md": "6120069fc0b45b2a5cdf25584a1eeb6bbfc363589a1dc8658e1af45093935cff",
+    "results/shape_join_pressure/evidence.json": "f050948e240aa2f50652624001d026d47eab260b369f713c4d44ef3499bf1d47"
+  },
+  "status": "core-continuation-and-both-same-profile-matching-roots-independently-rechecked"
+}
