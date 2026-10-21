@@ -1,0 +1,8 @@
+{
+  "parent_commit": "77a8b462019590178972b029ece632eac80e2313",
+  "input": "same fixed smooth compact physical compensator, potential-derived reference density and accepted scale coordinate",
+  "correction": "absence of profile-independent or numerical constants does not obstruct fixed-profile asymptotic bounds with finite profile-dependent constants",
+  "new_result": "all fixed radial/slow orders have explicit finite Euler-jet majorants; mismatch and all six moving-density commutators have conditional uniform-band bounds",
+  "scope": "no new profile or tail selected, no actual target-jet or complete residual closure, no uniform infinite-cycle or blow-up claim",
+  "arithmetic": "exact bivariate log/dilation jets compared with direct power substitution; all six commutator terms, support/mass and finite-margin controls"
+}
