@@ -1,0 +1,535 @@
+{
+  "dependency_evidence_sha256": {
+    "results/canonical_comparison_join/evidence.json": "7fafb6d41574edea1a0a69b9ba8266f2dee1605bbfe89da9168e51136584a2cd",
+    "results/canonical_endpoint_join/evidence.json": "d6c57381c49f164967c2515867e6046c1dee832263264ff4ed0da0f4fae4be4a",
+    "results/canonical_initial_mean_join/evidence.json": "445ea6c3d05a86cbadce2637771c45493b37612741981e1ea8bcba8cc83c7bcb",
+    "results/canonical_local_realization/evidence.json": "dd24a12408a5e0f8ed6ac12b621783b020f353fb80bf3add44a134237212614c",
+    "results/canonical_primary_foundation/evidence.json": "84e7fc53acc26a6be459669ab952d60eee30b83f7581eeb124edfd26fa829d5c",
+    "results/canonical_value_domain/evidence.json": "490935110199b5f61c24514a377e70147a5cd81425ced38c1321be3e59d3dbd9",
+    "results/certified_tail_reconstruction/evidence.json": "1784eba419ea2c7e6efabfd801f3d5eb599a0c214f4adfb9e56c5e3befbb7f35",
+    "results/current_residual_ledger_audit/evidence.json": "d7ec24ec9270889d1ae0038ecdfd02996485a5c2e2af3e7d12386b200c2869e3",
+    "results/current_target_cycle_bridge/evidence.json": "402de981f9b3b1c2ae57360e8602552e9b595e444113b33d4fcb4ffd2d2d6c14",
+    "results/explicit_tilt_pulse_tail/evidence.json": "430fe9f055c92581a813530934ddc7f2561984dc5b179c8a5ca24601e7dda9e1",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "flags": {
+    "all_six_covariances_axial_velocity_complete_pressure_and_Pi1_Pi2_retained": true,
+    "analytical_join_distinguished_from_exact_finite_diagnostics": true,
+    "canonical_primary_uses_own_reference_frame_entrance_roots_and_current_means": true,
+    "complete_finite_residual_keeps_viscosity_cutoffs_both_crosses_squares_and_tails": true,
+    "current_signed_fast_slow_targets_recomputed_after_every_update": true,
+    "fixed_stage_estimate_promoted_to_uncontrolled_stage_diagonal": false,
+    "formal_certificate": false,
+    "fresh_realization_localization_Borel_force_energy_and_same_force_comparison_joined": true,
+    "generated_regular_sources_have_reviewed_full_path_edge_and_entrance_inputs_conditionally": true,
+    "historical_first_band_realization_force_and_schedules_reidentified": false,
+    "inherited_and_canonical_primary_fields_or_roots_identified": false,
+    "one_later_tail_dominates_explicit_primary_canonical_and_edge_value_gates": true,
+    "retained_core_background_defining_map_and_inverse_premises_all_discharged": false,
+    "unconditional_pulse_complete_residual_admissible_blowup_or_blowup_proved": false
+  },
+  "gates": {
+    "all_scope_flags_are_strict_booleans": true,
+    "dependency_routes": true,
+    "eleven_frozen_dependency_records_bound": true,
+    "exact_join_checks": true
+  },
+  "protocol": {
+    "covariance": "all six complete-curl covariance entries, axial velocity, compact pressure, whole dZ(c_rho P), Pi1/Pi2 and actual A0/A1 remainders retained",
+    "force": "fresh whole-interval realization diagonal, certified localization, all twelve force groups, fresh Borel scales, energy and same-force comparison",
+    "objects": "inherited and canonical primaries remain distinct; canonical Br entrance Hc ac and current means are rebuilt, never copied by O(1/L) closeness",
+    "parent_commit": "330cdbd8a200e6349bdaf48d652ac91105eac2d5",
+    "residual": "exact angular complement, cutoff curl, temporal additive ledger, viscosity, both old-new orientations, squares and current mean-wave interactions; finite gain 1/2-kappa",
+    "scope": "conditional compatibility join; historical first band/field/force remain uncertified; retained continuum foundation bundle remains; no unconditional theorem",
+    "sources": "current generated regular expressions retain f/P full-path jets, Gaussian envelope, both flat edges, zero entrance collars and complete pressure-normal inverse",
+    "tail": "ell_sharp=max(ell_explicit,ell_canonical,ell_edge); q_sharp=min(qstar/64,2^(-ell_sharp-2)); one derivative-order- and stage-independent later tail"
+  },
+  "remaining_obligations": [
+    "independently audit and discharge the retained exact core background and global defining-map existence inverse gap weighted-edge and finite-contraction hypotheses",
+    "do not identify the distinct canonical field and fresh force with the uncertified historical first-band realization and force",
+    "do not promote conditional continuum lemmas or exact finite tests to an unconditional Navier-Stokes blow-up theorem"
+  ],
+  "reviews": {
+    "dependency_routing": {
+      "checks": {
+        "all_dependencies_retain_remaining_obligations": true,
+        "canonical_initial_mean_keeps_all_six_covariances": true,
+        "canonical_primary_is_not_inherited_primary": true,
+        "canonical_realization_keeps_complete_residual": true,
+        "canonical_value_domain_keeps_one_domain_for_all_jets": true,
+        "comparison_uses_same_canonical_field_and_force": true,
+        "complete_finite_residual_is_conditional": true,
+        "current_targets_use_exact_state_differences": true,
+        "distinct_tail_has_fresh_force": true,
+        "endpoint_keeps_full_pressure_memory": true,
+        "explicit_parent_supplies_new_tilt_and_tail": true,
+        "source_grammar_has_full_path_inputs": true
+      }
+    },
+    "exact_join": {
+      "checks": {
+        "all_twelve_localization_force_groups_recorded": true,
+        "combined_tail_dominates_each_distinct_family_gate": true,
+        "exactly_seven_groups_tie_the_gain": true,
+        "localization_support_closure_stays_inside_joined_tail": true,
+        "nine_complete_residual_groups_close_on_half_line_samples": true,
+        "whole_enlarged_charts_stay_in_original_value_domain": true
+      },
+      "cycle_orders": [
+        {
+          "B": "74999/50000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "49999/50000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "199997/100000",
+            "mean_wave_left": "199997/100000",
+            "mean_wave_right": "199997/100000",
+            "new_square": "59999/20000",
+            "old_wave_left": "199997/100000",
+            "old_wave_right": "199997/100000",
+            "signed_linear": "199997/100000",
+            "slow_mean_wave": "99999/50000",
+            "sourced_linear": "199997/100000"
+          },
+          "required": "199997/100000",
+          "tie_count": 7
+        },
+        {
+          "B": "199997/100000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "149997/100000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "62499/25000",
+            "mean_wave_left": "62499/25000",
+            "mean_wave_right": "62499/25000",
+            "new_square": "399993/100000",
+            "old_wave_left": "62499/25000",
+            "old_wave_right": "62499/25000",
+            "signed_linear": "62499/25000",
+            "slow_mean_wave": "249997/100000",
+            "sourced_linear": "62499/25000"
+          },
+          "required": "62499/25000",
+          "tie_count": 7
+        },
+        {
+          "B": "62499/25000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "49999/25000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "59999/20000",
+            "mean_wave_left": "59999/20000",
+            "mean_wave_right": "59999/20000",
+            "new_square": "499991/100000",
+            "old_wave_left": "59999/20000",
+            "old_wave_right": "59999/20000",
+            "signed_linear": "59999/20000",
+            "slow_mean_wave": "74999/25000",
+            "sourced_linear": "59999/20000"
+          },
+          "required": "59999/20000",
+          "tie_count": 7
+        },
+        {
+          "B": "59999/20000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "49999/20000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "174997/50000",
+            "mean_wave_left": "174997/50000",
+            "mean_wave_right": "174997/50000",
+            "new_square": "599989/100000",
+            "old_wave_left": "174997/50000",
+            "old_wave_right": "174997/50000",
+            "signed_linear": "174997/50000",
+            "slow_mean_wave": "69999/20000",
+            "sourced_linear": "174997/50000"
+          },
+          "required": "174997/50000",
+          "tie_count": 7
+        },
+        {
+          "B": "174997/50000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "149997/50000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "399993/100000",
+            "mean_wave_left": "399993/100000",
+            "mean_wave_right": "399993/100000",
+            "new_square": "699987/100000",
+            "old_wave_left": "399993/100000",
+            "old_wave_right": "399993/100000",
+            "signed_linear": "399993/100000",
+            "slow_mean_wave": "199997/50000",
+            "sourced_linear": "399993/100000"
+          },
+          "required": "399993/100000",
+          "tie_count": 7
+        },
+        {
+          "B": "399993/100000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "349993/100000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "56249/12500",
+            "mean_wave_left": "56249/12500",
+            "mean_wave_right": "56249/12500",
+            "new_square": "159997/20000",
+            "old_wave_left": "56249/12500",
+            "old_wave_right": "56249/12500",
+            "signed_linear": "56249/12500",
+            "slow_mean_wave": "449993/100000",
+            "sourced_linear": "56249/12500"
+          },
+          "required": "56249/12500",
+          "tie_count": 7
+        },
+        {
+          "B": "56249/12500",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "49999/12500",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "499991/100000",
+            "mean_wave_left": "499991/100000",
+            "mean_wave_right": "499991/100000",
+            "new_square": "899983/100000",
+            "old_wave_left": "499991/100000",
+            "old_wave_right": "499991/100000",
+            "signed_linear": "499991/100000",
+            "slow_mean_wave": "62499/12500",
+            "sourced_linear": "499991/100000"
+          },
+          "required": "499991/100000",
+          "tie_count": 7
+        },
+        {
+          "B": "499991/100000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "449991/100000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "54999/10000",
+            "mean_wave_left": "54999/10000",
+            "mean_wave_right": "54999/10000",
+            "new_square": "999981/100000",
+            "old_wave_left": "54999/10000",
+            "old_wave_right": "54999/10000",
+            "signed_linear": "54999/10000",
+            "slow_mean_wave": "549991/100000",
+            "sourced_linear": "54999/10000"
+          },
+          "required": "54999/10000",
+          "tie_count": 7
+        },
+        {
+          "B": "54999/10000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "49999/10000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "599989/100000",
+            "mean_wave_left": "599989/100000",
+            "mean_wave_right": "599989/100000",
+            "new_square": "1099979/100000",
+            "old_wave_left": "599989/100000",
+            "old_wave_right": "599989/100000",
+            "signed_linear": "599989/100000",
+            "slow_mean_wave": "59999/10000",
+            "sourced_linear": "599989/100000"
+          },
+          "required": "599989/100000",
+          "tie_count": 7
+        },
+        {
+          "B": "599989/100000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "549989/100000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "162497/25000",
+            "mean_wave_left": "162497/25000",
+            "mean_wave_right": "162497/25000",
+            "new_square": "1199977/100000",
+            "old_wave_left": "162497/25000",
+            "old_wave_right": "162497/25000",
+            "signed_linear": "162497/25000",
+            "slow_mean_wave": "649989/100000",
+            "sourced_linear": "162497/25000"
+          },
+          "required": "162497/25000",
+          "tie_count": 7
+        },
+        {
+          "B": "162497/25000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "149997/25000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "699987/100000",
+            "mean_wave_left": "699987/100000",
+            "mean_wave_right": "699987/100000",
+            "new_square": "51999/4000",
+            "old_wave_left": "699987/100000",
+            "old_wave_right": "699987/100000",
+            "signed_linear": "699987/100000",
+            "slow_mean_wave": "174997/25000",
+            "sourced_linear": "699987/100000"
+          },
+          "required": "699987/100000",
+          "tie_count": 7
+        },
+        {
+          "B": "699987/100000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "649987/100000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "374993/50000",
+            "mean_wave_left": "374993/50000",
+            "mean_wave_right": "374993/50000",
+            "new_square": "1399973/100000",
+            "old_wave_left": "374993/50000",
+            "old_wave_right": "374993/50000",
+            "signed_linear": "374993/50000",
+            "slow_mean_wave": "749987/100000",
+            "sourced_linear": "374993/50000"
+          },
+          "required": "374993/50000",
+          "tie_count": 7
+        },
+        {
+          "B": "374993/50000",
+          "all_groups_close": true,
+          "margins": {
+            "fast_mean_wave": "0/1",
+            "mean_wave_left": "0/1",
+            "mean_wave_right": "0/1",
+            "new_square": "349993/50000",
+            "old_wave_left": "0/1",
+            "old_wave_right": "0/1",
+            "signed_linear": "0/1",
+            "slow_mean_wave": "1/100000",
+            "sourced_linear": "0/1"
+          },
+          "orders": {
+            "fast_mean_wave": "159997/20000",
+            "mean_wave_left": "159997/20000",
+            "mean_wave_right": "159997/20000",
+            "new_square": "1499971/100000",
+            "old_wave_left": "159997/20000",
+            "old_wave_right": "159997/20000",
+            "signed_linear": "159997/20000",
+            "slow_mean_wave": "399993/50000",
+            "sourced_linear": "159997/20000"
+          },
+          "required": "159997/20000",
+          "tie_count": 7
+        }
+      ],
+      "force_terms": [
+        "cR",
+        "ct_u",
+        "dt",
+        "laplacian_c_u",
+        "gradient_c_gradient_u",
+        "laplacian_d",
+        "p_gradient_c",
+        "c_cminus1_u_gradient_u",
+        "c_u_gradient_c_u",
+        "c_u_gradient_d",
+        "c_d_gradient_u",
+        "d_gradient_d"
+      ],
+      "localization": {
+        "inside_tail": true,
+        "q_over_qsharp": "3/128",
+        "whole_chart_over_qsharp": "3/8"
+      },
+      "tail_charts": [
+        {
+          "Q_over_dyadic_band_ceiling": "1/1",
+          "canonical": 17,
+          "dominates_all": true,
+          "edge": 13,
+          "explicit": 11,
+          "joined": 17,
+          "whole_enlargement_over_qstar": "1/4"
+        },
+        {
+          "Q_over_dyadic_band_ceiling": "1/1",
+          "canonical": 19,
+          "dominates_all": true,
+          "edge": 23,
+          "explicit": 1000000,
+          "joined": 1000000,
+          "whole_enlargement_over_qstar": "1/4"
+        },
+        {
+          "Q_over_dyadic_band_ceiling": "1/1",
+          "canonical": 1048576,
+          "dominates_all": true,
+          "edge": 47,
+          "explicit": 31,
+          "joined": 1048576,
+          "whole_enlargement_over_qstar": "1/4"
+        },
+        {
+          "Q_over_dyadic_band_ceiling": "1/1",
+          "canonical": 100000000000000000000000000000,
+          "dominates_all": true,
+          "edge": 10000000000000000000000000000,
+          "explicit": 1000000000000000000000000000000,
+          "joined": 1000000000000000000000000000000,
+          "whole_enlargement_over_qstar": "1/4"
+        }
+      ]
+    }
+  },
+  "source_hashes": {
+    "results/canonical_comparison_join/README.md": "9a57faa0bc407d316e02995d31c669df12d6c0fb6a5e28e6544bd4dc247ab802",
+    "results/canonical_comparison_join/evidence.json": "7fafb6d41574edea1a0a69b9ba8266f2dee1605bbfe89da9168e51136584a2cd",
+    "results/canonical_endpoint_join/README.md": "863e9ef1f7956a9df5105873e1f82a7164492d36c5b577da810c22aca74a7019",
+    "results/canonical_endpoint_join/evidence.json": "d6c57381c49f164967c2515867e6046c1dee832263264ff4ed0da0f4fae4be4a",
+    "results/canonical_initial_mean_join/README.md": "95df79614a138570afa206ac92cdcb76051e8c825979a102f6f35e88507a764a",
+    "results/canonical_initial_mean_join/evidence.json": "445ea6c3d05a86cbadce2637771c45493b37612741981e1ea8bcba8cc83c7bcb",
+    "results/canonical_local_realization/README.md": "2feccfd8c154364458da5e5c2366c50e7d7ed8e804473b7658eba02b52fd32c8",
+    "results/canonical_local_realization/evidence.json": "dd24a12408a5e0f8ed6ac12b621783b020f353fb80bf3add44a134237212614c",
+    "results/canonical_primary_foundation/README.md": "0b1204546ce981149f6b5cb975574206884f5d84c85385f0ede29f32384e075a",
+    "results/canonical_primary_foundation/evidence.json": "84e7fc53acc26a6be459669ab952d60eee30b83f7581eeb124edfd26fa829d5c",
+    "results/canonical_value_domain/README.md": "45ee194ed8cb27e679a929d24b1c8c96f625914e6c49cd21452350beebe625d8",
+    "results/canonical_value_domain/evidence.json": "490935110199b5f61c24514a377e70147a5cd81425ced38c1321be3e59d3dbd9",
+    "results/certified_tail_reconstruction/README.md": "e7a0f20178bca2f46f1db703b1d3fa9d0f0e415b806099510eef51eeb28e1002",
+    "results/certified_tail_reconstruction/evidence.json": "1784eba419ea2c7e6efabfd801f3d5eb599a0c214f4adfb9e56c5e3befbb7f35",
+    "results/current_residual_ledger_audit/README.md": "eb38445afe8c34fdd3f18245da6f3dee30831051808bb7d43e69c6aba3e5e842",
+    "results/current_residual_ledger_audit/evidence.json": "d7ec24ec9270889d1ae0038ecdfd02996485a5c2e2af3e7d12386b200c2869e3",
+    "results/current_target_cycle_bridge/README.md": "0c96ac838ab7bc1861f5b178164318400eeebdd97c6f2d9855ba2200277830f2",
+    "results/current_target_cycle_bridge/evidence.json": "402de981f9b3b1c2ae57360e8602552e9b595e444113b33d4fcb4ffd2d2d6c14",
+    "results/explicit_tail_complete_join/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/explicit_tail_complete_join/README.md": "467047556b72d661b8929ee283debb23a2d8de4721f27613f4ee2dd88fd6701c",
+    "results/explicit_tail_complete_join/audit.py": "2c046af06b56d8f0ba962576f5e1c56a6c85505e0adf33ee5d7dbdaec659e8ae",
+    "results/explicit_tail_complete_join/join_checks.py": "7e51623c4f73c0bc4036d7d5b9ab0092fe4140a5d0740a837d266350c6996c4c",
+    "results/explicit_tail_complete_join/protocol.json": "791ca379c3fe37a4c02c2a8b05fbd60a482467ada189f43afbf8db86741e0128",
+    "results/explicit_tail_complete_join/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/explicit_tail_complete_join/test_audit.py": "ac55fbf2726e9123bea1d5762d26314aa88d61cfa480b4e87acae001c61fab83",
+    "results/explicit_tilt_pulse_tail/README.md": "6e7f3ff13510870a53978de90bd61e53318aa3296788d2a9fff9ac4b827b5a84",
+    "results/explicit_tilt_pulse_tail/evidence.json": "430fe9f055c92581a813530934ddc7f2561984dc5b179c8a5ca24601e7dda9e1",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "status": "conditional-explicit-tail-complete-canonical-residual-and-fresh-force-join"
+}

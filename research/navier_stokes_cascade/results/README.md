@@ -6,7 +6,25 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest checkpoint: [finalized global second-coefficient H2,3 bound](global_second_coefficient_h23/README.md).
+Latest checkpoint: [explicit-tail complete canonical join](explicit_tail_complete_join/README.md).
+The exact tilt and selected coefficient tail are now joined to a distinct
+canonical primary on one later value domain.  Current-state six-entry
+covariance/mean identities, full pressure memory, generated-source edge and
+entrance inputs, the complete finite residual, a fresh realization diagonal,
+all twelve localization-force terms and same-force comparison are propagated
+conditionally without identifying inherited/canonical roots or old/new
+forces.  The remaining obstruction is the retained exact core/background and
+global defining-map existence, inverse, gap, weighted-edge and finite-
+contraction premise bundle; no unconditional residual or blow-up follows.
+
+Preceding checkpoint: [explicit tilt and primary-pulse tail](explicit_tilt_pulse_tail/README.md).
+It corrects the absent historical numerical tilt/first band, selects
+`u^2=2^19 G^22`, obtains `d0=(2^19 G^22)^-1`, and constructs an exact later
+tail for the finalized selected cutoff.  It transfers primary pulse
+value/derivative/support estimates only; the latest checkpoint performs the
+distinct canonical residual/localization join.
+
+Earlier checkpoint: [finalized global second-coefficient H2,3 bound](global_second_coefficient_h23/README.md).
 The whole-support `Q10,Q11` calculation now uses `K0,5` and the finalized
 `K1,3*`, retains both shifted axial-viscosity moments and complete pressure
 memory, and keeps repaired `F1` separate from `U1`.  The selected cutoff and
