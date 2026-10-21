@@ -1,0 +1,11 @@
+{
+  "B": "10^20*(1+Lambda+K)^64",
+  "K_activation": "C^2*R^80",
+  "R": "exp(B/100)",
+  "activation_collaring": "0<=s<=1/4",
+  "inner_collar_s": "1/(10*sqrt(log(C)))",
+  "log_C": "10000*B+100*log(1/epsilon)",
+  "moment_rows": ["M", "I", "J", "S", "Cp"],
+  "width": "C^-20"
+}
+

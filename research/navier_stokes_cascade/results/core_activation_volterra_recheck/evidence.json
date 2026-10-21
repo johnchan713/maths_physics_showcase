@@ -1,0 +1,250 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/core_growth_source_recheck/evidence.json": "250391f37aee5f0bd91570fb2b3629f3204ff01bdfa17906370832d9da671895",
+    "results/inner_collar_activation/evidence.json": "7a17699476a8febb2f573c3b4b857cfa02b2b67436d5388a9c71233717babe3a"
+  },
+  "flags": {
+    "C_gauge_and_uniform_coefficient_envelopes_rederived": true,
+    "Kact_below_C_cubed_at_unchanged_width_rederived": true,
+    "all_five_forward_moment_factorizations_rederived": true,
+    "both_pressure_value_and_eta_derivative_terms_retained": true,
+    "compact_modulation_repair_or_exterior_rederived_here": false,
+    "formal_proof_assistant_or_external_peer_certificate": false,
+    "positive_flat_Volterra_representation_and_endpoint_rederived": true,
+    "prescribed_continuation_and_matching_roots_rederived_here": false,
+    "quantitative_inner_cone_collar_rederived": true,
+    "unconditional_pulse_residual_force_or_blowup_proved": false
+  },
+  "gates": {
+    "all_exact_Volterra_moment_scaling_and_cone_checks_pass": true,
+    "all_frozen_dependencies_bound": true,
+    "continuation_and_later_frontier_retained": true,
+    "scope_flags_are_strict_booleans": true
+  },
+  "parent_commit": "ce175f68ed606c259616c62eaa795ae83ce4500f",
+  "protocol": {
+    "B": "10^20*(1+Lambda+K)^64",
+    "K_activation": "C^2*R^80",
+    "R": "exp(B/100)",
+    "activation_collaring": "0<=s<=1/4",
+    "inner_collar_s": "1/(10*sqrt(log(C)))",
+    "log_C": "10000*B+100*log(1/epsilon)",
+    "moment_rows": [
+      "M",
+      "I",
+      "J",
+      "S",
+      "Cp"
+    ],
+    "width": "C^-20"
+  },
+  "remaining_obligations": [
+    "independently rederive prescribed continuation and both matching-root constructions on the same selected profile",
+    "audit compact modulation and exact repair with complete pressure memory and join the inner and outer cone bounds",
+    "retain the global pressure/moment, coefficient-support and reserved-mean obligations",
+    "retain uniform actual-pulse, covariance-mean and complete residual obligations before any blow-up claim"
+  ],
+  "review": {
+    "checks": {
+      "I_and_J_have_one_inverse_C": true,
+      "J_row_keeps_all_three_product_terms": true,
+      "Kact_C2_R80_covers_every_cone_row": true,
+      "Ns_keeps_both_pressure_terms": true,
+      "Qs_reciprocal_difference_is_complete": true,
+      "R80_is_strictly_below_C": true,
+      "Volterra_endpoint_is_not_zero": true,
+      "Volterra_second_endpoint_jet_keeps_radial_Jacobian": true,
+      "all_five_moment_rows_present_once": true,
+      "diagnostics_are_not_a_continuum_proof": true,
+      "flat_tail_loss_below_one_eighth_for_C_ge_2": true,
+      "moment_R8_envelope_covers_each_exact_row": true,
+      "native_growth_change_is_negligible": true,
+      "p2_keeps_field_denominator_difference": true,
+      "positive_Volterra_norm_is_three_halves": true,
+      "pressure_increment_has_two_inverse_C_powers": true,
+      "pressure_row_has_no_spurious_X": true,
+      "squared_cone_constant_is_32_over_81": true,
+      "squared_cone_loss_has_Cminus31": true,
+      "unchanged_width_makes_Kact_t_below_Cminus17": true,
+      "unchanged_width_makes_tR3_small": true,
+      "worst_cone_row_is_C2_R27": true
+    },
+    "cone_coefficients": [
+      {
+        "C_power": 0,
+        "R_power": 18,
+        "name": "Delta_p1"
+      },
+      {
+        "C_power": 2,
+        "R_power": 27,
+        "name": "ts_Delta_p2"
+      },
+      {
+        "C_power": 2,
+        "R_power": 5,
+        "name": "q2_ratio_error"
+      },
+      {
+        "C_power": 2,
+        "R_power": 6,
+        "name": "q_ts_ratio_error"
+      },
+      {
+        "C_power": 1,
+        "R_power": 24,
+        "name": "Delta_p2_in_J"
+      },
+      {
+        "C_power": 1,
+        "R_power": 21,
+        "name": "ts_Delta_p1_in_J"
+      },
+      {
+        "C_power": 1,
+        "R_power": 3,
+        "name": "q_ratio_error_in_J"
+      },
+      {
+        "C_power": 2,
+        "R_power": 6,
+        "name": "vs_error"
+      }
+    ],
+    "envelopes": {
+      "C_Delta_E_H_over_t_ea_s3": 4,
+      "Delta_Ns_over_t_ea_s3": 16,
+      "Delta_U_over_t_ea_s3": 2,
+      "Delta_W_CDeltaNQ_over_t2_ea_s6": 10,
+      "Delta_logE_over_t_ea_s3": 1,
+      "Delta_p1_over_t_ea_s3": 18,
+      "Delta_p2_over_C_t_ea_s3": 24,
+      "Er_over_E_minus_1_over_t_ea_s3": 2,
+      "moments_over_t2_ea_s6": 8
+    },
+    "map_differences": {
+      "Delta_NQ": [
+        "(1-h)*DeltaI",
+        "-D*eta*DeltaI_eta",
+        "-d*DeltaJ_eta",
+        "2*(h-D)*eta*DeltaJ"
+      ],
+      "Delta_Ns": [
+        "-W_r*DeltaU",
+        "-U_r*DeltaW",
+        "-DeltaW*DeltaU",
+        "D*(DeltaM-eta*DeltaM_eta)/X",
+        "4*h*eta*DeltaS/X",
+        "-d*DeltaS_eta/X",
+        "4*A*eta*DeltaCp",
+        "-d*DeltaCp_eta"
+      ],
+      "Delta_Qs": [
+        "-DeltaW",
+        "DeltaNQ/(X*H)",
+        "-NQ_r*DeltaH/(X*H_r*H)"
+      ],
+      "Delta_W": [
+        "-(2*D*eta*DeltaM+d*DeltaM_eta)/X"
+      ],
+      "Delta_p1": [
+        "X*DeltaQs/L"
+      ],
+      "Delta_p2": [
+        "X*DeltaNs/(L*E)",
+        "-X*Ns_r*DeltaE/(L*E_r*E)"
+      ]
+    },
+    "moments": [
+      {
+        "C_power": 0,
+        "R_power": 3,
+        "formula": [
+          "X*bU"
+        ],
+        "name": "M",
+        "removed_C_factor": "1"
+      },
+      {
+        "C_power": -1,
+        "R_power": 5,
+        "formula": [
+          "X*bH"
+        ],
+        "name": "I",
+        "removed_C_factor": "C"
+      },
+      {
+        "C_power": -1,
+        "R_power": 5,
+        "formula": [
+          "X*Ur*bH",
+          "X*Hr*bU",
+          "X*alpha*bU*bH"
+        ],
+        "name": "J",
+        "removed_C_factor": "C"
+      },
+      {
+        "C_power": 0,
+        "R_power": 4,
+        "formula": [
+          "2*X*Ur*bU",
+          "X*alpha*bU^2",
+          "-X*bE2/2"
+        ],
+        "name": "S",
+        "removed_C_factor": "1"
+      },
+      {
+        "C_power": -2,
+        "R_power": 4,
+        "formula": [
+          "bE2/2"
+        ],
+        "name": "Cp",
+        "removed_C_factor": "C^2"
+      }
+    ],
+    "selected_scale": {
+      "activated_growth_lower": "17/8",
+      "cone_C_power_after_R160_below_C2": -31,
+      "cone_constant": "32/81",
+      "denominator_lower": "9/8",
+      "flat_tail_C_power": -97,
+      "log_Kact_t_over_Cminus17_upper_per_B": "-49996/5",
+      "log_R80_over_C_upper_per_B": "-49996/5",
+      "log_native_growth_change_upper_per_B": "-4499998/25",
+      "log_tR3_upper_per_B": "-19999997/100",
+      "native_growth_lower": "9/4"
+    },
+    "volterra": {
+      "V0_first_jet_multiplier": "1/2",
+      "V0_second_jet_b0_multiplier": "-3/2",
+      "V0_second_jet_b2_multiplier": "1/2",
+      "endpoint_value_multiplier": "1/2",
+      "field_factor": "t*ea*s^3",
+      "g_lower": 2,
+      "g_upper": 6,
+      "moment_factor": "t^2*ea*s^6",
+      "operator_norm": "3/2"
+    }
+  },
+  "source_hashes": {
+    "results/core_activation_volterra_recheck/.gitignore": "81f85ea07bbf404eb4b959e5b8837c67c97716e49a2ba57253965c643101f637",
+    "results/core_activation_volterra_recheck/README.md": "78c2e1fa5a645c142c9478ba0e781d7db36512843b2a497112f81ddc8676d21a",
+    "results/core_activation_volterra_recheck/audit.py": "dcc8a2d3b20ae2e834a92646f24bd58e155e3bed223c06026aaff981ff1aa7da",
+    "results/core_activation_volterra_recheck/proof_checks.py": "ae80126339c516585c31d1ebd682f959ca3275c85b3dccad948f679b1dfff11a",
+    "results/core_activation_volterra_recheck/protocol.json": "0b920caec733c4ffeb42307e2715432f721cb3e7b4d341fceaead320c7c9acae",
+    "results/core_activation_volterra_recheck/requirements.txt": "1aefbcb733a9d4491408f8bef2b442bf135cbedf0fbf1e2e205c31925a4977c0",
+    "results/core_activation_volterra_recheck/test_audit.py": "59acc62cf748cefee17473ac6420b1ad1e84a6d5d044841c4b316076300f7217",
+    "results/core_growth_activation/README.md": "fd6134a88a69d49203235f9b2ef9abd1f80ee63baf129b5985c9e3136ad09a0a",
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/core_growth_source_recheck/README.md": "b89cf67aa7d8d46978821d18ffb89d2a14145856c35a1c9a336ccf5bdb8386aa",
+    "results/core_growth_source_recheck/evidence.json": "250391f37aee5f0bd91570fb2b3629f3204ff01bdfa17906370832d9da671895",
+    "results/inner_collar_activation/README.md": "3bb47028d2baa06e7ea6d0e3d3261c3edfa3f6bb6f16a6fee9098a927fd525d2",
+    "results/inner_collar_activation/evidence.json": "7a17699476a8febb2f573c3b4b857cfa02b2b67436d5388a9c71233717babe3a"
+  },
+  "status": "core-flat-activation-five-moment-and-cone-collar-independently-rederived"
+}
