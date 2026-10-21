@@ -1,0 +1,128 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a",
+    "results/foundation_bundle_route/evidence.json": "8e585d7b90ba9938fea314a1d2efc13be394011e7baa285145e3675fc6be4f24"
+  },
+  "flags": {
+    "angular_weight_floor_sharpened_to_7744_over_7745": true,
+    "complex_pressure_input_bound_rederived": true,
+    "flat_activation_volterra_and_moment_bounds_independently_reproved_here": false,
+    "full_nonlinear_banach_map_independently_reproved_here": false,
+    "later_foundation_providers_independently_reproved_here": false,
+    "real_pressure_derivative_and_atom_bounds_rederived": true,
+    "same_reference_measure_and_pressure_gauge_traced": true,
+    "small_source_partition_sharpened_to_eta_over_j_below_1_over_39": true,
+    "unconditional_pulse_residual_force_or_blowup_proved": false,
+    "velocity_remainder_bound_sharpened_to_21_eta_plus_5j": true
+  },
+  "gates": {
+    "all_exact_pressure_and_separation_checks_pass": true,
+    "all_frozen_dependencies_bound": true,
+    "scope_flags_are_strict_booleans": true,
+    "unresolved_continuum_frontier_retained": true
+  },
+  "parent_commit": "0e605bb3b289ed662ea5333d0335baac8302a1ff",
+  "protocol": {
+    "claim": "independent exact calculus for the shared core pressure datum and a sharper pressure-to-growth separation only",
+    "objects": "the same positive pressure measure, core parameters and real angular interval used by the frozen contraction and growth checkpoints",
+    "scope": "pressure input and sector partition; not a new Banach fixed-point, activation, global pulse or residual theorem"
+  },
+  "remaining_obligations": [
+    "independently rederive every nonlinear monomial and Lipschitz constant in the all-index core fixed-point map",
+    "independently rederive the angular-source comparison, flat Volterra activation and complete collar moment estimates",
+    "then continue the foundation frontier through continuation, matching roots, compact modulation/repair and the exterior join",
+    "retain the later global pressure, weighted-edge, coefficient, source-cycle and residual obligations until independently validated"
+  ],
+  "review": {
+    "atom_pressure": {
+      "atom_derivative_lower_coefficient": "10/1",
+      "derivative_numerator_max_without_factor_10": "-4/1",
+      "endpoint_min": "5/4",
+      "real_pressure_derivative_upper_coefficient": "20/1",
+      "required_theta1_atom_mass": "5/2",
+      "total_measure_mass_ceiling": "5/1"
+    },
+    "checks": {
+      "Hstar_over_j_above_22_over_25": true,
+      "axis_pressure_is_independent_of_radial_scale": true,
+      "chi_floor_above_point_99": true,
+      "complex_mixture_bound_below_10P2": true,
+      "ideal_atom_Kp_decreases_to_endpoint": true,
+      "ideal_atom_gives_Kp_at_least_5_over_4": true,
+      "pressure_fixed_before_Lambda_and_C": true,
+      "small_Z_ratio_below_1_over_39": true,
+      "velocity_constant_coefficient_below_5j": true,
+      "velocity_eta_coefficient_below_21": true,
+      "velocity_polynomial_rederived_exactly": true
+    },
+    "complex_pressure": {
+      "cauchy_derivative_coefficient_over_P2_r0": "20/1",
+      "mixture_upper_over_P2": "2147483648000000000000000000000000000000000000000000000000000000000000000000000000000000000/429496729599999999999999999999999999999999998689280000000000000000000000000000000000000001",
+      "r0": "1/25600000000000000000000",
+      "real_part_floor": "655359999999999999999999999999999999999999999/655360000000000000000000000000000000000000000"
+    },
+    "parameter_order": {
+      "all_edges_forward": true,
+      "edges": [
+        [
+          "reference_schedule",
+          "pressure_measure"
+        ],
+        [
+          "pressure_measure",
+          "core_parameters"
+        ],
+        [
+          "core_parameters",
+          "Lambda"
+        ],
+        [
+          "Lambda",
+          "C"
+        ]
+      ],
+      "nodes": [
+        "reference_schedule",
+        "pressure_measure",
+        "core_parameters",
+        "Lambda",
+        "C"
+      ],
+      "radial_scale_power_in_dX_over_X": 0
+    },
+    "separation": {
+      "H_over_j_exact_lower_control": "20989757/23727600",
+      "H_over_j_floor": "22/25",
+      "chi_floor": "7744/7745",
+      "eta_over_j_ceiling": "1/39",
+      "exact_ratio": "189/7475"
+    },
+    "velocity": {
+      "constant_over_j": "451/100",
+      "cubic_linear": "20/1",
+      "eta_total": "412211/20000",
+      "j2_eta": "51/20000",
+      "j_eta": "76/125"
+    }
+  },
+  "source_hashes": {
+    "results/core_contraction_audit/README.md": "29d504122e83a45ab7c36c98a90d1857ebc5fa82c248b302308881ad99abcb86",
+    "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+    "results/core_growth_activation/README.md": "fd6134a88a69d49203235f9b2ef9abd1f80ee63baf129b5985c9e3136ad09a0a",
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/core_pressure_gap_recheck/.gitignore": "77918ee4b4fafb0264a4a2a1c7ef6888eb001951ce69907db5e7f3162d9960ac",
+    "results/core_pressure_gap_recheck/README.md": "868df2ca586415403aa4bbd33e3b7669cb15bc825844dccba344c55647a5d073",
+    "results/core_pressure_gap_recheck/audit.py": "b96887de5e0dbdb21ca4f5fd576c198af04cc0f38319e6b51b6c67324f659922",
+    "results/core_pressure_gap_recheck/proof_checks.py": "64f6b325f6641aadf97be6ca661ed18d968625ecfdac4e32d64dea510b8df444",
+    "results/core_pressure_gap_recheck/protocol.json": "324da07ed72b1f7195723656b72b6195301c9cd2340658c62b082132c9ab9c6e",
+    "results/core_pressure_gap_recheck/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_pressure_gap_recheck/test_audit.py": "1e42e57a544e25e32a48dbe94c3dae133537182459da9b3454389bd00951bacb",
+    "results/core_pressure_identification/README.md": "2fa6c0975eba8027bf8d5859b0eb0213b4e615a6bd9df98436e77aec18ddcf9a",
+    "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a",
+    "results/foundation_bundle_route/README.md": "cd8aa2473d5ee59576d0f79ee5fbf65347df7c70c6e14bf8908cf84a094a4ad6",
+    "results/foundation_bundle_route/evidence.json": "8e585d7b90ba9938fea314a1d2efc13be394011e7baa285145e3675fc6be4f24"
+  },
+  "status": "shared-core-pressure-calculus-rederived-with-sharper-gap"
+}
