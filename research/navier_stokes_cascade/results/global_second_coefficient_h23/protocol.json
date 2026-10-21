@@ -1,0 +1,7 @@
+{
+  "final_bound": "Finalize separate U2,F2 jets with disjoint repair supports, convert E2=sqrt(2X)F2 using retained Rlo,Rhi jets, and take H2,3*=max_{r<=3}(U2_r,E2_r)",
+  "global_inputs": "K0,5=H^262 and K1,3*=J1,3+320C1,3",
+  "pressure_memory": "Q10,Q11 use the complete unchanged [0,Xv] and retain both shifted axial-viscosity moments",
+  "repair": "The exact positive-order inverse-800 map uses W1=4/e*; lower F1^2,U1^2,U1F1 terms remain fixed",
+  "scope": "Analytical explicit selected-parameter global H2,3 relative to retained foundations; all-scale pulses, covariance means, complete residual and blowup remain open"
+}

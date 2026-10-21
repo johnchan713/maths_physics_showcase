@@ -6,15 +6,25 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest checkpoint: [finalized global first-coefficient C3 bound](global_first_coefficient_c3/README.md).
+Latest checkpoint: [finalized global second-coefficient H2,3 bound](global_second_coefficient_h23/README.md).
+The whole-support `Q10,Q11` calculation now uses `K0,5` and the finalized
+`K1,3*`, retains both shifted axial-viscosity moments and complete pressure
+memory, and keeps repaired `F1` separate from `U1`.  The selected cutoff and
+actual width-`1/10` repair jets give finalized `F2,U2` radial bounds through
+order three; the required `E2=sqrt(2X)F2` conversion then yields an explicit
+finite `H2,3*`.  The first-band raw-deficit gate, all-scale pulses, complete
+covariance/means, residual closure and blow-up remain open.
+
+Preceding checkpoint: [finalized global first-coefficient C3 bound](global_first_coefficient_c3/README.md).
 The selected `K0,5<H^262` input is now inserted into the full-support signed
 `Q03,Q13` identities, retaining the nonzero axis-viscosity boundary and all
 later pressure memory.  The actual core/collar value constant, eta-independent
 coefficient cutoff, inverse-800 map and disjoint `U1` bump value `320` give the
 explicit finite selected-parameter certificate `K1,3*=J1,3+320C1,3`.  No
 guessed power of `H` hides the small denominators or Picard exponentials.  The
-second signed source, second repair and `H2,3` remain open, as do all-scale
-pulses, complete covariance/means, residual closure and blow-up.
+second signed source, second repair and `H2,3` are consumed by the latest
+checkpoint.  All-scale pulses, complete covariance/means, residual closure
+and blow-up remain open.
 
 Preceding checkpoint: [global leading fifth-angular bound](global_leading_c5/README.md).
 The same later axial/reference root now has a complete `C_eta^5` energy and

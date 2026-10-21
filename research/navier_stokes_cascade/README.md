@@ -13,16 +13,27 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [global first-coefficient C3 checkpoint](results/global_first_coefficient_c3/README.md)
+The latest [global second-coefficient H2,3 checkpoint](results/global_second_coefficient_h23/README.md)
+inserts `K0,5<H^262` and the finalized `K1,3*` into the complete whole-support
+`Q10,Q11` identities.  It retains both shifted axial-viscosity moments,
+keeps the repaired `F1` and `U1` bounds distinct, propagates the explicit
+coefficient cutoff and all actual repair-bump jets through radial order three,
+and converts finalized `F2` jets to `E2=sqrt(2X)F2` before defining the finite
+selected-parameter certificate `H2,3*`.  No guessed `H` power hides the nested
+Picard exponentials or geometric denominators.  The historical first-band
+raw-deficit gate, uniform all-scale pulse family, complete covariance/means,
+residual and blow-up obligations remain open.
+
+The preceding [global first-coefficient C3 checkpoint](results/global_first_coefficient_c3/README.md)
 inserts the selected `K0,5<H^262` bound into the complete signed `Q03,Q13`
 totals, retaining the axis-viscosity boundary and pressure memory through the
 true `Xv`.  It combines the explicit core/collar value constant with the
 eta-independent cutoff, exact inverse-800 map and actual disjoint `U1` bump
 value to obtain `K1,3*=J1,3+320C1,3`.  The bound remains an explicit formula
 in the unchanged selected parameters; no guessed `H` power hides its small
-denominators or Picard exponentials.  The shifted-viscosity second source and
-repair, `H2,3`, all-scale pulse-family, complete covariance/mean, residual and
-blow-up obligations remain open.
+denominators or Picard exponentials.  Its shifted-viscosity second-source and
+repair obligation is discharged by the latest checkpoint; all-scale
+pulse-family, complete covariance/mean, residual and blow-up obligations remain.
 
 The preceding [global leading fifth-angular checkpoint](results/global_leading_c5/README.md)
 lifts the same later axial/reference root, complete energy and positive

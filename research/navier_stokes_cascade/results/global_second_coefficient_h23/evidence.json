@@ -1,0 +1,234 @@
+{
+  "dependency_evidence_sha256": {
+    "results/axis_second_coefficient/evidence.json": "392ecb791db67bdeace62110adf74a6573a2b706edb95efd7ca4c0468541b631",
+    "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+    "results/cutoff_higher_jet_interface/evidence.json": "64cba74730fc6c63fa7f32fa2a74f56c078a147a4a5b1d5c62c9803daee526bf",
+    "results/explicit_coefficient_cutoff/evidence.json": "b8dbd4ac8db98696aeb8b25bea96f91ab43940c60af2fdf4730bc6bd424805b4",
+    "results/global_first_coefficient_c3/evidence.json": "d75ff5bd620460b6f9b659f0bdeb1d296ba9ce2f0af9ef878f89f6c9685993cc",
+    "results/global_leading_c5/evidence.json": "9312df56272b941181e48e2a4a0affdd49969cf379a1d8c3c32d07f985ba625b",
+    "results/higher_pressure_source_moments/evidence.json": "667dde96b93423063d6cbe64e1013d75818aa72c2d90364a4a3c98d475d357f8"
+  },
+  "flags": {
+    "complete_covariance_means_residual_or_blowup_verified": false,
+    "exact_inverse_800_and_fixed_lower_first_squares_retained": true,
+    "explicit_global_second_H23_closed": true,
+    "finalized_F1_and_U1_bounds_kept_distinct": true,
+    "historical_first_physical_band_raw_deficit_gate_verified": false,
+    "second_cutoff_and_all_repair_radial_jets_through_three_charged": true,
+    "uniform_actual_physical_pulse_family_verified": false,
+    "whole_support_Q10_Q11_with_both_shifted_viscosity_moments_assembled": true
+  },
+  "gates": {
+    "F_is_converted_to_E_before_H23": true,
+    "H23_is_maximum_of_all_final_E_and_U_jets": true,
+    "actual_third_bump_jet_is_used": true,
+    "all_scope_flags_are_strict_booleans": true,
+    "both_ordered_cross_terms_retained": true,
+    "both_shifted_axial_viscosity_moments_retained": true,
+    "cutoff_third_jet_keeps_lower_jacobian_terms": true,
+    "disjoint_repair_has_no_factor_five": true,
+    "first_F_and_U_are_not_conflated": true,
+    "inverse_uses_full_W1": true,
+    "lower_first_squares_enter_repair": true,
+    "nested_second_core_and_collar_are_both_present": true,
+    "second_collar_uses_finalized_first_radial_jets": true,
+    "seven_frozen_dependency_records_bound": true
+  },
+  "protocol": {
+    "final_bound": "Finalize separate U2,F2 jets with disjoint repair supports, convert E2=sqrt(2X)F2 using retained Rlo,Rhi jets, and take H2,3*=max_{r<=3}(U2_r,E2_r)",
+    "global_inputs": "K0,5=H^262 and K1,3*=J1,3+320C1,3",
+    "pressure_memory": "Q10,Q11 use the complete unchanged [0,Xv] and retain both shifted axial-viscosity moments",
+    "repair": "The exact positive-order inverse-800 map uses W1=4/e*; lower F1^2,U1^2,U1F1 terms remain fixed",
+    "scope": "Analytical explicit selected-parameter global H2,3 relative to retained foundations; all-scale pulses, covariance means, complete residual and blowup remain open"
+  },
+  "remaining_obligations": [
+    "insert K0,5, K1,3 and H2,3 into the actual physical pulse maps and prove uniform value derivative and support estimates at every retained scale",
+    "verify the historical first-band raw-deficit inequality or construct a separately certified later tail without changing the retained proof",
+    "complete covariance mean corrections including axial velocity and both exceptional pressure tails, then bound viscosity, every cutoff and all residual interactions"
+  ],
+  "reviews": {
+    "checks": {
+      "F_is_converted_to_E_before_H23": true,
+      "H23_is_maximum_of_all_final_E_and_U_jets": true,
+      "actual_third_bump_jet_is_used": true,
+      "both_ordered_cross_terms_retained": true,
+      "both_shifted_axial_viscosity_moments_retained": true,
+      "cutoff_third_jet_keeps_lower_jacobian_terms": true,
+      "disjoint_repair_has_no_factor_five": true,
+      "first_F_and_U_are_not_conflated": true,
+      "inverse_uses_full_W1": true,
+      "lower_first_squares_enter_repair": true,
+      "nested_second_core_and_collar_are_both_present": true,
+      "second_collar_uses_finalized_first_radial_jets": true
+    },
+    "exact_fixture": {
+      "Tcollar": "641876401418247/29791",
+      "assembled": {
+        "F_to_E": {
+          "E": [
+            "20586465619458050165784/1271",
+            "8258603791006116182161219/39401",
+            "52022154971259272348161480515454633/36387650921",
+            "28604299402431772390006239856622602218384575422005207555962079027/32294174135330540201"
+          ],
+          "radius_jets": [
+            "3",
+            "2",
+            "8",
+            "96"
+          ]
+        },
+        "H23": "28604299402431772390006239856622602218384575422005207555962079027/32294174135330540201",
+        "cut_second_jets": [
+          "568",
+          "1657161",
+          "419421410362196082194508371561695/887503681",
+          "232555279694567255194133238107231061558433286629696482468088355/787662783788549761"
+        ],
+        "discrepancies": [
+          "10792",
+          "205048",
+          "8954897555368117952835557/9227446944279201",
+          "2921239417",
+          "599690607210084557843606485/166094044997025618"
+        ],
+        "final_F2_jets": [
+          "6862155206486016721928/1271",
+          "2611050056067994381800561/39401",
+          "17336979290534405690795538786029495/36387650921",
+          "9534766467477257463304617319520265136625101617032272073031622555/32294174135330540201"
+        ],
+        "final_U2_jets": [
+          "3431077603243008721928/1271",
+          "1303809489232408333800561/39401",
+          "17266589639242304150994347874029495/36387650921",
+          "9534766467477257463132037018999538758554106704605292582471622555/32294174135330540201"
+        ],
+        "first_fields": {
+          "F1": "10893",
+          "U1": "5453",
+          "bump_value": "320"
+        },
+        "repair": {
+          "W1": "4/41",
+          "coefficient_Ceta1": "10722117510134400000/1271",
+          "rows": [
+            "10792/31",
+            "13402646887668000/1271",
+            "7586776",
+            "1199381214420169115687212970/105552765595609780239",
+            "35819590221472471811342228/378325324715447241"
+          ]
+        },
+        "repair_bumps": {
+          "E_to_F": [
+            "640",
+            "243520/31",
+            "440486880/961",
+            "37743267799600/29791"
+          ],
+          "U": [
+            "320",
+            "121600/31",
+            "220121600/961",
+            "18871303443200/29791"
+          ],
+          "logarithmic": [
+            "320",
+            "121600",
+            "220000000",
+            "18870643200000"
+          ]
+        },
+        "source": {
+          "Q10": "2571959098179139199193964/9227446944279201",
+          "Q11": "81378194187217244925688822/83047022498512809",
+          "R1": "10100/9801",
+          "R2": "1010200/970299",
+          "ordered_mixed_B": "22034482400/9801",
+          "ordered_quadratic_C": "3605991475670935904/85589104491",
+          "previous_v_Ceta3": "2199103396/8732691",
+          "shifted_axial_viscosity": [
+            "1671144696974836921600/9227446944279201",
+            "70539897209148379532800/83047022498512809"
+          ],
+          "u_Ceta2": [
+            "11",
+            "5453"
+          ],
+          "v_Ceta2": [
+            "18163396/88209",
+            "99265343212/970299"
+          ]
+        }
+      },
+      "cutoff": [
+        "1",
+        "2916",
+        "48114",
+        "3803922"
+      ],
+      "finalized_first_jets": {
+        "F": [
+          "10882",
+          "4320725/31",
+          "7597570529/961",
+          "641876401418247/29791"
+        ],
+        "U": [
+          "5442",
+          "2248085/31",
+          "3851360769/961",
+          "321053007359447/29791"
+        ],
+        "cut": [
+          "2",
+          "5835",
+          "113729",
+          "8084617"
+        ],
+        "mixed_Ceta3": "641876401418247/29791"
+      },
+      "inner_second_jets": [
+        "568",
+        "873",
+        "419421410362196053421560933217767/887503681",
+        "232555279694567251937794815315124650104699279891428771120872377/787662783788549761"
+      ]
+    },
+    "selected_formula": {
+      "collar_envelope": "Tcol=max(1,H0_mixedJ3, finalized_first_FU_mixedCeta3); J2,r=Ac,r M2core+Tcol^p_r(Acol,r M2col+Bcol,r)",
+      "cutoff": "k1,k2,k3 retain all Delta^-j logarithmic-Jacobian terms with L=(1,729,2916,58320)",
+      "final": "finalize U2,F2 jets; convert E2=sqrt(2X)F2 by the retained Rlo,Rhi product rule; H2,3*=max_r<=3(U2_r,E2_r)",
+      "first": "U1<=K1,3*=J13+320C13; F1<=J13+320C13 max(1,rp^-1)",
+      "inner": "J2,r from the nested second core/collar; P2,r=sum binom(r,j) k_j J2,r-j",
+      "leading": "K0,5=H^262 bounds every required leading Ceta2,Ceta3,Ceta4 row",
+      "repair": "C21=800 max(mu1/rho3,(mu1/rho3+Kg(4/e*)mu4)/lambda,Kg mu2,(4/e*)mu5/rho3,(4/e*)mu3)",
+      "source": "Q10,Q11 are the full [0,Xv] k=1 formulas with both shifted axial-viscosity terms"
+    }
+  },
+  "source_hashes": {
+    "results/axis_second_coefficient/README.md": "07151b5d8e0c1acb7bc1a67812413fd8d65ba85387b0709cfff6c07dc01e9cb9",
+    "results/axis_second_coefficient/evidence.json": "392ecb791db67bdeace62110adf74a6573a2b706edb95efd7ca4c0468541b631",
+    "results/coefficient_support_foundation/README.md": "df4b656a5e83d45e45c19b3330b66537e35acd24782d818818b59c0ac848d84d",
+    "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+    "results/cutoff_higher_jet_interface/README.md": "202c28f7cd98684a293df6b1246b40d5f37f9403e4278aee67237e64ca84d02e",
+    "results/cutoff_higher_jet_interface/evidence.json": "64cba74730fc6c63fa7f32fa2a74f56c078a147a4a5b1d5c62c9803daee526bf",
+    "results/explicit_coefficient_cutoff/README.md": "728c8c352fef842ed8d69449867f3d3378ea79e3865d98b08abc597a35d2fb20",
+    "results/explicit_coefficient_cutoff/evidence.json": "b8dbd4ac8db98696aeb8b25bea96f91ab43940c60af2fdf4730bc6bd424805b4",
+    "results/global_first_coefficient_c3/README.md": "612dad5708a915cc40d65ba8ca3075d50ee092ef455b20ccd041a37e59aef6ea",
+    "results/global_first_coefficient_c3/evidence.json": "d75ff5bd620460b6f9b659f0bdeb1d296ba9ce2f0af9ef878f89f6c9685993cc",
+    "results/global_leading_c5/README.md": "b14150967e466e9070d27694bcd9c6bd5719ae1b062f7db723f8b1bbbeff0db8",
+    "results/global_leading_c5/evidence.json": "9312df56272b941181e48e2a4a0affdd49969cf379a1d8c3c32d07f985ba625b",
+    "results/global_second_coefficient_h23/.gitignore": "87a6e5b9aa0065719749aebbeeae98714cc5fc40e0a3465fad03eba848d74e33",
+    "results/global_second_coefficient_h23/README.md": "68d5e8e0ba6c6ebc95d3ddfff60a878c8e8eba235364cc62e4547f08e83716c8",
+    "results/global_second_coefficient_h23/audit.py": "fe1758a454f8d78dfd92d4d2ea6d5af0e15d026427ff4a87ac8be89c21600e4a",
+    "results/global_second_coefficient_h23/global_second.py": "cd80d02c201e59a5499ac69ab95fb0876ad532c5ad12084f110e91c4ab09f9a2",
+    "results/global_second_coefficient_h23/protocol.json": "05866d38d9a921576544a464cd29e54e82445a3796c5ec52a0ab35f1b67e1581",
+    "results/global_second_coefficient_h23/requirements.txt": "dfa21f050923f61f8ba5cfc2bce702b752d5ea1604fb4838096fa137f9f6cf6c",
+    "results/global_second_coefficient_h23/test_audit.py": "895fce4b44e42e880eef5a36f0ba4a9330a463369d6260f216288e2f7d7bcfdd",
+    "results/higher_pressure_source_moments/README.md": "83a3deb3328f051fbd0ed3d11ba845c154fcbebac4b4d8331f219f9a2508b05a",
+    "results/higher_pressure_source_moments/evidence.json": "667dde96b93423063d6cbe64e1013d75818aa72c2d90364a4a3c98d475d357f8"
+  },
+  "status": "shifted-viscosity-second-repair-and-global-H23-assembled"
+}
