@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest checkpoint: [explicit-tail complete canonical join](explicit_tail_complete_join/README.md).
+Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
+The broad foundation obstruction left by the explicit-tail join is now split
+precisely.  Its named core, root, modulation, exterior, cone, pressure,
+weighted-background, coefficient, source and residual providers form an
+acyclic route, and all finite value gates share one later half-line.  This is
+a dependency closure, not an independent reproof of the provider continuum
+theorems.  The remaining frontier is their independent validation on the same
+selected maps; frozen flags and exact finite tests are not promoted to an
+unconditional pulse, force, residual or blow-up theorem.
+
+Preceding checkpoint: [explicit-tail complete canonical join](explicit_tail_complete_join/README.md).
 The exact tilt and selected coefficient tail are now joined to a distinct
 canonical primary on one later value domain.  Current-state six-entry
 covariance/mean identities, full pressure memory, generated-source edge and
