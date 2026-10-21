@@ -1,0 +1,436 @@
+{
+  "dependency_evidence_sha256": {
+    "results/current_frame_freezing/evidence.json": "47f78485017d33a74df8688873f4b6df1d66e2c4cc22ace18cca32d5a6dc28e8",
+    "results/explicit_coefficient_cutoff/evidence.json": "b8dbd4ac8db98696aeb8b25bea96f91ab43940c60af2fdf4730bc6bd424805b4",
+    "results/global_second_coefficient_h23/evidence.json": "27508cd6a66f9075a77eea9d39fc606969f483010fb8be751fe77e4287af9780",
+    "results/leading_cone_margin/evidence.json": "378a5a82c562a1a9973835f7517d7342c6c117ed269aef95ddce49dfd5bebd1d",
+    "results/leading_frame_freezing/evidence.json": "5d8a4fe7f0b385c64edf6d1fd1bd4c05a6b8f4297cf4ca84bcf6fc1a704009bf",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/same_tilt_deficit/evidence.json": "197d678280f2180c9c8ac511821712f9c55ed7e4f054e6b1ff5c4096cf4cca1b"
+  },
+  "flags": {
+    "all_generated_sources_complete_covariance_residual_or_blowup_verified": false,
+    "explicit_specialization_has_quantitative_raw_deficit": true,
+    "old_localized_force_automatically_reidentified_with_new_tail": false,
+    "previously_existential_tilt_now_has_explicit_specialization": true,
+    "primary_physical_pulse_value_derivative_and_support_transfer_on_new_tail": true,
+    "selected_cutoff_mixed_gate_has_finite_later_tail": true,
+    "unspecified_historical_first_integer_verified": false
+  },
+  "gates": {
+    "all_scope_flags_are_strict_booleans": true,
+    "manufactured_tail_fixture_passes_all_gates": true,
+    "potential_has_one_less_spatial_loss_than_velocity": true,
+    "pressure_has_one_more_spatial_loss_than_velocity": true,
+    "seven_frozen_dependency_records_bound": true,
+    "twelve_exact_tilt_rows_pass": true,
+    "twenty_eight_physical_exponent_rows_recorded": true
+  },
+  "protocol": {
+    "correction": "No numerical historical u or ell0 was frozen; non-evaluation of an old integer is distinct from selecting an explicit witness for the previously existential parameters",
+    "pulse": "On the separately certified tail, finalized K05,K13,H23 enter finite prefactors while the inherited primary physical exponents remain sx=1/2+h/2 and st=1+3h/2 with unchanged supports",
+    "scope": "Analytical explicit tilt and later-tail specialization relative to retained cone and pulse foundations; not verification of a historical first integer, generated nonlinear source family, complete covariance means, residual improvement or blowup",
+    "tail": "With selected coefficient cutoff Ccoeff=Cstar(729,2916), require ell^6>=max(16Cmesh/gammaB,Dbox/dchart) and Ccoeff*2^-floor(2h(ell-2))<=min(rb/8,omega^2*d0/(16Lpsi),gammaB/(128Cpert))",
+    "tilt": "From Ract<=1-epsilon*, select u^2=2/epsilon*, kappa=2/(2+epsilon*), and d0=epsilon*/2; then kappa-Ract>=epsilon*(1+epsilon)/(2+epsilon)>d0"
+  },
+  "remaining_obligations": [
+    "propagate the separately certified tail through localization and force without identifying it with an absent historical integer",
+    "verify complete-wave covariance and mean corrections including axial velocity, curl remainders and both exceptional pressure tails",
+    "prove every generated source satisfies the sourced inverse hypotheses and bound viscosity, cutoffs and all residual interactions"
+  ],
+  "reviews": {
+    "checks": {
+      "manufactured_tail_fixture_passes_all_gates": true,
+      "potential_has_one_less_spatial_loss_than_velocity": true,
+      "pressure_has_one_more_spatial_loss_than_velocity": true,
+      "twelve_exact_tilt_rows_pass": true,
+      "twenty_eight_physical_exponent_rows_recorded": true
+    },
+    "physical_exponent_rows": [
+      {
+        "a": 0,
+        "b": 0,
+        "potential": "0/1",
+        "pressure": "201/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "201/400"
+      },
+      {
+        "a": 0,
+        "b": 1,
+        "potential": "403/400",
+        "pressure": "161/80",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "151/100"
+      },
+      {
+        "a": 0,
+        "b": 2,
+        "potential": "403/200",
+        "pressure": "151/50",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1007/400"
+      },
+      {
+        "a": 0,
+        "b": 3,
+        "potential": "1209/400",
+        "pressure": "1611/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "141/40"
+      },
+      {
+        "a": 0,
+        "b": 4,
+        "potential": "403/100",
+        "pressure": "1007/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1813/400"
+      },
+      {
+        "a": 0,
+        "b": 5,
+        "potential": "403/80",
+        "pressure": "2417/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "277/50"
+      },
+      {
+        "a": 0,
+        "b": 6,
+        "potential": "1209/200",
+        "pressure": "141/20",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "2619/400"
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "potential": "201/400",
+        "pressure": "603/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "201/200"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "potential": "151/100",
+        "pressure": "503/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "161/80"
+      },
+      {
+        "a": 1,
+        "b": 2,
+        "potential": "1007/400",
+        "pressure": "1409/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "151/50"
+      },
+      {
+        "a": 1,
+        "b": 3,
+        "potential": "141/40",
+        "pressure": "453/100",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1611/400"
+      },
+      {
+        "a": 1,
+        "b": 4,
+        "potential": "1813/400",
+        "pressure": "443/80",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1007/200"
+      },
+      {
+        "a": 1,
+        "b": 5,
+        "potential": "277/50",
+        "pressure": "1309/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "2417/400"
+      },
+      {
+        "a": 2,
+        "b": 0,
+        "potential": "201/200",
+        "pressure": "201/100",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "603/400"
+      },
+      {
+        "a": 2,
+        "b": 1,
+        "potential": "161/80",
+        "pressure": "1207/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "503/200"
+      },
+      {
+        "a": 2,
+        "b": 2,
+        "potential": "151/50",
+        "pressure": "161/40",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1409/400"
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "potential": "1611/400",
+        "pressure": "2013/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "453/100"
+      },
+      {
+        "a": 2,
+        "b": 4,
+        "potential": "1007/200",
+        "pressure": "151/25",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "443/80"
+      },
+      {
+        "a": 3,
+        "b": 0,
+        "potential": "603/400",
+        "pressure": "201/80",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "201/100"
+      },
+      {
+        "a": 3,
+        "b": 1,
+        "potential": "503/200",
+        "pressure": "88/25",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1207/400"
+      },
+      {
+        "a": 3,
+        "b": 2,
+        "potential": "1409/400",
+        "pressure": "1811/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "161/40"
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "potential": "453/100",
+        "pressure": "1107/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "2013/400"
+      },
+      {
+        "a": 4,
+        "b": 0,
+        "potential": "201/100",
+        "pressure": "603/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "201/80"
+      },
+      {
+        "a": 4,
+        "b": 1,
+        "potential": "1207/400",
+        "pressure": "1609/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "88/25"
+      },
+      {
+        "a": 4,
+        "b": 2,
+        "potential": "161/40",
+        "pressure": "503/100",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1811/400"
+      },
+      {
+        "a": 5,
+        "b": 0,
+        "potential": "201/80",
+        "pressure": "1407/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "603/200"
+      },
+      {
+        "a": 5,
+        "b": 1,
+        "potential": "88/25",
+        "pressure": "181/40",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1609/400"
+      },
+      {
+        "a": 6,
+        "b": 0,
+        "potential": "603/200",
+        "pressure": "201/50",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1407/400"
+      }
+    ],
+    "tail_fixture": {
+      "H_lower": "2029369630025562255571/1187692068376013568605159424",
+      "binary_exponent_required": 38,
+      "checks": {
+        "base_error_gate": true,
+        "coarse_same_tilt_ratio_is_strict": true,
+        "current_value_error_gate": true,
+        "deficit_error_gate": true,
+        "mesh_half_budget": true,
+        "positive_H": true,
+        "positive_chart_gate": true,
+        "raw_deficit_is_valid": true,
+        "selected_cutoff_mixed_gate": true,
+        "strict_unused_raw_margin": true
+      },
+      "ell_exponential": 3802,
+      "ell_mesh": 17,
+      "ell_tail": 3802,
+      "error_upper": "125/34359738368",
+      "gamma": "43/3145728",
+      "mixed_budget": "8312298004584702998818816/2690094625847847199857",
+      "pointwise_budget": "43/7650410496",
+      "scale_floor": "274877906944/1",
+      "sixth_power_required": "855638016/43",
+      "tilt": {
+        "actual_deficit_floor": "65/8256",
+        "chosen_d0": "1/128",
+        "coarse_ratio_upper": "8127/8192",
+        "epsilon": "1/64",
+        "kappa": "128/129",
+        "u_squared": "128/1",
+        "unused_slack": "1/16512"
+      }
+    },
+    "tilt_rows": [
+      {
+        "power": 1,
+        "ratio": "5/8",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 2,
+        "ratio": "27/32",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 3,
+        "ratio": "119/128",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 4,
+        "ratio": "495/512",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 5,
+        "ratio": "2015/2048",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 6,
+        "ratio": "8127/8192",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 7,
+        "ratio": "32639/32768",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 8,
+        "ratio": "130815/131072",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 9,
+        "ratio": "523775/524288",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 10,
+        "ratio": "2096127/2097152",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 11,
+        "ratio": "8386559/8388608",
+        "strict": true,
+        "valid": true
+      },
+      {
+        "power": 12,
+        "ratio": "33550335/33554432",
+        "strict": true,
+        "valid": true
+      }
+    ]
+  },
+  "source_hashes": {
+    "results/current_frame_freezing/README.md": "175454a12c433c600d24aef342e521c566d6403a0fd5d62d98be602ff742a913",
+    "results/current_frame_freezing/evidence.json": "47f78485017d33a74df8688873f4b6df1d66e2c4cc22ace18cca32d5a6dc28e8",
+    "results/explicit_coefficient_cutoff/README.md": "728c8c352fef842ed8d69449867f3d3378ea79e3865d98b08abc597a35d2fb20",
+    "results/explicit_coefficient_cutoff/evidence.json": "b8dbd4ac8db98696aeb8b25bea96f91ab43940c60af2fdf4730bc6bd424805b4",
+    "results/explicit_tilt_pulse_tail/.gitignore": "87a6e5b9aa0065719749aebbeeae98714cc5fc40e0a3465fad03eba848d74e33",
+    "results/explicit_tilt_pulse_tail/README.md": "6e7f3ff13510870a53978de90bd61e53318aa3296788d2a9fff9ac4b827b5a84",
+    "results/explicit_tilt_pulse_tail/audit.py": "5916795a4cf9d67b5bd04b645e98fe46c7a171367b20c30163c5a9766685b7c1",
+    "results/explicit_tilt_pulse_tail/protocol.json": "1e0749beabec1a0b08b66dc625e1254218b14cd4531be74f9a1e8c485e8b8f53",
+    "results/explicit_tilt_pulse_tail/requirements.txt": "dfa21f050923f61f8ba5cfc2bce702b752d5ea1604fb4838096fa137f9f6cf6c",
+    "results/explicit_tilt_pulse_tail/tail_bounds.py": "8a4ef6ad32f86872733b9dda81e46a657964a0ef56b57d238fa0d0073ec39859",
+    "results/explicit_tilt_pulse_tail/test_audit.py": "4ef87cd47c7e78d62ea0bd93b4fc12b4e0ec8cf3cd9a8387a39d21bf24f14d9c",
+    "results/global_second_coefficient_h23/README.md": "68d5e8e0ba6c6ebc95d3ddfff60a878c8e8eba235364cc62e4547f08e83716c8",
+    "results/global_second_coefficient_h23/evidence.json": "27508cd6a66f9075a77eea9d39fc606969f483010fb8be751fe77e4287af9780",
+    "results/leading_cone_margin/README.md": "c2a64a6826133d6968b0a85eafc7b79a663065c5a9edbe428e5551ab07baa578",
+    "results/leading_cone_margin/evidence.json": "378a5a82c562a1a9973835f7517d7342c6c117ed269aef95ddce49dfd5bebd1d",
+    "results/leading_frame_freezing/README.md": "ed8c65a4bcfba44073064855c344d7003c3987ac56ea9da6d6ca447758229d8f",
+    "results/leading_frame_freezing/evidence.json": "5d8a4fe7f0b385c64edf6d1fd1bd4c05a6b8f4297cf4ca84bcf6fc1a704009bf",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/same_tilt_deficit/README.md": "b866c66947efe644da0337a15556db45a292d0bd738aca3eebb944d0d8affcf5",
+    "results/same_tilt_deficit/evidence.json": "197d678280f2180c9c8ac511821712f9c55ed7e4f054e6b1ff5c4096cf4cca1b"
+  },
+  "status": "explicit-tilt-raw-deficit-and-primary-pulse-tail-certificate"
+}

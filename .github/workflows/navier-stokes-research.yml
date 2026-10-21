@@ -76,6 +76,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/global_second_coefficient_h23/evidence.json \
             --output navier_stokes_global_second_coefficient_h23_ci.json
 
+      - name: Check explicit tilt raw deficit and separately certified primary pulse tail
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/explicit_tilt_pulse_tail/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/explicit_tilt_pulse_tail/audit.py \
+            --verify-record research/navier_stokes_cascade/results/explicit_tilt_pulse_tail/evidence.json \
+            --output navier_stokes_explicit_tilt_pulse_tail_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1411,6 +1418,14 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_explicit_variance_cutoff_ci.json
+            navier_stokes_compact_global_reconciliation_ci.json
+            navier_stokes_explicit_coefficient_cutoff_ci.json
+            navier_stokes_first_coefficient_c3_boundary_ci.json
+            navier_stokes_global_leading_c5_ci.json
+            navier_stokes_global_first_coefficient_c3_ci.json
+            navier_stokes_global_second_coefficient_h23_ci.json
+            navier_stokes_explicit_tilt_pulse_tail_ci.json
             navier_stokes_fourth_loop_shape_gate_ci.json
             navier_stokes_actual_fifth_native_ci.json
             navier_stokes_reference_fifth_transfer_ci.json

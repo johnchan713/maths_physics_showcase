@@ -13,7 +13,20 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [global second-coefficient H2,3 checkpoint](results/global_second_coefficient_h23/README.md)
+The latest [explicit tilt and primary-pulse tail checkpoint](results/explicit_tilt_pulse_tail/README.md)
+corrects the inherited first-band quantifier: no numerical historical tilt
+or first integer was frozen, so that absent integer cannot be retroactively
+verified. It instead specializes the previously existential tilt to
+`u^2=2^19 G^22`, obtains the rigorous raw deficit
+`d0=1/(2^19 G^22)`, and gives an exact integer threshold for a separately
+certified later tail using the selected coefficient cutoff and full mixed
+current-frame gate. Finalized `K0,5`, `K1,3*` and `H2,3*` then enter finite
+primary-pulse prefactors without changing the uniform physical exponents or
+supports on that tail. The old localization/force is not automatically
+reidentified; generated nonlinear source classes, complete covariance/means,
+residual and blow-up obligations remain open.
+
+The preceding [global second-coefficient H2,3 checkpoint](results/global_second_coefficient_h23/README.md)
 inserts `K0,5<H^262` and the finalized `K1,3*` into the complete whole-support
 `Q10,Q11` identities.  It retains both shifted axial-viscosity moments,
 keeps the repaired `F1` and `U1` bounds distinct, propagates the explicit

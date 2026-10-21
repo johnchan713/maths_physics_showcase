@@ -1,0 +1,7 @@
+{
+  "correction": "No numerical historical u or ell0 was frozen; non-evaluation of an old integer is distinct from selecting an explicit witness for the previously existential parameters",
+  "tilt": "From Ract<=1-epsilon*, select u^2=2/epsilon*, kappa=2/(2+epsilon*), and d0=epsilon*/2; then kappa-Ract>=epsilon*(1+epsilon)/(2+epsilon)>d0",
+  "tail": "With selected coefficient cutoff Ccoeff=Cstar(729,2916), require ell^6>=max(16Cmesh/gammaB,Dbox/dchart) and Ccoeff*2^-floor(2h(ell-2))<=min(rb/8,omega^2*d0/(16Lpsi),gammaB/(128Cpert))",
+  "pulse": "On the separately certified tail, finalized K05,K13,H23 enter finite prefactors while the inherited primary physical exponents remain sx=1/2+h/2 and st=1+3h/2 with unchanged supports",
+  "scope": "Analytical explicit tilt and later-tail specialization relative to retained cone and pulse foundations; not verification of a historical first integer, generated nonlinear source family, complete covariance means, residual improvement or blowup"
+}
