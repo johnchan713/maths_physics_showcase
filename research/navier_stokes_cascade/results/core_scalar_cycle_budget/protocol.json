@@ -1,0 +1,8 @@
+{
+  "parent_commit": "b2d5274a30b1fcf8fef6982bf3e051d2805682eb",
+  "input": "same canonical finite-cycle current wave/mean map hypotheses, sharper accumulated Haar rates, fresh scalar rows and fixed-profile pressure bounds",
+  "new_result": "explicit positive-polynomial scalar recurrence through two complete wave updates, fast correlations and fresh slow cancellation; conditional higher-jet pressure input routing with scale losses retained",
+  "existing_result_preserved": "the C+1 postslow scalar order is inherited, not claimed as newly discovered; new recurrence gives its quantitative finite-stage norm and logarithmic-loss ledger",
+  "scope": "no independent seed, full inverse, other scalar-defect or complete residual verification; no profile, accepted-tail or infinite-cycle promotion",
+  "arithmetic": "exact current angular-row cancellation and stale-row divergence controls, positive polynomial/exponent ledgers and rational all-tail exponential-series bounds"
+}

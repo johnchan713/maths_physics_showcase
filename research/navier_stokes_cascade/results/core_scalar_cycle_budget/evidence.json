@@ -1,0 +1,458 @@
+{
+  "dependency_evidence_sha256": {
+    "results/compact_mean_foundation/evidence.json": "4aac9ac6ed533ea1bd275490c794e9123db45ff47b4b65c7f1206b4f6b25a2c9",
+    "results/complex_mean_relaxation/evidence.json": "0551c6cd18b5c3861a7e8d0656df524c601e068a42645c7753a2ec028f2d6386",
+    "results/core_dynamic_mean_recheck/evidence.json": "a596e24dbfcde596d56f5dcc6e12b00bfef14002bffb7e7057f9841cd8c4aa53",
+    "results/core_fixed_profile_tame/evidence.json": "d06ccf98dad28493112700e3bc7041adfddb52a232733a7443f3934149ac8851",
+    "results/core_scalar_target_pressure_join/evidence.json": "e1847f85a9eb433fdea7f87199c2ed3c3890e8b52465994109f94b2cced593e8",
+    "results/current_target_cycle_bridge/evidence.json": "402de981f9b3b1c2ae57360e8602552e9b595e444113b33d4fcb4ffd2d2d6c14"
+  },
+  "flags": {
+    "actual_first_band_or_full_residual_certified": false,
+    "actual_profile_or_accepted_tail_changed": false,
+    "actual_seed_wave_mean_inverse_and_other_defect_inputs_independently_verified": false,
+    "current_wave_fast_and_fresh_slow_scalar_norm_recurrence_derived": true,
+    "existing_postslow_order_not_presented_as_new": true,
+    "polynomial_scale_losses_retained_in_pressure_input_bounds": true,
+    "positive_margin_given_tail_test_derived_without_new_tail_selection": true,
+    "sharper_accumulated_Haar_rate_used_with_finite_sums": true,
+    "unconditional_pulse_or_blowup_proved": false,
+    "uniform_infinite_stage_or_all_order_constant_proved": false
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_current_scalar_and_scale_controls_pass": true,
+    "six_historical_records_bound": true
+  },
+  "inherited_source_checks": {
+    "compact_mean_foundation:results/coefficient_support_audit/evidence.json": true,
+    "compact_mean_foundation:results/compact_mean_corrections/README.md": true,
+    "compact_mean_foundation:results/compact_mean_corrections/evidence.json": true,
+    "compact_mean_foundation:results/compact_mean_corrections/mean_system.py": true,
+    "compact_mean_foundation:results/compact_mean_corrections/operators.py": true,
+    "compact_mean_foundation:results/compact_mean_foundation/.gitignore": true,
+    "compact_mean_foundation:results/compact_mean_foundation/README.md": true,
+    "compact_mean_foundation:results/compact_mean_foundation/audit.py": true,
+    "compact_mean_foundation:results/compact_mean_foundation/mean_maps.py": true,
+    "compact_mean_foundation:results/compact_mean_foundation/protocol.json": true,
+    "compact_mean_foundation:results/compact_mean_foundation/requirements.txt": true,
+    "compact_mean_foundation:results/compact_mean_foundation/test_audit.py": true,
+    "compact_mean_foundation:results/complete_covariance_initial_means/evidence.json": true,
+    "compact_mean_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "compact_mean_foundation:results/physical_wave_interface/evidence.json": true,
+    "complex_mean_relaxation:results/compact_mean_corrections/evidence.json": true,
+    "complex_mean_relaxation:results/complex_mean_relaxation/.gitignore": true,
+    "complex_mean_relaxation:results/complex_mean_relaxation/README.md": true,
+    "complex_mean_relaxation:results/complex_mean_relaxation/audit.py": true,
+    "complex_mean_relaxation:results/complex_mean_relaxation/protocol.json": true,
+    "complex_mean_relaxation:results/complex_mean_relaxation/relaxation.py": true,
+    "complex_mean_relaxation:results/complex_mean_relaxation/requirements.txt": true,
+    "complex_mean_relaxation:results/complex_mean_relaxation/test_audit.py": true,
+    "complex_mean_relaxation:results/complex_signed_covariance_update/evidence.json": true,
+    "complex_mean_relaxation:results/first_sourced_wave_update/evidence.json": true,
+    "complex_mean_relaxation:results/geometric_pulse_replay/evidence.json": true,
+    "complex_mean_relaxation:results/physical_pulse_transfer/evidence.json": true,
+    "complex_mean_relaxation:results/physical_wave_interface/evidence.json": true,
+    "complex_mean_relaxation:results/post_signed_mean_relaxation/evidence.json": true,
+    "complex_mean_relaxation:results/residual_cycle_closure/evidence.json": true,
+    "core_dynamic_mean_recheck:results/complete_covariance_initial_means/README.md": true,
+    "core_dynamic_mean_recheck:results/complete_covariance_initial_means/means.py": true,
+    "core_dynamic_mean_recheck:results/complex_mean_relaxation/README.md": true,
+    "core_dynamic_mean_recheck:results/core_covariance_mean_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/.gitignore": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/audit.py": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/proof_checks.py": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/protocol.json": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/requirements.txt": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/test_audit.py": true,
+    "core_dynamic_mean_recheck:results/core_primary_tail_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/current_target_cycle_bridge/README.md": true,
+    "core_dynamic_mean_recheck:results/current_target_moment_audit/README.md": true,
+    "core_fixed_profile_tame:results/complete_covariance_initial_means/means.py": true,
+    "core_fixed_profile_tame:results/core_actual_compensator_gate/README.md": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/.gitignore": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/README.md": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/audit.py": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/protocol.json": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/requirements.txt": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/test_audit.py": true,
+    "core_fixed_profile_tame:results/core_pressure_shape_recheck/README.md": true,
+    "core_fixed_profile_tame:results/core_pressure_shape_recheck/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_reserved_geometry_recheck/README.md": true,
+    "core_fixed_profile_tame:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_slow_jet_loss_recheck/README.md": true,
+    "core_scalar_target_pressure_join:results/complete_covariance_initial_means/means.py": true,
+    "core_scalar_target_pressure_join:results/core_dynamic_mean_recheck/README.md": true,
+    "core_scalar_target_pressure_join:results/core_dynamic_mean_recheck/proof_checks.py": true,
+    "core_scalar_target_pressure_join:results/core_fixed_profile_tame/README.md": true,
+    "core_scalar_target_pressure_join:results/core_pressure_shape_recheck/README.md": true,
+    "core_scalar_target_pressure_join:results/core_scalar_target_pressure_join/.gitignore": true,
+    "core_scalar_target_pressure_join:results/core_scalar_target_pressure_join/README.md": true,
+    "core_scalar_target_pressure_join:results/core_scalar_target_pressure_join/audit.py": true,
+    "core_scalar_target_pressure_join:results/core_scalar_target_pressure_join/proof_checks.py": true,
+    "core_scalar_target_pressure_join:results/core_scalar_target_pressure_join/protocol.json": true,
+    "core_scalar_target_pressure_join:results/core_scalar_target_pressure_join/requirements.txt": true,
+    "core_scalar_target_pressure_join:results/core_scalar_target_pressure_join/test_audit.py": true,
+    "core_scalar_target_pressure_join:results/core_slow_jet_loss_recheck/README.md": true,
+    "core_scalar_target_pressure_join:results/current_target_cycle_bridge/README.md": true,
+    "core_scalar_target_pressure_join:results/current_target_moment_audit/README.md": true,
+    "current_target_cycle_bridge:results/canonical_finite_cycle_join/README.md": true,
+    "current_target_cycle_bridge:results/canonical_finite_cycle_join/evidence.json": true,
+    "current_target_cycle_bridge:results/canonical_initial_mean_join/README.md": true,
+    "current_target_cycle_bridge:results/canonical_initial_mean_join/evidence.json": true,
+    "current_target_cycle_bridge:results/canonical_initial_mean_join/real_covariance.py": true,
+    "current_target_cycle_bridge:results/compact_mean_foundation/README.md": true,
+    "current_target_cycle_bridge:results/compact_mean_foundation/evidence.json": true,
+    "current_target_cycle_bridge:results/complex_mean_relaxation/README.md": true,
+    "current_target_cycle_bridge:results/complex_mean_relaxation/evidence.json": true,
+    "current_target_cycle_bridge:results/complex_signed_covariance_update/README.md": true,
+    "current_target_cycle_bridge:results/complex_signed_covariance_update/covariance.py": true,
+    "current_target_cycle_bridge:results/complex_signed_covariance_update/evidence.json": true,
+    "current_target_cycle_bridge:results/current_target_cycle_bridge/.gitignore": true,
+    "current_target_cycle_bridge:results/current_target_cycle_bridge/README.md": true,
+    "current_target_cycle_bridge:results/current_target_cycle_bridge/audit.py": true,
+    "current_target_cycle_bridge:results/current_target_cycle_bridge/protocol.json": true,
+    "current_target_cycle_bridge:results/current_target_cycle_bridge/requirements.txt": true,
+    "current_target_cycle_bridge:results/current_target_cycle_bridge/target_cycle.py": true,
+    "current_target_cycle_bridge:results/current_target_cycle_bridge/test_audit.py": true,
+    "current_target_cycle_bridge:results/current_target_moment_audit/README.md": true,
+    "current_target_cycle_bridge:results/current_target_moment_audit/evidence.json": true,
+    "current_target_cycle_bridge:results/current_target_moment_audit/target_algebra.py": true,
+    "current_target_cycle_bridge:results/source_envelope_edge_audit/README.md": true,
+    "current_target_cycle_bridge:results/source_envelope_edge_audit/evidence.json": true
+  },
+  "protocol": {
+    "arithmetic": "exact current angular-row cancellation and stale-row divergence controls, positive polynomial/exponent ledgers and rational all-tail exponential-series bounds",
+    "existing_result_preserved": "the C+1 postslow scalar order is inherited, not claimed as newly discovered; new recurrence gives its quantitative finite-stage norm and logarithmic-loss ledger",
+    "input": "same canonical finite-cycle current wave/mean map hypotheses, sharper accumulated Haar rates, fresh scalar rows and fixed-profile pressure bounds",
+    "new_result": "explicit positive-polynomial scalar recurrence through two complete wave updates, fast correlations and fresh slow cancellation; conditional higher-jet pressure input routing with scale losses retained",
+    "parent_commit": "b2d5274a30b1fcf8fef6982bf3e051d2805682eb",
+    "scope": "no independent seed, full inverse, other scalar-defect or complete residual verification; no profile, accepted-tail or infinite-cycle promotion"
+  },
+  "remaining_obligations": [
+    "independently discharge the retained canonical seed and actual current complete-wave, fast/slow inverse and other scalar-defect norm inputs",
+    "check actual polynomial scale-loss and pressure budgets against the required tolerances on the existing common domain",
+    "join every generated support, full pressure memory, complete covariance, viscosity, cutoffs and nonlinear interaction in the complete residual"
+  ],
+  "review": {
+    "checks": {
+      "complete_covariance:all_six_covariances_nonzero": true,
+      "complete_covariance:compact_pressure_at_both_ends": true,
+      "complete_covariance:compact_pressure_axial_moment": true,
+      "complete_covariance:compact_pressure_radial_identity": true,
+      "complete_covariance:complete_cosine_divergence_zero": true,
+      "complete_covariance:complete_sine_divergence_zero": true,
+      "complete_covariance:covariance_symmetric": true,
+      "complete_covariance:finite_fixture_endpoint_jets_zero": true,
+      "complete_covariance:moving_bump_mass_one": true,
+      "complete_covariance:omitted_axial_pressure_detected": true,
+      "complete_covariance:omitted_axial_velocity_detected": true,
+      "complete_covariance:omitted_bump_derivative_detected": true,
+      "complete_covariance:raw_axial_defect_ibp": true,
+      "complete_covariance:raw_pressure_defect_ibp": true,
+      "complete_covariance:whole_moving_bump_derivative": true,
+      "current_slow:complete_covariance_fixed_during_slow_step": true,
+      "current_slow:fresh_current_row_cancels_entire_incoming_scalar": true,
+      "current_slow:independently_recomputed_postslow_scalar": true,
+      "current_slow:integrated_residual_jet_budget_n0": true,
+      "current_slow:integrated_residual_jet_budget_n1": true,
+      "current_slow:integrated_residual_jet_budget_n3": true,
+      "current_slow:nonzero_current_angular_linear_row_divisor": true,
+      "current_slow:old_Haar_angular_cross_retained": true,
+      "current_slow:old_Haar_axial_cross_retained": true,
+      "current_slow:old_Haar_means_are_not_zero": true,
+      "current_slow:postslow_nonlinear_norm_budget_n0": true,
+      "current_slow:postslow_nonlinear_norm_budget_n1": true,
+      "current_slow:postslow_nonlinear_norm_budget_n3": true,
+      "current_slow:postslow_scalar_not_zero": true,
+      "current_slow:slow_increment_both_velocity_moments_zero": true,
+      "current_slow:slow_increment_divergence_exact": true,
+      "current_slow:stale_angular_row_leaves_exact_scalar_mismatch": true,
+      "current_slow:stale_row_control_still_has_exact_divergence": true,
+      "cycle_polynomials:Haar_update_is_finite_sum_S1": true,
+      "cycle_polynomials:Haar_update_is_finite_sum_S4": true,
+      "cycle_polynomials:Haar_update_is_finite_sum_S64": true,
+      "cycle_polynomials:postslow_expanded_budget_S1": true,
+      "cycle_polynomials:postslow_expanded_budget_S4": true,
+      "cycle_polynomials:postslow_expanded_budget_S64": true,
+      "cycle_polynomials:preslow_expanded_budget_S1": true,
+      "cycle_polynomials:preslow_expanded_budget_S4": true,
+      "cycle_polynomials:preslow_expanded_budget_S64": true,
+      "cycle_polynomials:raw_exponent_budget_below_Pi_without_tail_change": true,
+      "cycle_polynomials:raw_slow_budget_below_Theta": true,
+      "exponent_margins:all_strict_margins_j0": true,
+      "exponent_margins:all_strict_margins_j1": true,
+      "exponent_margins:all_strict_margins_j1000000": true,
+      "exponent_margins:all_strict_margins_j4": true,
+      "exponent_margins:margin_affine_slopes_nonnegative": true,
+      "exponent_margins:prefix_slow_orders_above_one": true,
+      "exponent_margins:sharper_Haar_rate_needed_j0": true,
+      "exponent_margins:sharper_Haar_rate_needed_j1": true,
+      "exponent_margins:sharper_Haar_rate_needed_j1000000": true,
+      "exponent_margins:sharper_Haar_rate_needed_j4": true,
+      "pressure_tails:centrifugal_first_tail_plateau_axial_derivative_zero": true,
+      "pressure_tails:constant_second_profile_can_have_axial_gradient": true,
+      "pressure_tails:first_tail_cutoff_transition_not_zero": true,
+      "pressure_tails:full_pressure_subtraction_is_linear": true,
+      "pressure_tails:pressure_tail_powers_distinct": true,
+      "pressure_tails:same_fixed_parameters": true,
+      "scale_tail:p0_h1/200:given_tail_passes_diagnostic_tolerance": true,
+      "scale_tail:p0_h1/200:monotone_whole_tail_bound": true,
+      "scale_tail:p0_h1/200:positive_bound": true,
+      "scale_tail:p2_h1/200:given_tail_passes_diagnostic_tolerance": true,
+      "scale_tail:p2_h1/200:monotone_whole_tail_bound": true,
+      "scale_tail:p2_h1/200:positive_bound": true,
+      "scale_tail:p3_h1/1208925819614629174706176:given_tail_passes_diagnostic_tolerance": true,
+      "scale_tail:p3_h1/1208925819614629174706176:monotone_whole_tail_bound": true,
+      "scale_tail:p3_h1/1208925819614629174706176:positive_bound": true,
+      "scale_tail:zero_margin_positive_S_power_grows": true
+    },
+    "parts": {
+      "complete_covariance": {
+        "arithmetic": "exact Fraction; no float inputs",
+        "checks": {
+          "all_six_covariances_nonzero": true,
+          "compact_pressure_at_both_ends": true,
+          "compact_pressure_axial_moment": true,
+          "compact_pressure_radial_identity": true,
+          "complete_cosine_divergence_zero": true,
+          "complete_sine_divergence_zero": true,
+          "covariance_symmetric": true,
+          "finite_fixture_endpoint_jets_zero": true,
+          "moving_bump_mass_one": true,
+          "omitted_axial_pressure_detected": true,
+          "omitted_axial_velocity_detected": true,
+          "omitted_bump_derivative_detected": true,
+          "raw_axial_defect_ibp": true,
+          "raw_pressure_defect_ibp": true,
+          "whole_moving_bump_derivative": true
+        },
+        "fixture_not_actual_Cinfinity_profile": true,
+        "nonzero_controls": {
+          "Jtheta_at_Z0": "-166/456326325",
+          "Jz_at_Z0": "1284877871/6086912832000000",
+          "P_at_Z0": "201/2974571600",
+          "moving_bump_cprime": "1/40"
+        }
+      },
+      "current_slow": {
+        "checks": {
+          "complete_covariance_fixed_during_slow_step": true,
+          "fresh_current_row_cancels_entire_incoming_scalar": true,
+          "independently_recomputed_postslow_scalar": true,
+          "integrated_residual_jet_budget_n0": true,
+          "integrated_residual_jet_budget_n1": true,
+          "integrated_residual_jet_budget_n3": true,
+          "nonzero_current_angular_linear_row_divisor": true,
+          "old_Haar_angular_cross_retained": true,
+          "old_Haar_axial_cross_retained": true,
+          "old_Haar_means_are_not_zero": true,
+          "postslow_nonlinear_norm_budget_n0": true,
+          "postslow_nonlinear_norm_budget_n1": true,
+          "postslow_nonlinear_norm_budget_n3": true,
+          "postslow_scalar_not_zero": true,
+          "slow_increment_both_velocity_moments_zero": true,
+          "slow_increment_divergence_exact": true,
+          "stale_angular_row_leaves_exact_scalar_mismatch": true,
+          "stale_row_control_still_has_exact_divergence": true
+        },
+        "linear_row_divisor": "-899/680680",
+        "scope": "manufactured Haar current fields and fresh angular linear row; not a full physical five-map solve or the actual canonical field"
+      },
+      "cycle_polynomials": {
+        "Pi": {
+          "0": "226/9",
+          "1": "803/15",
+          "2": "13429/525",
+          "3": "408/35",
+          "4": "4/49"
+        },
+        "Theta": {
+          "0": "9",
+          "1": "27",
+          "2": "33",
+          "3": "27"
+        },
+        "a_next": {
+          "0": "4",
+          "1": "3",
+          "2": "3"
+        },
+        "checks": {
+          "Haar_update_is_finite_sum_S1": true,
+          "Haar_update_is_finite_sum_S4": true,
+          "Haar_update_is_finite_sum_S64": true,
+          "postslow_expanded_budget_S1": true,
+          "postslow_expanded_budget_S4": true,
+          "postslow_expanded_budget_S64": true,
+          "preslow_expanded_budget_S1": true,
+          "preslow_expanded_budget_S4": true,
+          "preslow_expanded_budget_S64": true,
+          "raw_exponent_budget_below_Pi_without_tail_change": true,
+          "raw_slow_budget_below_Theta": true
+        },
+        "rows": [
+          {
+            "Pi": "1278484/11025",
+            "S": "1",
+            "Theta": "96"
+          },
+          {
+            "Pi": "15605494/11025",
+            "S": "4",
+            "Theta": "2373"
+          },
+          {
+            "Pi": "49983400114/11025",
+            "S": "64",
+            "Theta": "7214793"
+          }
+        ],
+        "scope": "positive-polynomial majorant algebra; constants are diagnostic inputs, not actual canonical norm evaluations"
+      },
+      "exponent_margins": {
+        "checks": {
+          "all_strict_margins_j0": true,
+          "all_strict_margins_j1": true,
+          "all_strict_margins_j1000000": true,
+          "all_strict_margins_j4": true,
+          "margin_affine_slopes_nonnegative": true,
+          "prefix_slow_orders_above_one": true,
+          "sharper_Haar_rate_needed_j0": true,
+          "sharper_Haar_rate_needed_j1": true,
+          "sharper_Haar_rate_needed_j1000000": true,
+          "sharper_Haar_rate_needed_j4": true
+        },
+        "rows": [
+          {
+            "C": "99999/50000",
+            "index": 0,
+            "margins": {
+              "fast_cross": "49999/50000",
+              "fast_square": "49999/25000",
+              "next_input": "50001/100000",
+              "only_full_mean_rate_is_short_by": "1/100000",
+              "slow_square": "49999/50000",
+              "wave_square": "49999/50000"
+            }
+          },
+          {
+            "C": "249997/100000",
+            "index": 1,
+            "margins": {
+              "fast_cross": "49999/50000",
+              "fast_square": "49999/20000",
+              "next_input": "50001/100000",
+              "only_full_mean_rate_is_short_by": "1/100000",
+              "slow_square": "149997/100000",
+              "wave_square": "149997/100000"
+            }
+          },
+          {
+            "C": "199997/50000",
+            "index": 4,
+            "margins": {
+              "fast_cross": "49999/50000",
+              "fast_square": "49999/12500",
+              "next_input": "50001/100000",
+              "only_full_mean_rate_is_short_by": "1/100000",
+              "slow_square": "149997/50000",
+              "wave_square": "149997/50000"
+            }
+          },
+          {
+            "C": "24999599999/50000",
+            "index": 1000000,
+            "margins": {
+              "fast_cross": "49999/50000",
+              "fast_square": "12499799999/25000",
+              "next_input": "50001/100000",
+              "only_full_mean_rate_is_short_by": "1/100000",
+              "slow_square": "24999549999/50000",
+              "wave_square": "24999549999/50000"
+            }
+          }
+        ],
+        "scope": "exact rational diagnostic margins; analytical affine formulas prove the full half-line"
+      },
+      "pressure_tails": {
+        "both_actual_background_pressure_tails_retained_in_analytical_balance": true,
+        "checks": {
+          "centrifugal_first_tail_plateau_axial_derivative_zero": true,
+          "constant_second_profile_can_have_axial_gradient": true,
+          "first_tail_cutoff_transition_not_zero": true,
+          "full_pressure_subtraction_is_linear": true,
+          "pressure_tail_powers_distinct": true,
+          "same_fixed_parameters": true
+        },
+        "exact_controls": {
+          "first_tail_transition": "-324/42875",
+          "second_tail_axial_numerator": "-99/125"
+        }
+      },
+      "scale_tail": {
+        "checks": {
+          "p0_h1/200:given_tail_passes_diagnostic_tolerance": true,
+          "p0_h1/200:monotone_whole_tail_bound": true,
+          "p0_h1/200:positive_bound": true,
+          "p2_h1/200:given_tail_passes_diagnostic_tolerance": true,
+          "p2_h1/200:monotone_whole_tail_bound": true,
+          "p2_h1/200:positive_bound": true,
+          "p3_h1/1208925819614629174706176:given_tail_passes_diagnostic_tolerance": true,
+          "p3_h1/1208925819614629174706176:monotone_whole_tail_bound": true,
+          "p3_h1/1208925819614629174706176:positive_bound": true,
+          "zero_margin_positive_S_power_grows": true
+        },
+        "rows": [
+          {
+            "A": "3",
+            "ell_start": "100000000",
+            "eta": "1/2",
+            "h": "1/200",
+            "p": 0,
+            "upper": "3/7812500000"
+          },
+          {
+            "A": "7",
+            "ell_start": "100000000000000000000000000000000000000000000000000",
+            "eta": "1/100000",
+            "h": "1/200",
+            "p": 2,
+            "upper": "63/30517578125000000000000000000000000000000000000000000"
+          },
+          {
+            "A": "11",
+            "ell_start": "3273390607896141870013189696827599152216642046043064789483291368096133796404674554883270092325904157150886684127560071009217256545885393053328527589376",
+            "eta": "1/3",
+            "h": "1/1208925819614629174706176",
+            "p": 3,
+            "upper": "22733865/71671831749689734737838152978190216899892655911508785116799651230841339877765150252188079784691427704832"
+          }
+        ],
+        "scope": "rational exponential-series upper bounds on specified diagnostic tails; no actual accepted tail certified"
+      }
+    }
+  },
+  "source_hashes": {
+    "results/canonical_finite_cycle_join/README.md": "ab1076960e4356f4a4388c32f35cd5424168dd67db9bb3716d7f6937cd94c69a",
+    "results/compact_mean_foundation/README.md": "f17ddf5d7858d835669ad897bf2ad22357175531c5f54d26fdf05fb04b8e4256",
+    "results/complete_covariance_initial_means/means.py": "47b5ab42f674984ace9ce9536940735890db16d57b4fb6398854a1b902f9c3d1",
+    "results/complex_mean_relaxation/README.md": "240e82a0bf1a874005535c046a4bc23371b37dbedad3ca8250e633aeb0c8636d",
+    "results/core_dynamic_mean_recheck/README.md": "c7cda93205da899ca463a946c50eb50f667c0fa73937b88991e131f7fdc47c4c",
+    "results/core_dynamic_mean_recheck/proof_checks.py": "aedef1a878539e9a03444e7f082eec1baf04df253457ccf83b331f3c6706bfb7",
+    "results/core_fixed_profile_tame/README.md": "6046cfdcf2540a7ce245b1abebeec00e0d57196dc719f84185c04fcbb5c10a6d",
+    "results/core_scalar_cycle_budget/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_scalar_cycle_budget/README.md": "afef49fcb4be73b1099b50d9412f92f14f8039a1a42747619d1f233f70c0fdcd",
+    "results/core_scalar_cycle_budget/audit.py": "c8b4a8548dd140b7bb222907d682f96c0539713180a246cbe6f4b6438b4e6a94",
+    "results/core_scalar_cycle_budget/proof_checks.py": "6dd6fdf9c284f5f7f1094f3f32d442a7502cd482da24de071f0ef54c619a24be",
+    "results/core_scalar_cycle_budget/protocol.json": "18eec95eb607ca09d4deac07d6370f4939e016bbfa8ccedf8215570fab4181d0",
+    "results/core_scalar_cycle_budget/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_scalar_cycle_budget/test_audit.py": "68d65134ff954d8227b54f5c790e2e58a1e8c81216f1d4a8b61af2b7f33dd48b",
+    "results/core_scalar_target_pressure_join/README.md": "e86f0c0aca048c1c5decc719608f5a78de16dda13a576af07ac1a33ed065789f",
+    "results/current_target_cycle_bridge/README.md": "0c96ac838ab7bc1861f5b178164318400eeebdd97c6f2d9855ba2200277830f2",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428"
+  },
+  "status": "finite-current-scalar-cycle-and-polynomial-pressure-input-budget"
+}
