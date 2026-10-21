@@ -153,6 +153,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_coefficient_support_recheck/evidence.json \
             --output navier_stokes_core_coefficient_support_recheck_ci.json
 
+      - name: Recheck common primary tail and all-band edge flatness
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_primary_tail_recheck/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_primary_tail_recheck/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_primary_tail_recheck/evidence.json \
+            --output navier_stokes_core_primary_tail_recheck_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1498,6 +1505,7 @@ jobs:
             navier_stokes_core_modulation_repair_join_recheck_ci.json
             navier_stokes_core_global_pressure_moment_recheck_ci.json
             navier_stokes_core_coefficient_support_recheck_ci.json
+            navier_stokes_core_primary_tail_recheck_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json

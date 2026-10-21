@@ -1,0 +1,403 @@
+{
+  "dependency_evidence_sha256": {
+    "results/auxiliary_geometry_audit/evidence.json": "67b5e15b26af7e98f1dae7297f0bc299a63787f46f9dad3cf8faaa60944546e5",
+    "results/canonical_value_domain/evidence.json": "490935110199b5f61c24514a377e70147a5cd81425ced38c1321be3e59d3dbd9",
+    "results/core_coefficient_support_recheck/evidence.json": "5b17e83b6dfea94bee8fc720e11b01a9bce3fc1093926110b05828bdacd7aff6",
+    "results/explicit_tilt_pulse_tail/evidence.json": "430fe9f055c92581a813530934ddc7f2561984dc5b179c8a5ca24601e7dda9e1",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/sourced_inverse_foundation/evidence.json": "15afc498fa42605b0fcbaaff81b4245ceb388e447527e63395eeb45348c41827"
+  },
+  "flags": {
+    "additive_envelope_and_support_controlled_cutoff_errors_have_all_band_flatness_bound": true,
+    "all_fixed_primary_physical_jets_joined_on_same_certified_tail": true,
+    "all_generated_sources_satisfy_inverse_input_hypotheses": false,
+    "binary_scale_exponent_certified_without_materializing_its_power": true,
+    "complete_covariance_means_full_residual_or_blowup_proved": false,
+    "complete_radial_axial_and_two_exceptional_pressure_terms_retained": true,
+    "edge_width_cost_and_retained_half_edge_factor_explicit": true,
+    "manufactured_controls_are_continuum_suprema": false,
+    "old_first_band_or_old_localized_force_reidentified": false,
+    "one_integer_joins_all_finite_primary_value_gates": true,
+    "retained_core_frame_inverse_and_source_envelope_lemmas_are_dependencies": true
+  },
+  "gates": {
+    "all_exact_primary_tail_controls_pass": true,
+    "declared_dependency_source_hashes_match": true,
+    "six_frozen_records_bound": true
+  },
+  "inherited_source_checks": {
+    "auxiliary_geometry_audit:GOAL.md": true,
+    "auxiliary_geometry_audit:results/actual_band_pulse_bounds/evidence.json": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/.gitignore": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/README.md": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/audit.py": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/checks.py": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/geometry.py": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/protocol.json": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/requirements.txt": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/test_audit.py": true,
+    "auxiliary_geometry_audit:results/global_solution_comparison/evidence.json": true,
+    "canonical_value_domain:results/canonical_endpoint_join/README.md": true,
+    "canonical_value_domain:results/canonical_endpoint_join/evidence.json": true,
+    "canonical_value_domain:results/canonical_primary_foundation/README.md": true,
+    "canonical_value_domain:results/canonical_primary_foundation/canonical_bounds.py": true,
+    "canonical_value_domain:results/canonical_primary_foundation/evidence.json": true,
+    "canonical_value_domain:results/canonical_value_domain/.gitignore": true,
+    "canonical_value_domain:results/canonical_value_domain/README.md": true,
+    "canonical_value_domain:results/canonical_value_domain/acceptance.py": true,
+    "canonical_value_domain:results/canonical_value_domain/audit.py": true,
+    "canonical_value_domain:results/canonical_value_domain/protocol.json": true,
+    "canonical_value_domain:results/canonical_value_domain/requirements.txt": true,
+    "canonical_value_domain:results/canonical_value_domain/test_audit.py": true,
+    "canonical_value_domain:results/core_pressure_identification/README.md": true,
+    "canonical_value_domain:results/core_pressure_identification/evidence.json": true,
+    "canonical_value_domain:results/frame_column_foundation/README.md": true,
+    "canonical_value_domain:results/frame_column_foundation/evidence.json": true,
+    "canonical_value_domain:results/frame_column_foundation/frame_budget.py": true,
+    "canonical_value_domain:results/geometric_pulse_replay/README.md": true,
+    "canonical_value_domain:results/geometric_pulse_replay/evidence.json": true,
+    "canonical_value_domain:results/leading_frame_foundation/README.md": true,
+    "canonical_value_domain:results/leading_frame_foundation/evidence.json": true,
+    "core_coefficient_support_recheck:results/annular_exterior_foundation/README.md": true,
+    "core_coefficient_support_recheck:results/coefficient_support_audit/README.md": true,
+    "core_coefficient_support_recheck:results/coefficient_support_foundation/README.md": true,
+    "core_coefficient_support_recheck:results/coefficient_support_foundation/conservative_checks.py": true,
+    "core_coefficient_support_recheck:results/core_coefficient_support_recheck/.gitignore": true,
+    "core_coefficient_support_recheck:results/core_coefficient_support_recheck/README.md": true,
+    "core_coefficient_support_recheck:results/core_coefficient_support_recheck/audit.py": true,
+    "core_coefficient_support_recheck:results/core_coefficient_support_recheck/proof_checks.py": true,
+    "core_coefficient_support_recheck:results/core_coefficient_support_recheck/protocol.json": true,
+    "core_coefficient_support_recheck:results/core_coefficient_support_recheck/requirements.txt": true,
+    "core_coefficient_support_recheck:results/core_coefficient_support_recheck/test_audit.py": true,
+    "core_coefficient_support_recheck:results/core_global_pressure_moment_recheck/README.md": true,
+    "core_coefficient_support_recheck:results/matching_root_foundation/matching_bounds.py": true,
+    "core_coefficient_support_recheck:results/root_foundation/root_bounds.py": true,
+    "core_coefficient_support_recheck:results/weighted_stress_foundation/README.md": true,
+    "explicit_tilt_pulse_tail:results/current_frame_freezing/README.md": true,
+    "explicit_tilt_pulse_tail:results/current_frame_freezing/evidence.json": true,
+    "explicit_tilt_pulse_tail:results/explicit_coefficient_cutoff/README.md": true,
+    "explicit_tilt_pulse_tail:results/explicit_coefficient_cutoff/evidence.json": true,
+    "explicit_tilt_pulse_tail:results/explicit_tilt_pulse_tail/.gitignore": true,
+    "explicit_tilt_pulse_tail:results/explicit_tilt_pulse_tail/README.md": true,
+    "explicit_tilt_pulse_tail:results/explicit_tilt_pulse_tail/audit.py": true,
+    "explicit_tilt_pulse_tail:results/explicit_tilt_pulse_tail/protocol.json": true,
+    "explicit_tilt_pulse_tail:results/explicit_tilt_pulse_tail/requirements.txt": true,
+    "explicit_tilt_pulse_tail:results/explicit_tilt_pulse_tail/tail_bounds.py": true,
+    "explicit_tilt_pulse_tail:results/explicit_tilt_pulse_tail/test_audit.py": true,
+    "explicit_tilt_pulse_tail:results/global_second_coefficient_h23/README.md": true,
+    "explicit_tilt_pulse_tail:results/global_second_coefficient_h23/evidence.json": true,
+    "explicit_tilt_pulse_tail:results/leading_cone_margin/README.md": true,
+    "explicit_tilt_pulse_tail:results/leading_cone_margin/evidence.json": true,
+    "explicit_tilt_pulse_tail:results/leading_frame_freezing/README.md": true,
+    "explicit_tilt_pulse_tail:results/leading_frame_freezing/evidence.json": true,
+    "explicit_tilt_pulse_tail:results/physical_pulse_foundation/README.md": true,
+    "explicit_tilt_pulse_tail:results/physical_pulse_foundation/evidence.json": true,
+    "explicit_tilt_pulse_tail:results/same_tilt_deficit/README.md": true,
+    "explicit_tilt_pulse_tail:results/same_tilt_deficit/evidence.json": true,
+    "physical_pulse_foundation:results/actual_band_pulse_bounds/evidence.json": true,
+    "physical_pulse_foundation:results/auxiliary_geometry_audit/evidence.json": true,
+    "physical_pulse_foundation:results/background_jet_foundation/evidence.json": true,
+    "physical_pulse_foundation:results/coefficient_support_audit/evidence.json": true,
+    "physical_pulse_foundation:results/core_all_order_foundation/coordinate_checks.py": true,
+    "physical_pulse_foundation:results/geometric_pulse_replay/estimates.py": true,
+    "physical_pulse_foundation:results/geometric_pulse_replay/evidence.json": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/.gitignore": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/README.md": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/audit.py": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/protocol.json": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/pulse_bounds.py": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/pulse_checks.py": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/requirements.txt": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/test_audit.py": true,
+    "physical_pulse_foundation:results/physical_pulse_transfer/evidence.json": true,
+    "physical_pulse_foundation:results/physical_pulse_transfer/transfer.py": true,
+    "physical_pulse_foundation:results/physical_wave_interface/evidence.json": true,
+    "physical_pulse_foundation:results/weighted_stress_foundation/evidence.json": true,
+    "sourced_inverse_foundation:results/coefficient_support_foundation/evidence.json": true,
+    "sourced_inverse_foundation:results/first_sourced_foundation/sourced_bounds.py": true,
+    "sourced_inverse_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "sourced_inverse_foundation:results/physical_pulse_foundation/pulse_bounds.py": true,
+    "sourced_inverse_foundation:results/regular_source_foundation/source_bounds.py": true,
+    "sourced_inverse_foundation:results/sourced_inverse_foundation/.gitignore": true,
+    "sourced_inverse_foundation:results/sourced_inverse_foundation/README.md": true,
+    "sourced_inverse_foundation:results/sourced_inverse_foundation/audit.py": true,
+    "sourced_inverse_foundation:results/sourced_inverse_foundation/inverse_bounds.py": true,
+    "sourced_inverse_foundation:results/sourced_inverse_foundation/inverse_checks.py": true,
+    "sourced_inverse_foundation:results/sourced_inverse_foundation/protocol.json": true,
+    "sourced_inverse_foundation:results/sourced_inverse_foundation/requirements.txt": true,
+    "sourced_inverse_foundation:results/sourced_inverse_foundation/test_audit.py": true
+  },
+  "protocol": {
+    "flatness": "for errors retaining full-path envelopes and closed enlarged label supports: same-domain Gaussian square completion, explicit retained half-edge weight, and at most five enlarged active dyadic bands",
+    "input": "same repaired leading profile, finite coefficient supports, explicit selected tilt and separately certified later primary tail",
+    "parent_commit": "9f62f1c849779bf3516253aa42b4d8e43bd571cd",
+    "scope": "conditional primary pulses and already-envelope-controlled cutoff errors only; generated sources, complete covariance means, full residual, old force identification and blow-up remain open",
+    "selector": "one maximum of mixed-value, mesh, pulse-length, background and padded slow-coordinate thresholds; binary exponent certificates without constructing 2^ell or 2^exponent"
+  },
+  "remaining_obligations": [
+    "join complete-wave covariance and current mean corrections on the common tail, including axial velocity, curl remainders, signed squares and Pi1/Pi2 cutoff derivatives",
+    "prove full lifted-path envelope, endpoint-extension, edge/jet and harmonic-moment bounds for every generated nonlinear source",
+    "prove complete residual with viscosity, every cutoff and interaction, and propagate any new field/force without identifying an unverified historical first band"
+  ],
+  "review": {
+    "checks": {
+      "all_checked_later_bands_hold": true,
+      "all_enlarged_band_sums_have_fixed_overlap_bound": true,
+      "all_starting_gates_hold": true,
+      "narrow_inner_edge_cost_is_not_erased": true,
+      "primary_pressure_velocity_potential_losses_retained": true,
+      "same_domain_square_completion_is_exact": true,
+      "tiny_h_without_materializing_binary_scale": true
+    },
+    "edge_example": "61440000000000000027",
+    "flatness_example": {
+      "D": "139/7",
+      "log_constant": "1951421/196"
+    },
+    "physical_exponent_rows": [
+      {
+        "potential": "0",
+        "pressure": "201/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "201/400"
+      },
+      {
+        "potential": "403/400",
+        "pressure": "161/80",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "151/100"
+      },
+      {
+        "potential": "403/200",
+        "pressure": "151/50",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1007/400"
+      },
+      {
+        "potential": "1209/400",
+        "pressure": "1611/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "141/40"
+      },
+      {
+        "potential": "403/100",
+        "pressure": "1007/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1813/400"
+      },
+      {
+        "potential": "403/80",
+        "pressure": "2417/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "277/50"
+      },
+      {
+        "potential": "1209/200",
+        "pressure": "141/20",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "2619/400"
+      },
+      {
+        "potential": "201/400",
+        "pressure": "603/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "201/200"
+      },
+      {
+        "potential": "151/100",
+        "pressure": "503/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "161/80"
+      },
+      {
+        "potential": "1007/400",
+        "pressure": "1409/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "151/50"
+      },
+      {
+        "potential": "141/40",
+        "pressure": "453/100",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1611/400"
+      },
+      {
+        "potential": "1813/400",
+        "pressure": "443/80",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1007/200"
+      },
+      {
+        "potential": "277/50",
+        "pressure": "1309/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "2417/400"
+      },
+      {
+        "potential": "201/200",
+        "pressure": "201/100",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "603/400"
+      },
+      {
+        "potential": "161/80",
+        "pressure": "1207/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "503/200"
+      },
+      {
+        "potential": "151/50",
+        "pressure": "161/40",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1409/400"
+      },
+      {
+        "potential": "1611/400",
+        "pressure": "2013/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "453/100"
+      },
+      {
+        "potential": "1007/200",
+        "pressure": "151/25",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "443/80"
+      },
+      {
+        "potential": "603/400",
+        "pressure": "201/80",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "201/100"
+      },
+      {
+        "potential": "503/200",
+        "pressure": "88/25",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1207/400"
+      },
+      {
+        "potential": "1409/400",
+        "pressure": "1811/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "161/40"
+      },
+      {
+        "potential": "453/100",
+        "pressure": "1107/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "2013/400"
+      },
+      {
+        "potential": "201/100",
+        "pressure": "603/200",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "201/80"
+      },
+      {
+        "potential": "1207/400",
+        "pressure": "1609/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "88/25"
+      },
+      {
+        "potential": "161/40",
+        "pressure": "503/100",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1811/400"
+      },
+      {
+        "potential": "201/80",
+        "pressure": "1407/400",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "603/200"
+      },
+      {
+        "potential": "88/25",
+        "pressure": "181/40",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1609/400"
+      },
+      {
+        "potential": "603/200",
+        "pressure": "201/50",
+        "st": "403/400",
+        "sx": "201/400",
+        "velocity": "1407/400"
+      }
+    ],
+    "selector": {
+      "binary_exponent_required": 38,
+      "binary_scale_exponent": 476014,
+      "checks": {
+        "background_strict_half_margin": true,
+        "binary_value_gate": true,
+        "geometry_floor": true,
+        "independent_chart_gate": true,
+        "mesh_half_budget": true,
+        "whole_half_line_slow_gate": true,
+        "whole_pulse_length": true
+      },
+      "ell_tail": 47601491,
+      "gamma": "43/3145728",
+      "pointwise_budget": "43/7650410496",
+      "slow_fourth_power_required": "5134311279820800000000000000000",
+      "thresholds": {
+        "background": 10,
+        "geometry_floor": 16,
+        "mesh_and_chart": 17,
+        "mixed_value": 3802,
+        "padded_slow_coordinates": 47601491,
+        "pulse_length": 550322
+      }
+    },
+    "tiny_h_selector_summary": {
+      "band_integer_bits": 411,
+      "h": "1/1606938044258990275541962092341162602522202993782792835301376",
+      "scale_exponent_bits": 212
+    }
+  },
+  "source_hashes": {
+    "results/auxiliary_geometry_audit/README.md": "6bcd1dbc12e8561fd2cb1ab797bc323324445895474e4fb6bb10b3d7e231c7b7",
+    "results/canonical_value_domain/README.md": "45ee194ed8cb27e679a929d24b1c8c96f625914e6c49cd21452350beebe625d8",
+    "results/core_coefficient_support_recheck/README.md": "f66cda979f43cd1c719475c5b179b2b3bf12ad839d4dc7acd9ea6087474f33e5",
+    "results/core_primary_tail_recheck/.gitignore": "77918ee4b4fafb0264a4a2a1c7ef6888eb001951ce69907db5e7f3162d9960ac",
+    "results/core_primary_tail_recheck/README.md": "7acbbdcb68053bda84b9ba5ef57a28050d94c78e865216d18f81b37f1d9344bc",
+    "results/core_primary_tail_recheck/audit.py": "67e3674aa8574142c9f564c265f01fa4c8441c5541057e968f101648b8ad341b",
+    "results/core_primary_tail_recheck/proof_checks.py": "6888d850f818e653b275bd37347c8bf942c1c846479ce3d812c1ac6ef9b615cd",
+    "results/core_primary_tail_recheck/protocol.json": "88a112c7327aa8b48048599cb3eeb91e20fcef32b3cbc9ded6614c5fe58c2127",
+    "results/core_primary_tail_recheck/requirements.txt": "08f2cf2332b782c02a0af55b559955ce01b2299431e579226caaf51a6d08c742",
+    "results/core_primary_tail_recheck/test_audit.py": "c31daec9384dee0c2f576507086270106a3818cffef1d006b908bd298c7871c6",
+    "results/explicit_tilt_pulse_tail/README.md": "6e7f3ff13510870a53978de90bd61e53318aa3296788d2a9fff9ac4b827b5a84",
+    "results/explicit_tilt_pulse_tail/tail_bounds.py": "8a4ef6ad32f86872733b9dda81e46a657964a0ef56b57d238fa0d0073ec39859",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5",
+    "results/sourced_inverse_foundation/README.md": "6f784f977d69cf489e2416d98069f2e12a1db1580fc6adbc43cde45cb55352c2"
+  },
+  "status": "same-profile-primary-tail-value-gates-and-dyadic-edge-flatness-rechecked"
+}
