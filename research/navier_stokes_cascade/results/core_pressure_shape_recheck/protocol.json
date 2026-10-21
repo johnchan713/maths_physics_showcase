@@ -1,0 +1,7 @@
+{
+  "parent_commit": "bbac37527263fbd9bc91e277c1e56bcc0aacceef",
+  "input": "same fixed slow axial inverse, full current pressure reconstruction and actual compensator; target-independent reference density is a comparison only",
+  "new_result": "pointwise fourth target-jet coefficient is the full primitive of the density mismatch; scalar moment cancellation is insufficient; radial cubic coefficient persists for any unit compensator",
+  "scope": "isolated slow linear response and explicit shape norm gate; no actual compensator replacement, canonical failure or full residual gain",
+  "arithmetic": "exact radial/logarithmic reference normalization, same-moment positive comparison density certificate, full averaged-source odd parts and moving-density pressure identities"
+}

@@ -188,6 +188,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_slow_jet_loss_recheck/evidence.json \
             --output navier_stokes_core_slow_jet_loss_recheck_ci.json
 
+      - name: Recheck pointwise pressure shape and persistent radial target jet
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_pressure_shape_recheck/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_pressure_shape_recheck/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_pressure_shape_recheck/evidence.json \
+            --output navier_stokes_core_pressure_shape_recheck_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1538,6 +1545,7 @@ jobs:
             navier_stokes_core_dynamic_mean_recheck_ci.json
             navier_stokes_core_reserved_geometry_recheck_ci.json
             navier_stokes_core_slow_jet_loss_recheck_ci.json
+            navier_stokes_core_pressure_shape_recheck_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
