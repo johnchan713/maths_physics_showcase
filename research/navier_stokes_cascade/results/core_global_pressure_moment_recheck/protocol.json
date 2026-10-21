@@ -1,0 +1,8 @@
+{
+  "input": "the same repaired leading profile fixed by core_modulation_repair_join_recheck",
+  "moments": "global defect order (M,R,J,S,Cp), with R the renormalized heat moment and not raw I(infinity)",
+  "rows": "finite endpoint I matches convert to global R matches only through the common future heat tail and unchanged power subtraction",
+  "pressure": "Pi_axis=-Cp_id(infinity), all edits retain the same gauge, and Pi(X)=-integral_X^infinity E^2/(2x) dx",
+  "exterior": "zero five functional defects remove radial velocity and both signed weighted exterior stress memories, retaining the X pressure term and eta derivative",
+  "scope": "global leading pressure/moment/exterior-stress identities; coefficient supports, physical pulses, covariance means, complete residual, and blow-up remain open"
+}

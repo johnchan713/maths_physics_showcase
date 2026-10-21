@@ -1,0 +1,161 @@
+{
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/core_modulation_repair_join_recheck/evidence.json": "06c690c0615abba4afb37d438c49ff5493545bac94d45c1aa926bcfb52646f68",
+    "results/global_moment_stress/evidence.json": "0b1ce61f32a75e46817d99351dac0512dbb7f1a503a0158612a953f6d8a6636e",
+    "results/heat_exterior_audit/evidence.json": "92b39415d9c7a851ce7f2c6ba325b1a7a8fe27f3c175136f35615b175a038a56",
+    "results/pulse_moment_audit/evidence.json": "60d4348f7839ad849abd3086d1fd7ec18a77f1a9788807a456516f916270e832"
+  },
+  "flags": {
+    "coefficient_and_reserved_mean_supports_rederived_here": false,
+    "complete_pressure_memory_and_eta_derivative_retained": true,
+    "finite_endpoint_I_to_global_R_conversion_condition_made_explicit": true,
+    "formal_proof_assistant_or_external_peer_certificate": false,
+    "renormalized_heat_moment_and_endpoint_jets_rederived": true,
+    "same_gauge_backward_pressure_identity_rederived": true,
+    "same_repaired_profile_all_five_global_defects_rederived": true,
+    "uniform_actual_pulse_covariance_residual_or_blowup_proved": false,
+    "zero_defect_exterior_velocity_and_stress_join_rederived": true
+  },
+  "gates": {
+    "all_exact_global_pressure_moment_and_stress_checks_pass": true,
+    "all_frozen_dependencies_bound": true,
+    "coefficient_and_physical_frontier_retained": true,
+    "scope_flags_are_strict_booleans": true
+  },
+  "parent_commit": "fbefd07f4fb1b3738a00429dd282ce6f4e5c715e",
+  "protocol": {
+    "exterior": "zero five functional defects remove radial velocity and both signed weighted exterior stress memories, retaining the X pressure term and eta derivative",
+    "input": "the same repaired leading profile fixed by core_modulation_repair_join_recheck",
+    "moments": "global defect order (M,R,J,S,Cp), with R the renormalized heat moment and not raw I(infinity)",
+    "pressure": "Pi_axis=-Cp_id(infinity), all edits retain the same gauge, and Pi(X)=-integral_X^infinity E^2/(2x) dx",
+    "rows": "finite endpoint I matches convert to global R matches only through the common future heat tail and unchanged power subtraction",
+    "scope": "global leading pressure/moment/exterior-stress identities; coefficient supports, physical pulses, covariance means, complete residual, and blow-up remain open"
+  },
+  "remaining_obligations": [
+    "independently audit finite coefficient solves, their common supports, and untouched reserved velocity and exceptional pressure means",
+    "prove uniform actual-pulse existence, inverse, gap, value, derivative and support estimates at every physical scale",
+    "join complete wave covariance and mean corrections including radial and axial velocity, curl remainders and both exceptional pressure tails",
+    "prove the full residual gain including viscosity, every cutoff and every interaction before any force or blow-up conclusion"
+  ],
+  "review": {
+    "checks": {
+      "all_five_global_defects_are_functional_equalities": true,
+      "annular_rows_invert_exactly": true,
+      "both_heat_ends_and_fixed_eta_jets_are_integrable": true,
+      "compact_rows_invert_exactly_for_positive_lambda": true,
+      "finite_I_match_converts_to_R_only_with_common_tail": true,
+      "h_zero_cannot_be_interchanged_with_infinite_integration": true,
+      "intermediate_pressure_memory_is_not_reset": true,
+      "omitting_pressure_repair_breaks_the_gauge": true,
+      "pressure_eta_slope_defect_grows_linearly_in_X": true,
+      "raw_I_infinity_is_not_set_to_zero": true,
+      "renormalized_heat_moment_is_the_finite_global_object": true,
+      "same_pressure_gauge_gives_backward_tail": true,
+      "zero_U_does_not_remove_M_induced_radial_velocity": true,
+      "zero_five_defects_remove_all_exterior_memory": true
+    },
+    "edits": {
+      "angular_roots_and_wait": [
+        "R=0",
+        "Cp total preserved",
+        "S included in strength root"
+      ],
+      "axial_and_strength_roots": [
+        "M=0",
+        "J=0",
+        "S=0",
+        "I,Cp unchanged"
+      ],
+      "functional_in_eta": true,
+      "global_zero_defects": [
+        "M",
+        "R",
+        "J",
+        "S",
+        "Pi_axis+Cp"
+      ],
+      "heat_edit_and_compensation": [
+        "Delta R cancels",
+        "Delta S cancels",
+        "Delta Cp cancels"
+      ],
+      "intermediate_pressure_memory_may_be_nonzero": true,
+      "modulation_and_compact_repair": "all five endpoint defects restored",
+      "shape_and_annular_root": "all five endpoint defects restored"
+    },
+    "endpoint_to_global": {
+      "common_Hpow": true,
+      "common_future_tail": true,
+      "conclusion": "Delta R=0",
+      "difference_formula": "Delta R=Delta I(Xrep)+int_Xrep^infinity Delta(H-Hpow) dX",
+      "endpoint_row_order": "(M,I,J,S,Cp)",
+      "finite_row": "Delta I(Xrep)=0",
+      "global_defect_order": "(M,R,J,S,Cp)",
+      "invalid_conclusion": "I(infinity)=0"
+    },
+    "heat": {
+      "Cp_tail": "O(X^(-2-2h))",
+      "Hcal": "Gamma(1+h)^-1 int exp(-v) v^h (1+Zv)^-h dv",
+      "Hcal_derivative": "(-1)^j (h)_j/Gamma(1+h) int exp(-v) v^(h+j) (1+Zv)^(-h-j) dv",
+      "R": "int_0^infinity (H-Hpow) dX",
+      "R_limit": "lim_X [I(X)-X Hpow(X)/(1-h)]",
+      "S_tail": "O(X^(-1-2h))",
+      "axis_H": "2X F with smooth F",
+      "axis_Hpow_integrable_condition": "0<h<1",
+      "h_zero_interchange_allowed": false,
+      "large_X_H_minus_Hpow": "O_h(X^(-1-h))",
+      "large_X_eta_derivatives": "O_h(X^(-1-h)) at every fixed order",
+      "raw_I_infinity_exists": false
+    },
+    "pressure": {
+      "backward": "-24",
+      "final_total": "36",
+      "forward": "-24",
+      "ideal_total": "36",
+      "intermediate_heat": [
+        "2",
+        "-3",
+        "5",
+        "7"
+      ],
+      "missing_pressure_repair": "43",
+      "pi_axis": "-36"
+    },
+    "pressure_slope_X100": "-100",
+    "sample_annular_rows": [
+      "2",
+      "1/5",
+      "3",
+      "-3/5",
+      "11"
+    ],
+    "sample_compact_rows": [
+      "2",
+      "-300000000000000000000",
+      "3",
+      "-7",
+      "11"
+    ]
+  },
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/core_global_pressure_moment_recheck/.gitignore": "77918ee4b4fafb0264a4a2a1c7ef6888eb001951ce69907db5e7f3162d9960ac",
+    "results/core_global_pressure_moment_recheck/README.md": "16d03f9a5f0fef160b8e6af1c5a76cf9eaf34cc7aa593f631a0338e212ac176a",
+    "results/core_global_pressure_moment_recheck/audit.py": "35d6442d8bf8c006b2771363efe3889b6992418de9eb1d6a31ece0a2dbbef747",
+    "results/core_global_pressure_moment_recheck/proof_checks.py": "4af0a0ac34dd8d95b3505b590e1c978e1634932dec672b64fb7e4cce080d8c3f",
+    "results/core_global_pressure_moment_recheck/protocol.json": "8fe24d7c4502003ff5bd680f4f20550af3a3e686c181dd2d9e5462b097624760",
+    "results/core_global_pressure_moment_recheck/requirements.txt": "07a6aed809ced5650c222557b496d27f6b06ee37f5a966ed27d1a6e669c10394",
+    "results/core_global_pressure_moment_recheck/test_audit.py": "9e8c9f740af81d1dfd19829ebf6c1d7f6d86b6dd8cfa4db239da042a6adeac94",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/core_modulation_repair_join_recheck/evidence.json": "06c690c0615abba4afb37d438c49ff5493545bac94d45c1aa926bcfb52646f68",
+    "results/global_moment_stress/README.md": "93620eac607bd40fd777052cc107d69795d6e378cfd73f1de7eae53d03621734",
+    "results/global_moment_stress/evidence.json": "0b1ce61f32a75e46817d99351dac0512dbb7f1a503a0158612a953f6d8a6636e",
+    "results/heat_exterior_audit/README.md": "e5128b15a8ec398102a29ab6377de23c807d41d69408c142ce41f70e9a64934f",
+    "results/heat_exterior_audit/evidence.json": "92b39415d9c7a851ce7f2c6ba325b1a7a8fe27f3c175136f35615b175a038a56",
+    "results/pulse_moment_audit/README.md": "5e26cfb73096de8718ab97231c02a4401e59cc06daeb1f568ecb039172931d44",
+    "results/pulse_moment_audit/evidence.json": "60d4348f7839ad849abd3086d1fd7ec18a77f1a9788807a456516f916270e832"
+  },
+  "status": "same-repaired-profile-global-pressure-moments-and-exterior-stress-identities-independently-rechecked"
+}
