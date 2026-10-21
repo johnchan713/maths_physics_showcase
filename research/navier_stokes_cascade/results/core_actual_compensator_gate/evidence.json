@@ -1,0 +1,255 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_pressure_shape_recheck/evidence.json": "312e9f63c3af505ca366cba31f621bbed01718241905c33e41703ae15b8695c5",
+    "results/core_reserved_geometry_recheck/evidence.json": "b911312cddc119be917f88d18161ea91b2fae7b67a2c679ed35ec96740087820",
+    "results/core_slow_jet_loss_recheck/evidence.json": "083dcc8c9d94924ed48aa473118c242ad11ed08dbd47e36f3881318569474aa0"
+  },
+  "flags": {
+    "actual_high_target_jet_budget_closed": false,
+    "actual_profile_contract_traced": true,
+    "actual_profile_formula_or_numeric_seminorms_found": false,
+    "complete_residual_improvement_or_blowup_proved": false,
+    "conditional_first_and_second_slow_shape_bounds_derived": true,
+    "diagnostic_pressure_bump_promoted_to_canonical_data": false,
+    "parent_pointwise_pressure_and_radial_coefficients_retained": true,
+    "positivity_alone_suffices_for_shape_derivative_bounds": false,
+    "scalar_mass_moment_and_support_suffice_for_shape_bound": false
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_profile_obstruction_and_budget_controls_pass": true,
+    "three_historical_records_bound": true
+  },
+  "inherited_source_checks": {
+    "core_pressure_shape_recheck:results/compact_mean_foundation/README.md": true,
+    "core_pressure_shape_recheck:results/complete_covariance_initial_means/README.md": true,
+    "core_pressure_shape_recheck:results/complete_covariance_initial_means/means.py": true,
+    "core_pressure_shape_recheck:results/core_dynamic_mean_recheck/README.md": true,
+    "core_pressure_shape_recheck:results/core_pressure_shape_recheck/.gitignore": true,
+    "core_pressure_shape_recheck:results/core_pressure_shape_recheck/README.md": true,
+    "core_pressure_shape_recheck:results/core_pressure_shape_recheck/audit.py": true,
+    "core_pressure_shape_recheck:results/core_pressure_shape_recheck/proof_checks.py": true,
+    "core_pressure_shape_recheck:results/core_pressure_shape_recheck/protocol.json": true,
+    "core_pressure_shape_recheck:results/core_pressure_shape_recheck/requirements.txt": true,
+    "core_pressure_shape_recheck:results/core_pressure_shape_recheck/test_audit.py": true,
+    "core_pressure_shape_recheck:results/core_reserved_geometry_recheck/README.md": true,
+    "core_pressure_shape_recheck:results/core_slow_jet_loss_recheck/README.md": true,
+    "core_pressure_shape_recheck:results/core_slow_jet_loss_recheck/proof_checks.py": true,
+    "core_pressure_shape_recheck:results/current_target_moment_audit/README.md": true,
+    "core_reserved_geometry_recheck:results/coefficient_support_audit/README.md": true,
+    "core_reserved_geometry_recheck:results/compact_mean_foundation/README.md": true,
+    "core_reserved_geometry_recheck:results/complete_covariance_initial_means/means.py": true,
+    "core_reserved_geometry_recheck:results/core_dynamic_mean_recheck/README.md": true,
+    "core_reserved_geometry_recheck:results/core_dynamic_mean_recheck/proof_checks.py": true,
+    "core_reserved_geometry_recheck:results/core_primary_tail_recheck/README.md": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/.gitignore": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/README.md": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/audit.py": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/protocol.json": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/requirements.txt": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/test_audit.py": true,
+    "core_reserved_geometry_recheck:results/physical_pulse_foundation/README.md": true,
+    "core_reserved_geometry_recheck:results/source_envelope_edge_audit/README.md": true,
+    "core_slow_jet_loss_recheck:results/compact_mean_corrections/README.md": true,
+    "core_slow_jet_loss_recheck:results/compact_mean_foundation/README.md": true,
+    "core_slow_jet_loss_recheck:results/complete_covariance_initial_means/README.md": true,
+    "core_slow_jet_loss_recheck:results/complete_covariance_initial_means/means.py": true,
+    "core_slow_jet_loss_recheck:results/complex_mean_relaxation/README.md": true,
+    "core_slow_jet_loss_recheck:results/core_dynamic_mean_recheck/README.md": true,
+    "core_slow_jet_loss_recheck:results/core_reserved_geometry_recheck/README.md": true,
+    "core_slow_jet_loss_recheck:results/core_slow_jet_loss_recheck/.gitignore": true,
+    "core_slow_jet_loss_recheck:results/core_slow_jet_loss_recheck/README.md": true,
+    "core_slow_jet_loss_recheck:results/core_slow_jet_loss_recheck/audit.py": true,
+    "core_slow_jet_loss_recheck:results/core_slow_jet_loss_recheck/proof_checks.py": true,
+    "core_slow_jet_loss_recheck:results/core_slow_jet_loss_recheck/protocol.json": true,
+    "core_slow_jet_loss_recheck:results/core_slow_jet_loss_recheck/requirements.txt": true,
+    "core_slow_jet_loss_recheck:results/core_slow_jet_loss_recheck/test_audit.py": true,
+    "core_slow_jet_loss_recheck:results/current_target_cycle_bridge/README.md": true
+  },
+  "protocol": {
+    "arithmetic": "exact compact polynomial families, exact mass and second-moment integrals, rational chart-composition constants",
+    "input": "same arbitrary fixed smooth compact unit-mass physical pressure compensator and inherited pointwise pressure-shape identity",
+    "new_result": "the actual construction has no frozen compensator formula or numeric shape seminorms; mass, support and scalar moment cannot supply them; explicit conditional slow-composition bounds isolate the missing inputs",
+    "parent_commit": "2b3e99d09b7973831b4fa6d804d0a03270884639",
+    "scope": "analytical data gate and exact counterfamilies; no canonical profile substitution, full residual closure or blow-up claim"
+  },
+  "remaining_obligations": [
+    "freeze the actual physical rhohat formula or supply its Euler-shape seminorms B0,B1,... at every required fixed order",
+    "insert those constants and the actual current-target derivatives into the pointwise pressure, radial and moving-commutator budgets",
+    "join generated-source supports, viscosity, cutoffs and all interactions in the complete physical residual"
+  ],
+  "review": {
+    "checks": {
+      "dilation_budget:all_shape_composition_constants_exact": true,
+      "dilation_budget:log_s_TT_bound": true,
+      "dilation_budget:log_s_T_bound": true,
+      "dilation_budget:log_s_ZT_bound": true,
+      "dilation_budget:log_s_ZZ_bound": true,
+      "dilation_budget:log_s_Z_bound": true,
+      "inherited_shape:parent:perturbation_zero_second_moment": true,
+      "inherited_shape:parent:pointwise_fourth_coefficient_nonzero": true,
+      "inherited_shape:parent:radial_high_jet_total_nonzero": true,
+      "inherited_shape:parent:reference_mass_one": true,
+      "positive_concentration:pointwise_height_scales_N2": true,
+      "positive_concentration:pointwise_height_scales_N4": true,
+      "positive_concentration:pointwise_height_scales_N8": true,
+      "positive_concentration:positive_unit_mass_N2": true,
+      "positive_concentration:positive_unit_mass_N4": true,
+      "positive_concentration:positive_unit_mass_N8": true,
+      "positive_concentration:reference_bump_mass_positive": true,
+      "profile_contract:fixed_smooth_compact_profile_is_only_an_input": true,
+      "profile_contract:no_profile_formula_or_seminorm_values_are_declared": true,
+      "profile_contract:nonnegativity_is_not_assumed": true,
+      "profile_contract:numerical_diagnostic_bump_is_not_promoted_to_canonical_data": true,
+      "profile_contract:unit_mass_is_declared": true,
+      "signed_same_moment_family:base_mass_one": true,
+      "signed_same_moment_family:linear_shape_primitive_growth_N1": true,
+      "signed_same_moment_family:linear_shape_primitive_growth_N11": true,
+      "signed_same_moment_family:linear_shape_primitive_growth_N5": true,
+      "signed_same_moment_family:mass_N1": true,
+      "signed_same_moment_family:mass_N11": true,
+      "signed_same_moment_family:mass_N5": true,
+      "signed_same_moment_family:perturbation_mass_zero": true,
+      "signed_same_moment_family:perturbation_second_moment_zero": true,
+      "signed_same_moment_family:primitive_has_zero_endpoints": true,
+      "signed_same_moment_family:primitive_midpoint_nonzero": true,
+      "signed_same_moment_family:second_moment_N1": true,
+      "signed_same_moment_family:second_moment_N11": true,
+      "signed_same_moment_family:second_moment_N5": true
+    },
+    "parts": {
+      "dilation_budget": {
+        "bounds": {
+          "D_TT_B1": "49152",
+          "D_TT_B2": "16384",
+          "D_T_B1": "128",
+          "D_ZT_B1": "20480",
+          "D_ZT_B2": "8192",
+          "D_ZZ_B1": "12288",
+          "D_ZZ_B2": "4096",
+          "D_Z_B1": "64"
+        },
+        "checks": {
+          "all_shape_composition_constants_exact": true,
+          "log_s_TT_bound": true,
+          "log_s_T_bound": true,
+          "log_s_ZT_bound": true,
+          "log_s_ZZ_bound": true,
+          "log_s_Z_bound": true
+        },
+        "definitions": {
+          "B0": "sup |Dhat|",
+          "B1": "sup |E Dhat|",
+          "B2": "sup |E^2 Dhat|"
+        },
+        "mismatch_pressure_m0": "epsilon^5 [64 B1 |dZ^3(KJ)|_0 + B0 |dZ^4(KJ)|_0]"
+      },
+      "inherited_shape": {
+        "checks": {
+          "parent:perturbation_zero_second_moment": true,
+          "parent:pointwise_fourth_coefficient_nonzero": true,
+          "parent:radial_high_jet_total_nonzero": true,
+          "parent:reference_mass_one": true
+        },
+        "scope": "parent pointwise pressure and radial coefficient identities retained"
+      },
+      "positive_concentration": {
+        "checks": {
+          "pointwise_height_scales_N2": true,
+          "pointwise_height_scales_N4": true,
+          "pointwise_height_scales_N8": true,
+          "positive_unit_mass_N2": true,
+          "positive_unit_mass_N4": true,
+          "positive_unit_mass_N8": true,
+          "reference_bump_mass_positive": true
+        },
+        "conclusion": "even nonnegative unit-mass profiles on one fixed hull have unbounded pointwise density, hence unbounded first radial shape jet",
+        "rows": [
+          {
+            "N": 2,
+            "midpoint_height": "315/64",
+            "support": [
+              "1",
+              "3/2"
+            ]
+          },
+          {
+            "N": 4,
+            "midpoint_height": "315/32",
+            "support": [
+              "1",
+              "5/4"
+            ]
+          },
+          {
+            "N": 8,
+            "midpoint_height": "315/16",
+            "support": [
+              "1",
+              "9/8"
+            ]
+          }
+        ]
+      },
+      "profile_contract": {
+        "checks": {
+          "fixed_smooth_compact_profile_is_only_an_input": true,
+          "no_profile_formula_or_seminorm_values_are_declared": true,
+          "nonnegativity_is_not_assumed": true,
+          "numerical_diagnostic_bump_is_not_promoted_to_canonical_data": true,
+          "unit_mass_is_declared": true
+        },
+        "scope": "source-contract audit bound to the hashed analytical notes and diagnostic implementation"
+      },
+      "signed_same_moment_family": {
+        "checks": {
+          "base_mass_one": true,
+          "linear_shape_primitive_growth_N1": true,
+          "linear_shape_primitive_growth_N11": true,
+          "linear_shape_primitive_growth_N5": true,
+          "mass_N1": true,
+          "mass_N11": true,
+          "mass_N5": true,
+          "perturbation_mass_zero": true,
+          "perturbation_second_moment_zero": true,
+          "primitive_has_zero_endpoints": true,
+          "primitive_midpoint_nonzero": true,
+          "second_moment_N1": true,
+          "second_moment_N11": true,
+          "second_moment_N5": true
+        },
+        "conclusion": "unit mass, fixed support and the scalar second moment have no profile-independent D-hat bound",
+        "rows": [
+          {
+            "N": 1,
+            "shape_primitive_midpoint": "1/16777216"
+          },
+          {
+            "N": 5,
+            "shape_primitive_midpoint": "5/16777216"
+          },
+          {
+            "N": 11,
+            "shape_primitive_midpoint": "11/16777216"
+          }
+        ]
+      }
+    }
+  },
+  "source_hashes": {
+    "results/compact_mean_corrections/README.md": "ae135ad88b0e23e782b27bc1a05cf550f62130630daec49db8941b7d6e817774",
+    "results/compact_mean_corrections/reviews.py": "6ae528993f4f6e3727e64d8086371fbb7912d1937d10adcca8efb0546599b670",
+    "results/core_actual_compensator_gate/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_actual_compensator_gate/README.md": "6d96547782cb2ba29e67a216a1e1ac26447f5a67b389dc52bb6c75c803b7e57e",
+    "results/core_actual_compensator_gate/audit.py": "81464fcdff4c4d5e97cfa27b1bff911a4ae6fb29418b4c1549e2dd7449b54add",
+    "results/core_actual_compensator_gate/proof_checks.py": "d9176609cad1f824f6c5bfa52535ea88aa6f795d7ce761693c83f7e13e476f29",
+    "results/core_actual_compensator_gate/protocol.json": "9ce2f431a27331a75c406ef2ffe11b428c3349ef2e3a99fd318cee371e4461ae",
+    "results/core_actual_compensator_gate/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_actual_compensator_gate/test_audit.py": "49084e1488b030370163671106aace0362970805bfcea57f55532426fc877824",
+    "results/core_pressure_shape_recheck/README.md": "babdbf6e99e49ff9b8a25b30f298dac0612eb85ba9ec67157b4f3b7ec6338c75",
+    "results/core_reserved_geometry_recheck/README.md": "9427bd6d51a42cee4f562eadf1a1ed3bf21358af9a6fbac66cca4b6100e8a13f",
+    "results/core_slow_jet_loss_recheck/README.md": "d34f3d6b3c1d94afca1d65b791ea6a4f1fc29ac28f58ecc12faf58373c120f78"
+  },
+  "status": "actual-compensator-profile-data-gate-and-conditional-shape-bounds"
+}

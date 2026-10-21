@@ -1,0 +1,7 @@
+{
+  "parent_commit": "2b3e99d09b7973831b4fa6d804d0a03270884639",
+  "input": "same arbitrary fixed smooth compact unit-mass physical pressure compensator and inherited pointwise pressure-shape identity",
+  "new_result": "the actual construction has no frozen compensator formula or numeric shape seminorms; mass, support and scalar moment cannot supply them; explicit conditional slow-composition bounds isolate the missing inputs",
+  "scope": "analytical data gate and exact counterfamilies; no canonical profile substitution, full residual closure or blow-up claim",
+  "arithmetic": "exact compact polynomial families, exact mass and second-moment integrals, rational chart-composition constants"
+}
