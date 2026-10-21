@@ -1,0 +1,218 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+    "results/core_pressure_gap_recheck/evidence.json": "314c8d76ec51fe0ab415ebf51ef0068a823af58d70abb6b60a8ead7f2613fbce",
+    "results/foundation_bundle_route/evidence.json": "8e585d7b90ba9938fea314a1d2efc13be394011e7baa285145e3675fc6be4f24"
+  },
+  "flags": {
+    "all_index_product_and_integrated_derivative_bounds_rederived": true,
+    "all_normalized_R1_R2_monomials_enumerated": true,
+    "complete_pressure_primitive_and_three_pressure_terms_retained": true,
+    "formal_proof_assistant_or_external_peer_certificate": false,
+    "full_core_growth_and_activation_independently_reproved_here": false,
+    "later_continuation_roots_modulation_or_exterior_reproved_here": false,
+    "map_invariance_and_lipschitz_majorants_rederived": true,
+    "order_one_angular_inverse_bound_rederived": true,
+    "selected_Lambda_formula_gives_strict_contraction": true,
+    "unconditional_pulse_residual_force_or_blowup_proved": false
+  },
+  "gates": {
+    "all_exact_operator_source_and_contraction_checks_pass": true,
+    "all_frozen_dependencies_bound": true,
+    "growth_and_later_frontier_retained": true,
+    "scope_flags_are_strict_booleans": true
+  },
+  "parent_commit": "6582f51d627b46fdcf244335b880223fcb6b59e3",
+  "protocol": {
+    "claim": "independent all-index operator and complete monomial ledger for the normalized core fixed-point contraction",
+    "objects": "the same coefficient norm, normalized R1/R2 map, pressure primitive, selected Lambda formula and frozen pressure datum",
+    "scope": "core map invariance and contraction only; growth activation and later foundation providers remain separate"
+  },
+  "remaining_obligations": [
+    "independently rederive the angular scalar comparison and positive source bound without division by chi",
+    "independently rederive the axial-sector exit growth and flat Volterra activation with complete pressure moments",
+    "continue through prescribed continuation, matching roots, compact modulation and the annular/exterior join on the same profile",
+    "retain the later regional cone, global pressure, weighted-edge, coefficient, source-cycle and residual obligations"
+  ],
+  "review": {
+    "checks": {
+      "R1_linear_sum_is_19237_over_50": true,
+      "R1_quadratic_sum_is_952_over_25": true,
+      "R1_zeta_multiplier_is_10": true,
+      "R2_linear_sum_is_442": true,
+      "R2_pressure_sum_is_34": true,
+      "R2_quadratic_sum_is_32": true,
+      "all_21_normalized_source_terms_present_once": true,
+      "cauchy_fixed_coefficient_multipliers_at_most_one": true,
+      "finite_convolution_controls_below_exact_A0": true,
+      "inverse_word_recurrence_has_two_factorial_denominators": true,
+      "mixed_allocations_at_most_one": true,
+      "pressure_lipschitz_keeps_two_S_factor": true,
+      "pressure_primitive_uses_three_algebra_products": true,
+      "pressure_source_uses_fourth_algebra_power": true,
+      "remaining_H_power_is_127": true,
+      "universal_selected_formula_gives_10_minus_50": true
+    },
+    "lipschitz_coefficients": {
+      "R1_linear": "2462336/25",
+      "R1_quadratic_per_S": "124780544/25",
+      "R1_zeta_per_M_S": "1310720/1",
+      "R2_linear": "113152/1",
+      "R2_pressure_per_S": "23364622090240/1",
+      "R2_quadratic_per_S": "4194304/1"
+    },
+    "majorant_coefficients": {
+      "R1_linear_A0": "2462336/25",
+      "R1_quadratic_A0_squared": "62390272/25",
+      "R1_zeta_A0_squared": "655360/1",
+      "R2_linear_A0": "113152/1",
+      "R2_pressure_A0_fourth": "11682311045120/1",
+      "R2_quadratic_A0_squared": "2097152/1",
+      "pressure_primitive_A0_cubed": 1342177280
+    },
+    "operator_constants": {
+      "A0": 256,
+      "D0": "80/rho",
+      "finite_samples_are_not_all_index_proofs": true,
+      "maximum_sampled_cauchy_multiplier": "1/1",
+      "maximum_sampled_convolution_product": "11039380408697939501909346023652025/892428826208150203298068762603584",
+      "maximum_sampled_mixed_allocation": "1/4"
+    },
+    "source_sums": {
+      "R1_linear": "19237/50",
+      "R1_quadratic": "952/25",
+      "R1_zeta": "10/1",
+      "R2_linear": "442/1",
+      "R2_pressure": "34/1",
+      "R2_quadratic": "32/1"
+    },
+    "source_terms": [
+      {
+        "constant": "128/1",
+        "group": "R1_linear",
+        "name": "R1_Wstar_Phi"
+      },
+      {
+        "constant": "37/50",
+        "group": "R1_linear",
+        "name": "R1_h_seed_Phi"
+      },
+      {
+        "constant": "128/1",
+        "group": "R1_linear",
+        "name": "R1_Wstar_DPhi"
+      },
+      {
+        "constant": "128/1",
+        "group": "R1_linear",
+        "name": "R1_Hstar_Phi_eta"
+      },
+      {
+        "constant": "4/1",
+        "group": "R1_quadratic",
+        "name": "R1_B_average_u_Phi"
+      },
+      {
+        "constant": "10/1",
+        "group": "R1_quadratic",
+        "name": "R1_B_average_u_eta_Phi"
+      },
+      {
+        "constant": "2/25",
+        "group": "R1_quadratic",
+        "name": "R1_h_u_Phi"
+      },
+      {
+        "constant": "4/1",
+        "group": "R1_quadratic",
+        "name": "R1_B_average_u_DPhi"
+      },
+      {
+        "constant": "10/1",
+        "group": "R1_quadratic",
+        "name": "R1_B_average_u_eta_DPhi"
+      },
+      {
+        "constant": "10/1",
+        "group": "R1_quadratic",
+        "name": "R1_d_u_Phi_eta"
+      },
+      {
+        "constant": "10/1",
+        "group": "R1_zeta",
+        "name": "R1_d_u_zeta_Phi"
+      },
+      {
+        "constant": "186/1",
+        "group": "R2_linear",
+        "name": "R2_seed_coefficient_u"
+      },
+      {
+        "constant": "128/1",
+        "group": "R2_linear",
+        "name": "R2_Wstar_Du"
+      },
+      {
+        "constant": "128/1",
+        "group": "R2_linear",
+        "name": "R2_Hstar_u_eta"
+      },
+      {
+        "constant": "8/1",
+        "group": "R2_quadratic",
+        "name": "R2_minus_2A_eta_u2"
+      },
+      {
+        "constant": "4/1",
+        "group": "R2_quadratic",
+        "name": "R2_B_average_u_Du"
+      },
+      {
+        "constant": "10/1",
+        "group": "R2_quadratic",
+        "name": "R2_B_average_u_eta_Du"
+      },
+      {
+        "constant": "10/1",
+        "group": "R2_quadratic",
+        "name": "R2_d_u_u_eta"
+      },
+      {
+        "constant": "16/1",
+        "group": "R2_pressure",
+        "name": "R2_minus_4A_eta_p"
+      },
+      {
+        "constant": "10/1",
+        "group": "R2_pressure",
+        "name": "R2_d_p_eta"
+      },
+      {
+        "constant": "8/1",
+        "group": "R2_pressure",
+        "name": "R2_minus_2eta_Dp"
+      }
+    ],
+    "universal_contraction": {
+      "H_denominator_power": 127,
+      "epsilon_squared_over_10_power_18": "1/100000000000000000000000000000000000000000000000000",
+      "strict_universal_ceiling": "1/100000000000000000000000000000000000000000000000000"
+    }
+  },
+  "source_hashes": {
+    "results/core_contraction_audit/README.md": "29d504122e83a45ab7c36c98a90d1857ebc5fa82c248b302308881ad99abcb86",
+    "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+    "results/core_fixed_point_ledger_recheck/.gitignore": "77918ee4b4fafb0264a4a2a1c7ef6888eb001951ce69907db5e7f3162d9960ac",
+    "results/core_fixed_point_ledger_recheck/README.md": "3f9a4d4d0a7a637a598ebf1314c16c7a405ffc6e5be2e4ffa5ff34d8c0d9a7ae",
+    "results/core_fixed_point_ledger_recheck/audit.py": "a17a951984ecbc0897d49598e488672a3b4efe77964478f2ca55a226d621ace4",
+    "results/core_fixed_point_ledger_recheck/proof_checks.py": "a39c44d9c5d16b6dd335cad54a58053364fce4b591d23a4504b4d871b2c8ad07",
+    "results/core_fixed_point_ledger_recheck/protocol.json": "4934ac16e10106a4ced8d464f18a4fd3057d6c5e9a88e91929aa66823c24786f",
+    "results/core_fixed_point_ledger_recheck/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_fixed_point_ledger_recheck/test_audit.py": "604efa65bdecc8bb423202d110ae95eb17c7faf0a49bed0e1fe842abb588cf4a",
+    "results/core_pressure_gap_recheck/README.md": "868df2ca586415403aa4bbd33e3b7669cb15bc825844dccba344c55647a5d073",
+    "results/core_pressure_gap_recheck/evidence.json": "314c8d76ec51fe0ab415ebf51ef0068a823af58d70abb6b60a8ead7f2613fbce",
+    "results/foundation_bundle_route/README.md": "cd8aa2473d5ee59576d0f79ee5fbf65347df7c70c6e14bf8908cf84a094a4ad6",
+    "results/foundation_bundle_route/evidence.json": "8e585d7b90ba9938fea314a1d2efc13be394011e7baa285145e3675fc6be4f24"
+  },
+  "status": "core-fixed-point-all-index-ledger-independently-rederived"
+}
