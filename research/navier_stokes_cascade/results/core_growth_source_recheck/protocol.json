@@ -1,0 +1,13 @@
+{
+  "Y_exit": "4",
+  "Y_max": "41/10",
+  "angular_sector": "chi>99/100",
+  "axial_sector": "chi<=99/100",
+  "epsilon": "1/10000000000000000",
+  "h_max": "1/100",
+  "j": "1/1000000000000000000",
+  "p1_upper": "10",
+  "pressure_scale_min": "16",
+  "sigma_over_j": "1/100"
+}
+

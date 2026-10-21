@@ -1,0 +1,167 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_fixed_point_ledger_recheck/evidence.json": "f210da4a0a7bf19dc9bba14f5d3d7cd6465ee0e6b24b80251b29526f462b3a73",
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/core_pressure_gap_recheck/evidence.json": "314c8d76ec51fe0ab415ebf51ef0068a823af58d70abb6b60a8ead7f2613fbce"
+  },
+  "flags": {
+    "alternating_scalar_bounds_independently_rederived": true,
+    "axial_exit_pressure_growth_with_physical_scaling_rederived": true,
+    "continuation_matching_modulation_or_exterior_rederived_here": false,
+    "flat_activation_volterra_and_moment_bounds_rederived_here": false,
+    "formal_proof_assistant_or_external_peer_certificate": false,
+    "forward_shear_and_angular_exit_growth_rederived": true,
+    "positive_source_without_division_by_chi_rederived": true,
+    "unconditional_pulse_residual_force_or_blowup_proved": false,
+    "weighted_eta_reciprocal_bound_keeps_Hstar_factor": true
+  },
+  "gates": {
+    "all_exact_scalar_source_and_exit_checks_pass": true,
+    "all_frozen_dependencies_bound": true,
+    "flat_activation_and_later_frontier_retained": true,
+    "scope_flags_are_strict_booleans": true
+  },
+  "parent_commit": "3476acc9ccdb5921e20964f86180128fac094ad6",
+  "protocol": {
+    "Y_exit": "4",
+    "Y_max": "41/10",
+    "angular_sector": "chi>99/100",
+    "axial_sector": "chi<=99/100",
+    "epsilon": "1/10000000000000000",
+    "h_max": "1/100",
+    "j": "1/1000000000000000000",
+    "p1_upper": "10",
+    "pressure_scale_min": "16",
+    "sigma_over_j": "1/100"
+  },
+  "remaining_obligations": [
+    "independently rederive the flat activation Volterra bounds and complete pressure-moment factors at the unchanged width",
+    "continue through prescribed continuation and matching roots on the same selected profile",
+    "audit compact modulation and exact repair with full pressure memory and join the regional cone estimates",
+    "retain all later coefficient-support, actual-pulse, covariance-mean and complete residual obligations"
+  ],
+  "review": {
+    "checks": {
+      "axial_log_margin_symbolically_positive": true,
+      "axial_normalization_denominator_is_80": true,
+      "diagnostics_are_not_a_continuum_proof": true,
+      "endpoint_comparison_shear_above_2p376": true,
+      "endpoint_polynomial_is_exact": true,
+      "f0_stays_above_point_265": true,
+      "forward_shear_exceeds_one_tenth": true,
+      "forward_shear_lower_is_5_over_32": true,
+      "linear_absorption_available": true,
+      "logarithmic_scalar_slope_below_4": true,
+      "no_error_was_divided_by_chi": true,
+      "source_chi_loss_is_520": true,
+      "source_ledger_has_all_ten_groups": true,
+      "source_remainder_has_124_spare_H_powers": true,
+      "source_universal_remainder_below_point_003": true,
+      "weighted_eta_scalar_bound_is_410": true,
+      "weighted_reciprocal_error_below_2000": true,
+      "young_remainder_coefficient_below_9": true
+    },
+    "exit": {
+      "Phi_ratio_lower": "1/8",
+      "actual_angular_shear_target": "23/10",
+      "angular_comparison_shear_lower": "475535511/200000000",
+      "axial_ratio_denominator": 80,
+      "native_a_lower_coefficient_over_Lambda": "2/5",
+      "native_v_lower": "23/10",
+      "p1_over_X_lower": "5/32"
+    },
+    "parameters": {
+      "H_power_in_Lambda": 128,
+      "Lambda_lower": 100000000000000000000000000000000000000000000,
+      "axial_fixed_log_loss": 105,
+      "pressure_delta_log_loss_upper": 100,
+      "source_H_power": 4,
+      "source_inverse_H_power_after_division": 124
+    },
+    "scalar": {
+      "endpoint_comparison_shear_lower": "475535511/200000000",
+      "endpoint_polynomial": "-75535511/400000000",
+      "f0_lower_cubic": "305719/1152000",
+      "log_slope_upper": "205/53",
+      "weighted_eta_upper": "410/1",
+      "weighted_reciprocal_error": 1896
+    },
+    "source": {
+      "chi_loss": 520,
+      "fixed_point_error_multiplier": 2160,
+      "source_constant_after_small_h": "14/5",
+      "source_final_angular_coefficient": "19/20",
+      "source_final_constant": "5/2",
+      "terms": [
+        [
+          "main_angular",
+          "positive",
+          "Lambda*L*chi"
+        ],
+        [
+          "constant_W",
+          "positive",
+          "29/10"
+        ],
+        [
+          "small_h",
+          "negative",
+          "1/10"
+        ],
+        [
+          "W_scalar_log",
+          "negative",
+          "20*chi"
+        ],
+        [
+          "H_scalar_eta_log",
+          "negative",
+          "500*chi"
+        ],
+        [
+          "W_fixed_point_error",
+          "negative",
+          "160*e"
+        ],
+        [
+          "H_fixed_point_error",
+          "negative",
+          "2000*e"
+        ],
+        [
+          "W_constant_error",
+          "negative",
+          "2*Ubar/Lambda"
+        ],
+        [
+          "H_zeta_error",
+          "negative",
+          "(Ubar/sigma)*sqrt(chi)"
+        ],
+        [
+          "H_eta_error",
+          "negative",
+          "500*Ubar/(Lambda*sigma)"
+        ]
+      ],
+      "universal_remainder_prefactor": "2162000500000000000009/1000000000000000000000000",
+      "young_remainder_coefficient": "1250/147"
+    }
+  },
+  "source_hashes": {
+    "results/core_fixed_point_ledger_recheck/README.md": "3f9a4d4d0a7a637a598ebf1314c16c7a405ffc6e5be2e4ffa5ff34d8c0d9a7ae",
+    "results/core_fixed_point_ledger_recheck/evidence.json": "f210da4a0a7bf19dc9bba14f5d3d7cd6465ee0e6b24b80251b29526f462b3a73",
+    "results/core_growth_activation/README.md": "fd6134a88a69d49203235f9b2ef9abd1f80ee63baf129b5985c9e3136ad09a0a",
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/core_growth_source_recheck/.gitignore": "81f85ea07bbf404eb4b959e5b8837c67c97716e49a2ba57253965c643101f637",
+    "results/core_growth_source_recheck/README.md": "b89cf67aa7d8d46978821d18ffb89d2a14145856c35a1c9a336ccf5bdb8386aa",
+    "results/core_growth_source_recheck/audit.py": "ea2f5bede428e237a8efd3d1b7a2b25eafdcddcac6ff71b74940eccfccc08efc",
+    "results/core_growth_source_recheck/proof_checks.py": "1aa29fa9050beaaabc5edf09a5a9c793136fb2fe7a963d01e5a19d591ecd0606",
+    "results/core_growth_source_recheck/protocol.json": "1babc64afb1cee726e790cf85f1ee09b974ace1b2e6641925d770df1f87c721e",
+    "results/core_growth_source_recheck/requirements.txt": "1aefbcb733a9d4491408f8bef2b442bf135cbedf0fbf1e2e205c31925a4977c0",
+    "results/core_growth_source_recheck/test_audit.py": "08b38e6a5df7acb066eee5008ff66391b1ba04af4f004828805c1645bacf1d7c",
+    "results/core_pressure_gap_recheck/README.md": "868df2ca586415403aa4bbd33e3b7669cb15bc825844dccba344c55647a5d073",
+    "results/core_pressure_gap_recheck/evidence.json": "314c8d76ec51fe0ab415ebf51ef0068a823af58d70abb6b60a8ead7f2613fbce"
+  },
+  "status": "core-angular-source-and-two-sector-exit-independently-rederived"
+}
