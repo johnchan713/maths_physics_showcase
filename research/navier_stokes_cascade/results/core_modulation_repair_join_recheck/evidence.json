@@ -1,0 +1,165 @@
+{
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/core_continuation_matching_recheck/evidence.json": "6d10bffb7587fcb8372b8d9088a223bde8c80131bc07be02dcb5e08d9189f848",
+    "results/explicit_variance_cutoff/evidence.json": "82d046cac7f274a262a550349e7c84589c745ae264fb6ebb4d1ab991a8436c1a",
+    "results/loop_modulation_bounds/evidence.json": "89822b9058906cb2638d8a74f5a024f876b7af7faad4ece73fde71d48f0fbfb1",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/repair_state_bounds/evidence.json": "78d12a7000cf0ef78a60ea05ee76ef292e551d5f5c9e6d72af6b35eca015632a"
+  },
+  "flags": {
+    "complete_global_pressure_moment_tail_identity_rederived_here": false,
+    "formal_proof_assistant_or_external_peer_certificate": false,
+    "inner_compact_annular_exterior_value_cone_join_rederived": true,
+    "moving_phase_inverse_and_slow_fast_chain_rule_rederived": true,
+    "original_width_parameters_roots_frequency_and_gauge_unchanged": true,
+    "same_compact_five_row_root_applied_with_complete_pressure_memory": true,
+    "same_frequency_modulation_and_extra_moment_gain_rederived": true,
+    "signed_variance_root_through_zero_rederived": true,
+    "uniform_actual_pulse_covariance_residual_or_blowup_proved": false
+  },
+  "gates": {
+    "all_exact_modulation_repair_and_join_checks_pass": true,
+    "all_frozen_dependencies_bound": true,
+    "global_and_physical_frontier_retained": true,
+    "scope_flags_are_strict_booleans": true
+  },
+  "parent_commit": "f9c45658e75a6f0a8122875e383185679f4bec55",
+  "protocol": {
+    "cone": "combined state error below G^-64/2 and inner/compact/annular-exterior value-cone join at the unchanged endpoints",
+    "frequency": "N=1+floor(H^32), with A=C^4096, G=exp(A^32), H=exp(G^4)",
+    "input": "the same continued profile and both five-row roots fixed by core_continuation_matching_recheck",
+    "loop": "signed variance root through zero, exact moving phase, and slow/fast chain rule before phase substitution",
+    "repair": "the same compact five-row root with beta=800, q=25000, D=H^16, lambda>0, and Cp retained",
+    "scope": "leading fixed-frequency modulation/repair and value-cone join; later global moment tails, coefficients, physical pulses, covariance means, residual, and blow-up remain open"
+  },
+  "remaining_obligations": [
+    "independently retrace the global renormalized heat moment and complete pressure/moment identities on this repaired profile",
+    "audit finite coefficients, common supports, and untouched reserved velocity and exceptional pressure means",
+    "prove uniform actual-pulse value, derivative, inverse, gap and support estimates at every physical scale",
+    "join complete covariance means including axial velocity and pressure, then bound viscosity, all cutoffs and all interactions before any blow-up claim"
+  ],
+  "review": {
+    "chain": {
+      "N": "7",
+      "fast_loop_term": "2",
+      "field_rth_radial_power": "N^(r-1)",
+      "field_value_power": "N^-1",
+      "full_radial_derivative": "15/7",
+      "moment_rth_radial_power": "N^max(r-2,-1)",
+      "slow_remainder": "1/7"
+    },
+    "checks": {
+      "all_five_endpoint_rows_and_axis_datum_are_retained": true,
+      "cone_constant_is_absorbed": true,
+      "fast_phase_derivative_is_not_mislabelled_small": true,
+      "freezing_phase_would_drop_a_nonzero_term": true,
+      "moment_errors_have_one_extra_radial_gain": true,
+      "moving_phase_inverse_identity_is_exact": true,
+      "omitting_pressure_row_has_nonzero_axial_defect": true,
+      "pressure_row_is_fifth_and_independent": true,
+      "repair_contraction_coefficient_fits_binary_bound": true,
+      "repair_contraction_is_below_2^-219": true,
+      "same_five_row_transform_is_exactly_invertible": true,
+      "selected_frequency_clears_coefficient_radius": true,
+      "selected_frequency_clears_state_threshold": true,
+      "signed_variance_root_is_regular_at_zero": true,
+      "support_endpoints_join_without_reselection": true,
+      "zero_variance_does_not_use_singular_V_mu_division": true
+    },
+    "hierarchy": {
+      "A_floor": 65536,
+      "G_floor": 65536,
+      "N": "1+floor(H^32)>H^32",
+      "cone_constant_exponent": 29,
+      "cone_left_exponent": 480,
+      "cone_loss": "256*(4G^3)^10*(G^-64/2)<G^-4/2",
+      "epsilon": "G^-64",
+      "exp_ratio_monotone_from_one": true,
+      "kappa": "G^-4",
+      "radius_polynomial_left": 8388620,
+      "radius_polynomial_right": 1072624634395407767965921999856467690198349265647391470217884915497741122405883758144149943853352274215202548654918884068300310624955725595714691920486727680,
+      "state_error": "2*H^16*(1+1600*A^128)/N<G^-64/2",
+      "state_polynomial_left": 858099707516326214372737599885174152158679412517913176174307932398192897924707006515319955082681819372162038923935107254640248499964580476571753536397770765,
+      "state_polynomial_right": 1072624634395407767965921999856467690198349265647391470217884915497741122405883758144149943853352274215202548654918884068300310624955725595714691920486727680
+    },
+    "phase": {
+      "inverse_identity": "0",
+      "phase_term": "2/33",
+      "phi_left": "0",
+      "phi_right": "1",
+      "pulled_t_r": "13/33",
+      "t_r_fixed_theta": "1/3",
+      "theta_r": "8/33",
+      "w": "11/12"
+    },
+    "repair": {
+      "D": "H^16",
+      "H_binary_floor": 65536,
+      "H_inverse_power": 16,
+      "beta": "800",
+      "binary_coefficient_bound": 137438953472,
+      "contraction_coefficient": "128000000000",
+      "lambda_positive": true,
+      "q": "25000",
+      "root": "2*beta*D/N",
+      "root_coefficient": "1600",
+      "rows": [
+        "M",
+        "(M-J)/lambda",
+        "I",
+        "-S",
+        "Cp"
+      ],
+      "target": "D/N"
+    },
+    "sample_compact_rows": [
+      "2",
+      "-300",
+      "3",
+      "-7",
+      "11"
+    ],
+    "supports": {
+      "all_five_endpoint_defects_zero_as_eta_functions": true,
+      "annular_and_compact_roots_reselected": false,
+      "axis_pressure_datum_unchanged": true,
+      "compact": "[Xminus,Xrep]",
+      "frequency_reselected": false,
+      "future_heat_edit_starts": "Xstar",
+      "inner_protected": "[Xa,Xminus]",
+      "inner_width": "C^-20",
+      "repair_endpoint": "Xrep=rho_p*exp(5)=Xstar"
+    },
+    "variance": {
+      "R2_at_zero": "1/2",
+      "R_at_zero": "sin(theta)",
+      "cutoff_flat_zero_extension": true,
+      "division_by_V_mu_at_zero_allowed": false,
+      "signed_F_mu_squared_over_d0_squared_at_zero": "1/2",
+      "signed_extension_required": true
+    }
+  },
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/core_continuation_matching_recheck/README.md": "2d01af07c0760e17765f1478da3b16a9fa02862fc62c21a9150f922df4af288b",
+    "results/core_continuation_matching_recheck/evidence.json": "6d10bffb7587fcb8372b8d9088a223bde8c80131bc07be02dcb5e08d9189f848",
+    "results/core_modulation_repair_join_recheck/.gitignore": "77918ee4b4fafb0264a4a2a1c7ef6888eb001951ce69907db5e7f3162d9960ac",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/core_modulation_repair_join_recheck/audit.py": "02ad04983ac44b3ecb5b69ceee20cb87433c9966934030d7b6daad6d0650010a",
+    "results/core_modulation_repair_join_recheck/proof_checks.py": "37620be9d80a063f57412656e0f7d8dad584cda9455af4f7f4b472dd497ca7a4",
+    "results/core_modulation_repair_join_recheck/protocol.json": "856980fd22ffee727a3833ff98fc492937d170429f41cf72958f33ba1bed9732",
+    "results/core_modulation_repair_join_recheck/requirements.txt": "07a6aed809ced5650c222557b496d27f6b06ee37f5a966ed27d1a6e669c10394",
+    "results/core_modulation_repair_join_recheck/test_audit.py": "e5187567c6706cab10cb510bd60e09c99f2fc49d28615c873b80e368732ab27d",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/explicit_variance_cutoff/evidence.json": "82d046cac7f274a262a550349e7c84589c745ae264fb6ebb4d1ab991a8436c1a",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/loop_modulation_bounds/evidence.json": "89822b9058906cb2638d8a74f5a024f876b7af7faad4ece73fde71d48f0fbfb1",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/repair_state_bounds/README.md": "163dce199a65acd22ef68ee7d906a112c1f8dbcb698000f40df848a424af8a4c",
+    "results/repair_state_bounds/evidence.json": "78d12a7000cf0ef78a60ea05ee76ef292e551d5f5c9e6d72af6b35eca015632a"
+  },
+  "status": "same-profile-compact-modulation-repair-and-regional-cone-join-independently-rechecked"
+}

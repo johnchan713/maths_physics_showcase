@@ -1,0 +1,8 @@
+{
+  "frequency": "N=1+floor(H^32), with A=C^4096, G=exp(A^32), H=exp(G^4)",
+  "input": "the same continued profile and both five-row roots fixed by core_continuation_matching_recheck",
+  "loop": "signed variance root through zero, exact moving phase, and slow/fast chain rule before phase substitution",
+  "repair": "the same compact five-row root with beta=800, q=25000, D=H^16, lambda>0, and Cp retained",
+  "cone": "combined state error below G^-64/2 and inner/compact/annular-exterior value-cone join at the unchanged endpoints",
+  "scope": "leading fixed-frequency modulation/repair and value-cone join; later global moment tails, coefficients, physical pulses, covariance means, residual, and blow-up remain open"
+}

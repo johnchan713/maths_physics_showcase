@@ -132,6 +132,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_continuation_matching_recheck/evidence.json \
             --output navier_stokes_core_continuation_matching_recheck_ci.json
 
+      - name: Recheck same-profile modulation exact repair and regional cone join
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_modulation_repair_join_recheck/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_modulation_repair_join_recheck/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_modulation_repair_join_recheck/evidence.json \
+            --output navier_stokes_core_modulation_repair_join_recheck_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
