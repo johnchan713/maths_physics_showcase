@@ -209,6 +209,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_fixed_profile_tame/evidence.json \
             --output navier_stokes_core_fixed_profile_tame_ci.json
 
+      - name: Check current scalar target higher jets and pressure join
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_scalar_target_pressure_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_scalar_target_pressure_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_scalar_target_pressure_join/evidence.json \
+            --output navier_stokes_core_scalar_target_pressure_join_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1562,6 +1569,7 @@ jobs:
             navier_stokes_core_pressure_shape_recheck_ci.json
             navier_stokes_core_actual_compensator_gate_ci.json
             navier_stokes_core_fixed_profile_tame_ci.json
+            navier_stokes_core_scalar_target_pressure_join_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json

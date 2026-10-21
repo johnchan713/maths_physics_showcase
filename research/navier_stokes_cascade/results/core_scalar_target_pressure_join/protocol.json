@@ -1,0 +1,8 @@
+{
+  "parent_commit": "a421ceab5aa765b6c08f8025bf3aa2ef331a3527",
+  "input": "same fixed-profile tame pressure bounds, actual scalar angular flux moment, projected signed target and current integrated residual",
+  "new_result": "mixed scalar jets split into pure-T current flux norms and epsilon^-1 integrated-residual jets; explicit slow-time and axial-viscous pressure budgets keep both channels",
+  "projection": "Xi=-I2 Q2 E discards M=int R^2 E; E=-D2 Xi+sigma M, so projected-target improvement alone does not bound the scalar input",
+  "scope": "conditional quantitative routing, complete covariance and pressure memory retained; no actual canonical input norms, new tail or full residual closure",
+  "arithmetic": "exact complete current angular equation, finite-rank projection controls, product-jet routing, postfast zero-Haar curl correlations and rational coefficient bounds"
+}
