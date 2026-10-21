@@ -1,0 +1,137 @@
+{
+  "dependency_evidence_sha256": {
+    "results/axis_first_coefficient/evidence.json": "63714bd8dc8d49bd02155cdd53b6ff442a453cd8d046d3ba70d0d068d90bb23f",
+    "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+    "results/collar_operator_envelope/evidence.json": "6284e397f6cdee992a5be197017222b322f577f995ff178059c0d5a30e467693",
+    "results/cutoff_higher_jet_interface/evidence.json": "64cba74730fc6c63fa7f32fa2a74f56c078a147a4a5b1d5c62c9803daee526bf",
+    "results/first_coefficient_c3_boundary/evidence.json": "514adaa145183dab274369cd5417a63d66a73e8dd34367745739ec187525f352",
+    "results/global_leading_c5/evidence.json": "9312df56272b941181e48e2a4a0affdd49969cf379a1d8c3c32d07f985ba625b",
+    "results/global_swirl_envelope/evidence.json": "5868fa5e33e20100c9765d43b7c34bfb3440d1debaf0cfae60ebda67b4cb225e"
+  },
+  "flags": {
+    "axis_viscosity_and_complete_pressure_memory_retained": true,
+    "complete_covariance_means_residual_or_blowup_verified": false,
+    "exact_inverse_800_and_actual_disjoint_U_bump_value_used": true,
+    "finalized_global_first_K13_closed": true,
+    "local_core_collar_and_selected_cutoff_value_constant_assembled": true,
+    "second_signed_moments_repair_and_H23_closed": false,
+    "selected_whole_support_K05_inserted_in_signed_Ceta3_sources": true,
+    "uniform_actual_physical_pulse_family_verified": false
+  },
+  "gates": {
+    "actual_disjoint_U_bump_value_is_320": true,
+    "all_scope_flags_are_strict_booleans": true,
+    "axis_viscosity_changes_Q03": true,
+    "eta_independent_cutoff_has_unit_value_cost": true,
+    "finalized_bound_adds_local_and_repair": true,
+    "inverse_uses_full_W3": true,
+    "local_Ceta3_charges_third_Cauchy_loss": true,
+    "pressure_memory_enters_third_and_fifth_targets": true,
+    "reciprocal_cap_is_25_over_23_at_h_ceiling": true,
+    "regular_v4_cost_is_below_29": true,
+    "seven_frozen_dependency_records_bound": true,
+    "weighted_source_has_no_axis_viscosity_boundary": true
+  },
+  "protocol": {
+    "final_bound": "K1,3*=J1,3+320C1,3, with the two U bumps disjoint",
+    "global_inputs": "K0,5<H^262; u3<=H^262; f3=max(Kaxis,2(1+Xa^-1)H^70)",
+    "local_value": "J1,3=(1+2/delta+4/delta^2+8/delta^3)(Mcore+Mcollar); eta-independent cutoff value cost is one",
+    "pressure_memory": "Q03,Q13 use the full unchanged [0,Xv]; Q03 retains 2nu V4 and Q13 has the exact weighted viscosity cancellation",
+    "repair": "The exact positive-order inverse-800 map uses W3=5/e* and no quadratic leading-repair term",
+    "scope": "Analytical explicit selected-parameter global K1,3 relative to retained foundations; second repair H2,3, all-scale pulses, covariance means, complete residual and blowup remain open"
+  },
+  "remaining_obligations": [
+    "use the finalized K1,3 formula and leading Ceta4 row in the full-support shifted-viscosity Q10,Q11 identities, then assemble the second repair and H2,3",
+    "audit uniform actual-pulse value/derivative/support estimates on every physical scale",
+    "complete covariance mean corrections including axial velocity and both exceptional pressure tails, then bound viscosity, every cutoff and all residual interactions"
+  ],
+  "reviews": {
+    "checks": {
+      "actual_disjoint_U_bump_value_is_320": true,
+      "axis_viscosity_changes_Q03": true,
+      "eta_independent_cutoff_has_unit_value_cost": true,
+      "finalized_bound_adds_local_and_repair": true,
+      "inverse_uses_full_W3": true,
+      "local_Ceta3_charges_third_Cauchy_loss": true,
+      "pressure_memory_enters_third_and_fifth_targets": true,
+      "reciprocal_cap_is_25_over_23_at_h_ceiling": true,
+      "regular_v4_cost_is_below_29": true,
+      "weighted_source_has_no_axis_viscosity_boundary": true
+    },
+    "exact_fixture": {
+      "assembled": {
+        "K13": "290212053880333383630/1271",
+        "actual_U_bump_value": "320",
+        "discrepancies": [
+          "200070",
+          "3801330",
+          "33356247461/3072",
+          "197669160",
+          "224860582635/2048"
+        ],
+        "repair": {
+          "W3": "5/41",
+          "coefficient_Ceta3": "906912668376000000/1271",
+          "rows": [
+            "200070/31",
+            "1133640835470000/1271",
+            "140649210",
+            "1124302913175/2603008",
+            "166781237305/125952"
+          ]
+        },
+        "source": {
+          "Q03": "5083955621/1536",
+          "Q13": "22037619435/1024",
+          "reciprocal_cap": "25/24",
+          "regular_v_Ceta4": "7361/16"
+        }
+      },
+      "local": {
+        "Ceta3_factor": "585",
+        "cutoff_value_cost": 1,
+        "tentative_value_Ceta3": "10530"
+      }
+    },
+    "selected_formula": {
+      "J13": "(1+2/delta+4/delta^2+8/delta^3)(Mcore+Mcollar)",
+      "Mcollar": "(z_col+12 z_col^2/delta) exp(12 z_col^2/delta)",
+      "Mcore": "(z_core+6 z_core^2/delta) exp(6 z_core^2/delta)",
+      "delta": "rho_axis/(800 S)",
+      "final": "K1,3 := J13 + 320 C13",
+      "leading_inputs": {
+        "K05": "H^262",
+        "f3": "max(Kaxis,2(1+Xa^-1)H^70)",
+        "u3": "H^262"
+      },
+      "repair": "C13=800 max(mu1/rho3,(mu1/rho3+Kg(5/e*)mu4)/lambda,Kg mu2,(5/e*)mu5/rho3,(5/e*)mu3)",
+      "signed_support": "Q03,Q13 integrate over the unchanged full [0,Xv]",
+      "z_collar": "2 C_col b_col",
+      "z_core": "2 C_core b_core"
+    }
+  },
+  "source_hashes": {
+    "results/axis_first_coefficient/README.md": "aa6f920ba99023d4ec6a0dbf7cb8597bbab0c0d9ea3c104fe8ba1fc95e77bd6e",
+    "results/axis_first_coefficient/evidence.json": "63714bd8dc8d49bd02155cdd53b6ff442a453cd8d046d3ba70d0d068d90bb23f",
+    "results/coefficient_support_foundation/README.md": "df4b656a5e83d45e45c19b3330b66537e35acd24782d818818b59c0ac848d84d",
+    "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+    "results/collar_operator_envelope/README.md": "4afac9f2f93f93c59dc93644694e87059319474ba964f2e12d7027e09833384a",
+    "results/collar_operator_envelope/evidence.json": "6284e397f6cdee992a5be197017222b322f577f995ff178059c0d5a30e467693",
+    "results/cutoff_higher_jet_interface/README.md": "202c28f7cd98684a293df6b1246b40d5f37f9403e4278aee67237e64ca84d02e",
+    "results/cutoff_higher_jet_interface/evidence.json": "64cba74730fc6c63fa7f32fa2a74f56c078a147a4a5b1d5c62c9803daee526bf",
+    "results/first_coefficient_c3_boundary/README.md": "96500186a923f20f4f82261eddf6ee76d62e52b0590528a5bd123f18823f6cc8",
+    "results/first_coefficient_c3_boundary/evidence.json": "514adaa145183dab274369cd5417a63d66a73e8dd34367745739ec187525f352",
+    "results/global_first_coefficient_c3/.gitignore": "5567b35e4f06adf3dd3ed77f3d84f6661cbe2192a78ff4bad70cde136fd9ffa3",
+    "results/global_first_coefficient_c3/README.md": "612dad5708a915cc40d65ba8ca3075d50ee092ef455b20ccd041a37e59aef6ea",
+    "results/global_first_coefficient_c3/audit.py": "900d4e35a880054d31d108a45a567805c7d2023e808ca87de9fcb440aa5f9e8a",
+    "results/global_first_coefficient_c3/global_first.py": "7f4f547cd290c9439a92aabf04915655b35688c7a1991a85701c4b909df54ac1",
+    "results/global_first_coefficient_c3/protocol.json": "f0001576c91cf49fb93c52c81d490ddef986e3e5ac5aa42c49e0d94b56a87433",
+    "results/global_first_coefficient_c3/requirements.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "results/global_first_coefficient_c3/test_audit.py": "12c84fb27505b81c615183ffffa2b1d6607edb442f574930cdb5432db066fdc5",
+    "results/global_leading_c5/README.md": "b14150967e466e9070d27694bcd9c6bd5719ae1b062f7db723f8b1bbbeff0db8",
+    "results/global_leading_c5/evidence.json": "9312df56272b941181e48e2a4a0affdd49969cf379a1d8c3c32d07f985ba625b",
+    "results/global_swirl_envelope/README.md": "a899a23ab7f41d865b315f3fa6462758fcae4ae5e93df99de3e674be859d2758",
+    "results/global_swirl_envelope/evidence.json": "5868fa5e33e20100c9765d43b7c34bfb3440d1debaf0cfae60ebda67b4cb225e"
+  },
+  "status": "full-pressure-memory-first-repair-and-global-K13-assembled"
+}

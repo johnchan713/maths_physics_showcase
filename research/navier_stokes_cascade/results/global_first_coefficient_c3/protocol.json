@@ -1,0 +1,8 @@
+{
+  "final_bound": "K1,3*=J1,3+320C1,3, with the two U bumps disjoint",
+  "global_inputs": "K0,5<H^262; u3<=H^262; f3=max(Kaxis,2(1+Xa^-1)H^70)",
+  "local_value": "J1,3=(1+2/delta+4/delta^2+8/delta^3)(Mcore+Mcollar); eta-independent cutoff value cost is one",
+  "pressure_memory": "Q03,Q13 use the full unchanged [0,Xv]; Q03 retains 2nu V4 and Q13 has the exact weighted viscosity cancellation",
+  "repair": "The exact positive-order inverse-800 map uses W3=5/e* and no quadratic leading-repair term",
+  "scope": "Analytical explicit selected-parameter global K1,3 relative to retained foundations; second repair H2,3, all-scale pulses, covariance means, complete residual and blowup remain open"
+}

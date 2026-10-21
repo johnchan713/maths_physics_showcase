@@ -62,6 +62,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/global_leading_c5/evidence.json \
             --output navier_stokes_global_leading_c5_ci.json
 
+      - name: Check full pressure memory first repair and finalized global K13
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/global_first_coefficient_c3/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/global_first_coefficient_c3/audit.py \
+            --verify-record research/navier_stokes_cascade/results/global_first_coefficient_c3/evidence.json \
+            --output navier_stokes_global_first_coefficient_c3_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v

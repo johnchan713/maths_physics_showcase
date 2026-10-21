@@ -13,15 +13,26 @@ and testing the manuscript-based construction, beginning with its first
 unclosed obligation. Test counts and small reference parameters do not
 measure how close the construction is to a proof.
 
-The latest [global leading fifth-angular checkpoint](results/global_leading_c5/README.md)
+The latest [global first-coefficient C3 checkpoint](results/global_first_coefficient_c3/README.md)
+inserts the selected `K0,5<H^262` bound into the complete signed `Q03,Q13`
+totals, retaining the axis-viscosity boundary and pressure memory through the
+true `Xv`.  It combines the explicit core/collar value constant with the
+eta-independent cutoff, exact inverse-800 map and actual disjoint `U1` bump
+value to obtain `K1,3*=J1,3+320C1,3`.  The bound remains an explicit formula
+in the unchanged selected parameters; no guessed `H` power hides its small
+denominators or Picard exponentials.  The shifted-viscosity second source and
+repair, `H2,3`, all-scale pulse-family, complete covariance/mean, residual and
+blow-up obligations remain open.
+
+The preceding [global leading fifth-angular checkpoint](results/global_leading_c5/README.md)
 lifts the same later axial/reference root, complete energy and positive
 strength to `C_eta^5`.  The exact fifth interpolation derivative preserves
 the `8192T` energy budget, and the complete later axial cover has norm at
 most 132.  Joining this row to the native sixth-angular estimate and the
 selected FINAL compact fifth gate proves the quantitative whole-support
-bound `K0,5<H^262`.  Global `K1,3`, the shifted-viscosity second source and
-repair, `H2,3`, all-scale pulse-family, complete covariance/mean, residual
-and blow-up obligations remain open.
+bound `K0,5<H^262`.  That input is consumed by the latest checkpoint; the
+shifted-viscosity second source and repair, `H2,3`, all-scale pulse-family,
+complete covariance/mean, residual and blow-up obligations remain open.
 
 The preceding [global first-coefficient C3 boundary checkpoint](results/first_coefficient_c3_boundary/README.md)
 extends the whole-inner first coefficient through `X^3 C_eta^3` and propagates

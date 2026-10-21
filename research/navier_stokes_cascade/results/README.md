@@ -6,16 +6,26 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest checkpoint: [global leading fifth-angular bound](global_leading_c5/README.md).
+Latest checkpoint: [finalized global first-coefficient C3 bound](global_first_coefficient_c3/README.md).
+The selected `K0,5<H^262` input is now inserted into the full-support signed
+`Q03,Q13` identities, retaining the nonzero axis-viscosity boundary and all
+later pressure memory.  The actual core/collar value constant, eta-independent
+coefficient cutoff, inverse-800 map and disjoint `U1` bump value `320` give the
+explicit finite selected-parameter certificate `K1,3*=J1,3+320C1,3`.  No
+guessed power of `H` hides the small denominators or Picard exponentials.  The
+second signed source, second repair and `H2,3` remain open, as do all-scale
+pulses, complete covariance/means, residual closure and blow-up.
+
+Preceding checkpoint: [global leading fifth-angular bound](global_leading_c5/README.md).
 The same later axial/reference root now has a complete `C_eta^5` energy and
 strength audit, with later axial norm at most 132. The selected fifth cutoff
 gate joins this to the native and FINAL compact rows, proving the quantitative
 whole-support certificate `K0,5<H^262`. This supplies the corrected missing
-input but does not yet assemble global `K1,3`, the second repair or `H2,3`;
+input for the now-completed global `K1,3` assembly; the second repair or `H2,3`;
 all-scale pulses, complete covariance/means, residual closure and blow-up
 remain unproved.
 
-Preceding checkpoint: [global first-coefficient C3 boundary](first_coefficient_c3_boundary/README.md).
+Earlier checkpoint: [global first-coefficient C3 boundary](first_coefficient_c3_boundary/README.md).
 The local whole-inner first coefficient now has an explicit `X^3 C_eta^3`
 bound and the selected coefficient cutoff propagates it exactly.  The audit
 corrects the next global dependency: the full signed leading pressure moments
