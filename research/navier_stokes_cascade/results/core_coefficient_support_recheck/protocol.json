@@ -1,0 +1,9 @@
+{
+  "parent_commit": "3651a61c308633530eafd9ceb728b3355177d3b8",
+  "input": "same leading profile and exact five global functional identities from core_global_pressure_moment_recheck",
+  "coefficient_rows": "ordinary (M,I,Cp,J,S); normalize before applying the constant linear B inverse, with lambda and e(eta) costs retained",
+  "support": "each finite positive order; velocity edge Xvel; exceptional pressure and stress edges retained at orders one and two",
+  "reserved_pressure": "Pi1=K1(eta)-mu^2/(4X), Pi2=K2(eta); pressure oscillation gives a necessary error floor independent of both K functions",
+  "derivatives": "the uncut first inverse-radius term is stationary in physical t,z; every cutoff product term remains",
+  "scope": "conditional finite coefficient support join and exact pressure obstruction; uniform pulses, complete covariance means, full residual and blow-up remain open"
+}
