@@ -251,6 +251,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_initial_scalar_seed_budget/evidence.json \
             --output navier_stokes_core_initial_scalar_seed_budget_ci.json
 
+      - name: Check common atlas primary aggregate edge bounds and matched normalization
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_primary_aggregate_atlas/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_primary_aggregate_atlas/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_primary_aggregate_atlas/evidence.json \
+            --output navier_stokes_core_primary_aggregate_atlas_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1610,6 +1617,7 @@ jobs:
             navier_stokes_core_slow_inverse_budget_ci.json
             navier_stokes_core_fast_inverse_budget_ci.json
             navier_stokes_core_initial_scalar_seed_budget_ci.json
+            navier_stokes_core_primary_aggregate_atlas_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json

@@ -1,0 +1,8 @@
+{
+  "parent_commit": "1e5bc69040c0aaa0d740819dc3eaccb56aff5833",
+  "input": "same frozen actual atlas, per-label canonical coefficient/root/edge estimates and unchanged physical fields, profiles, radius, width, tilt and accepted tail",
+  "new_result": "explicit fixed-width edge unweighting, common raw derivative factor, no pointwise label/deck count in aggregate norm, matched coarsest-band covariance and fast floor bounds with arbitrary-reference corrections",
+  "existing_result_preserved": "closed support separation and qualitative covering geometry were established earlier; initial scalar n+10/n+11 coefficient jet costs and full pressure memory remain",
+  "scope": "conditional aggregate join from retained uniform native pulse estimates; no independent per-label ODE/root proof, signed/sourced seed, full residual, infinite realization or blow-up",
+  "arithmetic": "actual integer atlas certificates, rational edge-series constants, linear derivative pullbacks, exact normalization failure controls and positive polynomial initial-seed substitution"
+}
