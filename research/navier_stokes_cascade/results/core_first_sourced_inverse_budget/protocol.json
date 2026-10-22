@@ -1,0 +1,11 @@
+{
+  "parent_commit": "a0bce249f120368f8437962aabaecb05de293264",
+  "actual_field_changes": "none; original profiles roots width radius carriers cutoffs supports and accepted domain retained",
+  "normal_extension": "Ahat=A0-lambda*I+(lambda+Pprime/P)*h*nT; h=n/|n|^2",
+  "normal_derivative_correction": "parameter derivatives need not be tangent; direct tangent-only Duhamel is insufficient",
+  "Gaussian_weight": "full P(s)/P(w) retained in ambient normal and tangent propagators; no inverse Gaussian floor",
+  "source_gate": "README inequality (9) for actual post-signed fresh-mean regular source remains conditional",
+  "norm_convention": "raw total-order mixed derivative maximum; binomial convolution; full-path suprema",
+  "pressure": "full moving normal and unprojected forcing term, not a projected-source pressure surrogate",
+  "scope": "finite-order conditional norm recurrence; manufactured controls do not certify actual core/source or full residual"
+}
