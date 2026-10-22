@@ -1,0 +1,9 @@
+{
+  "parent_commit": "12d02e2b988c538a66b0f9d93bcd5e0444c6d743",
+  "new_result": "explicit normal moving-normal K eikonal and logarithmic-profile jet polynomials from full background slow jets and the actual frozen phase",
+  "growth": "lambda(v)=lambda0/sqrt(1+s_sigma(v)^2), not constant lambda0; retain inverse-square-root jets beyond quadratic damping",
+  "floor": "beta=lambda_min/[4(1+U^2)^2]; require S^2(epsilon+epsilon^2+k^-1)<=1 and 36*Cphi^2<=beta*S^2; then |n|^-2<=4/beta",
+  "norms": "raw multibinomial convolution; finite inverse-square-root composition; convert through-order coefficient norms by sum 5^j/j! times raw maxima",
+  "scope": "conditional full-background jet and actual accepted-domain value-constant substitution; tangent propagator and other core support premises remain unclosed",
+  "unchanged": "physical fields fixed tilt original roots phase carriers profiles cutoffs width radius supports accepted band and historical frozen evidence"
+}

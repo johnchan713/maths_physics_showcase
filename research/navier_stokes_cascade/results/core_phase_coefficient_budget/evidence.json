@@ -1,0 +1,452 @@
+{
+  "dependency_evidence_sha256": {
+    "results/actual_band_pulse_bounds/evidence.json": "02d59fe4906a7bab5272200a9135fbd63ecce3e04bb1ec88e31e7671bdf4f23d",
+    "results/core_first_sourced_inverse_budget/evidence.json": "788f952989523c871f51b42c0d7c828a4448cf995e0d67ce4650892afbb37fef",
+    "results/core_primary_aggregate_atlas/evidence.json": "3ada69e4be086d8dd4ae1894aa7ee2f636b4ff952952348320721099acd3ff28",
+    "results/core_primary_tail_recheck/evidence.json": "d0cb62531e34a664b34f0bb7eaec20eecd1e1e9447ab2b3e48765de886934b3e",
+    "results/core_signed_prefix_source_budget/evidence.json": "4fa5193370702c31c5bbc04af8342c80e886578bb41f04a132c162184279eb2e"
+  },
+  "flags": {
+    "actual_core_background_and_phase_value_constants_independently_verified": false,
+    "actual_unchanged_accepted_domain_value_gate_substitution_verified": false,
+    "complete_residual_unconditional_pulses_or_blowup_proved": false,
+    "five_variable_raw_to_factorial_conversion_and_inverse_source_interfaces_joined": true,
+    "frozen_nonzero_rounding_radial_flow_and_axial_transport_retained": true,
+    "full_normal_floor_reduced_to_explicit_whole_path_value_inequalities": true,
+    "historical_evidence_or_actual_profiles_carriers_or_accepted_bands_changed": false,
+    "homogeneous_tangent_propagator_or_all_support_premises_independently_closed": false,
+    "logarithmic_profile_rate_retains_varying_growth_at_all_fixed_orders": true,
+    "normal_moving_normal_K_and_eikonal_jets_derived_from_full_background_inputs": true
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_phase_growth_floor_and_box_controls_pass": true,
+    "five_historical_records_bound": true
+  },
+  "inherited_source_checks": {
+    "actual_band_pulse_bounds:GOAL.md": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/README.md": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/audit.py": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/bounds.py": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/charts.py": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/diagnostics.py": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/protocol.json": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/requirements.txt": true,
+    "actual_band_pulse_bounds:results/actual_band_pulse_bounds/test_audit.py": true,
+    "actual_band_pulse_bounds:results/background_summation/evidence.json": true,
+    "actual_band_pulse_bounds:results/physical_wave_interface/evidence.json": true,
+    "core_first_sourced_inverse_budget:results/actual_band_pulse_bounds/README.md": true,
+    "core_first_sourced_inverse_budget:results/core_first_sourced_inverse_budget/.gitignore": true,
+    "core_first_sourced_inverse_budget:results/core_first_sourced_inverse_budget/README.md": true,
+    "core_first_sourced_inverse_budget:results/core_first_sourced_inverse_budget/audit.py": true,
+    "core_first_sourced_inverse_budget:results/core_first_sourced_inverse_budget/budgets.py": true,
+    "core_first_sourced_inverse_budget:results/core_first_sourced_inverse_budget/controls.py": true,
+    "core_first_sourced_inverse_budget:results/core_first_sourced_inverse_budget/protocol.json": true,
+    "core_first_sourced_inverse_budget:results/core_first_sourced_inverse_budget/requirements.txt": true,
+    "core_first_sourced_inverse_budget:results/core_first_sourced_inverse_budget/test_audit.py": true,
+    "core_first_sourced_inverse_budget:results/core_initial_haar_row_budget/README.md": true,
+    "core_first_sourced_inverse_budget:results/core_primary_root_budget/README.md": true,
+    "core_first_sourced_inverse_budget:results/core_primary_root_budget/budgets.py": true,
+    "core_first_sourced_inverse_budget:results/first_sourced_foundation/README.md": true,
+    "core_first_sourced_inverse_budget:results/first_sourced_foundation/sourced_checks.py": true,
+    "core_first_sourced_inverse_budget:results/modulation_repair_all_order/map_checks.py": true,
+    "core_first_sourced_inverse_budget:results/regular_source_foundation/README.md": true,
+    "core_primary_aggregate_atlas:results/auxiliary_geometry_audit/README.md": true,
+    "core_primary_aggregate_atlas:results/auxiliary_geometry_audit/geometry.py": true,
+    "core_primary_aggregate_atlas:results/canonical_primary_foundation/README.md": true,
+    "core_primary_aggregate_atlas:results/complete_covariance_initial_means/means.py": true,
+    "core_primary_aggregate_atlas:results/core_fast_inverse_budget/README.md": true,
+    "core_primary_aggregate_atlas:results/core_fast_inverse_budget/proof_checks.py": true,
+    "core_primary_aggregate_atlas:results/core_initial_scalar_seed_budget/README.md": true,
+    "core_primary_aggregate_atlas:results/core_initial_scalar_seed_budget/proof_checks.py": true,
+    "core_primary_aggregate_atlas:results/core_primary_aggregate_atlas/.gitignore": true,
+    "core_primary_aggregate_atlas:results/core_primary_aggregate_atlas/README.md": true,
+    "core_primary_aggregate_atlas:results/core_primary_aggregate_atlas/audit.py": true,
+    "core_primary_aggregate_atlas:results/core_primary_aggregate_atlas/proof_checks.py": true,
+    "core_primary_aggregate_atlas:results/core_primary_aggregate_atlas/protocol.json": true,
+    "core_primary_aggregate_atlas:results/core_primary_aggregate_atlas/requirements.txt": true,
+    "core_primary_aggregate_atlas:results/core_primary_aggregate_atlas/test_audit.py": true,
+    "core_primary_aggregate_atlas:results/core_slow_inverse_budget/README.md": true,
+    "core_primary_aggregate_atlas:results/core_slow_inverse_budget/proof_checks.py": true,
+    "core_primary_aggregate_atlas:results/physical_pulse_foundation/README.md": true,
+    "core_primary_tail_recheck:results/auxiliary_geometry_audit/README.md": true,
+    "core_primary_tail_recheck:results/canonical_value_domain/README.md": true,
+    "core_primary_tail_recheck:results/core_coefficient_support_recheck/README.md": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/.gitignore": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/README.md": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/audit.py": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/proof_checks.py": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/protocol.json": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/requirements.txt": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/test_audit.py": true,
+    "core_primary_tail_recheck:results/explicit_tilt_pulse_tail/README.md": true,
+    "core_primary_tail_recheck:results/explicit_tilt_pulse_tail/tail_bounds.py": true,
+    "core_primary_tail_recheck:results/physical_pulse_foundation/README.md": true,
+    "core_primary_tail_recheck:results/sourced_inverse_foundation/README.md": true,
+    "core_signed_prefix_source_budget:results/complete_covariance_initial_means/means.py": true,
+    "core_signed_prefix_source_budget:results/core_fast_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_fast_inverse_budget/proof_checks.py": true,
+    "core_signed_prefix_source_budget:results/core_first_sourced_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_first_sourced_inverse_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_initial_haar_row_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_initial_haar_row_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_initial_scalar_seed_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/.gitignore": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/audit.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/controls.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/protocol.json": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/requirements.txt": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/test_audit.py": true,
+    "core_signed_prefix_source_budget:results/core_slow_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/regular_source_foundation/README.md": true,
+    "core_signed_prefix_source_budget:results/regular_source_foundation/source_checks.py": true
+  },
+  "protocol": {
+    "floor": "beta=lambda_min/[4(1+U^2)^2]; require S^2(epsilon+epsilon^2+k^-1)<=1 and 36*Cphi^2<=beta*S^2; then |n|^-2<=4/beta",
+    "growth": "lambda(v)=lambda0/sqrt(1+s_sigma(v)^2), not constant lambda0; retain inverse-square-root jets beyond quadratic damping",
+    "new_result": "explicit normal moving-normal K eikonal and logarithmic-profile jet polynomials from full background slow jets and the actual frozen phase",
+    "norms": "raw multibinomial convolution; finite inverse-square-root composition; convert through-order coefficient norms by sum 5^j/j! times raw maxima",
+    "parent_commit": "12d02e2b988c538a66b0f9d93bcd5e0444c6d743",
+    "scope": "conditional full-background jet and actual accepted-domain value-constant substitution; tangent propagator and other core support premises remain unclosed",
+    "unchanged": "physical fields fixed tilt original roots phase carriers profiles cutoffs width radius supports accepted band and historical frozen evidence"
+  },
+  "remaining_obligations": [
+    "derive actual full-background jet and phase-comparison constants and verify both value inequalities (10) on the unchanged accepted domain",
+    "discharge the homogeneous tangent propagator original-root wave and remaining full-path support and fixed-map premises",
+    "join quantitative first sourced complete covariance fresh full pressure means and the complete physical residual including additive tails before unconditional claims"
+  ],
+  "review": {
+    "checks": {
+      "actual_phase:all_three_actual_phase_normal_components_exact": true,
+      "actual_phase:axial_transport_term_in_eikonal_is_essential": true,
+      "actual_phase:full_axial_normal_error_not_dropped": true,
+      "actual_phase:full_eikonal_identity_has_exact_epsilon_factor": true,
+      "actual_phase:moving_normal_is_path_derivative_not_full_normal_jet": true,
+      "actual_phase:nonzero_radial_background_term_in_eikonal_is_essential": true,
+      "actual_phase:normal_is_affine_in_path_with_frozen_carriers": true,
+      "actual_phase:phase_cancellation_uses_full_F_and_G": true,
+      "coefficient_polynomials:dim4_raw_to_factorial_multinomial_count": true,
+      "coefficient_polynomials:dim5_raw_to_factorial_multinomial_count": true,
+      "coefficient_polynomials:full_G_transport_and_nonzero_radial_flow_affect_eikonal_budget": true,
+      "coefficient_polynomials:n0_S1_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n0_S1_normal_component_substitution": true,
+      "coefficient_polynomials:n0_S3_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n0_S3_normal_component_substitution": true,
+      "coefficient_polynomials:n0_normalized_source_coefficients_keep_all_named_inputs": true,
+      "coefficient_polynomials:n0_only_background_jets_through_n_plus_one": true,
+      "coefficient_polynomials:n1_S1_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n1_S1_normal_component_substitution": true,
+      "coefficient_polynomials:n1_S3_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n1_S3_normal_component_substitution": true,
+      "coefficient_polynomials:n1_normalized_source_coefficients_keep_all_named_inputs": true,
+      "coefficient_polynomials:n1_only_background_jets_through_n_plus_one": true,
+      "coefficient_polynomials:n2_S1_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n2_S1_normal_component_substitution": true,
+      "coefficient_polynomials:n2_S3_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n2_S3_normal_component_substitution": true,
+      "coefficient_polynomials:n2_normalized_source_coefficients_keep_all_named_inputs": true,
+      "coefficient_polynomials:n3_S1_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n3_S1_normal_component_substitution": true,
+      "coefficient_polynomials:n3_S3_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n3_S3_normal_component_substitution": true,
+      "coefficient_polynomials:n3_normalized_source_coefficients_keep_all_named_inputs": true,
+      "coefficient_polynomials:n3_only_background_jets_through_n_plus_one": true,
+      "coefficient_polynomials:n4_S1_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n4_S1_normal_component_substitution": true,
+      "coefficient_polynomials:n4_S3_moving_normal_has_no_extra_path_factor": true,
+      "coefficient_polynomials:n4_S3_normal_component_substitution": true,
+      "coefficient_polynomials:n4_normalized_source_coefficients_keep_all_named_inputs": true,
+      "coefficient_polynomials:nearest_nonzero_rounding_unit_cost_retained": true,
+      "full_box:order0_whole_box_eikonal_over_epsilon_bound": true,
+      "full_box:order0_whole_box_matrix_bound": true,
+      "full_box:order0_whole_box_normal_bound": true,
+      "full_box:order1_whole_box_eikonal_over_epsilon_bound": true,
+      "full_box:order1_whole_box_matrix_bound": true,
+      "full_box:order1_whole_box_normal_bound": true,
+      "full_box:order2_whole_box_eikonal_over_epsilon_bound": true,
+      "full_box:order2_whole_box_matrix_bound": true,
+      "full_box:order2_whole_box_normal_bound": true,
+      "full_box:order3_whole_box_eikonal_over_epsilon_bound": true,
+      "full_box:order3_whole_box_matrix_bound": true,
+      "full_box:order3_whole_box_normal_bound": true,
+      "normal_value_gate:floor_uses_full_or_tangential_reference_length": true,
+      "normal_value_gate:good_value_budget_meets_both_whole_path_gates": true,
+      "normal_value_gate:insufficient_normal_value_margin_is_rejected": true,
+      "normal_value_gate:large_accumulated_rounding_error_is_not_hidden": true,
+      "normal_value_gate:nonzero_angular_carrier_alone_is_not_a_uniform_normal_floor": true,
+      "normal_value_gate:squared_tilt_denominator_is_a_valid_outward_bound": true,
+      "varying_growth_profile:damping_has_zero_third_derivative_but_growth_does_not": true,
+      "varying_growth_profile:growth_is_lambda0_over_sqrt_shape_not_constant": true,
+      "varying_growth_profile:normalization_center_has_zero_logarithmic_profile_rate": true,
+      "varying_growth_profile:order0_actual_varying_growth_profile_jet_bounded": true,
+      "varying_growth_profile:order1_actual_varying_growth_profile_jet_bounded": true,
+      "varying_growth_profile:order2_actual_varying_growth_profile_jet_bounded": true,
+      "varying_growth_profile:order3_actual_varying_growth_profile_jet_bounded": true,
+      "varying_growth_profile:order4_actual_varying_growth_profile_jet_bounded": true,
+      "varying_growth_profile:order5_actual_varying_growth_profile_jet_bounded": true,
+      "varying_growth_profile:order6_actual_varying_growth_profile_jet_bounded": true,
+      "varying_growth_profile:third_profile_derivative_is_not_zero": true
+    },
+    "parts": {
+      "actual_phase": {
+        "checks": {
+          "all_three_actual_phase_normal_components_exact": true,
+          "axial_transport_term_in_eikonal_is_essential": true,
+          "full_axial_normal_error_not_dropped": true,
+          "full_eikonal_identity_has_exact_epsilon_factor": true,
+          "moving_normal_is_path_derivative_not_full_normal_jet": true,
+          "nonzero_radial_background_term_in_eikonal_is_essential": true,
+          "normal_is_affine_in_path_with_frozen_carriers": true,
+          "phase_cancellation_uses_full_F_and_G": true
+        },
+        "scope": "exact mixed rational jets of the actual frozen-phase formula with manufactured full backgrounds, not selected physical fields"
+      },
+      "coefficient_polynomials": {
+        "checks": {
+          "dim4_raw_to_factorial_multinomial_count": true,
+          "dim5_raw_to_factorial_multinomial_count": true,
+          "full_G_transport_and_nonzero_radial_flow_affect_eikonal_budget": true,
+          "n0_S1_moving_normal_has_no_extra_path_factor": true,
+          "n0_S1_normal_component_substitution": true,
+          "n0_S3_moving_normal_has_no_extra_path_factor": true,
+          "n0_S3_normal_component_substitution": true,
+          "n0_normalized_source_coefficients_keep_all_named_inputs": true,
+          "n0_only_background_jets_through_n_plus_one": true,
+          "n1_S1_moving_normal_has_no_extra_path_factor": true,
+          "n1_S1_normal_component_substitution": true,
+          "n1_S3_moving_normal_has_no_extra_path_factor": true,
+          "n1_S3_normal_component_substitution": true,
+          "n1_normalized_source_coefficients_keep_all_named_inputs": true,
+          "n1_only_background_jets_through_n_plus_one": true,
+          "n2_S1_moving_normal_has_no_extra_path_factor": true,
+          "n2_S1_normal_component_substitution": true,
+          "n2_S3_moving_normal_has_no_extra_path_factor": true,
+          "n2_S3_normal_component_substitution": true,
+          "n2_normalized_source_coefficients_keep_all_named_inputs": true,
+          "n3_S1_moving_normal_has_no_extra_path_factor": true,
+          "n3_S1_normal_component_substitution": true,
+          "n3_S3_moving_normal_has_no_extra_path_factor": true,
+          "n3_S3_normal_component_substitution": true,
+          "n3_normalized_source_coefficients_keep_all_named_inputs": true,
+          "n3_only_background_jets_through_n_plus_one": true,
+          "n4_S1_moving_normal_has_no_extra_path_factor": true,
+          "n4_S1_normal_component_substitution": true,
+          "n4_S3_moving_normal_has_no_extra_path_factor": true,
+          "n4_S3_normal_component_substitution": true,
+          "n4_normalized_source_coefficients_keep_all_named_inputs": true,
+          "nearest_nonzero_rounding_unit_cost_retained": true
+        },
+        "rows": [
+          {
+            "eikonal": {
+              "0": "3",
+              "1": "1530"
+            },
+            "matrix": {
+              "0": "18"
+            },
+            "normal": {
+              "0": "49",
+              "1": "612"
+            },
+            "order": 0
+          },
+          {
+            "eikonal": {
+              "0": "2301",
+              "1": "3826"
+            },
+            "matrix": {
+              "0": "28"
+            },
+            "normal": {
+              "0": "949",
+              "1": "796"
+            },
+            "order": 1
+          },
+          {
+            "eikonal": {
+              "0": "11487",
+              "1": "9674"
+            },
+            "matrix": {
+              "0": "40"
+            },
+            "normal": {
+              "0": "2450",
+              "1": "980"
+            },
+            "order": 2
+          },
+          {
+            "eikonal": {
+              "0": "43545",
+              "1": "24342"
+            },
+            "matrix": {
+              "0": "54"
+            },
+            "normal": {
+              "0": "4596",
+              "1": "1164"
+            },
+            "order": 3
+          },
+          {
+            "eikonal": {
+              "0": "146067",
+              "1": "60450"
+            },
+            "matrix": {
+              "0": "70"
+            },
+            "normal": {
+              "0": "7728",
+              "1": "1348"
+            },
+            "order": 4
+          }
+        ],
+        "scope": "positive-polynomial formulas with manufactured lower background bounds; no actual norm enclosure"
+      },
+      "full_box": {
+        "checks": {
+          "order0_whole_box_eikonal_over_epsilon_bound": true,
+          "order0_whole_box_matrix_bound": true,
+          "order0_whole_box_normal_bound": true,
+          "order1_whole_box_eikonal_over_epsilon_bound": true,
+          "order1_whole_box_matrix_bound": true,
+          "order1_whole_box_normal_bound": true,
+          "order2_whole_box_eikonal_over_epsilon_bound": true,
+          "order2_whole_box_matrix_bound": true,
+          "order2_whole_box_normal_bound": true,
+          "order3_whole_box_eikonal_over_epsilon_bound": true,
+          "order3_whole_box_matrix_bound": true,
+          "order3_whole_box_normal_bound": true
+        },
+        "rows": [
+          {
+            "eikonal_box_majorant": "1733/105",
+            "matrix_box_majorant": "22",
+            "normal_box_majorant": "1699/525",
+            "order": 0
+          },
+          {
+            "eikonal_box_majorant": "239/15",
+            "matrix_box_majorant": "7",
+            "normal_box_majorant": "187/75",
+            "order": 1
+          },
+          {
+            "eikonal_box_majorant": "238/15",
+            "matrix_box_majorant": "4",
+            "normal_box_majorant": "38/15",
+            "order": 2
+          },
+          {
+            "eikonal_box_majorant": "256/15",
+            "matrix_box_majorant": "0",
+            "normal_box_majorant": "203/50",
+            "order": 3
+          }
+        ],
+        "scope": "independent exact coefficient-sum suprema over a whole unit box with R in [1,2]; finite manufactured backgrounds, not actual core bounds"
+      },
+      "normal_value_gate": {
+        "checks": {
+          "floor_uses_full_or_tangential_reference_length": true,
+          "good_value_budget_meets_both_whole_path_gates": true,
+          "insufficient_normal_value_margin_is_rejected": true,
+          "large_accumulated_rounding_error_is_not_hidden": true,
+          "nonzero_angular_carrier_alone_is_not_a_uniform_normal_floor": true,
+          "squared_tilt_denominator_is_a_valid_outward_bound": true
+        },
+        "good": {
+          "assumptions": "actual comparison (5), epsilon_sum=epsilon+epsilon^2+k^-1; no new accepted band selected",
+          "beta": "1/100",
+          "inverse_normal_square": "400",
+          "lambda_min": "1",
+          "phase_error": "3/100",
+          "tilt_upper": "2"
+        },
+        "scope": "rational triangle-inequality/value-gate witnesses; actual Cphi growth gaps and accepted-domain substitution remain unverified"
+      },
+      "varying_growth_profile": {
+        "checks": {
+          "damping_has_zero_third_derivative_but_growth_does_not": true,
+          "growth_is_lambda0_over_sqrt_shape_not_constant": true,
+          "normalization_center_has_zero_logarithmic_profile_rate": true,
+          "order0_actual_varying_growth_profile_jet_bounded": true,
+          "order1_actual_varying_growth_profile_jet_bounded": true,
+          "order2_actual_varying_growth_profile_jet_bounded": true,
+          "order3_actual_varying_growth_profile_jet_bounded": true,
+          "order4_actual_varying_growth_profile_jet_bounded": true,
+          "order5_actual_varying_growth_profile_jet_bounded": true,
+          "order6_actual_varying_growth_profile_jet_bounded": true,
+          "third_profile_derivative_is_not_zero": true
+        },
+        "rows": [
+          {
+            "exact_abs_jet": "0",
+            "order": 0,
+            "polynomial_bound": "627/128"
+          },
+          {
+            "exact_abs_jet": "162/125",
+            "order": 1,
+            "polynomial_bound": "243/64"
+          },
+          {
+            "exact_abs_jet": "2592/3125",
+            "order": 2,
+            "polynomial_bound": "11745/2048"
+          },
+          {
+            "exact_abs_jet": "8748/15625",
+            "order": 3,
+            "polynomial_bound": "1305639/65536"
+          },
+          {
+            "exact_abs_jet": "594864/390625",
+            "order": 4,
+            "polynomial_bound": "289735947/2097152"
+          },
+          {
+            "exact_abs_jet": "16691184/9765625",
+            "order": 5,
+            "polynomial_bound": "82438604145/67108864"
+          },
+          {
+            "exact_abs_jet": "1693682784/244140625",
+            "order": 6,
+            "polynomial_bound": "28656463067865/2147483648"
+          }
+        ],
+        "scope": "exact algebraic profile jets at a rational Pythagorean normalization center; no selected Gaussian profile sampled"
+      }
+    }
+  },
+  "source_hashes": {
+    "results/actual_band_pulse_bounds/README.md": "b95bccb7103ec813babf7ccb9a43d65ee0b74b221914fa66fb9c2f1b98f4847f",
+    "results/core_all_order_foundation/coordinate_checks.py": "bbc81d687982f8985f7e5f916a57a023875a8f7e2b853a127aedcd6457e1646f",
+    "results/core_first_sourced_inverse_budget/README.md": "c5b99ccddab6df86c27c7ceb069cb6995c8b4e8126d642d323df9178ba97805c",
+    "results/core_first_sourced_inverse_budget/budgets.py": "3dce6117a5524e8f06c093833b45697dceffd03a46718950e0872f295ef5099e",
+    "results/core_phase_coefficient_budget/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_phase_coefficient_budget/README.md": "37c00b1e9050894fb3417b83817c18188ff5d6193e6b56ba4160e8dc042e9eda",
+    "results/core_phase_coefficient_budget/audit.py": "9610b1fb8a7aabd04d6616f791f431d937fc1a6ff135d0e3adf0200e5357c1e7",
+    "results/core_phase_coefficient_budget/budgets.py": "95b1fe979265851d41dbd8c0237faea6007074b461db27fa0028c7e865b7506f",
+    "results/core_phase_coefficient_budget/controls.py": "8f5999ea2973142decdce9e63a19dab4bed21f4976d530c4598abacc9c3e7339",
+    "results/core_phase_coefficient_budget/protocol.json": "637ce6e5b04bc499ab9eaed18bcce3edb55f24ab8aa9bab34aff4721eab78796",
+    "results/core_phase_coefficient_budget/requirements.txt": "74c1b9d7e6103576c1f8c7bf2bf255e088ee5ab2c8f5d7f70dc757c0ae596011",
+    "results/core_phase_coefficient_budget/test_audit.py": "1081d9684a6f493905e4f1f2d7ad2fac6e957f849cf73983370503dcaa29aeee",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6",
+    "results/core_primary_tail_recheck/README.md": "7acbbdcb68053bda84b9ba5ef57a28050d94c78e865216d18f81b37f1d9344bc",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/core_signed_prefix_source_budget/budgets.py": "141e8193b477024d6dcab82c3c4a584b721fdad70823ac3b2218bbfbc2387719",
+    "results/modulation_repair_all_order/map_checks.py": "7bb812332b22e3bd01861411143f878b7ff6c15113544e089b758dbe97432c6d"
+  },
+  "status": "full-background-frozen-phase-coefficient-recipes-varying-growth-and-normal-floor-gate"
+}
