@@ -1,0 +1,12 @@
+{
+  "parent_commit": "c69476a089fe3d894179e577b90b5f15ded3c4af",
+  "selected_mesh": "same original halfwidth delta=ell^-6, doubled-box displacement from active intersection at most 3delta per coordinate",
+  "native_log_distance": "delta*(12/rA+30) on physical T>=0, given 6delta<=rA and 100delta<=1",
+  "derived_norm_hull": "Rband in [rA/2,5rB/2], Rnative in [rA/4,5rB], Xnative<=25rB^2/2",
+  "leading_velocity_domain": "all positive radii by the original complete native/terminal/Gamma velocity proof and zero extension of axial rows",
+  "primitive_volume": "min(Xhi,Xv) only for X*U and primitive norm volume, never future pressure or moment endpoints",
+  "actual_negative_T_extension_or_growth_cone_floors_verified": false,
+  "actual_original_band_Borel_schedule_or_selector_inequality_verified": false,
+  "historical_parameters_or_supports_changed": false,
+  "finite_controls_are_not_continuum_proofs": true
+}

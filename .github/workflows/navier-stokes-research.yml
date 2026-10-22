@@ -321,6 +321,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_borel_cutoff_certificate/evidence.json \
             --output navier_stokes_core_borel_cutoff_certificate_ci.json
 
+      - name: Check existing native chart cover support aware primitive and full future pressure
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_native_chart_cover/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_native_chart_cover/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_native_chart_cover/evidence.json \
+            --output navier_stokes_core_native_chart_cover_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1690,6 +1697,7 @@ jobs:
             navier_stokes_core_background_finite_head_budget_ci.json
             navier_stokes_core_background_radial_reconstruction_ci.json
             navier_stokes_core_borel_cutoff_certificate_ci.json
+            navier_stokes_core_native_chart_cover_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
