@@ -300,6 +300,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_phase_coefficient_budget/evidence.json \
             --output navier_stokes_core_phase_coefficient_budget_ci.json
 
+      - name: Check explicit finite head background jets full normal comparison and unchanged selector compatibility
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_background_finite_head_budget/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_background_finite_head_budget/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_background_finite_head_budget/evidence.json \
+            --output navier_stokes_core_background_finite_head_budget_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1666,6 +1673,7 @@ jobs:
             navier_stokes_core_first_sourced_inverse_budget_ci.json
             navier_stokes_core_signed_prefix_source_budget_ci.json
             navier_stokes_core_phase_coefficient_budget_ci.json
+            navier_stokes_core_background_finite_head_budget_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json

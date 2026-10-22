@@ -1,0 +1,12 @@
+{
+  "parent_commit": "84a99f5292c1f63037275db47cad301e9717cb8c",
+  "derivative_basis": "Euler q*d_q at fixed X,eta with explicit raw mixed slow jets after composition",
+  "normalized_diagonal": "same retained C_(n,m)*a_n^(-nh)<=2^-n for m<=n; no new cutoff schedule",
+  "head_start": "N=max(2,m); coefficient one never placed in the weak diagonal tail",
+  "radial_increment": "q^(2nh)[chi W_n^r-(E chi) J_n^r], full finalized pressure/moment coefficients",
+  "phase_comparison": "all seven error groups, nearest nonzero unit rounding and full axial transport",
+  "unchanged_selector_compatibility": "beta*Lreq^2>=144*r0^2*Cphi^2, all original selector gates retained",
+  "manufactured_exact_orders": [0,1,2,3,4,5,6],
+  "actual_constants_or_selected_domain_substitution_evaluated": false,
+  "numerical_diagnostics_are_not_continuum_proofs": true
+}

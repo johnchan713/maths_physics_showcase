@@ -1,0 +1,753 @@
+{
+  "dependency_evidence_sha256": {
+    "results/background_jet_foundation/evidence.json": "8d5ceba47fc1f3759d7f25301396584274d264c91af9c67823197d8192fa800d",
+    "results/background_summation/evidence.json": "a2e55ad429914b2ce33aff913efd43165d2fd1f2fb88f13a6edfffc887b23853",
+    "results/core_fixed_profile_tame/evidence.json": "d06ccf98dad28493112700e3bc7041adfddb52a232733a7443f3934149ac8851",
+    "results/core_phase_coefficient_budget/evidence.json": "0f052f36ea462f31101ef67c38687eca7464a8b8be462d2212b3a7bed745a758",
+    "results/core_primary_tail_recheck/evidence.json": "d0cb62531e34a664b34f0bb7eaec20eecd1e1e9447ab2b3e48765de886934b3e",
+    "results/core_signed_prefix_source_budget/evidence.json": "4fa5193370702c31c5bbc04af8342c80e886578bb41f04a132c162184279eb2e"
+  },
+  "flags": {
+    "Cphi_contains_all_seven_full_normal_error_groups": true,
+    "actual_leading_coefficient_cutoff_and_schedule_inputs_certified_here": false,
+    "actual_unchanged_domain_normal_floor_substitution_verified": false,
+    "complete_residual_unconditional_pulses_or_blowup_proved": false,
+    "finite_real_chart_composition_and_full_background_coefficient_substitution_explicit": true,
+    "global_pressure_moment_identities_or_tangent_propagator_newly_closed": false,
+    "historical_evidence_profiles_carriers_cutoffs_or_accepted_bands_changed": false,
+    "radial_cutoff_curl_commutator_and_Euler_conversion_cost_retained": true,
+    "unchanged_selector_join_reduced_to_explicit_original_length_compatibility": true,
+    "whole_q_interval_finite_head_and_geometric_tail_constants_explicit": true
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_finite_head_cutoff_chart_and_selector_controls_pass": true,
+    "six_historical_records_bound": true
+  },
+  "inherited_source_checks": {
+    "background_jet_foundation:EXTERNAL_REVIEW_2026-10-15.md": true,
+    "background_jet_foundation:GOAL.md": true,
+    "background_jet_foundation:results/background_jet_foundation/.gitignore": true,
+    "background_jet_foundation:results/background_jet_foundation/README.md": true,
+    "background_jet_foundation:results/background_jet_foundation/audit.py": true,
+    "background_jet_foundation:results/background_jet_foundation/diagnostics.py": true,
+    "background_jet_foundation:results/background_jet_foundation/foundation.py": true,
+    "background_jet_foundation:results/background_jet_foundation/protocol.json": true,
+    "background_jet_foundation:results/background_jet_foundation/requirements.txt": true,
+    "background_jet_foundation:results/background_jet_foundation/test_audit.py": true,
+    "background_jet_foundation:results/background_summation/evidence.json": true,
+    "background_jet_foundation:results/geometric_pulse_replay/evidence.json": true,
+    "background_summation:GOAL.md": true,
+    "background_summation:results/annular_first_correction/evidence.json": true,
+    "background_summation:results/axis_core_attachment/evidence.json": true,
+    "background_summation:results/background_summation/README.md": true,
+    "background_summation:results/background_summation/audit.py": true,
+    "background_summation:results/background_summation/checks.py": true,
+    "background_summation:results/background_summation/hierarchy.py": true,
+    "background_summation:results/background_summation/protocol.json": true,
+    "background_summation:results/background_summation/requirements.txt": true,
+    "background_summation:results/background_summation/summation.py": true,
+    "background_summation:results/background_summation/test_audit.py": true,
+    "background_summation:results/first_correction_construction/evidence.json": true,
+    "background_summation:results/heat_exterior_audit/evidence.json": true,
+    "background_summation:results/higher_jet_budget/evidence.json": true,
+    "background_summation:results/physical_residual_budget/evidence.json": true,
+    "background_summation:results/stress_realization_audit/evidence.json": true,
+    "core_fixed_profile_tame:results/complete_covariance_initial_means/means.py": true,
+    "core_fixed_profile_tame:results/core_actual_compensator_gate/README.md": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/.gitignore": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/README.md": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/audit.py": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/protocol.json": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/requirements.txt": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/test_audit.py": true,
+    "core_fixed_profile_tame:results/core_pressure_shape_recheck/README.md": true,
+    "core_fixed_profile_tame:results/core_pressure_shape_recheck/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_reserved_geometry_recheck/README.md": true,
+    "core_fixed_profile_tame:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_slow_jet_loss_recheck/README.md": true,
+    "core_phase_coefficient_budget:results/actual_band_pulse_bounds/README.md": true,
+    "core_phase_coefficient_budget:results/core_all_order_foundation/coordinate_checks.py": true,
+    "core_phase_coefficient_budget:results/core_first_sourced_inverse_budget/README.md": true,
+    "core_phase_coefficient_budget:results/core_first_sourced_inverse_budget/budgets.py": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/.gitignore": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/README.md": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/audit.py": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/budgets.py": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/controls.py": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/protocol.json": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/requirements.txt": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/test_audit.py": true,
+    "core_phase_coefficient_budget:results/core_primary_aggregate_atlas/README.md": true,
+    "core_phase_coefficient_budget:results/core_primary_tail_recheck/README.md": true,
+    "core_phase_coefficient_budget:results/core_signed_prefix_source_budget/README.md": true,
+    "core_phase_coefficient_budget:results/core_signed_prefix_source_budget/budgets.py": true,
+    "core_phase_coefficient_budget:results/modulation_repair_all_order/map_checks.py": true,
+    "core_primary_tail_recheck:results/auxiliary_geometry_audit/README.md": true,
+    "core_primary_tail_recheck:results/canonical_value_domain/README.md": true,
+    "core_primary_tail_recheck:results/core_coefficient_support_recheck/README.md": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/.gitignore": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/README.md": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/audit.py": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/proof_checks.py": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/protocol.json": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/requirements.txt": true,
+    "core_primary_tail_recheck:results/core_primary_tail_recheck/test_audit.py": true,
+    "core_primary_tail_recheck:results/explicit_tilt_pulse_tail/README.md": true,
+    "core_primary_tail_recheck:results/explicit_tilt_pulse_tail/tail_bounds.py": true,
+    "core_primary_tail_recheck:results/physical_pulse_foundation/README.md": true,
+    "core_primary_tail_recheck:results/sourced_inverse_foundation/README.md": true,
+    "core_signed_prefix_source_budget:results/complete_covariance_initial_means/means.py": true,
+    "core_signed_prefix_source_budget:results/core_fast_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_fast_inverse_budget/proof_checks.py": true,
+    "core_signed_prefix_source_budget:results/core_first_sourced_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_first_sourced_inverse_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_initial_haar_row_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_initial_haar_row_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_initial_scalar_seed_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/.gitignore": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/audit.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/controls.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/protocol.json": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/requirements.txt": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/test_audit.py": true,
+    "core_signed_prefix_source_budget:results/core_slow_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/regular_source_foundation/README.md": true,
+    "core_signed_prefix_source_budget:results/regular_source_foundation/source_checks.py": true
+  },
+  "protocol": {
+    "actual_constants_or_selected_domain_substitution_evaluated": false,
+    "derivative_basis": "Euler q*d_q at fixed X,eta with explicit raw mixed slow jets after composition",
+    "head_start": "N=max(2,m); coefficient one never placed in the weak diagonal tail",
+    "manufactured_exact_orders": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "normalized_diagonal": "same retained C_(n,m)*a_n^(-nh)<=2^-n for m<=n; no new cutoff schedule",
+    "numerical_diagnostics_are_not_continuum_proofs": true,
+    "parent_commit": "84a99f5292c1f63037275db47cad301e9717cb8c",
+    "phase_comparison": "all seven error groups, nearest nonzero unit rounding and full axial transport",
+    "radial_increment": "q^(2nh)[chi W_n^r-(E chi) J_n^r], full finalized pressure/moment coefficients",
+    "unchanged_selector_compatibility": "beta*Lreq^2>=144*r0^2*Cphi^2, all original selector gates retained"
+  },
+  "remaining_obligations": [
+    "certify actual leading through-two and finalized coefficient-one through-one tuple jets, cutoff Euler norms, normalized retained schedule, growth/shear and geometry data",
+    "evaluate all seven Cphi groups and beta*Lreq^2>=144*r0^2*Cphi^2 on the unchanged existing selector, retaining all original checks",
+    "discharge homogeneous tangent propagator actual-root wave and remaining whole-path support and fixed-map premises",
+    "join first sourced complete covariance fresh full-pressure moments and complete physical residual including all additive tails before unconditional claims"
+  ],
+  "review": {
+    "checks": {
+      "chart:m0_eta0_F_finite_chart_composition_bounded": true,
+      "chart:m0_eta0_G_finite_chart_composition_bounded": true,
+      "chart:m0_eta0_btilde_finite_chart_composition_bounded": true,
+      "chart:m0_eta3/5_F_finite_chart_composition_bounded": true,
+      "chart:m0_eta3/5_G_finite_chart_composition_bounded": true,
+      "chart:m0_eta3/5_btilde_finite_chart_composition_bounded": true,
+      "chart:m1_eta0_F_finite_chart_composition_bounded": true,
+      "chart:m1_eta0_G_finite_chart_composition_bounded": true,
+      "chart:m1_eta0_btilde_finite_chart_composition_bounded": true,
+      "chart:m1_eta3/5_F_finite_chart_composition_bounded": true,
+      "chart:m1_eta3/5_G_finite_chart_composition_bounded": true,
+      "chart:m1_eta3/5_btilde_finite_chart_composition_bounded": true,
+      "chart:m2_eta0_F_finite_chart_composition_bounded": true,
+      "chart:m2_eta0_G_finite_chart_composition_bounded": true,
+      "chart:m2_eta0_btilde_finite_chart_composition_bounded": true,
+      "chart:m2_eta3/5_F_finite_chart_composition_bounded": true,
+      "chart:m2_eta3/5_G_finite_chart_composition_bounded": true,
+      "chart:m2_eta3/5_btilde_finite_chart_composition_bounded": true,
+      "chart:m3_eta0_F_finite_chart_composition_bounded": true,
+      "chart:m3_eta0_G_finite_chart_composition_bounded": true,
+      "chart:m3_eta0_btilde_finite_chart_composition_bounded": true,
+      "chart:m3_eta3/5_F_finite_chart_composition_bounded": true,
+      "chart:m3_eta3/5_G_finite_chart_composition_bounded": true,
+      "chart:m3_eta3/5_btilde_finite_chart_composition_bounded": true,
+      "chart:radial_reciprocal_is_not_dropped": true,
+      "comparison:Cphi_sums_all_seven_groups": true,
+      "comparison:S10_sign-1_frozen_shear_cancellation": true,
+      "comparison:S10_sign-1_v0_full_normal_error_envelope": true,
+      "comparison:S10_sign-1_v10_full_normal_error_envelope": true,
+      "comparison:S10_sign-1_v20_full_normal_error_envelope": true,
+      "comparison:S10_sign1_frozen_shear_cancellation": true,
+      "comparison:S10_sign1_v0_full_normal_error_envelope": true,
+      "comparison:S10_sign1_v10_full_normal_error_envelope": true,
+      "comparison:S10_sign1_v20_full_normal_error_envelope": true,
+      "comparison:S1_sign-1_frozen_shear_cancellation": true,
+      "comparison:S1_sign-1_v0_full_normal_error_envelope": true,
+      "comparison:S1_sign-1_v1_full_normal_error_envelope": true,
+      "comparison:S1_sign-1_v2_full_normal_error_envelope": true,
+      "comparison:S1_sign1_frozen_shear_cancellation": true,
+      "comparison:S1_sign1_v0_full_normal_error_envelope": true,
+      "comparison:S1_sign1_v1_full_normal_error_envelope": true,
+      "comparison:S1_sign1_v2_full_normal_error_envelope": true,
+      "comparison:S3_sign-1_frozen_shear_cancellation": true,
+      "comparison:S3_sign-1_v0_full_normal_error_envelope": true,
+      "comparison:S3_sign-1_v3_full_normal_error_envelope": true,
+      "comparison:S3_sign-1_v6_full_normal_error_envelope": true,
+      "comparison:S3_sign1_frozen_shear_cancellation": true,
+      "comparison:S3_sign1_v0_full_normal_error_envelope": true,
+      "comparison:S3_sign1_v3_full_normal_error_envelope": true,
+      "comparison:S3_sign1_v6_full_normal_error_envelope": true,
+      "comparison:comparison_uses_leading_two_and_cutoff_two": true,
+      "comparison:comparison_uses_only_coefficient_one_jets_through_one": true,
+      "comparison:every_error_group_has_positive_cost": true,
+      "cutoff:Euler_second_jet_differs_from_frozen_second_jet": true,
+      "cutoff:commutator_sign_is_essential": true,
+      "cutoff:m0_Euler_product_rule_retains_commutator": true,
+      "cutoff:m0_cutoff_extra_Euler_jet_bound": true,
+      "cutoff:m1_Euler_product_rule_retains_commutator": true,
+      "cutoff:m1_cutoff_extra_Euler_jet_bound": true,
+      "cutoff:m2_Euler_product_rule_retains_commutator": true,
+      "cutoff:m2_cutoff_extra_Euler_jet_bound": true,
+      "cutoff:m3_Euler_product_rule_retains_commutator": true,
+      "cutoff:m3_cutoff_extra_Euler_jet_bound": true,
+      "cutoff:m4_Euler_product_rule_retains_commutator": true,
+      "cutoff:m4_cutoff_extra_Euler_jet_bound": true,
+      "cutoff:radial_cutoff_curl_commutator_nonzero": true,
+      "selector:insufficient_original_length_is_reported_not_reselected": true,
+      "selector:normal_floor_same_as_parent": true,
+      "selector:slow_gate_already_dominates_parent_rounding_gate": true,
+      "selector:unchanged_length_budget_joins_parent_normal_margin": true,
+      "selector:unchanged_selector_all_original_checks_pass": true,
+      "tail:m0_coefficient_one_always_in_finite_head": true,
+      "tail:m0_t1/17_entire_geometric_tail_bound": true,
+      "tail:m0_t1/17_whole_interval_correction_constant": true,
+      "tail:m0_t1/2_entire_geometric_tail_bound": true,
+      "tail:m0_t1/2_whole_interval_correction_constant": true,
+      "tail:m0_t1_entire_geometric_tail_bound": true,
+      "tail:m0_t1_whole_interval_correction_constant": true,
+      "tail:m1_coefficient_one_always_in_finite_head": true,
+      "tail:m1_t1/17_entire_geometric_tail_bound": true,
+      "tail:m1_t1/17_whole_interval_correction_constant": true,
+      "tail:m1_t1/2_entire_geometric_tail_bound": true,
+      "tail:m1_t1/2_whole_interval_correction_constant": true,
+      "tail:m1_t1_entire_geometric_tail_bound": true,
+      "tail:m1_t1_whole_interval_correction_constant": true,
+      "tail:m2_coefficient_one_always_in_finite_head": true,
+      "tail:m2_t1/17_entire_geometric_tail_bound": true,
+      "tail:m2_t1/17_whole_interval_correction_constant": true,
+      "tail:m2_t1/2_entire_geometric_tail_bound": true,
+      "tail:m2_t1/2_whole_interval_correction_constant": true,
+      "tail:m2_t1_entire_geometric_tail_bound": true,
+      "tail:m2_t1_whole_interval_correction_constant": true,
+      "tail:m3_coefficient_one_always_in_finite_head": true,
+      "tail:m3_t1/17_entire_geometric_tail_bound": true,
+      "tail:m3_t1/17_whole_interval_correction_constant": true,
+      "tail:m3_t1/2_entire_geometric_tail_bound": true,
+      "tail:m3_t1/2_whole_interval_correction_constant": true,
+      "tail:m3_t1_entire_geometric_tail_bound": true,
+      "tail:m3_t1_whole_interval_correction_constant": true,
+      "tail:m4_coefficient_one_always_in_finite_head": true,
+      "tail:m4_t1/17_entire_geometric_tail_bound": true,
+      "tail:m4_t1/17_whole_interval_correction_constant": true,
+      "tail:m4_t1/2_entire_geometric_tail_bound": true,
+      "tail:m4_t1/2_whole_interval_correction_constant": true,
+      "tail:m4_t1_entire_geometric_tail_bound": true,
+      "tail:m4_t1_whole_interval_correction_constant": true,
+      "tail:m5_coefficient_one_always_in_finite_head": true,
+      "tail:m5_t1/17_entire_geometric_tail_bound": true,
+      "tail:m5_t1/17_whole_interval_correction_constant": true,
+      "tail:m5_t1/2_entire_geometric_tail_bound": true,
+      "tail:m5_t1/2_whole_interval_correction_constant": true,
+      "tail:m5_t1_entire_geometric_tail_bound": true,
+      "tail:m5_t1_whole_interval_correction_constant": true,
+      "tail:m6_coefficient_one_always_in_finite_head": true,
+      "tail:m6_t1/17_entire_geometric_tail_bound": true,
+      "tail:m6_t1/17_whole_interval_correction_constant": true,
+      "tail:m6_t1/2_entire_geometric_tail_bound": true,
+      "tail:m6_t1/2_whole_interval_correction_constant": true,
+      "tail:m6_t1_entire_geometric_tail_bound": true,
+      "tail:m6_t1_whole_interval_correction_constant": true,
+      "tail:starting_diagonal_tail_at_one_loses_q_to_2h_rate": true
+    },
+    "parts": {
+      "chart": {
+        "checks": {
+          "m0_eta0_F_finite_chart_composition_bounded": true,
+          "m0_eta0_G_finite_chart_composition_bounded": true,
+          "m0_eta0_btilde_finite_chart_composition_bounded": true,
+          "m0_eta3/5_F_finite_chart_composition_bounded": true,
+          "m0_eta3/5_G_finite_chart_composition_bounded": true,
+          "m0_eta3/5_btilde_finite_chart_composition_bounded": true,
+          "m1_eta0_F_finite_chart_composition_bounded": true,
+          "m1_eta0_G_finite_chart_composition_bounded": true,
+          "m1_eta0_btilde_finite_chart_composition_bounded": true,
+          "m1_eta3/5_F_finite_chart_composition_bounded": true,
+          "m1_eta3/5_G_finite_chart_composition_bounded": true,
+          "m1_eta3/5_btilde_finite_chart_composition_bounded": true,
+          "m2_eta0_F_finite_chart_composition_bounded": true,
+          "m2_eta0_G_finite_chart_composition_bounded": true,
+          "m2_eta0_btilde_finite_chart_composition_bounded": true,
+          "m2_eta3/5_F_finite_chart_composition_bounded": true,
+          "m2_eta3/5_G_finite_chart_composition_bounded": true,
+          "m2_eta3/5_btilde_finite_chart_composition_bounded": true,
+          "m3_eta0_F_finite_chart_composition_bounded": true,
+          "m3_eta0_G_finite_chart_composition_bounded": true,
+          "m3_eta0_btilde_finite_chart_composition_bounded": true,
+          "m3_eta3/5_F_finite_chart_composition_bounded": true,
+          "m3_eta3/5_G_finite_chart_composition_bounded": true,
+          "m3_eta3/5_btilde_finite_chart_composition_bounded": true,
+          "radial_reciprocal_is_not_dropped": true
+        },
+        "rows": [
+          {
+            "actual_max_raw_jet": "3/2",
+            "eta": "0",
+            "field": "F",
+            "order": 0
+          },
+          {
+            "actual_max_raw_jet": "3/2",
+            "eta": "0",
+            "field": "G",
+            "order": 0
+          },
+          {
+            "actual_max_raw_jet": "3/2",
+            "eta": "0",
+            "field": "btilde",
+            "order": 0
+          },
+          {
+            "actual_max_raw_jet": "93/50",
+            "eta": "3/5",
+            "field": "F",
+            "order": 0
+          },
+          {
+            "actual_max_raw_jet": "93/50",
+            "eta": "3/5",
+            "field": "G",
+            "order": 0
+          },
+          {
+            "actual_max_raw_jet": "93/50",
+            "eta": "3/5",
+            "field": "btilde",
+            "order": 0
+          },
+          {
+            "actual_max_raw_jet": "3/2",
+            "eta": "0",
+            "field": "F",
+            "order": 1
+          },
+          {
+            "actual_max_raw_jet": "3/2",
+            "eta": "0",
+            "field": "G",
+            "order": 1
+          },
+          {
+            "actual_max_raw_jet": "3/2",
+            "eta": "0",
+            "field": "btilde",
+            "order": 1
+          },
+          {
+            "actual_max_raw_jet": "93/50",
+            "eta": "3/5",
+            "field": "F",
+            "order": 1
+          },
+          {
+            "actual_max_raw_jet": "93/50",
+            "eta": "3/5",
+            "field": "G",
+            "order": 1
+          },
+          {
+            "actual_max_raw_jet": "93/50",
+            "eta": "3/5",
+            "field": "btilde",
+            "order": 1
+          },
+          {
+            "actual_max_raw_jet": "2",
+            "eta": "0",
+            "field": "F",
+            "order": 2
+          },
+          {
+            "actual_max_raw_jet": "152163/80000",
+            "eta": "0",
+            "field": "G",
+            "order": 2
+          },
+          {
+            "actual_max_raw_jet": "377/200",
+            "eta": "0",
+            "field": "btilde",
+            "order": 2
+          },
+          {
+            "actual_max_raw_jet": "370792685925/123654854168",
+            "eta": "3/5",
+            "field": "F",
+            "order": 2
+          },
+          {
+            "actual_max_raw_jet": "370792685925/123654854168",
+            "eta": "3/5",
+            "field": "G",
+            "order": 2
+          },
+          {
+            "actual_max_raw_jet": "45982850125/15456856771",
+            "eta": "3/5",
+            "field": "btilde",
+            "order": 2
+          },
+          {
+            "actual_max_raw_jet": "6",
+            "eta": "0",
+            "field": "F",
+            "order": 3
+          },
+          {
+            "actual_max_raw_jet": "94211343/16000000",
+            "eta": "0",
+            "field": "G",
+            "order": 3
+          },
+          {
+            "actual_max_raw_jet": "11661/2000",
+            "eta": "0",
+            "field": "btilde",
+            "order": 3
+          },
+          {
+            "actual_max_raw_jet": "14668353216616606875/1534576772311255216",
+            "eta": "3/5",
+            "field": "F",
+            "order": 3
+          },
+          {
+            "actual_max_raw_jet": "14668353216616606875/1534576772311255216",
+            "eta": "3/5",
+            "field": "G",
+            "order": 3
+          },
+          {
+            "actual_max_raw_jet": "908569000202643750/95911048269453451",
+            "eta": "3/5",
+            "field": "btilde",
+            "order": 3
+          }
+        ],
+        "scope": "exact implicit coordinate jets and manufactured C^m profile jets through order three; analytic majorant, not sampled field norms, supplies general orders"
+      },
+      "comparison": {
+        "Cphi": "44760014862423085267930754011/2430",
+        "checks": {
+          "Cphi_sums_all_seven_groups": true,
+          "S10_sign-1_frozen_shear_cancellation": true,
+          "S10_sign-1_v0_full_normal_error_envelope": true,
+          "S10_sign-1_v10_full_normal_error_envelope": true,
+          "S10_sign-1_v20_full_normal_error_envelope": true,
+          "S10_sign1_frozen_shear_cancellation": true,
+          "S10_sign1_v0_full_normal_error_envelope": true,
+          "S10_sign1_v10_full_normal_error_envelope": true,
+          "S10_sign1_v20_full_normal_error_envelope": true,
+          "S1_sign-1_frozen_shear_cancellation": true,
+          "S1_sign-1_v0_full_normal_error_envelope": true,
+          "S1_sign-1_v1_full_normal_error_envelope": true,
+          "S1_sign-1_v2_full_normal_error_envelope": true,
+          "S1_sign1_frozen_shear_cancellation": true,
+          "S1_sign1_v0_full_normal_error_envelope": true,
+          "S1_sign1_v1_full_normal_error_envelope": true,
+          "S1_sign1_v2_full_normal_error_envelope": true,
+          "S3_sign-1_frozen_shear_cancellation": true,
+          "S3_sign-1_v0_full_normal_error_envelope": true,
+          "S3_sign-1_v3_full_normal_error_envelope": true,
+          "S3_sign-1_v6_full_normal_error_envelope": true,
+          "S3_sign1_frozen_shear_cancellation": true,
+          "S3_sign1_v0_full_normal_error_envelope": true,
+          "S3_sign1_v3_full_normal_error_envelope": true,
+          "S3_sign1_v6_full_normal_error_envelope": true,
+          "comparison_uses_leading_two_and_cutoff_two": true,
+          "comparison_uses_only_coefficient_one_jets_through_one": true,
+          "every_error_group_has_positive_cost": true
+        },
+        "groups": {
+          "angular_box": "11/4",
+          "angular_rounding": "1",
+          "axial_transport": "1401385986/25",
+          "radial_background": "4829869044/25",
+          "radial_box": "4476001486242308465857492000/243",
+          "radial_rounding": "1513512",
+          "tilt": "3/4"
+        },
+        "rows": [
+          {
+            "L1_error": "11/40",
+            "S": "1",
+            "sign": -1,
+            "v": "0"
+          },
+          {
+            "L1_error": "3388660637389298897861817101851/3110400",
+            "S": "1",
+            "sign": -1,
+            "v": "1"
+          },
+          {
+            "L1_error": "3388660637389298897861816674171/1555200",
+            "S": "1",
+            "sign": -1,
+            "v": "2"
+          },
+          {
+            "L1_error": "7/40",
+            "S": "1",
+            "sign": 1,
+            "v": "0"
+          },
+          {
+            "L1_error": "2759837013956233123000860575797/3110400",
+            "S": "1",
+            "sign": 1,
+            "v": "1"
+          },
+          {
+            "L1_error": "2759837013956233123000860653557/1555200",
+            "S": "1",
+            "sign": 1,
+            "v": "2"
+          },
+          {
+            "L1_error": "69/656",
+            "S": "3",
+            "sign": -1,
+            "v": "0"
+          },
+          {
+            "L1_error": "316542825107056056681189740052637/3443212800",
+            "S": "3",
+            "sign": -1,
+            "v": "3"
+          },
+          {
+            "L1_error": "316542825107056056681189558969037/1721606400",
+            "S": "3",
+            "sign": -1,
+            "v": "6"
+          },
+          {
+            "L1_error": "45/656",
+            "S": "3",
+            "sign": 1,
+            "v": "0"
+          },
+          {
+            "L1_error": "290761056546300359756929602462859/3443212800",
+            "S": "3",
+            "sign": 1,
+            "v": "3"
+          },
+          {
+            "L1_error": "290761056546300359756929613485339/1721606400",
+            "S": "3",
+            "sign": 1,
+            "v": "6"
+          },
+          {
+            "L1_error": "64557307/2408002400",
+            "S": "10",
+            "sign": -1,
+            "v": "0"
+          },
+          {
+            "L1_error": "72534555774176045655945636606144577/9362313331200",
+            "S": "10",
+            "sign": -1,
+            "v": "10"
+          },
+          {
+            "L1_error": "72534555774176045655945511106739769/4681156665600",
+            "S": "10",
+            "sign": -1,
+            "v": "20"
+          },
+          {
+            "L1_error": "61838747/2408002400",
+            "S": "10",
+            "sign": 1,
+            "v": "0"
+          },
+          {
+            "L1_error": "70641794781171646937300882413440463/9362313331200",
+            "S": "10",
+            "sign": 1,
+            "v": "10"
+          },
+          {
+            "L1_error": "70641794781171646937300867524941271/4681156665600",
+            "S": "10",
+            "sign": 1,
+            "v": "20"
+          }
+        ],
+        "scope": "manufactured admissible reference/carrier/error witnesses over the whole path endpoints and interior; continuum estimate follows seven analytic bounds, not these witnesses"
+      },
+      "cutoff": {
+        "checks": {
+          "Euler_second_jet_differs_from_frozen_second_jet": true,
+          "commutator_sign_is_essential": true,
+          "m0_Euler_product_rule_retains_commutator": true,
+          "m0_cutoff_extra_Euler_jet_bound": true,
+          "m1_Euler_product_rule_retains_commutator": true,
+          "m1_cutoff_extra_Euler_jet_bound": true,
+          "m2_Euler_product_rule_retains_commutator": true,
+          "m2_cutoff_extra_Euler_jet_bound": true,
+          "m3_Euler_product_rule_retains_commutator": true,
+          "m3_cutoff_extra_Euler_jet_bound": true,
+          "m4_Euler_product_rule_retains_commutator": true,
+          "m4_cutoff_extra_Euler_jet_bound": true,
+          "radial_cutoff_curl_commutator_nonzero": true
+        },
+        "scope": "manufactured local polynomial cutoff jets; no claim that this polynomial is the actual compact cutoff or actual pressure coefficient"
+      },
+      "selector": {
+        "checks": {
+          "insufficient_original_length_is_reported_not_reselected": true,
+          "normal_floor_same_as_parent": true,
+          "slow_gate_already_dominates_parent_rounding_gate": true,
+          "unchanged_length_budget_joins_parent_normal_margin": true,
+          "unchanged_selector_all_original_checks_pass": true
+        },
+        "ell_tail": "47601491",
+        "scope": "exact retained selector fixture, not substitution of actual finite background constants into the selected physical domain"
+      },
+      "tail": {
+        "checks": {
+          "m0_coefficient_one_always_in_finite_head": true,
+          "m0_t1/17_entire_geometric_tail_bound": true,
+          "m0_t1/17_whole_interval_correction_constant": true,
+          "m0_t1/2_entire_geometric_tail_bound": true,
+          "m0_t1/2_whole_interval_correction_constant": true,
+          "m0_t1_entire_geometric_tail_bound": true,
+          "m0_t1_whole_interval_correction_constant": true,
+          "m1_coefficient_one_always_in_finite_head": true,
+          "m1_t1/17_entire_geometric_tail_bound": true,
+          "m1_t1/17_whole_interval_correction_constant": true,
+          "m1_t1/2_entire_geometric_tail_bound": true,
+          "m1_t1/2_whole_interval_correction_constant": true,
+          "m1_t1_entire_geometric_tail_bound": true,
+          "m1_t1_whole_interval_correction_constant": true,
+          "m2_coefficient_one_always_in_finite_head": true,
+          "m2_t1/17_entire_geometric_tail_bound": true,
+          "m2_t1/17_whole_interval_correction_constant": true,
+          "m2_t1/2_entire_geometric_tail_bound": true,
+          "m2_t1/2_whole_interval_correction_constant": true,
+          "m2_t1_entire_geometric_tail_bound": true,
+          "m2_t1_whole_interval_correction_constant": true,
+          "m3_coefficient_one_always_in_finite_head": true,
+          "m3_t1/17_entire_geometric_tail_bound": true,
+          "m3_t1/17_whole_interval_correction_constant": true,
+          "m3_t1/2_entire_geometric_tail_bound": true,
+          "m3_t1/2_whole_interval_correction_constant": true,
+          "m3_t1_entire_geometric_tail_bound": true,
+          "m3_t1_whole_interval_correction_constant": true,
+          "m4_coefficient_one_always_in_finite_head": true,
+          "m4_t1/17_entire_geometric_tail_bound": true,
+          "m4_t1/17_whole_interval_correction_constant": true,
+          "m4_t1/2_entire_geometric_tail_bound": true,
+          "m4_t1/2_whole_interval_correction_constant": true,
+          "m4_t1_entire_geometric_tail_bound": true,
+          "m4_t1_whole_interval_correction_constant": true,
+          "m5_coefficient_one_always_in_finite_head": true,
+          "m5_t1/17_entire_geometric_tail_bound": true,
+          "m5_t1/17_whole_interval_correction_constant": true,
+          "m5_t1/2_entire_geometric_tail_bound": true,
+          "m5_t1/2_whole_interval_correction_constant": true,
+          "m5_t1_entire_geometric_tail_bound": true,
+          "m5_t1_whole_interval_correction_constant": true,
+          "m6_coefficient_one_always_in_finite_head": true,
+          "m6_t1/17_entire_geometric_tail_bound": true,
+          "m6_t1/17_whole_interval_correction_constant": true,
+          "m6_t1/2_entire_geometric_tail_bound": true,
+          "m6_t1/2_whole_interval_correction_constant": true,
+          "m6_t1_entire_geometric_tail_bound": true,
+          "m6_t1_whole_interval_correction_constant": true,
+          "starting_diagonal_tail_at_one_loses_q_to_2h_rate": true
+        },
+        "rows": [
+          {
+            "head": "2",
+            "order": 0,
+            "start": 2,
+            "tail": "1/2"
+          },
+          {
+            "head": "3",
+            "order": 1,
+            "start": 2,
+            "tail": "1/2"
+          },
+          {
+            "head": "4",
+            "order": 2,
+            "start": 2,
+            "tail": "1/2"
+          },
+          {
+            "head": "11",
+            "order": 3,
+            "start": 3,
+            "tail": "1/4"
+          },
+          {
+            "head": "21",
+            "order": 4,
+            "start": 4,
+            "tail": "1/8"
+          },
+          {
+            "head": "34",
+            "order": 5,
+            "start": 5,
+            "tail": "1/16"
+          },
+          {
+            "head": "50",
+            "order": 6,
+            "start": 6,
+            "tail": "1/32"
+          }
+        ],
+        "scope": "exact geometric series with t=q^h in (0,1]; analytic monotonic bounds cover the entire interval"
+      }
+    }
+  },
+  "source_hashes": {
+    "results/background_jet_foundation/README.md": "8b70ed3289d5ebaddbb58183a595b29e80b31503ea6fa832445c448b4f32a7be",
+    "results/background_summation/README.md": "1f2d37750821432fa04c1b0ca968d7d3db079c3cb6fb02c8ae4b82bc5639e8be",
+    "results/core_all_order_foundation/coordinate_checks.py": "bbc81d687982f8985f7e5f916a57a023875a8f7e2b853a127aedcd6457e1646f",
+    "results/core_background_finite_head_budget/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_background_finite_head_budget/audit.py": "68a337f1256f1bd05f0aade585c72dde5d2d63e149b2ed768073f2fd00d3e01d",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_background_finite_head_budget/controls.py": "0887b69a6eb90f5dd22f51415e8b4bc70832d02c6ab27e1b0615af38bbb4615b",
+    "results/core_background_finite_head_budget/protocol.json": "097a385d05ead51cf41230b220160dd7a6481e0d1328d9d26ddbb84dc572ff7f",
+    "results/core_background_finite_head_budget/requirements.txt": "d31e8efce623192760a4cfaf8cb7196149972b28257cb1ecb6d16726bfc1bc0c",
+    "results/core_background_finite_head_budget/test_audit.py": "9b413c00b8aab4608d93e965c34c09a1afaa672193bc70e11f0db767ae06ba93",
+    "results/core_fixed_profile_tame/README.md": "6046cfdcf2540a7ce245b1abebeec00e0d57196dc719f84185c04fcbb5c10a6d",
+    "results/core_phase_coefficient_budget/README.md": "37c00b1e9050894fb3417b83817c18188ff5d6193e6b56ba4160e8dc042e9eda",
+    "results/core_phase_coefficient_budget/budgets.py": "95b1fe979265851d41dbd8c0237faea6007074b461db27fa0028c7e865b7506f",
+    "results/core_primary_tail_recheck/README.md": "7acbbdcb68053bda84b9ba5ef57a28050d94c78e865216d18f81b37f1d9344bc",
+    "results/core_primary_tail_recheck/proof_checks.py": "6888d850f818e653b275bd37347c8bf942c1c846479ce3d812c1ac6ef9b615cd",
+    "results/core_reserved_geometry_recheck/proof_checks.py": "39c280f66d68bc3529749363166041b56ac5b33ccbe1b82c25d9ea05276beb5e",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/modulation_repair_all_order/map_checks.py": "7bb812332b22e3bd01861411143f878b7ff6c15113544e089b758dbe97432c6d"
+  },
+  "status": "finite-head-full-background-jet-constants-and-unchanged-normal-selector-compatibility"
+}
