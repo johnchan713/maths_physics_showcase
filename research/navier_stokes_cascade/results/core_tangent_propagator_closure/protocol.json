@@ -1,0 +1,12 @@
+{
+  "parent_commit": "935dae292935babd245a1839126ca246339cb04a",
+  "integrated_cost": "H=CE+Cd with ORIGINAL retained frame primitives and same full path",
+  "Euclidean_conversion": "Kframe=(1+S0)*max(1,cmax)/min(1,cmin)",
+  "derived_tangent_polynomial": "T(S)=Kframe*3^ceil(H)",
+  "derived_length_polynomial": "Length(S)=S from original L<=S",
+  "harmonic_value_bound": "extra factor exp[-(m^2-1)*integral actual d], d>=bmin^2/4",
+  "canonical_zero_entrance": "frame change leaves zero data and physical inverse unchanged; homogeneous growing primaries/roots remain distinct unless separately identified",
+  "new_analytical_assumptions": [],
+  "new_acceptance_inequalities": [],
+  "actual_primitive_enclosures_complete_means_source_support_or_residual_certified": false
+}

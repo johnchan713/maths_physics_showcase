@@ -363,6 +363,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_sourced_normal_transfer/evidence.json \
             --output navier_stokes_core_sourced_normal_transfer_ci.json
 
+      - name: Check original frame budgets close physical tangent propagator and inverse length
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_tangent_propagator_closure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_tangent_propagator_closure/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_tangent_propagator_closure/evidence.json \
+            --output navier_stokes_core_tangent_propagator_closure_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1738,6 +1745,7 @@ jobs:
             navier_stokes_core_physical_representative_closure_ci.json
             navier_stokes_core_normal_length_closure_ci.json
             navier_stokes_core_sourced_normal_transfer_ci.json
+            navier_stokes_core_tangent_propagator_closure_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
