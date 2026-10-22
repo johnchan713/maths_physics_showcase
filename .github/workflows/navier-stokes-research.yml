@@ -314,6 +314,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_background_radial_reconstruction/evidence.json \
             --output navier_stokes_core_background_radial_reconstruction_ci.json
 
+      - name: Check implemented Borel cutoff Euler jets unchanged scale prefix and full phase gates
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_borel_cutoff_certificate/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_borel_cutoff_certificate/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_borel_cutoff_certificate/evidence.json \
+            --output navier_stokes_core_borel_cutoff_certificate_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1682,6 +1689,7 @@ jobs:
             navier_stokes_core_phase_coefficient_budget_ci.json
             navier_stokes_core_background_finite_head_budget_ci.json
             navier_stokes_core_background_radial_reconstruction_ci.json
+            navier_stokes_core_borel_cutoff_certificate_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json

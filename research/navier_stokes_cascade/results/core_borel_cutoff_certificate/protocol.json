@@ -1,0 +1,12 @@
+{
+  "parent_commit": "dbc9aeb1696c6a93b5128a5a04f95f76c528db2e",
+  "implemented_cutoff": "chi(s)=1-sigma(2s-1), sigma=g/(g+g_reflected), g=exp(-1/x^2)",
+  "Euler_low_bounds": [1,64,4928],
+  "Euler_midpoint_first_and_second": [-12,-12],
+  "all_fixed_order_recipe": "Gaussian polynomial recurrence, positive reciprocal/product bounds and Stirling Euler conversion",
+  "schedule_verification": "provided outward binary-log intervals, every normalized row through n, every smaller q; no scale selection",
+  "finite_prefix_is_infinite_schedule_certificate": false,
+  "Cphi_dependence": "D+5*Lhigh*(pplus+qz)*(CF1+CG1)*max(1,2*(1+2h)*M11*K2)",
+  "actual_infinite_schedule_or_unchanged_selector_verified": false,
+  "tests_are_not_continuum_proofs": true
+}
