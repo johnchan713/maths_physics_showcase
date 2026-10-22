@@ -1,0 +1,11 @@
+{
+  "parent_commit": "18faf0b9ee43efe277d0b57c3e662222d80c6bd7",
+  "definition": "background_jet_foundation equation (11), same full Euler norms and all inherited finite requirements",
+  "quantifiers": "every sequence admitted by the original real rule, every n>=1, every m<=n, every q on the entire cutoff support",
+  "strict_normalized_margin": "n*h*log(a_n)-log(C_nm)-n*log(2)>=n*h>0",
+  "removed_independent_premises_for_rule_defined_floor": ["infinite normalized diagonal", "identity with diagnostic squared-flat Borel cutoff"],
+  "new_analytical_assumptions": [],
+  "numeric_infinite_sequence_or_mpmath_rounding_certified": false,
+  "actual_chart_gaps_band_or_full_residual_certified": false,
+  "historical_parameters_or_evidence_changed": false
+}

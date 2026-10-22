@@ -1,0 +1,2 @@
+# New certificates use the standard library. Historical replay uses mpmath.
+mpmath>=1.3

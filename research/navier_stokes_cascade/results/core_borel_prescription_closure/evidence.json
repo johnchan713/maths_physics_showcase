@@ -1,0 +1,454 @@
+{
+  "dependency_evidence_sha256": {
+    "results/background_jet_foundation/evidence.json": "8d5ceba47fc1f3759d7f25301396584274d264c91af9c67823197d8192fa800d",
+    "results/background_summation/evidence.json": "a2e55ad429914b2ce33aff913efd43165d2fd1f2fb88f13a6edfffc887b23853",
+    "results/core_borel_cutoff_certificate/evidence.json": "5fea9720cc8fb09851974b3af91e6a38bfa06011760efddb60de75c21f66b608",
+    "results/core_tangential_normal_closure/evidence.json": "8eff3dfc246ecb527b8c5d56a4a514c3639583cd0defd7b6c5b4b813d7856de7"
+  },
+  "flags": {
+    "actual_leading_coefficient_certificate_chart_gaps_or_band_newly_verified": false,
+    "actual_separately_fixed_numeric_sequence_or_mpmath_rounding_certified": false,
+    "all_sequences_admitted_by_original_real_rule_satisfy_all_order_diagonal": true,
+    "complete_residual_unconditional_pulses_or_blowup_proved": false,
+    "full_pressure_radial_curl_and_Euler_conversion_costs_retained": true,
+    "historical_scales_cutoffs_supports_or_evidence_changed": false,
+    "independent_diagonal_and_diagnostic_cutoff_identity_removed_for_rule_defined_floor": true,
+    "inherited_finite_physical_log_power_requirements_retained": true,
+    "new_analytical_assumptions_added": false,
+    "strict_normalized_gain_margin_and_finite_stage_induction_supplied": true
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_universal_source_and_transfer_controls_pass": true,
+    "four_frozen_records_bound": true
+  },
+  "inherited_source_checks": {
+    "background_jet_foundation:EXTERNAL_REVIEW_2026-10-15.md": true,
+    "background_jet_foundation:GOAL.md": true,
+    "background_jet_foundation:results/background_jet_foundation/.gitignore": true,
+    "background_jet_foundation:results/background_jet_foundation/README.md": true,
+    "background_jet_foundation:results/background_jet_foundation/audit.py": true,
+    "background_jet_foundation:results/background_jet_foundation/diagnostics.py": true,
+    "background_jet_foundation:results/background_jet_foundation/foundation.py": true,
+    "background_jet_foundation:results/background_jet_foundation/protocol.json": true,
+    "background_jet_foundation:results/background_jet_foundation/requirements.txt": true,
+    "background_jet_foundation:results/background_jet_foundation/test_audit.py": true,
+    "background_jet_foundation:results/background_summation/evidence.json": true,
+    "background_jet_foundation:results/geometric_pulse_replay/evidence.json": true,
+    "background_summation:GOAL.md": true,
+    "background_summation:results/annular_first_correction/evidence.json": true,
+    "background_summation:results/axis_core_attachment/evidence.json": true,
+    "background_summation:results/background_summation/README.md": true,
+    "background_summation:results/background_summation/audit.py": true,
+    "background_summation:results/background_summation/checks.py": true,
+    "background_summation:results/background_summation/hierarchy.py": true,
+    "background_summation:results/background_summation/protocol.json": true,
+    "background_summation:results/background_summation/requirements.txt": true,
+    "background_summation:results/background_summation/summation.py": true,
+    "background_summation:results/background_summation/test_audit.py": true,
+    "background_summation:results/first_correction_construction/evidence.json": true,
+    "background_summation:results/heat_exterior_audit/evidence.json": true,
+    "background_summation:results/higher_jet_budget/evidence.json": true,
+    "background_summation:results/physical_residual_budget/evidence.json": true,
+    "background_summation:results/stress_realization_audit/evidence.json": true,
+    "core_borel_cutoff_certificate:results/background_jet_foundation/README.md": true,
+    "core_borel_cutoff_certificate:results/background_summation/README.md": true,
+    "core_borel_cutoff_certificate:results/background_summation/checks.py": true,
+    "core_borel_cutoff_certificate:results/core_all_order_foundation/coordinate_checks.py": true,
+    "core_borel_cutoff_certificate:results/core_background_finite_head_budget/README.md": true,
+    "core_borel_cutoff_certificate:results/core_background_finite_head_budget/budgets.py": true,
+    "core_borel_cutoff_certificate:results/core_background_radial_reconstruction/README.md": true,
+    "core_borel_cutoff_certificate:results/core_background_radial_reconstruction/budgets.py": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/.gitignore": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/README.md": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/audit.py": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/budgets.py": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/controls.py": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/protocol.json": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/requirements.txt": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/test_audit.py": true,
+    "core_borel_cutoff_certificate:results/core_primary_tail_recheck/README.md": true,
+    "core_borel_cutoff_certificate:results/cutoff_repair_derivative_budget/README.md": true,
+    "core_borel_cutoff_certificate:results/modulation_repair_all_order/map_checks.py": true,
+    "core_borel_cutoff_certificate:results/outer_pressure_pilot/schedule.py": true,
+    "core_tangential_normal_closure:results/background_jet_foundation/README.md": true,
+    "core_tangential_normal_closure:results/background_summation/README.md": true,
+    "core_tangential_normal_closure:results/core_background_finite_head_budget/README.md": true,
+    "core_tangential_normal_closure:results/core_background_finite_head_budget/budgets.py": true,
+    "core_tangential_normal_closure:results/core_borel_cutoff_certificate/README.md": true,
+    "core_tangential_normal_closure:results/core_borel_cutoff_certificate/budgets.py": true,
+    "core_tangential_normal_closure:results/core_native_chart_cover/README.md": true,
+    "core_tangential_normal_closure:results/core_native_chart_cover/budgets.py": true,
+    "core_tangential_normal_closure:results/core_phase_coefficient_budget/README.md": true,
+    "core_tangential_normal_closure:results/core_phase_coefficient_budget/budgets.py": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/.gitignore": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/README.md": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/audit.py": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/budgets.py": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/controls.py": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/protocol.json": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/requirements.txt": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/test_audit.py": true
+  },
+  "protocol": {
+    "actual_chart_gaps_band_or_full_residual_certified": false,
+    "definition": "background_jet_foundation equation (11), same full Euler norms and all inherited finite requirements",
+    "historical_parameters_or_evidence_changed": false,
+    "new_analytical_assumptions": [],
+    "numeric_infinite_sequence_or_mpmath_rounding_certified": false,
+    "parent_commit": "18faf0b9ee43efe277d0b57c3e662222d80c6bd7",
+    "quantifiers": "every sequence admitted by the original real rule, every n>=1, every m<=n, every q on the entire cutoff support",
+    "removed_independent_premises_for_rule_defined_floor": [
+      "infinite normalized diagonal",
+      "identity with diagnostic squared-flat Borel cutoff"
+    ],
+    "strict_normalized_margin": "n*h*log(a_n)-log(C_nm)-n*log(2)>=n*h>0"
+  },
+  "remaining_obligations": [
+    "verify retained leading and full coefficient regularity premises on actual required domains",
+    "verify actual physical representative and native neighborhood coverage and positive leading growth/shear gaps",
+    "substitute actual leading first tuple bounds into the same Ctan slow and normal inequalities at the unchanged band",
+    "if an independently fixed numeric sequence is intended instead of the rule-defined family identify its same-rule adherence or prove direct diagonal inequalities without reselection",
+    "retain remaining radial phase propagator supports full covariance fresh pressure/axial means and complete physical residual obligations"
+  ],
+  "review": {
+    "checks": {
+      "algebra:boundary_universal_polynomial_identity_and_nonnegative_remainder": true,
+      "algebra:boundary_wrong_target_is_rejected": true,
+      "algebra:normalized_universal_polynomial_identity_and_nonnegative_remainder": true,
+      "algebra:normalized_wrong_target_is_rejected": true,
+      "algebra:physical_log_power_universal_polynomial_identity_and_nonnegative_remainder": true,
+      "algebra:physical_log_power_wrong_target_is_rejected": true,
+      "algebra:separation_universal_polynomial_identity_and_nonnegative_remainder": true,
+      "algebra:separation_wrong_target_is_rejected": true,
+      "constants:first_low_order_curl_norm_still_has_extra_cutoff_derivative": true,
+      "constants:n1_m0_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n1_m0_K1_same_complete_tuple_constant": true,
+      "constants:n1_m0_K4928_same_complete_tuple_constant": true,
+      "constants:n1_m1_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n1_m1_K1_same_complete_tuple_constant": true,
+      "constants:n1_m1_K4928_same_complete_tuple_constant": true,
+      "constants:n2_m0_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n2_m0_K1_same_complete_tuple_constant": true,
+      "constants:n2_m0_K4928_same_complete_tuple_constant": true,
+      "constants:n2_m1_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n2_m1_K1_same_complete_tuple_constant": true,
+      "constants:n2_m1_K4928_same_complete_tuple_constant": true,
+      "constants:n2_m2_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n2_m2_K1_same_complete_tuple_constant": true,
+      "constants:n2_m2_K4928_same_complete_tuple_constant": true,
+      "constants:n7_m0_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n7_m0_K1_same_complete_tuple_constant": true,
+      "constants:n7_m0_K4928_same_complete_tuple_constant": true,
+      "constants:n7_m1_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n7_m1_K1_same_complete_tuple_constant": true,
+      "constants:n7_m1_K4928_same_complete_tuple_constant": true,
+      "constants:n7_m2_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n7_m2_K1_same_complete_tuple_constant": true,
+      "constants:n7_m2_K4928_same_complete_tuple_constant": true,
+      "constants:n7_m3_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n7_m3_K1_same_complete_tuple_constant": true,
+      "constants:n7_m3_K4928_same_complete_tuple_constant": true,
+      "constants:n7_m4_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n7_m4_K1_same_complete_tuple_constant": true,
+      "constants:n7_m4_K4928_same_complete_tuple_constant": true,
+      "constants:n7_m5_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n7_m5_K1_same_complete_tuple_constant": true,
+      "constants:n7_m5_K4928_same_complete_tuple_constant": true,
+      "constants:n7_m6_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n7_m6_K1_same_complete_tuple_constant": true,
+      "constants:n7_m6_K4928_same_complete_tuple_constant": true,
+      "constants:n7_m7_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+      "constants:n7_m7_K1_same_complete_tuple_constant": true,
+      "constants:n7_m7_K4928_same_complete_tuple_constant": true,
+      "constants:second_Euler_order_needs_Bell_conversion": true,
+      "source:all_normalized_rows_through_n_required": true,
+      "source:dropped_domain_margin_changes_the_retained_rule": true,
+      "source:dropped_index_budget_changes_the_retained_rule": true,
+      "source:dropped_separation_changes_the_retained_rule": true,
+      "source:dropped_unit_padding_changes_the_retained_rule": true,
+      "source:fixed_gain_is_n_times_h": true,
+      "source:missing_all_order_row_guard_changes_the_retained_rule": true,
+      "source:original_max_includes_each_row_separation_boundary_and_unit_padding": true,
+      "source:wrong_gain_changes_the_retained_rule": true,
+      "stages:finite_prefix_does_not_certify_arbitrary_future_stage": true,
+      "stages:larger_later_bound_is_not_automatically_satisfied_by_fixed_scale": true,
+      "stages:n1_every_finite_row_has_the_strict_gain_margin": true,
+      "stages:n1_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+      "stages:n2_every_finite_row_has_the_strict_gain_margin": true,
+      "stages:n2_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+      "stages:n3_every_finite_row_has_the_strict_gain_margin": true,
+      "stages:n3_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+      "stages:n4_every_finite_row_has_the_strict_gain_margin": true,
+      "stages:n4_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+      "stages:n5_every_finite_row_has_the_strict_gain_margin": true,
+      "stages:n5_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+      "stages:n6_every_finite_row_has_the_strict_gain_margin": true,
+      "stages:n6_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+      "stages:n7_every_finite_row_has_the_strict_gain_margin": true,
+      "stages:n7_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+      "stages:n8_every_finite_row_has_the_strict_gain_margin": true,
+      "stages:n8_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+      "transfer:actual_independent_numeric_sequence_and_band_are_not_certified": true,
+      "transfer:diagnostic_cutoff_identity_is_not_needed_for_this_floor": true,
+      "transfer:independent_diagonal_is_discharged_only_for_rule_defined_construction": true,
+      "transfer:same_Ctan_and_complete_transport_without_independent_diagonal_input": true,
+      "transfer:t1/100_closed_diagonal_feeds_same_head_free_first_order_sum": true,
+      "transfer:t1/2_closed_diagonal_feeds_same_head_free_first_order_sum": true,
+      "transfer:t1_closed_diagonal_feeds_same_head_free_first_order_sum": true
+    },
+    "parts": {
+      "algebra": {
+        "certificates": {
+          "boundary": {
+            "premise": {
+              "1": "-1",
+              "b": "1",
+              "domain": "-1",
+              "ell": "-1"
+            },
+            "remainder": {
+              "1": "1"
+            },
+            "target": {
+              "b": "1",
+              "domain": "-1",
+              "ell": "-1"
+            }
+          },
+          "normalized": {
+            "premise": {
+              "b*g": "1",
+              "ell*n": "-1",
+              "g": "-1",
+              "v": "-1"
+            },
+            "remainder": {
+              "g": "1"
+            },
+            "target": {
+              "b*g": "1",
+              "ell*n": "-1",
+              "v": "-1"
+            }
+          },
+          "physical_log_power": {
+            "premise": {
+              "P*P": "-1",
+              "b*gamma*gamma": "1",
+              "ell*gamma*n": "-2",
+              "gamma*gamma": "-1",
+              "gamma*v": "-2"
+            },
+            "remainder": {
+              "gamma*gamma": "1"
+            },
+            "target": {
+              "P*P": "-1",
+              "b*gamma*gamma": "1",
+              "ell*gamma*n": "-2",
+              "gamma*v": "-2"
+            }
+          },
+          "separation": {
+            "premise": {
+              "1": "-1",
+              "b": "1",
+              "ell": "-1",
+              "previous": "-1"
+            },
+            "remainder": {
+              "1": "1"
+            },
+            "target": {
+              "b": "1",
+              "ell": "-1",
+              "previous": "-1"
+            }
+          }
+        },
+        "checks": {
+          "boundary_universal_polynomial_identity_and_nonnegative_remainder": true,
+          "boundary_wrong_target_is_rejected": true,
+          "normalized_universal_polynomial_identity_and_nonnegative_remainder": true,
+          "normalized_wrong_target_is_rejected": true,
+          "physical_log_power_universal_polynomial_identity_and_nonnegative_remainder": true,
+          "physical_log_power_wrong_target_is_rejected": true,
+          "separation_universal_polynomial_identity_and_nonnegative_remainder": true,
+          "separation_wrong_target_is_rejected": true
+        },
+        "scope": "arbitrary symbolic index and positive gains; universal algebra, not inference from finitely many stages"
+      },
+      "constants": {
+        "checks": {
+          "first_low_order_curl_norm_still_has_extra_cutoff_derivative": true,
+          "n1_m0_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n1_m0_K1_same_complete_tuple_constant": true,
+          "n1_m0_K4928_same_complete_tuple_constant": true,
+          "n1_m1_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n1_m1_K1_same_complete_tuple_constant": true,
+          "n1_m1_K4928_same_complete_tuple_constant": true,
+          "n2_m0_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n2_m0_K1_same_complete_tuple_constant": true,
+          "n2_m0_K4928_same_complete_tuple_constant": true,
+          "n2_m1_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n2_m1_K1_same_complete_tuple_constant": true,
+          "n2_m1_K4928_same_complete_tuple_constant": true,
+          "n2_m2_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n2_m2_K1_same_complete_tuple_constant": true,
+          "n2_m2_K4928_same_complete_tuple_constant": true,
+          "n7_m0_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n7_m0_K1_same_complete_tuple_constant": true,
+          "n7_m0_K4928_same_complete_tuple_constant": true,
+          "n7_m1_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n7_m1_K1_same_complete_tuple_constant": true,
+          "n7_m1_K4928_same_complete_tuple_constant": true,
+          "n7_m2_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n7_m2_K1_same_complete_tuple_constant": true,
+          "n7_m2_K4928_same_complete_tuple_constant": true,
+          "n7_m3_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n7_m3_K1_same_complete_tuple_constant": true,
+          "n7_m3_K4928_same_complete_tuple_constant": true,
+          "n7_m4_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n7_m4_K1_same_complete_tuple_constant": true,
+          "n7_m4_K4928_same_complete_tuple_constant": true,
+          "n7_m5_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n7_m5_K1_same_complete_tuple_constant": true,
+          "n7_m5_K4928_same_complete_tuple_constant": true,
+          "n7_m6_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n7_m6_K1_same_complete_tuple_constant": true,
+          "n7_m6_K4928_same_complete_tuple_constant": true,
+          "n7_m7_K1000000000000000000000000000000_same_complete_tuple_constant": true,
+          "n7_m7_K1_same_complete_tuple_constant": true,
+          "n7_m7_K4928_same_complete_tuple_constant": true,
+          "second_Euler_order_needs_Bell_conversion": true
+        },
+        "scope": "actual historical constant formulas on manufactured seminorms; arbitrary fixed smooth cutoff norms are retained, not bounded uniformly over all cutoffs"
+      },
+      "source": {
+        "checks": {
+          "all_normalized_rows_through_n_required": true,
+          "dropped_domain_margin_changes_the_retained_rule": true,
+          "dropped_index_budget_changes_the_retained_rule": true,
+          "dropped_separation_changes_the_retained_rule": true,
+          "dropped_unit_padding_changes_the_retained_rule": true,
+          "fixed_gain_is_n_times_h": true,
+          "missing_all_order_row_guard_changes_the_retained_rule": true,
+          "original_max_includes_each_row_separation_boundary_and_unit_padding": true,
+          "wrong_gain_changes_the_retained_rule": true
+        },
+        "scope": "AST identity of the historical diagnostic real formula; no certification of mpmath rounding or actual numerical inputs"
+      },
+      "stages": {
+        "checks": {
+          "finite_prefix_does_not_certify_arbitrary_future_stage": true,
+          "larger_later_bound_is_not_automatically_satisfied_by_fixed_scale": true,
+          "n1_every_finite_row_has_the_strict_gain_margin": true,
+          "n1_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+          "n2_every_finite_row_has_the_strict_gain_margin": true,
+          "n2_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+          "n3_every_finite_row_has_the_strict_gain_margin": true,
+          "n3_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+          "n4_every_finite_row_has_the_strict_gain_margin": true,
+          "n4_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+          "n5_every_finite_row_has_the_strict_gain_margin": true,
+          "n5_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+          "n6_every_finite_row_has_the_strict_gain_margin": true,
+          "n6_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+          "n7_every_finite_row_has_the_strict_gain_margin": true,
+          "n7_no_actual_scale_selected_or_infinite_prefix_promotion": true,
+          "n8_every_finite_row_has_the_strict_gain_margin": true,
+          "n8_no_actual_scale_selected_or_infinite_prefix_promotion": true
+        },
+        "rows": [
+          {
+            "gain": "1/200",
+            "manufactured_log_scale": "1141",
+            "maximum_manufactured_log_constant": "5",
+            "n": 1
+          },
+          {
+            "gain": "1/100",
+            "manufactured_log_scale": "1841",
+            "maximum_manufactured_log_constant": "17",
+            "n": 2
+          },
+          {
+            "gain": "3/200",
+            "manufactured_log_scale": "9023/3",
+            "maximum_manufactured_log_constant": "43",
+            "n": 3
+          },
+          {
+            "gain": "1/50",
+            "manufactured_log_scale": "4591",
+            "maximum_manufactured_log_constant": "89",
+            "n": 4
+          },
+          {
+            "gain": "1/40",
+            "manufactured_log_scale": "6581",
+            "maximum_manufactured_log_constant": "161",
+            "n": 5
+          },
+          {
+            "gain": "3/100",
+            "manufactured_log_scale": "26923/3",
+            "maximum_manufactured_log_constant": "265",
+            "n": 6
+          },
+          {
+            "gain": "7/200",
+            "manufactured_log_scale": "82387/7",
+            "maximum_manufactured_log_constant": "407",
+            "n": 7
+          },
+          {
+            "gain": "1/25",
+            "manufactured_log_scale": "14966",
+            "maximum_manufactured_log_constant": "593",
+            "n": 8
+          }
+        ],
+        "scope": "rational parameter-space controls only; universal theorem is the arbitrary-index derivation, not this finite list"
+      },
+      "transfer": {
+        "Ctan": "56504569",
+        "checks": {
+          "actual_independent_numeric_sequence_and_band_are_not_certified": true,
+          "diagnostic_cutoff_identity_is_not_needed_for_this_floor": true,
+          "independent_diagonal_is_discharged_only_for_rule_defined_construction": true,
+          "same_Ctan_and_complete_transport_without_independent_diagonal_input": true,
+          "t1/100_closed_diagonal_feeds_same_head_free_first_order_sum": true,
+          "t1/2_closed_diagonal_feeds_same_head_free_first_order_sum": true,
+          "t1_closed_diagonal_feeds_same_head_free_first_order_sum": true
+        },
+        "retained_premises": [
+          "leading and full coefficient regularity certificate",
+          "same real max prescription with own cutoff norms and original finite constraints",
+          "actual physical chart and leading gaps",
+          "unchanged-band normal and slow inequalities"
+        ]
+      }
+    }
+  },
+  "source_hashes": {
+    "results/background_jet_foundation/README.md": "8b70ed3289d5ebaddbb58183a595b29e80b31503ea6fa832445c448b4f32a7be",
+    "results/background_jet_foundation/foundation.py": "d178b047ad496974523c45b192931df861c0356e17e30e916915ad5b221b96ed",
+    "results/background_summation/README.md": "1f2d37750821432fa04c1b0ca968d7d3db079c3cb6fb02c8ae4b82bc5639e8be",
+    "results/background_summation/summation.py": "bfd8089a7c4ccfbe059df2999c8e393d92d91e83097d8b9a835da20a15880e9f",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_borel_cutoff_certificate/README.md": "3730d55541fe4a24f2dbb010ef27899bbbb57aa18f9f08abb90515546fef2c63",
+    "results/core_borel_prescription_closure/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_borel_prescription_closure/README.md": "969735f83b28f7e07b3c4e16a390e22bdcef4a478f5274ab423fc7917bbd49d5",
+    "results/core_borel_prescription_closure/audit.py": "4c27568ef66108614bcfc41835d9cd63ea83b810af6c6a5e2f1fb0b9256ba7a8",
+    "results/core_borel_prescription_closure/controls.py": "542987d77e7dcca666ba306d2d2d2b76e90a745284803612286c3b2afcf641d1",
+    "results/core_borel_prescription_closure/proof.py": "e8312c30fe9ffaca71d6aa35257bca3ee4a9e9ac52020934af1b56aa611ef882",
+    "results/core_borel_prescription_closure/protocol.json": "11d30072c0e44d3f66755edf4d7434494f21687a44e5dd06434e50af8b2e7edd",
+    "results/core_borel_prescription_closure/requirements.txt": "8c2cbc68b965e5f9182c74b00c0d4990b751a468ab6e612dccb1cce00865f012",
+    "results/core_borel_prescription_closure/test_audit.py": "dfa02d9d819f9021447db72db059af6ce456b960a00348314bdd312d9df5649e",
+    "results/core_tangential_normal_closure/README.md": "cedde29ff05621b82c9be65f35f64e84c25605219c54f1122795e5ef53ad3965",
+    "results/core_tangential_normal_closure/budgets.py": "e7ccd13f979b4e4a9e95084eeafd018b6ce7747e71440094e8279d6710cde42e"
+  },
+  "status": "original-real-borel-prescription-infinite-diagonal-closure-relative-to-full-coefficient-regularity"
+}
