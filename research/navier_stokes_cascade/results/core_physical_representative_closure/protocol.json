@@ -1,0 +1,11 @@
+{
+  "parent_commit": "134d9a06a9c2e96ecb1b4debf7c1e7e8888bb1cc",
+  "original_representative_rule": "x0_(ell,a) in B_(ell,a) intersect A_ell, manuscript equation (6.8)",
+  "physical_value_neighborhoods": "relative to tau>=0; one-sided derivatives at tau=0, section 7.1",
+  "floor_uses_reference_gaps": "at original active representative only; full upper velocity norms elsewhere on physical doubled box",
+  "unchanged_norm_cover_gates": "6*ell^-6<=rA and 100*ell^-6<=1",
+  "normal_margin": "4*Ctan^2<=beta*ell_existing^4 with original slow gate",
+  "new_analytical_assumptions": [],
+  "full_cone_or_global_negative_time_extension_certified": false,
+  "actual_unchanged_band_or_complete_residual_certified": false
+}

@@ -1,0 +1,25 @@
+{
+  "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "historically_recorded_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+  "pdf_binary_hash_recomputed_this_checkpoint": false,
+  "primary_source_read_date": "2026-10-22",
+  "representative_definition": {
+    "section": "6.2",
+    "equation": "6.8",
+    "printed_page": 64,
+    "pdf_page_index": 63,
+    "active_set_clauses": ["0<q<qbig", "1/2<=q/Q<=2", "tau>=0", "Xa<=r^2/(2q)<=Xb"],
+    "selected_indices": "a with B_(ell,a) intersect A_ell nonempty",
+    "original_representatives": "x0_(ell,a) belongs to B_(ell,a) intersect A_ell"
+  },
+  "value_neighborhood_convention": {
+    "section": "7.1",
+    "printed_page": 74,
+    "pdf_page_index": 73,
+    "relative_physical_domain": "tau>=0",
+    "boundary_derivatives": "one-sided at tau=0",
+    "cone_application": "neighborhood intersection with the closed active annulus"
+  },
+  "separate_extension_obligation": "Section 6.2 equation (6.9) and Proposition 5.5 retain a smooth coordinate extension; its quantitative bounds are not proved here",
+  "source_definition_is_not_acceptance_of_manuscript_theorems": true
+}

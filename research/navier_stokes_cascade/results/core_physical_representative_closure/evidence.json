@@ -1,0 +1,356 @@
+{
+  "dependency_evidence_sha256": {
+    "results/auxiliary_geometry_audit/evidence.json": "67b5e15b26af7e98f1dae7297f0bc299a63787f46f9dad3cf8faaa60944546e5",
+    "results/core_borel_prescription_closure/evidence.json": "3f412f6d8171c476a5b42c28d79f53986e2ac7744e6b001d4cab8dfd0a5d989b",
+    "results/core_native_chart_cover/evidence.json": "f956df9955ae6419b9c203d003b5d98588a336f3c437a27d05240645b44dd1ea",
+    "results/core_tangential_normal_closure/evidence.json": "8eff3dfc246ecb527b8c5d56a4a514c3639583cd0defd7b6c5b4b813d7856de7",
+    "results/leading_frame_foundation/evidence.json": "fec0aee5eecb7873d2e76abd50a24e2f2a4ff236f97380e9bc36629d1ba30fba"
+  },
+  "flags": {
+    "actual_profile_input_constants_or_unchanged_band_floor_numerically_verified": false,
+    "complete_axial_transport_pressure_memory_and_radial_cutoff_premises_retained": true,
+    "complete_residual_unconditional_pulses_or_blowup_proved": false,
+    "existing_physical_doubled_box_norm_hull_applies_from_original_representative": true,
+    "global_negative_time_extension_or_full_cone_neighborhood_closed": false,
+    "historical_representatives_scales_supports_or_evidence_changed": false,
+    "independent_native_value_neighborhood_and_negative_time_rep_requirements_removed_for_floor": true,
+    "new_analytical_assumptions_added": false,
+    "original_representatives_are_physical_active_points_by_defining_rule": true,
+    "pdf_binary_hash_independently_recomputed": false,
+    "reference_growth_shear_gaps_needed_at_active_representative_only_for_this_floor": true
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_representative_norm_and_floor_controls_pass": true,
+    "five_historical_records_bound": true
+  },
+  "inherited_source_checks": {
+    "auxiliary_geometry_audit:GOAL.md": true,
+    "auxiliary_geometry_audit:results/actual_band_pulse_bounds/evidence.json": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/.gitignore": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/README.md": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/audit.py": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/checks.py": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/geometry.py": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/protocol.json": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/requirements.txt": true,
+    "auxiliary_geometry_audit:results/auxiliary_geometry_audit/test_audit.py": true,
+    "auxiliary_geometry_audit:results/global_solution_comparison/evidence.json": true,
+    "core_borel_prescription_closure:results/background_jet_foundation/README.md": true,
+    "core_borel_prescription_closure:results/background_jet_foundation/foundation.py": true,
+    "core_borel_prescription_closure:results/background_summation/README.md": true,
+    "core_borel_prescription_closure:results/background_summation/summation.py": true,
+    "core_borel_prescription_closure:results/core_background_finite_head_budget/budgets.py": true,
+    "core_borel_prescription_closure:results/core_borel_cutoff_certificate/README.md": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/.gitignore": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/README.md": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/audit.py": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/controls.py": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/proof.py": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/protocol.json": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/requirements.txt": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/test_audit.py": true,
+    "core_borel_prescription_closure:results/core_tangential_normal_closure/README.md": true,
+    "core_borel_prescription_closure:results/core_tangential_normal_closure/budgets.py": true,
+    "core_native_chart_cover:results/annular_exterior_foundation/README.md": true,
+    "core_native_chart_cover:results/auxiliary_geometry_audit/README.md": true,
+    "core_native_chart_cover:results/background_jet_foundation/README.md": true,
+    "core_native_chart_cover:results/core_background_radial_reconstruction/README.md": true,
+    "core_native_chart_cover:results/core_background_radial_reconstruction/budgets.py": true,
+    "core_native_chart_cover:results/core_borel_cutoff_certificate/README.md": true,
+    "core_native_chart_cover:results/core_borel_cutoff_certificate/budgets.py": true,
+    "core_native_chart_cover:results/core_native_chart_cover/.gitignore": true,
+    "core_native_chart_cover:results/core_native_chart_cover/README.md": true,
+    "core_native_chart_cover:results/core_native_chart_cover/audit.py": true,
+    "core_native_chart_cover:results/core_native_chart_cover/budgets.py": true,
+    "core_native_chart_cover:results/core_native_chart_cover/controls.py": true,
+    "core_native_chart_cover:results/core_native_chart_cover/protocol.json": true,
+    "core_native_chart_cover:results/core_native_chart_cover/requirements.txt": true,
+    "core_native_chart_cover:results/core_native_chart_cover/test_audit.py": true,
+    "core_native_chart_cover:results/core_primary_tail_recheck/README.md": true,
+    "core_native_chart_cover:results/core_primary_tail_recheck/proof_checks.py": true,
+    "core_native_chart_cover:results/global_axial_source_envelope/README.md": true,
+    "core_native_chart_cover:results/global_axial_source_envelope/envelopes.py": true,
+    "core_native_chart_cover:results/global_swirl_envelope/README.md": true,
+    "core_native_chart_cover:results/global_swirl_envelope/swirl_bounds.py": true,
+    "core_tangential_normal_closure:results/background_jet_foundation/README.md": true,
+    "core_tangential_normal_closure:results/background_summation/README.md": true,
+    "core_tangential_normal_closure:results/core_background_finite_head_budget/README.md": true,
+    "core_tangential_normal_closure:results/core_background_finite_head_budget/budgets.py": true,
+    "core_tangential_normal_closure:results/core_borel_cutoff_certificate/README.md": true,
+    "core_tangential_normal_closure:results/core_borel_cutoff_certificate/budgets.py": true,
+    "core_tangential_normal_closure:results/core_native_chart_cover/README.md": true,
+    "core_tangential_normal_closure:results/core_native_chart_cover/budgets.py": true,
+    "core_tangential_normal_closure:results/core_phase_coefficient_budget/README.md": true,
+    "core_tangential_normal_closure:results/core_phase_coefficient_budget/budgets.py": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/.gitignore": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/README.md": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/audit.py": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/budgets.py": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/controls.py": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/protocol.json": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/requirements.txt": true,
+    "core_tangential_normal_closure:results/core_tangential_normal_closure/test_audit.py": true,
+    "leading_frame_foundation:results/core_growth_activation/README.md": true,
+    "leading_frame_foundation:results/core_growth_activation/evidence.json": true,
+    "leading_frame_foundation:results/global_pressure_moment_foundation/evidence.json": true,
+    "leading_frame_foundation:results/heat_exterior_audit/README.md": true,
+    "leading_frame_foundation:results/leading_frame_foundation/.gitignore": true,
+    "leading_frame_foundation:results/leading_frame_foundation/README.md": true,
+    "leading_frame_foundation:results/leading_frame_foundation/audit.py": true,
+    "leading_frame_foundation:results/leading_frame_foundation/frame_checks.py": true,
+    "leading_frame_foundation:results/leading_frame_foundation/frame_floors.py": true,
+    "leading_frame_foundation:results/leading_frame_foundation/protocol.json": true,
+    "leading_frame_foundation:results/leading_frame_foundation/requirements.txt": true,
+    "leading_frame_foundation:results/leading_frame_foundation/test_audit.py": true,
+    "leading_frame_foundation:results/loop_modulation_bounds/README.md": true,
+    "leading_frame_foundation:results/outer_edge_stability/README.md": true,
+    "leading_frame_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "leading_frame_foundation:results/primary_covariance_foundation/evidence.json": true,
+    "leading_frame_foundation:results/regional_cone_join/README.md": true,
+    "leading_frame_foundation:results/regional_cone_join/evidence.json": true,
+    "leading_frame_foundation:results/repair_state_bounds/README.md": true
+  },
+  "protocol": {
+    "actual_unchanged_band_or_complete_residual_certified": false,
+    "floor_uses_reference_gaps": "at original active representative only; full upper velocity norms elsewhere on physical doubled box",
+    "full_cone_or_global_negative_time_extension_certified": false,
+    "new_analytical_assumptions": [],
+    "normal_margin": "4*Ctan^2<=beta*ell_existing^4 with original slow gate",
+    "original_representative_rule": "x0_(ell,a) in B_(ell,a) intersect A_ell, manuscript equation (6.8)",
+    "parent_commit": "134d9a06a9c2e96ecb1b4debf7c1e7e8888bb1cc",
+    "physical_value_neighborhoods": "relative to tau>=0; one-sided derivatives at tau=0, section 7.1",
+    "unchanged_norm_cover_gates": "6*ell^-6<=rA and 100*ell^-6<=1"
+  },
+  "remaining_obligations": [
+    "substitute actual leading first tuple norms on original physical norm hull and closed-active-annulus reference gap bounds into unchanged-band normal and slow inequalities",
+    "retain original radial clearance and q-domain gates; stricter supplied rational root enclosures need their own clearance check",
+    "keep native value neighborhood growth/cone estimates and global smooth extension obligations where OTHER full-wave estimates require them",
+    "discharge remaining sourced propagator supports full covariance fresh pressure/axial means and complete viscous cutoff interaction residual estimates"
+  ],
+  "review": {
+    "checks": {
+      "cover:ell10000_no_value_neighborhood_or_negative_time_certificate": true,
+      "cover:ell10000_same_original_norm_hull": true,
+      "cover:ell16_no_value_neighborhood_or_negative_time_certificate": true,
+      "cover:ell16_same_original_norm_hull": true,
+      "cover:ell32_no_value_neighborhood_or_negative_time_certificate": true,
+      "cover:ell32_same_original_norm_hull": true,
+      "cover:failed_original_axis_clearance_is_reported_without_reselection": true,
+      "cover:original_geometric_clearance_matches_exact_square_root_boundary": true,
+      "join:ell1000000000000_arbitrarily_narrow_unrelated_mu_can_fail_without_blocking_floor_recipe": true,
+      "join:ell1000000000000_original_band_and_all_scope_limits_retained": true,
+      "join:ell1000000000000_same_complete_tangential_recipe": true,
+      "join:ell16_arbitrarily_narrow_unrelated_mu_can_fail_without_blocking_floor_recipe": true,
+      "join:ell16_original_band_and_all_scope_limits_retained": true,
+      "join:ell16_same_complete_tangential_recipe": true,
+      "join:supplied_large_manufactured_scale_passes_without_proving_actual_band": true,
+      "join:supplied_old_small_scale_margin_failure_is_reported": true,
+      "representatives:R1_eta-1_original_physical_active_clauses_and_box_pass": true,
+      "representatives:R1_eta-1_representative_not_moved": true,
+      "representatives:R1_eta0_original_physical_active_clauses_and_box_pass": true,
+      "representatives:R1_eta0_representative_not_moved": true,
+      "representatives:R1_eta1_original_physical_active_clauses_and_box_pass": true,
+      "representatives:R1_eta1_representative_not_moved": true,
+      "representatives:R1_eta3/5_original_physical_active_clauses_and_box_pass": true,
+      "representatives:R1_eta3/5_representative_not_moved": true,
+      "representatives:R2_eta-1_original_physical_active_clauses_and_box_pass": true,
+      "representatives:R2_eta-1_representative_not_moved": true,
+      "representatives:R2_eta0_original_physical_active_clauses_and_box_pass": true,
+      "representatives:R2_eta0_representative_not_moved": true,
+      "representatives:R2_eta1_original_physical_active_clauses_and_box_pass": true,
+      "representatives:R2_eta1_representative_not_moved": true,
+      "representatives:R2_eta3/5_original_physical_active_clauses_and_box_pass": true,
+      "representatives:R2_eta3/5_representative_not_moved": true,
+      "representatives:arbitrary_box_point_outside_native_annulus_is_rejected": true,
+      "representatives:negative_center_is_not_an_original_active_representative": true,
+      "representatives:root100001/100000_nonconstant_s_exact_physical_chart": true,
+      "representatives:root99999/100000_nonconstant_s_exact_physical_chart": true,
+      "representatives:selected_boundary_box_can_have_negative_time_center": true,
+      "source:global_smooth_extension_remains_separate": true,
+      "source:historical_pdf_digest_metadata_matches_without_claiming_recomputed_binary_hash": true,
+      "source:manuscript_theorems_not_assumed_by_using_its_definitions": true,
+      "source:source_defines_intersection_representative_not_arbitrary_box_point": true,
+      "source:source_keeps_physical_native_and_original_q_domain_clauses": true,
+      "source:source_physical_relative_value_neighborhood_and_one_sided_boundary": true
+    },
+    "parts": {
+      "cover": {
+        "checks": {
+          "ell10000_no_value_neighborhood_or_negative_time_certificate": true,
+          "ell10000_same_original_norm_hull": true,
+          "ell16_no_value_neighborhood_or_negative_time_certificate": true,
+          "ell16_same_original_norm_hull": true,
+          "ell32_no_value_neighborhood_or_negative_time_certificate": true,
+          "ell32_same_original_norm_hull": true,
+          "failed_original_axis_clearance_is_reported_without_reselection": true,
+          "original_geometric_clearance_matches_exact_square_root_boundary": true
+        }
+      },
+      "join": {
+        "checks": {
+          "ell1000000000000_arbitrarily_narrow_unrelated_mu_can_fail_without_blocking_floor_recipe": true,
+          "ell1000000000000_original_band_and_all_scope_limits_retained": true,
+          "ell1000000000000_same_complete_tangential_recipe": true,
+          "ell16_arbitrarily_narrow_unrelated_mu_can_fail_without_blocking_floor_recipe": true,
+          "ell16_original_band_and_all_scope_limits_retained": true,
+          "ell16_same_complete_tangential_recipe": true,
+          "supplied_large_manufactured_scale_passes_without_proving_actual_band": true,
+          "supplied_old_small_scale_margin_failure_is_reported": true
+        },
+        "rows": [
+          {
+            "Ctan": "966394214",
+            "existing_ell": "16",
+            "normal_margin": "-93391777685267763216/25",
+            "supplied_margin_passes": false
+          },
+          {
+            "Ctan": "966394214",
+            "existing_ell": "1000000000000",
+            "normal_margin": "9999999999999999999999999996264328892589288816",
+            "supplied_margin_passes": true
+          }
+        ],
+        "scope": "parameter-space sufficient-margin controls only; neither existing actual band nor profile inputs are evaluated"
+      },
+      "representatives": {
+        "checks": {
+          "R1_eta-1_original_physical_active_clauses_and_box_pass": true,
+          "R1_eta-1_representative_not_moved": true,
+          "R1_eta0_original_physical_active_clauses_and_box_pass": true,
+          "R1_eta0_representative_not_moved": true,
+          "R1_eta1_original_physical_active_clauses_and_box_pass": true,
+          "R1_eta1_representative_not_moved": true,
+          "R1_eta3/5_original_physical_active_clauses_and_box_pass": true,
+          "R1_eta3/5_representative_not_moved": true,
+          "R2_eta-1_original_physical_active_clauses_and_box_pass": true,
+          "R2_eta-1_representative_not_moved": true,
+          "R2_eta0_original_physical_active_clauses_and_box_pass": true,
+          "R2_eta0_representative_not_moved": true,
+          "R2_eta1_original_physical_active_clauses_and_box_pass": true,
+          "R2_eta1_representative_not_moved": true,
+          "R2_eta3/5_original_physical_active_clauses_and_box_pass": true,
+          "R2_eta3/5_representative_not_moved": true,
+          "arbitrary_box_point_outside_native_annulus_is_rejected": true,
+          "negative_center_is_not_an_original_active_representative": true,
+          "root100001/100000_nonconstant_s_exact_physical_chart": true,
+          "root99999/100000_nonconstant_s_exact_physical_chart": true,
+          "selected_boundary_box_can_have_negative_time_center": true
+        },
+        "rows": [
+          {
+            "R": "1",
+            "eta": "-1",
+            "native_edge": true,
+            "physical_boundary": true
+          },
+          {
+            "R": "1",
+            "eta": "0",
+            "native_edge": true,
+            "physical_boundary": false
+          },
+          {
+            "R": "1",
+            "eta": "3/5",
+            "native_edge": true,
+            "physical_boundary": false
+          },
+          {
+            "R": "1",
+            "eta": "1",
+            "native_edge": true,
+            "physical_boundary": true
+          },
+          {
+            "R": "2",
+            "eta": "-1",
+            "native_edge": true,
+            "physical_boundary": true
+          },
+          {
+            "R": "2",
+            "eta": "0",
+            "native_edge": true,
+            "physical_boundary": false
+          },
+          {
+            "R": "2",
+            "eta": "3/5",
+            "native_edge": true,
+            "physical_boundary": false
+          },
+          {
+            "R": "2",
+            "eta": "1",
+            "native_edge": true,
+            "physical_boundary": true
+          }
+        ],
+        "scope": "manufactured supplied rational chart data; original universal membership follows equation (6.8), not these finite witnesses"
+      },
+      "source": {
+        "checks": {
+          "global_smooth_extension_remains_separate": true,
+          "historical_pdf_digest_metadata_matches_without_claiming_recomputed_binary_hash": true,
+          "manuscript_theorems_not_assumed_by_using_its_definitions": true,
+          "source_defines_intersection_representative_not_arbitrary_box_point": true,
+          "source_keeps_physical_native_and_original_q_domain_clauses": true,
+          "source_physical_relative_value_neighborhood_and_one_sided_boundary": true
+        },
+        "scope": "source-contract integrity and historical metadata checks; not a binary PDF hash recomputation or a proof of manuscript theorems"
+      }
+    }
+  },
+  "source_contract": {
+    "historically_recorded_pdf_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "pdf_binary_hash_recomputed_this_checkpoint": false,
+    "primary_source_read_date": "2026-10-22",
+    "representative_definition": {
+      "active_set_clauses": [
+        "0<q<qbig",
+        "1/2<=q/Q<=2",
+        "tau>=0",
+        "Xa<=r^2/(2q)<=Xb"
+      ],
+      "equation": "6.8",
+      "original_representatives": "x0_(ell,a) belongs to B_(ell,a) intersect A_ell",
+      "pdf_page_index": 63,
+      "printed_page": 64,
+      "section": "6.2",
+      "selected_indices": "a with B_(ell,a) intersect A_ell nonempty"
+    },
+    "separate_extension_obligation": "Section 6.2 equation (6.9) and Proposition 5.5 retain a smooth coordinate extension; its quantitative bounds are not proved here",
+    "source_definition_is_not_acceptance_of_manuscript_theorems": true,
+    "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+    "value_neighborhood_convention": {
+      "boundary_derivatives": "one-sided at tau=0",
+      "cone_application": "neighborhood intersection with the closed active annulus",
+      "pdf_page_index": 73,
+      "printed_page": 74,
+      "relative_physical_domain": "tau>=0",
+      "section": "7.1"
+    }
+  },
+  "source_hashes": {
+    "results/auxiliary_geometry_audit/README.md": "6bcd1dbc12e8561fd2cb1ab797bc323324445895474e4fb6bb10b3d7e231c7b7",
+    "results/background_jet_foundation/protocol.json": "9b3c7df796093ee262c05993ce7bfaf556e4926254d40f1d1b5b9302dccb37fd",
+    "results/core_borel_prescription_closure/README.md": "969735f83b28f7e07b3c4e16a390e22bdcef4a478f5274ab423fc7917bbd49d5",
+    "results/core_native_chart_cover/README.md": "6fa8bf9951dffc3ef61e228d0beed07648aec2e87d43480b729c6c90fe020e7e",
+    "results/core_native_chart_cover/budgets.py": "ad34a7a89a00024d0fe120bd8d24350e3cc24323c1b1fffce88f6e1ad23566a4",
+    "results/core_physical_representative_closure/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_physical_representative_closure/README.md": "1693f9d2fc54e466835045d8e9cf9b9da0c96d71280ab0688b9747fec0bba4bc",
+    "results/core_physical_representative_closure/audit.py": "b262b00c7ab4b93e143befec1ff2165a065d079ecbc66aa30c48c6f68554beaf",
+    "results/core_physical_representative_closure/budgets.py": "d5932921977be68b9fe01c21d90ee9a710491d549de8b65b6fcfca8f16ee12fa",
+    "results/core_physical_representative_closure/controls.py": "cb1e758ea84f985effbaf27e5658e6ee02cc17d5108e27898f1794cde2449c2a",
+    "results/core_physical_representative_closure/protocol.json": "621eb0872f17255431f67ecff9e1297cabad0d2b36d3f49b44e75cbba1c54abd",
+    "results/core_physical_representative_closure/requirements.txt": "0a7fb0eae9ceb1936d2ecb41949f365ff77b55ec2aa4bc5005e41af809dba3ca",
+    "results/core_physical_representative_closure/source_contract.json": "1bb344090e4cb7ed35e6e401cd2cad65610ddd2d5ac3198a4c1d886005186069",
+    "results/core_physical_representative_closure/test_audit.py": "e3b3fd8c5ca9b0dd4fd24b3133d96fc84578823b77764a3ab627b53556c0d381",
+    "results/core_tangential_normal_closure/README.md": "cedde29ff05621b82c9be65f35f64e84c25605219c54f1122795e5ef53ad3965",
+    "results/core_tangential_normal_closure/budgets.py": "e7ccd13f979b4e4a9e95084eeafd018b6ce7747e71440094e8279d6710cde42e",
+    "results/leading_frame_foundation/README.md": "43e94ef9e98ddccecad6953412396384ae795bd33534295ceb2d48db145038eb"
+  },
+  "status": "original-physical-representative-membership-and-norm-only-tangential-floor-closure"
+}
