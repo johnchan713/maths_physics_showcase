@@ -1,0 +1,11 @@
+{
+  "parent_commit": "c86d5ad47289d9484f060801ea4727247d61c51d",
+  "diagonal": "same C_(n,m)*a_n^(-nh)<=2^-n for ALL n>=1, m<=1, complete Euler tuple with radial curl commutator",
+  "low_order_sum": "sum_(n>=1) 2^-n*(q^h)^n=q^h/(2-q^h)<=q^h",
+  "tangential_error": "ct/S+ca/k+cb/S^3+cz*S*epsilon <= Ctan/S under the original slow gate",
+  "normal_margin": "4*Ctan^2<=beta*S^2; beta=lambda_min/[4*(1+U^2)^2]",
+  "unchanged_length_compatibility": "beta*Lreq^2>=16*r0^2*Ctan^2",
+  "new_analytical_assumptions": [],
+  "actual_schedule_selector_or_full_residual_certified": false,
+  "finite_controls_are_not_continuum_proofs": true
+}

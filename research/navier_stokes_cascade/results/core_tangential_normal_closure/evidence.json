@@ -1,0 +1,456 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_background_finite_head_budget/evidence.json": "b5af09a6f76cd90ffd6eec68b69f3bead2e00069a18a31890787da6f649c7297",
+    "results/core_borel_cutoff_certificate/evidence.json": "5fea9720cc8fb09851974b3af91e6a38bfa06011760efddb60de75c21f66b608",
+    "results/core_native_chart_cover/evidence.json": "f956df9955ae6419b9c203d003b5d98588a336f3c437a27d05240645b44dd1ea",
+    "results/core_phase_coefficient_budget/evidence.json": "0f052f36ea462f31101ef67c38687eca7464a8b8be462d2212b3a7bed745a758"
+  },
+  "flags": {
+    "actual_infinite_diagonal_cutoff_identity_or_first_band_certified": false,
+    "complete_residual_unconditional_pulses_or_blowup_proved": false,
+    "full_axial_transport_and_both_tangential_tilt_errors_retained": true,
+    "higher_order_or_radial_phase_obligations_removed": false,
+    "historical_evidence_parameters_schedule_or_accepted_bands_changed": false,
+    "independent_first_coefficient_K2_and_leading_second_inputs_removed_for_floor": true,
+    "new_analytical_assumptions_added": false,
+    "normal_floor_recipe_reduced_to_4_Ctan_squared_and_length_factor_16": true,
+    "original_slow_gate_implies_Ctan_over_S_without_extra_factor": true,
+    "pressure_source_supports_or_complete_covariance_newly_closed": false,
+    "same_complete_diagonal_implies_qh_correction_through_first_order": true
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_controls_pass": true,
+    "four_historical_records_bound": true
+  },
+  "inherited_source_checks": {
+    "core_background_finite_head_budget:results/background_jet_foundation/README.md": true,
+    "core_background_finite_head_budget:results/background_summation/README.md": true,
+    "core_background_finite_head_budget:results/core_all_order_foundation/coordinate_checks.py": true,
+    "core_background_finite_head_budget:results/core_background_finite_head_budget/.gitignore": true,
+    "core_background_finite_head_budget:results/core_background_finite_head_budget/README.md": true,
+    "core_background_finite_head_budget:results/core_background_finite_head_budget/audit.py": true,
+    "core_background_finite_head_budget:results/core_background_finite_head_budget/budgets.py": true,
+    "core_background_finite_head_budget:results/core_background_finite_head_budget/controls.py": true,
+    "core_background_finite_head_budget:results/core_background_finite_head_budget/protocol.json": true,
+    "core_background_finite_head_budget:results/core_background_finite_head_budget/requirements.txt": true,
+    "core_background_finite_head_budget:results/core_background_finite_head_budget/test_audit.py": true,
+    "core_background_finite_head_budget:results/core_fixed_profile_tame/README.md": true,
+    "core_background_finite_head_budget:results/core_phase_coefficient_budget/README.md": true,
+    "core_background_finite_head_budget:results/core_phase_coefficient_budget/budgets.py": true,
+    "core_background_finite_head_budget:results/core_primary_tail_recheck/README.md": true,
+    "core_background_finite_head_budget:results/core_primary_tail_recheck/proof_checks.py": true,
+    "core_background_finite_head_budget:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_background_finite_head_budget:results/core_signed_prefix_source_budget/README.md": true,
+    "core_background_finite_head_budget:results/modulation_repair_all_order/map_checks.py": true,
+    "core_borel_cutoff_certificate:results/background_jet_foundation/README.md": true,
+    "core_borel_cutoff_certificate:results/background_summation/README.md": true,
+    "core_borel_cutoff_certificate:results/background_summation/checks.py": true,
+    "core_borel_cutoff_certificate:results/core_all_order_foundation/coordinate_checks.py": true,
+    "core_borel_cutoff_certificate:results/core_background_finite_head_budget/README.md": true,
+    "core_borel_cutoff_certificate:results/core_background_finite_head_budget/budgets.py": true,
+    "core_borel_cutoff_certificate:results/core_background_radial_reconstruction/README.md": true,
+    "core_borel_cutoff_certificate:results/core_background_radial_reconstruction/budgets.py": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/.gitignore": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/README.md": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/audit.py": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/budgets.py": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/controls.py": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/protocol.json": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/requirements.txt": true,
+    "core_borel_cutoff_certificate:results/core_borel_cutoff_certificate/test_audit.py": true,
+    "core_borel_cutoff_certificate:results/core_primary_tail_recheck/README.md": true,
+    "core_borel_cutoff_certificate:results/cutoff_repair_derivative_budget/README.md": true,
+    "core_borel_cutoff_certificate:results/modulation_repair_all_order/map_checks.py": true,
+    "core_borel_cutoff_certificate:results/outer_pressure_pilot/schedule.py": true,
+    "core_native_chart_cover:results/annular_exterior_foundation/README.md": true,
+    "core_native_chart_cover:results/auxiliary_geometry_audit/README.md": true,
+    "core_native_chart_cover:results/background_jet_foundation/README.md": true,
+    "core_native_chart_cover:results/core_background_radial_reconstruction/README.md": true,
+    "core_native_chart_cover:results/core_background_radial_reconstruction/budgets.py": true,
+    "core_native_chart_cover:results/core_borel_cutoff_certificate/README.md": true,
+    "core_native_chart_cover:results/core_borel_cutoff_certificate/budgets.py": true,
+    "core_native_chart_cover:results/core_native_chart_cover/.gitignore": true,
+    "core_native_chart_cover:results/core_native_chart_cover/README.md": true,
+    "core_native_chart_cover:results/core_native_chart_cover/audit.py": true,
+    "core_native_chart_cover:results/core_native_chart_cover/budgets.py": true,
+    "core_native_chart_cover:results/core_native_chart_cover/controls.py": true,
+    "core_native_chart_cover:results/core_native_chart_cover/protocol.json": true,
+    "core_native_chart_cover:results/core_native_chart_cover/requirements.txt": true,
+    "core_native_chart_cover:results/core_native_chart_cover/test_audit.py": true,
+    "core_native_chart_cover:results/core_primary_tail_recheck/README.md": true,
+    "core_native_chart_cover:results/core_primary_tail_recheck/proof_checks.py": true,
+    "core_native_chart_cover:results/global_axial_source_envelope/README.md": true,
+    "core_native_chart_cover:results/global_axial_source_envelope/envelopes.py": true,
+    "core_native_chart_cover:results/global_swirl_envelope/README.md": true,
+    "core_native_chart_cover:results/global_swirl_envelope/swirl_bounds.py": true,
+    "core_phase_coefficient_budget:results/actual_band_pulse_bounds/README.md": true,
+    "core_phase_coefficient_budget:results/core_all_order_foundation/coordinate_checks.py": true,
+    "core_phase_coefficient_budget:results/core_first_sourced_inverse_budget/README.md": true,
+    "core_phase_coefficient_budget:results/core_first_sourced_inverse_budget/budgets.py": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/.gitignore": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/README.md": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/audit.py": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/budgets.py": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/controls.py": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/protocol.json": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/requirements.txt": true,
+    "core_phase_coefficient_budget:results/core_phase_coefficient_budget/test_audit.py": true,
+    "core_phase_coefficient_budget:results/core_primary_aggregate_atlas/README.md": true,
+    "core_phase_coefficient_budget:results/core_primary_tail_recheck/README.md": true,
+    "core_phase_coefficient_budget:results/core_signed_prefix_source_budget/README.md": true,
+    "core_phase_coefficient_budget:results/core_signed_prefix_source_budget/budgets.py": true,
+    "core_phase_coefficient_budget:results/modulation_repair_all_order/map_checks.py": true
+  },
+  "protocol": {
+    "actual_schedule_selector_or_full_residual_certified": false,
+    "diagonal": "same C_(n,m)*a_n^(-nh)<=2^-n for ALL n>=1, m<=1, complete Euler tuple with radial curl commutator",
+    "finite_controls_are_not_continuum_proofs": true,
+    "low_order_sum": "sum_(n>=1) 2^-n*(q^h)^n=q^h/(2-q^h)<=q^h",
+    "new_analytical_assumptions": [],
+    "normal_margin": "4*Ctan^2<=beta*S^2; beta=lambda_min/[4*(1+U^2)^2]",
+    "parent_commit": "c86d5ad47289d9484f060801ea4727247d61c51d",
+    "tangential_error": "ct/S+ca/k+cb/S^3+cz*S*epsilon <= Ctan/S under the original slow gate",
+    "unchanged_length_compatibility": "beta*Lreq^2>=16*r0^2*Ctan^2"
+  },
+  "remaining_obligations": [
+    "justify the SAME complete infinite Euler diagonal and actual cutoff by the original prescription, not finite samples",
+    "verify actual physical representatives native value neighborhoods leading first tuple bounds and positive growth/shear gaps",
+    "substitute those inputs into 4*Ctan^2<=beta*ell_existing^4 and the original slow gate, or unchanged length compatibility with factor 16",
+    "retain independent higher phase radial propagator support full pressure covariance mean and complete residual obligations"
+  ],
+  "review": {
+    "checks": {
+      "comparison:M0_K1_old_axial_excess_exact": true,
+      "comparison:M0_K1_old_full_Cphi_strictly_larger": true,
+      "comparison:M0_K4928_old_axial_excess_exact": true,
+      "comparison:M0_K4928_old_full_Cphi_strictly_larger": true,
+      "comparison:M1000000_K1_old_axial_excess_exact": true,
+      "comparison:M1000000_K1_old_full_Cphi_strictly_larger": true,
+      "comparison:M1000000_K4928_old_axial_excess_exact": true,
+      "comparison:M1000000_K4928_old_full_Cphi_strictly_larger": true,
+      "comparison:M1_K1_old_axial_excess_exact": true,
+      "comparison:M1_K1_old_full_Cphi_strictly_larger": true,
+      "comparison:M1_K4928_old_axial_excess_exact": true,
+      "comparison:M1_K4928_old_full_Cphi_strictly_larger": true,
+      "comparison:new_exact_margin_retains_inverse_normal_square": true,
+      "comparison:same_supplied_scale_new_margin_passes_old_margin_fails": true,
+      "join:existing_support_aware_leading_first_rows_feed_without_first_repair": true,
+      "join:insufficient_existing_length_is_reported": true,
+      "join:length_gate_does_not_select_scale_or_certify_actual_selector": true,
+      "join:no_independent_first_K2_or_leading_second_input": true,
+      "join:original_infinite_diagonal_remains_an_explicit_unverified_premise": true,
+      "join:original_radius_and_length_constants_match_direct_gate": true,
+      "sum:same_majorant_cannot_give_uniform_t_squared_rate": true,
+      "sum:t1/10000_N19_partial_plus_exact_remainder": true,
+      "sum:t1/10000_N1_partial_plus_exact_remainder": true,
+      "sum:t1/10000_N2_partial_plus_exact_remainder": true,
+      "sum:t1/10000_N7_partial_plus_exact_remainder": true,
+      "sum:t1/10000_both_low_orders_bounded_by_t": true,
+      "sum:t1/16_N19_partial_plus_exact_remainder": true,
+      "sum:t1/16_N1_partial_plus_exact_remainder": true,
+      "sum:t1/16_N2_partial_plus_exact_remainder": true,
+      "sum:t1/16_N7_partial_plus_exact_remainder": true,
+      "sum:t1/16_both_low_orders_bounded_by_t": true,
+      "sum:t1/2_N19_partial_plus_exact_remainder": true,
+      "sum:t1/2_N1_partial_plus_exact_remainder": true,
+      "sum:t1/2_N2_partial_plus_exact_remainder": true,
+      "sum:t1/2_N7_partial_plus_exact_remainder": true,
+      "sum:t1/2_both_low_orders_bounded_by_t": true,
+      "sum:t1_N19_partial_plus_exact_remainder": true,
+      "sum:t1_N1_partial_plus_exact_remainder": true,
+      "sum:t1_N2_partial_plus_exact_remainder": true,
+      "sum:t1_N7_partial_plus_exact_remainder": true,
+      "sum:t1_both_low_orders_bounded_by_t": true,
+      "sum:unit_constant_is_sharp_for_this_majorant_at_t1": true,
+      "transport:S1000_axial_original_slow_and_component_sum": true,
+      "transport:S1000_epsilon2_original_slow_and_component_sum": true,
+      "transport:S1000_mixed_original_slow_and_component_sum": true,
+      "transport:S1000_rounding_original_slow_and_component_sum": true,
+      "transport:S16_axial_original_slow_and_component_sum": true,
+      "transport:S16_epsilon2_original_slow_and_component_sum": true,
+      "transport:S16_mixed_original_slow_and_component_sum": true,
+      "transport:S16_rounding_original_slow_and_component_sum": true,
+      "transport:S1_axial_original_slow_and_component_sum": true,
+      "transport:S1_epsilon2_original_slow_and_component_sum": true,
+      "transport:S1_mixed_original_slow_and_component_sum": true,
+      "transport:S1_rounding_original_slow_and_component_sum": true,
+      "transport:S2_axial_original_slow_and_component_sum": true,
+      "transport:S2_epsilon2_original_slow_and_component_sum": true,
+      "transport:S2_mixed_original_slow_and_component_sum": true,
+      "transport:S2_rounding_original_slow_and_component_sum": true,
+      "transport:both_tilt_and_box_costs_survive_zero_transport": true,
+      "transport:consistent_epsilon_squared_and_ceiling_carrier_satisfy_slow_bound": true,
+      "transport:epsilon_squared_remains_in_the_original_slow_gate": true,
+      "transport:full_axial_transport_is_not_dropped": true,
+      "transport:nonzero_rounding_cost_is_one_not_half": true,
+      "transport:slow_failure_is_reported_not_assumed": true
+    },
+    "parts": {
+      "comparison": {
+        "checks": {
+          "M0_K1_old_axial_excess_exact": true,
+          "M0_K1_old_full_Cphi_strictly_larger": true,
+          "M0_K4928_old_axial_excess_exact": true,
+          "M0_K4928_old_full_Cphi_strictly_larger": true,
+          "M1000000_K1_old_axial_excess_exact": true,
+          "M1000000_K1_old_full_Cphi_strictly_larger": true,
+          "M1000000_K4928_old_axial_excess_exact": true,
+          "M1000000_K4928_old_full_Cphi_strictly_larger": true,
+          "M1_K1_old_axial_excess_exact": true,
+          "M1_K1_old_full_Cphi_strictly_larger": true,
+          "M1_K4928_old_axial_excess_exact": true,
+          "M1_K4928_old_full_Cphi_strictly_larger": true,
+          "new_exact_margin_retains_inverse_normal_square": true,
+          "same_supplied_scale_new_margin_passes_old_margin_fails": true
+        },
+        "rows": [
+          {
+            "K": "1",
+            "M": "0",
+            "new_Ctan": "56504569",
+            "old_Cphi": "48908504044794004712238238529/81"
+          },
+          {
+            "K": "4928",
+            "M": "0",
+            "new_Ctan": "56504569",
+            "old_Cphi": "48908504044794004712238238529/81"
+          },
+          {
+            "K": "1",
+            "M": "1",
+            "new_Ctan": "56504569",
+            "old_Cphi": "244542520223970023590368676981/405"
+          },
+          {
+            "K": "4928",
+            "M": "1",
+            "new_Ctan": "56504569",
+            "old_Cphi": "244542520223970308286525494053/405"
+          },
+          {
+            "K": "1",
+            "M": "1000000",
+            "new_Ctan": "56504569",
+            "old_Cphi": "48908504044805561278744363169/81"
+          },
+          {
+            "K": "4928",
+            "M": "1000000",
+            "new_Ctan": "56504569",
+            "old_Cphi": "48908504101744792642158763169/81"
+          }
+        ],
+        "scope": "manufactured recipe comparison, not a fluid counterexample or a newly selected actual band"
+      },
+      "join": {
+        "Ctan": "43952369798339642/3",
+        "checks": {
+          "existing_support_aware_leading_first_rows_feed_without_first_repair": true,
+          "insufficient_existing_length_is_reported": true,
+          "length_gate_does_not_select_scale_or_certify_actual_selector": true,
+          "no_independent_first_K2_or_leading_second_input": true,
+          "original_infinite_diagonal_remains_an_explicit_unverified_premise": true,
+          "original_radius_and_length_constants_match_direct_gate": true
+        },
+        "native_leading_first": "145673344/99",
+        "scope": "old native norm recipes on manufactured profile budgets; no actual chart/gap/schedule promoted"
+      },
+      "sum": {
+        "checks": {
+          "same_majorant_cannot_give_uniform_t_squared_rate": true,
+          "t1/10000_N19_partial_plus_exact_remainder": true,
+          "t1/10000_N1_partial_plus_exact_remainder": true,
+          "t1/10000_N2_partial_plus_exact_remainder": true,
+          "t1/10000_N7_partial_plus_exact_remainder": true,
+          "t1/10000_both_low_orders_bounded_by_t": true,
+          "t1/16_N19_partial_plus_exact_remainder": true,
+          "t1/16_N1_partial_plus_exact_remainder": true,
+          "t1/16_N2_partial_plus_exact_remainder": true,
+          "t1/16_N7_partial_plus_exact_remainder": true,
+          "t1/16_both_low_orders_bounded_by_t": true,
+          "t1/2_N19_partial_plus_exact_remainder": true,
+          "t1/2_N1_partial_plus_exact_remainder": true,
+          "t1/2_N2_partial_plus_exact_remainder": true,
+          "t1/2_N7_partial_plus_exact_remainder": true,
+          "t1/2_both_low_orders_bounded_by_t": true,
+          "t1_N19_partial_plus_exact_remainder": true,
+          "t1_N1_partial_plus_exact_remainder": true,
+          "t1_N2_partial_plus_exact_remainder": true,
+          "t1_N7_partial_plus_exact_remainder": true,
+          "t1_both_low_orders_bounded_by_t": true,
+          "unit_constant_is_sharp_for_this_majorant_at_t1": true
+        },
+        "rows": [
+          {
+            "majorant": "1/19999",
+            "ratio_to_t": "10000/19999",
+            "t": "1/10000"
+          },
+          {
+            "majorant": "1/31",
+            "ratio_to_t": "16/31",
+            "t": "1/16"
+          },
+          {
+            "majorant": "1/3",
+            "ratio_to_t": "2/3",
+            "t": "1/2"
+          },
+          {
+            "majorant": "1",
+            "ratio_to_t": "1",
+            "t": "1"
+          }
+        ],
+        "scope": "exact infinite geometric majorant identity; not actual coefficient measurements or an infinite schedule certificate"
+      },
+      "transport": {
+        "checks": {
+          "S1000_axial_original_slow_and_component_sum": true,
+          "S1000_epsilon2_original_slow_and_component_sum": true,
+          "S1000_mixed_original_slow_and_component_sum": true,
+          "S1000_rounding_original_slow_and_component_sum": true,
+          "S16_axial_original_slow_and_component_sum": true,
+          "S16_epsilon2_original_slow_and_component_sum": true,
+          "S16_mixed_original_slow_and_component_sum": true,
+          "S16_rounding_original_slow_and_component_sum": true,
+          "S1_axial_original_slow_and_component_sum": true,
+          "S1_epsilon2_original_slow_and_component_sum": true,
+          "S1_mixed_original_slow_and_component_sum": true,
+          "S1_rounding_original_slow_and_component_sum": true,
+          "S2_axial_original_slow_and_component_sum": true,
+          "S2_epsilon2_original_slow_and_component_sum": true,
+          "S2_mixed_original_slow_and_component_sum": true,
+          "S2_rounding_original_slow_and_component_sum": true,
+          "both_tilt_and_box_costs_survive_zero_transport": true,
+          "consistent_epsilon_squared_and_ceiling_carrier_satisfy_slow_bound": true,
+          "epsilon_squared_remains_in_the_original_slow_gate": true,
+          "full_axial_transport_is_not_dropped": true,
+          "nonzero_rounding_cost_is_one_not_half": true,
+          "slow_failure_is_reported_not_assumed": true
+        },
+        "rows": [
+          {
+            "S": "1",
+            "bound": "56504569",
+            "case": "axial",
+            "error": "56504568"
+          },
+          {
+            "S": "1",
+            "bound": "56504569",
+            "case": "rounding",
+            "error": "121"
+          },
+          {
+            "S": "1",
+            "bound": "56504569",
+            "case": "epsilon2",
+            "error": "120"
+          },
+          {
+            "S": "1",
+            "bound": "56504569",
+            "case": "mixed",
+            "error": "56504809/3"
+          },
+          {
+            "S": "2",
+            "bound": "56504569/2",
+            "case": "axial",
+            "error": "56504487/2"
+          },
+          {
+            "S": "2",
+            "bound": "56504569/2",
+            "case": "rounding",
+            "error": "79/4"
+          },
+          {
+            "S": "2",
+            "bound": "56504569/2",
+            "case": "epsilon2",
+            "error": "39/2"
+          },
+          {
+            "S": "2",
+            "bound": "56504569/2",
+            "case": "mixed",
+            "error": "113009131/12"
+          },
+          {
+            "S": "16",
+            "bound": "56504569/16",
+            "case": "axial",
+            "error": "3616285467/1024"
+          },
+          {
+            "S": "16",
+            "bound": "56504569/16",
+            "case": "rounding",
+            "error": "799/1024"
+          },
+          {
+            "S": "16",
+            "bound": "56504569/16",
+            "case": "epsilon2",
+            "error": "795/1024"
+          },
+          {
+            "S": "16",
+            "bound": "56504569/16",
+            "case": "mixed",
+            "error": "3616287061/3072"
+          },
+          {
+            "S": "1000",
+            "bound": "56504569/1000",
+            "case": "axial",
+            "error": "14126115000027/250000000"
+          },
+          {
+            "S": "1000",
+            "bound": "56504569/1000",
+            "case": "rounding",
+            "error": "3000277/250000000"
+          },
+          {
+            "S": "1000",
+            "bound": "56504569/1000",
+            "case": "epsilon2",
+            "error": "3000027/250000000"
+          },
+          {
+            "S": "1000",
+            "bound": "56504569/1000",
+            "case": "mixed",
+            "error": "14126121000331/750000000"
+          }
+        ]
+      }
+    }
+  },
+  "source_hashes": {
+    "results/background_jet_foundation/README.md": "8b70ed3289d5ebaddbb58183a595b29e80b31503ea6fa832445c448b4f32a7be",
+    "results/background_summation/README.md": "1f2d37750821432fa04c1b0ca968d7d3db079c3cb6fb02c8ae4b82bc5639e8be",
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_borel_cutoff_certificate/README.md": "3730d55541fe4a24f2dbb010ef27899bbbb57aa18f9f08abb90515546fef2c63",
+    "results/core_borel_cutoff_certificate/budgets.py": "3f1a851e16af18aa7eaf8fd031cc718a45b2e298a0cf2a342f7fa259426cc554",
+    "results/core_native_chart_cover/README.md": "6fa8bf9951dffc3ef61e228d0beed07648aec2e87d43480b729c6c90fe020e7e",
+    "results/core_native_chart_cover/budgets.py": "ad34a7a89a00024d0fe120bd8d24350e3cc24323c1b1fffce88f6e1ad23566a4",
+    "results/core_phase_coefficient_budget/README.md": "37c00b1e9050894fb3417b83817c18188ff5d6193e6b56ba4160e8dc042e9eda",
+    "results/core_phase_coefficient_budget/budgets.py": "95b1fe979265851d41dbd8c0237faea6007074b461db27fa0028c7e865b7506f",
+    "results/core_tangential_normal_closure/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_tangential_normal_closure/README.md": "cedde29ff05621b82c9be65f35f64e84c25605219c54f1122795e5ef53ad3965",
+    "results/core_tangential_normal_closure/audit.py": "517265c2a20fb8ec0f01a3c2aeaadc91c96026b70e044b657a38dafbdb26e9b2",
+    "results/core_tangential_normal_closure/budgets.py": "e7ccd13f979b4e4a9e95084eeafd018b6ce7747e71440094e8279d6710cde42e",
+    "results/core_tangential_normal_closure/controls.py": "fec76957873e449fd539fc3da87aad68335aaa5c5ceb4d82a210b5ad9475c925",
+    "results/core_tangential_normal_closure/protocol.json": "ae65d16e7a9b93f3dd2eae64088181fe82b283ef83fb6a596f5ebd2eb38af93b",
+    "results/core_tangential_normal_closure/requirements.txt": "fd8c940dd5f646e78e9c39d7334968b21461dfd08e2c398254fe5ff1d3cf8d4e",
+    "results/core_tangential_normal_closure/test_audit.py": "ee3d936a093dafd7f9bd6a8184fc6fd68102554ebc27b6896337b5bf21db816c"
+  },
+  "status": "low-order-diagonal-input-closure-and-complete-tangential-normal-margin"
+}
