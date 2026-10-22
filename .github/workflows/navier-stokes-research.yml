@@ -377,6 +377,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_sourced_covariance_moment_join/evidence.json \
             --output navier_stokes_core_sourced_covariance_moment_join_ci.json
 
+      - name: Check same-gap higher-pole operators and fresh post-sourced full-pressure mean size
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_reweighted_fresh_mean_closure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_reweighted_fresh_mean_closure/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_reweighted_fresh_mean_closure/evidence.json \
+            --output navier_stokes_core_reweighted_fresh_mean_closure_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1754,6 +1761,7 @@ jobs:
             navier_stokes_core_sourced_normal_transfer_ci.json
             navier_stokes_core_tangent_propagator_closure_ci.json
             navier_stokes_core_sourced_covariance_moment_join_ci.json
+            navier_stokes_core_reweighted_fresh_mean_closure_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json

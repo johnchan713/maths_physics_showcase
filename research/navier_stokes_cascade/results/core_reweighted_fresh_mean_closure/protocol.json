@@ -1,0 +1,12 @@
+{
+  "parent_commit": "702886d7be7e46fc038e544987a1dbb25e5d1417",
+  "result": "explicit same-gap higher-pole operator domination and conditional fresh post-sourced full-pressure mean SIZE composition",
+  "new_analytical_assumptions": [],
+  "retained_contract": "original KT1 KA1 Kp Kmom are the positive kernel/profile recipes, not arbitrary operator norms; actual original enclosures remain conditional",
+  "new_domains": {"KT1": ["6p"], "KA1": ["6p"], "Kp": ["6p", "12p"], "Kmom": ["6p", "12p"]},
+  "estimate_argument": "S+K is polynomial majorization only; actual physical band unchanged and no S>=K gate",
+  "mean_sequence": "old final means plus changed complete wave; full pressure prefast, postfast and postslow; fresh slow targets",
+  "mean_orders": "mu=1-kappa tangential and axial; mu+1 radial; final pole6p and final-row pole12p",
+  "next_source_interface": "blocked until exact +/-1,+/-2 input harmonic grammar and full residual inequality are derived",
+  "no_claim": "actual all-scale input certification, improved complete residual, unconditional pulses or blow-up"
+}

@@ -1,0 +1,264 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_dynamic_mean_recheck/evidence.json": "a596e24dbfcde596d56f5dcc6e12b00bfef14002bffb7e7057f9841cd8c4aa53",
+    "results/core_initial_haar_row_budget/evidence.json": "6d8215125c694bbf2764456aea8f1b99a967f68a8312a76533f3815a7e97e750",
+    "results/core_signed_prefix_source_budget/evidence.json": "4fa5193370702c31c5bbc04af8342c80e886578bb41f04a132c162184279eb2e",
+    "results/core_sourced_covariance_moment_join/evidence.json": "28f095d981697425320988358ffbb3b7a4b4ce43668c83f0078fcae5b9dbca9d"
+  },
+  "flags": {
+    "actual_original_gap_width_and_closed_reserved_hulls_retained": true,
+    "actual_original_input_enclosures_or_profile_provenance_certified": false,
+    "arbitrary_old_operator_norm_implies_new_domain_coverage": false,
+    "complete_pressure_and_three_scalars_recomputed_prefast_postfast_and_postslow": true,
+    "complete_residual_improvement_unconditional_pulses_or_blowup_proved": false,
+    "finite_shift_is_estimate_argument_only_without_new_physical_band_gate": true,
+    "higher_pole_operator_multipliers_derived_from_retained_positive_profile_recipes": true,
+    "historical_evidence_profiles_supports_widths_or_bands_changed": false,
+    "homogeneous_frame_or_original_root_identification_closed": false,
+    "new_analytical_assumptions_or_acceptance_gates_added": false,
+    "next_source_interface_rejects_inherited_single_frequency_grammar": true,
+    "old_final_means_complete_changed_wave_and_fresh_fast_slow_maps_composed": true
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_kernel_shift_and_fresh_mean_controls_pass": true,
+    "four_historical_records_bound": true
+  },
+  "inherited_source_checks": {
+    "core_dynamic_mean_recheck:results/complete_covariance_initial_means/README.md": true,
+    "core_dynamic_mean_recheck:results/complete_covariance_initial_means/means.py": true,
+    "core_dynamic_mean_recheck:results/complex_mean_relaxation/README.md": true,
+    "core_dynamic_mean_recheck:results/core_covariance_mean_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/.gitignore": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/audit.py": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/proof_checks.py": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/protocol.json": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/requirements.txt": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/test_audit.py": true,
+    "core_dynamic_mean_recheck:results/core_primary_tail_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/current_target_cycle_bridge/README.md": true,
+    "core_dynamic_mean_recheck:results/current_target_moment_audit/README.md": true,
+    "core_initial_haar_row_budget:results/canonical_initial_mean_join/README.md": true,
+    "core_initial_haar_row_budget:results/compact_mean_foundation/README.md": true,
+    "core_initial_haar_row_budget:results/complete_covariance_initial_means/means.py": true,
+    "core_initial_haar_row_budget:results/core_fast_inverse_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/.gitignore": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/audit.py": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/budgets.py": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/controls.py": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/protocol.json": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/requirements.txt": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/test_audit.py": true,
+    "core_initial_haar_row_budget:results/core_initial_scalar_seed_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_initial_scalar_seed_budget/proof_checks.py": true,
+    "core_initial_haar_row_budget:results/core_primary_root_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_primary_root_budget/budgets.py": true,
+    "core_initial_haar_row_budget:results/core_scalar_target_pressure_join/proof_checks.py": true,
+    "core_initial_haar_row_budget:results/core_signed_target_edge_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_signed_target_edge_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/complete_covariance_initial_means/means.py": true,
+    "core_signed_prefix_source_budget:results/core_fast_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_fast_inverse_budget/proof_checks.py": true,
+    "core_signed_prefix_source_budget:results/core_first_sourced_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_first_sourced_inverse_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_initial_haar_row_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_initial_haar_row_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_initial_scalar_seed_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/.gitignore": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/audit.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/controls.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/protocol.json": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/requirements.txt": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/test_audit.py": true,
+    "core_signed_prefix_source_budget:results/core_slow_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/regular_source_foundation/README.md": true,
+    "core_signed_prefix_source_budget:results/regular_source_foundation/source_checks.py": true,
+    "core_sourced_covariance_moment_join:results/complete_covariance_initial_means/means.py": true,
+    "core_sourced_covariance_moment_join:results/core_dynamic_mean_recheck/README.md": true,
+    "core_sourced_covariance_moment_join:results/core_primary_aggregate_atlas/proof_checks.py": true,
+    "core_sourced_covariance_moment_join:results/core_signed_prefix_source_budget/README.md": true,
+    "core_sourced_covariance_moment_join:results/core_signed_prefix_source_budget/budgets.py": true,
+    "core_sourced_covariance_moment_join:results/core_signed_target_edge_budget/budgets.py": true,
+    "core_sourced_covariance_moment_join:results/core_sourced_covariance_moment_join/.gitignore": true,
+    "core_sourced_covariance_moment_join:results/core_sourced_covariance_moment_join/README.md": true,
+    "core_sourced_covariance_moment_join:results/core_sourced_covariance_moment_join/audit.py": true,
+    "core_sourced_covariance_moment_join:results/core_sourced_covariance_moment_join/budgets.py": true,
+    "core_sourced_covariance_moment_join:results/core_sourced_covariance_moment_join/controls.py": true,
+    "core_sourced_covariance_moment_join:results/core_sourced_covariance_moment_join/protocol.json": true,
+    "core_sourced_covariance_moment_join:results/core_sourced_covariance_moment_join/requirements.txt": true,
+    "core_sourced_covariance_moment_join:results/core_sourced_covariance_moment_join/test_audit.py": true,
+    "core_sourced_covariance_moment_join:results/core_tangent_propagator_closure/README.md": true,
+    "core_sourced_covariance_moment_join:results/core_tangent_propagator_closure/budgets.py": true,
+    "core_sourced_covariance_moment_join:results/first_sourced_foundation/README.md": true
+  },
+  "protocol": {
+    "estimate_argument": "S+K is polynomial majorization only; actual physical band unchanged and no S>=K gate",
+    "mean_orders": "mu=1-kappa tangential and axial; mu+1 radial; final pole6p and final-row pole12p",
+    "mean_sequence": "old final means plus changed complete wave; full pressure prefast, postfast and postslow; fresh slow targets",
+    "new_analytical_assumptions": [],
+    "new_domains": {
+      "KA1": [
+        "6p"
+      ],
+      "KT1": [
+        "6p"
+      ],
+      "Kmom": [
+        "6p",
+        "12p"
+      ],
+      "Kp": [
+        "6p",
+        "12p"
+      ]
+    },
+    "next_source_interface": "blocked until exact +/-1,+/-2 input harmonic grammar and full residual inequality are derived",
+    "no_claim": "actual all-scale input certification, improved complete residual, unconditional pulses or blow-up",
+    "parent_commit": "702886d7be7e46fc038e544987a1dbb25e5d1417",
+    "result": "explicit same-gap higher-pole operator domination and conditional fresh post-sourced full-pressure mean SIZE composition",
+    "retained_contract": "original KT1 KA1 Kp Kmom are the positive kernel/profile recipes, not arbitrary operator norms; actual original enclosures remain conditional"
+  },
+  "remaining_obligations": [
+    "validate original primitive old-wave source common-chart coefficient/support and recipe-defined profile bounds across every actual physical scale; no manufactured fixture certifies these inputs",
+    "derive exact next nonzero regular source for the changed +/-1,+/-2 wave and fresh means including all output harmonics through +/-4 and full pressure angular factors",
+    "establish the complete improved residual inequality including viscosity actual cutoff commutators tails all interactions and fresh zero-mode identities on the original band",
+    "retain and where needed identify original homogeneous primary frames roots actual A0/A1 velocities and moving-pressure compensator products"
+  ],
+  "review": {
+    "checks": {
+      "fresh:all_three_scalars_and_pressure_recomputed_after_fast": true,
+      "fresh:axial_A1_operation_retained_in_fast_tangential_bound": true,
+      "fresh:complete_changed_wave_keeps_old_cross_and_sourced_square": true,
+      "fresh:final_pressure_and_scalars_recomputed_after_slow": true,
+      "fresh:full_cut_sourced_pressure_retained": true,
+      "fresh:full_pressure_Kp_and_global_moment_Kmom_reweighted": true,
+      "fresh:next_harmonic_grammar_blocks_inverse_source": true,
+      "fresh:next_harmonic_grammar_blocks_raw_source": true,
+      "fresh:next_harmonic_grammar_blocks_source": true,
+      "fresh:no_actual_input_enclosure_or_residual_promotion": true,
+      "fresh:normal_and_tangent_from_original_frame_inputs": true,
+      "fresh:old_accumulated_means_survive_fresh_fast_and_slow": true,
+      "fresh:postslow_order_zero_uses_finite_original_mean_jets_through_31": true,
+      "fresh:postslow_pressure_contains_slow_mean_products": true,
+      "fresh:slow_map_uses_fresh_postfast_pressure_and_all_three_scalars": true,
+      "kernel:0:one_fixed_shift_covers_all_four_new_domains": true,
+      "kernel:0:pole0:same_actual_gap_kernel_recipe": true,
+      "kernel:0:same_original_width_and_gap": true,
+      "kernel:1:one_fixed_shift_covers_all_four_new_domains": true,
+      "kernel:1:pole12:same_actual_gap_kernel_recipe": true,
+      "kernel:1:pole6:same_actual_gap_kernel_recipe": true,
+      "kernel:1:same_original_width_and_gap": true,
+      "kernel:3/2:one_fixed_shift_covers_all_four_new_domains": true,
+      "kernel:3/2:pole18:same_actual_gap_kernel_recipe": true,
+      "kernel:3/2:pole9:same_actual_gap_kernel_recipe": true,
+      "kernel:3/2:same_original_width_and_gap": true,
+      "kernel:exact_binomial_translation_no_new_S_ge_K_gate": true,
+      "kernel:giant_constant_retained_exactly_without_materialization": true,
+      "kernel:materializer_guard_is_explicit_diagnostic_limit": true,
+      "kernel:positive_polynomial_inputs_monotone_under_estimate_shift": true,
+      "kernel:sparse_polynomial_hull_dominates_every_nonnegative_monomial": true,
+      "kernel:zero_sparse_hull_stays_zero": true
+    },
+    "parts": {
+      "fresh": {
+        "checks": {
+          "all_three_scalars_and_pressure_recomputed_after_fast": true,
+          "axial_A1_operation_retained_in_fast_tangential_bound": true,
+          "complete_changed_wave_keeps_old_cross_and_sourced_square": true,
+          "final_pressure_and_scalars_recomputed_after_slow": true,
+          "full_cut_sourced_pressure_retained": true,
+          "full_pressure_Kp_and_global_moment_Kmom_reweighted": true,
+          "next_harmonic_grammar_blocks_inverse_source": true,
+          "next_harmonic_grammar_blocks_raw_source": true,
+          "next_harmonic_grammar_blocks_source": true,
+          "no_actual_input_enclosure_or_residual_promotion": true,
+          "normal_and_tangent_from_original_frame_inputs": true,
+          "old_accumulated_means_survive_fresh_fast_and_slow": true,
+          "postslow_order_zero_uses_finite_original_mean_jets_through_31": true,
+          "postslow_pressure_contains_slow_mean_products": true,
+          "slow_map_uses_fresh_postfast_pressure_and_all_three_scalars": true
+        },
+        "final_mean_degrees": {
+          "u": 621,
+          "x": 621,
+          "z": 573
+        },
+        "final_row_degrees": {
+          "Etheta": 1530,
+          "Ez": 1532,
+          "Jtheta": 1483,
+          "Jz": 1531,
+          "P": 1531,
+          "gr": 1530,
+          "pm": 1532
+        },
+        "highest_initial_jet": 31,
+        "scope": "exact positive-polynomial composition on manufactured original recipe inputs; size only"
+      },
+      "kernel": {
+        "checks": {
+          "0:one_fixed_shift_covers_all_four_new_domains": true,
+          "0:pole0:same_actual_gap_kernel_recipe": true,
+          "0:same_original_width_and_gap": true,
+          "1:one_fixed_shift_covers_all_four_new_domains": true,
+          "1:pole12:same_actual_gap_kernel_recipe": true,
+          "1:pole6:same_actual_gap_kernel_recipe": true,
+          "1:same_original_width_and_gap": true,
+          "3/2:one_fixed_shift_covers_all_four_new_domains": true,
+          "3/2:pole18:same_actual_gap_kernel_recipe": true,
+          "3/2:pole9:same_actual_gap_kernel_recipe": true,
+          "3/2:same_original_width_and_gap": true,
+          "exact_binomial_translation_no_new_S_ge_K_gate": true,
+          "giant_constant_retained_exactly_without_materialization": true,
+          "materializer_guard_is_explicit_diagnostic_limit": true,
+          "positive_polynomial_inputs_monotone_under_estimate_shift": true,
+          "sparse_polynomial_hull_dominates_every_nonnegative_monomial": true,
+          "zero_sparse_hull_stays_zero": true
+        },
+        "rows": [
+          {
+            "pole": "0",
+            "shift_denominator_bits": 3,
+            "shift_numerator_bits": 13
+          },
+          {
+            "pole": "1",
+            "shift_denominator_bits": 11,
+            "shift_numerator_bits": 48
+          },
+          {
+            "pole": "3/2",
+            "shift_denominator_bits": 29,
+            "shift_numerator_bits": 114
+          }
+        ],
+        "scope": "exact rational upper recipes, not sampled continuum operator norms"
+      }
+    }
+  },
+  "source_hashes": {
+    "results/core_dynamic_mean_recheck/README.md": "c7cda93205da899ca463a946c50eb50f667c0fa73937b88991e131f7fdc47c4c",
+    "results/core_initial_haar_row_budget/README.md": "1196944157a5f9668ebba7f0613fb1c2626449a1008955bfd85c334bcf2bac7c",
+    "results/core_initial_haar_row_budget/budgets.py": "434b4f085ffee00fed1097c3006399e19f6c8fe096033999cc48eff7b208bf82",
+    "results/core_primary_aggregate_atlas/proof_checks.py": "4266f29458f2e20e49e6b861909f13499d06f25ff66009f28d79458dc0e39026",
+    "results/core_reweighted_fresh_mean_closure/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_reweighted_fresh_mean_closure/README.md": "724d5bcd6988cc2ff1298328a54c477f20f989476c577266701c2065bdc4dac0",
+    "results/core_reweighted_fresh_mean_closure/audit.py": "e1ae25f6d3c8d50569e5ad9e216c68c45c7559729b7ccfba5eb603d5e470a420",
+    "results/core_reweighted_fresh_mean_closure/budgets.py": "6a300ef3e1632491225eccf2a1e9c66f735a61b95d8dbcb5fda2a15ec5aeb463",
+    "results/core_reweighted_fresh_mean_closure/controls.py": "8fa66d33cbb57b08bf79edd92b8e53b39cefdca02300db7c0a48522c5c3e6bec",
+    "results/core_reweighted_fresh_mean_closure/protocol.json": "a4edda4a9c00f54636b224d9eb8613804eab1d8e5f5ee78357afe5f1706b4f14",
+    "results/core_reweighted_fresh_mean_closure/requirements.txt": "74c1b9d7e6103576c1f8c7bf2bf255e088ee5ab2c8f5d7f70dc757c0ae596011",
+    "results/core_reweighted_fresh_mean_closure/test_audit.py": "22eee71ca6c650395a8edf5ac40db3628200ab65b63143bc9ee8382840785719",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/core_signed_prefix_source_budget/budgets.py": "141e8193b477024d6dcab82c3c4a584b721fdad70823ac3b2218bbfbc2387719",
+    "results/core_signed_target_edge_budget/budgets.py": "d3a0eb6f6c2a83a306094d7d0bcd4b93de5a96c383a4175db9f944941997bd9e",
+    "results/core_sourced_covariance_moment_join/README.md": "a3800e5b00fd601a97834b534d2b99f5ef88aa9358c5529ab1a09f197e266084",
+    "results/core_sourced_covariance_moment_join/budgets.py": "7b3f21b024cd209e290073f789fe45dea7d9aafcd50f9162c3b8da0ee48b7252",
+    "results/core_tangent_propagator_closure/budgets.py": "ffe5c85fbda3849f77cc1c5ee5dc12df0c4b96eb24040793eb488594fba8170e"
+  },
+  "status": "same-gap-higher-pole-operators-and-fresh-post-sourced-full-pressure-mean-size-closure"
+}
