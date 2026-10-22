@@ -1,0 +1,12 @@
+{
+  "parent_commit": "ced9ea1e0cf26aed8c417ef957970ad029e40649",
+  "derived_low_orders": "leading full E,U,W,J through two; finalized coefficient one through one",
+  "raw_convention": "factorial angular row norm gives raw kth derivative at most k! times the row",
+  "primitive": "M_n=int_0^X U_n, never reset on a local velocity-zero interval",
+  "extra_angular_input": "W_n through m uses U_n pure angular through m+1; no spurious additional radial derivative",
+  "first_repair": "same full Q03,Q13 signed source moments, axis viscosity and inverse-800 Ceta3 map",
+  "native_chart_coverage": "Rlo<=Rmin/2, Xhi>=2Rmax^2 and Rhi^2>=2Xhi for entire s in [1/4,4]",
+  "distinct_cutoffs": "Borel chi Euler K2 remains an input; coefficient kappa physical X jets are supplied by historical construction",
+  "actual_giant_constants_or_unchanged_selector_substitution_evaluated": false,
+  "finite_controls_are_not_continuum_proofs": true
+}
