@@ -1,0 +1,11 @@
+{
+  "parent_commit": "5ba2fad301fac1ac7a68885c0d79d70caa7cdb76",
+  "normal_error": "complete tangential error <=Dt/L, with ORIGINAL pulse length and slow gate",
+  "physical_consistency": "lambda_min^2<=2*Fmax*gmax follows from original reference growth formula",
+  "length_domination": "LR=8*CE/mu >=16*(1+3u/2)*Da and >=8*(1+3u/2)*Ds; max(25,LR)>=Ln",
+  "original_floor": "|n_tan|>=bmin/2 and |n|^-2<=4/bmin^2",
+  "phase_squared_beta_not_identified_with_frame_linear_beta": true,
+  "new_analytical_assumptions": [],
+  "actual_unknown_historical_band_or_stronger_phase_beta_bound_certified": false,
+  "full_propagator_covariance_or_residual_closed": false
+}
