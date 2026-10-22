@@ -1,0 +1,8 @@
+{
+  "parent_commit": "b8da70e057ca500f508ba8f6f19ead1499a0e253",
+  "input": "same current scalar defects, fixed geometric moment profiles and positive tilt, retained smooth background a(eta) with positive absolute floor, unchanged reserved hull and common tail",
+  "new_result": "explicit response profiles with three distinct physical scale factors; fractional moving-profile and reciprocal all-fixed-order norm majorants substituted into the coupled scalar recurrence",
+  "existing_result_preserved": "qualitative five-map existence and fixed axial 1/lambda conditioning were already established; C+1 scalar gain and m+4 incoming target cost remain",
+  "scope": "conditional continuum slow-map estimates plus exact finite diagnostics; no new background-floor, canonical-seed, sourced/fast input or full residual proof",
+  "arithmetic": "exact rational signed moment matrices, physical scaling exponents, compact piecewise polynomial potential, generalized bivariate Taylor jets and positive scale-polynomial substitution"
+}
