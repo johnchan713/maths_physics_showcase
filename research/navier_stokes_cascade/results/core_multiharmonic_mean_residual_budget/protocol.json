@@ -1,0 +1,13 @@
+{
+  "parent_commit": "6b7d106fbe9b5811c41a9e617808bd16ba6f6f05",
+  "result": "quantitative multiharmonic next regular source from current generated inverse and fresh mean increments; precise mean-feedback gain gap",
+  "new_analytical_assumptions": [],
+  "harmonics": {"input": [-2,-1,1,2], "nonzero_output": [-4,-3,-2,-1,1,2,3,4], "max_input_ratio": 2, "max_square_multiplier": 4},
+  "pressure": "full uncut source-normal pressure in regular linear remainder; cut pressure in exact tail identity; complete angular-zero pressure reconstructed after fresh means",
+  "cutoff": "temporal Gaussian-ledger cutoff outside uncut inverse coefficients; spatial and slow localizers remain inside regular uncut data; no inverse of additive tails",
+  "rates": "B=1-kappa, desired D=3/2-2kappa; wave-stage groups meet D but coarse fresh mean feedback supplies only B",
+  "source_pole": "9p from fresh mean pole6p times complete wave pole3p",
+  "remaining_inequality": "actual Pperp[N(d,wcur)+N(wcur,d)] must be bounded at order D on the same band; stronger fast-row D and fresh slow-scalar C orders are unproved sufficient targets",
+  "witness_scope": "generic admissible local class fields; not prescribed fresh map outputs and not a refutation of the actual construction",
+  "no_claim": "improved complete residual, unconditional actual input enclosures, infinite field or blow-up"
+}
