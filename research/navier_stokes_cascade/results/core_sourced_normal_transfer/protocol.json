@@ -1,0 +1,11 @@
+{
+  "parent_commit": "772380fceca23a1a99d12749b238c494c4e88897",
+  "original_floor": "q=4/bmin^2 from the retained original normal-length certificate",
+  "removed_gate": "independent stronger phase-beta comparison gate for this original-tail sourced inverse route",
+  "denominator_degrees": {"velocity": "4j+2", "pressure": "4j+3", "potential": "4j+3"},
+  "comparison": "fixed other inputs, coefficientwise B_new<=max(1,q_new/q_old)^D B_old; q uniform across the family",
+  "complete_pressure": "keep n^T f even when Pi f vanishes, moving normal, and same cutoff products",
+  "new_analytical_assumptions": [],
+  "manufactured_controls_are_continuum_proof": false,
+  "actual_propagator_complete_means_or_residual_closed": false
+}
