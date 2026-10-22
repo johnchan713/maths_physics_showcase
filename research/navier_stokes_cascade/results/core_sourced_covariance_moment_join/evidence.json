@@ -1,0 +1,388 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_dynamic_mean_recheck/evidence.json": "a596e24dbfcde596d56f5dcc6e12b00bfef14002bffb7e7057f9841cd8c4aa53",
+    "results/core_signed_prefix_source_budget/evidence.json": "4fa5193370702c31c5bbc04af8342c80e886578bb41f04a132c162184279eb2e",
+    "results/core_tangent_propagator_closure/evidence.json": "e874f9cead29150a2f871ec0c349b7c35e0f60181bd0e2030c57942aa9156488",
+    "results/first_sourced_foundation/evidence.json": "79c48c09868edef6f8efed9ec9df8a7ffd7c3dffc520fd91685259754a7c003a"
+  },
+  "flags": {
+    "actual_new_weighted_operator_constants_and_post_wave_fresh_mean_fields_certified": false,
+    "actual_primitive_old_wave_or_before_source_enclosures_certified": false,
+    "all_signed_modes_quadratures_axial_entries_and_second_harmonic_square_retained": true,
+    "complete_residual_improvement_unconditional_pulses_or_blowup_proved": false,
+    "full_covariance_support_hull_not_reserved_mean_hull_used": true,
+    "historical_profiles_supports_widths_bands_or_evidence_changed": false,
+    "homogeneous_primary_frame_or_original_root_identification_closed": false,
+    "new_analytical_assumptions_or_acceptance_gates_added": false,
+    "new_covariance_bound_generated_from_before_source_derived_inverse_and_same_complete_cut_curl": true,
+    "next_weighted_operator_domains_6p_and_12p_kept_distinct_from_old_2p_and_4p": true,
+    "three_changed_defects_and_whole_moving_axial_pressure_moment_bounded": true
+  },
+  "gates": {
+    "all_declared_historical_sources_match": true,
+    "all_exact_tensor_curl_pressure_pole_and_generated_chain_controls_pass": true,
+    "four_historical_records_bound": true
+  },
+  "inherited_source_checks": {
+    "core_dynamic_mean_recheck:results/complete_covariance_initial_means/README.md": true,
+    "core_dynamic_mean_recheck:results/complete_covariance_initial_means/means.py": true,
+    "core_dynamic_mean_recheck:results/complex_mean_relaxation/README.md": true,
+    "core_dynamic_mean_recheck:results/core_covariance_mean_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/.gitignore": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/audit.py": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/proof_checks.py": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/protocol.json": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/requirements.txt": true,
+    "core_dynamic_mean_recheck:results/core_dynamic_mean_recheck/test_audit.py": true,
+    "core_dynamic_mean_recheck:results/core_primary_tail_recheck/README.md": true,
+    "core_dynamic_mean_recheck:results/current_target_cycle_bridge/README.md": true,
+    "core_dynamic_mean_recheck:results/current_target_moment_audit/README.md": true,
+    "core_signed_prefix_source_budget:results/complete_covariance_initial_means/means.py": true,
+    "core_signed_prefix_source_budget:results/core_fast_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_fast_inverse_budget/proof_checks.py": true,
+    "core_signed_prefix_source_budget:results/core_first_sourced_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_first_sourced_inverse_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_initial_haar_row_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_initial_haar_row_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_initial_scalar_seed_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/.gitignore": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/audit.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/budgets.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/controls.py": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/protocol.json": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/requirements.txt": true,
+    "core_signed_prefix_source_budget:results/core_signed_prefix_source_budget/test_audit.py": true,
+    "core_signed_prefix_source_budget:results/core_slow_inverse_budget/README.md": true,
+    "core_signed_prefix_source_budget:results/regular_source_foundation/README.md": true,
+    "core_signed_prefix_source_budget:results/regular_source_foundation/source_checks.py": true,
+    "core_tangent_propagator_closure:results/core_first_sourced_inverse_budget/budgets.py": true,
+    "core_tangent_propagator_closure:results/core_normal_length_closure/README.md": true,
+    "core_tangent_propagator_closure:results/core_normal_length_closure/budgets.py": true,
+    "core_tangent_propagator_closure:results/core_sourced_normal_transfer/README.md": true,
+    "core_tangent_propagator_closure:results/core_sourced_normal_transfer/budgets.py": true,
+    "core_tangent_propagator_closure:results/core_tangent_propagator_closure/.gitignore": true,
+    "core_tangent_propagator_closure:results/core_tangent_propagator_closure/README.md": true,
+    "core_tangent_propagator_closure:results/core_tangent_propagator_closure/audit.py": true,
+    "core_tangent_propagator_closure:results/core_tangent_propagator_closure/budgets.py": true,
+    "core_tangent_propagator_closure:results/core_tangent_propagator_closure/controls.py": true,
+    "core_tangent_propagator_closure:results/core_tangent_propagator_closure/protocol.json": true,
+    "core_tangent_propagator_closure:results/core_tangent_propagator_closure/requirements.txt": true,
+    "core_tangent_propagator_closure:results/core_tangent_propagator_closure/test_audit.py": true,
+    "core_tangent_propagator_closure:results/frame_column_foundation/README.md": true,
+    "core_tangent_propagator_closure:results/frame_column_foundation/frame_budget.py": true,
+    "core_tangent_propagator_closure:results/frame_column_foundation/frame_identity.py": true,
+    "core_tangent_propagator_closure:results/sourced_inverse_foundation/README.md": true,
+    "first_sourced_foundation:results/actual_band_pulse_bounds/bounds.py": true,
+    "first_sourced_foundation:results/compact_mean_foundation/evidence.json": true,
+    "first_sourced_foundation:results/complete_covariance_initial_means/evidence.json": true,
+    "first_sourced_foundation:results/complete_covariance_initial_means/means.py": true,
+    "first_sourced_foundation:results/complex_signed_covariance_update/evidence.json": true,
+    "first_sourced_foundation:results/first_sourced_foundation/.gitignore": true,
+    "first_sourced_foundation:results/first_sourced_foundation/README.md": true,
+    "first_sourced_foundation:results/first_sourced_foundation/audit.py": true,
+    "first_sourced_foundation:results/first_sourced_foundation/protocol.json": true,
+    "first_sourced_foundation:results/first_sourced_foundation/requirements.txt": true,
+    "first_sourced_foundation:results/first_sourced_foundation/sourced_bounds.py": true,
+    "first_sourced_foundation:results/first_sourced_foundation/sourced_checks.py": true,
+    "first_sourced_foundation:results/first_sourced_foundation/test_audit.py": true,
+    "first_sourced_foundation:results/first_sourced_wave_update/evidence.json": true,
+    "first_sourced_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "first_sourced_foundation:results/post_signed_mean_relaxation/evidence.json": true,
+    "first_sourced_foundation:results/real_signed_covariance_update/evidence.json": true,
+    "first_sourced_foundation:results/regular_source_foundation/evidence.json": true
+  },
+  "protocol": {
+    "actual_new_operator_constants_fresh_mean_fields_or_complete_residual_certified": false,
+    "covariance_bound": "2*Uold_n*Uadd_n+Uadd_n^2; all signed harmonics and tensor entries",
+    "full_pressure": "n.f, nprime, same cutoff, full Pi1/Pi2 subtraction and derivative of entire c_rho*dP retained",
+    "generated_chain": "BEFORE fresh source -> original derived inverse -> same cut potential/pressure -> complete curl -> full covariance -> full-axis moments",
+    "new_analytical_assumptions": [],
+    "new_selector_or_smallness_conditions": [],
+    "old_pressure_operator_domains": [
+      "2p",
+      "4p"
+    ],
+    "orders": "B=1-kappa, C=B+1/2; moment order C and axial residual moment order C+1",
+    "parent_commit": "04aa29f2481efce6e6e9ce4bb1f3108341a83f5c",
+    "pole_scope": "one common p covers requested finite jets, with unweighted fixed coefficients: sourced wave 3p, covariance 6p, next fresh pressure rows 12p",
+    "required_next_pressure_operator_domains": [
+      "6p",
+      "12p"
+    ]
+  },
+  "remaining_obligations": [
+    "retain validity of original primitive old-wave source coefficient and full-path support bounds on the same common chart; generated covariance is no longer an independent norm input on this route",
+    "reevaluate SAME weighted operators at 6p and 12p (or prove sharper actual poles), then apply fresh fast and slow maps and recompute complete pressure and all three scalars after each update",
+    "retain old means actual A0/A1 velocities full Pi1/Pi2 memory moving compensator products and homogeneous primary/root identification where required",
+    "join full target and pointwise residual estimates across all physical scales including viscosity cutoff and interaction terms; scalar moment bounds alone do not prove residual improvement"
+  ],
+  "review": {
+    "checks": {
+      "complete_curl:cutoff_derivatives_cannot_be_erased": true,
+      "complete_curl:graph_and_cylindrical_connection_are_nonzero": true,
+      "complete_curl:order0_full_graph_cylindrical_curl_norm_is_bounded": true,
+      "complete_curl:order1_full_graph_cylindrical_curl_norm_is_bounded": true,
+      "complete_curl:order2_full_graph_cylindrical_curl_norm_is_bounded": true,
+      "generated_chain:all_three_generated_moments_and_whole_pressure_response_are_positive": true,
+      "generated_chain:k1/100000_all_power_margins_and_extra_axial_epsilon_retained": true,
+      "generated_chain:k1/1000_all_power_margins_and_extra_axial_epsilon_retained": true,
+      "generated_chain:k1/100_all_power_margins_and_extra_axial_epsilon_retained": true,
+      "generated_chain:no_actual_enclosure_or_complete_residual_promotion": true,
+      "generated_chain:normal_denominator_and_derived_tangent_still_used": true,
+      "generated_chain:order0_all_signed_modes_and_complete_cut_curl_retained": true,
+      "generated_chain:order0_full_cut_pressure_keeps_unprojected_source": true,
+      "generated_chain:order0_generated_covariance_cross_and_square_retained": true,
+      "generated_chain:order1_all_signed_modes_and_complete_cut_curl_retained": true,
+      "generated_chain:order1_full_cut_pressure_keeps_unprojected_source": true,
+      "generated_chain:order1_generated_covariance_cross_and_square_retained": true,
+      "generated_chain:residual_order_zero_uses_finite_before_prefix_jets_through_18": true,
+      "pressure_moments:axial_pressure_not_supplied_by_two_selected_fluxes": true,
+      "pressure_moments:compact_pressure_both_endpoints": true,
+      "pressure_moments:full_axial_covariance_and_pressure_moment": true,
+      "pressure_moments:full_axis_pressure_defect_identity": true,
+      "pressure_moments:full_pressure_first_moment": true,
+      "pressure_moments:moving_compensator_derivative_survives": true,
+      "pressure_moments:order0_Jtheta_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order0_Jz_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order0_P_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order0_pressure_moment_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order0_whole_axial_moment_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order1_Jtheta_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order1_Jz_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order1_P_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order1_pressure_moment_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order1_whole_axial_moment_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order2_Jtheta_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order2_Jz_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order2_P_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order2_pressure_moment_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:order2_whole_axial_moment_independent_polynomial_majorant_is_bounded": true,
+      "pressure_moments:whole_moving_pressure_derivative": true,
+      "tensor:absent_old_second_mode_still_has_nonzero_square": true,
+      "tensor:all_six_entries_change": true,
+      "tensor:complete_tensor_matches_difference_of_two_covariances": true,
+      "tensor:full_tensor_each_entry_has_l1_cross_plus_square_bound": true,
+      "weighted_domains:old_4p_input_norm_cannot_bound_generic_6p_input": true,
+      "weighted_domains:p0_correctly_recomputed_domains_cover_next_maps": true,
+      "weighted_domains:p0_old_domains_are_sufficient_only_at_zero_pole": true,
+      "weighted_domains:p0_sourced_self_square_and_fresh_map_poles": true,
+      "weighted_domains:p1_correctly_recomputed_domains_cover_next_maps": true,
+      "weighted_domains:p1_old_domains_are_sufficient_only_at_zero_pole": true,
+      "weighted_domains:p1_sourced_self_square_and_fresh_map_poles": true,
+      "weighted_domains:p3/2_correctly_recomputed_domains_cover_next_maps": true,
+      "weighted_domains:p3/2_old_domains_are_sufficient_only_at_zero_pole": true,
+      "weighted_domains:p3/2_sourced_self_square_and_fresh_map_poles": true,
+      "weighted_domains:same_fixed_width_primitive_recipe_exists_at_both_required_poles": true
+    },
+    "parts": {
+      "complete_curl": {
+        "checks": {
+          "cutoff_derivatives_cannot_be_erased": true,
+          "graph_and_cylindrical_connection_are_nonzero": true,
+          "order0_full_graph_cylindrical_curl_norm_is_bounded": true,
+          "order1_full_graph_cylindrical_curl_norm_is_bounded": true,
+          "order2_full_graph_cylindrical_curl_norm_is_bounded": true
+        },
+        "rows": [
+          {
+            "actual_majorant": "7093/5",
+            "order": 0,
+            "upper": "25584"
+          },
+          {
+            "actual_majorant": "101817/20",
+            "order": 1,
+            "upper": "155652"
+          },
+          {
+            "actual_majorant": "1797369/200",
+            "order": 2,
+            "upper": "325059"
+          }
+        ],
+        "scope": "independent full-box polynomial coefficient norms; finite fixture, not a continuum pulse enclosure"
+      },
+      "generated_chain": {
+        "checks": {
+          "all_three_generated_moments_and_whole_pressure_response_are_positive": true,
+          "k1/100000_all_power_margins_and_extra_axial_epsilon_retained": true,
+          "k1/1000_all_power_margins_and_extra_axial_epsilon_retained": true,
+          "k1/100_all_power_margins_and_extra_axial_epsilon_retained": true,
+          "no_actual_enclosure_or_complete_residual_promotion": true,
+          "normal_denominator_and_derived_tangent_still_used": true,
+          "order0_all_signed_modes_and_complete_cut_curl_retained": true,
+          "order0_full_cut_pressure_keeps_unprojected_source": true,
+          "order0_generated_covariance_cross_and_square_retained": true,
+          "order1_all_signed_modes_and_complete_cut_curl_retained": true,
+          "order1_full_cut_pressure_keeps_unprojected_source": true,
+          "order1_generated_covariance_cross_and_square_retained": true,
+          "residual_order_zero_uses_finite_before_prefix_jets_through_18": true
+        },
+        "highest_initial_jet": 18,
+        "rows": [
+          {
+            "complete_degree": 21,
+            "covariance_degree": 42,
+            "order": 0
+          },
+          {
+            "complete_degree": 33,
+            "covariance_degree": 66,
+            "order": 1
+          }
+        ],
+        "scope": "exact positive-polynomial composition on manufactured retained inputs; no actual generated-fluid bounds certified"
+      },
+      "pressure_moments": {
+        "checks": {
+          "axial_pressure_not_supplied_by_two_selected_fluxes": true,
+          "compact_pressure_both_endpoints": true,
+          "full_axial_covariance_and_pressure_moment": true,
+          "full_axis_pressure_defect_identity": true,
+          "full_pressure_first_moment": true,
+          "moving_compensator_derivative_survives": true,
+          "order0_Jtheta_independent_polynomial_majorant_is_bounded": true,
+          "order0_Jz_independent_polynomial_majorant_is_bounded": true,
+          "order0_P_independent_polynomial_majorant_is_bounded": true,
+          "order0_pressure_moment_independent_polynomial_majorant_is_bounded": true,
+          "order0_whole_axial_moment_independent_polynomial_majorant_is_bounded": true,
+          "order1_Jtheta_independent_polynomial_majorant_is_bounded": true,
+          "order1_Jz_independent_polynomial_majorant_is_bounded": true,
+          "order1_P_independent_polynomial_majorant_is_bounded": true,
+          "order1_pressure_moment_independent_polynomial_majorant_is_bounded": true,
+          "order1_whole_axial_moment_independent_polynomial_majorant_is_bounded": true,
+          "order2_Jtheta_independent_polynomial_majorant_is_bounded": true,
+          "order2_Jz_independent_polynomial_majorant_is_bounded": true,
+          "order2_P_independent_polynomial_majorant_is_bounded": true,
+          "order2_pressure_moment_independent_polynomial_majorant_is_bounded": true,
+          "order2_whole_axial_moment_independent_polynomial_majorant_is_bounded": true,
+          "whole_moving_pressure_derivative": true
+        },
+        "scope": "exact compact finite-regularity polynomial moment/pressure controls, with nonconstant compensator"
+      },
+      "tensor": {
+        "checks": {
+          "absent_old_second_mode_still_has_nonzero_square": true,
+          "all_six_entries_change": true,
+          "complete_tensor_matches_difference_of_two_covariances": true,
+          "full_tensor_each_entry_has_l1_cross_plus_square_bound": true
+        },
+        "delta": [
+          [
+            "23/2",
+            "7/2",
+            "6"
+          ],
+          [
+            "7/2",
+            "8",
+            "11"
+          ],
+          [
+            "6",
+            "11",
+            "16"
+          ]
+        ],
+        "scope": "exact two-frequency real quadratures, not actual sourced ODE samples"
+      },
+      "weighted_domains": {
+        "checks": {
+          "old_4p_input_norm_cannot_bound_generic_6p_input": true,
+          "p0_correctly_recomputed_domains_cover_next_maps": true,
+          "p0_old_domains_are_sufficient_only_at_zero_pole": true,
+          "p0_sourced_self_square_and_fresh_map_poles": true,
+          "p1_correctly_recomputed_domains_cover_next_maps": true,
+          "p1_old_domains_are_sufficient_only_at_zero_pole": true,
+          "p1_sourced_self_square_and_fresh_map_poles": true,
+          "p3/2_correctly_recomputed_domains_cover_next_maps": true,
+          "p3/2_old_domains_are_sufficient_only_at_zero_pole": true,
+          "p3/2_sourced_self_square_and_fresh_map_poles": true,
+          "same_fixed_width_primitive_recipe_exists_at_both_required_poles": true
+        },
+        "rows": [
+          {
+            "pole": "0",
+            "required": {
+              "KA1": [
+                "0"
+              ],
+              "KT1": [
+                "0"
+              ],
+              "Kmom": [
+                "0",
+                "0"
+              ],
+              "Kp": [
+                "0",
+                "0"
+              ]
+            }
+          },
+          {
+            "pole": "1",
+            "required": {
+              "KA1": [
+                "6"
+              ],
+              "KT1": [
+                "6"
+              ],
+              "Kmom": [
+                "6",
+                "12"
+              ],
+              "Kp": [
+                "6",
+                "12"
+              ]
+            }
+          },
+          {
+            "pole": "3/2",
+            "required": {
+              "KA1": [
+                "9"
+              ],
+              "KT1": [
+                "9"
+              ],
+              "Kmom": [
+                "9",
+                "18"
+              ],
+              "Kp": [
+                "9",
+                "18"
+              ]
+            }
+          }
+        ],
+        "scope": "proof-domain correction, not an obstruction to existence of the fixed operator at a higher finite pole"
+      }
+    }
+  },
+  "source_hashes": {
+    "results/complete_covariance_initial_means/means.py": "47b5ab42f674984ace9ce9536940735890db16d57b4fb6398854a1b902f9c3d1",
+    "results/core_dynamic_mean_recheck/README.md": "c7cda93205da899ca463a946c50eb50f667c0fa73937b88991e131f7fdc47c4c",
+    "results/core_primary_aggregate_atlas/proof_checks.py": "4266f29458f2e20e49e6b861909f13499d06f25ff66009f28d79458dc0e39026",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/core_signed_prefix_source_budget/budgets.py": "141e8193b477024d6dcab82c3c4a584b721fdad70823ac3b2218bbfbc2387719",
+    "results/core_signed_target_edge_budget/budgets.py": "d3a0eb6f6c2a83a306094d7d0bcd4b93de5a96c383a4175db9f944941997bd9e",
+    "results/core_sourced_covariance_moment_join/.gitignore": "8ebfefd26c6c97658683529d559655e9eba8c70dd6eadbb73cf2d1c4a68c7d7e",
+    "results/core_sourced_covariance_moment_join/README.md": "a3800e5b00fd601a97834b534d2b99f5ef88aa9358c5529ab1a09f197e266084",
+    "results/core_sourced_covariance_moment_join/audit.py": "37bf110f7c4b03ce1a2085b6cdb0eed5e3c7f465bd59aba8e849f2a5ae8c6dc4",
+    "results/core_sourced_covariance_moment_join/budgets.py": "7b3f21b024cd209e290073f789fe45dea7d9aafcd50f9162c3b8da0ee48b7252",
+    "results/core_sourced_covariance_moment_join/controls.py": "6a115d2543846e44a3d4562ca6ccaef823a60502133e0bbf23facd88a29b4d05",
+    "results/core_sourced_covariance_moment_join/protocol.json": "8152153364e2c650fd46a27ab8cba1cef2ac849b51e2c61d3c9a099b3d48be77",
+    "results/core_sourced_covariance_moment_join/requirements.txt": "74c1b9d7e6103576c1f8c7bf2bf255e088ee5ab2c8f5d7f70dc757c0ae596011",
+    "results/core_sourced_covariance_moment_join/test_audit.py": "8c859c89828d967d145a1febf91140f30672cbb6e26d92fbcebfbfc1959fda1f",
+    "results/core_tangent_propagator_closure/README.md": "4d2befdec9c9d81146a171ba0c195ae29ae3de339df19ba59781b9de37d5f181",
+    "results/core_tangent_propagator_closure/budgets.py": "ffe5c85fbda3849f77cc1c5ee5dc12df0c4b96eb24040793eb488594fba8170e",
+    "results/first_sourced_foundation/README.md": "b4b4fa32c4d37ce3cef2aa60c688f1a83faccbe3bab8b248c95e0ca909e55839"
+  },
+  "status": "generated-sourced-complete-covariance-full-pressure-moments-and-next-weighted-operator-domain-correction"
+}

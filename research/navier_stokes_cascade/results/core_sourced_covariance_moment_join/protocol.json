@@ -1,0 +1,13 @@
+{
+  "parent_commit": "04aa29f2481efce6e6e9ce4bb1f3108341a83f5c",
+  "generated_chain": "BEFORE fresh source -> original derived inverse -> same cut potential/pressure -> complete curl -> full covariance -> full-axis moments",
+  "covariance_bound": "2*Uold_n*Uadd_n+Uadd_n^2; all signed harmonics and tensor entries",
+  "orders": "B=1-kappa, C=B+1/2; moment order C and axial residual moment order C+1",
+  "pole_scope": "one common p covers requested finite jets, with unweighted fixed coefficients: sourced wave 3p, covariance 6p, next fresh pressure rows 12p",
+  "old_pressure_operator_domains": ["2p", "4p"],
+  "required_next_pressure_operator_domains": ["6p", "12p"],
+  "full_pressure": "n.f, nprime, same cutoff, full Pi1/Pi2 subtraction and derivative of entire c_rho*dP retained",
+  "new_analytical_assumptions": [],
+  "new_selector_or_smallness_conditions": [],
+  "actual_new_operator_constants_fresh_mean_fields_or_complete_residual_certified": false
+}
