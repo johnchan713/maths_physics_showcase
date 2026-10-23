@@ -453,6 +453,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_post_signed_mean_closure/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_post_signed_mean_closure/evidence.json \
             --output navier_stokes_core_post_signed_mean_closure_ci.json
+      - name: Check current post signed nonzero source and physical tail request domains
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_post_signed_residual_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_post_signed_residual_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_post_signed_residual_join/evidence.json \
+            --output navier_stokes_core_post_signed_residual_join_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1841,6 +1847,7 @@ jobs:
             navier_stokes_core_preserved_haar_scalar_join_ci.json
             navier_stokes_core_generic_signed_covariance_join_ci.json
             navier_stokes_core_post_signed_mean_closure_ci.json
+            navier_stokes_core_post_signed_residual_join_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
