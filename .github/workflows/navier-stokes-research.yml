@@ -391,6 +391,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_multiharmonic_mean_residual_budget/evidence.json \
             --output navier_stokes_core_multiharmonic_mean_residual_budget_ci.json
 
+      - name: Check derived actual scalar gain with retained reserved hull contract
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_actual_scalar_gain_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_actual_scalar_gain_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_actual_scalar_gain_join/evidence.json \
+            --output navier_stokes_core_actual_scalar_gain_join_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1770,6 +1777,7 @@ jobs:
             navier_stokes_core_sourced_covariance_moment_join_ci.json
             navier_stokes_core_reweighted_fresh_mean_closure_ci.json
             navier_stokes_core_multiharmonic_mean_residual_budget_ci.json
+            navier_stokes_core_actual_scalar_gain_join_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
