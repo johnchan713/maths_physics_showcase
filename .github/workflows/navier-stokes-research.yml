@@ -537,6 +537,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_canonical_entrance_jet_closure/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_canonical_entrance_jet_closure/evidence.json \
             --output navier_stokes_core_canonical_entrance_jet_closure_ci.json
+      - name: Check canonical Haar column jets physical normalization and joint root inputs
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_canonical_haar_column_jet_closure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_canonical_haar_column_jet_closure/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_canonical_haar_column_jet_closure/evidence.json \
+            --output navier_stokes_core_canonical_haar_column_jet_closure_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1939,6 +1945,7 @@ jobs:
             navier_stokes_core_leading_direction_enclosure_ci.json
             navier_stokes_core_reference_scaled_normal_floor_ci.json
             navier_stokes_core_canonical_entrance_jet_closure_ci.json
+            navier_stokes_core_canonical_haar_column_jet_closure_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json

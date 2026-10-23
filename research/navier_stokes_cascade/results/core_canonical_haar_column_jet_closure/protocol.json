@@ -1,0 +1,10 @@
+{
+  "parent_commit": "f749704c9ee88e0758640e189a2c024dbe1f579b",
+  "result": "conditional explicit canonical Haar-column jet closure and joint H/W norm input substitution",
+  "integral": "retain original angular half, transverse cutoff, temporal cutoff, J ci and s0=r0^2/sqrt(L); Gaussian square integral cancels physical scale after normalization",
+  "moving_maps": "full normalized torus Haar average removes parameter-dependent translations and finite-cover copy factors exactly, not pointwise; label and L frozen",
+  "bound": "H_j=2*(d^j/j!)*Jmax*G*(U*U)_j, Jmax=2, G=2 max(1,1/c), c derived from original actual fixed positive tilt and spectral bounds",
+  "join": "same canonical U_j supplies H and W; original target, curl, loghalf, value gaps and roots unchanged",
+  "scope": "principal column/tensor only, not full curl-wave covariance or an actual background supremum certificate; all full pressure/moment/support and residual obligations retained",
+  "next": "derive remaining complete curl-operator D_j recipe from actual cylindrical/graph/normal coefficients, retain weighted target and primitive premises"
+}
