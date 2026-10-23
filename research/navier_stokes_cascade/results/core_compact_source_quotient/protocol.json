@@ -1,0 +1,17 @@
+{
+  "parent_commit": "e441859258f915144b59ca4f967b10e28d49c8f0",
+  "result": "exact compact-source quotient with retained local pressure memory and conditional actual axial-potential A1 error order B+1=2-kappa",
+  "new_analytical_assumptions": [],
+  "retained_inputs": "original coarse actual beta M_(B+1), v and gamma M_B, all six complete covariance entries M1; b=O(epsilon), V and G=O(1) in retained fixed multiplier seminorms, not assertions of weighted compact background support; exact original compact potential and whole stress support/endpoint contracts, same weighted operators and base/exterior ledger",
+  "operator": "J_e D_b h = full characteristic boundary + (b-e) J_e(h/r); for compact potentials A_e D_e=0, T_e D_e=I, D_e T_e=I-A_e, A_e^2=A_e and T_e A_e=0",
+  "radial": "S=2b beta+beta^2+Wrr, H=b gamma+G beta+beta gamma+Wrz, C=2Vv+v^2+Wtt; gr=r0+D_r K0 with r0=-tstar beta-S/R-Dz H+C/R+epsilon Dz^2 beta and K0=-S+epsilon D1 beta",
+  "pressure": "same current P=int Haar r0 and pm=K0+T0(r0-rho P); K0 is restored in pressure, not erased because A0 kills its divergence; old full pressure and base Pi1/Pi2 memory remain",
+  "actual_axial_route": "finite sum of the SAME compact fast/slow potentials gives gamma=D1 Psi and beta=-Dz Psi; waves change covariance only; actual fast gamma=gd-A1 gd is essential",
+  "A1": "A1 Qcirc Ez_postwave=A1 Dz Qcirc H1 with H1=2G gamma+gamma^2+Wzz-S+T0(r0-rho P). Time, both viscosities and radial/stress fluxes vanish only under this compact projection and whole support contracts",
+  "moving_cutoff": "[partial_s,A_e]f=R^-e chi_Rs J_e f for s=Z,T; no free slow commutation or division by chi_R",
+  "norm": "H1 M_B gives A1 error M_(B+1), two kappa better than old E source route and kappa above C0; combined output n envelope reads fields/operators through n+3, internal pressure/H1 through n+1, explicit Dz epsilon and Qcirc factor2 retained",
+  "domains": "A1 POSTWAVE old means2q, complete current wave3q, full covariance6q and reduced pressure/H1 at6q with original Kp/Kmom/KA1 at6q; FINAL radial source remains12q. Retain unweighted fixed-multiplier contracts, or add any actual multiplier poles at products before selecting q. Keep all common request and archived operator/source DAGs",
+  "requests": "normalized A1 target C0 uses p0 and H1 through m+1; physical h1/200 mN0 uses p30000002 H1 J60000008, versus old full-E-row p30000004 J60000011; these are distinct source functions and not total original-profile jet counts; A0 J60200007 unchanged",
+  "radial_boundary": "pure swirl comparison satisfies divergence and both exact Haar velocity moments but retains a fundamental Pell-resonant centripetal A0 source; not a canonical or uniform all-jet counterexample",
+  "no_claim": "actual all-scale coarse or reduced high-jet input/support validation, improved full pressure or regular source E, subsequent signed cycle, absolute decay, infinite diagonal, unconditional pulse or blow-up"
+}
