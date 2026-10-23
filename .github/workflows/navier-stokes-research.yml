@@ -419,6 +419,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_localized_stress_assembly/evidence.json \
             --output navier_stokes_core_localized_stress_assembly_ci.json
 
+      - name: Check final regular mean row closure and pointwise compensated A0 estimate
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_final_mean_row_closure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_final_mean_row_closure/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_final_mean_row_closure/evidence.json \
+            --output navier_stokes_core_final_mean_row_closure_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1802,6 +1809,7 @@ jobs:
             navier_stokes_core_fast_row_gain_join_ci.json
             navier_stokes_core_haar_row_stress_join_ci.json
             navier_stokes_core_localized_stress_assembly_ci.json
+            navier_stokes_core_final_mean_row_closure_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
