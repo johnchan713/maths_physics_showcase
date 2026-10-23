@@ -1,0 +1,15 @@
+{
+  "parent_commit": "7e3acac4a78c3064bf2227cc35f9268892fae423",
+  "result": "conditional complete current postslow scalar order C+1 using an explicit finite preserved-Haar norm recipe",
+  "new_analytical_assumptions": [],
+  "retained_lower_input_inequalities_not_verified": [
+    "same canonical initial SeedBudget weighted field/defect and chart-hull transfer inequalities",
+    "SEPARATE original complete cut primary at 1/2 and original-root first signed velocity at alpha-1/2",
+    "same G=0 entire reserved potential hull and complete zero-Haar compact fast identities"
+  ],
+  "rates": "B=1-kappa, C=3/2-kappa, D=C-kappa, alpha=2-3kappa; first postfast min(2,alpha,2B)=alpha; accumulated Haar tangential order 1 and radial order 2; all three current postslow scalars C+1, whole axial residual moment C+2",
+  "composition": "original SeedBudget fields/output; complete first signed covariance cross plus square; first fast change on full initial means; same current five-map; finite old Haar sum; existing scalar-derived latest slow increment",
+  "pressure": "all six complete covariance entries, axial velocity square, weighted radial pressure moment and derivative of moving c_rho P retained; no total pressure-field rate promotion",
+  "obstruction": "a coarse B current mean callback alone cannot supply a Haar order-one norm: the missing rescaling epsilon^-kappa diverges on a whole tail",
+  "no_claim": "actual lower weighted input verification, next full canonical cycle, improved nonzero source D, absolute physical decay, uniform infinite diagonal, complete residual improvement, unconditional pulses or blow-up"
+}
