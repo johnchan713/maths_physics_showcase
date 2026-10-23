@@ -1,0 +1,15 @@
+{
+  "parent_commit": "12603481241ee73dcfb3df6b773f8c3687b0dab9",
+  "result": "conditional all-mixed-order seam closure of the retained finite physical grammar from original weighted target/source/path/profile contracts",
+  "new_analytical_assumptions": [],
+  "inputs": "EVERY retained finite target Xi_j has full zeta mixed jets, original y_sigma has weighted jets and y_sigma>=c zeta/s0, full lifted f/P mixed bounds with flat entrance and closed transverse support on whole path, original same-band normal/root/freezing gates and physical copy compatibility",
+  "root": "actual linear delta_a=(Hc^-1 Xi)/(2 epsilon ac) with SAME original ac; each mixed derivative keeps sqrt(zeta). The reciprocal root is not zero-extended; the positive root has its own half-weight extension under the input contract. No updated-total-wave root is substituted",
+  "sharp_support_threshold": "target zeta^theta yields signed zeta^(theta-1/2) up to finite poles. theta>1/2 suffices; scalar fixed-root comparisons at/below equality fail smooth zero extension even though targets are smooth compact. Additional vanishing can restore equality. Not canonical target data. Original full-zeta hypothesis retained",
+  "edge": "x^-p exp(-c/x^2)<=L!c^-L x^(2L-p), L=floor((p+K)/2)+1. Original c_left=C_setup^-40/2, c_right=2 remain positive and fixed; no giant factorial evaluated",
+  "forced_and_cut": "whole-path zero forcing jets on transverse faces and zero entrance give zero response jets by differentiated ODE uniqueness; raw outgoing response not assumed zero. Same cutoff on potential and full moving/source-normal pressure, complete cylindrical curl",
+  "means_pressure": "Nt^-1 may fill torus; shifted T_e fills WHOLE radial hull including gaps and has edge-directed flat bounds. Keep actual gd-A1 gd, finite smooth reserved response, full pm=T0(gr-rhoP), K0/K1, Pi1/Pi2, all six covariance entries and both viscosities",
+  "covers": "global physical periodic pullbacks/copy sums first, chart restrictions second. J=((3,1),(1,5)), k->(J^i)^T k. No unrelated patch solve or inverse-branch choice. Different labels need not agree individually; representations of same assembled sum do",
+  "quantifiers": "every finite stage and fixed mixed jet under its retained input bounds. T=0 one-sided only, no negative-physical-time zero extension, no uniform-in-order or infinite-stage constant",
+  "requests": "parent p30000001 and raw Phi60000006 illustration unchanged; smooth global extension implies every required trace identity, not millions of independent samples. Complete older raw norm/operator DAG remains",
+  "no_claim": "actual canonical weighted suprema or same-band gaps certified, improved regular order, absolute residual decay, infinite field, forcing regularity or blow-up"
+}
