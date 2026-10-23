@@ -1,0 +1,13 @@
+{
+  "parent_commit": "813240e752d550d4ed0cbcc81c62f34e375d3836",
+  "result": "conditional post-generic-signed fast/slow mean block at full regular mean-row order C0=2-2kappa, with actual A1 velocities and one complete finite request domain",
+  "new_analytical_assumptions": [],
+  "rates": "B=1-kappa, C=3/2-kappa, D=C-kappa; derived new fast D, fresh postfast scalars C, slow C, postslow scalars C+1; full tangential remainders D+1-2kappa and C+1-2kappa exceed C0",
+  "exact_full_identity": "Efinal=Haar(EpostSigned)+(0,A1 Qcirc EpostSigned_z)+Rf+Rs; both complete differences include actual A1 velocities and full current pressure reconstruction",
+  "radial": "Er=-rho Pnew-A0(gr_final-rho Pnew), zero Haar compensated moment; full final gr source B and Pnew scalar C+1",
+  "requests": "strict compact rule: p1=50001 J1=n+100005, p0=100000 J0=n+200003 at kappa=1e-5; new covariance requests through J0+13, NEXT signed target through J0+14; old frozen DAGs not collapsed",
+  "one_common_pole": "choose original p for every older nested input; pad paired target allowance d=12p; q=max(previous signed q,6p,6N+9,6N+12p+6), N largest new covariance request; p=1 illustrative q=1200114 at output0, not an actual input enclosure",
+  "operators": "prefast rows/fast fields 2q, postfast source/final gr 4q; original shift_recipe(q/3,L,width,gap) covers KT1/KA1 at2q and Kp/Kmom at2q,4q; giant coefficients deferred",
+  "retained_contract": "same actual weighted input/raw kernel families, G=0 on WHOLE reserved potential hull, zero-Haar complete fast fields, unit-mass moving rho, frozen coefficients and whole-line compact smooth supports",
+  "no_claim": "actual high-jet/support/background verification, complete new nonzero/physical residual, full canonical seed, absolute decay, infinite field, unconditional pulses or blow-up"
+}
