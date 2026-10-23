@@ -1,0 +1,13 @@
+{
+  "parent_commit": "c9269c3412d4284b4c0b72ad5dd6663427e285ad",
+  "result": "exact compact projection/primitive seam defects and explicit zeroth-output physical A1 mixed trace gate",
+  "new_analytical_assumptions": [],
+  "trace_conventions": "potential jump is right-minus-left of r^e h in fixed physical characteristic coordinates; IBP Delta_r is left-minus-right of weighted Fourier source U jets, including exterior zero pieces",
+  "pressure": "Q pm=Q K1+T0 Q r1 plus cumulative seam/cutoff defect if classical patch potentials fail to glue; smooth global identity unchanged. Full moving rhoP, K0/K1, Pi1/Pi2 and all current covariance/pressure memory retained",
+  "axial": "A1 Q Ez=A1 Dz Q Phi plus the weighted compact projection defect of Q Omega; Omega=Lambda+2G Psi, both scalar viscosities and local viscous pressure retained",
+  "moving_seam": "partial_Z Delta_r F=Delta_r partial_Z F+s_Z Delta_(r+1) F. Value matching of Phi alone does not imply matching of Dz Phi; original moving cutoff commutator also retained",
+  "inequality": "for source order a and trace extra order b_r, require a+b_r+(r+1)kappa>target or exact combined boundary cancellation; equality not settled by strict-margin recipe",
+  "physical_zero_output": "unchanged h1/200 N0 kappa1/100000 target302 a2 p30000001. Sufficient partial_Z Q Phi weighted zero traces through29999999, or identical weighted Phi traces through30000000 plus mixed regularity. Raw Phi60000006 and entire older graph retained. No additional nonstationary trace request in normalized direct p0 route",
+  "comparison": "finite-regularity compact B-splines at fixed nonzero auxiliary mode have exact M^-n seam leakage along half-integer M. Not canonical C-infinity fields, not the prescribed mean/covariance history, no actual-source lower bound",
+  "no_claim": "canonical closed-cover trace matching, actual all-scale high-jet norm/support validation, improved whole regular order, absolute residual decay, infinite field, forcing smoothness or blow-up"
+}

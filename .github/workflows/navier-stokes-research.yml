@@ -501,6 +501,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_axial_potential_pressure_gain/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_axial_potential_pressure_gain/evidence.json \
             --output navier_stokes_core_axial_potential_pressure_gain_ci.json
+      - name: Check compact projection pressure and physical A1 mixed trace gate
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_compact_trace_gate/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_compact_trace_gate/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_compact_trace_gate/evidence.json \
+            --output navier_stokes_core_compact_trace_gate_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1897,6 +1903,7 @@ jobs:
             navier_stokes_core_mixed_compact_time_budget_ci.json
             navier_stokes_core_angular_pressure_normal_form_ci.json
             navier_stokes_core_axial_potential_pressure_gain_ci.json
+            navier_stokes_core_compact_trace_gate_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
