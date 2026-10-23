@@ -1,0 +1,13 @@
+{
+  "parent_commit": "7228cde1b0281e46054e381a2e708080b1b346b9",
+  "result": "conditional actual postwave fast-row D, actual fresh fast D and mean-feedback D join from existing coarse field/profile recipes",
+  "new_analytical_assumptions": [],
+  "difference": "cancel c Nt before estimating; retain actual A1 velocities, full compensated pressure, all mean crosses, viscosity and cylindrical connections",
+  "rates": "B=1-kappa; old fast and slow differences H=2-3kappa; sourced covariance rows D=3/2-2kappa; fresh scalar/slow C=3/2-kappa",
+  "A1": "nonzero exact A1 fz; q=floor((H-B)/kappa)+1, J=n+2q+3; original raw profile factors and old prefast source retained as finite deferred polynomial product",
+  "default_finite_dependency": "row0: old source200001 and initial means200004; fast0: old source200006 and initial means200009; next source0: old source200009 and initial means200012",
+  "poles": "proper 2p/4p and 6p/12p pressure domains; common fast row6p, fresh mean6p and next regular source9p with explicit long-shell embeddings",
+  "tails": "exact additive ledger unchanged and excluded from sourced inverse; actual complete field products retain A1 velocities",
+  "remaining": "original actual high-jet inputs and support/frame contracts, full angular-zero system, entire tails/physical derivative/cutoff residual, forcing and infinite field",
+  "no_claim": "complete residual improvement, unconditional pulses or blow-up"
+}
