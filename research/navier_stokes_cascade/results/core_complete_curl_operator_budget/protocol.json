@@ -1,0 +1,10 @@
+{
+  "parent_commit": "95da5280b58140f76fd390b07e27940d6a455d5a",
+  "result": "conditional full cylindrical graph curl coefficient budget and explicit radial chart transport",
+  "operator": "eta curl_*(h cross A), h=n/|n|^2, retains radial graph, epsilon partial_Z and ez Ctheta/R connection; D0 retains every first derivative of h",
+  "bound": "raw sum 2[(Vchart*h)_j+(V_R*h_shift)_j+(r*h)_j], then five-variable factorial normalization; eta M<=1, eta epsilon<=1, fixed dr in (1/3,5/2)",
+  "chart": "conjugate D_R by dr R^(dr-1) before composing all coefficient and root jets with R(U); separately supplied signed target xi must also use operator.transport; no independent chart derivative callback or new field",
+  "ledger": "D_j needs full background through j+2; whole moving axial pressure moment output n retains n+13 background order in this route",
+  "scope": "conditional lower-input recipe, no numerical actual background suprema, pressure memory deletion, complete mean residual closure or blow-up",
+  "next": "actual weighted target/loghalf and fixed cutoff input estimates, primitive validity, full covariance means and all physical residual terms"
+}
