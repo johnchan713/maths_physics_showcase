@@ -1,0 +1,12 @@
+{
+  "parent_commit": "eb39e7efe518ada0319fe8c26041f2a58d9ac286",
+  "result": "full Haar row two-rate envelope and same-field principal stress criterion; fresh postslow radial Haar residual at B+C",
+  "new_analytical_assumptions": [],
+  "Haar": "all graph and c Nt terms vanish after normalized Haar; all complete mean/covariance correlations and full compensated pressure remain",
+  "stress": "selected full flux F=L+R, R at C; canonical exact L=0 suffices where it applies to the SAME localized field and stress; otherwise ||epsilon^-1 L|| must be epsilon^(D-1) with D-1=1/2-2kappa",
+  "countercontrol": "compact positive transverse covariance tensors have the same trace and all three scalar defects, but different order-one spatial Haar rows; not the prescribed full pulse or canonical cone",
+  "radial": "actual fresh slow C with old means B gives all three postslow scalar defects at B+C; A0 has zero Haar average, radial Haar obstruction is -rho Pnew",
+  "pressure": "full pbar and both background pressure tails retained; differentiate whole Jz+c_rho P; no pointwise pressure or A0 promotion",
+  "remaining": "same-field actual principal identity and localization bookkeeping or consistent canonical route; full exact tail/physical residual and original input/support contracts",
+  "no_claim": "actual principal mismatch refuted, complete residual improvement, unconditional pulses, infinite field or blow-up"
+}

@@ -405,6 +405,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_fast_row_gain_join/evidence.json \
             --output navier_stokes_core_fast_row_gain_join_ci.json
 
+      - name: Check complete Haar stress criterion and postslow radial mean gain
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_haar_row_stress_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_haar_row_stress_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_haar_row_stress_join/evidence.json \
+            --output navier_stokes_core_haar_row_stress_join_ci.json
+
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1786,6 +1793,7 @@ jobs:
             navier_stokes_core_multiharmonic_mean_residual_budget_ci.json
             navier_stokes_core_actual_scalar_gain_join_ci.json
             navier_stokes_core_fast_row_gain_join_ci.json
+            navier_stokes_core_haar_row_stress_join_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
