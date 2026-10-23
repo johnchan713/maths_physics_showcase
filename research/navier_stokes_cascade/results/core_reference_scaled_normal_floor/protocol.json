@@ -1,0 +1,11 @@
+{
+  "calibration": "original Bs^2=lambda0/[epsilon*k^2*(1+u_actual^2)^(3/2)]>=beta=lambda_min/[4(1+u_upper^2)^2], retaining 1<=epsilon*k^2<=4",
+  "correction": "recent native normal-margin comparison remains optional for original full-frame route; original normal and tangent implications already closed",
+  "inverse": "qref=1/[(1-theta)^2 beta]<=1024/(961 beta)<4/beta; quse=min(4/bmin^2,qref)",
+  "parent_commit": "0ddb0ef928e3e51b76173f847a18b150e3687cba",
+  "relative": "|n_tan-Bs K|<=Dt/L<=theta bmin<=theta Bs; theta=Dt/(Lreq bmin)<=1/[32(1+3u/2)]",
+  "result": "reference-scaled calibrated normal floor and monotone inverse transfer on original full-frame accepted tail",
+  "retained": "original primitive Mz/Db/frame validity and same accepted tail, complete moving-normal/unprojected-source pressure, all full path and mean memory terms",
+  "scope": "conditional analytical implication, no actual primitive or old-band numerical certification, no new selector, complete residual or blow-up",
+  "transfer": "all same ForcedBudget recurrences and original cutoffs are coefficientwise monotone in q at FIXED other primitive/tangent/source inputs"
+}
