@@ -1,0 +1,13 @@
+{
+  "parent_commit": "7b1acd4e8f8d966c6eeec2031fbec1cd988ff394",
+  "result": "conditional quantitative current generic signed covariance, complete pressure domains and projected-target join at C0=2-2kappa",
+  "new_analytical_assumptions": [],
+  "existing_qualitative_result": "current_target_cycle_bridge already derived the conditional C0 target gain; this joins recent explicit prefix recipes, finite tensor/pressure budgets and enlarged operator proof domains",
+  "covariance": "Delta=Bil(W0,L)+Bil(U-W0,L)+Bil(U,R)+Cov(L+R), all six entries and complex quadratures; original roots and original principal/error norm recipes are separate",
+  "pressure": "same moving rho and complete six-entry source; whole epsilon partial_Z(dJz+c_rho dP), moving Qe commutators and axial velocity covariance retained",
+  "orders": "B=1-kappa, C=3/2-kappa, D=C-kappa; all three covariance errors C0=2B, target/Haar tangential C0; scalar and radial Haar change C, pointwise pressure change D",
+  "domains": "target output n uses covariance/curl through n+2 and target input n+3; q=max(3p,6(n+2)+9,6(n+2)+d_(n+3)+6), covariance/pressure source 2q; original shift_recipe(q/6) and separate primitive_recipe(2q) retain geometry",
+  "illustration_only": "p=1 and row poles 12 give q=30, new pressure pole 60 at n=0, beyond old declared 6/12 domains; no actual huge input evaluated",
+  "next": "actual weighted inputs; post-signed fast then fresh slow scalar/full-row feedback and radial/compact-tail proof-domain join",
+  "no_claim": "actual pulse/support validation, complete next cycle, improved physical residual, absolute decay, arbitrary infinite diagonal, unconditional pulses or blow-up"
+}
