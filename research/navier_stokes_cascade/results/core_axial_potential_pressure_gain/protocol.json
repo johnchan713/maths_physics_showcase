@@ -1,0 +1,15 @@
+{
+  "parent_commit": "1999c84d2476b7b332a08bc108d158078f3a7f6c",
+  "new_analytical_assumptions": [],
+  "result": "same-postwave axial potential and pressure complements at order1, actual A1 error order2; separate full potential/radial mean conditional on preserved Haar history",
+  "normal_form": "gamma=D1 Psi, beta=-Dz Psi. X=2Ggamma+gamma^2+Wzz+pm FULL. Ez=D1 Lambda+Dz X, Lambda=tstar Psi+Hrz-epsilon D_r gamma-epsilon Dz^2 Psi-Sigma_z. QPsi=c^-1 Nt^-1[T1 Q(Ez-DzX)+epsilon partial_T QPsi-QHrz+epsilon D_r Qgamma+epsilon Dz^2 QPsi]",
+  "noncircular": "Every Psi and pm on this RHS uses the OLD coarse M_B recipe. Fine Ez is the already derived SAME-stage row E postwave or C0 final. Upstream fine-row/Haar/root/source dependencies remain in the older graph",
+  "viscosity": "FULL X includes epsilon D1 beta in pm. Xflat=X-epsilon D1 beta instead requires -2epsilon Dz^2 Psi in Lambda. No mix of these two forms; preserve the full local pressure force",
+  "pressure": "Extend angular lemma to postwave Etheta E>1 at its OWN6q domain. Qpm=QK1+T0 Qr1, QrhoP=Q(a Haar v)=0. This channel needs no additional fine Haar callback. FULL pressure keeps K1, moving rhoP, full variance, base Pi1/Pi2 and every old/nonzero pressure contribution",
+  "projection": "A1 QEz=A1 Dz QPhi with Phi=-2G_R Psi+gamma^2+Wzz+pm. QPhi=-2G_R QPsi+Q(gamma^2+Wzz)+Qpm is order1 from coarse inputs and fine current rows. Keep G_R on WHOLE potential hull and never commute T1 or A1 through Dz without moving-cutoff commutator",
+  "Haar": "Only full Psi1/beta2 needs HaarPsi=T1 Haargamma order1 from preserved finite slow history; Q-only A1 route does not supply or newly use that fine input. A homogeneous Haar-potential increment epsilon^B f has fine row response but epsilon^-1 potential grows epsilon^-kappa; not a canonical comparison; this comparison does not impose the full current scalar-defect constraints and does not rule out using them or prescribed finite history to prove the Haar bound",
+  "requests": "effective postwave A1 source2. normalized direct QPhi raw order m+1. physical target unchanged, p=max(0,floor((target-2)/kappa)+1); for positive p QPhi raw m+2p+4. h1/200 N=m0 gives60000006 versus old H1 60000008; different functions. New old-coarse-pressure field recipe60000014 stays below retained final A0 local60200007. Entire older request DAG retained",
+  "domains": "postwave6q, final12q, distinct states and original KT1/Nt/KA1/Kp/primitive/profile/weight shifts. Add fixed multiplier poles before products; no different-pole monotonicity or new physical band",
+  "program": "potential output n: current fields/KT1 n+6, Ez n+4, old coarse pm n+5 (conservative pressure fields n+8). A1 output n reads QPhi n+1, beta2 separately Psi n+1 and finer Haar gamma. Actual all-band norms not evaluated",
+  "no_claim": "actual high-jet/Haar/profile/support validity, improved whole regular E or full gamma/total pressure, complete physical residual decay, infinite field, forcing smoothness, velocity blow-up"
+}
