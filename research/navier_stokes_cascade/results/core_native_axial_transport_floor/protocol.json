@@ -1,0 +1,13 @@
+{
+  "parent_commit": "9151274fbad956a8e2cabdf99b1e06af919ceabf",
+  "result": "exact native axial phase derivative, primitive leading first-jet floor recipe, retained S powers and uniform original slow gate",
+  "new_analytical_assumptions": [],
+  "native_identity": "F_Z=s^-1 D_h E/(R L), G_Z=s^-1 D_h U/L. D_h=2eta(Euler_q-X partial_X-A)+(1-eta^2)partial_eta. A+D=1. Full Borel Euler/cutoff dependence retained",
+  "leading_inputs": "same physical whole norm hull X in [Rmin^2/8,2Rmax^2], leading E0/U0 value/X/eta first-jet enclosures. Euler leading zero. Sharp max 2at+b(1-t^2) equals 2a if a>=b, otherwise b+a^2/b. No desired fine H_Z callback",
+  "heat": "retained heat native E0=C(2X)^-A Hheat(2(1-eta^2)/X), U0=0 has D_h E0=D_h U0=0 exactly; no interior heat substitution or pressure reset",
+  "correction": "same COMPLETE infinite native Euler diagonal through order1, every n>=1, implies each delta E/U jet <=q^h. Direction bounded by 2(1+A+Xhi)q^h<4(1+A+Xhi)epsilon. Full radial streamfunction cutoff component remains in field",
+  "floor": "actual old carrier/reference/box comparison gives error <=A0/S+B0/S^2+C0/S^3 under original slow gate. Require 4error^2<=beta at SUPPLIED S; beta=lambda_min/[4(1+Ubound^2)^2]. Keeps both tilt errors, nearest NONZERO rounding and full axial transport",
+  "slow": "ORIGINAL k=ceil(epsilon^-1/2), epsilon=2^(-h ell), S=ell^2. Positive exponential-series term16 gives slow<=3*16!*4^16/(h^16 ell^12). Original supplied ell>=512/h^2 implies uniform upper 3*16!/(2^76*100^8)<1e-24. No new band or changed carrier",
+  "comparison_scope": "retained powers improve the collapsed SAME positive program. No universal comparison with old generic-chart route, which reads different leading norms. Manufactured norm examples are not actual accepted profile/band enclosures",
+  "no_claim": "actual leading primitive suprema, diagonal identity or same-band normal/root/cone/freezing gaps certified, complete phase/residual/physical decay improved, infinite field, forcing regularity or blow-up"
+}
