@@ -471,6 +471,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_next_sourced_mean_tail_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_next_sourced_mean_tail_join/evidence.json \
             --output navier_stokes_core_next_sourced_mean_tail_join_ci.json
+      - name: Check sharp compact finite jet input obstruction with original rounded carriers
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_compact_input_sharpness/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_compact_input_sharpness/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_compact_input_sharpness/evidence.json \
+            --output navier_stokes_core_compact_input_sharpness_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1862,6 +1868,7 @@ jobs:
             navier_stokes_core_post_signed_residual_join_ci.json
             navier_stokes_core_next_sourced_wave_join_ci.json
             navier_stokes_core_next_sourced_mean_tail_join_ci.json
+            navier_stokes_core_compact_input_sharpness_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json

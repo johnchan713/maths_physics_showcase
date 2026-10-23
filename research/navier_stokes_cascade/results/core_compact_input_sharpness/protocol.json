@@ -1,0 +1,16 @@
+{
+  "parent_commit": "df3b93b4f07489e4f2806f359200dc34f5537d84",
+  "result": "sharp finite-jet obstruction for the same compact A0/A1 scalar operators, not actual canonical input validation",
+  "new_canonical_analytical_assumptions": [],
+  "comparison_class": "all smooth real compact radial/slow sources of zero auxiliary Haar; fixed original positive hull, nonconstant moving chi and same f_e,k_e; extra canonical source equations and all-jet uniformity not assumed",
+  "exact_family": "P+Q sqrt2=(1+sqrt2)^j, k=(P-Q,Q), omega=P-sqrt2 Q; f=A f_e^-1 phi B cos(2pi(k.y-M omega U)); original shift cancels radial phase exactly",
+  "arbitrary_carrier": "select first P^2>=M; M<=P^2<9M and |M omega|<=P, so no rounded carrier or band is retuned",
+  "norms": "raw coefficient derivatives hold M,c fixed; N_J(f)<=|A|16^J A_J P^J and N_m(A_e f)>=|A|c_star P^m; constants retain actual fixed profile factors",
+  "sharp_boundary": "uniform N_m(A_e f)<=C M^-p N_J(f) requires J>=m+2p; equality not resolved; inherited integer upper rule m+2p+3 is three above this boundary",
+  "original_scales": "M=c_i^rho_g epsilon^-kappa, (Tg S)^-1<c_i<=S^-1, S=ell^2; up to polynomial S no finite-jet epsilon^a to epsilon^target route can use J<ceil(m+2(target-a)/kappa)",
+  "physical_route": "comparison uses parent's sufficient normalized target (N+3/2+2h+2m)/h, not a necessary loss for all physical arguments; h1/200 kappa1e-5 output0 power0 lower A0J60200002 A1J60000006, retained60200007 and60000011",
+  "all_jet_caveat": "P^-J comparison controls only the first J derivatives uniformly; higher jets grow, so it is not a counterexample in the original all-fixed-jet source class and not a canonical field",
+  "pressure_and_support": "zero Haar pointwise implies all integrated Haar moments vanish, but nonzero compact oscillatory output survives radial compensation; actual current gr must retain all means, complete covariance, full forced/reconstructed pressure and gd-A1 gd",
+  "remaining_gate": "same-family all-band weighted-to-raw current source N_J inequalities and exact full support/endpoint identification; special canonical structure could improve the scalar bound only after being proved",
+  "no_claim": "actual high-jet source validation, actual source or physical residual lower bound, subsequent signed cycle, absolute residual decay, infinite diagonal, unconditional pulse or blow-up"
+}
