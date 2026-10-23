@@ -1,0 +1,14 @@
+{
+  "parent_commit": "29195306c4bccab9dc19dd5528ae03c2a6b84d51",
+  "result": "exact current angular-row radial normal form and conditional M1 current mean pressure",
+  "new_analytical_assumptions": [],
+  "angular": "J=bv+Vbeta+beta v+Wrt; L=Gv+Vgamma+gamma v+Wtz; F=-Etheta-epsilon v_T+Dz L-epsilon(D_r D1 v+Dz^2 v); H=c^-1 Nt^-1 Q J; K=c^-1 Nt^-1 Q F; Qv=-D2 H-K",
+  "noncircular": "Etheta is the already derived FINAL angular component C0=2-2kappa, from full fast cancellation/Haar/slow differences; no current pressure or current A0 estimate enters this angular equation. Earlier source/pressure graphs are retained",
+  "radial": "a=2V/R, a1=6V/R^2-2V_R/R; K1=K0-aH; r1=a Haar(v)+v^2/R+Rrest-a1 H-aK; gr=r1+D_r K1; A0 Qgr=-A0(a1H)-A0(aK)+A0 Q(v^2/R+Rrest)",
+  "pressure": "P=int Haar r1 unchanged, pm=K1+T0(r1-rho P); full Haar(v^2), all correlations, moving rho, finer old P scalar bound, local K0 and K1, axial pressure, base Pi1/Pi2 and wave/exterior pressure memory retained",
+  "orders": "J1, F E=2-3kappa from TWO graph-viscous losses; H1, K E, K1/r1/current mean pm1 conditional on existing weighted field/Haar/final angular row and operator/support contracts. Total pressure, regular E and parent direct A1 order are not promoted",
+  "profile": "f0 a=2V/(d U); f0 a1=6V/(d U R)-2V_U/R; J kernel reads fixed background V through raw J+1, all reciprocal/profile and R/U conversion factors retained",
+  "requests": "normalized output0 J200000 F6 square5 rest200001; physical h1/200 power0 J60200004 F60000010 square60000009 rest60200005. Sources differ; largest local field input remains 200003/60200007; all older source/root/normal graph and shifts retained",
+  "program": "factorial through n pressure uses current fields/backgrounds through n+6, angular row n+4; original weighted four-jet temporal raw conversion/projection factors and T0/moment contracts retained; temporal raw/through factor 48*6^n*2^(n+4)*(n+4)! times c^-1 and original profile/weight conversions, kept deferred",
+  "scope": "conditional analytic identities and norm estimates with finite exact diagnostics. Actual all-band input/Haar/profile/high-jet/whole-support inequalities, full physical residual, absolute decay, infinite diagonal and blow-up remain unproved; only Qcirc F is required to have whole-hull compact extension, not its auxiliary-independent selected-stress part"
+}

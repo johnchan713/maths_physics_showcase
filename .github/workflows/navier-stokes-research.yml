@@ -489,6 +489,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_mixed_compact_time_budget/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_mixed_compact_time_budget/evidence.json \
             --output navier_stokes_core_mixed_compact_time_budget_ci.json
+      - name: Check current angular normal form full local pressure and order one mean pressure
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_angular_pressure_normal_form/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_angular_pressure_normal_form/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_angular_pressure_normal_form/evidence.json \
+            --output navier_stokes_core_angular_pressure_normal_form_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -1883,6 +1889,7 @@ jobs:
             navier_stokes_core_compact_input_sharpness_ci.json
             navier_stokes_core_compact_source_quotient_ci.json
             navier_stokes_core_mixed_compact_time_budget_ci.json
+            navier_stokes_core_angular_pressure_normal_form_ci.json
             navier_stokes_explicit_variance_cutoff_ci.json
             navier_stokes_compact_global_reconciliation_ci.json
             navier_stokes_explicit_coefficient_cutoff_ci.json
