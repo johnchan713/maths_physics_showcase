@@ -1,0 +1,11 @@
+{
+  "axis": "explicit collar K at tc/2, E0=sqrt(2X)Freg; no inverse-Xlo loss in logarithmic directional derivative",
+  "compact": "joint J3 primitive and original J4 field imply compact E0 J1<H^4,U0 J1<H^2; first pullback no N loss, second still has N",
+  "diagonal": "same complete normalized Euler schedule m<=n includes m=1 at every n>=1; radial cutoff-curl and full pressure memory retained",
+  "direction": "DE=max(b K M(1+h+x,delta^-1),2H^4), DU=max(K M(1/2+h+x,delta^-1),2H^2); max regional pointwise bounds",
+  "gaps": "same analytic active-annulus squared shear/growth floors; 1/8<s^(-1-h)<8; original u^2=2^19 G^22 unchanged",
+  "parent_commit": "102f6fed681ccffc474887df75c99f40d16ed259",
+  "result": "global leading native directional enclosure from original regional first jets; same selector margin remains open",
+  "scope": "conditional on reviewed continuum defining maps; no actual giant-parameter margin verification, historical first-band identification, unconditional pulse bound, complete residual or blow-up",
+  "selector": "same primary-tail selector supplies slow<=tau/Cslow<=1; normal requires 4[A/Sfloor+B/Sfloor^2+C/Sfloor^3]^2<=beta at Sfloor=max(1,Lreq/(2r0)) without changing Lreq"
+}
