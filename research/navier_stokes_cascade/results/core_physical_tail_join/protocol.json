@@ -1,0 +1,13 @@
+{
+  "parent_commit": "40ec55da59d5ecd04dd57bc801e5d18b7b3c17da",
+  "result": "conditional finite-prefix physical compact/Gaussian tail transfer and precise absolute regular-order gap",
+  "new_analytical_assumptions": [],
+  "tail_identity": "Tcompact=(-A0 Q1 current gr,0,+A1 Q1 postwave Ez); temporal Gaussian ledger additive; actual A1 velocities remain in all regular products",
+  "physical": "Lambda=2A+1/2, total physical derivative cost at most Q^-2m; compact source a needs h(a+p kappa)>N+Lambda+2m",
+  "same_domain": "original ell>=16 and q/Q in [1/4,4]; x=ln(1/q), S<=16x^2; exact polynomial/exponential absorption changes constants only",
+  "Gaussian": "original temporal plateau gives c_band=cG*r0/25; c_band/4 suffices in natural-log coordinates; spatial/diagonal/localization cutoffs are separate",
+  "obstruction": "current physical upper-bound exponent hD-Lambda-2m=-3/2-h(1/2+2kappa)-2m<0; no actual residual lower bound inferred",
+  "high_jets": "illustrative h=1/200 only: physical m=N=0 rule reads A0 current source 60200007, A1 current source 60100009, nested original initial means 60300013; none evaluated",
+  "next": "actual high-jet/support/base input validity, common-family higher induction and controlled physical diagonal/force join",
+  "no_claim": "absolute residual decay, arbitrary stage diagonal, actual primitive validity, unconditional pulses, infinite field, complete residual improvement or blow-up"
+}
