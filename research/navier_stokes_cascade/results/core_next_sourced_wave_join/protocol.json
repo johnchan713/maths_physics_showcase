@@ -1,0 +1,13 @@
+{
+  "parent_commit": "80b192a00a3947e132f116eea7539794a92f9b22",
+  "result": "conditional next constrained sourced wave on +/-1,...,+/-4, full forced pressure and complete curl/covariance; regular WAVE-stage gain D -> E=2-3kappa before fresh means",
+  "new_analytical_assumptions": [],
+  "inverse": "same original normal floor 4/bmin^2 and frame tangent recipe, Gaussian-adapted ambient extension, original full length for mixed jets, all source-normal and moving-normal pressure terms",
+  "normalizations": "principal/complete velocity D=3/2-2kappa; pressure/potential C0=D+1/2; coefficient curl E=D+1/2-kappa",
+  "source": "SAME derived current regular_source_envelope raw j! norm recipe; old enormous norm DAGs stay deferred and tails excluded, no new fine outgoing source callback",
+  "covariance_and_means": "all six complete covariances change at C0, full graph pressure/tangential row changes E; old scalars retained, current scalar/target C0 and whole axial pressure moment C0+1; new pointwise radial A0 not joined",
+  "harmonics": "eight signed inverse input modes; H4, ratio4, damping upper64*N, nonlinear residual outputs through +/-8; no output-frequency inverse",
+  "domain": "wave/rows at n use current source through n+4, original normal n+5; pad previous request graph to n+4, q1200138 and earlier target200021 for p1 output0 illustrative only; covariance/pressure6q requires original 6q/12q and separate Ie6q estimates plus all old shifts",
+  "tail": "Told+(1-psi)CURRENT_Gregular+Tpsi, never inverse an additive tail; reconstruct new radial source/A0 before later physical-tail join",
+  "no_claim": "actual high-jet/frame/support/entrance enclosure, subsequent fast/slow or signed cycle, full pointwise radial bound, complete actual residual improvement, absolute decay, infinite field, unconditional pulses or blow-up"
+}
