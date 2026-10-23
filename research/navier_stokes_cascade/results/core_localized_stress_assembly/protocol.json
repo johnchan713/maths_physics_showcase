@@ -1,0 +1,12 @@
+{
+  "parent_commit": "5a2ff1296cce7f0875f5e1b78535596f9832861c",
+  "result": "conditional canonical cutoff/partition/physical-scale principal stress assembly and complete regular postwave tangential mean rows D",
+  "new_analytical_assumptions": [],
+  "stage": "old completed means plus complete sourced wave, before fresh fast/slow means",
+  "identity": "L=sum eta^2 a(Hy-T)+sum eta^2(aT-Sigma0)+(sum eta^2-1)Sigma0; both signs inside H; both pulse cutoffs and angular/Haar measure inside H",
+  "pressure": "all six covariance entries, rho P, Pi1/Pi2 and actual A1 velocity products retained; only two principal Haar entries matched",
+  "regular_join": "Haar C plus Q1 D gives full regular tangential rows D; original finite high-jet A1 recipe and additive tails remain separate",
+  "scope": "conditional derivation relative to original canonical actual-input premises; manufactured exact finite controls do not certify those inputs",
+  "next": "final fresh feedback, pointwise radial A0 remainder and full exact physical tail/residual ledger",
+  "no_claim": "independently validated actual inputs, unconditional pulses, final full radial bound, complete physical residual improvement, infinite field or blow-up"
+}
