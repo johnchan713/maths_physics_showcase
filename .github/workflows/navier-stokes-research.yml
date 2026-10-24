@@ -639,6 +639,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_rho_squared_projector_realization/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_rho_squared_projector_realization/evidence.json \
             --output navier_stokes_core_rho_squared_projector_realization_ci.json
+      - name: Check rho projector same choice signed source root covariance and full pressure recomputation
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_rho_projector_signed_recompute/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_rho_projector_signed_recompute/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_rho_projector_signed_recompute/evidence.json \
+            --output navier_stokes_core_rho_projector_signed_recompute_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
