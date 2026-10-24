@@ -627,6 +627,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_native_haar_primitive_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_native_haar_primitive_join/evidence.json \
             --output navier_stokes_core_native_haar_primitive_join_ci.json
+      - name: Check first real mean refresh scalar protocol and full high jet obligations
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_real_refresh_obligation_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_real_refresh_obligation_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_real_refresh_obligation_join/evidence.json \
+            --output navier_stokes_core_real_refresh_obligation_join_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
