@@ -579,6 +579,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_prefast_weighted_source_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_prefast_weighted_source_join/evidence.json \
             --output navier_stokes_core_prefast_weighted_source_join_ci.json
+      - name: Check symbolic fresh postfast pressure scalars and complete slow size join
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_symbolic_fresh_mean_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_symbolic_fresh_mean_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_symbolic_fresh_mean_join/evidence.json \
+            --output navier_stokes_core_symbolic_fresh_mean_join_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
