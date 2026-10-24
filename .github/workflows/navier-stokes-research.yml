@@ -651,6 +651,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_full_compact_pressure_response/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_full_compact_pressure_response/evidence.json \
             --output navier_stokes_core_full_compact_pressure_response_ci.json
+      - name: Check initial full cancellation current regular fast source and original A1 obligation
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_cancellation_fast_source/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_cancellation_fast_source/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_initial_cancellation_fast_source/evidence.json \
+            --output navier_stokes_core_initial_cancellation_fast_source_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
