@@ -561,6 +561,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_weighted_primary_covariance_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_weighted_primary_covariance_join/evidence.json \
             --output navier_stokes_core_weighted_primary_covariance_join_ci.json
+      - name: Check same weight reverse radial chart and complete initial row interface
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_weighted_reverse_chart/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_weighted_reverse_chart/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_weighted_reverse_chart/evidence.json \
+            --output navier_stokes_core_weighted_reverse_chart_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
