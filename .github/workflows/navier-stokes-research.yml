@@ -591,6 +591,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_sharp_initial_scalar_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_sharp_initial_scalar_join/evidence.json \
             --output navier_stokes_core_sharp_initial_scalar_join_ci.json
+      - name: Check symbolic complete initial Haar rows and projected signed source inputs
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_symbolic_initial_haar_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_symbolic_initial_haar_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_symbolic_initial_haar_join/evidence.json \
+            --output navier_stokes_core_symbolic_initial_haar_join_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
