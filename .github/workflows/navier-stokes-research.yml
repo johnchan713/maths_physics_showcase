@@ -615,6 +615,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_symbolic_real_covariance_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_symbolic_real_covariance_join/evidence.json \
             --output navier_stokes_core_symbolic_real_covariance_join_ci.json
+      - name: Check moving pressure compensator mixed jets and new pole moments
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_moving_pressure_compensator_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_moving_pressure_compensator_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_moving_pressure_compensator_join/evidence.json \
+            --output navier_stokes_core_moving_pressure_compensator_join_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
