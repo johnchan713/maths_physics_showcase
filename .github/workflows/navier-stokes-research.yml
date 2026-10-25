@@ -657,6 +657,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_cancellation_fast_source/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_initial_cancellation_fast_source/evidence.json \
             --output navier_stokes_core_initial_cancellation_fast_source_ci.json
+      - name: Check original prefast quotient correction and conditional whole source fast inverse
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_quotient_fast_inverse/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_quotient_fast_inverse/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_initial_quotient_fast_inverse/evidence.json \
+            --output navier_stokes_core_initial_quotient_fast_inverse_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
