@@ -1,0 +1,226 @@
+{
+  "dependency_evidence_sha256": {
+    "results/compact_mean_foundation/evidence.json": "4aac9ac6ed533ea1bd275490c794e9123db45ff47b4b65c7f1206b4f6b25a2c9",
+    "results/core_initial_viscosity_sharpness_witness/evidence.json": "359aeb9dd3b75fa219e8d191a34659889ab6d4165a2f8fef5944452e7fcb3be8",
+    "results/core_localized_stress_assembly/evidence.json": "1becf00aa1c5784dc9165f5a10a067ba343ef88d8d2cb433f75213aca3c0727c",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/real_signed_covariance_update/evidence.json": "35fb38c5ac67d0254557ff2b6af10e256285c0263fd92042ce76eed0e2461d03"
+  },
+  "flags": {
+    "actual_same_state_high_jets_proved": false,
+    "complete_residual_and_blowup_certified": false,
+    "nonzero_selected_actual_profile_has_internal_source_to_viscosity_cancellation": false,
+    "positive_epsilon_order_gain_proved": false
+  },
+  "gates": {
+    "exact_controls": true,
+    "five_frozen_records": true,
+    "historical_sources": true
+  },
+  "inherited_source_checks": {
+    "compact_mean_foundation:results/coefficient_support_audit/evidence.json": true,
+    "compact_mean_foundation:results/compact_mean_corrections/README.md": true,
+    "compact_mean_foundation:results/compact_mean_corrections/evidence.json": true,
+    "compact_mean_foundation:results/compact_mean_corrections/mean_system.py": true,
+    "compact_mean_foundation:results/compact_mean_corrections/operators.py": true,
+    "compact_mean_foundation:results/compact_mean_foundation/.gitignore": true,
+    "compact_mean_foundation:results/compact_mean_foundation/README.md": true,
+    "compact_mean_foundation:results/compact_mean_foundation/audit.py": true,
+    "compact_mean_foundation:results/compact_mean_foundation/mean_maps.py": true,
+    "compact_mean_foundation:results/compact_mean_foundation/protocol.json": true,
+    "compact_mean_foundation:results/compact_mean_foundation/requirements.txt": true,
+    "compact_mean_foundation:results/compact_mean_foundation/test_audit.py": true,
+    "compact_mean_foundation:results/complete_covariance_initial_means/evidence.json": true,
+    "compact_mean_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "compact_mean_foundation:results/physical_wave_interface/evidence.json": true,
+    "core_initial_viscosity_sharpness_witness:results/core_initial_final_row_obstruction/bounds.py": true,
+    "core_initial_viscosity_sharpness_witness:results/core_initial_viscosity_sharpness_witness/.gitignore": true,
+    "core_initial_viscosity_sharpness_witness:results/core_initial_viscosity_sharpness_witness/README.md": true,
+    "core_initial_viscosity_sharpness_witness:results/core_initial_viscosity_sharpness_witness/audit.py": true,
+    "core_initial_viscosity_sharpness_witness:results/core_initial_viscosity_sharpness_witness/controls.py": true,
+    "core_initial_viscosity_sharpness_witness:results/core_initial_viscosity_sharpness_witness/requirements.txt": true,
+    "core_initial_viscosity_sharpness_witness:results/core_initial_viscosity_sharpness_witness/test_audit.py": true,
+    "core_initial_viscosity_sharpness_witness:results/core_initial_viscosity_sharpness_witness/witness.py": true,
+    "core_initial_viscosity_sharpness_witness:results/post_signed_mean_relaxation/relax.py": true,
+    "core_initial_viscosity_sharpness_witness:results/real_signed_covariance_update/signed.py": true,
+    "core_localized_stress_assembly:results/actual_band_pulse_bounds/README.md": true,
+    "core_localized_stress_assembly:results/auxiliary_geometry_audit/README.md": true,
+    "core_localized_stress_assembly:results/canonical_initial_mean_join/README.md": true,
+    "core_localized_stress_assembly:results/canonical_primary_foundation/README.md": true,
+    "core_localized_stress_assembly:results/core_fast_row_gain_join/README.md": true,
+    "core_localized_stress_assembly:results/core_fast_row_gain_join/budgets.py": true,
+    "core_localized_stress_assembly:results/core_haar_row_stress_join/README.md": true,
+    "core_localized_stress_assembly:results/core_haar_row_stress_join/budgets.py": true,
+    "core_localized_stress_assembly:results/core_initial_haar_row_budget/README.md": true,
+    "core_localized_stress_assembly:results/core_localized_stress_assembly/.gitignore": true,
+    "core_localized_stress_assembly:results/core_localized_stress_assembly/README.md": true,
+    "core_localized_stress_assembly:results/core_localized_stress_assembly/assembly.py": true,
+    "core_localized_stress_assembly:results/core_localized_stress_assembly/audit.py": true,
+    "core_localized_stress_assembly:results/core_localized_stress_assembly/controls.py": true,
+    "core_localized_stress_assembly:results/core_localized_stress_assembly/protocol.json": true,
+    "core_localized_stress_assembly:results/core_localized_stress_assembly/requirements.txt": true,
+    "core_localized_stress_assembly:results/core_localized_stress_assembly/test_audit.py": true,
+    "core_localized_stress_assembly:results/core_primary_root_budget/README.md": true,
+    "core_localized_stress_assembly:results/core_reweighted_fresh_mean_closure/budgets.py": true,
+    "core_localized_stress_assembly:results/current_residual_ledger_audit/README.md": true,
+    "physical_pulse_foundation:results/actual_band_pulse_bounds/evidence.json": true,
+    "physical_pulse_foundation:results/auxiliary_geometry_audit/evidence.json": true,
+    "physical_pulse_foundation:results/background_jet_foundation/evidence.json": true,
+    "physical_pulse_foundation:results/coefficient_support_audit/evidence.json": true,
+    "physical_pulse_foundation:results/core_all_order_foundation/coordinate_checks.py": true,
+    "physical_pulse_foundation:results/geometric_pulse_replay/estimates.py": true,
+    "physical_pulse_foundation:results/geometric_pulse_replay/evidence.json": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/.gitignore": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/README.md": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/audit.py": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/protocol.json": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/pulse_bounds.py": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/pulse_checks.py": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/requirements.txt": true,
+    "physical_pulse_foundation:results/physical_pulse_foundation/test_audit.py": true,
+    "physical_pulse_foundation:results/physical_pulse_transfer/evidence.json": true,
+    "physical_pulse_foundation:results/physical_pulse_transfer/transfer.py": true,
+    "physical_pulse_foundation:results/physical_wave_interface/evidence.json": true,
+    "physical_pulse_foundation:results/weighted_stress_foundation/evidence.json": true,
+    "real_signed_covariance_update:results/actual_band_pulse_bounds/evidence.json": true,
+    "real_signed_covariance_update:results/compact_mean_corrections/evidence.json": true,
+    "real_signed_covariance_update:results/complete_covariance_initial_means/evidence.json": true,
+    "real_signed_covariance_update:results/geometric_pulse_replay/evidence.json": true,
+    "real_signed_covariance_update:results/physical_pulse_transfer/evidence.json": true,
+    "real_signed_covariance_update:results/physical_wave_interface/evidence.json": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/.gitignore": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/README.md": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/audit.py": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/protocol.json": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/requirements.txt": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/signed.py": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/test_audit.py": true,
+    "real_signed_covariance_update:results/residual_cycle_closure/evidence.json": true,
+    "real_signed_covariance_update:results/weighted_background_edges/evidence.json": true
+  },
+  "review": {
+    "actual_profile": {
+      "exact_profile_cancellation_excluded": true,
+      "graph_source_nonzero": true,
+      "multiplier_auxiliary_independent": true,
+      "physical_profile_auxiliary_independent": false,
+      "profile_nonconstant": true,
+      "profile_nonzero": true,
+      "quantitative_epsilon_gain_proved": false,
+      "selected_target_nonzero": true,
+      "viscosity_leading_coefficient_nonzero": true
+    },
+    "checks": {
+      "L_squared_Nt_inverse_L_is_injective_on_zero_Haar_modes": true,
+      "Pell_norm_nonzero_(0, 1)": true,
+      "Pell_norm_nonzero_(1, 0)": true,
+      "Pell_norm_nonzero_(13, -8)": true,
+      "Pell_norm_nonzero_(239, -169)": true,
+      "auxiliary_independent_signed_multiplier_does_not_make_physical_profile_constant": true,
+      "every_nonzero_integer_mode_has_nonzero_radial_divisor": true,
+      "every_nonzero_integer_mode_has_nonzero_temporal_divisor": true,
+      "exact_nonvanishing_is_not_promoted_to_quantitative_epsilon_lower_bound": true,
+      "nonconstant_actual_profile_excludes_internal_graph_and_viscosity_cancellation": true,
+      "nonzero_selected_Haar_target_and_strict_transverse_support_force_nonconstant_profile": true,
+      "remaining_strict_gate_is_explicit_positive_order_inequality": true,
+      "source_and_viscosity_orders_match_inherited_D_and_nu": true,
+      "zero_target_branch_is_not_misreported_as_nonzero": true
+    },
+    "fixture": {
+      "all_radial_divisors_nonzero": true,
+      "all_temporal_divisors_nonzero": true,
+      "input_modes": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "output_modes": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "pell_norms": {
+        "(-1, 0)": 1,
+        "(-2, 1)": -1,
+        "(0, -1)": -1,
+        "(0, 1)": -1,
+        "(1, 0)": 1,
+        "(2, -1)": -1
+      },
+      "transfer_is_injective": true
+    },
+    "parent_commit": "c7519993b5e45ec4e6f3fe08ebfdc32280d91b9b",
+    "rate_gate": {
+      "current_covariance_order": "199997/100000",
+      "current_source_order": "49999/25000",
+      "current_viscosity_order": "149997/50000",
+      "leading_fast": "-c_i^-1 M Nt^-1 L Lambda_re",
+      "leading_radial_viscosity": "epsilon c_i^-1 M^3 L^2 Nt^-1 L Lambda_re",
+      "leading_source": "M L Lambda_re",
+      "orders": {
+        "D": "49999/25000",
+        "alpha": "199997/100000",
+        "kappa": "1/100000",
+        "nu": "149997/50000"
+      },
+      "strict_gain_from_current_evidence": false,
+      "strict_sufficient_inequality": "there exist delta>0 and finite positive P_n such that N_n(L^2 Nt^-1 L Lambda_re)<=epsilon^(alpha+delta) P_n(S) for every selected component and accepted band",
+      "target_alternative": "Xi_re is identically zero, or has the same positive epsilon-order gain, on every active selected component"
+    },
+    "scope": "conditional actual-profile Fourier injectivity and exact remaining rate gate; not an actual epsilon lower bound, high-jet enclosure, complete residual estimate or blow-up proof"
+  },
+  "source_hashes": {
+    "results/core_initial_actual_profile_gate/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_initial_actual_profile_gate/README.md": "cc65f31d812d6c15edadaf861306c629acccd9da03aba4deadd4e2c10f67874d",
+    "results/core_initial_actual_profile_gate/audit.py": "561de11a3afb9898ae0b41bef3106a705beaa930c0238efccaf12018744839dd",
+    "results/core_initial_actual_profile_gate/controls.py": "3938da2b8cc3d0129db0760f2d3e058438dbc085c2f90a0ed850fb2079b8cc83",
+    "results/core_initial_actual_profile_gate/profile_gate.py": "0459b875abe83ab5769957c7d3be031ddef25a9c5fbfd8f05786e8431c9eeb65",
+    "results/core_initial_actual_profile_gate/requirements.txt": "d78165cb12250fa5bb897d2026515b89ddb8d6a88aaa152e5d62ff2e36028d11",
+    "results/core_initial_actual_profile_gate/test_audit.py": "345d6c3dc51c3dfdc87e1a843fd91af2e6978b989bca05649e6405c15dd764a1",
+    "results/core_initial_viscosity_sharpness_witness/witness.py": "26979fde1ec4fd7fa9345bf65e42f2fe14bcfec5dbf3fbe88df9bc9c089c3161",
+    "results/real_signed_covariance_update/signed.py": "d6e7a82653ea47ebe877925cbd3a86a057cb160e46d445f112abc652b238439a"
+  },
+  "status": "conditional-actual-profile-injectivity-and-quantitative-rate-gate"
+}
