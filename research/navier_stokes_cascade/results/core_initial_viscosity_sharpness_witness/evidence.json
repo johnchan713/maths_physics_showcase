@@ -1,0 +1,92 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_initial_final_row_obstruction/evidence.json": "afe76bb6aee1fcd1da2fd902a5a8e3874b320281e3ce6f56c77f72012dcd851b",
+    "results/post_signed_mean_relaxation/evidence.json": "b9e434faec88944679141dda99a8832198b35a8b0c5fcedd6d93268f47cfcef8",
+    "results/real_signed_covariance_update/evidence.json": "35fb38c5ac67d0254557ff2b6af10e256285c0263fd92042ce76eed0e2461d03"
+  },
+  "flags": {
+    "actual_high_jets_support_complete_residual_and_blowup_certified": false,
+    "actual_pulse_special_identity_excluded": false,
+    "inherited_size_premises_imply_positive_gain": false,
+    "local_source_rate_D_and_viscosity_rate_nu_jointly_attained": true
+  },
+  "gates": {
+    "exact_controls": true,
+    "historical_sources": true,
+    "three_frozen_records": true
+  },
+  "inherited_source_checks": {
+    "core_initial_final_row_obstruction:results/core_axial_potential_pressure_gain/bounds.py": true,
+    "core_initial_final_row_obstruction:results/core_final_mean_row_closure/budgets.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/.gitignore": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/README.md": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/audit.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/bounds.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/controls.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/requirements.txt": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/test_audit.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_postfast_refresh/bounds.py": true,
+    "core_initial_final_row_obstruction:results/core_post_signed_mean_closure/budgets.py": true,
+    "core_initial_final_row_obstruction:results/post_signed_mean_relaxation/relax.py": true,
+    "post_signed_mean_relaxation:results/coefficient_support_audit/evidence.json": true,
+    "post_signed_mean_relaxation:results/compact_mean_corrections/evidence.json": true,
+    "post_signed_mean_relaxation:results/complete_covariance_initial_means/evidence.json": true,
+    "post_signed_mean_relaxation:results/geometric_pulse_replay/evidence.json": true,
+    "post_signed_mean_relaxation:results/physical_pulse_transfer/evidence.json": true,
+    "post_signed_mean_relaxation:results/physical_wave_interface/evidence.json": true,
+    "post_signed_mean_relaxation:results/post_signed_mean_relaxation/.gitignore": true,
+    "post_signed_mean_relaxation:results/post_signed_mean_relaxation/README.md": true,
+    "post_signed_mean_relaxation:results/post_signed_mean_relaxation/audit.py": true,
+    "post_signed_mean_relaxation:results/post_signed_mean_relaxation/protocol.json": true,
+    "post_signed_mean_relaxation:results/post_signed_mean_relaxation/relax.py": true,
+    "post_signed_mean_relaxation:results/post_signed_mean_relaxation/requirements.txt": true,
+    "post_signed_mean_relaxation:results/post_signed_mean_relaxation/test_audit.py": true,
+    "post_signed_mean_relaxation:results/real_signed_covariance_update/evidence.json": true,
+    "post_signed_mean_relaxation:results/residual_cycle_closure/evidence.json": true,
+    "real_signed_covariance_update:results/actual_band_pulse_bounds/evidence.json": true,
+    "real_signed_covariance_update:results/compact_mean_corrections/evidence.json": true,
+    "real_signed_covariance_update:results/complete_covariance_initial_means/evidence.json": true,
+    "real_signed_covariance_update:results/geometric_pulse_replay/evidence.json": true,
+    "real_signed_covariance_update:results/physical_pulse_transfer/evidence.json": true,
+    "real_signed_covariance_update:results/physical_wave_interface/evidence.json": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/.gitignore": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/README.md": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/audit.py": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/protocol.json": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/requirements.txt": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/signed.py": true,
+    "real_signed_covariance_update:results/real_signed_covariance_update/test_audit.py": true,
+    "real_signed_covariance_update:results/residual_cycle_closure/evidence.json": true,
+    "real_signed_covariance_update:results/weighted_background_edges/evidence.json": true
+  },
+  "review": {
+    "checks": {
+      "actual_special_identity_is_left_open": true,
+      "both_missing_gains_can_be_zero_in_same_local_jet": true,
+      "connection_part_has_strict_kappa_source_margin": true,
+      "mode_algebra_accepts_only_exact_scalars": true,
+      "one_and_zero_graph_laplacian_parts_are_strictly_higher": true,
+      "one_graph_derivative_attains_complete_source_order_D": true,
+      "positive_gain_is_not_a_consequence_of_inherited_size_hypotheses": true,
+      "principal_cross_realizes_nonzero_covariance_mode_at_alpha": true,
+      "temporal_inverse_preserves_D_and_cancels_source_exactly": true,
+      "two_graph_viscosity_derivatives_attain_nu": true,
+      "witness_respects_zero_Haar_requirement": true
+    },
+    "parent_commit": "a05a5a2a91220e0e080f54e558b8c2fd73e36cba",
+    "scope": "exact local active-interior Fourier-jet sharpness witness for the inherited source and radial-viscosity bounds; not an actual-pulse lower bound, high-jet enclosure, complete residual estimate or blow-up proof"
+  },
+  "source_hashes": {
+    "results/core_initial_final_row_obstruction/bounds.py": "6ba586a2a1f9ecd942b6984da4171e5ef443790436892e0759a39277890760ae",
+    "results/core_initial_viscosity_sharpness_witness/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_initial_viscosity_sharpness_witness/README.md": "132c35998cd75e36a0cc35bc62e3a9a66e38f700bcd89a08c6f88cd0cefcb707",
+    "results/core_initial_viscosity_sharpness_witness/audit.py": "bee0d2456449ecfd15432b8640c3db205767eafba68a704bcd948c544e8e5f9c",
+    "results/core_initial_viscosity_sharpness_witness/controls.py": "fe34d057af81b0c8e6f91a2e73e5fa4e10e49367a266b15c6fff163a43441c1a",
+    "results/core_initial_viscosity_sharpness_witness/requirements.txt": "d78165cb12250fa5bb897d2026515b89ddb8d6a88aaa152e5d62ff2e36028d11",
+    "results/core_initial_viscosity_sharpness_witness/test_audit.py": "c204210c6c42215c6899bf7b2e36ccd241ba044600f1f1586b0540d261075aef",
+    "results/core_initial_viscosity_sharpness_witness/witness.py": "26979fde1ec4fd7fa9345bf65e42f2fe14bcfec5dbf3fbe88df9bc9c089c3161",
+    "results/post_signed_mean_relaxation/relax.py": "2555b38294cca37eba8d874c294a2595855f0425846a9589aa89ca3d5c057e6c",
+    "results/real_signed_covariance_update/signed.py": "d6e7a82653ea47ebe877925cbd3a86a057cb160e46d445f112abc652b238439a"
+  },
+  "status": "sharp-local-source-to-viscosity-witness-and-premise-obstruction"
+}

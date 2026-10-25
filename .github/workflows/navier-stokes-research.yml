@@ -675,6 +675,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_final_row_obstruction/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_initial_final_row_obstruction/evidence.json \
             --output navier_stokes_core_initial_final_row_obstruction_ci.json
+      - name: Check sharp local signed-covariance source and radial-viscosity equality witness
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_viscosity_sharpness_witness/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_viscosity_sharpness_witness/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_initial_viscosity_sharpness_witness/evidence.json \
+            --output navier_stokes_core_initial_viscosity_sharpness_witness_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
