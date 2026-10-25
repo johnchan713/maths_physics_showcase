@@ -669,6 +669,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_postfast_refresh/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_initial_postfast_refresh/evidence.json \
             --output navier_stokes_core_initial_postfast_refresh_ci.json
+      - name: Check conditional initial final row and sharp radial viscosity obstruction
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_final_row_obstruction/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_final_row_obstruction/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_initial_final_row_obstruction/evidence.json \
+            --output navier_stokes_core_initial_final_row_obstruction_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
