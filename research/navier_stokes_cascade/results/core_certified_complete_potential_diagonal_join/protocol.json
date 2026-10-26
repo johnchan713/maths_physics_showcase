@@ -1,0 +1,7 @@
+{
+  "parent_commit": "9be61b33c2651c198f89604a76fd737e334d2c72",
+  "correction": "a stage-growth bound is required for naive uncut substitution j=j(q), but not for the existing locally finite complete-potential cutoff diagonal",
+  "domain": "the certified fixed-stage high-jet graphs, fixed operator potential and pressure gauges, complete covariance and pressure memory, direct swirl, whole supports and retained finite-stage residual identities",
+  "result": "join the certified fixed-stage domains to one locally finite divergence-free complete-potential diagonal with conditional all-fixed-jet local residual flatness",
+  "scope": "local diagonal implication only; actual infinite constants are not evaluated and endpoint localization, global forcing, energy, comparison and blow-up are not certified here"
+}
