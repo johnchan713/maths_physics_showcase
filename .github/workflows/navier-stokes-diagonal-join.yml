@@ -1,4 +1,4 @@
-name: Navier-Stokes corrected diagonal join
+name: Navier-Stokes corrected diagonal and endpoint joins
 
 on:
   push:
@@ -6,14 +6,18 @@ on:
       - research/navier-stokes-cascade
     paths:
       - research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/**
+      - research/navier_stokes_cascade/results/core_corrected_endpoint_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
+      - research/navier_stokes_cascade/results/current_endpoint_jets/**
       - .github/workflows/navier-stokes-diagonal-join.yml
   pull_request:
     paths:
       - research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/**
+      - research/navier_stokes_cascade/results/core_corrected_endpoint_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
+      - research/navier_stokes_cascade/results/current_endpoint_jets/**
       - .github/workflows/navier-stokes-diagonal-join.yml
 
 permissions:
@@ -36,8 +40,18 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/evidence.json \
             --output navier_stokes_corrected_diagonal_join_ci.json
 
+      - name: Check corrected same-field punctured endpoint
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_corrected_endpoint_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_corrected_endpoint_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_corrected_endpoint_join/evidence.json \
+            --output navier_stokes_corrected_endpoint_join_ci.json
+
       - name: Recheck synchronized finite-stage recurrence
         run: /usr/bin/python3 research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/test_audit.py -v
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
+
+      - name: Recheck inherited current endpoint jets
+        run: /usr/bin/python3 research/navier_stokes_cascade/results/current_endpoint_jets/test_audit.py -v
