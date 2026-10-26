@@ -1,0 +1,418 @@
+{
+  "closure": {
+    "actual_fixed_gauge_complete_representatives_required": true,
+    "all_fixed_jets_of_complete_local_residual_are_flat_conditionally": true,
+    "closed_time_localization_forcing_energy_global_comparison_or_blowup_proved": false,
+    "complete_pressure_differences_and_direct_swirl_cut": true,
+    "corrected_current_seed_and_gain_used": true,
+    "one_locally_finite_divergence_free_field_follows_conditionally": true,
+    "primitive_analytic_contracts_independently_proved": false,
+    "protected_inner_velocity_and_heat_exterior_preserved_conditionally": true,
+    "stage_uniform_constants_fixed_q_contraction_or_raw_convergence_required": false
+  },
+  "dependency_evidence_sha256": {
+    "results/canonical_local_realization/evidence.json": "dd24a12408a5e0f8ed6ac12b621783b020f353fb80bf3add44a134237212614c",
+    "results/core_finite_stage_compact_recurrence/evidence.json": "f49b4132de95667046e884aeaf0049bd6df21a9d1ed34272c98a8fd739147c34",
+    "results/core_finite_support_closure/evidence.json": "b58b5e36e18e5ad5938ff81c12db9706d1c229b5e4d549b3604f58bd1d6e7867",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+    "results/realization_foundation/evidence.json": "d9a67ebe145fd2d31abb87d1fe700ff8025b5802a726cff961e4461fb5166d64"
+  },
+  "gates": {
+    "conditional_scope": true,
+    "exact_controls": true,
+    "five_frozen_records": true,
+    "historical_sources": true
+  },
+  "inherited_source_checks": {
+    "canonical_local_realization:results/background_summation/README.md": true,
+    "canonical_local_realization:results/background_summation/evidence.json": true,
+    "canonical_local_realization:results/canonical_finite_cycle_join/README.md": true,
+    "canonical_local_realization:results/canonical_finite_cycle_join/evidence.json": true,
+    "canonical_local_realization:results/canonical_local_realization/.gitignore": true,
+    "canonical_local_realization:results/canonical_local_realization/README.md": true,
+    "canonical_local_realization:results/canonical_local_realization/audit.py": true,
+    "canonical_local_realization:results/canonical_local_realization/gauge_checks.py": true,
+    "canonical_local_realization:results/canonical_local_realization/protocol.json": true,
+    "canonical_local_realization:results/canonical_local_realization/realization.py": true,
+    "canonical_local_realization:results/canonical_local_realization/requirements.txt": true,
+    "canonical_local_realization:results/canonical_local_realization/test_audit.py": true,
+    "canonical_local_realization:results/compact_mean_foundation/README.md": true,
+    "canonical_local_realization:results/compact_mean_foundation/evidence.json": true,
+    "canonical_local_realization:results/finite_induction_foundation/README.md": true,
+    "canonical_local_realization:results/finite_induction_foundation/evidence.json": true,
+    "canonical_local_realization:results/physical_pulse_foundation/README.md": true,
+    "canonical_local_realization:results/physical_pulse_foundation/evidence.json": true,
+    "canonical_local_realization:results/realization_foundation/README.md": true,
+    "canonical_local_realization:results/realization_foundation/evidence.json": true,
+    "canonical_local_realization:results/realization_foundation/realized_checks.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/.gitignore": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/README.md": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/controls.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/recurrence.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/requirements.txt": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/test_audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_next_sourced_mean_tail_join/budgets.py": true,
+    "core_finite_stage_compact_recurrence:results/core_post_signed_mean_closure/budgets.py": true,
+    "core_finite_stage_compact_recurrence:results/core_post_signed_seed_sync/ledger.py": true,
+    "core_finite_stage_compact_recurrence:results/finite_stage_induction/induction.py": true,
+    "core_finite_support_closure:results/auxiliary_geometry_audit/README.md": true,
+    "core_finite_support_closure:results/auxiliary_geometry_audit/geometry.py": true,
+    "core_finite_support_closure:results/compact_mean_corrections/mean_system.py": true,
+    "core_finite_support_closure:results/compact_mean_foundation/README.md": true,
+    "core_finite_support_closure:results/core_axial_potential_pressure_gain/README.md": true,
+    "core_finite_support_closure:results/core_axial_potential_pressure_gain/bounds.py": true,
+    "core_finite_support_closure:results/core_compact_trace_gate/README.md": true,
+    "core_finite_support_closure:results/core_compact_trace_gate/bounds.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/.gitignore": true,
+    "core_finite_support_closure:results/core_finite_support_closure/README.md": true,
+    "core_finite_support_closure:results/core_finite_support_closure/audit.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/bounds.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/controls.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/protocol.json": true,
+    "core_finite_support_closure:results/core_finite_support_closure/requirements.txt": true,
+    "core_finite_support_closure:results/core_finite_support_closure/test_audit.py": true,
+    "core_finite_support_closure:results/core_next_sourced_wave_join/README.md": true,
+    "core_finite_support_closure:results/core_next_sourced_wave_join/budgets.py": true,
+    "core_finite_support_closure:results/source_envelope_edge_audit/README.md": true,
+    "core_finite_support_closure:results/source_envelope_edge_audit/source_bounds.py": true,
+    "finite_stage_induction:results/actual_band_pulse_bounds/evidence.json": true,
+    "finite_stage_induction:results/compact_mean_corrections/evidence.json": true,
+    "finite_stage_induction:results/complex_mean_relaxation/evidence.json": true,
+    "finite_stage_induction:results/complex_signed_covariance_update/evidence.json": true,
+    "finite_stage_induction:results/finite_stage_induction/.gitignore": true,
+    "finite_stage_induction:results/finite_stage_induction/README.md": true,
+    "finite_stage_induction:results/finite_stage_induction/audit.py": true,
+    "finite_stage_induction:results/finite_stage_induction/induction.py": true,
+    "finite_stage_induction:results/finite_stage_induction/protocol.json": true,
+    "finite_stage_induction:results/finite_stage_induction/requirements.txt": true,
+    "finite_stage_induction:results/finite_stage_induction/test_audit.py": true,
+    "finite_stage_induction:results/first_sourced_wave_update/evidence.json": true,
+    "finite_stage_induction:results/physical_pulse_transfer/evidence.json": true,
+    "finite_stage_induction:results/post_signed_mean_relaxation/evidence.json": true,
+    "finite_stage_induction:results/residual_cycle_closure/evidence.json": true,
+    "realization_foundation:results/background_summation/evidence.json": true,
+    "realization_foundation:results/background_summation/summation.py": true,
+    "realization_foundation:results/compact_mean_foundation/evidence.json": true,
+    "realization_foundation:results/current_complex_foundation/evidence.json": true,
+    "realization_foundation:results/current_potential_realization/evidence.json": true,
+    "realization_foundation:results/finite_induction_foundation/evidence.json": true,
+    "realization_foundation:results/finite_induction_foundation/finite_bounds.py": true,
+    "realization_foundation:results/full_potential_realization/evidence.json": true,
+    "realization_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "realization_foundation:results/realization_foundation/.gitignore": true,
+    "realization_foundation:results/realization_foundation/README.md": true,
+    "realization_foundation:results/realization_foundation/audit.py": true,
+    "realization_foundation:results/realization_foundation/protocol.json": true,
+    "realization_foundation:results/realization_foundation/realized_bounds.py": true,
+    "realization_foundation:results/realization_foundation/realized_checks.py": true,
+    "realization_foundation:results/realization_foundation/requirements.txt": true,
+    "realization_foundation:results/realization_foundation/test_audit.py": true,
+    "realization_foundation:results/regular_source_foundation/evidence.json": true
+  },
+  "review": {
+    "checks": {
+      "all_six_residual_groups_retained": true,
+      "complete_cut_velocity_exactly_divergence_free": true,
+      "corrected_gain": true,
+      "corrected_seed": true,
+      "default_comparison_stage_is_12816": true,
+      "every_comparison_closes": true,
+      "every_representative_has_exact_delta_slope": true,
+      "implicit_q_cutoff_jets_checked": true,
+      "one_extra_curl_loss_reserved": true,
+      "weakest_representative_margin_is_one": true,
+      "whole_interval_scale_majorant": true
+    },
+    "comparisons": [
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 12816,
+        "cross_exponent": "40011549/40000000",
+        "finite_residual_exponent": "11814231/400000",
+        "finite_residual_stage": 1402,
+        "jet": 0,
+        "square_exponent": "360411549/20000000",
+        "tail_exponent": "360411549/40000000",
+        "tail_stage": 12816,
+        "target": 0
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 18417,
+        "cross_exponent": "80022373/20000000",
+        "finite_residual_exponent": "830744747/20000000",
+        "finite_residual_stage": 3402,
+        "jet": 1,
+        "square_exponent": "280222373/10000000",
+        "tail_exponent": "280222373/20000000",
+        "tail_stage": 18417,
+        "target": 3
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 37618,
+        "cross_exponent": "480037143/40000000",
+        "finite_residual_exponent": "203842143/2500000",
+        "finite_residual_stage": 9802,
+        "jet": 5,
+        "square_exponent": "1200437143/20000000",
+        "tail_exponent": "1200437143/40000000",
+        "tail_stage": 37618,
+        "target": 11
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 78420,
+        "cross_exponent": "120014737/40000000",
+        "finite_residual_exponent": "1535357369/10000000",
+        "finite_residual_stage": 18203,
+        "jet": 20,
+        "square_exponent": "2040414737/20000000",
+        "tail_exponent": "2040414737/40000000",
+        "tail_stage": 78420,
+        "target": 2
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 7127,
+        "cross_exponent": "25025943/25000000",
+        "finite_residual_exponent": "2956507553/100000000",
+        "finite_residual_stage": 779,
+        "jet": 0,
+        "square_exponent": "225475943/12500000",
+        "tail_exponent": "225475943/25000000",
+        "tail_stage": 7127,
+        "target": 0
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 10238,
+        "cross_exponent": "800073547/200000000",
+        "finite_residual_exponent": "1039093389/25000000",
+        "finite_residual_stage": 1891,
+        "jet": 1,
+        "square_exponent": "2803673547/100000000",
+        "tail_exponent": "2803673547/200000000",
+        "tail_stage": 10238,
+        "target": 3
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 20906,
+        "cross_exponent": "2400385511/200000000",
+        "finite_residual_exponent": "101958569/1250000",
+        "finite_residual_stage": 5446,
+        "jet": 5,
+        "square_exponent": "6003985511/100000000",
+        "tail_exponent": "6003985511/200000000",
+        "tail_stage": 20906,
+        "target": 11
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 43574,
+        "cross_exponent": "24014939/8000000",
+        "finite_residual_exponent": "3839168371/25000000",
+        "finite_residual_stage": 10113,
+        "jet": 20,
+        "square_exponent": "408158939/4000000",
+        "tail_exponent": "408158939/8000000",
+        "tail_stage": 43574,
+        "target": 2
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 640054,
+        "cross_exponent": "400005967/400000000",
+        "finite_residual_exponent": "7375182459/250000000",
+        "finite_residual_stage": 70006,
+        "jet": 0,
+        "square_exponent": "3600085967/200000000",
+        "tail_exponent": "3600085967/400000000",
+        "tail_stage": 640054,
+        "target": 0
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 920071,
+        "cross_exponent": "1000004973/250000000",
+        "finite_residual_exponent": "8300147957/200000000",
+        "finite_residual_stage": 170012,
+        "jet": 1,
+        "square_exponent": "3500054973/125000000",
+        "tail_exponent": "3500054973/250000000",
+        "tail_stage": 920071,
+        "target": 3
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 1880128,
+        "cross_exponent": "24000009613/2000000000",
+        "finite_residual_exponent": "40750354807/500000000",
+        "finite_residual_stage": 490031,
+        "jet": 5,
+        "square_exponent": "60000409613/1000000000",
+        "tail_exponent": "60000409613/2000000000",
+        "tail_stage": 1880128,
+        "target": 11
+      },
+      {
+        "checks": {
+          "both_crosses": true,
+          "enough_jets": true,
+          "finite_residual": true,
+          "linear": true,
+          "square": true
+        },
+        "comparison_stage": 3920251,
+        "cross_exponent": "1500009811/500000000",
+        "finite_residual_exponent": "30700147849/200000000",
+        "finite_residual_stage": 910056,
+        "jet": 20,
+        "square_exponent": "25500109811/250000000",
+        "tail_exponent": "25500109811/500000000",
+        "tail_stage": 3920251,
+        "target": 2
+      }
+    ],
+    "corrected_gain": "49997/100000",
+    "diagnostics_are_exact_fixtures_not_actual_pulses": true,
+    "first_cycle_orders": {
+      "complete_fixed_gauge_pressure_difference": "49999/25000",
+      "complete_wave_velocity": "149997/100000",
+      "direct_axisymmetric_swirl": "49999/25000",
+      "mean_azimuthal_potential": "49999/25000",
+      "mean_radial_velocity": "74999/25000",
+      "wave_potential": "199997/100000"
+    },
+    "representative_margins": {
+      "complete_fixed_gauge_pressure_difference": "149999/100000",
+      "complete_wave_velocity": "1",
+      "direct_axisymmetric_swirl": "149999/100000",
+      "mean_azimuthal_potential": "149999/100000",
+      "mean_radial_velocity": "249999/100000",
+      "wave_potential": "3/2"
+    },
+    "residual_groups": [
+      "new_old",
+      "new_square",
+      "old_new",
+      "pressure",
+      "time",
+      "viscosity"
+    ],
+    "scale_majorant": {
+      "checks": {
+        "arbitrary_finite_constants_allowed": true,
+        "raw_series_convergence_not_required": true,
+        "stage_uniform_constants_not_required": true,
+        "strict_doubling": true,
+        "whole_interval_strict": true
+      },
+      "rows": [
+        {
+          "chosen": "78424001059700009/2499700009",
+          "doubling_margin": "78423998560000000/2499700009",
+          "gamma": "49997/40000000",
+          "margin": "-49997/80000000",
+          "stage": 1
+        },
+        {
+          "chosen": "400999944002259700009/2499700009",
+          "doubling_margin": "23583618823452958823/147041177",
+          "gamma": "49997/10000000",
+          "margin": "-49997/20000000",
+          "stage": 4
+        },
+        {
+          "chosen": "67997520000000000000000000001156653053302601/722413302601",
+          "doubling_margin": "67997519999999999999884111017339277586697399/722413302601",
+          "gamma": "849949/40000000",
+          "margin": "-849949/80000000",
+          "stage": 17
+        }
+      ]
+    }
+  },
+  "source_hashes": {
+    "results/canonical_local_realization/realization.py": "55fad98af693eb80932884e8fd977b5088d3068d7d7073dfd646caa32b541906",
+    "results/core_complete_potential_diagonal_join/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_complete_potential_diagonal_join/README.md": "0155311534ed95a1a6209592a111de9d99df1dcd9dbf36d3383fd327c7802482",
+    "results/core_complete_potential_diagonal_join/audit.py": "e4f44bf912dbb0d3db56eec4f091d89ccca1c534e169b4e8bd7d274edf42c86f",
+    "results/core_complete_potential_diagonal_join/controls.py": "3d1aace7adacdc2d207b081259175a7154c62329aa9f31f6db75128c66353c35",
+    "results/core_complete_potential_diagonal_join/diagonal.py": "839c3d701072cf054f5d2cb09fd4639911edcbd8591e2cc4bb804074aa66348d",
+    "results/core_complete_potential_diagonal_join/requirements.txt": "2a5139ea8846ab8d0a7c5617a46f39495f556b99dbccbf15f5047e7217d454cc",
+    "results/core_complete_potential_diagonal_join/test_audit.py": "d65989fd6f64279a9ffe057b92c11e38a15469ef0e502c138ec63de90acda80c",
+    "results/core_finite_stage_compact_recurrence/recurrence.py": "1230877412571408bf5ef1d400077c624b5573917c6aacdd1e0919f9efc3c138",
+    "results/finite_stage_induction/induction.py": "e388630da7fd7db8b4b38e6c8e1ecbfb867e6e1a2657e90b5689551319226915",
+    "results/realization_foundation/realized_checks.py": "e2ff84f2d5be6ce4893df8802811ea85ea2b9d655e1f1e0b58e13c9cd572415f"
+  },
+  "status": "conditional-corrected-complete-potential-diagonal-join"
+}

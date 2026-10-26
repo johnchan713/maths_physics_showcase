@@ -1,0 +1,43 @@
+name: Navier-Stokes corrected diagonal join
+
+on:
+  push:
+    branches:
+      - research/navier-stokes-cascade
+    paths:
+      - research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/**
+      - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
+      - research/navier_stokes_cascade/results/canonical_local_realization/**
+      - .github/workflows/navier-stokes-diagonal-join.yml
+  pull_request:
+    paths:
+      - research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/**
+      - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
+      - research/navier_stokes_cascade/results/canonical_local_realization/**
+      - .github/workflows/navier-stokes-diagonal-join.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install historical replay dependencies
+        run: sudo apt-get update && sudo apt-get install -y python3-numpy python3-scipy python3-mpmath python3-sympy
+
+      - name: Check corrected complete-potential diagonal
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/evidence.json \
+            --output navier_stokes_corrected_diagonal_join_ci.json
+
+      - name: Recheck synchronized finite-stage recurrence
+        run: /usr/bin/python3 research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/test_audit.py -v
+
+      - name: Recheck inherited complete-potential diagonal
+        run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
