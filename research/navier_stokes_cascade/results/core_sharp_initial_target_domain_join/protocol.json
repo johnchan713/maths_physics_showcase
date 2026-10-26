@@ -1,0 +1,7 @@
+{
+  "parent_commit": "a558aa752380e7b9aa41713287e904460dbb5ca0",
+  "correction": "retain the proved initial Haar-row rate beta=2-2*kappa through the linear projector, two-edge primitive and original-root signed maps instead of downgrading it to alpha=2-3*kappa",
+  "result": "the first-real pointwise covariance response has order alpha and its fresh-fast radial viscosity has order 3-5*kappa, giving strict margin kappa over nu=3-6*kappa",
+  "domain": "the same fixed-profile projector, compact/slow weighted domains, whole supports and complete moving-pressure memory as the parent",
+  "scope": "conditional first-real rate correction only; same-state high-jet enclosures, radial A0, later complex waves and complete residual closure remain open"
+}
