@@ -1,4 +1,4 @@
-name: Navier-Stokes corrected diagonal through fixed-profile projector join
+name: Navier-Stokes corrected diagonal through compact-slow inverse join
 
 on:
   push:
@@ -14,6 +14,7 @@ on:
       - research/navier_stokes_cascade/results/core_same_band_gap_join/**
       - research/navier_stokes_cascade/results/core_canonical_full_path_ode_join/**
       - research/navier_stokes_cascade/results/core_fixed_profile_projector_join/**
+      - research/navier_stokes_cascade/results/core_compact_slow_inverse_domain_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -31,6 +32,7 @@ on:
       - research/navier_stokes_cascade/results/core_same_band_gap_join/**
       - research/navier_stokes_cascade/results/core_canonical_full_path_ode_join/**
       - research/navier_stokes_cascade/results/core_fixed_profile_projector_join/**
+      - research/navier_stokes_cascade/results/core_compact_slow_inverse_domain_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -113,6 +115,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_fixed_profile_projector_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_fixed_profile_projector_join/evidence.json \
             --output navier_stokes_fixed_profile_projector_join_ci.json
+
+      - name: Join compact and slow inverse weighted domains
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_compact_slow_inverse_domain_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_compact_slow_inverse_domain_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_compact_slow_inverse_domain_join/evidence.json \
+            --output navier_stokes_compact_slow_inverse_domain_join_ci.json
 
       - name: Recheck synchronized finite-stage recurrence
         run: /usr/bin/python3 research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/test_audit.py -v
