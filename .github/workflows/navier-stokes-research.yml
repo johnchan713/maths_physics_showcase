@@ -687,6 +687,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_actual_profile_gate/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_initial_actual_profile_gate/evidence.json \
             --output navier_stokes_core_initial_actual_profile_gate_ci.json
+      - name: Check sharper initial Haar target and strict first-real final-row margin
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_target_rate_gain/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_target_rate_gain/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_initial_target_rate_gain/evidence.json \
+            --output navier_stokes_core_initial_target_rate_gain_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v

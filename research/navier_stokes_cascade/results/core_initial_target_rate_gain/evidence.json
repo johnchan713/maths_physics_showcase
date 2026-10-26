@@ -1,0 +1,260 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_initial_actual_profile_gate/evidence.json": "4d21f70ddd86323888c2450cfe4467c7fae17813054fc9c213ed17368d8ffb40",
+    "results/core_initial_final_row_obstruction/evidence.json": "afe76bb6aee1fcd1da2fd902a5a8e3874b320281e3ce6f56c77f72012dcd851b",
+    "results/core_initial_haar_row_budget/evidence.json": "6d8215125c694bbf2764456aea8f1b99a967f68a8312a76533f3815a7e97e750",
+    "results/core_log_pullback_projector_join/evidence.json": "7379c94a13f593ce155fd5badc68fa7e7eb0df8f5cef2f62e66c83414c403001",
+    "results/core_rho_projector_signed_recompute/evidence.json": "d1ffd1f8709d7705b607f093e819d9177f6d002414d75843b7a8a807ec3988d6",
+    "results/core_symbolic_initial_haar_join/evidence.json": "bb806cfd121d57153c0ec1e7840c7fcef3c6baac704f26a555c1e94e79da9da2",
+    "results/core_symbolic_signed_target_join/evidence.json": "f1ae321c6a9516d152910f5b0a8a2af8d23f467381755211b4a56f30cae8639c"
+  },
+  "flags": {
+    "actual_same_state_high_jets_proved": false,
+    "complete_residual_and_blowup_certified": false,
+    "conditional_strict_first_real_final_row_margin_proved": true,
+    "sharper_initial_target_rate_beta_retained": true
+  },
+  "gates": {
+    "exact_controls": true,
+    "historical_sources": true,
+    "seven_frozen_records": true
+  },
+  "inherited_source_checks": {
+    "core_initial_actual_profile_gate:results/core_initial_actual_profile_gate/.gitignore": true,
+    "core_initial_actual_profile_gate:results/core_initial_actual_profile_gate/README.md": true,
+    "core_initial_actual_profile_gate:results/core_initial_actual_profile_gate/audit.py": true,
+    "core_initial_actual_profile_gate:results/core_initial_actual_profile_gate/controls.py": true,
+    "core_initial_actual_profile_gate:results/core_initial_actual_profile_gate/profile_gate.py": true,
+    "core_initial_actual_profile_gate:results/core_initial_actual_profile_gate/requirements.txt": true,
+    "core_initial_actual_profile_gate:results/core_initial_actual_profile_gate/test_audit.py": true,
+    "core_initial_actual_profile_gate:results/core_initial_viscosity_sharpness_witness/witness.py": true,
+    "core_initial_actual_profile_gate:results/real_signed_covariance_update/signed.py": true,
+    "core_initial_final_row_obstruction:results/core_axial_potential_pressure_gain/bounds.py": true,
+    "core_initial_final_row_obstruction:results/core_final_mean_row_closure/budgets.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/.gitignore": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/README.md": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/audit.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/bounds.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/controls.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/requirements.txt": true,
+    "core_initial_final_row_obstruction:results/core_initial_final_row_obstruction/test_audit.py": true,
+    "core_initial_final_row_obstruction:results/core_initial_postfast_refresh/bounds.py": true,
+    "core_initial_final_row_obstruction:results/core_post_signed_mean_closure/budgets.py": true,
+    "core_initial_final_row_obstruction:results/post_signed_mean_relaxation/relax.py": true,
+    "core_initial_haar_row_budget:results/canonical_initial_mean_join/README.md": true,
+    "core_initial_haar_row_budget:results/compact_mean_foundation/README.md": true,
+    "core_initial_haar_row_budget:results/complete_covariance_initial_means/means.py": true,
+    "core_initial_haar_row_budget:results/core_fast_inverse_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/.gitignore": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/audit.py": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/budgets.py": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/controls.py": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/protocol.json": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/requirements.txt": true,
+    "core_initial_haar_row_budget:results/core_initial_haar_row_budget/test_audit.py": true,
+    "core_initial_haar_row_budget:results/core_initial_scalar_seed_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_initial_scalar_seed_budget/proof_checks.py": true,
+    "core_initial_haar_row_budget:results/core_primary_root_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_primary_root_budget/budgets.py": true,
+    "core_initial_haar_row_budget:results/core_scalar_target_pressure_join/proof_checks.py": true,
+    "core_initial_haar_row_budget:results/core_signed_target_edge_budget/README.md": true,
+    "core_initial_haar_row_budget:results/core_signed_target_edge_budget/budgets.py": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/.gitignore": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/README.md": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/audit.py": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/bounds.py": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/controls.py": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/requirements.txt": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/test_audit.py": true,
+    "core_log_pullback_projector_join:results/core_primary_target_cutoff_budget/bounds.py": true,
+    "core_log_pullback_projector_join:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_log_pullback_projector_join:results/core_symbolic_initial_haar_join/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_native_haar_primitive_join/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/.gitignore": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/README.md": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/audit.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/controls.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/requirements.txt": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/test_audit.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_squared_projector_realization/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_symbolic_real_covariance_join/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_symbolic_signed_target_join/bounds.py": true,
+    "core_symbolic_initial_haar_join:results/core_initial_haar_row_budget/budgets.py": true,
+    "core_symbolic_initial_haar_join:results/core_sharp_initial_scalar_join/bounds.py": true,
+    "core_symbolic_initial_haar_join:results/core_signed_target_edge_budget/budgets.py": true,
+    "core_symbolic_initial_haar_join:results/core_symbolic_fresh_mean_join/bounds.py": true,
+    "core_symbolic_initial_haar_join:results/core_symbolic_initial_haar_join/.gitignore": true,
+    "core_symbolic_initial_haar_join:results/core_symbolic_initial_haar_join/README.md": true,
+    "core_symbolic_initial_haar_join:results/core_symbolic_initial_haar_join/audit.py": true,
+    "core_symbolic_initial_haar_join:results/core_symbolic_initial_haar_join/bounds.py": true,
+    "core_symbolic_initial_haar_join:results/core_symbolic_initial_haar_join/controls.py": true,
+    "core_symbolic_initial_haar_join:results/core_symbolic_initial_haar_join/requirements.txt": true,
+    "core_symbolic_initial_haar_join:results/core_symbolic_initial_haar_join/test_audit.py": true,
+    "core_symbolic_signed_target_join:results/core_log_pullback_projector_join/bounds.py": true,
+    "core_symbolic_signed_target_join:results/core_primary_root_budget/budgets.py": true,
+    "core_symbolic_signed_target_join:results/core_signed_target_edge_budget/budgets.py": true,
+    "core_symbolic_signed_target_join:results/core_symbolic_signed_target_join/.gitignore": true,
+    "core_symbolic_signed_target_join:results/core_symbolic_signed_target_join/README.md": true,
+    "core_symbolic_signed_target_join:results/core_symbolic_signed_target_join/audit.py": true,
+    "core_symbolic_signed_target_join:results/core_symbolic_signed_target_join/bounds.py": true,
+    "core_symbolic_signed_target_join:results/core_symbolic_signed_target_join/controls.py": true,
+    "core_symbolic_signed_target_join:results/core_symbolic_signed_target_join/requirements.txt": true,
+    "core_symbolic_signed_target_join:results/core_symbolic_signed_target_join/test_audit.py": true,
+    "core_symbolic_signed_target_join:results/core_symbolic_weighted_maps/bounds.py": true
+  },
+  "review": {
+    "checks": {
+      "actual_profile_multiplier_has_only_finite_derivative_inverse_loss": true,
+      "complete_fast_source_improves_by_kappa_over_old_D": true,
+      "conditional_final_row_has_strict_kappa_margin_over_required_nu": true,
+      "labelwise_zero_collars_and_squared_partition_transfer_profile_order": true,
+      "linear_compact_target_and_signed_maps_preserve_beta": true,
+      "no_complete_residual_or_high_jet_promotion_is_made": true,
+      "order_three_moment_bumps_do_not_limit_projected_source": true,
+      "pointwise_covariance_response_pays_exactly_one_graph_loss": true,
+      "radial_viscosity_is_now_three_minus_five_kappa": true,
+      "real_pair_remainder_improves_to_three_minus_four_kappa": true,
+      "retained_A1_bound_ties_but_does_not_spoil_new_final_order": true,
+      "sharper_initial_Haar_rows_are_beta_not_downgraded_alpha": true,
+      "signed_principal_and_curl_orders_are_recomputed_from_beta": true
+    },
+    "correction": "the inherited beta=2-2kappa initial Haar estimate must not be lowered to alpha=2-3kappa before the first signed target; retaining beta gives the missing strict kappa margin",
+    "final_row": {
+      "complete_fast_source": "199997/100000",
+      "conditional_final_order": "59999/20000",
+      "conditional_strict_absorption": true,
+      "fast_groups": {
+        "base_radial_flux": "74999/25000",
+        "changed_axial_pressure": "299997/100000",
+        "new_mean_square": "499993/100000",
+        "old_mean_transport": "79999/20000",
+        "radial_viscosity": "59999/20000",
+        "slow_time": "299997/100000"
+      },
+      "final_groups": {
+        "fresh_fast_difference": "59999/20000",
+        "postsigned_Haar_row": "74999/25000",
+        "retained_A1_raw_bound": "59999/20000",
+        "sharp_slow_difference": "299997/100000"
+      },
+      "inherited_required_order": "149997/50000",
+      "orders": {
+        "D": "49999/25000",
+        "alpha": "199997/100000",
+        "beta": "99999/50000",
+        "final": "59999/20000",
+        "kappa": "1/100000",
+        "nu": "149997/50000",
+        "source": "199997/100000"
+      },
+      "source_groups": {
+        "corrected_original_A1_complement": "2",
+        "original_fast_difference": "199997/100000",
+        "original_slow_difference": "99999/50000",
+        "signed_covariance_response": "199997/100000"
+      },
+      "strict_margin": "1/100000",
+      "target": {
+        "compact_target": "99999/50000",
+        "compatibility_moments": "3",
+        "initial_Haar_rows": "99999/50000",
+        "orders": {
+          "D": "49999/25000",
+          "alpha": "199997/100000",
+          "beta": "99999/50000",
+          "final": "59999/20000",
+          "kappa": "1/100000",
+          "nu": "149997/50000",
+          "source": "199997/100000"
+        },
+        "pointwise_covariance_response": "199997/100000",
+        "projected_source": "99999/50000",
+        "real_old_new_sine": "74999/25000",
+        "real_pair_remainder": "74999/25000",
+        "real_signed_curl_square": "199997/50000",
+        "real_signed_square": "74999/25000",
+        "signed_curl": "199997/100000",
+        "signed_velocity": "74999/50000",
+        "target_gain": "1/100000"
+      }
+    },
+    "parent_commit": "5e6063a30f0dba6fe98f8c12f2f388fa8f0ec93f",
+    "profile_modes": [
+      {
+        "inverse_power_bound": 27,
+        "mode": [
+          1,
+          0
+        ],
+        "pell_norm": 1,
+        "radius": 1
+      },
+      {
+        "inverse_power_bound": 27,
+        "mode": [
+          0,
+          1
+        ],
+        "pell_norm": -1,
+        "radius": 1
+      },
+      {
+        "inverse_power_bound": 5250987,
+        "mode": [
+          13,
+          -8
+        ],
+        "pell_norm": -103,
+        "radius": 21
+      },
+      {
+        "inverse_power_bound": 748177108992,
+        "mode": [
+          239,
+          -169
+        ],
+        "pell_norm": -52222,
+        "radius": 408
+      }
+    ],
+    "scope": "conditional first-real target/source/final-row rate correction using existing weighted Haar and fixed-map premises; not an actual high-jet enclosure, complete residual estimate or blow-up proof",
+    "target_gain": {
+      "compact_target": "99999/50000",
+      "compatibility_moments": "3",
+      "initial_Haar_rows": "99999/50000",
+      "orders": {
+        "D": "49999/25000",
+        "alpha": "199997/100000",
+        "beta": "99999/50000",
+        "final": "59999/20000",
+        "kappa": "1/100000",
+        "nu": "149997/50000",
+        "source": "199997/100000"
+      },
+      "pointwise_covariance_response": "199997/100000",
+      "projected_source": "99999/50000",
+      "real_old_new_sine": "74999/25000",
+      "real_pair_remainder": "74999/25000",
+      "real_signed_curl_square": "199997/50000",
+      "real_signed_square": "74999/25000",
+      "signed_curl": "199997/100000",
+      "signed_velocity": "74999/50000",
+      "target_gain": "1/100000"
+    }
+  },
+  "source_hashes": {
+    "results/core_initial_actual_profile_gate/profile_gate.py": "0459b875abe83ab5769957c7d3be031ddef25a9c5fbfd8f05786e8431c9eeb65",
+    "results/core_initial_final_row_obstruction/bounds.py": "6ba586a2a1f9ecd942b6984da4171e5ef443790436892e0759a39277890760ae",
+    "results/core_initial_target_rate_gain/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_initial_target_rate_gain/README.md": "0a473af2e635760c0fee64d6a432867f7945b33773d29a404c5235dfdbd1f0e0",
+    "results/core_initial_target_rate_gain/audit.py": "0dddd663dbb857a73065c46ef56a69aff2f1be22b2d61d142d4feffcd1b77280",
+    "results/core_initial_target_rate_gain/controls.py": "6470f08b8d0fb5d736db7cf860deecca21af517491cfcc3e7978c6232430f95a",
+    "results/core_initial_target_rate_gain/rate_gain.py": "aa7fd238d0ccd2bd6371303edffa76b065b5e68f38ffea143231aa6187569a61",
+    "results/core_initial_target_rate_gain/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_initial_target_rate_gain/test_audit.py": "2848a36103989f12f961a8d1eb5ab7f1ed338d4982e9afb32fbc83a5161d66da",
+    "results/real_signed_covariance_update/signed.py": "d6e7a82653ea47ebe877925cbd3a86a057cb160e46d445f112abc652b238439a"
+  },
+  "status": "conditional-sharper-initial-target-and-strict-first-real-final-row-rate"
+}
