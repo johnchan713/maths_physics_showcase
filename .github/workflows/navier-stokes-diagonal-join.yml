@@ -1,4 +1,4 @@
-name: Navier-Stokes corrected diagonal through foundation frontier
+name: Navier-Stokes corrected diagonal through leading Borel join
 
 on:
   push:
@@ -10,6 +10,7 @@ on:
       - research/navier_stokes_cascade/results/core_corrected_force_join/**
       - research/navier_stokes_cascade/results/core_corrected_comparison_join/**
       - research/navier_stokes_cascade/results/core_corrected_foundation_frontier/**
+      - research/navier_stokes_cascade/results/core_leading_background_borel_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -23,6 +24,7 @@ on:
       - research/navier_stokes_cascade/results/core_corrected_force_join/**
       - research/navier_stokes_cascade/results/core_corrected_comparison_join/**
       - research/navier_stokes_cascade/results/core_corrected_foundation_frontier/**
+      - research/navier_stokes_cascade/results/core_leading_background_borel_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -77,6 +79,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_corrected_foundation_frontier/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_corrected_foundation_frontier/evidence.json \
             --output navier_stokes_corrected_foundation_frontier_ci.json
+
+      - name: Join leading profile to rule-defined Borel background
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_leading_background_borel_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_leading_background_borel_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_leading_background_borel_join/evidence.json \
+            --output navier_stokes_leading_background_borel_join_ci.json
 
       - name: Recheck synchronized finite-stage recurrence
         run: /usr/bin/python3 research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/test_audit.py -v
