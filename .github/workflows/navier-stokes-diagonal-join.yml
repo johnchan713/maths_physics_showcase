@@ -1,4 +1,4 @@
-name: Navier-Stokes corrected diagonal, endpoint and force joins
+name: Navier-Stokes corrected diagonal through comparison joins
 
 on:
   push:
@@ -8,20 +8,24 @@ on:
       - research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/**
       - research/navier_stokes_cascade/results/core_corrected_endpoint_join/**
       - research/navier_stokes_cascade/results/core_corrected_force_join/**
+      - research/navier_stokes_cascade/results/core_corrected_comparison_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
       - research/navier_stokes_cascade/results/force_foundation/**
+      - research/navier_stokes_cascade/results/comparison_foundation/**
       - .github/workflows/navier-stokes-diagonal-join.yml
   pull_request:
     paths:
       - research/navier_stokes_cascade/results/core_complete_potential_diagonal_join/**
       - research/navier_stokes_cascade/results/core_corrected_endpoint_join/**
       - research/navier_stokes_cascade/results/core_corrected_force_join/**
+      - research/navier_stokes_cascade/results/core_corrected_comparison_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
       - research/navier_stokes_cascade/results/force_foundation/**
+      - research/navier_stokes_cascade/results/comparison_foundation/**
       - .github/workflows/navier-stokes-diagonal-join.yml
 
 permissions:
@@ -58,6 +62,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_corrected_force_join/evidence.json \
             --output navier_stokes_corrected_force_join_ci.json
 
+      - name: Check corrected same-field pressure recovery and comparison
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_corrected_comparison_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_corrected_comparison_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_corrected_comparison_join/evidence.json \
+            --output navier_stokes_corrected_comparison_join_ci.json
+
       - name: Recheck synchronized finite-stage recurrence
         run: /usr/bin/python3 research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/test_audit.py -v
 
@@ -69,3 +80,6 @@ jobs:
 
       - name: Recheck inherited force foundation
         run: /usr/bin/python3 research/navier_stokes_cascade/results/force_foundation/test_audit.py -v
+
+      - name: Recheck inherited comparison foundation
+        run: /usr/bin/python3 research/navier_stokes_cascade/results/comparison_foundation/test_audit.py -v
