@@ -723,6 +723,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_first_sourced_physical_tail_closure/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_first_sourced_physical_tail_closure/evidence.json \
             --output navier_stokes_core_first_sourced_physical_tail_closure_ci.json
+      - name: Check corrected post-signed induction seed compact synchronization
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_post_signed_seed_sync/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_post_signed_seed_sync/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_post_signed_seed_sync/evidence.json \
+            --output navier_stokes_core_post_signed_seed_sync_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
@@ -2058,6 +2064,7 @@ jobs:
         with:
           name: navier-stokes-convergence
           path: |
+            navier_stokes_core_post_signed_seed_sync_ci.json
             navier_stokes_core_first_sourced_physical_tail_closure_ci.json
             navier_stokes_core_initial_physical_stage_sync_ci.json
             navier_stokes_explicit_tail_complete_join_ci.json
