@@ -1,4 +1,4 @@
-name: Navier-Stokes corrected diagonal through same-band gap join
+name: Navier-Stokes corrected diagonal through canonical full-path ODE join
 
 on:
   push:
@@ -12,6 +12,7 @@ on:
       - research/navier_stokes_cascade/results/core_corrected_foundation_frontier/**
       - research/navier_stokes_cascade/results/core_leading_background_borel_join/**
       - research/navier_stokes_cascade/results/core_same_band_gap_join/**
+      - research/navier_stokes_cascade/results/core_canonical_full_path_ode_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -27,6 +28,7 @@ on:
       - research/navier_stokes_cascade/results/core_corrected_foundation_frontier/**
       - research/navier_stokes_cascade/results/core_leading_background_borel_join/**
       - research/navier_stokes_cascade/results/core_same_band_gap_join/**
+      - research/navier_stokes_cascade/results/core_canonical_full_path_ode_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -95,6 +97,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_same_band_gap_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_same_band_gap_join/evidence.json \
             --output navier_stokes_same_band_gap_join_ci.json
+
+      - name: Join canonical full-path ODE pressure and cutoffs
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_canonical_full_path_ode_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_canonical_full_path_ode_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_canonical_full_path_ode_join/evidence.json \
+            --output navier_stokes_canonical_full_path_ode_join_ci.json
 
       - name: Recheck synchronized finite-stage recurrence
         run: /usr/bin/python3 research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/test_audit.py -v
