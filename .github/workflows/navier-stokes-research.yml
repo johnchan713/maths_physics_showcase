@@ -705,6 +705,12 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_phi_high_jet_closure/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_initial_phi_high_jet_closure/evidence.json \
             --output navier_stokes_core_initial_phi_high_jet_closure_ci.json
+      - name: Check conditional first-real radial A0 and compact physical-tail closure
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_a0_physical_tail_closure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_initial_a0_physical_tail_closure/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_initial_a0_physical_tail_closure/evidence.json \
+            --output navier_stokes_core_initial_a0_physical_tail_closure_ci.json
       - name: Check actual native sixth angular fields moments same annular root and fifth scalar R5 input
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/native_sixth_angular/test_audit.py -v
