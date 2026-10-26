@@ -1,4 +1,4 @@
-name: Navier-Stokes corrected diagonal through sharp initial target join
+name: Navier-Stokes corrected diagonal through first-real high-jet join
 
 on:
   push:
@@ -16,6 +16,7 @@ on:
       - research/navier_stokes_cascade/results/core_fixed_profile_projector_join/**
       - research/navier_stokes_cascade/results/core_compact_slow_inverse_domain_join/**
       - research/navier_stokes_cascade/results/core_sharp_initial_target_domain_join/**
+      - research/navier_stokes_cascade/results/core_first_real_high_jet_domain_closure/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -35,6 +36,7 @@ on:
       - research/navier_stokes_cascade/results/core_fixed_profile_projector_join/**
       - research/navier_stokes_cascade/results/core_compact_slow_inverse_domain_join/**
       - research/navier_stokes_cascade/results/core_sharp_initial_target_domain_join/**
+      - research/navier_stokes_cascade/results/core_first_real_high_jet_domain_closure/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -131,6 +133,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_sharp_initial_target_domain_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_sharp_initial_target_domain_join/evidence.json \
             --output navier_stokes_sharp_initial_target_domain_join_ci.json
+
+      - name: Close certified first-real high-jet and compact-tail domains
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_first_real_high_jet_domain_closure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_first_real_high_jet_domain_closure/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_first_real_high_jet_domain_closure/evidence.json \
+            --output navier_stokes_first_real_high_jet_domain_closure_ci.json
 
       - name: Recheck synchronized finite-stage recurrence
         run: /usr/bin/python3 research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/test_audit.py -v
