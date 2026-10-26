@@ -1,0 +1,174 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_initial_a0_physical_tail_closure/evidence.json": "1b4658d52003bfdfc9bc7238bbbf41af8b3c8696c9ff91f8fd5cccf56a62b9d1",
+    "results/core_physical_tail_join/evidence.json": "d5916638d86000f381517d55a740313d48513009fac446018472cfaaca3ec22c",
+    "results/first_sourced_foundation/evidence.json": "79c48c09868edef6f8efed9ec9df8a7ffd7c3dffc520fd91685259754a7c003a",
+    "results/regular_source_foundation/evidence.json": "91f71ce32b4427f504553f4d8dfe5d555ae8822ec3f8e8da75123f729e487e28"
+  },
+  "flags": {
+    "blowup_certified": false,
+    "complete_physical_residual_decay_proved": false,
+    "initial_compact_tail_closure_preserved": true,
+    "post_sourced_changed_compact_DAG_closed": false,
+    "post_sourced_regular_gain_preserved": true,
+    "stage_mixing_excluded": true
+  },
+  "gates": {
+    "exact_controls": true,
+    "four_frozen_records": true,
+    "historical_sources": true
+  },
+  "inherited_source_checks": {
+    "core_initial_a0_physical_tail_closure:results/core_initial_a0_physical_tail_closure/.gitignore": true,
+    "core_initial_a0_physical_tail_closure:results/core_initial_a0_physical_tail_closure/README.md": true,
+    "core_initial_a0_physical_tail_closure:results/core_initial_a0_physical_tail_closure/audit.py": true,
+    "core_initial_a0_physical_tail_closure:results/core_initial_a0_physical_tail_closure/closure.py": true,
+    "core_initial_a0_physical_tail_closure:results/core_initial_a0_physical_tail_closure/controls.py": true,
+    "core_initial_a0_physical_tail_closure:results/core_initial_a0_physical_tail_closure/requirements.txt": true,
+    "core_initial_a0_physical_tail_closure:results/core_initial_a0_physical_tail_closure/test_audit.py": true,
+    "core_initial_a0_physical_tail_closure:results/core_initial_a1_request_graph/requests.py": true,
+    "core_initial_a0_physical_tail_closure:results/core_initial_phi_high_jet_closure/closure.py": true,
+    "core_initial_a0_physical_tail_closure:results/core_physical_tail_join/bounds.py": true,
+    "core_initial_a0_physical_tail_closure:results/core_post_signed_mean_closure/budgets.py": true,
+    "core_physical_tail_join:results/auxiliary_geometry_audit/README.md": true,
+    "core_physical_tail_join:results/core_fast_inverse_budget/README.md": true,
+    "core_physical_tail_join:results/core_fast_inverse_budget/proof_checks.py": true,
+    "core_physical_tail_join:results/core_fast_row_gain_join/README.md": true,
+    "core_physical_tail_join:results/core_fast_row_gain_join/budgets.py": true,
+    "core_physical_tail_join:results/core_final_mean_row_closure/README.md": true,
+    "core_physical_tail_join:results/core_final_mean_row_closure/budgets.py": true,
+    "core_physical_tail_join:results/core_multiharmonic_mean_residual_budget/README.md": true,
+    "core_physical_tail_join:results/core_physical_tail_join/.gitignore": true,
+    "core_physical_tail_join:results/core_physical_tail_join/README.md": true,
+    "core_physical_tail_join:results/core_physical_tail_join/audit.py": true,
+    "core_physical_tail_join:results/core_physical_tail_join/bounds.py": true,
+    "core_physical_tail_join:results/core_physical_tail_join/controls.py": true,
+    "core_physical_tail_join:results/core_physical_tail_join/protocol.json": true,
+    "core_physical_tail_join:results/core_physical_tail_join/requirements.txt": true,
+    "core_physical_tail_join:results/core_physical_tail_join/test_audit.py": true,
+    "core_physical_tail_join:results/current_residual_ledger_audit/README.md": true,
+    "core_physical_tail_join:results/current_residual_ledger_audit/residual_ledger.py": true,
+    "core_physical_tail_join:results/geometric_pulse_replay/README.md": true,
+    "core_physical_tail_join:results/physical_pulse_foundation/README.md": true,
+    "core_physical_tail_join:results/physical_pulse_transfer/README.md": true,
+    "first_sourced_foundation:results/actual_band_pulse_bounds/bounds.py": true,
+    "first_sourced_foundation:results/compact_mean_foundation/evidence.json": true,
+    "first_sourced_foundation:results/complete_covariance_initial_means/evidence.json": true,
+    "first_sourced_foundation:results/complete_covariance_initial_means/means.py": true,
+    "first_sourced_foundation:results/complex_signed_covariance_update/evidence.json": true,
+    "first_sourced_foundation:results/first_sourced_foundation/.gitignore": true,
+    "first_sourced_foundation:results/first_sourced_foundation/README.md": true,
+    "first_sourced_foundation:results/first_sourced_foundation/audit.py": true,
+    "first_sourced_foundation:results/first_sourced_foundation/protocol.json": true,
+    "first_sourced_foundation:results/first_sourced_foundation/requirements.txt": true,
+    "first_sourced_foundation:results/first_sourced_foundation/sourced_bounds.py": true,
+    "first_sourced_foundation:results/first_sourced_foundation/sourced_checks.py": true,
+    "first_sourced_foundation:results/first_sourced_foundation/test_audit.py": true,
+    "first_sourced_foundation:results/first_sourced_wave_update/evidence.json": true,
+    "first_sourced_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "first_sourced_foundation:results/post_signed_mean_relaxation/evidence.json": true,
+    "first_sourced_foundation:results/real_signed_covariance_update/evidence.json": true,
+    "first_sourced_foundation:results/regular_source_foundation/evidence.json": true,
+    "regular_source_foundation:results/actual_band_pulse_bounds/diagnostics.py": true,
+    "regular_source_foundation:results/actual_band_pulse_bounds/evidence.json": true,
+    "regular_source_foundation:results/compact_mean_foundation/evidence.json": true,
+    "regular_source_foundation:results/finite_stage_induction/evidence.json": true,
+    "regular_source_foundation:results/first_sourced_wave_update/evidence.json": true,
+    "regular_source_foundation:results/geometric_pulse_replay/evidence.json": true,
+    "regular_source_foundation:results/modulation_repair_all_order/map_checks.py": true,
+    "regular_source_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "regular_source_foundation:results/physical_wave_interface/evidence.json": true,
+    "regular_source_foundation:results/regular_source_foundation/.gitignore": true,
+    "regular_source_foundation:results/regular_source_foundation/README.md": true,
+    "regular_source_foundation:results/regular_source_foundation/audit.py": true,
+    "regular_source_foundation:results/regular_source_foundation/protocol.json": true,
+    "regular_source_foundation:results/regular_source_foundation/requirements.txt": true,
+    "regular_source_foundation:results/regular_source_foundation/source_bounds.py": true,
+    "regular_source_foundation:results/regular_source_foundation/source_checks.py": true,
+    "regular_source_foundation:results/regular_source_foundation/test_audit.py": true,
+    "regular_source_foundation:results/residual_cycle_closure/evidence.json": true
+  },
+  "review": {
+    "checks": {
+      "compact_difference_keeps_covariance_and_pressure": true,
+      "initial_DAG_does_not_contain_sourced_state": true,
+      "manufactured_changed_compact_inputs_are_nonzero": true,
+      "physical_exponents_are_exact": true,
+      "retained_orders_are_exact": true,
+      "scope_separates_conditional_parts_from_complete_residual": true,
+      "sourced_gain_is_positive_but_both_rows_fail": true
+    },
+    "compact_identity": {
+      "covariance_change": "Bil(w_R,v)+Cov(v)",
+      "difference": "(-A0 Qcirc Delta_gr,0,+A1 Dz Qcirc Delta_Phi)",
+      "initial_compact_bound_transfers_to_sourced_state": false,
+      "initial_graph_contains_first_sourced_wave": false,
+      "new": "(-A0 Qcirc gr_S,0,+A1 Dz Qcirc Phi_S)",
+      "old": "(-A0 Qcirc gr_R,0,+A1 Dz Qcirc Phi_R)",
+      "pressure_change": "Delta_gp=-D1 Delta_Wrr-Dz Delta_Wrz+Delta_Wtt/R; Delta_P=int Haar Delta_gp; Delta_pm=T0(Delta_gp-rho Delta_P)"
+    },
+    "manufactured_change": {
+      "Qcirc_gr": [
+        "3/2",
+        "-3/2"
+      ],
+      "Qcirc_phi": [
+        "7",
+        "-7"
+      ],
+      "axial_changed": true,
+      "gr": [
+        "1",
+        "-2"
+      ],
+      "phi": [
+        "17",
+        "3"
+      ],
+      "radial_changed": true
+    },
+    "scope": {
+      "blowup_proved": false,
+      "complete_physical_residual_decay_proved": false,
+      "initial_compact_tail_closed_conditionally": true,
+      "post_sourced_regular_gain_closed_conditionally": true,
+      "primitive_continuum_contracts_certified_here": false,
+      "synchronized_post_sourced_compact_DAG_closed_here": false
+    },
+    "stages": {
+      "first_real": {
+        "compact_state": "gr_R,Phi_R",
+        "name": "R",
+        "physical_exponent": "-30100001/20000000",
+        "regular_order": "99999/100000"
+      },
+      "first_real_meets_requested_bound": false,
+      "first_sourced": {
+        "compact_state": "gr_S,Phi_S",
+        "name": "S",
+        "physical_exponent": "-15025001/10000000",
+        "regular_order": "74999/50000"
+      },
+      "first_sourced_meets_requested_bound": false,
+      "h": "1/200",
+      "kappa": "1/100000",
+      "normalization": "151/100",
+      "physical_gain": "49999/20000000",
+      "physical_jet": 0,
+      "requested_power": "0",
+      "reserve": "1",
+      "sourced_gain": "49999/100000",
+      "sufficient_later_order_threshold": "502"
+    }
+  },
+  "source_hashes": {
+    "results/core_initial_physical_stage_sync/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_initial_physical_stage_sync/README.md": "bebeca967a2f06e45d151bbb9d5604c5ffc578ed6f3150f78ce47be7a5e43e51",
+    "results/core_initial_physical_stage_sync/audit.py": "aba718e04bace2935d3c545961b5ed32d4973d936122d663ce0b505174581d95",
+    "results/core_initial_physical_stage_sync/controls.py": "ef72aa296e4be8a63802d955a2df961c495f141996214d7ad62407f53a681bd4",
+    "results/core_initial_physical_stage_sync/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_initial_physical_stage_sync/stage_sync.py": "5d5d2648c50f655084dbfa4332cda21651c6d00aabaf32ba8bec5b29f6c0982f",
+    "results/core_initial_physical_stage_sync/test_audit.py": "8b9d4a27100ec044db47220ac24b7ec1dd6abb202d10e95a8d7ad352979654a0"
+  },
+  "status": "conditional-first-real-physical-stage-synchronization-obstruction"
+}
