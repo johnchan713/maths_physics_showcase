@@ -1,0 +1,207 @@
+{
+  "dependency_evidence_sha256": {
+    "results/comparison_foundation/evidence.json": "8375a9e06205b9817bd114a22320915f264fd760ae85d385a474f776ecebd0ca",
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_corrected_comparison_join/evidence.json": "b57592912e8951b9b8b4ade127f7cb91001e108c125f0d05bb82b0d93d1b79bd",
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/global_solution_comparison/evidence.json": "fda47288fea382c0ac443924de71b16f732119f7ea9942fa58a0a94c656c13ed"
+  },
+  "gates": {
+    "conditional_scope": true,
+    "dependency_sources_unchanged": true,
+    "exact_controls": true,
+    "five_frozen_dependency_records": true
+  },
+  "inherited_source_checks": {
+    "comparison_foundation:results/comparison_foundation/.gitignore": true,
+    "comparison_foundation:results/comparison_foundation/README.md": true,
+    "comparison_foundation:results/comparison_foundation/audit.py": true,
+    "comparison_foundation:results/comparison_foundation/compact_bounds.py": true,
+    "comparison_foundation:results/comparison_foundation/compact_checks.py": true,
+    "comparison_foundation:results/comparison_foundation/protocol.json": true,
+    "comparison_foundation:results/comparison_foundation/requirements.txt": true,
+    "comparison_foundation:results/comparison_foundation/test_audit.py": true,
+    "comparison_foundation:results/core_all_order_foundation/evidence.json": true,
+    "comparison_foundation:results/core_contraction_audit/evidence.json": true,
+    "comparison_foundation:results/current_solution_comparison/evidence.json": true,
+    "comparison_foundation:results/endpoint_foundation/evidence.json": true,
+    "comparison_foundation:results/finite_induction_foundation/evidence.json": true,
+    "comparison_foundation:results/force_foundation/evidence.json": true,
+    "comparison_foundation:results/global_solution_comparison/comparison_bounds.py": true,
+    "comparison_foundation:results/global_solution_comparison/evidence.json": true,
+    "comparison_foundation:results/realization_foundation/evidence.json": true,
+    "comparison_foundation:results/realization_foundation/realized_checks.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/.gitignore": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/README.md": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/audit.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/controls.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/localization.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/protocol.json": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/requirements.txt": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/test_audit.py": true,
+    "core_corrected_comparison_join:results/core_corrected_comparison_join/.gitignore": true,
+    "core_corrected_comparison_join:results/core_corrected_comparison_join/README.md": true,
+    "core_corrected_comparison_join:results/core_corrected_comparison_join/audit.py": true,
+    "core_corrected_comparison_join:results/core_corrected_comparison_join/comparison.py": true,
+    "core_corrected_comparison_join:results/core_corrected_comparison_join/controls.py": true,
+    "core_corrected_comparison_join:results/core_corrected_comparison_join/requirements.txt": true,
+    "core_corrected_comparison_join:results/core_corrected_comparison_join/test_audit.py": true,
+    "core_growth_activation:GOAL.md": true,
+    "core_growth_activation:results/background_jet_foundation/evidence.json": true,
+    "core_growth_activation:results/core_contraction_audit/evidence.json": true,
+    "core_growth_activation:results/core_growth_activation/.gitignore": true,
+    "core_growth_activation:results/core_growth_activation/README.md": true,
+    "core_growth_activation:results/core_growth_activation/audit.py": true,
+    "core_growth_activation:results/core_growth_activation/diagnostics.py": true,
+    "core_growth_activation:results/core_growth_activation/growth.py": true,
+    "core_growth_activation:results/core_growth_activation/protocol.json": true,
+    "core_growth_activation:results/core_growth_activation/requirements.txt": true,
+    "core_growth_activation:results/core_growth_activation/test_audit.py": true,
+    "core_growth_activation:results/inner_collar_activation/evidence.json": true,
+    "global_solution_comparison:GOAL.md": true,
+    "global_solution_comparison:results/global_solution_comparison/.gitignore": true,
+    "global_solution_comparison:results/global_solution_comparison/README.md": true,
+    "global_solution_comparison:results/global_solution_comparison/audit.py": true,
+    "global_solution_comparison:results/global_solution_comparison/comparison_bounds.py": true,
+    "global_solution_comparison:results/global_solution_comparison/pressure_checks.py": true,
+    "global_solution_comparison:results/global_solution_comparison/protocol.json": true,
+    "global_solution_comparison:results/global_solution_comparison/requirements.txt": true,
+    "global_solution_comparison:results/global_solution_comparison/test_audit.py": true,
+    "global_solution_comparison:results/localized_force_extension/evidence.json": true
+  },
+  "remaining_obligations": [
+    "independently identify the exact core pressure family with the completed global backward pressure on this same field",
+    "discharge the retained primitive background, root, inverse, support, pressure and positive-core estimates before any unconditional force or blow-up claim"
+  ],
+  "review": {
+    "checks": {
+      "commutator": true,
+      "interface": true,
+      "limit": true,
+      "pressure": true,
+      "radius": true,
+      "scope": true
+    },
+    "exact_controls_are_not_continuum_proofs": true,
+    "scope": {
+      "certified_fixed_stage_domains_and_single_cutoff_sequence_retained": true,
+      "every_smooth_locally_uniform_finite_energy_same_force_competitor_equals_constructed_field_before_t_one_conditionally": true,
+      "future_velocity_or_pressure_constructed": false,
+      "global_smooth_bounded_energy_competitor_exclusion_follows_conditionally_from_inherited_core_growth": true,
+      "mixed_pressure_moment_isotropy_assumed": false,
+      "positive_core_contract_retained_as_dependency": true,
+      "pressure_gradient_recovered_without_competitor_pressure_decay": true,
+      "primitive_field_force_and_positive_core_contracts_independently_proved": false,
+      "same_certified_complete_potential_field_force_and_fixed_gauge_pressure_used": true,
+      "unconditional_admissible_force_or_blowup_proved": false,
+      "uniform_stage_constant_growth_required": false
+    },
+    "sections": {
+      "commutator": {
+        "checks": {
+          "L1_stress_to_L1_pressure_is_not_used": true,
+          "L_four_thirds_norm_decays_as_R_minus_three_fourths": true,
+          "both_near_cancellation_and_far_cap_are_needed": true,
+          "eighth_cutoff_power_is_sufficient_for_L_four_thirds_pairing": true,
+          "exact_radial_coefficient": true,
+          "far_integral_is_finite": true,
+          "near_integral_is_finite": true,
+          "seventh_power_is_insufficient_for_this_pairing": true
+        },
+        "exponent": "4/3",
+        "far_radial_power": "-2",
+        "kernel": "|z|^-3 min(|z|/R,1)",
+        "near_radial_power": "-2/3",
+        "norm_radius_decay": "3/4",
+        "radial_coefficient": "4"
+      },
+      "interface": {
+        "checks": {
+          "certified_fixed_stage_domains_and_cutoff_sequence_retained": true,
+          "certified_force_parent_used": true,
+          "compact_force_and_zero_datum_available_conditionally": true,
+          "comparison_was_not_claimed_by_parent": true,
+          "finite_energy_is_essential_to_remove_harmonic_pressure_gradients": true,
+          "fixed_gauge_pressure_and_all_residual_terms_retained": true,
+          "no_global_competitor_derivative_pressure_or_dissipation_bound_added": true
+        },
+        "competitor": "smooth on compact sets, same force and datum, and sup_[0,T] ||v||_2 finite for each fixed T<1",
+        "constructed_field": "same u=curl(cA)+cB, p=cp0, zero datum and one compact smooth force",
+        "difference": "w=v-u; pi=P-p; g=v tensor v-u tensor u=w tensor w+h"
+      },
+      "limit": {
+        "Gronwall": "E_R(t)<=2 C_T T exp(2 T L_T) R^-2 for each fixed T<1",
+        "checks": {
+          "constants_need_not_be_uniform_as_T_approaches_one": true,
+          "cutoff_family_need_not_be_monotone": true,
+          "equality_on_every_fixed_interval_gives_v_equals_u_for_all_t_below_one": true,
+          "fixed_ball_eventually_lies_where_cutoff_is_one": true,
+          "inherited_positive_core_growth_would_then_give_a_contradiction": true,
+          "smooth_global_competitor_is_bounded_on_a_compact_neighborhood_of_the_terminal_origin": true
+        },
+        "energy": "0.5 E_R'+0.5 D_R^2<=||grad u||_infinity E_R+C_T R^-2; E_R(0)=0",
+        "order": "first fix T<1, then R->infinity, only then approach the protected core as t->1"
+      },
+      "pressure": {
+        "checks": {
+          "L1_stress_embeds_in_H_minus_s_only_for_s_strictly_above_three_halves": true,
+          "Poisson_equation_alone_does_not_remove_harmonic_gradient": true,
+          "force_divergence_cancels_once_and_is_not_subtracted_again": true,
+          "individual_forced_pressures_are_not_replaced_by_unforced_Riesz_formulas": true,
+          "no_temperedness_or_decay_of_competitor_pressure_assumed": true,
+          "time_averaged_momentum_places_pressure_gradient_in_H_minus_three": true,
+          "weighted_L2_Fourier_function_supported_at_one_point_is_zero": true
+        },
+        "equation": "w_t+div(g)=Delta w-grad(pi); -Delta pi=partial_i partial_j g_ij; common force cancels exactly once",
+        "forced_individual": "-Delta p=partial_i partial_j(u_i u_j)-div f and likewise for P",
+        "harmonic_counterexample": "without finite energy, v=t e1 and P=-x1 versus u=0,p=0 have the same zero datum and force but a nonzero harmonic pressure gradient",
+        "recovered": "pi_star=sum R_i R_j g_ij in L_infinity_t H^-2; for every compact time test, grad(pi-pi_star) is harmonic in H^-3 and hence zero"
+      },
+      "radius": {
+        "checks": {
+          "coarse_uniform_L2_laplacian_term_limits_this_ledger_to_R_minus_two": true,
+          "compact_mixed_pressure_flux_decay_is_five_halves": true,
+          "every_remainder_decays_at_least_two": true,
+          "exact_Young_decays": true,
+          "mixed_moment_is_not_assumed_isotropic": true,
+          "support_separation_gives_R_minus_L_at_least_R_over_two": true
+        },
+        "compact_pressure": "on R<=|x|<=2R and R>=2L, |pi_h|<=C H_T R^-3; mixed pressure flux is O(R^-5/2)",
+        "other_decays": {
+          "compact_mixed_pressure": "5/2",
+          "cutoff_laplacian": "2"
+        },
+        "quadratic_pressure": "main flux <=C R^-1 B_R^(3/2); commutator flux <=C R^-7/4 B_R^(3/4)",
+        "rows": [
+          {
+            "Sobolev_offset": "5/2",
+            "Young_decay": "4",
+            "dissipation_power": "3/2",
+            "radius_power": "1",
+            "term": "quadratic_pressure_and_transport"
+          },
+          {
+            "Sobolev_offset": "5/2",
+            "Young_decay": "14/5",
+            "dissipation_power": "3/4",
+            "radius_power": "7/4",
+            "term": "quadratic_commutator"
+          }
+        ],
+        "split": "g=w tensor w+h; h=w tensor u+u tensor w, support(h) subset K",
+        "worst_decay": "2"
+      }
+    }
+  },
+  "source_hashes": {
+    "results/core_certified_complete_potential_comparison_join/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_certified_complete_potential_comparison_join/README.md": "cff40cb00f99d0324d125a2ba0806a3b2bc8ac1f4b308a8adc00f54f3421f174",
+    "results/core_certified_complete_potential_comparison_join/audit.py": "d5eae9403f4ffab0dba2c55d6877cee5e6dcc7bad11ec7613dc8f96a8c161903",
+    "results/core_certified_complete_potential_comparison_join/comparison.py": "ff6833baa9d6db2c96301008e4da282b753542fe34b0981ddecbf9664eb0e339",
+    "results/core_certified_complete_potential_comparison_join/controls.py": "507a318f4cd7192341ded5cfb3840849ad51cba9580a712d8b4f87bd9ae9e342",
+    "results/core_certified_complete_potential_comparison_join/protocol.json": "4ba7ccda2947b0b24b08d14207c62f2daea4ea9be913e031f7d27a416349c71c",
+    "results/core_certified_complete_potential_comparison_join/requirements.txt": "7833e714da66331b4b1e627ac9295ed4d4a7ae59f3446d34f2611318c4021388",
+    "results/core_certified_complete_potential_comparison_join/test_audit.py": "425f19c2dd2dca83ddff651dbf2250032222e227a035fc010036da3686edad19"
+  },
+  "status": "certified-domain-conditional-pressure-comparison-and-exclusion-join"
+}

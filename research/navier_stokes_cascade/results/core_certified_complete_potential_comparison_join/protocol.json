@@ -1,0 +1,11 @@
+{
+  "parent_commit": "b7bc616c63736e884a43ea88d249ce7a0a952d1e",
+  "field": "the same certified-domain localized complete-potential velocity, compact fixed-gauge pressure, zero datum and one compact smooth force",
+  "competitor": "any global smooth solution with the same datum and force and locally uniform finite L2 energy on every fixed interval [0,T], T<1",
+  "pressure_recovery": "the common force cancels once; recover grad(P-p)=grad sum R_i R_j(v_i v_j-u_i u_j) by time averaging in H^-3 without pressure decay or temperedness assumptions",
+  "radius_ledger": "split compact mixed stress from the quadratic stress, use the L4/3 commutator kernel and the eighth-power cutoff, absorb all fluxes, and retain the coarse R^-2 remainder",
+  "limit_order": "fix T<1, send R to infinity, then approach the protected core as t tends to 1",
+  "correction": "finite energy is essential to exclude harmonic pressure gradients; individual pressure equations retain -div f and the common force is not subtracted twice",
+  "result": "conditional uniqueness before t=1 and exclusion of a global smooth bounded-energy same-force competitor, relative to the retained positive-core and primitive analytic contracts",
+  "scope": "no future constructed velocity, no discharged primitive contracts, and no unconditional admissible-force or blow-up theorem"
+}

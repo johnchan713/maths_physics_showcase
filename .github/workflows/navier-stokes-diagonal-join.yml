@@ -1,4 +1,4 @@
-name: Navier-Stokes certified-domain diagonal endpoint and force
+name: Navier-Stokes certified-domain field through comparison
 
 on:
   push:
@@ -22,6 +22,7 @@ on:
       - research/navier_stokes_cascade/results/core_certified_complete_potential_diagonal_join/**
       - research/navier_stokes_cascade/results/core_certified_complete_potential_endpoint_join/**
       - research/navier_stokes_cascade/results/core_certified_complete_potential_force_join/**
+      - research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -47,6 +48,7 @@ on:
       - research/navier_stokes_cascade/results/core_certified_complete_potential_diagonal_join/**
       - research/navier_stokes_cascade/results/core_certified_complete_potential_endpoint_join/**
       - research/navier_stokes_cascade/results/core_certified_complete_potential_force_join/**
+      - research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -188,6 +190,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_certified_complete_potential_force_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_certified_complete_potential_force_join/evidence.json \
             --output navier_stokes_certified_complete_potential_force_join_ci.json
+
+      - name: Join certified complete-potential field to pressure recovery and comparison
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/evidence.json \
+            --output navier_stokes_certified_complete_potential_comparison_join_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
