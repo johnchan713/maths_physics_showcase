@@ -1,0 +1,140 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_certified_complete_potential_endpoint_join/evidence.json": "f40db0ddfb1fd3fc661ede433d8ce88c8be10d25b77c635e1b61c3ec75c64e49",
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_closed_chart_coefficient_join/evidence.json": "5a3c0cd69f983df47248be8b35ff54bcad02348238a87018b6646252291dac93",
+    "results/core_corner_flatness_obstruction/evidence.json": "08178e20b2a2ee486976637d1e4ffc85af2659d180a708375ec171e4bb1b9651",
+    "results/core_corner_tail_slack_reconciliation/evidence.json": "f3e0ee58871b00245741f48e04481db7b7eaab5850a593830d276b8fd44e0988",
+    "results/core_primitive_margin_normalization_reconciliation/evidence.json": "c08d54fa1cf021e7c7cc80da1b264465a163617fdd23479d16ec9cd925d609c2",
+    "results/core_same_field_pressure_reconciliation/evidence.json": "a0a6bb8cc8d3e1c52227a1b2cb4f7a1adc0e340d2b9fc5fb2ac5aa9ebdc99f0c"
+  },
+  "gates": {
+    "all_dependency_sources_match": true,
+    "corner_and_force_replay_joined": true,
+    "eight_frozen_dependencies": true,
+    "remaining_core_scope_preserved": true,
+    "six_exact_controls": true
+  },
+  "inherited_source_checks": {
+    "core_certified_complete_potential_diagonal_join:results/canonical_local_realization/realization.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/.gitignore": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/README.md": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/protocol.json": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/requirements.txt": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/test_audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_finite_stage_domain_join/certified_recurrence.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_certified_complete_potential_diagonal_join:results/finite_stage_induction/induction.py": true,
+    "core_certified_complete_potential_diagonal_join:results/realization_foundation/realized_checks.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/.gitignore": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/README.md": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/controls.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/protocol.json": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/requirements.txt": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/test_audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/current_endpoint_jets/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/endpoint_foundation/terminal_bounds.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/.gitignore": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/README.md": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/audit.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/controls.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/localization.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/protocol.json": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/requirements.txt": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/test_audit.py": true,
+    "core_closed_chart_coefficient_join:results/core_closed_chart_coefficient_join/.gitignore": true,
+    "core_closed_chart_coefficient_join:results/core_closed_chart_coefficient_join/README.md": true,
+    "core_closed_chart_coefficient_join:results/core_closed_chart_coefficient_join/audit.py": true,
+    "core_closed_chart_coefficient_join:results/core_closed_chart_coefficient_join/compactness.py": true,
+    "core_closed_chart_coefficient_join:results/core_closed_chart_coefficient_join/protocol.json": true,
+    "core_closed_chart_coefficient_join:results/core_closed_chart_coefficient_join/requirements.txt": true,
+    "core_closed_chart_coefficient_join:results/core_closed_chart_coefficient_join/test_audit.py": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/.gitignore": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/README.md": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/audit.py": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/corner.py": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/protocol.json": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/requirements.txt": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/test_audit.py": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/.gitignore": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/README.md": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/audit.py": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/protocol.json": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/requirements.txt": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/slack.py": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/test_audit.py": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/.gitignore": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/README.md": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/audit.py": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/margins.py": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/protocol.json": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/requirements.txt": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/test_audit.py": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/.gitignore": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/README.md": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/audit.py": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/identities.py": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/protocol.json": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/requirements.txt": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/test_audit.py": true
+  },
+  "protocol": {
+    "obstruction": "prove a positive physical swirl coefficient on the same complete-potential diagonal field and protected core path, including exact vanishing or a quantitative subleading bound for every correction",
+    "parent_commit": "9a7ef975a3c5dab72cb01aaad64c01c10f157d47",
+    "result": "replay the corrected scale-compatible primitive certificate through logarithmic half-gain, closed-chart residual flatness, Cartesian corner transfer, and the same-field localization/force ledger",
+    "retained": "complete fixed-gauge pressure memory, unit viscosity, cutoff curls, both nonlinear crosses, the new square, normalized supports, relative root balls, and weighted flat edges",
+    "scope": "analytic implication relative to the certified provider chain; no positive physical support floor, no positive edge-weight floor, and no unconditional blow-up or competitor exclusion"
+  },
+  "remaining_obligations": [
+    "prove the positive physical swirl coefficient on the same complete-potential diagonal core path",
+    "prove exact vanishing of every correction on that path or the summed one-half leading bound",
+    "only then replay the fixed-time expanding-ball limit before considering competitor exclusion"
+  ],
+  "review": {
+    "analytic_conclusions": {
+      "all_fixed_residual_jets_are_cartesian_corner_flat_relative_to_the_certified_provider_chain": true,
+      "same_field_compact_force_and_preterminal_energy_follow_relative_to_punctured_endpoint_bounds": true,
+      "scale_compatible_certificate_suffices_for_closed_chart_constants": true,
+      "selected_half_gain_absorbs_finite_logs_and_constants": true
+    },
+    "checks": {
+      "cartesian_transfer_keeps_requested_power": true,
+      "comparison_stage_is_minimal": true,
+      "comparison_stage_meets_both_gates": true,
+      "force_jet_reserves_complete_orders": true,
+      "half_gain_keeps_finite_log_constant": true,
+      "physical_separation_has_no_uniform_floor": true
+    },
+    "parameters": {
+      "delta": "49997/100000",
+      "h": "1/200"
+    },
+    "sample_stage_gate": {
+      "fixed_exponent": "164027039/4000000",
+      "stage": "21601",
+      "tail_exponent": "200017597/20000000"
+    },
+    "scope": {
+      "positive_edge_weight_floor_used": false,
+      "positive_physical_support_floor_used": false,
+      "same_field_positive_core_lower_bound_independently_proved_here": false,
+      "unconditional_blowup_or_competitor_exclusion_proved": false
+    }
+  },
+  "source_hashes": {
+    "results/core_scale_compatible_corner_force_replay/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_scale_compatible_corner_force_replay/README.md": "c64e5c9c6c7f31f6b1f194ae013c789ac32b7a58c495c29719db3ff1ee05f71a",
+    "results/core_scale_compatible_corner_force_replay/audit.py": "82c2fd758719573c6e7686f97b8336089d2a8bc2d6036da9ae0a8f833762e797",
+    "results/core_scale_compatible_corner_force_replay/corner_force.py": "f3b3d6044e35e599b0927056cad67de01af1262cb390610ef5705c45910ce9c5",
+    "results/core_scale_compatible_corner_force_replay/protocol.json": "ea1841bc7ad26d053ed69a7cb9c7ed46604c87282f3eb2faa8c9c609661cada9",
+    "results/core_scale_compatible_corner_force_replay/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_scale_compatible_corner_force_replay/test_audit.py": "09bf39e7a7d5d74ed5f0d549874852a90ab4fadc12403fe68375151c8ab2eb0e"
+  },
+  "status": "scale-compatible-corner-flatness-and-force-replayed"
+}
