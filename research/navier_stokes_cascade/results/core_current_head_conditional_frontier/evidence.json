@@ -1,0 +1,95 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_log_reserved_pressure_comparison_replay/evidence.json": "950f85a90508853038b8c91be6824eff9f49a27419a02af1407ef8540c35bffc"
+  },
+  "gates": {
+    "five_live_contracts_enumerated": true,
+    "one_current_head_dependency": true,
+    "scientific_scope_preserved": true,
+    "six_graph_and_frontier_controls": true
+  },
+  "protocol": {
+    "correction": "the old pure-power provider inequality is not the current frontier: it was corrected to a log-weighted source domain and propagated through the residual, corner, localization, force, energy and comparison replays",
+    "frontier": "independent same-object validation of the leading/Borel, same-band gap, full-path ODE, fixed-profile projector and compact/slow weighted-map contracts",
+    "parent_commit": "0a7d6f6ad2e31a5c8e4ab77f4a8a036a00711cf8",
+    "result": "audit the current-head transitive evidence graph and distinguish discharged downstream replays from the live primitive continuum promotion frontier",
+    "scope": "dependency and mathematical-obligation audit only; no tests, hashes or executable ledgers are treated as continuum proofs and no unconditional pulse, force, exclusion or blow-up theorem is claimed"
+  },
+  "remaining_obligations": [
+    "independently audit P1 from the defining leading profile, coefficient recursion and real Borel selector, proving every fixed seminorm is finite before scale selection",
+    "then audit P2 through P5 on that same object without substituting a diagnostic profile, sampled supremum or historical first band",
+    "only after those five continuum contracts are discharged may the already replayed residual, force and comparison implications be considered for unconditional promotion"
+  ],
+  "review": {
+    "checks": {
+      "all_dependency_hashes_match": true,
+      "all_source_hashes_match": true,
+      "current_head_graph_is_acyclic": true,
+      "discharge_chain_is_transitively_connected": true,
+      "five_primitive_contracts_are_in_current_closure": true,
+      "old_provider_frontier_is_followed_by_log_source_and_residual_replays": true
+    },
+    "discharged_relative_to_frontier": {
+      "actual_source_induction": "proved in the log-weighted domain for every fixed stage",
+      "compact_and_slow_operator_bounds": "reconstructed directly",
+      "complete_residual": "replayed with all six groups and separate logarithmic reserves",
+      "energy": "exact preterminal identity and separate endpoint bounds replayed",
+      "localization_and_force": "all twelve localization terms and compact future force replayed",
+      "pressure_and_comparison": "force divergence retained and expanding-ball remainders replayed",
+      "pure_power_source_frontier": "corrected: finite logarithmic degree is allowed and absorbed by one additional compact integration",
+      "terminal_corner_and_endpoint": "replayed on the same fixed-gauge field"
+    },
+    "graph": {
+      "chain_links": {
+        "core_direct_compact_slow_provider_reconstruction_reaches_core_complete_dependency_quantifier_audit": true,
+        "core_log_renormalized_actual_source_induction_reaches_core_direct_compact_slow_provider_reconstruction": true,
+        "core_log_reserved_cartesian_corner_replay_reaches_core_log_reserved_complete_residual_replay": true,
+        "core_log_reserved_complete_residual_replay_reaches_core_log_renormalized_actual_source_induction": true,
+        "core_log_reserved_endpoint_compatibility_join_reaches_core_log_reserved_cartesian_corner_replay": true,
+        "core_log_reserved_localization_force_replay_reaches_core_log_reserved_endpoint_compatibility_join": true,
+        "core_log_reserved_pressure_comparison_replay_reaches_core_log_reserved_preterminal_energy_replay": true,
+        "core_log_reserved_preterminal_energy_replay_reaches_core_log_reserved_localization_force_replay": true
+      },
+      "dependency_hash_checks": 893,
+      "edges": 893,
+      "frontier_links": {
+        "current_head_reaches_core_canonical_full_path_ode_join": true,
+        "current_head_reaches_core_compact_slow_inverse_domain_join": true,
+        "current_head_reaches_core_fixed_profile_projector_join": true,
+        "current_head_reaches_core_leading_background_borel_join": true,
+        "current_head_reaches_core_same_band_gap_join": true
+      },
+      "nodes": 224,
+      "source_hash_checks": 3675
+    },
+    "live_frontier": {
+      "P1_leading_and_borel": "for the same completed leading profile, every fixed coefficient seminorm C_bg(n,m) is finite before the real Borel scale b_n is selected, and the selected locally finite sum retains full pressure",
+      "P2_same_band_gaps": "on one derivative-independent accepted tail, Delta_bg>0, the phase normal has a positive floor, and the value, spectral and factored cone gaps hold for the P1 field",
+      "P3_full_path_ode": "the canonical full-path propagator has finite fixed-jet bounds on the P2 tail while retaining n dot f in pressure, moving normal, varying growth and every cutoff derivative",
+      "P4_fixed_profiles": "one fixed compensator and the same-choice projectors have finite fixed-order seminorms, exact moments and common reserved supports, with all projector-dependent pressure objects recomputed",
+      "P5_weighted_maps": "the shifted two-edge compact maps, zero-Haar inverse and fixed slow response preserve zeta times delta^-p weighted fixed-order domains and complete pressure memory on the P1--P4 field"
+    },
+    "quantifier_guard": {
+      "comparison_order_fixed_T_then_radius_then_core": true,
+      "fixed_m_N_then_finite_stage_then_small_scale_limit": true,
+      "no_stage_uniform_constant_is_needed": true,
+      "one_field_profile_scales_gauges_and_supports_fixed_first": true
+    },
+    "scope": {
+      "downstream_chain_complete_relative_to_five_contracts": true,
+      "five_contracts_independently_reproved_in_this_checkpoint": false,
+      "hashes_or_tests_treated_as_continuum_proof": false,
+      "unconditional_pulse_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_conditional_frontier/.gitignore": "9c3d8658497ba9bb53c1533e27aedd423e1b883206d4a2eff4c31b4e5975a738",
+    "results/core_current_head_conditional_frontier/README.md": "68e319e1136c5084a1c411912b332c1a5b52dbfe5018fd59e636aed38b5aa534",
+    "results/core_current_head_conditional_frontier/audit.py": "bb405007016da15ca008f02033bab0b2d252e1e185c42fceaa11fe6b429a66bc",
+    "results/core_current_head_conditional_frontier/current_frontier.py": "204c80db32847eaa03ce60229424a0c79411cd70a11b03f2569182be125e757a",
+    "results/core_current_head_conditional_frontier/protocol.json": "1512326e1e6abfa24f2bf0af7f4d7d8fdf7aba08d3b88cd8ff1bbb95c293a2b4",
+    "results/core_current_head_conditional_frontier/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_current_head_conditional_frontier/test_audit.py": "3d94b3279b6ffa55fe7b5e5ed43d398efc173e687e9d367d74b33694832c912c"
+  },
+  "status": "current-head-downstream-replays-audited-with-five-contract-continuum-frontier"
+}
