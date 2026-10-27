@@ -1,0 +1,141 @@
+{
+  "dependency_evidence_sha256": {
+    "results/background_jet_foundation/evidence.json": "8d5ceba47fc1f3759d7f25301396584274d264c91af9c67823197d8192fa800d",
+    "results/background_summation/evidence.json": "a2e55ad429914b2ce33aff913efd43165d2fd1f2fb88f13a6edfffc887b23853",
+    "results/core_borel_prescription_closure/evidence.json": "3f412f6d8171c476a5b42c28d79f53986e2ac7744e6b001d4cab8dfd0a5d989b",
+    "results/core_current_head_conditional_frontier/evidence.json": "01162287a73ccaf467c8268766653d6baf6fe3f2eef1be816fda0e41b4c4b010",
+    "results/core_leading_background_borel_join/evidence.json": "cb0fc6bf2b624431ea1f99fe9f920305c04c0fa014c28ef167615914fdd9e1a5"
+  },
+  "gates": {
+    "all_inherited_sources_match": true,
+    "five_exact_controls": true,
+    "five_frozen_dependencies": true,
+    "scientific_scope_preserved": true
+  },
+  "inherited_source_checks": {
+    "background_jet_foundation:EXTERNAL_REVIEW_2026-10-15.md": true,
+    "background_jet_foundation:GOAL.md": true,
+    "background_jet_foundation:results/background_jet_foundation/.gitignore": true,
+    "background_jet_foundation:results/background_jet_foundation/README.md": true,
+    "background_jet_foundation:results/background_jet_foundation/audit.py": true,
+    "background_jet_foundation:results/background_jet_foundation/diagnostics.py": true,
+    "background_jet_foundation:results/background_jet_foundation/foundation.py": true,
+    "background_jet_foundation:results/background_jet_foundation/protocol.json": true,
+    "background_jet_foundation:results/background_jet_foundation/requirements.txt": true,
+    "background_jet_foundation:results/background_jet_foundation/test_audit.py": true,
+    "background_jet_foundation:results/background_summation/evidence.json": true,
+    "background_jet_foundation:results/geometric_pulse_replay/evidence.json": true,
+    "background_summation:GOAL.md": true,
+    "background_summation:results/annular_first_correction/evidence.json": true,
+    "background_summation:results/axis_core_attachment/evidence.json": true,
+    "background_summation:results/background_summation/README.md": true,
+    "background_summation:results/background_summation/audit.py": true,
+    "background_summation:results/background_summation/checks.py": true,
+    "background_summation:results/background_summation/hierarchy.py": true,
+    "background_summation:results/background_summation/protocol.json": true,
+    "background_summation:results/background_summation/requirements.txt": true,
+    "background_summation:results/background_summation/summation.py": true,
+    "background_summation:results/background_summation/test_audit.py": true,
+    "background_summation:results/first_correction_construction/evidence.json": true,
+    "background_summation:results/heat_exterior_audit/evidence.json": true,
+    "background_summation:results/higher_jet_budget/evidence.json": true,
+    "background_summation:results/physical_residual_budget/evidence.json": true,
+    "background_summation:results/stress_realization_audit/evidence.json": true,
+    "core_borel_prescription_closure:results/background_jet_foundation/README.md": true,
+    "core_borel_prescription_closure:results/background_jet_foundation/foundation.py": true,
+    "core_borel_prescription_closure:results/background_summation/README.md": true,
+    "core_borel_prescription_closure:results/background_summation/summation.py": true,
+    "core_borel_prescription_closure:results/core_background_finite_head_budget/budgets.py": true,
+    "core_borel_prescription_closure:results/core_borel_cutoff_certificate/README.md": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/.gitignore": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/README.md": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/audit.py": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/controls.py": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/proof.py": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/protocol.json": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/requirements.txt": true,
+    "core_borel_prescription_closure:results/core_borel_prescription_closure/test_audit.py": true,
+    "core_borel_prescription_closure:results/core_tangential_normal_closure/README.md": true,
+    "core_borel_prescription_closure:results/core_tangential_normal_closure/budgets.py": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/.gitignore": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/README.md": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/audit.py": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/current_frontier.py": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/protocol.json": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/requirements.txt": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/test_audit.py": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/.gitignore": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/README.md": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/audit.py": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/borel_join.py": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/protocol.json": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/requirements.txt": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/test_audit.py": true
+  },
+  "protocol": {
+    "correction": "the first current-head contract must be split: the coefficient inverse and Borel diagonal close from finite fixed-order data, while the finalized leading-profile collar and patch identities remain the precise imported leaf",
+    "parent_commit": "bd83faf6521305b8cd8d9c02c58dd7bf11108588",
+    "pressure": "retain forward pressure reconstruction, the order-two shifted axial-viscosity pressure source, every higher Pi_n and the radial curl-cutoff commutator",
+    "result": "reconstruct the fixed-order background coefficient seminorm and real Borel selector directly, before any scale is selected",
+    "scope": "analytical fixed-order and Borel-selection reconstruction relative to one finalized leading-profile certificate; no numerical scale list, unconditional residual, force, exclusion or blow-up theorem"
+  },
+  "remaining_obligations": [
+    "prove the finalized leading-profile certificate directly from the same core, activation, continuation, modulation, repair and exterior defining maps",
+    "in particular establish every fixed holomorphic-eta collar seminorm, the exact I3 power-law patch and ordered bumps, and the compact velocity/pressure-source identities on that one profile",
+    "then advance the same-band gap contract without replacing continuum infima by sampled diagnostics"
+  ],
+  "review": {
+    "checks": {
+      "geometrically_separated_scales_are_locally_finite_in_fixture": true,
+      "no_adjacent_derivative_word_has_more_than_ceiling_half_slots": true,
+      "ordered_simplex_majorants_are_finite": true,
+      "selector_gives_strict_normalized_margin": true,
+      "selector_uses_every_fixed_row_through_order_n": true
+    },
+    "controls": {
+      "selector": "2603/3",
+      "selector_slacks": {
+        "normalized": "3/200",
+        "strict_after_unit_padding": "0"
+      },
+      "surviving_derivative_slots": {
+        "0": 0,
+        "1": 1,
+        "10": 5,
+        "11": 6,
+        "12": 6,
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 3,
+        "6": 3,
+        "7": 4,
+        "8": 4,
+        "9": 5
+      }
+    },
+    "leading_certificate": {
+      "compact_velocity_and_pressure_source_identities_required": true,
+      "exact_I3_power_law_and_five_ordered_bumps_required": true,
+      "fixed_order_holomorphic_eta_collar_and_smooth_global_jets_required": true,
+      "independently_reproved_here": false,
+      "same_completed_profile": true
+    },
+    "scope": {
+      "coefficient_and_borel_part_of_P1_reconstructed": true,
+      "numerical_infinite_scale_list_required": false,
+      "scale_selected_before_coefficient_seminorm": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_leading_background_seminorm_reconstruction/.gitignore": "9c3d8658497ba9bb53c1533e27aedd423e1b883206d4a2eff4c31b4e5975a738",
+    "results/core_leading_background_seminorm_reconstruction/README.md": "21f062f120ecd2cf39188f6db092426473c777c8551e11ae06ee979b9592643e",
+    "results/core_leading_background_seminorm_reconstruction/audit.py": "f2ab8c984dfc6464ba84e4673e86603b81890cf5f7af016f9e077d5d0e91f4de",
+    "results/core_leading_background_seminorm_reconstruction/protocol.json": "fd0279da63223cb5b97ff5b11dd912563c5ee65c70a7e9566a02ad09df842312",
+    "results/core_leading_background_seminorm_reconstruction/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_leading_background_seminorm_reconstruction/seminorms.py": "7a8ca373a040fcb7650ed10d1e2f1f7d5a998109bcd44c780f7ed91179b10afd",
+    "results/core_leading_background_seminorm_reconstruction/test_audit.py": "78bef1527cfbdc0fd1bd9bbdb7941ff3f864e718e6cd5ba30a422cc766b58e17"
+  },
+  "status": "fixed-order-background-seminorm-and-real-borel-selector-reconstructed-relative-to-leading-certificate"
+}

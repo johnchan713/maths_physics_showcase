@@ -1,0 +1,7 @@
+{
+  "parent_commit": "bd83faf6521305b8cd8d9c02c58dd7bf11108588",
+  "result": "reconstruct the fixed-order background coefficient seminorm and real Borel selector directly, before any scale is selected",
+  "correction": "the first current-head contract must be split: the coefficient inverse and Borel diagonal close from finite fixed-order data, while the finalized leading-profile collar and patch identities remain the precise imported leaf",
+  "pressure": "retain forward pressure reconstruction, the order-two shifted axial-viscosity pressure source, every higher Pi_n and the radial curl-cutoff commutator",
+  "scope": "analytical fixed-order and Borel-selection reconstruction relative to one finalized leading-profile certificate; no numerical scale list, unconditional residual, force, exclusion or blow-up theorem"
+}

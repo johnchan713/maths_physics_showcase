@@ -40,6 +40,7 @@ on:
       - research/navier_stokes_cascade/results/core_log_reserved_preterminal_energy_replay/**
       - research/navier_stokes_cascade/results/core_log_reserved_pressure_comparison_replay/**
       - research/navier_stokes_cascade/results/core_current_head_conditional_frontier/**
+      - research/navier_stokes_cascade/results/core_leading_background_seminorm_reconstruction/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -83,6 +84,7 @@ on:
       - research/navier_stokes_cascade/results/core_log_reserved_preterminal_energy_replay/**
       - research/navier_stokes_cascade/results/core_log_reserved_pressure_comparison_replay/**
       - research/navier_stokes_cascade/results/core_current_head_conditional_frontier/**
+      - research/navier_stokes_cascade/results/core_leading_background_seminorm_reconstruction/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -350,6 +352,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_conditional_frontier/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_current_head_conditional_frontier/evidence.json \
             --output navier_stokes_current_head_conditional_frontier_ci.json
+
+      - name: Reconstruct leading background seminorms and Borel selector
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_leading_background_seminorm_reconstruction/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_leading_background_seminorm_reconstruction/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_leading_background_seminorm_reconstruction/evidence.json \
+            --output navier_stokes_leading_background_seminorm_reconstruction_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
