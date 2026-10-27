@@ -1,0 +1,270 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_corrected_endpoint_join/evidence.json": "7d000d9015468ccb2032020d6b80cb75a56f97f3cb2758b60c756cbd7c573e01",
+    "results/core_corrected_force_join/evidence.json": "d9134eb24000b86eced91780b8a8f36bb11e79c311d4947c56bf2352f99b55b3",
+    "results/core_log_reserved_cartesian_corner_replay/evidence.json": "d14f7cc3a0ff423ce863753470e4e6a672cf07e40eaafe792e0bf5008f3005b9",
+    "results/core_log_reserved_complete_residual_replay/evidence.json": "1b1b7af2c5ae682cbebb3bab0df2a70113836b4566dc56ea743fa5d4b3fab34d",
+    "results/current_endpoint_jets/evidence.json": "de61c70e5aea7ef14663e8fa4d34736bcf50399db4660c1eb3f01827c2e7e6d6",
+    "results/endpoint_foundation/evidence.json": "1325b04b9c7e8a81e13df85f3f3aef2b8de1d0fa2a0d4cd28868552901ef03f7"
+  },
+  "gates": {
+    "closed_time_inputs": true,
+    "scientific_scope_preserved": true,
+    "six_frozen_dependencies": true,
+    "ten_exact_controls": true
+  },
+  "protocol": {
+    "parent_commit": "254ed16c56eb8b2e707e2bb689c48f331dca659e",
+    "quantifier": "each mixed force-jet request raises derivative order and comparison stage finitely; it estimates the already selected field and cutoff sequence rather than selecting a new field",
+    "result": "join the inherited punctured one-sided potential, direct-swirl and fixed-gauge pressure jets to the corrected Cartesian residual flatness on the same field",
+    "scope": "closed-time compatibility inputs for localization only; localization, compact-force extension, energy, comparison and blow-up remain to be replayed"
+  },
+  "remaining_obligations": [
+    "replay the exact axisymmetric localization formula with all twelve residual terms and unit viscosity",
+    "construct and glue the compact smooth future force from the resulting terminal force jets",
+    "then replay preterminal energy, fixed-gauge pressure recovery and expanding-ball comparison"
+  ],
+  "review": {
+    "checks": {
+      "all_sample_derivative_ledgers_match": true,
+      "complete_exterior_heat_and_pressure_jets_retained": true,
+      "every_sample_flat_power_closes": true,
+      "extra_time_derivative_is_only_one_fixed_order": true,
+      "fixed_gauge_complete_pressure_memory_is_not_reset": true,
+      "localization_force_energy_comparison_and_blowup_not_claimed": true,
+      "origin_is_handled_by_residual_flatness_not_field_regularization": true,
+      "punctured_potential_direct_swirl_and_pressure_jets_available_conditionally": true,
+      "request_dependent_stage_does_not_select_a_new_field": true,
+      "same_corrected_field_and_cutoff_sequence_retained": true
+    },
+    "default_request": {
+      "cartesian_factor": 4,
+      "checks": {
+        "closed_residual_flatness_beats_requested_power": true,
+        "direct_swirl_has_three_order_Cauchy_buffer": true,
+        "potential_has_four_order_Cauchy_buffer": true,
+        "pressure_has_two_order_Cauchy_buffer": true,
+        "punctured_orders_match_localization_Cauchy_orders": true,
+        "residual_next_time_derivative_is_fixed_finite_request": true,
+        "same_fixed_field_is_used": true
+      },
+      "closed_residual_exponent": "20025973/20000000",
+      "comparison_stage": 16017,
+      "flat_power": 0,
+      "localization_Cauchy_orders": {
+        "direct_swirl": 3,
+        "potential": 4,
+        "pressure": 2
+      },
+      "localization_force_orders": {
+        "direct_swirl": 2,
+        "potential": 3,
+        "pressure": 1
+      },
+      "punctured_field_orders": {
+        "direct_swirl": 3,
+        "potential": 4,
+        "pressure": 2
+      },
+      "residual_Cauchy_jet": 1,
+      "spatial_order": 0,
+      "time_order": 0,
+      "total_mixed_order": 0
+    },
+    "joined_cover": {
+      "corner": "all fixed jets of R_1(u*,p*) are flat at (x,t)=(0,1)",
+      "exterior": "exact heat swirl and fixed-gauge pressure mixed jets",
+      "overlap": "the inherited axial/equatorial punctured cover overlaps inside the enlarged closed atlas",
+      "punctured": "uniform one-sided A, B, p jets on every |x|>=d>0 terminal compact"
+    },
+    "sample_requests": [
+      {
+        "cartesian_factor": 4,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_fixed_field_is_used": true
+        },
+        "closed_residual_exponent": "20025973/20000000",
+        "comparison_stage": 16017,
+        "flat_power": 0,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 3,
+          "potential": 4,
+          "pressure": 2
+        },
+        "localization_force_orders": {
+          "direct_swirl": 2,
+          "potential": 3,
+          "pressure": 1
+        },
+        "punctured_field_orders": {
+          "direct_swirl": 3,
+          "potential": 4,
+          "pressure": 2
+        },
+        "residual_Cauchy_jet": 1,
+        "spatial_order": 0,
+        "time_order": 0,
+        "total_mixed_order": 0
+      },
+      {
+        "cartesian_factor": 4096,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_fixed_field_is_used": true
+        },
+        "closed_residual_exponent": "240051543/40000000",
+        "comparison_stage": 32818,
+        "flat_power": 5,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 7,
+          "potential": 8,
+          "pressure": 6
+        },
+        "localization_force_orders": {
+          "direct_swirl": 6,
+          "potential": 7,
+          "pressure": 5
+        },
+        "punctured_field_orders": {
+          "direct_swirl": 7,
+          "potential": 8,
+          "pressure": 6
+        },
+        "residual_Cauchy_jet": 5,
+        "spatial_order": 1,
+        "time_order": 3,
+        "total_mixed_order": 4
+      },
+      {
+        "cartesian_factor": 16777216,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_fixed_field_is_used": true
+        },
+        "closed_residual_exponent": "60011891/5000000",
+        "comparison_stage": 101623,
+        "flat_power": 11,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 27,
+          "potential": 28,
+          "pressure": 26
+        },
+        "localization_force_orders": {
+          "direct_swirl": 26,
+          "potential": 27,
+          "pressure": 25
+        },
+        "punctured_field_orders": {
+          "direct_swirl": 27,
+          "potential": 28,
+          "pressure": 26
+        },
+        "residual_Cauchy_jet": 25,
+        "spatial_order": 20,
+        "time_order": 4,
+        "total_mixed_order": 24
+      },
+      {
+        "cartesian_factor": 64,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_fixed_field_is_used": true
+        },
+        "closed_residual_exponent": "120067501/40000000",
+        "comparison_stage": 260832,
+        "flat_power": 2,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 79,
+          "potential": 80,
+          "pressure": 78
+        },
+        "localization_force_orders": {
+          "direct_swirl": 78,
+          "potential": 79,
+          "pressure": 77
+        },
+        "punctured_field_orders": {
+          "direct_swirl": 79,
+          "potential": 80,
+          "pressure": 78
+        },
+        "residual_Cauchy_jet": 77,
+        "spatial_order": 6,
+        "time_order": 70,
+        "total_mixed_order": 76
+      },
+      {
+        "cartesian_factor": 68719476736,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_fixed_field_is_used": true
+        },
+        "closed_residual_exponent": "360045513/20000000",
+        "comparison_stage": 669657,
+        "flat_power": 17,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 203,
+          "potential": 204,
+          "pressure": 202
+        },
+        "localization_force_orders": {
+          "direct_swirl": 202,
+          "potential": 203,
+          "pressure": 201
+        },
+        "punctured_field_orders": {
+          "direct_swirl": 203,
+          "potential": 204,
+          "pressure": 202
+        },
+        "residual_Cauchy_jet": 201,
+        "spatial_order": 100,
+        "time_order": 100,
+        "total_mixed_order": 200
+      }
+    ],
+    "scope": {
+      "closed_time_localization_inputs_joined_conditionally": true,
+      "localization_and_compact_force_replayed_here": false,
+      "same_field_pressure_support_and_gauge_retained": true,
+      "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+      "unconditional_pulse_residual_force_comparison_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_log_reserved_endpoint_compatibility_join/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_log_reserved_endpoint_compatibility_join/README.md": "8ad34dfaf3eabc57b818ec5fe4bea6a532f29ff09bddb2a30b7a987e164a5a47",
+    "results/core_log_reserved_endpoint_compatibility_join/audit.py": "49cb181d9a659eaec7caad579e82e8b4d9fff282e3a470892cbfd25172f1dfd3",
+    "results/core_log_reserved_endpoint_compatibility_join/endpoint_compatibility.py": "b25f86d2c57ba8e861b4529fff729d37246567a7007ef30d2f481e15f51b298e",
+    "results/core_log_reserved_endpoint_compatibility_join/protocol.json": "7d081d5aafb22c762360db183515f21436752dfec298ee98d8e0d04acb42b9e5",
+    "results/core_log_reserved_endpoint_compatibility_join/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_log_reserved_endpoint_compatibility_join/test_audit.py": "1e71a4b8973fcc1b856e838a34fbd3b15764226705013a20a18b2f6af9384a66"
+  },
+  "status": "log-reserved-corner-and-punctured-endpoint-inputs-joined-conditionally"
+}
