@@ -1,0 +1,6 @@
+{
+  "parent_commit": "985189b8dae86e2df7a4d3bfe94a592d20bbaae7",
+  "correction": "the pure-power normalized source supremum in the parent is stronger than the established logarithmic primitive domain; finite logarithmic degree must be retained and absorbed with explicit positive exponent slack",
+  "result": "derive the logarithmically renormalized actual-source supremum from the seed and sourced/generic formula graphs, and extend it to every fixed finite stage",
+  "scope": "source-domain induction and reserve rule only; the six-group residual, localization, force, comparison and blow-up replays remain to be performed"
+}

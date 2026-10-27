@@ -1,0 +1,226 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_direct_compact_slow_provider_reconstruction/evidence.json": "ad698e873be65c32dcd6a2e00ce98dc1ffec1a514bfa5075d0b23813b8a52ad3",
+    "results/core_finite_stage_compact_recurrence/evidence.json": "f49b4132de95667046e884aeaf0049bd6df21a9d1ed34272c98a8fd739147c34",
+    "results/core_next_sourced_mean_tail_join/evidence.json": "8ac53e2107e543b4fbd8471df2eae6ad07675ad7d9bdd91c27b540b55813d055",
+    "results/core_post_signed_mean_closure/evidence.json": "9bdbd0648a56ebf220a8c464a0d477564b1aac27664988fcb0f3324cdd4a38d0",
+    "results/core_prefast_weighted_source_join/evidence.json": "3710e70004c3ea58287b2370ef49deda048cd7eac571716e1a960ad965b2e8fc",
+    "results/core_primitive_margin_normalization_reconciliation/evidence.json": "c08d54fa1cf021e7c7cc80da1b264465a163617fdd23479d16ec9cd925d609c2"
+  },
+  "gates": {
+    "actual_source_induction": true,
+    "scientific_scope_preserved": true,
+    "six_frozen_dependencies": true,
+    "ten_exact_controls": true
+  },
+  "protocol": {
+    "correction": "the pure-power normalized source supremum in the parent is stronger than the established logarithmic primitive domain; finite logarithmic degree must be retained and absorbed with explicit positive exponent slack",
+    "parent_commit": "985189b8dae86e2df7a4d3bfe94a592d20bbaae7",
+    "result": "derive the logarithmically renormalized actual-source supremum from the seed and sourced/generic formula graphs, and extend it to every fixed finite stage",
+    "scope": "source-domain induction and reserve rule only; the six-group residual, localization, force, comparison and blow-up replays remain to be performed"
+  },
+  "remaining_obligations": [
+    "insert the corrected logarithmic source domain into the direct compact and slow estimates",
+    "allocate explicit reserve in all six residual groups, including viscosity, cutoffs and both interaction orientations",
+    "then replay localization, compact force, energy and fixed-gauge comparison on the same field"
+  ],
+  "review": {
+    "checks": {
+      "actual_seed_source_formula_and_pressure_refresh_retained": true,
+      "complete_pressure_and_covariance_memory_retained": true,
+      "corrected_source_frontier_has_finite_log_degree": true,
+      "degree_one_log_renormalization_is_uniform": true,
+      "every_fixed_stage_formula_graph_is_finite": true,
+      "extra_compact_integration_leaves_positive_margin_after_logs": true,
+      "parent_pure_power_frontier_is_not_implied_by_log_domain": true,
+      "positive_reserve_absorbs_every_fixed_log_power": true,
+      "six_group_residual_replay_not_silently_claimed": true,
+      "sourced_and_generic_actual_formula_routes_used": true
+    },
+    "corrected_source_frontier": {
+      "finite_log_degree_for_each_fixed_request": true,
+      "invalid_unless_separately_proved": "sup_l epsilon_l^(-b_j) max_|alpha|<=R sup_Omega zeta^(-1) delta^p |D^alpha F_(j,l)| < infinity",
+      "memory": [
+        "six_covariance_entries",
+        "actual_axial_velocity_gd_minus_A1gd",
+        "whole_dZ_Jz_plus_c_rho_P",
+        "old_pressure_and_Pi1_Pi2"
+      ],
+      "proof": "the fixed primitive leaves have band-uniform weighted jets with finite log degree; the actual seed and sourced/generic DAGs use only finitely many sum, product, derivative, Haar, moment, compact, temporal-inverse and fixed slow-response operations",
+      "proved_domain": "sup_l epsilon_l^(-b_j) (1+|log epsilon_l|)^(-P_(j,R)) max_|alpha|<=R sup_Omega zeta^(-1) delta^p |D^alpha F_(j,l)| < infinity",
+      "pure_power_recovery": "spend any explicit sigma>0 of epsilon exponent: (1+|log epsilon|)^P epsilon^sigma <= exp(P^2/(4 sigma))"
+    },
+    "fixed_stage_examples": [
+      {
+        "base_strict_margins": {
+          "A0": "1/20000000",
+          "A1": "1/20000000"
+        },
+        "distinct_common_poles": [
+          "363000270",
+          "363000270"
+        ],
+        "finite_formula_graph": true,
+        "first_real_interface_ceiling": 500038,
+        "harmonic_bound": 4,
+        "one_extra_integration_q_reserve": "1/20000000",
+        "physical_jet": 0,
+        "raw_sources": {
+          "A0": 60200007,
+          "A1": 60100009
+        },
+        "requested_power": 0,
+        "retained_strict_margin": {
+          "A0": "3/40000000",
+          "A1": "3/40000000"
+        },
+        "spend_on_logs": "1/40000000",
+        "stage": 0
+      },
+      {
+        "base_strict_margins": {
+          "A0": "1/20000000",
+          "A1": "1/20000000"
+        },
+        "distinct_common_poles": [
+          "365400480",
+          "365400480",
+          "365400480"
+        ],
+        "finite_formula_graph": true,
+        "first_real_interface_ceiling": 1000067,
+        "harmonic_bound": 8,
+        "one_extra_integration_q_reserve": "1/20000000",
+        "physical_jet": 0,
+        "raw_sources": {
+          "A0": 60200007,
+          "A1": 60000015
+        },
+        "requested_power": 0,
+        "retained_strict_margin": {
+          "A0": "3/40000000",
+          "A1": "3/40000000"
+        },
+        "spend_on_logs": "1/40000000",
+        "stage": 1
+      },
+      {
+        "base_strict_margins": {
+          "A0": "1/20000000",
+          "A1": "1/20000000"
+        },
+        "distinct_common_poles": [
+          "369000618",
+          "369000618",
+          "369000618",
+          "369000618"
+        ],
+        "finite_formula_graph": true,
+        "first_real_interface_ceiling": 1700084,
+        "harmonic_bound": 16,
+        "one_extra_integration_q_reserve": "1/20000000",
+        "physical_jet": 0,
+        "raw_sources": {
+          "A0": 60200007,
+          "A1": 59900021
+        },
+        "requested_power": 0,
+        "retained_strict_margin": {
+          "A0": "3/40000000",
+          "A1": "3/40000000"
+        },
+        "spend_on_logs": "1/40000000",
+        "stage": 2
+      }
+    ],
+    "one_sourced_generic_cycle": {
+      "generic": {
+        "A0_source": "99999/100000",
+        "A1_source": "74999/50000",
+        "complete_covariance": "149999/100000",
+        "covariance_error": "99999/50000",
+        "fast": "74999/50000",
+        "minimum": "74999/50000",
+        "pointwise_pressure_change": "74999/50000",
+        "post_signed_Q1": "74999/50000",
+        "postfast_scalar": "149999/100000",
+        "slow": "149999/100000",
+        "whole_regular": "74999/50000"
+      },
+      "memory": [
+        "six_covariance_entries",
+        "actual_axial_velocity_gd_minus_A1gd",
+        "whole_dZ_Jz_plus_c_rho_P",
+        "old_pressure_and_Pi1_Pi2"
+      ],
+      "no_desired_source_callback_used": true,
+      "source_operations": [
+        "finite sums and products",
+        "fixed coefficient derivatives",
+        "auxiliary Haar projection",
+        "radial moments and projectors",
+        "oriented compact maps",
+        "zero-Haar temporal inverse",
+        "fixed five-profile slow response"
+      ],
+      "sourced": {
+        "A0_source": "99999/100000",
+        "A1_source": "199997/100000",
+        "fast": "199997/100000",
+        "minimum": "199997/100000",
+        "postfast_scalar": "99999/50000",
+        "postwave_Qcirc": "199997/100000",
+        "slow": "99999/50000",
+        "whole_regular": "199997/100000"
+      }
+    },
+    "residual_groups": [
+      "time",
+      "viscosity",
+      "pressure",
+      "old_new",
+      "new_old",
+      "new_square"
+    ],
+    "scope": {
+      "log_renormalized_actual_source_supremum_proved_for_every_fixed_stage": true,
+      "pure_power_source_supremum_without_spending_slack_proved": false,
+      "six_group_complete_residual_replayed_with_log_reserve": false,
+      "unconditional_force_comparison_or_blowup_claimed": false
+    },
+    "seed": {
+      "every_prefast_group_meets_mu": true,
+      "fresh_slow_rate": "149999/100000",
+      "full_pressure_recomputed_after_fast": true,
+      "kappa": "1/100000",
+      "limiting_prefast_groups": [
+        "complete_wave_wave",
+        "full_primary_linear",
+        "mean_wave_phase",
+        "radial_W_derivative",
+        "radial_W_minus_stress",
+        "swirl_mean_linear",
+        "tangential_mean_fast_time"
+      ],
+      "memory": [
+        "six_covariance_entries",
+        "actual_axial_velocity_gd_minus_A1gd",
+        "whole_dZ_Jz_plus_c_rho_P",
+        "old_pressure_and_Pi1_Pi2"
+      ],
+      "postfast_scalar_rate": "149999/100000",
+      "prefast_source_rate": "99999/100000",
+      "source_formula": "linear + complete_wave_wave + complete_mean_wave"
+    }
+  },
+  "source_hashes": {
+    "results/core_log_renormalized_actual_source_induction/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_log_renormalized_actual_source_induction/README.md": "07d49102b5242316bf82cabe601c0fda0eb64474cc8660728ca5c03b46f5dfe9",
+    "results/core_log_renormalized_actual_source_induction/audit.py": "b6144eb7dd484afbb9f691ec80d212da23f0570539d5e93b8e938f71cbd9d696",
+    "results/core_log_renormalized_actual_source_induction/protocol.json": "fabf1ef4f3770c0e05c2368d0de60e684770d4f37f675891dbc08a8bf64bcbba",
+    "results/core_log_renormalized_actual_source_induction/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_log_renormalized_actual_source_induction/source_induction.py": "c004f0d0c0d5950ab161dce08f7eeb71a07148ff1a01d911096901263088c7f5",
+    "results/core_log_renormalized_actual_source_induction/test_audit.py": "5be5173f67a093e198e59b98c47d8682a365c3419d5b25d3dde62dd65d8bee04"
+  },
+  "status": "log-renormalized-actual-source-tail-induction-proved-with-residual-replay-frontier"
+}
