@@ -1,0 +1,164 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_certified_finite_stage_domain_join/evidence.json": "85260f36a3f60668735e2cc25cd1c37cdbe532134aa86b8569c8b8d708adc190",
+    "results/core_compact_slow_inverse_domain_join/evidence.json": "129ae2d83800c7f78c79c9a7eba38f2405c8d17c83f0ec466975c49f2bb63e86",
+    "results/core_complete_dependency_quantifier_audit/evidence.json": "87861a317f18040884d88e0f5893c46f16438e395a780a9ab65e00cd7c55dffa",
+    "results/core_fixed_profile_projector_join/evidence.json": "08ee8eac5d445843295dba79a45ff82e587b41d0e285d63151beb8a49696c8b2"
+  },
+  "gates": {
+    "direct_operator_reconstruction": true,
+    "four_frozen_dependencies": true,
+    "nine_exact_controls": true,
+    "scientific_scope_preserved": true
+  },
+  "protocol": {
+    "correction": "finite smoothness on each physical band does not by itself imply the weighted source constant is uniform over the accepted infinite tail; the missing statement is a normalized source supremum for the actual same-stage rows",
+    "parent_commit": "05e76e48ca83557535c30f2c0ee8994231a6a264",
+    "result": "directly reconstruct the fixed-order shifted compact-map and fixed slow-response estimates, retaining their physical shift, edge orientation, supports, axial velocity and moving pressure data",
+    "scope": "direct operator estimate and exact source frontier only; no unconditional generated-source, complete-residual, compact-force, comparison or blow-up theorem"
+  },
+  "remaining_obligations": [
+    "prove the normalized weighted source supremum uniformly over the accepted band tail for every fixed stage and requested finite jet",
+    "derive those bounds from the actual matching-stage covariance, axial velocity, moving pressure and support formulas rather than a provider flag",
+    "then insert the direct compact and slow estimates into the six-group complete residual and replay localization, force and comparison"
+  ],
+  "review": {
+    "checks": {
+      "actual_uniform_source_supremum_remains_explicit": true,
+      "all_six_residual_groups_remain": true,
+      "both_flat_edges_use_the_correct_integral_orientation": true,
+      "compact_remainder_has_explicit_gain_and_request": true,
+      "fixed_order_compact_constant_is_finite": true,
+      "physical_shift_is_not_removed": true,
+      "provider_route_is_finite_and_acyclic": true,
+      "scope_is_conditional": true,
+      "slow_response_keeps_axial_velocity_and_moving_pressure": true
+    },
+    "compact_remainder_bound": {
+      "epsilon_gain": "31*kappa",
+      "integrations": 31,
+      "nonzero_mode_divisor_bound": "|(v_r dot k)^-1| < 3*|k|_1",
+      "output_order": 17,
+      "physical_shift_retained": true,
+      "source_order": 82,
+      "zero_haar_weighted_moment_required": true
+    },
+    "fixed_order_compact_bound": {
+      "finite_profile_dependent_constant": true,
+      "fixed_coefficient_derivatives_commute_under_shifted_integral": true,
+      "input_order": 17,
+      "input_pole": 23,
+      "output_order": 17,
+      "output_pole": 23,
+      "three_regions": [
+        "inner_correct_orientation",
+        "compact_transition",
+        "outer_correct_orientation"
+      ]
+    },
+    "fixed_slow_response_bound": {
+      "Jtheta_order": 19,
+      "P_and_Jz_order": 18,
+      "conditioning": "fixed lambda^-1",
+      "finite_profile_dependent_constant": true,
+      "full_axial_velocity_retained": true,
+      "moving_pressure_product": "partial_Z(Jz+c_rho*P), including (partial_Z c_rho)*P",
+      "output_order": 17,
+      "scale_interval": "1/4 <= s <= 4"
+    },
+    "flat_edge_examples": [
+      {
+        "coefficient": "1",
+        "fixed_power_absorbed_by_positive_quadratic_exponential": true,
+        "flat_limit": 0,
+        "power": 0,
+        "substitution": "y=1/x"
+      },
+      {
+        "coefficient": "1",
+        "fixed_power_absorbed_by_positive_quadratic_exponential": true,
+        "flat_limit": 0,
+        "power": 7,
+        "substitution": "y=1/x"
+      },
+      {
+        "coefficient": "1/64",
+        "fixed_power_absorbed_by_positive_quadratic_exponential": true,
+        "flat_limit": 0,
+        "power": 200003,
+        "substitution": "y=1/x"
+      }
+    ],
+    "oriented_compact_map": {
+      "coefficient_derivatives_do_not_differentiate_Ma_vr": true,
+      "inner_edge": {
+        "active_integral": "I_- = integral_{-infinity}^0 F(U+a,y+Ma v_r) da",
+        "flat_factor": "exp(-w^2/U^2)",
+        "source_interval": "0 < U+a < U"
+      },
+      "outer_edge": {
+        "active_integral": "I_+ = integral_0^infinity F(U+a,y+Ma v_r) da",
+        "flat_factor": "exp(-4/(L-U)^2)",
+        "source_interval": "U < U+a < L"
+      },
+      "primitive": "g_e*((1-chi)*I_- - chi*I_+)",
+      "shift_is_retained": true,
+      "wrong_orientation_fails": "I_- can approach a nonzero total integral at U=L while the outer weight vanishes; I_+ has the symmetric failure at U=0"
+    },
+    "provider_order": [
+      "actual_weighted_source_jets",
+      "shifted_left_right_integrals",
+      "oriented_compact_primitive",
+      "zero_haar_fast_inverse",
+      "fresh_pressure_and_moments",
+      "fixed_five_profile_slow_response",
+      "matching_stage_residual"
+    ],
+    "remaining_source_frontier": {
+      "complete_inputs": [
+        "all six covariance entries",
+        "axial velocity gd-A1*gd",
+        "Jz+c_rho*P",
+        "old pressure and Pi1/Pi2 memory"
+      ],
+      "exact_zero_haar_weighted_moments_required_for_flat_remainders": true,
+      "normalized_source_supremum": "sup_{bands ell>=ell_*} epsilon_ell^(-b_j) max_{|alpha|<=R_j(m,N)} sup_{Omega_{j,ell}} zeta^(-1) delta^(p_{j,alpha}) |D^alpha F_{j,ell}| < infinity",
+      "operator_estimate_implies_source_estimate": false,
+      "pointwise_band_smoothness_implies_tail_supremum": false,
+      "proved_from_raw_generated_source_formulas_here": false,
+      "same_fixed_profiles_roots_supports_and_gauges_required": true,
+      "same_stage_required": true
+    },
+    "residual_ledger": {
+      "K_m": "2*A+3/2+2*m",
+      "delta": "49997/100000",
+      "groups": [
+        "time",
+        "viscosity",
+        "pressure",
+        "old_new",
+        "new_old",
+        "new_square"
+      ],
+      "h": "1/200",
+      "kappa": "1/100000",
+      "positive_stage_slope": true,
+      "target": "|R(U^[j])|_m <= C_(j,m,N) q^[h*B_j-(3/2+2h+2m+eta)]"
+    },
+    "scope": {
+      "actual_generated_source_tail_supremum_proved": false,
+      "compact_and_slow_operator_bounds_reconstructed_directly": true,
+      "unconditional_complete_residual_force_comparison_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_direct_compact_slow_provider_reconstruction/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_direct_compact_slow_provider_reconstruction/README.md": "a109b3a201357df0910aa0c0ff6ebc7411051d6bace6ecd81b585e2bb6df4a0b",
+    "results/core_direct_compact_slow_provider_reconstruction/audit.py": "387446ccb44648bd0d3b06f19b16847f582e2f7ea1a7856c562ba6afbb887517",
+    "results/core_direct_compact_slow_provider_reconstruction/protocol.json": "72aca317b4d6028484a0c527f139b980daa02e7d124b6ad699d30a32e3257e88",
+    "results/core_direct_compact_slow_provider_reconstruction/provider_reconstruction.py": "b328ae07170e0d09820cdee496061419672b48efb8cc68c9b969d94653986e9d",
+    "results/core_direct_compact_slow_provider_reconstruction/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_direct_compact_slow_provider_reconstruction/test_audit.py": "28be667fe1969beed9af993891ef4c7d28ab6885fc11c8565654de5f7e0e7c6b"
+  },
+  "status": "direct-compact-slow-operators-proved-with-actual-source-supremum-frontier"
+}

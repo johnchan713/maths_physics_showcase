@@ -1,0 +1,6 @@
+{
+  "parent_commit": "05e76e48ca83557535c30f2c0ee8994231a6a264",
+  "result": "directly reconstruct the fixed-order shifted compact-map and fixed slow-response estimates, retaining their physical shift, edge orientation, supports, axial velocity and moving pressure data",
+  "correction": "finite smoothness on each physical band does not by itself imply the weighted source constant is uniform over the accepted infinite tail; the missing statement is a normalized source supremum for the actual same-stage rows",
+  "scope": "direct operator estimate and exact source frontier only; no unconditional generated-source, complete-residual, compact-force, comparison or blow-up theorem"
+}
