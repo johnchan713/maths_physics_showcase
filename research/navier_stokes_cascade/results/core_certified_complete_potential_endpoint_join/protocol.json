@@ -1,0 +1,8 @@
+{
+  "parent_commit": "747ee32f11aa9b8336b0686b6f66a5affa31b1d7",
+  "field": "the same certified-domain locally finite complete-potential diagonal, fixed potential and pressure gauges, direct swirl, supports and cutoff sequence",
+  "endpoint_condition": "for every fixed spatial/time jet, the representative and one extra time derivative are uniformly bounded on each enlarged punctured closed chart through |eta|=1 and T=0",
+  "correction": "no uniform stage-constant growth is required at the endpoint because every q-positive compact sees finitely many fixed stages before the terminal limit; the positive-radius equator lies in the unchanged heat exterior",
+  "result": "conditional compatible one-sided potential, direct-swirl, velocity and complete-pressure jets at t=1 on punctured local compacts",
+  "scope": "no origin regularization, analytic or zero future continuation, localization, global force, energy, comparison or blow-up theorem"
+}

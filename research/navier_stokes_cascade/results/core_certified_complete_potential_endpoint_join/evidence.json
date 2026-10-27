@@ -1,0 +1,597 @@
+{
+  "closure": {
+    "analytic_or_zero_future_continuation_licensed": false,
+    "certified_fixed_stage_domains_retained": true,
+    "compatible_one_sided_C_infinity_potential_direct_swirl_velocity_and_pressure_jets_on_punctured_terminal_compacts_follow_conditionally": true,
+    "complete_exterior_heat_and_pressure_mixed_jets_retained": true,
+    "localization_initialization_admissible_force_energy_global_comparison_or_blowup_proved": false,
+    "nonzero_exterior_time_Taylor_series_has_zero_radius": true,
+    "primitive_all_order_endpoint_contracts_independently_proved": false,
+    "same_certified_complete_diagonal_field_used": true,
+    "stage_uniform_constant_bound_required": false,
+    "terminal_origin_regularized": false
+  },
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_finite_stage_compact_recurrence/evidence.json": "f49b4132de95667046e884aeaf0049bd6df21a9d1ed34272c98a8fd739147c34",
+    "results/core_finite_support_closure/evidence.json": "b58b5e36e18e5ad5938ff81c12db9706d1c229b5e4d549b3604f58bd1d6e7867",
+    "results/current_endpoint_jets/evidence.json": "de61c70e5aea7ef14663e8fa4d34736bcf50399db4660c1eb3f01827c2e7e6d6",
+    "results/endpoint_foundation/evidence.json": "1325b04b9c7e8a81e13df85f3f3aef2b8de1d0fa2a0d4cd28868552901ef03f7",
+    "results/physical_pulse_transfer/evidence.json": "4fd33b054abaa66aa34052eccf97086a1db9ea8325afe857b1de35e03e63fc85"
+  },
+  "gates": {
+    "conditional_scope": true,
+    "exact_controls": true,
+    "historical_sources": true,
+    "six_frozen_records": true
+  },
+  "inherited_source_checks": {
+    "core_certified_complete_potential_diagonal_join:results/canonical_local_realization/realization.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/.gitignore": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/README.md": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/protocol.json": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/requirements.txt": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/test_audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_finite_stage_domain_join/certified_recurrence.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_certified_complete_potential_diagonal_join:results/finite_stage_induction/induction.py": true,
+    "core_certified_complete_potential_diagonal_join:results/realization_foundation/realized_checks.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/.gitignore": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/README.md": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/controls.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/recurrence.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/requirements.txt": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/test_audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_next_sourced_mean_tail_join/budgets.py": true,
+    "core_finite_stage_compact_recurrence:results/core_post_signed_mean_closure/budgets.py": true,
+    "core_finite_stage_compact_recurrence:results/core_post_signed_seed_sync/ledger.py": true,
+    "core_finite_stage_compact_recurrence:results/finite_stage_induction/induction.py": true,
+    "core_finite_support_closure:results/auxiliary_geometry_audit/README.md": true,
+    "core_finite_support_closure:results/auxiliary_geometry_audit/geometry.py": true,
+    "core_finite_support_closure:results/compact_mean_corrections/mean_system.py": true,
+    "core_finite_support_closure:results/compact_mean_foundation/README.md": true,
+    "core_finite_support_closure:results/core_axial_potential_pressure_gain/README.md": true,
+    "core_finite_support_closure:results/core_axial_potential_pressure_gain/bounds.py": true,
+    "core_finite_support_closure:results/core_compact_trace_gate/README.md": true,
+    "core_finite_support_closure:results/core_compact_trace_gate/bounds.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/.gitignore": true,
+    "core_finite_support_closure:results/core_finite_support_closure/README.md": true,
+    "core_finite_support_closure:results/core_finite_support_closure/audit.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/bounds.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/controls.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/protocol.json": true,
+    "core_finite_support_closure:results/core_finite_support_closure/requirements.txt": true,
+    "core_finite_support_closure:results/core_finite_support_closure/test_audit.py": true,
+    "core_finite_support_closure:results/core_next_sourced_wave_join/README.md": true,
+    "core_finite_support_closure:results/core_next_sourced_wave_join/budgets.py": true,
+    "core_finite_support_closure:results/source_envelope_edge_audit/README.md": true,
+    "core_finite_support_closure:results/source_envelope_edge_audit/source_bounds.py": true,
+    "current_endpoint_jets:results/auxiliary_geometry_audit/evidence.json": true,
+    "current_endpoint_jets:results/background_jet_foundation/evidence.json": true,
+    "current_endpoint_jets:results/current_endpoint_jets/.gitignore": true,
+    "current_endpoint_jets:results/current_endpoint_jets/README.md": true,
+    "current_endpoint_jets:results/current_endpoint_jets/audit.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/endpoint.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/endpoint_checks.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/protocol.json": true,
+    "current_endpoint_jets:results/current_endpoint_jets/requirements.txt": true,
+    "current_endpoint_jets:results/current_endpoint_jets/test_audit.py": true,
+    "current_endpoint_jets:results/current_potential_realization/evidence.json": true,
+    "current_endpoint_jets:results/finite_stage_induction/evidence.json": true,
+    "current_endpoint_jets:results/geometric_pulse_replay/evidence.json": true,
+    "current_endpoint_jets:results/heat_exterior_audit/evidence.json": true,
+    "current_endpoint_jets:results/localized_force_extension/evidence.json": true,
+    "current_endpoint_jets:results/physical_pulse_transfer/evidence.json": true,
+    "endpoint_foundation:results/annular_exterior_foundation/evidence.json": true,
+    "endpoint_foundation:results/annular_exterior_foundation/exterior_bounds.py": true,
+    "endpoint_foundation:results/auxiliary_geometry_audit/evidence.json": true,
+    "endpoint_foundation:results/coefficient_support_audit/evidence.json": true,
+    "endpoint_foundation:results/compact_mean_foundation/evidence.json": true,
+    "endpoint_foundation:results/core_all_order_foundation/evidence.json": true,
+    "endpoint_foundation:results/current_endpoint_jets/evidence.json": true,
+    "endpoint_foundation:results/endpoint_foundation/.gitignore": true,
+    "endpoint_foundation:results/endpoint_foundation/README.md": true,
+    "endpoint_foundation:results/endpoint_foundation/audit.py": true,
+    "endpoint_foundation:results/endpoint_foundation/protocol.json": true,
+    "endpoint_foundation:results/endpoint_foundation/requirements.txt": true,
+    "endpoint_foundation:results/endpoint_foundation/terminal_bounds.py": true,
+    "endpoint_foundation:results/endpoint_foundation/terminal_checks.py": true,
+    "endpoint_foundation:results/endpoint_foundation/test_audit.py": true,
+    "endpoint_foundation:results/physical_pulse_foundation/evidence.json": true,
+    "endpoint_foundation:results/realization_foundation/evidence.json": true,
+    "endpoint_foundation:results/realization_foundation/realized_checks.py": true,
+    "physical_pulse_transfer:results/actual_band_pulse_bounds/evidence.json": true,
+    "physical_pulse_transfer:results/auxiliary_geometry_audit/evidence.json": true,
+    "physical_pulse_transfer:results/background_jet_foundation/evidence.json": true,
+    "physical_pulse_transfer:results/coefficient_support_audit/evidence.json": true,
+    "physical_pulse_transfer:results/compact_mean_corrections/evidence.json": true,
+    "physical_pulse_transfer:results/geometric_pulse_replay/evidence.json": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/.gitignore": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/README.md": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/audit.py": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/protocol.json": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/requirements.txt": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/test_audit.py": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/transfer.py": true,
+    "physical_pulse_transfer:results/physical_wave_interface/evidence.json": true,
+    "physical_pulse_transfer:results/weighted_background_edges/evidence.json": true
+  },
+  "remaining_obligations": [
+    "join localization and zero initialization to this same endpoint field without resetting gauges or cutoffs",
+    "then construct the compact smooth force and verify whole-space energy and global comparison on that field",
+    "retain the singular origin and every unresolved continuum premise before any blow-up claim"
+  ],
+  "review": {
+    "atlas": {
+      "checks": {
+        "admitted_first_band_margin": true,
+        "both_enlarged_boundary_bands_retained": true,
+        "doubled_stage_cutoffs_leave_finitely_many_terms": true,
+        "full_fourQ_margin_used": true,
+        "same_closed_labels_colors_lifts_and_physical_q_bumps": true,
+        "terminal_mesh_labels_already_selected": true
+      },
+      "enlarged_q_over_Q": "1/4<=q/Q<=4",
+      "enlarged_window": {
+        "count": 9,
+        "first": 18,
+        "last": 26
+      },
+      "historical_narrow_window": {
+        "count": 7,
+        "first": 19,
+        "last": 25
+      },
+      "observation": "q_e=min(qstar/16,2^(-ell0-2)); tau<=q_e/16; |z|<=(q_e/16)^D",
+      "rows": [
+        {
+          "band": 16,
+          "terminal_time_centers": [
+            -1,
+            1
+          ]
+        },
+        {
+          "band": 20,
+          "terminal_time_centers": [
+            -1,
+            1
+          ]
+        },
+        {
+          "band": 1000000,
+          "terminal_time_centers": [
+            -1,
+            1
+          ]
+        }
+      ]
+    },
+    "checks": {
+      "certified_diagonal_gain": true,
+      "certified_diagonal_seed": true,
+      "complete_exterior_jets": true,
+      "complete_representatives": true,
+      "enlarged_closed_atlas": true,
+      "pressure_second_jet_keeps_cross": true,
+      "pressure_time_sign_and_memory": true,
+      "punctured_cover": true
+    },
+    "exact_controls_are_not_actual_endpoint_fields": true,
+    "exterior": {
+      "checks": {
+        "Cartesian_frame_derivatives_bounded_on_r_ge_rmin_positive": true,
+        "all_36_mixed_radial_pressure_identities_exact": true,
+        "all_terminal_values_below_same_positive_majorants": true,
+        "exact_zero_radius_ratio_identity": true,
+        "factorial_lower_bounds": true,
+        "finite_Zmax_on_every_positive_radius_late_time_compact": true,
+        "full_pressure_Leibniz_convolution_never_truncated": true,
+        "no_global_complex_heat_neighborhood_or_convergent_terminal_series_used": true,
+        "pressure_density_integrable_at_infinity_for_every_fixed_j": true,
+        "smooth_one_sided_jets_do_not_license_analytic_or_zero_future": true
+      },
+      "exterior_pressure": "p=-integral_r^infinity K(rho,tau)^2*d rho/rho",
+      "exterior_swirl": "K=C*r^(-1-2h)*H(4*tau/r^2)",
+      "mixed_terminal_rows": [
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 0,
+          "terminal_pressure_identity": true,
+          "time_order": 0
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 0,
+          "terminal_pressure_identity": true,
+          "time_order": 1
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 0,
+          "terminal_pressure_identity": true,
+          "time_order": 2
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 0,
+          "terminal_pressure_identity": true,
+          "time_order": 3
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 0,
+          "terminal_pressure_identity": true,
+          "time_order": 4
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 0,
+          "terminal_pressure_identity": true,
+          "time_order": 5
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 1,
+          "terminal_pressure_identity": true,
+          "time_order": 0
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 1,
+          "terminal_pressure_identity": true,
+          "time_order": 1
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 1,
+          "terminal_pressure_identity": true,
+          "time_order": 2
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 1,
+          "terminal_pressure_identity": true,
+          "time_order": 3
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 1,
+          "terminal_pressure_identity": true,
+          "time_order": 4
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 1,
+          "terminal_pressure_identity": true,
+          "time_order": 5
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 2,
+          "terminal_pressure_identity": true,
+          "time_order": 0
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 2,
+          "terminal_pressure_identity": true,
+          "time_order": 1
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 2,
+          "terminal_pressure_identity": true,
+          "time_order": 2
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 2,
+          "terminal_pressure_identity": true,
+          "time_order": 3
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 2,
+          "terminal_pressure_identity": true,
+          "time_order": 4
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 2,
+          "terminal_pressure_identity": true,
+          "time_order": 5
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 3,
+          "terminal_pressure_identity": true,
+          "time_order": 0
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 3,
+          "terminal_pressure_identity": true,
+          "time_order": 1
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 3,
+          "terminal_pressure_identity": true,
+          "time_order": 2
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 3,
+          "terminal_pressure_identity": true,
+          "time_order": 3
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 3,
+          "terminal_pressure_identity": true,
+          "time_order": 4
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 3,
+          "terminal_pressure_identity": true,
+          "time_order": 5
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 4,
+          "terminal_pressure_identity": true,
+          "time_order": 0
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 4,
+          "terminal_pressure_identity": true,
+          "time_order": 1
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 4,
+          "terminal_pressure_identity": true,
+          "time_order": 2
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 4,
+          "terminal_pressure_identity": true,
+          "time_order": 3
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 4,
+          "terminal_pressure_identity": true,
+          "time_order": 4
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 4,
+          "terminal_pressure_identity": true,
+          "time_order": 5
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 5,
+          "terminal_pressure_identity": true,
+          "time_order": 0
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 5,
+          "terminal_pressure_identity": true,
+          "time_order": 1
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 5,
+          "terminal_pressure_identity": true,
+          "time_order": 2
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 5,
+          "terminal_pressure_identity": true,
+          "time_order": 3
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 5,
+          "terminal_pressure_identity": true,
+          "time_order": 4
+        },
+        {
+          "full_convolution_nonzero": true,
+          "heat_majorant_dominates_terminal": true,
+          "pressure_majorant_dominates_terminal": true,
+          "radial_order": 5,
+          "terminal_pressure_identity": true,
+          "time_order": 5
+        }
+      ],
+      "ratio_rows": [
+        {
+          "Taylor_coefficient_ratio": "80601/20000",
+          "heat_factorial_lower_bound": true,
+          "j": 1,
+          "pressure_convolution_lower_bound": true,
+          "ratio_identity": true
+        },
+        {
+          "Taylor_coefficient_ratio": "241001/30000",
+          "heat_factorial_lower_bound": true,
+          "j": 2,
+          "pressure_convolution_lower_bound": true,
+          "ratio_identity": true
+        },
+        {
+          "Taylor_coefficient_ratio": "4404201/110000",
+          "heat_factorial_lower_bound": true,
+          "j": 10,
+          "pressure_convolution_lower_bound": true,
+          "ratio_identity": true
+        },
+        {
+          "Taylor_coefficient_ratio": "404040201/1010000",
+          "heat_factorial_lower_bound": true,
+          "j": 100,
+          "pressure_convolution_lower_bound": true,
+          "ratio_identity": true
+        }
+      ]
+    },
+    "punctured_cover": {
+      "axial_region": "|z|>=zeta/2 gives q>=(zeta/2)^(1/D)>0",
+      "checks": {
+        "axial_and_equatorial_regions_overlap": true,
+        "equatorial_heat_exterior_margin": true,
+        "full_pressure_support_not_velocity_support_alone_used": true,
+        "implicit_denominator_positive": true,
+        "positive_radius_equator_and_axis_with_nonzero_z_covered": true,
+        "singular_origin_not_covered": true
+      },
+      "cover": "b=min(q_e/4,d^2/(16Xext),1/4); zeta=min(d/4,(b/16)^D); tau<=b/16",
+      "equatorial_region": "|z|<zeta and |x|>=d gives X>=16*Xext/3"
+    },
+    "representatives": {
+      "blocking_inequality": "sup_(Eplus x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+      "checks": {
+        "certified_complete_diagonal_is_one_fixed_field": true,
+        "certified_fixed_stage_domains_are_the_diagonal_inputs": true,
+        "closed_eta_poles_and_one_sided_T_zero_jets_required": true,
+        "complete_seed_potential_direct_swirl_and_fixed_gauge_pressure_required": true,
+        "each_q_positive_compact_has_finitely_many_bands_and_stages": true,
+        "finite_certified_seed_additions_preserve_all_fixed_endpoint_bounds_conditionally": true,
+        "no_new_gauge_label_diagonal_or_forward_inverse_at_endpoint": true,
+        "no_uniform_stage_constant_bound_is_used_at_the_endpoint": true,
+        "pressure_Cauchy_uses_one_more_derivative": true,
+        "velocity_Cauchy_uses_two_more_potential_derivatives": true
+      },
+      "rows": [
+        {
+          "direct_for_future_residual_Cauchy": 3,
+          "direct_swirl_for_velocity_Cauchy": 1,
+          "potential_for_future_residual_Cauchy": 4,
+          "potential_for_velocity_Cauchy": 2,
+          "pressure_Cauchy": 1,
+          "pressure_for_future_residual_Cauchy": 2
+        },
+        {
+          "direct_for_future_residual_Cauchy": 4,
+          "direct_swirl_for_velocity_Cauchy": 2,
+          "potential_for_future_residual_Cauchy": 5,
+          "potential_for_velocity_Cauchy": 3,
+          "pressure_Cauchy": 2,
+          "pressure_for_future_residual_Cauchy": 3
+        },
+        {
+          "direct_for_future_residual_Cauchy": 8,
+          "direct_swirl_for_velocity_Cauchy": 6,
+          "potential_for_future_residual_Cauchy": 9,
+          "potential_for_velocity_Cauchy": 7,
+          "pressure_Cauchy": 6,
+          "pressure_for_future_residual_Cauchy": 7
+        },
+        {
+          "direct_for_future_residual_Cauchy": 103,
+          "direct_swirl_for_velocity_Cauchy": 101,
+          "potential_for_future_residual_Cauchy": 104,
+          "potential_for_velocity_Cauchy": 102,
+          "pressure_Cauchy": 101,
+          "pressure_for_future_residual_Cauchy": 102
+        }
+      ]
+    }
+  },
+  "source_hashes": {
+    "results/core_certified_complete_potential_diagonal_join/diagonal_join.py": "9c76cbabb594bb230c0eb31e78ebe2b8b4df2d22bac1cb7105e24cba2d2dd813",
+    "results/core_certified_complete_potential_endpoint_join/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_certified_complete_potential_endpoint_join/README.md": "cb9e933a0fe8137c6a8ba2190a6acb33504e6225fb86b340f18d04bab9abbd83",
+    "results/core_certified_complete_potential_endpoint_join/audit.py": "6965db67d5e8067a10f939f62d18dc2b6518e1c5c08d748b4515a2e18018cd8a",
+    "results/core_certified_complete_potential_endpoint_join/controls.py": "212a954f0823427e283ad08761fa81560022913e62cb0abea6ef6811f7767a5f",
+    "results/core_certified_complete_potential_endpoint_join/endpoint.py": "6cf485b036428cdf88b03ff74326fb5efe2411fa02a9a4cc8cfea198544432c2",
+    "results/core_certified_complete_potential_endpoint_join/protocol.json": "013ca84387cc3696f92b672a54f04f73cfe8d1d60c66704a76f991a1fde2ca3b",
+    "results/core_certified_complete_potential_endpoint_join/requirements.txt": "d0110753ee747656cb160275408e316b59d3c9cea04122c7c40159189f70f159",
+    "results/core_certified_complete_potential_endpoint_join/test_audit.py": "00dea7e0d9a6e9a2e99c2f5f4d6e3e7236488186564114649e48318699fe3a07",
+    "results/current_endpoint_jets/endpoint.py": "5c147a83082d312c725d2286a961677d960236c5f471c767285721f50baa0c9b",
+    "results/endpoint_foundation/terminal_bounds.py": "d832cc15355e7fbb7ba94997fd617eb91a5212dc9856e6022423b627914fa700"
+  },
+  "status": "certified-domain-conditional-complete-potential-punctured-endpoint-join"
+}
