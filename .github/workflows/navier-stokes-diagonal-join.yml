@@ -30,6 +30,7 @@ on:
       - research/navier_stokes_cascade/results/core_primitive_margin_normalization_reconciliation/**
       - research/navier_stokes_cascade/results/core_scale_compatible_corner_force_replay/**
       - research/navier_stokes_cascade/results/core_same_field_positive_core_reconciliation/**
+      - research/navier_stokes_cascade/results/core_complete_dependency_quantifier_audit/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -63,6 +64,7 @@ on:
       - research/navier_stokes_cascade/results/core_primitive_margin_normalization_reconciliation/**
       - research/navier_stokes_cascade/results/core_scale_compatible_corner_force_replay/**
       - research/navier_stokes_cascade/results/core_same_field_positive_core_reconciliation/**
+      - research/navier_stokes_cascade/results/core_complete_dependency_quantifier_audit/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -260,6 +262,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_same_field_positive_core_reconciliation/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_same_field_positive_core_reconciliation/evidence.json \
             --output navier_stokes_same_field_positive_core_reconciliation_ci.json
+
+      - name: Audit complete dependency and quantifier chain
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_complete_dependency_quantifier_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_complete_dependency_quantifier_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_complete_dependency_quantifier_audit/evidence.json \
+            --output navier_stokes_complete_dependency_quantifier_audit_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

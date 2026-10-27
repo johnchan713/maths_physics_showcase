@@ -1,0 +1,101 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_canonical_full_path_ode_join/evidence.json": "fd28c1af3c9a5cb11dabe7df96e95525b3d90136ab16fcfd42898be5d65ff7d2",
+    "results/core_certified_complete_potential_comparison_join/evidence.json": "c38c419a7a720ddc2cb6207d80e652b300171e80d1ee982d1399a66105371786",
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_certified_complete_potential_endpoint_join/evidence.json": "f40db0ddfb1fd3fc661ede433d8ce88c8be10d25b77c635e1b61c3ec75c64e49",
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_certified_finite_stage_domain_join/evidence.json": "85260f36a3f60668735e2cc25cd1c37cdbe532134aa86b8569c8b8d708adc190",
+    "results/core_compact_slow_inverse_domain_join/evidence.json": "129ae2d83800c7f78c79c9a7eba38f2405c8d17c83f0ec466975c49f2bb63e86",
+    "results/core_fixed_profile_projector_join/evidence.json": "08ee8eac5d445843295dba79a45ff82e587b41d0e285d63151beb8a49696c8b2",
+    "results/core_leading_background_borel_join/evidence.json": "cb0fc6bf2b624431ea1f99fe9f920305c04c0fa014c28ef167615914fdd9e1a5",
+    "results/core_primitive_margin_normalization_reconciliation/evidence.json": "c08d54fa1cf021e7c7cc80da1b264465a163617fdd23479d16ec9cd925d609c2",
+    "results/core_same_band_gap_join/evidence.json": "b240040bacac856e039b6320f734078ce486cd48b1d91c02ddb6ba6396c291be",
+    "results/core_same_field_positive_core_reconciliation/evidence.json": "21151dd33b0c85350655cd06deaf950efcefe15b8c579135d7deb8bfef848f84",
+    "results/core_scale_compatible_corner_force_replay/evidence.json": "df473ba6a001763ef44b7674134533c93ae4479e83a48891333230d7b0827b5e"
+  },
+  "gates": {
+    "common_object_and_quantifier_join": true,
+    "scientific_scope_preserved": true,
+    "seven_exact_controls": true,
+    "thirteen_direct_frozen_dependencies": true
+  },
+  "protocol": {
+    "correction": "request-dependent derivative ceilings, integration-by-parts counts and common-pole norm archives are proof requests for fixed representatives; they are not new profile or field selections, but their continuum estimates remain conditional on the frozen provider contracts",
+    "limit_order": "choose the field and both Borel/cutoff sequences once; for fixed m,N choose a finite comparison stage, then q tends to zero; for exclusion fix T<1, send R to infinity, then approach the protected core",
+    "parent_commit": "527d758f8270763e4959f2c5e6b1a3e381414a43",
+    "result": "audit the complete transitive dependency graph, the one-object selection spine, and the fixed-request quantifier order through comparison and protected-core evaluation",
+    "scope": "dependency and quantifier reconciliation only; no independent construction of the provider profiles, unconditional residual theorem, admissible-force theorem or blow-up claim"
+  },
+  "remaining_obligations": [
+    "independently reconstruct the master provider condition for one fixed all-order profile and every fixed finite-stage representative",
+    "then replay the complete residual and localized force from those reconstructed estimates rather than from conditional provider flags",
+    "only after that replay use the already valid fixed-T then radius then protected-core limit to assess unconditional competitor exclusion"
+  ],
+  "review": {
+    "checks": {
+      "active_spine_is_transitively_connected": true,
+      "all_transitive_dependency_hashes_match": true,
+      "all_transitive_source_hashes_match": true,
+      "conditional_scope_preserved": true,
+      "thirteen_named_roots_loaded": true,
+      "transitive_evidence_graph_is_acyclic": true,
+      "valid_fixed_request_and_limit_order": true
+    },
+    "graph": {
+      "dependency_hash_checks": 837,
+      "edges": 837,
+      "nodes": 215,
+      "source_hash_checks": 3612,
+      "spine_links": {
+        "core_canonical_full_path_ode_join_reaches_core_same_band_gap_join": true,
+        "core_certified_complete_potential_comparison_join_reaches_core_certified_complete_potential_force_join": true,
+        "core_certified_complete_potential_diagonal_join_reaches_core_certified_finite_stage_domain_join": true,
+        "core_certified_complete_potential_endpoint_join_reaches_core_certified_complete_potential_diagonal_join": true,
+        "core_certified_complete_potential_force_join_reaches_core_certified_complete_potential_endpoint_join": true,
+        "core_certified_finite_stage_domain_join_reaches_core_compact_slow_inverse_domain_join": true,
+        "core_compact_slow_inverse_domain_join_reaches_core_fixed_profile_projector_join": true,
+        "core_fixed_profile_projector_join_reaches_core_canonical_full_path_ode_join": true,
+        "core_same_band_gap_join_reaches_core_leading_background_borel_join": true,
+        "core_same_field_positive_core_reconciliation_reaches_core_certified_complete_potential_comparison_join": true
+      }
+    },
+    "quantifiers": {
+      "comparison_order_is_fixed_T_then_R_then_tau": true,
+      "default_stage_is_12816": true,
+      "derivative_and_pole_indices_are_proof_archives_not_field_reselections": true,
+      "endpoint_uses_local_finiteness_before_terminal_limit": true,
+      "field_and_sequences_chosen_before_requests": true,
+      "fixed_m_N_choose_one_finite_J_before_q_limit": true,
+      "force_extension_uses_one_diagonal_sequence_for_all_fixed_jets": true,
+      "sample_fixed_comparison_stages": {
+        "m=0,N=0": 12816,
+        "m=1,N=3": 18417,
+        "m=5,N=11": 37618
+      },
+      "unconditional_provider_estimates_established_here": false
+    },
+    "remaining_master_condition": {
+      "residual": "the matching-state residual identity retains pressure, viscosity, all cutoffs, both cross interactions and the new square",
+      "same_fixed_representatives": "for every fixed j,m,N the provider constants C_{j,m,N} are finite for one U^[j], not a request-dependent field",
+      "scale_compatible_gaps": "Delta_bg>0, 3/8012>0, theta_ann<1, theta_rep<1",
+      "status": "asserted by frozen analytical provider contracts but not independently reconstructed in this checkpoint",
+      "weighted_domains": "all fixed-order profile, root, compact and slow-map weighted seminorms are finite on the unchanged supports"
+    },
+    "scope": {
+      "common_object_and_quantifier_join_checked": true,
+      "tests_or_hashes_treated_as_continuum_proof": false,
+      "unconditional_pulse_residual_force_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_complete_dependency_quantifier_audit/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_complete_dependency_quantifier_audit/README.md": "c1ab9549ab5488dd1bf614e49dfbb34535c2fa1d98f7fff7aa1d45c714d9d621",
+    "results/core_complete_dependency_quantifier_audit/audit.py": "30d9f5008f9fa1d104cd4784f127903ce52c27ab9f382bdff1cbd8706f6df21c",
+    "results/core_complete_dependency_quantifier_audit/dependency_graph.py": "2d0bac36445af38c4637ca621f3cdf2a3c10b70805bc8669c560b6df5a0b2ec7",
+    "results/core_complete_dependency_quantifier_audit/protocol.json": "d6dd5c78528508cf1d16bb2566302f210c0e28d927c4813b8f5d3e9d5bd751f7",
+    "results/core_complete_dependency_quantifier_audit/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_complete_dependency_quantifier_audit/test_audit.py": "2aefcf5b11f3a76228443ca3c268ddaf5daa28c212279bd221d0ec72f84ec307"
+  },
+  "status": "complete-common-object-quantifier-audited-with-provider-frontier"
+}
