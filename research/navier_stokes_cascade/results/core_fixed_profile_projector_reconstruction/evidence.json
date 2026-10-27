@@ -1,0 +1,258 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_finite_support_closure/evidence.json": "b58b5e36e18e5ad5938ff81c12db9706d1c229b5e4d549b3604f58bd1d6e7867",
+    "results/core_fixed_profile_projector_join/evidence.json": "08ee8eac5d445843295dba79a45ff82e587b41d0e285d63151beb8a49696c8b2",
+    "results/core_fixed_profile_tame/evidence.json": "d06ccf98dad28493112700e3bc7041adfddb52a232733a7443f3934149ac8851",
+    "results/core_full_path_ode_reconstruction/evidence.json": "3debeabf5ee1f2d9d49b2e781a2ebf6d55f1dc0a0c0347126837b14a9bfbfd43",
+    "results/core_log_pullback_projector_join/evidence.json": "7379c94a13f593ce155fd5badc68fa7e7eb0df8f5cef2f62e66c83414c403001",
+    "results/core_moving_pressure_compensator_join/evidence.json": "3a403ada095263ec274c44ac8a482cb0a3ab6977917c687e656d690af05bacc3",
+    "results/core_reserved_geometry_recheck/evidence.json": "b911312cddc119be917f88d18161ea91b2fae7b67a2c679ed35ec96740087820",
+    "results/core_rho_projector_signed_recompute/evidence.json": "d1ffd1f8709d7705b607f093e819d9177f6d002414d75843b7a8a807ec3988d6",
+    "results/core_rho_squared_projector_realization/evidence.json": "a92f80a3678398fc0738461f441a4fb419be8328793bb089b0b93e30499943f9"
+  },
+  "flags": {
+    "actual_high_jet_current_fields_or_complete_residual_certified": false,
+    "actual_support_strictly_contained_in_moving_enclosure": true,
+    "both_exact_projector_moment_normalizations_proved": true,
+    "compact_or_slow_weighted_inverse_domains_closed_here": false,
+    "current_full_path_tail_used": true,
+    "explicit_new_same_profile_rho_squared_projectors_selected": true,
+    "fixed_order_band_uniform_jets_joined": true,
+    "historical_unspecified_projectors_or_targets_identified_with_new_choice": false,
+    "moving_enclosure_identified_with_actual_support": false,
+    "normalization_only_projector_jet_inference_rejected": true,
+    "one_fixed_smooth_pressure_profile_with_profile_dependent_constants_used": true,
+    "reserved_weight_floor_used_only_on_actual_moving_support": true,
+    "same_choice_source_signed_target_covariance_and_pressure_recomputation_required": true,
+    "unconditional_pulse_force_residual_improvement_or_blowup_proved": false,
+    "uniformity_over_all_profiles_orders_or_cycles_proved": false
+  },
+  "gates": {
+    "all_declared_dependency_sources_match": true,
+    "all_exact_quantifier_support_and_identity_controls": true,
+    "nine_frozen_dependencies": true,
+    "scientific_scope_retained": true
+  },
+  "inherited_source_checks": {
+    "core_finite_support_closure:results/auxiliary_geometry_audit/README.md": true,
+    "core_finite_support_closure:results/auxiliary_geometry_audit/geometry.py": true,
+    "core_finite_support_closure:results/compact_mean_corrections/mean_system.py": true,
+    "core_finite_support_closure:results/compact_mean_foundation/README.md": true,
+    "core_finite_support_closure:results/core_axial_potential_pressure_gain/README.md": true,
+    "core_finite_support_closure:results/core_axial_potential_pressure_gain/bounds.py": true,
+    "core_finite_support_closure:results/core_compact_trace_gate/README.md": true,
+    "core_finite_support_closure:results/core_compact_trace_gate/bounds.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/.gitignore": true,
+    "core_finite_support_closure:results/core_finite_support_closure/README.md": true,
+    "core_finite_support_closure:results/core_finite_support_closure/audit.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/bounds.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/controls.py": true,
+    "core_finite_support_closure:results/core_finite_support_closure/protocol.json": true,
+    "core_finite_support_closure:results/core_finite_support_closure/requirements.txt": true,
+    "core_finite_support_closure:results/core_finite_support_closure/test_audit.py": true,
+    "core_finite_support_closure:results/core_next_sourced_wave_join/README.md": true,
+    "core_finite_support_closure:results/core_next_sourced_wave_join/budgets.py": true,
+    "core_finite_support_closure:results/source_envelope_edge_audit/README.md": true,
+    "core_finite_support_closure:results/source_envelope_edge_audit/source_bounds.py": true,
+    "core_fixed_profile_projector_join:results/core_fixed_profile_projector_join/.gitignore": true,
+    "core_fixed_profile_projector_join:results/core_fixed_profile_projector_join/README.md": true,
+    "core_fixed_profile_projector_join:results/core_fixed_profile_projector_join/audit.py": true,
+    "core_fixed_profile_projector_join:results/core_fixed_profile_projector_join/profile_join.py": true,
+    "core_fixed_profile_projector_join:results/core_fixed_profile_projector_join/protocol.json": true,
+    "core_fixed_profile_projector_join:results/core_fixed_profile_projector_join/requirements.txt": true,
+    "core_fixed_profile_projector_join:results/core_fixed_profile_projector_join/test_audit.py": true,
+    "core_fixed_profile_projector_join:results/core_fixed_profile_tame/proof_checks.py": true,
+    "core_fixed_profile_projector_join:results/core_moving_pressure_compensator_join/bounds.py": true,
+    "core_fixed_profile_projector_join:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_fixed_profile_projector_join:results/core_rho_projector_signed_recompute/bounds.py": true,
+    "core_fixed_profile_projector_join:results/core_rho_squared_projector_realization/bounds.py": true,
+    "core_fixed_profile_tame:results/complete_covariance_initial_means/means.py": true,
+    "core_fixed_profile_tame:results/core_actual_compensator_gate/README.md": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/.gitignore": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/README.md": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/audit.py": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/protocol.json": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/requirements.txt": true,
+    "core_fixed_profile_tame:results/core_fixed_profile_tame/test_audit.py": true,
+    "core_fixed_profile_tame:results/core_pressure_shape_recheck/README.md": true,
+    "core_fixed_profile_tame:results/core_pressure_shape_recheck/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_reserved_geometry_recheck/README.md": true,
+    "core_fixed_profile_tame:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_fixed_profile_tame:results/core_slow_jet_loss_recheck/README.md": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/.gitignore": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/README.md": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/audit.py": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/ode.py": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/protocol.json": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/requirements.txt": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/test_audit.py": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/.gitignore": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/README.md": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/audit.py": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/bounds.py": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/controls.py": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/requirements.txt": true,
+    "core_log_pullback_projector_join:results/core_log_pullback_projector_join/test_audit.py": true,
+    "core_log_pullback_projector_join:results/core_primary_target_cutoff_budget/bounds.py": true,
+    "core_log_pullback_projector_join:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_log_pullback_projector_join:results/core_symbolic_initial_haar_join/bounds.py": true,
+    "core_moving_pressure_compensator_join:results/core_moving_pressure_compensator_join/.gitignore": true,
+    "core_moving_pressure_compensator_join:results/core_moving_pressure_compensator_join/README.md": true,
+    "core_moving_pressure_compensator_join:results/core_moving_pressure_compensator_join/audit.py": true,
+    "core_moving_pressure_compensator_join:results/core_moving_pressure_compensator_join/bounds.py": true,
+    "core_moving_pressure_compensator_join:results/core_moving_pressure_compensator_join/controls.py": true,
+    "core_moving_pressure_compensator_join:results/core_moving_pressure_compensator_join/requirements.txt": true,
+    "core_moving_pressure_compensator_join:results/core_moving_pressure_compensator_join/test_audit.py": true,
+    "core_moving_pressure_compensator_join:results/core_primary_target_cutoff_budget/bounds.py": true,
+    "core_moving_pressure_compensator_join:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_moving_pressure_compensator_join:results/core_symbolic_real_covariance_join/bounds.py": true,
+    "core_moving_pressure_compensator_join:results/core_symbolic_weighted_maps/bounds.py": true,
+    "core_reserved_geometry_recheck:results/coefficient_support_audit/README.md": true,
+    "core_reserved_geometry_recheck:results/compact_mean_foundation/README.md": true,
+    "core_reserved_geometry_recheck:results/complete_covariance_initial_means/means.py": true,
+    "core_reserved_geometry_recheck:results/core_dynamic_mean_recheck/README.md": true,
+    "core_reserved_geometry_recheck:results/core_dynamic_mean_recheck/proof_checks.py": true,
+    "core_reserved_geometry_recheck:results/core_primary_tail_recheck/README.md": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/.gitignore": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/README.md": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/audit.py": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/protocol.json": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/requirements.txt": true,
+    "core_reserved_geometry_recheck:results/core_reserved_geometry_recheck/test_audit.py": true,
+    "core_reserved_geometry_recheck:results/physical_pulse_foundation/README.md": true,
+    "core_reserved_geometry_recheck:results/source_envelope_edge_audit/README.md": true,
+    "core_rho_projector_signed_recompute:results/core_native_haar_primitive_join/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/.gitignore": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/README.md": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/audit.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/controls.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/requirements.txt": true,
+    "core_rho_projector_signed_recompute:results/core_rho_projector_signed_recompute/test_audit.py": true,
+    "core_rho_projector_signed_recompute:results/core_rho_squared_projector_realization/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_symbolic_real_covariance_join/bounds.py": true,
+    "core_rho_projector_signed_recompute:results/core_symbolic_signed_target_join/bounds.py": true,
+    "core_rho_squared_projector_realization:results/core_log_pullback_projector_join/bounds.py": true,
+    "core_rho_squared_projector_realization:results/core_moving_pressure_compensator_join/bounds.py": true,
+    "core_rho_squared_projector_realization:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_rho_squared_projector_realization:results/core_rho_squared_projector_realization/.gitignore": true,
+    "core_rho_squared_projector_realization:results/core_rho_squared_projector_realization/README.md": true,
+    "core_rho_squared_projector_realization:results/core_rho_squared_projector_realization/audit.py": true,
+    "core_rho_squared_projector_realization:results/core_rho_squared_projector_realization/bounds.py": true,
+    "core_rho_squared_projector_realization:results/core_rho_squared_projector_realization/controls.py": true,
+    "core_rho_squared_projector_realization:results/core_rho_squared_projector_realization/requirements.txt": true,
+    "core_rho_squared_projector_realization:results/core_rho_squared_projector_realization/test_audit.py": true
+  },
+  "protocol": {
+    "correction": "for rhohat in C_c^infinity((ell,u)), the actual scaled support is strictly contained in the moving interval [sqrt(s)ell,sqrt(s)u]; that interval and [ell/2,2u] are enclosures, not identities for the support",
+    "domain": "the reconstructed same-band tail and complete lifted paths certified by the current full-path ODE checkpoint, with the retained scale chart 1/4<=s<=4 and reserved annulus",
+    "identity_rule": "all projector-dependent source, signed target, curl, six covariance channels and full pressure norms are freshly recomputed for this exact choice; no equality with historical unspecified projectors is asserted",
+    "parent_commit": "0adc3b851a2b9f849d4f5dc46c5529f85aa09136",
+    "pressure": "retain the current full-path wave pressure, the whole moving compensator, axial velocity, and both Pi1/Pi2 background-pressure tails in the same-choice ledger",
+    "profile_quantifier": "one fixed smooth compact unit-mass pressure profile is chosen once; constants may depend on its finite seminorms and on derivative order",
+    "projectors": "explicit same-profile choices sigma_e=R^(-e)*sqrt(s)*rho^2/A2, A2=integral rhohat^2, e=1,2",
+    "scope": "fourth primitive contract only; compact and slow weighted inverse domains, actual linked high-jet inputs, complete means/residual and blow-up remain open"
+  },
+  "remaining_obligations": [
+    "join the compact and slow inverse maps to these same-choice coefficients on their full weighted domains and whole-path supports",
+    "supply the actual linked current-field high-jet inputs and strict epsilon margins at every requested finite stage without derivative-order uniformity",
+    "join fresh axial/full-pressure means, generated interactions, viscosity and every cutoff term in the complete residual"
+  ],
+  "review": {
+    "checks": {
+      "cauchy_schwarz_lower_bound": true,
+      "compact_profile_support_is_strictly_inside_scaled_enclosure": true,
+      "contract_follows_same_choice_recompute": true,
+      "dependency_route_is_acyclic": true,
+      "diagnostic_profile_A2_is_positive": true,
+      "diagnostic_profile_has_unit_mass": true,
+      "e1_arbitrary_family_derivative_grows_linearly": true,
+      "e1_arbitrary_family_moment_preserved": true,
+      "e1_s1/4_exact_scaled_moment": true,
+      "e1_s1_exact_scaled_moment": true,
+      "e1_s4_exact_scaled_moment": true,
+      "e2_arbitrary_family_derivative_grows_linearly": true,
+      "e2_arbitrary_family_moment_preserved": true,
+      "e2_s1/4_exact_scaled_moment": true,
+      "e2_s1_exact_scaled_moment": true,
+      "e2_s4_exact_scaled_moment": true,
+      "fixed_finite_profile_data_give_finite_positive_bound": true,
+      "moving_support_enclosure_union_is_l_over_2_to_2u": true,
+      "reciprocal_A2_bound": true,
+      "same_choice_recompute_follows_explicit_projector": true,
+      "support_enclosure_is_not_identified_with_actual_support": true
+    },
+    "profile_diagnostic": {
+      "A2": "10/7",
+      "length": "1",
+      "mass": "1"
+    },
+    "scope": "exact finite rational controls for normalization, support and quantifier guards; the continuum conclusion uses one fixed C-infinity profile and finite-order composition",
+    "strict_support_rows": [
+      {
+        "actual": [
+          "5/8",
+          "7/8"
+        ],
+        "hull": [
+          "1/2",
+          "1"
+        ],
+        "strict": true
+      },
+      {
+        "actual": [
+          "5/4",
+          "7/4"
+        ],
+        "hull": [
+          "1",
+          "2"
+        ],
+        "strict": true
+      },
+      {
+        "actual": [
+          "5/2",
+          "7/2"
+        ],
+        "hull": [
+          "2",
+          "4"
+        ],
+        "strict": true
+      }
+    ],
+    "support_rows": [
+      [
+        "1/2",
+        "1"
+      ],
+      [
+        "1",
+        "2"
+      ],
+      [
+        "2",
+        "4"
+      ]
+    ]
+  },
+  "source_hashes": {
+    "results/core_fixed_profile_projector_reconstruction/.gitignore": "972ca000540099f56a9a67d3d4591eb6a881b470b752a9545199dc0bf8ae4021",
+    "results/core_fixed_profile_projector_reconstruction/README.md": "9251371fceb7192a68df7dfd3199f94695a206f4130dd2a47d6e71e29e7303ea",
+    "results/core_fixed_profile_projector_reconstruction/audit.py": "6b9caf548fd164d7d1da0ed0f5c2756f9ce7be1b7f186263271dd9294179f01b",
+    "results/core_fixed_profile_projector_reconstruction/projectors.py": "d51bb1fe9d6dfb93c8cddf82bcad282ea0179e098b8faf624af48a40c8f2cf6d",
+    "results/core_fixed_profile_projector_reconstruction/protocol.json": "be0721c8a2749012dfd62cb367a42793770a64b31ef5e676d000b4e221ebe07d",
+    "results/core_fixed_profile_projector_reconstruction/requirements.txt": "5ec407c4d4c718a99748ffa976be6ca4e6ffa2484e96c9142e86ba8d3111b541",
+    "results/core_fixed_profile_projector_reconstruction/test_audit.py": "98d19612f4b72a4c509ddb08d93ff717d2d4a33bfff16eaa6d4159f60b48c134",
+    "results/core_fixed_profile_tame/proof_checks.py": "49adf09281223fc189d2d38a1cf9ef93936b391361584b70439d132897842b5d",
+    "results/core_moving_pressure_compensator_join/bounds.py": "458cae3562f376419c2cf37b3cd824a059ae093026ed3e31b1f83d861ac22ee8",
+    "results/core_reserved_geometry_recheck/proof_checks.py": "39c280f66d68bc3529749363166041b56ac5b33ccbe1b82c25d9ea05276beb5e",
+    "results/core_rho_projector_signed_recompute/bounds.py": "b9a3f10b27e5e3355b07b6963d7485353e4155b4fc610268fbad86f313431a08",
+    "results/core_rho_squared_projector_realization/bounds.py": "6d5a123072567c09d645320b4a3b8f549b50b264864b051833de3109ae225d46"
+  },
+  "status": "fixed-profile-same-choice-projector-contract-reconstructed-on-current-full-path-tail"
+}

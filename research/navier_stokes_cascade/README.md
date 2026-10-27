@@ -1464,6 +1464,19 @@ fixed-order, not derivative-uniform, constants. The fixed compensator and
 projector family is next; no unconditional pulse, residual, force, exclusion
 or blow-up conclusion follows.
 
+The next [fixed-profile compensator/projector reconstruction](results/core_fixed_profile_projector_reconstruction/README.md)
+places one fixed smooth pressure profile and its explicit rho-squared moment
+projectors on that current full-path tail. It proves profile-dependent finite
+fixed-order seminorms, both exact weighted moments, reserved support and the
+same-choice recomputation of source, signed target, curl, all six covariance
+channels and full pressure norms. It also corrects the inherited support
+wording: the scaled `(ell,u)` interval is only an enclosure because a
+`C_c^infinity((ell,u))` profile has actual support strictly inside it. The
+common `[ell/2,2u]` interval remains an integration hull, never a rectangular
+weight-floor domain. Constants are not uniform over profiles, derivative
+orders or cycles. The compact and slow weighted inverse domains are next; no
+unconditional pulse, residual, force, exclusion or blow-up conclusion follows.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

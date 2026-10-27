@@ -1,0 +1,10 @@
+{
+  "parent_commit": "0adc3b851a2b9f849d4f5dc46c5529f85aa09136",
+  "domain": "the reconstructed same-band tail and complete lifted paths certified by the current full-path ODE checkpoint, with the retained scale chart 1/4<=s<=4 and reserved annulus",
+  "correction": "for rhohat in C_c^infinity((ell,u)), the actual scaled support is strictly contained in the moving interval [sqrt(s)ell,sqrt(s)u]; that interval and [ell/2,2u] are enclosures, not identities for the support",
+  "profile_quantifier": "one fixed smooth compact unit-mass pressure profile is chosen once; constants may depend on its finite seminorms and on derivative order",
+  "projectors": "explicit same-profile choices sigma_e=R^(-e)*sqrt(s)*rho^2/A2, A2=integral rhohat^2, e=1,2",
+  "identity_rule": "all projector-dependent source, signed target, curl, six covariance channels and full pressure norms are freshly recomputed for this exact choice; no equality with historical unspecified projectors is asserted",
+  "pressure": "retain the current full-path wave pressure, the whole moving compensator, axial velocity, and both Pi1/Pi2 background-pressure tails in the same-choice ledger",
+  "scope": "fourth primitive contract only; compact and slow weighted inverse domains, actual linked high-jet inputs, complete means/residual and blow-up remain open"
+}
