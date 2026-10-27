@@ -1,0 +1,246 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_certified_finite_stage_domain_join/evidence.json": "85260f36a3f60668735e2cc25cd1c37cdbe532134aa86b8569c8b8d708adc190",
+    "results/core_compact_slow_inverse_domain_join/evidence.json": "129ae2d83800c7f78c79c9a7eba38f2405c8d17c83f0ec466975c49f2bb63e86",
+    "results/core_corner_tail_slack_reconciliation/evidence.json": "f3e0ee58871b00245741f48e04481db7b7eaab5850a593830d276b8fd44e0988",
+    "results/core_first_real_high_jet_domain_closure/evidence.json": "d240e3ddb3087d802d74213766abd38b79b81156cdb01d55f6371857ee32be96",
+    "results/matching_root_foundation/evidence.json": "22fd0e2a826ae3916a99dbd68eeb09f9e2836ae383364057e2e8bdbb67071bd5",
+    "results/physical_pulse_transfer/evidence.json": "4fd33b054abaa66aa34052eccf97086a1db9ea8325afe857b1de35e03e63fc85",
+    "results/weighted_background_edges/evidence.json": "04eb035805766e43a80c93bb0a215bfb05e1be60364c18da7791d70c7a0abc2c"
+  },
+  "gates": {
+    "all_dependency_sources_match": true,
+    "conditional_scope_preserved": true,
+    "eight_exact_controls": true,
+    "seven_frozen_dependencies": true
+  },
+  "inherited_source_checks": {
+    "core_certified_finite_stage_domain_join:results/core_certified_finite_stage_domain_join/.gitignore": true,
+    "core_certified_finite_stage_domain_join:results/core_certified_finite_stage_domain_join/README.md": true,
+    "core_certified_finite_stage_domain_join:results/core_certified_finite_stage_domain_join/audit.py": true,
+    "core_certified_finite_stage_domain_join:results/core_certified_finite_stage_domain_join/certified_recurrence.py": true,
+    "core_certified_finite_stage_domain_join:results/core_certified_finite_stage_domain_join/protocol.json": true,
+    "core_certified_finite_stage_domain_join:results/core_certified_finite_stage_domain_join/requirements.txt": true,
+    "core_certified_finite_stage_domain_join:results/core_certified_finite_stage_domain_join/test_audit.py": true,
+    "core_certified_finite_stage_domain_join:results/core_finite_stage_compact_recurrence/recurrence.py": true,
+    "core_certified_finite_stage_domain_join:results/core_finite_support_closure/README.md": true,
+    "core_certified_finite_stage_domain_join:results/core_first_real_high_jet_domain_closure/high_jet_join.py": true,
+    "core_certified_finite_stage_domain_join:results/core_first_sourced_high_jet_domain_closure/sourced_join.py": true,
+    "core_certified_finite_stage_domain_join:results/finite_stage_induction/induction.py": true,
+    "core_compact_slow_inverse_domain_join:results/core_compact_slow_inverse_domain_join/.gitignore": true,
+    "core_compact_slow_inverse_domain_join:results/core_compact_slow_inverse_domain_join/README.md": true,
+    "core_compact_slow_inverse_domain_join:results/core_compact_slow_inverse_domain_join/audit.py": true,
+    "core_compact_slow_inverse_domain_join:results/core_compact_slow_inverse_domain_join/inverse_join.py": true,
+    "core_compact_slow_inverse_domain_join:results/core_compact_slow_inverse_domain_join/protocol.json": true,
+    "core_compact_slow_inverse_domain_join:results/core_compact_slow_inverse_domain_join/requirements.txt": true,
+    "core_compact_slow_inverse_domain_join:results/core_compact_slow_inverse_domain_join/test_audit.py": true,
+    "core_compact_slow_inverse_domain_join:results/core_fast_inverse_budget/README.md": true,
+    "core_compact_slow_inverse_domain_join:results/core_initial_final_row_obstruction/README.md": true,
+    "core_compact_slow_inverse_domain_join:results/core_real_refresh_obligation_join/README.md": true,
+    "core_compact_slow_inverse_domain_join:results/core_slow_inverse_budget/README.md": true,
+    "core_compact_slow_inverse_domain_join:results/core_symbolic_weighted_maps/README.md": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/.gitignore": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/README.md": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/audit.py": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/protocol.json": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/requirements.txt": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/slack.py": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/test_audit.py": true,
+    "core_first_real_high_jet_domain_closure:results/core_compact_slow_inverse_domain_join/README.md": true,
+    "core_first_real_high_jet_domain_closure:results/core_first_real_high_jet_domain_closure/.gitignore": true,
+    "core_first_real_high_jet_domain_closure:results/core_first_real_high_jet_domain_closure/README.md": true,
+    "core_first_real_high_jet_domain_closure:results/core_first_real_high_jet_domain_closure/audit.py": true,
+    "core_first_real_high_jet_domain_closure:results/core_first_real_high_jet_domain_closure/high_jet_join.py": true,
+    "core_first_real_high_jet_domain_closure:results/core_first_real_high_jet_domain_closure/protocol.json": true,
+    "core_first_real_high_jet_domain_closure:results/core_first_real_high_jet_domain_closure/requirements.txt": true,
+    "core_first_real_high_jet_domain_closure:results/core_first_real_high_jet_domain_closure/test_audit.py": true,
+    "core_first_real_high_jet_domain_closure:results/core_fixed_profile_projector_join/README.md": true,
+    "core_first_real_high_jet_domain_closure:results/core_initial_a0_physical_tail_closure/closure.py": true,
+    "core_first_real_high_jet_domain_closure:results/core_initial_phi_high_jet_closure/closure.py": true,
+    "core_first_real_high_jet_domain_closure:results/core_sharp_initial_target_domain_join/rate_join.py": true,
+    "matching_root_foundation:results/annular_exterior_foundation/evidence.json": true,
+    "matching_root_foundation:results/axial_root_foundation/evidence.json": true,
+    "matching_root_foundation:results/axis_matching_audit/evidence.json": true,
+    "matching_root_foundation:results/axis_matching_audit/moments.py": true,
+    "matching_root_foundation:results/loop_modulation_bounds/evidence.json": true,
+    "matching_root_foundation:results/matching_root_foundation/.gitignore": true,
+    "matching_root_foundation:results/matching_root_foundation/README.md": true,
+    "matching_root_foundation:results/matching_root_foundation/audit.py": true,
+    "matching_root_foundation:results/matching_root_foundation/matching_bounds.py": true,
+    "matching_root_foundation:results/matching_root_foundation/matching_checks.py": true,
+    "matching_root_foundation:results/matching_root_foundation/protocol.json": true,
+    "matching_root_foundation:results/matching_root_foundation/requirements.txt": true,
+    "matching_root_foundation:results/matching_root_foundation/test_audit.py": true,
+    "matching_root_foundation:results/modulation_repair_all_order/evidence.json": true,
+    "matching_root_foundation:results/repair_state_bounds/evidence.json": true,
+    "matching_root_foundation:results/shape_join_pressure/evidence.json": true,
+    "matching_root_foundation:results/stress_realization_audit/evidence.json": true,
+    "matching_root_foundation:results/stress_realization_audit/repair.py": true,
+    "physical_pulse_transfer:results/actual_band_pulse_bounds/evidence.json": true,
+    "physical_pulse_transfer:results/auxiliary_geometry_audit/evidence.json": true,
+    "physical_pulse_transfer:results/background_jet_foundation/evidence.json": true,
+    "physical_pulse_transfer:results/coefficient_support_audit/evidence.json": true,
+    "physical_pulse_transfer:results/compact_mean_corrections/evidence.json": true,
+    "physical_pulse_transfer:results/geometric_pulse_replay/evidence.json": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/.gitignore": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/README.md": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/audit.py": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/protocol.json": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/requirements.txt": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/test_audit.py": true,
+    "physical_pulse_transfer:results/physical_pulse_transfer/transfer.py": true,
+    "physical_pulse_transfer:results/physical_wave_interface/evidence.json": true,
+    "physical_pulse_transfer:results/weighted_background_edges/evidence.json": true,
+    "weighted_background_edges:results/background_jet_foundation/evidence.json": true,
+    "weighted_background_edges:results/coefficient_support_audit/evidence.json": true,
+    "weighted_background_edges:results/core_contraction_audit/evidence.json": true,
+    "weighted_background_edges:results/core_growth_activation/evidence.json": true,
+    "weighted_background_edges:results/inner_collar_activation/evidence.json": true,
+    "weighted_background_edges:results/loop_modulation_bounds/evidence.json": true,
+    "weighted_background_edges:results/outer_edge_stability/evidence.json": true,
+    "weighted_background_edges:results/regional_cone_join/evidence.json": true,
+    "weighted_background_edges:results/repair_state_bounds/evidence.json": true,
+    "weighted_background_edges:results/weighted_background_edges/.gitignore": true,
+    "weighted_background_edges:results/weighted_background_edges/README.md": true,
+    "weighted_background_edges:results/weighted_background_edges/audit.py": true,
+    "weighted_background_edges:results/weighted_background_edges/edges.py": true,
+    "weighted_background_edges:results/weighted_background_edges/protocol.json": true,
+    "weighted_background_edges:results/weighted_background_edges/requirements.txt": true,
+    "weighted_background_edges:results/weighted_background_edges/test_audit.py": true
+  },
+  "protocol": {
+    "closed_domain": "T+eta^2=1, |eta|<=1, L>=49/50; fixed compact X supports and one-sided T=0 derivatives; no division by T or 1-eta^2",
+    "field": "the same fixed-gauge complete-potential diagonal and fixed-profile finite-stage provider graphs",
+    "parent_commit": "8b627a88a3d55259e9c35827192e58109b628968",
+    "remaining_premise": "independently prove the named exact leading/background cone, support-separation, root-input and compact-input margins and their all-fixed-order seminorms",
+    "result": "for each fixed stage and jet, the closed-chart compact-X coefficient constants follow by finite composition from the certified primitive closed-domain contracts",
+    "scope": "conditional finite-composition join; no unconditional pulse hierarchy, compact force, complete residual theorem or blow-up"
+  },
+  "remaining_obligations": [
+    "independently verify the exact leading/background shear, growth, cone and all-fixed-order closed-chart seminorms from their defining profiles and Borel sum",
+    "independently verify the global support-separation, root-input and compact-input margins used by the primitive contracts on the unchanged common tail",
+    "then replay the now-joined coefficient, logarithmic-slack, Cartesian-corner, localization, force and comparison implications on the same field"
+  ],
+  "review": {
+    "checks": {
+      "all_primitive_domains_are_closed": true,
+      "closed_chart_constants_follow_from_primitive_contracts": true,
+      "every_fixed_provider_graph_is_finite_and_acyclic": true,
+      "finite_composition_majorants_stay_finite": true,
+      "fixed_compact_supports_are_preserved": true,
+      "implicit_coordinate_has_strict_closed_floor": true,
+      "independent_primitive_margin_proof_is_not_supplied_by_graph_arithmetic": true,
+      "reciprocal_derivative_recurrence_stays_finite": true
+    },
+    "coefficient_conclusion": {
+      "closed_poles": "one-sided eta endpoint jets and L floor exclude T or 1-eta^2 poles",
+      "compact_X_uniformity": "fixed normalized supports exclude q-dependent X/q concentration",
+      "fixed_stage_residual": "C_stage(J,m,K)<infinity relative to primitive closed-domain contracts",
+      "increment_representative": "C_rep(j,m,K)<infinity with a finite fixed logarithmic power relative to the same contracts"
+    },
+    "finite_dag_majorants": [
+      "12",
+      "157",
+      "24807",
+      "615412057"
+    ],
+    "primitive_ledger": {
+      "annular_root": {
+        "closed": true,
+        "domain": "eta in [-1,1] with one-sided endpoint jets",
+        "floor": "root Jacobian inverse <=1220"
+      },
+      "background": {
+        "closed": true,
+        "domain": "1/4<=q/Q<=4, compact X enlargement, T>=0",
+        "floor": "leading shear/growth/cone margins"
+      },
+      "compact_repair_root": {
+        "closed": true,
+        "domain": "eta in [-1,1], 0<lambda<=1/100",
+        "floor": "root Jacobian inverse <=1600"
+      },
+      "compact_slow_maps": {
+        "closed": true,
+        "domain": "fixed smooth projector and reserved support hulls",
+        "floor": "fixed profile, determinant and background floors"
+      },
+      "implicit_q": {
+        "closed": true,
+        "domain": "|eta|<=1,T=1-eta^2",
+        "floor": "L>=49/50"
+      },
+      "pulse_ode": {
+        "closed": true,
+        "domain": "closed pulse interval and fixed slow boxes",
+        "floor": "mu>0, A_c,min>0 and positive amplitude"
+      },
+      "support": {
+        "closed": true,
+        "domain": "fixed compact X annuli and separated closed labels",
+        "floor": "positive support/separation margins"
+      }
+    },
+    "reciprocal_L_jet_majorants": [
+      "50/49",
+      "10000/2401",
+      "2490000/117649",
+      "620010000/5764801",
+      "154382490000/282475249",
+      "38441240010000/13841287201",
+      "9571868762490000/678223072849",
+      "2383395321860010000/33232930569601",
+      "593465435143142490000/1628413597910449"
+    ],
+    "scope": {
+      "actual_exact_core_background_and_primitive_margins_independently_proved_here": false,
+      "closed_chart_coefficient_join_relative_to_primitive_contracts": true,
+      "unconditional_complete_residual_compact_force_or_blowup": false
+    },
+    "stage_rows": [
+      {
+        "closed_supports_preserved": true,
+        "distinct_poles": 1,
+        "finite_and_acyclic": true,
+        "harmonics_at_most": 4,
+        "jet": 0,
+        "physical_primitive_ceiling": 60900051,
+        "power": 0,
+        "stage": 0,
+        "state_primitive_ceiling": 900047
+      },
+      {
+        "closed_supports_preserved": true,
+        "distinct_poles": 1,
+        "finite_and_acyclic": true,
+        "harmonics_at_most": 8,
+        "jet": 2,
+        "physical_primitive_ceiling": 261300088,
+        "power": 1,
+        "stage": 1,
+        "state_primitive_ceiling": 1400078
+      },
+      {
+        "closed_supports_preserved": true,
+        "distinct_poles": 1,
+        "finite_and_acyclic": true,
+        "harmonics_at_most": 16,
+        "jet": 3,
+        "physical_primitive_ceiling": 501900112,
+        "power": 5,
+        "stage": 2,
+        "state_primitive_ceiling": 2100096
+      }
+    ]
+  },
+  "source_hashes": {
+    "results/core_closed_chart_coefficient_join/.gitignore": "709f2a58bfa24b6cbf2dd39b48aa5e599b033a61519129745c453ae212ff13dd",
+    "results/core_closed_chart_coefficient_join/README.md": "3664851f8c5eb6545babdbaeda9129bf5a87de62ca2f7a31f0c85a6d1155435a",
+    "results/core_closed_chart_coefficient_join/audit.py": "ce096ca37f4b73e9a441f991cf461158d2116548a47c9896a8c4cc524f89a83a",
+    "results/core_closed_chart_coefficient_join/compactness.py": "0384e83e079cf4ed18be3da7d4c93864a7d8285c3ba2bcd16fdfa8d3c65d4ad1",
+    "results/core_closed_chart_coefficient_join/protocol.json": "d443abdcdfc2c92f128f090ebcb1ae4602877acd59dd08396d2ab35592f61bee",
+    "results/core_closed_chart_coefficient_join/requirements.txt": "780b07894d16bf730a7f4a55418a60ac89382510c02d1f9e004a6231700e5031",
+    "results/core_closed_chart_coefficient_join/test_audit.py": "b3cee23e337ff16ad8927e8b59d41b3f0fbad449302e5f1e5ac9ca7328093dfa"
+  },
+  "status": "closed-chart-coefficient-finiteness-joined-relative-to-certified-primitive-contracts"
+}
