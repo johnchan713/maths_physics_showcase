@@ -1,0 +1,11 @@
+{
+  "parent_commit": "6a1e9459dd091595f471e904f0e997e241313ea3",
+  "field": "the same certified-domain complete-potential diagonal, endpoint atlas, fixed potential and pressure gauges, direct swirl, supports and cutoff sequence",
+  "localization": "u=curl(c*A)+c*B=c*u0+grad(c) cross A; p=c*p0 for one Cartesian-smooth axisymmetric space-time cutoff",
+  "residual": "retain the base residual, both time terms, three viscosity groups, pressure cutoff, rescaling, two cross transports, old-curl transport and curl square at unit viscosity",
+  "corner_condition": "all fixed Cartesian/time jets of the complete residual are uniformly O((tau+|z|^(1/D))^N) for every N on the full compact-X corner, with exact zero residual in the heat exterior",
+  "future_force": "smooth Borel jet extension with one increasing dyadic sequence; no analytic terminal Taylor convergence and no future velocity or pressure are assumed",
+  "energy": "E(t)+2 integral_0^t D <= (integral_0^t ||f||_2)^2; retain only the resulting separate supremum and total-dissipation bounds",
+  "correction": "localization uses no uniform stage-growth bound; local finiteness and the certified corner residual apply before the force-jet limit",
+  "scope": "conditional compact smooth force, zero initial datum and preterminal energy only; no terminal-origin regularity, global comparison or blow-up theorem"
+}

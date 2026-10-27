@@ -1,0 +1,260 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_certified_complete_potential_endpoint_join/evidence.json": "f40db0ddfb1fd3fc661ede433d8ce88c8be10d25b77c635e1b61c3ec75c64e49",
+    "results/core_corrected_force_join/evidence.json": "d9134eb24000b86eced91780b8a8f36bb11e79c311d4947c56bf2352f99b55b3",
+    "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc"
+  },
+  "gates": {
+    "conditional_scope": true,
+    "dependency_sources_unchanged": true,
+    "exact_controls": true,
+    "four_frozen_dependency_records": true
+  },
+  "inherited_source_checks": {
+    "core_certified_complete_potential_diagonal_join:results/canonical_local_realization/realization.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/.gitignore": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/README.md": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/protocol.json": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/requirements.txt": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/test_audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_finite_stage_domain_join/certified_recurrence.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_certified_complete_potential_diagonal_join:results/finite_stage_induction/induction.py": true,
+    "core_certified_complete_potential_diagonal_join:results/realization_foundation/realized_checks.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/.gitignore": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/README.md": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/controls.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/protocol.json": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/requirements.txt": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/test_audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/current_endpoint_jets/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/endpoint_foundation/terminal_bounds.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/.gitignore": true,
+    "core_corrected_force_join:results/core_corrected_force_join/README.md": true,
+    "core_corrected_force_join:results/core_corrected_force_join/audit.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/controls.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/localization.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/requirements.txt": true,
+    "core_corrected_force_join:results/core_corrected_force_join/test_audit.py": true,
+    "force_foundation:results/coefficient_support_audit/evidence.json": true,
+    "force_foundation:results/compact_mean_foundation/evidence.json": true,
+    "force_foundation:results/current_localized_force/evidence.json": true,
+    "force_foundation:results/current_localized_force/forcing.py": true,
+    "force_foundation:results/endpoint_foundation/evidence.json": true,
+    "force_foundation:results/finite_induction_foundation/evidence.json": true,
+    "force_foundation:results/force_foundation/.gitignore": true,
+    "force_foundation:results/force_foundation/README.md": true,
+    "force_foundation:results/force_foundation/audit.py": true,
+    "force_foundation:results/force_foundation/localized_bounds.py": true,
+    "force_foundation:results/force_foundation/localized_checks.py": true,
+    "force_foundation:results/force_foundation/protocol.json": true,
+    "force_foundation:results/force_foundation/requirements.txt": true,
+    "force_foundation:results/force_foundation/test_audit.py": true,
+    "force_foundation:results/global_moment_stress/evidence.json": true,
+    "force_foundation:results/localized_force_extension/evidence.json": true,
+    "force_foundation:results/realization_foundation/evidence.json": true,
+    "force_foundation:results/realization_foundation/realized_checks.py": true
+  },
+  "remaining_obligations": [
+    "recover the fixed-gauge pressure and close expanding-ball comparison for every admissible smooth finite-energy competitor with the same zero datum and force",
+    "discharge the retained primitive background, root, inverse, support, pressure and physical-transfer estimates before any unconditional force or blow-up claim"
+  ],
+  "review": {
+    "checks": {
+      "domain": true,
+      "energy": true,
+      "extension": true,
+      "residual": true,
+      "scope": true
+    },
+    "exact_controls_are_not_continuum_proofs": true,
+    "scope": {
+      "actual_terminal_norms_or_Borel_scales_evaluated": false,
+      "certified_fixed_stage_domains_and_single_cutoff_sequence_retained": true,
+      "compact_smooth_force_and_zero_initial_data_follow_conditionally": true,
+      "complete_fixed_gauge_pressure_and_all_twelve_residual_terms_retained": true,
+      "future_velocity_or_pressure_constructed": false,
+      "global_competitor_comparison_or_blowup_proved": false,
+      "preterminal_energy_and_integrated_dissipation_follow_conditionally": true,
+      "primitive_corner_and_punctured_bounds_independently_proved": false,
+      "protected_inner_field_unchanged_on_cutoff_plateau": true,
+      "regular_velocity_or_pressure_at_terminal_origin_proved": false,
+      "same_certified_complete_diagonal_field_localized": true,
+      "uniform_stage_constant_growth_required": false
+    },
+    "sections": {
+      "domain": {
+        "checks": {
+          "certified_endpoint_parent_used": true,
+          "certified_fixed_stage_domains_retained": true,
+          "curl_and_axisymmetric_direct_swirl_are_exactly_divergence_free": true,
+          "d_dot_grad_c_vanishes_by_cross_product": true,
+          "enlarged_chart_margin_strict": true,
+          "every_Cauchy_bound_reserves_one_more_time_derivative": true,
+          "every_force_order_has_three_extra_potential_derivatives": true,
+          "parent_did_not_already_claim_localization": true,
+          "twelve_complete_terms_retained": true,
+          "zero_initial_neighborhood_follows_from_time_cutoff": true
+        },
+        "complete_pressure": "p0 remains in its fixed gauge with every inherited pressure difference and moment tail",
+        "cutoff": "c=chi_r(r^2) chi_z(z) chi_t(t), axisymmetric and one near (0,1)",
+        "enlarged_chart": "1/4<=q/Q<=4; q<=3q_e/8; q_e<=qstar/16; hence 4Q<=16q<=3qstar/8",
+        "field": "u=curl(c*A)+c*B=c*u0+d; d=grad(c) cross A; p=c*p0",
+        "requirements": [
+          {
+            "Cauchy_direct_swirl_order": 3,
+            "Cauchy_potential_order": 4,
+            "Cauchy_pressure_order": 2,
+            "direct_swirl_order": 2,
+            "force_order": 0,
+            "potential_order": 3,
+            "pressure_order": 1
+          },
+          {
+            "Cauchy_direct_swirl_order": 4,
+            "Cauchy_potential_order": 5,
+            "Cauchy_pressure_order": 3,
+            "direct_swirl_order": 3,
+            "force_order": 1,
+            "potential_order": 4,
+            "pressure_order": 2
+          },
+          {
+            "Cauchy_direct_swirl_order": 8,
+            "Cauchy_potential_order": 9,
+            "Cauchy_pressure_order": 7,
+            "direct_swirl_order": 7,
+            "force_order": 5,
+            "potential_order": 8,
+            "pressure_order": 6
+          },
+          {
+            "Cauchy_direct_swirl_order": 103,
+            "Cauchy_potential_order": 104,
+            "Cauchy_pressure_order": 102,
+            "direct_swirl_order": 102,
+            "force_order": 100,
+            "potential_order": 103,
+            "pressure_order": 101
+          }
+        ]
+      },
+      "energy": {
+        "checks": {
+          "dissipation_factor_two_retained": true,
+          "energy_does_not_regularize_terminal_origin_or_prove_growth": true,
+          "pressure_and_transport_fluxes_vanish_for_compact_divergence_free_field": true,
+          "separate_extrema_cannot_be_added_with_same_budget": true,
+          "terminal_dissipation_uses_monotone_convergence": true,
+          "zero_start_handled_by_regularized_square_root": true
+        },
+        "counterexample": {
+          "epsilon": "1/100",
+          "force_norm": "201/200",
+          "lower_combined": "37349/22350"
+        },
+        "fixed_time": "E(t)+2 integral_0^t D <= (integral_0^t ||f||_2)^2",
+        "identity": "0.5 E'(t)+D(t)=<f(t),u(t)>",
+        "separate": "sup_(t<1) E<=F(1)^2 and integral_0^1 D<=F(1)^2/2"
+      },
+      "extension": {
+        "checks": {
+          "every_fixed_mixed_jet_enters_the_single_diagonal": true,
+          "finite_constraints_allow_increasing_dyadic_scales": true,
+          "future_velocity_or_pressure_not_constructed": true,
+          "geometric_differentiated_tail_is_two_to_one_minus_J": true,
+          "invalid_Leibniz_indices_give_zero": true,
+          "plateau_and_factorial_match_exactly_F_m": true,
+          "raw_terminal_Taylor_convergence_not_required": true,
+          "representative_factorial_control": true
+        },
+        "exact_factor": "binomial(m,k) b_j^k chi0^(k)(b_j sigma) sigma^(j-m+k)/(j-m+k)!",
+        "future_force": "f_plus=sum_j chi0(b_j sigma) sigma^j F_j/j!, sigma=t-1",
+        "rows": [
+          {
+            "diagonal_admits": true,
+            "exponent_negative": true,
+            "first_stage": 1,
+            "spatial_order": 0,
+            "time_order": 0
+          },
+          {
+            "diagonal_admits": true,
+            "exponent_negative": true,
+            "first_stage": 8,
+            "spatial_order": 1,
+            "time_order": 3
+          },
+          {
+            "diagonal_admits": true,
+            "exponent_negative": true,
+            "first_stage": 48,
+            "spatial_order": 20,
+            "time_order": 4
+          },
+          {
+            "diagonal_admits": true,
+            "exponent_negative": true,
+            "first_stage": 152,
+            "spatial_order": 6,
+            "time_order": 70
+          },
+          {
+            "diagonal_admits": true,
+            "exponent_negative": true,
+            "first_stage": 4000,
+            "spatial_order": 1000,
+            "time_order": 1000
+          }
+        ],
+        "terminal_jets": "F_j=lim_(t up to 1) partial_t^j f_minus in C_c^infinity(K), flat at x=0",
+        "whole_support_bound": "||D_x^a partial_sigma^m T_j|| <= C_(j,a,m) b_j^(m-j)"
+      },
+      "residual": {
+        "checks": {
+          "complete_pressure_cutoff_term_retained": true,
+          "corner_flatness_must_be_uniform_in_compact_X_not_pathwise": true,
+          "force_divergence_retained_in_pressure_equation": true,
+          "no_compact_support_preserving_Leray_projection_assumed": true,
+          "punctured_endpoint_and_corner_flatness_have_distinct_roles": true,
+          "time_viscosity_pressure_and_all_nonlinear_terms_present": true
+        },
+        "corner_blocker": "for every alpha,j,N, sup_corner |D_x^alpha partial_t^j R_1(u0,p0)| <= C_(alpha,j,N) (tau+|z|^(1/D))^N",
+        "identity": "R_nu(u,p)=c R_nu(u0,p0)+c_t u0+d_t-nu(Delta c)u0-2nu sum_i c_i partial_i u0-nu Delta d+p0 grad c+c(c-1)(u0.grad)u0+c(u0.grad c)u0+c(u0.grad)d+c(d.grad)u0+(d.grad)d",
+        "pressure_Poisson": "-Delta p=partial_i partial_j(u_i u_j)-div f_minus",
+        "punctured_blocker": "for every fixed alpha,j, the required A,B,p0 jets and their next time derivatives are uniformly bounded on each punctured terminal compact",
+        "terms": [
+          "base_residual",
+          "cutoff_time",
+          "curl_time",
+          "cutoff_laplacian",
+          "gradient_viscosity",
+          "curl_viscosity",
+          "pressure_cutoff",
+          "quadratic_rescaling",
+          "velocity_cutoff_transport",
+          "old_curl_transport",
+          "curl_old_transport",
+          "curl_square"
+        ]
+      }
+    }
+  },
+  "source_hashes": {
+    "results/core_certified_complete_potential_force_join/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_certified_complete_potential_force_join/README.md": "17aef1c72e9efb852519ef4de90472fdb62398027016dc4e54a1cf0feb5162fd",
+    "results/core_certified_complete_potential_force_join/audit.py": "63d6da9f3860048222de4959340c7cf7b5949255864b666edca3d683f01e76e0",
+    "results/core_certified_complete_potential_force_join/controls.py": "cf353fb0588d4d6439f7326c33730ef267dfea6fc5923f2bec0396e9fb129c5b",
+    "results/core_certified_complete_potential_force_join/localization.py": "a9f2fc798aa877dee7fa1b39c4486b0d54a1be2af1118a081fbd8ecf3d8cdccf",
+    "results/core_certified_complete_potential_force_join/protocol.json": "3f18bd210d9dc60551b738b003bc911faf2b7bc379b178e9fe41059e83cf9914",
+    "results/core_certified_complete_potential_force_join/requirements.txt": "50f054ff4f00d5609205702476b72068d84d5aefbafc874ec58f869a1b131f4d",
+    "results/core_certified_complete_potential_force_join/test_audit.py": "99dfa3b70012ec89b67c29f2e6146f2892f1ec368cdce13d04ec536215f798f1"
+  },
+  "status": "certified-domain-conditional-localization-force-and-energy-join"
+}
