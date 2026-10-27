@@ -1,0 +1,7 @@
+{
+  "parent_commit": "47a30fc47a9b55ad9d81d190559775a98ee95a5e",
+  "correction": "the prior checkpoint left the same-field lower bound open; annular increments vanish exactly on the protected path while positive-order Borel background terms need the separate O(q^(2h)) estimate",
+  "result": "identify e0=E0(Xin,0)>0 and prove q^A u_theta*=e0+O(q^(2h)) on one fixed Xin<Xa path for the same complete-potential diagonal",
+  "comparison_order": "fix T<1, send the comparison radius to infinity, and only then approach the protected core as tau tends to zero",
+  "scope": "conditional analytical join relative to the frozen provider contracts; no unconditional pulse hierarchy, admissible-force theorem, or blow-up claim"
+}
