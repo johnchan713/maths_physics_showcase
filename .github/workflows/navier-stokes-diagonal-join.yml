@@ -23,6 +23,7 @@ on:
       - research/navier_stokes_cascade/results/core_certified_complete_potential_endpoint_join/**
       - research/navier_stokes_cascade/results/core_certified_complete_potential_force_join/**
       - research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/**
+      - research/navier_stokes_cascade/results/core_same_field_pressure_reconciliation/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -49,6 +50,7 @@ on:
       - research/navier_stokes_cascade/results/core_certified_complete_potential_endpoint_join/**
       - research/navier_stokes_cascade/results/core_certified_complete_potential_force_join/**
       - research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/**
+      - research/navier_stokes_cascade/results/core_same_field_pressure_reconciliation/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -197,6 +199,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_certified_complete_potential_comparison_join/evidence.json \
             --output navier_stokes_certified_complete_potential_comparison_join_ci.json
+
+      - name: Identify same-field core pressure with completed leading backward pressure
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_same_field_pressure_reconciliation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_same_field_pressure_reconciliation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_same_field_pressure_reconciliation/evidence.json \
+            --output navier_stokes_same_field_pressure_reconciliation_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

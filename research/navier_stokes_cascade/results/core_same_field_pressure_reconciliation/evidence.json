@@ -1,0 +1,260 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_comparison_join/evidence.json": "c38c419a7a720ddc2cb6207d80e652b300171e80d1ee982d1399a66105371786",
+    "results/core_certified_complete_potential_endpoint_join/evidence.json": "f40db0ddfb1fd3fc661ede433d8ce88c8be10d25b77c635e1b61c3ec75c64e49",
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_fixed_point_ledger_recheck/evidence.json": "f210da4a0a7bf19dc9bba14f5d3d7cd6465ee0e6b24b80251b29526f462b3a73",
+    "results/core_global_pressure_moment_recheck/evidence.json": "f24e08f6c2bb68780ec67c792eb3fa7e8962462242571f9f0f6257a3de88e557",
+    "results/core_leading_background_borel_join/evidence.json": "cb0fc6bf2b624431ea1f99fe9f920305c04c0fa014c28ef167615914fdd9e1a5",
+    "results/core_modulation_repair_join_recheck/evidence.json": "06c690c0615abba4afb37d438c49ff5493545bac94d45c1aa926bcfb52646f68",
+    "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a"
+  },
+  "gates": {
+    "all_dependency_sources_match": true,
+    "eight_frozen_dependencies": true,
+    "order_and_scope_preserved": true,
+    "seven_exact_controls": true
+  },
+  "inherited_source_checks": {
+    "core_certified_complete_potential_comparison_join:results/core_certified_complete_potential_comparison_join/.gitignore": true,
+    "core_certified_complete_potential_comparison_join:results/core_certified_complete_potential_comparison_join/README.md": true,
+    "core_certified_complete_potential_comparison_join:results/core_certified_complete_potential_comparison_join/audit.py": true,
+    "core_certified_complete_potential_comparison_join:results/core_certified_complete_potential_comparison_join/comparison.py": true,
+    "core_certified_complete_potential_comparison_join:results/core_certified_complete_potential_comparison_join/controls.py": true,
+    "core_certified_complete_potential_comparison_join:results/core_certified_complete_potential_comparison_join/protocol.json": true,
+    "core_certified_complete_potential_comparison_join:results/core_certified_complete_potential_comparison_join/requirements.txt": true,
+    "core_certified_complete_potential_comparison_join:results/core_certified_complete_potential_comparison_join/test_audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/.gitignore": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/README.md": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/controls.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/protocol.json": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/requirements.txt": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/test_audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/current_endpoint_jets/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/endpoint_foundation/terminal_bounds.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/.gitignore": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/README.md": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/audit.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/controls.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/localization.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/protocol.json": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/requirements.txt": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/test_audit.py": true,
+    "core_fixed_point_ledger_recheck:results/core_contraction_audit/README.md": true,
+    "core_fixed_point_ledger_recheck:results/core_contraction_audit/evidence.json": true,
+    "core_fixed_point_ledger_recheck:results/core_fixed_point_ledger_recheck/.gitignore": true,
+    "core_fixed_point_ledger_recheck:results/core_fixed_point_ledger_recheck/README.md": true,
+    "core_fixed_point_ledger_recheck:results/core_fixed_point_ledger_recheck/audit.py": true,
+    "core_fixed_point_ledger_recheck:results/core_fixed_point_ledger_recheck/proof_checks.py": true,
+    "core_fixed_point_ledger_recheck:results/core_fixed_point_ledger_recheck/protocol.json": true,
+    "core_fixed_point_ledger_recheck:results/core_fixed_point_ledger_recheck/requirements.txt": true,
+    "core_fixed_point_ledger_recheck:results/core_fixed_point_ledger_recheck/test_audit.py": true,
+    "core_fixed_point_ledger_recheck:results/core_pressure_gap_recheck/README.md": true,
+    "core_fixed_point_ledger_recheck:results/core_pressure_gap_recheck/evidence.json": true,
+    "core_fixed_point_ledger_recheck:results/foundation_bundle_route/README.md": true,
+    "core_fixed_point_ledger_recheck:results/foundation_bundle_route/evidence.json": true,
+    "core_global_pressure_moment_recheck:results/annular_exterior_foundation/README.md": true,
+    "core_global_pressure_moment_recheck:results/annular_exterior_foundation/evidence.json": true,
+    "core_global_pressure_moment_recheck:results/core_global_pressure_moment_recheck/.gitignore": true,
+    "core_global_pressure_moment_recheck:results/core_global_pressure_moment_recheck/README.md": true,
+    "core_global_pressure_moment_recheck:results/core_global_pressure_moment_recheck/audit.py": true,
+    "core_global_pressure_moment_recheck:results/core_global_pressure_moment_recheck/proof_checks.py": true,
+    "core_global_pressure_moment_recheck:results/core_global_pressure_moment_recheck/protocol.json": true,
+    "core_global_pressure_moment_recheck:results/core_global_pressure_moment_recheck/requirements.txt": true,
+    "core_global_pressure_moment_recheck:results/core_global_pressure_moment_recheck/test_audit.py": true,
+    "core_global_pressure_moment_recheck:results/core_modulation_repair_join_recheck/README.md": true,
+    "core_global_pressure_moment_recheck:results/core_modulation_repair_join_recheck/evidence.json": true,
+    "core_global_pressure_moment_recheck:results/global_moment_stress/README.md": true,
+    "core_global_pressure_moment_recheck:results/global_moment_stress/evidence.json": true,
+    "core_global_pressure_moment_recheck:results/heat_exterior_audit/README.md": true,
+    "core_global_pressure_moment_recheck:results/heat_exterior_audit/evidence.json": true,
+    "core_global_pressure_moment_recheck:results/pulse_moment_audit/README.md": true,
+    "core_global_pressure_moment_recheck:results/pulse_moment_audit/evidence.json": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/.gitignore": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/README.md": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/audit.py": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/borel_join.py": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/protocol.json": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/requirements.txt": true,
+    "core_leading_background_borel_join:results/core_leading_background_borel_join/test_audit.py": true,
+    "core_modulation_repair_join_recheck:results/annular_exterior_foundation/README.md": true,
+    "core_modulation_repair_join_recheck:results/annular_exterior_foundation/evidence.json": true,
+    "core_modulation_repair_join_recheck:results/core_continuation_matching_recheck/README.md": true,
+    "core_modulation_repair_join_recheck:results/core_continuation_matching_recheck/evidence.json": true,
+    "core_modulation_repair_join_recheck:results/core_modulation_repair_join_recheck/.gitignore": true,
+    "core_modulation_repair_join_recheck:results/core_modulation_repair_join_recheck/README.md": true,
+    "core_modulation_repair_join_recheck:results/core_modulation_repair_join_recheck/audit.py": true,
+    "core_modulation_repair_join_recheck:results/core_modulation_repair_join_recheck/proof_checks.py": true,
+    "core_modulation_repair_join_recheck:results/core_modulation_repair_join_recheck/protocol.json": true,
+    "core_modulation_repair_join_recheck:results/core_modulation_repair_join_recheck/requirements.txt": true,
+    "core_modulation_repair_join_recheck:results/core_modulation_repair_join_recheck/test_audit.py": true,
+    "core_modulation_repair_join_recheck:results/explicit_variance_cutoff/README.md": true,
+    "core_modulation_repair_join_recheck:results/explicit_variance_cutoff/evidence.json": true,
+    "core_modulation_repair_join_recheck:results/loop_modulation_bounds/README.md": true,
+    "core_modulation_repair_join_recheck:results/loop_modulation_bounds/evidence.json": true,
+    "core_modulation_repair_join_recheck:results/regional_cone_join/README.md": true,
+    "core_modulation_repair_join_recheck:results/regional_cone_join/evidence.json": true,
+    "core_modulation_repair_join_recheck:results/repair_state_bounds/README.md": true,
+    "core_modulation_repair_join_recheck:results/repair_state_bounds/evidence.json": true,
+    "core_pressure_identification:results/annular_exterior_foundation/README.md": true,
+    "core_pressure_identification:results/annular_exterior_foundation/evidence.json": true,
+    "core_pressure_identification:results/canonical_comparison_join/README.md": true,
+    "core_pressure_identification:results/canonical_comparison_join/evidence.json": true,
+    "core_pressure_identification:results/canonical_primary_foundation/README.md": true,
+    "core_pressure_identification:results/canonical_primary_foundation/protocol.json": true,
+    "core_pressure_identification:results/coefficient_support_foundation/README.md": true,
+    "core_pressure_identification:results/coefficient_support_foundation/evidence.json": true,
+    "core_pressure_identification:results/core_all_order_foundation/README.md": true,
+    "core_pressure_identification:results/core_all_order_foundation/evidence.json": true,
+    "core_pressure_identification:results/core_contraction_audit/README.md": true,
+    "core_pressure_identification:results/core_contraction_audit/evidence.json": true,
+    "core_pressure_identification:results/core_growth_activation/README.md": true,
+    "core_pressure_identification:results/core_growth_activation/evidence.json": true,
+    "core_pressure_identification:results/core_pressure_identification/.gitignore": true,
+    "core_pressure_identification:results/core_pressure_identification/README.md": true,
+    "core_pressure_identification:results/core_pressure_identification/audit.py": true,
+    "core_pressure_identification:results/core_pressure_identification/pressure_recovery.py": true,
+    "core_pressure_identification:results/core_pressure_identification/protocol.json": true,
+    "core_pressure_identification:results/core_pressure_identification/requirements.txt": true,
+    "core_pressure_identification:results/core_pressure_identification/test_audit.py": true,
+    "core_pressure_identification:results/global_pressure_moment_foundation/README.md": true,
+    "core_pressure_identification:results/global_pressure_moment_foundation/evidence.json": true,
+    "core_pressure_identification:results/global_pressure_moment_foundation/identities.py": true,
+    "core_pressure_identification:results/outer_pressure_pilot/schedule.py": true
+  },
+  "protocol": {
+    "field": "the same certified complete-potential field, leading profile, gauges, supports and cutoff sequence used by the comparison checkpoint",
+    "frontier": "prove the fixed-jet closed-corner residual bounds, uniformly on each compact X-region and with the extra time derivative required by localization",
+    "identification": "on the protected core, the exact core pressure and completed leading backward pressure have the same axis datum and the same radial derivative E0^2/(2X)",
+    "order_correction": "the identification is the q^0 leading pressure; q-positive background, wave, mean and localization pressure memory remains in the full corrected pressure",
+    "parent_commit": "ec9eec28c874eb626b6e5857def432a351d4e1bf",
+    "scope": "same-field pressure reconciliation and obstruction ledger; no new pulse, force, residual-improvement or blow-up theorem"
+  },
+  "remaining_obligations": [
+    "prove for every fixed spacetime jet the closed-chart residual bound through |eta|=1 and T=0, including the extra time derivative used by localization",
+    "make that corner flatness uniform on each compact X-region before promoting the compact force and global comparison",
+    "retain q-positive background, wave, mean and localization pressure in the complete residual and force"
+  ],
+  "review": {
+    "checks": {
+      "core_radial_pressure_density_equals_leading_swirl_density": true,
+      "full_corrected_pressure_is_not_collapsed_to_centrifugal_pressure": true,
+      "omitted_fifth_row_leaves_nonzero_gauge_defect": true,
+      "pressure_identification_does_not_prove_corner_flatness": true,
+      "protected_inner_support_is_needed_to_transfer_the_core_identity": true,
+      "q_positive_background_pressure_need_not_equal_leading_pressure": true,
+      "same_axis_and_zero_total_defect_give_forward_backward_equality_at_every_split": true
+    },
+    "density_rows": [
+      {
+        "X": "1/7",
+        "core_density": "36/25",
+        "equal": true,
+        "swirl_density": "36/25"
+      },
+      {
+        "X": "1/7",
+        "core_density": "49/121",
+        "equal": true,
+        "swirl_density": "49/121"
+      },
+      {
+        "X": "1/7",
+        "core_density": "400/169",
+        "equal": true,
+        "swirl_density": "400/169"
+      },
+      {
+        "X": "1",
+        "core_density": "36/25",
+        "equal": true,
+        "swirl_density": "36/25"
+      },
+      {
+        "X": "1",
+        "core_density": "49/121",
+        "equal": true,
+        "swirl_density": "49/121"
+      },
+      {
+        "X": "1",
+        "core_density": "400/169",
+        "equal": true,
+        "swirl_density": "400/169"
+      },
+      {
+        "X": "9",
+        "core_density": "36/25",
+        "equal": true,
+        "swirl_density": "36/25"
+      },
+      {
+        "X": "9",
+        "core_density": "49/121",
+        "equal": true,
+        "swirl_density": "49/121"
+      },
+      {
+        "X": "9",
+        "core_density": "400/169",
+        "equal": true,
+        "swirl_density": "400/169"
+      }
+    ],
+    "negative_controls": {
+      "nonzero_fifth_row_defect": "1",
+      "positive_i4_background_radial_pressure_derivative": "9/128"
+    },
+    "scope": {
+      "fixed_jet_closed_corner_residual_bound_proved_here": false,
+      "full_q_positive_pressure_identified_with_core_pressure": false,
+      "leading_q_zero_pressure_identified_on_same_field": true,
+      "unconditional_force_residual_or_blowup_proved": false
+    },
+    "split_rows": [
+      {
+        "backward": "-17",
+        "defect": "0",
+        "forward": "-17",
+        "split": 0
+      },
+      {
+        "backward": "-15",
+        "defect": "0",
+        "forward": "-15",
+        "split": 1
+      },
+      {
+        "backward": "-12",
+        "defect": "0",
+        "forward": "-12",
+        "split": 2
+      },
+      {
+        "backward": "-7",
+        "defect": "0",
+        "forward": "-7",
+        "split": 3
+      },
+      {
+        "backward": "0",
+        "defect": "0",
+        "forward": "0",
+        "split": 4
+      }
+    ]
+  },
+  "source_hashes": {
+    "results/core_same_field_pressure_reconciliation/.gitignore": "d10236b398557e529edeff839ec1d4acbcecd1de31dfe96876531277774bc91a",
+    "results/core_same_field_pressure_reconciliation/README.md": "6e5be45b1d48b65b84edb2804941b943688d9f86dfa7aeafa13d81b173c63ede",
+    "results/core_same_field_pressure_reconciliation/audit.py": "fd1a603493657d744449a320eaac8cfb88dc0658a7c9a58b6b01e2f8fff7df4f",
+    "results/core_same_field_pressure_reconciliation/identities.py": "34b6f01c50bd836ef25c7b83726e827cb4f097ae52ca11a8e8082a639ca73767",
+    "results/core_same_field_pressure_reconciliation/protocol.json": "2e91fd4b08a30785a07f91b4f75f5fd8e8c37e8c3ce5724aa62f6833b7d6ea67",
+    "results/core_same_field_pressure_reconciliation/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_same_field_pressure_reconciliation/test_audit.py": "f848b3c7b39e76ec3cbc3afa3036b96aa4a40c0576808b131edd0b654ca33b5b"
+  },
+  "status": "same-field-core-pressure-identified-with-completed-leading-backward-pressure"
+}
