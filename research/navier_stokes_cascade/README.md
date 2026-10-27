@@ -1449,6 +1449,21 @@ conditional on the frozen exact core/root and regional/frame providers. The
 canonical full-path ODE is next; no unconditional pulse, residual, force,
 exclusion or blow-up conclusion follows.
 
+The following [canonical full-path ODE reconstruction](results/core_full_path_ode_reconstruction/README.md)
+closes finite-interval existence, the Gaussian-adapted propagator, every
+fixed mixed jet, entrance data, pressure, potential and cutoff/support
+placement on that same accepted tail. It corrects a semantic conflation:
+the canonical primary is homogeneous, while the adjacent zero-entry sourced
+inverse retains the unprojected `n dot f` term in its pressure. A purely
+normal source proves that projecting before pressure reconstruction would
+lose a nonzero pressure response. The raw response is not assigned compact
+support or a zero exit value; compact support comes from the inherited
+potential and full-pressure cutoffs with all product derivatives retained.
+This remains conditional on the frozen background/frame providers and gives
+fixed-order, not derivative-uniform, constants. The fixed compensator and
+projector family is next; no unconditional pulse, residual, force, exclusion
+or blow-up conclusion follows.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

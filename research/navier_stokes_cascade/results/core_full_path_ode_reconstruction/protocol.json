@@ -1,0 +1,8 @@
+{
+  "correction": "the canonical primary is homogeneous and has f=0; retaining the unprojected n dot f pressure source is a separate adjacent sourced-inverse obligation, not a source inserted into the primary",
+  "parent_commit": "e016f4a705ef8a04c89478b8707cd8a07273a112",
+  "domain": "the reconstructed same-band tail on every complete lifted interval, with frozen discrete labels and the full rule-defined Borel background",
+  "pressure": "pi=i(n dot Kt-nprime dot t+n dot f)/(k*m*|n|^2), retaining moving normal and unprojected source before potential and full-pressure cutoffs; distinct Pi1/Pi2 background memory and moving moments remain explicit later-ledger obligations",
+  "result": "reconstruct finite-interval existence, propagator, fixed-jet, entrance, pressure, potential and cutoff/support estimates for the canonical primary and adjacent sourced inverse",
+  "scope": "third primitive contract only; fixed projectors and compact/slow weighted maps remain open"
+}

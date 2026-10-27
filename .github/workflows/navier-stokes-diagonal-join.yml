@@ -43,6 +43,7 @@ on:
       - research/navier_stokes_cascade/results/core_leading_background_seminorm_reconstruction/**
       - research/navier_stokes_cascade/results/core_leading_profile_certificate/**
       - research/navier_stokes_cascade/results/core_same_band_gap_reconstruction/**
+      - research/navier_stokes_cascade/results/core_full_path_ode_reconstruction/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -89,6 +90,7 @@ on:
       - research/navier_stokes_cascade/results/core_leading_background_seminorm_reconstruction/**
       - research/navier_stokes_cascade/results/core_leading_profile_certificate/**
       - research/navier_stokes_cascade/results/core_same_band_gap_reconstruction/**
+      - research/navier_stokes_cascade/results/core_full_path_ode_reconstruction/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -377,6 +379,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_same_band_gap_reconstruction/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_same_band_gap_reconstruction/evidence.json \
             --output navier_stokes_same_band_gap_reconstruction_ci.json
+
+      - name: Reconstruct canonical full-path ODE
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_full_path_ode_reconstruction/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_full_path_ode_reconstruction/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_full_path_ode_reconstruction/evidence.json \
+            --output navier_stokes_full_path_ode_reconstruction_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
