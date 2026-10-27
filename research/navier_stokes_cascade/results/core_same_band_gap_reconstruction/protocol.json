@@ -1,0 +1,7 @@
+{
+  "correction": "the leading stress has zero global magnitude infimum at its two flat edges; the valid same-band cone contract uses |T0|>=c*zeta, smooth factored directions, and relative-stress errors",
+  "parent_commit": "c1a9a9a4d97a5b4165f7d5033f3f5b16016e3b24",
+  "pressure": "retain the completed leading pressure, every positive-order pressure coefficient, Pi1/Pi2 memory, axial transport, and the radial cutoff-curl commutator",
+  "result": "reconstruct the same-band value, spectral, factored-cone and full-phase-normal contract on the newly certified completed leading profile",
+  "scope": "second primitive contract relative to the exact core/root and cited continuum providers; the full-path ODE and all downstream pulse/residual contracts remain open"
+}

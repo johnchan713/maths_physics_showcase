@@ -1437,6 +1437,18 @@ background contract relative to the frozen exact core and root hypotheses.
 The same-band continuum gap contract remains next; no unconditional pulse,
 complete residual, force, exclusion or blow-up conclusion is claimed.
 
+The subsequent [same-band continuum-gap reconstruction](results/core_same_band_gap_reconstruction/README.md)
+joins that finalized profile and its real Borel background to one common
+value, spectral, factored-cone and full-phase-normal tail. It corrects the
+global-stress shorthand: the leading stress has zero magnitude infimum at
+its flat edges, while `|T0|>=c zeta`, the limiting directions and the
+relative-stress quotient supply the valid cone contract. A finite explicit
+perturbation radius and one derivative-independent integer close the value,
+chart, length and slow rows without sampled continuum suprema. This remains
+conditional on the frozen exact core/root and regional/frame providers. The
+canonical full-path ODE is next; no unconditional pulse, residual, force,
+exclusion or blow-up conclusion follows.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL
