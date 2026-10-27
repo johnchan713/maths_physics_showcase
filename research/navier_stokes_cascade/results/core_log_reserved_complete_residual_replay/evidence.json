@@ -1,0 +1,277 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_complete_potential_diagonal_join/evidence.json": "e2c62cc359872d182e8d3aad849ef584a5404bd6ba34df6936dc1918cdafd95e",
+    "results/core_corner_tail_slack_reconciliation/evidence.json": "f3e0ee58871b00245741f48e04481db7b7eaab5850a593830d276b8fd44e0988",
+    "results/core_finite_stage_compact_recurrence/evidence.json": "f49b4132de95667046e884aeaf0049bd6df21a9d1ed34272c98a8fd739147c34",
+    "results/core_log_renormalized_actual_source_induction/evidence.json": "58362ac9bb2da6a3fbf579e4f17351ca5e839e14b3ec18f5eff8ffeac54296a5",
+    "results/core_post_signed_residual_join/evidence.json": "bb9833093f77cebeb4045096f4c0c8d2ad7c03fab4a830f6e6f848831895f662"
+  },
+  "gates": {
+    "five_frozen_dependencies": true,
+    "scientific_scope_preserved": true,
+    "six_group_local_residual": true,
+    "ten_exact_controls": true
+  },
+  "protocol": {
+    "correction": "the extra compact integration pays only the logarithmic loss of its own A0 or A1 source; it cannot also pay logarithms in the regular residual, viscosity, cutoffs, or interactions",
+    "parent_commit": "cce45fc0cc34c48a7a9c22406687dfa0a7b3900d",
+    "result": "replay the complete fixed-stage and diagonal residual with separate positive exponent accounts for compact-source logarithms, regular-residual logarithms, and cutoff-tail logarithms",
+    "scope": "conditional complete local residual flatness for the existing locally finite field; localization, compact force, energy, comparison, and blow-up are not replayed here"
+  },
+  "remaining_obligations": [
+    "replay the punctured closed-corner endpoint and Cartesian flatness transfer on the corrected same field",
+    "replay localization and compact forcing including viscosity and cutoff derivatives",
+    "replay energy, fixed-gauge pressure recovery and expanding-ball comparison before any blow-up claim"
+  ],
+  "review": {
+    "checks": {
+      "actual_source_log_domain_precedes_this_replay": "True",
+      "all_six_residual_groups_are_retained": "True",
+      "compact_A0_and_A1_reserves_are_distinct": "True",
+      "cutoff_reserve_remains_the_existing_half_gain": "True",
+      "localization_force_comparison_and_blowup_not_claimed": "True",
+      "one_fixed_stage_is_used_for_each_jet_and_power": "True",
+      "positive_reserve_absorbs_each_fixed_log_degree": "True",
+      "regular_reserve_comes_from_one_new_stage": "True",
+      "sample_complete_residual_targets_close": "True",
+      "zero_reserve_pure_power_ratio_is_unbounded": "True"
+    },
+    "default_comparison": {
+      "background_state_loss": "801/100",
+      "base_comparison_stage": "12816",
+      "base_regular_exponent": "11814231/400000",
+      "checks": {
+        "all_six_tail_groups_beat_target": "True",
+        "compact_accounts_are_separate_and_positive": "True",
+        "complete_residual_beats_target": "True",
+        "cutoff_account_positive": "True",
+        "exactly_one_stage_added": "True",
+        "fixed_state_beats_target": "True",
+        "old_threshold_checks_hold": "True",
+        "one_stage_gain_is_exact": "True",
+        "regular_log_account_positive": "True"
+      },
+      "compact_accounts": {
+        "A0": {
+          "extra_integration_gain": "1/20000000",
+          "may_pay_regular_or_cutoff_log": "False",
+          "retained_strict_margin": "1/40000000",
+          "spent_on_own_source_log": "1/40000000"
+        },
+        "A1": {
+          "extra_integration_gain": "1/20000000",
+          "may_pay_regular_or_cutoff_log": "False",
+          "retained_strict_margin": "1/40000000",
+          "spent_on_own_source_log": "1/40000000"
+        }
+      },
+      "complete_minimum_exponent": "20030773/20000000",
+      "cutoff_log_spend": "320430773/20000000",
+      "first_omitted_representative_gain": "320430773/10000000",
+      "fixed_state_exponent_after_logs": "1181473097/40000000",
+      "identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
+      "jet": "0",
+      "log_reserved_comparison_stage": "12817",
+      "raw_regular_exponent": "590761547/20000000",
+      "regular_log_spend": "49997/40000000",
+      "regular_retained_margin": "49997/40000000",
+      "regular_stage_gain": "49997/20000000",
+      "residual_group_exponents": {
+        "new_old": "20030773/20000000",
+        "new_square": "180230773/10000000",
+        "old_new": "20030773/20000000",
+        "pressure": "180230773/20000000",
+        "time": "180230773/20000000",
+        "viscosity": "180230773/20000000"
+      },
+      "tail_exponent_after_cutoff_logs": "180230773/20000000",
+      "target": "0"
+    },
+    "residual_groups": [
+      "time",
+      "viscosity",
+      "pressure",
+      "old_new",
+      "new_old",
+      "new_square"
+    ],
+    "sample_comparisons": [
+      {
+        "background_state_loss": "801/100",
+        "base_comparison_stage": "12816",
+        "base_regular_exponent": "11814231/400000",
+        "checks": {
+          "all_six_tail_groups_beat_target": "True",
+          "compact_accounts_are_separate_and_positive": "True",
+          "complete_residual_beats_target": "True",
+          "cutoff_account_positive": "True",
+          "exactly_one_stage_added": "True",
+          "fixed_state_beats_target": "True",
+          "old_threshold_checks_hold": "True",
+          "one_stage_gain_is_exact": "True",
+          "regular_log_account_positive": "True"
+        },
+        "compact_accounts": {
+          "A0": {
+            "extra_integration_gain": "1/20000000",
+            "may_pay_regular_or_cutoff_log": "False",
+            "retained_strict_margin": "1/40000000",
+            "spent_on_own_source_log": "1/40000000"
+          },
+          "A1": {
+            "extra_integration_gain": "1/20000000",
+            "may_pay_regular_or_cutoff_log": "False",
+            "retained_strict_margin": "1/40000000",
+            "spent_on_own_source_log": "1/40000000"
+          }
+        },
+        "complete_minimum_exponent": "20030773/20000000",
+        "cutoff_log_spend": "320430773/20000000",
+        "first_omitted_representative_gain": "320430773/10000000",
+        "fixed_state_exponent_after_logs": "1181473097/40000000",
+        "identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
+        "jet": "0",
+        "log_reserved_comparison_stage": "12817",
+        "raw_regular_exponent": "590761547/20000000",
+        "regular_log_spend": "49997/40000000",
+        "regular_retained_margin": "49997/40000000",
+        "regular_stage_gain": "49997/20000000",
+        "residual_group_exponents": {
+          "new_old": "20030773/20000000",
+          "new_square": "180230773/10000000",
+          "old_new": "20030773/20000000",
+          "pressure": "180230773/20000000",
+          "time": "180230773/20000000",
+          "viscosity": "180230773/20000000"
+        },
+        "tail_exponent_after_cutoff_logs": "180230773/20000000",
+        "target": "0"
+      },
+      {
+        "background_state_loss": "1001/100",
+        "base_comparison_stage": "18417",
+        "base_regular_exponent": "830744747/20000000",
+        "checks": {
+          "all_six_tail_groups_beat_target": "True",
+          "compact_accounts_are_separate_and_positive": "True",
+          "complete_residual_beats_target": "True",
+          "cutoff_account_positive": "True",
+          "exactly_one_stage_added": "True",
+          "fixed_state_beats_target": "True",
+          "old_threshold_checks_hold": "True",
+          "one_stage_gain_is_exact": "True",
+          "regular_log_account_positive": "True"
+        },
+        "compact_accounts": {
+          "A0": {
+            "extra_integration_gain": "1/20000000",
+            "may_pay_regular_or_cutoff_log": "False",
+            "retained_strict_margin": "1/40000000",
+            "spent_on_own_source_log": "1/40000000"
+          },
+          "A1": {
+            "extra_integration_gain": "1/20000000",
+            "may_pay_regular_or_cutoff_log": "False",
+            "retained_strict_margin": "1/40000000",
+            "spent_on_own_source_log": "1/40000000"
+          }
+        },
+        "complete_minimum_exponent": "160094743/40000000",
+        "cutoff_log_spend": "920894743/40000000",
+        "first_omitted_representative_gain": "920894743/20000000",
+        "fixed_state_exponent_after_logs": "1661539491/40000000",
+        "identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
+        "jet": "1",
+        "log_reserved_comparison_stage": "18418",
+        "raw_regular_exponent": "103849343/2500000",
+        "regular_log_spend": "49997/40000000",
+        "regular_retained_margin": "49997/40000000",
+        "regular_stage_gain": "49997/20000000",
+        "residual_group_exponents": {
+          "new_old": "160094743/40000000",
+          "new_square": "560494743/20000000",
+          "old_new": "160094743/40000000",
+          "pressure": "560494743/40000000",
+          "time": "560494743/40000000",
+          "viscosity": "560494743/40000000"
+        },
+        "tail_exponent_after_cutoff_logs": "560494743/40000000",
+        "target": "3"
+      },
+      {
+        "background_state_loss": "1801/100",
+        "base_comparison_stage": "37618",
+        "base_regular_exponent": "203842143/2500000",
+        "checks": {
+          "all_six_tail_groups_beat_target": "True",
+          "compact_accounts_are_separate_and_positive": "True",
+          "complete_residual_beats_target": "True",
+          "cutoff_account_positive": "True",
+          "exactly_one_stage_added": "True",
+          "fixed_state_beats_target": "True",
+          "old_threshold_checks_hold": "True",
+          "one_stage_gain_is_exact": "True",
+          "regular_log_account_positive": "True"
+        },
+        "compact_accounts": {
+          "A0": {
+            "extra_integration_gain": "1/20000000",
+            "may_pay_regular_or_cutoff_log": "False",
+            "retained_strict_margin": "1/40000000",
+            "spent_on_own_source_log": "1/40000000"
+          },
+          "A1": {
+            "extra_integration_gain": "1/20000000",
+            "may_pay_regular_or_cutoff_log": "False",
+            "retained_strict_margin": "1/40000000",
+            "spent_on_own_source_log": "1/40000000"
+          }
+        },
+        "complete_minimum_exponent": "24004357/2000000",
+        "cutoff_log_spend": "94044357/2000000",
+        "first_omitted_representative_gain": "94044357/1000000",
+        "fixed_state_exponent_after_logs": "652304857/8000000",
+        "identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
+        "jet": "5",
+        "log_reserved_comparison_stage": "37619",
+        "raw_regular_exponent": "1630787141/20000000",
+        "regular_log_spend": "49997/40000000",
+        "regular_retained_margin": "49997/40000000",
+        "regular_stage_gain": "49997/20000000",
+        "residual_group_exponents": {
+          "new_old": "24004357/2000000",
+          "new_square": "60024357/1000000",
+          "old_new": "24004357/2000000",
+          "pressure": "60024357/2000000",
+          "time": "60024357/2000000",
+          "viscosity": "60024357/2000000"
+        },
+        "tail_exponent_after_cutoff_logs": "60024357/2000000",
+        "target": "11"
+      }
+    ],
+    "scope": {
+      "complete_pressure_memory_and_both_interaction_orientations_retained": "True",
+      "localization_force_energy_and_comparison_replayed_after_source_correction": "False",
+      "log_reserved_six_group_complete_local_residual_flat_conditionally": "True",
+      "same_locally_finite_field_and_cutoff_sequence_retained": "True",
+      "stage_uniform_constants_or_fixed_q_contraction_used": "False",
+      "unconditional_pulse_force_comparison_or_blowup_claimed": "False"
+    },
+    "zero_reserve_counterexample_ratios": [
+      "1",
+      "11",
+      "1001"
+    ]
+  },
+  "source_hashes": {
+    "results/core_log_reserved_complete_residual_replay/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_log_reserved_complete_residual_replay/README.md": "073e1e29f6f1c9917e9b7618da37725be1cbb00e36f9cd262214ba9f2d2966cd",
+    "results/core_log_reserved_complete_residual_replay/audit.py": "fe2b721038d91e1d5bf11086064f97a7f3a7c82cd9dc68be3a5051c3e47264a0",
+    "results/core_log_reserved_complete_residual_replay/protocol.json": "f6bb191efad00817e421830340065d7450e85adabc49c24aa64a84d0ef0aaca5",
+    "results/core_log_reserved_complete_residual_replay/replay.py": "1447e3bc8294454d808c67122ed3e46b81f8863aadafefb6ff6d82779d9946a3",
+    "results/core_log_reserved_complete_residual_replay/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_log_reserved_complete_residual_replay/test_audit.py": "08c118779a670533707de9f1d0ee580703e4e2be30ca5683269362036cebe6b6"
+  },
+  "status": "log-reserved-complete-six-group-local-residual-replayed-conditionally"
+}

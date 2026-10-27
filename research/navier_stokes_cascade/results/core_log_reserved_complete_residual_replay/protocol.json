@@ -1,0 +1,6 @@
+{
+  "parent_commit": "cce45fc0cc34c48a7a9c22406687dfa0a7b3900d",
+  "result": "replay the complete fixed-stage and diagonal residual with separate positive exponent accounts for compact-source logarithms, regular-residual logarithms, and cutoff-tail logarithms",
+  "correction": "the extra compact integration pays only the logarithmic loss of its own A0 or A1 source; it cannot also pay logarithms in the regular residual, viscosity, cutoffs, or interactions",
+  "scope": "conditional complete local residual flatness for the existing locally finite field; localization, compact force, energy, comparison, and blow-up are not replayed here"
+}
