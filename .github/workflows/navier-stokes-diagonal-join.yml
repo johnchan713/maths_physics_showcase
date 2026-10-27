@@ -38,6 +38,7 @@ on:
       - research/navier_stokes_cascade/results/core_log_reserved_endpoint_compatibility_join/**
       - research/navier_stokes_cascade/results/core_log_reserved_localization_force_replay/**
       - research/navier_stokes_cascade/results/core_log_reserved_preterminal_energy_replay/**
+      - research/navier_stokes_cascade/results/core_log_reserved_pressure_comparison_replay/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -79,6 +80,7 @@ on:
       - research/navier_stokes_cascade/results/core_log_reserved_endpoint_compatibility_join/**
       - research/navier_stokes_cascade/results/core_log_reserved_localization_force_replay/**
       - research/navier_stokes_cascade/results/core_log_reserved_preterminal_energy_replay/**
+      - research/navier_stokes_cascade/results/core_log_reserved_pressure_comparison_replay/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -332,6 +334,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_log_reserved_preterminal_energy_replay/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_log_reserved_preterminal_energy_replay/evidence.json \
             --output navier_stokes_log_reserved_preterminal_energy_replay_ci.json
+
+      - name: Replay log-reserved pressure recovery and comparison
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_log_reserved_pressure_comparison_replay/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_log_reserved_pressure_comparison_replay/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_log_reserved_pressure_comparison_replay/evidence.json \
+            --output navier_stokes_log_reserved_pressure_comparison_replay_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

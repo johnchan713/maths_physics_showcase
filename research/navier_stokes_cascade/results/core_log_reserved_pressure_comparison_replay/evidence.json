@@ -1,0 +1,137 @@
+{
+  "dependency_evidence_sha256": {
+    "results/comparison_foundation/evidence.json": "8375a9e06205b9817bd114a22320915f264fd760ae85d385a474f776ecebd0ca",
+    "results/core_complete_dependency_quantifier_audit/evidence.json": "87861a317f18040884d88e0f5893c46f16438e395a780a9ab65e00cd7c55dffa",
+    "results/core_corrected_comparison_join/evidence.json": "b57592912e8951b9b8b4ade127f7cb91001e108c125f0d05bb82b0d93d1b79bd",
+    "results/core_log_reserved_localization_force_replay/evidence.json": "08d502eb76fd4f30bc628c672094336acbbeb955dc4f1dfddb555c655ba695b6",
+    "results/core_log_reserved_preterminal_energy_replay/evidence.json": "91aa84f5301724c77c5a7dd0d2480b0a39c3b883da9ba374dca72f5c084d07ad",
+    "results/core_same_field_positive_core_reconciliation/evidence.json": "21151dd33b0c85350655cd06deaf950efcefe15b8c579135d7deb8bfef848f84"
+  },
+  "gates": {
+    "conditional_comparison_joined": true,
+    "scientific_scope_preserved": true,
+    "six_frozen_dependencies": true,
+    "ten_exact_controls": true
+  },
+  "protocol": {
+    "competitor": "smooth on compact subsets, same force and zero datum, with a uniform L2 bound on each fixed interval [0,T], T<1; no global pressure, derivative or dissipation bound",
+    "parent_commit": "bacc87b64b3b20c1aae1796a3f28e3dec57230af",
+    "result": "replay fixed-gauge pressure-gradient recovery and the expanding-ball comparison for the same log-reserved localized field, force and zero datum",
+    "scope": "conditional same-field comparison and competitor exclusion relative to the frozen field, force and protected-core contracts; no future solution or unconditional blow-up theorem"
+  },
+  "remaining_obligations": [
+    "audit the current-head dependency graph to enumerate every still-conditional continuum contract",
+    "independently discharge any remaining primitive or operator contract before promoting admissible-force or exclusion statements",
+    "do not claim an unconditional Navier-Stokes blow-up theorem from executable or numerical evidence"
+  ],
+  "review": {
+    "checks": {
+      "all_limit_checks_close": true,
+      "all_pressure_recovery_checks_close": true,
+      "all_radius_checks_close": true,
+      "competitor_requires_only_local_smoothness_and_fixed_interval_L2_bound": true,
+      "complete_fixed_gauge_pressure_memory_is_not_replaced": true,
+      "conditional_competitor_exclusion_uses_same_field_core_lower_bound": true,
+      "fixed_time_then_radius_then_core_order_retained": true,
+      "force_divergence_is_retained_then_cancels_once": true,
+      "same_localized_field_force_and_zero_datum_retained": true,
+      "scope_excludes_future_solution_and_unconditional_blowup": true
+    },
+    "conditional_conclusion": {
+      "comparison": "v=u on R^3 x [0,T] for every fixed T<1",
+      "core": "|u_theta(x_tau,1-tau)|>=(e0/2) tau^-A on the protected path",
+      "exclusion": "a globally smooth locally bounded finite-energy same-force competitor is excluded relative to all frozen contracts"
+    },
+    "interface": {
+      "competitor": "v,P smooth on compact subsets, same f and zero datum, sup_[0,T] ||v||_2 finite for each T<1",
+      "constructed": "same u=curl(cA)+cB, p=cp0, compact smooth f and u(0)=0",
+      "no_added_hypotheses": "no global competitor derivative, pressure-decay or dissipation bound"
+    },
+    "limit": {
+      "Gronwall": "E_R(t)<=2 C_T T exp(2 T L_T) R^-2 for each fixed T<1",
+      "checks": {
+        "constants_need_not_be_uniform_as_T_reaches_one": true,
+        "cutoffs_need_not_be_monotone": true,
+        "equality_holds_on_every_fixed_preterminal_interval": true,
+        "fixed_ball_eventually_lies_in_cutoff_plateau": true,
+        "global_smooth_competitor_is_locally_bounded_near_terminal_point": true,
+        "same_field_positive_core_path_is_available_conditionally": true
+      },
+      "limit_order": "fix T<1, then R->infinity, then approach the protected core as t->1",
+      "localized_inequality": "0.5 E_R'(t)+0.5 D_R(t)^2<=||grad u(t)||_infinity E_R(t)+C_T R^-2; E_R(0)=0"
+    },
+    "pressure": {
+      "Poisson_difference": "-Delta pi=partial_i partial_j g_ij",
+      "checks": {
+        "L1_stress_requires_Hminus_s_strictly_above_three_halves": true,
+        "Poisson_equation_alone_is_insufficient": true,
+        "common_force_cancels_exactly_once": true,
+        "harmonic_Hminus_three_gradient_vanishes": true,
+        "individual_force_divergence_is_retained": true,
+        "no_competitor_pressure_decay_or_temperedness_assumed": true,
+        "time_averaged_momentum_places_gradient_in_Hminus_three": true
+      },
+      "difference_equation": "w_t+div(g)=Delta w-grad(pi); div w=0",
+      "harmonic_counterexample": "without finite energy, v=t e1 and P=-x1 versus u=0,p=0 have the same zero datum and force but a nonzero harmonic pressure gradient",
+      "individual_pressures": "-Delta p=partial_i partial_j(u_i u_j)-div f; -Delta P=partial_i partial_j(v_i v_j)-div f",
+      "recovery": "pi_star=sum R_i R_j g_ij in L_infinity_t H^-2; for every compact time test, grad(pi-pi_star) is harmonic in H^-3 and hence zero",
+      "stress": "g=v tensor v-u tensor u=w tensor w+w tensor u+u tensor w"
+    },
+    "radius": {
+      "checks": {
+        "Young_remainders_are_R_minus_four_and_R_minus_fourteen_fifths": true,
+        "coarse_cutoff_laplacian_limits_total_remainder_to_R_minus_two": true,
+        "compact_mixed_flux_decays_R_minus_five_halves": true,
+        "eighth_cutoff_power_is_required_by_this_pairing": true,
+        "far_commutator_integral_is_finite": true,
+        "mixed_moment_is_not_assumed_isotropic": true,
+        "near_commutator_integral_is_finite": true,
+        "support_separation_is_R_over_two": true
+      },
+      "commutator_exponent": "4/3",
+      "commutator_kernel": "|z|^-3 min(|z|/R,1)",
+      "commutator_norm_decay": "3/4",
+      "commutator_radial_coefficient": "4",
+      "compact_mixed_pressure": "|pi_h|<=C H_T R^-3 and its annular flux is O(R^-5/2)",
+      "cutoff": "chi_R=phi(x/R)^8; phi=1 on B_1 and zero outside B_2",
+      "flux_rows": [
+        {
+          "Sobolev_offset": "5/2",
+          "Young_decay": "4",
+          "dissipation_power": "3/2",
+          "radius_power": "1",
+          "term": "quadratic_pressure_and_transport"
+        },
+        {
+          "Sobolev_offset": "5/2",
+          "Young_decay": "14/5",
+          "dissipation_power": "3/4",
+          "radius_power": "7/4",
+          "term": "quadratic_commutator"
+        }
+      ],
+      "support_split": "g=w tensor w+h; h=w tensor u+u tensor w; supp h subset K",
+      "worst_decay": "2"
+    },
+    "scope": {
+      "all_frozen_continuum_contracts_independently_reproved_here": false,
+      "finite_energy_hypothesis_removed": false,
+      "fixed_gauge_pressure_gradient_recovered_conditionally": true,
+      "future_velocity_or_pressure_constructed": false,
+      "global_smooth_finite_energy_competitor_exclusion_follows_conditionally": true,
+      "mixed_pressure_moment_isotropy_assumed": false,
+      "same_field_expanding_ball_comparison_replayed_conditionally": true,
+      "unconditional_admissible_force_or_blowup_proved": false
+    }
+  },
+  "source_hashes": {
+    "results/core_log_reserved_pressure_comparison_replay/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_log_reserved_pressure_comparison_replay/README.md": "98e89eda1c685e42de115c81647b2c6b000ad62e1bf65c1632360cbe94be4e2f",
+    "results/core_log_reserved_pressure_comparison_replay/audit.py": "83fc4a5746d296ecf8439041f8acea5a185aca4c13a728e6ae8fd8266d42b986",
+    "results/core_log_reserved_pressure_comparison_replay/pressure_comparison.py": "6031ca44ea17d12a20df381efc71569ebc8f9e4693f0539fcb04f918b8f60b6a",
+    "results/core_log_reserved_pressure_comparison_replay/protocol.json": "84f732200acf3fa997175ec8cff099c1b6e9b9cd963acef957f171fa862aedf0",
+    "results/core_log_reserved_pressure_comparison_replay/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_log_reserved_pressure_comparison_replay/test_audit.py": "c350a43e882f78b7d96d263dbb1097ff4ae0ab3aa2c3abb63fdfc1023bcec8f6"
+  },
+  "status": "log-reserved-pressure-and-expanding-ball-comparison-replayed-conditionally"
+}
