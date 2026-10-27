@@ -1,0 +1,7 @@
+{
+  "correction": "global complex-eta analyticity is false at the heat endpoint and is not needed; the common holomorphic strip is required only on the protected first collar, while later pieces require all fixed one-sided smooth jets",
+  "parent_commit": "285b8c4251db338c866315b138aa0402884fd25a",
+  "pressure": "carry the full forward pressure primitive through activation, repair and the reserved I3 patch; K3 contains all incoming pressure memory and is never reset",
+  "result": "join the finalized leading-profile collar, reserved-patch and compact-support certificate from its defining maps, relative to the frozen exact core and root hypotheses",
+  "scope": "analytical leading-profile certificate for the first background contract; no unconditional pulse, complete residual, force, exclusion or blow-up theorem"
+}
