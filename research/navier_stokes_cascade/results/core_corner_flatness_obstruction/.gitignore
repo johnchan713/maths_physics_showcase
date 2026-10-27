@@ -1,0 +1,3 @@
+fresh.json
+*.pyc
+__pycache__/

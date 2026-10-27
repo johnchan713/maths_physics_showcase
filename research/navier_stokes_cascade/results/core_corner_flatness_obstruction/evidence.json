@@ -1,0 +1,243 @@
+{
+  "dependency_evidence_sha256": {
+    "results/canonical_local_realization/evidence.json": "dd24a12408a5e0f8ed6ac12b621783b020f353fb80bf3add44a134237212614c",
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_certified_complete_potential_endpoint_join/evidence.json": "f40db0ddfb1fd3fc661ede433d8ce88c8be10d25b77c635e1b61c3ec75c64e49",
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_same_field_pressure_reconciliation/evidence.json": "a0a6bb8cc8d3e1c52227a1b2cb4f7a1adc0e340d2b9fc5fb2ac5aa9ebdc99f0c",
+    "results/current_endpoint_jets/evidence.json": "de61c70e5aea7ef14663e8fa4d34736bcf50399db4660c1eb3f01827c2e7e6d6",
+    "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc"
+  },
+  "gates": {
+    "all_dependency_sources_match": true,
+    "eight_exact_controls": true,
+    "obstruction_scope_preserved": true,
+    "seven_frozen_dependencies": true
+  },
+  "inherited_source_checks": {
+    "canonical_local_realization:results/background_summation/README.md": true,
+    "canonical_local_realization:results/background_summation/evidence.json": true,
+    "canonical_local_realization:results/canonical_finite_cycle_join/README.md": true,
+    "canonical_local_realization:results/canonical_finite_cycle_join/evidence.json": true,
+    "canonical_local_realization:results/canonical_local_realization/.gitignore": true,
+    "canonical_local_realization:results/canonical_local_realization/README.md": true,
+    "canonical_local_realization:results/canonical_local_realization/audit.py": true,
+    "canonical_local_realization:results/canonical_local_realization/gauge_checks.py": true,
+    "canonical_local_realization:results/canonical_local_realization/protocol.json": true,
+    "canonical_local_realization:results/canonical_local_realization/realization.py": true,
+    "canonical_local_realization:results/canonical_local_realization/requirements.txt": true,
+    "canonical_local_realization:results/canonical_local_realization/test_audit.py": true,
+    "canonical_local_realization:results/compact_mean_foundation/README.md": true,
+    "canonical_local_realization:results/compact_mean_foundation/evidence.json": true,
+    "canonical_local_realization:results/finite_induction_foundation/README.md": true,
+    "canonical_local_realization:results/finite_induction_foundation/evidence.json": true,
+    "canonical_local_realization:results/physical_pulse_foundation/README.md": true,
+    "canonical_local_realization:results/physical_pulse_foundation/evidence.json": true,
+    "canonical_local_realization:results/realization_foundation/README.md": true,
+    "canonical_local_realization:results/realization_foundation/evidence.json": true,
+    "canonical_local_realization:results/realization_foundation/realized_checks.py": true,
+    "core_certified_complete_potential_diagonal_join:results/canonical_local_realization/realization.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/.gitignore": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/README.md": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/protocol.json": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/requirements.txt": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/test_audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_finite_stage_domain_join/certified_recurrence.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_certified_complete_potential_diagonal_join:results/finite_stage_induction/induction.py": true,
+    "core_certified_complete_potential_diagonal_join:results/realization_foundation/realized_checks.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/.gitignore": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/README.md": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/controls.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/protocol.json": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/requirements.txt": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/test_audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/current_endpoint_jets/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/endpoint_foundation/terminal_bounds.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/.gitignore": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/README.md": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/audit.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/controls.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/localization.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/protocol.json": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/requirements.txt": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/test_audit.py": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/.gitignore": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/README.md": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/audit.py": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/identities.py": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/protocol.json": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/requirements.txt": true,
+    "core_same_field_pressure_reconciliation:results/core_same_field_pressure_reconciliation/test_audit.py": true,
+    "current_endpoint_jets:results/auxiliary_geometry_audit/evidence.json": true,
+    "current_endpoint_jets:results/background_jet_foundation/evidence.json": true,
+    "current_endpoint_jets:results/current_endpoint_jets/.gitignore": true,
+    "current_endpoint_jets:results/current_endpoint_jets/README.md": true,
+    "current_endpoint_jets:results/current_endpoint_jets/audit.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/endpoint.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/endpoint_checks.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/protocol.json": true,
+    "current_endpoint_jets:results/current_endpoint_jets/requirements.txt": true,
+    "current_endpoint_jets:results/current_endpoint_jets/test_audit.py": true,
+    "current_endpoint_jets:results/current_potential_realization/evidence.json": true,
+    "current_endpoint_jets:results/finite_stage_induction/evidence.json": true,
+    "current_endpoint_jets:results/geometric_pulse_replay/evidence.json": true,
+    "current_endpoint_jets:results/heat_exterior_audit/evidence.json": true,
+    "current_endpoint_jets:results/localized_force_extension/evidence.json": true,
+    "current_endpoint_jets:results/physical_pulse_transfer/evidence.json": true,
+    "force_foundation:results/coefficient_support_audit/evidence.json": true,
+    "force_foundation:results/compact_mean_foundation/evidence.json": true,
+    "force_foundation:results/current_localized_force/evidence.json": true,
+    "force_foundation:results/current_localized_force/forcing.py": true,
+    "force_foundation:results/endpoint_foundation/evidence.json": true,
+    "force_foundation:results/finite_induction_foundation/evidence.json": true,
+    "force_foundation:results/force_foundation/.gitignore": true,
+    "force_foundation:results/force_foundation/README.md": true,
+    "force_foundation:results/force_foundation/audit.py": true,
+    "force_foundation:results/force_foundation/localized_bounds.py": true,
+    "force_foundation:results/force_foundation/localized_checks.py": true,
+    "force_foundation:results/force_foundation/protocol.json": true,
+    "force_foundation:results/force_foundation/requirements.txt": true,
+    "force_foundation:results/force_foundation/test_audit.py": true,
+    "force_foundation:results/global_moment_stress/evidence.json": true,
+    "force_foundation:results/localized_force_extension/evidence.json": true,
+    "force_foundation:results/realization_foundation/evidence.json": true,
+    "force_foundation:results/realization_foundation/realized_checks.py": true
+  },
+  "protocol": {
+    "field": "the same certified complete-potential diagonal, fixed gauges, supports and cutoff sequence used by endpoint localization and comparison",
+    "obstruction": "the existing open-chart or pointwise estimates do not establish finite closed-chart fixed-stage and cutoff-tail constants uniformly on compact X intervals",
+    "parent_commit": "369f9a43e1cf0b2762f3c4144337d17b855ebb87",
+    "scope": "exact reduction and counterexamples only; no unconditional compact force, residual improvement or blow-up theorem",
+    "transfer": "T+eta^2=1, L=1-2h eta^2>=49/50, and q<=4(tau+|z|^(1/D)) transfer a uniform closed-chart q-flat residual estimate to Cartesian corner flatness"
+  },
+  "remaining_obligations": [
+    "prove finite fixed-stage residual constants on the full closed chart uniformly for every compact X interval",
+    "prove the same closed-chart transition-uniform constants for every complete-potential cutoff increment before scale absorption",
+    "then transfer arbitrary q powers to the Cartesian corner with one extra time derivative and replay localization, force and comparison"
+  ],
+  "review": {
+    "boundary_rows": [
+      {
+        "interior": "1/786433",
+        "order": 0,
+        "pole": "1",
+        "pole_over_q_power": "1"
+      },
+      {
+        "interior": "1/824634769408",
+        "order": 1,
+        "pole": "1/1048576",
+        "pole_over_q_power": "1"
+      },
+      {
+        "interior": "1/996922264489287132907256791913463808",
+        "order": 5,
+        "pole": "1/1267650600228229401496703205376",
+        "pole_over_q_power": "1"
+      },
+      {
+        "interior": "1/2030766518373521782888873482195844637364733515772064734865953929742331131325570471216175884116158635189631639244043729458167808",
+        "order": 20,
+        "pole": "1/2582249878086908589655919172003011874329705792829223512830659356540647622016841194629645353280137831435903171972747493376",
+        "pole_over_q_power": "1"
+      }
+    ],
+    "checks": {
+      "closed_boundary_can_lose_one_q_order": true,
+      "extra_localization_time_derivative_is_a_fixed_finite_request": true,
+      "finite_comparison_stage_exists_after_fixed_jet_and_target": true,
+      "implicit_coordinate_jacobian_has_strict_closed_floor": true,
+      "normalized_terminal_chart_is_T_plus_eta_squared_equal_one": true,
+      "pointwise_compact_X_flatness_need_not_be_uniform": true,
+      "scale_absorption_requires_finite_closed_chart_constants": true,
+      "uniform_q_flatness_transfers_with_four_to_the_power": true
+    },
+    "closed_constants_required": {
+      "cutoff_tail": "sup_closed,transition q^(-(h*delta*j-L_m))*|(V_(j,a),P_(j,a))|_m < infinity uniformly in a",
+      "fixed_stage": "sup_closed q^(-(h*B_J-K_m))*|R(U^[J])|_m < infinity"
+    },
+    "compact_X_spike_rows": [
+      {
+        "fixed_X_one": 1.0586017690735176e-110,
+        "moving_X_equals_q": 0.36787944117144233,
+        "q": 0.0625
+      },
+      {
+        "fixed_X_one": 0.0,
+        "moving_X_equals_q": 0.36787944117144233,
+        "q": 0.00390625
+      },
+      {
+        "fixed_X_one": 0.0,
+        "moving_X_equals_q": 0.36787944117144233,
+        "q": 1.52587890625e-05
+      },
+      {
+        "fixed_X_one": 0.0,
+        "moving_X_equals_q": 0.36787944117144233,
+        "q": 2.3283064365386963e-10
+      }
+    ],
+    "scope": {
+      "blowup_proved": false,
+      "closed_chart_constants_proved_finite_for_actual_field": false,
+      "compact_force_and_comparison_unconditional": false,
+      "coordinate_transfer_proved": true
+    },
+    "stage_rows": [
+      {
+        "N": 0,
+        "m": 0,
+        "stage": 6408
+      },
+      {
+        "N": 10,
+        "m": 0,
+        "stage": 14408
+      },
+      {
+        "N": 5,
+        "m": 3,
+        "stage": 15208
+      }
+    ],
+    "transfer_rows": [
+      {
+        "constant": 1,
+        "power": 0
+      },
+      {
+        "constant": 4,
+        "power": 1
+      },
+      {
+        "constant": 16,
+        "power": 2
+      },
+      {
+        "constant": 65536,
+        "power": 8
+      },
+      {
+        "constant": 18446744073709551616,
+        "power": 32
+      }
+    ]
+  },
+  "source_hashes": {
+    "results/core_corner_flatness_obstruction/.gitignore": "d10236b398557e529edeff839ec1d4acbcecd1de31dfe96876531277774bc91a",
+    "results/core_corner_flatness_obstruction/README.md": "8252d08562fb75d8819592d984680b110c7afd05541594ac49f7d78f3f198305",
+    "results/core_corner_flatness_obstruction/audit.py": "a597d2d944ac0c340dd668fa40af4b91d07a097196c43dd4d1696a4c3064d815",
+    "results/core_corner_flatness_obstruction/corner.py": "d8aae7c931703dfb72304dec4e60a4f38e88d0143654881d36d0e3fce208a721",
+    "results/core_corner_flatness_obstruction/protocol.json": "ba53966fa2389bc12f01bb6b366d8138f96fe26990c6a9abd67ff3ef9e214f44",
+    "results/core_corner_flatness_obstruction/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_corner_flatness_obstruction/test_audit.py": "a2bb456a8c1c795d1c699c9fd7818047a64b3c67bb814be5b2a1eb6ca5d25ddf"
+  },
+  "status": "closed-corner-transfer-proved-and-uniform-constant-obstruction-isolated"
+}
