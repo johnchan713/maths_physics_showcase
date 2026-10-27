@@ -34,6 +34,7 @@ on:
       - research/navier_stokes_cascade/results/core_direct_compact_slow_provider_reconstruction/**
       - research/navier_stokes_cascade/results/core_log_renormalized_actual_source_induction/**
       - research/navier_stokes_cascade/results/core_log_reserved_complete_residual_replay/**
+      - research/navier_stokes_cascade/results/core_log_reserved_cartesian_corner_replay/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -71,6 +72,7 @@ on:
       - research/navier_stokes_cascade/results/core_direct_compact_slow_provider_reconstruction/**
       - research/navier_stokes_cascade/results/core_log_renormalized_actual_source_induction/**
       - research/navier_stokes_cascade/results/core_log_reserved_complete_residual_replay/**
+      - research/navier_stokes_cascade/results/core_log_reserved_cartesian_corner_replay/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -296,6 +298,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_log_reserved_complete_residual_replay/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_log_reserved_complete_residual_replay/evidence.json \
             --output navier_stokes_log_reserved_complete_residual_replay_ci.json
+
+      - name: Transfer log-reserved residual to the Cartesian corner
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_log_reserved_cartesian_corner_replay/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_log_reserved_cartesian_corner_replay/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_log_reserved_cartesian_corner_replay/evidence.json \
+            --output navier_stokes_log_reserved_cartesian_corner_replay_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

@@ -1,0 +1,248 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_closed_chart_coefficient_join/evidence.json": "5a3c0cd69f983df47248be8b35ff54bcad02348238a87018b6646252291dac93",
+    "results/core_corner_flatness_obstruction/evidence.json": "08178e20b2a2ee486976637d1e4ffc85af2659d180a708375ec171e4bb1b9651",
+    "results/core_corner_tail_slack_reconciliation/evidence.json": "f3e0ee58871b00245741f48e04481db7b7eaab5850a593830d276b8fd44e0988",
+    "results/core_log_renormalized_actual_source_induction/evidence.json": "58362ac9bb2da6a3fbf579e4f17351ca5e839e14b3ec18f5eff8ffeac54296a5",
+    "results/core_log_reserved_complete_residual_replay/evidence.json": "1b1b7af2c5ae682cbebb3bab0df2a70113836b4566dc56ea743fa5d4b3fab34d",
+    "results/core_primitive_margin_normalization_reconciliation/evidence.json": "c08d54fa1cf021e7c7cc80da1b264465a163617fdd23479d16ec9cd925d609c2"
+  },
+  "gates": {
+    "cartesian_corner_flatness": true,
+    "scientific_scope_preserved": true,
+    "six_frozen_dependencies": true,
+    "ten_exact_controls": true
+  },
+  "protocol": {
+    "correction": "the historical no-log full-exponent fixed-stage closed-chart supremum is stronger than the corrected source domain; use its finite log weight and the new one-stage regular reserve instead",
+    "parent_commit": "2a022f7951a72abee335bc1cac3f524fb3e01e7b",
+    "result": "join the log-reserved complete six-group residual to the closed terminal chart and transfer every fixed residual jet to Cartesian corner flatness on the same field",
+    "scope": "residual corner flatness only; punctured field jets are inherited, while localization, compact force, energy, comparison and blow-up are not replayed here"
+  },
+  "remaining_obligations": [
+    "join the inherited punctured one-sided field and pressure jets to this corrected Cartesian residual flatness",
+    "replay localization and compact forcing with the extra time derivative, viscosity and every cutoff derivative",
+    "then replay energy, fixed-gauge pressure recovery and expanding-ball comparison before any blow-up claim"
+  ],
+  "review": {
+    "cartesian_transfer": "q<=4 rho and |D^alpha R|<=C q^(N+1) imply |D^alpha R|<=C 4^(N+1) rho^(N+1)",
+    "checks": {
+      "closed_jacobian_floor_holds": true,
+      "closed_normalized_support_contract_retained": true,
+      "closed_terminal_identity_holds": true,
+      "complete_six_group_residual_beats_every_sample_target": true,
+      "corrected_log_reserved_residual_is_the_parent": true,
+      "finite_fixed_stage_exists_for_every_sample": true,
+      "historical_full_exponent_no_log_stage_supremum_not_reused": true,
+      "localization_force_comparison_and_blowup_remain_open_in_this_replay": true,
+      "q_le_four_rho_preserves_arbitrary_power": true,
+      "scale_incompatible_positive_floors_are_not_used": true
+    },
+    "corrected_closed_stage_domain": "sup_closed,K q^(-(h B_J-K_m)) (1+|log q|)^(-P_(J,m,K)) |R_regular(U^[J])|_m < infinity",
+    "default_target": {
+      "cartesian_factor_at_requested_exponent": 4,
+      "checks": {
+        "all_six_groups_retained": true,
+        "cartesian_transfer_is_four_to_the_power": true,
+        "closed_residual_beats_requested_power": true,
+        "jacobian_has_uniform_closed_floor": true,
+        "no_physical_or_edge_floor_used": true,
+        "normalized_support_margin_positive": true,
+        "one_fixed_stage_used": true,
+        "terminal_chart_closes": true
+      },
+      "closed_chart": {
+        "angular_domain_includes_eta_endpoints": true,
+        "compact_X_interval_fixed_before_supremum": true,
+        "edge_weight_floor_used": false,
+        "jacobian_floor": "99/100",
+        "normalized_support_margin": "3/8012",
+        "physical_support_floor_used": false,
+        "terminal_identity": "1"
+      },
+      "closed_chart_exponent": "20030773/20000000",
+      "comparison_stage": 12817,
+      "jet": 0,
+      "pressure_memory": "fixed gauge; moving normal and K pressure; all six covariance entries; gd-A1gd; dZ(Jz+c_rho P); both exceptional compact tails",
+      "requested_power": 0,
+      "requested_strict_exponent": "1",
+      "residual_groups": {
+        "new_old": "20030773/20000000",
+        "new_square": "180230773/10000000",
+        "old_new": "20030773/20000000",
+        "pressure": "180230773/20000000",
+        "time": "180230773/20000000",
+        "viscosity": "180230773/20000000"
+      },
+      "retained_exponent_margin": "30773/20000000"
+    },
+    "sample_targets": [
+      {
+        "cartesian_factor_at_requested_exponent": 4,
+        "checks": {
+          "all_six_groups_retained": true,
+          "cartesian_transfer_is_four_to_the_power": true,
+          "closed_residual_beats_requested_power": true,
+          "jacobian_has_uniform_closed_floor": true,
+          "no_physical_or_edge_floor_used": true,
+          "normalized_support_margin_positive": true,
+          "one_fixed_stage_used": true,
+          "terminal_chart_closes": true
+        },
+        "closed_chart": {
+          "angular_domain_includes_eta_endpoints": true,
+          "compact_X_interval_fixed_before_supremum": true,
+          "edge_weight_floor_used": false,
+          "jacobian_floor": "99/100",
+          "normalized_support_margin": "3/8012",
+          "physical_support_floor_used": false,
+          "terminal_identity": "1"
+        },
+        "closed_chart_exponent": "20030773/20000000",
+        "comparison_stage": 12817,
+        "jet": 0,
+        "pressure_memory": "fixed gauge; moving normal and K pressure; all six covariance entries; gd-A1gd; dZ(Jz+c_rho P); both exceptional compact tails",
+        "requested_power": 0,
+        "requested_strict_exponent": "1",
+        "residual_groups": {
+          "new_old": "20030773/20000000",
+          "new_square": "180230773/10000000",
+          "old_new": "20030773/20000000",
+          "pressure": "180230773/20000000",
+          "time": "180230773/20000000",
+          "viscosity": "180230773/20000000"
+        },
+        "retained_exponent_margin": "30773/20000000"
+      },
+      {
+        "cartesian_factor_at_requested_exponent": 4194304,
+        "checks": {
+          "all_six_groups_retained": true,
+          "cartesian_transfer_is_four_to_the_power": true,
+          "closed_residual_beats_requested_power": true,
+          "jacobian_has_uniform_closed_floor": true,
+          "no_physical_or_edge_floor_used": true,
+          "normalized_support_margin_positive": true,
+          "one_fixed_stage_used": true,
+          "terminal_chart_closes": true
+        },
+        "closed_chart": {
+          "angular_domain_includes_eta_endpoints": true,
+          "compact_X_interval_fixed_before_supremum": true,
+          "edge_weight_floor_used": false,
+          "jacobian_floor": "99/100",
+          "normalized_support_margin": "3/8012",
+          "physical_support_floor_used": false,
+          "terminal_identity": "1"
+        },
+        "closed_chart_exponent": "440087543/40000000",
+        "comparison_stage": 20818,
+        "jet": 0,
+        "pressure_memory": "fixed gauge; moving normal and K pressure; all six covariance entries; gd-A1gd; dZ(Jz+c_rho P); both exceptional compact tails",
+        "requested_power": 10,
+        "requested_strict_exponent": "11",
+        "residual_groups": {
+          "new_old": "440087543/40000000",
+          "new_square": "760487543/20000000",
+          "old_new": "440087543/40000000",
+          "pressure": "760487543/40000000",
+          "time": "760487543/40000000",
+          "viscosity": "760487543/40000000"
+        },
+        "retained_exponent_margin": "87543/40000000"
+      },
+      {
+        "cartesian_factor_at_requested_exponent": 4096,
+        "checks": {
+          "all_six_groups_retained": true,
+          "cartesian_transfer_is_four_to_the_power": true,
+          "closed_residual_beats_requested_power": true,
+          "jacobian_has_uniform_closed_floor": true,
+          "no_physical_or_edge_floor_used": true,
+          "normalized_support_margin_positive": true,
+          "one_fixed_stage_used": true,
+          "terminal_chart_closes": true
+        },
+        "closed_chart": {
+          "angular_domain_includes_eta_endpoints": true,
+          "compact_X_interval_fixed_before_supremum": true,
+          "edge_weight_floor_used": false,
+          "jacobian_floor": "99/100",
+          "normalized_support_margin": "3/8012",
+          "physical_support_floor_used": false,
+          "terminal_identity": "1"
+        },
+        "closed_chart_exponent": "240070743/40000000",
+        "comparison_stage": 26418,
+        "jet": 3,
+        "pressure_memory": "fixed gauge; moving normal and K pressure; all six covariance entries; gd-A1gd; dZ(Jz+c_rho P); both exceptional compact tails",
+        "requested_power": 5,
+        "requested_strict_exponent": "6",
+        "residual_groups": {
+          "new_old": "240070743/40000000",
+          "new_square": "800470743/20000000",
+          "old_new": "240070743/40000000",
+          "pressure": "800470743/40000000",
+          "time": "800470743/40000000",
+          "viscosity": "800470743/40000000"
+        },
+        "retained_exponent_margin": "70743/40000000"
+      },
+      {
+        "cartesian_factor_at_requested_exponent": 68719476736,
+        "checks": {
+          "all_six_groups_retained": true,
+          "cartesian_transfer_is_four_to_the_power": true,
+          "closed_residual_beats_requested_power": true,
+          "jacobian_has_uniform_closed_floor": true,
+          "no_physical_or_edge_floor_used": true,
+          "normalized_support_margin_positive": true,
+          "one_fixed_stage_used": true,
+          "terminal_chart_closes": true
+        },
+        "closed_chart": {
+          "angular_domain_includes_eta_endpoints": true,
+          "compact_X_interval_fixed_before_supremum": true,
+          "edge_weight_floor_used": false,
+          "jacobian_floor": "99/100",
+          "normalized_support_margin": "3/8012",
+          "physical_support_floor_used": false,
+          "terminal_identity": "1"
+        },
+        "closed_chart_exponent": "720093937/40000000",
+        "comparison_stage": 52020,
+        "jet": 8,
+        "pressure_memory": "fixed gauge; moving normal and K pressure; all six covariance entries; gd-A1gd; dZ(Jz+c_rho P); both exceptional compact tails",
+        "requested_power": 17,
+        "requested_strict_exponent": "18",
+        "residual_groups": {
+          "new_old": "720093937/40000000",
+          "new_square": "1680493937/20000000",
+          "old_new": "720093937/40000000",
+          "pressure": "1680493937/40000000",
+          "time": "1680493937/40000000",
+          "viscosity": "1680493937/40000000"
+        },
+        "retained_exponent_margin": "93937/40000000"
+      }
+    ],
+    "scope": {
+      "complete_pressure_memory_retained": true,
+      "historical_evidence_modified": false,
+      "localization_force_energy_comparison_replayed_here": false,
+      "punctured_field_endpoint_jets_reproved_here": false,
+      "same_field_all_fixed_residual_jets_cartesian_corner_flat_conditionally": true,
+      "unconditional_pulse_residual_force_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_log_reserved_cartesian_corner_replay/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_log_reserved_cartesian_corner_replay/README.md": "dd12e0248294b3a35035448e64f023fe817401db22856e742589f1ca6c9ca2a1",
+    "results/core_log_reserved_cartesian_corner_replay/audit.py": "eb54e526092f41ef340a2020480f10aedf031d4b068d4ca011b4d023ff411cd1",
+    "results/core_log_reserved_cartesian_corner_replay/corner_replay.py": "ae20b1b9cc34dec9017a0cf1fa4ee65bfc235cccb399c39cc4ea29de5e514778",
+    "results/core_log_reserved_cartesian_corner_replay/protocol.json": "8fa4c81a7148321c306dbc27cb41637d960844a15fb58d9856f1fcd5807addb6",
+    "results/core_log_reserved_cartesian_corner_replay/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_log_reserved_cartesian_corner_replay/test_audit.py": "b1ac23f15949995aee9f56241e24d500e58e5e402bf1e9a6fc95848bc60f1580"
+  },
+  "status": "log-reserved-six-group-residual-transferred-to-cartesian-corner-conditionally"
+}
