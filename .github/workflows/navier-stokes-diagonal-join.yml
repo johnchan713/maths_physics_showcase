@@ -27,6 +27,7 @@ on:
       - research/navier_stokes_cascade/results/core_corner_flatness_obstruction/**
       - research/navier_stokes_cascade/results/core_corner_tail_slack_reconciliation/**
       - research/navier_stokes_cascade/results/core_closed_chart_coefficient_join/**
+      - research/navier_stokes_cascade/results/core_primitive_margin_normalization_reconciliation/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -57,6 +58,7 @@ on:
       - research/navier_stokes_cascade/results/core_corner_flatness_obstruction/**
       - research/navier_stokes_cascade/results/core_corner_tail_slack_reconciliation/**
       - research/navier_stokes_cascade/results/core_closed_chart_coefficient_join/**
+      - research/navier_stokes_cascade/results/core_primitive_margin_normalization_reconciliation/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -233,6 +235,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_closed_chart_coefficient_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_closed_chart_coefficient_join/evidence.json \
             --output navier_stokes_closed_chart_coefficient_join_ci.json
+
+      - name: Reconcile scale-compatible primitive margins
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_primitive_margin_normalization_reconciliation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_primitive_margin_normalization_reconciliation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_primitive_margin_normalization_reconciliation/evidence.json \
+            --output navier_stokes_primitive_margin_normalization_reconciliation_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
