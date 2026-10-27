@@ -1,0 +1,127 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_corrected_force_join/evidence.json": "d9134eb24000b86eced91780b8a8f36bb11e79c311d4947c56bf2352f99b55b3",
+    "results/core_log_reserved_endpoint_compatibility_join/evidence.json": "c3737f0c29674c6fd092049964a2a0d6703779d7154a675ed1d62fcffcce9992",
+    "results/core_log_reserved_localization_force_replay/evidence.json": "08d502eb76fd4f30bc628c672094336acbbeb955dc4f1dfddb555c655ba695b6",
+    "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc"
+  },
+  "gates": {
+    "five_frozen_dependencies": true,
+    "preterminal_energy_joined": true,
+    "scientific_scope_preserved": true,
+    "ten_exact_controls": true
+  },
+  "protocol": {
+    "correction": "retain the fixed-time joint estimate and the two separate endpoint bounds; do not combine the energy supremum and total dissipation under one unchanged force budget",
+    "parent_commit": "3bb6c5d1beba0f637d66695e87b75e618a2ee120",
+    "result": "replay the exact preterminal kinetic-energy identity and its valid endpoint consequences for the same log-reserved localized field and compact force",
+    "scope": "conditional preterminal energy and dissipation only; terminal field regularity, future velocity/pressure, pressure recovery, comparison and blow-up remain open"
+  },
+  "remaining_obligations": [
+    "replay fixed-gauge pressure recovery with the compact force-divergence term retained",
+    "prove the expanding-ball comparison for every admissible smooth finite-energy competitor with the same datum and force",
+    "only then revisit competitor exclusion; no unconditional blow-up claim is available"
+  ],
+  "review": {
+    "checks": {
+      "endpoint_energy_and_dissipation_bounds_are_separate": true,
+      "fixed_time_factor_two_retained": true,
+      "pressure_flux_vanishes_by_compact_support_and_divergence_free_velocity": true,
+      "regularized_square_root_handles_zero_energy": true,
+      "same_localized_field_and_compact_force_used": true,
+      "stronger_combined_endpoint_budget_is_refuted": true,
+      "terminal_dissipation_uses_monotone_convergence_only": true,
+      "transport_flux_vanishes_by_compact_support_and_divergence_free_velocity": true,
+      "unit_viscosity_gives_positive_gradient_dissipation": true,
+      "zero_initial_datum_from_time_cutoff_retained": true
+    },
+    "endpoint": {
+      "dissipation": "integral_0^1 D(t) dt<=F(1)^2/2",
+      "energy": "sup_(t<1) E(t)<=F(1)^2",
+      "limit_method": "monotone convergence of the nonnegative dissipation integral as t increases to 1",
+      "no_terminal_u_or_p_required": true
+    },
+    "fixed_time": "E(t)+2 integral_0^t D(s) ds <= F(t)^2 for every t<1",
+    "identity": {
+      "definitions": "E=||u||_2^2; D=||grad u||_2^2; F(t)=integral_0^t ||f(s)||_2 ds",
+      "differential": "0.5 E'(t)+D(t)=<f(t),u(t)>",
+      "pressure": "integral u.grad p=0",
+      "transport": "integral u.(u.grad)u=0",
+      "viscosity": "-integral u.Delta u=||grad u||_2^2"
+    },
+    "invalid_strengthening": {
+      "diagnostic": {
+        "epsilon": "1/100",
+        "force_L1": "201/200",
+        "force_budget_squared": "40401/40000",
+        "forcing": "g=y'+y is nonnegative; g=1/epsilon+t/epsilon on [0,epsilon] and zero later",
+        "lower_bound_for_sup_y2_plus_twice_integral_y2": "37349/22350",
+        "path": "y=t/epsilon on [0,epsilon], then y=exp(-(t-epsilon)) on [epsilon,1]",
+        "strict_gap": "11819953/17880000"
+      },
+      "diagnostic_is_not_a_Navier_Stokes_solution": true,
+      "historical_value_matches": true,
+      "rejected": "sup_(t<1) E(t)+2 integral_0^1 D(t)dt<=F(1)^2"
+    },
+    "sample_budgets": [
+      {
+        "dissipation_budget": "0",
+        "energy_budget": "0",
+        "force_integral": "0",
+        "joint_budget": "0"
+      },
+      {
+        "dissipation_budget": "1/200",
+        "energy_budget": "1/100",
+        "force_integral": "1/10",
+        "joint_budget": "1/100"
+      },
+      {
+        "dissipation_budget": "1/2",
+        "energy_budget": "1",
+        "force_integral": "1",
+        "joint_budget": "1"
+      },
+      {
+        "dissipation_budget": "40401/80000",
+        "energy_budget": "40401/40000",
+        "force_integral": "201/200",
+        "joint_budget": "40401/40000"
+      },
+      {
+        "dissipation_budget": "50",
+        "energy_budget": "100",
+        "force_integral": "10",
+        "joint_budget": "100"
+      }
+    ],
+    "scope": {
+      "expanding_ball_comparison_or_competitor_exclusion_proved": false,
+      "fixed_gauge_pressure_recovery_replayed_here": false,
+      "future_velocity_or_pressure_constructed": false,
+      "same_field_preterminal_energy_identity_replayed_conditionally": true,
+      "separate_finite_energy_and_total_dissipation_bounds_obtained_conditionally": true,
+      "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+      "unconditional_pulse_residual_force_or_blowup_claimed": false
+    },
+    "zero_start": {
+      "bound": "Y_delta'<=||f||_2 sqrt(E)/sqrt(E+delta^2)<=||f||_2",
+      "delta": "1/1000",
+      "derivative": "Y_delta'=E'/(2 sqrt(E+delta^2))",
+      "integrated": "sqrt(E(t)+delta^2)<=delta+F(t)",
+      "limit": "sqrt(E(t))<=F(t)",
+      "quantity": "Y_delta=sqrt(E+delta^2)"
+    }
+  },
+  "source_hashes": {
+    "results/core_log_reserved_preterminal_energy_replay/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_log_reserved_preterminal_energy_replay/README.md": "661d24eeb2c518f1749c5da7b5badc3204bf9e3e56ceb30b4726a42aff0e948b",
+    "results/core_log_reserved_preterminal_energy_replay/audit.py": "6a9d05a95e297990af0067046268fb94629d6fd2f3a367f94989cd3b064e03b5",
+    "results/core_log_reserved_preterminal_energy_replay/preterminal_energy.py": "e145a9505490ca807019179843904c84ed1207b725e56c71e1ffe7ac0b4bf587",
+    "results/core_log_reserved_preterminal_energy_replay/protocol.json": "d962f2abed9a0d2600ba6571830ba467355267534402e2d85ae2046934a50d52",
+    "results/core_log_reserved_preterminal_energy_replay/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_log_reserved_preterminal_energy_replay/test_audit.py": "c2ae01fa4088edd6a6f24ac91292c7ae24189d669f46f9f31bbdcff128f18c3d"
+  },
+  "status": "log-reserved-preterminal-energy-replayed-conditionally"
+}
