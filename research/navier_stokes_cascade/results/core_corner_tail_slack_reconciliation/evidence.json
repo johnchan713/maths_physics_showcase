@@ -1,0 +1,196 @@
+{
+  "dependency_evidence_sha256": {
+    "results/canonical_local_realization/evidence.json": "dd24a12408a5e0f8ed6ac12b621783b020f353fb80bf3add44a134237212614c",
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_certified_complete_potential_endpoint_join/evidence.json": "f40db0ddfb1fd3fc661ede433d8ce88c8be10d25b77c635e1b61c3ec75c64e49",
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_complete_potential_diagonal_join/evidence.json": "e2c62cc359872d182e8d3aad849ef584a5404bd6ba34df6936dc1918cdafd95e",
+    "results/core_corner_flatness_obstruction/evidence.json": "08178e20b2a2ee486976637d1e4ffc85af2659d180a708375ec171e4bb1b9651",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1"
+  },
+  "gates": {
+    "all_dependency_sources_match": true,
+    "correction_and_scope_preserved": true,
+    "eight_exact_controls": true,
+    "seven_frozen_dependencies": true
+  },
+  "inherited_source_checks": {
+    "canonical_local_realization:results/background_summation/README.md": true,
+    "canonical_local_realization:results/background_summation/evidence.json": true,
+    "canonical_local_realization:results/canonical_finite_cycle_join/README.md": true,
+    "canonical_local_realization:results/canonical_finite_cycle_join/evidence.json": true,
+    "canonical_local_realization:results/canonical_local_realization/.gitignore": true,
+    "canonical_local_realization:results/canonical_local_realization/README.md": true,
+    "canonical_local_realization:results/canonical_local_realization/audit.py": true,
+    "canonical_local_realization:results/canonical_local_realization/gauge_checks.py": true,
+    "canonical_local_realization:results/canonical_local_realization/protocol.json": true,
+    "canonical_local_realization:results/canonical_local_realization/realization.py": true,
+    "canonical_local_realization:results/canonical_local_realization/requirements.txt": true,
+    "canonical_local_realization:results/canonical_local_realization/test_audit.py": true,
+    "canonical_local_realization:results/compact_mean_foundation/README.md": true,
+    "canonical_local_realization:results/compact_mean_foundation/evidence.json": true,
+    "canonical_local_realization:results/finite_induction_foundation/README.md": true,
+    "canonical_local_realization:results/finite_induction_foundation/evidence.json": true,
+    "canonical_local_realization:results/physical_pulse_foundation/README.md": true,
+    "canonical_local_realization:results/physical_pulse_foundation/evidence.json": true,
+    "canonical_local_realization:results/realization_foundation/README.md": true,
+    "canonical_local_realization:results/realization_foundation/evidence.json": true,
+    "canonical_local_realization:results/realization_foundation/realized_checks.py": true,
+    "core_certified_complete_potential_diagonal_join:results/canonical_local_realization/realization.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/.gitignore": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/README.md": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/protocol.json": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/requirements.txt": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_complete_potential_diagonal_join/test_audit.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_certified_finite_stage_domain_join/certified_recurrence.py": true,
+    "core_certified_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_certified_complete_potential_diagonal_join:results/finite_stage_induction/induction.py": true,
+    "core_certified_complete_potential_diagonal_join:results/realization_foundation/realized_checks.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_diagonal_join/diagonal_join.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/.gitignore": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/README.md": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/controls.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/protocol.json": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/requirements.txt": true,
+    "core_certified_complete_potential_endpoint_join:results/core_certified_complete_potential_endpoint_join/test_audit.py": true,
+    "core_certified_complete_potential_endpoint_join:results/current_endpoint_jets/endpoint.py": true,
+    "core_certified_complete_potential_endpoint_join:results/endpoint_foundation/terminal_bounds.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/.gitignore": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/README.md": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/audit.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/controls.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/localization.py": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/protocol.json": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/requirements.txt": true,
+    "core_certified_complete_potential_force_join:results/core_certified_complete_potential_force_join/test_audit.py": true,
+    "core_complete_potential_diagonal_join:results/canonical_local_realization/realization.py": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/.gitignore": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/README.md": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/audit.py": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/controls.py": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/requirements.txt": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/test_audit.py": true,
+    "core_complete_potential_diagonal_join:results/core_finite_stage_compact_recurrence/recurrence.py": true,
+    "core_complete_potential_diagonal_join:results/finite_stage_induction/induction.py": true,
+    "core_complete_potential_diagonal_join:results/realization_foundation/realized_checks.py": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/.gitignore": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/README.md": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/audit.py": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/corner.py": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/protocol.json": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/requirements.txt": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/test_audit.py": true,
+    "finite_stage_induction:results/actual_band_pulse_bounds/evidence.json": true,
+    "finite_stage_induction:results/compact_mean_corrections/evidence.json": true,
+    "finite_stage_induction:results/complex_mean_relaxation/evidence.json": true,
+    "finite_stage_induction:results/complex_signed_covariance_update/evidence.json": true,
+    "finite_stage_induction:results/finite_stage_induction/.gitignore": true,
+    "finite_stage_induction:results/finite_stage_induction/README.md": true,
+    "finite_stage_induction:results/finite_stage_induction/audit.py": true,
+    "finite_stage_induction:results/finite_stage_induction/induction.py": true,
+    "finite_stage_induction:results/finite_stage_induction/protocol.json": true,
+    "finite_stage_induction:results/finite_stage_induction/requirements.txt": true,
+    "finite_stage_induction:results/finite_stage_induction/test_audit.py": true,
+    "finite_stage_induction:results/first_sourced_wave_update/evidence.json": true,
+    "finite_stage_induction:results/physical_pulse_transfer/evidence.json": true,
+    "finite_stage_induction:results/post_signed_mean_relaxation/evidence.json": true,
+    "finite_stage_induction:results/residual_cycle_closure/evidence.json": true
+  },
+  "protocol": {
+    "correction": "the full-exponent no-log cutoff-tail supremum is stronger than required and need not be finite when inherited logarithmic factors are present",
+    "field": "the same certified complete-potential diagonal, fixed gauges, supports and cutoff sequence",
+    "parent_commit": "3dcfe37baa7005b4d513be03a56988b07bbb2ff3",
+    "proved_transfer": "half of the positive stage gain uniformly absorbs every fixed logarithmic power on the closed cutoff transition, after the closed representative coefficient bound is supplied",
+    "remaining_obstruction": "prove the actual fixed-stage residual and increment representative coefficient bounds uniformly on the closed chart and compact X intervals",
+    "scope": "analytical slack reconciliation only; no unconditional compact force, complete residual theorem or blow-up"
+  },
+  "remaining_obligations": [
+    "prove the actual fixed-stage residual coefficient bound uniformly through the closed angular poles on each compact X interval",
+    "prove the actual increment representative coefficient and logarithmic-power bound on the same closed chart before applying the now-closed cutoff-tail transfer",
+    "then replay corner localization, compact forcing and comparison on the same field without strengthening the cutoff-tail quantifier"
+  ],
+  "review": {
+    "checks": {
+      "cutoff_scale_is_selected_after_its_finite_coefficient_data": true,
+      "cutoff_transition_adds_no_new_uniform_constant_obstruction": true,
+      "exactly_half_gain_reserved": true,
+      "full_exponent_log_model_is_unbounded_for_positive_power": true,
+      "positive_stage_gain": true,
+      "primitive_closed_coefficient_bounds_still_required": true,
+      "whole_interval_scale_margins_are_strict": true,
+      "young_majorant_is_finite_for_every_fixed_stage_and_power": true
+    },
+    "closed_tail_bounds": {
+      "chosen_scale_bound": "|cut_j|_m <= 2^(-j) q^(g_j/2-L_m) on q<=1/a_j",
+      "proved_from_closed_representative_bound": "sup q^(-(g_j/2-L_m)) |cut_j| <= C*exp(P^2/g_j)",
+      "unsupported_full_exponent": "sup q^(-(g_j-L_m)) |cut_j| without its log weight"
+    },
+    "model_rows": [
+      {
+        "full": 8,
+        "s": 1,
+        "slack": 7.990006846647138
+      },
+      {
+        "full": 1331,
+        "s": 10,
+        "slack": 1314.4670383072653
+      },
+      {
+        "full": 1003003001,
+        "s": 1000,
+        "slack": 287386724.2477297
+      },
+      {
+        "full": 1000300030001,
+        "s": 10000,
+        "slack": 3730568.156991322
+      }
+    ],
+    "rows": [
+      {
+        "chosen_log_scale": "78424001059700009/2499700009",
+        "gain": "49997/20000000",
+        "reserved_half_gain": "49997/40000000",
+        "scale_margin": "-49997/80000000",
+        "stage": 1
+      },
+      {
+        "chosen_log_scale": "9001003942259700009/2499700009",
+        "gain": "49997/5000000",
+        "reserved_half_gain": "49997/10000000",
+        "scale_margin": "-49997/20000000",
+        "stage": 4
+      },
+      {
+        "chosen_log_scale": "13199593156653053302601/722413302601",
+        "gain": "849949/20000000",
+        "reserved_half_gain": "849949/40000000",
+        "scale_margin": "-849949/80000000",
+        "stage": 17
+      }
+    ],
+    "scope": {
+      "actual_primitive_closed_coefficients_proved": false,
+      "compact_force_comparison_or_blowup_unconditional": false,
+      "full_exponent_no_log_tail_supremum_proved": false,
+      "full_exponent_no_log_tail_supremum_required": false,
+      "half_gain_closed_tail_transfer_proved_conditionally": true
+    }
+  },
+  "source_hashes": {
+    "results/core_corner_tail_slack_reconciliation/.gitignore": "709f2a58bfa24b6cbf2dd39b48aa5e599b033a61519129745c453ae212ff13dd",
+    "results/core_corner_tail_slack_reconciliation/README.md": "f1d6f2e63dbcc223d25236e7fef1c0522a5dc70644f9f7e9a2e15069dd26dafc",
+    "results/core_corner_tail_slack_reconciliation/audit.py": "1d25befbd4187c5871cfd64cf442d0937afabbc7fd6817606e159ffb4a36a61b",
+    "results/core_corner_tail_slack_reconciliation/protocol.json": "bb6d63adfcb58c8fdc300f5062388bc840ad89c0620ec07c219dcbbb62a14a02",
+    "results/core_corner_tail_slack_reconciliation/requirements.txt": "780b07894d16bf730a7f4a55418a60ac89382510c02d1f9e004a6231700e5031",
+    "results/core_corner_tail_slack_reconciliation/slack.py": "4b3a6ce97ed3a85722c87433bfc2ab27709f0e1e6669ef41feca38a8d212b9ad",
+    "results/core_corner_tail_slack_reconciliation/test_audit.py": "82b4168432a5ce01f2a9605f2c58e38a0827eb156bd115acaf860e420a60ac6c"
+  },
+  "status": "closed-corner-cutoff-tail-slack-reconciled"
+}
