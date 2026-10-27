@@ -25,42 +25,42 @@
   ],
   "review": {
     "checks": {
-      "actual_source_log_domain_precedes_this_replay": "True",
-      "all_six_residual_groups_are_retained": "True",
-      "compact_A0_and_A1_reserves_are_distinct": "True",
-      "cutoff_reserve_remains_the_existing_half_gain": "True",
-      "localization_force_comparison_and_blowup_not_claimed": "True",
-      "one_fixed_stage_is_used_for_each_jet_and_power": "True",
-      "positive_reserve_absorbs_each_fixed_log_degree": "True",
-      "regular_reserve_comes_from_one_new_stage": "True",
-      "sample_complete_residual_targets_close": "True",
-      "zero_reserve_pure_power_ratio_is_unbounded": "True"
+      "actual_source_log_domain_precedes_this_replay": true,
+      "all_six_residual_groups_are_retained": true,
+      "compact_A0_and_A1_reserves_are_distinct": true,
+      "cutoff_reserve_remains_the_existing_half_gain": true,
+      "localization_force_comparison_and_blowup_not_claimed": true,
+      "one_fixed_stage_is_used_for_each_jet_and_power": true,
+      "positive_reserve_absorbs_each_fixed_log_degree": true,
+      "regular_reserve_comes_from_one_new_stage": true,
+      "sample_complete_residual_targets_close": true,
+      "zero_reserve_pure_power_ratio_is_unbounded": true
     },
     "default_comparison": {
       "background_state_loss": "801/100",
-      "base_comparison_stage": "12816",
+      "base_comparison_stage": 12816,
       "base_regular_exponent": "11814231/400000",
       "checks": {
-        "all_six_tail_groups_beat_target": "True",
-        "compact_accounts_are_separate_and_positive": "True",
-        "complete_residual_beats_target": "True",
-        "cutoff_account_positive": "True",
-        "exactly_one_stage_added": "True",
-        "fixed_state_beats_target": "True",
-        "old_threshold_checks_hold": "True",
-        "one_stage_gain_is_exact": "True",
-        "regular_log_account_positive": "True"
+        "all_six_tail_groups_beat_target": true,
+        "compact_accounts_are_separate_and_positive": true,
+        "complete_residual_beats_target": true,
+        "cutoff_account_positive": true,
+        "exactly_one_stage_added": true,
+        "fixed_state_beats_target": true,
+        "old_threshold_checks_hold": true,
+        "one_stage_gain_is_exact": true,
+        "regular_log_account_positive": true
       },
       "compact_accounts": {
         "A0": {
           "extra_integration_gain": "1/20000000",
-          "may_pay_regular_or_cutoff_log": "False",
+          "may_pay_regular_or_cutoff_log": false,
           "retained_strict_margin": "1/40000000",
           "spent_on_own_source_log": "1/40000000"
         },
         "A1": {
           "extra_integration_gain": "1/20000000",
-          "may_pay_regular_or_cutoff_log": "False",
+          "may_pay_regular_or_cutoff_log": false,
           "retained_strict_margin": "1/40000000",
           "spent_on_own_source_log": "1/40000000"
         }
@@ -70,8 +70,8 @@
       "first_omitted_representative_gain": "320430773/10000000",
       "fixed_state_exponent_after_logs": "1181473097/40000000",
       "identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
-      "jet": "0",
-      "log_reserved_comparison_stage": "12817",
+      "jet": 0,
+      "log_reserved_comparison_stage": 12817,
       "raw_regular_exponent": "590761547/20000000",
       "regular_log_spend": "49997/40000000",
       "regular_retained_margin": "49997/40000000",
@@ -85,7 +85,7 @@
         "viscosity": "180230773/20000000"
       },
       "tail_exponent_after_cutoff_logs": "180230773/20000000",
-      "target": "0"
+      "target": 0
     },
     "residual_groups": [
       "time",
@@ -98,29 +98,29 @@
     "sample_comparisons": [
       {
         "background_state_loss": "801/100",
-        "base_comparison_stage": "12816",
+        "base_comparison_stage": 12816,
         "base_regular_exponent": "11814231/400000",
         "checks": {
-          "all_six_tail_groups_beat_target": "True",
-          "compact_accounts_are_separate_and_positive": "True",
-          "complete_residual_beats_target": "True",
-          "cutoff_account_positive": "True",
-          "exactly_one_stage_added": "True",
-          "fixed_state_beats_target": "True",
-          "old_threshold_checks_hold": "True",
-          "one_stage_gain_is_exact": "True",
-          "regular_log_account_positive": "True"
+          "all_six_tail_groups_beat_target": true,
+          "compact_accounts_are_separate_and_positive": true,
+          "complete_residual_beats_target": true,
+          "cutoff_account_positive": true,
+          "exactly_one_stage_added": true,
+          "fixed_state_beats_target": true,
+          "old_threshold_checks_hold": true,
+          "one_stage_gain_is_exact": true,
+          "regular_log_account_positive": true
         },
         "compact_accounts": {
           "A0": {
             "extra_integration_gain": "1/20000000",
-            "may_pay_regular_or_cutoff_log": "False",
+            "may_pay_regular_or_cutoff_log": false,
             "retained_strict_margin": "1/40000000",
             "spent_on_own_source_log": "1/40000000"
           },
           "A1": {
             "extra_integration_gain": "1/20000000",
-            "may_pay_regular_or_cutoff_log": "False",
+            "may_pay_regular_or_cutoff_log": false,
             "retained_strict_margin": "1/40000000",
             "spent_on_own_source_log": "1/40000000"
           }
@@ -130,8 +130,8 @@
         "first_omitted_representative_gain": "320430773/10000000",
         "fixed_state_exponent_after_logs": "1181473097/40000000",
         "identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
-        "jet": "0",
-        "log_reserved_comparison_stage": "12817",
+        "jet": 0,
+        "log_reserved_comparison_stage": 12817,
         "raw_regular_exponent": "590761547/20000000",
         "regular_log_spend": "49997/40000000",
         "regular_retained_margin": "49997/40000000",
@@ -145,33 +145,33 @@
           "viscosity": "180230773/20000000"
         },
         "tail_exponent_after_cutoff_logs": "180230773/20000000",
-        "target": "0"
+        "target": 0
       },
       {
         "background_state_loss": "1001/100",
-        "base_comparison_stage": "18417",
+        "base_comparison_stage": 18417,
         "base_regular_exponent": "830744747/20000000",
         "checks": {
-          "all_six_tail_groups_beat_target": "True",
-          "compact_accounts_are_separate_and_positive": "True",
-          "complete_residual_beats_target": "True",
-          "cutoff_account_positive": "True",
-          "exactly_one_stage_added": "True",
-          "fixed_state_beats_target": "True",
-          "old_threshold_checks_hold": "True",
-          "one_stage_gain_is_exact": "True",
-          "regular_log_account_positive": "True"
+          "all_six_tail_groups_beat_target": true,
+          "compact_accounts_are_separate_and_positive": true,
+          "complete_residual_beats_target": true,
+          "cutoff_account_positive": true,
+          "exactly_one_stage_added": true,
+          "fixed_state_beats_target": true,
+          "old_threshold_checks_hold": true,
+          "one_stage_gain_is_exact": true,
+          "regular_log_account_positive": true
         },
         "compact_accounts": {
           "A0": {
             "extra_integration_gain": "1/20000000",
-            "may_pay_regular_or_cutoff_log": "False",
+            "may_pay_regular_or_cutoff_log": false,
             "retained_strict_margin": "1/40000000",
             "spent_on_own_source_log": "1/40000000"
           },
           "A1": {
             "extra_integration_gain": "1/20000000",
-            "may_pay_regular_or_cutoff_log": "False",
+            "may_pay_regular_or_cutoff_log": false,
             "retained_strict_margin": "1/40000000",
             "spent_on_own_source_log": "1/40000000"
           }
@@ -181,8 +181,8 @@
         "first_omitted_representative_gain": "920894743/20000000",
         "fixed_state_exponent_after_logs": "1661539491/40000000",
         "identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
-        "jet": "1",
-        "log_reserved_comparison_stage": "18418",
+        "jet": 1,
+        "log_reserved_comparison_stage": 18418,
         "raw_regular_exponent": "103849343/2500000",
         "regular_log_spend": "49997/40000000",
         "regular_retained_margin": "49997/40000000",
@@ -196,33 +196,33 @@
           "viscosity": "560494743/40000000"
         },
         "tail_exponent_after_cutoff_logs": "560494743/40000000",
-        "target": "3"
+        "target": 3
       },
       {
         "background_state_loss": "1801/100",
-        "base_comparison_stage": "37618",
+        "base_comparison_stage": 37618,
         "base_regular_exponent": "203842143/2500000",
         "checks": {
-          "all_six_tail_groups_beat_target": "True",
-          "compact_accounts_are_separate_and_positive": "True",
-          "complete_residual_beats_target": "True",
-          "cutoff_account_positive": "True",
-          "exactly_one_stage_added": "True",
-          "fixed_state_beats_target": "True",
-          "old_threshold_checks_hold": "True",
-          "one_stage_gain_is_exact": "True",
-          "regular_log_account_positive": "True"
+          "all_six_tail_groups_beat_target": true,
+          "compact_accounts_are_separate_and_positive": true,
+          "complete_residual_beats_target": true,
+          "cutoff_account_positive": true,
+          "exactly_one_stage_added": true,
+          "fixed_state_beats_target": true,
+          "old_threshold_checks_hold": true,
+          "one_stage_gain_is_exact": true,
+          "regular_log_account_positive": true
         },
         "compact_accounts": {
           "A0": {
             "extra_integration_gain": "1/20000000",
-            "may_pay_regular_or_cutoff_log": "False",
+            "may_pay_regular_or_cutoff_log": false,
             "retained_strict_margin": "1/40000000",
             "spent_on_own_source_log": "1/40000000"
           },
           "A1": {
             "extra_integration_gain": "1/20000000",
-            "may_pay_regular_or_cutoff_log": "False",
+            "may_pay_regular_or_cutoff_log": false,
             "retained_strict_margin": "1/40000000",
             "spent_on_own_source_log": "1/40000000"
           }
@@ -232,8 +232,8 @@
         "first_omitted_representative_gain": "94044357/1000000",
         "fixed_state_exponent_after_logs": "652304857/8000000",
         "identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
-        "jet": "5",
-        "log_reserved_comparison_stage": "37619",
+        "jet": 5,
+        "log_reserved_comparison_stage": 37619,
         "raw_regular_exponent": "1630787141/20000000",
         "regular_log_spend": "49997/40000000",
         "regular_retained_margin": "49997/40000000",
@@ -247,27 +247,27 @@
           "viscosity": "60024357/2000000"
         },
         "tail_exponent_after_cutoff_logs": "60024357/2000000",
-        "target": "11"
+        "target": 11
       }
     ],
     "scope": {
-      "complete_pressure_memory_and_both_interaction_orientations_retained": "True",
-      "localization_force_energy_and_comparison_replayed_after_source_correction": "False",
-      "log_reserved_six_group_complete_local_residual_flat_conditionally": "True",
-      "same_locally_finite_field_and_cutoff_sequence_retained": "True",
-      "stage_uniform_constants_or_fixed_q_contraction_used": "False",
-      "unconditional_pulse_force_comparison_or_blowup_claimed": "False"
+      "complete_pressure_memory_and_both_interaction_orientations_retained": true,
+      "localization_force_energy_and_comparison_replayed_after_source_correction": false,
+      "log_reserved_six_group_complete_local_residual_flat_conditionally": true,
+      "same_locally_finite_field_and_cutoff_sequence_retained": true,
+      "stage_uniform_constants_or_fixed_q_contraction_used": false,
+      "unconditional_pulse_force_comparison_or_blowup_claimed": false
     },
     "zero_reserve_counterexample_ratios": [
-      "1",
-      "11",
-      "1001"
+      1,
+      11,
+      1001
     ]
   },
   "source_hashes": {
     "results/core_log_reserved_complete_residual_replay/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
     "results/core_log_reserved_complete_residual_replay/README.md": "073e1e29f6f1c9917e9b7618da37725be1cbb00e36f9cd262214ba9f2d2966cd",
-    "results/core_log_reserved_complete_residual_replay/audit.py": "fe2b721038d91e1d5bf11086064f97a7f3a7c82cd9dc68be3a5051c3e47264a0",
+    "results/core_log_reserved_complete_residual_replay/audit.py": "973bf7750032567c268a77e77370af75c8e31044d594098e7eef8703a905ec6f",
     "results/core_log_reserved_complete_residual_replay/protocol.json": "f6bb191efad00817e421830340065d7450e85adabc49c24aa64a84d0ef0aaca5",
     "results/core_log_reserved_complete_residual_replay/replay.py": "1447e3bc8294454d808c67122ed3e46b81f8863aadafefb6ff6d82779d9946a3",
     "results/core_log_reserved_complete_residual_replay/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",

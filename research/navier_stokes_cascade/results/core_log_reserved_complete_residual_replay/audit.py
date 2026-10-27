@@ -2,6 +2,7 @@
 """Freeze the log-reserved complete residual replay."""
 
 import argparse
+from fractions import Fraction
 import hashlib
 import json
 from pathlib import Path
@@ -29,7 +30,7 @@ def encode(value):
         return {key: encode(item) for key, item in value.items()}
     if isinstance(value, (list, tuple)):
         return [encode(item) for item in value]
-    if hasattr(value, "numerator") and hasattr(value, "denominator"):
+    if isinstance(value, Fraction):
         return str(value)
     return value
 
