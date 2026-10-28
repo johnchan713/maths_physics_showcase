@@ -1604,6 +1604,18 @@ separately certified explicit-tail route yields a positive exact
 complete covariance means and the complete residual remain before any
 unconditional pulse, force, exclusion or blow-up conclusion.
 
+The [current-head Q3 full-frame join](results/core_current_head_q3_full_frame_join/README.md)
+now binds the Q1-Q2 field to the original complete frame, whole lifted path,
+fixed phase jets and canonical constrained ODE on the same explicit later
+tail. The older unevaluated `36 Cphi^2<=beta S^2` comparison is an optional
+sufficient normal-floor route and is not used: Q2 supplies the full-path
+normal floor directly. Fixed-order Borel seminorms and compact closed paths
+make the original frame constants finite; the ODE keeps moving-normal and
+unprojected source pressure and both potential and pressure cutoff
+commutators. The checkpoint does not certify an unspecified historical first
+band. Fixed projector/compensator supports and compact/slow weighted inverse
+domains remain next, before complete means and residual promotion.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

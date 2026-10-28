@@ -1,0 +1,132 @@
+{
+  "dependency_evidence_sha256": {
+    "results/canonical_primary_foundation/evidence.json": "84e7fc53acc26a6be459669ab952d60eee30b83f7581eeb124edfd26fa829d5c",
+    "results/core_canonical_entrance_jet_closure/evidence.json": "d159baf86153900708f300b32b9971401b8fa0dfc8ae7c23b3f82a89a7cf1d95",
+    "results/core_canonical_full_path_ode_join/evidence.json": "fd28c1af3c9a5cb11dabe7df96e95525b3d90136ab16fcfd42898be5d65ff7d2",
+    "results/core_canonical_haar_column_jet_closure/evidence.json": "856e5931f2b22873b44264ee5de042ac812b3b6c2e89329c3ff1075bf40fabf4",
+    "results/core_current_head_q1_exact_map_join/evidence.json": "2163895c04626750c32ba4df499e1a7dd95c4aed54b06753da5cc402b3622961",
+    "results/core_current_head_q2_regional_gap_join/evidence.json": "64f62c4bf9c0cd36306bf028e63f8293626e494e5f85bd6b1336b05694af59a7",
+    "results/core_finite_support_closure/evidence.json": "b58b5e36e18e5ad5938ff81c12db9706d1c229b5e4d549b3604f58bd1d6e7867",
+    "results/core_full_path_ode_reconstruction/evidence.json": "3debeabf5ee1f2d9d49b2e781a2ebf6d55f1dc0a0c0347126837b14a9bfbfd43",
+    "results/core_leading_background_seminorm_reconstruction/evidence.json": "fb58eeb5071645adaf4f64df4814a7f91c628e9602320d20027758ceb281b0f1",
+    "results/core_leading_profile_certificate/evidence.json": "3e540aa5be3669ba682ff6f9ad03e40f15abb24869583ec40ad1299ff5574aff",
+    "results/core_phase_coefficient_budget/evidence.json": "0f052f36ea462f31101ef67c38687eca7464a8b8be462d2212b3a7bed745a758",
+    "results/core_reference_scaled_normal_floor/evidence.json": "3e104020aa2b131eb53583232bfe3a6f17a42ce763b1bcdb4ce7a0d1ca91d854",
+    "results/core_same_band_gap_join/evidence.json": "b240040bacac856e039b6320f734078ce486cd48b1d91c02ddb6ba6396c291be",
+    "results/core_same_band_gap_reconstruction/evidence.json": "cfb45fd4152877bdccae26f5e533c6bdb51747b65dca8d4176b8bd2007e62d0c",
+    "results/core_tangent_propagator_closure/evidence.json": "e874f9cead29150a2f871ec0c349b7c35e0f60181bd0e2030c57942aa9156488",
+    "results/frame_column_foundation/evidence.json": "82e80512c7e404b757043f3a4ea93d7ec81babf08a8ffd58917b19320b4abf1d",
+    "results/sourced_inverse_foundation/evidence.json": "15afc498fa42605b0fcbaaff81b4245ceb388e447527e63395eeb45348c41827"
+  },
+  "gates": {
+    "nine_exact_graph_and_interface_controls": true,
+    "scientific_scope_preserved": true,
+    "seventeen_direct_provider_records": true
+  },
+  "protocol": {
+    "correction": "the unresolved numerical Cphi comparison belongs to an older sufficient normal-floor route; Q3 uses the separately certified later-tail normal floor and proves finiteness of the original frame constants from fixed-order Borel seminorms and compact whole-path domains",
+    "identity": "the exact profile, roots, carriers, h=lambda^2, C^-20 width, supports, pressure gauge, full F/G axial transport and accepted later tail are unchanged",
+    "parent_commit": "c977837a780f6830590d4dca4814cbc171ffb7b5",
+    "result": "bind the Q1-Q2 object to the original complete frame, whole-path primitive, phase-jet and accepted later-tail domain and to the canonical constrained ODE on that same domain",
+    "scope": "same-object Q3 analytical join and interface recheck only; fixed projector/compensator and compact/slow inverse contracts, generated sources, complete means and residual remain open"
+  },
+  "remaining_obligations": [
+    "bind the fixed compensator/projector profiles, actual supports and every fixed jet to this Q1-Q3 field and accepted later tail",
+    "join the compact and slow inverse maps with their weighted domains and whole-path support on the same field",
+    "then join generated harmonic sources, complete covariance and fresh axial/full-pressure means, retaining Pi1/Pi2 and all reserved supports",
+    "only after those contracts may the full viscosity/cutoff/interaction residual, force, comparison or blow-up claims be reconsidered"
+  ],
+  "review": {
+    "checks": {
+      "all_declared_dependency_hashes_match": true,
+      "all_declared_source_hashes_match": true,
+      "all_seventeen_Q3_provider_statuses_match": true,
+      "frame_denominators_and_constants_are_positive_and_finite": true,
+      "moving_normal_pressure_term_is_nonzero": true,
+      "picard_factorial_ratio_closes_without_smallness": true,
+      "provider_graph_is_acyclic": true,
+      "pure_normal_source_retains_nonzero_pressure": true,
+      "same_later_tail_compactness_closes_frame_constants": true
+    },
+    "graph": {
+      "dependency_hash_checks": 1018,
+      "edges": 1018,
+      "nodes": 241,
+      "source_hash_checks": 3836
+    },
+    "interface_controls": {
+      "compactness": {
+        "background": "every fixed Borel background jet is finite before the common tail is selected",
+        "denominators": "Q2 supplies positive normal, shear, frame, carrier and canonical-root floors on the same tail",
+        "domain": "finite accepted labels/charts and each closed lifted interval 0<=v<=L<=S on the Q2 later tail",
+        "frame_constants": "CE=sup L*||E|| and Cd=sup L*|d-dref| are finite by compactness; endpoint frame factors are finite by positive cmin and normal floors",
+        "growth": "P=exp(integral(lambda-dref)) is positive; its ratios cancel at entrance and Duhamel interfaces",
+        "old_numeric_Cphi_gate_required": false,
+        "phase": "full F,G axial transport and their fixed jets are finite on the closed path",
+        "unspecified_historical_first_band_certified": false
+      },
+      "constrained_equation": "t'+Kt+m^2*d*t+i*k*m*n*pi=-f, n.t=0",
+      "cutoffs": "curl(psi*A)=psi*curl(A)+grad(psi)xA and grad(psi*pi)=psi*grad(pi)+pi*grad(psi)",
+      "frame_budget_fixture": {
+        "H": "41/12",
+        "Kframe": "99",
+        "dstar": "1/404",
+        "exponential_power": "4",
+        "normal_reciprocal": "103424/961",
+        "picard_index": "1003912",
+        "picard_next_ratio": "5788562273/11577124716",
+        "tangent_constant": "8019"
+      },
+      "moving_normal_pressure": {
+        "moving_normal_over_i": "1/28",
+        "source_normal_over_i": "0",
+        "total_without_K_over_i": "1/28"
+      },
+      "pressure": "pi=i*(n.Kt-nprime.t+n.f)/(k*m*|n|^2)",
+      "pure_normal_source_pressure": {
+        "moving_normal_over_i": "0",
+        "source_normal_over_i": "2/5",
+        "total_without_K_over_i": "2/5"
+      }
+    },
+    "provider_status_checks": {
+      "canonical_primary_foundation": true,
+      "core_canonical_entrance_jet_closure": true,
+      "core_canonical_full_path_ode_join": true,
+      "core_canonical_haar_column_jet_closure": true,
+      "core_current_head_q1_exact_map_join": true,
+      "core_current_head_q2_regional_gap_join": true,
+      "core_finite_support_closure": true,
+      "core_full_path_ode_reconstruction": true,
+      "core_leading_background_seminorm_reconstruction": true,
+      "core_leading_profile_certificate": true,
+      "core_phase_coefficient_budget": true,
+      "core_reference_scaled_normal_floor": true,
+      "core_same_band_gap_join": true,
+      "core_same_band_gap_reconstruction": true,
+      "core_tangent_propagator_closure": true,
+      "frame_column_foundation": true,
+      "sourced_inverse_foundation": true
+    },
+    "scope": {
+      "Q1_Q2_object_is_a_direct_dependency": true,
+      "Q3_full_frame_primitive_path_and_phase_domain_bound_on_same_later_tail": true,
+      "every_provider_theorem_independently_reproved_here": false,
+      "fixed_projector_compensator_and_weighted_inverse_contracts_closed": false,
+      "hashes_or_tests_treated_as_continuum_proof": false,
+      "old_numeric_Cphi_sufficient_gate_used": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false,
+      "unspecified_historical_first_band_certified": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q3_full_frame_join/.gitignore": "87a6e5b9aa0065719749aebbeeae98714cc5fc40e0a3465fad03eba848d74e33",
+    "results/core_current_head_q3_full_frame_join/README.md": "0d99b23c53ebe5e2a58c1db5f99ec498cb000f4a2900192f7524bdd93808608e",
+    "results/core_current_head_q3_full_frame_join/audit.py": "31fa3ee6080ef49038cbd3e22b02745e95e77518bbfaeed8c57b587aff071c30",
+    "results/core_current_head_q3_full_frame_join/full_frame.py": "ee8b3d4159223ba21eac5407caa320ca19aeea003478f05ba5ee3261e341e0da",
+    "results/core_current_head_q3_full_frame_join/protocol.json": "ac6f95f8cd5eef3969a3766afbc57b3bceb186e8e679b627d57088f90eea1d9a",
+    "results/core_current_head_q3_full_frame_join/requirements.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "results/core_current_head_q3_full_frame_join/test_audit.py": "d8935804840f77bf9fa360623aa9774de1cac8ca659cd4e30ec59148c8e62334"
+  },
+  "status": "current-head-Q3-full-frame-whole-path-and-phase-domain-bound"
+}
