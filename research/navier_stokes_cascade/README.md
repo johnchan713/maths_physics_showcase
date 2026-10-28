@@ -1516,6 +1516,19 @@ stage-uniform constant or fixed-`q` contraction. The current corner and
 endpoint transfer is next, followed by localization, force, energy and
 comparison; none is promoted by this checkpoint.
 
+The [current log-reserved corner and endpoint join](results/core_current_log_reserved_corner_endpoint_join/README.md)
+now carries that exact request-dependent residual stage, including the two
+extra `A0/A1` source derivatives, onto the closed `eta` chart and through
+`q<=4(tau+|z|^(1/D))`. It joins the resulting Cartesian-flat current residual
+to the current punctured one-sided potential, direct-swirl and complete
+fixed-gauge pressure jets. A mixed localization request of order `m` consumes
+exactly the finite `A:m+4`, `B:m+3`, `p:m+2` Cauchy orders and residual jet
+`m+1`; raising the request does not select a new field. The endpoint uniform
+all-fixed-order physical bound remains an explicit conditional input, and no
+terminal regularity of velocity or pressure at the origin is asserted. The
+twelve-term localization and compact-force replay is next, followed by
+energy and comparison.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

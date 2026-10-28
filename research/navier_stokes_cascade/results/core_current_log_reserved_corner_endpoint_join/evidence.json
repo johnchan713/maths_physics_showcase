@@ -1,0 +1,559 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_corner_flatness_obstruction/evidence.json": "08178e20b2a2ee486976637d1e4ffc85af2659d180a708375ec171e4bb1b9651",
+    "results/core_current_log_reserved_residual_reconciliation/evidence.json": "bf5d045c4339ca8bcd38f0262661817758c0d7a309e7fa70795e1fea481ea02c",
+    "results/core_log_reserved_cartesian_corner_replay/evidence.json": "d14f7cc3a0ff423ce863753470e4e6a672cf07e40eaafe792e0bf5008f3005b9",
+    "results/core_log_reserved_endpoint_compatibility_join/evidence.json": "c3737f0c29674c6fd092049964a2a0d6703779d7154a675ed1d62fcffcce9992",
+    "results/core_primitive_margin_normalization_reconciliation/evidence.json": "c08d54fa1cf021e7c7cc80da1b264465a163617fdd23479d16ec9cd925d609c2",
+    "results/current_endpoint_jets/evidence.json": "de61c70e5aea7ef14663e8fa4d34736bcf50399db4660c1eb3f01827c2e7e6d6"
+  },
+  "flags": {
+    "complete_pressure_covariance_axial_and_exterior_memory_retained": true,
+    "current_punctured_endpoint_derivative_ledger_joined": true,
+    "current_request_dependent_residual_stage_transferred_to_corner": true,
+    "endpoint_uniform_all_order_physical_bound_proved_here": false,
+    "extra_A0_A1_source_derivatives_retained_at_corner": true,
+    "localization_force_energy_or_comparison_replayed_here": false,
+    "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+    "unconditional_pulse_residual_force_exclusion_or_blowup_proved": false
+  },
+  "gates": {
+    "all_declared_dependency_sources_match": true,
+    "scientific_scope_retained": true,
+    "six_frozen_dependencies": true,
+    "ten_exact_transfer_controls": true
+  },
+  "inherited_source_checks": {
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/.gitignore": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/README.md": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/audit.py": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/corner.py": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/protocol.json": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/requirements.txt": true,
+    "core_corner_flatness_obstruction:results/core_corner_flatness_obstruction/test_audit.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/.gitignore": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/README.md": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/audit.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/protocol.json": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/requirements.txt": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/residual.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/test_audit.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_source_reconciliation/reconcile.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_log_reserved_complete_residual_replay/replay.py": true,
+    "core_log_reserved_cartesian_corner_replay:results/core_log_reserved_cartesian_corner_replay/.gitignore": true,
+    "core_log_reserved_cartesian_corner_replay:results/core_log_reserved_cartesian_corner_replay/README.md": true,
+    "core_log_reserved_cartesian_corner_replay:results/core_log_reserved_cartesian_corner_replay/audit.py": true,
+    "core_log_reserved_cartesian_corner_replay:results/core_log_reserved_cartesian_corner_replay/corner_replay.py": true,
+    "core_log_reserved_cartesian_corner_replay:results/core_log_reserved_cartesian_corner_replay/protocol.json": true,
+    "core_log_reserved_cartesian_corner_replay:results/core_log_reserved_cartesian_corner_replay/requirements.txt": true,
+    "core_log_reserved_cartesian_corner_replay:results/core_log_reserved_cartesian_corner_replay/test_audit.py": true,
+    "core_log_reserved_endpoint_compatibility_join:results/core_log_reserved_endpoint_compatibility_join/.gitignore": true,
+    "core_log_reserved_endpoint_compatibility_join:results/core_log_reserved_endpoint_compatibility_join/README.md": true,
+    "core_log_reserved_endpoint_compatibility_join:results/core_log_reserved_endpoint_compatibility_join/audit.py": true,
+    "core_log_reserved_endpoint_compatibility_join:results/core_log_reserved_endpoint_compatibility_join/endpoint_compatibility.py": true,
+    "core_log_reserved_endpoint_compatibility_join:results/core_log_reserved_endpoint_compatibility_join/protocol.json": true,
+    "core_log_reserved_endpoint_compatibility_join:results/core_log_reserved_endpoint_compatibility_join/requirements.txt": true,
+    "core_log_reserved_endpoint_compatibility_join:results/core_log_reserved_endpoint_compatibility_join/test_audit.py": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/.gitignore": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/README.md": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/audit.py": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/margins.py": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/protocol.json": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/requirements.txt": true,
+    "core_primitive_margin_normalization_reconciliation:results/core_primitive_margin_normalization_reconciliation/test_audit.py": true,
+    "current_endpoint_jets:results/auxiliary_geometry_audit/evidence.json": true,
+    "current_endpoint_jets:results/background_jet_foundation/evidence.json": true,
+    "current_endpoint_jets:results/current_endpoint_jets/.gitignore": true,
+    "current_endpoint_jets:results/current_endpoint_jets/README.md": true,
+    "current_endpoint_jets:results/current_endpoint_jets/audit.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/endpoint.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/endpoint_checks.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/protocol.json": true,
+    "current_endpoint_jets:results/current_endpoint_jets/requirements.txt": true,
+    "current_endpoint_jets:results/current_endpoint_jets/test_audit.py": true,
+    "current_endpoint_jets:results/current_potential_realization/evidence.json": true,
+    "current_endpoint_jets:results/finite_stage_induction/evidence.json": true,
+    "current_endpoint_jets:results/geometric_pulse_replay/evidence.json": true,
+    "current_endpoint_jets:results/heat_exterior_audit/evidence.json": true,
+    "current_endpoint_jets:results/localized_force_extension/evidence.json": true,
+    "current_endpoint_jets:results/physical_pulse_transfer/evidence.json": true
+  },
+  "protocol": {
+    "blocking_inequality": "the punctured endpoint input remains conditional on uniform all-fixed-order physical bounds up to |eta|=1 on each q-positive compact",
+    "corner": "use the current request-dependent comparison stage, including the two extra A0/A1 source derivatives, on the closed eta chart and then q<=4*(tau+|z|^(1/D))",
+    "endpoint": "join the current punctured one-sided potential, direct-swirl and complete-pressure jets with localization Cauchy requests m+4, m+3 and m+2",
+    "field": "the exact current locally finite field, cutoff sequence, supports and fixed pressure gauge used by the current log-reserved residual reconciliation",
+    "parent_commit": "a08d07d296ae3da7b77a3d7578145f149ea4cf01",
+    "scope": "conditional current-field corner and endpoint input package only; localization, compact force, energy, comparison, exclusion and blow-up are not replayed here"
+  },
+  "remaining_obligations": [
+    "replay all twelve localization terms on this exact current corner/endpoint package",
+    "construct the compatible compact future force and revalidate preterminal energy",
+    "then replay fixed-gauge pressure recovery and expanding-ball comparison before any exclusion or blow-up claim"
+  ],
+  "review": {
+    "checks": {
+      "all_fixed_sample_residual_jets_are_cartesian_flat": true,
+      "current_log_reserved_residual_is_exact_parent": true,
+      "current_punctured_endpoint_contract_is_used": true,
+      "current_request_dependent_stage_reaches_closed_corner": true,
+      "every_sample_corner_power_and_endpoint_request_closes": true,
+      "extra_A0_A1_derivative_cost_not_dropped_at_corner": true,
+      "extra_time_derivative_is_only_a_fixed_finite_request": true,
+      "fixed_gauge_complete_pressure_and_axial_memory_retained": true,
+      "localization_force_energy_comparison_and_blowup_remain_open": true,
+      "punctured_and_localization_derivative_ledgers_match": true
+    },
+    "joined_cover": {
+      "corner": "all fixed jets of the complete current residual are Cartesian flat",
+      "exterior": "exact heat direct-swirl and full fixed-gauge pressure mixed jets",
+      "overlap": "current axial and equatorial regions cover each enlarged punctured compact",
+      "punctured": "uniform one-sided current A, B and fixed-gauge p jets on every |x|>=d>0 terminal compact"
+    },
+    "sample_corner_targets": [
+      {
+        "cartesian_factor_at_requested_exponent": 4,
+        "checks": {
+          "all_six_groups_retained": true,
+          "cartesian_transfer_is_four_to_the_power": true,
+          "closed_jacobian_floor_holds": true,
+          "closed_residual_beats_requested_power": true,
+          "current_residual_controls_hold": true,
+          "current_source_and_corner_use_same_stage": true,
+          "no_scale_incompatible_positive_floor_used": true,
+          "normalized_support_margin_positive": true,
+          "terminal_chart_closes": true,
+          "two_extra_compact_source_derivatives_reach_corner_stage": true
+        },
+        "closed_chart": {
+          "angular_domain_includes_eta_endpoints": true,
+          "compact_X_interval_fixed_before_supremum": true,
+          "edge_weight_floor_used": false,
+          "jacobian_floor": "99/100",
+          "normalized_support_margin": "3/8012",
+          "physical_support_floor_used": false,
+          "terminal_identity": "1"
+        },
+        "closed_chart_exponent": "20030773/20000000",
+        "comparison_stage": 12817,
+        "current_stage_request": {
+          "base_strict_margins": {
+            "A0": "1/20000000",
+            "A1": "152690387/5000000"
+          },
+          "extra_source_derivatives_per_compact_map": 2,
+          "finite_formula_graph": true,
+          "first_real_interface_ceiling": 16431690995699,
+          "physical_jet": 0,
+          "raw_sources_before_extra_integration": {
+            "A0": 60200007,
+            "A1": 5
+          },
+          "raw_sources_with_extra_integration": {
+            "A0": 60200009,
+            "A1": 7
+          },
+          "requested_power": 0,
+          "stage": 12817
+        },
+        "jet": 0,
+        "pressure_memory": [
+          "six_covariance_entries",
+          "actual_axial_velocity_gd_minus_A1gd",
+          "whole_dZ_Jz_plus_c_rho_P",
+          "old_pressure_and_Pi1_Pi2"
+        ],
+        "requested_power": 0,
+        "requested_strict_exponent": "1",
+        "reserve_accounts": {
+          "A0": {
+            "absorption_exponent_bound": "0",
+            "log_degree": 0,
+            "may_pay_other_account": false,
+            "owner": "A0_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "A1": {
+            "absorption_exponent_bound": "0",
+            "log_degree": 0,
+            "may_pay_other_account": false,
+            "owner": "A1_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "cutoff": {
+            "absorption_exponent_bound": "0",
+            "log_degree": 0,
+            "may_pay_other_account": false,
+            "owner": "cutoff_residual",
+            "reserve": "320430773/20000000",
+            "reserve_class": "cutoff_tail"
+          },
+          "regular": {
+            "absorption_exponent_bound": "0",
+            "log_degree": 0,
+            "may_pay_other_account": false,
+            "owner": "regular_residual",
+            "reserve": "49997/40000000",
+            "reserve_class": "regular_residual"
+          }
+        },
+        "residual_groups": {
+          "new_old": "20030773/20000000",
+          "new_square": "180230773/10000000",
+          "old_new": "20030773/20000000",
+          "pressure": "180230773/20000000",
+          "time": "180230773/20000000",
+          "viscosity": "180230773/20000000"
+        },
+        "retained_exponent_margin": "30773/20000000"
+      },
+      {
+        "cartesian_factor_at_requested_exponent": 256,
+        "checks": {
+          "all_six_groups_retained": true,
+          "cartesian_transfer_is_four_to_the_power": true,
+          "closed_jacobian_floor_holds": true,
+          "closed_residual_beats_requested_power": true,
+          "current_residual_controls_hold": true,
+          "current_source_and_corner_use_same_stage": true,
+          "no_scale_incompatible_positive_floor_used": true,
+          "normalized_support_margin_positive": true,
+          "terminal_chart_closes": true,
+          "two_extra_compact_source_derivatives_reach_corner_stage": true
+        },
+        "closed_chart": {
+          "angular_domain_includes_eta_endpoints": true,
+          "compact_X_interval_fixed_before_supremum": true,
+          "edge_weight_floor_used": false,
+          "jacobian_floor": "99/100",
+          "normalized_support_margin": "3/8012",
+          "physical_support_floor_used": false,
+          "terminal_identity": "1"
+        },
+        "closed_chart_exponent": "160094743/40000000",
+        "comparison_stage": 18418,
+        "current_stage_request": {
+          "base_strict_margins": {
+            "A0": "1/20000000",
+            "A1": "158158949/4000000"
+          },
+          "extra_source_derivatives_per_compact_map": 2,
+          "finite_formula_graph": true,
+          "first_real_interface_ceiling": 33927605408325,
+          "physical_jet": 1,
+          "raw_sources_before_extra_integration": {
+            "A0": 260200008,
+            "A1": 6
+          },
+          "raw_sources_with_extra_integration": {
+            "A0": 260200010,
+            "A1": 8
+          },
+          "requested_power": 3,
+          "stage": 18418
+        },
+        "jet": 1,
+        "pressure_memory": [
+          "six_covariance_entries",
+          "actual_axial_velocity_gd_minus_A1gd",
+          "whole_dZ_Jz_plus_c_rho_P",
+          "old_pressure_and_Pi1_Pi2"
+        ],
+        "requested_power": 3,
+        "requested_strict_exponent": "4",
+        "reserve_accounts": {
+          "A0": {
+            "absorption_exponent_bound": "490000000",
+            "log_degree": 7,
+            "may_pay_other_account": false,
+            "owner": "A0_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "A1": {
+            "absorption_exponent_bound": "1210000000",
+            "log_degree": 11,
+            "may_pay_other_account": false,
+            "owner": "A1_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "cutoff": {
+            "absorption_exponent_bound": "10000000/3186487",
+            "log_degree": 17,
+            "may_pay_other_account": false,
+            "owner": "cutoff_residual",
+            "reserve": "920894743/40000000",
+            "reserve_class": "cutoff_tail"
+          },
+          "regular": {
+            "absorption_exponent_bound": "1690000000/49997",
+            "log_degree": 13,
+            "may_pay_other_account": false,
+            "owner": "regular_residual",
+            "reserve": "49997/40000000",
+            "reserve_class": "regular_residual"
+          }
+        },
+        "residual_groups": {
+          "new_old": "160094743/40000000",
+          "new_square": "560494743/20000000",
+          "old_new": "160094743/40000000",
+          "pressure": "560494743/40000000",
+          "time": "560494743/40000000",
+          "viscosity": "560494743/40000000"
+        },
+        "retained_exponent_margin": "94743/40000000"
+      },
+      {
+        "cartesian_factor_at_requested_exponent": 16777216,
+        "checks": {
+          "all_six_groups_retained": true,
+          "cartesian_transfer_is_four_to_the_power": true,
+          "closed_jacobian_floor_holds": true,
+          "closed_residual_beats_requested_power": true,
+          "current_residual_controls_hold": true,
+          "current_source_and_corner_use_same_stage": true,
+          "no_scale_incompatible_positive_floor_used": true,
+          "normalized_support_margin_positive": true,
+          "terminal_chart_closes": true,
+          "two_extra_compact_source_derivatives_reach_corner_stage": true
+        },
+        "closed_chart": {
+          "angular_domain_includes_eta_endpoints": true,
+          "compact_X_interval_fixed_before_supremum": true,
+          "edge_weight_floor_used": false,
+          "jacobian_floor": "99/100",
+          "normalized_support_margin": "3/8012",
+          "physical_support_floor_used": false,
+          "terminal_identity": "1"
+        },
+        "closed_chart_exponent": "24004357/2000000",
+        "comparison_stage": 37619,
+        "current_stage_request": {
+          "base_strict_margins": {
+            "A0": "1/20000000",
+            "A1": "715393571/10000000"
+          },
+          "extra_source_derivatives_per_compact_map": 2,
+          "finite_formula_graph": true,
+          "first_real_interface_ceiling": 141525474381742,
+          "physical_jet": 5,
+          "raw_sources_before_extra_integration": {
+            "A0": 900200012,
+            "A1": 10
+          },
+          "raw_sources_with_extra_integration": {
+            "A0": 900200014,
+            "A1": 12
+          },
+          "requested_power": 11,
+          "stage": 37619
+        },
+        "jet": 5,
+        "pressure_memory": [
+          "six_covariance_entries",
+          "actual_axial_velocity_gd_minus_A1gd",
+          "whole_dZ_Jz_plus_c_rho_P",
+          "old_pressure_and_Pi1_Pi2"
+        ],
+        "requested_power": 11,
+        "requested_strict_exponent": "12",
+        "reserve_accounts": {
+          "A0": {
+            "absorption_exponent_bound": "13690000000",
+            "log_degree": 37,
+            "may_pay_other_account": false,
+            "owner": "A0_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "A1": {
+            "absorption_exponent_bound": "16810000000",
+            "log_degree": 41,
+            "may_pay_other_account": false,
+            "owner": "A1_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "cutoff": {
+            "absorption_exponent_bound": "1104500000/94044357",
+            "log_degree": 47,
+            "may_pay_other_account": false,
+            "owner": "cutoff_residual",
+            "reserve": "94044357/2000000",
+            "reserve_class": "cutoff_tail"
+          },
+          "regular": {
+            "absorption_exponent_bound": "18490000000/49997",
+            "log_degree": 43,
+            "may_pay_other_account": false,
+            "owner": "regular_residual",
+            "reserve": "49997/40000000",
+            "reserve_class": "regular_residual"
+          }
+        },
+        "residual_groups": {
+          "new_old": "24004357/2000000",
+          "new_square": "60024357/1000000",
+          "old_new": "24004357/2000000",
+          "pressure": "60024357/2000000",
+          "time": "60024357/2000000",
+          "viscosity": "60024357/2000000"
+        },
+        "retained_exponent_margin": "4357/2000000"
+      }
+    ],
+    "sample_endpoint_requests": [
+      {
+        "cartesian_factor": 4,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "current_endpoint_geometry_controls_hold": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_current_residual_stage_carries_extra_derivatives": true
+        },
+        "closed_residual_exponent": "20025973/20000000",
+        "comparison_stage": 16017,
+        "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+        "flat_power": 0,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 3,
+          "potential": 4,
+          "pressure": 2
+        },
+        "punctured_field_Cauchy_orders": {
+          "direct_swirl": 3,
+          "potential": 4,
+          "pressure": 2
+        },
+        "residual_Cauchy_jet": 1,
+        "spatial_order": 0,
+        "time_order": 0,
+        "total_mixed_order": 0
+      },
+      {
+        "cartesian_factor": 4096,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "current_endpoint_geometry_controls_hold": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_current_residual_stage_carries_extra_derivatives": true
+        },
+        "closed_residual_exponent": "240051543/40000000",
+        "comparison_stage": 32818,
+        "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+        "flat_power": 5,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 7,
+          "potential": 8,
+          "pressure": 6
+        },
+        "punctured_field_Cauchy_orders": {
+          "direct_swirl": 7,
+          "potential": 8,
+          "pressure": 6
+        },
+        "residual_Cauchy_jet": 5,
+        "spatial_order": 1,
+        "time_order": 3,
+        "total_mixed_order": 4
+      },
+      {
+        "cartesian_factor": 16777216,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "current_endpoint_geometry_controls_hold": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_current_residual_stage_carries_extra_derivatives": true
+        },
+        "closed_residual_exponent": "480089137/40000000",
+        "comparison_stage": 53620,
+        "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+        "flat_power": 11,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 12,
+          "potential": 13,
+          "pressure": 11
+        },
+        "punctured_field_Cauchy_orders": {
+          "direct_swirl": 12,
+          "potential": 13,
+          "pressure": 11
+        },
+        "residual_Cauchy_jet": 10,
+        "spatial_order": 5,
+        "time_order": 4,
+        "total_mixed_order": 9
+      },
+      {
+        "cartesian_factor": 64,
+        "checks": {
+          "closed_residual_flatness_beats_requested_power": true,
+          "current_endpoint_geometry_controls_hold": true,
+          "direct_swirl_has_three_order_Cauchy_buffer": true,
+          "potential_has_four_order_Cauchy_buffer": true,
+          "pressure_has_two_order_Cauchy_buffer": true,
+          "punctured_orders_match_localization_Cauchy_orders": true,
+          "residual_next_time_derivative_is_fixed_finite_request": true,
+          "same_current_residual_stage_carries_extra_derivatives": true
+        },
+        "closed_residual_exponent": "6002557/2000000",
+        "comparison_stage": 49619,
+        "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+        "flat_power": 2,
+        "localization_Cauchy_orders": {
+          "direct_swirl": 13,
+          "potential": 14,
+          "pressure": 12
+        },
+        "punctured_field_Cauchy_orders": {
+          "direct_swirl": 13,
+          "potential": 14,
+          "pressure": 12
+        },
+        "residual_Cauchy_jet": 11,
+        "spatial_order": 3,
+        "time_order": 7,
+        "total_mixed_order": 10
+      }
+    ],
+    "scope": {
+      "current_closed_time_localization_inputs_joined_conditionally": true,
+      "current_same_field_residual_cartesian_corner_flat_conditionally": true,
+      "endpoint_uniform_all_order_physical_bound_proved_here": false,
+      "localization_force_energy_comparison_replayed_here": false,
+      "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_corner_flatness_obstruction/corner.py": "d8aae7c931703dfb72304dec4e60a4f38e88d0143654881d36d0e3fce208a721",
+    "results/core_current_log_reserved_corner_endpoint_join/.gitignore": "972ca000540099f56a9a67d3d4591eb6a881b470b752a9545199dc0bf8ae4021",
+    "results/core_current_log_reserved_corner_endpoint_join/README.md": "476075376da09c5cebd1b2bc0297fff7927f755df842cef2785c078dbf10a8c1",
+    "results/core_current_log_reserved_corner_endpoint_join/audit.py": "25185b5bf2b8692bc4134c29f571511a13370b3f280013676aabbb48250d5575",
+    "results/core_current_log_reserved_corner_endpoint_join/protocol.json": "5f664accb884517f84e896fa94dbc25cb6b69144f378caf9ab83bf7e09a65d0f",
+    "results/core_current_log_reserved_corner_endpoint_join/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_current_log_reserved_corner_endpoint_join/test_audit.py": "c1b9aeea7632d13cff078b3c991c5bace41eb2cce69fb9eab807bdef9807845d",
+    "results/core_current_log_reserved_corner_endpoint_join/transfer.py": "5a5f0b9f33de701b570bf473382b08cb5c5d4da222c6fb584e5a8ab1e396be7d",
+    "results/core_current_log_reserved_residual_reconciliation/residual.py": "e587b135e09914e929329598b318cdd1bfba1d212af89f310d62b6ef6e327d74",
+    "results/core_primitive_margin_normalization_reconciliation/margins.py": "dfb4b36a43d110c4535be1b5800061f7e54ba38dc8ab278a85b0706ddbc5cb70",
+    "results/current_endpoint_jets/endpoint.py": "5c147a83082d312c725d2286a961677d960236c5f471c767285721f50baa0c9b"
+  },
+  "status": "current-log-reserved-corner-and-punctured-endpoint-joined-conditionally"
+}
