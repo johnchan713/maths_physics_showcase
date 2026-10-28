@@ -1,0 +1,446 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_compact_slow_inverse_reconstruction/evidence.json": "22e4b560e1f4928d9fd74d9f11045d00fbebe01c361bfcac5e86c26e1c6aee19",
+    "results/core_complete_potential_diagonal_join/evidence.json": "e2c62cc359872d182e8d3aad849ef584a5404bd6ba34df6936dc1918cdafd95e",
+    "results/core_corner_tail_slack_reconciliation/evidence.json": "f3e0ee58871b00245741f48e04481db7b7eaab5850a593830d276b8fd44e0988",
+    "results/core_current_log_source_reconciliation/evidence.json": "2d771039c61aeddc5a3d3c58fd8dea57d9a1379bb0c0356678c93f964d011cf0",
+    "results/core_finite_stage_compact_recurrence/evidence.json": "f49b4132de95667046e884aeaf0049bd6df21a9d1ed34272c98a8fd739147c34",
+    "results/core_log_renormalized_actual_source_induction/evidence.json": "58362ac9bb2da6a3fbf579e4f17351ca5e839e14b3ec18f5eff8ffeac54296a5",
+    "results/core_log_reserved_complete_residual_replay/evidence.json": "1b1b7af2c5ae682cbebb3bab0df2a70113836b4566dc56ea743fa5d4b3fab34d",
+    "results/core_post_signed_residual_join/evidence.json": "bb9833093f77cebeb4045096f4c0c8d2ad7c03fab4a830f6e6f848831895f662"
+  },
+  "flags": {
+    "compact_regular_and_cutoff_log_reserves_are_disjoint": true,
+    "complete_covariance_axial_velocity_and_pressure_memory_retained": true,
+    "corner_endpoint_force_energy_or_comparison_replayed_here": false,
+    "current_source_chain_and_residual_use_same_objects": true,
+    "extra_A0_A1_integration_derivative_cost_carried_into_residual_stage": true,
+    "same_locally_finite_field_supports_gauges_and_cutoff_sequence_used": true,
+    "stage_uniform_constants_or_fixed_q_contraction_proved": false,
+    "time_viscosity_pressure_both_crosses_and_new_square_retained": true,
+    "unconditional_pulse_residual_force_exclusion_or_blowup_proved": false
+  },
+  "gates": {
+    "all_declared_dependency_sources_match": true,
+    "eight_exact_current_residual_controls": true,
+    "eight_frozen_dependencies": true,
+    "scientific_scope_retained": true
+  },
+  "inherited_source_checks": {
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/.gitignore": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/audit.py": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/inverse.py": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/protocol.json": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/requirements.txt": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/test_audit.py": true,
+    "core_compact_slow_inverse_reconstruction:results/core_direct_compact_slow_provider_reconstruction/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_fast_inverse_budget/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_initial_final_row_obstruction/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_log_renormalized_actual_source_induction/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_slow_inverse_budget/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_symbolic_weighted_maps/README.md": true,
+    "core_complete_potential_diagonal_join:results/canonical_local_realization/realization.py": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/.gitignore": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/README.md": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/audit.py": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/controls.py": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/requirements.txt": true,
+    "core_complete_potential_diagonal_join:results/core_complete_potential_diagonal_join/test_audit.py": true,
+    "core_complete_potential_diagonal_join:results/core_finite_stage_compact_recurrence/recurrence.py": true,
+    "core_complete_potential_diagonal_join:results/finite_stage_induction/induction.py": true,
+    "core_complete_potential_diagonal_join:results/realization_foundation/realized_checks.py": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/.gitignore": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/README.md": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/audit.py": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/protocol.json": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/requirements.txt": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/slack.py": true,
+    "core_corner_tail_slack_reconciliation:results/core_corner_tail_slack_reconciliation/test_audit.py": true,
+    "core_current_log_source_reconciliation:results/core_compact_slow_inverse_reconstruction/inverse.py": true,
+    "core_current_log_source_reconciliation:results/core_current_log_source_reconciliation/.gitignore": true,
+    "core_current_log_source_reconciliation:results/core_current_log_source_reconciliation/README.md": true,
+    "core_current_log_source_reconciliation:results/core_current_log_source_reconciliation/audit.py": true,
+    "core_current_log_source_reconciliation:results/core_current_log_source_reconciliation/protocol.json": true,
+    "core_current_log_source_reconciliation:results/core_current_log_source_reconciliation/reconcile.py": true,
+    "core_current_log_source_reconciliation:results/core_current_log_source_reconciliation/requirements.txt": true,
+    "core_current_log_source_reconciliation:results/core_current_log_source_reconciliation/test_audit.py": true,
+    "core_current_log_source_reconciliation:results/core_finite_stage_compact_recurrence/recurrence.py": true,
+    "core_current_log_source_reconciliation:results/core_log_renormalized_actual_source_induction/source_induction.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/.gitignore": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/README.md": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/controls.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/recurrence.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/requirements.txt": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/test_audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_next_sourced_mean_tail_join/budgets.py": true,
+    "core_finite_stage_compact_recurrence:results/core_post_signed_mean_closure/budgets.py": true,
+    "core_finite_stage_compact_recurrence:results/core_post_signed_seed_sync/ledger.py": true,
+    "core_finite_stage_compact_recurrence:results/finite_stage_induction/induction.py": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/.gitignore": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/README.md": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/audit.py": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/protocol.json": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/requirements.txt": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/source_induction.py": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/test_audit.py": true,
+    "core_log_reserved_complete_residual_replay:results/core_log_reserved_complete_residual_replay/.gitignore": true,
+    "core_log_reserved_complete_residual_replay:results/core_log_reserved_complete_residual_replay/README.md": true,
+    "core_log_reserved_complete_residual_replay:results/core_log_reserved_complete_residual_replay/audit.py": true,
+    "core_log_reserved_complete_residual_replay:results/core_log_reserved_complete_residual_replay/protocol.json": true,
+    "core_log_reserved_complete_residual_replay:results/core_log_reserved_complete_residual_replay/replay.py": true,
+    "core_log_reserved_complete_residual_replay:results/core_log_reserved_complete_residual_replay/requirements.txt": true,
+    "core_log_reserved_complete_residual_replay:results/core_log_reserved_complete_residual_replay/test_audit.py": true,
+    "core_post_signed_residual_join:results/core_fast_row_gain_join/README.md": true,
+    "core_post_signed_residual_join:results/core_fast_row_gain_join/budgets.py": true,
+    "core_post_signed_residual_join:results/core_generic_signed_covariance_join/README.md": true,
+    "core_post_signed_residual_join:results/core_generic_signed_covariance_join/budgets.py": true,
+    "core_post_signed_residual_join:results/core_multiharmonic_mean_residual_budget/README.md": true,
+    "core_post_signed_residual_join:results/core_multiharmonic_mean_residual_budget/budgets.py": true,
+    "core_post_signed_residual_join:results/core_physical_tail_join/README.md": true,
+    "core_post_signed_residual_join:results/core_physical_tail_join/bounds.py": true,
+    "core_post_signed_residual_join:results/core_post_signed_mean_closure/README.md": true,
+    "core_post_signed_residual_join:results/core_post_signed_mean_closure/budgets.py": true,
+    "core_post_signed_residual_join:results/core_post_signed_residual_join/.gitignore": true,
+    "core_post_signed_residual_join:results/core_post_signed_residual_join/README.md": true,
+    "core_post_signed_residual_join:results/core_post_signed_residual_join/audit.py": true,
+    "core_post_signed_residual_join:results/core_post_signed_residual_join/bounds.py": true,
+    "core_post_signed_residual_join:results/core_post_signed_residual_join/controls.py": true,
+    "core_post_signed_residual_join:results/core_post_signed_residual_join/protocol.json": true,
+    "core_post_signed_residual_join:results/core_post_signed_residual_join/requirements.txt": true,
+    "core_post_signed_residual_join:results/core_post_signed_residual_join/test_audit.py": true,
+    "core_post_signed_residual_join:results/core_signed_target_edge_budget/README.md": true,
+    "core_post_signed_residual_join:results/core_signed_target_edge_budget/budgets.py": true,
+    "core_post_signed_residual_join:results/current_residual_ledger_audit/README.md": true,
+    "core_post_signed_residual_join:results/finite_induction_foundation/finite_checks.py": true,
+    "core_post_signed_residual_join:results/regular_source_foundation/README.md": true
+  },
+  "protocol": {
+    "correction": "carry the two additional A0/A1 source derivatives required by the extra compact integration into the exact residual comparison stage",
+    "field": "the same current locally finite divergence-free field, cutoff sequence, supports, gauges, fixed profile, same-choice projectors and weighted inverse maps",
+    "parent_commit": "8461bd590064f15ba5bc33dc78c251c6db43deaf",
+    "quantifier": "for each fixed jet and target choose one finite comparison stage and its finite enlarged source requests; no stage-uniform constant or fixed-q contraction is used",
+    "reserve_accounts": "separate A0 and A1 source reserves h*kappa, one-stage regular reserve h*(1/2-3*kappa), and the existing first-omitted cutoff half-gain; no account pays another class's logarithm",
+    "residual": "retain time, unit viscosity, full pressure, old-new, new-old and new-square with all six covariance entries and actual axial velocity",
+    "scope": "conditional current-chain local residual flatness only; corner, endpoint, localization, force, energy, comparison, exclusion and blow-up are not replayed here"
+  },
+  "remaining_obligations": [
+    "instantiate the corrected Cartesian-corner and punctured-endpoint residual transfer on this exact current field",
+    "then revalidate all twelve localization terms, compact future force, preterminal energy and fixed-gauge expanding-ball comparison",
+    "retain the unresolved frozen exact core/root and regional/frame hypotheses before any unconditional promotion"
+  ],
+  "review": {
+    "checks": {
+      "all_six_groups_and_both_cross_orientations_retained": true,
+      "compact_regular_and_cutoff_reserves_not_reused": true,
+      "corner_force_energy_comparison_not_silently_replayed": true,
+      "current_source_precedes_current_residual": true,
+      "extra_derivative_cost_present_at_each_residual_stage": true,
+      "frozen_three_account_residual_arithmetic_retained": true,
+      "same_current_pressure_covariance_and_axial_memory_retained": true,
+      "sample_fixed_jet_targets_close_with_positive_reserve": true
+    },
+    "memory": [
+      "six_covariance_entries",
+      "actual_axial_velocity_gd_minus_A1gd",
+      "whole_dZ_Jz_plus_c_rho_P",
+      "old_pressure_and_Pi1_Pi2"
+    ],
+    "residual_groups": [
+      "time",
+      "viscosity",
+      "pressure",
+      "old_new",
+      "new_old",
+      "new_square"
+    ],
+    "sample_comparisons": [
+      {
+        "base_comparison_stage": 12816,
+        "checks": {
+          "A0_and_A1_each_retain_positive_margin": true,
+          "all_six_groups_and_fixed_state_beat_target": true,
+          "all_six_residual_groups_retained": true,
+          "all_three_reserve_classes_are_disjoint": true,
+          "both_cross_orientations_have_the_same_proved_exponent": true,
+          "complete_pressure_memory_retained": true,
+          "current_source_reconciliation_controls_hold": true,
+          "cutoff_tail_spends_only_its_half_gain": true,
+          "extra_compact_derivative_cost_carried_into_residual_stage": true,
+          "frozen_residual_controls_hold": true,
+          "regular_stage_retains_positive_margin": true,
+          "same_log_reserved_stage_used_for_source_and_residual": true
+        },
+        "complete_minimum_exponent": "20030773/20000000",
+        "current_stage_request": {
+          "base_strict_margins": {
+            "A0": "1/20000000",
+            "A1": "152690387/5000000"
+          },
+          "extra_source_derivatives_per_compact_map": 2,
+          "finite_formula_graph": true,
+          "first_real_interface_ceiling": 16431690995699,
+          "physical_jet": 0,
+          "raw_sources_before_extra_integration": {
+            "A0": 60200007,
+            "A1": 5
+          },
+          "raw_sources_with_extra_integration": {
+            "A0": 60200009,
+            "A1": 7
+          },
+          "requested_power": 0,
+          "stage": 12817
+        },
+        "cutoff_retained_tail_exponent": "180230773/20000000",
+        "fixed_state_exponent_after_logs": "1181473097/40000000",
+        "jet": 0,
+        "log_reserved_comparison_stage": 12817,
+        "regular_retained_margin": "49997/40000000",
+        "regular_stage_gain": "49997/20000000",
+        "reserve_accounts": {
+          "A0": {
+            "absorption_exponent_bound": "0",
+            "log_degree": 0,
+            "may_pay_other_account": false,
+            "owner": "A0_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "A1": {
+            "absorption_exponent_bound": "0",
+            "log_degree": 0,
+            "may_pay_other_account": false,
+            "owner": "A1_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "cutoff": {
+            "absorption_exponent_bound": "0",
+            "log_degree": 0,
+            "may_pay_other_account": false,
+            "owner": "cutoff_residual",
+            "reserve": "320430773/20000000",
+            "reserve_class": "cutoff_tail"
+          },
+          "regular": {
+            "absorption_exponent_bound": "0",
+            "log_degree": 0,
+            "may_pay_other_account": false,
+            "owner": "regular_residual",
+            "reserve": "49997/40000000",
+            "reserve_class": "regular_residual"
+          }
+        },
+        "residual_group_exponents": {
+          "new_old": "20030773/20000000",
+          "new_square": "180230773/10000000",
+          "old_new": "20030773/20000000",
+          "pressure": "180230773/20000000",
+          "time": "180230773/20000000",
+          "viscosity": "180230773/20000000"
+        },
+        "residual_identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
+        "target": 0
+      },
+      {
+        "base_comparison_stage": 18417,
+        "checks": {
+          "A0_and_A1_each_retain_positive_margin": true,
+          "all_six_groups_and_fixed_state_beat_target": true,
+          "all_six_residual_groups_retained": true,
+          "all_three_reserve_classes_are_disjoint": true,
+          "both_cross_orientations_have_the_same_proved_exponent": true,
+          "complete_pressure_memory_retained": true,
+          "current_source_reconciliation_controls_hold": true,
+          "cutoff_tail_spends_only_its_half_gain": true,
+          "extra_compact_derivative_cost_carried_into_residual_stage": true,
+          "frozen_residual_controls_hold": true,
+          "regular_stage_retains_positive_margin": true,
+          "same_log_reserved_stage_used_for_source_and_residual": true
+        },
+        "complete_minimum_exponent": "160094743/40000000",
+        "current_stage_request": {
+          "base_strict_margins": {
+            "A0": "1/20000000",
+            "A1": "158158949/4000000"
+          },
+          "extra_source_derivatives_per_compact_map": 2,
+          "finite_formula_graph": true,
+          "first_real_interface_ceiling": 33927605408325,
+          "physical_jet": 1,
+          "raw_sources_before_extra_integration": {
+            "A0": 260200008,
+            "A1": 6
+          },
+          "raw_sources_with_extra_integration": {
+            "A0": 260200010,
+            "A1": 8
+          },
+          "requested_power": 3,
+          "stage": 18418
+        },
+        "cutoff_retained_tail_exponent": "560494743/40000000",
+        "fixed_state_exponent_after_logs": "1661539491/40000000",
+        "jet": 1,
+        "log_reserved_comparison_stage": 18418,
+        "regular_retained_margin": "49997/40000000",
+        "regular_stage_gain": "49997/20000000",
+        "reserve_accounts": {
+          "A0": {
+            "absorption_exponent_bound": "490000000",
+            "log_degree": 7,
+            "may_pay_other_account": false,
+            "owner": "A0_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "A1": {
+            "absorption_exponent_bound": "1210000000",
+            "log_degree": 11,
+            "may_pay_other_account": false,
+            "owner": "A1_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "cutoff": {
+            "absorption_exponent_bound": "10000000/3186487",
+            "log_degree": 17,
+            "may_pay_other_account": false,
+            "owner": "cutoff_residual",
+            "reserve": "920894743/40000000",
+            "reserve_class": "cutoff_tail"
+          },
+          "regular": {
+            "absorption_exponent_bound": "1690000000/49997",
+            "log_degree": 13,
+            "may_pay_other_account": false,
+            "owner": "regular_residual",
+            "reserve": "49997/40000000",
+            "reserve_class": "regular_residual"
+          }
+        },
+        "residual_group_exponents": {
+          "new_old": "160094743/40000000",
+          "new_square": "560494743/20000000",
+          "old_new": "160094743/40000000",
+          "pressure": "560494743/40000000",
+          "time": "560494743/40000000",
+          "viscosity": "560494743/40000000"
+        },
+        "residual_identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
+        "target": 3
+      },
+      {
+        "base_comparison_stage": 37618,
+        "checks": {
+          "A0_and_A1_each_retain_positive_margin": true,
+          "all_six_groups_and_fixed_state_beat_target": true,
+          "all_six_residual_groups_retained": true,
+          "all_three_reserve_classes_are_disjoint": true,
+          "both_cross_orientations_have_the_same_proved_exponent": true,
+          "complete_pressure_memory_retained": true,
+          "current_source_reconciliation_controls_hold": true,
+          "cutoff_tail_spends_only_its_half_gain": true,
+          "extra_compact_derivative_cost_carried_into_residual_stage": true,
+          "frozen_residual_controls_hold": true,
+          "regular_stage_retains_positive_margin": true,
+          "same_log_reserved_stage_used_for_source_and_residual": true
+        },
+        "complete_minimum_exponent": "24004357/2000000",
+        "current_stage_request": {
+          "base_strict_margins": {
+            "A0": "1/20000000",
+            "A1": "715393571/10000000"
+          },
+          "extra_source_derivatives_per_compact_map": 2,
+          "finite_formula_graph": true,
+          "first_real_interface_ceiling": 141525474381742,
+          "physical_jet": 5,
+          "raw_sources_before_extra_integration": {
+            "A0": 900200012,
+            "A1": 10
+          },
+          "raw_sources_with_extra_integration": {
+            "A0": 900200014,
+            "A1": 12
+          },
+          "requested_power": 11,
+          "stage": 37619
+        },
+        "cutoff_retained_tail_exponent": "60024357/2000000",
+        "fixed_state_exponent_after_logs": "652304857/8000000",
+        "jet": 5,
+        "log_reserved_comparison_stage": 37619,
+        "regular_retained_margin": "49997/40000000",
+        "regular_stage_gain": "49997/20000000",
+        "reserve_accounts": {
+          "A0": {
+            "absorption_exponent_bound": "13690000000",
+            "log_degree": 37,
+            "may_pay_other_account": false,
+            "owner": "A0_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "A1": {
+            "absorption_exponent_bound": "16810000000",
+            "log_degree": 41,
+            "may_pay_other_account": false,
+            "owner": "A1_actual_source",
+            "reserve": "1/40000000",
+            "reserve_class": "compact_source"
+          },
+          "cutoff": {
+            "absorption_exponent_bound": "1104500000/94044357",
+            "log_degree": 47,
+            "may_pay_other_account": false,
+            "owner": "cutoff_residual",
+            "reserve": "94044357/2000000",
+            "reserve_class": "cutoff_tail"
+          },
+          "regular": {
+            "absorption_exponent_bound": "18490000000/49997",
+            "log_degree": 43,
+            "may_pay_other_account": false,
+            "owner": "regular_residual",
+            "reserve": "49997/40000000",
+            "reserve_class": "regular_residual"
+          }
+        },
+        "residual_group_exponents": {
+          "new_old": "24004357/2000000",
+          "new_square": "60024357/1000000",
+          "old_new": "24004357/2000000",
+          "pressure": "60024357/2000000",
+          "time": "60024357/2000000",
+          "viscosity": "60024357/2000000"
+        },
+        "residual_identity": "R(u*,p*)=R(U[J]) + e_t - Delta e + grad pi + (U[J].grad)e + (e.grad)U[J] + (e.grad)e",
+        "target": 11
+      }
+    ],
+    "scope": {
+      "corner_endpoint_force_energy_comparison_replayed_here": false,
+      "same_current_locally_finite_field_and_cutoff_sequence_retained": true,
+      "six_group_log_reserved_local_residual_instantiated_on_current_chain": true,
+      "stage_uniform_constants_or_fixed_q_contraction_used": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_complete_potential_diagonal_join/diagonal.py": "839c3d701072cf054f5d2cb09fd4639911edcbd8591e2cc4bb804074aa66348d",
+    "results/core_current_log_reserved_residual_reconciliation/.gitignore": "972ca000540099f56a9a67d3d4591eb6a881b470b752a9545199dc0bf8ae4021",
+    "results/core_current_log_reserved_residual_reconciliation/README.md": "cffaafcb4d3307b66e1789d9898413df5c23f533f687721aa46c0718c742f80b",
+    "results/core_current_log_reserved_residual_reconciliation/audit.py": "36a3c20f9982555d0652b8a24711ab0ef2aedcbc038dce3fdf5ee54c5213351d",
+    "results/core_current_log_reserved_residual_reconciliation/protocol.json": "c859b4cd4deb89edbf21f9c711825be4e5dad2323255dbc08bd350583e0058bf",
+    "results/core_current_log_reserved_residual_reconciliation/requirements.txt": "5ec407c4d4c718a99748ffa976be6ca4e6ffa2484e96c9142e86ba8d3111b541",
+    "results/core_current_log_reserved_residual_reconciliation/residual.py": "e587b135e09914e929329598b318cdd1bfba1d212af89f310d62b6ef6e327d74",
+    "results/core_current_log_reserved_residual_reconciliation/test_audit.py": "38e9466df1516e678b9894dca2daae0a67b66eea1351568e91b197a1a0cd1dc2",
+    "results/core_current_log_source_reconciliation/reconcile.py": "99d82cd18c35fada15575844cc6d97a52538258d91923b59d4475b5a4bd0c04e",
+    "results/core_log_reserved_complete_residual_replay/replay.py": "1447e3bc8294454d808c67122ed3e46b81f8863aadafefb6ff6d82779d9946a3"
+  },
+  "status": "current-chain-log-reserved-six-group-local-residual-reconciled-conditionally"
+}

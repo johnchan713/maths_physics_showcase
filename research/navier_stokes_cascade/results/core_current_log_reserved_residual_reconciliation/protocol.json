@@ -1,0 +1,9 @@
+{
+  "parent_commit": "8461bd590064f15ba5bc33dc78c251c6db43deaf",
+  "field": "the same current locally finite divergence-free field, cutoff sequence, supports, gauges, fixed profile, same-choice projectors and weighted inverse maps",
+  "correction": "carry the two additional A0/A1 source derivatives required by the extra compact integration into the exact residual comparison stage",
+  "reserve_accounts": "separate A0 and A1 source reserves h*kappa, one-stage regular reserve h*(1/2-3*kappa), and the existing first-omitted cutoff half-gain; no account pays another class's logarithm",
+  "residual": "retain time, unit viscosity, full pressure, old-new, new-old and new-square with all six covariance entries and actual axial velocity",
+  "quantifier": "for each fixed jet and target choose one finite comparison stage and its finite enlarged source requests; no stage-uniform constant or fixed-q contraction is used",
+  "scope": "conditional current-chain local residual flatness only; corner, endpoint, localization, force, energy, comparison, exclusion and blow-up are not replayed here"
+}

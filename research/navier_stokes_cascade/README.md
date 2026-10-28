@@ -1504,6 +1504,18 @@ pressure memory are retained. This does not replay the complete residual;
 the next obligation is to instantiate its three separate reserve accounts on
 these exact current objects before revalidating the downstream chain.
 
+The [current-chain log-reserved residual reconciliation](results/core_current_log_reserved_residual_reconciliation/README.md)
+now carries the extra compact integration's two-derivative source cost into
+the exact residual comparison stage and keeps four named accounts in three
+disjoint reserve classes: `A0/A1` source logs, the one-stage regular-residual
+gain, and the first-omitted cutoff half-gain. On the same locally finite field
+it retains time, unit viscosity, complete pressure, both nonlinear cross
+orientations and the new square, together with full covariance and axial
+velocity memory. Every fixed jet and target closes conditionally, without a
+stage-uniform constant or fixed-`q` contraction. The current corner and
+endpoint transfer is next, followed by localization, force, energy and
+comparison; none is promoted by this checkpoint.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL
