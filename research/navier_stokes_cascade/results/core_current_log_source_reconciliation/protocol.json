@@ -1,0 +1,10 @@
+{
+  "parent_commit": "b3f08d3098a4b286177850ad2eaa8309bfc5c540",
+  "current_chain": "the same completed leading/Borel profile, same-band tail, full paths, fixed same-choice projectors, supports, gauges and weighted compact/slow inverses",
+  "source_domain": "for each fixed stage and finite request, the actual generated source has a finite log degree in the zeta delta^-p weighted domain",
+  "quantifier": "fix stage, physical jet and target; compute the finite recurrence request; enlarge each A0/A1 source request by two derivatives for one extra compact integration; then invoke the current all-fixed-order bounds",
+  "reserve": "the extra integration gains q^(h kappa); half absorbs the fixed logarithmic degree and half remains strict",
+  "memory": "retain all six covariance entries, actual g_d-A1 g_d, whole partial_Z(J_z+c_rho P), old pressure and both Pi1/Pi2 memories",
+  "correction": "the derivative cost of the extra compact integration is explicit, and the old pure-power zero-margin equality is not the live frontier for the enlarged log-renormalized request",
+  "scope": "current source-domain instantiation only; the six-group residual and all corner, endpoint, force, energy, comparison and blow-up conclusions are not replayed here"
+}

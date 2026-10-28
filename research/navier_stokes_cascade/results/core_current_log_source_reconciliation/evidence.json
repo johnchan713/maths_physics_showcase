@@ -1,0 +1,315 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_compact_slow_inverse_reconstruction/evidence.json": "22e4b560e1f4928d9fd74d9f11045d00fbebe01c361bfcac5e86c26e1c6aee19",
+    "results/core_current_head_conditional_frontier/evidence.json": "01162287a73ccaf467c8268766653d6baf6fe3f2eef1be816fda0e41b4c4b010",
+    "results/core_finite_stage_compact_recurrence/evidence.json": "f49b4132de95667046e884aeaf0049bd6df21a9d1ed34272c98a8fd739147c34",
+    "results/core_fixed_profile_projector_reconstruction/evidence.json": "254afd864a80b8d2da3e0d81554fcc31cff8659d8a22607f76856bad3d1cd18d",
+    "results/core_full_path_ode_reconstruction/evidence.json": "3debeabf5ee1f2d9d49b2e781a2ebf6d55f1dc0a0c0347126837b14a9bfbfd43",
+    "results/core_leading_background_seminorm_reconstruction/evidence.json": "fb58eeb5071645adaf4f64df4814a7f91c628e9602320d20027758ceb281b0f1",
+    "results/core_leading_profile_certificate/evidence.json": "3e540aa5be3669ba682ff6f9ad03e40f15abb24869583ec40ad1299ff5574aff",
+    "results/core_log_renormalized_actual_source_induction/evidence.json": "58362ac9bb2da6a3fbf579e4f17351ca5e839e14b3ec18f5eff8ffeac54296a5",
+    "results/core_same_band_gap_reconstruction/evidence.json": "cfb45fd4152877bdccae26f5e533c6bdb51747b65dca8d4176b8bd2007e62d0c"
+  },
+  "flags": {
+    "actual_seed_and_sourced_generic_formula_graphs_retained": true,
+    "all_fixed_enlarged_requests_are_accepted": true,
+    "complete_residual_or_downstream_replays_reproved_here": false,
+    "extra_compact_integration_costs_two_source_derivatives_explicitly": true,
+    "fixed_current_primitive_leaves_enter_with_log_degree_zero": true,
+    "one_current_profile_tail_path_projector_and_inverse_chain_used": true,
+    "pure_power_zero_margin_reintroduced_as_current_frontier": false,
+    "six_covariance_axial_velocity_and_complete_pressure_memory_retained": true,
+    "stage_uniform_constants_or_log_degrees_proved": false,
+    "unconditional_pulse_residual_force_exclusion_or_blowup_proved": false
+  },
+  "gates": {
+    "all_declared_dependency_sources_match": true,
+    "nine_frozen_dependencies": true,
+    "scientific_scope_retained": true,
+    "twelve_exact_instantiation_controls": true
+  },
+  "inherited_source_checks": {
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/.gitignore": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/audit.py": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/inverse.py": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/protocol.json": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/requirements.txt": true,
+    "core_compact_slow_inverse_reconstruction:results/core_compact_slow_inverse_reconstruction/test_audit.py": true,
+    "core_compact_slow_inverse_reconstruction:results/core_direct_compact_slow_provider_reconstruction/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_fast_inverse_budget/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_initial_final_row_obstruction/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_log_renormalized_actual_source_induction/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_slow_inverse_budget/README.md": true,
+    "core_compact_slow_inverse_reconstruction:results/core_symbolic_weighted_maps/README.md": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/.gitignore": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/README.md": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/audit.py": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/current_frontier.py": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/protocol.json": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/requirements.txt": true,
+    "core_current_head_conditional_frontier:results/core_current_head_conditional_frontier/test_audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/.gitignore": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/README.md": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/controls.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/recurrence.py": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/requirements.txt": true,
+    "core_finite_stage_compact_recurrence:results/core_finite_stage_compact_recurrence/test_audit.py": true,
+    "core_finite_stage_compact_recurrence:results/core_next_sourced_mean_tail_join/budgets.py": true,
+    "core_finite_stage_compact_recurrence:results/core_post_signed_mean_closure/budgets.py": true,
+    "core_finite_stage_compact_recurrence:results/core_post_signed_seed_sync/ledger.py": true,
+    "core_finite_stage_compact_recurrence:results/finite_stage_induction/induction.py": true,
+    "core_fixed_profile_projector_reconstruction:results/core_fixed_profile_projector_reconstruction/.gitignore": true,
+    "core_fixed_profile_projector_reconstruction:results/core_fixed_profile_projector_reconstruction/README.md": true,
+    "core_fixed_profile_projector_reconstruction:results/core_fixed_profile_projector_reconstruction/audit.py": true,
+    "core_fixed_profile_projector_reconstruction:results/core_fixed_profile_projector_reconstruction/projectors.py": true,
+    "core_fixed_profile_projector_reconstruction:results/core_fixed_profile_projector_reconstruction/protocol.json": true,
+    "core_fixed_profile_projector_reconstruction:results/core_fixed_profile_projector_reconstruction/requirements.txt": true,
+    "core_fixed_profile_projector_reconstruction:results/core_fixed_profile_projector_reconstruction/test_audit.py": true,
+    "core_fixed_profile_projector_reconstruction:results/core_fixed_profile_tame/proof_checks.py": true,
+    "core_fixed_profile_projector_reconstruction:results/core_moving_pressure_compensator_join/bounds.py": true,
+    "core_fixed_profile_projector_reconstruction:results/core_reserved_geometry_recheck/proof_checks.py": true,
+    "core_fixed_profile_projector_reconstruction:results/core_rho_projector_signed_recompute/bounds.py": true,
+    "core_fixed_profile_projector_reconstruction:results/core_rho_squared_projector_realization/bounds.py": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/.gitignore": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/README.md": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/audit.py": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/ode.py": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/protocol.json": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/requirements.txt": true,
+    "core_full_path_ode_reconstruction:results/core_full_path_ode_reconstruction/test_audit.py": true,
+    "core_leading_background_seminorm_reconstruction:results/core_leading_background_seminorm_reconstruction/.gitignore": true,
+    "core_leading_background_seminorm_reconstruction:results/core_leading_background_seminorm_reconstruction/README.md": true,
+    "core_leading_background_seminorm_reconstruction:results/core_leading_background_seminorm_reconstruction/audit.py": true,
+    "core_leading_background_seminorm_reconstruction:results/core_leading_background_seminorm_reconstruction/protocol.json": true,
+    "core_leading_background_seminorm_reconstruction:results/core_leading_background_seminorm_reconstruction/requirements.txt": true,
+    "core_leading_background_seminorm_reconstruction:results/core_leading_background_seminorm_reconstruction/seminorms.py": true,
+    "core_leading_background_seminorm_reconstruction:results/core_leading_background_seminorm_reconstruction/test_audit.py": true,
+    "core_leading_profile_certificate:results/core_leading_profile_certificate/.gitignore": true,
+    "core_leading_profile_certificate:results/core_leading_profile_certificate/README.md": true,
+    "core_leading_profile_certificate:results/core_leading_profile_certificate/audit.py": true,
+    "core_leading_profile_certificate:results/core_leading_profile_certificate/certificate.py": true,
+    "core_leading_profile_certificate:results/core_leading_profile_certificate/protocol.json": true,
+    "core_leading_profile_certificate:results/core_leading_profile_certificate/requirements.txt": true,
+    "core_leading_profile_certificate:results/core_leading_profile_certificate/test_audit.py": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/.gitignore": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/README.md": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/audit.py": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/protocol.json": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/requirements.txt": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/source_induction.py": true,
+    "core_log_renormalized_actual_source_induction:results/core_log_renormalized_actual_source_induction/test_audit.py": true,
+    "core_same_band_gap_reconstruction:results/core_same_band_gap_reconstruction/.gitignore": true,
+    "core_same_band_gap_reconstruction:results/core_same_band_gap_reconstruction/README.md": true,
+    "core_same_band_gap_reconstruction:results/core_same_band_gap_reconstruction/audit.py": true,
+    "core_same_band_gap_reconstruction:results/core_same_band_gap_reconstruction/gaps.py": true,
+    "core_same_band_gap_reconstruction:results/core_same_band_gap_reconstruction/protocol.json": true,
+    "core_same_band_gap_reconstruction:results/core_same_band_gap_reconstruction/requirements.txt": true,
+    "core_same_band_gap_reconstruction:results/core_same_band_gap_reconstruction/test_audit.py": true
+  },
+  "protocol": {
+    "correction": "the derivative cost of the extra compact integration is explicit, and the old pure-power zero-margin equality is not the live frontier for the enlarged log-renormalized request",
+    "current_chain": "the same completed leading/Borel profile, same-band tail, full paths, fixed same-choice projectors, supports, gauges and weighted compact/slow inverses",
+    "memory": "retain all six covariance entries, actual g_d-A1 g_d, whole partial_Z(J_z+c_rho P), old pressure and both Pi1/Pi2 memories",
+    "parent_commit": "b3f08d3098a4b286177850ad2eaa8309bfc5c540",
+    "quantifier": "fix stage, physical jet and target; compute the finite recurrence request; enlarge each A0/A1 source request by two derivatives for one extra compact integration; then invoke the current all-fixed-order bounds",
+    "reserve": "the extra integration gains q^(h kappa); half absorbs the fixed logarithmic degree and half remains strict",
+    "scope": "current source-domain instantiation only; the six-group residual and all corner, endpoint, force, energy, comparison and blow-up conclusions are not replayed here",
+    "source_domain": "for each fixed stage and finite request, the actual generated source has a finite log degree in the zeta delta^-p weighted domain"
+  },
+  "remaining_obligations": [
+    "instantiate the separately reserved six-group residual replay on these exact current objects, keeping distinct compact-source, regular-residual and cutoff-tail reserve accounts",
+    "then revalidate the corrected corner and endpoint transfer, localization, compact force, preterminal energy and fixed-gauge comparison on that same current field",
+    "retain the unresolved frozen exact core/root and regional/frame hypotheses before any unconditional promotion"
+  ],
+  "review": {
+    "checks": {
+      "all_current_inverse_controls_hold": true,
+      "complete_pressure_covariance_and_axial_memory_agree": true,
+      "complete_residual_is_not_silently_replayed": true,
+      "current_chain_is_acyclic_and_ordered": true,
+      "current_inverse_accepts_each_fixed_enlarged_request": true,
+      "current_primitive_leaves_have_log_degree_zero": true,
+      "every_example_recurrence_request_is_finite": true,
+      "extra_integration_derivative_cost_is_explicit_and_finite": true,
+      "half_extra_reserve_absorbs_each_fixed_log_degree": true,
+      "old_log_source_induction_controls_hold": true,
+      "positive_margin_remains_after_log_absorption": true,
+      "pure_power_zero_margin_is_not_reintroduced_as_frontier": true
+    },
+    "current_chain_order": [
+      "leading_borel_profile",
+      "same_band_tail",
+      "full_path_ode",
+      "fixed_same_choice_projectors",
+      "weighted_compact_slow_inverse",
+      "log_renormalized_actual_source_induction"
+    ],
+    "current_leaf_log_degrees": {
+      "fixed_profile_and_same_choice_projectors": 0,
+      "full_path_ode_pressure_potential_and_cutoffs": 0,
+      "interpretation": "zero denotes log degree P=0; constants may depend on the fixed stage and requested order but not on the tail-band index",
+      "leading_background_fixed_order_weighted_jets": 0,
+      "same_band_gap_and_frame_coefficients": 0,
+      "shifted_compact_zero_haar_and_fixed_slow_maps": 0
+    },
+    "fixed_request_examples": [
+      {
+        "absorption_exponent_bound": "0",
+        "current_inverse_accepts_every_fixed_order": true,
+        "extra_source_derivatives_per_compact_map": 2,
+        "finite_common_poles": [
+          "363000270",
+          "363000270"
+        ],
+        "finite_formula_graph": true,
+        "finite_harmonic_bound": 4,
+        "first_real_interface_ceiling": 500038,
+        "log_degree": 0,
+        "one_extra_integration_q_reserve": "1/20000000",
+        "physical_jet": 0,
+        "raw_sources_before_extra_integration": {
+          "A0": 60200007,
+          "A1": 60100009
+        },
+        "raw_sources_with_extra_integration": {
+          "A0": 60200009,
+          "A1": 60100011
+        },
+        "requested_power": 0,
+        "retained_strict_margin": {
+          "A0": "3/40000000",
+          "A1": "3/40000000"
+        },
+        "spend_on_logs": "1/40000000",
+        "stage": 0
+      },
+      {
+        "absorption_exponent_bound": "490000000",
+        "current_inverse_accepts_every_fixed_order": true,
+        "extra_source_derivatives_per_compact_map": 2,
+        "finite_common_poles": [
+          "2285400498",
+          "2285400498",
+          "2285400498"
+        ],
+        "finite_formula_graph": true,
+        "finite_harmonic_bound": 8,
+        "first_real_interface_ceiling": 1000070,
+        "log_degree": 7,
+        "one_extra_integration_q_reserve": "1/20000000",
+        "physical_jet": 3,
+        "raw_sources_before_extra_integration": {
+          "A0": 380200010,
+          "A1": 380000018
+        },
+        "raw_sources_with_extra_integration": {
+          "A0": 380200012,
+          "A1": 380000020
+        },
+        "requested_power": 2,
+        "retained_strict_margin": {
+          "A0": "3/40000000",
+          "A1": "3/40000000"
+        },
+        "spend_on_logs": "1/40000000",
+        "stage": 1
+      },
+      {
+        "absorption_exponent_bound": "13690000000",
+        "current_inverse_accepts_every_fixed_order": true,
+        "extra_source_derivatives_per_compact_map": 2,
+        "finite_common_poles": [
+          "4929000660",
+          "4929000660",
+          "4929000660",
+          "4929000660"
+        ],
+        "finite_formula_graph": true,
+        "finite_harmonic_bound": 16,
+        "first_real_interface_ceiling": 1700091,
+        "log_degree": 37,
+        "one_extra_integration_q_reserve": "1/20000000",
+        "physical_jet": 7,
+        "raw_sources_before_extra_integration": {
+          "A0": 820200014,
+          "A1": 819900028
+        },
+        "raw_sources_with_extra_integration": {
+          "A0": 820200016,
+          "A1": 819900030
+        },
+        "requested_power": 5,
+        "retained_strict_margin": {
+          "A0": "3/40000000",
+          "A1": "3/40000000"
+        },
+        "spend_on_logs": "1/40000000",
+        "stage": 2
+      },
+      {
+        "absorption_exponent_bound": "127690000000",
+        "current_inverse_accepts_every_fixed_order": true,
+        "extra_source_derivatives_per_compact_map": 2,
+        "finite_common_poles": [
+          "8787000666",
+          "8787000666",
+          "8787000666",
+          "8787000666",
+          "8787000666",
+          "8787000666",
+          "8787000666"
+        ],
+        "finite_formula_graph": true,
+        "finite_harmonic_bound": 128,
+        "first_real_interface_ceiling": 5000074,
+        "log_degree": 113,
+        "one_extra_integration_q_reserve": "1/20000000",
+        "physical_jet": 11,
+        "raw_sources_before_extra_integration": {
+          "A0": 1460200018,
+          "A1": 1459600050
+        },
+        "raw_sources_with_extra_integration": {
+          "A0": 1460200020,
+          "A1": 1459600052
+        },
+        "requested_power": 13,
+        "retained_strict_margin": {
+          "A0": "3/40000000",
+          "A1": "3/40000000"
+        },
+        "spend_on_logs": "1/40000000",
+        "stage": 5
+      }
+    ],
+    "memory": [
+      "six_covariance_entries",
+      "actual_axial_velocity_gd_minus_A1gd",
+      "whole_dZ_Jz_plus_c_rho_P",
+      "old_pressure_and_Pi1_Pi2"
+    ],
+    "quantifier_order": "fix stage j, physical jet m and target N; compute the finite recurrence request; enlarge A0 and A1 source requests by two; then apply the current fixed-order primitive bounds",
+    "scope": {
+      "complete_residual_or_downstream_force_comparison_replayed_here": false,
+      "log_source_induction_instantiated_on_current_five_contract_chain": true,
+      "stage_uniform_constants_or_log_degrees_proved": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    },
+    "source_domain": "sup_l epsilon_l^(-b_j) (1+|log epsilon_l|)^(-P_(j,R)) max_|alpha|<=R sup_Omega zeta^(-1) delta^p |D^alpha F_(j,l)| < infinity"
+  },
+  "source_hashes": {
+    "results/core_compact_slow_inverse_reconstruction/inverse.py": "e87218789ad250d7a98473eac2202a5d541f3594cc7f932f8beb8fe17e2335d0",
+    "results/core_current_log_source_reconciliation/.gitignore": "972ca000540099f56a9a67d3d4591eb6a881b470b752a9545199dc0bf8ae4021",
+    "results/core_current_log_source_reconciliation/README.md": "6fe5fb6f95a42f4f008827528d173587bde466adf96ff513a192c766c1f22e03",
+    "results/core_current_log_source_reconciliation/audit.py": "18a44bdfad4ab2431c6e75b9364475373ed62432b1adc0ee1b7571c21d6afa36",
+    "results/core_current_log_source_reconciliation/protocol.json": "aac52f754e1ce44b951f3e858945e945a6394e5ea986d36dc0f41e7da14ebc26",
+    "results/core_current_log_source_reconciliation/reconcile.py": "99d82cd18c35fada15575844cc6d97a52538258d91923b59d4475b5a4bd0c04e",
+    "results/core_current_log_source_reconciliation/requirements.txt": "5ec407c4d4c718a99748ffa976be6ca4e6ffa2484e96c9142e86ba8d3111b541",
+    "results/core_current_log_source_reconciliation/test_audit.py": "5bec15bb9d599d1ea745cba1d5d7540f3af73aa6fc80fa032bbd7cbdd2f3827e",
+    "results/core_finite_stage_compact_recurrence/recurrence.py": "1230877412571408bf5ef1d400077c624b5573917c6aacdd1e0919f9efc3c138",
+    "results/core_log_renormalized_actual_source_induction/source_induction.py": "c004f0d0c0d5950ab161dce08f7eeb71a07148ff1a01d911096901263088c7f5"
+  },
+  "status": "current-five-contract-log-renormalized-actual-source-induction-reconciled-conditionally"
+}

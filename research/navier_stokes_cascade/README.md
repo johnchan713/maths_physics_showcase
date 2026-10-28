@@ -1491,6 +1491,19 @@ replay are cited rather than reproved here. The next obligation is to
 reconcile them with the five reconstructed primitive contracts on the same
 objects before any residual, force, exclusion or blow-up promotion.
 
+The [current-chain log-source reconciliation](results/core_current_log_source_reconciliation/README.md)
+now performs that instantiation in the correct quantifier order: fix the
+stage, physical jet and target, compute the finite recurrence request, add
+the two source derivatives required by one extra `A0/A1` compact integration,
+and only then invoke the current all-fixed-order primitive bounds. The current
+primitive leaves enter the weighted logarithmic class with degree zero; the
+finite actual-source formula graph gives a finite log degree at every fixed
+stage. Half of the gained `q^(h kappa)` absorbs that degree and half remains
+strict. All six covariance entries, actual axial velocity and complete
+pressure memory are retained. This does not replay the complete residual;
+the next obligation is to instantiate its three separate reserve accounts on
+these exact current objects before revalidating the downstream chain.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

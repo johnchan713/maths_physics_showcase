@@ -46,6 +46,7 @@ on:
       - research/navier_stokes_cascade/results/core_full_path_ode_reconstruction/**
       - research/navier_stokes_cascade/results/core_fixed_profile_projector_reconstruction/**
       - research/navier_stokes_cascade/results/core_compact_slow_inverse_reconstruction/**
+      - research/navier_stokes_cascade/results/core_current_log_source_reconciliation/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -95,6 +96,7 @@ on:
       - research/navier_stokes_cascade/results/core_full_path_ode_reconstruction/**
       - research/navier_stokes_cascade/results/core_fixed_profile_projector_reconstruction/**
       - research/navier_stokes_cascade/results/core_compact_slow_inverse_reconstruction/**
+      - research/navier_stokes_cascade/results/core_current_log_source_reconciliation/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -404,6 +406,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_compact_slow_inverse_reconstruction/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_compact_slow_inverse_reconstruction/evidence.json \
             --output navier_stokes_compact_slow_inverse_reconstruction_ci.json
+
+      - name: Reconcile current primitives with log-renormalized sources
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_log_source_reconciliation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_log_source_reconciliation/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_log_source_reconciliation/evidence.json \
+            --output navier_stokes_current_log_source_reconciliation_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
