@@ -1477,6 +1477,20 @@ weight-floor domain. Constants are not uniform over profiles, derivative
 orders or cycles. The compact and slow weighted inverse domains are next; no
 unconditional pulse, residual, force, exclusion or blow-up conclusion follows.
 
+The following [compact and slow weighted-inverse reconstruction](results/core_compact_slow_inverse_reconstruction/README.md)
+joins those current same-choice objects to the physically shifted compact
+maps, zero-Haar temporal inverse and fixed five-profile slow response. It
+retains the unchanged `C_setup^-20` width, symbolic two-edge constants,
+actual `g_d-A1 g_d` axial velocity, complete moving-pressure derivative,
+whole reserved potential hull and the finite high-jet request graph. It also
+corrects the inherited frontier: the exact zero-margin equality blocks the
+older positive-majorant pure-power route, while the later log-renormalized
+actual-source induction changes the source norm and obtains reserve through
+one extra compact integration. That later induction and complete residual
+replay are cited rather than reproved here. The next obligation is to
+reconcile them with the five reconstructed primitive contracts on the same
+objects before any residual, force, exclusion or blow-up promotion.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL
