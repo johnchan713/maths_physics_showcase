@@ -1,0 +1,6 @@
+{
+  "parent_commit": "14140ab7973092807c61503d6a9b41f50190173d",
+  "result": "replay fixed-gauge pressure-gradient recovery and expanding-ball comparison for the exact current log-reserved localized field, force and zero datum",
+  "competitor": "smooth on compact subsets, same force and zero datum, with a uniform L2 bound on each fixed interval [0,T], T<1; no global pressure, derivative or dissipation bound",
+  "scope": "conditional same-field comparison and competitor exclusion relative to the frozen current field, force and protected-core contracts; no future solution or unconditional blow-up theorem"
+}

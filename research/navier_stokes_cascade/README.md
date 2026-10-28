@@ -1551,6 +1551,18 @@ under one unchanged `F(1)^2` budget; the frozen scalar negative control rules
 out that stronger inference. No terminal field regularity, pressure recovery,
 comparison, exclusion, or blow-up conclusion is promoted.
 
+The [current log-reserved pressure and comparison join](results/core_current_log_reserved_pressure_comparison_join/README.md)
+now recovers the pressure difference from finite energy and the momentum
+equation while retaining `-div(f)` in each individual pressure equation and
+cancelling the common force exactly once. The expanding-ball calculation
+keeps the compact mixed pressure, the `L^(4/3)` quadratic commutator, the
+eighth cutoff power, and every remainder through the limiting `R^-2` term.
+It yields conditional equality with every locally smooth same-force
+competitor having a fixed-interval `L2` bound. Conditional exclusion then
+uses the finalized protected-core field only after the radius limit. Finite
+energy remains essential, and no unconditional admissible-force or blow-up
+theorem is claimed.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL
