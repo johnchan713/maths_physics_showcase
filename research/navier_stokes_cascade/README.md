@@ -1616,6 +1616,20 @@ commutators. The checkpoint does not certify an unspecified historical first
 band. Fixed projector/compensator supports and compact/slow weighted inverse
 domains remain next, before complete means and residual promotion.
 
+The [current-head Q4 fixed-profile join](results/core_current_head_q4_fixed_profile_join/README.md)
+now chooses one smooth compact pressure profile on the Q1--Q3 field, binds
+all its fixed-order moving compensator jets, and defines explicit
+same-profile projectors
+`sigma_e=R^-e sqrt(s) rho^2/A2`, `e=1,2`, with exact weighted moment one.
+It corrects two scope errors: normalization does not control arbitrary
+profile families, and the scaled moving interval is only an enclosure of the
+actual strictly contained support. Every projector-dependent edge target,
+signed root input, curl, six-entry covariance and full pressure norm is
+recomputed for this exact choice, retaining axial velocity, the moving
+`c_rho P` term and both background pressure tails. Compact/slow weighted
+inverse domains and their actual generated-source inputs remain next; no
+complete residual or unconditional conclusion is promoted.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

@@ -1,0 +1,9 @@
+{
+  "parent_commit": "8d9b31a46eb8ab13028e338fdabc0fc6ece8ec2a",
+  "result": "bind one fixed smooth pressure profile, its complete moving compensator and explicit same-profile rho-squared projectors to the Q1-Q3 field and accepted later tail",
+  "correction": "mass, support and moments do not control jets of an arbitrary profile family, and a moving interval is only a support enclosure; fixed-order bounds use one fixed C-infinity profile and its actual strictly enclosed scaled support",
+  "projectors": "sigma_e=R^(-e)*sqrt(s)*rho^2/A2 for e=1,2 with A2=integral rhohat^2, followed by fresh same-choice recomputation of every projector-dependent target, root input, covariance entry and pressure norm",
+  "pressure": "retain all six moving-density commutator terms, epsilon partial_Z(J_z+c_rho P) including (partial_Z c_rho)P, axial velocity, current wave pressure and both Pi1/Pi2 pressure tails",
+  "quantifier": "for each fixed derivative order the constants are finite and uniform over the accepted later physical tail, but may depend on the fixed profile and order",
+  "scope": "same-object fourth primitive contract only; compact/slow weighted inverse domains, actual generated-source bounds, complete means/residual and blow-up remain open"
+}

@@ -1,0 +1,185 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q3_full_frame_join/evidence.json": "c2d4e74e82ce44940b6101fb7e445553c1a70acb5679495d24d1db8a8311b9c7",
+    "results/core_finite_support_closure/evidence.json": "b58b5e36e18e5ad5938ff81c12db9706d1c229b5e4d549b3604f58bd1d6e7867",
+    "results/core_fixed_profile_projector_join/evidence.json": "08ee8eac5d445843295dba79a45ff82e587b41d0e285d63151beb8a49696c8b2",
+    "results/core_fixed_profile_projector_reconstruction/evidence.json": "254afd864a80b8d2da3e0d81554fcc31cff8659d8a22607f76856bad3d1cd18d",
+    "results/core_fixed_profile_tame/evidence.json": "d06ccf98dad28493112700e3bc7041adfddb52a232733a7443f3934149ac8851",
+    "results/core_log_pullback_projector_join/evidence.json": "7379c94a13f593ce155fd5badc68fa7e7eb0df8f5cef2f62e66c83414c403001",
+    "results/core_moving_pressure_compensator_join/evidence.json": "3a403ada095263ec274c44ac8a482cb0a3ab6977917c687e656d690af05bacc3",
+    "results/core_reserved_geometry_recheck/evidence.json": "b911312cddc119be917f88d18161ea91b2fae7b67a2c679ed35ec96740087820",
+    "results/core_rho_projector_signed_recompute/evidence.json": "d1ffd1f8709d7705b607f093e819d9177f6d002414d75843b7a8a807ec3988d6",
+    "results/core_rho_squared_projector_realization/evidence.json": "a92f80a3678398fc0738461f441a4fb419be8328793bb089b0b93e30499943f9"
+  },
+  "gates": {
+    "scientific_scope_preserved": true,
+    "ten_direct_provider_records": true,
+    "ten_exact_graph_and_interface_controls": true
+  },
+  "protocol": {
+    "correction": "mass, support and moments do not control jets of an arbitrary profile family, and a moving interval is only a support enclosure; fixed-order bounds use one fixed C-infinity profile and its actual strictly enclosed scaled support",
+    "parent_commit": "8d9b31a46eb8ab13028e338fdabc0fc6ece8ec2a",
+    "pressure": "retain all six moving-density commutator terms, epsilon partial_Z(J_z+c_rho P) including (partial_Z c_rho)P, axial velocity, current wave pressure and both Pi1/Pi2 pressure tails",
+    "projectors": "sigma_e=R^(-e)*sqrt(s)*rho^2/A2 for e=1,2 with A2=integral rhohat^2, followed by fresh same-choice recomputation of every projector-dependent target, root input, covariance entry and pressure norm",
+    "quantifier": "for each fixed derivative order the constants are finite and uniform over the accepted later physical tail, but may depend on the fixed profile and order",
+    "result": "bind one fixed smooth pressure profile, its complete moving compensator and explicit same-profile rho-squared projectors to the Q1-Q3 field and accepted later tail",
+    "scope": "same-object fourth primitive contract only; compact/slow weighted inverse domains, actual generated-source bounds, complete means/residual and blow-up remain open"
+  },
+  "remaining_obligations": [
+    "join the shifted compact maps, zero-Haar temporal inverse and fixed slow response to these exact same-choice coefficients on their full weighted domains and whole-path supports",
+    "prove the actual generated-source weighted suprema at every finite request rather than inferring them from operator boundedness",
+    "then join complete covariance and fresh axial/full-pressure means, retaining both Pi1/Pi2 tails and all reserved supports",
+    "only after those joins may the full viscosity/cutoff/interaction residual, force, comparison or blow-up claims be reconsidered"
+  ],
+  "review": {
+    "checks": {
+      "actual_support_is_strictly_inside_every_moving_enclosure": true,
+      "all_declared_dependency_hashes_match": true,
+      "all_declared_source_hashes_match": true,
+      "all_ten_Q4_provider_statuses_match": true,
+      "both_projector_moments_are_exact_on_all_scale_controls": true,
+      "finite_support_closure_follows_same_choice_recompute": true,
+      "fixed_profile_gives_finite_positive_fixed_order_majorant": true,
+      "provider_graph_is_acyclic": true,
+      "same_choice_recompute_follows_projector_choice": true,
+      "whole_moving_pressure_derivative_retains_crho_Z_P": true
+    },
+    "graph": {
+      "dependency_hash_checks": 1035,
+      "edges": 1035,
+      "nodes": 242,
+      "source_hash_checks": 3843
+    },
+    "interface_controls": {
+      "commutator": "all six moving-density product terms and epsilon*partial_Z(Jz+c_rho*P), including c_rho,Z*P",
+      "moving_pressure_memory": {
+        "Jz_Z": "17/9",
+        "crho_Z_times_P": "7/15",
+        "crho_times_P_Z": "143/24",
+        "total_without_epsilon": "2993/360"
+      },
+      "projector_rows": [
+        {
+          "actual_support": [
+            "5/8",
+            "7/8"
+          ],
+          "hull": [
+            "1/2",
+            "1"
+          ],
+          "moment": "1",
+          "reciprocal_A2": "7/10",
+          "reciprocal_bound": "1",
+          "strict_support": true
+        },
+        {
+          "actual_support": [
+            "5/4",
+            "7/4"
+          ],
+          "hull": [
+            "1",
+            "2"
+          ],
+          "moment": "1",
+          "reciprocal_A2": "7/10",
+          "reciprocal_bound": "1",
+          "strict_support": true
+        },
+        {
+          "actual_support": [
+            "5/2",
+            "7/2"
+          ],
+          "hull": [
+            "2",
+            "4"
+          ],
+          "moment": "1",
+          "reciprocal_A2": "7/10",
+          "reciprocal_bound": "1",
+          "strict_support": true
+        },
+        {
+          "actual_support": [
+            "5/8",
+            "7/8"
+          ],
+          "hull": [
+            "1/2",
+            "1"
+          ],
+          "moment": "1",
+          "reciprocal_A2": "7/10",
+          "reciprocal_bound": "1",
+          "strict_support": true
+        },
+        {
+          "actual_support": [
+            "5/4",
+            "7/4"
+          ],
+          "hull": [
+            "1",
+            "2"
+          ],
+          "moment": "1",
+          "reciprocal_A2": "7/10",
+          "reciprocal_bound": "1",
+          "strict_support": true
+        },
+        {
+          "actual_support": [
+            "5/2",
+            "7/2"
+          ],
+          "hull": [
+            "2",
+            "4"
+          ],
+          "moment": "1",
+          "reciprocal_A2": "7/10",
+          "reciprocal_bound": "1",
+          "strict_support": true
+        }
+      ],
+      "same_choice": "recompute h_e, two-edge primitives, signed amplitude/root input, curl, six covariances and full pressure norms after fixing sigma_e",
+      "support": "supp(sigma_e)=sqrt(s)*supp(rhohat) is strictly inside the moving interval; [ell/2,2u] is only a common integration hull"
+    },
+    "provider_status_checks": {
+      "core_current_head_q3_full_frame_join": true,
+      "core_finite_support_closure": true,
+      "core_fixed_profile_projector_join": true,
+      "core_fixed_profile_projector_reconstruction": true,
+      "core_fixed_profile_tame": true,
+      "core_log_pullback_projector_join": true,
+      "core_moving_pressure_compensator_join": true,
+      "core_reserved_geometry_recheck": true,
+      "core_rho_projector_signed_recompute": true,
+      "core_rho_squared_projector_realization": true
+    },
+    "scope": {
+      "Q1_Q3_field_is_a_direct_dependency": true,
+      "Q4_fixed_profile_compensator_projectors_bound_on_same_later_tail": true,
+      "compact_slow_weighted_inverse_contract_closed": false,
+      "hashes_or_tests_treated_as_continuum_proof": false,
+      "historical_unspecified_projectors_identified_with_new_choice": false,
+      "moving_support_enclosure_identified_with_actual_support": false,
+      "normalization_only_used_to_control_arbitrary_profile_jets": false,
+      "same_choice_projector_dependent_objects_recomputed": true,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false,
+      "uniformity_over_profiles_orders_or_infinite_cycles_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q4_fixed_profile_join/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_current_head_q4_fixed_profile_join/README.md": "acee08b0752b8d889b937682eaa3853d81acf80cdb6bef2a692e5ff954f3c3db",
+    "results/core_current_head_q4_fixed_profile_join/audit.py": "b8f3f5fefd477983707d5a3551cf250330836c74017e3c905d710410df282cb7",
+    "results/core_current_head_q4_fixed_profile_join/fixed_profiles.py": "6553e90ef26cad8828c3b579f24118f3851d4a088393123de943d8113fe58caa",
+    "results/core_current_head_q4_fixed_profile_join/protocol.json": "b2d6b6b07d52cdcdf76db47259373a5dc2a1aaa176e4c1aceeb5b8beab16b746",
+    "results/core_current_head_q4_fixed_profile_join/requirements.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "results/core_current_head_q4_fixed_profile_join/test_audit.py": "b64779c337747aa21fcabb65218388ed8d7633b4589b4d1a992d8f4b0ec84ce4"
+  },
+  "status": "current-head-Q4-fixed-profile-compensator-and-same-choice-projectors-bound"
+}

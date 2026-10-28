@@ -56,6 +56,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q1_exact_map_join/**
       - research/navier_stokes_cascade/results/core_current_head_q2_regional_gap_join/**
       - research/navier_stokes_cascade/results/core_current_head_q3_full_frame_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q4_fixed_profile_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -115,6 +116,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q1_exact_map_join/**
       - research/navier_stokes_cascade/results/core_current_head_q2_regional_gap_join/**
       - research/navier_stokes_cascade/results/core_current_head_q3_full_frame_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q4_fixed_profile_join/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -494,6 +496,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q3_full_frame_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_current_head_q3_full_frame_join/evidence.json \
             --output navier_stokes_current_head_q3_full_frame_join_ci.json
+
+      - name: Join current-head Q4 fixed profile and projectors
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q4_fixed_profile_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q4_fixed_profile_join/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q4_fixed_profile_join/evidence.json \
+            --output navier_stokes_current_head_q4_fixed_profile_join_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
