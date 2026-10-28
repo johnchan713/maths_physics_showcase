@@ -1630,6 +1630,21 @@ recomputed for this exact choice, retaining axial velocity, the moving
 inverse domains and their actual generated-source inputs remain next; no
 complete residual or unconditional conclusion is promoted.
 
+The [current-head Q5 weighted-inverse/source join](results/core_current_head_q5_weighted_inverse_source_join/README.md)
+now binds the shifted two-edge compact maps, zero-Haar fast inverse and fixed
+five-profile slow response to the exact Q1--Q4 coefficients and supports.
+It retains the physical characteristic shift, the actual `g_d-A1 g_d`
+axial velocity, distinct derivative requests through the `m+9` full-pressure
+moment and the complete reserved potential hull. It also corrects Q4's raw
+pure-power source request: fixed-stage sources may have a finite logarithmic
+degree, so the exact domain includes
+`(1+|log epsilon|)^(-P)`. One extra compact integration costs two source
+derivatives for both `A0` and `A1`, gains `epsilon^kappa`, absorbs the log
+with half that gain and retains a strict half-reserve. The old
+`D+1-2kappa=nu` zero-margin equality remains valid only as an obstruction to
+the obsolete pure-power route. The complete six-group residual replay on
+this same object is the next obligation.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

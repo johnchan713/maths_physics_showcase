@@ -1,0 +1,130 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_compact_slow_inverse_domain_join/evidence.json": "129ae2d83800c7f78c79c9a7eba38f2405c8d17c83f0ec466975c49f2bb63e86",
+    "results/core_compact_slow_inverse_reconstruction/evidence.json": "22e4b560e1f4928d9fd74d9f11045d00fbebe01c361bfcac5e86c26e1c6aee19",
+    "results/core_current_head_q4_fixed_profile_join/evidence.json": "1d4bcbc2aeaec87cec83917079276c286bce9f83470c560d287c4092456e77f1",
+    "results/core_current_log_source_reconciliation/evidence.json": "2d771039c61aeddc5a3d3c58fd8dea57d9a1379bb0c0356678c93f964d011cf0",
+    "results/core_direct_compact_slow_provider_reconstruction/evidence.json": "ad698e873be65c32dcd6a2e00ce98dc1ffec1a514bfa5075d0b23813b8a52ad3",
+    "results/core_fast_inverse_budget/evidence.json": "cabd9b46cd156fc9f7bd7b7a9e36348e292b801cf9e96d17898544a2dc03c4f3",
+    "results/core_initial_haar_row_budget/evidence.json": "6d8215125c694bbf2764456aea8f1b99a967f68a8312a76533f3815a7e97e750",
+    "results/core_log_renormalized_actual_source_induction/evidence.json": "58362ac9bb2da6a3fbf579e4f17351ca5e839e14b3ec18f5eff8ffeac54296a5",
+    "results/core_native_haar_primitive_join/evidence.json": "be5128c2b68ac8cadd07b1099ebc3688e4f9684c7dba3330cfa9258b581150d1",
+    "results/core_slow_inverse_budget/evidence.json": "9a292fdd67f0e86b7ba9e36c9121460496c73943397711215686dd661d2dc6a7"
+  },
+  "gates": {
+    "scientific_scope_preserved": true,
+    "ten_direct_provider_records": true,
+    "ten_exact_graph_and_interface_controls": true
+  },
+  "protocol": {
+    "correction": "the pure-power normalized source supremum recorded as Q4's next input is stronger than the established domain; the current source space permits a finite fixed-stage logarithmic degree and uses one extra compact integration to recover a strict half-kappa reserve",
+    "operators": "retain the physical y+Ma v_r shift, both edge orientations, g_d-A1 g_d, the fixed five-profile slow response, full moving pressure, all six covariance entries and both Pi1/Pi2 tails",
+    "parent_commit": "40172e50fe02956cac8b89e199288e97bb3e8d26",
+    "quantifier": "fix stage, physical jet and target power before requesting finitely many derivatives, poles and harmonics; constants and log degree may depend on those fixed indices",
+    "result": "bind the shifted compact maps, zero-Haar fast inverse, fixed slow response and fixed-stage log-renormalized actual-source induction to the same Q1-Q4 field and accepted later tail",
+    "scope": "same-object fifth primitive and actual-source contract only; the six-group residual, complete repeated means, localization/force/comparison promotion and blow-up remain open"
+  },
+  "remaining_obligations": [
+    "instantiate the six-group residual replay on this exact Q1-Q5 object with separate compact-source, regular-residual and cutoff-tail logarithmic accounts",
+    "retain complete repeated covariance, fresh axial velocity and whole moving-pressure means at every finite stage",
+    "include unit viscosity, all potential and pressure cutoff derivatives and both nonlinear cross orientations plus the new square",
+    "only after the residual closes may corner/endpoint, localization, compact force, energy, comparison, exclusion or blow-up claims be reconsidered"
+  ],
+  "review": {
+    "checks": {
+      "all_declared_dependency_hashes_match": true,
+      "all_declared_source_hashes_match": true,
+      "all_ten_Q5_provider_statuses_match": true,
+      "both_edge_and_interior_kernel_branches_are_positive": true,
+      "extra_compact_integration_costs_two_A0_and_A1_derivatives": true,
+      "fast_and_pressure_derivative_losses_are_distinct": true,
+      "fixed_stage_quantifiers_require_no_uniform_order_constant": true,
+      "half_log_reserve_is_strictly_positive": true,
+      "old_pure_power_radial_viscosity_has_exact_zero_margin": true,
+      "provider_graph_is_acyclic": true
+    },
+    "graph": {
+      "dependency_hash_checks": 1045,
+      "edges": 1045,
+      "nodes": 243,
+      "source_hash_checks": 3850
+    },
+    "interface_controls": {
+      "fast_map": "retain y+Ma*v_r, u=-c^-1 Nt^-1 Ftheta, gd=-c^-1 Nt^-1 Fz, gamma=gd-A1*gd, beta=-epsilon*partial_Z T1*gd",
+      "fixed_stage_domain": {
+        "derivative_uniform_constant_required": false,
+        "finite_log_degree": 37,
+        "jet_fixed_first": true,
+        "stage_fixed_first": true,
+        "stage_uniform_constant_required": false,
+        "target_fixed_first": true
+      },
+      "log_reserve": {
+        "constant_exponent": "13690000000",
+        "gain": "1/20000000",
+        "retained": "1/40000000",
+        "spent_on_logs": "1/40000000"
+      },
+      "pressure": "reconstruct after fast and slow maps; retain Jz+c_rho*P, c_rho,Z*P, axial velocity, six covariances and Pi1/Pi2",
+      "pure_power_equality": {
+        "B": "99999/100000",
+        "D": "49999/25000",
+        "equality": true,
+        "nu": "149997/50000",
+        "radial_viscosity": "149997/50000",
+        "source_margin": "0",
+        "viscosity_margin": "0"
+      },
+      "request_graph": {
+        "A0_with_extra_integration": 399997,
+        "A1_with_extra_integration": 200003,
+        "fast_radial_potential": 5,
+        "fast_tangential_or_axial": 4,
+        "prefast_source": 8,
+        "whole_axial_pressure_moment": 9
+      },
+      "slow_map": "fixed five-profile response on the complete reserved potential hull with finite fixed lambda^-1 conditioning",
+      "two_edge_kernel": {
+        "inner": "4/49",
+        "interior": "1/4900",
+        "outer": "401/100",
+        "sum": "401/98"
+      },
+      "weighted_domain": "epsilon^b*(1+|log epsilon|)^P*zeta*delta^-p with finite P after fixing stage, jet and target"
+    },
+    "provider_status_checks": {
+      "core_compact_slow_inverse_domain_join": true,
+      "core_compact_slow_inverse_reconstruction": true,
+      "core_current_head_q4_fixed_profile_join": true,
+      "core_current_log_source_reconciliation": true,
+      "core_direct_compact_slow_provider_reconstruction": true,
+      "core_fast_inverse_budget": true,
+      "core_initial_haar_row_budget": true,
+      "core_log_renormalized_actual_source_induction": true,
+      "core_native_haar_primitive_join": true,
+      "core_slow_inverse_budget": true
+    },
+    "scope": {
+      "Q1_Q4_object_is_a_direct_dependency": true,
+      "Q5_weighted_inverse_and_log_source_contract_bound_on_same_later_tail": true,
+      "actual_A1_axial_velocity_removed": false,
+      "finite_stage_log_source_induction_instantiated": true,
+      "hashes_or_tests_treated_as_continuum_proof": false,
+      "old_zero_margin_equality_erased": false,
+      "physical_characteristic_shift_removed": false,
+      "raw_pure_power_supremum_promoted_as_exact_current_source_domain": false,
+      "six_group_complete_residual_replayed": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q5_weighted_inverse_source_join/.gitignore": "d767cb1e2958cda1b74070059e9febbb541c265139e3ddbd9671d77e3308dfe9",
+    "results/core_current_head_q5_weighted_inverse_source_join/README.md": "6ada1ea7416077edfb0aed83a4be54c163368616498523ccae5226042ade39af",
+    "results/core_current_head_q5_weighted_inverse_source_join/audit.py": "e3c4b7a0cea7c0b68df7b1a088cf30c8cd0eebd3b06488d47db10900ad88cf54",
+    "results/core_current_head_q5_weighted_inverse_source_join/protocol.json": "7d5a6e332a205ef7e75f60d6a8aa4785ed78cb947f6aee18b00a6f09a05acb73",
+    "results/core_current_head_q5_weighted_inverse_source_join/requirements.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "results/core_current_head_q5_weighted_inverse_source_join/test_audit.py": "88fffba338fc2fd65120523004d3bc907001283cd8c84eb1e2105068a82ebae5",
+    "results/core_current_head_q5_weighted_inverse_source_join/weighted_inverse.py": "0615e9a88c2919e1f1b790e591f6df34cfbef0ac224f9706953fb7bad5fa761e"
+  },
+  "status": "current-head-Q5-weighted-inverse-and-log-source-domain-bound"
+}
