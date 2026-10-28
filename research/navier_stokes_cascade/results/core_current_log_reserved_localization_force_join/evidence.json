@@ -1,0 +1,565 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_corrected_force_join/evidence.json": "d9134eb24000b86eced91780b8a8f36bb11e79c311d4947c56bf2352f99b55b3",
+    "results/core_current_log_reserved_corner_endpoint_join/evidence.json": "2f79f01af5c8636da08a8012fe7f23951b814170f79dad9d66119264c6d31d8d",
+    "results/core_current_log_reserved_residual_reconciliation/evidence.json": "bf5d045c4339ca8bcd38f0262661817758c0d7a309e7fa70795e1fea481ea02c",
+    "results/core_log_reserved_localization_force_replay/evidence.json": "08d502eb76fd4f30bc628c672094336acbbeb955dc4f1dfddb555c655ba695b6",
+    "results/current_endpoint_jets/evidence.json": "de61c70e5aea7ef14663e8fa4d34736bcf50399db4660c1eb3f01827c2e7e6d6",
+    "results/current_localized_force/evidence.json": "70f3240badb5a8c7d55c2df150b550fec815ecd84314800edd3d5057bb3e6cb1",
+    "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc"
+  },
+  "flags": {
+    "actual_terminal_norms_or_extension_scales_numerically_evaluated": false,
+    "all_twelve_time_viscous_pressure_and_nonlinear_groups_retained": true,
+    "current_same_field_axisymmetric_localization_replayed": true,
+    "current_terminal_force_jets_joined_conditionally": true,
+    "force_divergence_in_pressure_equation_retained": true,
+    "future_velocity_or_pressure_constructed": false,
+    "one_smooth_compact_future_force_constructed_conditionally": true,
+    "preterminal_energy_or_comparison_replayed_here": false,
+    "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+    "unconditional_pulse_residual_force_exclusion_or_blowup_proved": false
+  },
+  "gates": {
+    "all_declared_dependency_sources_match": true,
+    "localization_and_force_joined": true,
+    "scientific_scope_retained": true,
+    "seven_frozen_dependencies": true,
+    "ten_exact_localization_force_controls": true
+  },
+  "inherited_source_checks": {
+    "core_corrected_force_join:results/core_corrected_force_join/.gitignore": true,
+    "core_corrected_force_join:results/core_corrected_force_join/README.md": true,
+    "core_corrected_force_join:results/core_corrected_force_join/audit.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/controls.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/localization.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/requirements.txt": true,
+    "core_corrected_force_join:results/core_corrected_force_join/test_audit.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_corner_flatness_obstruction/corner.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/.gitignore": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/README.md": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/audit.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/protocol.json": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/requirements.txt": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/test_audit.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/transfer.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_residual_reconciliation/residual.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_primitive_margin_normalization_reconciliation/margins.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/current_endpoint_jets/endpoint.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/.gitignore": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/README.md": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/audit.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/protocol.json": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/requirements.txt": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/residual.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/test_audit.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_source_reconciliation/reconcile.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_log_reserved_complete_residual_replay/replay.py": true,
+    "core_log_reserved_localization_force_replay:results/core_log_reserved_localization_force_replay/.gitignore": true,
+    "core_log_reserved_localization_force_replay:results/core_log_reserved_localization_force_replay/README.md": true,
+    "core_log_reserved_localization_force_replay:results/core_log_reserved_localization_force_replay/audit.py": true,
+    "core_log_reserved_localization_force_replay:results/core_log_reserved_localization_force_replay/localization_force.py": true,
+    "core_log_reserved_localization_force_replay:results/core_log_reserved_localization_force_replay/protocol.json": true,
+    "core_log_reserved_localization_force_replay:results/core_log_reserved_localization_force_replay/requirements.txt": true,
+    "core_log_reserved_localization_force_replay:results/core_log_reserved_localization_force_replay/test_audit.py": true,
+    "current_endpoint_jets:results/auxiliary_geometry_audit/evidence.json": true,
+    "current_endpoint_jets:results/background_jet_foundation/evidence.json": true,
+    "current_endpoint_jets:results/current_endpoint_jets/.gitignore": true,
+    "current_endpoint_jets:results/current_endpoint_jets/README.md": true,
+    "current_endpoint_jets:results/current_endpoint_jets/audit.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/endpoint.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/endpoint_checks.py": true,
+    "current_endpoint_jets:results/current_endpoint_jets/protocol.json": true,
+    "current_endpoint_jets:results/current_endpoint_jets/requirements.txt": true,
+    "current_endpoint_jets:results/current_endpoint_jets/test_audit.py": true,
+    "current_endpoint_jets:results/current_potential_realization/evidence.json": true,
+    "current_endpoint_jets:results/finite_stage_induction/evidence.json": true,
+    "current_endpoint_jets:results/geometric_pulse_replay/evidence.json": true,
+    "current_endpoint_jets:results/heat_exterior_audit/evidence.json": true,
+    "current_endpoint_jets:results/localized_force_extension/evidence.json": true,
+    "current_endpoint_jets:results/physical_pulse_transfer/evidence.json": true,
+    "current_localized_force:results/background_jet_foundation/evidence.json": true,
+    "current_localized_force:results/compact_mean_corrections/evidence.json": true,
+    "current_localized_force:results/current_endpoint_jets/evidence.json": true,
+    "current_localized_force:results/current_localized_force/.gitignore": true,
+    "current_localized_force:results/current_localized_force/README.md": true,
+    "current_localized_force:results/current_localized_force/audit.py": true,
+    "current_localized_force:results/current_localized_force/current_checks.py": true,
+    "current_localized_force:results/current_localized_force/forcing.py": true,
+    "current_localized_force:results/current_localized_force/protocol.json": true,
+    "current_localized_force:results/current_localized_force/requirements.txt": true,
+    "current_localized_force:results/current_localized_force/test_audit.py": true,
+    "current_localized_force:results/current_potential_realization/evidence.json": true,
+    "current_localized_force:results/finite_stage_induction/evidence.json": true,
+    "current_localized_force:results/full_potential_realization/evidence.json": true,
+    "current_localized_force:results/localized_force_extension/evidence.json": true,
+    "current_localized_force:results/physical_pulse_transfer/evidence.json": true,
+    "force_foundation:results/coefficient_support_audit/evidence.json": true,
+    "force_foundation:results/compact_mean_foundation/evidence.json": true,
+    "force_foundation:results/current_localized_force/evidence.json": true,
+    "force_foundation:results/current_localized_force/forcing.py": true,
+    "force_foundation:results/endpoint_foundation/evidence.json": true,
+    "force_foundation:results/finite_induction_foundation/evidence.json": true,
+    "force_foundation:results/force_foundation/.gitignore": true,
+    "force_foundation:results/force_foundation/README.md": true,
+    "force_foundation:results/force_foundation/audit.py": true,
+    "force_foundation:results/force_foundation/localized_bounds.py": true,
+    "force_foundation:results/force_foundation/localized_checks.py": true,
+    "force_foundation:results/force_foundation/protocol.json": true,
+    "force_foundation:results/force_foundation/requirements.txt": true,
+    "force_foundation:results/force_foundation/test_audit.py": true,
+    "force_foundation:results/global_moment_stress/evidence.json": true,
+    "force_foundation:results/localized_force_extension/evidence.json": true,
+    "force_foundation:results/realization_foundation/evidence.json": true,
+    "force_foundation:results/realization_foundation/realized_checks.py": true
+  },
+  "protocol": {
+    "field": "the exact current corner/endpoint package, locally finite field, cutoff sequence, supports and fixed pressure gauge",
+    "force_extension": "join compact terminal force jets with one Borel diagonal sum chi0(b_j*sigma)*sigma^j*F_j/j! chosen from actual finite jet norms",
+    "localization": "u=curl(c*A)+c*B=c*u0+d, d=grad(c) cross A, p=c*p0, with unit viscosity and all twelve residual groups",
+    "parent_commit": "1cd71054cd5f222901d2e1480d41ccd23702be23",
+    "pressure": "retain complete p0*grad(c) and -div(f) in the forced pressure equation; no regauging or compact-support-preserving Leray projection",
+    "scope": "conditional current localization and one smooth compact force only; energy, comparison, exclusion and blow-up are not replayed here",
+    "scope_correction": "the older current-force checkpoint bundled energy, but this new current log-reserved chain advances only localization and compact force here"
+  },
+  "remaining_obligations": [
+    "replay the fixed-time preterminal energy identity for this exact localized current field and force",
+    "retain the factor-two dissipation bound and take energy and dissipation terminal limits separately",
+    "then replay fixed-gauge pressure recovery and expanding-ball comparison before any exclusion or blow-up claim"
+  ],
+  "review": {
+    "blocking_inputs": {
+      "corner": "all fixed jets of the complete current residual are Cartesian flat",
+      "extension": "each fixed terminal force norm is finite; no uniform-in-j norm is required",
+      "punctured": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j"
+    },
+    "checks": {
+      "complete_fixed_gauge_pressure_is_cut_off_without_regauging": true,
+      "corner_punctured_and_exterior_cover_gives_compact_terminal_force_jets": true,
+      "current_parent_corner_endpoint_inputs_are_joined": true,
+      "d_dot_grad_c_term_vanishes_exactly": true,
+      "divergence_free_axisymmetric_localization_is_exact": true,
+      "every_extension_sample_enters_one_actual_norm_diagonal": true,
+      "every_force_sample_closes_on_current_field": true,
+      "exact_twelve_term_identity_replayed": true,
+      "forced_pressure_equation_retains_force_divergence": true,
+      "future_series_matches_all_terminal_force_jets_without_field_extension": true
+    },
+    "force_samples": [
+      {
+        "Cauchy_orders": {
+          "direct_swirl": 3,
+          "potential": 4,
+          "pressure": 2
+        },
+        "checks": {
+          "both_crosses_and_square_retained": true,
+          "complete_pressure_cutoff_retained": true,
+          "direct_swirl_Cauchy_order": true,
+          "direct_swirl_force_order": true,
+          "one_next_residual_time_jet": true,
+          "potential_Cauchy_order": true,
+          "potential_force_order": true,
+          "pressure_Cauchy_order": true,
+          "pressure_force_order": true,
+          "same_current_field_request_closes": true,
+          "twelve_nonzero_groups": true,
+          "unit_viscosity_used": true
+        },
+        "comparison_stage": 16017,
+        "flat_power": 0,
+        "force_orders": {
+          "direct_swirl": 2,
+          "potential": 3,
+          "pressure": 1
+        },
+        "residual_Cauchy_jet": 1,
+        "spatial_order": 0,
+        "time_order": 0,
+        "total_mixed_order": 0
+      },
+      {
+        "Cauchy_orders": {
+          "direct_swirl": 7,
+          "potential": 8,
+          "pressure": 6
+        },
+        "checks": {
+          "both_crosses_and_square_retained": true,
+          "complete_pressure_cutoff_retained": true,
+          "direct_swirl_Cauchy_order": true,
+          "direct_swirl_force_order": true,
+          "one_next_residual_time_jet": true,
+          "potential_Cauchy_order": true,
+          "potential_force_order": true,
+          "pressure_Cauchy_order": true,
+          "pressure_force_order": true,
+          "same_current_field_request_closes": true,
+          "twelve_nonzero_groups": true,
+          "unit_viscosity_used": true
+        },
+        "comparison_stage": 32818,
+        "flat_power": 5,
+        "force_orders": {
+          "direct_swirl": 6,
+          "potential": 7,
+          "pressure": 5
+        },
+        "residual_Cauchy_jet": 5,
+        "spatial_order": 1,
+        "time_order": 3,
+        "total_mixed_order": 4
+      },
+      {
+        "Cauchy_orders": {
+          "direct_swirl": 12,
+          "potential": 13,
+          "pressure": 11
+        },
+        "checks": {
+          "both_crosses_and_square_retained": true,
+          "complete_pressure_cutoff_retained": true,
+          "direct_swirl_Cauchy_order": true,
+          "direct_swirl_force_order": true,
+          "one_next_residual_time_jet": true,
+          "potential_Cauchy_order": true,
+          "potential_force_order": true,
+          "pressure_Cauchy_order": true,
+          "pressure_force_order": true,
+          "same_current_field_request_closes": true,
+          "twelve_nonzero_groups": true,
+          "unit_viscosity_used": true
+        },
+        "comparison_stage": 53620,
+        "flat_power": 11,
+        "force_orders": {
+          "direct_swirl": 11,
+          "potential": 12,
+          "pressure": 10
+        },
+        "residual_Cauchy_jet": 10,
+        "spatial_order": 5,
+        "time_order": 4,
+        "total_mixed_order": 9
+      },
+      {
+        "Cauchy_orders": {
+          "direct_swirl": 13,
+          "potential": 14,
+          "pressure": 12
+        },
+        "checks": {
+          "both_crosses_and_square_retained": true,
+          "complete_pressure_cutoff_retained": true,
+          "direct_swirl_Cauchy_order": true,
+          "direct_swirl_force_order": true,
+          "one_next_residual_time_jet": true,
+          "potential_Cauchy_order": true,
+          "potential_force_order": true,
+          "pressure_Cauchy_order": true,
+          "pressure_force_order": true,
+          "same_current_field_request_closes": true,
+          "twelve_nonzero_groups": true,
+          "unit_viscosity_used": true
+        },
+        "comparison_stage": 49619,
+        "flat_power": 2,
+        "force_orders": {
+          "direct_swirl": 12,
+          "potential": 13,
+          "pressure": 11
+        },
+        "residual_Cauchy_jet": 11,
+        "spatial_order": 3,
+        "time_order": 7,
+        "total_mixed_order": 10
+      }
+    ],
+    "future_extension": {
+      "finite_stage_constraints": "|a|+m<=floor(j/2), with increasing dyadic b_j chosen once from actual finite terminal norms",
+      "formula": "f_plus=sum_j chi0(b_j sigma) sigma^j F_j/j!",
+      "samples": [
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 1,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/2",
+              "index": 1,
+              "scale_exponent": -1
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/4",
+              "index": 2,
+              "scale_exponent": -2
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/8",
+              "index": 3,
+              "scale_exponent": -3
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/16",
+              "index": 4,
+              "scale_exponent": -4
+            }
+          ],
+          "spatial_order": 0,
+          "time_order": 0
+        },
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 8,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/256",
+              "index": 8,
+              "scale_exponent": -5
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/512",
+              "index": 9,
+              "scale_exponent": -6
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/1024",
+              "index": 10,
+              "scale_exponent": -7
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/2048",
+              "index": 11,
+              "scale_exponent": -8
+            }
+          ],
+          "spatial_order": 1,
+          "time_order": 3
+        },
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 48,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/281474976710656",
+              "index": 48,
+              "scale_exponent": -44
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/562949953421312",
+              "index": 49,
+              "scale_exponent": -45
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/1125899906842624",
+              "index": 50,
+              "scale_exponent": -46
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/2251799813685248",
+              "index": 51,
+              "scale_exponent": -47
+            }
+          ],
+          "spatial_order": 20,
+          "time_order": 4
+        },
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 152,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/5708990770823839524233143877797980545530986496",
+              "index": 152,
+              "scale_exponent": -82
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/11417981541647679048466287755595961091061972992",
+              "index": 153,
+              "scale_exponent": -83
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/22835963083295358096932575511191922182123945984",
+              "index": 154,
+              "scale_exponent": -84
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/45671926166590716193865151022383844364247891968",
+              "index": 155,
+              "scale_exponent": -85
+            }
+          ],
+          "spatial_order": 6,
+          "time_order": 70
+        },
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 400,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/2582249878086908589655919172003011874329705792829223512830659356540647622016841194629645353280137831435903171972747493376",
+              "index": 400,
+              "scale_exponent": -300
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/5164499756173817179311838344006023748659411585658447025661318713081295244033682389259290706560275662871806343945494986752",
+              "index": 401,
+              "scale_exponent": -301
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/10328999512347634358623676688012047497318823171316894051322637426162590488067364778518581413120551325743612687890989973504",
+              "index": 402,
+              "scale_exponent": -302
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/20657999024695268717247353376024094994637646342633788102645274852325180976134729557037162826241102651487225375781979947008",
+              "index": 403,
+              "scale_exponent": -303
+            }
+          ],
+          "spatial_order": 100,
+          "time_order": 100
+        }
+      ],
+      "support": "K x [1-tau0,3/2]",
+      "tail": "each fixed differentiated tail from J is at most 2^(1-J)",
+      "whole_support_bound": "||D_x^a partial_sigma^m T_j|| <= C_(j,a,m) b_j^(m-j)"
+    },
+    "localized_field": {
+      "divergence": "div curl(cA)=0 and div(cB)=r^-1 partial_theta(cb)=0",
+      "initial_data": "the inherited time cutoff makes u identically zero near t=0",
+      "potential_form": "u=curl(cA)+cB=cu0+d; d=grad(c) cross A",
+      "pressure": "p=cp0 with complete current fixed-gauge pressure p0",
+      "vanishing_term": "(d.grad c)u0=0"
+    },
+    "residual": {
+      "pressure_Poisson": "-Delta p=partial_i partial_j(u_i u_j)-div f_minus",
+      "terms": [
+        {
+          "formula": "c R_1(u0,p0)",
+          "name": "base_residual"
+        },
+        {
+          "formula": "c_t u0",
+          "name": "cutoff_time"
+        },
+        {
+          "formula": "d_t",
+          "name": "curl_time"
+        },
+        {
+          "formula": "-(Delta c)u0",
+          "name": "cutoff_laplacian"
+        },
+        {
+          "formula": "-2 sum_i c_i partial_i u0",
+          "name": "gradient_viscosity"
+        },
+        {
+          "formula": "-Delta d",
+          "name": "curl_viscosity"
+        },
+        {
+          "formula": "p0 grad c",
+          "name": "pressure_cutoff"
+        },
+        {
+          "formula": "c(c-1)(u0.grad)u0",
+          "name": "quadratic_rescaling"
+        },
+        {
+          "formula": "c(u0.grad c)u0",
+          "name": "velocity_cutoff_transport"
+        },
+        {
+          "formula": "c(u0.grad)d",
+          "name": "old_curl_transport"
+        },
+        {
+          "formula": "c(d.grad)u0",
+          "name": "curl_old_transport"
+        },
+        {
+          "formula": "(d.grad)d",
+          "name": "curl_square"
+        }
+      ],
+      "viscosity": 1
+    },
+    "scope": {
+      "complete_pressure_memory_and_force_divergence_retained": true,
+      "current_same_field_axisymmetric_localization_replayed_conditionally": true,
+      "future_velocity_or_pressure_constructed": false,
+      "one_smooth_compact_force_extension_constructed_conditionally": true,
+      "pressure_recovery_comparison_or_blowup_proved": false,
+      "preterminal_energy_replayed_here": false,
+      "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+      "unconditional_pulse_residual_or_force_claimed": false
+    },
+    "terminal_gluing": {
+      "conclusion": "F_j=lim_(t up to 1) partial_t^j f_minus is in C_c^infinity(K) and all spatial jets vanish at x=0",
+      "corner": "c=1,d=0, so f_minus is the Cartesian-flat complete current residual",
+      "exterior": "the exact heat direct-swirl and complete pressure jets close the equatorial cover",
+      "punctured": "current one-sided A,B,p0 jets and next time derivatives are uniformly Cauchy on each compact"
+    }
+  },
+  "source_hashes": {
+    "results/core_corrected_force_join/localization.py": "f0118ef3640ade0632432122cf47127aea527cd7c9be9b39da777b482caed4ac",
+    "results/core_current_log_reserved_corner_endpoint_join/transfer.py": "5a5f0b9f33de701b570bf473382b08cb5c5d4da222c6fb584e5a8ab1e396be7d",
+    "results/core_current_log_reserved_localization_force_join/.gitignore": "972ca000540099f56a9a67d3d4591eb6a881b470b752a9545199dc0bf8ae4021",
+    "results/core_current_log_reserved_localization_force_join/README.md": "05e32730685a21559eaeb7baa700895b012700adecb30492f20cff6bb48b34c6",
+    "results/core_current_log_reserved_localization_force_join/audit.py": "4a7d9cbdf6ebde53f7a8c994f80661e0238f4b89f52d5e1c1146d0876e16a9bb",
+    "results/core_current_log_reserved_localization_force_join/localization_force.py": "5967fca723bcf49edc3885c230697ee8c96a988c8d83384a349226f4be740356",
+    "results/core_current_log_reserved_localization_force_join/protocol.json": "bdfb78b876be81a05e573716c974f23b17390497ba34ce2a22a44ec9315fc228",
+    "results/core_current_log_reserved_localization_force_join/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_current_log_reserved_localization_force_join/test_audit.py": "76eb4cd295e10d51b1da87ab83cb1d81e58dfabaf1f8cd0ab8ac7c2ac57f3617",
+    "results/core_current_log_reserved_residual_reconciliation/residual.py": "e587b135e09914e929329598b318cdd1bfba1d212af89f310d62b6ef6e327d74",
+    "results/current_endpoint_jets/endpoint.py": "5c147a83082d312c725d2286a961677d960236c5f471c767285721f50baa0c9b"
+  },
+  "status": "current-log-reserved-localization-and-compact-force-joined-conditionally"
+}

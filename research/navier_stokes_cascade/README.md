@@ -1529,6 +1529,19 @@ terminal regularity of velocity or pressure at the origin is asserted. The
 twelve-term localization and compact-force replay is next, followed by
 energy and comparison.
 
+The [current log-reserved localization and compact-force join](results/core_current_log_reserved_localization_force_join/README.md)
+now expands the exact current localized field
+`u=curl(cA)+cB=cu0+grad(c) cross A`, `p=cp0`, into all twelve time,
+unit-viscosity, complete-pressure and nonlinear groups. The only apparent
+thirteenth transport term vanishes by the cross-product identity. The forced
+pressure equation retains `-div(f)`, and the full pressure cutoff is not
+regauged. Current corner flatness and punctured endpoint Cauchy jets give
+compact smooth terminal force jets, which one actual-norm Borel diagonal
+joins to a single compact future force without assuming Taylor convergence
+or constructing a future velocity. The older current-force checkpoint's
+energy statement is deliberately not promoted yet; fixed-time preterminal
+energy on this newly reconciled chain is the next obligation.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL
