@@ -1578,6 +1578,20 @@ without treating them as continuum proofs. Q1--Q3 remain unproved here, so
 the pulse, residual, force, exclusion and blow-up conclusions remain
 conditional.
 
+The [current-head Q1 exact-map join](results/core_current_head_q1_exact_map_join/README.md)
+now binds the pressure-family core fixed point, reference and matching root
+families, same exact compact repair, and completed leading backward pressure
+on one current-head profile. The annular root satisfies
+`8 beta^2 q delta < 4.26e-8`; the compact root satisfies the sharper symbolic
+row `8(800)^2(25000)2^-256 < 1`. The leading pressure defect solves
+`K_A delta=0`, whose nonzero homogeneous mode
+`C(1-eta^2)^(-2A)` is endpoint-unbounded, so smooth endpoint compatibility
+forces `delta=0`. This identity does not erase positive-order, wave, mean or
+localization pressure. The checkpoint binds 239 evidence nodes, 991
+dependency hashes and 3,822 source hashes. It advances only Q1; Q2 regional
+continuum infima and Q3 full-frame primitive/path bounds remain before any
+unconditional pulse, residual, force, exclusion or blow-up conclusion.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

@@ -1,0 +1,110 @@
+{
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/axial_root_foundation/evidence.json": "0ca0e15d6a1b6b9c39ec7e09f3869ae0e710219bc32a0f650a47b0ef94f1ebad",
+    "results/core_continuation_matching_recheck/evidence.json": "6d10bffb7587fcb8372b8d9088a223bde8c80131bc07be02dcb5e08d9189f848",
+    "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+    "results/core_current_head_primitive_frontier_audit/evidence.json": "9a7e4521af282ecfb8a699bb66e852bc3c367adfb40e7b8f71d0e7b2f4f954de",
+    "results/core_fixed_point_ledger_recheck/evidence.json": "f210da4a0a7bf19dc9bba14f5d3d7cd6465ee0e6b24b80251b29526f462b3a73",
+    "results/core_global_pressure_moment_recheck/evidence.json": "f24e08f6c2bb68780ec67c792eb3fa7e8962462242571f9f0f6257a3de88e557",
+    "results/core_modulation_repair_join_recheck/evidence.json": "06c690c0615abba4afb37d438c49ff5493545bac94d45c1aa926bcfb52646f68",
+    "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a",
+    "results/core_same_field_pressure_reconciliation/evidence.json": "a0a6bb8cc8d3e1c52227a1b2cb4f7a1adc0e340d2b9fc5fb2ac5aa9ebdc99f0c",
+    "results/foundation_bundle_route/evidence.json": "8e585d7b90ba9938fea314a1d2efc13be394011e7baa285145e3675fc6be4f24",
+    "results/matching_root_foundation/evidence.json": "22fd0e2a826ae3916a99dbd68eeb09f9e2836ae383364057e2e8bdbb67071bd5",
+    "results/prescribed_continuation_foundation/evidence.json": "33a4bbbac554dd669d2177dc86d8c1370b947082d3f24fb78309ffdab2e2fc80",
+    "results/root_foundation/evidence.json": "dc3533a665e4cfc318cb2f069b1de76c83f3ada673dddbd5cb69b891b97c84ff"
+  },
+  "gates": {
+    "four_Q1_contract_groups": true,
+    "fourteen_direct_provider_records": true,
+    "scientific_scope_preserved": true,
+    "seven_exact_graph_and_interface_controls": true
+  },
+  "protocol": {
+    "correction": "Q1 is not an absent root construction: its analytical providers already exist, but the finalized leading-profile certificate did not bind their evidence into one same-object current-head dependency",
+    "identity": "the pressure datum, h=lambda^2, width C^-20, supports, N=1+floor(H^32), roots and gauge are fixed once; no diagnostic root or later full-pressure collapse is substituted",
+    "parent_commit": "39656aaef7e425195b30cbb213ebb7377b98f413",
+    "result": "bind the exact pressure-family core, all selected finite root families and completed leading backward pressure into one current-head Q1 defining-map chain",
+    "scope": "same-object analytical join and interface recheck only; Q2 regional continuum infima and Q3 full-frame primitive/path bounds remain, and no unconditional pulse, residual, force, exclusion or blow-up theorem is claimed"
+  },
+  "remaining_obligations": [
+    "audit Q2 on this exact Q1 profile by proving the positive core, determinant, orientation, cone and factored-edge continuum infima on the actual finite regional cover",
+    "then audit Q3 original full-frame primitive bounds, complete path and phase jets and the accepted physical domain on the same common tail",
+    "retain every later pressure component; the leading pressure identity does not collapse the full corrected pressure",
+    "only after Q2 and Q3 may the already replayed actual-pulse, residual, force and comparison implications be reconsidered for unconditional promotion"
+  ],
+  "review": {
+    "checks": {
+      "all_declared_dependency_hashes_match": true,
+      "all_declared_source_hashes_match": true,
+      "all_ten_Q1_provider_statuses_match": true,
+      "annular_root_smallness_is_strict": true,
+      "compact_root_smallness_is_strict": true,
+      "nonzero_pressure_homogeneous_mode_is_endpoint_unbounded": true,
+      "provider_graph_is_acyclic": true
+    },
+    "contracts": {
+      "core": "one Banach fixed point in the complete all-index coefficient space for the selected exact positive-measure pressure family, with exact core stress cancellation",
+      "leading_pressure": "Pi_axis+Cp_infinity=0 on the same completed leading profile, so the core datum equals the completed leading backward pressure while positive-order, wave, mean and localization pressure remain",
+      "matching_and_repair_roots": "the annular and compact five-row roots are the same accepted roots at every fixed order and restore M,R-or-I,J,S,Cp without resetting pressure",
+      "reference_roots": "the angular, heat, waiting, axial two-moment and positive scalar-strength roots are unique in their retained brackets/balls and have finite fixed jets"
+    },
+    "graph": {
+      "dependency_hash_checks": 991,
+      "edges": 991,
+      "nodes": 239,
+      "source_hash_checks": 3822
+    },
+    "interface_controls": {
+      "annular": {
+        "invariant": "532103/125000000000000",
+        "lipschitz": "532103/250000000000000",
+        "radius": "8723/250000000000000000"
+      },
+      "compact": {
+        "invariant": "1953125/1766847064778384329583297500742918515827483896875618958121606201292619776",
+        "lipschitz": "1953125/3533694129556768659166595001485837031654967793751237916243212402585239552",
+        "radius": "25/1809251394333065553493296640760748560207343510400633813116524750123642650624"
+      },
+      "fixed_object_ledger": "same exact pressure datum, h=lambda^2, C^-20 width, supports, N=1+floor(H^32), roots and gauge",
+      "pressure": {
+        "bounded_smooth_solution_forces_C_zero": true,
+        "homogeneous_mode": "C*(1-eta^2)^(-2A)",
+        "nonzero_mode_is_bounded_at_endpoints": false
+      },
+      "scalar_strength_derivative_floor": "F_A>49/100"
+    },
+    "provider_status_checks": {
+      "axial_root_foundation": true,
+      "core_continuation_matching_recheck": true,
+      "core_contraction_audit": true,
+      "core_fixed_point_ledger_recheck": true,
+      "core_global_pressure_moment_recheck": true,
+      "core_modulation_repair_join_recheck": true,
+      "core_pressure_identification": true,
+      "core_same_field_pressure_reconciliation": true,
+      "matching_root_foundation": true,
+      "root_foundation": true
+    },
+    "scope": {
+      "Q1_interface_uniqueness_and_pressure_compatibility_rechecked": true,
+      "Q1_provider_chain_bound_on_one_current_head_object": true,
+      "Q2_regional_continuum_infima_discharged": false,
+      "Q3_full_frame_primitive_domain_discharged": false,
+      "every_provider_theorem_independently_reproved_here": false,
+      "hashes_or_tests_treated_as_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q1_exact_map_join/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_current_head_q1_exact_map_join/README.md": "541d3b84400dfa3afddb532e90ec474d14d40e3d48200a269487e1be8b2b0a5e",
+    "results/core_current_head_q1_exact_map_join/audit.py": "8af4c6dc66751c038041a4cedcecf138c3db17d3183c162d22aac1194522c7b2",
+    "results/core_current_head_q1_exact_map_join/exact_map.py": "fd21a8139c212b9f390af1248055c60a9329ae8c5bd0bc2898e715905788c41b",
+    "results/core_current_head_q1_exact_map_join/protocol.json": "46056474e763b747ed0fa275bc8a8b4cf8dc82f138a4b2dbc3e10aae9b238e14",
+    "results/core_current_head_q1_exact_map_join/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_current_head_q1_exact_map_join/test_audit.py": "03247aa408856ba2e1769cbab13ca22e0344fe6ff4d13b5a02a8622c34616cd1"
+  },
+  "status": "current-head-Q1-exact-core-roots-and-leading-pressure-bound-on-one-profile"
+}
