@@ -1,0 +1,8 @@
+{
+  "parent_commit": "e8142c9e6a31242a860ea1403bd80bd8b194a0f7",
+  "object": "the exact Q1-Q5 later-tail field, fixed profile, same-choice projectors, shifted compact maps, fixed slow response, actual source graph, gauges, supports and cutoff sequence",
+  "residual": "retain the regular current source, separate A0 and A1 compact tails, old Gaussian and signed cutoff-time tails, flat exterior, time, unit viscosity, complete pressure, both nonlinear cross orientations and the new square",
+  "reserves": "A0 and A1 each spend half of their own h*kappa gain; the regular residual spends half of one new h*(1/2-3*kappa) stage; the cutoff tail spends half of the first omitted representative gain",
+  "quantifier": "fix the physical jet and target, choose one finite comparison stage, then invoke the finite enlarged source requests; no stage-uniform constant or J(q) selection is used",
+  "scope": "conditional current-head Q6 local residual flatness only; corner, endpoint, localization, force, energy, comparison, exclusion and blow-up are not replayed here"
+}

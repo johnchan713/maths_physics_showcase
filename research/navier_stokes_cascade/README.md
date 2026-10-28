@@ -1645,6 +1645,22 @@ with half that gain and retains a strict half-reserve. The old
 the obsolete pure-power route. The complete six-group residual replay on
 this same object is the next obligation.
 
+The [current-head Q6 complete residual join](results/core_current_head_q6_complete_residual_join/README.md)
+now binds that exact Q1--Q5 object to the log-reserved locally finite
+comparison. It carries the two extra `A0/A1` source derivatives at the same
+fixed comparison stage, keeps separate compact-source, regular-residual and
+cutoff-tail logarithmic accounts, and retains time, unit viscosity, complete
+pressure, both nonlinear cross orientations and the new square. All six
+covariance entries, actual axial velocity, moving pressure and every
+potential/pressure cutoff derivative remain in the same-object ledger. It
+also corrects the common-margin interpretation: the final exponent is the
+minimum of the fixed-state and six cutoff-comparison exponents; margins owned
+by disjoint accounts cannot be added. Thus every fixed residual jet is flat
+conditionally on the Q1--Q5 continuum contracts. The closed Cartesian-corner
+and punctured-endpoint transfer on this exact Q6 field is next; no terminal
+field regularity, admissible force, exclusion or blow-up conclusion is
+promoted here.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL
