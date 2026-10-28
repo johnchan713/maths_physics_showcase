@@ -1563,6 +1563,21 @@ uses the finalized protected-core field only after the radius limit. Finite
 energy remains essential, and no unconditional admissible-force or blow-up
 theorem is claimed.
 
+The [current-head primitive-frontier audit](results/core_current_head_primitive_frontier_audit/README.md)
+now corrects the older five-contract frontier: all five contracts have
+same-object reconstruction checkpoints, and the current log-reserved chain
+replays their consequences through comparison. The live promotion frontier
+is lower: exact core/root defining identities, positive regional continuum
+infima with the factored flat-edge stress, and the original complete
+frame/path primitive domain. Their common selector row
+`2 h (ell-2) >= max_i log2(C_i/r_i)` is finite only after every actual
+margin `r_i` is proved positive and every continuum constant `C_i` finite;
+taking a smaller physical scale cannot establish those antecedents. The
+audit binds 238 evidence nodes, 990 dependency hashes and 3,815 source hashes
+without treating them as continuum proofs. Q1--Q3 remain unproved here, so
+the pulse, residual, force, exclusion and blow-up conclusions remain
+conditional.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

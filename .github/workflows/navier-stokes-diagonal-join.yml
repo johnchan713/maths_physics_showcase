@@ -52,6 +52,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_log_reserved_localization_force_join/**
       - research/navier_stokes_cascade/results/core_current_log_reserved_preterminal_energy_join/**
       - research/navier_stokes_cascade/results/core_current_log_reserved_pressure_comparison_join/**
+      - research/navier_stokes_cascade/results/core_current_head_primitive_frontier_audit/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -107,6 +108,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_log_reserved_localization_force_join/**
       - research/navier_stokes_cascade/results/core_current_log_reserved_preterminal_energy_join/**
       - research/navier_stokes_cascade/results/core_current_log_reserved_pressure_comparison_join/**
+      - research/navier_stokes_cascade/results/core_current_head_primitive_frontier_audit/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -458,6 +460,13 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_log_reserved_pressure_comparison_join/audit.py \
             --verify-record research/navier_stokes_cascade/results/core_current_log_reserved_pressure_comparison_join/evidence.json \
             --output navier_stokes_current_log_reserved_pressure_comparison_join_ci.json
+
+      - name: Audit current-head lower primitive frontier
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_primitive_frontier_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_primitive_frontier_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_primitive_frontier_audit/evidence.json \
+            --output navier_stokes_current_head_primitive_frontier_audit_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

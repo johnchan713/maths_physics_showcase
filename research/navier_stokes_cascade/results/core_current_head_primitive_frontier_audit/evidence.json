@@ -1,0 +1,125 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_current_log_reserved_pressure_comparison_join/evidence.json": "8ad0c77e3b68ca737448db44f2ce8532ee9cfb184392145490fc770d0aa44ef9"
+  },
+  "gates": {
+    "one_current_head_dependency": true,
+    "scientific_scope_preserved": true,
+    "seven_graph_frontier_controls": true,
+    "three_boundary_witnesses_reached": true,
+    "three_live_primitive_groups_enumerated": true
+  },
+  "protocol": {
+    "correction": "the five-contract frontier recorded by the older current-head audit is historical, not live: each contract now has a same-object reconstruction in the current pressure-comparison closure",
+    "frontier": "the exact core/root defining identities, positive regional continuum infima, and original full-frame primitive/path-domain estimates still imported by those reconstructions",
+    "obstruction": "the common-tail selector ceiling is defined only after every actual continuum margin is positive and every associated perturbation constant is finite; choosing a smaller q cannot establish either premise",
+    "parent_commit": "fa006e2fbbea66396bf8843cfa36a81cb5c956be",
+    "result": "audit the current-head dependency and quantifier frontier after all five former primitive contracts were reconstructed and replayed",
+    "scope": "dependency and quantifier audit only; hashes and executable controls are not continuum proofs, and no unconditional pulse, residual, force, exclusion or blow-up theorem is claimed"
+  },
+  "remaining_obligations": [
+    "prove Q1 from the pressure-family fixed-point map and every exact finite root, including completed backward-pressure identification on the same profile",
+    "prove Q2 as continuum infima and factored-edge coefficients on the actual regional cover, without grid sampling or a false positive absolute-stress floor",
+    "prove Q3 for the original full frame, complete path and phase jets and accepted physical domain, then evaluate the finite selector rows only after their positive margins and finite constants exist",
+    "only then reconsider unconditional promotion of the already reconstructed source, residual, localization, force, energy and comparison implications"
+  ],
+  "review": {
+    "blocking_inequality": {
+      "aggregate_margin": "m_base=min(f,t,d,omega,m_phi,c_a,b_0,lambda_min,b_min^2)>0",
+      "finite_constants": "0<C_i<infinity for every value, relative-stress, chart, length and frame row",
+      "logical_status": "ell is not defined by this row until every actual r_i is positive and every C_i is finite; q-smallness cannot prove those antecedents",
+      "selector_row": "2*h*(ell-2)>=max_i log2(C_i/r_i)"
+    },
+    "checks": {
+      "all_dependency_hashes_match": true,
+      "all_six_reconstructions_are_in_current_closure": true,
+      "all_source_hashes_match": true,
+      "current_head_graph_is_acyclic": true,
+      "current_replay_chain_is_transitively_connected": true,
+      "historical_five_contract_records_remain_in_closure": true,
+      "lower_boundary_witnesses_are_in_current_closure": true
+    },
+    "correction": {
+      "downstream_current_replays_present": [
+        "core_current_log_source_reconciliation",
+        "core_current_log_reserved_residual_reconciliation",
+        "core_current_log_reserved_corner_endpoint_join",
+        "core_current_log_reserved_localization_force_join",
+        "core_current_log_reserved_preterminal_energy_join",
+        "core_current_log_reserved_pressure_comparison_join"
+      ],
+      "historical_five_contract_frontier_is_live": false,
+      "same_object_reconstructions_present": [
+        "core_leading_background_seminorm_reconstruction",
+        "core_leading_profile_certificate",
+        "core_same_band_gap_reconstruction",
+        "core_full_path_ode_reconstruction",
+        "core_fixed_profile_projector_reconstruction",
+        "core_compact_slow_inverse_reconstruction"
+      ]
+    },
+    "graph": {
+      "boundary_links": {
+        "current_head_reaches_boundary_witness_core_leading_profile_certificate": true,
+        "current_head_reaches_boundary_witness_core_reference_scaled_normal_floor": true,
+        "current_head_reaches_boundary_witness_core_same_band_gap_reconstruction": true
+      },
+      "dependency_hash_checks": 990,
+      "edges": 990,
+      "historical_frontier_links": {
+        "current_head_reaches_historical_core_canonical_full_path_ode_join": true,
+        "current_head_reaches_historical_core_compact_slow_inverse_domain_join": true,
+        "current_head_reaches_historical_core_fixed_profile_projector_join": true,
+        "current_head_reaches_historical_core_leading_background_borel_join": true,
+        "current_head_reaches_historical_core_same_band_gap_join": true
+      },
+      "nodes": 238,
+      "reconstruction_links": {
+        "current_head_reaches_core_compact_slow_inverse_reconstruction": true,
+        "current_head_reaches_core_fixed_profile_projector_reconstruction": true,
+        "current_head_reaches_core_full_path_ode_reconstruction": true,
+        "current_head_reaches_core_leading_background_seminorm_reconstruction": true,
+        "current_head_reaches_core_leading_profile_certificate": true,
+        "current_head_reaches_core_same_band_gap_reconstruction": true
+      },
+      "replay_links": {
+        "core_current_log_reserved_corner_endpoint_join_reaches_core_current_log_reserved_residual_reconciliation": true,
+        "core_current_log_reserved_localization_force_join_reaches_core_current_log_reserved_corner_endpoint_join": true,
+        "core_current_log_reserved_pressure_comparison_join_reaches_core_current_log_reserved_preterminal_energy_join": true,
+        "core_current_log_reserved_preterminal_energy_join_reaches_core_current_log_reserved_localization_force_join": true,
+        "core_current_log_reserved_residual_reconciliation_reaches_core_current_log_source_reconciliation": true
+      },
+      "source_hash_checks": 3815
+    },
+    "live_frontier": {
+      "Q1_exact_core_and_roots": "the stated pressure-family Banach fixed point, completed global backward-pressure identification, and every finite implicit repair/matching root satisfy their exact defining equations on the same profile",
+      "Q2_regional_continuum_margins": "on the actual finite regional cover, f=inf F0, t=inf(-g0_theta), d=inf D0, the orientation and same-tilt cone margins, and the two factored edge coefficients are strictly positive",
+      "Q3_full_frame_primitive_domain": "the original background/frame primitive bounds, complete path and phase jets, positive carrier/root floors, and the physical accepted-tail domain hold for that same field with finite continuum constants"
+    },
+    "quantifier_guard": {
+      "actual_continuum_infima_precede_selector_choice": true,
+      "comparison_order_is_fixed_T_then_R_then_terminal_core": true,
+      "fixed_jet_stage_and_target_precede_small_scale_limit": true,
+      "no_stage_uniform_constant_is_needed": true,
+      "one_common_selector_tail_precedes_band_limit": true,
+      "one_exact_profile_roots_supports_and_gauges_fixed_first": true
+    },
+    "scope": {
+      "Q1_Q2_Q3_independently_reproved_here": false,
+      "downstream_replay_complete_relative_to_lower_frontier": true,
+      "former_five_contracts_reconstructed_on_current_objects": true,
+      "hashes_or_tests_treated_as_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_primitive_frontier_audit/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_current_head_primitive_frontier_audit/README.md": "a31585b85bb48130ee21ecc1935c8f142b51dc242cf261b98255921cbe3c0dd2",
+    "results/core_current_head_primitive_frontier_audit/audit.py": "69521a125ccc5f614a62a7f9111ca6d1818805deae0ee0020a5cdc3e96aae755",
+    "results/core_current_head_primitive_frontier_audit/current_frontier.py": "fcb77ce128b27b074c24119b0d62659bdb1ea6c5a67647b38184c78703f54d91",
+    "results/core_current_head_primitive_frontier_audit/protocol.json": "ab5773fd334c6f9a667f1f41e9e6512988b26b78db302afc0dd5a9dbc391ce94",
+    "results/core_current_head_primitive_frontier_audit/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_current_head_primitive_frontier_audit/test_audit.py": "62f793d0caa4005199a8a4b10aac8950458408d75cc71714d7db55bac4e3bda5"
+  },
+  "status": "current-head-five-contract-frontier-corrected-to-lower-core-root-regional-frame-antecedents"
+}
