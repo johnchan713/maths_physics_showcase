@@ -1661,6 +1661,20 @@ and punctured-endpoint transfer on this exact Q6 field is next; no terminal
 field regularity, admissible force, exclusion or blow-up conclusion is
 promoted here.
 
+The [current-head Q7 corner and endpoint join](results/core_current_head_q7_corner_endpoint_join/README.md)
+now transfers every fixed Q6 residual jet to the closed Cartesian terminal
+corner using `q<=4(tau+|z|^(1/D))`, while retaining the exact comparison
+stage, the two extra `A0/A1` source derivatives, all six groups and complete
+pressure/covariance/axial memory. It joins that flat residual to the
+same-field punctured endpoint ledger with exact localization requests
+`A:m+4`, `B:m+3`, `p:m+2` and residual jet `m+1`. The checkpoint narrows an
+older diagnostic: the alternate `h=9/1000` sample is not the selected Q6
+object, so only `h=1/200`, `kappa=1/100000` are promoted. Uniform
+all-fixed-order `A,B,p` bounds through `|eta|=1` on every positive-`q`
+punctured compact remain the precise conditional premise; residual flatness
+does not regularize velocity or pressure at the terminal origin. The exact
+twelve-term localization and compact-force replay is next.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

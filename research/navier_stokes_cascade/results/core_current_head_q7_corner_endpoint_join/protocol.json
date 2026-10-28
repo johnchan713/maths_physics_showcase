@@ -1,0 +1,8 @@
+{
+  "parent_commit": "ae11c819e913e349d72855727799563cc6574933",
+  "object": "the exact Q1-Q6 locally finite field at h=1/200 and kappa=1/100000, with unchanged supports, gauges, cutoff sequence, pressure memory and enlarged A0/A1 requests",
+  "corner": "transfer every fixed Q6 residual jet through q<=4*(tau+|z|^(1/D)) on the closed eta chart without a physical support-distance or pointwise edge-weight floor",
+  "endpoint": "join punctured one-sided A, direct-swirl B and fixed-gauge pressure jets with exact localization requests A:m+4, B:m+3, p:m+2 and residual jet m+1",
+  "obstruction": "uniform all-fixed-order physical A/B/p bounds through |eta|=1 on every positive-q punctured compact remain an explicit premise; residual flatness at the origin does not prove them",
+  "scope": "conditional current-head Q7 corner and punctured-endpoint transfer only; localization, compact force, energy, comparison, exclusion and blow-up are not replayed here"
+}
