@@ -1542,6 +1542,15 @@ or constructing a future velocity. The older current-force checkpoint's
 energy statement is deliberately not promoted yet; fixed-time preterminal
 energy on this newly reconciled chain is the next obligation.
 
+The [current log-reserved preterminal-energy join](results/core_current_log_reserved_preterminal_energy_join/README.md)
+now applies the exact fixed-time energy identity to that same localized field
+and compact force. It uses a square-root regularization at the zero datum and
+retains `E(t)+2 integral_0^t D <= F(t)^2`. Consequently, the terminal energy
+and total-dissipation bounds are finite separately. They cannot be added
+under one unchanged `F(1)^2` budget; the frozen scalar negative control rules
+out that stronger inference. No terminal field regularity, pressure recovery,
+comparison, exclusion, or blow-up conclusion is promoted.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

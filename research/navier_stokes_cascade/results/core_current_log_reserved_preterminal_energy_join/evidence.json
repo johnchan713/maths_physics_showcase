@@ -1,0 +1,211 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_corrected_force_join/evidence.json": "d9134eb24000b86eced91780b8a8f36bb11e79c311d4947c56bf2352f99b55b3",
+    "results/core_current_log_reserved_corner_endpoint_join/evidence.json": "2f79f01af5c8636da08a8012fe7f23951b814170f79dad9d66119264c6d31d8d",
+    "results/core_current_log_reserved_localization_force_join/evidence.json": "c09738a25928f8946f367b809aa44b07918e4a71f567d5d455e104702d530087",
+    "results/core_current_log_reserved_residual_reconciliation/evidence.json": "bf5d045c4339ca8bcd38f0262661817758c0d7a309e7fa70795e1fea481ea02c",
+    "results/core_log_reserved_preterminal_energy_replay/evidence.json": "91aa84f5301724c77c5a7dd0d2480b0a39c3b883da9ba374dca72f5c084d07ad",
+    "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc"
+  },
+  "flags": {
+    "complete_pressure_memory_and_unit_viscosity_retained": true,
+    "energy_and_dissipation_terminal_limits_taken_separately": true,
+    "exact_current_localized_field_and_force_used": true,
+    "factor_two_dissipation_retained": true,
+    "future_velocity_or_pressure_constructed": false,
+    "pressure_recovery_or_comparison_replayed_here": false,
+    "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+    "unconditional_pulse_residual_force_exclusion_or_blowup_proved": false,
+    "zero_norm_regularization_retained": true
+  },
+  "gates": {
+    "all_declared_dependency_sources_match": true,
+    "eleven_exact_energy_controls": true,
+    "exact_current_preterminal_energy_joined": true,
+    "scientific_scope_retained": true,
+    "six_frozen_dependencies": true
+  },
+  "inherited_source_checks": {
+    "core_corrected_force_join:results/core_corrected_force_join/.gitignore": true,
+    "core_corrected_force_join:results/core_corrected_force_join/README.md": true,
+    "core_corrected_force_join:results/core_corrected_force_join/audit.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/controls.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/localization.py": true,
+    "core_corrected_force_join:results/core_corrected_force_join/requirements.txt": true,
+    "core_corrected_force_join:results/core_corrected_force_join/test_audit.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_corner_flatness_obstruction/corner.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/.gitignore": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/README.md": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/audit.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/protocol.json": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/requirements.txt": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/test_audit.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_corner_endpoint_join/transfer.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_current_log_reserved_residual_reconciliation/residual.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/core_primitive_margin_normalization_reconciliation/margins.py": true,
+    "core_current_log_reserved_corner_endpoint_join:results/current_endpoint_jets/endpoint.py": true,
+    "core_current_log_reserved_localization_force_join:results/core_corrected_force_join/localization.py": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_corner_endpoint_join/transfer.py": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_localization_force_join/.gitignore": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_localization_force_join/README.md": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_localization_force_join/audit.py": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_localization_force_join/localization_force.py": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_localization_force_join/protocol.json": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_localization_force_join/requirements.txt": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_localization_force_join/test_audit.py": true,
+    "core_current_log_reserved_localization_force_join:results/core_current_log_reserved_residual_reconciliation/residual.py": true,
+    "core_current_log_reserved_localization_force_join:results/current_endpoint_jets/endpoint.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_complete_potential_diagonal_join/diagonal.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/.gitignore": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/README.md": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/audit.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/protocol.json": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/requirements.txt": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/residual.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_reserved_residual_reconciliation/test_audit.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_current_log_source_reconciliation/reconcile.py": true,
+    "core_current_log_reserved_residual_reconciliation:results/core_log_reserved_complete_residual_replay/replay.py": true,
+    "core_log_reserved_preterminal_energy_replay:results/core_log_reserved_preterminal_energy_replay/.gitignore": true,
+    "core_log_reserved_preterminal_energy_replay:results/core_log_reserved_preterminal_energy_replay/README.md": true,
+    "core_log_reserved_preterminal_energy_replay:results/core_log_reserved_preterminal_energy_replay/audit.py": true,
+    "core_log_reserved_preterminal_energy_replay:results/core_log_reserved_preterminal_energy_replay/preterminal_energy.py": true,
+    "core_log_reserved_preterminal_energy_replay:results/core_log_reserved_preterminal_energy_replay/protocol.json": true,
+    "core_log_reserved_preterminal_energy_replay:results/core_log_reserved_preterminal_energy_replay/requirements.txt": true,
+    "core_log_reserved_preterminal_energy_replay:results/core_log_reserved_preterminal_energy_replay/test_audit.py": true,
+    "force_foundation:results/coefficient_support_audit/evidence.json": true,
+    "force_foundation:results/compact_mean_foundation/evidence.json": true,
+    "force_foundation:results/current_localized_force/evidence.json": true,
+    "force_foundation:results/current_localized_force/forcing.py": true,
+    "force_foundation:results/endpoint_foundation/evidence.json": true,
+    "force_foundation:results/finite_induction_foundation/evidence.json": true,
+    "force_foundation:results/force_foundation/.gitignore": true,
+    "force_foundation:results/force_foundation/README.md": true,
+    "force_foundation:results/force_foundation/audit.py": true,
+    "force_foundation:results/force_foundation/localized_bounds.py": true,
+    "force_foundation:results/force_foundation/localized_checks.py": true,
+    "force_foundation:results/force_foundation/protocol.json": true,
+    "force_foundation:results/force_foundation/requirements.txt": true,
+    "force_foundation:results/force_foundation/test_audit.py": true,
+    "force_foundation:results/global_moment_stress/evidence.json": true,
+    "force_foundation:results/localized_force_extension/evidence.json": true,
+    "force_foundation:results/realization_foundation/evidence.json": true,
+    "force_foundation:results/realization_foundation/realized_checks.py": true
+  },
+  "protocol": {
+    "correction": "retain the fixed-time joint estimate and the two separate endpoint bounds; do not add the energy supremum and total dissipation under one unchanged force budget",
+    "parent_commit": "ee84777c08fe7c3878c4aef9dc728273cdaf2eb4",
+    "result": "replay the exact preterminal kinetic-energy identity and its valid endpoint consequences for the current log-reserved localized field and compact force",
+    "scope": "conditional preterminal energy and dissipation only; terminal field regularity, future velocity/pressure, pressure recovery, comparison and blow-up remain open"
+  },
+  "remaining_obligations": [
+    "replay fixed-gauge pressure recovery for the exact current field and compact force with -div(f) retained",
+    "prove expanding-ball comparison for every admissible smooth finite-energy competitor with the same datum and force",
+    "only then revisit competitor exclusion; no unconditional blow-up claim is available"
+  ],
+  "review": {
+    "checks": {
+      "complete_pressure_and_force_divergence_parent_retained": true,
+      "endpoint_energy_and_dissipation_bounds_are_separate": true,
+      "exact_current_localized_field_and_force_used": true,
+      "fixed_time_factor_two_retained": true,
+      "pressure_flux_vanishes_by_compact_support_and_divergence_free_velocity": true,
+      "regularized_square_root_handles_zero_energy": true,
+      "stronger_combined_endpoint_budget_is_refuted": true,
+      "terminal_dissipation_uses_monotone_convergence_only": true,
+      "transport_flux_vanishes_by_compact_support_and_divergence_free_velocity": true,
+      "unit_viscosity_gives_positive_gradient_dissipation": true,
+      "zero_initial_datum_from_time_cutoff_retained": true
+    },
+    "endpoint": {
+      "dissipation": "integral_0^1 D(t) dt<=F(1)^2/2",
+      "energy": "sup_(t<1) E(t)<=F(1)^2",
+      "force_integrability": "the current compact smooth force has F(1)<infinity",
+      "limit_method": "monotone convergence of the nonnegative dissipation integral as t increases to 1",
+      "no_terminal_u_or_p_required": true
+    },
+    "fixed_time": "E(t)+2 integral_0^t D(s) ds <= F(t)^2 for every t<1",
+    "identity": {
+      "definitions": "E=||u||_2^2; D=||grad u||_2^2; F(t)=integral_0^t ||f(s)||_2 ds",
+      "differential": "0.5 E'(t)+D(t)=<f(t),u(t)>",
+      "pressure": "integral u.grad p=0",
+      "transport": "integral u.(u.grad)u=0",
+      "viscosity": "-integral u.Delta u=||grad u||_2^2"
+    },
+    "invalid_strengthening": {
+      "diagnostic": {
+        "epsilon": "1/100",
+        "force_L1": "201/200",
+        "force_budget_squared": "40401/40000",
+        "forcing": "g=y'+y is nonnegative; g=1/epsilon+t/epsilon on [0,epsilon] and zero later",
+        "lower_bound_for_sup_y2_plus_twice_integral_y2": "37349/22350",
+        "path": "y=t/epsilon on [0,epsilon], then y=exp(-(t-epsilon)) on [epsilon,1]",
+        "strict_gap": "11819953/17880000"
+      },
+      "diagnostic_is_not_a_Navier_Stokes_solution": true,
+      "historical_value_matches": true,
+      "rejected": "sup_(t<1) E(t)+2 integral_0^1 D(t)dt<=F(1)^2"
+    },
+    "sample_budgets": [
+      {
+        "dissipation_budget": "0",
+        "energy_budget": "0",
+        "force_integral": "0",
+        "joint_budget": "0"
+      },
+      {
+        "dissipation_budget": "1/200",
+        "energy_budget": "1/100",
+        "force_integral": "1/10",
+        "joint_budget": "1/100"
+      },
+      {
+        "dissipation_budget": "1/2",
+        "energy_budget": "1",
+        "force_integral": "1",
+        "joint_budget": "1"
+      },
+      {
+        "dissipation_budget": "40401/80000",
+        "energy_budget": "40401/40000",
+        "force_integral": "201/200",
+        "joint_budget": "40401/40000"
+      },
+      {
+        "dissipation_budget": "50",
+        "energy_budget": "100",
+        "force_integral": "10",
+        "joint_budget": "100"
+      }
+    ],
+    "scope": {
+      "exact_current_field_preterminal_energy_identity_replayed_conditionally": true,
+      "expanding_ball_comparison_or_competitor_exclusion_proved": false,
+      "fixed_gauge_pressure_recovery_replayed_here": false,
+      "future_velocity_or_pressure_constructed": false,
+      "separate_finite_energy_and_total_dissipation_bounds_obtained_conditionally": true,
+      "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+      "unconditional_pulse_residual_force_or_blowup_claimed": false
+    },
+    "zero_start": {
+      "bound": "Y_delta'<=||f||_2 sqrt(E)/sqrt(E+delta^2)<=||f||_2",
+      "delta": "1/1000",
+      "derivative": "Y_delta'=E'/(2 sqrt(E+delta^2))",
+      "integrated": "sqrt(E(t)+delta^2)<=delta+F(t)",
+      "limit": "sqrt(E(t))<=F(t)",
+      "quantity": "Y_delta=sqrt(E+delta^2)"
+    }
+  },
+  "source_hashes": {
+    "results/core_corrected_force_join/localization.py": "f0118ef3640ade0632432122cf47127aea527cd7c9be9b39da777b482caed4ac",
+    "results/core_current_log_reserved_localization_force_join/localization_force.py": "5967fca723bcf49edc3885c230697ee8c96a988c8d83384a349226f4be740356",
+    "results/core_current_log_reserved_preterminal_energy_join/.gitignore": "65830710427515752dacdd67e34d7d204f767d38df54cb4fa0d903e60baf1a34",
+    "results/core_current_log_reserved_preterminal_energy_join/README.md": "51024e81896e97a0fe62a8b2835d7e2b2086931856558a9e72458b24633ffaf6",
+    "results/core_current_log_reserved_preterminal_energy_join/audit.py": "6656bd1b59d881f526884144bfb99993171720201374b52baa5d756c426f63ef",
+    "results/core_current_log_reserved_preterminal_energy_join/preterminal_energy.py": "043184d9ca3324b3d7ede7a21ef2279701cee970ce361922a424c61d0959d2fd",
+    "results/core_current_log_reserved_preterminal_energy_join/protocol.json": "5095168ebdc8d9bf8766b4421433b8d69db513061e88b5f28b0aa09269669332",
+    "results/core_current_log_reserved_preterminal_energy_join/requirements.txt": "d195d93d1dbb2461b703d41642ba0796d275e4cd0438897c2f11f824f578a3e9",
+    "results/core_current_log_reserved_preterminal_energy_join/test_audit.py": "6d336fdb40c94af25290cb4f952a64f3995ff95b015edabba4851b67a2743c4d",
+    "results/core_log_reserved_preterminal_energy_replay/preterminal_energy.py": "e145a9505490ca807019179843904c84ed1207b725e56c71e1ffe7ac0b4bf587"
+  },
+  "status": "current-log-reserved-preterminal-energy-joined-conditionally"
+}
