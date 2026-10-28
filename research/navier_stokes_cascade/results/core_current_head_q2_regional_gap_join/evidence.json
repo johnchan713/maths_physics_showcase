@@ -1,0 +1,168 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_activation_volterra_recheck/evidence.json": "fe89046be2824d6d88d96e5fd0d660ea28cc14e965b36f33145c4e482fbfae88",
+    "results/core_current_head_primitive_frontier_audit/evidence.json": "9a7e4521af282ecfb8a699bb66e852bc3c367adfb40e7b8f71d0e7b2f4f954de",
+    "results/core_current_head_q1_exact_map_join/evidence.json": "2163895c04626750c32ba4df499e1a7dd95c4aed54b06753da5cc402b3622961",
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/core_leading_background_seminorm_reconstruction/evidence.json": "fb58eeb5071645adaf4f64df4814a7f91c628e9602320d20027758ceb281b0f1",
+    "results/core_leading_profile_certificate/evidence.json": "3e540aa5be3669ba682ff6f9ad03e40f15abb24869583ec40ad1299ff5574aff",
+    "results/core_primary_tail_recheck/evidence.json": "d0cb62531e34a664b34f0bb7eaec20eecd1e1e9447ab2b3e48765de886934b3e",
+    "results/core_same_band_gap_join/evidence.json": "b240040bacac856e039b6320f734078ce486cd48b1d91c02ddb6ba6396c291be",
+    "results/core_same_band_gap_reconstruction/evidence.json": "cfb45fd4152877bdccae26f5e533c6bdb51747b65dca8d4176b8bd2007e62d0c",
+    "results/explicit_tilt_pulse_tail/evidence.json": "430fe9f055c92581a813530934ddc7f2561984dc5b179c8a5ca24601e7dda9e1",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/weighted_background_edges/evidence.json": "04eb035805766e43a80c93bb0a215bfb05e1be60364c18da7791d70c7a0abc2c",
+    "results/weighted_stress_foundation/evidence.json": "5033fd870260a6561b9e4a2c342a9cc67365d077c8acc802e32a2a08de59882a"
+  },
+  "gates": {
+    "nine_exact_graph_and_interface_controls": true,
+    "scientific_scope_preserved": true,
+    "thirteen_direct_provider_records": true
+  },
+  "protocol": {
+    "correction": "the leading stress has zero absolute magnitude infimum at both flat annular edges, and the older existing-tilt sufficient gate is not certified; Q2 uses the exact weighted edge factors and the separately certified explicit later-tail route",
+    "identity": "the Q1 pressure datum, h=lambda^2, width C^-20, supports, selected roots, complete leading pressure memory and later-tail field are unchanged",
+    "parent_commit": "290f6d1b20675997b9eb47799283781220e3eef1",
+    "result": "bind the exact Q1 object to the finite regional continuum gaps, factored flat-edge stress, explicit later-tail tilt and one positive same-band perturbation radius",
+    "scope": "current-head Q2 provider join and exact interface recheck only; Q3 full-frame primitive/path bounds remain, and no unconditional pulse, residual, force, exclusion or blow-up theorem is claimed"
+  },
+  "remaining_obligations": [
+    "audit Q3 on this Q1-Q2 object: the original full-frame primitive, moving-normal path ODE, complete phase jets and accepted physical domain on the same later tail",
+    "then audit fixed compensator/projector supports and compact/slow inverse weighted domains before promoting generated sources",
+    "retain complete covariance means including axial velocity, curl remainders, Pi1/Pi2 and every positive-order, wave, mean, localization and forced pressure component",
+    "only after those obligations may complete viscosity/cutoff/interaction residual, force, exclusion or blow-up claims be reconsidered"
+  ],
+  "review": {
+    "checks": {
+      "all_declared_dependency_hashes_match": true,
+      "all_declared_source_hashes_match": true,
+      "all_twelve_Q2_provider_statuses_match": true,
+      "corrected_first_outer_ramp_floor_exceeds_one_half": true,
+      "every_same_tilt_perturbation_row_is_strictly_positive": true,
+      "flat_edge_contract_is_weighted_and_factored": true,
+      "historical_uncertified_existing_tilt_gate_is_not_used": true,
+      "provider_graph_is_acyclic": true,
+      "ten_region_cover_has_exact_shared_endpoints": true
+    },
+    "graph": {
+      "dependency_hash_checks": 1005,
+      "edges": 1005,
+      "nodes": 240,
+      "source_hash_checks": 3829
+    },
+    "interface_controls": {
+      "corrected_outer_ramp_floor": "0.58615931165792861430599575312569545370475491670969128617912039406251195084770282",
+      "edge": {
+        "absolute_open_annulus_stress_infimum": "0",
+        "inner_factor": "T0=exp(-t1^2/ya^2)*Aa, |Aa|>=ca>0",
+        "normalized_directions_extend_smoothly": true,
+        "outer_factor": "T0=exp(-4/yb^2)*yb^-3*(b0,yb^6*bz), b0>0",
+        "positive_absolute_stress_floor": false,
+        "valid_lower_bound": "|T0|>=c*zeta",
+        "weight": "zeta=exp(-t1^2/ya^2-4/yb^2)"
+      },
+      "excluded_route": "leading_cone_margin existing-u sufficient gate",
+      "perturbation_radius": "33/387618781940",
+      "perturbation_rows": {
+        "D": "1/550",
+        "F": "1/10",
+        "minus_gtheta": "1/14",
+        "orientation": "1/390",
+        "relative_stress": "1/2",
+        "same_tilt_cone": "33/387618781940"
+      },
+      "pressure_memory": "full F,G axial transport, Pi1/Pi2 and later positive-order, wave, mean, localization and forced pressure terms are retained",
+      "tilt_route": "explicit_tilt_pulse_tail -> core_primary_tail_recheck -> core_same_band_gap_join/reconstruction"
+    },
+    "provider_status_checks": {
+      "core_activation_volterra_recheck": true,
+      "core_current_head_q1_exact_map_join": true,
+      "core_growth_activation": true,
+      "core_leading_background_seminorm_reconstruction": true,
+      "core_leading_profile_certificate": true,
+      "core_primary_tail_recheck": true,
+      "core_same_band_gap_join": true,
+      "core_same_band_gap_reconstruction": true,
+      "explicit_tilt_pulse_tail": true,
+      "regional_cone_join": true,
+      "weighted_background_edges": true,
+      "weighted_stress_foundation": true
+    },
+    "regional_cover": {
+      "exact_shared_endpoints": true,
+      "regions": [
+        {
+          "left": "Xminus",
+          "region": "activation",
+          "right": "Xa*exp(delta)"
+        },
+        {
+          "left": "Xa*exp(delta)",
+          "region": "reduced_continuation",
+          "right": "Xi"
+        },
+        {
+          "left": "Xi",
+          "region": "shape",
+          "right": "Xsep"
+        },
+        {
+          "left": "Xsep",
+          "region": "ideal_prejoin",
+          "right": "XR*exp(-8)"
+        },
+        {
+          "left": "XR*exp(-8)",
+          "region": "five_moment_join",
+          "right": "XR*exp(-5)"
+        },
+        {
+          "left": "XR*exp(-5)",
+          "region": "ideal_after_join",
+          "right": "XR"
+        },
+        {
+          "left": "XR",
+          "region": "first_outer_ramp",
+          "right": "XR*exp(1)"
+        },
+        {
+          "left": "XR*exp(1)",
+          "region": "axial_Md64",
+          "right": "XR*exp(T+1)"
+        },
+        {
+          "left": "XR*exp(T+1)",
+          "region": "intermediate_ramp",
+          "right": "XR*exp(T+2)"
+        },
+        {
+          "left": "XR*exp(T+2)",
+          "region": "intermediate_power",
+          "right": "Xrep=Xstar"
+        }
+      ]
+    },
+    "scope": {
+      "Q1_exact_object_is_a_direct_dependency": true,
+      "Q2_positive_same_band_radius_rechecked": true,
+      "Q2_regional_continuum_and_factored_edge_chain_bound_on_that_object": true,
+      "Q3_full_frame_primitive_domain_discharged": false,
+      "every_provider_theorem_independently_reproved_here": false,
+      "hashes_tests_or_interval_diagnostics_treated_as_continuum_proof": false,
+      "historical_uncertified_existing_tilt_gate_used": false,
+      "positive_absolute_stress_infimum_at_flat_edges_claimed": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q2_regional_gap_join/.gitignore": "87a6e5b9aa0065719749aebbeeae98714cc5fc40e0a3465fad03eba848d74e33",
+    "results/core_current_head_q2_regional_gap_join/README.md": "a75b85f7acf75f692734a0c9e096c52d6cc7bd25e27cc681adc36ad66c447ae9",
+    "results/core_current_head_q2_regional_gap_join/audit.py": "dbb1ced7a568c0e3044e2e97badb63474d5e34a149376ae73a1fb797d8b68019",
+    "results/core_current_head_q2_regional_gap_join/protocol.json": "462570226d9414d8bfd91cc59a608723899a948a838b94e1d625915bf53545c3",
+    "results/core_current_head_q2_regional_gap_join/regional_gaps.py": "b7aa50529c63ad01fc592363b70dda9abbf477b939717384ca0bfa15290d8fd0",
+    "results/core_current_head_q2_regional_gap_join/requirements.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "results/core_current_head_q2_regional_gap_join/test_audit.py": "91a4baeec59984f7e86cf33e9b9449bb4841f8ee8eb71b2f410cd01c01c56fed"
+  },
+  "status": "current-head-Q2-regional-continuum-factored-edges-and-same-band-gap-bound"
+}

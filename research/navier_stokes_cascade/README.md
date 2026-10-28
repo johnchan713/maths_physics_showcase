@@ -1592,6 +1592,18 @@ dependency hashes and 3,822 source hashes. It advances only Q1; Q2 regional
 continuum infima and Q3 full-frame primitive/path bounds remain before any
 unconditional pulse, residual, force, exclusion or blow-up conclusion.
 
+The [current-head Q2 regional-gap join](results/core_current_head_q2_regional_gap_join/README.md)
+now binds that exact Q1 object to the ten-piece analytic regional cover,
+corrected first outer-ramp comparison, factored flat-edge stress and explicit
+later-tail same-tilt cone route. It records the genuine obstruction
+`inf |T0|=0` at the flat annular edges and uses instead
+`|T0|>=c zeta` with smooth limiting directions and relative-stress control.
+The inherited uncertified existing-tilt sufficient gate is excluded; the
+separately certified explicit-tail route yields a positive exact
+`rho_gap`. This advances Q2 only. Q3 full-frame primitive/path bounds,
+complete covariance means and the complete residual remain before any
+unconditional pulse, force, exclusion or blow-up conclusion.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL
