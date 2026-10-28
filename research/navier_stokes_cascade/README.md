@@ -1690,6 +1690,18 @@ terminal field regularity, energy, comparison, exclusion or blow-up result is
 promoted. The next obligation is the exact preterminal energy replay with the
 factor-two dissipation bound and separate terminal limits.
 
+The [current-head Q9 preterminal energy join](results/core_current_head_q9_preterminal_energy_join/README.md)
+now binds the exact conditional Q8 field and compact force to
+`0.5 E'(t)+D(t)=<f(t),u(t)>`. Square-root regularization at the zero initial
+datum gives `sqrt(E(t))<=F(t)`, hence the sharp fixed-time estimate
+`E(t)+2 integral_0^t D<=F(t)^2`. The terminal conclusions remain separate:
+`sup_(t<1) E(t)<=F(1)^2` and `integral_0^1 D<=F(1)^2/2`; an exact scalar
+control refutes adding those two extrema under one unchanged budget. The Q8
+punctured endpoint inequality remains conditional, and no terminal field
+trace, comparison, exclusion or blow-up conclusion is promoted. The next
+obligation is fixed-gauge pressure recovery with `-div(f)` retained, followed
+by expanding-ball comparison for admissible same-force finite-energy fields.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

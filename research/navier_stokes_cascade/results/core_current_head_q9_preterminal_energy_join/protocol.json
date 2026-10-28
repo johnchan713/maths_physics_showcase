@@ -1,0 +1,9 @@
+{
+  "parent_commit": "ea485170aed8d1fd9550539cddbeb512f4e9317c",
+  "object": "the exact conditional Q8 divergence-free compactly supported field and compact smooth force, with unit viscosity, complete fixed-gauge pressure and all twelve localization terms",
+  "identity": "0.5*E'(t)+D(t)=<f(t),u(t)> for every t<1, followed by zero-safe square-root regularization",
+  "fixed_time": "E(t)+2*integral_0^t D <= F(t)^2 with F(t)=integral_0^t ||f||_2",
+  "terminal": "take sup energy and monotone dissipation limits separately; do not add their endpoint extrema under one unchanged F(1)^2 budget",
+  "obstruction": "Q8's all-fixed-order punctured endpoint inequality remains conditional and is inherited by the compact force and energy conclusion",
+  "scope": "conditional current-head Q9 preterminal energy and total dissipation only; no terminal field trace, pressure recovery, comparison, exclusion or blow-up"
+}
