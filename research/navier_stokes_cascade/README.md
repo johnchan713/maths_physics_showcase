@@ -1702,6 +1702,21 @@ trace, comparison, exclusion or blow-up conclusion is promoted. The next
 obligation is fixed-gauge pressure recovery with `-div(f)` retained, followed
 by expanding-ball comparison for admissible same-force finite-energy fields.
 
+The [current-head Q10 pressure and comparison join](results/core_current_head_q10_pressure_comparison_join/README.md)
+now binds Q9 to fixed-gauge pressure-gradient recovery and expanding-ball
+comparison. Both individual pressure equations retain `-div(f)` and the
+common force cancels exactly once. Finite energy plus momentum removes the
+harmonic pressure-gradient ambiguity; Poisson alone does not. The compact
+mixed pressure, `L^(4/3)` commutator, eighth-power cutoff and every boundary
+term leave the cutoff Laplacian's limiting `R^-2` remainder, so fixing
+`T<1` before sending `R` to infinity proves conditional equality with every
+locally smooth same-force competitor having a fixed-interval `L2` bound.
+Joining the same protected-core path conditionally excludes a globally
+smooth finite-energy competitor. The Q8 endpoint inequality and upstream
+continuum contracts remain unproved, so no unconditional admissible-force,
+exclusion or blow-up result is claimed. The next obligation is a current-head
+dependency and quantifier audit of every remaining conditional contract.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

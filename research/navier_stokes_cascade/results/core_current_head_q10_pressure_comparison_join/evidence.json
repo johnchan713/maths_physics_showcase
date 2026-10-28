@@ -1,0 +1,188 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q9_preterminal_energy_join/evidence.json": "7e1c5047c3420e13251b482cc280325ac1de2793424c7418c2c0a99d855d6260",
+    "results/core_current_log_reserved_pressure_comparison_join/evidence.json": "8ad0c77e3b68ca737448db44f2ce8532ee9cfb184392145490fc770d0aa44ef9",
+    "results/core_current_log_source_reconciliation/evidence.json": "2d771039c61aeddc5a3d3c58fd8dea57d9a1379bb0c0356678c93f964d011cf0",
+    "results/core_leading_profile_certificate/evidence.json": "3e540aa5be3669ba682ff6f9ad03e40f15abb24869583ec40ad1299ff5574aff",
+    "results/core_log_reserved_pressure_comparison_replay/evidence.json": "950f85a90508853038b8c91be6824eff9f49a27419a02af1407ef8540c35bffc",
+    "results/core_same_field_positive_core_reconciliation/evidence.json": "21151dd33b0c85350655cd06deaf950efcefe15b8c579135d7deb8bfef848f84"
+  },
+  "gates": {
+    "all_dependency_hashes_match": true,
+    "all_inherited_source_hashes_match": true,
+    "provider_graph_is_acyclic": true,
+    "scientific_scope_preserved": true,
+    "six_direct_provider_records": true,
+    "thirteen_exact_Q10_controls": true
+  },
+  "graph": {
+    "dependency_hash_checks": 1079,
+    "edges": 1079,
+    "nodes": 248,
+    "source_hash_checks": 3897
+  },
+  "protocol": {
+    "competitor": "locally smooth same-force zero-datum field with a uniform L2 bound on every fixed preterminal interval; no pressure decay or global derivative bound",
+    "limit": "fix T<1, send R to infinity, then approach the protected core; no uniform constants as T approaches one are required",
+    "object": "the exact conditional Q9 finite-energy field, complete fixed-gauge pressure and compact smooth force with zero datum",
+    "obstruction": "the Q8 all-fixed-order punctured endpoint inequality and every upstream Q1-Q8 continuum contract remain conditional",
+    "parent_commit": "45f5106e3e805007f5895cc5330af784d18d5d9c",
+    "pressure": "retain -div(f) in both individual pressure equations, cancel the common force once, and use momentum plus finite energy to remove the harmonic pressure-gradient ambiguity",
+    "radius": "use the compact mixed pressure, L^(4/3) quadratic commutator, eighth-power cutoff and all remainders through the limiting R^-2 term",
+    "scope": "conditional Q10 pressure recovery, comparison and finite-energy competitor exclusion only; no future solution or unconditional admissible-force, exclusion or blow-up theorem"
+  },
+  "remaining_obligations": [
+    "prove the Q8 punctured endpoint inequality and every still-conditional Q1-Q8 provider contract",
+    "audit the complete current-head dependency graph and quantify the exact remaining analytical primitives",
+    "do not promote conditional same-force comparison or exclusion to an unconditional admissible-force or blow-up theorem"
+  ],
+  "review": {
+    "blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+    "checks": {
+      "Q8_endpoint_premise_remains_conditional": true,
+      "all_limit_and_core_checks_close": true,
+      "all_pressure_recovery_checks_close": true,
+      "all_radius_checks_close": true,
+      "competitor_requires_local_smoothness_and_fixed_interval_L2": true,
+      "complete_fixed_gauge_pressure_memory_is_not_replaced": true,
+      "conditional_exclusion_uses_same_protected_core_field": true,
+      "exact_Q9_finite_energy_field_and_force_used": true,
+      "finite_energy_hypothesis_is_not_removed": true,
+      "fixed_time_then_radius_then_core_order_retained": true,
+      "force_divergence_is_retained_then_cancels_once": true,
+      "no_future_solution_or_unconditional_blowup_is_inferred": true,
+      "six_selected_provider_statuses_match": true
+    },
+    "conditional_conclusion": {
+      "comparison": "v=u on R^3 x [0,T] for every fixed T<1",
+      "core": "|u_theta(x_tau,1-tau)|>=(e0/2) tau^-A",
+      "exclusion": "a globally smooth locally bounded finite-energy same-force competitor is excluded relative to every frozen Q1-Q10 contract",
+      "pressure_gradient": "grad(P-p)=grad sum_ij R_i R_j(v_i v_j-u_i u_j)"
+    },
+    "interface": {
+      "competitor": "v,P locally smooth, same f and zero datum, sup_[0,T] ||v||_2 finite for every T<1",
+      "constructed": "exact Q9 u=curl(cA)+cB, p=cp0, compact smooth f, zero datum and finite energy",
+      "no_added_hypotheses": "no global competitor derivative, pressure-decay or dissipation bound"
+    },
+    "limit": {
+      "Gronwall": "E_R(t)<=2 C_T T exp(2 T L_T) R^-2 for each fixed T<1",
+      "Q9_limit_order": "fix T<1, recover pressure, send R to infinity, then approach the protected core",
+      "checks": {
+        "Q9_fixed_interval_constants_need_no_terminal_uniformity": true,
+        "constants_need_not_be_uniform_as_T_reaches_one": true,
+        "current_protected_core_path_is_joined_conditionally": true,
+        "cutoffs_need_not_be_monotone": true,
+        "equality_holds_on_every_fixed_preterminal_interval": true,
+        "fixed_ball_eventually_lies_in_cutoff_plateau": true,
+        "global_smooth_competitor_is_locally_bounded_near_terminal_point": true
+      },
+      "current_core": {
+        "bound": "|u_theta(x_tau,1-tau)|>=(e0/2) tau^-A",
+        "checks": {
+          "current_localization_uses_the_same_current_field": true,
+          "current_source_chain_starts_from_that_leading_profile": true,
+          "finalized_profile_keeps_axis_core_and_protected_collar": true,
+          "frozen_same_diagonal_core_bound_is_positive": true,
+          "localization_plateau_preserves_the_bound": true,
+          "no_unconditional_core_or_blowup_claim_imported": true
+        },
+        "path": "z=0, r=sqrt(2 X_in tau), q=tau, eta=0, X=X_in"
+      },
+      "limit_order": "fix T<1, then R->infinity, then approach the protected core as t->1",
+      "localized_inequality": "0.5 E_R'(t)+0.5 D_R(t)^2<=||grad u(t)||_infinity E_R(t)+C_T R^-2; E_R(0)=0"
+    },
+    "pressure": {
+      "Poisson_difference": "-Delta pi=partial_i partial_j g_ij",
+      "Q9_interface": "u,p,f have Q9 finite energy; v,P have the same f and zero datum and a fixed-interval L2 bound",
+      "checks": {
+        "L1_stress_requires_Hminus_s_strictly_above_three_halves": true,
+        "Poisson_equation_alone_is_insufficient": true,
+        "Q9_common_force_cancels_once": true,
+        "Q9_individual_pressure_keeps_force_divergence": true,
+        "common_force_cancels_exactly_once": true,
+        "harmonic_Hminus_three_gradient_vanishes": true,
+        "individual_force_divergence_is_retained": true,
+        "no_competitor_pressure_decay_or_temperedness_assumed": true,
+        "time_averaged_momentum_places_gradient_in_Hminus_three": true
+      },
+      "difference_equation": "w_t+div(g)=Delta w-grad(pi); div w=0",
+      "harmonic_counterexample": "without finite energy, v=t e1 and P=-x1 versus u=0,p=0 have the same zero datum and force but a nonzero harmonic pressure gradient",
+      "individual_pressures": "-Delta p=partial_i partial_j(u_i u_j)-div f; -Delta P=partial_i partial_j(v_i v_j)-div f",
+      "recovery": "pi_star=sum R_i R_j g_ij in L_infinity_t H^-2; for every compact time test, grad(pi-pi_star) is harmonic in H^-3 and hence zero",
+      "stress": "g=v tensor v-u tensor u=w tensor w+w tensor u+u tensor w"
+    },
+    "provider_status_checks": {
+      "core_current_head_q9_preterminal_energy_join": true,
+      "core_current_log_reserved_pressure_comparison_join": true,
+      "core_current_log_source_reconciliation": true,
+      "core_leading_profile_certificate": true,
+      "core_log_reserved_pressure_comparison_replay": true,
+      "core_same_field_positive_core_reconciliation": true
+    },
+    "radius": {
+      "checks": {
+        "Young_remainders_are_R_minus_four_and_R_minus_fourteen_fifths": true,
+        "coarse_cutoff_laplacian_limits_total_remainder_to_R_minus_two": true,
+        "commutator_is_L_four_thirds": true,
+        "commutator_norm_is_R_minus_three_quarters": true,
+        "compact_mixed_flux_decays_R_minus_five_halves": true,
+        "eighth_cutoff_power_is_required_by_this_pairing": true,
+        "far_commutator_integral_is_finite": true,
+        "limiting_remainder_is_R_minus_two": true,
+        "mixed_moment_is_not_assumed_isotropic": true,
+        "near_commutator_integral_is_finite": true,
+        "support_separation_is_R_over_two": true
+      },
+      "commutator_exponent": "4/3",
+      "commutator_kernel": "|z|^-3 min(|z|/R,1)",
+      "commutator_norm_decay": "3/4",
+      "commutator_radial_coefficient": "4",
+      "compact_mixed_pressure": "|pi_h|<=C H_T R^-3 and its annular flux is O(R^-5/2)",
+      "cutoff": "chi_R=phi(x/R)^8; phi=1 on B_1 and zero outside B_2",
+      "flux_rows": [
+        {
+          "Sobolev_offset": "5/2",
+          "Young_decay": "4",
+          "dissipation_power": "3/2",
+          "radius_power": "1",
+          "term": "quadratic_pressure_and_transport"
+        },
+        {
+          "Sobolev_offset": "5/2",
+          "Young_decay": "14/5",
+          "dissipation_power": "3/4",
+          "radius_power": "7/4",
+          "term": "quadratic_commutator"
+        }
+      ],
+      "support_split": "g=w tensor w+h; h=w tensor u+u tensor w; supp h subset K",
+      "worst_decay": "2"
+    },
+    "scope": {
+      "Q8_endpoint_uniform_all_order_bound_proved_here": false,
+      "Q9_expanding_ball_comparison_replayed_conditionally": true,
+      "Q9_fixed_gauge_pressure_gradient_recovered_conditionally": true,
+      "all_frozen_continuum_contracts_independently_reproved_here": false,
+      "competitor_pressure_decay_or_temperedness_assumed": false,
+      "finite_energy_hypothesis_removed": false,
+      "future_velocity_or_pressure_constructed": false,
+      "global_smooth_finite_energy_competitor_exclusion_follows_conditionally": true,
+      "hashes_or_tests_treated_as_continuum_proof": false,
+      "mixed_pressure_moment_isotropy_assumed": false,
+      "unconditional_admissible_force_exclusion_or_blowup_proved": false
+    }
+  },
+  "source_hashes": {
+    "results/core_corrected_comparison_join/comparison.py": "5d6cea13d3b6fc892fdc81bacd5e11e90614b21afd14124ed718bc3dd8492038",
+    "results/core_current_head_q10_pressure_comparison_join/.gitignore": "75e4ab44067f89c049e942ef700ad41713d8ae91bc4eedf9da9bcd4b7331ebf6",
+    "results/core_current_head_q10_pressure_comparison_join/README.md": "3c055b2e703bcabdd50015ba9a47333205c1428f033dc0f5f4d6ff1e9e213e8b",
+    "results/core_current_head_q10_pressure_comparison_join/audit.py": "3688e435a7df3ca26e60015166addf6bb549cd585388ccfe8ce269aae5466416",
+    "results/core_current_head_q10_pressure_comparison_join/pressure_comparison.py": "b974170fb19ba17428b116892ef362449da8c175c4151db874f50a6fa09341ba",
+    "results/core_current_head_q10_pressure_comparison_join/protocol.json": "7d02cdbb2d67c5bd893d13cfd6b599ae3e7226a8ae7058837ea148e3954ea565",
+    "results/core_current_head_q10_pressure_comparison_join/requirements.txt": "c1109af0273cdd02745f174b563025e7ba04266b62ee31aa14505dce41a71c2d",
+    "results/core_current_head_q10_pressure_comparison_join/test_audit.py": "0ecd71c129ff4b3aaf5bf065be95f63e7cea587b4fa30a414dff9ad3575047d0",
+    "results/core_current_head_q9_preterminal_energy_join/preterminal_energy.py": "e4bf64c82f069c5408fb607f17719e3eb6930001fe1eeefe1dc2ae6600c418d7",
+    "results/core_current_log_reserved_pressure_comparison_join/pressure_comparison.py": "fef3322f470aad433fe92e3f4febc42f1e46c2782fca708f557ada3fa302214b"
+  },
+  "status": "current-head-Q10-pressure-and-expanding-ball-comparison-joined-conditionally"
+}

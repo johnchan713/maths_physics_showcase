@@ -1,0 +1,10 @@
+{
+  "parent_commit": "45f5106e3e805007f5895cc5330af784d18d5d9c",
+  "object": "the exact conditional Q9 finite-energy field, complete fixed-gauge pressure and compact smooth force with zero datum",
+  "competitor": "locally smooth same-force zero-datum field with a uniform L2 bound on every fixed preterminal interval; no pressure decay or global derivative bound",
+  "pressure": "retain -div(f) in both individual pressure equations, cancel the common force once, and use momentum plus finite energy to remove the harmonic pressure-gradient ambiguity",
+  "radius": "use the compact mixed pressure, L^(4/3) quadratic commutator, eighth-power cutoff and all remainders through the limiting R^-2 term",
+  "limit": "fix T<1, send R to infinity, then approach the protected core; no uniform constants as T approaches one are required",
+  "obstruction": "the Q8 all-fixed-order punctured endpoint inequality and every upstream Q1-Q8 continuum contract remain conditional",
+  "scope": "conditional Q10 pressure recovery, comparison and finite-energy competitor exclusion only; no future solution or unconditional admissible-force, exclusion or blow-up theorem"
+}
