@@ -1675,6 +1675,21 @@ punctured compact remain the precise conditional premise; residual flatness
 does not regularize velocity or pressure at the terminal origin. The exact
 twelve-term localization and compact-force replay is next.
 
+The [current-head Q8 localization and compact-force join](results/core_current_head_q8_localization_force_join/README.md)
+now applies the exact twelve-term unit-viscosity identity to the Q7 field.
+It retains every cutoff derivative, the whole fixed-gauge pressure cutoff,
+both nonlinear cross orientations, the curl square and `-div(f)` in the
+forced pressure equation. It corrects the older derivative-ledger wording:
+direct localized-force jets need `A:m+2`, `B:m+1`, `p:m`, and Cauchy
+convergence needs one further time derivative; Q7's larger orders therefore
+leave one unused field derivative in every channel. Conditional on the still
+unproved punctured endpoint inequality, the Cartesian-flat corner and finite
+punctured cover yield compact smooth terminal force jets, which one
+actual-norm Borel diagonal extends to a compact smooth future force. No
+terminal field regularity, energy, comparison, exclusion or blow-up result is
+promoted. The next obligation is the exact preterminal energy replay with the
+factor-two dissipation bound and separate terminal limits.
+
 The [constructive auxiliary geometry](results/auxiliary_geometry_audit/README.md)
 now gives a 1,250-color rule, rational centers with denominator 2,003,
 and a fixed positive radius proving closed support separation across ALL

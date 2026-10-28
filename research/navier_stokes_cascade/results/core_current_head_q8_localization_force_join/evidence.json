@@ -1,0 +1,498 @@
+{
+  "dependency_evidence_sha256": {
+    "results/core_corrected_force_join/evidence.json": "d9134eb24000b86eced91780b8a8f36bb11e79c311d4947c56bf2352f99b55b3",
+    "results/core_current_head_q7_corner_endpoint_join/evidence.json": "6799ac48a2e73a3d50e9790d27439106e02a5e2fdefd298413a7c1abc75b1ddf",
+    "results/core_current_log_reserved_localization_force_join/evidence.json": "c09738a25928f8946f367b809aa44b07918e4a71f567d5d455e104702d530087",
+    "results/core_log_reserved_localization_force_replay/evidence.json": "08d502eb76fd4f30bc628c672094336acbbeb955dc4f1dfddb555c655ba695b6",
+    "results/current_localized_force/evidence.json": "70f3240badb5a8c7d55c2df150b550fec815ecd84314800edd3d5057bb3e6cb1",
+    "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc"
+  },
+  "gates": {
+    "all_dependency_hashes_match": true,
+    "all_inherited_source_hashes_match": true,
+    "provider_graph_is_acyclic": true,
+    "scientific_scope_preserved": true,
+    "six_direct_provider_records": true,
+    "twelve_exact_Q8_controls": true
+  },
+  "graph": {
+    "dependency_hash_checks": 1067,
+    "edges": 1067,
+    "nodes": 246,
+    "source_hash_checks": 3877
+  },
+  "protocol": {
+    "force_extension": "conditional on the Q7 punctured endpoint premise, join the Cartesian-flat corner and compact punctured cover and use one Borel diagonal selected from the actual finite terminal force norms",
+    "ledger_correction": "direct localized-force differentiation needs only A:m+2, B:m+1, p:m; one next time derivative needs A:m+3, B:m+2, p:m+1, while Q7 supplies A:m+4, B:m+3, p:m+2",
+    "localization": "u=curl(c*A)+c*B=c*u0+d, d=grad(c) cross A, p=c*p0, at unit viscosity with the complete twelve-term residual identity",
+    "object": "the exact Q1-Q7 field at h=1/200 and kappa=1/100000, with unchanged supports, gauges, cutoff sequence, complete pressure memory, axial velocity and enlarged A0/A1 requests",
+    "parent_commit": "1b1014d62f3eb33fd776caa3b850ed4ac8f37994",
+    "pressure": "retain the entire fixed-gauge p0*grad(c) term and -div(f) in the forced pressure equation, with no regauging or compact-support-preserving Leray projection",
+    "scope": "conditional current-head Q8 localization and one smooth compact force only; endpoint bounds, terminal field regularity, energy, comparison, exclusion and blow-up are not proved here"
+  },
+  "remaining_obligations": [
+    "prove the Q7 all-fixed-order punctured endpoint inequality for the actual A B and fixed-gauge pressure providers",
+    "replay the fixed-time preterminal energy identity on this exact localized Q8 field and force with factor-two dissipation",
+    "take terminal energy and dissipation limits separately before fixed-gauge pressure recovery and expanding-ball comparison",
+    "do not promote terminal field regularity or an unconditional exclusion or blow-up theorem"
+  ],
+  "review": {
+    "blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+    "checks": {
+      "Q7_corner_endpoint_parent_is_unchanged": true,
+      "conditional_corner_punctured_cover_gives_terminal_force_jets": true,
+      "endpoint_premise_remains_explicit": true,
+      "energy_comparison_exclusion_and_blowup_are_not_replayed": true,
+      "exact_twelve_term_identity_replayed": true,
+      "forced_pressure_equation_retains_force_divergence": true,
+      "one_actual_norm_Borel_diagonal_closes": true,
+      "only_apparent_thirteenth_group_vanishes": true,
+      "sharp_ledger_correction_closes_with_Q7_reserve": true,
+      "terminal_field_regularization_is_not_inferred": true,
+      "three_selected_provider_statuses_match": true,
+      "unit_viscosity_pressure_crosses_and_square_retained": true
+    },
+    "force_samples": [
+      {
+        "Q7_order_reserve": {
+          "direct_swirl": 1,
+          "potential": 1,
+          "pressure": 1
+        },
+        "Q7_supplied_orders": {
+          "direct_swirl": 3,
+          "potential": 4,
+          "pressure": 2
+        },
+        "checks": {
+          "Cauchy_uses_one_next_time_derivative": true,
+          "Q7_parent_request_closes": true,
+          "Q7_retains_next_residual_jet": true,
+          "Q7_retains_one_unused_field_derivative": true,
+          "direct_potential_order_from_Delta_d_or_grad_u0": true,
+          "direct_pressure_order_from_p0_grad_c": true,
+          "direct_swirl_order_from_grad_u0": true
+        },
+        "comparison_stage": 16017,
+        "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+        "flat_power": 0,
+        "residual_Cauchy_jet": 1,
+        "sharp_Cauchy_orders": {
+          "direct_swirl": 2,
+          "potential": 3,
+          "pressure": 1
+        },
+        "sharp_direct_force_orders": {
+          "direct_swirl": 1,
+          "potential": 2,
+          "pressure": 0
+        },
+        "spatial_order": 0,
+        "time_order": 0,
+        "total_mixed_order": 0
+      },
+      {
+        "Q7_order_reserve": {
+          "direct_swirl": 1,
+          "potential": 1,
+          "pressure": 1
+        },
+        "Q7_supplied_orders": {
+          "direct_swirl": 7,
+          "potential": 8,
+          "pressure": 6
+        },
+        "checks": {
+          "Cauchy_uses_one_next_time_derivative": true,
+          "Q7_parent_request_closes": true,
+          "Q7_retains_next_residual_jet": true,
+          "Q7_retains_one_unused_field_derivative": true,
+          "direct_potential_order_from_Delta_d_or_grad_u0": true,
+          "direct_pressure_order_from_p0_grad_c": true,
+          "direct_swirl_order_from_grad_u0": true
+        },
+        "comparison_stage": 32818,
+        "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+        "flat_power": 5,
+        "residual_Cauchy_jet": 5,
+        "sharp_Cauchy_orders": {
+          "direct_swirl": 6,
+          "potential": 7,
+          "pressure": 5
+        },
+        "sharp_direct_force_orders": {
+          "direct_swirl": 5,
+          "potential": 6,
+          "pressure": 4
+        },
+        "spatial_order": 1,
+        "time_order": 3,
+        "total_mixed_order": 4
+      },
+      {
+        "Q7_order_reserve": {
+          "direct_swirl": 1,
+          "potential": 1,
+          "pressure": 1
+        },
+        "Q7_supplied_orders": {
+          "direct_swirl": 12,
+          "potential": 13,
+          "pressure": 11
+        },
+        "checks": {
+          "Cauchy_uses_one_next_time_derivative": true,
+          "Q7_parent_request_closes": true,
+          "Q7_retains_next_residual_jet": true,
+          "Q7_retains_one_unused_field_derivative": true,
+          "direct_potential_order_from_Delta_d_or_grad_u0": true,
+          "direct_pressure_order_from_p0_grad_c": true,
+          "direct_swirl_order_from_grad_u0": true
+        },
+        "comparison_stage": 53620,
+        "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+        "flat_power": 11,
+        "residual_Cauchy_jet": 10,
+        "sharp_Cauchy_orders": {
+          "direct_swirl": 11,
+          "potential": 12,
+          "pressure": 10
+        },
+        "sharp_direct_force_orders": {
+          "direct_swirl": 10,
+          "potential": 11,
+          "pressure": 9
+        },
+        "spatial_order": 5,
+        "time_order": 4,
+        "total_mixed_order": 9
+      },
+      {
+        "Q7_order_reserve": {
+          "direct_swirl": 1,
+          "potential": 1,
+          "pressure": 1
+        },
+        "Q7_supplied_orders": {
+          "direct_swirl": 13,
+          "potential": 14,
+          "pressure": 12
+        },
+        "checks": {
+          "Cauchy_uses_one_next_time_derivative": true,
+          "Q7_parent_request_closes": true,
+          "Q7_retains_next_residual_jet": true,
+          "Q7_retains_one_unused_field_derivative": true,
+          "direct_potential_order_from_Delta_d_or_grad_u0": true,
+          "direct_pressure_order_from_p0_grad_c": true,
+          "direct_swirl_order_from_grad_u0": true
+        },
+        "comparison_stage": 49619,
+        "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+        "flat_power": 2,
+        "residual_Cauchy_jet": 11,
+        "sharp_Cauchy_orders": {
+          "direct_swirl": 12,
+          "potential": 13,
+          "pressure": 11
+        },
+        "sharp_direct_force_orders": {
+          "direct_swirl": 11,
+          "potential": 12,
+          "pressure": 10
+        },
+        "spatial_order": 3,
+        "time_order": 7,
+        "total_mixed_order": 10
+      }
+    ],
+    "future_extension": {
+      "finite_stage_constraints": "|a|+m<=floor(j/2), with increasing dyadic b_j selected once from actual finite F_j norms",
+      "formula": "f_plus=sum_j chi0(b_j sigma) sigma^j F_j/j!",
+      "samples": [
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 1,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/2",
+              "index": 1,
+              "scale_exponent": -1
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/4",
+              "index": 2,
+              "scale_exponent": -2
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/8",
+              "index": 3,
+              "scale_exponent": -3
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/16",
+              "index": 4,
+              "scale_exponent": -4
+            }
+          ],
+          "spatial_order": 0,
+          "time_order": 0
+        },
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 8,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/256",
+              "index": 8,
+              "scale_exponent": -5
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/512",
+              "index": 9,
+              "scale_exponent": -6
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/1024",
+              "index": 10,
+              "scale_exponent": -7
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/2048",
+              "index": 11,
+              "scale_exponent": -8
+            }
+          ],
+          "spatial_order": 1,
+          "time_order": 3
+        },
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 48,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/281474976710656",
+              "index": 48,
+              "scale_exponent": -44
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/562949953421312",
+              "index": 49,
+              "scale_exponent": -45
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/1125899906842624",
+              "index": 50,
+              "scale_exponent": -46
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/2251799813685248",
+              "index": 51,
+              "scale_exponent": -47
+            }
+          ],
+          "spatial_order": 20,
+          "time_order": 4
+        },
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 152,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/5708990770823839524233143877797980545530986496",
+              "index": 152,
+              "scale_exponent": -82
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/11417981541647679048466287755595961091061972992",
+              "index": 153,
+              "scale_exponent": -83
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/22835963083295358096932575511191922182123945984",
+              "index": 154,
+              "scale_exponent": -84
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/45671926166590716193865151022383844364247891968",
+              "index": 155,
+              "scale_exponent": -85
+            }
+          ],
+          "spatial_order": 6,
+          "time_order": 70
+        },
+        {
+          "checks": {
+            "all_sample_constraints_admit": true,
+            "all_scale_exponents_are_negative": true,
+            "exact_Leibniz_factor_retained": true,
+            "tail_bound_is_geometric": true
+          },
+          "first_controlled_index": 400,
+          "sample_tail": [
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/2582249878086908589655919172003011874329705792829223512830659356540647622016841194629645353280137831435903171972747493376",
+              "index": 400,
+              "scale_exponent": -300
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/5164499756173817179311838344006023748659411585658447025661318713081295244033682389259290706560275662871806343945494986752",
+              "index": 401,
+              "scale_exponent": -301
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/10328999512347634358623676688012047497318823171316894051322637426162590488067364778518581413120551325743612687890989973504",
+              "index": 402,
+              "scale_exponent": -302
+            },
+            {
+              "finite_constraint_admits": true,
+              "geometric_target": "1/20657999024695268717247353376024094994637646342633788102645274852325180976134729557037162826241102651487225375781979947008",
+              "index": 403,
+              "scale_exponent": -303
+            }
+          ],
+          "spatial_order": 100,
+          "time_order": 100
+        }
+      ],
+      "support": "K x [1-tau0,3/2]",
+      "tail": "each fixed differentiated tail from J is at most 2^(1-J)",
+      "whole_support_bound": "||D_x^a partial_sigma^m T_j|| <= C_(j,a,m) b_j^(m-j)"
+    },
+    "localized_field": {
+      "divergence": "div curl(cA)=0 and div(cB)=r^-1 partial_theta(cb)=0",
+      "potential_form": "u=curl(cA)+cB=cu0+d; d=grad(c) cross A",
+      "pressure": "p=cp0 with complete Q7 fixed-gauge pressure p0",
+      "vanishing_term": "(d.grad c)u0=0"
+    },
+    "provider_status_checks": {
+      "core_current_head_q7_corner_endpoint_join": true,
+      "core_current_log_reserved_localization_force_join": true,
+      "core_log_reserved_localization_force_replay": true
+    },
+    "residual": {
+      "pressure_Poisson": "-Delta p=partial_i partial_j(u_i u_j)-div f_minus",
+      "terms": [
+        {
+          "formula": "c R_1(u0,p0)",
+          "name": "base_residual"
+        },
+        {
+          "formula": "c_t u0",
+          "name": "cutoff_time"
+        },
+        {
+          "formula": "d_t",
+          "name": "curl_time"
+        },
+        {
+          "formula": "-(Delta c)u0",
+          "name": "cutoff_laplacian"
+        },
+        {
+          "formula": "-2 sum_i c_i partial_i u0",
+          "name": "gradient_viscosity"
+        },
+        {
+          "formula": "-Delta d",
+          "name": "curl_viscosity"
+        },
+        {
+          "formula": "p0 grad c",
+          "name": "pressure_cutoff"
+        },
+        {
+          "formula": "c(c-1)(u0.grad)u0",
+          "name": "quadratic_rescaling"
+        },
+        {
+          "formula": "c(u0.grad c)u0",
+          "name": "velocity_cutoff_transport"
+        },
+        {
+          "formula": "c(u0.grad)d",
+          "name": "old_curl_transport"
+        },
+        {
+          "formula": "c(d.grad)u0",
+          "name": "curl_old_transport"
+        },
+        {
+          "formula": "(d.grad)d",
+          "name": "curl_square"
+        }
+      ],
+      "viscosity": 1
+    },
+    "scope": {
+      "Q7_endpoint_uniform_all_order_bound_proved_here": false,
+      "exact_Q1_Q7_field_localized_conditionally": true,
+      "future_velocity_or_pressure_constructed": false,
+      "hashes_or_tests_treated_as_continuum_proof": false,
+      "one_smooth_compact_force_extension_constructed_conditionally": true,
+      "pressure_recovery_comparison_or_blowup_proved": false,
+      "preterminal_energy_replayed_here": false,
+      "terminal_velocity_or_pressure_regular_at_origin_proved": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_claimed": false
+    },
+    "terminal_gluing": {
+      "conclusion": "F_j=lim_(t up to 1) partial_t^j f_minus is in C_c^infinity(K), with every spatial jet zero at x=0",
+      "corner": "c=1,d=0, so f_minus is the Cartesian-flat Q7 complete residual",
+      "punctured": "conditional on the Q7 all-fixed-order bound, one more time derivative gives uniform Cauchy limits"
+    }
+  },
+  "source_hashes": {
+    "results/core_corrected_force_join/localization.py": "f0118ef3640ade0632432122cf47127aea527cd7c9be9b39da777b482caed4ac",
+    "results/core_current_head_q6_complete_residual_join/complete_residual.py": "5031f27f9ce4ed3bcb30686768d941a1d4f11bedae181c48b818b9080fe871ee",
+    "results/core_current_head_q7_corner_endpoint_join/corner_endpoint.py": "b020ae8d8747ccab75632e7c4fa719b627c40792080a205023dc194434679567",
+    "results/core_current_head_q8_localization_force_join/.gitignore": "75e4ab44067f89c049e942ef700ad41713d8ae91bc4eedf9da9bcd4b7331ebf6",
+    "results/core_current_head_q8_localization_force_join/README.md": "8cb594d53fb6a740f9903c131ca7bed63f9cc6bbd9741523f95c20b7ac563355",
+    "results/core_current_head_q8_localization_force_join/audit.py": "1ce658d0718a2b17211408ccd59dffaacf1999eded35055dc59b06287fad07cb",
+    "results/core_current_head_q8_localization_force_join/localization_force.py": "224e6f8d3c57fb7bafa5e28cab83c3c3aa0ea9b0afb7fc98aa4dfaeb66172b5c",
+    "results/core_current_head_q8_localization_force_join/protocol.json": "87b12ffb5189590e9a6cba98a3c33fc36fe736f7c2c07c007b49c0cc256f2b43",
+    "results/core_current_head_q8_localization_force_join/requirements.txt": "c1109af0273cdd02745f174b563025e7ba04266b62ee31aa14505dce41a71c2d",
+    "results/core_current_head_q8_localization_force_join/test_audit.py": "9cdf53ba85602787d4c694ec71414a7a21c61f17bb638db9f30e7de7c68d69f5"
+  },
+  "status": "current-head-Q8-twelve-term-localization-and-compact-force-joined-conditionally"
+}

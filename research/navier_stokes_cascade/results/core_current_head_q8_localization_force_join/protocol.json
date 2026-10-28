@@ -1,0 +1,9 @@
+{
+  "parent_commit": "1b1014d62f3eb33fd776caa3b850ed4ac8f37994",
+  "object": "the exact Q1-Q7 field at h=1/200 and kappa=1/100000, with unchanged supports, gauges, cutoff sequence, complete pressure memory, axial velocity and enlarged A0/A1 requests",
+  "localization": "u=curl(c*A)+c*B=c*u0+d, d=grad(c) cross A, p=c*p0, at unit viscosity with the complete twelve-term residual identity",
+  "ledger_correction": "direct localized-force differentiation needs only A:m+2, B:m+1, p:m; one next time derivative needs A:m+3, B:m+2, p:m+1, while Q7 supplies A:m+4, B:m+3, p:m+2",
+  "pressure": "retain the entire fixed-gauge p0*grad(c) term and -div(f) in the forced pressure equation, with no regauging or compact-support-preserving Leray projection",
+  "force_extension": "conditional on the Q7 punctured endpoint premise, join the Cartesian-flat corner and compact punctured cover and use one Borel diagonal selected from the actual finite terminal force norms",
+  "scope": "conditional current-head Q8 localization and one smooth compact force only; endpoint bounds, terminal field regularity, energy, comparison, exclusion and blow-up are not proved here"
+}
