@@ -64,6 +64,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q9_preterminal_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q10_pressure_comparison_join/**
       - research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/**
+      - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
       - research/navier_stokes_cascade/results/core_current_head_q12_symbolic_parameter/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
@@ -133,6 +134,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q9_preterminal_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q10_pressure_comparison_join/**
       - research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/**
+      - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
       - research/navier_stokes_cascade/results/core_current_head_q12_symbolic_parameter/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
@@ -578,6 +580,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/evidence.json --output q13_ci.json
+
+      - name: Audit Q14 fully expanded primitive ceilings
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/evidence.json --output q14_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

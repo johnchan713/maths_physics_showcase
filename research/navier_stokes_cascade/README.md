@@ -1,5 +1,12 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q14 correction:** The [primitive-ceiling audit](results/core_current_head_q14_primitive_ceiling/README.md)
+> corrects Q12's labeling of first-real interface counts as primitive counts.
+> The certified provider adds 400009 derivatives after both enlarged compact
+> requests; the operator-pole domains must use those expanded orders.
+> Q12's exponent arithmetic and Q13's cutoff proof remain valid, but actual
+> all-band representative bounds and endpoint closure remain unproved.
+
 > **Q13 update:** The [cutoff-uniformity derivation](results/core_current_head_q13_cutoff_uniformity/README.md)
 > proves the all-order implicit-coordinate cutoff bounds uniformly in scale,
 > including both seams and the complete curl/pressure cutoff terms. The

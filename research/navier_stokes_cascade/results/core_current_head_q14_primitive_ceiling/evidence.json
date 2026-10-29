@@ -1,0 +1,38 @@
+{
+  "closure": {
+    "edges": 1088,
+    "nodes": 252,
+    "source_bindings": 3921
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q13_cutoff_uniformity/evidence.json": "72fb91a03b240747c31707263e7640dd5679bab96b602b95df1f0e7e0b1d1d2e"
+  },
+  "maximum_common_pole_increment": 2400054,
+  "parent": "f71c542e46948caebbf44d62981451ed615d8c75",
+  "primitive_offset": 400009,
+  "scope": {
+    "endpoint_bound_proved": false,
+    "fully_expanded_requests_corrected": true,
+    "physical_field_changed": false,
+    "representative_suprema_proved": false,
+    "unconditional_residual_or_blowup": false
+  },
+  "source_hashes": {
+    "results/core_certified_finite_stage_domain_join/README.md": "551d547eca45350a51ca88553c84429f7450c5a682a9fe010d4e5c71f1c602cf",
+    "results/core_certified_finite_stage_domain_join/certified_recurrence.py": "b1a4bc10b6265dad052690e6c4d8038211a5169f69a182724eb7cb0392bd6df0",
+    "results/core_current_head_q14_primitive_ceiling/README.md": "4d832a13201e586bebf8ca8a280015f8f2595c9d6b82d60cdb1d7632a994090b",
+    "results/core_current_head_q14_primitive_ceiling/audit.py": "1c4c44e8e0294070ec29674ee2c7a4446fc3705ecbdd2e4cc713313d66ace909",
+    "results/core_current_head_q14_primitive_ceiling/ceiling.py": "297bf3123595d9ebd2ff24811d85629149cfb7c9bad6613837dc8eafbd47d84e",
+    "results/core_current_head_q14_primitive_ceiling/test_audit.py": "86d2d4bfdb4f57eec6790e1848d7a24ca8dfcb3bfdc5d249d0cbd695c5893a55",
+    "results/core_first_real_high_jet_domain_closure/high_jet_join.py": "53b7032b9ef51b8bb3bc5f798fab7cecfa13eb06987783d3bc6f9b182bcf4d93"
+  },
+  "state_samples": {
+    "0": 900047,
+    "1": 1400076,
+    "1000000000000000000000000000000": 99994000000000000000000000000400035000000000000000000000000900047,
+    "2": 2100093
+  },
+  "status": "compressed-interface-to-primitive-correction",
+  "symbolic_root_combined_primitive": "max(I_J(m),I_phys)+400009",
+  "symbolic_root_state_primitive": "m+900047+99994*J^2+400035*J"
+}
