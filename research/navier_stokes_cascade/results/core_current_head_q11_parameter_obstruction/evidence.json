@@ -1,0 +1,25 @@
+{
+  "Q6_default_h": "1/200",
+  "Q7_literal_h": "1/200",
+  "actual_cross_strict_upper": "-449469227/51300000",
+  "closure": {
+    "edges": 1085,
+    "nodes": 249,
+    "source_bindings": 3907
+  },
+  "constructed_h": "exp(-8*(exp(64)+10))",
+  "constructed_h_strict_upper": "1/513",
+  "continuum_theorem_disproved": false,
+  "diagnostic_cross_exponent": "20030773/20000000",
+  "endpoint_bound_proved": false,
+  "parent": "d1aea3715e41ae2db7440190d6a8f4a69f5ee733",
+  "required_cross_stage": "J >= ceil(2*(N+16+4*m+4*h)/(h*(1/2-3*kappa))-1)",
+  "same_parameter_join_valid": false,
+  "source_hashes": {
+    "results/core_current_head_q11_parameter_obstruction/README.md": "c7f35b9a3ac957e945c98065ac5b7305de4af8a207abc087d43e084fc6a66147",
+    "results/core_current_head_q11_parameter_obstruction/audit.py": "aee58d09e6a96fc8ff795b36b1a60426c32fa33c50ec5a79ff6d03d65f863e5e",
+    "results/core_current_head_q11_parameter_obstruction/test_audit.py": "2150e2339291fc806b1a64ebab60e43daed956f5ae4508ef360be94489c15c80"
+  },
+  "stage": 12817,
+  "status": "same-object-parameter-interface-obstructed"
+}

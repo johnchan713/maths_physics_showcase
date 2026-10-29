@@ -1,5 +1,15 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q11 correction:** The [parameter-identity audit](results/core_current_head_q11_parameter_obstruction/README.md)
+> finds that Q1 retains `h=lambda^2=exp(-8*(exp(64)+10))`, while Q6 defaults
+> to `h=1/200` and Q7 calls that the selected field. These values differ.
+> The recorded same-object Q6--Q10 promotion is therefore blocked; their
+> generic conditional implications and historical evidence remain preserved.
+> The frozen `J=12817` cross-bound fails after substituting the root parameter.
+> Next is a symbolic same-parameter source/stage/cutoff audit before endpoint
+> promotion, not another downstream replay or a blow-up claim.
+
+
 This directory is an **experimental research scaffold, not a claimed proof or
 disproof** of the Navier-Stokes Millennium Prize problem. It gives the
 repository a reproducible place to test one concrete direction: whether
