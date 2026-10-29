@@ -1,5 +1,12 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q15 update:** The [fixed-width edge-transfer bound](results/core_current_head_q15_flat_edge_transfer/README.md)
+> converts the inherited weighted jet estimates to ordinary uniform bounds
+> and flat zero extensions with explicit finite symbolic constants. It spends
+> no q-exponent reserve and retains logarithmic weights. Actual complete
+> representative estimates still require a term-by-term physical transfer;
+> endpoint closure and unconditional residual claims remain open.
+
 > **Q14 correction:** The [primitive-ceiling audit](results/core_current_head_q14_primitive_ceiling/README.md)
 > corrects Q12's labeling of first-real interface counts as primitive counts.
 > The certified provider adds 400009 derivatives after both enlarged compact

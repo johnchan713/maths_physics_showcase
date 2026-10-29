@@ -1,0 +1,64 @@
+{
+  "closure": {
+    "edges": 1089,
+    "nodes": 253,
+    "source_bindings": 3928
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q14_primitive_ceiling/evidence.json": "99229e6f960e79fa9decac4be9e705a02a8e4ae1d56addcfe5fcf1b1dca243ae"
+  },
+  "parent": "f80034adc47312dcddf0e09c147880b6244cf18e",
+  "requests": [
+    {
+      "constant": "factorial(n)*w^(-2*n)",
+      "materialized_constant": false,
+      "n": 0,
+      "pole": "0",
+      "power_margin": "0",
+      "vanishing_order": "0"
+    },
+    {
+      "constant": "factorial(n)*w^(-2*n)",
+      "materialized_constant": false,
+      "n": 4,
+      "pole": "3",
+      "power_margin": "1",
+      "vanishing_order": "4"
+    },
+    {
+      "constant": "factorial(n)*w^(-2*n)",
+      "materialized_constant": false,
+      "n": 200007,
+      "pole": "400009",
+      "power_margin": "0",
+      "vanishing_order": "5"
+    },
+    {
+      "constant": "factorial(n)*w^(-2*n)",
+      "materialized_constant": false,
+      "n": 5000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006,
+      "pole": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "power_margin": "0",
+      "vanishing_order": "12"
+    }
+  ],
+  "scope": {
+    "complete_representative_bounds_proved": false,
+    "endpoint_bound_proved": false,
+    "flat_edge_transfer_proved": true,
+    "q_exponent_reserve_spent": false,
+    "unconditional_residual_or_blowup": false,
+    "width_reselected": false
+  },
+  "source_hashes": {
+    "results/core_compact_slow_inverse_reconstruction/README.md": "70f42063c5b4eb4c3f735edf8d6a55cdc9847d74c274c125ed864c5d6a5cb35f",
+    "results/core_current_head_q15_flat_edge_transfer/README.md": "090e6476f2efde78f0b9375554dc24d6c37f225b16779cc64c91d51b6bd14de0",
+    "results/core_current_head_q15_flat_edge_transfer/audit.py": "01c5144646ced4549e6ec94020ee25effbd21114d97f162e86ca9e1f5d8d2199",
+    "results/core_current_head_q15_flat_edge_transfer/edge.py": "6610800dfc2f11f6325c5fc0d7ee4640545a36925fde2b1161b1e7307387ad47",
+    "results/core_current_head_q15_flat_edge_transfer/test_audit.py": "91483ecc542fedce6941a039171c1eb1c1efbd5cd70783a78d6909509456b75d",
+    "results/core_current_head_q5_weighted_inverse_source_join/README.md": "6ada1ea7416077edfb0aed83a4be54c163368616498523ccae5226042ade39af",
+    "results/core_log_renormalized_actual_source_induction/README.md": "07d49102b5242316bf82cabe601c0fda0eb64474cc8660728ca5c03b46f5dfe9"
+  },
+  "status": "fixed-width-weighted-to-unweighted-transfer-proved",
+  "width": "C_setup^(-20), fixed across physical bands"
+}
