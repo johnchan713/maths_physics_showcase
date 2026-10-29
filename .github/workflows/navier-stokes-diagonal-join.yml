@@ -64,6 +64,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q9_preterminal_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q10_pressure_comparison_join/**
       - research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/**
+      - research/navier_stokes_cascade/results/core_current_head_q12_symbolic_parameter/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -131,6 +132,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q9_preterminal_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q10_pressure_comparison_join/**
       - research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/**
+      - research/navier_stokes_cascade/results/core_current_head_q12_symbolic_parameter/**
       - research/navier_stokes_cascade/results/core_finite_stage_compact_recurrence/**
       - research/navier_stokes_cascade/results/canonical_local_realization/**
       - research/navier_stokes_cascade/results/current_endpoint_jets/**
@@ -564,6 +566,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/evidence.json --output q11_ci.json
+
+      - name: Audit Q12 symbolic root parameter and cutoff obligation
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q12_symbolic_parameter/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q12_symbolic_parameter/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q12_symbolic_parameter/evidence.json --output q12_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

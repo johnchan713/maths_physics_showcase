@@ -1,5 +1,14 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q12 update:** The [symbolic root-parameter audit](results/core_current_head_q12_symbolic_parameter/README.md)
+> derives a sufficient fixed comparison stage at the exact root h, compresses
+> the derivative recurrence to a quadratic formula, and carries both extra
+> compact integrations to the original primitive requests. All six exponent
+> accounts close algebraically. The same-field join remains blocked until
+> the original cutoff sequence and its full closed-chart constants satisfy
+> the displayed root-parameter inequalities. No cutoff sequence is reselected,
+> and no endpoint or unconditional residual theorem is promoted.
+
 > **Q11 correction:** The [parameter-identity audit](results/core_current_head_q11_parameter_obstruction/README.md)
 > finds that Q1 retains `h=lambda^2=exp(-8*(exp(64)+10))`, while Q6 defaults
 > to `h=1/200` and Q7 calls that the selected field. These values differ.
