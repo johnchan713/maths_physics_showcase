@@ -1,5 +1,12 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q13 update:** The [cutoff-uniformity derivation](results/core_current_head_q13_cutoff_uniformity/README.md)
+> proves the all-order implicit-coordinate cutoff bounds uniformly in scale,
+> including both seams and the complete curl/pressure cutoff terms. The
+> original diagonal rule is already symbolic: no numerical cutoff list is
+> required. The remaining frontier is the actual fixed-gauge representative
+> bound over every physical band and closed support, before endpoint promotion.
+
 > **Q12 update:** The [symbolic root-parameter audit](results/core_current_head_q12_symbolic_parameter/README.md)
 > derives a sufficient fixed comparison stage at the exact root h, compresses
 > the derivative recurrence to a quadratic formula, and carries both extra

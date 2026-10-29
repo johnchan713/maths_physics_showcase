@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1087,
+    "nodes": 251,
+    "source_bindings": 3914
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q12_symbolic_parameter/evidence.json": "8580c79416ec0b2d42d24763a7841c888f51674e3fe077cd0d4696a75f415dd0"
+  },
+  "diagnostic_bounds": {
+    "t": "1287500/1231713",
+    "tt": "853667218750000/778280977071297",
+    "z": "2575000/1231713",
+    "zt": "1113687500000/505705638123",
+    "zz": "5108947862500000/778280977071297",
+    "zztt": "9225382242284453125000000000/1180743234446496543156766593"
+  },
+  "parent": "18d8c52172856032ef031ad4302db0b791acbae7",
+  "scope": {
+    "actual_representative_suprema_proved": false,
+    "cutoff_factor_all_order_bound_proved": true,
+    "cutoff_sequence_reselected": false,
+    "endpoint_bound_proved": false,
+    "numerical_cutoff_sequence_required": false,
+    "unconditional_residual_or_blowup": false
+  },
+  "source_hashes": {
+    "results/canonical_local_realization/README.md": "2feccfd8c154364458da5e5c2366c50e7d7ed8e804473b7658eba02b52fd32c8",
+    "results/core_certified_complete_potential_diagonal_join/README.md": "0cb3d009cb30423205199e924522c270d55272c2a66630775d0b9a3f0c0356ae",
+    "results/core_complete_potential_diagonal_join/README.md": "0155311534ed95a1a6209592a111de9d99df1dcd9dbf36d3383fd327c7802482",
+    "results/core_current_head_q13_cutoff_uniformity/README.md": "c4140317c9791c64774c573600f71f601c443aab5127490d17289d57dcffdb7f",
+    "results/core_current_head_q13_cutoff_uniformity/audit.py": "6b4620834eda669ce3fbfa6bdeeef8605ad5d3ce63a63e4b8f48d6958a113f9a",
+    "results/core_current_head_q13_cutoff_uniformity/cutoff.py": "01d252c1b53aa1ce7bac26b42b4f719f61c1c05d0ce7f550c0b825f9a14f27b0",
+    "results/core_current_head_q13_cutoff_uniformity/test_audit.py": "848570ac216368a6195cceedd79dd62073e0d2f86c352298c1b2f9ad8413d289"
+  },
+  "status": "all-order-cutoff-factor-proved-representative-bound-open"
+}
