@@ -1,0 +1,65 @@
+{
+  "closure": {
+    "edges": 1091,
+    "nodes": 255,
+    "source_bindings": 3943
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q16_representative_transfer/evidence.json": "d09374628e236742de269d32e5eaa5c11565f83d4c9819dc80510b27248b2415"
+  },
+  "parent": "b5b4383ec413a9d7d9272c7242ce0d6ead950887",
+  "rational_diagnostics": [
+    {
+      "S": 1,
+      "count": 2518992,
+      "polynomial_majorant": "1316386323/512",
+      "radial_length": "7/2"
+    },
+    {
+      "S": 256,
+      "count": 33191424444528,
+      "polynomial_majorant": "43135347032064",
+      "radial_length": "7/2"
+    },
+    {
+      "S": 1000000000000,
+      "count": 1978363037109375000000000000000000000444528,
+      "polynomial_majorant": "2571067037109375000000000000000000000000000",
+      "radial_length": "7/2"
+    }
+  ],
+  "scope": {
+    "actual_normalized_coefficient_estimates_proved": false,
+    "endpoint_bound_proved": false,
+    "field_or_width_reselected": false,
+    "mean_labels_disjoint": false,
+    "projected_mean_pressure_count_derived": true,
+    "unconditional_residual_or_blowup": false
+  },
+  "source_hashes": {
+    "results/auxiliary_geometry_audit/README.md": "6bcd1dbc12e8561fd2cb1ab797bc323324445895474e4fb6bb10b3d7e231c7b7",
+    "results/compact_mean_corrections/README.md": "ae135ad88b0e23e782b27bc1a05cf550f62130630daec49db8941b7d6e817774",
+    "results/compact_mean_foundation/README.md": "f17ddf5d7858d835669ad897bf2ad22357175531c5f54d26fdf05fb04b8e4256",
+    "results/core_current_head_q17_mean_support_join/README.md": "f59a9b2f443431861c9c9b25fb22c6428fc4cc1db81a637c47fa62d8aac01982",
+    "results/core_current_head_q17_mean_support_join/audit.py": "0b34e86c8398236bece37bfcd0ab742624e676ccd1330341ebb3dd8dd8dc5f3b",
+    "results/core_current_head_q17_mean_support_join/support.py": "8ca9a5dbdc2c6c0cbcd03b0e158acc5a010150f103a18ed8f2086f80a7d00bac",
+    "results/core_current_head_q17_mean_support_join/test_audit.py": "3ce205dbaeef9aab49b08a73c3ba6ebe61a492f6b225bba975a7752b19cf587f",
+    "results/core_current_head_q4_fixed_profile_join/README.md": "acee08b0752b8d889b937682eaa3853d81acf80cdb6bef2a692e5ff954f3c3db",
+    "results/core_finite_support_closure/README.md": "5034221837ca97be051722e139a5f32d00967c2795a080390711fafcbadd3810",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6"
+  },
+  "status": "projected-mean-pressure-support-count-derived",
+  "symbolic": {
+    "actual_normalized_coefficient_estimates_certified": false,
+    "extra_log_degree_per_label_sum": 6,
+    "linear_maps_preserve_slow_projection": true,
+    "polynomial_bound": "54*2744*(L_R*(25/16)^3+4)*S^3",
+    "projected_label_bound": "54*2744*(ceil(L_R*(25*S/16)^3)+3)",
+    "radial_or_auxiliary_disjointness_of_means": false,
+    "same_base_pressure_memory_retained": [
+      "Pi1",
+      "Pi2"
+    ],
+    "zero_Haar_A0_is_not_zero_A0": true
+  }
+}

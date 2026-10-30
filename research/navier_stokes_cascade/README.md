@@ -1,5 +1,12 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q17 update:** The [projected mean/pressure support join](results/core_current_head_q17_mean_support_join/README.md)
+> derives the missing aggregation count from the frozen slow mesh. Compact
+> maps may fill radial and auxiliary supports, but collect only O(S^3)
+> original labels at fixed slow coordinates. This costs finite logarithmic
+> degree and no q power. Actual normalized coefficient estimates and all
+> endpoint/unconditional residual conclusions remain unproved here.
+
 > **Q16 update:** The [termwise representative transfer](results/core_current_head_q16_representative_transfer/README.md)
 > maps the corrected normalized orders through the physical potential,
 > velocity and pressure rescalings. Every component has a positive exponent
