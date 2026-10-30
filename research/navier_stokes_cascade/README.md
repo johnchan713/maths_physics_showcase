@@ -1,5 +1,11 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q28 update:** The [initial mean composition](results/core_current_head_q28_initial_mean_composition/README.md)
+> removes the independent initial-mean input by composing the actual primary
+> and signed fast/slow passes, retaining fresh pressure and both pole archives.
+> The conservative route requests primary wave jets through j+27. Actual
+> fixed-map, background and canonical premises remain conditional.
+
 > **Q27 update:** The [first signed-wave input join](results/core_current_head_q27_signed_wave_inputs/README.md)
 > derives the source recipe's T, R, Pi and U bounds from the original roots,
 > signed target, homogeneous pressure and complete cut potential. It retains

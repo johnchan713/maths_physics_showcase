@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1102,
+    "nodes": 266,
+    "source_bindings": 4056
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q27_signed_wave_inputs/evidence.json": "8172a447094a3b29350b4fa68a46c0b20ec67586d9baddae2b505d1b493f2147"
+  },
+  "parent": "011261b106abba9fbb23a0443218ff555d2f751c",
+  "source_hashes": {
+    "results/core_current_head_q28_initial_mean_composition/README.md": "f12b03ac2c94edce7c618409ad295a2f93474371c4e2572d523c9c7b25abf89d",
+    "results/core_current_head_q28_initial_mean_composition/audit.py": "1284628fc167f233c52d9847938d7c48657079e93fa68acc60e1ec612bf5ba9e",
+    "results/core_current_head_q28_initial_mean_composition/composition.py": "2f0295b4c64b31e0fdd0aeec8af5d915e75c2dc26a1e6539999df4bc7b02472b",
+    "results/core_current_head_q28_initial_mean_composition/test_audit.py": "e7de58aa364f5d4f27277c3ce4c5db60920a3ef0660280eed8f1de33bbe4df80",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176",
+    "results/core_initial_haar_row_budget/README.md": "1196944157a5f9668ebba7f0613fb1c2626449a1008955bfd85c334bcf2bac7c",
+    "results/core_initial_scalar_seed_budget/README.md": "e7f28f727cbf45f443691a42563d05dee2dde7caa41b764a70b9712d3fe0c9de",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/core_signed_prefix_source_budget/budgets.py": "141e8193b477024d6dcab82c3c4a584b721fdad70823ac3b2218bbfbc2387719"
+  },
+  "status": "conditional-primary-to-signed-mean-composition",
+  "symbolic": {
+    "complete_residual_or_blowup": false,
+    "fixed_map_and_background_premises_discharged": false,
+    "fresh_pressure_and_all_scalars": true,
+    "initial_mean_callback_removed": true,
+    "initial_old_means_zero": true,
+    "primary_root_order": "j+28 before target expansion",
+    "primary_wave_order": "j+27",
+    "result": "conditional-primary-to-signed-mean-composition",
+    "signed_old_means_reset": false,
+    "signed_root_order": "j+16 before target expansion",
+    "signed_wave_order": "j+15",
+    "source_pole": "3*max(2*p_primary,p_signed)"
+  }
+}
