@@ -86,6 +86,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q35_initial_projected_source/**
       - research/navier_stokes_cascade/results/core_current_head_q36_profile_signed_target/**
       - research/navier_stokes_cascade/results/core_current_head_q37_signed_covariance_pressure/**
+      - research/navier_stokes_cascade/results/core_current_head_q38_new_pole_maps/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -179,6 +180,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q35_initial_projected_source/**
       - research/navier_stokes_cascade/results/core_current_head_q36_profile_signed_target/**
       - research/navier_stokes_cascade/results/core_current_head_q37_signed_covariance_pressure/**
+      - research/navier_stokes_cascade/results/core_current_head_q38_new_pole_maps/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -746,6 +748,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q37_signed_covariance_pressure/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q37_signed_covariance_pressure/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q37_signed_covariance_pressure/evidence.json --output q37_ci.json
+
+      - name: Check Q38 new-pole radial maps
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q38_new_pole_maps/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q38_new_pole_maps/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q38_new_pole_maps/evidence.json --output q38_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

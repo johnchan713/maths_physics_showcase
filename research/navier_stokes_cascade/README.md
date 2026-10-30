@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q38 update:** The [new-pole radial maps](results/core_current_head_q38_new_pole_maps/README.md)
+> derive Q37’s pressure, primitive and projector bounds on its enlarged domain,
+> retaining exact moments, flat extensions and the original moving profile.
+> Actual source contracts, fresh means and full residual closure remain open.
+
 > **Q37 update:** The [signed covariance/pressure join](results/core_current_head_q37_signed_covariance_pressure/README.md)
 > retains all six tensor entries, signed squares and old pressure/scalars.
 > It derives profile/moment inputs and exposes the larger pressure-map pole.

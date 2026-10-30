@@ -1,0 +1,34 @@
+{
+  "closure": {
+    "edges": 1112,
+    "nodes": 276,
+    "source_bindings": 4158
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q37_signed_covariance_pressure/evidence.json": "2ce4ac21e99648c91595c404bb2bc711015886b882648e9e18faeffedb3cf18c"
+  },
+  "parent": "18fe97ad4956c3e25133013d178d90cb86d9e164",
+  "source_hashes": {
+    "results/core_current_head_q37_signed_covariance_pressure/signed_update.py": "7f57134e5fdcb43236f3c34a634c7c0dafbaccac5cb9966845df82d5b0a0e2de",
+    "results/core_current_head_q38_new_pole_maps/README.md": "2b266b312d25de57300bcdd40d37febca4dec5496cd57ab595aab55defc770a7",
+    "results/core_current_head_q38_new_pole_maps/audit.py": "de0d066a62a4d3cd75d2e7e4f7b4892c3857dd4cb9ffb91d4eb908a7443531b4",
+    "results/core_current_head_q38_new_pole_maps/new_maps.py": "73f7746f5e9d6535380ef6eb23acd6cb0b64e87acfd5cf6972c50f16aa92f977",
+    "results/core_current_head_q38_new_pole_maps/test_audit.py": "c8cec602cdb52b9ce6388547f16f2916678c42cedc71a3439058f02f7f093522",
+    "results/core_rho_projector_signed_recompute/bounds.py": "b9a3f10b27e5e3355b07b6963d7485353e4155b4fc610268fbad86f313431a08",
+    "results/core_symbolic_signed_target_join/bounds.py": "66f4e0f8ae1b319efe60fadaa9c72f39a8c7d1ebcc18010357149694ad8a1738",
+    "results/core_symbolic_weighted_maps/bounds.py": "5deee877dac3315705e99ad5211480049b482f8b5375e2bb3117943844c7d5a7"
+  },
+  "status": "same-profile-new-pole-radial-map-composition",
+  "symbolic": {
+    "actual_source_and_fresh_means_certified": false,
+    "complete_residual_or_blowup": false,
+    "exact_zero_moments_and_flat_extensions_required": true,
+    "independent_Kp_primitive_bump_callbacks_removed": true,
+    "kernel_applied_before_differentiation": false,
+    "new_pressure_pole_used": true,
+    "profile_floor_once_per_bump": true,
+    "radial_jacobian_retained": true,
+    "result": "same-profile-new-pole-radial-map-composition",
+    "whole_pressure_memory_retained": true
+  }
+}
