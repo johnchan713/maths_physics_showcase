@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1099,
+    "nodes": 263,
+    "source_bindings": 4023
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q24_root_cone_gate/evidence.json": "05a758ea06b9ed8c3002d9ffe16b1d2b4a4f1e49b8ab5a38736660a58e995142"
+  },
+  "parent": "e3059ea9875b457244397e68a0217b4d2fcd6f44",
+  "source_hashes": {
+    "results/canonical_primary_foundation/README.md": "0b1204546ce981149f6b5cb975574206884f5d84c85385f0ede29f32384e075a",
+    "results/canonical_value_domain/README.md": "45ee194ed8cb27e679a929d24b1c8c96f625914e6c49cd21452350beebe625d8",
+    "results/core_canonical_haar_column_jet_closure/README.md": "f97e89e5a851cc6b22d7fc572fdf1ebb25d5c086eb5e85073e7b8f169f1b1551",
+    "results/core_current_head_q25_direct_cone_join/README.md": "7f4cbc639f485bf0e2a7ba9422734283f3257a03b7d737c0ba0c2b2bad1c13e4",
+    "results/core_current_head_q25_direct_cone_join/audit.py": "4daf28e430410efe5ec49b6ee5d74ea12aa0e3eff689773dd6479b5552c21056",
+    "results/core_current_head_q25_direct_cone_join/direct.py": "c0a1b5173f3c2eae06673f1e2410edb9298b0c077396f1367bdc1bea522701d1",
+    "results/core_current_head_q25_direct_cone_join/test_audit.py": "2ac731028b33f3ac97bcbdcbbeb2b46591b9298b954eaea876fb2290aded7f4b",
+    "results/core_current_head_q2_regional_gap_join/README.md": "a75b85f7acf75f692734a0c9e096c52d6cc7bd25e27cc681adc36ad66c447ae9",
+    "results/core_primary_root_budget/README.md": "67c1f6b41f441c58866cab8c5571f83bc18aa718e8a926f71120b77c27eaa899",
+    "results/core_primary_tail_recheck/README.md": "7acbbdcb68053bda84b9ba5ef57a28050d94c78e865216d18f81b37f1d9344bc"
+  },
+  "status": "canonical-direct-cone-to-root-margins",
+  "symbolic": {
+    "K0": "6/(jmin min(A,u))",
+    "beta": "4 gamma vstar/(25 jmax)",
+    "certified_direct_cone_tail_implication": true,
+    "historical_minimum_band_membership_proved": false,
+    "infinity_basis_cost_retained": true,
+    "normalized_determinant_interval": [
+      "7/8",
+      "25/8"
+    ],
+    "status": "canonical-direct-cone-to-root-margins",
+    "unconditional_residual_or_blowup": false
+  }
+}

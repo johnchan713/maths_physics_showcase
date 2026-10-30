@@ -73,6 +73,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q22_uniform_frame_join/**
       - research/navier_stokes_cascade/results/core_current_head_q23_finite_band_frame_join/**
       - research/navier_stokes_cascade/results/core_current_head_q24_root_cone_gate/**
+      - research/navier_stokes_cascade/results/core_current_head_q25_direct_cone_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -153,6 +154,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q22_uniform_frame_join/**
       - research/navier_stokes_cascade/results/core_current_head_q23_finite_band_frame_join/**
       - research/navier_stokes_cascade/results/core_current_head_q24_root_cone_gate/**
+      - research/navier_stokes_cascade/results/core_current_head_q25_direct_cone_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -655,6 +657,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q24_root_cone_gate/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q24_root_cone_gate/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q24_root_cone_gate/evidence.json --output q24_ci.json
+
+      - name: Audit Q25 direct canonical cone root bounds
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q25_direct_cone_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q25_direct_cone_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q25_direct_cone_join/evidence.json --output q25_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

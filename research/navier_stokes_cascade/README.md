@@ -1,5 +1,11 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q25 update:** The [direct canonical cone join](results/core_current_head_q25_direct_cone_join/README.md)
+> derives Q24 determinant margins and the original beta/K0 constants on
+> the certified direct-cone tail, retaining mass cancellation and basis
+> conversion. Membership of an earlier historical domain remains a
+> separate obligation; no field or selector is changed.
+
 > **Q24 update:** The [canonical cone gate](results/core_current_head_q24_root_cone_gate/README.md)
 > reduces the finite-head positive-root obligation to three oriented
 > determinant margins, with explicit enclosure errors and inverse/root
