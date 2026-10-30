@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1103,
+    "nodes": 267,
+    "source_bindings": 4065
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q28_initial_mean_composition/evidence.json": "b3cc6ea87c93e3a7f606474d1fe745d58c1f83790498b61cfb22377d17d2c22d"
+  },
+  "parent": "d218ebe560bc54586a7eac536b7267b981153fd1",
+  "source_hashes": {
+    "results/core_compact_slow_inverse_reconstruction/README.md": "70f42063c5b4eb4c3f735edf8d6a55cdc9847d74c274c125ed864c5d6a5cb35f",
+    "results/core_current_head_q29_weighted_compact_constants/README.md": "9587194f819b20f5552654e9e160ad4e4ad892e49f38730ca69bae5c96057caf",
+    "results/core_current_head_q29_weighted_compact_constants/audit.py": "3707d5765f039a46c398c92c7db08d67b79db9ad10a3f1109aea163d6f2dedaa",
+    "results/core_current_head_q29_weighted_compact_constants/compact.py": "34accbc1b46dbb6c560f03cbf500c0b2105d4cfe21d5afcea322a43d4bb75f55",
+    "results/core_current_head_q29_weighted_compact_constants/test_audit.py": "74f1fcd7702320038a180ae2b4e0fb9044c86d9325ae79262bc10a3db492238c",
+    "results/core_current_head_q4_fixed_profile_join/README.md": "acee08b0752b8d889b937682eaa3853d81acf80cdb6bef2a692e5ff954f3c3db",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176",
+    "results/core_initial_haar_row_budget/README.md": "1196944157a5f9668ebba7f0613fb1c2626449a1008955bfd85c334bcf2bac7c",
+    "results/core_signed_target_edge_budget/README.md": "d311c52ee1e321ba10c780fa9956f5f06ee901f0e3aae0f4a608dc8a37245ffc"
+  },
+  "status": "conditional-explicit-weighted-shifted-compact-constants",
+  "symbolic": {
+    "KA": "2^(3m) k_m (chi_U)_m f_m Jmax Lx E_p Z_gap",
+    "KT": "2^(3m) g_m (chi_m+(1-chi)_m) f_m Jmax C_p",
+    "archive_uses_sum_not_largest_pole": true,
+    "cutoff_derivatives_required": "m+1",
+    "extra_M_power": 0,
+    "input_derivative_loss": 0,
+    "result": "conditional-explicit-weighted-shifted-compact-constants",
+    "shift_preserved": true,
+    "slow_response_and_full_source_closed": false,
+    "unconditional_residual_or_blowup": false,
+    "weight_floor_on_actual_support_only": true
+  }
+}

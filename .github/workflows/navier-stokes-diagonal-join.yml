@@ -77,6 +77,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q26_source_domain_join/**
       - research/navier_stokes_cascade/results/core_current_head_q27_signed_wave_inputs/**
       - research/navier_stokes_cascade/results/core_current_head_q28_initial_mean_composition/**
+      - research/navier_stokes_cascade/results/core_current_head_q29_weighted_compact_constants/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -161,6 +162,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q26_source_domain_join/**
       - research/navier_stokes_cascade/results/core_current_head_q27_signed_wave_inputs/**
       - research/navier_stokes_cascade/results/core_current_head_q28_initial_mean_composition/**
+      - research/navier_stokes_cascade/results/core_current_head_q29_weighted_compact_constants/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -683,6 +685,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q28_initial_mean_composition/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q28_initial_mean_composition/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q28_initial_mean_composition/evidence.json --output q28_ci.json
+
+      - name: Audit Q29 weighted compact constants
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q29_weighted_compact_constants/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q29_weighted_compact_constants/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q29_weighted_compact_constants/evidence.json --output q29_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

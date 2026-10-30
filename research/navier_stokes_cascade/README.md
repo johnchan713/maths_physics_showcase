@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q29 update:** The [weighted compact constants](results/core_current_head_q29_weighted_compact_constants/README.md)
+> make the radial Jacobian, actual plateau gap and distinct pole archive explicit
+> for shifted T_e/A_e bounds, without an extra M or q loss. Actual profile/support
+> identification, slow-response constants and complete source closure remain open.
+
 > **Q28 update:** The [initial mean composition](results/core_current_head_q28_initial_mean_composition/README.md)
 > removes the independent initial-mean input by composing the actual primary
 > and signed fast/slow passes, retaining fresh pressure and both pole archives.
