@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q37 update:** The [signed covariance/pressure join](results/core_current_head_q37_signed_covariance_pressure/README.md)
+> retains all six tensor entries, signed squares and old pressure/scalars.
+> It derives profile/moment inputs and exposes the larger pressure-map pole.
+> New-domain maps, fresh means and full source closure remain conditional.
+
 > **Q36 update:** The [fixed-profile signed-target join](results/core_current_head_q36_profile_signed_target/README.md)
 > binds density, moving pressure and both projectors to one fixed profile,
 > then recomputes Q35’s target through both edges and the unchanged root.

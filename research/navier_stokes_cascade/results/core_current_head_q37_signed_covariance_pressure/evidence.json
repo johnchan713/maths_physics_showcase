@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1111,
+    "nodes": 275,
+    "source_bindings": 4149
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q36_profile_signed_target/evidence.json": "0655d797123681ee853fc6e72504abbc916bcf130b3f6d2ba36dde4ee17dd82b"
+  },
+  "parent": "fe8ff50754441ef89ab24a09db18ebca7a2d4876",
+  "source_hashes": {
+    "results/core_current_head_q36_profile_signed_target/profile_target.py": "2fce0c3bea5b10ef7448d6c323406bd475f9c144d37fa3adaead7d6fe7dace72",
+    "results/core_current_head_q37_signed_covariance_pressure/README.md": "d9aafcbf5741edbc77725991f00d3a2bb7e88f6b486754c5852885efb1070c2b",
+    "results/core_current_head_q37_signed_covariance_pressure/audit.py": "10cdda0c4eceea265f7c4f3fbee778c82c1c1be8814c019cc6dcf9092a02bec4",
+    "results/core_current_head_q37_signed_covariance_pressure/signed_update.py": "7f57134e5fdcb43236f3c34a634c7c0dafbaccac5cb9966845df82d5b0a0e2de",
+    "results/core_current_head_q37_signed_covariance_pressure/test_audit.py": "e989a2871ba394de573482dc71065895ac86a9818229097897079e60eba9fc21",
+    "results/core_generic_signed_covariance_join/budgets.py": "70dfab854894f3f5e6b91f448372994a0be099bc7f25f2c96ece8f8abbd67858",
+    "results/core_symbolic_real_covariance_join/README.md": "7538e2fa049957047a22f35b3081477ee4bca89eec7dead60a901be6e79e947a",
+    "results/core_symbolic_real_covariance_join/bounds.py": "baf6a97fba119db0856bc87bf6fd683b0b144f61ef245ffa1a156c29c7cc1b9b",
+    "results/core_weighted_reverse_chart/bounds.py": "02978b861744a7457b9013ad72bd2590950fd722d8decf5aa5b201500333cf0f"
+  },
+  "status": "conditional-Q36-complete-real-covariance-and-pressure",
+  "symbolic": {
+    "actual_new_domain_maps_still_required": true,
+    "complete_residual_or_blowup": false,
+    "fresh_fast_slow_or_full_source_certified": false,
+    "full_moving_pressure_retained": true,
+    "new_pressure_pole": "2*max(6*(n+2)+9,6*(n+2)+d+6)",
+    "old_scalars_added": true,
+    "profile_and_primary_covariance_ceiling": "m+16",
+    "profile_and_radial_moment_inputs_derived": true,
+    "result": "conditional-Q36-complete-real-covariance-and-pressure",
+    "signed_square_retained": true,
+    "six_tensor_entries": true,
+    "target_ceiling": "m+3"
+  }
+}
