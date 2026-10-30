@@ -1,5 +1,12 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q19 update:** The [typed radial cycle](results/core_current_head_q19_typed_weight_cycle/README.md)
+> conditionally preserves half weight for harmonics and full weight for mean
+> increments and signed targets. Exact angular projection removes single-wave
+> linear terms from the mean equations; covariance restores the full weight.
+> Whole-path inverse, root and epsilon-rate contracts remain required.
+
+
 > **Q18 correction:** The [edge-weight audit](results/core_current_head_q18_edge_weight_obstruction/README.md)
 > finds that Q5's blanket full-weight source bound is not justified by the
 > harmonic source foundation, which retains only sqrt(zeta). No finite

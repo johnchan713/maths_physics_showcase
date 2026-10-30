@@ -1,0 +1,45 @@
+{
+  "closure": {
+    "edges": 1093,
+    "nodes": 257,
+    "source_bindings": 3962
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q18_edge_weight_obstruction/evidence.json": "95ccb024eb52fb21306137c83b8230d58e7a1930f5ad47741ef5f71c320f967f"
+  },
+  "parent": "3ab3fa4cd0e5c85e8343ea7b10f7356c76c6f2d9",
+  "source_hashes": {
+    "results/compact_mean_corrections/README.md": "ae135ad88b0e23e782b27bc1a05cf550f62130630daec49db8941b7d6e817774",
+    "results/compact_mean_foundation/README.md": "f17ddf5d7858d835669ad897bf2ad22357175531c5f54d26fdf05fb04b8e4256",
+    "results/core_current_head_q19_typed_weight_cycle/README.md": "627c38cfe82cadcac7852d22ff2b7998708156cabca6cee9d2f4611d82852926",
+    "results/core_current_head_q19_typed_weight_cycle/audit.py": "331c25112284fca8fc5d64ebd5db35c655ef945679485e58085c35437e00cbf3",
+    "results/core_current_head_q19_typed_weight_cycle/test_audit.py": "806c45883ab223f5e0dedb103658c376f3dac7e38a0e4851850b54d0245a91f1",
+    "results/core_current_head_q19_typed_weight_cycle/typed.py": "738f7f9a288de0aa9512046cccac1e471e4aa0f47059fa4ddd42d5e2f0b123e1",
+    "results/core_generic_signed_covariance_join/README.md": "4be7970360bfccd085bab75bc4e78e94bac400f820d34c00745481c9ebe6532f",
+    "results/core_next_sourced_mean_tail_join/README.md": "a5dcca9377532f7142187757c9f744bc67ed674902afb933d09eb49b4d26450a",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856"
+  },
+  "status": "conditional-typed-radial-cycle-invariant",
+  "symbolic": {
+    "actual_inverse_root_and_rate_contracts_certified": false,
+    "angular_mean_distinct_from_auxiliary_Haar": true,
+    "compact_maps_only_receive_full_weight_mean_inputs": true,
+    "conditional_radial_cycle_closed": true,
+    "full_pressure_can_have_half_weight": true,
+    "harmonic_inverse_requires_whole_path_f_over_P_jets": true,
+    "radial_invariant": {
+      "covariance": "1",
+      "covariance_change": "1",
+      "harmonic_pressure": "1/2",
+      "harmonic_source": "1/2",
+      "mean": "1",
+      "mean_pressure": "1",
+      "mean_rows": "1",
+      "signed_target": "1",
+      "signed_wave": "1/2",
+      "wave": "1/2"
+    },
+    "unconditional_residual_or_blowup": false
+  }
+}
