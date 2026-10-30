@@ -1,0 +1,38 @@
+{
+  "closure": {
+    "edges": 1107,
+    "nodes": 271,
+    "source_bindings": 4104
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q32_stress_normalization/evidence.json": "b32511d1075600fa4fbec737eca6a44f7a970c681df19ff4dabfb88e9fd7539f"
+  },
+  "parent": "9127cae3f55522b11339923754ec00b62e1b47b1",
+  "source_hashes": {
+    "results/core_canonical_haar_column_jet_closure/bounds.py": "b14af14e1e19637620a882c2e2801e2faaec3621bbf77dc810991cdc579be6e1",
+    "results/core_canonical_haar_column_jet_closure/controls.py": "82cd3e395c172ec4f9c3e7fd9b3173e41657eca4e04f8bc831a3f5d16aaaaf10",
+    "results/core_current_head_q32_stress_normalization/normalization.py": "a7f391fd18d4d4cce243b212359e5bd1239d424f0cec10088846d562942a150f",
+    "results/core_current_head_q33_common_covariance_join/README.md": "57099dc0772569a916a3403e85c7e8f76bc5a3912df569306841411f4d93e695",
+    "results/core_current_head_q33_common_covariance_join/audit.py": "aac6b5a35bb8509c5dc0803231d01d5e04a4b7946aa8b8e431c6e0db4fcb7d2f",
+    "results/core_current_head_q33_common_covariance_join/covariance.py": "ab37341af9c2b64c6b6e4067df5dfea111c49ac766efb745e813e97f4580a933",
+    "results/core_current_head_q33_common_covariance_join/test_audit.py": "bf65b64da943a9eeda36aa50bb0683043365c7f9a5c43efc713eced0399246c2",
+    "results/core_initial_haar_row_budget/README.md": "1196944157a5f9668ebba7f0613fb1c2626449a1008955bfd85c334bcf2bac7c",
+    "results/core_initial_haar_row_budget/budgets.py": "434b4f085ffee00fed1097c3006399e19f6c8fe096033999cc48eff7b208bf82",
+    "results/core_localized_stress_assembly/README.md": "a5ab5abbb5bf8c84ef13ef3666a614c5a8d540134fba1ef79cf372701d1dba7a",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6"
+  },
+  "status": "conditional-common-covariance-and-stress-defect-inputs",
+  "symbolic": {
+    "background_evaluated_in_common_chart": true,
+    "canonical_value_and_ODE_inputs_independently_verified": false,
+    "duplicated_stress_or_deck_count": false,
+    "full_six_entry_covariance": true,
+    "full_source_or_residual_or_blowup": false,
+    "independent_W_D_callbacks_removed": true,
+    "pole": "12*n+18",
+    "result": "conditional-common-covariance-and-stress-defect-inputs",
+    "selected_defect": "Dcurl+4*Cnative_n*S_n",
+    "wave_factor": "16*188^n*n!; S_i<=25*S/16",
+    "weight_preserved": true
+  }
+}

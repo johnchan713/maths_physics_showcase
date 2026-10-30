@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q33 update:** The [common covariance join](results/core_current_head_q33_common_covariance_join/README.md)
+> supplies the initial weighted covariance and selected-flux defect from the
+> canonical root and normalized background stress, retaining full curl squares.
+> Actual lower premises and complete mean/source closure remain open.
+
 > **Q32 update:** The [stress normalization join](results/core_current_head_q32_stress_normalization/README.md)
 > retains the physical scale multiplier and its derivatives, derives the
 > epsilon-cubed higher stress and supplies native root-target norm inputs.
