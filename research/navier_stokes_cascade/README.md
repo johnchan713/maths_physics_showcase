@@ -1,5 +1,12 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q16 update:** The [termwise representative transfer](results/core_current_head_q16_representative_transfer/README.md)
+> maps the corrected normalized orders through the physical potential,
+> velocity and pressure rescalings. Every component has a positive exponent
+> margin; full pressure is the limiting row. The result remains conditional
+> on actual band-uniform normalized inputs and mean/pressure support overlap.
+> No endpoint or unconditional residual theorem is promoted.
+
 > **Q15 update:** The [fixed-width edge-transfer bound](results/core_current_head_q15_flat_edge_transfer/README.md)
 > converts the inherited weighted jet estimates to ordinary uniform bounds
 > and flat zero extensions with explicit finite symbolic constants. It spends

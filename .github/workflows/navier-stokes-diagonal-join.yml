@@ -64,6 +64,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q9_preterminal_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q10_pressure_comparison_join/**
       - research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/**
+      - research/navier_stokes_cascade/results/core_current_head_q16_representative_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -135,6 +136,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q9_preterminal_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q10_pressure_comparison_join/**
       - research/navier_stokes_cascade/results/core_current_head_q11_parameter_obstruction/**
+      - research/navier_stokes_cascade/results/core_current_head_q16_representative_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -592,6 +594,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/evidence.json --output q15_ci.json
+
+      - name: Audit Q16 complete representative physical transfer
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q16_representative_transfer/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q16_representative_transfer/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q16_representative_transfer/evidence.json --output q16_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
