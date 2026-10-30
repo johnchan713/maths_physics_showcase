@@ -1,0 +1,38 @@
+{
+  "closure": {
+    "edges": 1109,
+    "nodes": 273,
+    "source_bindings": 4126
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q34_haar_norm_correction/evidence.json": "dfa1e13caacddc5405fe4799168eca6cf1ca612ab06a88b0a1d904bd43ec9e87"
+  },
+  "parent": "7420459c1c79c7a98ecbdc954f69d42c05feb53c",
+  "source_hashes": {
+    "results/core_current_head_q34_haar_norm_correction/haar_norms.py": "854ff2d2aa51ec0b003da5b3b6e4b635ff31cc5d613698c57ad4e0667c141d3e",
+    "results/core_current_head_q35_initial_projected_source/README.md": "14a2bf95663acbaaba961406e2c0799c7594c8d5df24f6dce0b49d3ed83e06c4",
+    "results/core_current_head_q35_initial_projected_source/audit.py": "5c81307324cbb43e4286ffe84894e2b4f3980a0780b79da234469999f939dde7",
+    "results/core_current_head_q35_initial_projected_source/pipeline.py": "a7d9dbe46b7309cbdd6d55d45d0bade57fa110986f6e8ac932dcb8db785c536f",
+    "results/core_current_head_q35_initial_projected_source/test_audit.py": "e2625ff6535d44940b658da5f9dfbe3fbe22fec3fc5bd5608e7721287a0eae3f",
+    "results/core_sharp_initial_scalar_join/README.md": "582ce9b5a325a4c93e0802ab8bb29d6617ddf1adf56fab45c1cf10e8a54d7cbe",
+    "results/core_sharp_initial_scalar_join/bounds.py": "d0dcd1144fde47687084a72207bddf19d402eba6a4a04548175451099298c537",
+    "results/core_symbolic_fresh_mean_join/README.md": "9bb9be6aab17e0ec13a4fc7416b2114e6c26b869921a18960c9b80c85184e5d8",
+    "results/core_symbolic_fresh_mean_join/bounds.py": "5821f08fb5b7d4eb6abecd98f1a1cf11ef447c42425abce4690cf8fc1425e36d",
+    "results/core_symbolic_initial_haar_join/README.md": "cf2429ee2666cff8e59369200cdd36af612f81ffad64bf5d7db86db56f1d3113",
+    "results/core_symbolic_initial_haar_join/bounds.py": "bc14ef2afada885d673a06d8c70451cee3d36695c2f20849825370b14a79218c"
+  },
+  "status": "conditional-sharp-initial-projected-source-composition",
+  "symbolic": {
+    "common_pole": "12*(m+13)+18",
+    "complete_residual_or_blowup": false,
+    "corrected_R_norms_used": true,
+    "covariance_ceiling": "m+13",
+    "fixed_operator_and_canonical_premises_certified": false,
+    "initial_mean_and_scalar_callbacks_removed": true,
+    "old_means_reset": false,
+    "result": "conditional-sharp-initial-projected-source-composition",
+    "signed_primitive_root_or_full_source_certified": false,
+    "two_projector_channels_distinct": true,
+    "whole_moving_pressure_retained": true
+  }
+}

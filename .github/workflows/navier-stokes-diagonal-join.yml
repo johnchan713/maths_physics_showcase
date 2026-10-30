@@ -83,6 +83,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q32_stress_normalization/**
       - research/navier_stokes_cascade/results/core_current_head_q33_common_covariance_join/**
       - research/navier_stokes_cascade/results/core_current_head_q34_haar_norm_correction/**
+      - research/navier_stokes_cascade/results/core_current_head_q35_initial_projected_source/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -173,6 +174,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q32_stress_normalization/**
       - research/navier_stokes_cascade/results/core_current_head_q33_common_covariance_join/**
       - research/navier_stokes_cascade/results/core_current_head_q34_haar_norm_correction/**
+      - research/navier_stokes_cascade/results/core_current_head_q35_initial_projected_source/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -725,6 +727,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q34_haar_norm_correction/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q34_haar_norm_correction/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q34_haar_norm_correction/evidence.json --output q34_ci.json
+
+      - name: Check Q35 sharp initial projected-source composition
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q35_initial_projected_source/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q35_initial_projected_source/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q35_initial_projected_source/evidence.json --output q35_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q35 update:** The [initial projected-source composition](results/core_current_head_q35_initial_projected_source/README.md)
+> binds corrected covariance and stress norms to the sharp fast/slow scalar
+> and Haar-row chain, retaining the moving pressure moment and distinct channels.
+> Fixed-map validity and the signed primitive/full source remain conditional.
+
 > **Q34 correction:** The [Haar norm interface](results/core_current_head_q34_haar_norm_correction/README.md)
 > supplies the missing raw-U to through-order R covariance conversion and
 > background derivative count. Q33 polynomial compatibility alone did not
