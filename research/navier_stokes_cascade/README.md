@@ -1,5 +1,12 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q21 update:** The [affine lifted-path join](results/core_current_head_q21_lifted_path_join/README.md)
+> transfers extended-domain source jets along each original lift with factor
+> 2^(k+r) S^(-r), no extra source derivatives and no new q loss. Together
+> with Q20 this supplies the conditional whole-path norm conversion;
+> actual extended-domain source bounds remain open.
+
+
 > **Q20 update:** The [Gaussian quotient jet join](results/core_current_head_q20_gaussian_quotient_join/README.md)
 > converts whole-path weighted raw source jets to f/P jets by a finite
 > triangular recurrence, without an inverse Gaussian minimum or extra source

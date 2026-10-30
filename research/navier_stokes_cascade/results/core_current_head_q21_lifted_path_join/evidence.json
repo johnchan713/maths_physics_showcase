@@ -1,0 +1,33 @@
+{
+  "closure": {
+    "edges": 1095,
+    "nodes": 259,
+    "source_bindings": 3980
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q20_gaussian_quotient_join/evidence.json": "6fa1656cb6b02a95181104605b38ca96c894a0560d0aa42cb8aa09bdf4a271b7"
+  },
+  "parent": "2f844abbf80dda5931a2143fe22ffb987698efdc",
+  "source_hashes": {
+    "results/auxiliary_geometry_audit/README.md": "6bcd1dbc12e8561fd2cb1ab797bc323324445895474e4fb6bb10b3d7e231c7b7",
+    "results/core_current_head_q19_typed_weight_cycle/README.md": "627c38cfe82cadcac7852d22ff2b7998708156cabca6cee9d2f4611d82852926",
+    "results/core_current_head_q21_lifted_path_join/README.md": "119c8d751803a2e2fa9b3becf3f4cebce46c52dca448f55ad926a334fb01db9a",
+    "results/core_current_head_q21_lifted_path_join/audit.py": "ac8a4a9842eec8a2de30b9c74a645421aa2d8504772c7f0a188fc2fbb8a817b0",
+    "results/core_current_head_q21_lifted_path_join/lift.py": "ddb6dc071434f12ded3a661195cae2a9a9c2e0103e881b105362233d0a777253",
+    "results/core_current_head_q21_lifted_path_join/test_audit.py": "99fc30c52fbbc3f98ae7ec6cc775d69979aa2d0a177b92e424b9074cd110208e",
+    "results/core_first_sourced_inverse_budget/README.md": "c5b99ccddab6df86c27c7ceb069cb6995c8b4e8126d642d323df9178ba97805c",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6"
+  },
+  "status": "conditional-affine-whole-path-source-transfer",
+  "symbolic": {
+    "Gaussian_evaluated_at_path_point": true,
+    "actual_extended_source_bounds_proved": false,
+    "affine_auxiliary_jacobian": "I-v_t lambda_t",
+    "conditional_extended_to_path_transfer_proved": true,
+    "extra_source_derivative_orders": 0,
+    "higher_auxiliary_map_derivatives": 0,
+    "liftwise_not_deck_averaged": true,
+    "mixed_jet_factor": "2^(k+r)*S^(-r)",
+    "unconditional_residual_or_blowup": false
+  }
+}
