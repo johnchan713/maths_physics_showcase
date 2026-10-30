@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1114,
+    "nodes": 278,
+    "source_bindings": 4176
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q39_current_scalar_refresh/evidence.json": "1e76e05f45eab455c2c07dc12c9ddc9a65212ee4489de962d66edb7a717662b1"
+  },
+  "parent": "37bd02fc95254cacb2d59fbf2bf5d3866e5abcad",
+  "source_hashes": {
+    "results/core_current_head_q39_current_scalar_refresh/refresh_scalars.py": "50857ed44a2c29b4563df6e127f09d0db13f46126d9729ec8d2852b7aadb1499",
+    "results/core_current_head_q40_current_fast_rows/README.md": "d8ac8f0dbc288e8932b9c8f52477bd4cbb5fcf45a110b83fd8e566b3448da4c0",
+    "results/core_current_head_q40_current_fast_rows/audit.py": "736253f696156d713fb6f55b376317d9b6792b6c0a265d83063b2395b46de113",
+    "results/core_current_head_q40_current_fast_rows/current_fast.py": "b3ceb094c3ed6d43571096d8a3bc15bcfa92b68480caf6647139c2561a07fd9d",
+    "results/core_current_head_q40_current_fast_rows/test_audit.py": "de1406e6915853423c0b9e4f75740ea48d7ad86a1c86b7fd3f9fd4faa975b48c",
+    "results/core_fast_row_gain_join/budgets.py": "9f635486fa0b1688341571f8abcb25183f22c21f2fe42aff5a2303c60fdbc60e",
+    "results/core_post_signed_mean_closure/budgets.py": "93fae87a7c35a0c01a450be3a470a00ecc005c9bd98fe49d12d28516ea2a008f",
+    "results/core_real_refresh_obligation_join/README.md": "1bbe3610d00eaf5c4b04eb523137e0f4e14eac8b02b8dded2eb4f3d64d449c62"
+  },
+  "status": "current-rows-to-complete-fast-norm-composition",
+  "symbolic": {
+    "Q36_profile_covariance": "m+24",
+    "Q36_target": "m+11",
+    "Q39_slow_output_m_requires_Q37_pressure": "m+8",
+    "actual_fast_source_postslow_or_full_residual_certified": false,
+    "blowup": false,
+    "fast_axial_A1_velocity_retained": true,
+    "full_old_fast_slow_differences": true,
+    "full_signed_covariance_and_pressure": true,
+    "initial_A1_retained": true,
+    "nonzero_Haar_factor": 2,
+    "original_A1_compact_time_and_background_contracts_required": true,
+    "result": "current-rows-to-complete-fast-norm-composition",
+    "time_inverse_S_retained": true
+  }
+}

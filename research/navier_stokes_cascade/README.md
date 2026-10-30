@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q40 update:** The [current-row fast join](results/core_current_head_q40_current_fast_rows/README.md)
+> derives rows from both old mean differences, complete signed covariance
+> and the retained initial A1 remainder, then applies the complete fast inverse.
+> Original tail/map premises and postslow/full-source closure remain open.
+
 > **Q39 update:** The [current scalar refresh](results/core_current_head_q39_current_scalar_refresh/README.md)
 > retains full old-mean correlations, adds the signed change only once,
 > and feeds fresh postfast scalars to the same slow response. The actual
