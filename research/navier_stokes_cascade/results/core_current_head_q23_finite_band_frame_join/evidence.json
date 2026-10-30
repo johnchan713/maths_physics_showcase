@@ -1,0 +1,39 @@
+{
+  "closure": {
+    "edges": 1097,
+    "nodes": 261,
+    "source_bindings": 4000
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q22_uniform_frame_join/evidence.json": "c9fca5d5219d676b4fa0f481c7ca344fab696e29acbc5efab24a4649b8093373"
+  },
+  "parent": "30725005ddb9aaa93737238451f757fc473df5c0",
+  "source_hashes": {
+    "results/auxiliary_geometry_audit/README.md": "6bcd1dbc12e8561fd2cb1ab797bc323324445895474e4fb6bb10b3d7e231c7b7",
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q23_finite_band_frame_join/README.md": "d1b3cfa97b0ca55c465a19fc57255a8d714108454a2c5b296ddc8b4bf8af1218",
+    "results/core_current_head_q23_finite_band_frame_join/audit.py": "c89adde0fa04bb52888795b14a2a800aeec9f67aed5dfed6f6139ac7d5b94712",
+    "results/core_current_head_q23_finite_band_frame_join/completion.py": "f0d0f5ee52a5eadc3e14b66af111837a518deb3ad6a9b94ea2e1df45df439a6d",
+    "results/core_current_head_q23_finite_band_frame_join/test_audit.py": "437c0357004ea4f775a52c22ebee0512e378f1426c235a133e8806ace1251544",
+    "results/core_current_head_q3_full_frame_join/README.md": "0d99b23c53ebe5e2a58c1db5f99ec498cb000f4a2900192f7524bdd93808608e",
+    "results/core_leading_background_borel_join/README.md": "52d4cfc83b2fc9fa537f4c230a2a2c8a918be56820949aa5100eb5275bc4cf70",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/core_tangent_propagator_closure/README.md": "4d2befdec9c9d81146a171ba0c195ae29ae3de339df19ba59781b9de37d5f181",
+    "results/frame_column_foundation/README.md": "5d0616b3f5e8a491af448e303067630d7118badba6ffd7a0648ca3eaeddc8ca6",
+    "results/frame_column_foundation/frame_budget.py": "2f72e227b1b158a6bb09c02c3f29d9b1875af8037dbcf3908e9fe8054c87d3e7"
+  },
+  "status": "finite-head-tail-uniform-upper-propagator",
+  "symbolic": {
+    "Q22_dominance_needed_for_upper_bound": false,
+    "actual_source_bound_proved": false,
+    "analysis_threshold": "ceil(max(16,360(4/h)^5,Lreq/(2r0)))",
+    "finite_head_normal_floor": "1/(khead Rmax)",
+    "original_selector_changed": false,
+    "root_or_cone_lower_bound_proved": false,
+    "status": "finite-head-tail-uniform-upper-propagator",
+    "unconditional_residual_or_blowup": false,
+    "uniform_T": "max(Ttail,Thead)"
+  }
+}

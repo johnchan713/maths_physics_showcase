@@ -1,5 +1,11 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q23 update:** The [finite-band frame completion](results/core_current_head_q23_finite_band_frame_join/README.md)
+> obtains a uniform upper propagator by combining a quantitative tail with
+> a finite earlier-band estimate. It changes no selector or field. This
+> removes Q22 constant dominance for upper bounds only; canonical root
+> and cone lower bounds still require their own proof.
+
 > **Q22 correction:** The [uniform frame audit](results/core_current_head_q22_uniform_frame_join/README.md)
 > separates per-band compactness from a band-uniform propagator bound. It
 > derives Db/Mz from the existing finite-head background estimates and guards
