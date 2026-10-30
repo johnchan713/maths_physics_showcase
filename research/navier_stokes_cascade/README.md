@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q39 update:** The [current scalar refresh](results/core_current_head_q39_current_scalar_refresh/README.md)
+> retains full old-mean correlations, adds the signed change only once,
+> and feeds fresh postfast scalars to the same slow response. The actual
+> new fast-source estimate and complete postslow/source closure remain open.
+
 > **Q38 update:** The [new-pole radial maps](results/core_current_head_q38_new_pole_maps/README.md)
 > derive Q37’s pressure, primitive and projector bounds on its enlarged domain,
 > retaining exact moments, flat extensions and the original moving profile.

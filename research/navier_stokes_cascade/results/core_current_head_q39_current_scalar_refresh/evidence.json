@@ -1,0 +1,39 @@
+{
+  "closure": {
+    "edges": 1113,
+    "nodes": 277,
+    "source_bindings": 4166
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q38_new_pole_maps/evidence.json": "fd270d73997694aa65fbd956e91f331a6670bb707b1d6b5939d3ec806b9381a1"
+  },
+  "parent": "4d10116d38f4fd193eb42c5d94078b466767c0a8",
+  "source_hashes": {
+    "results/core_actual_scalar_gain_join/budgets.py": "be7e20a112b27ef1d64d5bad27607950731f4eaf3d865943cc3bc407c2573168",
+    "results/core_current_head_q38_new_pole_maps/new_maps.py": "73f7746f5e9d6535380ef6eb23acd6cb0b64e87acfd5cf6972c50f16aa92f977",
+    "results/core_current_head_q39_current_scalar_refresh/README.md": "40243d2665883e8a9297ffe3557941947f8c79a6fb07d618dca075d0a8f38c3d",
+    "results/core_current_head_q39_current_scalar_refresh/audit.py": "aebfc16a9d6280a3665515b9bd46aa8a18531d820e1107861662b016ace0fb09",
+    "results/core_current_head_q39_current_scalar_refresh/refresh_scalars.py": "50857ed44a2c29b4563df6e127f09d0db13f46126d9729ec8d2852b7aadb1499",
+    "results/core_current_head_q39_current_scalar_refresh/test_audit.py": "c47f0e4003e44de21a0c7999880d414923f25b8785830908ea3f37ce463576d5",
+    "results/core_post_signed_mean_closure/budgets.py": "93fae87a7c35a0c01a450be3a470a00ecc005c9bd98fe49d12d28516ea2a008f",
+    "results/core_preserved_haar_scalar_join/budgets.py": "05b3c86cc2be683f2eba93d6e03df760dc3ff5238b871f914a39f2080a956315",
+    "results/core_real_refresh_obligation_join/README.md": "1bbe3610d00eaf5c4b04eb523137e0f4e14eac8b02b8dded2eb4f3d64d449c62",
+    "results/core_real_refresh_obligation_join/bounds.py": "09725dd3c2b0239ea44046f0b9735a4fb8cb3342712304b73990bd02dc444a93"
+  },
+  "status": "current-scalar-fast-change-and-slow-response-join",
+  "symbolic": {
+    "Q36_profile_covariance_ceiling": "m+17",
+    "Q36_target_ceiling": "m+4",
+    "Q38_pressure_ceiling": "m+1",
+    "actual_fast_source_bound_required": true,
+    "complete_axial_fast_and_old_correlations_required": true,
+    "fast_change_order": "59999/20000",
+    "new_fast_jet_ceiling": "m+2",
+    "old_and_new_poles_unweighted_separately": true,
+    "old_full_means_derived": true,
+    "postfast_order": "199997/100000",
+    "postslow_reset_full_source_residual_or_blowup_certified": false,
+    "result": "current-scalar-fast-change-and-slow-response-join",
+    "signed_scalar_change_added_once": true
+  }
+}
