@@ -1,5 +1,11 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q22 correction:** The [uniform frame audit](results/core_current_head_q22_uniform_frame_join/README.md)
+> separates per-band compactness from a band-uniform propagator bound. It
+> derives Db/Mz from the existing finite-head background estimates and guards
+> reuse of the original selector constants. The actual constant/domain
+> comparison remains open; no unconditional source bound is promoted.
+
 > **Q21 update:** The [affine lifted-path join](results/core_current_head_q21_lifted_path_join/README.md)
 > transfers extended-domain source jets along each original lift with factor
 > 2^(k+r) S^(-r), no extra source derivatives and no new q loss. Together

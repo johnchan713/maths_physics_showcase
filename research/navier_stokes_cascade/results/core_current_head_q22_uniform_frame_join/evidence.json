@@ -1,0 +1,40 @@
+{
+  "closure": {
+    "edges": 1096,
+    "nodes": 260,
+    "source_bindings": 3988
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q21_lifted_path_join/evidence.json": "4b0c65e5024fc153a7bb0bf65b6b2b789f32ac0ed76656ee7dd7aad168667f27"
+  },
+  "parent": "eb6f2073673911fe69d26c803ff3e7dd8f354cf5",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q22_uniform_frame_join/README.md": "ae313be40175eeeb9f347b37b149e7ab45638f854f3487f95f5ab243b0649df0",
+    "results/core_current_head_q22_uniform_frame_join/audit.py": "20ba7e2102cb0ffd09be04f8b43af6953f8c99fd2a0c2a907d53c53bbd7bc680",
+    "results/core_current_head_q22_uniform_frame_join/test_audit.py": "3b61ca14d1cd727d2f25874c0767d4ec008da671f426e477200db3dbe3c0aed2",
+    "results/core_current_head_q22_uniform_frame_join/uniform.py": "90f668aceb3779cedaa3bd34814d6af91086dcdd33d0768af790cb91961d9762",
+    "results/core_current_head_q3_full_frame_join/README.md": "0d99b23c53ebe5e2a58c1db5f99ec498cb000f4a2900192f7524bdd93808608e",
+    "results/core_leading_background_borel_join/README.md": "52d4cfc83b2fc9fa537f4c230a2a2c8a918be56820949aa5100eb5275bc4cf70",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/core_tangent_propagator_closure/README.md": "4d2befdec9c9d81146a171ba0c195ae29ae3de339df19ba59781b9de37d5f181",
+    "results/frame_column_foundation/README.md": "5d0616b3f5e8a491af448e303067630d7118badba6ffd7a0648ca3eaeddc8ca6",
+    "results/frame_column_foundation/frame_budget.py": "2f72e227b1b158a6bb09c02c3f29d9b1875af8037dbcf3908e9fe8054c87d3e7"
+  },
+  "status": "guarded-uniform-frame-repair",
+  "symbolic": {
+    "ODE_normalized_homogeneous": "exp(v)",
+    "ODE_normalized_zero_entry": "exp(v)-1",
+    "actual_extended_source_bounds_proved": false,
+    "actual_original_constant_dominance_proved": false,
+    "finite_band_constants_imply_polynomial_control": false,
+    "fixed_epsilon_reserve_repairs_model": false,
+    "original_selector_mutated": false,
+    "required_Db": "3 Dbox Jlead_2 + Jerr_1",
+    "required_Mz": "Jfull_1",
+    "status": "compactness-quantifier-corrected-with-guarded-uniform-frame-recipe",
+    "unconditional_residual_or_blowup": false,
+    "uniform_frame_condition": "log Kframe + CE + Cd <= A + B log S"
+  }
+}

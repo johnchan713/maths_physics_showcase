@@ -70,6 +70,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q19_typed_weight_cycle/**
       - research/navier_stokes_cascade/results/core_current_head_q20_gaussian_quotient_join/**
       - research/navier_stokes_cascade/results/core_current_head_q21_lifted_path_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q22_uniform_frame_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -147,6 +148,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q19_typed_weight_cycle/**
       - research/navier_stokes_cascade/results/core_current_head_q20_gaussian_quotient_join/**
       - research/navier_stokes_cascade/results/core_current_head_q21_lifted_path_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q22_uniform_frame_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -634,6 +636,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q21_lifted_path_join/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q21_lifted_path_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q21_lifted_path_join/evidence.json --output q21_ci.json
+
+      - name: Audit Q22 uniform frame quantifier and guarded repair
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q22_uniform_frame_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q22_uniform_frame_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q22_uniform_frame_join/evidence.json --output q22_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
