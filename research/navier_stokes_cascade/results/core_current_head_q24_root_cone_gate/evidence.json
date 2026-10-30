@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1098,
+    "nodes": 262,
+    "source_bindings": 4014
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q23_finite_band_frame_join/evidence.json": "1e043eae8a4c0fa117b0675f1834b3dcbcbcc09984ead327367cee25c7bfb571"
+  },
+  "parent": "47934df884d9a195ac23906485ddec98cd651726",
+  "source_hashes": {
+    "results/canonical_value_domain/README.md": "45ee194ed8cb27e679a929d24b1c8c96f625914e6c49cd21452350beebe625d8",
+    "results/core_canonical_haar_column_jet_closure/README.md": "f97e89e5a851cc6b22d7fc572fdf1ebb25d5c086eb5e85073e7b8f169f1b1551",
+    "results/core_current_head_q24_root_cone_gate/README.md": "ba08cb3f2af103a3031093378dcb615198b161ce15c8c8a2f629b3fc5a6d8f6c",
+    "results/core_current_head_q24_root_cone_gate/audit.py": "29e3b86f4afc84edc33cc7777bbf3e3d3171172992b4a08f8bd4a503836c73d1",
+    "results/core_current_head_q24_root_cone_gate/cone.py": "55a83353fdedcaba3750c5562d1b47cf2ead58f854cb079c73c83d4fa69c8edd",
+    "results/core_current_head_q24_root_cone_gate/test_audit.py": "6986671355841ff1401f66f4b1e02ae8617bd9da918f5b241d07b0c3ed93928c",
+    "results/core_current_head_q2_regional_gap_join/README.md": "a75b85f7acf75f692734a0c9e096c52d6cc7bd25e27cc681adc36ad66c447ae9",
+    "results/core_primary_root_budget/README.md": "67c1f6b41f441c58866cab8c5571f83bc18aa718e8a926f71120b77c27eaa899",
+    "results/core_primary_tail_recheck/README.md": "7acbbdcb68053bda84b9ba5ef57a28050d94c78e865216d18f81b37f1d9344bc"
+  },
+  "status": "finite-head-canonical-cone-gate",
+  "symbolic": {
+    "K_head": "2M/d",
+    "actual_head_margins_proved": false,
+    "beta_head": "rho_min a/M^2",
+    "required_margins": [
+      "o det(c_plus,c_minus)>0",
+      "o det(tau,c_minus)>0",
+      "o det(c_plus,tau)>0"
+    ],
+    "selector_changed": false,
+    "status": "finite-head-canonical-cone-gate",
+    "unbounded_target_magnitude_not_compactified": true,
+    "unconditional_residual_or_blowup": false
+  }
+}

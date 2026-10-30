@@ -1,5 +1,11 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q24 update:** The [canonical cone gate](results/core_current_head_q24_root_cone_gate/README.md)
+> reduces the finite-head positive-root obligation to three oriented
+> determinant margins, with explicit enclosure errors and inverse/root
+> constants. Actual whole-chart margins remain unproved; upper propagator
+> and positive pulse mass alone do not supply them.
+
 > **Q23 update:** The [finite-band frame completion](results/core_current_head_q23_finite_band_frame_join/README.md)
 > obtains a uniform upper propagator by combining a quantitative tail with
 > a finite earlier-band estimate. It changes no selector or field. This
