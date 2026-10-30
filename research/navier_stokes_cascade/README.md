@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q34 correction:** The [Haar norm interface](results/core_current_head_q34_haar_norm_correction/README.md)
+> supplies the missing raw-U to through-order R covariance conversion and
+> background derivative count. Q33 polynomial compatibility alone did not
+> certify this norm interface. Full mean/source and residual closure remain open.
+
 > **Q33 update:** The [common covariance join](results/core_current_head_q33_common_covariance_join/README.md)
 > supplies the initial weighted covariance and selected-flux defect from the
 > canonical root and normalized background stress, retaining full curl squares.

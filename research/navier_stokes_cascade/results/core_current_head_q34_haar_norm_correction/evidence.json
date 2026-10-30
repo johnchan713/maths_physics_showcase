@@ -1,0 +1,42 @@
+{
+  "closure": {
+    "edges": 1108,
+    "nodes": 272,
+    "source_bindings": 4115
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q33_common_covariance_join/evidence.json": "55cdc6b3645423afdbd860f8124daa95d9eaeda0bfa0a776adcb5a0ec3bb4857"
+  },
+  "parent": "b49bb07f3c36d7d8ecced0b940bc6403fac2e6f1",
+  "source_hashes": {
+    "results/core_current_head_q33_common_covariance_join/covariance.py": "ab37341af9c2b64c6b6e4067df5dfea111c49ac766efb745e813e97f4580a933",
+    "results/core_current_head_q34_haar_norm_correction/README.md": "285f371f484f54639f804dd2e120907698f1e751f1ae59ebf2656a45b77fa241",
+    "results/core_current_head_q34_haar_norm_correction/audit.py": "31ec9f7f059fe42882593198d2d0346328959b3bd5a879af19c70f98e2931bb5",
+    "results/core_current_head_q34_haar_norm_correction/haar_norms.py": "854ff2d2aa51ec0b003da5b3b6e4b635ff31cc5d613698c57ad4e0667c141d3e",
+    "results/core_current_head_q34_haar_norm_correction/test_audit.py": "3d3ecd3137f9045688b7e8fe065b8c5d8de9ef7f8bb4f8ac9a1f20493da56901",
+    "results/core_sharp_initial_scalar_join/README.md": "582ce9b5a325a4c93e0802ab8bb29d6617ddf1adf56fab45c1cf10e8a54d7cbe",
+    "results/core_sharp_initial_scalar_join/bounds.py": "d0dcd1144fde47687084a72207bddf19d402eba6a4a04548175451099298c537",
+    "results/core_symbolic_initial_haar_join/README.md": "cf2429ee2666cff8e59369200cdd36af612f81ffad64bf5d7db86db56f1d3113",
+    "results/core_symbolic_initial_haar_join/bounds.py": "bc14ef2afada885d673a06d8c70451cee3d36695c2f20849825370b14a79218c",
+    "results/core_weighted_reverse_chart/README.md": "a2c1179512869d02bfeb918bce562f5bfc980274340f295430f95124d704a219",
+    "results/core_weighted_reverse_chart/bounds.py": "02978b861744a7457b9013ad72bd2590950fd722d8decf5aa5b201500333cf0f"
+  },
+  "status": "R-chart-through-order-Haar-interface-corrected",
+  "symbolic": {
+    "background_direct_R_count": true,
+    "background_reverse_transfer": false,
+    "common_weight_preserved": true,
+    "correction": "Q33 raw polynomial interface alone does not certify through-order R norms",
+    "covariance_reverse_transfer": true,
+    "full_source_residual_or_blowup": false,
+    "raw_to_normalized_count": [
+      "1",
+      "6",
+      "37/2",
+      "118/3",
+      "523/8"
+    ],
+    "result": "R-chart-through-order-Haar-interface-corrected",
+    "scalar_identities_initial_only": true
+  }
+}
