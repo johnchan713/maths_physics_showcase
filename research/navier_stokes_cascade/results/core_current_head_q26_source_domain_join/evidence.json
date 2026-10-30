@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1100,
+    "nodes": 264,
+    "source_bindings": 4033
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q25_direct_cone_join/evidence.json": "8ad9ca5578af36ccc42ca283f2a4e6fcd31825f6de257791f2ecadb8cf389517"
+  },
+  "parent": "8f5b46e6d0f2df1eb27ac2ca84c1cec8400b2448",
+  "source_hashes": {
+    "results/auxiliary_geometry_audit/README.md": "6bcd1dbc12e8561fd2cb1ab797bc323324445895474e4fb6bb10b3d7e231c7b7",
+    "results/core_current_head_q26_source_domain_join/README.md": "774e90b21566473b21d763072bbc4b325d47404b754f70de1947a59fa95a1fd3",
+    "results/core_current_head_q26_source_domain_join/audit.py": "6446f4d28bc69d442e9a9663a0facf8533383a4f465f10d31e82c91b34ff1c62",
+    "results/core_current_head_q26_source_domain_join/domain.py": "b690f28803e2302c0cc04a30d896672803a3eea3768ca46d96bbf6497ecfee10",
+    "results/core_current_head_q26_source_domain_join/test_audit.py": "528add4b47d3a67808e9ae13d4cf07a0a93f49e1166dbba7678259ebedce5ac7",
+    "results/core_current_head_q2_regional_gap_join/README.md": "a75b85f7acf75f692734a0c9e096c52d6cc7bd25e27cc681adc36ad66c447ae9",
+    "results/core_current_head_q4_fixed_profile_join/README.md": "acee08b0752b8d889b937682eaa3853d81acf80cdb6bef2a692e5ff954f3c3db",
+    "results/core_current_head_q5_weighted_inverse_source_join/README.md": "6ada1ea7416077edfb0aed83a4be54c163368616498523ccae5226042ade39af",
+    "results/core_current_head_q6_complete_residual_join/README.md": "f2494caf2342cdf20b470d1d18e3df0988512ef31a9a61af4e76d01d381aaf80",
+    "results/core_current_head_q8_localization_force_join/README.md": "8cb594d53fb6a740f9903c131ca7bed63f9cc6bbd9741523f95c20b7ac563355",
+    "results/core_primary_tail_recheck/README.md": "7acbbdcb68053bda84b9ba5ef57a28050d94c78e865216d18f81b37f1d9344bc"
+  },
+  "status": "fixed-q-local-source-domain-closure",
+  "symbolic": {
+    "background_bound": "4Q<=16q<=qstar/4",
+    "domain": "0<q<=min(qstar/64,2^(-ell_*-2))",
+    "field_or_selector_changed": false,
+    "historical_localization_identified": false,
+    "label_bound": "Q<=4q<=2^(-ell_*)",
+    "recursion_domain_enlargement_factor": 1,
+    "source_norm_proved": false,
+    "status": "fixed-q-local-source-domain-closure",
+    "unconditional_residual_or_blowup": false,
+    "unrestricted_exterior_slow_box_source_bound": false
+  }
+}

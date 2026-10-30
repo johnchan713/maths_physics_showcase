@@ -1,5 +1,11 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q26 update:** The [local source-domain join](results/core_current_head_q26_source_domain_join/README.md)
+> binds Q25 cone coverage to the existing certified tail and proves that
+> radial/auxiliary maps preserve its q fibers through finite source stages.
+> Background-chart enlargement is not iterated source-domain enlargement.
+> Actual source norms and historical localization membership remain open.
+
 > **Q25 update:** The [direct canonical cone join](results/core_current_head_q25_direct_cone_join/README.md)
 > derives Q24 determinant margins and the original beta/K0 constants on
 > the certified direct-cone tail, retaining mass cancellation and basis
