@@ -1,0 +1,45 @@
+{
+  "closure": {
+    "edges": 1101,
+    "nodes": 265,
+    "source_bindings": 4044
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q26_source_domain_join/evidence.json": "53c4a643a62e99d6f09cee23da8b39312bea69a470459004a898787b6d66c09e"
+  },
+  "parent": "1fcc2669852829f108e411c5648017a84a6c9f4e",
+  "source_hashes": {
+    "results/core_canonical_entrance_jet_closure/README.md": "73009a782e22b3aa1f702f579340929e21ddfd0b8b0fc3c75e95a51bcacd2a86",
+    "results/core_canonical_haar_column_jet_closure/README.md": "f97e89e5a851cc6b22d7fc572fdf1ebb25d5c086eb5e85073e7b8f169f1b1551",
+    "results/core_current_head_q27_signed_wave_inputs/README.md": "7eda3ed0ff6be235ffa6850c95b7d7b795d31c48f95cb24dadea402eef3a993a",
+    "results/core_current_head_q27_signed_wave_inputs/audit.py": "181b2023861898cf880fab8eed57eaf27b7aa05b74a396f3ed1aab0a5c15340e",
+    "results/core_current_head_q27_signed_wave_inputs/test_audit.py": "ddd82cbcc7f16d633359b3acac5d5b47995069c66cfb389a0e93f3d03c43ff33",
+    "results/core_current_head_q27_signed_wave_inputs/waves.py": "fea22e1d059678bb9d9bfe69f68b9718f4ce01a835a5593a4b6bf47bfbfdd058",
+    "results/core_phase_coefficient_budget/README.md": "37c00b1e9050894fb3417b83817c18188ff5d6193e6b56ba4160e8dc042e9eda",
+    "results/core_phase_coefficient_budget/budgets.py": "95b1fe979265851d41dbd8c0237faea6007074b461db27fa0028c7e865b7506f",
+    "results/core_primary_root_budget/README.md": "67c1f6b41f441c58866cab8c5571f83bc18aa718e8a926f71120b77c27eaa899",
+    "results/core_primary_root_budget/budgets.py": "c54222b0a79f7342d8fc780af93a9aa9572cd86e591fbeab5eead9178d1c8cc8",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/core_signed_prefix_source_budget/budgets.py": "141e8193b477024d6dcab82c3c4a584b721fdad70823ac3b2218bbfbc2387719"
+  },
+  "status": "conditional-first-signed-complete-wave-input-closure",
+  "symbolic": {
+    "actual_lower_premises_certified": false,
+    "common_pole": "max(6*n+9,6*n+d+6)",
+    "complete_first_source_or_residual_proved": false,
+    "independent_wave_T_R_Pi_U_callbacks_removed": true,
+    "prefix_wave_order_for_source_j": "j+15",
+    "pressure_row": "(n^T K-nprime^T)/|n|^2",
+    "result": "conditional-first-signed-complete-wave-input-closure",
+    "root_and_target_order_for_source_j": "j+16 (before expanding target dependencies)",
+    "root_and_target_order_for_wave_slot": "n+1",
+    "signed_square_and_cutoff_curl_retained": true,
+    "wave_orders": {
+      "Pi": "1",
+      "R": "1-kappa",
+      "T": "1/2",
+      "U": "1/2"
+    },
+    "wave_weight": "sqrt(zeta)*P"
+  }
+}

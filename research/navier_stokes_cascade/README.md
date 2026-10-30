@@ -1,5 +1,11 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q27 update:** The [first signed-wave input join](results/core_current_head_q27_signed_wave_inputs/README.md)
+> derives the source recipe's T, R, Pi and U bounds from the original roots,
+> signed target, homogeneous pressure and complete cut potential. It retains
+> signed/cutoff curls and traces the additional root/target jet request.
+> The complete source still requires its lower mean, background and fixed-map premises.
+
 > **Q26 update:** The [local source-domain join](results/core_current_head_q26_source_domain_join/README.md)
 > binds Q25 cone coverage to the existing certified tail and proves that
 > radial/auxiliary maps preserve its q fibers through finite source stages.
