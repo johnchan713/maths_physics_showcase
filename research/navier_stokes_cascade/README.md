@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q30 update:** The [fixed support join](results/core_current_head_q30_fixed_support_join/README.md)
+> binds the uniform cutoff gap and full slow-potential hull to the existing
+> fixed choices, with explicit finite slow-matrix denominators. Background,
+> canonical and weighted-source premises remain; no full residual is promoted.
+
 > **Q29 update:** The [weighted compact constants](results/core_current_head_q29_weighted_compact_constants/README.md)
 > make the radial Jacobian, actual plateau gap and distinct pole archive explicit
 > for shifted T_e/A_e bounds, without an extra M or q loss. Actual profile/support

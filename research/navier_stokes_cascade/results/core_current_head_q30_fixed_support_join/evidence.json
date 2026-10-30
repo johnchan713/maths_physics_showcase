@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1104,
+    "nodes": 268,
+    "source_bindings": 4074
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q29_weighted_compact_constants/evidence.json": "45310893f46bd77c72e4a3f1b714bda27ca712d1a690bebd57ccb274e17f75b5"
+  },
+  "parent": "cee654124843aeb2ce26234df8dae44c04366f3d",
+  "source_hashes": {
+    "results/compact_mean_corrections/README.md": "ae135ad88b0e23e782b27bc1a05cf550f62130630daec49db8941b7d6e817774",
+    "results/compact_mean_foundation/README.md": "f17ddf5d7858d835669ad897bf2ad22357175531c5f54d26fdf05fb04b8e4256",
+    "results/core_coefficient_support_recheck/README.md": "f66cda979f43cd1c719475c5b179b2b3bf12ad839d4dc7acd9ea6087474f33e5",
+    "results/core_current_head_q30_fixed_support_join/README.md": "3005d7d6cb917a970a1ff85ec9a0f18b2a13f513934629e4fc130d4b22448069",
+    "results/core_current_head_q30_fixed_support_join/audit.py": "f9efe1931364725667c90ea3a3a3f12ba26d63c0d59e0f8f345a6b71162cc091",
+    "results/core_current_head_q30_fixed_support_join/fixed_maps.py": "bec5d420db3007e496409b78d3b645a329af9f08136b0d20848baac78c5f3b0d",
+    "results/core_current_head_q30_fixed_support_join/test_audit.py": "91804f35deea15518be5f609f11354221a3ce4ccb742b084c4f386f5295605fa",
+    "results/core_reserved_geometry_recheck/README.md": "9427bd6d51a42cee4f562eadf1a1ed3bf21358af9a6fbac66cca4b6100e8a13f",
+    "results/core_slow_inverse_budget/README.md": "f3539fc205e5f3dc0c261d286ab7387ca0c0e5d615abaf94863f69970f8f2a03"
+  },
+  "status": "fixed-choice-cutoff-and-slow-hull-join",
+  "symbolic": {
+    "actual_source_and_background_premises_closed": false,
+    "axial_determinant": "g*(1-exp(-2*dpatch*lambda))>0",
+    "cutoff_gap": "min(log(c0/Xa),log(Xb/c1))>0; fixed physical X profile",
+    "full_pressure_identified_with_leading": false,
+    "new_profile_or_band_selected": false,
+    "result": "fixed-choice-cutoff-and-slow-hull-join",
+    "slow_hull": "[l0,g^2*u0] compactly inside x-image of I4",
+    "slow_potential_hull_not_bumps_only": true,
+    "unconditional_residual_or_blowup": false,
+    "uniform_in_lambda_to_zero": false
+  }
+}
