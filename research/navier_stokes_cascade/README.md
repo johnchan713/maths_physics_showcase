@@ -1,5 +1,13 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q18 correction:** The [edge-weight audit](results/core_current_head_q18_edge_weight_obstruction/README.md)
+> finds that Q5's blanket full-weight source bound is not justified by the
+> harmonic source foundation, which retains only sqrt(zeta). No finite
+> radial pole, band reserve or logarithmic factor repairs that embedding.
+> A typed harmonic/mean/signed-target induction is required; this is an
+> obstruction to the inherited implication, not a failure proof for the field.
+
+
 > **Q17 update:** The [projected mean/pressure support join](results/core_current_head_q17_mean_support_join/README.md)
 > derives the missing aggregation count from the frozen slow mesh. Compact
 > maps may fill radial and auxiliary supports, but collect only O(S^3)

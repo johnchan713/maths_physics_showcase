@@ -1,0 +1,62 @@
+{
+  "closure": {
+    "edges": 1092,
+    "nodes": 256,
+    "source_bindings": 3953
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q17_mean_support_join/evidence.json": "cc1405f8b150a4a750a25b0d6354e1bb0f0eee1dca9f79cba3e870e718b8e3c1"
+  },
+  "diagnostics": [
+    {
+      "log_ratio_lower": "1/2",
+      "n": 1,
+      "pole": 0
+    },
+    {
+      "log_ratio_lower": "15/2",
+      "n": 5,
+      "pole": 1
+    },
+    {
+      "log_ratio_lower": "1280060000703/2",
+      "n": 1600037,
+      "pole": 400009
+    },
+    {
+      "log_ratio_lower": "8000000000000000000000000000006000000000000000000000000000001/2",
+      "n": 4000000000000000000000000000001,
+      "pole": 1000000000000000000000000000000
+    }
+  ],
+  "parent": "c5752be79a1370765eece93b1b5e91e8355b7767",
+  "scope": {
+    "actual_component_bound_proved": false,
+    "unconditional_residual_or_blowup": false,
+    "weight_embedding_obstruction_proved": true
+  },
+  "source_hashes": {
+    "results/core_current_head_q18_edge_weight_obstruction/README.md": "0a53691f89c68a80dc3490eee8f38d2cf54585f1fa3998c233d0ce914a9ba716",
+    "results/core_current_head_q18_edge_weight_obstruction/audit.py": "ee40af507dd3157babdd0446fee74c4c5cd8722474a560fa2a61b75244ac69db",
+    "results/core_current_head_q18_edge_weight_obstruction/test_audit.py": "154570751696de576f4f612aa37a2298fdd4a2d47d30c75eecfcab9a0022e318",
+    "results/core_current_head_q18_edge_weight_obstruction/weights.py": "a82f94deac29e9fc7d53aa45a79b8300cef074f532658cc7dc306b07a40969cd",
+    "results/core_current_head_q5_weighted_inverse_source_join/README.md": "6ada1ea7416077edfb0aed83a4be54c163368616498523ccae5226042ade39af",
+    "results/core_finite_support_closure/README.md": "5034221837ca97be051722e139a5f32d00967c2795a080390711fafcbadd3810",
+    "results/core_log_renormalized_actual_source_induction/README.md": "07d49102b5242316bf82cabe601c0fda0eb64474cc8660728ca5c03b46f5dfe9",
+    "results/core_log_renormalized_actual_source_induction/source_induction.py": "c004f0d0c0d5950ab161dce08f7eeb71a07148ff1a01d911096901263088c7f5",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856"
+  },
+  "status": "blanket-full-edge-source-implication-obstructed",
+  "symbolic": {
+    "Q5_blanket_full_weight_source_promotion_justified": false,
+    "actual_source_violates_full_weight_bound_proved": false,
+    "full_weight_signed_target_after_root_division": "1/2",
+    "half_weight_target_after_root_division": "0",
+    "linear_wave_source": "1/2",
+    "mean_covariance": "1",
+    "mean_wave_source_with_full_weight_mean": "3/2",
+    "sum_of_these_sources": "1/2",
+    "typed_all_stage_induction_completed": false,
+    "wave_wave_source": "1"
+  }
+}
