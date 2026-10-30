@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q32 update:** The [stress normalization join](results/core_current_head_q32_stress_normalization/README.md)
+> retains the physical scale multiplier and its derivatives, derives the
+> epsilon-cubed higher stress and supplies native root-target norm inputs.
+> Canonical/atlas source composition and complete residual bounds remain open.
+
 > **Q31 update:** The [weighted stress input budget](results/core_current_head_q31_stress_input_budget/README.md)
 > makes the finite coefficient head, exceptional first stress and exact weight
 > derivative constants explicit on the combined Borel schedule. Physical/atlas

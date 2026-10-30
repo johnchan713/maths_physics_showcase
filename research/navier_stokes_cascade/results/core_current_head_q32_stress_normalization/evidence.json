@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1106,
+    "nodes": 270,
+    "source_bindings": 4095
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q31_stress_input_budget/evidence.json": "fc7f49fa6bb4c99342c623680a6b50da8beed1dee76659fab16199f23262d081"
+  },
+  "parent": "a951d7094b44df5dacfcd04f30ee4b46f4aaa9f6",
+  "source_hashes": {
+    "results/actual_band_pulse_bounds/README.md": "b95bccb7103ec813babf7ccb9a43d65ee0b74b221914fa66fb9c2f1b98f4847f",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q31_stress_input_budget/stress_inputs.py": "1d9489f4ca00f9ffbe2aa407442566e1fe5a75f13109ca2ef01e225e673c550c",
+    "results/core_current_head_q32_stress_normalization/README.md": "daba466f5102577293a7d2803a72d043eff403aa60240d7027688befae30ffd3",
+    "results/core_current_head_q32_stress_normalization/audit.py": "abc6aa3dbc0f57d999a3e17a401b15364788e142974c2280fa60de72dfe9c28a",
+    "results/core_current_head_q32_stress_normalization/normalization.py": "a7f391fd18d4d4cce243b212359e5bd1239d424f0cec10088846d562942a150f",
+    "results/core_current_head_q32_stress_normalization/test_audit.py": "4b79f1742064c378e00182802b611634f1007a7cf3d426bdb68c83738a5aecf8",
+    "results/core_localized_stress_assembly/README.md": "a5ab5abbb5bf8c84ef13ef3666a614c5a8d540134fba1ef79cf372701d1dba7a",
+    "results/core_primary_root_budget/budgets.py": "c54222b0a79f7342d8fc780af93a9aa9572cd86e591fbeab5eead9178d1c8cc8"
+  },
+  "status": "physical-and-native-stress-normalization",
+  "symbolic": {
+    "all_source_premises_closed": false,
+    "complete_residual_or_blowup": false,
+    "derivatives_of_scale_factor_retained": true,
+    "higher_epsilon_order": 3,
+    "higher_stress_raw": "2209480100799225622836409205036617/291600",
+    "leading_target": "s^(-1-h)*T0",
+    "normalized_stress": "epsilon*s^(-1-h)*Tsum",
+    "pole": 9,
+    "pressure_memory_removed": false,
+    "result": "physical-and-native-stress-normalization",
+    "target_raw": "69888361565248619730687635260625/11664"
+  }
+}
