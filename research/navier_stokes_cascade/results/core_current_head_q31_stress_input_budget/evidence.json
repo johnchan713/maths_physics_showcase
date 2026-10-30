@@ -1,0 +1,48 @@
+{
+  "closure": {
+    "edges": 1105,
+    "nodes": 269,
+    "source_bindings": 4083
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q30_fixed_support_join/evidence.json": "ad15216ed97e21d2e7337bbc4743c30669883b2acdc0fb2ab32af345cac629da"
+  },
+  "parent": "e026133f29dc758d04a269166e0ff8e46a30dd4e",
+  "source_hashes": {
+    "results/background_jet_foundation/README.md": "8b70ed3289d5ebaddbb58183a595b29e80b31503ea6fa832445c448b4f32a7be",
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q31_stress_input_budget/README.md": "8f8a70acd1e559687279b3f489b0490714af05185e5b8b8cfbfb3809a909ebaf",
+    "results/core_current_head_q31_stress_input_budget/audit.py": "ebc7372303d41d54ec1245e910e4f86c84a747757b4dc02e0326e97b3a4954f8",
+    "results/core_current_head_q31_stress_input_budget/stress_inputs.py": "1d9489f4ca00f9ffbe2aa407442566e1fe5a75f13109ca2ef01e225e673c550c",
+    "results/core_current_head_q31_stress_input_budget/test_audit.py": "ec451c054523f891409d37266906c905f319f98be9f45fc1b4ced971ac5e4561",
+    "results/core_initial_haar_row_budget/README.md": "1196944157a5f9668ebba7f0613fb1c2626449a1008955bfd85c334bcf2bac7c",
+    "results/core_leading_background_borel_join/README.md": "52d4cfc83b2fc9fa537f4c230a2a2c8a918be56820949aa5100eb5275bc4cf70",
+    "results/core_primary_root_budget/README.md": "67c1f6b41f441c58866cab8c5571f83bc18aa718e8a926f71120b77c27eaa899",
+    "results/weighted_background_edges/README.md": "1ae6a1ab7b9d08ae8fb47e399a14711e86f7ebb8561281ee179864328226f716",
+    "results/weighted_stress_foundation/README.md": "18d60471dd6d794f440e184375fe3d64d1787c854cdd67bc840878a9e37f0f16"
+  },
+  "status": "finite-head-weighted-stress-input-budget",
+  "symbolic": {
+    "both_weight_constants_retained": true,
+    "compact_tail": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "25/4",
+      "121/8"
+    ],
+    "diagnostic": {
+      "correction": "7012581265032477/400000000000",
+      "pole": "15",
+      "relative": "86634314501/1562500000",
+      "target": "156556273/2048"
+    },
+    "full_source_or_residual_proved": false,
+    "numeric_root_h_evaluated": false,
+    "original_first_coefficient_kept_out_of_compact_quotient_norm": true,
+    "pressure_replaced_by_stress": false,
+    "result": "finite-head-weighted-stress-input-budget",
+    "same_schedule_required": true
+  }
+}

@@ -79,6 +79,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q28_initial_mean_composition/**
       - research/navier_stokes_cascade/results/core_current_head_q29_weighted_compact_constants/**
       - research/navier_stokes_cascade/results/core_current_head_q30_fixed_support_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q31_stress_input_budget/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -165,6 +166,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q28_initial_mean_composition/**
       - research/navier_stokes_cascade/results/core_current_head_q29_weighted_compact_constants/**
       - research/navier_stokes_cascade/results/core_current_head_q30_fixed_support_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q31_stress_input_budget/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -697,6 +699,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q30_fixed_support_join/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q30_fixed_support_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q30_fixed_support_join/evidence.json --output q30_ci.json
+
+      - name: Check Q31 weighted background stress inputs
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q31_stress_input_budget/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q31_stress_input_budget/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q31_stress_input_budget/evidence.json --output q31_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

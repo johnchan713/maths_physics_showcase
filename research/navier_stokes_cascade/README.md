@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q31 update:** The [weighted stress input budget](results/core_current_head_q31_stress_input_budget/README.md)
+> makes the finite coefficient head, exceptional first stress and exact weight
+> derivative constants explicit on the combined Borel schedule. Physical/atlas
+> and canonical source joins remain; no full residual is promoted.
+
 > **Q30 update:** The [fixed support join](results/core_current_head_q30_fixed_support_join/README.md)
 > binds the uniform cutoff gap and full slow-potential hull to the existing
 > fixed choices, with explicit finite slow-matrix denominators. Background,
