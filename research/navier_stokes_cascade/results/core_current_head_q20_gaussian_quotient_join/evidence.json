@@ -1,0 +1,33 @@
+{
+  "closure": {
+    "edges": 1094,
+    "nodes": 258,
+    "source_bindings": 3972
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q19_typed_weight_cycle/evidence.json": "70c8149dc84a3a7f22b2f18ceadb7dbdf49ddd6c1077c3f5deb5e05af295905e"
+  },
+  "parent": "3f38f4e5a48d3d5d5f06b8559f36fadcc09bd755",
+  "source_hashes": {
+    "results/core_canonical_entrance_jet_closure/README.md": "73009a782e22b3aa1f702f579340929e21ddfd0b8b0fc3c75e95a51bcacd2a86",
+    "results/core_current_head_q20_gaussian_quotient_join/README.md": "bdca37e4d0322f478207ca4b531635a3b326c4722cb0983d53809ebe2a6c83af",
+    "results/core_current_head_q20_gaussian_quotient_join/audit.py": "e96ca2d42b3734d00f4077d0d0bdd132d2def827ada4e533fb2c17916a1b986c",
+    "results/core_current_head_q20_gaussian_quotient_join/quotient.py": "1895ac26ced79142796920150c55e79963da0691ab069886111772ff94de1c5c",
+    "results/core_current_head_q20_gaussian_quotient_join/test_audit.py": "9f18e63b20579a314c616d294fc4211cdb98d34ed9be040e093a7339620e7858",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856"
+  },
+  "status": "conditional-whole-path-Gaussian-quotient-jet-join",
+  "symbolic": {
+    "actual_all_stage_source_enclosures_proved": false,
+    "conditional_whole_path_jet_equivalence": true,
+    "extra_source_derivative_orders": 0,
+    "log_jet_bound": "ell_j=(L/2)*p_j+p_(j-1)",
+    "physical_trace_bound_implies_lifted_bound": false,
+    "quotient_bound": "Q_j=sum_i=0^j binom(j,i) H_i F_(j-i)",
+    "recurrence": "H_j=sum_i=1^j binom(j-1,i-1) ell_i H_(j-i)",
+    "unconditional_residual_or_blowup": false,
+    "zeroth_log_or_inverse_Gaussian_required": false
+  }
+}

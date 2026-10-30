@@ -1,5 +1,12 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q20 update:** The [Gaussian quotient jet join](results/core_current_head_q20_gaussian_quotient_join/README.md)
+> converts whole-path weighted raw source jets to f/P jets by a finite
+> triangular recurrence, without an inverse Gaussian minimum or extra source
+> derivatives. Actual lifted-domain source estimates remain required;
+> a physical trace alone does not supply them.
+
+
 > **Q19 update:** The [typed radial cycle](results/core_current_head_q19_typed_weight_cycle/README.md)
 > conditionally preserves half weight for harmonics and full weight for mean
 > increments and signed targets. Exact angular projection removes single-wave

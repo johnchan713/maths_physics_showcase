@@ -68,6 +68,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q17_mean_support_join/**
       - research/navier_stokes_cascade/results/core_current_head_q18_edge_weight_obstruction/**
       - research/navier_stokes_cascade/results/core_current_head_q19_typed_weight_cycle/**
+      - research/navier_stokes_cascade/results/core_current_head_q20_gaussian_quotient_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -143,6 +144,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q17_mean_support_join/**
       - research/navier_stokes_cascade/results/core_current_head_q18_edge_weight_obstruction/**
       - research/navier_stokes_cascade/results/core_current_head_q19_typed_weight_cycle/**
+      - research/navier_stokes_cascade/results/core_current_head_q20_gaussian_quotient_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -620,6 +622,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q19_typed_weight_cycle/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q19_typed_weight_cycle/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q19_typed_weight_cycle/evidence.json --output q19_ci.json
+
+      - name: Audit Q20 Gaussian quotient jet join
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q20_gaussian_quotient_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q20_gaussian_quotient_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q20_gaussian_quotient_join/evidence.json --output q20_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
