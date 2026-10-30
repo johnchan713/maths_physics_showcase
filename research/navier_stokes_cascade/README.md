@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q36 update:** The [fixed-profile signed-target join](results/core_current_head_q36_profile_signed_target/README.md)
+> binds density, moving pressure and both projectors to one fixed profile,
+> then recomputes Q35’s target through both edges and the unchanged root.
+> Actual map/root inputs, fresh signed covariance and full source remain conditional.
+
 > **Q35 update:** The [initial projected-source composition](results/core_current_head_q35_initial_projected_source/README.md)
 > binds corrected covariance and stress norms to the sharp fast/slow scalar
 > and Haar-row chain, retaining the moving pressure moment and distinct channels.

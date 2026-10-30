@@ -1,0 +1,41 @@
+{
+  "closure": {
+    "edges": 1110,
+    "nodes": 274,
+    "source_bindings": 4137
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q35_initial_projected_source/evidence.json": "069515b032507211dd8a84dc4b4c7bc8868b82c07ac39bb5d46424102d6070e9"
+  },
+  "parent": "e4aceb61c9c54d2f35174a402edf1a6e3ba9380a",
+  "source_hashes": {
+    "results/core_current_head_q35_initial_projected_source/pipeline.py": "a7d9dbe46b7309cbdd6d55d45d0bade57fa110986f6e8ac932dcb8db785c536f",
+    "results/core_current_head_q36_profile_signed_target/README.md": "0d1dc66079170405d2c05a5ed1ce8fb6304dd1ff96c632258efb2a6df77ea42f",
+    "results/core_current_head_q36_profile_signed_target/audit.py": "e6a97fe242ebf17688ac0590a97a06d4719d22bfa3cbaff7bc6bb571148b9b4f",
+    "results/core_current_head_q36_profile_signed_target/profile_target.py": "2fce0c3bea5b10ef7448d6c323406bd475f9c144d37fa3adaead7d6fe7dace72",
+    "results/core_current_head_q36_profile_signed_target/test_audit.py": "c8b752b050c34cc4c85833e1787871b8de2b528fbd1bb6efd5b316a71576b458",
+    "results/core_current_head_q4_fixed_profile_join/README.md": "acee08b0752b8d889b937682eaa3853d81acf80cdb6bef2a692e5ff954f3c3db",
+    "results/core_log_pullback_projector_join/README.md": "3bcaa9f21300865a984526a929ed5aa12761acf82858fceafa57ca12a9050bd4",
+    "results/core_log_pullback_projector_join/bounds.py": "ad29b6c2e6ce2709c0b1212ecff0aa59211a4787b1a81b875aa92cb0f6b399df",
+    "results/core_moving_pressure_compensator_join/bounds.py": "458cae3562f376419c2cf37b3cd824a059ae093026ed3e31b1f83d861ac22ee8",
+    "results/core_rho_squared_projector_realization/bounds.py": "6d5a123072567c09d645320b4a3b8f549b50b264864b051833de3109ae225d46",
+    "results/core_symbolic_signed_target_join/README.md": "2e1a7d7e26c75276d1ed7c3f01712450d523c041505b5dd0e4ffcaa2bc93b8e1",
+    "results/core_symbolic_signed_target_join/bounds.py": "66f4e0f8ae1b319efe60fadaa9c72f39a8c7d1ebcc18010357149694ad8a1738"
+  },
+  "status": "conditional-fixed-profile-to-original-signed-target",
+  "symbolic": {
+    "actual_profile_fixed_map_root_premises_required": true,
+    "blowup": false,
+    "common_pole": "12*(m+13)+18",
+    "complete_curl_needs_next_target_jet": true,
+    "covariance_order": "m+13",
+    "full_moving_pressure_and_two_edge_primitive": true,
+    "full_signed_covariance_fresh_means_source_or_residual_certified": false,
+    "historical_unspecified_projector_identity": false,
+    "independent_rho_c_rho_projector_callbacks_removed": true,
+    "native_target_pole": "2*p+3*n",
+    "profile_order": "m+13",
+    "result": "conditional-fixed-profile-to-original-signed-target",
+    "same_choice_recomputed": true
+  }
+}
