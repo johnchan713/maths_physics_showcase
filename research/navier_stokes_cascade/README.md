@@ -1,5 +1,9 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q44 update:** The [radial multiplier bounds](results/core_current_head_q44_radial_multipliers/README.md)
+> derive the native hull, three compact multipliers and logarithmic Jacobian
+> from the same positive R hull. Cutoff/kernel and A1-tail inputs remain open.
+
 > **Q43 update:** The [compact chart conversion](results/core_current_head_q43_compact_chart/README.md)
 > supplies normalized-R/raw-U operator conversion in both directions, preserving
 > the same weight and pole. Actual profile and A1-tail hypotheses remain open.

@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1118,
+    "nodes": 282,
+    "source_bindings": 4206
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q43_compact_chart/evidence.json": "a42fb660f221d388517ec083f68228d6be1da11ca9cdf6146f5cbb5d1f6dce9c"
+  },
+  "parent": "6ac762d58d76a714b8dc579a81efedd62e9e86c5",
+  "source_hashes": {
+    "results/core_current_head_q29_weighted_compact_constants/README.md": "9587194f819b20f5552654e9e160ad4e4ad892e49f38730ca69bae5c96057caf",
+    "results/core_current_head_q42_compact_provider/provider.py": "21f73f49e774f3c037fd90c5bcadeac4e7d507a620f0f3f32f769c453d10044c",
+    "results/core_current_head_q43_compact_chart/chart.py": "4c959c4aa77e0cbb4a3c66432860372b1b874bbd54fe0061c36abc53fc278d09",
+    "results/core_current_head_q44_radial_multipliers/README.md": "90f883418ae79f60b9f19d92597837ea72c64c8ae001c91d3d17b18ce17d1d0f",
+    "results/core_current_head_q44_radial_multipliers/audit.py": "2800f8b239b5146a8876bd19300e64c929307405732ade5a546f5dc518e9e05d",
+    "results/core_current_head_q44_radial_multipliers/radial.py": "96ba90c9accdb5d99ad789badc6721ce97a46d83938fee4da4273e0ffe1f7a4f",
+    "results/core_current_head_q44_radial_multipliers/test_audit.py": "5ef3986bdba8366654e92d2e53a9db5f46e80c1f2801c9d7029d23482bdf5a4a"
+  },
+  "status": "derived-radial-hull-and-compact-multipliers",
+  "symbolic": {
+    "Umax": "max(1,Rmax^3)",
+    "Umin": "min(1,Rmin^3)",
+    "chart_and_multiplier_hull_identical": true,
+    "cutoff_kernel_and_time_inputs_retained": true,
+    "derived_inputs": [
+      "f",
+      "g",
+      "k",
+      "jacobian"
+    ],
+    "initial_A1_tail_full_source_residual_or_blowup_certified": false,
+    "result": "derived-radial-hull-and-compact-multipliers"
+  }
+}
