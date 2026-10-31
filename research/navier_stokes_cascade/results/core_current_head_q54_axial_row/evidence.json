@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1128,
+    "nodes": 292,
+    "source_bindings": 4288
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q53_primary_oscillation/evidence.json": "3ef5519bdb868c1791119c3526968f0b670de7a426f07b8b55e8401ace900487"
+  },
+  "parent": "d7913c10901da7d8e4aeceaac81cc059ba4d69c5",
+  "source_hashes": {
+    "results/core_axial_potential_pressure_gain/README.md": "c1475ab1bccccb4e61e8d75f9921f93e4639d0dcee08047579f0a8891afabb1b",
+    "results/core_current_head_q47_full_pressure_correction/README.md": "78884265930523c2b692854270679dc5593e5e29449660200ece4c92a89e1015",
+    "results/core_current_head_q48_original_axial_tail/README.md": "9fe11a0fbcb23b440366526aae24833e9651081036381af419375af7025c7e5f",
+    "results/core_current_head_q49_initial_flux_tail/README.md": "108387dadafb2d846d16e921a75df780085f31254465cc528895b6549592ee6d",
+    "results/core_current_head_q51_radial_curl_target/README.md": "f0d8ca1f24a49125351e5644f3d9ce869a6fe7faa18ce7b880e4014336eb6a26",
+    "results/core_current_head_q52_double_viscosity/README.md": "2f698c1fd622fa454ca94bdd370c3a75130398658d92683762724644f667f7fa",
+    "results/core_current_head_q54_axial_row/README.md": "4d631df27a2b43040bf938daa032d50c428dff167a8098df75f4afae6f011fee",
+    "results/core_current_head_q54_axial_row/audit.py": "27212010825602317c8f93f0bf9a7cc753135b344db4c2bde2678a0812b46c7b",
+    "results/core_current_head_q54_axial_row/axial.py": "edcfeb64c05fce6d7aa8c927768064ea4678f06716906064f2ff61a6e21cb2ce",
+    "results/core_current_head_q54_axial_row/test_audit.py": "e067c338159baf4649506a8bf987b7064209bfc0545804d640ef9867b05c5bde",
+    "results/core_fast_row_gain_join/README.md": "d86842b7bda2973fd9dcfc08d9d8713507e222b72c925dbbbe591a0e130ed9b8",
+    "results/core_initial_final_row_obstruction/README.md": "29651cc4ea2205d731e309b25ec572d79e2c60909d1a7bee32a9f6620668f856",
+    "results/core_initial_target_rate_gain/README.md": "0a473af2e635760c0fee64d6a432867f7945b33773d29a404c5235dfdbd1f0e0"
+  },
+  "status": "conditional-axial-viscosity-and-postsigned-tail",
+  "symbolic": {
+    "direct_tail": "2",
+    "leading": "59999/20000",
+    "p": "99995",
+    "phi_extra": "199992",
+    "remainder": "74999/25000",
+    "required": "149997/50000",
+    "velocity_error": "99999/50000"
+  }
+}

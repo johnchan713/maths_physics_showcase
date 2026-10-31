@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q54:** [Two leading channels of the final axial row](results/core_current_head_q54_axial_row/README.md). The direct axial correction bound suffices inside viscosity; the unmultiplied post-signed pressure tail still needs a stronger estimate.
+
 > **Q53:** [A common support gap and the angular stress floor](results/core_current_head_q53_primary_oscillation/README.md) show that the conditional Q52 exponent is sharp for eight auxiliary derivatives along shrinking bands.
 
 > **Q52:** [Two viscous terms in the final angular row](results/core_current_head_q52_double_viscosity/README.md). The limiting term depends on the original primary covariance; the signed target contributes at a higher order.
