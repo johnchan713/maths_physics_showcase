@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1138,
+    "nodes": 302,
+    "source_bindings": 4402
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q63_repair_anisotropy/evidence.json": "34b05820bd3b0cc1b96cada3680c447c0feb0a26a25111d0eb2a83f0dfc2ef5f"
+  },
+  "parent": "239a6bb1c5b5f5a03ea7b62eb68c7e3ab5d3960e",
+  "source_hashes": {
+    "results/core_current_head_q64_fast_phase_radius/README.md": "b44f0fc7f0459a68dbf3cfc64c0eba4c6ba74f2aceed07b678355c78612b140f",
+    "results/core_current_head_q64_fast_phase_radius/audit.py": "8fc8e4480aa880ba25867caf59b3f6e7c9d95e1b87e05779b06cc391deba5d88",
+    "results/core_current_head_q64_fast_phase_radius/q64.py": "7cdb76dfb610f5c1c9298457b601892870085f920eea424e5ae7cca14434e11d",
+    "results/core_current_head_q64_fast_phase_radius/test_audit.py": "21c0a4528b781d578f1507e030e8af27d1d18c527d7c387f3a7ee3cb580ac3d7",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "conditional-uniform-fast-phase-radius",
+  "symbolic": {
+    "disk_control": [
+      "1/96",
+      "1/3072"
+    ],
+    "physical_inputs_enclosed": false,
+    "slow_analyticity_assumed": false
+  }
+}
