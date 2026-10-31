@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1126,
+    "nodes": 290,
+    "source_bindings": 4268
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q51_radial_curl_target/evidence.json": "dba76156680082aef989fa427296ef9abf4fa20020205577613414511be83fea"
+  },
+  "parent": "0bdf8f993cae78050ee52f72b0cca7101f055ec8",
+  "source_hashes": {
+    "results/core_current_head_q50_viscosity_inverse/inverse.py": "0d465c84bdf9fb5ed4fc63314eec764daceb63c02933e88ee3309269539f4fb6",
+    "results/core_current_head_q52_double_viscosity/README.md": "2f698c1fd622fa454ca94bdd370c3a75130398658d92683762724644f667f7fa",
+    "results/core_current_head_q52_double_viscosity/angular.py": "7f91dde7799412a1b4571711b5ea6bc889c79f23a2194774433893ef0514939a",
+    "results/core_current_head_q52_double_viscosity/audit.py": "5aab15e9b200d21d24e413769caac3656f6a50e9b33a634d62a81fe194ad81a2",
+    "results/core_current_head_q52_double_viscosity/test_audit.py": "e8bb470350370bd66620f253e45afa5fd18c7b37b28409828687a5eb96b150fc",
+    "results/core_fast_row_gain_join/README.md": "d86842b7bda2973fd9dcfc08d9d8713507e222b72c925dbbbe591a0e130ed9b8",
+    "results/core_initial_final_row_obstruction/README.md": "29651cc4ea2205d731e309b25ec572d79e2c60909d1a7bee32a9f6620668f856",
+    "results/core_initial_scalar_seed_budget/README.md": "e7f28f727cbf45f443691a42563d05dee2dde7caa41b764a70b9712d3fe0c9de",
+    "results/core_initial_target_rate_gain/README.md": "0a473af2e635760c0fee64d6a432867f7945b33773d29a404c5235dfdbd1f0e0"
+  },
+  "status": "first-real-angular-double-viscosity",
+  "symbolic": {
+    "inverse_aux_order": 8,
+    "inverse_constant": 2038431744,
+    "physical_lower_bound_or_complete_residual": false,
+    "principal_source": "original complete W_rtheta before first fast",
+    "rates": {
+      "final_error": "74999/25000",
+      "final_leading": "59999/20000",
+      "new_fast": "199997/100000",
+      "new_fast_error": "99999/50000",
+      "original_fast": "99999/100000"
+    }
+  }
+}

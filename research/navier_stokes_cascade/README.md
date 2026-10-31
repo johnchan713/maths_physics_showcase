@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q52:** [Two viscous terms in the final angular row](results/core_current_head_q52_double_viscosity/README.md). The limiting term depends on the original primary covariance; the signed target contributes at a higher order.
+
 > **Q51:** [Radial curl and the initial target](results/core_current_head_q51_radial_curl_target/README.md). The selected curl product contains an explicit axial derivative factor, giving a conditional order-two Q36 target.
 
 > **Q50:** [Necessary target bound for strict viscosity gain](results/core_current_head_q50_viscosity_inverse/README.md). Five auxiliary derivatives of the leading viscous term control the signed target value under the common-zero premise.
