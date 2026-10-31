@@ -1,5 +1,9 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q42 update:** The [explicit compact provider](results/core_current_head_q42_compact_provider/README.md)
+> connects Q29 weighted constants to the current fast inverse and enforces
+> cutoff-jet and exact-pole coverage. Actual raw input bounds and A1 tails remain open.
+
 > **Q41 update:** The [postslow reset](results/core_current_head_q41_postslow_reset/README.md)
 > uses the retained initial Haar means with the fresh Q39/Q40 slow response,
 > preserving nonlinear remainders and the whole moving pressure moment.

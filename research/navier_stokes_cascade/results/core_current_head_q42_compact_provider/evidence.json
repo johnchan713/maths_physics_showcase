@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1116,
+    "nodes": 280,
+    "source_bindings": 4192
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q41_postslow_reset/evidence.json": "a2710d5e06092dbacbe4803bc6363b475a5055db97e8bc653ca1b2ecdc73ec56"
+  },
+  "parent": "39897b3143afbd749a344be22ab925505ef624e2",
+  "source_hashes": {
+    "results/core_current_head_q29_weighted_compact_constants/README.md": "9587194f819b20f5552654e9e160ad4e4ad892e49f38730ca69bae5c96057caf",
+    "results/core_current_head_q29_weighted_compact_constants/compact.py": "34accbc1b46dbb6c560f03cbf500c0b2105d4cfe21d5afcea322a43d4bb75f55",
+    "results/core_current_head_q40_current_fast_rows/current_fast.py": "b3ceb094c3ed6d43571096d8a3bc15bcfa92b68480caf6647139c2561a07fd9d",
+    "results/core_current_head_q42_compact_provider/README.md": "e4e530909ed9d01fe20d3dbdb96fae3081ddd9456d6a50256ac01d89a91a4c30",
+    "results/core_current_head_q42_compact_provider/audit.py": "3490acc6858523f67d9bbc8d8633948a2b9d3ebbc65ccf69fd5a11f72054f55f",
+    "results/core_current_head_q42_compact_provider/provider.py": "21f73f49e774f3c037fd90c5bcadeac4e7d507a620f0f3f32f769c453d10044c",
+    "results/core_current_head_q42_compact_provider/test_audit.py": "a8a2829ca0866ec5a55bb8e9cb5ccb1e8942da67aea9f27a95ade409b9ff255a"
+  },
+  "status": "explicit-current-compact-provider",
+  "symbolic": {
+    "Q41_output_m_requires_compact": "m+6",
+    "Q41_output_m_requires_cutoff": "m+7",
+    "exact_pole_requested": true,
+    "fast_output_m_requires_compact": "m+1",
+    "fast_output_m_requires_cutoff": "m+2",
+    "initial_A1_tail_full_source_residual_or_blowup_certified": false,
+    "raw_input_chart_conversion_and_actual_profile_hypotheses_required": true,
+    "result": "explicit-current-compact-provider"
+  }
+}
