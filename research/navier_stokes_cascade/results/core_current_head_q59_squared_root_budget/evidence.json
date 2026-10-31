@@ -1,0 +1,50 @@
+{
+  "closure": {
+    "edges": 1133,
+    "nodes": 297,
+    "source_bindings": 4341
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q58_leading_weight_enclosure/evidence.json": "863bc6ba94c653ea8feac24d0021b104e609ecdaab5d96791d7b573f988f600e"
+  },
+  "parent": "ef1233d1fce112db3e6dab80dfeb4f97ae1606fc",
+  "source_hashes": {
+    "results/core_canonical_entrance_jet_closure/README.md": "73009a782e22b3aa1f702f579340929e21ddfd0b8b0fc3c75e95a51bcacd2a86",
+    "results/core_canonical_haar_column_jet_closure/README.md": "f97e89e5a851cc6b22d7fc572fdf1ebb25d5c086eb5e85073e7b8f169f1b1551",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q59_squared_root_budget/README.md": "f41c065a0575840d4ded1ec64cc49226bd60d206530279e0b93d91155be4037c",
+    "results/core_current_head_q59_squared_root_budget/audit.py": "6836fd09c76396fb283d04e96b3b046d57f3c3be247f7d0aad4b40dcc9a5b8e7",
+    "results/core_current_head_q59_squared_root_budget/q59.py": "6c22baf963329564161af25b60ee0297baba8064ac4621a8056eea00fa341149",
+    "results/core_current_head_q59_squared_root_budget/test_audit.py": "9fcc655b22b4d7f40bac37dab8bc4089537a25fbff2b1103bcce0cd5b6d6f830",
+    "results/core_localized_stress_assembly/README.md": "a5ab5abbb5bf8c84ef13ef3666a614c5a8d540134fba1ef79cf372701d1dba7a",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6",
+    "results/core_primary_root_budget/README.md": "67c1f6b41f441c58866cab8c5571f83bc18aa718e8a926f71120b77c27eaa899",
+    "results/core_primary_target_cutoff_budget/README.md": "d446492859d24eec433d90ba4737a98583154d130eef52eed957d6b52cd4bf25"
+  },
+  "status": "axial-principal-products-without-root-differentiation",
+  "symbolic": {
+    "physical_jet_enclosures_verified": false,
+    "shell_indices_at_zero": {
+      "0": [
+        {
+          "slow": 99997,
+          "total": 199991
+        },
+        {
+          "slow": 99995,
+          "total": 199991
+        }
+      ],
+      "1": [
+        {
+          "slow": 99997,
+          "total": 199990
+        },
+        {
+          "slow": 99995,
+          "total": 199990
+        }
+      ]
+    }
+  }
+}

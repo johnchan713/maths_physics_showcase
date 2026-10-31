@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q59:** [Squared roots in the primary covariance](results/core_current_head_q59_squared_root_budget/README.md) separate slow column and entrance derivatives from high path derivatives in the axial test.
+
 > **Q58:** [Leading-background enclosure of the axial weights](results/core_current_head_q58_leading_weight_enclosure/README.md) reduces the pressure cutoff to one shape moment and charges positive-order background corrections at low derivative order.
 
 > **Q57:** [Primary amplitude estimates for the axial tail](results/core_current_head_q57_primary_tail_budget/README.md) isolate the high derivatives needed in the principal products and bound the curl square at low order.
