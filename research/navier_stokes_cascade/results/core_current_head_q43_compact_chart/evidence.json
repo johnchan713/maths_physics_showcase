@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1117,
+    "nodes": 281,
+    "source_bindings": 4199
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q42_compact_provider/evidence.json": "e1dbc6221496d458be064860d39ba0b87ab90136e642248c73a84fe492b065ed"
+  },
+  "parent": "c612d8415503d4f2fc327e307be2eee39adfe985",
+  "source_hashes": {
+    "results/core_current_head_q34_haar_norm_correction/README.md": "285f371f484f54639f804dd2e120907698f1e751f1ae59ebf2656a45b77fa241",
+    "results/core_current_head_q42_compact_provider/provider.py": "21f73f49e774f3c037fd90c5bcadeac4e7d507a620f0f3f32f769c453d10044c",
+    "results/core_current_head_q43_compact_chart/README.md": "485925c8869df6b01e7c0bd893a7a500a9dbeb47c8ef79eff791e0bb3089e2fd",
+    "results/core_current_head_q43_compact_chart/audit.py": "3bb86261601bcdab01317e2afecf5ed55ef4807d72023b7778c52225c0527a37",
+    "results/core_current_head_q43_compact_chart/chart.py": "4c959c4aa77e0cbb4a3c66432860372b1b874bbd54fe0061c36abc53fc278d09",
+    "results/core_current_head_q43_compact_chart/test_audit.py": "2f842474689056eecacc76a5664607589afaeeb9d88df48b5cfc3ed54a238787",
+    "results/core_weighted_reverse_chart/README.md": "a2c1179512869d02bfeb918bce562f5bfc980274340f295430f95124d704a219"
+  },
+  "status": "same-weight-compact-chart-roundtrip",
+  "symbolic": {
+    "actual_enclosures_profile_jets_and_A1_tail_required": true,
+    "complete_source_residual_or_blowup_certified": false,
+    "derivative_order_loss": 0,
+    "extra_epsilon_loss": 0,
+    "forward": "n! sum [t^j](1-A(t))^-1",
+    "result": "same-weight-compact-chart-roundtrip",
+    "reverse": "n! sum [t^j]exp(B(t))",
+    "same_pole": true
+  }
+}

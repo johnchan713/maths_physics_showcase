@@ -1,5 +1,9 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q43 update:** The [compact chart conversion](results/core_current_head_q43_compact_chart/README.md)
+> supplies normalized-R/raw-U operator conversion in both directions, preserving
+> the same weight and pole. Actual profile and A1-tail hypotheses remain open.
+
 > **Q42 update:** The [explicit compact provider](results/core_current_head_q42_compact_provider/README.md)
 > connects Q29 weighted constants to the current fast inverse and enforces
 > cutoff-jet and exact-pole coverage. Actual raw input bounds and A1 tails remain open.

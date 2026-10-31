@@ -91,6 +91,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q40_current_fast_rows/**
       - research/navier_stokes_cascade/results/core_current_head_q41_postslow_reset/**
       - research/navier_stokes_cascade/results/core_current_head_q42_compact_provider/**
+      - research/navier_stokes_cascade/results/core_current_head_q43_compact_chart/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -189,6 +190,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q40_current_fast_rows/**
       - research/navier_stokes_cascade/results/core_current_head_q41_postslow_reset/**
       - research/navier_stokes_cascade/results/core_current_head_q42_compact_provider/**
+      - research/navier_stokes_cascade/results/core_current_head_q43_compact_chart/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -781,6 +783,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q42_compact_provider/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q42_compact_provider/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q42_compact_provider/evidence.json --output q42_ci.json
+
+      - name: Check Q43 compact chart conversion
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q43_compact_chart/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q43_compact_chart/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q43_compact_chart/evidence.json --output q43_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
