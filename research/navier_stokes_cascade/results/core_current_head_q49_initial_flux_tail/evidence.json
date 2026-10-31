@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1123,
+    "nodes": 287,
+    "source_bindings": 4243
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q48_original_axial_tail/evidence.json": "83dc31ce4ce93e2d9d0f45553fbcb520fb311766f0d172fafa55c5a83dd2c183"
+  },
+  "parent": "1f7db80b37a023994bd804a9cbef143a938154fa",
+  "source_hashes": {
+    "results/core_current_head_q43_compact_chart/chart.py": "4c959c4aa77e0cbb4a3c66432860372b1b874bbd54fe0061c36abc53fc278d09",
+    "results/core_current_head_q48_original_axial_tail/native_tail.py": "6829e37a62f43f01f88e01d8df58ea3e38bda50608ba9fa25955103ca2aff030",
+    "results/core_current_head_q49_initial_flux_tail/README.md": "108387dadafb2d846d16e921a75df780085f31254465cc528895b6549592ee6d",
+    "results/core_current_head_q49_initial_flux_tail/audit.py": "3a952e41c8f37a32db617ee6555a5b7569150d80ace2a9dabc214b96fe6013f1",
+    "results/core_current_head_q49_initial_flux_tail/flux_tail.py": "d3b905a2048222e2fc5651b52c3955d9c5564070864e6b39f80799444aa23d99",
+    "results/core_current_head_q49_initial_flux_tail/test_audit.py": "71aa2fa0b51d819527c1081e72a12c64a7617984db7a19c331144585d9af823d",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176",
+    "results/core_initial_scalar_seed_budget/README.md": "e7f28f727cbf45f443691a42563d05dee2dde7caa41b764a70b9712d3fe0c9de"
+  },
+  "status": "initial-graph-flux-cancellation",
+  "symbolic": {
+    "actual_lower_field_bounds_or_full_residual_certified": false,
+    "initial_axial_shape": "n+1",
+    "initial_pressure_shape": "n+2",
+    "original_covariance_order": "n+3",
+    "original_flux_annihilated": true,
+    "original_tail_rate": "2-kappa",
+    "output_pole": 0
+  }
+}

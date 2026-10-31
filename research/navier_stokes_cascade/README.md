@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q49:** [The original axial graph flux cancels](results/core_current_head_q49_initial_flux_tail/README.md). The initial tail now follows from low-order covariance and full shifted pressure.
+
 > **Q48:** [Original axial tail](results/core_current_head_q48_original_axial_tail/README.md). Divisor spacing saves two source derivatives, and both native chart transfers are explicit. The high-order original covariance archive remains unverified.
 
 > **Q47 correction:** [Full compact pressure in Q40 rows](results/core_current_head_q47_full_pressure_correction/README.md). The Haar primitive does not bound general auxiliary modes by the Q38 argument. Use the corrected full-row factory for Q41 composition.
