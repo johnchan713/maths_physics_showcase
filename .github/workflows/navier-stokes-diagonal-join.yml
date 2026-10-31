@@ -103,6 +103,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q52_double_viscosity/**
       - research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/**
       - research/navier_stokes_cascade/results/core_current_head_q54_axial_row/**
+      - research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -213,6 +214,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q52_double_viscosity/**
       - research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/**
       - research/navier_stokes_cascade/results/core_current_head_q54_axial_row/**
+      - research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -865,6 +867,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q54_axial_row/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q54_axial_row/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q54_axial_row/evidence.json --output q54_ci.json
+
+      - name: Check Q55 shifted tail threshold
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/evidence.json --output q55_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

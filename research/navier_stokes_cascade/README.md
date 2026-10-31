@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q55:** [Sharp derivative threshold for the axial tail](results/core_current_head_q55_axial_tail_threshold/README.md). Compact zero-Haar sources can resonate with the shift; the estimate distinguishes the generic operator cost from the unverified physical source.
+
 > **Q54:** [Two leading channels of the final axial row](results/core_current_head_q54_axial_row/README.md). The direct axial correction bound suffices inside viscosity; the unmultiplied post-signed pressure tail still needs a stronger estimate.
 
 > **Q53:** [A common support gap and the angular stress floor](results/core_current_head_q53_primary_oscillation/README.md) show that the conditional Q52 exponent is sharp for eight auxiliary derivatives along shrinking bands.

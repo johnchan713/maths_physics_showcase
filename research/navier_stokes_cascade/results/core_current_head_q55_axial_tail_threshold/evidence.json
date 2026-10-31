@@ -1,0 +1,40 @@
+{
+  "closure": {
+    "edges": 1129,
+    "nodes": 293,
+    "source_bindings": 4301
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q54_axial_row/evidence.json": "4a4b7a3dba642452140ec1febd0374eb74f054e24e54eb5f87532a56ddad9d8e"
+  },
+  "parent": "8df2dae96a5613e7064af70a81052f6ba1911d81",
+  "source_hashes": {
+    "results/core_current_head_q48_original_axial_tail/README.md": "9fe11a0fbcb23b440366526aae24833e9651081036381af419375af7025c7e5f",
+    "results/core_current_head_q50_viscosity_inverse/README.md": "c3d522c3c812b087de51f0df9b5af1cdf139df24c7d8fa0982838bbe4be8d48c",
+    "results/core_current_head_q54_axial_row/README.md": "4d631df27a2b43040bf938daa032d50c428dff167a8098df75f4afae6f011fee",
+    "results/core_current_head_q55_axial_tail_threshold/README.md": "3dc4ef165c6a2a5ab6e430cf3ee814b84657bca5686f6d5a2e8da1d099899f20",
+    "results/core_current_head_q55_axial_tail_threshold/audit.py": "e7d60f6d333ad2f52199a4bcd7656c80094ef9b911d3acf32ba01d2972d5695a",
+    "results/core_current_head_q55_axial_tail_threshold/test_audit.py": "8cc5debec255ee62666060717f99156bcc27d27dd3826bd71d9ff375093e2f0d",
+    "results/core_current_head_q55_axial_tail_threshold/threshold.py": "8a352377c9ae3385649b93e9de4e1d78b2294999a9e387e593627c7457061833",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176"
+  },
+  "status": "sharp-native-shifted-tail-threshold",
+  "symbolic": {
+    "199989": {
+      "phi_extra": 199990,
+      "radial_counts": [
+        99995,
+        99994
+      ],
+      "tail_order": "599989/200000"
+    },
+    "199990": {
+      "phi_extra": 199991,
+      "radial_counts": [
+        99996,
+        99994
+      ],
+      "tail_order": "59999/20000"
+    }
+  }
+}
