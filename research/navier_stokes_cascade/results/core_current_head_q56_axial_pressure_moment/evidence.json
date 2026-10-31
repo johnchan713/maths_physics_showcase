@@ -1,0 +1,39 @@
+{
+  "closure": {
+    "edges": 1130,
+    "nodes": 294,
+    "source_bindings": 4309
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q55_axial_tail_threshold/evidence.json": "af524e22341902ff2d1e445d26cd7075e3bd754a8b5ea74104becd6bbace6f45"
+  },
+  "parent": "caafbf421079613130121560d8eded42f471bc0e",
+  "source_hashes": {
+    "results/core_angular_pressure_normal_form/README.md": "e9b4a8627bfc9ab9d020d10b0081fae875b27d9b745875ac964a9f7dc3afdc34",
+    "results/core_axial_potential_pressure_gain/README.md": "c1475ab1bccccb4e61e8d75f9921f93e4639d0dcee08047579f0a8891afabb1b",
+    "results/core_current_head_q49_initial_flux_tail/README.md": "108387dadafb2d846d16e921a75df780085f31254465cc528895b6549592ee6d",
+    "results/core_current_head_q51_radial_curl_target/README.md": "f0d8ca1f24a49125351e5644f3d9ce869a6fe7faa18ce7b880e4014336eb6a26",
+    "results/core_current_head_q54_axial_row/README.md": "4d631df27a2b43040bf938daa032d50c428dff167a8098df75f4afae6f011fee",
+    "results/core_current_head_q56_axial_pressure_moment/README.md": "35b8eb552f0b1b076ebdbb40c192e9de93b8b9e68e688686f7d743595dd60afd",
+    "results/core_current_head_q56_axial_pressure_moment/audit.py": "6b2d96206c010031a3706d76f707a1b4a2207d25b27bacb752a18acd481ee6df",
+    "results/core_current_head_q56_axial_pressure_moment/moment.py": "adc2510aed50afd3503f898b59830cf788948b5f46689e719fffeef6b58803fa",
+    "results/core_current_head_q56_axial_pressure_moment/test_audit.py": "5307cccbcef9bbb4f64d10a1edbbf12c8f15f3f2d7c09c7874437febe558dffb",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176",
+    "results/core_initial_scalar_seed_budget/README.md": "e7f28f727cbf45f443691a42563d05dee2dde7caa41b764a70b9712d3fe0c9de"
+  },
+  "status": "postsigned-pressure-reduced-to-primary-moment",
+  "symbolic": {
+    "components": [
+      "zz",
+      "rr",
+      "tt",
+      "rz",
+      "rt",
+      "radial_viscosity"
+    ],
+    "isotropic_response": 0,
+    "radial_viscous_response": 0,
+    "remainder": "149999/50000",
+    "target": "59999/20000"
+  }
+}

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q56:** [The axial pressure moment](results/core_current_head_q56_axial_pressure_moment/README.md) reduces the remaining tail test to diagonal anisotropy and two original primary shear covariances.
+
 > **Q55:** [Sharp derivative threshold for the axial tail](results/core_current_head_q55_axial_tail_threshold/README.md). Compact zero-Haar sources can resonate with the shift; the estimate distinguishes the generic operator cost from the unverified physical source.
 
 > **Q54:** [Two leading channels of the final axial row](results/core_current_head_q54_axial_row/README.md). The direct axial correction bound suffices inside viscosity; the unmultiplied post-signed pressure tail still needs a stronger estimate.

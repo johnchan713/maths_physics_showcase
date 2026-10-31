@@ -104,6 +104,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/**
       - research/navier_stokes_cascade/results/core_current_head_q54_axial_row/**
       - research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/**
+      - research/navier_stokes_cascade/results/core_current_head_q56_axial_pressure_moment/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -215,6 +216,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/**
       - research/navier_stokes_cascade/results/core_current_head_q54_axial_row/**
       - research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/**
+      - research/navier_stokes_cascade/results/core_current_head_q56_axial_pressure_moment/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -872,6 +874,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/evidence.json --output q55_ci.json
+
+      - name: Check Q56 pressure moment
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q56_axial_pressure_moment/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q56_axial_pressure_moment/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q56_axial_pressure_moment/evidence.json --output q56_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
