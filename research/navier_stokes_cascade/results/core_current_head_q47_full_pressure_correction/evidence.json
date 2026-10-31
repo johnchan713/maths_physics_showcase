@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1121,
+    "nodes": 285,
+    "source_bindings": 4227
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q46_moving_cutoff/evidence.json": "5ebfb846d18d3eac2b98fb368eb45d856a86c274aebdc0ae56969d8ac0e9c9e5"
+  },
+  "parent": "9e4097774930b205204170f4e14394197877f3fc",
+  "source_hashes": {
+    "results/core_current_head_q40_current_fast_rows/current_fast.py": "b3ceb094c3ed6d43571096d8a3bc15bcfa92b68480caf6647139c2561a07fd9d",
+    "results/core_current_head_q46_moving_cutoff/moving.py": "edbe8acecd707fdf5a994d72ea852e428e6c2f0469a891760e21ff8cb63f0e0f",
+    "results/core_current_head_q47_full_pressure_correction/README.md": "78884265930523c2b692854270679dc5593e5e29449660200ece4c92a89e1015",
+    "results/core_current_head_q47_full_pressure_correction/audit.py": "338aaaffab88509cd3cdfac1b5ea0a6cb582a2e9fa9a412e7c034c8c23c227bd",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q47_full_pressure_correction/test_audit.py": "be743b8f41a8b68f669be45d6a087b83e30a676993513bb0e93c917180d4b88c",
+    "results/core_full_compact_pressure_response/README.md": "e177bb681c9e73c9c21f27d9be97aae93d7dc676683c8f8cb327339269f348e1",
+    "results/core_initial_cancellation_fast_source/README.md": "c1d4244cdd3942fcbb09afa6e2052d180acbc28555ce5be4522882c08ef2f7fd"
+  },
+  "status": "full-torus-pressure-correction",
+  "symbolic": {
+    "axial_channel": 1,
+    "combined_cutoff_shape_ceiling": "m+14",
+    "complete_residual_or_blowup_certified": false,
+    "full_pressure_channel": 0,
+    "full_row_pressure_request": "n+3",
+    "original_A1_and_actual_source_required": true,
+    "result": "full-torus-pressure-correction"
+  }
+}

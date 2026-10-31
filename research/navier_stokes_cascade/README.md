@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q47 correction:** [Full compact pressure in Q40 rows](results/core_current_head_q47_full_pressure_correction/README.md). The Haar primitive does not bound general auxiliary modes by the Q38 argument. Use the corrected full-row factory for Q41 composition.
+
 > **Q46:** [Moving cutoff jets](results/core_current_head_q46_moving_cutoff/README.md) derive the native mixed derivatives from the fixed physical shape, including the extra axial cutoff derivative. The initial A1 tail remains open.
 
 > **Q45:** [Directed kernel bounds](results/core_current_head_q45_directed_kernel/README.md) use the existing fixed cutoff gap to supply four of Q44’s remaining inputs. Raw cutoff jets and the initial A1 tail remain open.
