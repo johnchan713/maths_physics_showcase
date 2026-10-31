@@ -109,6 +109,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/**
       - research/navier_stokes_cascade/results/core_current_head_q59_squared_root_budget/**
       - research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/**
+      - research/navier_stokes_cascade/results/core_current_head_q61_covariance_comparison/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -225,6 +226,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/**
       - research/navier_stokes_cascade/results/core_current_head_q59_squared_root_budget/**
       - research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/**
+      - research/navier_stokes_cascade/results/core_current_head_q61_covariance_comparison/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -907,6 +909,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/evidence.json --output q60_ci.json
+
+      - name: Check Q61 leading covariance comparison
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q61_covariance_comparison/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q61_covariance_comparison/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q61_covariance_comparison/evidence.json --output q61_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

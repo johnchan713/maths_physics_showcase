@@ -1,0 +1,34 @@
+{
+  "closure": {
+    "edges": 1135,
+    "nodes": 299,
+    "source_bindings": 4362
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q60_affine_path_generator/evidence.json": "7cfde69a7e7ff8f4825a5e4912c812ebcf67cfde03e290438741ca91db2ac5ff"
+  },
+  "parent": "4742e16ea3191cc0638760ba8ebb72c94cfc5ece",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_canonical_entrance_jet_closure/README.md": "73009a782e22b3aa1f702f579340929e21ddfd0b8b0fc3c75e95a51bcacd2a86",
+    "results/core_canonical_haar_column_jet_closure/README.md": "f97e89e5a851cc6b22d7fc572fdf1ebb25d5c086eb5e85073e7b8f169f1b1551",
+    "results/core_current_head_q21_lifted_path_join/README.md": "119c8d751803a2e2fa9b3becf3f4cebce46c52dca448f55ad926a334fb01db9a",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q58_leading_weight_enclosure/README.md": "158147bf46a012ba6e8c455926303a3e77ae72b8504b0c752c86c035053d542d",
+    "results/core_current_head_q59_squared_root_budget/README.md": "f41c065a0575840d4ded1ec64cc49226bd60d206530279e0b93d91155be4037c",
+    "results/core_current_head_q61_covariance_comparison/README.md": "d8a080bc9ddedfd064e43908d1e45afe0c021bf9a79a79a10dc4a3c5113b9223",
+    "results/core_current_head_q61_covariance_comparison/audit.py": "5d49989d3210fc187e607f72b18fe4f8d4a0f8f7f284076ceae24f8ce451ecaa",
+    "results/core_current_head_q61_covariance_comparison/q61.py": "edc5ee2570b8060c562a75b05944857bdf1f5fc72a8a3bad7a0df6b1ab829aec",
+    "results/core_current_head_q61_covariance_comparison/test_audit.py": "f5d856db8b2459f156c725133a0cefeac0b99d1ec03f16218af9a3baecd9c362",
+    "results/core_phase_coefficient_budget/README.md": "37c00b1e9050894fb3417b83817c18188ff5d6193e6b56ba4160e8dc042e9eda",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6",
+    "results/core_primary_target_cutoff_budget/README.md": "d446492859d24eec433d90ba4737a98583154d130eef52eed957d6b52cd4bf25"
+  },
+  "status": "conditional-leading-covariance-comparison",
+  "symbolic": {
+    "boundary": "2",
+    "correction_order_offset": 6,
+    "leading_order_offset": 99998,
+    "physical_enclosure_verified": false
+  }
+}
