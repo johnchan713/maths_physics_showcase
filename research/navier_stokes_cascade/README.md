@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q57:** [Primary amplitude estimates for the axial tail](results/core_current_head_q57_primary_tail_budget/README.md) isolate the high derivatives needed in the principal products and bound the curl square at low order.
+
 > **Q56:** [The axial pressure moment](results/core_current_head_q56_axial_pressure_moment/README.md) reduces the remaining tail test to diagonal anisotropy and two original primary shear covariances.
 
 > **Q55:** [Sharp derivative threshold for the axial tail](results/core_current_head_q55_axial_tail_threshold/README.md). Compact zero-Haar sources can resonate with the shift; the estimate distinguishes the generic operator cost from the unverified physical source.

@@ -1,0 +1,68 @@
+{
+  "closure": {
+    "edges": 1131,
+    "nodes": 295,
+    "source_bindings": 4320
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q56_axial_pressure_moment/evidence.json": "6bc321ac693aa423f1d09e35637595e37af0c2bf70dedc7b63fca690bb4d44d3"
+  },
+  "parent": "3ca5e1955bc3ce485982a97f5880126ba34af7de",
+  "source_hashes": {
+    "results/core_current_head_q48_original_axial_tail/README.md": "9fe11a0fbcb23b440366526aae24833e9651081036381af419375af7025c7e5f",
+    "results/core_current_head_q50_viscosity_inverse/README.md": "c3d522c3c812b087de51f0df9b5af1cdf139df24c7d8fa0982838bbe4be8d48c",
+    "results/core_current_head_q55_axial_tail_threshold/README.md": "3dc4ef165c6a2a5ab6e430cf3ee814b84657bca5686f6d5a2e8da1d099899f20",
+    "results/core_current_head_q56_axial_pressure_moment/README.md": "35b8eb552f0b1b076ebdbb40c192e9de93b8b9e68e688686f7d743595dd60afd",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q57_primary_tail_budget/audit.py": "5e63af891d2b29848ba3a8758eaa827f8eb966525ea6bff8697174892ff8d7e7",
+    "results/core_current_head_q57_primary_tail_budget/budget.py": "626baa50a863670f81aa52cbc4230428299f3d6c671425029f264e7998c47abe",
+    "results/core_current_head_q57_primary_tail_budget/test_audit.py": "a0bf7ff46b03d1e2cc75d694896ea4b509f479d8a2e1b2ad808636789514fe51",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176",
+    "results/core_initial_scalar_seed_budget/README.md": "e7f28f727cbf45f443691a42563d05dee2dde7caa41b764a70b9712d3fe0c9de",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6"
+  },
+  "status": "principal-amplitude-axial-tail-budget",
+  "symbolic": {
+    "curl_rate": "149999/50000",
+    "diagonal": {
+      "amplitude": 199991,
+      "curl": 5,
+      "outer": 0,
+      "rate": "59999/20000",
+      "shells": [
+        {
+          "aux": 99994,
+          "power": 2,
+          "radial": 99996
+        },
+        {
+          "aux": 99996,
+          "power": -2,
+          "radial": 99994
+        }
+      ],
+      "slow": 1,
+      "weight": 99997
+    },
+    "shear": {
+      "amplitude": 199990,
+      "curl": 5,
+      "outer": 0,
+      "rate": "59999/20000",
+      "shells": [
+        {
+          "aux": 99993,
+          "power": 2,
+          "radial": 99996
+        },
+        {
+          "aux": 99995,
+          "power": -2,
+          "radial": 99994
+        }
+      ],
+      "slow": 1,
+      "weight": 99997
+    }
+  }
+}
