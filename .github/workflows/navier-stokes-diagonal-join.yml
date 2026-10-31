@@ -108,6 +108,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q57_primary_tail_budget/**
       - research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/**
       - research/navier_stokes_cascade/results/core_current_head_q59_squared_root_budget/**
+      - research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -223,6 +224,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q57_primary_tail_budget/**
       - research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/**
       - research/navier_stokes_cascade/results/core_current_head_q59_squared_root_budget/**
+      - research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -900,6 +902,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q59_squared_root_budget/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q59_squared_root_budget/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q59_squared_root_budget/evidence.json --output q59_ci.json
+
+      - name: Check Q60 affine normal path stencil
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/evidence.json --output q60_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

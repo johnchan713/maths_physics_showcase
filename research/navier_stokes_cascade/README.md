@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q60:** [Affine normal path stencil](results/core_current_head_q60_affine_path_generator/README.md) reduces high path derivatives of the primary pulse to slow background inputs while retaining moving-normal pressure.
+
 > **Q59:** [Squared roots in the primary covariance](results/core_current_head_q59_squared_root_budget/README.md) separate slow column and entrance derivatives from high path derivatives in the axial test.
 
 > **Q58:** [Leading-background enclosure of the axial weights](results/core_current_head_q58_leading_weight_enclosure/README.md) reduces the pressure cutoff to one shape moment and charges positive-order background corrections at low derivative order.

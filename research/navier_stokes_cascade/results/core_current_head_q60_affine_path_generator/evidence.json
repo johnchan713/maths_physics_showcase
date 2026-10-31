@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1134,
+    "nodes": 298,
+    "source_bindings": 4352
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q59_squared_root_budget/evidence.json": "f25d74a0cf13c8ce773d7171920273286a224c002ae285883e7fd0ac4aa0c2c2"
+  },
+  "parent": "ee47f546cc2cbceedacc7380e6a8f3c003d36e2a",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_canonical_entrance_jet_closure/README.md": "73009a782e22b3aa1f702f579340929e21ddfd0b8b0fc3c75e95a51bcacd2a86",
+    "results/core_canonical_haar_column_jet_closure/README.md": "f97e89e5a851cc6b22d7fc572fdf1ebb25d5c086eb5e85073e7b8f169f1b1551",
+    "results/core_current_head_q21_lifted_path_join/README.md": "119c8d751803a2e2fa9b3becf3f4cebce46c52dca448f55ad926a334fb01db9a",
+    "results/core_current_head_q60_affine_path_generator/README.md": "8bc445bde9f2aa06babbeb387454f0745b112531142ebf2fe120b57320d4689c",
+    "results/core_current_head_q60_affine_path_generator/audit.py": "ca814f3d41692d06dc34562d4e6ca22cc4ebb7f06c90404a49e10adbc3f3c124",
+    "results/core_current_head_q60_affine_path_generator/q60.py": "edfa6d433ab547fa153a0d8abb5b83978e4aff64fe4b69afe04f29de68301b26",
+    "results/core_current_head_q60_affine_path_generator/test_audit.py": "c20ee4502f1e0462a555d2e483bc46f12c1282ce6a85398cee2e7928249d87c5",
+    "results/core_phase_coefficient_budget/README.md": "37c00b1e9050894fb3417b83817c18188ff5d6193e6b56ba4160e8dc042e9eda",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6"
+  },
+  "status": "conditional-affine-normal-path-stencil",
+  "symbolic": {
+    "background_slow_order_offset": 99998,
+    "fixture_raw_bounds": [
+      1,
+      1,
+      1,
+      7,
+      25,
+      157,
+      1057
+    ],
+    "physical_jet_enclosures_verified": false
+  }
+}
