@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q51:** [Radial curl and the initial target](results/core_current_head_q51_radial_curl_target/README.md). The selected curl product contains an explicit axial derivative factor, giving a conditional order-two Q36 target.
+
 > **Q50:** [Necessary target bound for strict viscosity gain](results/core_current_head_q50_viscosity_inverse/README.md). Five auxiliary derivatives of the leading viscous term control the signed target value under the common-zero premise.
 
 > **Q49:** [The original axial graph flux cancels](results/core_current_head_q49_initial_flux_tail/README.md). The initial tail now follows from low-order covariance and full shifted pressure.

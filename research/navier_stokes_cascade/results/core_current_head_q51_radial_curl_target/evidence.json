@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1125,
+    "nodes": 289,
+    "source_bindings": 4259
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q50_viscosity_inverse/evidence.json": "f1ada2b7f8b24ccaea0bdca95a46b4944644f427d283d52d321780f3ccd684cb"
+  },
+  "parent": "d880253a33f1a9b2798b1cf7826ba4cedb8c706a",
+  "source_hashes": {
+    "results/core_complete_curl_operator_budget/bounds.py": "d9fd815c48228ef5b83760edef86c6cab1defe308d767b046d0e3e3dd81f4338",
+    "results/core_current_head_q36_profile_signed_target/profile_target.py": "2fce0c3bea5b10ef7448d6c323406bd475f9c144d37fa3adaead7d6fe7dace72",
+    "results/core_current_head_q51_radial_curl_target/README.md": "f0d8ca1f24a49125351e5644f3d9ce869a6fe7faa18ce7b880e4014336eb6a26",
+    "results/core_current_head_q51_radial_curl_target/audit.py": "f590960ab2aa6f79ed827b69c7bb4e1ad1dcd93645f51bded0cf1cd234c9a62e",
+    "results/core_current_head_q51_radial_curl_target/target_rate.py": "18a0ab4870ed2dd1b8993f6b0b2a8e5e47daa669ca7d184cbf5d20d71274c0fc",
+    "results/core_current_head_q51_radial_curl_target/test_audit.py": "3315a09bddb784eca2bba01ba028ffff8747d774693b30c3542e36c08db65873",
+    "results/core_initial_haar_row_budget/README.md": "1196944157a5f9668ebba7f0613fb1c2626449a1008955bfd85c334bcf2bac7c",
+    "results/core_initial_target_rate_gain/README.md": "0a473af2e635760c0fee64d6a432867f7945b33773d29a404c5235dfdbd1f0e0",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6"
+  },
+  "status": "componentwise-initial-target-order-two",
+  "symbolic": {
+    "actual_field_enclosures_or_complete_residual": false,
+    "full_fast_source_order": "199997/100000",
+    "haar_row_and_target_order": 2,
+    "isolated_viscosity_order": "299997/100000",
+    "selected_curl_order": "299999/100000",
+    "selected_defect_order": "299999/100000"
+  }
+}
