@@ -101,6 +101,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q50_viscosity_inverse/**
       - research/navier_stokes_cascade/results/core_current_head_q51_radial_curl_target/**
       - research/navier_stokes_cascade/results/core_current_head_q52_double_viscosity/**
+      - research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -209,6 +210,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q50_viscosity_inverse/**
       - research/navier_stokes_cascade/results/core_current_head_q51_radial_curl_target/**
       - research/navier_stokes_cascade/results/core_current_head_q52_double_viscosity/**
+      - research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -851,6 +853,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q52_double_viscosity/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q52_double_viscosity/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q52_double_viscosity/evidence.json --output q52_ci.json
+
+      - name: Check Q53 primary oscillation
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q53_primary_oscillation/evidence.json --output q53_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q53:** [A common support gap and the angular stress floor](results/core_current_head_q53_primary_oscillation/README.md) show that the conditional Q52 exponent is sharp for eight auxiliary derivatives along shrinking bands.
+
 > **Q52:** [Two viscous terms in the final angular row](results/core_current_head_q52_double_viscosity/README.md). The limiting term depends on the original primary covariance; the signed target contributes at a higher order.
 
 > **Q51:** [Radial curl and the initial target](results/core_current_head_q51_radial_curl_target/README.md). The selected curl product contains an explicit axial derivative factor, giving a conditional order-two Q36 target.

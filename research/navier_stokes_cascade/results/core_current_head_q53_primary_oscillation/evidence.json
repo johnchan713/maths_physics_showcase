@@ -1,0 +1,34 @@
+{
+  "closure": {
+    "edges": 1127,
+    "nodes": 291,
+    "source_bindings": 4277
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q52_double_viscosity/evidence.json": "0464dfd66d7ce49c440328b879425d21ad0374eef32527f82250c073b238becb"
+  },
+  "parent": "ebaf09909439ef37244da7214f5038ed422ecb75",
+  "source_hashes": {
+    "results/auxiliary_geometry_audit/README.md": "6bcd1dbc12e8561fd2cb1ab797bc323324445895474e4fb6bb10b3d7e231c7b7",
+    "results/auxiliary_geometry_audit/protocol.json": "5dc32ec6b03a5e9e1c9623362be5f63efab3174e26c15c47ab5a32d44dc75fd5",
+    "results/core_corrected_endpoint_join/README.md": "e9114afe7b73bdffb63d67ea6286d729a119392cc7b45c29dd5cefd3f03d68dd",
+    "results/core_current_head_q51_radial_curl_target/README.md": "f0d8ca1f24a49125351e5644f3d9ce869a6fe7faa18ce7b880e4014336eb6a26",
+    "results/core_current_head_q53_primary_oscillation/README.md": "abdf2c540c024cd10148dfa61980574af1471aff8b0e7f4733c5a82afdf46df6",
+    "results/core_current_head_q53_primary_oscillation/audit.py": "47f22652d0a253be3673816cb40c9fd6893afbc615b2361a06bb85f5ffc77c94",
+    "results/core_current_head_q53_primary_oscillation/oscillation.py": "00de02e36f7a0cc7dc1e4e3ca6c1355e53b57962a4aeaa14268da1b2859df216",
+    "results/core_current_head_q53_primary_oscillation/test_audit.py": "25f7f3aa56d1c248eda1b2185b94b95b6353f3aca44a16d338ab527c428f27c6",
+    "results/core_localized_stress_assembly/README.md": "a5ab5abbb5bf8c84ef13ef3666a614c5a8d540134fba1ef79cf372701d1dba7a",
+    "results/core_primary_aggregate_atlas/README.md": "35f991d3b3a571b1bf85f04d6c44073e1fa755ff0df2f6cd5b725e282d7f11b6",
+    "results/regional_stress_floor/README.md": "cfd17189bf26ab7c0414c91d1c36843e6588b1f96bd6d85bbf43f524cf0e321c"
+  },
+  "status": "conditional-angular-eight-jet-exponent-obstruction",
+  "symbolic": {
+    "angular_exponent": "59999/20000",
+    "applies_to_physical_phase_graph": false,
+    "auxiliary_derivative_order": 8,
+    "curl_relative_power": "199999/100000",
+    "open_complement_area_lower": "3538591937/3538591938",
+    "row_relative_power": "1/100000",
+    "union_area_upper": "1/3538591938"
+  }
+}
