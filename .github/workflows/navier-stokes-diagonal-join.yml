@@ -94,6 +94,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q43_compact_chart/**
       - research/navier_stokes_cascade/results/core_current_head_q44_radial_multipliers/**
       - research/navier_stokes_cascade/results/core_current_head_q45_directed_kernel/**
+      - research/navier_stokes_cascade/results/core_current_head_q46_moving_cutoff/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -195,6 +196,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q43_compact_chart/**
       - research/navier_stokes_cascade/results/core_current_head_q44_radial_multipliers/**
       - research/navier_stokes_cascade/results/core_current_head_q45_directed_kernel/**
+      - research/navier_stokes_cascade/results/core_current_head_q46_moving_cutoff/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -802,6 +804,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q45_directed_kernel/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q45_directed_kernel/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q45_directed_kernel/evidence.json --output q45_ci.json
+
+      - name: Check Q46 moving cutoff
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q46_moving_cutoff/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q46_moving_cutoff/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q46_moving_cutoff/evidence.json --output q46_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

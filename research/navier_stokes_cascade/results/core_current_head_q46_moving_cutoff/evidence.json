@@ -1,0 +1,28 @@
+{
+  "closure": {
+    "edges": 1120,
+    "nodes": 284,
+    "source_bindings": 4220
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q45_directed_kernel/evidence.json": "d93988cf1d9305eac5ea0fae34b949a944846f337ae667ebaf72041a06037db1"
+  },
+  "parent": "dfdc6a763cb05140b90f0e876ac913f2d652cc62",
+  "source_hashes": {
+    "results/core_current_head_q45_directed_kernel/directed.py": "4cce73e46e2ea5703e694c4f3f41b4277449fcc3ebe213a42a783df2cf2d99ae",
+    "results/core_current_head_q46_moving_cutoff/README.md": "9fa8f6f9f4f1c5a6a5862281ab8d1c5d3d08d21a687840a0d2da775320afc3bb",
+    "results/core_current_head_q46_moving_cutoff/audit.py": "e13087360db2649ff909d18529b7250143b5b57260302ef18f4693430ebed3bc",
+    "results/core_current_head_q46_moving_cutoff/moving.py": "edbe8acecd707fdf5a994d72ea852e428e6c2f0469a891760e21ff8cb63f0e0f",
+    "results/core_current_head_q46_moving_cutoff/test_audit.py": "9bbf1d24f6cb2c7d5433584fb68d38c053328d6f8dcd5772dd266a8e79ad35a5",
+    "results/core_primary_target_cutoff_budget/README.md": "d446492859d24eec433d90ba4737a98583154d130eef52eed957d6b52cd4bf25",
+    "results/core_primary_target_cutoff_budget/bounds.py": "bcf9ebc20060f9cdec6510cba7cdb4d50db19b61329eecf9283c77097df6aa66"
+  },
+  "status": "moving-physical-cutoff-jets",
+  "symbolic": {
+    "actual_shape_values_initial_A1_tail_or_full_residual_certified": false,
+    "fixed_shape_ceiling": "compact order + 1",
+    "result": "moving-physical-cutoff-jets",
+    "scale_derivatives_retained": true,
+    "shifted_source_undifferentiated_in_M": true
+  }
+}

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q46:** [Moving cutoff jets](results/core_current_head_q46_moving_cutoff/README.md) derive the native mixed derivatives from the fixed physical shape, including the extra axial cutoff derivative. The initial A1 tail remains open.
+
 > **Q45:** [Directed kernel bounds](results/core_current_head_q45_directed_kernel/README.md) use the existing fixed cutoff gap to supply four of Q44’s remaining inputs. Raw cutoff jets and the initial A1 tail remain open.
 
 > **Q44 update:** The [radial multiplier bounds](results/core_current_head_q44_radial_multipliers/README.md)
