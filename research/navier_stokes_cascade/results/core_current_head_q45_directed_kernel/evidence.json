@@ -1,0 +1,33 @@
+{
+  "closure": {
+    "edges": 1119,
+    "nodes": 283,
+    "source_bindings": 4213
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q44_radial_multipliers/evidence.json": "0a077bae39e9fc6829a046300a63ff1ccfcb2fa106dfb969bc8d3d413cc4e171"
+  },
+  "parent": "c857803f1f83eed6328f1a3f78220079e1533bfa",
+  "source_hashes": {
+    "results/core_current_head_q29_weighted_compact_constants/README.md": "9587194f819b20f5552654e9e160ad4e4ad892e49f38730ca69bae5c96057caf",
+    "results/core_current_head_q30_fixed_support_join/fixed_maps.py": "bec5d420db3007e496409b78d3b645a329af9f08136b0d20848baac78c5f3b0d",
+    "results/core_current_head_q44_radial_multipliers/radial.py": "96ba90c9accdb5d99ad789badc6721ce97a46d83938fee4da4273e0ffe1f7a4f",
+    "results/core_current_head_q45_directed_kernel/README.md": "e1e2fad27ad09c42ddb3dc3b28c8abfa22a345c23c3907f834336d5c3b679b84",
+    "results/core_current_head_q45_directed_kernel/audit.py": "9dc2ee91869a0ba8ef903fc258c8cce7478a1a487906f34b104202f99b555212",
+    "results/core_current_head_q45_directed_kernel/directed.py": "4cce73e46e2ea5703e694c4f3f41b4277449fcc3ebe213a42a783df2cf2d99ae",
+    "results/core_current_head_q45_directed_kernel/test_audit.py": "00549f4267a49726a2e99704fd9f68937b5056203da125bdedf9051dff7fa7bc"
+  },
+  "status": "fixed-plateau-directed-kernel",
+  "symbolic": {
+    "A1_tail_actual_pulse_and_complete_residual_certified": false,
+    "cutoff_seminorms_required": true,
+    "derived": [
+      "length",
+      "edge",
+      "kernel",
+      "interior"
+    ],
+    "result": "fixed-plateau-directed-kernel",
+    "uniform_gap_from_Q30": true
+  }
+}

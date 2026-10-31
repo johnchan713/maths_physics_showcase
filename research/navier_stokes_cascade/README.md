@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q45:** [Directed kernel bounds](results/core_current_head_q45_directed_kernel/README.md) use the existing fixed cutoff gap to supply four of Q44’s remaining inputs. Raw cutoff jets and the initial A1 tail remain open.
+
 > **Q44 update:** The [radial multiplier bounds](results/core_current_head_q44_radial_multipliers/README.md)
 > derive the native hull, three compact multipliers and logarithmic Jacobian
 > from the same positive R hull. Cutoff/kernel and A1-tail inputs remain open.
