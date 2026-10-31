@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1136,
+    "nodes": 300,
+    "source_bindings": 4376
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q61_covariance_comparison/evidence.json": "e72a568c6377eaf007a32229a6b6199dae4fb01347f150ba32324ec13d73aa9a"
+  },
+  "parent": "49c5f6fd60be5a42247c4703faedfd354b79d7ee",
+  "source_hashes": {
+    "results/core_activation_volterra_recheck/README.md": "78c2e1fa5a645c142c9478ba0e781d7db36512843b2a497112f81ddc8676d21a",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q59_squared_root_budget/README.md": "f41c065a0575840d4ded1ec64cc49226bd60d206530279e0b93d91155be4037c",
+    "results/core_current_head_q62_target_memory/README.md": "8120322cf2e857913a631d8bf73125e39f1a802bdf56fb9f187bf4308c714b14",
+    "results/core_current_head_q62_target_memory/audit.py": "3e8b1b249f10fa59414bddbdc7c912dd55b04423b37ffb8614999faeb2b3e315",
+    "results/core_current_head_q62_target_memory/q62.py": "6392ffe6b699cc69e068dbdc0bfe5c5876151943374733a469799a73df023b74",
+    "results/core_current_head_q62_target_memory/test_audit.py": "9851f1ad92108754aa67575828410fc89d28110c45d51f2563ad496816e96753",
+    "results/core_global_pressure_moment_recheck/README.md": "16d03f9a5f0fef160b8e6af1c5a76cf9eaf34cc7aa593f631a0338e212ac176a",
+    "results/core_leading_profile_certificate/README.md": "fd0cff6bd915613706388e2b83d416b7fb46a62a0b58204979b0ffaf10b71bfe",
+    "results/core_primary_target_cutoff_budget/README.md": "d446492859d24eec433d90ba4737a98583154d130eef52eed957d6b52cd4bf25",
+    "results/global_moment_stress/README.md": "93620eac607bd40fd777052cc107d69795d6e378cfd73f1de7eae53d03621734",
+    "results/leading_cone_margin/README.md": "c2a64a6826133d6968b0a85eafc7b79a663065c5a9edbe428e5551ab07baa578",
+    "results/native_mixed_fourth_boundary/README.md": "45abdce5d60f596ae73ef85b17127912f0b50ad608ac0010dcdb4c71e7771a5e"
+  },
+  "status": "conditional-unstripped-target-from-terminal-memory",
+  "symbolic": {
+    "actual_velocity_enclosed": false,
+    "heat_control": [
+      "1381797888109/1000000000000",
+      "3381797888109/2000000000000"
+    ],
+    "local_velocity_order_offset": 99998,
+    "target_trace_order_offset": 2
+  }
+}

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q62:** [Unstripped target and terminal heat memory](results/core_current_head_q62_target_memory/README.md) bounds the axial-test stress from velocity with only low angular derivatives of incoming moments.
+
 > **Q61:** [Leading covariance comparison](results/core_current_head_q61_covariance_comparison/README.md) charges the Borel correction at low order in the principal axial moment.
 
 > **Q60:** [Affine normal path stencil](results/core_current_head_q60_affine_path_generator/README.md) reduces high path derivatives of the primary pulse to slow background inputs while retaining moving-normal pressure.
