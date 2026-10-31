@@ -1,0 +1,51 @@
+{
+  "closure": {
+    "edges": 1124,
+    "nodes": 288,
+    "source_bindings": 4251
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q49_initial_flux_tail/evidence.json": "d5008c54234c7bd74c5ed17e6cec045a46754a196a69888abf667d473177674a"
+  },
+  "parent": "5be7ed4a95eaa64a8cc771de870081fd2fc38e23",
+  "source_hashes": {
+    "results/core_axial_potential_pressure_gain/README.md": "c1475ab1bccccb4e61e8d75f9921f93e4639d0dcee08047579f0a8891afabb1b",
+    "results/core_current_head_q50_viscosity_inverse/README.md": "c3d522c3c812b087de51f0df9b5af1cdf139df24c7d8fa0982838bbe4be8d48c",
+    "results/core_current_head_q50_viscosity_inverse/audit.py": "286f601b372387189bf740669eb7728952cefec2f010310ba7199dc25d3f9f65",
+    "results/core_current_head_q50_viscosity_inverse/inverse.py": "0d465c84bdf9fb5ed4fc63314eec764daceb63c02933e88ee3309269539f4fb6",
+    "results/core_current_head_q50_viscosity_inverse/test_audit.py": "9273fbf55b3d27b05f81d8e9d06d3767641c9b34973e1c7f7ae05edb0958b9a7",
+    "results/core_initial_actual_profile_gate/README.md": "cc65f31d812d6c15edadaf861306c629acccd9da03aba4deadd4e2c10f67874d",
+    "results/core_initial_quotient_fast_inverse/README.md": "d1099052787b324ce5bcd6a1fe20743d3b84ce93814083a274310e858ddf93d9",
+    "results/core_initial_viscosity_sharpness_witness/README.md": "132c35998cd75e36a0cc35bc62e3a9a66e38f700bcd89a08c6f88cd0cefcb707"
+  },
+  "status": "viscosity-target-necessary-bound",
+  "symbolic": {
+    "auxiliary_derivatives": 5,
+    "complete_residual_or_blowup": false,
+    "critical_target_order": "199997/100000",
+    "example_modes": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        12,
+        29
+      ]
+    ],
+    "inverse_constant": 884736,
+    "physical_target_lower_bound": false
+  }
+}

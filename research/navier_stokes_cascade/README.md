@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q50:** [Necessary target bound for strict viscosity gain](results/core_current_head_q50_viscosity_inverse/README.md). Five auxiliary derivatives of the leading viscous term control the signed target value under the common-zero premise.
+
 > **Q49:** [The original axial graph flux cancels](results/core_current_head_q49_initial_flux_tail/README.md). The initial tail now follows from low-order covariance and full shifted pressure.
 
 > **Q48:** [Original axial tail](results/core_current_head_q48_original_axial_tail/README.md). Divisor spacing saves two source derivatives, and both native chart transfers are explicit. The high-order original covariance archive remains unverified.
