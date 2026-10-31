@@ -1,5 +1,10 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q41 update:** The [postslow reset](results/core_current_head_q41_postslow_reset/README.md)
+> uses the retained initial Haar means with the fresh Q39/Q40 slow response,
+> preserving nonlinear remainders and the whole moving pressure moment.
+> Actual input contracts and complete row/source closure remain conditional.
+
 > **Q40 update:** The [current-row fast join](results/core_current_head_q40_current_fast_rows/README.md)
 > derives rows from both old mean differences, complete signed covariance
 > and the retained initial A1 remainder, then applies the complete fast inverse.

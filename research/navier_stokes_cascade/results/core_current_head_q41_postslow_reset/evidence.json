@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1115,
+    "nodes": 279,
+    "source_bindings": 4184
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q40_current_fast_rows/evidence.json": "4e475449d435e69c3c20108ed431d3b33b0cbf20f9cc5d5f7843ac22955dc3eb"
+  },
+  "parent": "02f3a428a5536e0515b6722806f271dbad1f45c4",
+  "source_hashes": {
+    "results/core_actual_scalar_gain_join/budgets.py": "be7e20a112b27ef1d64d5bad27607950731f4eaf3d865943cc3bc407c2573168",
+    "results/core_current_head_q40_current_fast_rows/current_fast.py": "b3ceb094c3ed6d43571096d8a3bc15bcfa92b68480caf6647139c2561a07fd9d",
+    "results/core_current_head_q41_postslow_reset/README.md": "1210cea3642bc68efa07c98509e26cb2a7d8c2f583c6833f0a86817f46f158fd",
+    "results/core_current_head_q41_postslow_reset/audit.py": "3193e99aefc0374d0a1cd1b1adcfacf88e5bb49c934f67b3c6b9b192bf1ee532",
+    "results/core_current_head_q41_postslow_reset/postslow.py": "6288d94415c7e873b1133865767ae4eab93bacb8c85db98ad625cea7848327fc",
+    "results/core_current_head_q41_postslow_reset/test_audit.py": "2d5e61821f87ff35958e87d4bf51322dbadddc4400656aec8e1717bcf17c36a0",
+    "results/core_preserved_haar_scalar_join/budgets.py": "05b3c86cc2be683f2eba93d6e03df760dc3ff5238b871f914a39f2080a956315",
+    "results/core_real_refresh_obligation_join/README.md": "1bbe3610d00eaf5c4b04eb523137e0f4e14eac8b02b8dded2eb4f3d64d449c62"
+  },
+  "status": "same-state-postslow-scalar-and-whole-pressure-reset",
+  "symbolic": {
+    "Q36_target_ceiling": "m+14",
+    "Q37_pressure_ceiling": "m+11",
+    "actual_high_jets_full_rows_source_residual_or_blowup_certified": false,
+    "current_fast_slow_same_state_required": true,
+    "exact_zero_Haar_G0_and_five_map_moments_required": true,
+    "full_old_means_still_used_in_fast_update": true,
+    "old_Haar_is_retained_initial_slow": true,
+    "postslow_order": "299997/100000",
+    "profile_covariance_ceiling": "m+27",
+    "result": "same-state-postslow-scalar-and-whole-pressure-reset",
+    "whole_axial_order": "399997/100000",
+    "whole_reserved_potential_hull": true
+  }
+}
