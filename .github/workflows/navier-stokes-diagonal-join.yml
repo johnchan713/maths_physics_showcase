@@ -106,6 +106,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/**
       - research/navier_stokes_cascade/results/core_current_head_q56_axial_pressure_moment/**
       - research/navier_stokes_cascade/results/core_current_head_q57_primary_tail_budget/**
+      - research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -219,6 +220,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q55_axial_tail_threshold/**
       - research/navier_stokes_cascade/results/core_current_head_q56_axial_pressure_moment/**
       - research/navier_stokes_cascade/results/core_current_head_q57_primary_tail_budget/**
+      - research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -886,6 +888,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q57_primary_tail_budget/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q57_primary_tail_budget/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q57_primary_tail_budget/evidence.json --output q57_ci.json
+
+      - name: Check Q58 leading weight enclosure
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q58_leading_weight_enclosure/evidence.json --output q58_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

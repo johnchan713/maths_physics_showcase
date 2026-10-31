@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1132,
+    "nodes": 296,
+    "source_bindings": 4331
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q57_primary_tail_budget/evidence.json": "374d5ad4648f1c68f474fd71667ebf5f4be4fd909e12aa76484e21e5f250e6b1"
+  },
+  "parent": "be61757563b1c64110b8d0ea7979ae9934320420",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_current_head_q44_radial_multipliers/README.md": "90f883418ae79f60b9f19d92597837ea72c64c8ae001c91d3d17b18ce17d1d0f",
+    "results/core_current_head_q46_moving_cutoff/README.md": "9fa8f6f9f4f1c5a6a5862281ab8d1c5d3d08d21a687840a0d2da775320afc3bb",
+    "results/core_current_head_q56_axial_pressure_moment/README.md": "35b8eb552f0b1b076ebdbb40c192e9de93b8b9e68e688686f7d743595dd60afd",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q58_leading_weight_enclosure/README.md": "158147bf46a012ba6e8c455926303a3e77ae72b8504b0c752c86c035053d542d",
+    "results/core_current_head_q58_leading_weight_enclosure/audit.py": "8c37299d7c922fa66f1993bd720d4362a83cdd47c655b7e0bd1b58d6c2456320",
+    "results/core_current_head_q58_leading_weight_enclosure/q58_weights.py": "77a100a539f1d34c782ab4a1a36d56a38f1e12c8d637376bb1a443af260206f7",
+    "results/core_current_head_q58_leading_weight_enclosure/test_audit.py": "651fc510badf3c32b708eaab24d13bfd577baf37dcb6f01810b86ede7fdf6c12",
+    "results/core_primary_target_cutoff_budget/README.md": "d446492859d24eec433d90ba4737a98583154d130eef52eed957d6b52cd4bf25"
+  },
+  "status": "leading-weight-enclosure-for-axial-moment",
+  "symbolic": {
+    "background_error_extra": 2,
+    "background_weight_replacement_order": 4,
+    "fixture_coefficients": [
+      "768",
+      "960",
+      "4194304",
+      "21045248"
+    ],
+    "fixture_raw_base": "16384",
+    "leading_extra": 99998,
+    "physical_amplitude_enclosures_verified": false
+  }
+}
