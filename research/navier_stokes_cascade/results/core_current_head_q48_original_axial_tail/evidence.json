@@ -1,0 +1,51 @@
+{
+  "closure": {
+    "edges": 1122,
+    "nodes": 286,
+    "source_bindings": 4235
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q47_full_pressure_correction/evidence.json": "1eaa283c9906c60e8721ee79878f40ac312456704e47e710f63758f6054099fe"
+  },
+  "parent": "4a9deeb3e0b942b8241f0ff745284ed657c9398d",
+  "source_hashes": {
+    "results/core_current_head_q43_compact_chart/chart.py": "4c959c4aa77e0cbb4a3c66432860372b1b874bbd54fe0061c36abc53fc278d09",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q48_original_axial_tail/README.md": "9fe11a0fbcb23b440366526aae24833e9651081036381af419375af7025c7e5f",
+    "results/core_current_head_q48_original_axial_tail/audit.py": "916e9fb918f24e33379087a3dfb5e924f14827f769377a0a4bbb61a99e1f25bd",
+    "results/core_current_head_q48_original_axial_tail/native_tail.py": "6829e37a62f43f01f88e01d8df58ea3e38bda50608ba9fa25955103ca2aff030",
+    "results/core_current_head_q48_original_axial_tail/test_audit.py": "fdfc09256b4463415f961bcafb96e311115dfe198f6672e9441972f06a209089",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176",
+    "results/core_initial_cancellation_fast_source/bounds.py": "2437e9e3fb1c6cdab5f17eab4f27f10563d8e783a01c36763f0a74907ae49399"
+  },
+  "status": "conditional-original-axial-tail",
+  "symbolic": {
+    "materialized_physical_high_jets": false,
+    "q41_output_zero": {
+      "axial_shape": 11,
+      "covariance": 200012,
+      "integrations": 99999,
+      "output": 10,
+      "output_pole": 0,
+      "pressure": 200010,
+      "pressure_shape": 200011,
+      "radial_multiplier": 100009,
+      "raw_source": 200009,
+      "source_pole": 2400162
+    },
+    "row_zero": {
+      "axial_shape": 1,
+      "covariance": 200002,
+      "integrations": 99999,
+      "output": 0,
+      "output_pole": 0,
+      "pressure": 200000,
+      "pressure_shape": 200001,
+      "radial_multiplier": 99999,
+      "raw_source": 199999,
+      "source_pole": 2400042
+    },
+    "status": "conditional-original-axial-tail",
+    "uniform_actual_pulse_or_complete_residual": false
+  }
+}

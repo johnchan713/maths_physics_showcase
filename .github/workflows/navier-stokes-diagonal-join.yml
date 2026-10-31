@@ -96,6 +96,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q45_directed_kernel/**
       - research/navier_stokes_cascade/results/core_current_head_q46_moving_cutoff/**
       - research/navier_stokes_cascade/results/core_current_head_q47_full_pressure_correction/**
+      - research/navier_stokes_cascade/results/core_current_head_q48_original_axial_tail/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -199,6 +200,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q45_directed_kernel/**
       - research/navier_stokes_cascade/results/core_current_head_q46_moving_cutoff/**
       - research/navier_stokes_cascade/results/core_current_head_q47_full_pressure_correction/**
+      - research/navier_stokes_cascade/results/core_current_head_q48_original_axial_tail/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -816,6 +818,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q47_full_pressure_correction/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q47_full_pressure_correction/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q47_full_pressure_correction/evidence.json --output q47_ci.json
+
+      - name: Check Q48 original axial tail
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q48_original_axial_tail/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q48_original_axial_tail/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q48_original_axial_tail/evidence.json --output q48_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
