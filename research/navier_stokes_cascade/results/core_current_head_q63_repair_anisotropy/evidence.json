@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1137,
+    "nodes": 301,
+    "source_bindings": 4389
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q62_target_memory/evidence.json": "77253839ca37dc18abdb2219eb72b5a44cdbcc094e2636bc176f39c531777cb9"
+  },
+  "parent": "af4dd18ff65b97a4ccc60b50cc0994b53140e4cb",
+  "source_hashes": {
+    "results/core_borel_cutoff_certificate/README.md": "3730d55541fe4a24f2dbb010ef27899bbbb57aa18f9f08abb90515546fef2c63",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q58_leading_weight_enclosure/README.md": "158147bf46a012ba6e8c455926303a3e77ae72b8504b0c752c86c035053d542d",
+    "results/core_current_head_q59_squared_root_budget/README.md": "f41c065a0575840d4ded1ec64cc49226bd60d206530279e0b93d91155be4037c",
+    "results/core_current_head_q60_affine_path_generator/README.md": "8bc445bde9f2aa06babbeb387454f0745b112531142ebf2fe120b57320d4689c",
+    "results/core_current_head_q61_covariance_comparison/README.md": "d8a080bc9ddedfd064e43908d1e45afe0c021bf9a79a79a10dc4a3c5113b9223",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q63_repair_anisotropy/audit.py": "489d01e75957c78a807e100281bc863f4da5bf5048e93d549ad9100c63c00e41",
+    "results/core_current_head_q63_repair_anisotropy/q63.py": "8890082f8e5111f0de260731687273e344ba7978064a8b034d8540715a842f8a",
+    "results/core_current_head_q63_repair_anisotropy/test_audit.py": "bcde941903a746ae1fafaa8ac190fe6a828f6974bd355457668961fa7e06f4b5",
+    "results/core_primary_target_cutoff_budget/README.md": "d446492859d24eec433d90ba4737a98583154d130eef52eed957d6b52cd4bf25",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "conditional-anisotropic-repair-bump-enclosure",
+  "symbolic": {
+    "bump_first": [
+      5281200,
+      1377336960000,
+      1212331992192000000
+    ],
+    "physical_bounds_verified": false,
+    "profile_eta_offset": 2,
+    "profile_total_offset": 99998
+  }
+}

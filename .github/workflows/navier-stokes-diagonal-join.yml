@@ -111,6 +111,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/**
       - research/navier_stokes_cascade/results/core_current_head_q61_covariance_comparison/**
       - research/navier_stokes_cascade/results/core_current_head_q62_target_memory/**
+      - research/navier_stokes_cascade/results/core_current_head_q63_repair_anisotropy/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -229,6 +230,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q60_affine_path_generator/**
       - research/navier_stokes_cascade/results/core_current_head_q61_covariance_comparison/**
       - research/navier_stokes_cascade/results/core_current_head_q62_target_memory/**
+      - research/navier_stokes_cascade/results/core_current_head_q63_repair_anisotropy/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -921,6 +923,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q62_target_memory/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q62_target_memory/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q62_target_memory/evidence.json --output q62_ci.json
+
+      - name: Check Q63 anisotropic repair and explicit bumps
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q63_repair_anisotropy/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q63_repair_anisotropy/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q63_repair_anisotropy/evidence.json --output q63_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

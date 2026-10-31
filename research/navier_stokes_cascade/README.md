@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q63:** [Anisotropic repair and explicit bump bounds](results/core_current_head_q63_repair_anisotropy/README.md) separates the high radial bump derivatives from low η-order exact repair coefficients.
+
 > **Q62:** [Unstripped target and terminal heat memory](results/core_current_head_q62_target_memory/README.md) bounds the axial-test stress from velocity with only low angular derivatives of incoming moments.
 
 > **Q61:** [Leading covariance comparison](results/core_current_head_q61_covariance_comparison/README.md) charges the Borel correction at low order in the principal axial moment.
