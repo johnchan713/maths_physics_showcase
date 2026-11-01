@@ -1,0 +1,40 @@
+{
+  "closure": {
+    "edges": 1150,
+    "nodes": 314,
+    "source_bindings": 4552
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q75_physical_repair_weights/evidence.json": "7478da4c7befb5a325d5eddb909521a3fe01bed7ea64294f6c680f0e6f0ce202"
+  },
+  "parent": "6141830758bbe01b5fdf29617ede34693039710b",
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q58_leading_weight_enclosure/README.md": "158147bf46a012ba6e8c455926303a3e77ae72b8504b0c752c86c035053d542d",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q76_heat_compensation_jets/README.md": "426c8dbb31d26041a18780028ca24d44e32c28096417e5d085e76eb6282aba02",
+    "results/core_current_head_q76_heat_compensation_jets/audit.py": "022753bfe7e9b8ce38891a6227044650aa0011dc3c45b1227ee2fe31a65df7d0",
+    "results/core_current_head_q76_heat_compensation_jets/q76.py": "c4ed2f99fc5e030eb6b07698cd665e64f47d12c74c176626bf0830a703a5774b",
+    "results/core_current_head_q76_heat_compensation_jets/test_audit.py": "e1a0bf2fe5555c3143112521103441a0936057214031696a932dfb80c47ea7d9",
+    "results/heat_exterior_audit/README.md": "e5128b15a8ec398102a29ab6377de23c807d41d69408c142ce41f70e9a64934f",
+    "results/pulse_stress_audit/README.md": "253db00c9c11d43e247e7947a2fecc251a08a38c66ca01c499624ee7c2dd396c"
+  },
+  "status": "exterior-heat-compensation-mixed-jet-budget",
+  "symbolic": {
+    "D_through_3": [
+      6400,
+      1440000,
+      20736000271440000,
+      597196807817472146719440000
+    ],
+    "K_through_4": [
+      4,
+      16,
+      232,
+      5416,
+      160936
+    ],
+    "physical_band_gain": false
+  }
+}

@@ -124,6 +124,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q73_annular_target_all_orders/**
       - research/navier_stokes_cascade/results/core_current_head_q74_terminal_modulation_defect/**
       - research/navier_stokes_cascade/results/core_current_head_q75_physical_repair_weights/**
+      - research/navier_stokes_cascade/results/core_current_head_q76_heat_compensation_jets/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -255,6 +256,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q73_annular_target_all_orders/**
       - research/navier_stokes_cascade/results/core_current_head_q74_terminal_modulation_defect/**
       - research/navier_stokes_cascade/results/core_current_head_q75_physical_repair_weights/**
+      - research/navier_stokes_cascade/results/core_current_head_q76_heat_compensation_jets/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1012,6 +1014,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q75_physical_repair_weights/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q75_physical_repair_weights/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q75_physical_repair_weights/evidence.json --output q75_ci.json
+
+      - name: Check Q76 exterior heat compensation
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q76_heat_compensation_jets/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q76_heat_compensation_jets/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q76_heat_compensation_jets/evidence.json --output q76_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

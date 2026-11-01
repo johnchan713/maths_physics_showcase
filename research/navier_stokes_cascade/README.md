@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q76:** [Heat compensation mixed bounds](results/core_current_head_q76_heat_compensation_jets/README.md) quantifies the exterior three-row correction through the axial pulse entrance.
+
 > **Q75:** [Physical axial weights on the repair patch](results/core_current_head_q75_physical_repair_weights/README.md) bounds the two shear-weight changes and distinguishes the repair frequency from the physical band scale.
 
 > **Q74:** [Quadratic terminal modulation defect](results/core_current_head_q74_terminal_modulation_defect/README.md) identifies the five leading moment changes and their fixed-frequency repair.
