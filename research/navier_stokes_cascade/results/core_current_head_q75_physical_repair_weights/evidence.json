@@ -1,0 +1,33 @@
+{
+  "closure": {
+    "edges": 1149,
+    "nodes": 313,
+    "source_bindings": 4544
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q74_terminal_modulation_defect/evidence.json": "b27f8e4f7aef3b86e101f7c6fd3a060ef3c63d7d323febe8a1bb0f838d6fe8c3"
+  },
+  "parent": "8b16a1d69126228b15a2e666f2f7ddc08fa085c1",
+  "source_hashes": {
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q58_leading_weight_enclosure/README.md": "158147bf46a012ba6e8c455926303a3e77ae72b8504b0c752c86c035053d542d",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q75_physical_repair_weights/README.md": "879b1ed8eb1cadf80bd99b01cc5b5d037f3b446f00715cf85fe0d25f8ab0858b",
+    "results/core_current_head_q75_physical_repair_weights/audit.py": "654b6c7054e71215fce995beaf37bdc3f0de7d1410c3163b14c1ef32808327ff",
+    "results/core_current_head_q75_physical_repair_weights/q75.py": "c8803921d40bcc77d3130ae997628df54175adf823ea4a011576d364eb71f768",
+    "results/core_current_head_q75_physical_repair_weights/test_audit.py": "de73d1f9e99a5c5c21eaf3e4fdfa0691c65e120179ffc34b93397815e23909f4",
+    "results/core_primary_target_cutoff_budget/README.md": "d446492859d24eec433d90ba4737a98583154d130eef52eed957d6b52cd4bf25"
+  },
+  "status": "physical-axial-repair-weight-budget",
+  "symbolic": {
+    "diagonal_changes": [
+      0,
+      0
+    ],
+    "manufactured_weights": [
+      "312",
+      "-75"
+    ],
+    "principal_amplitudes_enclosed": false
+  }
+}

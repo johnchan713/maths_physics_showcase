@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q75:** [Physical axial weights on the repair patch](results/core_current_head_q75_physical_repair_weights/README.md) bounds the two shear-weight changes and distinguishes the repair frequency from the physical band scale.
+
 > **Q74:** [Quadratic terminal modulation defect](results/core_current_head_q74_terminal_modulation_defect/README.md) identifies the five leading moment changes and their fixed-frequency repair.
 
 > **Q73:** [All-order native annular target and root](results/core_current_head_q73_annular_target_all_orders/README.md) bounds higher angular inputs without a new high-order contraction.
