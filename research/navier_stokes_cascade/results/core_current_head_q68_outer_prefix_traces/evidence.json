@@ -1,0 +1,42 @@
+{
+  "closure": {
+    "edges": 1142,
+    "nodes": 306,
+    "source_bindings": 4440
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q67_premod_memory/evidence.json": "97c14c530994fe7514f2053f84ed50f6c18cd90e2655770f8c1403bc7c9a6dbc"
+  },
+  "parent": "65c2bd8144733faa350706f3df221ad88cf45773",
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/axis_matching_audit/README.md": "8c85355003ec18989854c4916fd3c3549bea452988f20879de58d2cf748bfd1e",
+    "results/core_current_head_q68_outer_prefix_traces/README.md": "90c4fb4b27b95f7360dbd9cb89f65b25012b2d088ebe0dc27d10e8d82e761d41",
+    "results/core_current_head_q68_outer_prefix_traces/audit.py": "3eaee6150b607979b4464948e9ee120c1a68aad4d52c151fabb2913c313eb22f",
+    "results/core_current_head_q68_outer_prefix_traces/q68.py": "69443ab8e9e5e49cf50b56ef134ce230de83f2b2e1e107a818d829b8930f9d62",
+    "results/core_current_head_q68_outer_prefix_traces/test_audit.py": "ccbabb1838b7fb974a84e0523f87175eedbaca1b286541f340c2b45efe2bf060",
+    "results/core_growth_activation/README.md": "fd6134a88a69d49203235f9b2ef9abd1f80ee63baf129b5985c9e3136ad09a0a",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/premodulation_mixed_shear/README.md": "c09e80d441df22d0d524c4d85d9736576ee640f3f8fe0afa9ad789723f9db105",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "native-outer-prefix-angular-traces",
+  "symbolic": {
+    "matched_trace_control": [
+      "12",
+      "80",
+      "480",
+      "2776/3",
+      "2560"
+    ],
+    "mixed_radial_inputs_closed": false,
+    "state_control": [
+      "2009",
+      "3",
+      "7155529/150"
+    ]
+  }
+}

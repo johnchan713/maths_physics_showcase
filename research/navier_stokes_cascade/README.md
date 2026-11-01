@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q68:** [Outer-prefix angular traces](results/core_current_head_q68_outer_prefix_traces/README.md) bounds all five incoming moments and pure angular state jets from the matched native profile.
+
 > **Q67:** [Pre-modulation state and incoming memory](results/core_current_head_q67_premod_memory/README.md) gives a forward jet enclosure and identifies the indispensable incoming pressure derivative.
 
 > **Q66:** [All-order cutoff amplitude](results/core_current_head_q66_cutoff_amplitude/README.md) bounds the signed amplitude from original state jets with flat support edges included.

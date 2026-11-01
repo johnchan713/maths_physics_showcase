@@ -116,6 +116,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q65_signed_root_radius/**
       - research/navier_stokes_cascade/results/core_current_head_q66_cutoff_amplitude/**
       - research/navier_stokes_cascade/results/core_current_head_q67_premod_memory/**
+      - research/navier_stokes_cascade/results/core_current_head_q68_outer_prefix_traces/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -239,6 +240,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q65_signed_root_radius/**
       - research/navier_stokes_cascade/results/core_current_head_q66_cutoff_amplitude/**
       - research/navier_stokes_cascade/results/core_current_head_q67_premod_memory/**
+      - research/navier_stokes_cascade/results/core_current_head_q68_outer_prefix_traces/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -956,6 +958,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q67_premod_memory/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q67_premod_memory/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q67_premod_memory/evidence.json --output q67_ci.json
+
+      - name: Check Q68 outer prefix angular traces
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q68_outer_prefix_traces/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q68_outer_prefix_traces/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q68_outer_prefix_traces/evidence.json --output q68_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
