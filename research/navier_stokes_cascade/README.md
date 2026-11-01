@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q70:** [Shape and annulus mixed derivatives](results/core_current_head_q70_shape_annulus_mixed/README.md) bounds arbitrary radial orders through six angular field derivatives and five angular state derivatives.
+
 > **Q69:** [Mixed outer-prefix derivatives](results/core_current_head_q69_outer_prefix_mixed/README.md) bounds native radial and angular derivatives at the retained ramp widths.
 
 > **Q68:** [Outer-prefix angular traces](results/core_current_head_q68_outer_prefix_traces/README.md) bounds all five incoming moments and pure angular state jets from the matched native profile.

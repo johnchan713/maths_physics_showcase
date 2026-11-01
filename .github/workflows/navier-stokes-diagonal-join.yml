@@ -118,6 +118,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q67_premod_memory/**
       - research/navier_stokes_cascade/results/core_current_head_q68_outer_prefix_traces/**
       - research/navier_stokes_cascade/results/core_current_head_q69_outer_prefix_mixed/**
+      - research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -243,6 +244,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q67_premod_memory/**
       - research/navier_stokes_cascade/results/core_current_head_q68_outer_prefix_traces/**
       - research/navier_stokes_cascade/results/core_current_head_q69_outer_prefix_mixed/**
+      - research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -970,6 +972,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q69_outer_prefix_mixed/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q69_outer_prefix_mixed/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q69_outer_prefix_mixed/evidence.json --output q69_ci.json
+
+      - name: Check Q70 shape and annulus mixed derivatives
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/evidence.json --output q70_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1144,
+    "nodes": 308,
+    "source_bindings": 4467
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q69_outer_prefix_mixed/evidence.json": "e9953be4d35014b779f9e3f8241d435a7a868e659c87babe657ca00aaa09c55d"
+  },
+  "parent": "7301fdea3715ac6c0e777a0468ec23d8747f3b4a",
+  "source_hashes": {
+    "results/axial_stress_audit/diagnostics.py": "9744e5df8004a1a110cff068981816238cc7ea6424d4570f19a7e0a5a45a5de0",
+    "results/axis_matching_audit/README.md": "8c85355003ec18989854c4916fd3c3549bea452988f20879de58d2cf748bfd1e",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q70_shape_annulus_mixed/README.md": "5b1728180c534479bb3554343eb5e5db05714bdcc7c41a5971d80d0d24bb75d7",
+    "results/core_current_head_q70_shape_annulus_mixed/audit.py": "0f4009a43552ed2b364e3635c170362167ea1118ebae3b91d64aeef626ffe97f",
+    "results/core_current_head_q70_shape_annulus_mixed/q70.py": "8e10da73008a6dee04d4b78e61e24132116f4da06f60ae38964b36cb33f9418e",
+    "results/core_current_head_q70_shape_annulus_mixed/test_audit.py": "e8ae1e509fc6c765f0de0b63605829d389350ca86b6dd7b689254f8a9186c36f",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/native_sixth_angular/README.md": "c670b5f76f84f7234de355eddd084bd647e277362b8942d7a129eef00182eed1",
+    "results/shape_join_pressure/README.md": "6120069fc0b45b2a5cdf25584a1eeb6bbfc363589a1dc8658e1af45093935cff",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "native-shape-annulus-mixed-six-angular",
+  "symbolic": {
+    "control_relative_order3": "3311513631629192676200537929/39062500000000000",
+    "control_shape_order3": "403198054820599/375000",
+    "field_eta": 6,
+    "physical_pulse_established": false,
+    "state_eta": 5
+  }
+}
