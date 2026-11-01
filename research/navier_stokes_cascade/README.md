@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q77:** [Exterior axial profile pulse](results/core_current_head_q77_axial_profile_pulse/README.md) bounds the strength and mixed field derivatives through the pulse exit.
+
 > **Q76:** [Heat compensation mixed bounds](results/core_current_head_q76_heat_compensation_jets/README.md) quantifies the exterior three-row correction through the axial pulse entrance.
 
 > **Q75:** [Physical axial weights on the repair patch](results/core_current_head_q75_physical_repair_weights/README.md) bounds the two shear-weight changes and distinguishes the repair frequency from the physical band scale.
