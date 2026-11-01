@@ -130,6 +130,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q79_ambient_value_bridge/**
       - research/navier_stokes_cascade/results/core_current_head_q80_support_saturated_tuple/**
       - research/navier_stokes_cascade/results/core_current_head_q81_covariance_error_support/**
+      - research/navier_stokes_cascade/results/core_current_head_q82_radial_pressure_split/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -267,6 +268,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q79_ambient_value_bridge/**
       - research/navier_stokes_cascade/results/core_current_head_q80_support_saturated_tuple/**
       - research/navier_stokes_cascade/results/core_current_head_q81_covariance_error_support/**
+      - research/navier_stokes_cascade/results/core_current_head_q82_radial_pressure_split/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1054,6 +1056,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q81_covariance_error_support/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q81_covariance_error_support/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q81_covariance_error_support/evidence.json --output q81_ci.json
+
+      - name: Check Q82 final radial pressure split
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q82_radial_pressure_split/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q82_radial_pressure_split/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q82_radial_pressure_split/evidence.json --output q82_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

@@ -1,0 +1,77 @@
+{
+  "closure": {
+    "edges": 1156,
+    "nodes": 320,
+    "source_bindings": 4619
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q81_covariance_error_support/evidence.json": "98912783ec81eaae050378ae019e0fd249473570127f18889622397fac4079a7"
+  },
+  "parent": "d92bb5392a4ab5fe11762a1aac92edc2b81c28b9",
+  "source_hashes": {
+    "results/core_angular_pressure_normal_form/README.md": "e9b4a8627bfc9ab9d020d10b0081fae875b27d9b745875ac964a9f7dc3afdc34",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_background_radial_reconstruction/budgets.py": "410ca88336dd6b401d27817118867537a3ff6d10425d76119791cae252d115da",
+    "results/core_current_head_q56_axial_pressure_moment/README.md": "35b8eb552f0b1b076ebdbb40c192e9de93b8b9e68e688686f7d743595dd60afd",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q61_covariance_comparison/README.md": "d8a080bc9ddedfd064e43908d1e45afe0c021bf9a79a79a10dc4a3c5113b9223",
+    "results/core_current_head_q82_radial_pressure_split/README.md": "0ed851a424aa79ff8f271d41359b7851d663ef26926d91f1b33fe878129c9277",
+    "results/core_current_head_q82_radial_pressure_split/audit.py": "ecc3c695a7eacdb82deb0bd04d2bf428957bdff004be9423bb4e46af588db831",
+    "results/core_current_head_q82_radial_pressure_split/q82.py": "577767774ef52a8567ae316c957be933fea3b9e49d52c0e303eaae52604f0f42",
+    "results/core_current_head_q82_radial_pressure_split/test_audit.py": "15e0f7b160a6e937ed533085beeda0f8bee98332406425e210d8bdc12f3ae1d0",
+    "results/core_initial_a0_physical_tail_closure/README.md": "5e7abff768f8a1344b951b38e5aab9dac9f814d908a52da7c4c87a47af7e7439"
+  },
+  "status": "conditional-final-radial-covariance-split",
+  "symbolic": {
+    "actual_envelopes_certified": false,
+    "complete_residual_or_blowup": false,
+    "diagonal": {
+      "extra_slow": 199996,
+      "extra_source": 399990,
+      "p": 199995,
+      "radial_auxiliary_pairs": [
+        [
+          199996,
+          199994
+        ],
+        [
+          199994,
+          199996
+        ]
+      ]
+    },
+    "physical_wave_replaced": false,
+    "pressure_truncated": false,
+    "remainder": {
+      "extra_slow": 99999,
+      "extra_source": 199996,
+      "p": 99998,
+      "radial_auxiliary_pairs": [
+        [
+          99999,
+          99997
+        ],
+        [
+          99997,
+          99999
+        ]
+      ]
+    },
+    "shear": {
+      "extra_slow": 199996,
+      "extra_source": 399989,
+      "p": 199995,
+      "radial_auxiliary_pairs": [
+        [
+          199996,
+          199993
+        ],
+        [
+          199994,
+          199995
+        ]
+      ]
+    },
+    "status": "conditional-final-radial-covariance-split"
+  }
+}

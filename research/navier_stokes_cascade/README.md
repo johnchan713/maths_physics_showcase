@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q82:** [Final radial pressure split](results/core_current_head_q82_radial_pressure_split/README.md) isolates two principal tensor products and lowers the derivative demand on the remaining final-state source.
+
 > **Q81:** [Covariance comparison error support](results/core_current_head_q81_covariance_error_support/README.md) localizes the low-order comparison error, retaining the common target and nonlocal pressure outputs.
 
 > **Q80:** [Support-saturated coefficient tuple](results/core_current_head_q80_support_saturated_tuple/README.md) clips positive-order norm estimates to the exact velocity support, retains pressure tails, and corrects Q79’s coefficient roadmap.
