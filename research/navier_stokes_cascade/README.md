@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q88:** [Native nonlinear remainder composition](results/core_current_head_q88_native_remainder_composition/README.md) combines the inherited coefficient programs on one hull with explicit geometry and unweighted temporal bounds.
+
 > **Q87:** [Final angular cancellation adapter](results/core_current_head_q87_final_angular_adapter/README.md) derives Q84’s angular coefficient from the same Haar row and complete final mean differences.
 
 > **Q86:** [Corrected final mean adapter](results/core_current_head_q86_final_mean_adapter/README.md) derives the three final velocity norm slots while retaining the separate angular cancellation requirement.

@@ -136,6 +136,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q86_final_mean_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/**
+      - research/navier_stokes_cascade/results/core_current_head_q88_native_remainder_composition/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -279,6 +280,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q86_final_mean_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/**
+      - research/navier_stokes_cascade/results/core_current_head_q88_native_remainder_composition/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1096,6 +1098,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/evidence.json --output q87_ci.json
+
+      - name: Check Q88 native nonlinear remainder composition
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q88_native_remainder_composition/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q88_native_remainder_composition/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q88_native_remainder_composition/evidence.json --output q88_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

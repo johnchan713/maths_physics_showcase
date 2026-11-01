@@ -1,0 +1,41 @@
+{
+  "closure": {
+    "edges": 1162,
+    "nodes": 326,
+    "source_bindings": 4693
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q87_final_angular_adapter/evidence.json": "3ebff98beb52eab20da9959f7e1f209a67c50de107c53f0d5792958baba1423f"
+  },
+  "parent": "58bbffdde9087aef859429849d955942ef867802",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q43_compact_chart/README.md": "485925c8869df6b01e7c0bd893a7a500a9dbeb47c8ef79eff791e0bb3089e2fd",
+    "results/core_current_head_q43_compact_chart/chart.py": "4c959c4aa77e0cbb4a3c66432860372b1b874bbd54fe0061c36abc53fc278d09",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q84_nonlinear_radial_envelope/README.md": "ad5ae3a5114167bfd74abaee8f3f63cb74ffed57a685a4403b4ada8526fd95d4",
+    "results/core_current_head_q84_nonlinear_radial_envelope/q84.py": "68412d0e8ca6c4a3e19b0679f01a7ccafe998819dc6a94192250bd291dd8bcd1",
+    "results/core_current_head_q85_covariance_defect_adapter/README.md": "67b08f1f54087a659294ca776838f6d24e5cfc28b2416602fd97266fd75cb08c",
+    "results/core_current_head_q86_final_mean_adapter/README.md": "c7d554f8e615b3996bb718731078690f5b99560e6a717ec15285fc66a74673d1",
+    "results/core_current_head_q87_final_angular_adapter/test_audit.py": "0f7607f68e1ed0b1fb1a771318efda3861c48e68abb0465cf7bdbbb0a97e0785",
+    "results/core_current_head_q88_native_remainder_composition/README.md": "0ae797db2dbf3b6575d8c14130a9f61d44ba07064370693004879fee8b8bb45f",
+    "results/core_current_head_q88_native_remainder_composition/audit.py": "177a0fee5ef162f328d584643e9f5ffed9914ca9c2cb603a89adaebf89b75a94",
+    "results/core_current_head_q88_native_remainder_composition/q88.py": "0ecfa5d248be5b969cdd7922eadb5ff27362d2170ac5661a92fa326ad246671c",
+    "results/core_current_head_q88_native_remainder_composition/test_audit.py": "cdec78d79b46304df92b2a227718f68072813948fbacc2f451abe2a6450c1f65",
+    "results/core_fast_row_gain_join/budgets.py": "9f635486fa0b1688341571f8abcb25183f22c21f2fe42aff5a2303c60fdbc60e",
+    "results/core_symbolic_fresh_mean_join/README.md": "9bb9be6aab17e0ec13a4fc7416b2114e6c26b869921a18960c9b80c85184e5d8",
+    "results/core_symbolic_initial_haar_join/bounds.py": "bc14ef2afada885d673a06d8c70451cee3d36695c2f20849825370b14a79218c"
+  },
+  "status": "same-hull-native-nonlinear-radial-composition",
+  "symbolic": {
+    "actual_continuum_inequalities_certified": false,
+    "factory_reserve": 200003,
+    "independent_final_field_or_temporal_callback": false,
+    "profile_reserve": 200030,
+    "radial_shell_source": 199996,
+    "status": "same-hull-native-nonlinear-radial-composition",
+    "temporal_extra_jets": 4,
+    "temporal_raw_constant": 9600,
+    "unconditional_residual_or_blowup": false
+  }
+}
