@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q79:** [Full-background and ambient value bridge](results/core_current_head_q79_ambient_value_bridge/README.md) makes finite-head normal and two-time upper bounds explicit while retaining the finalized coefficient and spectral hypotheses.
+
 > **Q78:** [Post-pulse and terminal heat bounds](results/core_current_head_q78_postpulse_heat_collar/README.md) encloses the remaining leading-field derivatives through the stress edge.
 
 > **Q77:** [Exterior axial profile pulse](results/core_current_head_q77_axial_profile_pulse/README.md) bounds the strength and mixed field derivatives through the pulse exit.

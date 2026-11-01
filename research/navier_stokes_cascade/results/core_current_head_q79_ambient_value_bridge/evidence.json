@@ -1,0 +1,83 @@
+{
+  "closure": {
+    "edges": 1153,
+    "nodes": 317,
+    "source_bindings": 4585
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q78_postpulse_heat_collar/evidence.json": "68b2175950eec82fb72f99956719cd75ebd1a2f3e52dc8b865104b09634ca746"
+  },
+  "parent": "8fc7b66adfca0b6a269e21e648bfa90a3c85bac5",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_canonical_entrance_jet_closure/README.md": "73009a782e22b3aa1f702f579340929e21ddfd0b8b0fc3c75e95a51bcacd2a86",
+    "results/core_current_head_q23_finite_band_frame_join/README.md": "d1b3cfa97b0ca55c465a19fc57255a8d714108454a2c5b296ddc8b4bf8af1218",
+    "results/core_current_head_q61_covariance_comparison/README.md": "d8a080bc9ddedfd064e43908d1e45afe0c021bf9a79a79a10dc4a3c5113b9223",
+    "results/core_current_head_q79_ambient_value_bridge/README.md": "2c3d1c9c510433e215ff6601c0aa246500d3d826765b4482b37803e23b17cc99",
+    "results/core_current_head_q79_ambient_value_bridge/audit.py": "3a578db730b7e7fcbc958adf9d03fdd63b9da7cc45472725298a56e8268eeb90",
+    "results/core_current_head_q79_ambient_value_bridge/q79.py": "0204de769280465a7ec6a8e5cbafbdc994f50355bc5b411cf6337aa32bdbba19",
+    "results/core_current_head_q79_ambient_value_bridge/test_audit.py": "ab977e7934a595b9aa9d587c322ebc44ab573e1f84b825c8765cf69c22ffaecd",
+    "results/core_phase_coefficient_budget/README.md": "37c00b1e9050894fb3417b83817c18188ff5d6193e6b56ba4160e8dc042e9eda",
+    "results/frame_column_foundation/README.md": "5d0616b3f5e8a491af448e303067630d7118badba6ffd7a0648ca3eaeddc8ca6",
+    "results/frame_column_foundation/frame_budget.py": "2f72e227b1b158a6bb09c02c3f29d9b1875af8037dbcf3908e9fe8054c87d3e7"
+  },
+  "status": "conditional-explicit-ambient-value-bridge",
+  "symbolic": {
+    "actual_finalized_coefficients_certified": false,
+    "ambient_polynomial": "Th+Tt+Nt/nu_t+S Tt Qt Nt",
+    "column_root_floor_proved": false,
+    "complete_residual_or_blowup": false,
+    "fixture_head": {
+      "Dref": "13/2",
+      "K": "21",
+      "M": "18",
+      "N": "1156",
+      "floor": "1/18",
+      "log_ambient": "22496"
+    },
+    "fixture_low": {
+      "Db": "1091707679571294862273356848/6075",
+      "Mz": "136720584/25",
+      "error_one": "471206736/25",
+      "full_one": "136720584/25",
+      "leading_two": "436683071828517899108048000/729"
+    },
+    "fixture_tail": {
+      "K": "1093764672/25",
+      "Lstar": "5589543319405029790522135148322187/486000000",
+      "M": "69869291492562872248634190581/24300",
+      "N": "698692914925628722486343211935243/243000000",
+      "Qlift": "279477165970251490057676023508/6075",
+      "T_exponent": "488171789367271855648961368436138634777035049536461710134272437799/14762250000000000",
+      "T_prefactor": "25",
+      "floor": "1/4",
+      "linear_factor": "48817178936727185750596822063487622381863160890650825360423111/369056250000",
+      "normal_term": "698692914925628722486343211935243/60750000"
+    },
+    "khead_recipe": "1+2^ceil(h ell0/2)",
+    "normal_reciprocal": "max(nu_h^-2,nu_t^-2)",
+    "original_selector_changed": false,
+    "requests": [
+      [
+        "cutoff",
+        2
+      ],
+      [
+        "leading",
+        1
+      ],
+      [
+        "leading",
+        2
+      ],
+      [
+        "profile",
+        1,
+        1
+      ]
+    ],
+    "status": "conditional-explicit-ambient-value-bridge",
+    "unconditional_actual_pulse_bound": false
+  }
+}
