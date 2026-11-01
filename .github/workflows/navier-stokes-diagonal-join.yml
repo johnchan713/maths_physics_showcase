@@ -133,6 +133,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q82_radial_pressure_split/**
       - research/navier_stokes_cascade/results/core_current_head_q83_shared_pressure_moment/**
       - research/navier_stokes_cascade/results/core_current_head_q84_nonlinear_radial_envelope/**
+      - research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -273,6 +274,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q82_radial_pressure_split/**
       - research/navier_stokes_cascade/results/core_current_head_q83_shared_pressure_moment/**
       - research/navier_stokes_cascade/results/core_current_head_q84_nonlinear_radial_envelope/**
+      - research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1075,6 +1077,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q84_nonlinear_radial_envelope/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q84_nonlinear_radial_envelope/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q84_nonlinear_radial_envelope/evidence.json --output q84_ci.json
+
+      - name: Check Q85 same root covariance defect
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/evidence.json --output q85_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

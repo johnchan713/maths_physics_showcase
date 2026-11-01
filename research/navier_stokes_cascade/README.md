@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q85:** [Same-root covariance defect](results/core_current_head_q85_covariance_defect_adapter/README.md) supplies Q84’s full covariance and defect coefficient slots using the stronger actual-target norm premise.
+
 > **Q84:** [Nonlinear radial remainder envelope](results/core_current_head_q84_nonlinear_radial_envelope/README.md) gives an explicit final-state norm polynomial and its primitive derivative ceiling.
 
 > **Q83:** [Shared principal pressure moment](results/core_current_head_q83_shared_pressure_moment/README.md) identifies the moving-cutoff axial term with the radial integral before its output multiplier.

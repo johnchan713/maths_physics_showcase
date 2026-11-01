@@ -1,0 +1,41 @@
+{
+  "closure": {
+    "edges": 1159,
+    "nodes": 323,
+    "source_bindings": 4654
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q84_nonlinear_radial_envelope/evidence.json": "ead529d8a6dfd3eb87a513be2a53091fde727f99d4a97cd232f77817cc7b9612"
+  },
+  "parent": "def77cfab82a2d941fbaa8d8f3847abef66558e8",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q37_signed_covariance_pressure/signed_update.py": "7f57134e5fdcb43236f3c34a634c7c0dafbaccac5cb9966845df82d5b0a0e2de",
+    "results/core_current_head_q41_postslow_reset/README.md": "1210cea3642bc68efa07c98509e26cb2a7d8c2f583c6833f0a86817f46f158fd",
+    "results/core_current_head_q47_full_pressure_correction/README.md": "78884265930523c2b692854270679dc5593e5e29449660200ece4c92a89e1015",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q51_radial_curl_target/README.md": "f0d8ca1f24a49125351e5644f3d9ce869a6fe7faa18ce7b880e4014336eb6a26",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q85_covariance_defect_adapter/README.md": "67b08f1f54087a659294ca776838f6d24e5cfc28b2416602fd97266fd75cb08c",
+    "results/core_current_head_q85_covariance_defect_adapter/audit.py": "37bd494c5809c303c8f753661c5f3f060099306ab2cf61ad9093fdc1deb9f5d0",
+    "results/core_current_head_q85_covariance_defect_adapter/q85.py": "60ce7ac8ae80ef71c6934b3776be554eef93d4b72a501fed1987d1d8f352f39d",
+    "results/core_current_head_q85_covariance_defect_adapter/test_audit.py": "3cf81058e48383e656c62990e14af78667e7d970243a0957318a757983d1910d"
+  },
+  "status": "same-root-full-covariance-defect-adapter",
+  "symbolic": {
+    "Q84_covariance_request": 200002,
+    "actual_field_inequalities_certified": false,
+    "conservative_target_reserve": 200005,
+    "defect_term_rates": [
+      "2",
+      "3",
+      "99999/50000",
+      "149999/50000",
+      "199999/50000"
+    ],
+    "old_target_rate_suffices": false,
+    "physical_wave_rebuilt": false,
+    "status": "same-root-full-covariance-defect-adapter",
+    "unconditional_residual_or_blowup": false
+  }
+}
