@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q84:** [Nonlinear radial remainder envelope](results/core_current_head_q84_nonlinear_radial_envelope/README.md) gives an explicit final-state norm polynomial and its primitive derivative ceiling.
+
 > **Q83:** [Shared principal pressure moment](results/core_current_head_q83_shared_pressure_moment/README.md) identifies the moving-cutoff axial term with the radial integral before its output multiplier.
 
 > **Q82:** [Final radial pressure split](results/core_current_head_q82_radial_pressure_split/README.md) isolates two principal tensor products and lowers the derivative demand on the remaining final-state source.

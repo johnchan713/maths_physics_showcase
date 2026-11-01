@@ -1,0 +1,61 @@
+{
+  "closure": {
+    "edges": 1158,
+    "nodes": 322,
+    "source_bindings": 4643
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q83_shared_pressure_moment/evidence.json": "773e520ef9a1299780a19e8367d7de3e42f0ea26230665dbedc292dd63d1d368"
+  },
+  "parent": "2b630e8cf4e1986e906135d87f3964fce800a514",
+  "source_hashes": {
+    "results/core_angular_pressure_normal_form/README.md": "e9b4a8627bfc9ab9d020d10b0081fae875b27d9b745875ac964a9f7dc3afdc34",
+    "results/core_angular_pressure_normal_form/bounds.py": "79ae1687f5b3d3cace0833eccad90154c65f16749cbfd01087db7187e0266af4",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q51_radial_curl_target/README.md": "f0d8ca1f24a49125351e5644f3d9ce869a6fe7faa18ce7b880e4014336eb6a26",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q82_radial_pressure_split/README.md": "0ed851a424aa79ff8f271d41359b7851d663ef26926d91f1b33fe878129c9277",
+    "results/core_current_head_q84_nonlinear_radial_envelope/README.md": "ad5ae3a5114167bfd74abaee8f3f63cb74ffed57a685a4403b4ada8526fd95d4",
+    "results/core_current_head_q84_nonlinear_radial_envelope/audit.py": "c430873aca5c9c2fad94814d8971048a2387c88b2545f234dd625984f2771072",
+    "results/core_current_head_q84_nonlinear_radial_envelope/q84.py": "68412d0e8ca6c4a3e19b0679f01a7ccafe998819dc6a94192250bd291dd8bcd1",
+    "results/core_current_head_q84_nonlinear_radial_envelope/test_audit.py": "511cc191ebecb90a1989a8fd7f3909a9f97ef5597bac205a6934b37ecc78e681",
+    "results/core_fast_row_gain_join/README.md": "d86842b7bda2973fd9dcfc08d9d8713507e222b72c925dbbbe591a0e130ed9b8"
+  },
+  "status": "explicit-final-nonlinear-radial-remainder-envelope",
+  "symbolic": {
+    "actual_norm_inequalities_certified": false,
+    "angular_row_extra": 200000,
+    "field_extra": 200002,
+    "fixture": {
+      "F": "331357",
+      "Jd": "41",
+      "angular_row_order": "4",
+      "field_order": "6",
+      "projected_remainder": "349178882",
+      "rest": "2311",
+      "temporal_source_order": "4"
+    },
+    "pressure_removed": false,
+    "radial_output_extra": 199996,
+    "rates": {
+      "F": "199997/100000",
+      "Jd": "99999/50000",
+      "nonF": "99999/50000"
+    },
+    "status": "explicit-final-nonlinear-radial-remainder-envelope",
+    "temporal_inverse_recipe": {
+      "factors": [
+        "original c^-1 floor Tg S",
+        "original weighted/raw temporal domain and profile conversions"
+      ],
+      "materialized": false,
+      "output_order": 199996,
+      "raw_source_order": 200000,
+      "scalar": 48,
+      "six_power": 199996,
+      "source_factorial": 200000,
+      "two_power": 200000
+    },
+    "unconditional_pulse_residual_or_blowup": false
+  }
+}
