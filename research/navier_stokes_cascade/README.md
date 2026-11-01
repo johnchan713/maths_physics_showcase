@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q81:** [Covariance comparison error support](results/core_current_head_q81_covariance_error_support/README.md) localizes the low-order comparison error, retaining the common target and nonlocal pressure outputs.
+
 > **Q80:** [Support-saturated coefficient tuple](results/core_current_head_q80_support_saturated_tuple/README.md) clips positive-order norm estimates to the exact velocity support, retains pressure tails, and corrects Q79’s coefficient roadmap.
 
 > **Q79:** [Full-background and ambient value bridge](results/core_current_head_q79_ambient_value_bridge/README.md) makes finite-head normal and two-time upper bounds explicit while retaining the finalized coefficient and spectral hypotheses.

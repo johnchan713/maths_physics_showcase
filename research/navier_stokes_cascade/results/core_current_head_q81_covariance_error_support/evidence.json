@@ -1,0 +1,42 @@
+{
+  "closure": {
+    "edges": 1155,
+    "nodes": 319,
+    "source_bindings": 4608
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q80_support_saturated_tuple/evidence.json": "77ab1efe965e4db9693b5e939b5f4a917729615fe3a352b9c831d14fb824fa72"
+  },
+  "parent": "a8b1efc0a7a3582209bd44621dc5b471fee704c3",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_background_radial_reconstruction/budgets.py": "410ca88336dd6b401d27817118867537a3ff6d10425d76119791cae252d115da",
+    "results/core_current_head_q25_direct_cone_join/README.md": "7f4cbc639f485bf0e2a7ba9422734283f3257a03b7d737c0ba0c2b2bad1c13e4",
+    "results/core_current_head_q58_leading_weight_enclosure/README.md": "158147bf46a012ba6e8c455926303a3e77ae72b8504b0c752c86c035053d542d",
+    "results/core_current_head_q59_squared_root_budget/README.md": "f41c065a0575840d4ded1ec64cc49226bd60d206530279e0b93d91155be4037c",
+    "results/core_current_head_q61_covariance_comparison/README.md": "d8a080bc9ddedfd064e43908d1e45afe0c021bf9a79a79a10dc4a3c5113b9223",
+    "results/core_current_head_q81_covariance_error_support/README.md": "55888f79d4f860df21aa8e653855ff9522ba4bf2e5b7ed60cb505deeef0e8455",
+    "results/core_current_head_q81_covariance_error_support/audit.py": "9639065ba818d7a5b5a156831955dcd8a6127a52592ddbf0f81604383269973b",
+    "results/core_current_head_q81_covariance_error_support/q81.py": "e3032cee6866a7b3d8309f7f73eff4934063dcc4227fdac06ace85014c456303",
+    "results/core_current_head_q81_covariance_error_support/test_audit.py": "9eb5e0c6c0abbdc9e50470efce18a0bc8156e61f25f5d2e560cf95abf117b651",
+    "results/core_primary_tail_recheck/README.md": "7acbbdcb68053bda84b9ba5ef57a28050d94c78e865216d18f81b37f1d9344bc"
+  },
+  "status": "principal-comparison-error-supported-on-positive-order-velocity-hull",
+  "symbolic": {
+    "common_reference_domain_required": true,
+    "common_target_required": true,
+    "failed_branch_improved": false,
+    "high_order_leading_integral_localized": false,
+    "interval_controls": [
+      "0",
+      "0",
+      "3",
+      "6",
+      "6"
+    ],
+    "physical_wave_replaced": false,
+    "pressure_output_support_inferred": false,
+    "status": "principal-comparison-error-supported-on-positive-order-velocity-hull",
+    "unconditional_pulse_residual_or_blowup": false
+  }
+}
