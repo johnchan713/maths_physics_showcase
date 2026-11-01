@@ -1,0 +1,32 @@
+{
+  "closure": {
+    "edges": 1152,
+    "nodes": 316,
+    "source_bindings": 4573
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q77_axial_profile_pulse/evidence.json": "1ffa19d9f91ea330029ec607167a71cb54e897f9b42044dfc4ad4ec60c599cc3"
+  },
+  "parent": "4bcac709bb3fc4a94bda21fe74f16b1616631577",
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q58_leading_weight_enclosure/README.md": "158147bf46a012ba6e8c455926303a3e77ae72b8504b0c752c86c035053d542d",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q78_postpulse_heat_collar/README.md": "cec40cfbf8f308a54f1bf6258b9dc879f913f7278204d4873be9f3f44e79c265",
+    "results/core_current_head_q78_postpulse_heat_collar/audit.py": "19f482dce34065767b80d8eade4e558131992f14cacd8b45c0d77267b34d194c",
+    "results/core_current_head_q78_postpulse_heat_collar/q78.py": "5fb28230ecc25961c4ca9db0cf8d86f768480a9830a1c86ab1bbae8c008b42b2",
+    "results/core_current_head_q78_postpulse_heat_collar/test_audit.py": "209b861562170a3233784c896084983ef2833b7312c7ef0db876488556aae958",
+    "results/heat_exterior_audit/README.md": "e5128b15a8ec398102a29ab6377de23c807d41d69408c142ce41f70e9a64934f",
+    "results/outer_pressure_pilot/schedule.py": "8b76461a06628ab4c4f1962a11f35dd011b9383880626fd5e7a32ea98a1fdc6e",
+    "results/pulse_moment_audit/README.md": "5e26cfb73096de8718ab97231c02a4401e59cc06daeb1f568ecb039172931d44",
+    "results/pulse_stress_audit/README.md": "253db00c9c11d43e247e7947a2fecc251a08a38c66ca01c499624ee7c2dd396c"
+  },
+  "status": "post-pulse-mixed-leading-shell-bounds",
+  "symbolic": {
+    "heat_control_y3_eta2": "3228458/3",
+    "heat_cutoff_width": "3/10",
+    "physical_propagator_established": false,
+    "reference_cutoff_width": 2
+  }
+}

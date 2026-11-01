@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q78:** [Post-pulse and terminal heat bounds](results/core_current_head_q78_postpulse_heat_collar/README.md) encloses the remaining leading-field derivatives through the stress edge.
+
 > **Q77:** [Exterior axial profile pulse](results/core_current_head_q77_axial_profile_pulse/README.md) bounds the strength and mixed field derivatives through the pulse exit.
 
 > **Q76:** [Heat compensation mixed bounds](results/core_current_head_q76_heat_compensation_jets/README.md) quantifies the exterior three-row correction through the axial pulse entrance.
