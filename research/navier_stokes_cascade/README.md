@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q67:** [Pre-modulation state and incoming memory](results/core_current_head_q67_premod_memory/README.md) gives a forward jet enclosure and identifies the indispensable incoming pressure derivative.
+
 > **Q66:** [All-order cutoff amplitude](results/core_current_head_q66_cutoff_amplitude/README.md) bounds the signed amplitude from original state jets with flat support edges included.
 
 > **Q65:** [Signed variance inverse radius](results/core_current_head_q65_signed_root_radius/README.md) bounds root derivatives by finite composition through zero pressure and zero variance.

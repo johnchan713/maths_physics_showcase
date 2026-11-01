@@ -1,0 +1,34 @@
+{
+  "closure": {
+    "edges": 1141,
+    "nodes": 305,
+    "source_bindings": 4429
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q66_cutoff_amplitude/evidence.json": "40fd75ee63b57615cb343a4248560d87ba161e5bed0b263fd7db005991fd9eb2"
+  },
+  "parent": "a009049a36d8a10f159ab370cd7cbc6ff1c6812b",
+  "source_hashes": {
+    "results/core_activation_volterra_recheck/README.md": "78c2e1fa5a645c142c9478ba0e781d7db36512843b2a497112f81ddc8676d21a",
+    "results/core_current_head_q62_target_memory/README.md": "8120322cf2e857913a631d8bf73125e39f1a802bdf56fb9f187bf4308c714b14",
+    "results/core_current_head_q67_premod_memory/README.md": "7c45f872f0894554ce66cd1d76749b6ba3bbb11884df29d5dc9237cfffdf7caa",
+    "results/core_current_head_q67_premod_memory/audit.py": "95bbb38b147f62a109a2375fa5c6ea8c49aaa382eb1a76b1f7afa3959bc78006",
+    "results/core_current_head_q67_premod_memory/q67.py": "6ee62ec225ea4e7a52d16a196ccc45b1b54227ea8462a4d146dcbd390f795b3e",
+    "results/core_current_head_q67_premod_memory/test_audit.py": "c775ca1785ab2e56d4b0751854afa5fc978615153ea4c694738daa6100ea76c3",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "conditional-premod-state-memory-envelope",
+  "symbolic": {
+    "actual_regional_inputs_enclosed": false,
+    "incoming_trace_required": true,
+    "state_input_orders": {
+      "field_eta": 3,
+      "field_total": 99999,
+      "trace_eta": 3
+    }
+  }
+}
