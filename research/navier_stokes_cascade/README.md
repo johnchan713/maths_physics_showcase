@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q72:** [Short-taper mixed bounds](results/core_current_head_q72_short_taper_inputs/README.md) supplies explicit core and step inputs on the interval before Q71.
+
 > **Q71:** [Post-taper continuation](results/core_current_head_q71_flat_reference_modes/README.md) uses the three exact reference powers to bound mixed derivatives up to the shape entry.
 
 > **Q70:** [Shape and annulus mixed derivatives](results/core_current_head_q70_shape_annulus_mixed/README.md) bounds arbitrary radial orders through six angular field derivatives and five angular state derivatives.

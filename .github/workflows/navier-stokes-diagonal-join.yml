@@ -120,6 +120,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q69_outer_prefix_mixed/**
       - research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/**
       - research/navier_stokes_cascade/results/core_current_head_q71_flat_reference_modes/**
+      - research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -247,6 +248,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q69_outer_prefix_mixed/**
       - research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/**
       - research/navier_stokes_cascade/results/core_current_head_q71_flat_reference_modes/**
+      - research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -984,6 +986,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q71_flat_reference_modes/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q71_flat_reference_modes/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q71_flat_reference_modes/evidence.json --output q71_ci.json
+
+      - name: Check Q72 short taper mixed bounds
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/evidence.json --output q72_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

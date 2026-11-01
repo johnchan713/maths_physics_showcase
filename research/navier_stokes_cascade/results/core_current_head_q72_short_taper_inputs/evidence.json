@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1146,
+    "nodes": 310,
+    "source_bindings": 4495
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q71_flat_reference_modes/evidence.json": "95ae4f6e6944e52fb7628f3e40dbf42ca74ddcf37355b41ed319369d833ff093"
+  },
+  "parent": "2bad360d0271a55d7ec9eb79141ebc51c253537c",
+  "source_hashes": {
+    "results/activated_collar_foundation/README.md": "94c654b3b4fb843bb8a93fc5ed97e2055376609a14c2a01ad9c6589b51daa310",
+    "results/axial_stress_audit/diagnostics.py": "9744e5df8004a1a110cff068981816238cc7ea6424d4570f19a7e0a5a45a5de0",
+    "results/core_all_order_foundation/README.md": "db2334588db56d7251950fad6e4cff6e6306df145b32f85d8b70a3dd42a415a7",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q72_short_taper_inputs/README.md": "954a50591c0c688169434b9dee1db8f05492092c941d2787eb5a6e74c91925f5",
+    "results/core_current_head_q72_short_taper_inputs/audit.py": "2e807616b92a64c405b9125c3272df1e7cddb27e9f2448d648cb128b1d87cef0",
+    "results/core_current_head_q72_short_taper_inputs/q72.py": "ab7fb60bab3f7939c51eb4065bc6b0dc0b1e8cbd50bd55e102752d9fe015cd75",
+    "results/core_current_head_q72_short_taper_inputs/test_audit.py": "be1fcd91b19ccb94b57800b4ee88c79812890efabf1c9d9532bfacfc070cfcc2",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/native_sixth_angular/README.md": "c670b5f76f84f7234de355eddd084bd647e277362b8942d7a129eef00182eed1",
+    "results/prescribed_continuation_foundation/README.md": "fa32edfdb1093b444542dda0b98db4efe3ae02d07550ba5d08ad9ccab2698728",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "short-taper-explicit-seed-and-state-bounds",
+  "symbolic": {
+    "manufactured_slope_factor": "5517840",
+    "manufactured_switch_factor": "11051165216171592299831041",
+    "physical_pulse_established": false,
+    "trace_reused_at_Xa_only": true
+  }
+}
