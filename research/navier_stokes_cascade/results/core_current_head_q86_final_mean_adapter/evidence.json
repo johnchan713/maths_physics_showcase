@@ -1,0 +1,52 @@
+{
+  "closure": {
+    "edges": 1160,
+    "nodes": 324,
+    "source_bindings": 4665
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q85_covariance_defect_adapter/evidence.json": "8a0beace45a8b2e098eb94fb0baf0d74e66f76e71f03fb906142e5f4c0c84732"
+  },
+  "parent": "d35af6a5d400d40878908e1a5607db0cbb2e6487",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q39_current_scalar_refresh/README.md": "40243d2665883e8a9297ffe3557941947f8c79a6fb07d618dca075d0a8f38c3d",
+    "results/core_current_head_q39_current_scalar_refresh/refresh_scalars.py": "50857ed44a2c29b4563df6e127f09d0db13f46126d9729ec8d2852b7aadb1499",
+    "results/core_current_head_q41_postslow_reset/README.md": "1210cea3642bc68efa07c98509e26cb2a7d8c2f583c6833f0a86817f46f158fd",
+    "results/core_current_head_q41_postslow_reset/postslow.py": "6288d94415c7e873b1133865767ae4eab93bacb8c85db98ad625cea7848327fc",
+    "results/core_current_head_q47_full_pressure_correction/README.md": "78884265930523c2b692854270679dc5593e5e29449660200ece4c92a89e1015",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q52_double_viscosity/README.md": "2f698c1fd622fa454ca94bdd370c3a75130398658d92683762724644f667f7fa",
+    "results/core_current_head_q86_final_mean_adapter/README.md": "c7d554f8e615b3996bb718731078690f5b99560e6a717ec15285fc66a74673d1",
+    "results/core_current_head_q86_final_mean_adapter/audit.py": "83786997841e2dcaeb561442255364826726df533d9ce25b5c844257c3483e3d",
+    "results/core_current_head_q86_final_mean_adapter/q86.py": "c0d58453f3f4134cd65a9b7ce8d8ba71cb3ad659c452f20843167437a83ce93d",
+    "results/core_current_head_q86_final_mean_adapter/test_audit.py": "9ce9daf90b2e608c4a100fea1b16e1efb6bc824091d28e6bbf0af0dbc96a89e5",
+    "results/core_fast_row_gain_join/README.md": "d86842b7bda2973fd9dcfc08d9d8713507e222b72c925dbbbe591a0e130ed9b8"
+  },
+  "status": "corrected-full-pressure-final-mean-adapter",
+  "symbolic": {
+    "actual_field_inequalities_certified": false,
+    "fine_angular_slot_supplied": false,
+    "pressure_or_axial_A1_removed": false,
+    "radial_orders": [
+      "199999/100000",
+      "74999/25000",
+      "299997/100000"
+    ],
+    "reserve": {
+      "covariance_state": 200013,
+      "final_fields": 200002,
+      "full_nested_DAG_expanded": false,
+      "incoming_rows": 200012,
+      "profile_covariance": 200029,
+      "signed_target": 200016
+    },
+    "status": "corrected-full-pressure-final-mean-adapter",
+    "tangential_orders": [
+      "99999/100000",
+      "49999/25000",
+      "199997/100000"
+    ],
+    "unconditional_residual_or_blowup": false
+  }
+}

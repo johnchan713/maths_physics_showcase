@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q86:** [Corrected final mean adapter](results/core_current_head_q86_final_mean_adapter/README.md) derives the three final velocity norm slots while retaining the separate angular cancellation requirement.
+
 > **Q85:** [Same-root covariance defect](results/core_current_head_q85_covariance_defect_adapter/README.md) supplies Q84’s full covariance and defect coefficient slots using the stronger actual-target norm premise.
 
 > **Q84:** [Nonlinear radial remainder envelope](results/core_current_head_q84_nonlinear_radial_envelope/README.md) gives an explicit final-state norm polynomial and its primitive derivative ceiling.
