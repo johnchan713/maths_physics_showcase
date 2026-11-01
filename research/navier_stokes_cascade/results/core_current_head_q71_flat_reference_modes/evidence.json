@@ -1,0 +1,40 @@
+{
+  "closure": {
+    "edges": 1145,
+    "nodes": 309,
+    "source_bindings": 4481
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q70_shape_annulus_mixed/evidence.json": "87c899c2b2406d0b23e3ad98abdc9afe8e7a20cac2c835ec49d7c23d50c9d42a"
+  },
+  "parent": "32f9521d5d54949f8a092ad64273e7ee15d0da4a",
+  "source_hashes": {
+    "results/axial_stress_audit/diagnostics.py": "9744e5df8004a1a110cff068981816238cc7ea6424d4570f19a7e0a5a45a5de0",
+    "results/core_continuation_matching_recheck/README.md": "2d01af07c0760e17765f1478da3b16a9fa02862fc62c21a9150f922df4af288b",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q71_flat_reference_modes/README.md": "acab7b73c372a2c12ab5a3a5c1e92e2eb5827333f0c25534a943c7fca3c5540f",
+    "results/core_current_head_q71_flat_reference_modes/audit.py": "1ce9591ab1fffe58e0843430dc7a358c8c960e72a9b2287f5ca50489fd009811",
+    "results/core_current_head_q71_flat_reference_modes/q71.py": "1cd5e0a3d095a40e4ab742f73f39ff81c337418ad61cf48fd11da9b223db5f8f",
+    "results/core_current_head_q71_flat_reference_modes/test_audit.py": "c5280983e9a4eb3290e5db908500aea0f4ed48d3acabfcea50d197bedf3e23ca",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/native_sixth_angular/README.md": "c670b5f76f84f7234de355eddd084bd647e277362b8942d7a129eef00182eed1",
+    "results/prescribed_continuation_foundation/README.md": "fa32edfdb1093b444542dda0b98db4efe3ae02d07550ba5d08ad9ccab2698728",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "post-taper-continuation-three-reference-modes",
+  "symbolic": {
+    "actual_moments_are_reference": false,
+    "manufactured_r3_bounds": [
+      "56609167866076137605/8",
+      "648648872604529474645/2"
+    ],
+    "source_powers": [
+      -1,
+      0,
+      1
+    ]
+  }
+}
