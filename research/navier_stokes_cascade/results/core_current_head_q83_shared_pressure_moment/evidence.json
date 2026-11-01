@@ -1,0 +1,46 @@
+{
+  "closure": {
+    "edges": 1157,
+    "nodes": 321,
+    "source_bindings": 4630
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q82_radial_pressure_split/evidence.json": "8dfa9a6dc3e12de1c59b7e4042fac82504a1dc4fbb8c159a02a762daf0aabf20"
+  },
+  "parent": "53f1b98642391752ca4a2e4477a85f8eeced8144",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_background_radial_reconstruction/budgets.py": "410ca88336dd6b401d27817118867537a3ff6d10425d76119791cae252d115da",
+    "results/core_current_head_q57_primary_tail_budget/README.md": "699a52cc64dfb17daab2131ba6c76a401b35ac119551a991b0e280a9388eb878",
+    "results/core_current_head_q58_leading_weight_enclosure/README.md": "158147bf46a012ba6e8c455926303a3e77ae72b8504b0c752c86c035053d542d",
+    "results/core_current_head_q59_squared_root_budget/README.md": "f41c065a0575840d4ded1ec64cc49226bd60d206530279e0b93d91155be4037c",
+    "results/core_current_head_q60_affine_path_generator/README.md": "8bc445bde9f2aa06babbeb387454f0745b112531142ebf2fe120b57320d4689c",
+    "results/core_current_head_q61_covariance_comparison/README.md": "d8a080bc9ddedfd064e43908d1e45afe0c021bf9a79a79a10dc4a3c5113b9223",
+    "results/core_current_head_q62_target_memory/README.md": "8120322cf2e857913a631d8bf73125e39f1a802bdf56fb9f187bf4308c714b14",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q83_shared_pressure_moment/README.md": "ac50faba11ebd8a87e470c5088e0d091d8c1b4d9800df2eec902d8386f2cec46",
+    "results/core_current_head_q83_shared_pressure_moment/audit.py": "b29330db45340525b9cda54205a0bf006165d08c41a6364dc6b00a9fd48a287a",
+    "results/core_current_head_q83_shared_pressure_moment/q83.py": "3e843f03bc5d15be8819ebb5182f02b9525c386ab2dc0e89156a549c136cfe99",
+    "results/core_current_head_q83_shared_pressure_moment/test_audit.py": "d95eb8c83dc3071fe7e9b95c8583eddc5d2ed29d3c342e365d4a14ab436cd7e3"
+  },
+  "status": "shared-principal-pressure-moment",
+  "symbolic": {
+    "actual_pulse_residual_or_blowup": false,
+    "axial": {
+      "eta": 2,
+      "profile": 99998,
+      "slow": 99997,
+      "total": 199991
+    },
+    "full_axial_order_improved": false,
+    "pressure_reset": false,
+    "radial_extra_output": {
+      "eta": 2,
+      "profile": 199998,
+      "slow": 199997,
+      "total": 399991
+    },
+    "shared_order": "4-5*kappa",
+    "status": "shared-principal-pressure-moment"
+  }
+}

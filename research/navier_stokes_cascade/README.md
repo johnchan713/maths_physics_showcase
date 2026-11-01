@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q83:** [Shared principal pressure moment](results/core_current_head_q83_shared_pressure_moment/README.md) identifies the moving-cutoff axial term with the radial integral before its output multiplier.
+
 > **Q82:** [Final radial pressure split](results/core_current_head_q82_radial_pressure_split/README.md) isolates two principal tensor products and lowers the derivative demand on the remaining final-state source.
 
 > **Q81:** [Covariance comparison error support](results/core_current_head_q81_covariance_error_support/README.md) localizes the low-order comparison error, retaining the common target and nonlocal pressure outputs.
