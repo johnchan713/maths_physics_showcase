@@ -113,6 +113,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q62_target_memory/**
       - research/navier_stokes_cascade/results/core_current_head_q63_repair_anisotropy/**
       - research/navier_stokes_cascade/results/core_current_head_q64_fast_phase_radius/**
+      - research/navier_stokes_cascade/results/core_current_head_q65_signed_root_radius/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -233,6 +234,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q62_target_memory/**
       - research/navier_stokes_cascade/results/core_current_head_q63_repair_anisotropy/**
       - research/navier_stokes_cascade/results/core_current_head_q64_fast_phase_radius/**
+      - research/navier_stokes_cascade/results/core_current_head_q65_signed_root_radius/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -935,6 +937,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q64_fast_phase_radius/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q64_fast_phase_radius/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q64_fast_phase_radius/evidence.json --output q64_ci.json
+
+      - name: Check Q65 signed variance inverse radius
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q65_signed_root_radius/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q65_signed_root_radius/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q65_signed_root_radius/evidence.json --output q65_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

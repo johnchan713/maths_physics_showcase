@@ -1,0 +1,28 @@
+{
+  "closure": {
+    "edges": 1139,
+    "nodes": 303,
+    "source_bindings": 4411
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q64_fast_phase_radius/evidence.json": "cc4219ac54e3d746240e05de42043193da2a842347b90604f147cc04aa257841"
+  },
+  "parent": "6e6ab3d506a6137c478f0154bf4a0b0476ce5c0d",
+  "source_hashes": {
+    "results/core_current_head_q65_signed_root_radius/README.md": "ebc66c482d18e6a09a39e9edf5ef7528c96f4e755c60c181beb1b0c679758890",
+    "results/core_current_head_q65_signed_root_radius/audit.py": "e0c79287468d3e2d183f854b93e8126090f8c4ede379c3439e7798f825ac7b93",
+    "results/core_current_head_q65_signed_root_radius/q65.py": "57a97648e527ed3ac4b4df5fcda8401e11a6a427a63028230b0e0186abff0fb3",
+    "results/core_current_head_q65_signed_root_radius/test_audit.py": "4603e9a9b74b49a7b14c81301f4dafe55ee49a841514c006f4a82c5edfde53d5",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "conditional-signed-variance-inverse-radius",
+  "symbolic": {
+    "control_radius": "1/559036493837412794733867310046010611179212190827773331662438400",
+    "divides_by_pressure_or_variance": false,
+    "physical_inputs_enclosed": false
+  }
+}

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q65:** [Signed variance inverse radius](results/core_current_head_q65_signed_root_radius/README.md) bounds root derivatives by finite composition through zero pressure and zero variance.
+
 > **Q64:** [Uniform fast-phase radius](results/core_current_head_q64_fast_phase_radius/README.md) supplies factorial fast-phase derivative bounds for the original moving loop without assuming slow analyticity.
 
 > **Q63:** [Anisotropic repair and explicit bump bounds](results/core_current_head_q63_repair_anisotropy/README.md) separates the high radial bump derivatives from low η-order exact repair coefficients.
