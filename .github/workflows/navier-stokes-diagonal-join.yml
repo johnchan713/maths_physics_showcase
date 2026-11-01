@@ -121,6 +121,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/**
       - research/navier_stokes_cascade/results/core_current_head_q71_flat_reference_modes/**
       - research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/**
+      - research/navier_stokes_cascade/results/core_current_head_q73_annular_target_all_orders/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -249,6 +250,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q70_shape_annulus_mixed/**
       - research/navier_stokes_cascade/results/core_current_head_q71_flat_reference_modes/**
       - research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/**
+      - research/navier_stokes_cascade/results/core_current_head_q73_annular_target_all_orders/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -991,6 +993,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q72_short_taper_inputs/evidence.json --output q72_ci.json
+
+      - name: Check Q73 all-order native annular target
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q73_annular_target_all_orders/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q73_annular_target_all_orders/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q73_annular_target_all_orders/evidence.json --output q73_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
