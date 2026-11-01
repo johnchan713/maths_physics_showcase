@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1140,
+    "nodes": 304,
+    "source_bindings": 4420
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q65_signed_root_radius/evidence.json": "89ccc0c4c2c80bcd504ce9226a5be9d062712369a349d889830888525e503a74"
+  },
+  "parent": "828450b93865cd97f6b9e7314432e6f6d460f801",
+  "source_hashes": {
+    "results/core_current_head_q66_cutoff_amplitude/README.md": "1f51fa10b9324b2e8f9e5ef488d2786ea43a6e5d437ead73996452980c27bac7",
+    "results/core_current_head_q66_cutoff_amplitude/audit.py": "69d2ce0c1f2efbf0cfe5fd99732241dbe8f14b611015bdb13920efb50fdc37bc",
+    "results/core_current_head_q66_cutoff_amplitude/q66.py": "1c107fc3d4878564c20c66924dc3f2fa973a027a2acb8e926bdc7d61b6a7eeea",
+    "results/core_current_head_q66_cutoff_amplitude/test_audit.py": "c6511e20235c4540874112dd5b84e3086ae825738524fbb5d1f872ad0e1334cc",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "conditional-all-order-cutoff-amplitude-envelope",
+  "symbolic": {
+    "actual_state_jets_enclosed": false,
+    "cutoff_raw_bounds": [
+      1,
+      729,
+      5832,
+      373248,
+      80621568,
+      41278242816,
+      41278242816000
+    ],
+    "pressure_reset": false
+  }
+}

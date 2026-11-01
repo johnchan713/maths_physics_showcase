@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q66:** [All-order cutoff amplitude](results/core_current_head_q66_cutoff_amplitude/README.md) bounds the signed amplitude from original state jets with flat support edges included.
+
 > **Q65:** [Signed variance inverse radius](results/core_current_head_q65_signed_root_radius/README.md) bounds root derivatives by finite composition through zero pressure and zero variance.
 
 > **Q64:** [Uniform fast-phase radius](results/core_current_head_q64_fast_phase_radius/README.md) supplies factorial fast-phase derivative bounds for the original moving loop without assuming slow analyticity.
