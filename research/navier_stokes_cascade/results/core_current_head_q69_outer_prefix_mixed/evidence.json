@@ -1,0 +1,40 @@
+{
+  "closure": {
+    "edges": 1143,
+    "nodes": 307,
+    "source_bindings": 4453
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q68_outer_prefix_traces/evidence.json": "2d40ca5a9aacc26fe382fe70d673ccd76e45bd165cb3b84d3170d6d37ba896ac"
+  },
+  "parent": "240c79eecf7a073306af4aa8ad0925614606a6fa",
+  "source_hashes": {
+    "results/actual_cutoff_pullback/README.md": "2ea13c0836cd7843d26e7e0c9ae32391a2e6dd34400099d8daf1024c5c4fa596",
+    "results/axial_stress_audit/diagnostics.py": "9744e5df8004a1a110cff068981816238cc7ea6424d4570f19a7e0a5a45a5de0",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q69_outer_prefix_mixed/README.md": "b0cab2daa1971ab9a02fc24b5c148088f6da4a45748a1a16d1b1d9641b257867",
+    "results/core_current_head_q69_outer_prefix_mixed/audit.py": "fc63a1ddf52f36af7455dbb73ffd86d7f5ed88d2e8257343e5e16e52afb834e0",
+    "results/core_current_head_q69_outer_prefix_mixed/q69.py": "87cc2654d9c92f977fd166fad3abba86e8e936a63ea070b4a28201f8dd1396a1",
+    "results/core_current_head_q69_outer_prefix_mixed/test_audit.py": "850ffbdc2df4a3443e8e64bb7ee4232e1537cea07bedf06ece2c858b97f399f4",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/explicit_variance_cutoff/README.md": "c5f412211762f1c2b0a5d8c6b4d0b7c7639f68531abfcd84a6528593e3e65d23",
+    "results/intermediate_decay_audit/README.md": "d55c33b98b891ecaddee0cb33c33a3866839d010083bdc9c01aef1cf9b663c6d",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "native-outer-prefix-mixed-jets",
+  "symbolic": {
+    "control_order": 4,
+    "exp_coefficients": [
+      "1",
+      "1",
+      "528121/2",
+      "13774953961/6",
+      "1213223821042321/24"
+    ],
+    "physical_pulse_established": false,
+    "physical_taper_control": "161408919840075/1024"
+  }
+}
