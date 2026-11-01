@@ -135,6 +135,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q84_nonlinear_radial_envelope/**
       - research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q86_final_mean_adapter/**
+      - research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -277,6 +278,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q84_nonlinear_radial_envelope/**
       - research/navier_stokes_cascade/results/core_current_head_q85_covariance_defect_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q86_final_mean_adapter/**
+      - research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1089,6 +1091,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q86_final_mean_adapter/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q86_final_mean_adapter/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q86_final_mean_adapter/evidence.json --output q86_ci.json
+
+      - name: Check Q87 final angular cancellation adapter
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q87_final_angular_adapter/evidence.json --output q87_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

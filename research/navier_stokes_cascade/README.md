@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q87:** [Final angular cancellation adapter](results/core_current_head_q87_final_angular_adapter/README.md) derives Q84’s angular coefficient from the same Haar row and complete final mean differences.
+
 > **Q86:** [Corrected final mean adapter](results/core_current_head_q86_final_mean_adapter/README.md) derives the three final velocity norm slots while retaining the separate angular cancellation requirement.
 
 > **Q85:** [Same-root covariance defect](results/core_current_head_q85_covariance_defect_adapter/README.md) supplies Q84’s full covariance and defect coefficient slots using the stronger actual-target norm premise.
