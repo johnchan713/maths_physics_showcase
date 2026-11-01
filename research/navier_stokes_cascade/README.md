@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q80:** [Support-saturated coefficient tuple](results/core_current_head_q80_support_saturated_tuple/README.md) clips positive-order norm estimates to the exact velocity support, retains pressure tails, and corrects Q79’s coefficient roadmap.
+
 > **Q79:** [Full-background and ambient value bridge](results/core_current_head_q79_ambient_value_bridge/README.md) makes finite-head normal and two-time upper bounds explicit while retaining the finalized coefficient and spectral hypotheses.
 
 > **Q78:** [Post-pulse and terminal heat bounds](results/core_current_head_q78_postpulse_heat_collar/README.md) encloses the remaining leading-field derivatives through the stress edge.

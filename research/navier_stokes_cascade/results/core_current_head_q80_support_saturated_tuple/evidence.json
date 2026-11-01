@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1154,
+    "nodes": 318,
+    "source_bindings": 4597
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q79_ambient_value_bridge/evidence.json": "fff11304b0ae1f133411cd189927c0e02243f9c789ef58644a388f3e16b92814"
+  },
+  "parent": "30db596f919096bc97a30be0a7cf4c81f43b04c9",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_background_radial_reconstruction/README.md": "97ca7b98c6e7baa21ba7775ebae73d53f71e50e7e81ee3bb585eaaefc0ed1a22",
+    "results/core_background_radial_reconstruction/budgets.py": "410ca88336dd6b401d27817118867537a3ff6d10425d76119791cae252d115da",
+    "results/core_borel_cutoff_certificate/README.md": "3730d55541fe4a24f2dbb010ef27899bbbb57aa18f9f08abb90515546fef2c63",
+    "results/core_coefficient_support_recheck/README.md": "f66cda979f43cd1c719475c5b179b2b3bf12ad839d4dc7acd9ea6087474f33e5",
+    "results/core_current_head_q80_support_saturated_tuple/README.md": "1435e0c4385a002434446841d4a0c43e2b94781e8152297fc9df9827fe57fdae",
+    "results/core_current_head_q80_support_saturated_tuple/audit.py": "79f621909ff4455436b4c1739eabbc787d76c1cea6cf584519292b6b2d19c881",
+    "results/core_current_head_q80_support_saturated_tuple/q80.py": "18ce21e80f9dc20d3d2d3df30610623d04c33e5d1c6e22cc047621171ac32bd7",
+    "results/core_current_head_q80_support_saturated_tuple/test_audit.py": "da7146e845a9c69bf1b0da6609e1c16a70d900c19f57c77cfd49b63422d20e05",
+    "results/core_leading_background_borel_join/README.md": "52d4cfc83b2fc9fa537f4c230a2a2c8a918be56820949aa5100eb5275bc4cf70",
+    "results/global_first_coefficient_c3/README.md": "612dad5708a915cc40d65ba8ca3075d50ee092ef455b20ccd041a37e59aef6ea"
+  },
+  "status": "support-saturated-positive-coefficient-tuple",
+  "symbolic": {
+    "fixture_clipped": "72530/99",
+    "fixture_full": "4572010/99",
+    "fixture_head": "328183744/45",
+    "leading_tuple_clipped": false,
+    "original_band_or_schedule_changed": false,
+    "pressure_tail_removed": false,
+    "status": "support-saturated-positive-coefficient-tuple",
+    "unconditional_pulse_or_residual_or_blowup": false
+  }
+}

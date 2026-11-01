@@ -128,6 +128,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q77_axial_profile_pulse/**
       - research/navier_stokes_cascade/results/core_current_head_q78_postpulse_heat_collar/**
       - research/navier_stokes_cascade/results/core_current_head_q79_ambient_value_bridge/**
+      - research/navier_stokes_cascade/results/core_current_head_q80_support_saturated_tuple/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -263,6 +264,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q77_axial_profile_pulse/**
       - research/navier_stokes_cascade/results/core_current_head_q78_postpulse_heat_collar/**
       - research/navier_stokes_cascade/results/core_current_head_q79_ambient_value_bridge/**
+      - research/navier_stokes_cascade/results/core_current_head_q80_support_saturated_tuple/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1040,6 +1042,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q79_ambient_value_bridge/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q79_ambient_value_bridge/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q79_ambient_value_bridge/evidence.json --output q79_ci.json
+
+      - name: Check Q80 support saturated coefficient tuple
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q80_support_saturated_tuple/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q80_support_saturated_tuple/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q80_support_saturated_tuple/evidence.json --output q80_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
