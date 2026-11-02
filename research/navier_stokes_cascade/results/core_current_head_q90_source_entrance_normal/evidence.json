@@ -1,0 +1,34 @@
+{
+  "closure": {
+    "edges": 1164,
+    "nodes": 328,
+    "source_bindings": 4726
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q89_first_real_residual_ledger/evidence.json": "2ea123f37a73494dfc87eefb0808575229a049a7d59e7f0d4c0ce8cfc09dbdfa"
+  },
+  "parent": "f47b6620304deb4b09e6c8c11b316968bac05a56",
+  "source_hashes": {
+    "results/core_current_head_q20_gaussian_quotient_join/README.md": "bdca37e4d0322f478207ca4b531635a3b326c4722cb0983d53809ebe2a6c83af",
+    "results/core_current_head_q20_gaussian_quotient_join/quotient.py": "1895ac26ced79142796920150c55e79963da0691ab069886111772ff94de1c5c",
+    "results/core_current_head_q21_lifted_path_join/README.md": "119c8d751803a2e2fa9b3becf3f4cebce46c52dca448f55ad926a334fb01db9a",
+    "results/core_current_head_q26_source_domain_join/README.md": "774e90b21566473b21d763072bbc4b325d47404b754f70de1947a59fa95a1fd3",
+    "results/core_current_head_q90_source_entrance_normal/README.md": "04cf46486833e151110ed2386d0ebcaba4867500864f778db712b2b8106d06c9",
+    "results/core_current_head_q90_source_entrance_normal/audit.py": "3b2cef0ccab88743188254a73f0df199726ff0e8df6e3a5fe61973f36fb42107",
+    "results/core_current_head_q90_source_entrance_normal/q90.py": "bf498726d5e37e36bd96729c3f765c9f1f7f2383ccc816f2a24fd3df95d8438c",
+    "results/core_current_head_q90_source_entrance_normal/test_audit.py": "17bcae95a4dfa561d518a41603723ac72d6dc798a53d62ce991b9ac01e143dc2",
+    "results/core_full_path_ode_reconstruction/README.md": "87d336bacbf8ecea067b590e43f8613664971a2059813ffe339402d58029a8d1",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856"
+  },
+  "status": "first-real-full-source-entrance-and-normal-reduction",
+  "symbolic": {
+    "actual_extended_source_inequality_certified": false,
+    "complete_residual_improvement_or_blowup": false,
+    "extra_source_jets_for_pressure": 0,
+    "finite_entrance_equivalence": "f[0:r]=0 iff t[0:r+1]=0 and pi[0:r]=0",
+    "normal_jet_ceiling": "r+1",
+    "normal_source_pressure_retained": true,
+    "raw_exit_vanishes_from_flat_source": false,
+    "status": "first-real-full-source-entrance-and-normal-reduction"
+  }
+}
