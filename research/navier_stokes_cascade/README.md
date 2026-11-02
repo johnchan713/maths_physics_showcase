@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q93:** [Current weighted wave composition](results/core_current_head_q93_current_weighted_wave/README.md) composes regular/cut wave and pressure coefficients from the current target and original root, keeping per-label Gaussians and lower norm contracts explicit.
+
 > **Q92:** [Complete regular linear envelope](results/core_current_head_q92_full_linear_envelope/README.md) gives an explicit coefficient for pressure, complete curl and every viscous group, conditional on weighted wave and background inputs.
 
 > **Q91:** [Weighted mean-wave source](results/core_current_head_q91_weighted_mean_wave/README.md) derives the mean-wave contribution from corrected unweighted final means and explicit weighted wave inputs.

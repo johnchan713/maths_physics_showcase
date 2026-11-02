@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1167,
+    "nodes": 331,
+    "source_bindings": 4755
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q92_full_linear_envelope/evidence.json": "087fe87c05699f2be4870cf5153d347d083ed19b57930f328fab62da1e23e890"
+  },
+  "parent": "eb430edede4a8eb1f9347d659aec3142ccdbbbea",
+  "source_hashes": {
+    "results/core_current_head_q27_signed_wave_inputs/README.md": "7eda3ed0ff6be235ffa6850c95b7d7b795d31c48f95cb24dadea402eef3a993a",
+    "results/core_current_head_q36_profile_signed_target/README.md": "0d1dc66079170405d2c05a5ed1ce8fb6304dd1ff96c632258efb2a6df77ea42f",
+    "results/core_current_head_q37_signed_covariance_pressure/README.md": "d9aafcbf5741edbc77725991f00d3a2bb7e88f6b486754c5852885efb1070c2b",
+    "results/core_current_head_q37_signed_covariance_pressure/signed_update.py": "7f57134e5fdcb43236f3c34a634c7c0dafbaccac5cb9966845df82d5b0a0e2de",
+    "results/core_current_head_q93_current_weighted_wave/README.md": "e8ebc7d52237800f4a0b929602f922939730e5d69f31b5947036855f9dcd8334",
+    "results/core_current_head_q93_current_weighted_wave/audit.py": "23ceaf6b242c279e0fcf9871071b29a22cb993d3d6b3f494b453cc5fe0a3ada2",
+    "results/core_current_head_q93_current_weighted_wave/q93.py": "cca33514f2444dfc81051de00461ba16a1be089f7d8669fae380083c0bc539e0",
+    "results/core_current_head_q93_current_weighted_wave/test_audit.py": "b364dbe7e5b212d1eeea89a01afdcf7e0c483a4b8e18a918b34966781878f7dc",
+    "results/core_symbolic_signed_target_join/bounds.py": "66f4e0f8ae1b319efe60fadaa9c72f39a8c7d1ebcc18010357149694ad8a1738",
+    "results/core_weighted_reverse_chart/README.md": "a2c1179512869d02bfeb918bce562f5bfc980274340f295430f95124d704a219"
+  },
+  "status": "current-target-original-root-weighted-wave-composition",
+  "symbolic": {
+    "Gaussian_is_per_original_label": true,
+    "Q51_stronger_coefficient_premise_required_for_this_coarse_bound": false,
+    "actual_native_provider_inequalities_certified": false,
+    "coarse_target_rate": "2-3*kappa",
+    "current_target_object_retained": true,
+    "full_source_complete_residual_or_blowup": false,
+    "independent_T_R_Pi_U_callbacks_removed": true,
+    "regular_and_cut_norm_slots_separate": true,
+    "status": "current-target-original-root-weighted-wave-composition"
+  }
+}
