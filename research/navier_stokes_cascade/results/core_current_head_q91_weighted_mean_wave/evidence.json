@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1165,
+    "nodes": 329,
+    "source_bindings": 4736
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q90_source_entrance_normal/evidence.json": "2a2f9e95c499f6d7d313e4faf0355adc9bfcf6116e75af9bd66aee22e8d2296a"
+  },
+  "parent": "aee602e9eeb10cbfb864af8eae10286cceddcd67",
+  "source_hashes": {
+    "results/core_current_head_q27_signed_wave_inputs/README.md": "7eda3ed0ff6be235ffa6850c95b7d7b795d31c48f95cb24dadea402eef3a993a",
+    "results/core_current_head_q39_current_scalar_refresh/refresh_scalars.py": "50857ed44a2c29b4563df6e127f09d0db13f46126d9729ec8d2852b7aadb1499",
+    "results/core_current_head_q86_final_mean_adapter/README.md": "c7d554f8e615b3996bb718731078690f5b99560e6a717ec15285fc66a74673d1",
+    "results/core_current_head_q86_final_mean_adapter/q86.py": "c0d58453f3f4134cd65a9b7ce8d8ba71cb3ad659c452f20843167437a83ce93d",
+    "results/core_current_head_q91_weighted_mean_wave/README.md": "8248d639f2be1f899bdc52ce9d74118f2a5617d47dcc5046dd6ea7a0acb8a038",
+    "results/core_current_head_q91_weighted_mean_wave/audit.py": "8bb75085364dd0427266ffcd73535764acf6e2201f4770e8547397a1d78193fb",
+    "results/core_current_head_q91_weighted_mean_wave/q91.py": "40a56f72d7beb0b319b45e108fa9f11cf66e4193ab95241f0a946dd0a29a9176",
+    "results/core_current_head_q91_weighted_mean_wave/test_audit.py": "cd2a199be0c52cbe32c6a2caafd8fccfd52b8b25565576234259c616ba5350bd",
+    "results/core_signed_prefix_source_budget/README.md": "fb96b7651216f5c87fb121597b7998a2e2d7508638c84cf72ac9880f41adb4f5",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856"
+  },
+  "status": "weighted-first-real-mean-wave-from-unweighted-means",
+  "symbolic": {
+    "actual_full_source_or_complete_residual_certified": false,
+    "epsilon_order": "1-kappa",
+    "extra_field_jets": 1,
+    "mean_component_norm_callback_removed": true,
+    "mean_radial_edge_weight_required": 0,
+    "source_radial_weight": "1/2",
+    "status": "weighted-first-real-mean-wave-from-unweighted-means",
+    "unconditional_blowup": false,
+    "weighted_wave_input_still_required": true
+  }
+}

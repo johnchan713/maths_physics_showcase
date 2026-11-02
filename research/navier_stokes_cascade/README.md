@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q91:** [Weighted mean-wave source](results/core_current_head_q91_weighted_mean_wave/README.md) derives the mean-wave contribution from corrected unweighted final means and explicit weighted wave inputs.
+
 > **Q90:** [Source entrance and normal forcing](results/core_current_head_q90_source_entrance_normal/README.md) proves the full entrance-jet compatibility criterion and a pressure norm envelope while isolating the actual extended-source inequality.
 
 > **Q89:** [First-real residual ledger](results/core_current_head_q89_first_real_residual_ledger/README.md) assembles the pressure/source stages and identifies the remaining nonzero-angular regular source and physical-rate limit.
