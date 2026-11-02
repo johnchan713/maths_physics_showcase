@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q97:** [Sourced covariance and global moments](results/core_current_head_q97_sourced_covariance_moments/README.md) retains both complex cross orientations and the new square, deriving changed pressure/moment identities while keeping the new pointwise pressure-map obligation explicit.
+
 > **Q96:** [Conditional sourced response](results/core_current_head_q96_sourced_response/README.md) derives normalized zero-entry response, full pressure and complete cut-curl jet bounds, including packet evaluation and Gaussian restoration costs.
 
 > **Q95:** [Whole-path source input replay](results/core_current_head_q95_path_input_replay/README.md) composes Q94 with Gaussian quotient jets and full normal forcing, explicitly retaining common/log poles and the six-variable path norm count.

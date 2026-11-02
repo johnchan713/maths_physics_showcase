@@ -1,0 +1,39 @@
+{
+  "closure": {
+    "edges": 1171,
+    "nodes": 335,
+    "source_bindings": 4795
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q96_sourced_response/evidence.json": "06974ecdd0a880dea9ee596b55cac66753c8b883d6339ca8984cb5657e250ab2"
+  },
+  "parent": "103b7e3a2433301edac90f0d04c128b6653ca9e9",
+  "source_hashes": {
+    "results/core_current_head_q37_signed_covariance_pressure/README.md": "d9aafcbf5741edbc77725991f00d3a2bb7e88f6b486754c5852885efb1070c2b",
+    "results/core_current_head_q37_signed_covariance_pressure/signed_update.py": "7f57134e5fdcb43236f3c34a634c7c0dafbaccac5cb9966845df82d5b0a0e2de",
+    "results/core_current_head_q46_moving_cutoff/README.md": "9fa8f6f9f4f1c5a6a5862281ab8d1c5d3d08d21a687840a0d2da775320afc3bb",
+    "results/core_current_head_q97_sourced_covariance_moments/README.md": "0353f6a915e60bd813ed81350ed85a1f158297e2da6e58d1bde08bc8ffe1d146",
+    "results/core_current_head_q97_sourced_covariance_moments/audit.py": "329d4ea16abda2acc6095f820b00f2a38e7c754868a054f01218b23b243a7d33",
+    "results/core_current_head_q97_sourced_covariance_moments/q97.py": "a6d5ebe10195b0935f23757e15e33b99b37d0db51403f5c0930b60e1c5007cf8",
+    "results/core_current_head_q97_sourced_covariance_moments/test_audit.py": "4707393c907734eaf1f69d01f5ef99c7f832276808cd9a79d0562fa269cce71e",
+    "results/core_generic_signed_covariance_join/README.md": "4be7970360bfccd085bab75bc4e78e94bac400f820d34c00745481c9ebe6532f",
+    "results/core_generic_signed_covariance_join/budgets.py": "70dfab854894f3f5e6b91f448372994a0be099bc7f25f2c96ece8f8abbd67858",
+    "results/core_sourced_covariance_moment_join/README.md": "a3800e5b00fd601a97834b534d2b99f5ef88aa9358c5529ab1a09f197e266084",
+    "results/core_sourced_covariance_moment_join/budgets.py": "7b3f21b024cd209e290073f789fe45dea7d9aafcd50f9162c3b8da0ee48b7252"
+  },
+  "status": "first-sourced-complex-covariance-and-global-moment-increments",
+  "symbolic": {
+    "Haar_moment_order": "3/2-kappa",
+    "actual_native_contracts_certified": false,
+    "both_complex_cross_orientations": true,
+    "complete_residual_or_blowup": false,
+    "covariance_order": "3/2-kappa",
+    "full_pointwise_pressure_or_fresh_means_supplied": false,
+    "mean_velocities_held_fixed": true,
+    "new_square_order": "2-2*kappa",
+    "old_covariance_and_pressure_memory_retained": true,
+    "pointwise_radial_source_order": "3/2-2*kappa",
+    "status": "first-sourced-complex-covariance-and-global-moment-increments",
+    "whole_axial_change_order": "5/2-kappa"
+  }
+}

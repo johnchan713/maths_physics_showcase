@@ -145,6 +145,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q94_full_regular_source/**
       - research/navier_stokes_cascade/results/core_current_head_q95_path_input_replay/**
       - research/navier_stokes_cascade/results/core_current_head_q96_sourced_response/**
+      - research/navier_stokes_cascade/results/core_current_head_q97_sourced_covariance_moments/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -297,6 +298,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q94_full_regular_source/**
       - research/navier_stokes_cascade/results/core_current_head_q95_path_input_replay/**
       - research/navier_stokes_cascade/results/core_current_head_q96_sourced_response/**
+      - research/navier_stokes_cascade/results/core_current_head_q97_sourced_covariance_moments/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1159,6 +1161,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q96_sourced_response/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q96_sourced_response/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q96_sourced_response/evidence.json --output q96_ci.json
+
+      - name: Check Q97 sourced covariance and global moments
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q97_sourced_covariance_moments/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q97_sourced_covariance_moments/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q97_sourced_covariance_moments/evidence.json --output q97_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
