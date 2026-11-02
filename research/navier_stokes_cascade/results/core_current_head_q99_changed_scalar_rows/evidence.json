@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1173,
+    "nodes": 337,
+    "source_bindings": 4818
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q98_shifted_pressure_flux/evidence.json": "a7b7138006411bebbbd5f58e60c0b47b98f835edd3ec3eac3c8aa7af1a19b4f6"
+  },
+  "parent": "e8e3bc333904269dd573b58f279e13569f1d38cc",
+  "source_hashes": {
+    "results/core_current_head_q39_current_scalar_refresh/README.md": "40243d2665883e8a9297ffe3557941947f8c79a6fb07d618dca075d0a8f38c3d",
+    "results/core_current_head_q39_current_scalar_refresh/refresh_scalars.py": "50857ed44a2c29b4563df6e127f09d0db13f46126d9729ec8d2852b7aadb1499",
+    "results/core_current_head_q41_postslow_reset/README.md": "1210cea3642bc68efa07c98509e26cb2a7d8c2f583c6833f0a86817f46f158fd",
+    "results/core_current_head_q41_postslow_reset/postslow.py": "6288d94415c7e873b1133865767ae4eab93bacb8c85db98ad625cea7848327fc",
+    "results/core_current_head_q97_sourced_covariance_moments/README.md": "0353f6a915e60bd813ed81350ed85a1f158297e2da6e58d1bde08bc8ffe1d146",
+    "results/core_current_head_q99_changed_scalar_rows/README.md": "ae3f0118c7566e2ec3fc995b2dffd98e956f0f40e0e1fbed754a3ec6378249e8",
+    "results/core_current_head_q99_changed_scalar_rows/audit.py": "b48dbee0297f7adf7e0beaaa5cf8bc94cb8d205c2dc415ac07daa261c2bd5944",
+    "results/core_current_head_q99_changed_scalar_rows/q99.py": "c669ee9f23d541ff537cf6029647e66f812b9ab5ab8ecc9374e4ff0399dd1006",
+    "results/core_current_head_q99_changed_scalar_rows/test_audit.py": "d181b311e1e536e92f2ade94ba0953ca780979c1b2f9db84cf6d5392f97fcd03",
+    "results/core_post_signed_mean_closure/README.md": "07423e815116884e207d72acd38201c280489a7507e18c787141e8a3902b2c54",
+    "results/core_post_signed_mean_closure/budgets.py": "93fae87a7c35a0c01a450be3a470a00ecc005c9bd98fe49d12d28516ea2a008f"
+  },
+  "status": "postslow-sourced-scalar-and-integrated-row-join",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "complete_residual_or_blowup": false,
+    "full_nonzero_Haar_rows_or_fresh_means_supplied": false,
+    "integrated_row_order": "5/2-kappa",
+    "old_scalar_stage": "completed-first-real-postslow",
+    "scalar_order": "3/2-kappa",
+    "status": "postslow-sourced-scalar-and-integrated-row-join",
+    "wave_change_added_once": true,
+    "whole_pressure_compensator_derivative_retained": true
+  }
+}

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q99:** [Changed postslow scalars and integrated rows](results/core_current_head_q99_changed_scalar_rows/README.md) adds sourced-wave moments to the completed incoming scalar stage, retains the full axial pressure product and isolates the nonzero-Haar row obligation before fresh means.
+
 > **Q98:** [Current shifted pressure flux](results/core_current_head_q98_shifted_pressure_flux/README.md) binds the compact left inverse to Q97’s new covariance pole, giving a conditional C-order pressure increment while retaining local pressure memory, the compensator and explicit seam defects.
 
 > **Q97:** [Sourced covariance and global moments](results/core_current_head_q97_sourced_covariance_moments/README.md) retains both complex cross orientations and the new square, deriving changed pressure/moment identities while keeping the new pointwise pressure-map obligation explicit.
