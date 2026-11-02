@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1170,
+    "nodes": 334,
+    "source_bindings": 4785
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q95_path_input_replay/evidence.json": "a1acfd37fefff46bfc1592263f2bdd0644e6a8987db617773e84d4a5eb81f675"
+  },
+  "parent": "fa4ace3740260083fc0f34a2a05258a8d07e9702",
+  "source_hashes": {
+    "results/core_current_head_q21_lifted_path_join/README.md": "119c8d751803a2e2fa9b3becf3f4cebce46c52dca448f55ad926a334fb01db9a",
+    "results/core_current_head_q90_source_entrance_normal/README.md": "04cf46486833e151110ed2386d0ebcaba4867500864f778db712b2b8106d06c9",
+    "results/core_current_head_q96_sourced_response/README.md": "88d8f2015a587e65b0cb7bceff6d7420bea90938c1b0195d470791b2654e6665",
+    "results/core_current_head_q96_sourced_response/audit.py": "86d8e484394bf75299675ea0696b8f3074f5ad93e4e274ecca7bbd604c015342",
+    "results/core_current_head_q96_sourced_response/q96.py": "a5c685f9900cf2146eb41d984b6c8e3f5cb4f9472d7fabd865114a863bb09840",
+    "results/core_current_head_q96_sourced_response/test_audit.py": "e3697978ecaaec42eacb177e113135f5ed51369444c817eb7a9b1daf9ae2ea6d",
+    "results/core_first_sourced_inverse_budget/README.md": "c5b99ccddab6df86c27c7ceb069cb6995c8b4e8126d642d323df9178ba97805c",
+    "results/core_first_sourced_inverse_budget/budgets.py": "3dce6117a5524e8f06c093833b45697dceffd03a46718950e0872f295ef5099e",
+    "results/core_full_path_ode_reconstruction/README.md": "87d336bacbf8ecea067b590e43f8613664971a2059813ffe339402d58029a8d1",
+    "results/core_full_path_ode_reconstruction/ode.py": "b20f70b7b56602f2ea33988a93f01ddca8f0fd4a0f41ea629fc923f1b8c54356"
+  },
+  "status": "conditional-same-state-zero-entry-response-and-complete-cut-curl",
+  "symbolic": {
+    "actual_contracts_certified": false,
+    "changed_covariance_or_residual_improvement": false,
+    "curl_order": "3/2-2*kappa",
+    "normalized_generator_includes_minus_profile_rate": true,
+    "packet_evaluation_factor": "1+376*S*I0",
+    "pressure_order": "3/2-kappa",
+    "response_order": "1-kappa",
+    "source_ceiling_shift": 1,
+    "status": "conditional-same-state-zero-entry-response-and-complete-cut-curl",
+    "unconditional_pulse_or_blowup": false
+  }
+}
