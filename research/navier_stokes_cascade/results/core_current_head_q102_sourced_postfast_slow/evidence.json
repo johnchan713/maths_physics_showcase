@@ -1,0 +1,39 @@
+{
+  "closure": {
+    "edges": 1176,
+    "nodes": 340,
+    "source_bindings": 4852
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q101_final_rows_fast_join/evidence.json": "4de16c2db64baef45d91b32091c13d4ad5303b34daf8288c03b07c7d18ee554d"
+  },
+  "parent": "5be85f46c17ba97514553f01f795b538eef763a5",
+  "source_hashes": {
+    "results/core_actual_scalar_gain_join/README.md": "57c32651ffdfe1a7272f89a21ec52d68047cd068d2d72f2798ab834fa3d9ab22",
+    "results/core_actual_scalar_gain_join/budgets.py": "be7e20a112b27ef1d64d5bad27607950731f4eaf3d865943cc3bc407c2573168",
+    "results/core_current_head_q102_sourced_postfast_slow/README.md": "0dafffe822c46523b7164a29c56608ef4f1a051fe33f92b65e66727df06f71c8",
+    "results/core_current_head_q102_sourced_postfast_slow/audit.py": "064e0068f6c47f5370fa8d427cc8ffc1f0f0ab3974d96bc3c6cbcb78461769aa",
+    "results/core_current_head_q102_sourced_postfast_slow/q102.py": "de64e109cd3e64d1a67eaff69d17e1378887d532a60a6e152b7b3e7b2b4e69ae",
+    "results/core_current_head_q102_sourced_postfast_slow/test_audit.py": "708bf72a62d83c01ec415699a80c72d8aaa70f848ca6ab2516ffd2987a3edca1",
+    "results/core_current_head_q39_current_scalar_refresh/README.md": "40243d2665883e8a9297ffe3557941947f8c79a6fb07d618dca075d0a8f38c3d",
+    "results/core_current_head_q99_changed_scalar_rows/README.md": "ae3f0118c7566e2ec3fc995b2dffd98e956f0f40e0e1fbed754a3ec6378249e8",
+    "results/core_current_head_q99_changed_scalar_rows/q99.py": "c669ee9f23d541ff537cf6029647e66f812b9ab5ab8ecc9374e4ff0399dd1006",
+    "results/core_preserved_haar_scalar_join/README.md": "a2493d94135c1a31aa0a841aa263d8a7d41bfb8b33604f562c93bfc626d3926e",
+    "results/core_preserved_haar_scalar_join/budgets.py": "05b3c86cc2be683f2eba93d6e03df760dc3ff5238b871f914a39f2080a956315"
+  },
+  "status": "sourced-postfast-correlations-and-fresh-slow-map",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "fast_correlation_order": "5/2-3*kappa",
+    "full_old_means_and_axial_fast_velocity_retained": true,
+    "postfast_axial_scalar_row_order": "5/2-kappa",
+    "postslow_reset_supplied": false,
+    "scalar_order": "3/2-kappa",
+    "slow_radial_order": "5/2-kappa",
+    "slow_tangential_order": "3/2-kappa",
+    "status": "sourced-postfast-correlations-and-fresh-slow-map",
+    "unconditional_pulse_residual_or_blowup": false,
+    "wave_change_added_once": true,
+    "whole_moving_pressure_product_retained": true
+  }
+}
