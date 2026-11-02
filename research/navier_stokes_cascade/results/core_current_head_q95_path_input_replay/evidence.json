@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1169,
+    "nodes": 333,
+    "source_bindings": 4775
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q94_full_regular_source/evidence.json": "88805fbee295650e395aed9368aa0e9ebf25dc47f582470dea8a8325897dfdd9"
+  },
+  "parent": "26c44bc5c8c48948e711742e6cbcc1e0572467aa",
+  "source_hashes": {
+    "results/core_current_head_q20_gaussian_quotient_join/README.md": "bdca37e4d0322f478207ca4b531635a3b326c4722cb0983d53809ebe2a6c83af",
+    "results/core_current_head_q20_gaussian_quotient_join/quotient.py": "1895ac26ced79142796920150c55e79963da0691ab069886111772ff94de1c5c",
+    "results/core_current_head_q21_lifted_path_join/README.md": "119c8d751803a2e2fa9b3becf3f4cebce46c52dca448f55ad926a334fb01db9a",
+    "results/core_current_head_q90_source_entrance_normal/README.md": "04cf46486833e151110ed2386d0ebcaba4867500864f778db712b2b8106d06c9",
+    "results/core_current_head_q90_source_entrance_normal/q90.py": "bf498726d5e37e36bd96729c3f765c9f1f7f2383ccc816f2a24fd3df95d8438c",
+    "results/core_current_head_q95_path_input_replay/README.md": "d267ab5710cd21b2bd7ea0a5cce0b45f10105cff146d5fc5f749fec4b6d7dcd3",
+    "results/core_current_head_q95_path_input_replay/audit.py": "9f801522bd2edcad2321054c119fc3d32721ae55a6c99843e5282a12da260d76",
+    "results/core_current_head_q95_path_input_replay/q95.py": "b62e7f836a96cf420397c376a1e9af2a57b557c086a830f30970ee4140b358de",
+    "results/core_current_head_q95_path_input_replay/test_audit.py": "20d0cf98d95e9b9d17178ac2ec45c2faa1baeba3e58b4ec971b3b081725b0c54",
+    "results/core_full_path_ode_reconstruction/README.md": "87d336bacbf8ecea067b590e43f8613664971a2059813ffe339402d58029a8d1"
+  },
+  "status": "explicit-first-real-whole-path-quotient-normal-input-replay",
+  "symbolic": {
+    "Gaussian_minimum_division": false,
+    "actual_native_contracts_certified": false,
+    "endpoint_flatness_from_norm_alone": false,
+    "full_residual_or_blowup": false,
+    "inverse_response_constructed": false,
+    "normal_pressure_source_order": "3/2-kappa",
+    "path_coordinate_count": 6,
+    "pole_rule": "max_j 2*p_(j+2) + max_j Bell_pole_j",
+    "source_derivative_shift": 0,
+    "source_order": "1-kappa",
+    "status": "explicit-first-real-whole-path-quotient-normal-input-replay"
+  }
+}

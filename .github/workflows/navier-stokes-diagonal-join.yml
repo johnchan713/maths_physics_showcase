@@ -143,6 +143,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q92_full_linear_envelope/**
       - research/navier_stokes_cascade/results/core_current_head_q93_current_weighted_wave/**
       - research/navier_stokes_cascade/results/core_current_head_q94_full_regular_source/**
+      - research/navier_stokes_cascade/results/core_current_head_q95_path_input_replay/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -293,6 +294,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q92_full_linear_envelope/**
       - research/navier_stokes_cascade/results/core_current_head_q93_current_weighted_wave/**
       - research/navier_stokes_cascade/results/core_current_head_q94_full_regular_source/**
+      - research/navier_stokes_cascade/results/core_current_head_q95_path_input_replay/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1145,6 +1147,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q94_full_regular_source/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q94_full_regular_source/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q94_full_regular_source/evidence.json --output q94_ci.json
+
+      - name: Check Q95 whole path source input replay
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q95_path_input_replay/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q95_path_input_replay/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q95_path_input_replay/evidence.json --output q95_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

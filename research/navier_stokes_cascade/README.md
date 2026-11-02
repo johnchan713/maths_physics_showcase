@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q95:** [Whole-path source input replay](results/core_current_head_q95_path_input_replay/README.md) composes Q94 with Gaussian quotient jets and full normal forcing, explicitly retaining common/log poles and the six-variable path norm count.
+
 > **Q94:** [Full first-real regular source](results/core_current_head_q94_full_regular_source/README.md) joins complete wave-wave, mean-wave and linear coefficients on one state with an explicitly doubled wave pole, conditional on native provider inequalities.
 
 > **Q93:** [Current weighted wave composition](results/core_current_head_q93_current_weighted_wave/README.md) composes regular/cut wave and pressure coefficients from the current target and original root, keeping per-label Gaussians and lower norm contracts explicit.
