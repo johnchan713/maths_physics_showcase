@@ -1,0 +1,57 @@
+{
+  "closure": {
+    "edges": 1163,
+    "nodes": 327,
+    "source_bindings": 4709
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q88_native_remainder_composition/evidence.json": "0fd06caebdf8cb79bf2147c7c96dd879316e2fb49d2cb002d5a48f144e9ef238"
+  },
+  "parent": "99a664b2d96b8e7dcfb2b289b2a1e970aecc91c6",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q43_compact_chart/chart.py": "4c959c4aa77e0cbb4a3c66432860372b1b874bbd54fe0061c36abc53fc278d09",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q52_double_viscosity/README.md": "2f698c1fd622fa454ca94bdd370c3a75130398658d92683762724644f667f7fa",
+    "results/core_current_head_q54_axial_row/README.md": "4d631df27a2b43040bf938daa032d50c428dff167a8098df75f4afae6f011fee",
+    "results/core_current_head_q84_nonlinear_radial_envelope/q84.py": "68412d0e8ca6c4a3e19b0679f01a7ccafe998819dc6a94192250bd291dd8bcd1",
+    "results/core_current_head_q88_native_remainder_composition/test_audit.py": "cdec78d79b46304df92b2a227718f68072813948fbacc2f451abe2a6450c1f65",
+    "results/core_current_head_q89_first_real_residual_ledger/README.md": "4af1e959a1e298c91855734775dd8fd30a81b1f04baa20d460a72e0b24319c97",
+    "results/core_current_head_q89_first_real_residual_ledger/audit.py": "37db157fba7fe00aea2c462ec9c82087506a02e72bd80311d73f354b9337ba64",
+    "results/core_current_head_q89_first_real_residual_ledger/q89.py": "d4148a22366eb1a3f229a1bfb572189bc0511d5cb512fdbe82daf5bd318bb1d4",
+    "results/core_current_head_q89_first_real_residual_ledger/test_audit.py": "f241c72a953b1b75710de3b36f74065fb3ffa590da84f5189a84b8e7f4128d46",
+    "results/core_fast_row_gain_join/budgets.py": "9f635486fa0b1688341571f8abcb25183f22c21f2fe42aff5a2303c60fdbc60e",
+    "results/core_first_sourced_physical_tail_closure/README.md": "45c8cf71add63aae30839495e95e82afcbc686c93bf535c179a21d0c1195cd7e",
+    "results/core_initial_a0_physical_tail_closure/README.md": "5e7abff768f8a1344b951b38e5aab9dac9f814d908a52da7c4c87a47af7e7439",
+    "results/core_symbolic_initial_haar_join/bounds.py": "bc14ef2afada885d673a06d8c70451cee3d36695c2f20849825370b14a79218c",
+    "results/current_residual_ledger_audit/README.md": "eb38445afe8c34fdd3f18245da6f3dee30831051808bb7d43e69c6aba3e5e842",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856"
+  },
+  "status": "first-real-regular-and-additive-residual-ledger",
+  "symbolic": {
+    "fixture_rates": {
+      "mean_rows": "59999/20000",
+      "missing_source_gain": "39999/20000",
+      "nonzero_regular": "99999/100000",
+      "normalized_total": "99999/100000",
+      "physical_total": "-50100001/20000000",
+      "target": "149997/50000"
+    },
+    "ledger": {
+      "angular_mean_rate": "3-5*kappa",
+      "continuum_inputs_certified": false,
+      "nonzero_regular_rate": "1-kappa",
+      "stage": "first_real"
+    },
+    "mean_row_gain_is_complete_residual_gain": false,
+    "source_states": {
+      "angular_mean": "final_first_real",
+      "axial_compact": "post_signed_pre_new_fast_first_real",
+      "axial_regular": "final_first_real",
+      "compensator": "final_first_real",
+      "radial_compact": "final_radial_first_real"
+    },
+    "status": "first-real-regular-and-additive-residual-ledger",
+    "unconditional_pulse_residual_or_blowup": false
+  }
+}

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q89:** [First-real residual ledger](results/core_current_head_q89_first_real_residual_ledger/README.md) assembles the pressure/source stages and identifies the remaining nonzero-angular regular source and physical-rate limit.
+
 > **Q88:** [Native nonlinear remainder composition](results/core_current_head_q88_native_remainder_composition/README.md) combines the inherited coefficient programs on one hull with explicit geometry and unweighted temporal bounds.
 
 > **Q87:** [Final angular cancellation adapter](results/core_current_head_q87_final_angular_adapter/README.md) derives Q84’s angular coefficient from the same Haar row and complete final mean differences.
