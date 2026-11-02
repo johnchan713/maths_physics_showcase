@@ -153,6 +153,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q102_sourced_postfast_slow/**
       - research/navier_stokes_cascade/results/core_current_head_q103_current_haar_postslow/**
       - research/navier_stokes_cascade/results/core_current_head_q104_final_radial_pressure/**
+      - research/navier_stokes_cascade/results/core_current_head_q105_projected_rows_feedback/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -313,6 +314,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q102_sourced_postfast_slow/**
       - research/navier_stokes_cascade/results/core_current_head_q103_current_haar_postslow/**
       - research/navier_stokes_cascade/results/core_current_head_q104_final_radial_pressure/**
+      - research/navier_stokes_cascade/results/core_current_head_q105_projected_rows_feedback/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1215,6 +1217,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q104_final_radial_pressure/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q104_final_radial_pressure/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q104_final_radial_pressure/evidence.json --output q104_ci.json
+
+      - name: Check current projected rows and complete-wave mean feedback
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q105_projected_rows_feedback/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q105_projected_rows_feedback/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q105_projected_rows_feedback/evidence.json --output q105_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

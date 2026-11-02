@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1179,
+    "nodes": 343,
+    "source_bindings": 4885
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q104_final_radial_pressure/evidence.json": "5a7cbeaabcab41fafb3738e831a34967480e97d5734211c9f930a0a16d5b2c37"
+  },
+  "parent": "f8c139d56ef53c64e1f04851cbb9718ee9b35afa",
+  "source_hashes": {
+    "results/core_compact_source_quotient/README.md": "3a8e5980ecea8c359de66dfc8cc09661fdc002d30db905b8882e5dd378514fbf",
+    "results/core_compact_source_quotient/bounds.py": "4a2e0f27eec98a7781996f1fe47652490256351d26417fe44eaed89d00f48370",
+    "results/core_current_head_q101_final_rows_fast_join/README.md": "e325ad2cbd39267d24714204105fc8bf29bed34ace86b610cf44efc6ea58cc15",
+    "results/core_current_head_q105_projected_rows_feedback/README.md": "90fd8a842d691f7d45332b0f9043ed7fbd8b4f18f6d4a7fa5dbcb0a85befa1dd",
+    "results/core_current_head_q105_projected_rows_feedback/audit.py": "4bc08862b7e3809c84ef93ff7b1a3d9621d9a0cd17bd886bc72d68fe5f414223",
+    "results/core_current_head_q105_projected_rows_feedback/q105.py": "2dd7202fbb1e8f4945b02dc334b25244c838769b596f208ca17b3188717c35cb",
+    "results/core_current_head_q105_projected_rows_feedback/test_audit.py": "5bfbe40c910f550b560a429f7c75169b213d8288a51216e504767cb97a802175",
+    "results/core_current_head_q91_weighted_mean_wave/README.md": "8248d639f2be1f899bdc52ce9d74118f2a5617d47dcc5046dd6ea7a0acb8a038",
+    "results/core_current_head_q91_weighted_mean_wave/q91.py": "40a56f72d7beb0b319b45e108fa9f11cf66e4193ab95241f0a946dd0a29a9176",
+    "results/core_post_signed_mean_closure/README.md": "07423e815116884e207d72acd38201c280489a7507e18c787141e8a3902b2c54",
+    "results/core_post_signed_mean_closure/budgets.py": "93fae87a7c35a0c01a450be3a470a00ecc005c9bd98fe49d12d28516ea2a008f"
+  },
+  "status": "final-projected-rows-and-mean-wave-feedback",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "actual_pre_fast_potential_A1_order": "2-kappa",
+    "angular_order": "5/2-4*kappa",
+    "axial_order": "min(2-kappa,5/2-4*kappa)",
+    "both_axial_viscosities_and_full_pressure_memory_retained": true,
+    "mean_wave_feedback_order": "3/2-2*kappa",
+    "pointwise_Haar_rows_or_full_regular_residual_supplied": false,
+    "status": "final-projected-rows-and-mean-wave-feedback",
+    "tail_source": "old_final_means_plus_total_sourced_wave_before_fresh_fast",
+    "unconditional_pulse_residual_or_blowup": false
+  }
+}

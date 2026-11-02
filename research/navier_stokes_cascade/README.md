@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q105:** [Current projected final rows and mean-wave feedback](results/core_current_head_q105_projected_rows_feedback/README.md) binds the compact axial identity to the current pre-fast pressure state, derives conditional projected-row and mean-update feedback coefficients, and keeps pointwise Haar rows and the complete residual as explicit obligations.
+
 > **Q104:** [Final means and radial mean pressure](results/core_current_head_q104_final_radial_pressure/README.md) assembles all six mean stages and total wave covariance, derives conditional full shifted pressure/A0 bounds with local viscous memory, and records the remaining radial scalar and compact-source gaps.
 
 > **Q103:** [Current Haar postslow reset](results/core_current_head_q103_current_haar_postslow/README.md) retains both incoming slow histories and derives conditional postslow scalar, pressure-compensator and whole axial pressure-moment bounds with the full support and trace gates explicit.
