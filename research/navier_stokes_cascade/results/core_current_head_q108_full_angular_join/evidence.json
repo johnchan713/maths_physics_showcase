@@ -1,0 +1,32 @@
+{
+  "closure": {
+    "edges": 1182,
+    "nodes": 346,
+    "source_bindings": 4907
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q107_sourced_haar_flux/evidence.json": "d2616cd8aa176f44e33b50bae2549199f877fdf8ff214703cef04767d0ed9607"
+  },
+  "parent": "4bd4b8fc98fdd76ec31eecccd639f6c44381d412",
+  "source_hashes": {
+    "results/core_current_head_q105_projected_rows_feedback/q105.py": "2dd7202fbb1e8f4945b02dc334b25244c838769b596f208ca17b3188717c35cb",
+    "results/core_current_head_q107_sourced_haar_flux/q107.py": "9055c9de3a2d54cc0f1c33e74d4b82dc8a29a8cb282eea2a11e1d1a0aecb8063",
+    "results/core_current_head_q108_full_angular_join/README.md": "99197805473b53e1b9584aca1e6b6aaa3114e3415f2ad28d8716e0a703077655",
+    "results/core_current_head_q108_full_angular_join/audit.py": "ea0c0c18159a9ff3d50d28e63dee60aa41492f578a30c745fe8ad753b61e115f",
+    "results/core_current_head_q108_full_angular_join/q108.py": "3e090962f8e18b82ccf49b6bc440ff80ef5eaac78ee8e3042de8fa52004afc7d",
+    "results/core_current_head_q108_full_angular_join/test_audit.py": "14effd61a21a8568998f46e2d798bff45431821e5c587e72ce03d3ca34150f6a",
+    "results/core_current_head_q87_final_angular_adapter/q87.py": "be3fd7712f36244bec722866894ad0c5b5eeec00deb17e10cc6eddf576f29156"
+  },
+  "status": "current-full-angular-row-from-incoming-cancellation-and-sourced-haar",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "each_weight_unweighted_at_its_own_pole": true,
+    "full_angular_order": "3/2-kappa",
+    "full_axial_row_supplied": false,
+    "full_cone_pulse_residual_or_blowup": false,
+    "old_angular_order": "2-2*kappa",
+    "old_program": "Q87 on identical Q86 state",
+    "sourced_change_added_once": true,
+    "status": "current-full-angular-row-from-incoming-cancellation-and-sourced-haar"
+  }
+}

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q108:** [Full current angular row](results/core_current_head_q108_full_angular_join/README.md) composes Q87’s actual incoming cancellation, Q107’s sourced Haar increment and Q105’s full fresh differences on one state, giving a conditional full angular coefficient at order 3/2-kappa. The axial Haar slot and stronger target gap remain open.
+
 > **Q107:** [Current sourced Haar flux](results/core_current_head_q107_sourced_haar_flux/README.md) binds the fixed-mean sourced Haar increment to Q97/Q98, recovers the graph-loss kappa in this increment, and retains local pressure and moving-rho memory. Incoming Haar/stress cancellation and full cone closure remain open.
 
 > **Q106:** [Pointwise Haar ledger and moment-blind covariance](results/core_current_head_q106_pointwise_haar_ledger/README.md) derives exact full Haar rows and conditional coefficient bounds with complete moving pressure; a positive comparison covariance shows that all three scalar moments can miss a pointwise row. Actual fine Haar norms remain open.
