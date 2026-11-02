@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1168,
+    "nodes": 332,
+    "source_bindings": 4765
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q93_current_weighted_wave/evidence.json": "8ba73d079db757e2a229a907450025ea18e29912d9b7aefec51993f99e33ae32"
+  },
+  "parent": "d2374fc6aa9bd55f94e2df411e681b2e4ff09973",
+  "source_hashes": {
+    "results/core_current_head_q86_final_mean_adapter/q86.py": "c0d58453f3f4134cd65a9b7ce8d8ba71cb3ad659c452f20843167437a83ce93d",
+    "results/core_current_head_q90_source_entrance_normal/README.md": "04cf46486833e151110ed2386d0ebcaba4867500864f778db712b2b8106d06c9",
+    "results/core_current_head_q91_weighted_mean_wave/README.md": "8248d639f2be1f899bdc52ce9d74118f2a5617d47dcc5046dd6ea7a0acb8a038",
+    "results/core_current_head_q92_full_linear_envelope/README.md": "2a885d1a4fd2535beeb52a7dd5e3f793dcc10808cb4f221d7d6f97d569660fcc",
+    "results/core_current_head_q94_full_regular_source/README.md": "3676ec2aeaae54d4eb682db657e1bc55b98433a8eeb15205668ff54f6bf1738a",
+    "results/core_current_head_q94_full_regular_source/audit.py": "2623ac055e247bb7bd0e916e2b97fadba62869ee1c96f31b7306e9195f4f5f26",
+    "results/core_current_head_q94_full_regular_source/q94.py": "e82dadd32b8073119f5ec36c934b9216b2dee0713ce422a2c25331fa52a94e9d",
+    "results/core_current_head_q94_full_regular_source/test_audit.py": "f23d95883a9415da1205b94c35311e66c01c0ae3bbc53aac48692d03a714ee4e",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856",
+    "results/regular_source_foundation/source_checks.py": "4d71fbe65bfa14b32fe359e91022943ed554d144af356d38b5e1b733f442edd5"
+  },
+  "status": "same-state-complete-first-real-regular-source-join",
+  "symbolic": {
+    "all_ordered_wave_products_retained": true,
+    "current_target_reserve_shift": 16,
+    "full_residual_or_blowup": false,
+    "input_order_shift": 2,
+    "mean_factory_reserve_shift": 2,
+    "native_provider_inequalities_certified": false,
+    "output_harmonic_division": false,
+    "profile_reserve_shift": 29,
+    "source_order": "1-kappa",
+    "source_pole": "2*p_(j+2)",
+    "status": "same-state-complete-first-real-regular-source-join"
+  }
+}
