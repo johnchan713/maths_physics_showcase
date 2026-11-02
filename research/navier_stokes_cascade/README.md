@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q104:** [Final means and radial mean pressure](results/core_current_head_q104_final_radial_pressure/README.md) assembles all six mean stages and total wave covariance, derives conditional full shifted pressure/A0 bounds with local viscous memory, and records the remaining radial scalar and compact-source gaps.
+
 > **Q103:** [Current Haar postslow reset](results/core_current_head_q103_current_haar_postslow/README.md) retains both incoming slow histories and derives conditional postslow scalar, pressure-compensator and whole axial pressure-moment bounds with the full support and trace gates explicit.
 
 > **Q102:** [Sourced postfast scalars and fresh slow map](results/core_current_head_q102_sourced_postfast_slow/README.md) adds complete old/new fast correlations to the current wave-updated scalars once, retains the moving pressure product and derives conditional bounds for the original fresh slow response on the same state.

@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1178,
+    "nodes": 342,
+    "source_bindings": 4874
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q103_current_haar_postslow/evidence.json": "acd4b223d6754749c501672ccc91a3ff78917a1e3656a4ae952f6326b0e72cfa"
+  },
+  "parent": "f5c73ee64ef04ff45cf016745ccf94afc4f5df5b",
+  "source_hashes": {
+    "results/core_compact_source_quotient/README.md": "3a8e5980ecea8c359de66dfc8cc09661fdc002d30db905b8882e5dd378514fbf",
+    "results/core_compact_trace_gate/README.md": "d9ec273c1c44637116ea69e0e458fe925423373b3fcad6a615906d728644346f",
+    "results/core_current_head_q101_final_rows_fast_join/README.md": "e325ad2cbd39267d24714204105fc8bf29bed34ace86b610cf44efc6ea58cc15",
+    "results/core_current_head_q101_final_rows_fast_join/q101.py": "404b3838b73676a64785ccc8da56a0a4da45fab87df6a3e35f2a976ee143d9f8",
+    "results/core_current_head_q104_final_radial_pressure/README.md": "7333b47befefbc407ba3b081943cfb95cdfaa1b4a36180ff02c3d17575388294",
+    "results/core_current_head_q104_final_radial_pressure/audit.py": "59982db6f1f23ba3446e9ea69d7ed39f7f2616909d99bf783ecdf80671061040",
+    "results/core_current_head_q104_final_radial_pressure/q104.py": "85c2ef8db31ae15a9f22a4b32229bf72f3b83845c95abd81ddf99a9cb1a6be59",
+    "results/core_current_head_q104_final_radial_pressure/test_audit.py": "f6a3968234b47e2c0e0a3246565e5e03c666e9c715c7b31c71cde602167f7dc1",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q97_sourced_covariance_moments/q97.py": "a6d5ebe10195b0935f23757e15e33b99b37d0db51403f5c0930b60e1c5007cf8",
+    "results/core_full_compact_pressure_response/README.md": "e177bb681c9e73c9c21f27d9be97aae93d7dc676683c8f8cb327339269f348e1"
+  },
+  "status": "complete-final-mean-and-full-radial-pressure-envelope",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "compensator_order": "5/2-kappa",
+    "complete_old_plus_sourced_covariance": true,
+    "complete_residual_or_blowup": false,
+    "final_mean_contributions": 6,
+    "full_source_pressure_and_A0_coarse_order": "1-kappa",
+    "local_viscous_and_covariance_pressure_retained": true,
+    "status": "complete-final-mean-and-full-radial-pressure-envelope",
+    "whole_compact_trace_contract_required": true
+  }
+}
