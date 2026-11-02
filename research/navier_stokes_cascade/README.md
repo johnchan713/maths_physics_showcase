@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q111:** [Closed same-hull chart majorants](results/core_current_head_q111_closed_chart_majorant/README.md) proves all-order closed R/U transfer factors and binds them to Q110’s current hull without materializing giant factorials. Both source factorials and the old raw-kernel/high-jet gates remain; no actual radial gain is certified.
+
 > **Q110:** [Current radial tail request audit](results/core_current_head_q110_radial_tail_request/README.md) binds the reduced A0 source to all six final means, separates the scalar component, and audits the full high-jet/common-pole/chart request. A low-output archive cannot certify the radial gain; actual tail inputs and full cone closure remain unproved.
 
 > **Q109:** [Full current axial mean row](results/core_current_head_q109_full_axial_join/README.md) binds the incoming axial Haar row with complete signed pressure and composes the current sourced increment, A1 tail and full mean differences, giving a conditional full axial coefficient at order 3/2-kappa. The radial cone and stronger target remain open.

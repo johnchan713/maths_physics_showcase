@@ -159,6 +159,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q108_full_angular_join/**
       - research/navier_stokes_cascade/results/core_current_head_q109_full_axial_join/**
       - research/navier_stokes_cascade/results/core_current_head_q110_radial_tail_request/**
+      - research/navier_stokes_cascade/results/core_current_head_q111_closed_chart_majorant/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -325,6 +326,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q108_full_angular_join/**
       - research/navier_stokes_cascade/results/core_current_head_q109_full_axial_join/**
       - research/navier_stokes_cascade/results/core_current_head_q110_radial_tail_request/**
+      - research/navier_stokes_cascade/results/core_current_head_q111_closed_chart_majorant/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1257,6 +1259,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q110_radial_tail_request/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q110_radial_tail_request/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q110_radial_tail_request/evidence.json --output q110_ci.json
+
+      - name: Check closed same-hull chart majorants and current radial binding
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q111_closed_chart_majorant/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q111_closed_chart_majorant/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q111_closed_chart_majorant/evidence.json --output q111_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

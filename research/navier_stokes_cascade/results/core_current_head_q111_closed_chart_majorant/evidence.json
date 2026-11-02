@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1185,
+    "nodes": 349,
+    "source_bindings": 4928
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q110_radial_tail_request/evidence.json": "a60f2de2247b08a59df6cba88a1bc67bdc1d9b49167e76d7099cac68845fb3ac"
+  },
+  "parent": "e6f9a799e6e58b629734e189a774801829d1e202",
+  "source_hashes": {
+    "results/core_current_head_q110_radial_tail_request/q110.py": "0e24ecf56bee71c3994b69a702610c44e821427020572866bc6ba2d9d3009d49",
+    "results/core_current_head_q111_closed_chart_majorant/README.md": "228f25cb0d4e072091cbcd8b711c32c03a812173f1447c87ec205be06703d0fc",
+    "results/core_current_head_q111_closed_chart_majorant/audit.py": "24615e306d27dc15060829a8351fda800e7af2c601df5aa0b68dea31852f6bcc",
+    "results/core_current_head_q111_closed_chart_majorant/q111.py": "19eb357f71d01f700b2cad896937bfc505bf53618e1f04fced4b0c5e5e15ce74",
+    "results/core_current_head_q111_closed_chart_majorant/test_audit.py": "f3a1114c3b6bbd2ed8645d9e2d56cec9f18e31960a7fd7032a4d4e8ac591b05e",
+    "results/core_current_head_q87_final_angular_adapter/q87.py": "be3fd7712f36244bec722866894ad0c5b5eeec00deb17e10cc6eddf576f29156",
+    "results/core_weighted_reverse_chart/bounds.py": "02978b861744a7457b9013ad72bd2590950fd722d8decf5aa5b201500333cf0f"
+  },
+  "status": "closed-same-hull-chart-majorants-for-current-radial-request",
+  "symbolic": {
+    "actual_source_kernel_or_radial_tail_certified": false,
+    "forward": "486*N!*[16*(1+Rmax)/min(1,Umin)]^N",
+    "full_cone_pulse_residual_or_blowup": false,
+    "giant_factorials_or_source_jets_materialized": false,
+    "reverse": "2*N!*[16*(1+max(1,Rmax^2,1/Rmin))/min(1,Rmin)]^N",
+    "source_factorial_multiplicity": 2,
+    "source_jet_order": 100005,
+    "status": "closed-same-hull-chart-majorants-for-current-radial-request"
+  }
+}
