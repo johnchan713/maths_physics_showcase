@@ -151,6 +151,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q100_sourced_full_row_changes/**
       - research/navier_stokes_cascade/results/core_current_head_q101_final_rows_fast_join/**
       - research/navier_stokes_cascade/results/core_current_head_q102_sourced_postfast_slow/**
+      - research/navier_stokes_cascade/results/core_current_head_q103_current_haar_postslow/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -309,6 +310,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q100_sourced_full_row_changes/**
       - research/navier_stokes_cascade/results/core_current_head_q101_final_rows_fast_join/**
       - research/navier_stokes_cascade/results/core_current_head_q102_sourced_postfast_slow/**
+      - research/navier_stokes_cascade/results/core_current_head_q103_current_haar_postslow/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1201,6 +1203,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q102_sourced_postfast_slow/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q102_sourced_postfast_slow/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q102_sourced_postfast_slow/evidence.json --output q102_ci.json
+
+      - name: Check current Haar postslow scalar reset
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q103_current_haar_postslow/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q103_current_haar_postslow/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q103_current_haar_postslow/evidence.json --output q103_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

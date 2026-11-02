@@ -1,0 +1,37 @@
+{
+  "closure": {
+    "edges": 1177,
+    "nodes": 341,
+    "source_bindings": 4863
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q102_sourced_postfast_slow/evidence.json": "a92270b45aacc26a0e990574b99e89e24941c4576e77ec8a186a607e277e098b"
+  },
+  "parent": "7a8aee9a6c509d0e2950b7135a8fd745efbb3e47",
+  "source_hashes": {
+    "results/core_actual_scalar_gain_join/README.md": "57c32651ffdfe1a7272f89a21ec52d68047cd068d2d72f2798ab834fa3d9ab22",
+    "results/core_actual_scalar_gain_join/budgets.py": "be7e20a112b27ef1d64d5bad27607950731f4eaf3d865943cc3bc407c2573168",
+    "results/core_current_head_q103_current_haar_postslow/README.md": "dff13c73b88cf62b6ddaad75962aa423982a2f661dfd83ed6c94cbe3d3b67b54",
+    "results/core_current_head_q103_current_haar_postslow/audit.py": "ec5581288b3a843a316f785c9d447358ab9678762b8fe9eb09332839373b581e",
+    "results/core_current_head_q103_current_haar_postslow/q103.py": "03c3d347714dd9d3ddb0698949ea8f126cf3a583e619d9845c7d4611ae99edaf",
+    "results/core_current_head_q103_current_haar_postslow/test_audit.py": "7367f32ffed3216f47d6d38b76949141f85e10bb58025173f854705e224b7ec6",
+    "results/core_current_head_q41_postslow_reset/README.md": "1210cea3642bc68efa07c98509e26cb2a7d8c2f583c6833f0a86817f46f158fd",
+    "results/core_current_head_q41_postslow_reset/postslow.py": "6288d94415c7e873b1133865767ae4eab93bacb8c85db98ad625cea7848327fc",
+    "results/core_current_head_q86_final_mean_adapter/README.md": "c7d554f8e615b3996bb718731078690f5b99560e6a717ec15285fc66a74673d1",
+    "results/core_preserved_haar_scalar_join/README.md": "a2493d94135c1a31aa0a841aa263d8a7d41bfb8b33604f562c93bfc626d3926e",
+    "results/core_preserved_haar_scalar_join/budgets.py": "05b3c86cc2be683f2eba93d6e03df760dc3ff5238b871f914a39f2080a956315"
+  },
+  "status": "current-haar-postslow-reset-and-pressure-scalars",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "full_fast_correlations_retained_in_Q102": true,
+    "full_pointwise_pressure_or_radial_residual_supplied": false,
+    "incoming_haar": "initial_slow_plus_previous_first_real_slow",
+    "moving_pressure_product_retained": true,
+    "original_whole_hull_G0_required": true,
+    "scalar_and_compensator_order": "5/2-kappa",
+    "status": "current-haar-postslow-reset-and-pressure-scalars",
+    "unconditional_pulse_residual_or_blowup": false,
+    "whole_axial_order": "7/2-kappa"
+  }
+}

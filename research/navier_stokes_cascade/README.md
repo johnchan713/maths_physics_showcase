@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q103:** [Current Haar postslow reset](results/core_current_head_q103_current_haar_postslow/README.md) retains both incoming slow histories and derives conditional postslow scalar, pressure-compensator and whole axial pressure-moment bounds with the full support and trace gates explicit.
+
 > **Q102:** [Sourced postfast scalars and fresh slow map](results/core_current_head_q102_sourced_postfast_slow/README.md) adds complete old/new fast correlations to the current wave-updated scalars once, retains the moving pressure product and derives conditional bounds for the original fresh slow response on the same state.
 
 > **Q101:** [Incoming final rows and sourced fast map](results/core_current_head_q101_final_rows_fast_join/README.md) composes the actual incoming row differences and post-signed axial remainder, accounts for same-pole products, and derives conditional total-row and complete fast-field coefficients.
