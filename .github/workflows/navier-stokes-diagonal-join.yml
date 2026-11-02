@@ -157,6 +157,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q106_pointwise_haar_ledger/**
       - research/navier_stokes_cascade/results/core_current_head_q107_sourced_haar_flux/**
       - research/navier_stokes_cascade/results/core_current_head_q108_full_angular_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q109_full_axial_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -321,6 +322,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q106_pointwise_haar_ledger/**
       - research/navier_stokes_cascade/results/core_current_head_q107_sourced_haar_flux/**
       - research/navier_stokes_cascade/results/core_current_head_q108_full_angular_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q109_full_axial_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1243,6 +1245,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q108_full_angular_join/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q108_full_angular_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q108_full_angular_join/evidence.json --output q108_ci.json
+
+      - name: Check full current axial mean row and complete signed Haar pressure
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q109_full_axial_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q109_full_axial_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q109_full_axial_join/evidence.json --output q109_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
