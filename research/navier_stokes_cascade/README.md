@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q106:** [Pointwise Haar ledger and moment-blind covariance](results/core_current_head_q106_pointwise_haar_ledger/README.md) derives exact full Haar rows and conditional coefficient bounds with complete moving pressure; a positive comparison covariance shows that all three scalar moments can miss a pointwise row. Actual fine Haar norms remain open.
+
 > **Q105:** [Current projected final rows and mean-wave feedback](results/core_current_head_q105_projected_rows_feedback/README.md) binds the compact axial identity to the current pre-fast pressure state, derives conditional projected-row and mean-update feedback coefficients, and keeps pointwise Haar rows and the complete residual as explicit obligations.
 
 > **Q104:** [Final means and radial mean pressure](results/core_current_head_q104_final_radial_pressure/README.md) assembles all six mean stages and total wave covariance, derives conditional full shifted pressure/A0 bounds with local viscous memory, and records the remaining radial scalar and compact-source gaps.

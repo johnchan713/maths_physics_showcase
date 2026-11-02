@@ -1,0 +1,27 @@
+{
+  "closure": {
+    "edges": 1180,
+    "nodes": 344,
+    "source_bindings": 4896
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q105_projected_rows_feedback/evidence.json": "69c8d8dfd4214fe154a9c4e8a53674f5e67f27aeb38d1cb97afde7f377292dd1"
+  },
+  "parent": "595c9222fcc5c389dfe41a370870975ca26afd3c",
+  "source_hashes": {
+    "results/core_current_head_q106_pointwise_haar_ledger/README.md": "1857575ca5bd24546938e6967dae4c8ab74f993c0e517001becc40f33d161944",
+    "results/core_current_head_q106_pointwise_haar_ledger/audit.py": "c02bb7ac90cf7c9f3b35b75816905a23e63603b9daab8e94ed0b32b9f1bec637",
+    "results/core_current_head_q106_pointwise_haar_ledger/q106.py": "74e95bd18b1417fe663fe576df906d23820a711aa2087dd5a56bfad8f28c7d33",
+    "results/core_current_head_q106_pointwise_haar_ledger/test_audit.py": "42c56ffbed6c88e41fa4fb8209efea66c918299d82aad0741a1f848996ad97f8"
+  },
+  "status": "exact-pointwise-haar-ledger-and-moment-blind-covariance-control",
+  "symbolic": {
+    "actual_fine_haar_norm_supplied": false,
+    "all_three_global_moments_can_vanish_in_comparison_covariance": true,
+    "canonical_wave_counterexample": false,
+    "full_cone_residual_pulse_or_blowup_certified": false,
+    "full_local_pressure_and_both_axial_viscosities_retained": true,
+    "products_averaged_before_factorization": true,
+    "status": "exact-pointwise-haar-ledger-and-moment-blind-covariance-control"
+  }
+}
