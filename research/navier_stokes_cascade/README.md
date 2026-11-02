@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q100:** [Full sourced row increments](results/core_current_head_q100_sourced_full_row_changes/README.md) derives conditional pointwise angular/axial coefficients with full pressure gradients and connections, and identifies the final incoming-row and axial-tail composition required before a fresh fast inverse.
+
 > **Q99:** [Changed postslow scalars and integrated rows](results/core_current_head_q99_changed_scalar_rows/README.md) adds sourced-wave moments to the completed incoming scalar stage, retains the full axial pressure product and isolates the nonzero-Haar row obligation before fresh means.
 
 > **Q98:** [Current shifted pressure flux](results/core_current_head_q98_shifted_pressure_flux/README.md) binds the compact left inverse to Q97’s new covariance pole, giving a conditional C-order pressure increment while retaining local pressure memory, the compensator and explicit seam defects.

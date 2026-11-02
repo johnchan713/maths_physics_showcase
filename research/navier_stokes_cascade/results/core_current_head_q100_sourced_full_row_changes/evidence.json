@@ -1,0 +1,38 @@
+{
+  "closure": {
+    "edges": 1174,
+    "nodes": 338,
+    "source_bindings": 4829
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q99_changed_scalar_rows/evidence.json": "dfd959bd58d5527bee3d5159c8a3add6df91223d5b055744e3bcf46531ce5ff4"
+  },
+  "parent": "d5264ba07259a2a22484b03a49e69471fe6a4069",
+  "source_hashes": {
+    "results/core_current_head_q100_sourced_full_row_changes/README.md": "b1f51601ed70ba87de79ffd30821c02f9710e501f1864db600f48fb1a5e67b3a",
+    "results/core_current_head_q100_sourced_full_row_changes/audit.py": "f5f1e275742c64f0e633c08e6c08419c6ab5f9554a141a08ab51d8f4e14fda79",
+    "results/core_current_head_q100_sourced_full_row_changes/q100.py": "36e1e4b32c0c2950f15a22d8ebe1039ad7259ae612f5315ffc1b60182ce6c78a",
+    "results/core_current_head_q100_sourced_full_row_changes/test_audit.py": "fe67492053701b8da21ce1cd61f81aa25465f80b20c127d3457f246f2502d959",
+    "results/core_current_head_q47_full_pressure_correction/README.md": "78884265930523c2b692854270679dc5593e5e29449660200ece4c92a89e1015",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q98_shifted_pressure_flux/README.md": "70ec10577418ddae1ce8ac4fb016cf35d5d174ddb60f264fd01ad3bc6176b4c3",
+    "results/core_current_head_q98_shifted_pressure_flux/q98.py": "60cd97ff07e2fd6bc7859edd2998d403a55e9c29a874ac5ba60a88afd55580fa",
+    "results/core_fast_row_gain_join/README.md": "d86842b7bda2973fd9dcfc08d9d8713507e222b72c925dbbbe591a0e130ed9b8",
+    "results/core_fast_row_gain_join/budgets.py": "9f635486fa0b1688341571f8abcb25183f22c21f2fe42aff5a2303c60fdbc60e",
+    "results/core_post_signed_mean_closure/README.md": "07423e815116884e207d72acd38201c280489a7507e18c787141e8a3902b2c54"
+  },
+  "status": "current-sourced-full-row-increment-envelope",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "complete_residual_or_blowup": false,
+    "covariance_request": "n+2",
+    "full_pressure_and_connections_retained": true,
+    "incoming_final_rows_required": true,
+    "increment_order": "3/2-2*kappa",
+    "pressure_request": "n+1",
+    "projection_norm_factor": 2,
+    "stale_prefast_row_reuse_rejected": true,
+    "status": "current-sourced-full-row-increment-envelope",
+    "total_changed_row_or_fresh_mean_supplied": false
+  }
+}
