@@ -140,6 +140,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q89_first_real_residual_ledger/**
       - research/navier_stokes_cascade/results/core_current_head_q90_source_entrance_normal/**
       - research/navier_stokes_cascade/results/core_current_head_q91_weighted_mean_wave/**
+      - research/navier_stokes_cascade/results/core_current_head_q92_full_linear_envelope/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -287,6 +288,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q89_first_real_residual_ledger/**
       - research/navier_stokes_cascade/results/core_current_head_q90_source_entrance_normal/**
       - research/navier_stokes_cascade/results/core_current_head_q91_weighted_mean_wave/**
+      - research/navier_stokes_cascade/results/core_current_head_q92_full_linear_envelope/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1124,6 +1126,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q91_weighted_mean_wave/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q91_weighted_mean_wave/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q91_weighted_mean_wave/evidence.json --output q91_ci.json
+
+      - name: Check Q92 complete regular linear envelope
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q92_full_linear_envelope/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q92_full_linear_envelope/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q92_full_linear_envelope/evidence.json --output q92_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
