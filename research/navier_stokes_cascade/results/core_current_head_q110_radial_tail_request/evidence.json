@@ -1,0 +1,32 @@
+{
+  "closure": {
+    "edges": 1184,
+    "nodes": 348,
+    "source_bindings": 4921
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q109_full_axial_join/evidence.json": "48c052da63bf035ca2acc4ec8056f13fdf80e366ea61e488926001c389fa721e"
+  },
+  "parent": "3f47262b2838fcd7683cae8e21fc9424bfda6f82",
+  "source_hashes": {
+    "results/core_compact_source_quotient/bounds.py": "4a2e0f27eec98a7781996f1fe47652490256351d26417fe44eaed89d00f48370",
+    "results/core_current_head_q104_final_radial_pressure/q104.py": "85c2ef8db31ae15a9f22a4b32229bf72f3b83845c95abd81ddf99a9cb1a6be59",
+    "results/core_current_head_q110_radial_tail_request/README.md": "4b396f80bb3a172f5aed26f50ad1a9ce2b1359d0b6570bf8c91ddb71113bf0ad",
+    "results/core_current_head_q110_radial_tail_request/audit.py": "8c6c644330a1fb7cc4962e4c1675c198430a9913a707b4d87e45980792572f98",
+    "results/core_current_head_q110_radial_tail_request/q110.py": "0e24ecf56bee71c3994b69a702610c44e821427020572866bc6ba2d9d3009d49",
+    "results/core_current_head_q110_radial_tail_request/test_audit.py": "c301e4cb715ed7b1acaf5f2493e9a4bf5a7ee088a98730f8b4ffd328dc674eee",
+    "results/core_final_mean_row_closure/budgets.py": "652dcafed56778d25c9b341f6d6f2aaab01f3abe79988cb5dc10636f173acd7e"
+  },
+  "status": "current-radial-split-and-full-graph-A0-request-audit",
+  "symbolic": {
+    "actual_tail_or_native_inputs_certified": false,
+    "covariance_request": 100016,
+    "default_integrations": 50001,
+    "default_raw_source_order": 100005,
+    "full_cone_pulse_residual_or_blowup": false,
+    "low_output_archive_not_a_high_jet_proof": true,
+    "profile_request": 100046,
+    "scalar_sufficient_for_current_mean_target": true,
+    "status": "current-radial-split-and-full-graph-A0-request-audit"
+  }
+}

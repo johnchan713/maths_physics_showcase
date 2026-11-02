@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q110:** [Current radial tail request audit](results/core_current_head_q110_radial_tail_request/README.md) binds the reduced A0 source to all six final means, separates the scalar component, and audits the full high-jet/common-pole/chart request. A low-output archive cannot certify the radial gain; actual tail inputs and full cone closure remain unproved.
+
 > **Q109:** [Full current axial mean row](results/core_current_head_q109_full_axial_join/README.md) binds the incoming axial Haar row with complete signed pressure and composes the current sourced increment, A1 tail and full mean differences, giving a conditional full axial coefficient at order 3/2-kappa. The radial cone and stronger target remain open.
 
 > **Q108:** [Full current angular row](results/core_current_head_q108_full_angular_join/README.md) composes Q87’s actual incoming cancellation, Q107’s sourced Haar increment and Q105’s full fresh differences on one state, giving a conditional full angular coefficient at order 3/2-kappa. The axial Haar slot and stronger target gap remain open.
