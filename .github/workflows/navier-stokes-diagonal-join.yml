@@ -155,6 +155,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q104_final_radial_pressure/**
       - research/navier_stokes_cascade/results/core_current_head_q105_projected_rows_feedback/**
       - research/navier_stokes_cascade/results/core_current_head_q106_pointwise_haar_ledger/**
+      - research/navier_stokes_cascade/results/core_current_head_q107_sourced_haar_flux/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -317,6 +318,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q104_final_radial_pressure/**
       - research/navier_stokes_cascade/results/core_current_head_q105_projected_rows_feedback/**
       - research/navier_stokes_cascade/results/core_current_head_q106_pointwise_haar_ledger/**
+      - research/navier_stokes_cascade/results/core_current_head_q107_sourced_haar_flux/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1229,6 +1231,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q106_pointwise_haar_ledger/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q106_pointwise_haar_ledger/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q106_pointwise_haar_ledger/evidence.json --output q106_ci.json
+
+      - name: Check current sourced Haar flux and compensated pressure
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q107_sourced_haar_flux/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q107_sourced_haar_flux/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q107_sourced_haar_flux/evidence.json --output q107_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
