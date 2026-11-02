@@ -1,0 +1,38 @@
+{
+  "closure": {
+    "edges": 1175,
+    "nodes": 339,
+    "source_bindings": 4840
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q100_sourced_full_row_changes/evidence.json": "c320177b3a3d4bc9059641a4696781e96c1dc9534bf98f257c013e854a470c68"
+  },
+  "parent": "acf10d1af8602e758bea320b74af3c7fd1d34504",
+  "source_hashes": {
+    "results/core_current_head_q101_final_rows_fast_join/README.md": "e325ad2cbd39267d24714204105fc8bf29bed34ace86b610cf44efc6ea58cc15",
+    "results/core_current_head_q101_final_rows_fast_join/audit.py": "11c99167b7da0600530025e2c6c3a3066071b364fe46ab9b627d8a4a2ca475df",
+    "results/core_current_head_q101_final_rows_fast_join/q101.py": "404b3838b73676a64785ccc8da56a0a4da45fab87df6a3e35f2a976ee143d9f8",
+    "results/core_current_head_q101_final_rows_fast_join/test_audit.py": "765d200cfc0f0390f9ed54fd3122e86932b701ec8f05db9db840e8b795bdf7fe",
+    "results/core_current_head_q40_current_fast_rows/README.md": "d8ac8f0dbc288e8932b9c8f52477bd4cbb5fcf45a110b83fd8e566b3448da4c0",
+    "results/core_current_head_q40_current_fast_rows/current_fast.py": "b3ceb094c3ed6d43571096d8a3bc15bcfa92b68480caf6647139c2561a07fd9d",
+    "results/core_current_head_q47_full_pressure_correction/README.md": "78884265930523c2b692854270679dc5593e5e29449660200ece4c92a89e1015",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q86_final_mean_adapter/README.md": "c7d554f8e615b3996bb718731078690f5b99560e6a717ec15285fc66a74673d1",
+    "results/core_fast_row_gain_join/README.md": "d86842b7bda2973fd9dcfc08d9d8713507e222b72c925dbbbe591a0e130ed9b8",
+    "results/core_fast_row_gain_join/budgets.py": "9f635486fa0b1688341571f8abcb25183f22c21f2fe42aff5a2303c60fdbc60e",
+    "results/core_post_signed_mean_closure/README.md": "07423e815116884e207d72acd38201c280489a7507e18c787141e8a3902b2c54"
+  },
+  "status": "incoming-final-row-and-sourced-fast-map-join",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "fast_radial_order": "5/2-2*kappa",
+    "fresh_slow_or_scalar_reset_supplied": false,
+    "old_operators_evaluated_at_their_exact_pole": true,
+    "original_time_inverse_S_and_axial_one_plus_KA_retained": true,
+    "post_signed_A1_retained": true,
+    "row_and_fast_order": "3/2-2*kappa",
+    "same_pole_product_absorption_explicit": true,
+    "status": "incoming-final-row-and-sourced-fast-map-join",
+    "unconditional_pulse_residual_or_blowup": false
+  }
+}

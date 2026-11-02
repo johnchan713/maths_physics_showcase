@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q101:** [Incoming final rows and sourced fast map](results/core_current_head_q101_final_rows_fast_join/README.md) composes the actual incoming row differences and post-signed axial remainder, accounts for same-pole products, and derives conditional total-row and complete fast-field coefficients.
+
 > **Q100:** [Full sourced row increments](results/core_current_head_q100_sourced_full_row_changes/README.md) derives conditional pointwise angular/axial coefficients with full pressure gradients and connections, and identifies the final incoming-row and axial-tail composition required before a fresh fast inverse.
 
 > **Q99:** [Changed postslow scalars and integrated rows](results/core_current_head_q99_changed_scalar_rows/README.md) adds sourced-wave moments to the completed incoming scalar stage, retains the full axial pressure product and isolates the nonzero-Haar row obligation before fresh means.
