@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q98:** [Current shifted pressure flux](results/core_current_head_q98_shifted_pressure_flux/README.md) binds the compact left inverse to Q97’s new covariance pole, giving a conditional C-order pressure increment while retaining local pressure memory, the compensator and explicit seam defects.
+
 > **Q97:** [Sourced covariance and global moments](results/core_current_head_q97_sourced_covariance_moments/README.md) retains both complex cross orientations and the new square, deriving changed pressure/moment identities while keeping the new pointwise pressure-map obligation explicit.
 
 > **Q96:** [Conditional sourced response](results/core_current_head_q96_sourced_response/README.md) derives normalized zero-entry response, full pressure and complete cut-curl jet bounds, including packet evaluation and Gaussian restoration costs.

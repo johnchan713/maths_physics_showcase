@@ -1,0 +1,39 @@
+{
+  "closure": {
+    "edges": 1172,
+    "nodes": 336,
+    "source_bindings": 4806
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q97_sourced_covariance_moments/evidence.json": "85b356236dbb027c38e4f164e51b838533e68266c4528824b97120ef22b8782d"
+  },
+  "parent": "e4609c5b345dfe6b940af4cdc7f7735e044361bd",
+  "source_hashes": {
+    "results/core_compact_source_quotient/README.md": "3a8e5980ecea8c359de66dfc8cc09661fdc002d30db905b8882e5dd378514fbf",
+    "results/core_compact_trace_gate/README.md": "d9ec273c1c44637116ea69e0e458fe925423373b3fcad6a615906d728644346f",
+    "results/core_current_head_q43_compact_chart/README.md": "485925c8869df6b01e7c0bd893a7a500a9dbeb47c8ef79eff791e0bb3089e2fd",
+    "results/core_current_head_q43_compact_chart/chart.py": "4c959c4aa77e0cbb4a3c66432860372b1b874bbd54fe0061c36abc53fc278d09",
+    "results/core_current_head_q46_moving_cutoff/README.md": "9fa8f6f9f4f1c5a6a5862281ab8d1c5d3d08d21a687840a0d2da775320afc3bb",
+    "results/core_current_head_q46_moving_cutoff/moving.py": "edbe8acecd707fdf5a994d72ea852e428e6c2f0469a891760e21ff8cb63f0e0f",
+    "results/core_current_head_q47_full_pressure_correction/README.md": "78884265930523c2b692854270679dc5593e5e29449660200ece4c92a89e1015",
+    "results/core_current_head_q47_full_pressure_correction/full_rows.py": "2c19eef5c6939a67cd37f3cddc4193c330d03067e948becb5214f5eeb0cd6a01",
+    "results/core_current_head_q98_shifted_pressure_flux/README.md": "70ec10577418ddae1ce8ac4fb016cf35d5d174ddb60f264fd01ad3bc6176b4c3",
+    "results/core_current_head_q98_shifted_pressure_flux/audit.py": "2175e92882c6330825cae909a6c113b555ce746213e00bb82824920c48fe34ae",
+    "results/core_current_head_q98_shifted_pressure_flux/q98.py": "60cd97ff07e2fd6bc7859edd2998d403a55e9c29a874ac5ba60a88afd55580fa",
+    "results/core_current_head_q98_shifted_pressure_flux/test_audit.py": "b3a95328c278853a1819330fa296c54850dfd7f8abcfded71fac4074e9667ae9"
+  },
+  "status": "current-shifted-pressure-flux-bound",
+  "symbolic": {
+    "actual_native_contracts_certified": false,
+    "complete_residual_or_blowup": false,
+    "covariance_request": "n+1",
+    "direct_source_order": "3/2-2*kappa",
+    "fresh_means_or_complete_residual_supplied": false,
+    "local_pressure_flux_retained": true,
+    "pressure_increment_order": "3/2-kappa",
+    "pressure_memory_added_not_reset": true,
+    "same_moving_T0_and_A0": true,
+    "status": "current-shifted-pressure-flux-bound",
+    "whole_hull_mixed_trace_contract_required": true
+  }
+}
