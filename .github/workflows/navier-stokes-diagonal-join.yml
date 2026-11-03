@@ -179,6 +179,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q128_real_cutoff_signed_root/**
       - research/navier_stokes_cascade/results/core_current_head_q129_moving_inverse_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q130_mixed_loop_binding/**
+      - research/navier_stokes_cascade/results/core_current_head_q131_swirl_memory_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -365,6 +366,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q128_real_cutoff_signed_root/**
       - research/navier_stokes_cascade/results/core_current_head_q129_moving_inverse_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q130_mixed_loop_binding/**
+      - research/navier_stokes_cascade/results/core_current_head_q131_swirl_memory_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1397,6 +1399,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q130_mixed_loop_binding/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q130_mixed_loop_binding/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q130_mixed_loop_binding/evidence.json --output q130_ci.json
+
+      - name: Check angular swirl and full five-row modulation memory
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q131_swirl_memory_gevrey/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q131_swirl_memory_gevrey/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q131_swirl_memory_gevrey/evidence.json --output q131_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1205,
+    "nodes": 369,
+    "source_bindings": 5080
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q130_mixed_loop_binding/evidence.json": "8c599f59166488c28a48011a18d59753fecd995a69c9f2e76048eb2f4b79dfc7"
+  },
+  "parent": "5af6852b597b632db59e6f8f57fa692131f1b36d",
+  "source_hashes": {
+    "results/core_current_head_q129_moving_inverse_gevrey/README.md": "3046560a412ed34bdc63bb4e0c5942a2099b88af407dcbdb2566b40903f78a5d",
+    "results/core_current_head_q130_mixed_loop_binding/README.md": "c3c71444a763c3d1c6106b7b9c21fa53eeadff55906d658a0929e34def30bba7",
+    "results/core_current_head_q130_mixed_loop_binding/q130.py": "d6469126c4a4e8410c9c1cab2757884d7bb755515da3a6f30207d656a9bb43fc",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q131_swirl_memory_gevrey/audit.py": "244703a43a442874b68e35fb156b1a9c80fb591b800fc01605084052bcf5bde1",
+    "results/core_current_head_q131_swirl_memory_gevrey/q131.py": "661e66d471e9fa571918b88034008d611f855eac24fbf55289a83f1d9519a793",
+    "results/core_current_head_q131_swirl_memory_gevrey/test_audit.py": "b78b278e75693d452b8e8c06c5c45d8a8a7bed83a4269c1ae1753e21e45dee02",
+    "results/core_current_head_q67_premod_memory/README.md": "7c45f872f0894554ce66cd1d76749b6ba3bbb11884df29d5dc9237cfffdf7caa",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b"
+  },
+  "status": "closed-angular-swirl-and-five-row-modulation-memory-bound",
+  "symbolic": {
+    "actual_profile_frequency_gate_final_repair_cone_pulse_residual_or_blowup_certified": false,
+    "angular_difference": "D=3*max(V0,MA)/N; delta E and inverse E use e*D and invE*D",
+    "memory": "All five incoming differences retained, including Pi and its angular derivative",
+    "radial_warning": "Pure angular fixed-y estimates only; no radial O(1/N) claim",
+    "shifted_jets": "D*L^(m+1)*((m+1)!)^3 <= D*L*(8*L)^m*(m!)^3",
+    "slow_analytic_extension_claimed": false,
+    "status": "closed-angular-swirl-and-five-row-modulation-memory-bound",
+    "swirl": "E_N=E*exp(Acal/N), inverse E_N=E^-1*exp(-Acal/N)",
+    "value_gate": "|Acal|,|Bcal|<=V0<=N implies exp(|Acal|/N)<3; N is the unchanged selected integer"
+  }
+}
