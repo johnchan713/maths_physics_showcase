@@ -1,0 +1,52 @@
+{
+  "closure": {
+    "edges": 1200,
+    "nodes": 364,
+    "source_bindings": 5033
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q125_uniform_angular_first_seed/evidence.json": "d71cb56335fde1946fac882d3f754d4c9ef0a011a4ae2862a8e8f9fbe986f4a0"
+  },
+  "parent": "86477ffed871c9487bbd3fec8bf4230d537a380b",
+  "source_hashes": {
+    "results/core_current_head_q126_exterior_axial_radius/README.md": "2116b3cd00b656d97c3d190c23f095812ed5ce9732531ef70369c1ed17987bc3",
+    "results/core_current_head_q126_exterior_axial_radius/audit.py": "6676bf17b23a5ce8edd2135d931d01b249344831f8ee6ffe9d307e4dbdadfdd0",
+    "results/core_current_head_q126_exterior_axial_radius/q126.py": "4fb13132ff82cd6d504a9d822c3e6ab0334bfb40ac279a3f8aeba71cf3ac7c79",
+    "results/core_current_head_q126_exterior_axial_radius/test_audit.py": "b34a687ac4668655b80b3676ffba8fc8d81e0021b77d72306298373d8e0cd502",
+    "results/core_current_head_q77_axial_profile_pulse/README.md": "6e8e13248f9ab63bd2e7632f1c499f0cc2f8bdda086983b455efb9f2b9f2c525",
+    "results/core_current_head_q77_axial_profile_pulse/q77.py": "9f173e2ad7687073acab1965f02f70dfad0310a070b1bf815a505fa21e69b8b0",
+    "results/core_current_head_q78_postpulse_heat_collar/README.md": "cec40cfbf8f308a54f1bf6258b9dc879f913f7278204d4873be9f3f44e79c265",
+    "results/global_axial_angular_bound/README.md": "3bce78996e4ad9d30d4743e24cc3e03bf317e0648c2a3a9b3623c50354e152c5",
+    "results/root_foundation/README.md": "c0733b883447de163d8084c12a126155d64d3dfbf137c53120e3c6217c80f9a2"
+  },
+  "status": "fixed-exterior-axial-angular-radius-and-current-first-join",
+  "symbolic": {
+    "actual_axis_compact_profile_scale_cone_pulse_residual_or_blowup_certified": false,
+    "angular_radius": "1/2 at every real eta center",
+    "angular_root_ball": "2^19*lambda^30",
+    "exterior_U_angular_norm": "40*(2^(m+1)-1)",
+    "exterior_U_binary_upper": "m+7",
+    "exterior_U_complex_cap": 40,
+    "heat_tail_complex_extension_claimed": false,
+    "preheat_future_mass_complex_cap": "2^14*T",
+    "status": "fixed-exterior-axial-angular-radius-and-current-first-join",
+    "strength_complex_cap": "3/2",
+    "value_checks": {
+      "affine_end_energy": true,
+      "angular_ball": true,
+      "angular_image": true,
+      "angular_lipschitz": true,
+      "energy_coefficient": true,
+      "energy_constant_negative": true,
+      "energy_forcing": true,
+      "energy_map_image": true,
+      "energy_map_lipschitz": true,
+      "energy_slope_change": true,
+      "exponential_upper": true,
+      "future_mass_factor": true,
+      "pulse_complex_cap": true,
+      "same_accepted_root": true,
+      "target_disk_constant": true
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q126:** [Fixed exterior axial angular radius](results/core_current_head_q126_exterior_axial_radius/README.md) identifies fixed complex extensions of the same exterior roots and bounds that pulse’s leading U angular norm by 40*(2^(m+1)-1). It retains the full pre-heat energy and makes no complex Gamma-tail claim. Axis/compact norms and original scale/source gates remain open.
+
 > **Q125:** [Uniform angular cost and the first cut seed](results/core_current_head_q125_uniform_angular_first_seed/README.md) replaces Q124’s coarse reciprocal factors by the existing product-algebra bound and derives every fixed angular first cut-seed norm from the same Cauchy cover. Actual whole-support leading/lower norms and retained-scale gates remain open.
 
 > **Q124:** [Full-pressure repair discrepancies at every order](results/core_current_head_q124_full_pressure_discrepancies/README.md) extends the signed pressure moment bounds and all five incoming discrepancy estimates to arbitrary fixed angular/coefficient orders, retaining axis and shifted axial viscosity terms. Actual whole-support lower-field/cut-seed norms and retained-scale verification remain open.
