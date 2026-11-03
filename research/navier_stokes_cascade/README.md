@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q114:** [Reduced-source polynomial degree and log-height](results/core_current_head_q114_source_polynomial_degree/README.md) derives a structural polynomial-growth bound for the current reduced source from its native mean/covariance leaves. Fixed exponential coefficients remain distinct from band growth; actual high-jet leaf inequalities and cone closure remain open.
+
 > **Q113:** [Compact-shape scope and identity audit](results/core_current_head_q113_compact_shape_scope/README.md) applies Q30's existing fixed-smooth-shape finiteness to Q112's current kernel factors. Numerical shape values are not required for this qualitative lemma; Borel/variance substitutions are rejected. The actual band-uniform high-jet source bound and radial cone remain open.
 
 > **Q112:** [Closed raw radial profile majorants](results/core_current_head_q112_raw_profile_majorants/README.md) proves all-order raw e=0 power bounds and a moving-cutoff majorant in the original shape jets. Slow motion and three source-side factorials remain explicit; actual shape/source inputs and the A0 gain are not certified.

@@ -162,6 +162,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q111_closed_chart_majorant/**
       - research/navier_stokes_cascade/results/core_current_head_q112_raw_profile_majorants/**
       - research/navier_stokes_cascade/results/core_current_head_q113_compact_shape_scope/**
+      - research/navier_stokes_cascade/results/core_current_head_q114_source_polynomial_degree/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -331,6 +332,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q111_closed_chart_majorant/**
       - research/navier_stokes_cascade/results/core_current_head_q112_raw_profile_majorants/**
       - research/navier_stokes_cascade/results/core_current_head_q113_compact_shape_scope/**
+      - research/navier_stokes_cascade/results/core_current_head_q114_source_polynomial_degree/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1278,6 +1280,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q113_compact_shape_scope/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q113_compact_shape_scope/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q113_compact_shape_scope/evidence.json --output q113_ci.json
+
+      - name: Check current reduced-source degree and fixed log-height
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q114_source_polynomial_degree/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q114_source_polynomial_degree/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q114_source_polynomial_degree/evidence.json --output q114_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

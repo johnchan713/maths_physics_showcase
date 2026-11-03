@@ -1,0 +1,28 @@
+{
+  "closure": {
+    "edges": 1188,
+    "nodes": 352,
+    "source_bindings": 4950
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q113_compact_shape_scope/evidence.json": "b710ac6861385ea0fc250635f748d7e97f55965fe61a8496294461c3bdc2c0f5"
+  },
+  "parent": "cf00be3b42b791c0d3dc4df4bfafcfcc16fc16b1",
+  "source_hashes": {
+    "results/core_current_head_q104_final_radial_pressure/q104.py": "85c2ef8db31ae15a9f22a4b32229bf72f3b83845c95abd81ddf99a9cb1a6be59",
+    "results/core_current_head_q114_source_polynomial_degree/README.md": "9b8a225f950e489ae2f83e83f106049f35d624ddab1e7f3fc221d06b1491d6b1",
+    "results/core_current_head_q114_source_polynomial_degree/audit.py": "cb063ce3b59216582541d5e6c3893bcc8b1026f07ef7e3c64d026c7a344511ea",
+    "results/core_current_head_q114_source_polynomial_degree/q114.py": "419b3fe115580dc17e83a4ebe726af06af549f069940d72898c3a52b1dc6a881",
+    "results/core_current_head_q114_source_polynomial_degree/test_audit.py": "73ff8508f5dfb7da27daf3d3e32dd324d533903ac41181ccdd351d2301dce2fb",
+    "results/core_symbolic_fresh_mean_join/bounds.py": "5821f08fb5b7d4eb6abecd98f1a1cf11ef447c42425abce4690cf8fc1425e36d"
+  },
+  "status": "current-reduced-source-polynomial-degree-and-height",
+  "symbolic": {
+    "bound": "exp(H_J)*(1+S)^D_J",
+    "fixed_exponential_coefficients_not_exp_in_S": true,
+    "full_cone_pulse_residual_or_blowup": false,
+    "reduced_source_graph_degree_absent": true,
+    "source_native_contracts_or_A0_gain_certified": false,
+    "status": "current-reduced-source-polynomial-degree-and-height"
+  }
+}
