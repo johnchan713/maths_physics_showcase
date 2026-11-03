@@ -169,6 +169,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q118_background_phase_binding/**
       - research/navier_stokes_cascade/results/core_current_head_q119_closed_slow_chart/**
       - research/navier_stokes_cascade/results/core_current_head_q120_closed_borel_cutoff/**
+      - research/navier_stokes_cascade/results/core_current_head_q121_all_order_radial_tuple/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -345,6 +346,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q118_background_phase_binding/**
       - research/navier_stokes_cascade/results/core_current_head_q119_closed_slow_chart/**
       - research/navier_stokes_cascade/results/core_current_head_q120_closed_borel_cutoff/**
+      - research/navier_stokes_cascade/results/core_current_head_q121_all_order_radial_tuple/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1327,6 +1329,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q120_closed_borel_cutoff/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q120_closed_borel_cutoff/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q120_closed_borel_cutoff/evidence.json --output q120_ci.json
+
+      - name: Check all-order radial tuple and incoming primitive
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q121_all_order_radial_tuple/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q121_all_order_radial_tuple/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q121_all_order_radial_tuple/evidence.json --output q121_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

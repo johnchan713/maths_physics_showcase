@@ -1,0 +1,30 @@
+{
+  "closure": {
+    "edges": 1195,
+    "nodes": 359,
+    "source_bindings": 4998
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q120_closed_borel_cutoff/evidence.json": "8f2ab19a6c02e4f105c7e9657ace329d64d70430a6f9fcdeeb889c1ea02f473f"
+  },
+  "parent": "3cf9920bdda832a8de0715724f75653f735a274c",
+  "source_hashes": {
+    "results/background_jet_foundation/README.md": "8b70ed3289d5ebaddbb58183a595b29e80b31503ea6fa832445c448b4f32a7be",
+    "results/core_background_radial_reconstruction/README.md": "97ca7b98c6e7baa21ba7775ebae73d53f71e50e7e81ee3bb585eaaefc0ed1a22",
+    "results/core_background_radial_reconstruction/budgets.py": "410ca88336dd6b401d27817118867537a3ff6d10425d76119791cae252d115da",
+    "results/core_current_head_q121_all_order_radial_tuple/README.md": "794effc8375eae02482502078b485c94f187e0ea921d0f3270829e6f69801457",
+    "results/core_current_head_q121_all_order_radial_tuple/audit.py": "721c0cfacd9da80f591c68d06c66813c4c84f91e05fa7e86f2250daa639ca233",
+    "results/core_current_head_q121_all_order_radial_tuple/q121.py": "b651511bd80de681e01eef472e9f4bbeb54ccc34d6eaa2781e71e4294f3924a5",
+    "results/core_current_head_q121_all_order_radial_tuple/test_audit.py": "35ce2969146c39d731f4a6fd08fbd6a462600a3c7299584d2134dafad1377f4c"
+  },
+  "status": "all-order-axis-memory-radial-tuple-bound",
+  "symbolic": {
+    "F_order": "m",
+    "U_order": "m+1 on [0,Xhi]",
+    "actual_profiles_schedule_pressure_support_or_pulse_certified": false,
+    "prefactor": "4*Rhi*Fraw+[2+(112+32*(D+2*n*h))*max(1,Xhi)/((1-2*h)*Rlo)]*Uraw",
+    "raw_tuple_bound": "m!*tau^(-m)*prefactor",
+    "status": "all-order-axis-memory-radial-tuple-bound",
+    "tau": "min(1,Rlo^2)/8"
+  }
+}
