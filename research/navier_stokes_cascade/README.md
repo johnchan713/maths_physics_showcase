@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q130:** [Six scalar jets to mixed loop bounds](results/core_current_head_q130_mixed_loop_binding/README.md) derives a common scalar-parameter/fast-angle analytic disk and binds Q128 to Q129 without independent mixed high-jet inputs. Actual PREMOD/real-cap premises, swirl modulation and final repair/cone closure remain open.
+
 > **Q129:** [Moving inverse and zero-mean primitive Gevrey bounds](results/core_current_head_q129_moving_inverse_gevrey/README.md) derives closed conditional angular bounds at fixed pulled-back phase, preserving the phase origin and density-weighted source mean. Actual mixed loop inputs and the final repair/cone join remain open.
 
 > **Q128:** [Real variance-cutoff and signed-root bounds](results/core_current_head_q128_real_cutoff_signed_root/README.md) derives closed real Gevrey-3 angular bounds from finite PREMOD complex state caps, retaining incoming Pi and Pi_eta. It avoids slow analytic continuation through the flat cutoff; moving-phase and final compact bounds remain open.

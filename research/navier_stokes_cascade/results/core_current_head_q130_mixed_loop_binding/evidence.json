@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1204,
+    "nodes": 368,
+    "source_bindings": 5070
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q129_moving_inverse_gevrey/evidence.json": "d48d2fddf6477549ba3c39b885a4aa2bec13fa3dcf4185702e779366497d0b14"
+  },
+  "parent": "41736482dd840aed1e802dfad2ea70495536cc40",
+  "source_hashes": {
+    "results/core_current_head_q128_real_cutoff_signed_root/README.md": "50839c38bf8da48f7bb67ade23d7dab8eb33411cb0530f73fd15b21cece6f810",
+    "results/core_current_head_q128_real_cutoff_signed_root/q128.py": "442fed0d1f7930ad98261d98e4385b15442ea80c208998ed77a7b1f5ab42f77b",
+    "results/core_current_head_q129_moving_inverse_gevrey/README.md": "3046560a412ed34bdc63bb4e0c5942a2099b88af407dcbdb2566b40903f78a5d",
+    "results/core_current_head_q129_moving_inverse_gevrey/q129.py": "1805b74eb43c1575b8ca53b69978681379ae99077e08b230d1e11ac789f70151",
+    "results/core_current_head_q130_mixed_loop_binding/README.md": "c3c71444a763c3d1c6106b7b9c21fa53eeadff55906d658a0929e34def30bba7",
+    "results/core_current_head_q130_mixed_loop_binding/audit.py": "967a04c773af4ba5602811bae8e5929d2d128d1efa0f6e456ff6bd0b52e4e6a6",
+    "results/core_current_head_q130_mixed_loop_binding/q130.py": "d6469126c4a4e8410c9c1cab2757884d7bb755515da3a6f30207d656a9bb43fc",
+    "results/core_current_head_q130_mixed_loop_binding/test_audit.py": "d5a2ea414e8055128ec1b7b4f82bd2ff3e16ce0008875663164681a2b26d46af",
+    "results/core_current_head_q65_signed_root_radius/README.md": "ebc66c482d18e6a09a39e9edf5ef7528c96f4e755c60c181beb1b0c679758890",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6"
+  },
+  "status": "six-scalar-real-Gevrey-to-original-mixed-loop-binding",
+  "symbolic": {
+    "actual_state_caps_swirl_final_repair_scale_pulse_residual_or_blowup_certified": false,
+    "density_floor": "1/(8*G^2) from a>=1/G, 0<v<=G and 2*pi<8; not G^-3 from G>=2 alone",
+    "exponential": "Eexp>=exp(G) is a premise; E2=9*Eexp^2>=exp(2*(G+1))",
+    "mixed": "|d_eta^i d_theta^j (w,fA,fB)|/(i!j!) <= (W,F,F)*B^i*C^j*(i!)^2",
+    "pressure": "Same Q128 p2 with complete incoming Pi and Pi_eta",
+    "scalar_parameters": "a, ts=-b/a, p=p2, mu, E, v=a+b^2/a+a*s^2",
+    "scope": "Removable signed loop, fixed phase origin and original augmented-variance means; Q129 inverse/primitive bounds apply",
+    "slow_analytic_extension_claimed": false,
+    "status": "six-scalar-real-Gevrey-to-original-mixed-loop-binding"
+  }
+}
