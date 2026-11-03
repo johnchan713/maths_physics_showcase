@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q133:** [Final leading angular assembly and norm order](results/core_current_head_q133_final_angular_gluing/README.md) assembles the conditional final compact U0 bound and joins the intended pointwise-X angular norm to axis/taper/exterior estimates. It distinguishes the stronger sum-of-global-suprema norm, for which a regional maximum is insufficient. Actual covers, gates and mixed radial/pulse bounds remain open.
+
 > **Q132:** [Same leading exact repair in Gevrey-3](results/core_current_head_q132_exact_repair_gevrey/README.md) closes the normalized quadratic repair recurrence, retaining both amplitude powers, inverse lambda and all baseline/full-pressure discrepancies. Actual target/acceptance/positive-field gates and the final cone join remain open.
 
 > **Q131:** [Angular swirl and five-row modulation memory](results/core_current_head_q131_swirl_memory_gevrey/README.md) propagates the closed primitive bounds through exponential swirl, inverse swirl and axial modulation, retaining every incoming moment/pressure discrepancy. Actual input gates, the later exact repair and final cone closure remain open.

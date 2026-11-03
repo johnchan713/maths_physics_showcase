@@ -1,0 +1,40 @@
+{
+  "closure": {
+    "edges": 1207,
+    "nodes": 371,
+    "source_bindings": 5101
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q132_exact_repair_gevrey/evidence.json": "177a84c8ca1904647f332b21a155a0556ca5a394c169952e69cce6b7adc0541e"
+  },
+  "parent": "efea38379f0d75edfe3b66f4a565e7196da0987f",
+  "source_hashes": {
+    "results/core_current_head_q124_full_pressure_discrepancies/README.md": "60d3792f92ea82477c8bf754acdb49574488433bb3f839a34824df61ab98e10a",
+    "results/core_current_head_q125_uniform_angular_first_seed/README.md": "746e8ce30f13346f9a5311a4970eec76b45affedffe20350adf0fac09cf4b9df",
+    "results/core_current_head_q126_exterior_axial_radius/README.md": "2116b3cd00b656d97c3d190c23f095812ed5ce9732531ef70369c1ed17987bc3",
+    "results/core_current_head_q126_exterior_axial_radius/q126.py": "4fb13132ff82cd6d504a9d822c3e6ab0334bfb40ac279a3f8aeba71cf3ac7c79",
+    "results/core_current_head_q127_annular_radius_axis/README.md": "ec5941589ea2af28460da30b5461dc58eb28a6ca18350e56787d953b16f332bf",
+    "results/core_current_head_q127_annular_radius_axis/q127.py": "f4a376e7895744439d9972996fd98c412492eeea59f4c5e05754f058235eab5c",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q132_exact_repair_gevrey/README.md": "0e029fcd984fc8c7a9344740397508a883759cfd3ab5ad39de82712eb36ad34a",
+    "results/core_current_head_q132_exact_repair_gevrey/q132.py": "90ee453459604c116d76dc96137fe732a3ad309139e77a8ec723315f280f2f64",
+    "results/core_current_head_q133_final_angular_gluing/README.md": "7714de4284dc187fdf0167d15f43977c535d8a3faa533711b97226ce7f7fc115",
+    "results/core_current_head_q133_final_angular_gluing/audit.py": "b32e6a646df0edb0c810760ee3ec71a442ad42ee7435364debb5bb88a96b9332",
+    "results/core_current_head_q133_final_angular_gluing/q133.py": "16cb36caf98e3f1dd0380050796bde3cd1a231c2737131d18de5a4f27ee03fd1",
+    "results/core_current_head_q133_final_angular_gluing/test_audit.py": "63f373dcb7bc35ca878dc5b6e369eec1a6d0aa5d629fe1099d6442bb2835e33a",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147"
+  },
+  "status": "final-leading-angular-assembly-and-norm-order-boundary",
+  "symbolic": {
+    "actual_profile_gates_mixed_radial_support_scale_pulse_residual_or_blowup_certified": false,
+    "binary": "stronger sum gluing costs at most two extra bits for four regions; weak intended norm uses max",
+    "correction_scope": "The smooth counterexample blocks a stronger reinterpretation, not the historical intended pointwise-X maximum rule",
+    "factorial_norm": "P*sum_(j=0)^m B^j*(j!)^2; not the raw m-th derivative bound",
+    "final_compact": "P=Q131_U_pref+B0*Q132_repair_field_pref; B=max(the two bases); raw <= P*B^m*(m!)^3",
+    "historical_frozen_records_modified": false,
+    "intended_Q125_norm": "sup_X sum_j sup_eta |d_eta^j U0(X,eta)|/j!; regional maximum is valid",
+    "pressure": "Q132 full baseline and incoming five-row target premises remain; no pressure reset",
+    "status": "final-leading-angular-assembly-and-norm-order-boundary",
+    "stronger_norm": "sum_j sup_X,eta |d_eta^j U0|/j!; regional sum or orderwise maximum required"
+  }
+}
