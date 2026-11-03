@@ -1,0 +1,29 @@
+{
+  "closure": {
+    "edges": 1196,
+    "nodes": 360,
+    "source_bindings": 5005
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q121_all_order_radial_tuple/evidence.json": "a6d4f673e067aedada310f78a12fc2e98581052a8fa56ae3716a8ac60ead1b19"
+  },
+  "parent": "d8455586d7de4461534b6b5989c7f6dd87e506bb",
+  "source_hashes": {
+    "results/background_jet_foundation/README.md": "8b70ed3289d5ebaddbb58183a595b29e80b31503ea6fa832445c448b4f32a7be",
+    "results/core_current_head_q122_positive_order_repair/README.md": "2140de6aa052226ac719d2fef8223d580334891fc18a830c2f8c0d58efa15169",
+    "results/core_current_head_q122_positive_order_repair/audit.py": "421cfafc249ee1d89cadbcc878ad23ad51b7b881cb973bdde386445d32299362",
+    "results/core_current_head_q122_positive_order_repair/q122.py": "cbf94cf4b58e9c9ee4663adc1989408b4f9db00c91047d56e80b6d4ae14acc9c",
+    "results/core_current_head_q122_positive_order_repair/test_audit.py": "7383ff7b3a6b1b9ae9455388d40215b758702c6d08def29726ef54a9fbe00338",
+    "results/global_first_coefficient_c3/README.md": "612dad5708a915cc40d65ba8ca3075d50ee092ef455b20ccd041a37e59aef6ea",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b"
+  },
+  "status": "all-order-positive-coefficient-repair-bound",
+  "symbolic": {
+    "actual_profiles_schedule_support_cone_pulse_residual_or_blowup_certified": false,
+    "all_five_full_pressure_rows_required": true,
+    "coefficient_raw": "1000*max(1,rho^-2)*max_i D_i*(1+(m^2+m+2)/e_star)/lambda_patch",
+    "original_linear_solve": true,
+    "raw_normalizer": "[2*d_k+2*k*d_(k-1)+k*(k-1)*d_(k-2)]/e_star",
+    "status": "all-order-positive-coefficient-repair-bound"
+  }
+}

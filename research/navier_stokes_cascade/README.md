@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q122:** [All-order positive-coefficient repair](results/core_current_head_q122_positive_order_repair/README.md) uses the original polynomial reciprocal patch normalizer to bound every raw angular repair jet and joins the finalized profile estimate to Q121. All five full-pressure discrepancies and actual seed/bump norms remain inputs.
+
 > **Q121:** [All-order radial tuple bound](results/core_current_head_q121_all_order_radial_tuple/README.md) bounds every fixed tuple jet by m!*tau^(-m) times explicit finalized F/U raw norms, retaining the axis primitive and one extra angular U derivative. Actual whole-interval profiles, retained schedule and high-pole source inputs remain open.
 
 > **Q120:** [Closed implemented Borel cutoff norms and retained-scale slack](results/core_current_head_q120_closed_borel_cutoff/README.md) derives K_m <= 82*4097^m*(m!)^3 and an explicit existing-scale binary-slack inequality. Actual cutoff identity, full profile inputs and the infinite retained schedule remain unverified; no scales are changed.
