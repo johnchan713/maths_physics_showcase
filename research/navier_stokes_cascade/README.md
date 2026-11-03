@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q128:** [Real variance-cutoff and signed-root bounds](results/core_current_head_q128_real_cutoff_signed_root/README.md) derives closed real Gevrey-3 angular bounds from finite PREMOD complex state caps, retaining incoming Pi and Pi_eta. It avoids slow analytic continuation through the flat cutoff; moving-phase and final compact bounds remain open.
+
 > **Q127:** [Earlier annular radius and axis angular cover](results/core_current_head_q127_annular_radius_axis/README.md) identifies a fixed complex radius for the same eta-dependent earlier root, retains every quadratic coefficient variation, and derives closed PREMOD/axis angular bounds. The final modulated compact norm remains a distinct unproved input.
 
 > **Q126:** [Fixed exterior axial angular radius](results/core_current_head_q126_exterior_axial_radius/README.md) identifies fixed complex extensions of the same exterior roots and bounds that pulse’s leading U angular norm by 40*(2^(m+1)-1). It retains the full pre-heat energy and makes no complex Gamma-tail claim. Axis/compact norms and original scale/source gates remain open.

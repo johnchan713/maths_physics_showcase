@@ -1,0 +1,33 @@
+{
+  "closure": {
+    "edges": 1202,
+    "nodes": 366,
+    "source_bindings": 5052
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q127_annular_radius_axis/evidence.json": "783670ee997a6577adfdbab917c128eeb77f52b14e82ef4ec5575fcaede30c8c"
+  },
+  "parent": "5a0fcb117a907fa6ead1d802c27e604e478f640e",
+  "source_hashes": {
+    "results/core_current_head_q128_real_cutoff_signed_root/README.md": "50839c38bf8da48f7bb67ade23d7dab8eb33411cb0530f73fd15b21cece6f810",
+    "results/core_current_head_q128_real_cutoff_signed_root/audit.py": "860e1ab2e018729cb68cb2e659fa2940acda50c6eb5dd5f3d79876150c25e33a",
+    "results/core_current_head_q128_real_cutoff_signed_root/q128.py": "442fed0d1f7930ad98261d98e4385b15442ea80c208998ed77a7b1f5ab42f77b",
+    "results/core_current_head_q128_real_cutoff_signed_root/test_audit.py": "a7e07adacad8721b39d8cd470c07765102d02b18621293970b3495e567b70f99",
+    "results/core_current_head_q65_signed_root_radius/README.md": "ebc66c482d18e6a09a39e9edf5ef7528c96f4e755c60c181beb1b0c679758890",
+    "results/core_current_head_q65_signed_root_radius/q65.py": "57a97648e527ed3ac4b4df5fcda8401e11a6a427a63028230b0e0186abff0fb3",
+    "results/core_current_head_q66_cutoff_amplitude/README.md": "1f51fa10b9324b2e8f9e5ef488d2786ea43a6e5d437ead73996452980c27bac7",
+    "results/core_current_head_q66_cutoff_amplitude/q66.py": "1c107fc3d4878564c20c66924dc3f2fa973a027a2acb8e926bdc7d61b6a7eeea",
+    "results/core_current_head_q67_premod_memory/README.md": "7c45f872f0894554ce66cd1d76749b6ba3bbb11884df29d5dc9237cfffdf7caa"
+  },
+  "status": "real-cutoff-and-signed-root-Gevrey3-angular-bound",
+  "symbolic": {
+    "actual_final_compact_profile_scale_cone_pulse_residual_or_blowup_certified": false,
+    "amplitude": "|s^(m)| <= Ms*Ls^m*(m!)^3",
+    "full_forward_pressure_terms": "X*(4*Aphys*eta*Pi-(1-eta^2)*Pi_eta)/(L*E)",
+    "scalar_inverse_E_exp_outward_bound_is_a_premise": true,
+    "signed_positive_jets": "|mu^(m)| <= a_Psi*[Ls*(1+2*(P+Ms)/sigma_Psi)]^m*(m!)^3",
+    "signed_value": "original G bound retained at m=0",
+    "slow_analytic_extension_claimed": false,
+    "status": "real-cutoff-and-signed-root-Gevrey3-angular-bound"
+  }
+}
