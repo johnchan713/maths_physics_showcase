@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q120:** [Closed implemented Borel cutoff norms and retained-scale slack](results/core_current_head_q120_closed_borel_cutoff/README.md) derives K_m <= 82*4097^m*(m!)^3 and an explicit existing-scale binary-slack inequality. Actual cutoff identity, full profile inputs and the infinite retained schedule remain unverified; no scales are changed.
+
 > **Q119:** [Closed real slow-chart factors](results/core_current_head_q119_closed_slow_chart/README.md) proves m! times geometric composition bounds for the full-background slow chart, preserving the original low-order comparison/selector constants and complete Borel tuple. Actual profile/source inputs and the high-pole cone join remain open.
 
 > **Q118:** [Current full-background phase binding](results/core_current_head_q118_background_phase_binding/README.md) derives phase, varying reference-rate and three linear-source slots from the retained full-background recipe, paying the raw R/common-U coordinate transfers. Its own background/cutoff requests are n+4/n+5; actual native inequalities and the high-pole cone join remain open.
