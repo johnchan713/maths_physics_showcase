@@ -167,6 +167,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q116_mixed_covariant_jets/**
       - research/navier_stokes_cascade/results/core_current_head_q117_current_covariant_response/**
       - research/navier_stokes_cascade/results/core_current_head_q118_background_phase_binding/**
+      - research/navier_stokes_cascade/results/core_current_head_q119_closed_slow_chart/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -341,6 +342,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q116_mixed_covariant_jets/**
       - research/navier_stokes_cascade/results/core_current_head_q117_current_covariant_response/**
       - research/navier_stokes_cascade/results/core_current_head_q118_background_phase_binding/**
+      - research/navier_stokes_cascade/results/core_current_head_q119_closed_slow_chart/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1313,6 +1315,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q118_background_phase_binding/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q118_background_phase_binding/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q118_background_phase_binding/evidence.json --output q118_ci.json
+
+      - name: Check closed slow-chart factors and preserved low-order comparison
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q119_closed_slow_chart/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q119_closed_slow_chart/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q119_closed_slow_chart/evidence.json --output q119_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

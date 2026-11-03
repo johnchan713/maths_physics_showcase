@@ -1,0 +1,32 @@
+{
+  "closure": {
+    "edges": 1193,
+    "nodes": 357,
+    "source_bindings": 4984
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q118_background_phase_binding/evidence.json": "bacdae85ccc0de4fe74ea25db11e2e9bbf3eb5fe7e0ee07b82dcdb646752b731"
+  },
+  "parent": "b8ec2e08e8076c0e1249bf13d519b119da490e9f",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/README.md": "586d203cc24fd8b3609427dcd4b53594cb583a24bbf81087807471354d5e978c",
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q119_closed_slow_chart/README.md": "65dfe46f288bb0efe6b3ca185e6e3493c08f97fe4b2a4c7c8c036b9af64ab0a6",
+    "results/core_current_head_q119_closed_slow_chart/audit.py": "a9b25dc4dd2db415dd41a4df268ede18e95f769719180f3eab3fc21fce13db85",
+    "results/core_current_head_q119_closed_slow_chart/q119.py": "d79e931fa122f0a38ed8871fb26e4ea1de186c3e01bea11e686eadded8daf537",
+    "results/core_current_head_q119_closed_slow_chart/test_audit.py": "eb8dcff96cff99ef9a835631de6a2bd1ad65646f98e80e56ad0b82fef2cf0ca4",
+    "results/core_fixed_profile_tame/README.md": "6046cfdcf2540a7ce245b1abebeec00e0d57196dc719f84185c04fcbb5c10a6d"
+  },
+  "status": "closed-real-slow-chart-background-majorants",
+  "symbolic": {
+    "actual_native_profile_or_source_inequalities_certified": false,
+    "analytic_coordinates_only_not_analytic_profiles": true,
+    "full_cone_pulse_residual_or_blowup": false,
+    "original_full_tuple_Borel_head_tail_and_schedule_retained": true,
+    "original_low_orders_zero_one_two_preserved": true,
+    "prefactors": "F:48/Rmin; G:24; btilde:12",
+    "raw_through_m_factor": "m!*tau^-m",
+    "status": "closed-real-slow-chart-background-majorants",
+    "tau": "min(1,Rmin)/(1024*(1+Rmax)^2)"
+  }
+}
