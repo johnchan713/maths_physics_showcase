@@ -183,6 +183,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q132_exact_repair_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q133_final_angular_gluing/**
       - research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/**
+      - research/navier_stokes_cascade/results/core_current_head_q135_exterior_swirl_angular/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -373,6 +374,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q132_exact_repair_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q133_final_angular_gluing/**
       - research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/**
+      - research/navier_stokes_cascade/results/core_current_head_q135_exterior_swirl_angular/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1425,6 +1427,11 @@ jobs:
         run: |
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/evidence.json --output q134_ci.json
+      - name: Check whole exterior swirl angular envelope
+        run: |
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q135_exterior_swirl_angular/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q135_exterior_swirl_angular/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q135_exterior_swirl_angular/evidence.json --output q135_ci.json
+
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
 

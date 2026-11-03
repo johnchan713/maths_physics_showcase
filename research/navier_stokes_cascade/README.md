@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q135:** [Whole exterior swirl angular envelope](results/core_current_head_q135_exterior_swirl_angular/README.md) joins the same heat/angular roots, scalar schedule and terminal factors into a conditional Gevrey-2 leading E0/F0 bound on all X>=Xstar. Actual axis/final compact F0 covers, mixed radial and physical pulse estimates remain open.
+
 > **Q134:** [Real heat endpoint jets and the same compensator](results/core_current_head_q134_real_heat_gevrey/README.md) closes conditional Gevrey-2 angular envelopes for the complete infinite heat moments and original three-row root. It retains the marginal I contribution and pressure memory, without a complex Gamma extension. Whole F0 assembly and mixed radial/physical pulse bounds remain open.
 
 > **Q133:** [Final leading angular assembly and norm order](results/core_current_head_q133_final_angular_gluing/README.md) assembles the conditional final compact U0 bound and joins the intended pointwise-X angular norm to axis/taper/exterior estimates. It distinguishes the stronger sum-of-global-suprema norm, for which a regional maximum is insufficient. Actual covers, gates and mixed radial/pulse bounds remain open.

@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1209,
+    "nodes": 373,
+    "source_bindings": 5126
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q134_real_heat_gevrey/evidence.json": "b2bcfee0485fff11fc3b842679e4f46fe6f7f3a4021309172105905df5ae4511"
+  },
+  "parent": "b9459174892d91e9ce3cf0baaf49a5a91c126d99",
+  "source_hashes": {
+    "results/core_current_head_q125_uniform_angular_first_seed/README.md": "746e8ce30f13346f9a5311a4970eec76b45affedffe20350adf0fac09cf4b9df",
+    "results/core_current_head_q126_exterior_axial_radius/README.md": "2116b3cd00b656d97c3d190c23f095812ed5ce9732531ef70369c1ed17987bc3",
+    "results/core_current_head_q134_real_heat_gevrey/README.md": "5c18e2572ec119e733f5b17f5ecaf0701ecd34120aba982161e8a552fb3fa4e8",
+    "results/core_current_head_q135_exterior_swirl_angular/README.md": "3552c7eab03896dca9e033c36cb19d73d2524a9e8e3ec20c964e625698226dce",
+    "results/core_current_head_q135_exterior_swirl_angular/audit.py": "4aa4cc0cab847303d0f9e32cab52cdf5430669d48ae51f7c1d169d9268d2219a",
+    "results/core_current_head_q135_exterior_swirl_angular/q135.py": "679eb92b5d095fdcd71d20d51783841dbf8f16ed3db99dd8c1f39c3dca53c0d4",
+    "results/core_current_head_q135_exterior_swirl_angular/test_audit.py": "e44f968896b6aa886e5dbafff7042565e30b71b5f78cbf78cb37d1336fb9e366",
+    "results/core_current_head_q77_axial_profile_pulse/README.md": "6e8e13248f9ab63bd2e7632f1c499f0cc2f8bdda086983b455efb9f2b9f2c525",
+    "results/core_current_head_q78_postpulse_heat_collar/README.md": "cec40cfbf8f308a54f1bf6258b9dc879f913f7278204d4873be9f3f44e79c265",
+    "results/global_swirl_envelope/README.md": "a899a23ab7f41d865b315f3fa6462758fcae4ae5e93df99de3e674be859d2758"
+  },
+  "status": "whole-exterior-leading-swirl-angular-Gevrey2-envelope",
+  "symbolic": {
+    "P": "81*S0*(1+15360000*h^4/Xstar)*(1+128*2^19*lambda^30)*(1+4*h/Xstar)/(1-h/1000)",
+    "actual_whole_F0_cone_pulse_residual_or_blowup_certified": false,
+    "factorial_norm": "P*sum_(j=0)^m 548^j*j!; binary ceilLog(max(1,P))+ceilLog(m+1)+10m+m*ceilLog(m)",
+    "historical_frozen_records_modified": false,
+    "pressure": "same Q134 infinite heat target and Q126 pre-heat future-mass root; no incoming pressure or other moment reset",
+    "pulse": "axial profile strength changes U, not the prescribed scalar swirl on that stage; no physical wave estimate follows",
+    "raw": "E0 and F0 <= P*548^m*(m!)^2 for X>=Xstar",
+    "remaining_inequality": "whole F0 angular norm requires actual regular-axis and finalized compact bounds on the SAME cover; Q121 also needs mixed X,eta derivatives",
+    "schedule": "same nonincreasing eta-independent scalar S<=S0, gamma, three heat bumps, two angular bumps, exact two-unit terminal taper and Gamma multiplier",
+    "status": "whole-exterior-leading-swirl-angular-Gevrey2-envelope"
+  }
+}
