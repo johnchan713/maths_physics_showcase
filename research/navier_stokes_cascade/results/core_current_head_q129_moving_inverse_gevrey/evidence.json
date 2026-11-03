@@ -1,0 +1,33 @@
+{
+  "closure": {
+    "edges": 1203,
+    "nodes": 367,
+    "source_bindings": 5061
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q128_real_cutoff_signed_root/evidence.json": "4a8db5852d29769053e400ea416ad9bb9364ea6ac8256c4b3c6a803431615474"
+  },
+  "parent": "ef19ac81120289a8fff635938a6babbe45bcad68",
+  "source_hashes": {
+    "results/core_current_head_q128_real_cutoff_signed_root/README.md": "50839c38bf8da48f7bb67ade23d7dab8eb33411cb0530f73fd15b21cece6f810",
+    "results/core_current_head_q128_real_cutoff_signed_root/q128.py": "442fed0d1f7930ad98261d98e4385b15442ea80c208998ed77a7b1f5ab42f77b",
+    "results/core_current_head_q129_moving_inverse_gevrey/README.md": "3046560a412ed34bdc63bb4e0c5942a2099b88af407dcbdb2566b40903f78a5d",
+    "results/core_current_head_q129_moving_inverse_gevrey/audit.py": "463e7f7f2efeaf0923d44e0137e26f822504fc2b0c295f45b7c4efdfe7626c57",
+    "results/core_current_head_q129_moving_inverse_gevrey/q129.py": "1805b74eb43c1575b8ca53b69978681379ae99077e08b230d1e11ac789f70151",
+    "results/core_current_head_q129_moving_inverse_gevrey/test_audit.py": "c2ce8ebe7dfed03d8791ec99b235cd9a1fa5bf97e705954600afe877c1c99efb",
+    "results/core_current_head_q64_fast_phase_radius/README.md": "b44f0fc7f0459a68dbf3cfc64c0eba4c6ba74f2aceed07b678355c78612b140f",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/stress_realization_audit/README.md": "3a9598d15415e579e67f54bd09106b2eb55136eff9f5dc96d39ac2f14c5717d7"
+  },
+  "status": "real-moving-phase-inverse-and-zero-mean-primitive-Gevrey3-bound",
+  "symbolic": {
+    "actual_mixed_inputs_final_repair_scale_pulse_residual_or_blowup_certified": false,
+    "inverse_positive_raw": "(t/C)*(B/eps)^m*(m!)^3, m>=1",
+    "mean": "integral_0^(2*pi) source(eta,theta)*w(eta,theta) dtheta = 0",
+    "origin": "phi(eta,theta)=integral_0^theta w(eta,s) ds; derivatives at fixed zeta",
+    "pressure_input": "Q128 complete incoming Pi and Pi_eta retained in the signed-root inputs",
+    "primitive_raw": "4*F*r^(-m)*(m!)^3, m>=0",
+    "slow_analytic_extension_claimed": false,
+    "status": "real-moving-phase-inverse-and-zero-mean-primitive-Gevrey3-bound"
+  }
+}

@@ -177,6 +177,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q126_exterior_axial_radius/**
       - research/navier_stokes_cascade/results/core_current_head_q127_annular_radius_axis/**
       - research/navier_stokes_cascade/results/core_current_head_q128_real_cutoff_signed_root/**
+      - research/navier_stokes_cascade/results/core_current_head_q129_moving_inverse_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -361,6 +362,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q126_exterior_axial_radius/**
       - research/navier_stokes_cascade/results/core_current_head_q127_annular_radius_axis/**
       - research/navier_stokes_cascade/results/core_current_head_q128_real_cutoff_signed_root/**
+      - research/navier_stokes_cascade/results/core_current_head_q129_moving_inverse_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1383,6 +1385,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q128_real_cutoff_signed_root/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q128_real_cutoff_signed_root/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q128_real_cutoff_signed_root/evidence.json --output q128_ci.json
+
+      - name: Check real moving inverse and zero-mean primitive Gevrey bounds
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q129_moving_inverse_gevrey/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q129_moving_inverse_gevrey/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q129_moving_inverse_gevrey/evidence.json --output q129_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
