@@ -171,6 +171,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q120_closed_borel_cutoff/**
       - research/navier_stokes_cascade/results/core_current_head_q121_all_order_radial_tuple/**
       - research/navier_stokes_cascade/results/core_current_head_q122_positive_order_repair/**
+      - research/navier_stokes_cascade/results/core_current_head_q123_fixed_bump_diagonal/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -349,6 +350,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q120_closed_borel_cutoff/**
       - research/navier_stokes_cascade/results/core_current_head_q121_all_order_radial_tuple/**
       - research/navier_stokes_cascade/results/core_current_head_q122_positive_order_repair/**
+      - research/navier_stokes_cascade/results/core_current_head_q123_fixed_bump_diagonal/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1341,6 +1343,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q122_positive_order_repair/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q122_positive_order_repair/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q122_positive_order_repair/evidence.json --output q122_ci.json
+
+      - name: Check fixed repair bumps to current retained diagonal
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q123_fixed_bump_diagonal/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q123_fixed_bump_diagonal/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q123_fixed_bump_diagonal/evidence.json --output q123_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

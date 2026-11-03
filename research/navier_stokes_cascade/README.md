@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q123:** [Fixed bumps to the current diagonal](results/core_current_head_q123_fixed_bump_diagonal/README.md) joins inherited all-order repair-bump bounds, the shifted E-to-F radial conversion, Q122 repair and Q121 tuple estimates to Q120 using binary budgets. Actual cut-seed/full-pressure discrepancy bounds and retained-scale verification remain open.
+
 > **Q122:** [All-order positive-coefficient repair](results/core_current_head_q122_positive_order_repair/README.md) uses the original polynomial reciprocal patch normalizer to bound every raw angular repair jet and joins the finalized profile estimate to Q121. All five full-pressure discrepancies and actual seed/bump norms remain inputs.
 
 > **Q121:** [All-order radial tuple bound](results/core_current_head_q121_all_order_radial_tuple/README.md) bounds every fixed tuple jet by m!*tau^(-m) times explicit finalized F/U raw norms, retaining the axis primitive and one extra angular U derivative. Actual whole-interval profiles, retained schedule and high-pole source inputs remain open.

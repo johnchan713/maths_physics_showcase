@@ -1,0 +1,29 @@
+{
+  "closure": {
+    "edges": 1197,
+    "nodes": 361,
+    "source_bindings": 5012
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q122_positive_order_repair/evidence.json": "f1d03e418e6058a7c2e10aabba08d3315a698ed1ca6e2d9673cd7e745e147330"
+  },
+  "parent": "91af8ae76d2b5bd82044792ac4d6d34af1f31e21",
+  "source_hashes": {
+    "results/core_current_head_q123_fixed_bump_diagonal/README.md": "08d651580fa1efafb6bb2580ea2a7e50e8ffa1d6077ada15e5cd21eb13e994d2",
+    "results/core_current_head_q123_fixed_bump_diagonal/audit.py": "723f65166741027a8a39970e3e5425c6b71c8b09a417f4b48f561f0d92d1bb74",
+    "results/core_current_head_q123_fixed_bump_diagonal/q123.py": "077128fd9bbe2b9da0d35a446f92d4191145d505ada36c35dee96272a51d63c1",
+    "results/core_current_head_q123_fixed_bump_diagonal/test_audit.py": "2cfd15787e549393048ba9c4ba106777e3c6fe9812214cb9ab72594ea5e486e0",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/cutoff_higher_jet_interface/README.md": "202c28f7cd98684a293df6b1246b40d5f37f9403e4278aee67237e64ca84d02e",
+    "results/cutoff_higher_jet_interface/jet_bounds.py": "e505b3a05629a34b29ec3bd2491ee58c5effb2bb6fb17145d3c5db3977a8e353"
+  },
+  "status": "fixed-bump-to-current-diagonal-binary-budget",
+  "symbolic": {
+    "E_over_R_through": "rp^-1*(3/2*max(1,p^-1))^m*m!*B_m",
+    "U_through": "max(1,p^-1)^m*m!*B_m",
+    "actual_profile_support_scale_cone_pulse_residual_or_blowup_certified": false,
+    "current_join": "Q122 repair -> Q121 raw tuple -> Q120 retained diagonal; no new scales",
+    "inherited_bump": "Q63: 162*32600^(m+1)*((m+1)!)^3; sharper inherited low rows retained",
+    "status": "fixed-bump-to-current-diagonal-binary-budget"
+  }
+}
