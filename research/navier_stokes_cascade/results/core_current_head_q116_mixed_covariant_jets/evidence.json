@@ -1,0 +1,30 @@
+{
+  "closure": {
+    "edges": 1190,
+    "nodes": 354,
+    "source_bindings": 4963
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q115_covariant_first_jet/evidence.json": "4be9257249c228ed7017b8715a542b56c476c0aeee25d038a9a8873b1bf9f4f6"
+  },
+  "parent": "8bbc5124f39769e58bdcdaa4c13663b310b0f322",
+  "source_hashes": {
+    "results/core_current_head_q116_mixed_covariant_jets/README.md": "cc9c11b98c983b0de3dd7734bff8c9b5a63555825310cacad30c357dd0debe59",
+    "results/core_current_head_q116_mixed_covariant_jets/audit.py": "c89d59cb505070fade809f3878aa26d7d00427427c8aa7ee4218eea2a8dba0cf",
+    "results/core_current_head_q116_mixed_covariant_jets/q116.py": "fecc9bae5a1668fa15ae55de6adb1de442b140f06542ad7dc5c59bb34ad09934",
+    "results/core_current_head_q116_mixed_covariant_jets/test_audit.py": "807623fa7ee2b346df1583e5014cfd7160e8bd20980b95fd108d7f94fdbf5af8",
+    "results/core_current_head_q90_source_entrance_normal/README.md": "04cf46486833e151110ed2386d0ebcaba4867500864f778db712b2b8106d06c9",
+    "results/core_current_head_q96_sourced_response/README.md": "88d8f2015a587e65b0cb7bceff6d7420bea90938c1b0195d470791b2654e6665",
+    "results/core_tangent_propagator_closure/README.md": "4d2befdec9c9d81146a171ba0c195ae29ae3de339df19ba59781b9de37d5f181"
+  },
+  "status": "all-fixed-mixed-covariant-jet-residence-recurrence",
+  "symbolic": {
+    "actual_high_jet_inputs_or_radial_gain_certified": false,
+    "full_cone_pulse_residual_or_blowup": false,
+    "full_normal_pressure_and_mixed_moving_normal_retained": true,
+    "pressure_zero_extension_requires_source_flat_through_N": true,
+    "source_jets_required": "through N; entrance flat through N-1 for velocity",
+    "status": "all-fixed-mixed-covariant-jet-residence-recurrence",
+    "velocity": "U_j <= ell_m V_j; V_j independent of m for uniform native inputs"
+  }
+}
