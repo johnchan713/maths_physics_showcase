@@ -1,0 +1,29 @@
+{
+  "closure": {
+    "edges": 1199,
+    "nodes": 363,
+    "source_bindings": 5026
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q124_full_pressure_discrepancies/evidence.json": "2e6aa08d916beff24ee234d131bf0b830e034f174f17537a15cc38b8930e773e"
+  },
+  "parent": "2e8e6230f0401fe7964ca13a6cf520c7e46415ce",
+  "source_hashes": {
+    "results/axis_first_coefficient/README.md": "aa6f920ba99023d4ec6a0dbf7cb8597bbab0c0d9ea3c104fe8ba1fc95e77bd6e",
+    "results/coefficient_support_foundation/README.md": "df4b656a5e83d45e45c19b3330b66537e35acd24782d818818b59c0ac848d84d",
+    "results/core_current_head_q125_uniform_angular_first_seed/README.md": "746e8ce30f13346f9a5311a4970eec76b45affedffe20350adf0fac09cf4b9df",
+    "results/core_current_head_q125_uniform_angular_first_seed/audit.py": "10f736bb6647ead8a2e135b3052f8808b3d12beaac7ac7a758515cb30944ad56",
+    "results/core_current_head_q125_uniform_angular_first_seed/q125.py": "7ef30980da8e27a445152128d3df8ae23124a78e0295fd8362c2d3ea8a7b254a",
+    "results/core_current_head_q125_uniform_angular_first_seed/test_audit.py": "734eb717789ebb9946323682938659628cfa676806f3245fbc601461dfd97141",
+    "results/first_coefficient_c3_boundary/README.md": "96500186a923f20f4f82261eddf6ee76d62e52b0590528a5bd123f18823f6cc8"
+  },
+  "status": "uniform-angular-reciprocal-and-first-cut-seed",
+  "symbolic": {
+    "actual_global_profile_scale_cone_pulse_residual_or_blowup_certified": false,
+    "leading_U_order": "m+2 for the first incoming discrepancy, m+3 shifted predecessor at later orders",
+    "pressure_operator_cost": "polynomial of degree at most three in m with native input budgets held fixed",
+    "reciprocal_algebra": "R=1/(1-8h) for every fixed m",
+    "same_first_seed": "(Mcore+Mcollar)*sum_(j=0)^m (2/delta)^j",
+    "status": "uniform-angular-reciprocal-and-first-cut-seed"
+  }
+}

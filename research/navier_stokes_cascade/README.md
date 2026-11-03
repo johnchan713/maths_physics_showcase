@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q125:** [Uniform angular cost and the first cut seed](results/core_current_head_q125_uniform_angular_first_seed/README.md) replaces Q124’s coarse reciprocal factors by the existing product-algebra bound and derives every fixed angular first cut-seed norm from the same Cauchy cover. Actual whole-support leading/lower norms and retained-scale gates remain open.
+
 > **Q124:** [Full-pressure repair discrepancies at every order](results/core_current_head_q124_full_pressure_discrepancies/README.md) extends the signed pressure moment bounds and all five incoming discrepancy estimates to arbitrary fixed angular/coefficient orders, retaining axis and shifted axial viscosity terms. Actual whole-support lower-field/cut-seed norms and retained-scale verification remain open.
 
 > **Q123:** [Fixed bumps to the current diagonal](results/core_current_head_q123_fixed_bump_diagonal/README.md) joins inherited all-order repair-bump bounds, the shifted E-to-F radial conversion, Q122 repair and Q121 tuple estimates to Q120 using binary budgets. Actual cut-seed/full-pressure discrepancy bounds and retained-scale verification remain open.
