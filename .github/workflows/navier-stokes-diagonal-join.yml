@@ -165,6 +165,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q114_source_polynomial_degree/**
       - research/navier_stokes_cascade/results/core_current_head_q115_covariant_first_jet/**
       - research/navier_stokes_cascade/results/core_current_head_q116_mixed_covariant_jets/**
+      - research/navier_stokes_cascade/results/core_current_head_q117_current_covariant_response/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -337,6 +338,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q114_source_polynomial_degree/**
       - research/navier_stokes_cascade/results/core_current_head_q115_covariant_first_jet/**
       - research/navier_stokes_cascade/results/core_current_head_q116_mixed_covariant_jets/**
+      - research/navier_stokes_cascade/results/core_current_head_q117_current_covariant_response/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1299,6 +1301,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q116_mixed_covariant_jets/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q116_mixed_covariant_jets/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q116_mixed_covariant_jets/evidence.json --output q116_ci.json
+
+      - name: Check current covariant response, full restoration and covariance interface
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q117_current_covariant_response/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q117_current_covariant_response/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q117_current_covariant_response/evidence.json --output q117_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

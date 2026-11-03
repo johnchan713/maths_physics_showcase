@@ -1,0 +1,32 @@
+{
+  "closure": {
+    "edges": 1191,
+    "nodes": 355,
+    "source_bindings": 4970
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q116_mixed_covariant_jets/evidence.json": "93d5e427a06bb83d13c5b91eb28e3f1bd9aef0bfbe3df3abbe04cf614332b3dc"
+  },
+  "parent": "7746338ea47a1babbcbeb00974500d0f00b384fd",
+  "source_hashes": {
+    "results/core_current_head_q117_current_covariant_response/README.md": "88e5320866b3cefee95b22a94ba8c56458459af1b926430074c5416cdd67a348",
+    "results/core_current_head_q117_current_covariant_response/audit.py": "d3f9317ae5db85731773bd644fe0ea67125b1b3ca636c73a905b2fe301a05475",
+    "results/core_current_head_q117_current_covariant_response/q117.py": "20b8cf965cf3ad6ee00294d65d6349ebd2a9bc572319e4728949fd6498c75c10",
+    "results/core_current_head_q117_current_covariant_response/test_audit.py": "be073a3170d95fe478ab6de4bc1656b24b77368f47a7718605ee03ff689a7917",
+    "results/core_current_head_q95_path_input_replay/README.md": "d267ab5710cd21b2bd7ea0a5cce0b45f10105cff146d5fc5f749fec4b6d7dcd3",
+    "results/core_current_head_q96_sourced_response/q96.py": "a5c685f9900cf2146eb41d984b6c8e3f5cb4f9472d7fabd865114a863bb09840",
+    "results/core_current_head_q97_sourced_covariance_moments/q97.py": "a6d5ebe10195b0935f23757e15e33b99b37d0db51403f5c0930b60e1c5007cf8"
+  },
+  "status": "current-source-covariant-response-and-full-restoration",
+  "symbolic": {
+    "Q97_two_carrier_covariance_type_compatible": true,
+    "actual_native_entrance_or_high_pole_contracts_certified": false,
+    "covariant_response_source_linear": true,
+    "damping_floor_derived_from_same_normal_reciprocal": true,
+    "full_cone_pulse_residual_or_blowup": false,
+    "new_source_pole_added": 0,
+    "original_Gaussian_Bell_packet_cutoff_and_complete_curl_retained": true,
+    "source_method": "Q95 PathInputs.build on the identical current source",
+    "status": "current-source-covariant-response-and-full-restoration"
+  }
+}

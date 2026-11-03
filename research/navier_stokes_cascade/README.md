@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q117:** [Current-source covariant response](results/core_current_head_q117_current_covariant_response/README.md) binds Q116 to the same Q95 source, derives its damping floor from the existing normal bound, and retains Gaussian restoration, packet evaluation, full pressure and complete cut curl. Source linearity preserves the common pole through the covariant solve; actual high-order inputs and cone closure remain open.
+
 > **Q116:** [All fixed mixed covariant jets](results/core_current_head_q116_mixed_covariant_jets/README.md) extends the projected response recurrence to mixed parameter/pulse jets with explicit entrance compatibility. Conditional harmonic residence is retained at every fixed order; full pressure keeps its direct normal-source term. Actual high-order inputs and cone closure remain open.
 
 > **Q115:** [Covariant first response jet](results/core_current_head_q115_covariant_first_jet/README.md) derives an exact projected parameter-jet equation, a conditional harmonic residence bound and the full normalized pressure derivative. Moving-normal and normal-source terms remain; actual high-jet inputs and cone closure remain open.
