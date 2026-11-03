@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1201,
+    "nodes": 365,
+    "source_bindings": 5042
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q126_exterior_axial_radius/evidence.json": "67f7e9f3a3bbbfe612dd5575c6726ab2cd137eb048004619aa35da69d05ee850"
+  },
+  "parent": "aa596da2976852c6d8a8783d3a97ff702d94c4b2",
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/collar_operator_envelope/README.md": "4afac9f2f93f93c59dc93644694e87059319474ba964f2e12d7027e09833384a",
+    "results/core_current_head_q127_annular_radius_axis/README.md": "ec5941589ea2af28460da30b5461dc58eb28a6ca18350e56787d953b16f332bf",
+    "results/core_current_head_q127_annular_radius_axis/audit.py": "ecbbe32b012876a47de969ce4f158685fc5e0532248d8562690eba29dfe9be32",
+    "results/core_current_head_q127_annular_radius_axis/q127.py": "f4a376e7895744439d9972996fd98c412492eeea59f4c5e05754f058235eab5c",
+    "results/core_current_head_q127_annular_radius_axis/test_audit.py": "f636fa252a0ac41b737b7f97a117510da1a869c2920fab36292da4d530247a7c",
+    "results/core_current_head_q70_shape_annulus_mixed/README.md": "5b1728180c534479bb3554343eb5e5db05714bdcc7c41a5971d80d0d24bb75d7",
+    "results/core_current_head_q73_annular_target_all_orders/README.md": "54498a7f0a0fa9532cd3ac342272b791a47e33a2d762d640c1ab6a08c700f59b",
+    "results/core_current_head_q73_annular_target_all_orders/q73.py": "23a208c19cec710589f896921bb6351e5561425805bdec4b5bb70ae886a214bc",
+    "results/global_axial_angular_bound/README.md": "3bce78996e4ad9d30d4743e24cc3e03bf317e0648c2a3a9b3623c50354e152c5"
+  },
+  "status": "same-earlier-annular-radius-and-axis-angular-cover",
+  "symbolic": {
+    "PREMOD_U": "(ua+16)*sum_(j=0)^m sigma^-j",
+    "actual_final_compact_profile_scale_cone_pulse_residual_or_blowup_certified": false,
+    "axis_U": "K_axis_value*sum_(j=0)^m delta^-j",
+    "binary_inverse_radius": "39+H_inverse_bits+Z_bits",
+    "coefficient_positive_jet": "a*sigma^-k for k>=1; original real value bound d retained",
+    "earlier_annular_swirl": "|E|<=4P, |1/E|<=20/P on -6<=y<=0",
+    "increment_radius": "a=1/(16*2000*200)",
+    "radius": "min(H/2,1/2,a/[8*2000*(2Z/H+200*d^2)])",
+    "real_accepted_value_cap": "6e-13",
+    "status": "same-earlier-annular-radius-and-axis-angular-cover"
+  }
+}

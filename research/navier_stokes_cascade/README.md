@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q127:** [Earlier annular radius and axis angular cover](results/core_current_head_q127_annular_radius_axis/README.md) identifies a fixed complex radius for the same eta-dependent earlier root, retains every quadratic coefficient variation, and derives closed PREMOD/axis angular bounds. The final modulated compact norm remains a distinct unproved input.
+
 > **Q126:** [Fixed exterior axial angular radius](results/core_current_head_q126_exterior_axial_radius/README.md) identifies fixed complex extensions of the same exterior roots and bounds that pulse’s leading U angular norm by 40*(2^(m+1)-1). It retains the full pre-heat energy and makes no complex Gamma-tail claim. Axis/compact norms and original scale/source gates remain open.
 
 > **Q125:** [Uniform angular cost and the first cut seed](results/core_current_head_q125_uniform_angular_first_seed/README.md) replaces Q124’s coarse reciprocal factors by the existing product-algebra bound and derives every fixed angular first cut-seed norm from the same Cauchy cover. Actual whole-support leading/lower norms and retained-scale gates remain open.

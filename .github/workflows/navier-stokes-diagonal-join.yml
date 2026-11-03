@@ -175,6 +175,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q124_full_pressure_discrepancies/**
       - research/navier_stokes_cascade/results/core_current_head_q125_uniform_angular_first_seed/**
       - research/navier_stokes_cascade/results/core_current_head_q126_exterior_axial_radius/**
+      - research/navier_stokes_cascade/results/core_current_head_q127_annular_radius_axis/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -357,6 +358,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q124_full_pressure_discrepancies/**
       - research/navier_stokes_cascade/results/core_current_head_q125_uniform_angular_first_seed/**
       - research/navier_stokes_cascade/results/core_current_head_q126_exterior_axial_radius/**
+      - research/navier_stokes_cascade/results/core_current_head_q127_annular_radius_axis/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1369,6 +1371,11 @@ jobs:
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q126_exterior_axial_radius/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q126_exterior_axial_radius/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q126_exterior_axial_radius/evidence.json --output q126_ci.json
+
+      - name: Check earlier varying annular root and leading axis cover
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q127_annular_radius_axis/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q127_annular_radius_axis/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q127_annular_radius_axis/evidence.json --output q127_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
