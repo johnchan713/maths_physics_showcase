@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q115:** [Covariant first response jet](results/core_current_head_q115_covariant_first_jet/README.md) derives an exact projected parameter-jet equation, a conditional harmonic residence bound and the full normalized pressure derivative. Moving-normal and normal-source terms remain; actual high-jet inputs and cone closure remain open.
+
 > **Q114:** [Reduced-source polynomial degree and log-height](results/core_current_head_q114_source_polynomial_degree/README.md) derives a structural polynomial-growth bound for the current reduced source from its native mean/covariance leaves. Fixed exponential coefficients remain distinct from band growth; actual high-jet leaf inequalities and cone closure remain open.
 
 > **Q113:** [Compact-shape scope and identity audit](results/core_current_head_q113_compact_shape_scope/README.md) applies Q30's existing fixed-smooth-shape finiteness to Q112's current kernel factors. Numerical shape values are not required for this qualitative lemma; Borel/variance substitutions are rejected. The actual band-uniform high-jet source bound and radial cone remain open.

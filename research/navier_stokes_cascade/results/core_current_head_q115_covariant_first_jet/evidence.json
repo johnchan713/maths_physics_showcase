@@ -1,0 +1,30 @@
+{
+  "closure": {
+    "edges": 1189,
+    "nodes": 353,
+    "source_bindings": 4956
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q114_source_polynomial_degree/evidence.json": "61d60eff219faa17140bde819de6b484815ec93e7cf85143ba5ac737988a8baf"
+  },
+  "parent": "c534ecc17e4c4a75f407f2c7cd9798036aa55103",
+  "source_hashes": {
+    "results/core_current_head_q115_covariant_first_jet/README.md": "74e9488fc741841e77ed5533c1347ec2b515b9285dfa30af48719bf60dfa2aed",
+    "results/core_current_head_q115_covariant_first_jet/audit.py": "eb3b62a0986108b77115e52a50eff03a1ee0822a05771fb808ad464f1abf4ffc",
+    "results/core_current_head_q115_covariant_first_jet/q115.py": "b8f4e17cc9edeaeba2b3adead80c9d36883d68ba6b92bbc46f536900e876d8ea",
+    "results/core_current_head_q115_covariant_first_jet/test_audit.py": "d7def4af8d6d9168746a86549630559bf0161232ce4c2cb3c717280737adb75e",
+    "results/core_current_head_q79_ambient_value_bridge/README.md": "2c3d1c9c510433e215ff6601c0aa246500d3d826765b4482b37803e23b17cc99",
+    "results/core_current_head_q96_sourced_response/README.md": "88d8f2015a587e65b0cb7bceff6d7420bea90938c1b0195d470791b2654e6665",
+    "results/core_tangent_propagator_closure/README.md": "4d2befdec9c9d81146a171ba0c195ae29ae3de339df19ba59781b9de37d5f181"
+  },
+  "status": "covariant-first-parameter-jet-and-harmonic-residence",
+  "symbolic": {
+    "all_high_jets_or_actual_source_certified": false,
+    "full_cone_pulse_residual_or_blowup": false,
+    "full_normal_source_and_moving_normal_retained": true,
+    "m2_residence_bound": "max(L,4/(3*dmin))",
+    "projected_jet": "w=Pi*partial_a u; partial_a u=w-h*(partial_a n dot u)",
+    "residence": "L if |m|=1 else min(L,1/((m^2-1)*dmin))",
+    "status": "covariant-first-parameter-jet-and-harmonic-residence"
+  }
+}
