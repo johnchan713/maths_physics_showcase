@@ -1,0 +1,29 @@
+{
+  "closure": {
+    "edges": 1198,
+    "nodes": 362,
+    "source_bindings": 5019
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q123_fixed_bump_diagonal/evidence.json": "3e598d68c0cefbc443b05ac37aa5aa9a7d1aa3f588c89588da802ba2f850982f"
+  },
+  "parent": "921cfa63cb051c6be7cefe3f0fb42247c15451f6",
+  "source_hashes": {
+    "results/background_summation/README.md": "1f2d37750821432fa04c1b0ca968d7d3db079c3cb6fb02c8ae4b82bc5639e8be",
+    "results/core_current_head_q124_full_pressure_discrepancies/README.md": "60d3792f92ea82477c8bf754acdb49574488433bb3f839a34824df61ab98e10a",
+    "results/core_current_head_q124_full_pressure_discrepancies/audit.py": "46bb608b18845694e0a6c699a33d5bd3dbc6e669cf77409749de17f3f34e4c9e",
+    "results/core_current_head_q124_full_pressure_discrepancies/q124.py": "53516f36e53ffc667eb5cb80b7a4e9daa97777786511f31489026310221c3041",
+    "results/core_current_head_q124_full_pressure_discrepancies/test_audit.py": "ca5f1808e6056a6eda451a5280369b4e200d403f2aa2f4eee4f4c7792956b0e2",
+    "results/higher_pressure_source_moments/README.md": "83a3deb3328f051fbd0ed3d11ba845c154fcbebac4b4d8331f219f9a2508b05a",
+    "results/higher_pressure_source_moments/moments.py": "76890a20d8c91654db41f5e6a4fea5bd74c87f47814f2eb0c655ce78c88850c0"
+  },
+  "status": "all-order-full-pressure-repair-discrepancy-bounds",
+  "symbolic": {
+    "actual_profile_support_scale_cone_pulse_residual_or_blowup_certified": false,
+    "all_five_full_pressure_discrepancies": true,
+    "ordinary_to_raw": "D_i <= m!*mu_i",
+    "reciprocal_angular_algebra": "R_m=4^(m+1)",
+    "shifted_viscosity": "16*R_m*R_(m+1)*(m+1+abs(beta-D))*(m+2+abs(beta))*|vprev|_(m+2)",
+    "status": "all-order-full-pressure-repair-discrepancy-bounds"
+  }
+}
