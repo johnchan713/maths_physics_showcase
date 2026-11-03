@@ -1,0 +1,39 @@
+{
+  "closure": {
+    "edges": 1208,
+    "nodes": 372,
+    "source_bindings": 5115
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q133_final_angular_gluing/evidence.json": "c1ab1a623e39b047ea44c26757003006d02e9b3c47cc7fe49cf9e908a1b1b57f"
+  },
+  "parent": "0c961aab0c7636c6bf71f75d741985a3b2f1c4eb",
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/core_current_head_q125_uniform_angular_first_seed/README.md": "746e8ce30f13346f9a5311a4970eec76b45affedffe20350adf0fac09cf4b9df",
+    "results/core_current_head_q133_final_angular_gluing/README.md": "7714de4284dc187fdf0167d15f43977c535d8a3faa533711b97226ce7f7fc115",
+    "results/core_current_head_q134_real_heat_gevrey/README.md": "5c18e2572ec119e733f5b17f5ecaf0701ecd34120aba982161e8a552fb3fa4e8",
+    "results/core_current_head_q134_real_heat_gevrey/audit.py": "88d25347cc17b818825b5906ec8f7a0a577e25251a8665ce48a0310989a0aca9",
+    "results/core_current_head_q134_real_heat_gevrey/q134.py": "0c4f5e596597cfc1e2db23f13b113be1c14e945812844fb2a71e8feec57b4bc6",
+    "results/core_current_head_q134_real_heat_gevrey/test_audit.py": "bad7eab47fc6a4a8b159ffd8f57c282c2603b935a94aa016fc5977999b9d3720",
+    "results/core_current_head_q76_heat_compensation_jets/README.md": "426c8dbb31d26041a18780028ca24d44e32c28096417e5d085e76eb6282aba02",
+    "results/core_current_head_q78_postpulse_heat_collar/README.md": "cec40cfbf8f308a54f1bf6258b9dc879f913f7278204d4873be9f3f44e79c265",
+    "results/global_swirl_envelope/README.md": "a899a23ab7f41d865b315f3fa6462758fcae4ae5e93df99de3e674be859d2758",
+    "results/root_foundation/README.md": "c0733b883447de163d8084c12a126155d64d3dfbf137c53120e3c6217c80f9a2"
+  },
+  "status": "real-heat-endpoint-Gevrey2-and-same-compensation-root",
+  "symbolic": {
+    "Gamma": "raw d_eta^m(H-1) <= (4h/X)*32^m*(m!)^2, one-sided at poles; no complex Gamma disk",
+    "actual_profile_gates_complete_F0_mixed_radial_scale_pulse_residual_or_blowup_certified": false,
+    "endpoint": "Gamma Z-Taylor coefficient ratio (m+h)(m+1+h)/(m+1) is unbounded at Z=0",
+    "historical_frozen_records_modified": false,
+    "infinite_tail": "Cp:16h eK^2/XK; S:32h eK^2; I:8sqrt(2)eK sqrt(XK), all times 64^m(m!)^2",
+    "multiplier": "raw d_eta^m((1+chi*(H-1))^2-1) <= (16h/X)*64^m*(m!)^2",
+    "next": "whole exterior F0 angular assembly, then axis/compact cover; Q125 needs F0 through m and U0 through m+2",
+    "pressure": "complete tail differences only; common incoming pressure and all other five traces persist locally",
+    "relative_patch": "raw correction <=30720000 e_star g*514^m*(m!)^2; also F0 since sqrt(2X)>=1",
+    "same_root": "m>=1 raw <=80000g*512^m*(m!)^2; m=0 retained 6400g; beta50 q100 g=h^4/Xstar",
+    "status": "real-heat-endpoint-Gevrey2-and-same-compensation-root",
+    "target": "component caps (400h^9,800h^9,40h^4)/Xstar; common Z=800h^4/Xstar, L=64"
+  }
+}

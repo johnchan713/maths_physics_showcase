@@ -1,0 +1,46 @@
+"""Q134 provenance replay; hashes and diagnostics are not continuum proofs."""
+import argparse
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import sys
+import q134
+HERE = Path(__file__).resolve().parent
+PROJECT = HERE.parent.parent
+PARENT = HERE.parent/'core_current_head_q133_final_angular_gluing'
+
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+
+def generate():
+    sys.path.insert(0,str(PARENT))
+    spec=importlib.util.spec_from_file_location('q134_parent',PARENT/'audit.py')
+    parent=importlib.util.module_from_spec(spec);spec.loader.exec_module(parent)
+    assert parent.generate()==json.loads((PARENT/'evidence.json').read_text())
+    seen=set(); counts={'nodes':0,'edges':0,'source_bindings':0}
+    def visit(path):
+        if path in seen:return
+        seen.add(path); counts['nodes']+=1
+        data=json.loads(path.read_text())
+        for name,digest in data.get('source_hashes',{}).items():
+            assert sha(PROJECT/name)==digest,name
+            counts['source_bindings']+=1
+        for name,digest in data.get('dependency_evidence_sha256',{}).items():
+            assert sha(PROJECT/name)==digest,name
+            counts['edges']+=1;visit(PROJECT/name)
+    visit(PARENT/'evidence.json')
+    paths=[HERE/n for n in ('README.md','q134.py','audit.py','test_audit.py')]
+    providers=('core_current_head_q76_heat_compensation_jets','core_current_head_q78_postpulse_heat_collar','root_foundation','global_swirl_envelope','annular_exterior_foundation','core_current_head_q125_uniform_angular_first_seed','core_current_head_q133_final_angular_gluing')
+    paths += [HERE.parent/n/'README.md' for n in providers]
+    return {'status':'real-heat-endpoint-Gevrey2-and-same-compensation-root',
+        'parent':'0c961aab0c7636c6bf71f75d741985a3b2f1c4eb','closure':counts,
+        'dependency_evidence_sha256':{'results/core_current_head_q133_final_angular_gluing/evidence.json':sha(PARENT/'evidence.json')},
+        'source_hashes':{str(p.relative_to(PROJECT)):sha(p) for p in paths},
+        'symbolic':q134.record()}
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('--output',required=True,type=Path);p.add_argument('--verify-record',type=Path)
+    a=p.parse_args();r=generate()
+    if a.verify_record:assert r==json.loads(a.verify_record.read_text())
+    with a.output.open('x') as f:json.dump(r,f,indent=2,sort_keys=True);f.write('\n')
+    print(r['status'],r['closure'])

@@ -182,6 +182,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q131_swirl_memory_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q132_exact_repair_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q133_final_angular_gluing/**
+      - research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -371,6 +372,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q131_swirl_memory_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q132_exact_repair_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q133_final_angular_gluing/**
+      - research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1419,6 +1421,10 @@ jobs:
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q133_final_angular_gluing/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q133_final_angular_gluing/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q133_final_angular_gluing/evidence.json --output q133_ci.json
 
+      - name: Recheck real heat endpoint jets and same compensation root
+        run: |
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q134_real_heat_gevrey/evidence.json --output q134_ci.json
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
 
