@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1192,
+    "nodes": 356,
+    "source_bindings": 4977
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q117_current_covariant_response/evidence.json": "49a5c8d08d5331ea4194dc86ec4455fb3cc37ababd63c40fad6a340315295208"
+  },
+  "parent": "21d2c754f19eeab8888209321d7423aeeedffeab",
+  "source_hashes": {
+    "results/core_background_finite_head_budget/budgets.py": "9d8588b820c9ff746caa057a905cd4cf77ff1f6be0263f0b4c33d148954e6fb2",
+    "results/core_current_head_q111_closed_chart_majorant/README.md": "228f25cb0d4e072091cbcd8b711c32c03a812173f1447c87ec205be06703d0fc",
+    "results/core_current_head_q118_background_phase_binding/README.md": "93a2ea0c2de954c498fe82ffc79c3e1603e3fb082b5a810077bd1be7c1f1277d",
+    "results/core_current_head_q118_background_phase_binding/audit.py": "91b02847d9851eece69a1b64610ca35582b9e30cc0100c285c44a0f6b464190e",
+    "results/core_current_head_q118_background_phase_binding/q118.py": "537f7ffa5989b1d068bc4045e36a70dd8f36f16ed01b0968631778b3ffab2538",
+    "results/core_current_head_q118_background_phase_binding/test_audit.py": "2e819267400ca4ea99f041814d8c836071d7ac7a8e4b3c33172fc773d7761f3b",
+    "results/core_phase_coefficient_budget/budgets.py": "95b1fe979265851d41dbd8c0237faea6007074b461db27fa0028c7e865b7506f"
+  },
+  "status": "current-full-background-phase-rate-and-linear-binding",
+  "symbolic": {
+    "Eik_bR_Bz_derived_from_full_background": true,
+    "actual_native_background_or_source_inputs_certified": false,
+    "complete_output_j_background_order": "j+4; Borel Euler cutoff j+5",
+    "forward_factorial_height": "486+2*N^2+N*B; fixed before all jets",
+    "full_cone_pulse_residual_or_blowup": false,
+    "normal_matrix_moving_normal_and_varying_profile_rate_derived": true,
+    "raw_R_to_common_U_to_R_transfers_retained": true,
+    "status": "current-full-background-phase-rate-and-linear-binding"
+  }
+}
