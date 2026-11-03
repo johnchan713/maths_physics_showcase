@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1206,
+    "nodes": 370,
+    "source_bindings": 5090
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q131_swirl_memory_gevrey/evidence.json": "74c7f5d9ccb006615354d1f3ab5ea6cfe3cbeb8603df629ba261dc6ccfac88a1"
+  },
+  "parent": "604d4566f6b9153bd1dcbab694a82d5a18d2bb28",
+  "source_hashes": {
+    "results/core_current_head_q122_positive_order_repair/README.md": "2140de6aa052226ac719d2fef8223d580334891fc18a830c2f8c0d58efa15169",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q131_swirl_memory_gevrey/q131.py": "661e66d471e9fa571918b88034008d611f855eac24fbf55289a83f1d9519a793",
+    "results/core_current_head_q132_exact_repair_gevrey/README.md": "0e029fcd984fc8c7a9344740397508a883759cfd3ab5ad39de82712eb36ad34a",
+    "results/core_current_head_q132_exact_repair_gevrey/audit.py": "6a8c1c3a6f17336e3039fa687850f75f189735c9f8d352d5a2054aed0817d514",
+    "results/core_current_head_q132_exact_repair_gevrey/q132.py": "90ee453459604c116d76dc96137fe732a3ad309139e77a8ec723315f280f2f64",
+    "results/core_current_head_q132_exact_repair_gevrey/test_audit.py": "ce557fecf006f79aa2fa08a7c628377e86c9e5c5fce387e6116f959f5fce95e9",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/repair_state_bounds/README.md": "163dce199a65acd22ef68ee7d906a112c1f8dbcb698000f40df848a424af8a4c",
+    "results/stress_realization_audit/repair.py": "68e1bf778757ffc31d74ef84c54f21a3bfe25d677a3655bd04a5c1905f3c9d12"
+  },
+  "status": "closed-Gevrey3-normalization-and-same-leading-quadratic-repair",
+  "symbolic": {
+    "actual_target_gates_final_field_cone_pulse_residual_or_blowup_certified": false,
+    "memory": "all five baseline target defects AND all five incoming modulation differences retained",
+    "normalization": "M/(rho*e), I/(sqrt(2)*rho^(3/2)*e), J/(sqrt(2)*rho^(3/2)*e^2), S/(rho*e^2), Pi/e^2; transformed (m,(m-j)/lambda,i,-s,cp)",
+    "polynomial_costs": "5/e_star for 1/e, 25/e_star^2 for 1/e^2; inverse lambda retained",
+    "root": "positive jets <= (2*beta*Z)*[8*L*max(1,8*(2*beta)^2*q*Z)]^m*(m!)^3",
+    "scope": "SAME accepted leading constant-B,Q root; not the earlier eta-dependent root or positive-order linear repair",
+    "slow_analytic_extension_claimed": false,
+    "status": "closed-Gevrey3-normalization-and-same-leading-quadratic-repair"
+  }
+}
