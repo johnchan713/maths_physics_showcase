@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q112:** [Closed raw radial profile majorants](results/core_current_head_q112_raw_profile_majorants/README.md) proves all-order raw e=0 power bounds and a moving-cutoff majorant in the original shape jets. Slow motion and three source-side factorials remain explicit; actual shape/source inputs and the A0 gain are not certified.
+
 > **Q111:** [Closed same-hull chart majorants](results/core_current_head_q111_closed_chart_majorant/README.md) proves all-order closed R/U transfer factors and binds them to Q110’s current hull without materializing giant factorials. Both source factorials and the old raw-kernel/high-jet gates remain; no actual radial gain is certified.
 
 > **Q110:** [Current radial tail request audit](results/core_current_head_q110_radial_tail_request/README.md) binds the reduced A0 source to all six final means, separates the scalar component, and audits the full high-jet/common-pole/chart request. A low-output archive cannot certify the radial gain; actual tail inputs and full cone closure remain unproved.

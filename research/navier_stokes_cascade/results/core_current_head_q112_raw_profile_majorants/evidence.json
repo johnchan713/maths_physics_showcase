@@ -1,0 +1,31 @@
+{
+  "closure": {
+    "edges": 1186,
+    "nodes": 350,
+    "source_bindings": 4935
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q111_closed_chart_majorant/evidence.json": "1453ea2d26e3c54bdd17e2842e14e47f6ab8c8b0f576be298ba20ec04fe7a0ed"
+  },
+  "parent": "ec0141cbcf42074bb55c227eada4129987aa0f30",
+  "source_hashes": {
+    "results/core_current_head_q112_raw_profile_majorants/README.md": "c168465b29d27f1d257300ab9033470b8d0683db6d7c628cca6ddc1dc06c4991",
+    "results/core_current_head_q112_raw_profile_majorants/audit.py": "d251e0bac10ce2ffc2fe569c1bed9f83a6fc2bcecd4b272a09ff43a72f2940a5",
+    "results/core_current_head_q112_raw_profile_majorants/q112.py": "d8c44ee0b179ad910c2ab5633770e0584e4d9f72a935d357b530b5276fed1577",
+    "results/core_current_head_q112_raw_profile_majorants/test_audit.py": "cdfc185db5f68f7840885de2cb6e1dcc814b7ec030b97adc7ca617b85d6ec133",
+    "results/core_current_head_q44_radial_multipliers/radial.py": "96ba90c9accdb5d99ad789badc6721ce97a46d83938fee4da4273e0ffe1f7a4f",
+    "results/core_current_head_q46_moving_cutoff/moving.py": "edbe8acecd707fdf5a994d72ea852e428e6c2f0469a891760e21ff8cb63f0e0f",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176"
+  },
+  "status": "closed-raw-radial-power-and-moving-cutoff-majorants",
+  "symbolic": {
+    "actual_shape_source_or_A0_gain_certified": false,
+    "f0_and_k0": "3*max(1,Rmin^-2,Rmax^2)*N!*(3/Umin)^N",
+    "full_cone_pulse_residual_or_blowup": false,
+    "giant_profile_factors_materialized": false,
+    "moving_chi": "N!*[512*(1+Xb)/Umin]^N*sum(shape[0:N+1])",
+    "original_shape_and_slow_motion_retained": true,
+    "source_factorial_multiplicity_including_f0": 3,
+    "status": "closed-raw-radial-power-and-moving-cutoff-majorants"
+  }
+}
