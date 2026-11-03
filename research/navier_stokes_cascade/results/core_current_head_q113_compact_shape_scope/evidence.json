@@ -1,0 +1,32 @@
+{
+  "closure": {
+    "edges": 1187,
+    "nodes": 351,
+    "source_bindings": 4942
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q112_raw_profile_majorants/evidence.json": "14da4407287f120b45640c0c42e16e989777b8561802c4bb340e3632d297c37d"
+  },
+  "parent": "7d98b37952bbb282a44c00478e647a8a1ce3e1e9",
+  "source_hashes": {
+    "results/compact_mean_corrections/README.md": "ae135ad88b0e23e782b27bc1a05cf550f62130630daec49db8941b7d6e817774",
+    "results/core_borel_cutoff_certificate/README.md": "3730d55541fe4a24f2dbb010ef27899bbbb57aa18f9f08abb90515546fef2c63",
+    "results/core_current_head_q113_compact_shape_scope/README.md": "a50731803040c2806090c37d0ee06ff76e33cf2827052e243f878bcea5b1d99f",
+    "results/core_current_head_q113_compact_shape_scope/audit.py": "22cd6590fd2904b1f00eef08ed6f01a589407d15a85823625cabe010a6c222c6",
+    "results/core_current_head_q113_compact_shape_scope/q113.py": "24c169216c58b07daf988eae09f6f46f755a489b364d62bd48eabc3cb0a7b803",
+    "results/core_current_head_q113_compact_shape_scope/test_audit.py": "65c7ffacf5cee28fc21561659d991e73c6fc55acaa0afd8c504fe2b2714c1a9d",
+    "results/core_current_head_q30_fixed_support_join/README.md": "3005d7d6cb917a970a1ff85ec9a0f18b2a13f513934629e4fc130d4b22448069",
+    "results/core_current_head_q66_cutoff_amplitude/README.md": "1f51fa10b9324b2e8f9e5ef488d2786ea43a6e5d437ead73996452980c27bac7"
+  },
+  "status": "compact-shape-identity-and-fixed-order-uniformity-audit",
+  "symbolic": {
+    "actual_numeric_shape_or_high_jet_source_certified": false,
+    "borel_or_variance_substitution_rejected": true,
+    "finite_constants_depend_on_selected_shape_and_order": true,
+    "full_cone_pulse_residual_or_blowup": false,
+    "geometry_alone_gives_no_numeric_derivative_bound": true,
+    "original_cutoff_unchanged": true,
+    "qualitative_profile_finiteness_already_follows_from_original_fixed_smooth_choice": true,
+    "status": "compact-shape-identity-and-fixed-order-uniformity-audit"
+  }
+}
