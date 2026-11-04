@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1213,
+    "nodes": 377,
+    "source_bindings": 5167
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q138_mixed_modulation_pullback/evidence.json": "83a0c017724e79f24457823fc51c2b443b6515a1068398305013c762295c0a5c"
+  },
+  "parent": "0eb03e5b3cd6a87e1a81d9212de71ae58da3e2c0",
+  "source_hashes": {
+    "results/core_current_head_q129_moving_inverse_gevrey/README.md": "3046560a412ed34bdc63bb4e0c5942a2099b88af407dcbdb2566b40903f78a5d",
+    "results/core_current_head_q130_mixed_loop_binding/README.md": "c3c71444a763c3d1c6106b7b9c21fa53eeadff55906d658a0929e34def30bba7",
+    "results/core_current_head_q138_mixed_modulation_pullback/README.md": "df4fe63b2cfc0933e39b0fe48f61f81a0548c49d246eb2303368c4421d3a3f6e",
+    "results/core_current_head_q139_mixed_primitive_binding/README.md": "9aa2a5df9657171a5307e149a17a3299b3b7262dcab84d491545463364a6af25",
+    "results/core_current_head_q139_mixed_primitive_binding/audit.py": "27f22714d41282cf563b837db301cdcc206341a6e713e28896cf3e6d421f371a",
+    "results/core_current_head_q139_mixed_primitive_binding/q139.py": "065cbb97003918f24a48d4576dcf4bf9724de59942075d0199aa00baad68a4bd",
+    "results/core_current_head_q139_mixed_primitive_binding/test_audit.py": "6ff1000cb92f0da3eef37f6bb98dc36e75fe40c26980080af1dfb7220c63ae14",
+    "results/core_current_head_q64_fast_phase_radius/README.md": "b44f0fc7f0459a68dbf3cfc64c0eba4c6ba74f2aceed07b678355c78612b140f",
+    "results/core_current_head_q65_signed_root_radius/README.md": "ebc66c482d18e6a09a39e9edf5ef7528c96f4e755c60c181beb1b0c679758890",
+    "results/core_current_head_q66_cutoff_amplitude/README.md": "1f51fa10b9324b2e8f9e5ef488d2786ea43a6e5d437ead73996452980c27bac7"
+  },
+  "status": "six-mixed-scalar-jets-to-fixed-origin-mixed-primitives",
+  "symbolic": {
+    "actual_complete_profile_pulse_covariance_residual_or_blowup_certified": false,
+    "historical_frozen_records_modified": false,
+    "inverse": "fixed-origin phase, complex scalar/phase perturbations; Lipschitz<1/16, image<t/2",
+    "joint": "d=1/(8G^2); t=min(r/4,dr/(64W)); s=min(r/4,dtr/(768W)); delta=d*t/8",
+    "mixed": "M=6F, A=8Ay(1+H/s), B=8Be(1+H/s), C=delta^-1; raw <=M A^i B^k(i!k!)^3 j!C^j",
+    "next": "bind actual mixed six-scalar jets from PREMOD state/cutoff/signed-root, then apply Q138 and join whole hull",
+    "pressure": "p is full p2 with incoming Pi/Pi_eta; v is augmented variance; original weighted means retained on actual real profile",
+    "primitive": "fixed integrals over [0,1] define analytic extension of original primitive with cap3F; no off-constraint periodicity premise",
+    "scalar_input": "sum of raw six-scalar jets/(i!k!) <= H Ay^i Be^k(i!k!)^2; all genuine mixed orders required",
+    "status": "six-mixed-scalar-jets-to-fixed-origin-mixed-primitives"
+  }
+}

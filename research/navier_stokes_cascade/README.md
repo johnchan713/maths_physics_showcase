@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q139:** [Mixed primitive binding](results/core_current_head_q139_mixed_primitive_binding/README.md) derives the Q138 mixed fixed-phase primitive input from six actual mixed scalar jets, via a joint scalar/phase inverse and the unchanged fixed integrals. Mean identities are required on the actual real profile, not independent complex inputs. Actual mixed state/root data, whole-hull joins and physical-scale gates remain open.
+
 > **Q138:** [Mixed Ny modulation envelope](results/core_current_head_q138_mixed_modulation_pullback/README.md) derives conditional mixed carrier/exponential and ordinary-X bounds, then joins the unchanged full-pressure repair. The radial base retains N. Actual mixed primitive/PREMOD inputs, whole-hull joins and physical-scale gates remain open.
 
 > **Q137:** [Physical repair mixed jets](results/core_current_head_q137_physical_repair_mixed/README.md) sharpens the same leading repair to a closed ordinary-X/eta Gevrey-3 bound, retaining inverse radii and full pressure-target premises. Its tuple contribution includes the entire axis primitive. Actual mixed moving-modulation bounds and all complete-profile/physical-scale gates remain open.
