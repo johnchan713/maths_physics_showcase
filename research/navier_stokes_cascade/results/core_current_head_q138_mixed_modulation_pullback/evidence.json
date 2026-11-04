@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1212,
+    "nodes": 376,
+    "source_bindings": 5157
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q137_physical_repair_mixed/evidence.json": "f89a9f4388fc6acefb1d4a3e6c3efbc6c3a33cdda6560ec51b78c38bb2acd783"
+  },
+  "parent": "bde05bc8d97198b7bb664b954c0f37845710ea77",
+  "source_hashes": {
+    "results/core_current_head_q121_all_order_radial_tuple/README.md": "794effc8375eae02482502078b485c94f187e0ea921d0f3270829e6f69801457",
+    "results/core_current_head_q129_moving_inverse_gevrey/README.md": "3046560a412ed34bdc63bb4e0c5942a2099b88af407dcbdb2566b40903f78a5d",
+    "results/core_current_head_q130_mixed_loop_binding/README.md": "c3c71444a763c3d1c6106b7b9c21fa53eeadff55906d658a0929e34def30bba7",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q137_physical_repair_mixed/README.md": "063f5484270f2c3c507deba016bbec9c4e2c0e18d550e0ffd4f3637d2e854d16",
+    "results/core_current_head_q138_mixed_modulation_pullback/README.md": "df4fe63b2cfc0933e39b0fe48f61f81a0548c49d246eb2303368c4421d3a3f6e",
+    "results/core_current_head_q138_mixed_modulation_pullback/audit.py": "61c99fdce7884c27da0c59e5f84c53fc796e6b2b5cf566bcb9d7dc8c40ce5222",
+    "results/core_current_head_q138_mixed_modulation_pullback/q138.py": "f60b602a67df25396d95a27ee4314bdd063f1c8dc47c6da5fd01159380f0116b",
+    "results/core_current_head_q138_mixed_modulation_pullback/test_audit.py": "52865f511309c1c08de061698cb66cff525360a9719249de4629c001bf2d2359",
+    "results/core_current_head_q64_fast_phase_radius/README.md": "b44f0fc7f0459a68dbf3cfc64c0eba4c6ba74f2aceed07b678355c78612b140f"
+  },
+  "status": "mixed-Ny-pullback-exponential-and-physical-modulation-envelope",
+  "symbolic": {
+    "actual_complete_profile_cone_pulse_covariance_residual_or_blowup_certified": false,
+    "exponential": "value gate |P|<=V0<=N; exp pref9, difference pref9max(V0,M)/N; bases 8(1+M/N)*(A+C*N,B)",
+    "historical_frozen_records_modified": false,
+    "input": "fixed-zeta primitive raw (i,k,j) <= M A^i B^k(i!k!)^3 j! C^j; actual mixed data, not Q129 angular data",
+    "ordinary_X": "raw log pref P R^r K^k(r!k!)^3 becomes P[(1+R)/xmin]^r K^k(r!k!)^3",
+    "pullback": "P(y,eta,Ny)/N raw <= (M/N)(A+C*N)^r B^k(r!k!)^3",
+    "radial_O_inverse_N_claimed": false,
+    "remaining": "bind actual mixed slow primitive and PREMOD jets, then join all regions/axis primitive and verify original gates/scales",
+    "repair": "add Q137 ordinary mixed prefactors and take max bases, retaining full five-row pressure target",
+    "status": "mixed-Ny-pullback-exponential-and-physical-modulation-envelope"
+  }
+}

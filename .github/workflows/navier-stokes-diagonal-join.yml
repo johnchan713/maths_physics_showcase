@@ -186,6 +186,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q135_exterior_swirl_angular/**
       - research/navier_stokes_cascade/results/core_current_head_q136_global_swirl_angular/**
       - research/navier_stokes_cascade/results/core_current_head_q137_physical_repair_mixed/**
+      - research/navier_stokes_cascade/results/core_current_head_q138_mixed_modulation_pullback/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -379,6 +380,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q135_exterior_swirl_angular/**
       - research/navier_stokes_cascade/results/core_current_head_q136_global_swirl_angular/**
       - research/navier_stokes_cascade/results/core_current_head_q137_physical_repair_mixed/**
+      - research/navier_stokes_cascade/results/core_current_head_q138_mixed_modulation_pullback/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1445,6 +1447,11 @@ jobs:
         run: |
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q137_physical_repair_mixed/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q137_physical_repair_mixed/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q137_physical_repair_mixed/evidence.json --output q137_ci.json
+
+      - name: Check mixed Ny modulation and original exact repair join
+        run: |
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q138_mixed_modulation_pullback/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q138_mixed_modulation_pullback/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q138_mixed_modulation_pullback/evidence.json --output q138_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

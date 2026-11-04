@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q138:** [Mixed Ny modulation envelope](results/core_current_head_q138_mixed_modulation_pullback/README.md) derives conditional mixed carrier/exponential and ordinary-X bounds, then joins the unchanged full-pressure repair. The radial base retains N. Actual mixed primitive/PREMOD inputs, whole-hull joins and physical-scale gates remain open.
+
 > **Q137:** [Physical repair mixed jets](results/core_current_head_q137_physical_repair_mixed/README.md) sharpens the same leading repair to a closed ordinary-X/eta Gevrey-3 bound, retaining inverse radii and full pressure-target premises. Its tuple contribution includes the entire axis primitive. Actual mixed moving-modulation bounds and all complete-profile/physical-scale gates remain open.
 
 > **Q136:** [Whole leading F0 angular assembly](results/core_current_head_q136_global_swirl_angular/README.md) joins conditional regular-axis, finalized compact modulation/repair and whole exterior bounds with explicit cover and order guards. It pairs F0 order m with finalized U0 order m+2. Actual profile/gate binding, mixed radial and physical pulse estimates remain open.
