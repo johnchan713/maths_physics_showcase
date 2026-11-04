@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1211,
+    "nodes": 375,
+    "source_bindings": 5147
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q136_global_swirl_angular/evidence.json": "16f7237c4654bd493673ff572ee2af5d6229fb76123b915eb52511f5fd7c277d"
+  },
+  "parent": "31ef905aa7183a9b87ba34ccda23e4c3eebdf0fb",
+  "source_hashes": {
+    "results/core_current_head_q121_all_order_radial_tuple/README.md": "794effc8375eae02482502078b485c94f187e0ea921d0f3270829e6f69801457",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q132_exact_repair_gevrey/README.md": "0e029fcd984fc8c7a9344740397508a883759cfd3ab5ad39de82712eb36ad34a",
+    "results/core_current_head_q136_global_swirl_angular/README.md": "8e63f13e60357faff8b1266682d7785cd60bded0783a2c76c29b9f20e7b3775c",
+    "results/core_current_head_q137_physical_repair_mixed/README.md": "063f5484270f2c3c507deba016bbec9c4e2c0e18d550e0ffd4f3637d2e854d16",
+    "results/core_current_head_q137_physical_repair_mixed/audit.py": "c6f087d7018ab927dffa6ea7c69be4021b96e6e389dc6620de8eb397c77a31d3",
+    "results/core_current_head_q137_physical_repair_mixed/q137.py": "a312ac13cd01f94888c92ca958ce1352ccb2b2d2e14af699ced6a06c367c9292",
+    "results/core_current_head_q137_physical_repair_mixed/test_audit.py": "7deeea737da64c0866d483a732e0099542e20a99cd422acc01e0941e8b340503",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q70_shape_annulus_mixed/README.md": "5b1728180c534479bb3554343eb5e5db05714bdcc7c41a5971d80d0d24bb75d7"
+  },
+  "status": "physical-leading-repair-mixed-Gevrey3-and-radial-obligation",
+  "symbolic": {
+    "Stirling": "sum_k |s(r,k)| D^k((k+1)!)^3 <= [8(1+D)]^r(r!)^3, D>=1; r=0 included",
+    "actual_complete_profile_cone_pulse_covariance_residual_or_blowup_certified": false,
+    "historical_frozen_records_modified": false,
+    "next": "actual mixed derivatives of compact moving modulation, then all other regions on same hull; bind low-order gates and scales",
+    "obstruction": "angular-only bounds do not control radial jets: a*sin(MX) independent of eta has fixed angular norm but radial derivative a*M",
+    "physical_EU": "A*P*[8(1+D)/xmin]^r*K^k*(r!k!)^3; A=162*32600, D=32600",
+    "physical_F": "multiply prefactor by max(1,xmin^-1), radial base becomes [8(1+D)+1]/xmin",
+    "pressure": "same full five-row target and accepted root remain; a local U plateau does not erase primitive or pressure memory",
+    "raw_total": "Pkind*max(1,Rkind,K)^m*(m!)^3; U needs m+1 for Q121 primitive",
+    "status": "physical-leading-repair-mixed-Gevrey3-and-radial-obligation"
+  }
+}

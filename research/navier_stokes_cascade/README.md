@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q137:** [Physical repair mixed jets](results/core_current_head_q137_physical_repair_mixed/README.md) sharpens the same leading repair to a closed ordinary-X/eta Gevrey-3 bound, retaining inverse radii and full pressure-target premises. Its tuple contribution includes the entire axis primitive. Actual mixed moving-modulation bounds and all complete-profile/physical-scale gates remain open.
+
 > **Q136:** [Whole leading F0 angular assembly](results/core_current_head_q136_global_swirl_angular/README.md) joins conditional regular-axis, finalized compact modulation/repair and whole exterior bounds with explicit cover and order guards. It pairs F0 order m with finalized U0 order m+2. Actual profile/gate binding, mixed radial and physical pulse estimates remain open.
 
 > **Q135:** [Whole exterior swirl angular envelope](results/core_current_head_q135_exterior_swirl_angular/README.md) joins the same heat/angular roots, scalar schedule and terminal factors into a conditional Gevrey-2 leading E0/F0 bound on all X>=Xstar. Actual axis/final compact F0 covers, mixed radial and physical pulse estimates remain open.
