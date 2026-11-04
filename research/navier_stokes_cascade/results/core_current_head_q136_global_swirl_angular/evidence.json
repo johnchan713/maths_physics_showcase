@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1210,
+    "nodes": 374,
+    "source_bindings": 5136
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q135_exterior_swirl_angular/evidence.json": "5e2b40dc995c52feb025c99613ce5277315150b65621298c3fe314e72c42d1c0"
+  },
+  "parent": "3b1cbefc91263d851ae0bf27d31f4bf5ffb9c434",
+  "source_hashes": {
+    "results/collar_operator_envelope/README.md": "4afac9f2f93f93c59dc93644694e87059319474ba964f2e12d7027e09833384a",
+    "results/core_current_head_q125_uniform_angular_first_seed/README.md": "746e8ce30f13346f9a5311a4970eec76b45affedffe20350adf0fac09cf4b9df",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q132_exact_repair_gevrey/README.md": "0e029fcd984fc8c7a9344740397508a883759cfd3ab5ad39de82712eb36ad34a",
+    "results/core_current_head_q133_final_angular_gluing/README.md": "7714de4284dc187fdf0167d15f43977c535d8a3faa533711b97226ce7f7fc115",
+    "results/core_current_head_q135_exterior_swirl_angular/README.md": "3552c7eab03896dca9e033c36cb19d73d2524a9e8e3ec20c964e625698226dce",
+    "results/core_current_head_q136_global_swirl_angular/README.md": "8e63f13e60357faff8b1266682d7785cd60bded0783a2c76c29b9f20e7b3775c",
+    "results/core_current_head_q136_global_swirl_angular/audit.py": "704e4f418d598bc6ed5093b0fc7a39d0696f99c5b3e148f8bff17cf44c8be471",
+    "results/core_current_head_q136_global_swirl_angular/q136.py": "1d56cb6dea6620eb836918ab46190bb4266e87bc516844a50c4b4c540d3d0069",
+    "results/core_current_head_q136_global_swirl_angular/test_audit.py": "e33a038c2a33affbf9698438a891c0b859b3e0700abc6d08e7440fdb055a3c44",
+    "results/global_axial_angular_bound/README.md": "3bce78996e4ad9d30d4743e24cc3e03bf317e0648c2a3a9b3623c50354e152c5"
+  },
+  "status": "regular-axis-final-compact-and-exterior-F0-angular-assembly",
+  "symbolic": {
+    "actual_profile_cone_pulse_covariance_residual_or_blowup_certified": false,
+    "axis": "regular F0 cap K(ell_axis) on same strip: K*sum delta^-j; never E/sqrt(2X) at zero",
+    "compact": "PF=max(1,xmin^-1)*(Q131_E_pref+B0*Q132_field_pref), B=max(two bases); PF*sum B^j*(j!)^2",
+    "first": "Q125 F0 through m and finalized U0 through m+2; no source/collar or mixed-radial proof follows",
+    "geometry": "axis_end>=compact xmin>0, compact xmax>=Xstar>=100; all same actual profile",
+    "historical_frozen_records_modified": false,
+    "pressure": "Q132 full baseline and all five incoming moment defects remain premises; no pressure reset",
+    "status": "regular-axis-final-compact-and-exterior-F0-angular-assembly",
+    "whole": "intended pointwise-X factorial norm bounded by regional max; no stronger global-supremum sum claim"
+  }
+}
