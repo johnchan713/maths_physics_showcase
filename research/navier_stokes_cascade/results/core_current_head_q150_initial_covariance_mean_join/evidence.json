@@ -1,0 +1,38 @@
+{
+  "closure": {
+    "edges": 1231,
+    "nodes": 388,
+    "source_bindings": 5288
+  },
+  "dependency_evidence_sha256": {
+    "results/complete_covariance_initial_means/evidence.json": "64d6891cdfd7e17bcb6ff8d50eef18c8e1ecbebf5a2f122c0a1ef49870060def",
+    "results/core_covariance_mean_recheck/evidence.json": "9b1a537103af67765fca3c9fae1d98cf4df6e245883ebc8da99d4ec8d42f31f7",
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_dynamic_mean_recheck/evidence.json": "a596e24dbfcde596d56f5dcc6e12b00bfef14002bffb7e7057f9841cd8c4aa53",
+    "results/core_multiharmonic_mean_residual_budget/evidence.json": "4ea6be333f15c655b9fab917812ef49a63c43f6901bcdc095cb285d1427dbc25"
+  },
+  "parent": "dd7aa09ebc33f588e165b3b3b61bc62a87afe3a2",
+  "source_hashes": {
+    "results/complete_covariance_initial_means/README.md": "c0c0ed167bc7bf84e5b48c1a2e360b7080c2892d88390c00a5d6cfbbcfccef0d",
+    "results/core_covariance_mean_recheck/README.md": "c0a0d6d1e3192f4a40819ac9b6c67a8a2c660f11c85144c8aebe168b788eb6d5",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q150_initial_covariance_mean_join/README.md": "44fc37e4ab21a460bf6a41c6dd9a5b27703d087a08e3c02d48e41dd1128e25c3",
+    "results/core_current_head_q150_initial_covariance_mean_join/audit.py": "6873792b4003f1fccd4bc4e47c0ca586f38d16c9c344fa246130b053b991dc97",
+    "results/core_current_head_q150_initial_covariance_mean_join/q150.py": "48ec55720297921e5f8240767ce89cc9b1faea68ffbd728e1e84e18503930b5e",
+    "results/core_current_head_q150_initial_covariance_mean_join/test_audit.py": "d28510c80a8d25c7960d24b97b488a6c2db90a39daa86bff0d13f2ce9a6cc0a8",
+    "results/core_dynamic_mean_recheck/README.md": "c7cda93205da899ca463a946c50eb50f667c0fa73937b88991e131f7fdc47c4c",
+    "results/core_multiharmonic_mean_residual_budget/README.md": "f4acf4b0c2d33086d8ebb6917fd120462bb16aba145844ff65d3789995cffd5f"
+  },
+  "status": "Q149-uniform-primary-initial-complete-covariance-mean-correction-joined",
+  "symbolic": {
+    "blowup_certified": false,
+    "correction": "the initial complete covariance/mean step was already audited; Q149's negative absolute power is canceled there by exact six-entry covariance, compact pressure and zero-Haar identities",
+    "established": "on Q149's uniform physical primary family, the initial fast/slow mean update retains axial velocity, both pressure tails and moving pressure, gives recomputed P,Jtheta,Jz in S2, and bounds the angular-mean residual by M_(2-3kappa) plus flat errors",
+    "historical_frozen_records_modified": false,
+    "later_signed_dynamic_cycle_or_complete_residual_certified": false,
+    "next": "prove that actual feedback inequality, or its stated sharper post-wave row/scalar sufficient bounds, while retaining complete zero-mode pressure, axial moments, supports, viscosity, cutoffs and all interactions",
+    "obstruction": "the first open later-cycle estimate is the actual fresh mean/current-wave feedback inequality at D=3/2-2kappa; the available coarse order B=1-kappa misses D by 1/2-kappa",
+    "scope": "the initial zero-old-mean stage only; later signed waves have nonzero old means and changing covariances, so the initial cancellation cannot be reused",
+    "status": "Q149-uniform-primary-initial-complete-covariance-mean-correction-joined"
+  }
+}
