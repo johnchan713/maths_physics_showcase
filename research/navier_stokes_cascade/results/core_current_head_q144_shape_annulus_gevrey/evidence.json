@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1218,
+    "nodes": 382,
+    "source_bindings": 5213
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q143_post_taper_gevrey/evidence.json": "69966ae807a2dafb93fafaea00b4e7641fbcf774b900de5c7ddbdea2cf39d1c7"
+  },
+  "parent": "b3d49e6478b3b8475f9d7f58749d426acf796559",
+  "source_hashes": {
+    "results/core_current_head_q127_annular_radius_axis/README.md": "ec5941589ea2af28460da30b5461dc58eb28a6ca18350e56787d953b16f332bf",
+    "results/core_current_head_q140_four_to_six_mixed_binding/README.md": "a12493e356e2ecaa86a24012c06b82b5e47f4d817580e3a1e61f4b546d7ef475",
+    "results/core_current_head_q143_post_taper_gevrey/README.md": "1c81b2dc90d95cc83b37661015ceb0b7580fee8a83c3c26ca7f08df0dde67806",
+    "results/core_current_head_q144_shape_annulus_gevrey/README.md": "f7187c169f9f26e4c661727f385bde3d121b1a52dc9cdd0577abc880286b2592",
+    "results/core_current_head_q144_shape_annulus_gevrey/audit.py": "93b43becb802ca2ce9e1944bfb0d97ffb340fccefbb21f2feddfe51ccb059633",
+    "results/core_current_head_q144_shape_annulus_gevrey/q144.py": "0dbbc901a3102b7d13f25fbc17ccb1c99327c4315cc1d8c42929763859bc6a3b",
+    "results/core_current_head_q144_shape_annulus_gevrey/test_audit.py": "36e53c2e52a3020ec85e81b5a8656e6955b929c780486a6875818bdcbac8ff40",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q67_premod_memory/README.md": "7c45f872f0894554ce66cd1d76749b6ba3bbb11884df29d5dc9237cfffdf7caa",
+    "results/core_current_head_q70_shape_annulus_mixed/README.md": "5b1728180c534479bb3554343eb5e5db05714bdcc7c41a5971d80d0d24bb75d7",
+    "results/core_current_head_q73_annular_target_all_orders/README.md": "54498a7f0a0fa9532cd3ac342272b791a47e33a2d762d640c1ab6a08c700f59b"
+  },
+  "status": "shape-annulus-mixed-Gevrey3-recurrence-and-positive-shear-floor",
+  "symbolic": {
+    "actual_complete_profile_pulse_covariance_residual_or_blowup_certified": false,
+    "blocking_inequality": "bind the same-profile complex value caps, G>=max(2,|mu|,|p2|,|mu*p2|), Eexp>=exp(G), and V0<=N before Q140-Q138",
+    "correction": "Q70 real first-derivative bounds give a shape floor 1298/3125 and the accepted earlier root gives a larger annular floor",
+    "floor": "a>=min(1298/3125,4/5,144709422735784/195312499997855)=1298/3125",
+    "historical_frozen_records_modified": false,
+    "memory": "all five actual Q143 moment rows are reintegrated; p2 retains Pi and Pi_eta",
+    "mixed": "Q143 endpoint plus Q70 explicit shape/restoration and Q127 same-root radius give fixed y/eta Gevrey-3 envelopes",
+    "status": "shape-annulus-mixed-Gevrey3-recurrence-and-positive-shear-floor"
+  }
+}

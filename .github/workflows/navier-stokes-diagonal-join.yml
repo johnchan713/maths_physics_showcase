@@ -192,6 +192,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q141_short_taper_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q142_short_taper_order_zero/**
       - research/navier_stokes_cascade/results/core_current_head_q143_post_taper_gevrey/**
+      - research/navier_stokes_cascade/results/core_current_head_q144_shape_annulus_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -391,6 +392,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q141_short_taper_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q142_short_taper_order_zero/**
       - research/navier_stokes_cascade/results/core_current_head_q143_post_taper_gevrey/**
+      - research/navier_stokes_cascade/results/core_current_head_q144_shape_annulus_gevrey/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1487,6 +1489,11 @@ jobs:
         run: |
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q143_post_taper_gevrey/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q143_post_taper_gevrey/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q143_post_taper_gevrey/evidence.json --output q143_ci.json
+
+      - name: Check shape and earlier annular mixed recurrence
+        run: |
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q144_shape_annulus_gevrey/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q144_shape_annulus_gevrey/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q144_shape_annulus_gevrey/evidence.json --output q144_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
