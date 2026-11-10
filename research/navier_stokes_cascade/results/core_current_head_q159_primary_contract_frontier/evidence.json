@@ -1,0 +1,117 @@
+{
+  "P2": {
+    "analytically_discharged": true,
+    "coefficient_bound": "C_(n,m) q^(nh)<2^(-n) on q<=a_n^(-1)",
+    "coefficient_quantifier": "for every fixed n and m<=n, C_(n,m)<infinity before b_n=log a_n is chosen",
+    "complete_pressure_and_cutoff_curl_retained": true,
+    "new_profile_or_scale_sequence_selected": false,
+    "object": "Q147 finalized profile, its rule-defined real Borel background, and Q149 inherited physical primary family",
+    "potential": "C_ab Q^(-a sx-b st) S^B sqrt(zeta) delta^(-B) P",
+    "pressure": "C_ab Q^(-(a+2)sx-b st) S^B sqrt(zeta) delta^(-B) P",
+    "pulse_quantifier": "one derivative-independent later band ell0; for every fixed physical (a,b), finite constants uniform over every used ell>=ell0 and label",
+    "scale_rule": "b_n>1+max(b_(n-1)+log2,B+log2,(log C_(n,m)+n log2)/(nh), all physical rows)",
+    "support": "fixed closed transverse/time supports; potential curls do not enlarge support; smooth zero extension and one-sided q=0 background jets",
+    "velocity": "C_ab Q^(-(a+1)sx-b st) S^B sqrt(zeta) delta^(-B) P"
+  },
+  "P3_gate": {
+    "angular_moment": "integral R^2 overline(E_theta,j)=epsilon partial_Z J_theta,j",
+    "axial_moment": "integral R overline(E_z,j)=epsilon partial_Z(J_z,j+c_rho P_mean,j)",
+    "base_case": "Q150 proves the initial six-entry covariance/mean correction on Q149's physical family",
+    "finite_stage_result_is_conditional_on_this_request": true,
+    "first_feedback": "Q152 proves the same-family principal stress identity and conditional D-order feedback",
+    "memory": "current axial velocity, all six covariance entries, Pi1/Pi2, moving pressure, both velocity moments, zero-Haar data and the reserved hull",
+    "obstruction_open": true,
+    "source_envelope_provider_marks_every_later_target_verified": false,
+    "universal_request": "for every finite cycle j and fixed mixed jet I, the actual recomputed signed/full-covariance target Xi_j must obey one weighted edge bound and both exact moments",
+    "weighted_bound": "|D^I Xi_j|<=C_(j,I) epsilon^(alpha_j) zeta ya^(-p_(j,I)) yb^(-q_(j,I))",
+    "why_compactness_is_insufficient": "zeta vanishes at both flat edges and reciprocal signed roots lose half a weight; ordinary finite unweighted seminorms do not imply the displayed divisibility"
+  },
+  "closure": {
+    "edges": 1293,
+    "nodes": 399,
+    "source_bindings": 5425
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q150_initial_covariance_mean_join/evidence.json": "4d99026d3503e6fff52e9d3361500605414a85998d23d6f9236f4fce77a895e9",
+    "results/core_current_head_q152_physical_stress_feedback_join/evidence.json": "e79f9d49a8100f871e4636037595c2ac185cd9c5986e9ecffe1168e45fbfc1a1",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json": "b7a3b0b717f27c364ba212a1ce3575c48abe13e69363c032c92126213931e08b",
+    "results/core_current_head_q158_physical_dependency_frontier/evidence.json": "b02b31efd3606f57185f0181babfe43d060c1f3e98f54f0d1d88699bb4656f5f",
+    "results/core_leading_background_borel_join/evidence.json": "cb0fc6bf2b624431ea1f99fe9f920305c04c0fa014c28ef167615914fdd9e1a5",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+    "results/physical_pulse_transfer/evidence.json": "4fd33b054abaa66aa34052eccf97086a1db9ea8325afe857b1de35e03e63fc85",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "frontier": [
+    {
+      "contract": "PREMOD value/root envelope",
+      "id": "P1",
+      "status": "closed"
+    },
+    {
+      "contract": "Borel background and physical primary pulses",
+      "id": "P2",
+      "status": "closed-by-Q149-and-Q159-audit"
+    },
+    {
+      "contract": "complete covariance/mean targets",
+      "id": "P3",
+      "status": "open-at-all-finite-cycle-target-quantifier"
+    },
+    {
+      "contract": "generated-source quotient and endpoint extension",
+      "id": "P4",
+      "status": "downstream-conditional"
+    },
+    {
+      "contract": "weighted inverses and physical tails",
+      "id": "P5",
+      "status": "downstream-conditional"
+    },
+    {
+      "contract": "complete diagonal, endpoint and localized force",
+      "id": "P6",
+      "status": "downstream-conditional"
+    },
+    {
+      "contract": "comparison and core exclusion",
+      "id": "P7",
+      "status": "conditional-consequence"
+    }
+  ],
+  "parent": "a7b6a48044c4b96cdb459b3311860381be0724d3",
+  "providers": {
+    "P2_same_object_provider_chain_complete": true,
+    "P3_all_finite_cycle_target_gate_open": true,
+    "Q153_downstream_join_remains_conditional": true,
+    "all_statuses_match": true
+  },
+  "source_hashes": {
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q150_initial_covariance_mean_join/README.md": "44fc37e4ab21a460bf6a41c6dd9a5b27703d087a08e3c02d48e41dd1128e25c3",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q158_physical_dependency_frontier/README.md": "e5a04b62529f82bb95fc8cc53f1e18e50d542f4c547f53f1be552953e64f0747",
+    "results/core_current_head_q159_primary_contract_frontier/README.md": "1c3d1a3cbdcda4750908d17b86d9c8e5986646498b88a7d63d394b9debd73267",
+    "results/core_current_head_q159_primary_contract_frontier/audit.py": "a06b89a3d48d6c45796dac4811da280d0efcf11e5b13d8b6c2348a3674a26f40",
+    "results/core_current_head_q159_primary_contract_frontier/q159.py": "41bb61aab79dfb39846b58d31ad26f5e288a3b9bb882b6a56b7e3383d852c00e",
+    "results/core_current_head_q159_primary_contract_frontier/test_audit.py": "1acc198c7e96bdd9d0244842431893014f0181d4d649c8507d83df74ae3036f8",
+    "results/core_leading_background_borel_join/README.md": "52d4cfc83b2fc9fa537f4c230a2a2c8a918be56820949aa5100eb5275bc4cf70",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4"
+  },
+  "status": "Q159-P2-corrected-closed-and-P3-finite-cycle-target-obstructed",
+  "symbolic": {
+    "P2_analytically_discharged": true,
+    "P3_universal_finite_cycle_gate_discharged": false,
+    "correction": "Q158 incorrectly listed P2 as a conditional import: Q149 already binds the rule-defined Borel theorem and physical-pulse transfer to the exact finalized profile",
+    "established": "every fixed coefficient seminorm precedes its Borel scale, and complete primary velocity, pressure, potential, fixed physical jets and supports hold uniformly on every used band of the same Q149 family",
+    "historical_frozen_records_modified": false,
+    "next": "derive the P3 weighted target and moment identities by induction on the actual physical cycle expressions, retaining full axial velocity, six covariances, pressure memory and zero-Haar/reserved-hull supports before reusing Q153",
+    "obstruction": "P3 still requires the weighted Xi_j edge estimate and both complete tangential moment identities for every finite recomputed physical cycle; Q150 and Q152 close the base and first feedback but do not discharge that universal quantifier",
+    "scope": "analytical provider audit and a precise remaining inequality; numerical tests and dependency closure are not continuum proofs of P3",
+    "status": "Q159-P2-corrected-closed-and-P3-finite-cycle-target-obstructed",
+    "unconditional_admissible_force_or_blowup_certified": false
+  }
+}
