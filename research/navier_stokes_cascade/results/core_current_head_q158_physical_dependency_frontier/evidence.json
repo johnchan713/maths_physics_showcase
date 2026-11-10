@@ -1,0 +1,133 @@
+{
+  "closure": {
+    "edges": 1282,
+    "nodes": 398,
+    "source_bindings": 5410
+  },
+  "dependency_evidence_sha256": {
+    "results/compact_jet_envelope/evidence.json": "304c78d3a0882d80305c1e37b0e5badc926c6f2e8abed6ecd37776a4cf5931fd",
+    "results/core_current_head_q145_hierarchy_gate/evidence.json": "f5b2c73cf3e2e5d82c7d0b062d2337ef9ffe3e77c6cda0ffe8cd81262195a58f",
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q150_initial_covariance_mean_join/evidence.json": "4d99026d3503e6fff52e9d3361500605414a85998d23d6f9236f4fce77a895e9",
+    "results/core_current_head_q152_physical_stress_feedback_join/evidence.json": "e79f9d49a8100f871e4636037595c2ac185cd9c5986e9ecffe1168e45fbfc1a1",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json": "b7a3b0b717f27c364ba212a1ce3575c48abe13e69363c032c92126213931e08b",
+    "results/core_current_head_q154_physical_endpoint_join/evidence.json": "7370613e214432fa5742dc9f782840e2d77bd411517c6339a4ffad56baaed366",
+    "results/core_current_head_q155_physical_force_energy_join/evidence.json": "242e711fbb1babf4ae71e7fc723850c4d079e9f102a4433a28bbfdcdc1456a23",
+    "results/core_current_head_q156_physical_pressure_comparison/evidence.json": "bca6d20dad86b7d91ea802ede03fef7a92c91c4f4c6aeb2f5930ce326973932f",
+    "results/core_current_head_q157_physical_core_exclusion/evidence.json": "2dee92bbbf297f9abdfe12d2215353ffac69a8cc716cda8ee9d4b5868f7dc6a5",
+    "results/loop_modulation_bounds/evidence.json": "89822b9058906cb2638d8a74f5a024f876b7af7faad4ece73fde71d48f0fbfb1"
+  },
+  "first_binding": {
+    "choices": "Eexp=V0=H",
+    "compact_provider": "compact_jet_envelope: |p2|<=A on the selected PREMOD compact hull",
+    "conclusion": "G>=max(2,|mu|,|p2|,|mu*p2|), Eexp>=exp(G), V0<=N",
+    "discharged": true,
+    "hierarchy": "A=C^4096<G=exp(A^32); exp(G)<H=exp(G^4)<N=1+floor(H^32)",
+    "missing_edge_at_Q145": "Q145 invoked the original whole-profile compact envelope but depended only on Q144, so its selected-profile value premise was not explicitly frozen",
+    "numerical_materialization_required": false,
+    "root_provider": "loop_modulation_bounds: |mu|<G and |mu*p2|<G for the same state",
+    "same_profile_required": true
+  },
+  "parent": "e7b61647d150bec544f045cca784bfa40e80a5e4",
+  "primitive_frontier": [
+    {
+      "contract": "selected PREMOD compact value and signed-root envelope",
+      "id": "P1",
+      "quantifiers": "one fixed finalized profile; supremum on its whole compact modulation hull",
+      "status": "discharged-by-Q158-provider-binding"
+    },
+    {
+      "contract": "rule-defined Borel coefficients and physical primary fixed-jet, support and full-path bounds",
+      "id": "P2",
+      "quantifiers": "for every fixed coefficient order and jet before each Borel scale is selected",
+      "status": "conditional-import"
+    },
+    {
+      "contract": "complete covariance and mean cycle with all six entries, axial velocity and full pressure memory",
+      "id": "P3",
+      "quantifiers": "every fixed physical label and finite cycle state on the same family",
+      "status": "conditional-import"
+    },
+    {
+      "contract": "generated-source Gaussian quotient, endpoint zero extension and complete pressure response",
+      "id": "P4",
+      "quantifiers": "every nonzero generated harmonic and every fixed output jet requested by A0/A1",
+      "status": "conditional-import"
+    },
+    {
+      "contract": "compact/slow inverse weighted domains and all temporal-Gaussian, A0/A1 and exterior tails",
+      "id": "P5",
+      "quantifiers": "every fixed stage j, physical jet m and requested power N",
+      "status": "conditional-import"
+    },
+    {
+      "contract": "complete-potential diagonal, punctured endpoint and localized force jets",
+      "id": "P6",
+      "quantifiers": "one cutoff sequence chosen after finite stage constants; every fixed punctured compact and jet",
+      "status": "conditional-import"
+    },
+    {
+      "contract": "preterminal pressure/comparison and protected-core implication",
+      "id": "P7",
+      "quantifiers": "T<1 fixed, then R to infinity, then tau down to zero",
+      "status": "conditional-consequence-of-P2-through-P6"
+    }
+  ],
+  "providers": {
+    "Q145_missing_provider_edge_repaired": true,
+    "all_statuses_match": true,
+    "later_Q149_Q157_conclusions_remain_conditional": true,
+    "same_state_signed_root_bound": true,
+    "selected_compact_envelope_bound": true
+  },
+  "quantifier_order": [
+    "fix the exact core, finalized profile, physical family, roots, gauges and supports",
+    "for each fixed coefficient order and jet prove finite seminorms, then choose that Borel scale",
+    "choose one derivative-independent admitted later tail",
+    "for each fixed label and output jet prove full-path pulse/source estimates",
+    "for each fixed (j,m,N) choose finite compact integration and source-jet requests",
+    "choose each complete-potential cutoff only after its finite stage constants are known",
+    "take one-sided endpoint limits on each fixed punctured compact",
+    "fix T<1, send comparison radius R to infinity, then send tau to zero on the core path"
+  ],
+  "route": [
+    "Q147 exact repair, value cone and five pressure/moment rows",
+    "Q148 finite coefficient and reserved-pressure supports",
+    "Q149 uniform inherited physical primary family",
+    "Q150 complete initial covariance and means",
+    "Q152 same-physical-family stress and feedback",
+    "Q153 source, tails and complete-potential diagonal",
+    "Q154 punctured closed-time endpoint",
+    "Q155 localization, compact force and preterminal energy",
+    "Q156 fixed-gauge comparison",
+    "Q157 protected physical core and conditional exclusion"
+  ],
+  "source_hashes": {
+    "results/compact_jet_envelope/README.md": "b0597dab919b3cf0a233b066d14a977385f530b2575d137fc75b3c53d996d915",
+    "results/core_current_head_q145_hierarchy_gate/README.md": "0d4b6f8cad0fd65ca4faa415bf975a33a4d9865c5a694e632be0f3564258b1fa",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q150_initial_covariance_mean_join/README.md": "44fc37e4ab21a460bf6a41c6dd9a5b27703d087a08e3c02d48e41dd1128e25c3",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q154_physical_endpoint_join/README.md": "7c45e1649c5ad48848c9d44b1e049bddcc45ce3105abc1e81bfad187bfd1f852",
+    "results/core_current_head_q155_physical_force_energy_join/README.md": "48d7294690234b882491b994451e457445ccbabc96cb5ae1dba99804530882fa",
+    "results/core_current_head_q156_physical_pressure_comparison/README.md": "958197cf00dfbafdcef3ae1664ffcf1f046ab0ce01e547bd0da77e75e14a5df4",
+    "results/core_current_head_q157_physical_core_exclusion/README.md": "ce970f27fde11bcf79971729d22dac8863a9ca70d603653fffc25cdb1332ab6b",
+    "results/core_current_head_q158_physical_dependency_frontier/README.md": "e5a04b62529f82bb95fc8cc53f1e18e50d542f4c547f53f1be552953e64f0747",
+    "results/core_current_head_q158_physical_dependency_frontier/audit.py": "126e8a341f8a07e932f5693e925ea37cc2223ea7e36e49ccd4edeaeade4fee68",
+    "results/core_current_head_q158_physical_dependency_frontier/q158.py": "ddd5cb52e17b8e8c362c3029ffa4cbd248c735385e01df85aeeea3be365fc2ba",
+    "results/core_current_head_q158_physical_dependency_frontier/test_audit.py": "ebb6f8370bc575e10dc6cd735992f41c170d50bf2769897f976113cba705faaa",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6"
+  },
+  "status": "Q158-physical-dependency-frontier-audited-and-first-loose-provider-bound",
+  "symbolic": {
+    "correction": "Q147--Q157 form one same-physical-object implication, but Q145's scalar gate did not freeze the compact-envelope and signed-root providers that justify its whole-profile value premise",
+    "established": "the selected PREMOD compact envelope and same-state signed-root estimates give the Q145 scalar gates exactly; the physical route and its quantifier order are acyclic and contain no request-dependent replacement field",
+    "first_loose_provider_binding_discharged": true,
+    "historical_frozen_records_modified": false,
+    "next": "independently close P2 on the exact Q149 physical primary family, beginning with the fixed-order Borel/whole-path pulse seminorms before any scale selection, then propagate the resulting constants through P3--P6",
+    "scope": "one missing provider binding and a dependency/quantifier audit; P2--P6 remain conditional continuum imports, and tests prove provenance and exact implications only",
+    "status": "Q158-physical-dependency-frontier-audited-and-first-loose-provider-bound",
+    "unconditional_admissible_force_or_blowup_certified": false
+  }
+}
