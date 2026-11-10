@@ -1,0 +1,109 @@
+{
+  "closure": {
+    "edges": 1273,
+    "nodes": 395,
+    "source_bindings": 5366
+  },
+  "commutator": {
+    "cutoff_power": 8,
+    "cutoff_sufficient": true,
+    "far_radial_power": "-2",
+    "kernel": "|z|^-3 min(|z|/R,1)",
+    "near_radial_power": "-2/3",
+    "norm_decay": "3/4",
+    "p": "4/3",
+    "radial_coefficient": "4"
+  },
+  "comparison": {
+    "competitor": "locally smooth v,P with the same f and zero datum and sup_[0,T] ||v||_2 finite for every T<1",
+    "competitor_boundary_flux_bound_assumed": false,
+    "competitor_derivative_bound_assumed": false,
+    "competitor_dissipation_bound_assumed": false,
+    "conclusion": "v=u on R^3 x [0,T] for every T<1",
+    "gronwall": "E_R(t)<=2 C_T T exp(2 T L_T) R^-2",
+    "limit_order": "fix T<1; recover pressure; send R to infinity",
+    "localized": "0.5 E_R'+0.5 D_R^2<=||grad u||_infinity E_R+C_T R^-2",
+    "terminal_uniform_constants_assumed": false
+  },
+  "core_gate": {
+    "Q155_frozen_interface_binds_quantitative_path": false,
+    "blowup_claimed": false,
+    "global_smooth_competitor_exclusion_claimed": false,
+    "required": "there exist e0,A,tau0>0 such that x_tau lies in the Q155 cutoff plateau and |u_theta(x_tau,1-tau)|>=(e0/2) tau^-A for 0<tau<tau0"
+  },
+  "dependency_evidence_sha256": {
+    "results/comparison_foundation/evidence.json": "8375a9e06205b9817bd114a22320915f264fd760ae85d385a474f776ecebd0ca",
+    "results/core_current_head_q10_pressure_comparison_join/evidence.json": "40cf0ec48f0181887e7e4c343b2dcb58711bf6c6db2bf223bba5088fe9d47faa",
+    "results/core_current_head_q155_physical_force_energy_join/evidence.json": "242e711fbb1babf4ae71e7fc723850c4d079e9f102a4433a28bbfdcdc1456a23"
+  },
+  "parent": "c4955037ccbc0cd039d8df071c93c26f85eaf6c7",
+  "pressure": {
+    "averaged_gradient_space": "H^-3",
+    "competitor_constant_gauge": "a time-dependent spatial constant remains and has zero cutoff flux",
+    "competitor_pressure_decay_assumed": false,
+    "constructed_gauge": "p=c p0 with Q155 complete fixed pressure memory",
+    "difference": "w_t+div g=Delta w-grad pi; -Delta pi=partial_i partial_j g_ij",
+    "finite_energy_essential": true,
+    "force_cancellations": 1,
+    "individual": "-Delta p=partial_i partial_j(u_i u_j)-div f; -Delta P=partial_i partial_j(v_i v_j)-div f",
+    "recovery": "grad pi=grad sum_ij R_i R_j g_ij in space-time distributions",
+    "riesz_pressure_space": "L_infinity([0,T];H^-2)",
+    "stress": "g=w tensor w+w tensor u+u tensor w",
+    "stress_space": "L_infinity([0,T];L1)"
+  },
+  "providers": {
+    "Q155_same_field_force_energy": true,
+    "historical_Q10_frozen": true,
+    "quantitative_same_physical_core_path": false,
+    "refined_comparison_lemma": true
+  },
+  "radius": {
+    "compact_mixed_flux": "O(R^-5/2)",
+    "cutoff": "chi_R=phi_R^8",
+    "obsolete_unsplit_decay": "4/3",
+    "other_decays": {
+      "compact_mixed_pressure": "5/2",
+      "cutoff_laplacian": "2"
+    },
+    "quadratic_flux": "C_T(R^-1 B_R^(3/2)+R^-7/4 B_R^(3/4))",
+    "support_split": "g=w tensor w+h; h=w tensor u+u tensor w; supp h subset supp u",
+    "terms": [
+      {
+        "dissipation_power": "3/2",
+        "name": "quadratic pressure and transport",
+        "radius_power": "1",
+        "sobolev_offset_decay": "5/2",
+        "young_decay": "4"
+      },
+      {
+        "dissipation_power": "3/4",
+        "name": "quadratic pressure commutator",
+        "radius_power": "7/4",
+        "sobolev_offset_decay": "5/2",
+        "young_decay": "14/5"
+      }
+    ],
+    "worst_decay": "2"
+  },
+  "source_hashes": {
+    "results/comparison_foundation/README.md": "f8e801cb10c97f6678e784b6c1c246be7ed8f0487fc5834aded3a9d8b4452a81",
+    "results/core_current_head_q10_pressure_comparison_join/README.md": "3c055b2e703bcabdd50015ba9a47333205c1428f033dc0f5f4d6ff1e9e213e8b",
+    "results/core_current_head_q155_physical_force_energy_join/README.md": "48d7294690234b882491b994451e457445ccbabc96cb5ae1dba99804530882fa",
+    "results/core_current_head_q156_physical_pressure_comparison/README.md": "958197cf00dfbafdcef3ae1664ffcf1f046ab0ce01e547bd0da77e75e14a5df4",
+    "results/core_current_head_q156_physical_pressure_comparison/audit.py": "a413996d4b2fb1f7a73441d5f49e5eb363f02cc85d92e64ee742e1ae8bcd01ec",
+    "results/core_current_head_q156_physical_pressure_comparison/q156.py": "f936ea67f5afbac7651b4d7b7b78fab878693e8c73dcd22b7f3c7c00f4145e0e",
+    "results/core_current_head_q156_physical_pressure_comparison/test_audit.py": "cc8a62ece819b2b2adbb04d899e982181831dd76ad44a9e1ba347d3a05df0322"
+  },
+  "status": "Q156-physical-fixed-gauge-pressure-and-expanding-ball-comparison-conditionally",
+  "symbolic": {
+    "correction": "the compact mixed-pressure split removes the older R^-4/3 remainder and leaves the coarse cutoff-Laplacian R^-2 remainder; pressure is recovered only up to a harmless time-dependent spatial constant",
+    "established": "for the exact Q155 field, complete fixed-gauge pressure and force, every locally smooth same-force zero-datum competitor with fixed-interval finite L2 norm equals u for all t<1",
+    "global_competitor_exclusion_or_blowup_certified": false,
+    "historical_frozen_records_modified": false,
+    "next": "bind a quantitative protected-core lower bound, with constants and path, to the exact Q153-Q155 physical field and localization plateau before attempting terminal exclusion",
+    "obstruction": "there exist e0,A,tau0>0 such that x_tau lies in the Q155 cutoff plateau and |u_theta(x_tau,1-tau)|>=(e0/2) tau^-A for 0<tau<tau0",
+    "preterminal_comparison_certified_conditionally": true,
+    "scope": "conditional analytical pressure/comparison join; no competitor pressure, derivative, dissipation or boundary-flux bound is assumed, and no exclusion or blow-up is claimed",
+    "status": "Q156-physical-fixed-gauge-pressure-and-expanding-ball-comparison-conditionally"
+  }
+}
