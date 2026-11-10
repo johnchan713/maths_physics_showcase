@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1217,
+    "nodes": 381,
+    "source_bindings": 5202
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q142_short_taper_order_zero/evidence.json": "d9fc12ad17be0682344dc5f9bf7518e86798503a4e83a17ac2fd1c815af0662b"
+  },
+  "parent": "71424aa12fa04d125f835ff9ac63ff5845de2810",
+  "source_hashes": {
+    "results/axis_core_attachment/README.md": "5e10233d5cde81565c9d47de909b5d7a727a780797d52e3c946f27ddd08b052a",
+    "results/core_current_head_q141_short_taper_gevrey/README.md": "305f713e6333bcf39f1fe879dfdf600c363cd6bd32d0e4229272bf9a7c9991e0",
+    "results/core_current_head_q142_short_taper_order_zero/README.md": "a81eddcd72e2435fa0c56c3e235ff3ebf411871bf0c0f2331d35fd50ee9a8db5",
+    "results/core_current_head_q143_post_taper_gevrey/README.md": "1c81b2dc90d95cc83b37661015ceb0b7580fee8a83c3c26ca7f08df0dde67806",
+    "results/core_current_head_q143_post_taper_gevrey/audit.py": "0bcd979b34449be2a59b20f7e3508b95c859a0006166c2879be1a669722cf207",
+    "results/core_current_head_q143_post_taper_gevrey/q143.py": "15fd9e1c51899d4757ba6bdc59d43cfffc1e97b92857ae836bf20a6de09fa9b5",
+    "results/core_current_head_q143_post_taper_gevrey/test_audit.py": "07b3dd227222ea88e4c7950e67369142a99b531894d74cb8ab157133fb6f5e1b",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q67_premod_memory/README.md": "7c45f872f0894554ce66cd1d76749b6ba3bbb11884df29d5dc9237cfffdf7caa",
+    "results/core_current_head_q71_flat_reference_modes/README.md": "acab7b73c372a2c12ab5a3a5c1e92e2eb5827333f0c25534a943c7fca3c5540f",
+    "results/core_current_head_q73_annular_target_all_orders/README.md": "54498a7f0a0fa9532cd3ac342272b791a47e33a2d762d640c1ab6a08c700f59b"
+  },
+  "status": "Q71-post-taper-value-based-mixed-Gevrey3-recurrence",
+  "symbolic": {
+    "actual": "same beta/theta/kappa prescriptions build F,U; all five actual moment rows enter from the Q141 endpoint and are reintegrated",
+    "actual_complete_profile_pulse_covariance_residual_or_blowup_certified": false,
+    "blocking_region": "shape and earlier annular restoration still need a common four-field mixed recurrence and gate binding before the Q140-Q138 compact join",
+    "correction": "Q73 finite-order exp(T_m^2) does not imply fixed Gevrey constants; exponentiate only the actual order-zero field multiplier",
+    "floor": "a>=2*C^-20/(5*Lambda) on B<=X<=110; final interpolation is between positive endpoints",
+    "historical_frozen_records_modified": false,
+    "output": "fixed mixed Gevrey-3 H,Ay,Be and selected a floor for actual post-taper a,b,p2,E",
+    "reference": "reintegrate the Q141 reference endpoint and all five rows on the flat continuation, then use Q71 exact three-mode radial spans for p1r and X*nsr",
+    "status": "Q71-post-taper-value-based-mixed-Gevrey3-recurrence"
+  }
+}
