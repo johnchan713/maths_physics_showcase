@@ -1,0 +1,193 @@
+{
+  "closure": {
+    "edges": 1302,
+    "nodes": 400,
+    "source_bindings": 5438
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q150_initial_covariance_mean_join/evidence.json": "4d99026d3503e6fff52e9d3361500605414a85998d23d6f9236f4fce77a895e9",
+    "results/core_current_head_q152_physical_stress_feedback_join/evidence.json": "e79f9d49a8100f871e4636037595c2ac185cd9c5986e9ecffe1168e45fbfc1a1",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json": "b7a3b0b717f27c364ba212a1ce3575c48abe13e69363c032c92126213931e08b",
+    "results/core_current_head_q159_primary_contract_frontier/evidence.json": "60ce1330f10c571b2c3716995d4f5cbe75e9f79dcf2c6e5644cb284f03be0485",
+    "results/current_target_cycle_bridge/evidence.json": "402de981f9b3b1c2ae57360e8602552e9b595e444113b33d4fcb4ffd2d2d6c14",
+    "results/current_target_moment_audit/evidence.json": "1d265466edb12722bdfd84425a5c4287b4e39d382aa36b1b46b375903daafb7f",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "frontier": [
+    {
+      "contract": "PREMOD value/root envelope",
+      "id": "P1",
+      "status": "closed"
+    },
+    {
+      "contract": "Borel background and physical primary pulses",
+      "id": "P2",
+      "status": "closed"
+    },
+    {
+      "contract": "complete covariance/mean targets",
+      "id": "P3",
+      "status": "closed-by-Q160-induction"
+    },
+    {
+      "contract": "generated-source quotient and endpoint extension",
+      "id": "P4",
+      "status": "next-replay-required"
+    },
+    {
+      "contract": "weighted inverses and physical tails",
+      "id": "P5",
+      "status": "downstream-conditional"
+    },
+    {
+      "contract": "complete diagonal, endpoint and localized force",
+      "id": "P6",
+      "status": "downstream-conditional"
+    },
+    {
+      "contract": "comparison and core exclusion",
+      "id": "P7",
+      "status": "conditional-consequence"
+    }
+  ],
+  "moments": {
+    "angular": "integral R^2 overline(E_theta,j)=epsilon partial_Z J_theta,j",
+    "axial": "integral R overline(E_z,j)=epsilon partial_Z(J_z,j+c_rho Pmean,j)",
+    "current_memory": "axial velocity; all six covariance entries including W_theta,z and W_zz; complete compact and moving pressure; Pi1/Pi2 in the same base; both velocity moments",
+    "fast": "the complete temporal-inverse curl has exact zero Haar mean and preserves both moments",
+    "preserved_at_every_finite_cycle": true,
+    "pressure": "pbar=I0(gbar-rho Pmean), integral R pbar=-Qg/2+c_rho Pmean",
+    "slow": "the five-map imposes its two zero velocity-moment rows and exact divergence",
+    "sourced_and_signed": "nonzero angular waves do not change the two Haar velocity moments",
+    "zero_total_is_necessary": true
+  },
+  "parent": "d7337e7714aa866e9d361e1ba69c9afbc4d701dc",
+  "providers": {
+    "Q153_may_be_replayed_but_is_not_promoted_here": true,
+    "historical_source_flag_preserved_false": true,
+    "new_Q160_theorem_supersedes_that_open_gate": true,
+    "same_physical_family_bound": true
+  },
+  "rates": {
+    "B0": "74999/50000",
+    "B_j": "74999/50000",
+    "C0": "99999/50000",
+    "C_equals_B_plus_half": true,
+    "C_j": "99999/50000",
+    "bridge_target_gain": "49999/100000",
+    "j": 0,
+    "kappa": "1/100000",
+    "proved_target_order": "249997/100000",
+    "required_C_next": "49999/20000",
+    "source_gain": "49997/100000",
+    "target_slack": "1/50000"
+  },
+  "seed": {
+    "canonical_and_physical_entrances_identified": false,
+    "complete_curl_margin": "1/2",
+    "first_physical_source_order": "74999/50000",
+    "first_required_target_order": "99999/50000",
+    "initial_target": "Q150 current initial target M_(2-3*kappa), with all six covariances and pressure memory",
+    "physical_family": "Q149 inherited physical primaries on every accepted later band",
+    "prefix": "the exact real covariance prefix and first generic signed current-state difference give Xi_0 in M_(2-2*kappa) on the same physical family",
+    "same_family_stress": "Q152 H_beta y_beta=T_beta and sum eta_beta^2=1",
+    "seed_closed": true
+  },
+  "source_hashes": {
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q150_initial_covariance_mean_join/README.md": "44fc37e4ab21a460bf6a41c6dd9a5b27703d087a08e3c02d48e41dd1128e25c3",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q159_primary_contract_frontier/README.md": "1c3d1a3cbdcda4750908d17b86d9c8e5986646498b88a7d63d394b9debd73267",
+    "results/core_current_head_q160_physical_target_induction/README.md": "b8e6cb93143ae4bde7d22da05db8a98af82eac37ecbd33a790e6976c4918e916",
+    "results/core_current_head_q160_physical_target_induction/audit.py": "475f33371e2aef5fdf81831fa4d8bd0fe931e6ab435a606eb6ab0711a4f8654d",
+    "results/core_current_head_q160_physical_target_induction/q160.py": "9f7ab3ef24d84ded8f06465c92e59101de62bb14e512f8c2e4db2d1ad3f16369",
+    "results/core_current_head_q160_physical_target_induction/test_audit.py": "45febdda98f1e63ee2a621901b653c51ab1e2299b525fb99b8ca899b14358dbe",
+    "results/current_target_cycle_bridge/README.md": "0c96ac838ab7bc1861f5b178164318400eeebdd97c6f2d9855ba2200277830f2",
+    "results/current_target_moment_audit/README.md": "94513dd4ede449f05d470b4d533f6dd21101e990666cfa018df3590e86c62ec1",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4"
+  },
+  "status": "Q160-physical-all-finite-cycle-target-moment-induction-joined",
+  "symbolic": {
+    "P3_universal_finite_cycle_gate_discharged": true,
+    "Q153_downstream_chain_replayed_without_P3_premise": false,
+    "correction": "Q159 treated the current-target bridge as only an expression-level warning; Q149/Q150/Q152 supply its physical seed and every same-family map premise",
+    "established": "for every finite physical cycle and fixed mixed jet, the recomputed Xi_j has the required epsilon order, full zeta edge weight and finite edge powers, and both complete tangential moment identities hold with full pressure memory",
+    "historical_frozen_records_modified": false,
+    "next": "replay Q153's generated-source quotient and endpoint-extension provider from this now-unconditional P3 input, checking the actual complete residual allocation before promoting any downstream diagonal, force or exclusion claim",
+    "scope": "finite-cycle continuum induction with stage- and jet-dependent constants; the diagnostic tests are not the proof and no uniform infinite-stage bound is asserted",
+    "status": "Q160-physical-all-finite-cycle-target-moment-induction-joined",
+    "unconditional_complete_residual_force_exclusion_or_blowup_certified": false
+  },
+  "target_step": {
+    "C": "99999/50000",
+    "C0": "99999/50000",
+    "all_rows_close_bridge_target": true,
+    "all_rows_close_physical_next_target": true,
+    "proved_gain": "49999/100000",
+    "required_gain": "49997/100000",
+    "rows": {
+      "fast_old_new_means": {
+        "margin_over_bridge_target": "149999/100000",
+        "margin_over_required_next": "150001/100000",
+        "order": "99999/25000"
+      },
+      "fast_square": {
+        "margin_over_bridge_target": "249997/100000",
+        "margin_over_required_next": "249999/100000",
+        "order": "249997/50000"
+      },
+      "signed_axial_pressure": {
+        "margin_over_bridge_target": "50001/100000",
+        "margin_over_required_next": "50003/100000",
+        "order": "149999/50000"
+      },
+      "signed_full_curl": {
+        "margin_over_bridge_target": "0",
+        "margin_over_required_next": "1/50000",
+        "order": "249997/100000"
+      },
+      "signed_old_error": {
+        "margin_over_bridge_target": "0",
+        "margin_over_required_next": "1/50000",
+        "order": "249997/100000"
+      },
+      "signed_square": {
+        "margin_over_bridge_target": "49999/100000",
+        "margin_over_required_next": "50001/100000",
+        "order": "74999/25000"
+      },
+      "slow_linear_pressure_viscosity": {
+        "margin_over_bridge_target": "50001/100000",
+        "margin_over_required_next": "50003/100000",
+        "order": "149999/50000"
+      },
+      "slow_old_new_means": {
+        "margin_over_bridge_target": "3/2",
+        "margin_over_required_next": "75001/50000",
+        "order": "399997/100000"
+      },
+      "slow_square": {
+        "margin_over_bridge_target": "249999/100000",
+        "margin_over_required_next": "250001/100000",
+        "order": "124999/25000"
+      }
+    },
+    "slack": "1/50000",
+    "whole_half_line": true
+  },
+  "weighted_closure": {
+    "covariance": "every wave factor has sqrt(zeta), so every complete wave product has zeta",
+    "means": "full-zeta mean products remain full-zeta because 0<zeta<=1 and zeta^2<=zeta",
+    "moving_compensator": "Q_e D_z H=D_z(Q_e H)+epsilon (partial_Z sigma_e) integral R^e H is retained",
+    "primitive": "the compensated input has zero R^e total; the two-edge oriented primitive retains zeta with only finite inverse-edge powers",
+    "reserved_hull": "reserved bumps lie on the fixed interior hull where zeta has a positive floor",
+    "signed": "X_new-X_old=-I_e Q_e overline(Delta E_e); the principal current covariance cancels X_old before estimating the complete error",
+    "stage_constants": "C_(j,I), p_(j,I), q_(j,I) may depend on the finite cycle and fixed jet",
+    "target": "|D^I Xi_j|<=C_(j,I) epsilon^(C_j) zeta ya^(-p_(j,I)) yb^(-q_(j,I))",
+    "uniform_in_stage_claimed": false
+  }
+}
