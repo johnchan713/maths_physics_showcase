@@ -1,0 +1,41 @@
+{
+  "closure": {
+    "edges": 1224,
+    "nodes": 387,
+    "source_bindings": 5277
+  },
+  "dependency_evidence_sha256": {
+    "results/core_canonical_full_path_ode_join/evidence.json": "fd28c1af3c9a5cb11dabe7df96e95525b3d90136ab16fcfd42898be5d65ff7d2",
+    "results/core_compact_slow_inverse_domain_join/evidence.json": "129ae2d83800c7f78c79c9a7eba38f2405c8d17c83f0ec466975c49f2bb63e86",
+    "results/core_current_head_q148_coefficient_support_pressure/evidence.json": "4c95824a4d9749da7e70f0bbc2d8fd30ea46c2620fa700ffd5fe0a805d4729b7",
+    "results/core_fixed_profile_projector_join/evidence.json": "08ee8eac5d445843295dba79a45ff82e587b41d0e285d63151beb8a49696c8b2",
+    "results/core_leading_background_borel_join/evidence.json": "cb0fc6bf2b624431ea1f99fe9f920305c04c0fa014c28ef167615914fdd9e1a5",
+    "results/core_same_band_gap_join/evidence.json": "b240040bacac856e039b6320f734078ce486cd48b1d91c02ddb6ba6396c291be",
+    "results/physical_pulse_transfer/evidence.json": "4fd33b054abaa66aa34052eccf97086a1db9ea8325afe857b1de35e03e63fc85"
+  },
+  "parent": "a69f150b0c1e87f2080538293be971434731c3be",
+  "source_hashes": {
+    "results/core_canonical_full_path_ode_join/README.md": "7c07f7efc5504fe0a678efe42a53ab93bc6406e16ece8789b052bca605f14d76",
+    "results/core_compact_slow_inverse_domain_join/README.md": "9042cb461a4f944473ab86b5dfd1a0c7c27d0a2dfb2411f5df1cdc7bb7ba9d96",
+    "results/core_current_head_q148_coefficient_support_pressure/README.md": "a041d10064ecc0fee93671e0483109ab3e5ea30dd6660e1a0f67b2d01745584a",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q149_primary_pulse_join/audit.py": "d768174885d3eac45fd7945c2b150718b0c40360135a8a38fbf6da3406e8edbb",
+    "results/core_current_head_q149_primary_pulse_join/q149.py": "99dee4c2bc6d508985b2acf76e9387fd649cdda76f3f4b488519b19639012ad9",
+    "results/core_current_head_q149_primary_pulse_join/test_audit.py": "11b451f7854b3e4c665b2c40d28569df12f49f8b857eb7971e3da7065d01afbc",
+    "results/core_fixed_profile_projector_join/README.md": "6caedd6ba074a69d58ab0187af4c763bc13e717b626c0d9c37f2b4fcfad32162",
+    "results/core_leading_background_borel_join/README.md": "52d4cfc83b2fc9fa537f4c230a2a2c8a918be56820949aa5100eb5275bc4cf70",
+    "results/core_same_band_gap_join/README.md": "a0bcf8350c50e6d397383635ae21023895f193bea9c54e31aff64fa078680834",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428"
+  },
+  "status": "Q148-schedule-frontier-corrected-and-uniform-primary-pulse-family-joined",
+  "symbolic": {
+    "complete_covariance_residual_or_blowup_certified": false,
+    "correction": "the exact-real rule-defined Borel prescription chooses each scale after all finite coefficient seminorms exist, so Q148's diagonal inequality follows by construction rather than remaining an external numerical-scale premise",
+    "established": "on the same finalized leading/background profile, complete primary curl velocity, wave pressure and fixed potential have uniform value, fixed physical derivative and closed-support bounds on every actual used dyadic scale",
+    "historical_frozen_records_modified": false,
+    "next": "derive the complete wave covariance and mean corrections, retaining axial velocity, all tensor entries, curl remainders, Pi1/Pi2 and moving pressure before the nonlinear source and full residual ledger",
+    "obstruction": "the known primary covariance remainder has Q exponent -1-2h*kappa<0 and cannot be absorbed by absolute decay",
+    "scope": "uniform independently audited physical primary family only; it is not identified with the separate canonical family, sourced inverses remain conditional on their input class and smooth endpoint support, and no complete nonlinear pulse hierarchy is claimed",
+    "status": "Q148-schedule-frontier-corrected-and-uniform-primary-pulse-family-joined"
+  }
+}
