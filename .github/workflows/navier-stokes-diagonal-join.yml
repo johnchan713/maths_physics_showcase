@@ -196,6 +196,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q145_hierarchy_gate/**
       - research/navier_stokes_cascade/results/core_current_head_q146_cap_repair_identity/**
       - research/navier_stokes_cascade/results/core_current_head_q147_repair_pressure_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q148_coefficient_support_pressure/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -399,6 +400,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q145_hierarchy_gate/**
       - research/navier_stokes_cascade/results/core_current_head_q146_cap_repair_identity/**
       - research/navier_stokes_cascade/results/core_current_head_q147_repair_pressure_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q148_coefficient_support_pressure/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1515,6 +1517,11 @@ jobs:
         run: |
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q147_repair_pressure_join/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q147_repair_pressure_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q147_repair_pressure_join/evidence.json --output q147_ci.json
+
+      - name: Check finalized-profile coefficient supports and reserved pressure
+        run: |
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q148_coefficient_support_pressure/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q148_coefficient_support_pressure/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q148_coefficient_support_pressure/evidence.json --output q148_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

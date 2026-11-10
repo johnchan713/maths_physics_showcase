@@ -1,0 +1,38 @@
+{
+  "closure": {
+    "edges": 1222,
+    "nodes": 386,
+    "source_bindings": 5264
+  },
+  "dependency_evidence_sha256": {
+    "results/core_coefficient_support_recheck/evidence.json": "5b17e83b6dfea94bee8fc720e11b01a9bce3fc1093926110b05828bdacd7aff6",
+    "results/core_current_head_q147_repair_pressure_join/evidence.json": "0ace77bed60329655532117b5c76d79ef154d95f64bafc14cc91c1b02fae2431"
+  },
+  "parent": "45efb625b15fd4039b21086895a4c2fcecf1986f",
+  "source_hashes": {
+    "results/coefficient_support_audit/README.md": "b26a5f1a4fce7a7ed3fbf0633624ba754de9fa0d0144ffbdd1c1fa5345694f7d",
+    "results/coefficient_support_foundation/README.md": "df4b656a5e83d45e45c19b3330b66537e35acd24782d818818b59c0ac848d84d",
+    "results/core_coefficient_support_recheck/README.md": "f66cda979f43cd1c719475c5b179b2b3bf12ad839d4dc7acd9ea6087474f33e5",
+    "results/core_current_head_q120_closed_borel_cutoff/README.md": "2d63394caae8c94c03424a2ec21dbb17666139cd85904582217cea4b932711bd",
+    "results/core_current_head_q122_positive_order_repair/README.md": "2140de6aa052226ac719d2fef8223d580334891fc18a830c2f8c0d58efa15169",
+    "results/core_current_head_q147_repair_pressure_join/README.md": "7d2135992623db537fbcae04c1e3fb2fd4ada35645d990fe8b7f3fe1d46fe1ff",
+    "results/core_current_head_q148_coefficient_support_pressure/README.md": "a041d10064ecc0fee93671e0483109ab3e5ea30dd6660e1a0f67b2d01745584a",
+    "results/core_current_head_q148_coefficient_support_pressure/audit.py": "ba6e0e78e932adde0db0adc13f4a99665c5d5ddbdb086a0d3f737c6fb6e0dac2",
+    "results/core_current_head_q148_coefficient_support_pressure/q148.py": "d77ceb85ae153a6872b7d3268c66d7deea0bf1ca91d00a72ceece2deadd998a9",
+    "results/core_current_head_q148_coefficient_support_pressure/test_audit.py": "4e90cc56c05c912015d83947619be69f8089c363812e2f76590f9dabb8fd5586",
+    "results/core_current_head_q79_ambient_value_bridge/README.md": "2c3d1c9c510433e215ff6601c0aa246500d3d826765b4482b37803e23b17cc99",
+    "results/core_current_head_q80_support_saturated_tuple/README.md": "1435e0c4385a002434446841d4a0c43e2b94781e8152297fc9df9827fe57fdae",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428"
+  },
+  "status": "Q147-final-profile-finite-coefficient-supports-and-reserved-pressure-obstruction-joined",
+  "symbolic": {
+    "established": "every fixed positive order has the ordinary five-row linear repair, inverse bound below 800, finite mixed seminorms and exact velocity/pressure/stress support edges",
+    "historical_frozen_records_modified": false,
+    "next": "join the already-audited physical primary-pulse transfer only after the actual schedule, inverse, gap and support premises are bound on this same finalized profile",
+    "pressure_floor": "sup_I4 |q^(2A)p_B-Pi0| >= |chi(c1q)|q^(2h)mu^2(e^-6-e^-11)/(8rho3)",
+    "reserved_mean": "positive-order velocity vanishes on I4 but Pi1=K1-mu^2/(4X) and Pi2=K2 retain complete later-source memory",
+    "status": "Q147-final-profile-finite-coefficient-supports-and-reserved-pressure-obstruction-joined",
+    "uniform_actual_pulses_complete_covariance_residual_or_blowup_certified": false,
+    "uniform_blocker": "prove C_nm*a_n^(-nh)<=2^-n for C_nm=max(1,2K_(m+1)(1+2nh)^m M_(n,m)), every retained n and m<=n, with actual full-hull tuple norms"
+  }
+}
