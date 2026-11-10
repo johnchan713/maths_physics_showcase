@@ -1,0 +1,41 @@
+{
+  "closure": {
+    "edges": 1221,
+    "nodes": 385,
+    "source_bindings": 5248
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q146_cap_repair_identity/evidence.json": "437e7a7ade48c1b05f079712714b78ad5b34cedd4390225432a47d0d421ff405"
+  },
+  "parent": "37aa64ffed83f55541bcb5f04eab7c806d419db1",
+  "source_hashes": {
+    "results/compact_global_reconciliation/README.md": "64d2e735f6d3d75c5b8a56f7abe6c44fbc56109dfdedcc02f994c4739745f08d",
+    "results/core_continuation_matching_recheck/README.md": "2d01af07c0760e17765f1478da3b16a9fa02862fc62c21a9150f922df4af288b",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q132_exact_repair_gevrey/README.md": "0e029fcd984fc8c7a9344740397508a883759cfd3ab5ad39de82712eb36ad34a",
+    "results/core_current_head_q137_physical_repair_mixed/README.md": "063f5484270f2c3c507deba016bbec9c4e2c0e18d550e0ffd4f3637d2e854d16",
+    "results/core_current_head_q138_mixed_modulation_pullback/README.md": "df4fe63b2cfc0933e39b0fe48f61f81a0548c49d246eb2303368c4421d3a3f6e",
+    "results/core_current_head_q146_cap_repair_identity/README.md": "4b18f84b34ba770c8b2250854039e846f6651bac76e370cfb86b602723a555f3",
+    "results/core_current_head_q147_repair_pressure_join/README.md": "7d2135992623db537fbcae04c1e3fb2fd4ada35645d990fe8b7f3fe1d46fe1ff",
+    "results/core_current_head_q147_repair_pressure_join/audit.py": "2627c4f13f36cd69a32c307245d0a7b857c59dbee9fcbe6ad49bbe83b7bb278b",
+    "results/core_current_head_q147_repair_pressure_join/q147.py": "347b3df47568c6ece6dc1b941f6996d2f20890cd84a52e539aa7b0515ed8587e",
+    "results/core_current_head_q147_repair_pressure_join/test_audit.py": "7ba3f474b4341faeacf5a9865225f08920c093f04aae11b92f282b80bf1ceb6f",
+    "results/core_current_head_q74_terminal_modulation_defect/README.md": "2532df7cf04924193e1b8a97b4957585550fa2978f9b399b33f15eeacbd2c72a",
+    "results/core_modulation_repair_join_recheck/README.md": "383a5b8f276eaf7193889d89f2aea2bcd1ceb05ec05c5339344d9e180408e021",
+    "results/matching_root_foundation/README.md": "071203671f89e0152ff82d5ff85b55ffc31ccc9b8064f1ffd09461e2e052c925",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/repair_state_bounds/README.md": "163dce199a65acd22ef68ee7d906a112c1f8dbcb698000f40df848a424af8a4c"
+  },
+  "status": "same-modulation-five-row-repair-cone-and-global-pressure-identity-joined",
+  "symbolic": {
+    "coefficient_reserved_mean_pulse_covariance_residual_or_blowup_certified": false,
+    "correction": "Q132 baseline is exactly zero because the target is the same PREMOD profile after the five-row annular match; this is a functional same-gauge identity, not support-end inference",
+    "global_pressure": "five endpoint identities plus the identical later heat tail give M=R=J=S=0 and Pi_axis+Cp=0 globally in the unchanged gauge",
+    "historical_frozen_records_modified": false,
+    "memory": "Q138 deltaE,deltaU generate the same five Q131 density rows; Pi and the shifted Pi_eta bound are retained",
+    "next": "audit finite positive-order coefficient and reserved-mean supports on this finalized profile before uniform physical pulses",
+    "repair": "the original accepted finite-N root, positive-field neighborhood and compact value-cone comparison now apply to that exact target",
+    "status": "same-modulation-five-row-repair-cone-and-global-pressure-identity-joined",
+    "target": "Q74 z=-T_c Delta=(-m,(j-m)/lambda,-i,s,-cp), identical to the signed Q132 target"
+  }
+}
