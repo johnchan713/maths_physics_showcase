@@ -1,0 +1,33 @@
+{
+  "closure": {
+    "edges": 1216,
+    "nodes": 380,
+    "source_bindings": 5194
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q141_short_taper_gevrey/evidence.json": "36e119025235f01f526c6b6b1b857f606f44fabd2f233d7f930f3fadc612cde7"
+  },
+  "parent": "3801ea92a4d114236b93a6084576a578a00910e4",
+  "source_hashes": {
+    "results/axis_core_attachment/README.md": "5e10233d5cde81565c9d47de909b5d7a727a780797d52e3c946f27ddd08b052a",
+    "results/core_current_head_q141_short_taper_gevrey/README.md": "305f713e6333bcf39f1fe879dfdf600c363cd6bd32d0e4229272bf9a7c9991e0",
+    "results/core_current_head_q142_short_taper_order_zero/README.md": "a81eddcd72e2435fa0c56c3e235ff3ebf411871bf0c0f2331d35fd50ee9a8db5",
+    "results/core_current_head_q142_short_taper_order_zero/audit.py": "1ab96f1023d081ec83f59b853851aab7428aae5a4a0042abd674fcc74525833f",
+    "results/core_current_head_q142_short_taper_order_zero/q142.py": "f3b31f30709753c1de44d3c0d459b72467d358dc321316bbdf90eaf8723daa2b",
+    "results/core_current_head_q142_short_taper_order_zero/test_audit.py": "7c39447b251666d91b83de944d76ad4ce523cf2ffdcbed45c71c42f7ac49e6cc",
+    "results/core_current_head_q72_short_taper_inputs/README.md": "954a50591c0c688169434b9dee1db8f05492092c941d2787eb5a6e74c91925f5",
+    "results/prescribed_continuation_foundation/README.md": "fa32edfdb1093b444542dda0b98db4efe3ae02d07550ba5d08ad9ccab2698728"
+  },
+  "status": "selected-short-taper-order-zero-caps-and-regional-obstruction",
+  "symbolic": {
+    "actual_complete_profile_pulse_covariance_residual_or_blowup_certified": false,
+    "blocking_inequality": "on every Q69-Q71/Q73/Q127 compact region require H,Ay,Be<infinity, afloor>0, G>=max(2,abs(mu),abs(p2),abs(mu*p2)), and V0<=unchanged N; then take max/min on the finite cover",
+    "correction": "the apparent short-taper positive-floor gap is closed by p1r>=X/10 and kappa>=C^-20 from the unchanged axis/core attachment",
+    "established": "Q72 geometry, five full-memory traces, reference/actual exponential values and a>=2*C^-20/(5*Lambda)",
+    "historical_frozen_records_modified": false,
+    "next": "compress the remaining regional four-field bounds in one convention and apply Q140-Q138 before the full-pressure exact repair/cone join",
+    "pressure": "Pi trace and Pi_eta path remain charged; I and J remain in p1r",
+    "representation": "astronomical value caps are retained as binary logarithmic budgets, with lower/upper log C certificates, rather than materialized integers",
+    "status": "selected-short-taper-order-zero-caps-and-regional-obstruction"
+  }
+}

@@ -190,6 +190,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q139_mixed_primitive_binding/**
       - research/navier_stokes_cascade/results/core_current_head_q140_four_to_six_mixed_binding/**
       - research/navier_stokes_cascade/results/core_current_head_q141_short_taper_gevrey/**
+      - research/navier_stokes_cascade/results/core_current_head_q142_short_taper_order_zero/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -387,6 +388,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q139_mixed_primitive_binding/**
       - research/navier_stokes_cascade/results/core_current_head_q140_four_to_six_mixed_binding/**
       - research/navier_stokes_cascade/results/core_current_head_q141_short_taper_gevrey/**
+      - research/navier_stokes_cascade/results/core_current_head_q142_short_taper_order_zero/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1473,6 +1475,11 @@ jobs:
         run: |
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q141_short_taper_gevrey/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q141_short_taper_gevrey/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q141_short_taper_gevrey/evidence.json --output q141_ci.json
+
+      - name: Check selected short-taper order-zero caps and regional gate
+        run: |
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q142_short_taper_order_zero/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q142_short_taper_order_zero/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q142_short_taper_order_zero/evidence.json --output q142_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

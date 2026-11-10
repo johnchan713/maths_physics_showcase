@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q142:** [Selected Q72 short-taper order-zero caps](results/core_current_head_q142_short_taper_order_zero/README.md) bind the geometry, all five full-memory traces, both exponential values and the positive actual shear floor to Q141. The apparent local floor gap is corrected by the inherited `p1r>=X/10` and `kappa>=C^-20`. A common actual four-field maximum/minimum across Q69--Q71/Q73/Q127 is now the first compact modulation/repair obstruction.
+
 > **Q141:** [Value-based Q72 short-taper recurrence](results/core_current_head_q141_short_taper_gevrey/README.md) replaces the inherited `exp(c*T_m)` seminorm loss by fixed mixed Gevrey-3 recurrences for the same reference and actual fields. It reintegrates all five moment rows and retains full `p2` pressure memory. Actual order-zero caps/gates and the remaining regional maximum remain open.
 
 > **Q140:** [Four PREMOD fields to six mixed scalars](results/core_current_head_q140_four_to_six_mixed_binding/README.md) derives the selected cutoff/root and augmented-variance mixed jets from genuine mixed bounds for `a,b,p2,E`, retaining full pressure. It also proves that Q72's published `exp(c*T_m)` cap cannot itself yield fixed Gevrey-3 constants; a value-based short-taper recurrence remains the next obligation.
