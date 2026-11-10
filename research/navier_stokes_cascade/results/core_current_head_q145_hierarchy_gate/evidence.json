@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1219,
+    "nodes": 383,
+    "source_bindings": 5224
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q144_shape_annulus_gevrey/evidence.json": "982f82731cf4d3843cd68d98232f67e8a249534a8540606feb0777981ff1b7f4"
+  },
+  "parent": "a28bbd8bcc13f8cee03f7e1a2ac5e8c00d2a5506",
+  "source_hashes": {
+    "results/compact_jet_envelope/README.md": "b0597dab919b3cf0a233b066d14a977385f530b2575d137fc75b3c53d996d915",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q140_four_to_six_mixed_binding/README.md": "a12493e356e2ecaa86a24012c06b82b5e47f4d817580e3a1e61f4b546d7ef475",
+    "results/core_current_head_q144_shape_annulus_gevrey/README.md": "f7187c169f9f26e4c661727f385bde3d121b1a52dc9cdd0577abc880286b2592",
+    "results/core_current_head_q145_hierarchy_gate/README.md": "0d4b6f8cad0fd65ca4faa415bf975a33a4d9865c5a694e632be0f3564258b1fa",
+    "results/core_current_head_q145_hierarchy_gate/audit.py": "cb1771af2ac14dd30e741055279aecd5006da2d3eb09e1c28458fbf4a7cab9d8",
+    "results/core_current_head_q145_hierarchy_gate/q145.py": "3a752cc8c4525b547939becd38b70c00a97a47c36bc79de4edbbedb3a2353900",
+    "results/core_current_head_q145_hierarchy_gate/test_audit.py": "1f558e9652cee0d8d2308bcbed756e0fd8e0f047e27a2d078ee9784ed7d4ba6e",
+    "results/core_current_head_q65_signed_root_radius/README.md": "ebc66c482d18e6a09a39e9edf5ef7528c96f4e755c60c181beb1b0c679758890",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/matching_root_foundation/README.md": "071203671f89e0152ff82d5ff85b55ffc31ccc9b8064f1ffd09461e2e052c925"
+  },
+  "status": "original-hierarchy-discharges-Q144-scalar-gate",
+  "symbolic": {
+    "actual_complete_profile_pulse_covariance_residual_or_blowup_certified": false,
+    "blocking_inequality": "bind one actual same-profile Q73/Q143/Q127 complex value-cap tuple across the shape/restoration/earlier annulus and specialize Q144 free caps",
+    "correction": "Q144 scalar requests are inherited consequences: |p2|<=A<G, |mu| and |mu*p2|<G, Eexp=H>exp(G), V0=H<N",
+    "hierarchy": "A=C^4096>=2^16; G=exp(A^32); H=exp(G^4); N=1+floor(H^32); no huge quantity is materialized",
+    "historical_frozen_records_modified": false,
+    "pressure": "the reduction applies only to the unchanged full p2 with all five rows, Pi and Pi_eta",
+    "same_profile_complex_caps_or_cone_join_certified": false,
+    "scalar_gate_independent_regional_obligation": false,
+    "status": "original-hierarchy-discharges-Q144-scalar-gate"
+  }
+}
