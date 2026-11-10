@@ -1,0 +1,41 @@
+{
+  "closure": {
+    "edges": 1266,
+    "nodes": 394,
+    "source_bindings": 5355
+  },
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_current_head_q154_physical_endpoint_join/evidence.json": "7370613e214432fa5742dc9f782840e2d77bd411517c6339a4ffad56baaed366",
+    "results/core_current_head_q8_localization_force_join/evidence.json": "8230a13912bd36b1d0bed507b2a373a152dc67e3dd3332d77238f1cba5578062",
+    "results/core_scale_compatible_corner_force_replay/evidence.json": "df473ba6a001763ef44b7674134533c93ae4479e83a48891333230d7b0827b5e",
+    "results/current_localized_force/evidence.json": "70f3240badb5a8c7d55c2df150b550fec815ecd84314800edd3d5057bb3e6cb1",
+    "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc",
+    "results/localized_force_extension/evidence.json": "fe63f5a0081b100f310630a9319b34eaf5cef15a01a7ec51d9d67388b065d5dc"
+  },
+  "parent": "6a3df11220e95520151ea6e09e7be2066e3d6bd8",
+  "source_hashes": {
+    "results/core_certified_complete_potential_force_join/README.md": "17aef1c72e9efb852519ef4de90472fdb62398027016dc4e54a1cf0feb5162fd",
+    "results/core_current_head_q154_physical_endpoint_join/README.md": "7c45e1649c5ad48848c9d44b1e049bddcc45ce3105abc1e81bfad187bfd1f852",
+    "results/core_current_head_q155_physical_force_energy_join/README.md": "48d7294690234b882491b994451e457445ccbabc96cb5ae1dba99804530882fa",
+    "results/core_current_head_q155_physical_force_energy_join/audit.py": "14909e4da8d4816f582b7baa83163ad82140e7a8b90942f17946a1878cc43325",
+    "results/core_current_head_q155_physical_force_energy_join/q155.py": "55c5a57940f479a4669c15b2915e2307141e4d783c817d588cf499ade9b13ca8",
+    "results/core_current_head_q155_physical_force_energy_join/test_audit.py": "0e4194972f67cfea893f827214e9788b101d344ad93ecb059fa84172c1d127dc",
+    "results/core_current_head_q8_localization_force_join/README.md": "8cb594d53fb6a740f9903c131ca7bed63f9cc6bbd9741523f95c20b7ac563355",
+    "results/core_scale_compatible_corner_force_replay/README.md": "c64e5c9c6c7f31f6b1f194ae013c789ac32b7a58c495c29719db3ff1ee05f71a",
+    "results/current_localized_force/README.md": "fbc568355f9f41cb9a82bc760bd8a235d56a73791ff4bf8ad9f1e284ead5041f",
+    "results/force_foundation/README.md": "9fd97cb4536f2b459eb3bc451bd9f6c3a3a9e453e158c11ea72bca8b60d76bce",
+    "results/localized_force_extension/README.md": "3526b5b5043ff16f4e4664957885560574f98b194de9e8fd4a165ceea7319989"
+  },
+  "status": "Q155-physical-localization-compact-force-and-energy-bound-conditionally",
+  "symbolic": {
+    "compact_force_and_energy_certified_conditionally": true,
+    "correction": "Q8's punctured endpoint premise is supplied by Q154, while Q153's complete residual gives the Cartesian-flat corner trace; the sharper direct force ledger is A:m+2, B:m+1, p:m with one further Cauchy time derivative",
+    "established": "the same Q154 physical field admits exact divergence-free axisymmetric localization, zero initial velocity, a twelve-term unit-viscosity residual with complete pressure, one compact smooth global force matching every terminal force jet, and the fixed-time preterminal energy/dissipation estimate",
+    "future_solution_pressure_comparison_or_blowup_certified": false,
+    "historical_frozen_records_modified": false,
+    "next": "recover the localized fixed-gauge pressure and perform the expanding-ball comparison with any admissible smooth finite-energy solution having the same zero datum and force, without assuming competitor pressure, derivative or boundary-flux bounds",
+    "scope": "conditional analytical composition of named continuum providers; the force trace is regularized but the terminal velocity and pressure at the origin are not, and no future solution is constructed",
+    "status": "Q155-physical-localization-compact-force-and-energy-bound-conditionally"
+  }
+}

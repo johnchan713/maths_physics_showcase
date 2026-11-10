@@ -203,6 +203,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q152_physical_stress_feedback_join/**
       - research/navier_stokes_cascade/results/core_current_head_q153_physical_source_tail_diagonal_join/**
       - research/navier_stokes_cascade/results/core_current_head_q154_physical_endpoint_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -413,6 +414,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q152_physical_stress_feedback_join/**
       - research/navier_stokes_cascade/results/core_current_head_q153_physical_source_tail_diagonal_join/**
       - research/navier_stokes_cascade/results/core_current_head_q154_physical_endpoint_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1558,6 +1560,8 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q153_physical_source_tail_diagonal_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json --output q153_ci.json
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q154_physical_endpoint_join/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q154_physical_endpoint_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q154_physical_endpoint_join/evidence.json --output q154_ci.json
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/evidence.json --output q155_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
