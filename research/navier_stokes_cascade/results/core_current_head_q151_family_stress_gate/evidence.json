@@ -1,0 +1,42 @@
+{
+  "closure": {
+    "edges": 1236,
+    "nodes": 389,
+    "source_bindings": 5297
+  },
+  "dependency_evidence_sha256": {
+    "results/canonical_primary_foundation/evidence.json": "84e7fc53acc26a6be459669ab952d60eee30b83f7581eeb124edfd26fa829d5c",
+    "results/core_actual_scalar_gain_join/evidence.json": "970e7ec61be056ef8e95158e527cc161bdffa0cbe4410345e95f7e86a2a1bd6b",
+    "results/core_canonical_full_path_ode_join/evidence.json": "fd28c1af3c9a5cb11dabe7df96e95525b3d90136ab16fcfd42898be5d65ff7d2",
+    "results/core_current_head_q150_initial_covariance_mean_join/evidence.json": "4d99026d3503e6fff52e9d3361500605414a85998d23d6f9236f4fce77a895e9",
+    "results/core_fast_row_gain_join/evidence.json": "af0cd5e853f7781c54c918b416b92ae8048076feb43087d7bba141737058d5bc",
+    "results/core_haar_row_stress_join/evidence.json": "fc205e58ea69504932bd143198ed5a32b4c90be9b7f84ab22e1a882640b16002",
+    "results/core_localized_stress_assembly/evidence.json": "1becf00aa1c5784dc9165f5a10a067ba343ef88d8d2cb433f75213aca3c0727c"
+  },
+  "parent": "fea4d12283ac5eaf80b719d58e43e9540add4880",
+  "source_hashes": {
+    "results/canonical_primary_foundation/README.md": "0b1204546ce981149f6b5cb975574206884f5d84c85385f0ede29f32384e075a",
+    "results/core_actual_scalar_gain_join/README.md": "57c32651ffdfe1a7272f89a21ec52d68047cd068d2d72f2798ab834fa3d9ab22",
+    "results/core_canonical_full_path_ode_join/README.md": "7c07f7efc5504fe0a678efe42a53ab93bc6406e16ece8789b052bca605f14d76",
+    "results/core_current_head_q150_initial_covariance_mean_join/README.md": "44fc37e4ab21a460bf6a41c6dd9a5b27703d087a08e3c02d48e41dd1128e25c3",
+    "results/core_current_head_q151_family_stress_gate/README.md": "a945eade27dd7f475a87ea4bedef86c6fc45249a65afde527a245056e88f5be0",
+    "results/core_current_head_q151_family_stress_gate/audit.py": "7ba42fc7d30035cefce39abf1ef083280ace72320b8eb24ab79c5691e489d786",
+    "results/core_current_head_q151_family_stress_gate/q151.py": "914f23d77a34467a4667d0aad4aff7ead799cb9a346d2be12926cee7b7db2ea2",
+    "results/core_current_head_q151_family_stress_gate/test_audit.py": "cc9f2873647626c36748f47e8687fe95c0fa6ffd0f44e2d4fd2650bb3385ba23",
+    "results/core_fast_row_gain_join/README.md": "d86842b7bda2973fd9dcfc08d9d8713507e222b72c925dbbbe591a0e130ed9b8",
+    "results/core_haar_row_stress_join/README.md": "ba1527dcee682b3928444cd689c5f0f8e8faa862d692ec0c8e41b97d4b146b55",
+    "results/core_localized_stress_assembly/README.md": "a5ab5abbb5bf8c84ef13ef3666a614c5a8d540134fba1ef79cf372701d1dba7a"
+  },
+  "status": "Q150-frontier-corrected-to-physical-canonical-principal-stress-gate",
+  "symbolic": {
+    "complete_residual_or_blowup_certified": false,
+    "correction": "the fresh mean/current-wave feedback estimate at D already follows conditionally for the consistently rebuilt canonical family; it is not available for Q150's distinct inherited physical family",
+    "established": "canonical exact row subtraction plus scalar C and fast-row D estimates close the finite regular feedback/source algebra with complete covariance, axial velocity, full pressure and exact A1 memory",
+    "historical_frozen_records_modified": false,
+    "inherited_and_canonical_primary_families_identified": false,
+    "next": "choose one route without merging families: audit the inherited physical stress identity on its full localized support, or bind the canonical columns/roots/high-jet compact inputs and supports to the finalized background before the complete tail/residual join",
+    "obstruction": "either prove the exact same-family physical principal-stress inequality ||epsilon^-1 L_e||<=epsilon^(D-1)Q_n(S)zeta delta^-p, or carry the rebuilt canonical family through independently validated uniform inputs; O(1/L) frame/root closeness is insufficient",
+    "scope": "a conditional canonical finite-stage estimate; no transfer to the inherited physical primary and no complete residual estimate",
+    "status": "Q150-frontier-corrected-to-physical-canonical-principal-stress-gate"
+  }
+}

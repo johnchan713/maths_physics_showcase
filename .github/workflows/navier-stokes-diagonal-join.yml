@@ -199,6 +199,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q148_coefficient_support_pressure/**
       - research/navier_stokes_cascade/results/core_current_head_q149_primary_pulse_join/**
       - research/navier_stokes_cascade/results/core_current_head_q150_initial_covariance_mean_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q151_family_stress_gate/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -405,6 +406,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q148_coefficient_support_pressure/**
       - research/navier_stokes_cascade/results/core_current_head_q149_primary_pulse_join/**
       - research/navier_stokes_cascade/results/core_current_head_q150_initial_covariance_mean_join/**
+      - research/navier_stokes_cascade/results/core_current_head_q151_family_stress_gate/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1536,6 +1538,11 @@ jobs:
         run: |
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q150_initial_covariance_mean_join/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q150_initial_covariance_mean_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q150_initial_covariance_mean_join/evidence.json --output q150_ci.json
+
+      - name: Check canonical feedback and physical-family stress gate
+        run: |
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q151_family_stress_gate/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q151_family_stress_gate/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q151_family_stress_gate/evidence.json --output q151_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v
