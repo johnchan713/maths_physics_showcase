@@ -1,0 +1,35 @@
+{
+  "closure": {
+    "edges": 1214,
+    "nodes": 378,
+    "source_bindings": 5177
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q139_mixed_primitive_binding/evidence.json": "f3bca007af7e17b4da74e14bf680379cde2ea981eddc4f9b060de7c2db978f01"
+  },
+  "parent": "90f910a0eb4ebbbb40bad8b6e831d222c8672539",
+  "source_hashes": {
+    "results/core_current_head_q128_real_cutoff_signed_root/README.md": "50839c38bf8da48f7bb67ade23d7dab8eb33411cb0530f73fd15b21cece6f810",
+    "results/core_current_head_q139_mixed_primitive_binding/README.md": "9aa2a5df9657171a5307e149a17a3299b3b7262dcab84d491545463364a6af25",
+    "results/core_current_head_q140_four_to_six_mixed_binding/README.md": "a12493e356e2ecaa86a24012c06b82b5e47f4d817580e3a1e61f4b546d7ef475",
+    "results/core_current_head_q140_four_to_six_mixed_binding/audit.py": "5710ea4d95abf64f2fa89bb194ab08aa0d748b7ffade71c1f3fc291e72f1109b",
+    "results/core_current_head_q140_four_to_six_mixed_binding/q140.py": "9a4d7a0f181206a37354404e441f62c7499519d549e01afe850d944984719250",
+    "results/core_current_head_q140_four_to_six_mixed_binding/test_audit.py": "af1781906fff6136449c9d59e96873b8c4f1dae77be29e16ff6b14d641eb74f0",
+    "results/core_current_head_q65_signed_root_radius/README.md": "ebc66c482d18e6a09a39e9edf5ef7528c96f4e755c60c181beb1b0c679758890",
+    "results/core_current_head_q66_cutoff_amplitude/README.md": "1f51fa10b9324b2e8f9e5ef488d2786ea43a6e5d437ead73996452980c27bac7",
+    "results/core_current_head_q72_short_taper_inputs/README.md": "954a50591c0c688169434b9dee1db8f05492092c941d2787eb5a6e74c91925f5"
+  },
+  "status": "four-PREMOD-mixed-fields-to-six-scalar-binding-and-short-taper-obstruction",
+  "symbolic": {
+    "actual_complete_profile_pulse_covariance_residual_or_blowup_certified": false,
+    "composition": "finite two-variable Gevrey-3 composition: outer Q C^n(n!)^2 gives bases 8(Ay,Be)(1+CH)",
+    "correction": "Q72 finite-order cap exp(c*T_m), T_m>=162*3260^m*(m!)^2/t^m, cannot itself be compressed into fixed Gevrey-3 constants",
+    "cutoff": "same Q66 flat cutoff, same positive radicand gap and same Q65 signed removable inverse; no slow analytic extension",
+    "historical_frozen_records_modified": false,
+    "input": "sum over a,b,p2,E of raw mixed jets/(i!k!) <= H Ay^i Be^k(i!k!)^2; p2 retains Pi and Pi_eta",
+    "next": "derive a value-based differentiated short-taper recurrence, then assemble actual four-field regional constants and apply Q139/Q138",
+    "obstruction_scope": "obstruction is in the inherited cap, not a non-Gevrey claim about the actual short-taper profile",
+    "output": "six actual scalars a,-b/a,p2,mu,E,a+b^2/a+a*s^2 satisfy Q139 with explicit Hsix,Asix,Bsix",
+    "status": "four-PREMOD-mixed-fields-to-six-scalar-binding-and-short-taper-obstruction"
+  }
+}

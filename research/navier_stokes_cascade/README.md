@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q140:** [Four PREMOD fields to six mixed scalars](results/core_current_head_q140_four_to_six_mixed_binding/README.md) derives the selected cutoff/root and augmented-variance mixed jets from genuine mixed bounds for `a,b,p2,E`, retaining full pressure. It also proves that Q72's published `exp(c*T_m)` cap cannot itself yield fixed Gevrey-3 constants; a value-based short-taper recurrence remains the next obligation.
+
 > **Q139:** [Mixed primitive binding](results/core_current_head_q139_mixed_primitive_binding/README.md) derives the Q138 mixed fixed-phase primitive input from six actual mixed scalar jets, via a joint scalar/phase inverse and the unchanged fixed integrals. Mean identities are required on the actual real profile, not independent complex inputs. Actual mixed state/root data, whole-hull joins and physical-scale gates remain open.
 
 > **Q138:** [Mixed Ny modulation envelope](results/core_current_head_q138_mixed_modulation_pullback/README.md) derives conditional mixed carrier/exponential and ordinary-X bounds, then joins the unchanged full-pressure repair. The radial base retains N. Actual mixed primitive/PREMOD inputs, whole-hull joins and physical-scale gates remain open.
