@@ -1,5 +1,7 @@
 # Navier-Stokes cascade research scaffold
 
+> **Q141:** [Value-based Q72 short-taper recurrence](results/core_current_head_q141_short_taper_gevrey/README.md) replaces the inherited `exp(c*T_m)` seminorm loss by fixed mixed Gevrey-3 recurrences for the same reference and actual fields. It reintegrates all five moment rows and retains full `p2` pressure memory. Actual order-zero caps/gates and the remaining regional maximum remain open.
+
 > **Q140:** [Four PREMOD fields to six mixed scalars](results/core_current_head_q140_four_to_six_mixed_binding/README.md) derives the selected cutoff/root and augmented-variance mixed jets from genuine mixed bounds for `a,b,p2,E`, retaining full pressure. It also proves that Q72's published `exp(c*T_m)` cap cannot itself yield fixed Gevrey-3 constants; a value-based short-taper recurrence remains the next obligation.
 
 > **Q139:** [Mixed primitive binding](results/core_current_head_q139_mixed_primitive_binding/README.md) derives the Q138 mixed fixed-phase primitive input from six actual mixed scalar jets, via a joint scalar/phase inverse and the unchanged fixed integrals. Mean identities are required on the actual real profile, not independent complex inputs. Actual mixed state/root data, whole-hull joins and physical-scale gates remain open.

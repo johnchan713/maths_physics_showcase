@@ -1,0 +1,34 @@
+{
+  "closure": {
+    "edges": 1215,
+    "nodes": 379,
+    "source_bindings": 5186
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q140_four_to_six_mixed_binding/evidence.json": "10a27268a1ce1b1a7fe200166d8adb0dd0a2fbc6fa00623b67fd99f2a6a9c5bc"
+  },
+  "parent": "2cff8d39aca13598b4034e55d40fe3d8dd7fcac5",
+  "source_hashes": {
+    "results/core_current_head_q140_four_to_six_mixed_binding/README.md": "a12493e356e2ecaa86a24012c06b82b5e47f4d817580e3a1e61f4b546d7ef475",
+    "results/core_current_head_q141_short_taper_gevrey/README.md": "305f713e6333bcf39f1fe879dfdf600c363cd6bd32d0e4229272bf9a7c9991e0",
+    "results/core_current_head_q141_short_taper_gevrey/audit.py": "cbdab574c2f15b243e19d6c034fa32dfe9347ff21ef0f69345822ca7cc1ad745",
+    "results/core_current_head_q141_short_taper_gevrey/q141.py": "f3327b220cd4715c54365369c197d374d6a09111ab76e845a267ab29e0fea675",
+    "results/core_current_head_q141_short_taper_gevrey/test_audit.py": "e5d4451497d81664d8d3dbda2b48f0079c38bcb6c145a4ef0a0a36f909199abe",
+    "results/core_current_head_q63_repair_anisotropy/README.md": "456bb605285dd5a8ef9ba1ed195fb4d5cd1dee8ef2f426e5fb8870b51b62a147",
+    "results/core_current_head_q67_premod_memory/README.md": "7c45f872f0894554ce66cd1d76749b6ba3bbb11884df29d5dc9237cfffdf7caa",
+    "results/core_current_head_q72_short_taper_inputs/README.md": "954a50591c0c688169434b9dee1db8f05492092c941d2787eb5a6e74c91925f5"
+  },
+  "status": "Q72-value-based-short-taper-mixed-Gevrey3-recurrence",
+  "symbolic": {
+    "actual": "same kappa,p1r,X*nsr build F_a,U_a; moments are reintegrated independently from the original Xa traces",
+    "actual_complete_profile_pulse_covariance_residual_or_blowup_certified": false,
+    "correction": "integrate fixed Gevrey sources and compose exp at an outward order-zero value cap; never exponentiate T_m",
+    "historical_frozen_records_modified": false,
+    "next": "verify those order-zero caps, assemble the remaining regional four-field constants, then join Q137/Q121 on the whole hull",
+    "output": "conditional common mixed Gevrey-3 H,Ay,Be for actual short-taper a,b,p2,E, passed to Q140/Q139/Q138",
+    "premises": "Q72 order-zero geometry, trace, exponential value and real floor/value/frequency gates remain to be numerically bound on the selected profile",
+    "pressure": "p2 retains complete M,S,Pi memory and both 4*Aphys*eta*Pi and -(1-eta^2)*Pi_eta terms; p1 retains I,J",
+    "reference": "same analytic core slopes and same psi build F_r,U_r; all five Xa traces build p1r and X*nsr",
+    "status": "Q72-value-based-short-taper-mixed-Gevrey3-recurrence"
+  }
+}
