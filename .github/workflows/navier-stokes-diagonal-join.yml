@@ -205,6 +205,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q154_physical_endpoint_join/**
       - research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q156_physical_pressure_comparison/**
+      - research/navier_stokes_cascade/results/core_current_head_q157_physical_core_exclusion/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -417,6 +418,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q154_physical_endpoint_join/**
       - research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/**
       - research/navier_stokes_cascade/results/core_current_head_q156_physical_pressure_comparison/**
+      - research/navier_stokes_cascade/results/core_current_head_q157_physical_core_exclusion/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1566,6 +1568,8 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q155_physical_force_energy_join/evidence.json --output q155_ci.json
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q156_physical_pressure_comparison/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q156_physical_pressure_comparison/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q156_physical_pressure_comparison/evidence.json --output q156_ci.json
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q157_physical_core_exclusion/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q157_physical_core_exclusion/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q157_physical_core_exclusion/evidence.json --output q157_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

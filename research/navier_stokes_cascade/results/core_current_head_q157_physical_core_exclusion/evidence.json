@@ -1,0 +1,79 @@
+{
+  "binding": {
+    "background": "Q149 uses the same finalized leading profile and rule-defined Borel background as the positive-core provider",
+    "background_remainder": "q^A u_theta=e0+R_bg; |R_bg|<=C_bg q^(2h)",
+    "canonical_physical_primary_identification_used": false,
+    "diagonal": "Q153 applies the certified complete-potential diagonal to the inherited physical family with unchanged closed annular supports",
+    "localization": "Q155 has c=1 and grad c=0 on the late core, hence u=u0 there",
+    "path_inside_hole": true,
+    "pressure_gauge_changed": false,
+    "support_hole": "every stage increment vanishes for X<X_a"
+  },
+  "closure": {
+    "edges": 1276,
+    "nodes": 396,
+    "source_bindings": 5373
+  },
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json": "b7a3b0b717f27c364ba212a1ce3575c48abe13e69363c032c92126213931e08b",
+    "results/core_current_head_q155_physical_force_energy_join/evidence.json": "242e711fbb1babf4ae71e7fc723850c4d079e9f102a4433a28bbfdcdc1456a23",
+    "results/core_current_head_q156_physical_pressure_comparison/evidence.json": "bca6d20dad86b7d91ea802ede03fef7a92c91c4f4c6aeb2f5930ce326973932f",
+    "results/core_same_field_positive_core_reconciliation/evidence.json": "21151dd33b0c85350655cd06deaf950efcefe15b8c579135d7deb8bfef848f84"
+  },
+  "exclusion": {
+    "comparison_input": "Q156: v=u on R^3 x [0,T] for every T<1 for each locally smooth same-force zero-datum competitor with fixed-interval L2 bound",
+    "conclusion": "no such competitor can also be smooth on a neighborhood of (0,1)",
+    "future_velocity_or_pressure_constructed": false,
+    "global_smooth_finite_energy_competitor_excluded_conditionally": true,
+    "terminal_input": "Q157 path tends to (0,1) and |u_theta| tends to infinity",
+    "unconditional_blowup_claimed": false
+  },
+  "lower_bound": {
+    "bound": "|u_theta(x_tau,1-tau)|>=(e0/2) tau^(-A) for 0<tau<=tau_star",
+    "conditional": true,
+    "exponent": "101/200",
+    "leading_coefficient": "e0=E0(X_in,0)=sqrt(2 X_in)*varphi_star*Phi/C>0",
+    "path": "x_tau=(sqrt(2 X_in tau),0,0), t=1-tau",
+    "tau_star": "min(q0,(e0/(2 C_bg))^100,tau0/2,r_L^2/(8 X_in))"
+  },
+  "parameters": {
+    "A": "101/200",
+    "X_a": "4/101",
+    "X_in": "1/101",
+    "h": "1/200",
+    "two_h_reciprocal": 100
+  },
+  "parent": "5384be92235f17e51a1e5206b08bb767831a7fde",
+  "providers": {
+    "Q155_localization_plateau": true,
+    "Q156_preterminal_comparison": true,
+    "all_provider_conclusions_remain_conditional": true,
+    "physical_diagonal_has_unchanged_annular_support_hole": true,
+    "same_finalized_background": true
+  },
+  "source_hashes": {
+    "results/core_certified_complete_potential_diagonal_join/README.md": "0cb3d009cb30423205199e924522c270d55272c2a66630775d0b9a3f0c0356ae",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q155_physical_force_energy_join/README.md": "48d7294690234b882491b994451e457445ccbabc96cb5ae1dba99804530882fa",
+    "results/core_current_head_q156_physical_pressure_comparison/README.md": "958197cf00dfbafdcef3ae1664ffcf1f046ab0ce01e547bd0da77e75e14a5df4",
+    "results/core_current_head_q157_physical_core_exclusion/README.md": "ce970f27fde11bcf79971729d22dac8863a9ca70d603653fffc25cdb1332ab6b",
+    "results/core_current_head_q157_physical_core_exclusion/audit.py": "90019def6345e9435b04caf61fdefa1ab9763d39b865666240d4c80f02fd4c25",
+    "results/core_current_head_q157_physical_core_exclusion/q157.py": "f9655801fcd93a8f8e56cd9973dc4af003524f987fdaaefdb19075b1efa7faeb",
+    "results/core_current_head_q157_physical_core_exclusion/test_audit.py": "e4d73c57a571682074ee578c29aebcdbb99130582a4b50769fa3ba4b93e240c1",
+    "results/core_same_field_positive_core_reconciliation/README.md": "e081722d44d6cab95894f9fa6a2f1ddba15fa3415febe0661d0b252f48039d18"
+  },
+  "status": "Q157-same-physical-core-path-and-competitor-exclusion-conditionally",
+  "symbolic": {
+    "correction": "Q156 correctly refused to import the older path without a family binding; Q149's exact shared Borel background and Q153's unchanged annular support hole now provide that binding without identifying canonical and physical pulses",
+    "established": "the exact Q153-Q155 physical field satisfies the protected-core lower bound with A=101/200 and an explicit positive combined threshold; with Q156 this conditionally excludes a same-force zero-datum smooth finite-energy competitor",
+    "historical_frozen_records_modified": false,
+    "next": "audit the current physical Q147-Q157 dependency and quantifier closure, list every still-conditional continuum primitive, and prove or precisely obstruct the first unresolved one before any unconditional theorem claim",
+    "same_physical_core_and_conditional_exclusion_certified": true,
+    "scope": "analytical composition of named conditional continuum providers; exact tests check arithmetic and provenance but do not prove those providers",
+    "status": "Q157-same-physical-core-path-and-competitor-exclusion-conditionally",
+    "unconditional_admissible_force_or_blowup_certified": false
+  }
+}
