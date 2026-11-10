@@ -1,0 +1,42 @@
+{
+  "closure": {
+    "edges": 1259,
+    "nodes": 392,
+    "source_bindings": 5332
+  },
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_endpoint_join/evidence.json": "f40db0ddfb1fd3fc661ede433d8ce88c8be10d25b77c635e1b61c3ec75c64e49",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json": "b7a3b0b717f27c364ba212a1ce3575c48abe13e69363c032c92126213931e08b",
+    "results/core_current_head_q7_corner_endpoint_join/evidence.json": "6799ac48a2e73a3d50e9790d27439106e02a5e2fdefd298413a7c1abc75b1ddf",
+    "results/current_endpoint_jets/evidence.json": "de61c70e5aea7ef14663e8fa4d34736bcf50399db4660c1eb3f01827c2e7e6d6",
+    "results/endpoint_foundation/evidence.json": "1325b04b9c7e8a81e13df85f3f3aef2b8de1d0fa2a0d4cd28868552901ef03f7",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0"
+  },
+  "parent": "a22f25e5f14763dc24c695233144e9be46a359fa",
+  "source_hashes": {
+    "results/core_certified_complete_potential_endpoint_join/README.md": "cb9e933a0fe8137c6a8ba2190a6acb33504e6225fb86b340f18d04bab9abbd83",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q154_physical_endpoint_join/README.md": "7c45e1649c5ad48848c9d44b1e049bddcc45ce3105abc1e81bfad187bfd1f852",
+    "results/core_current_head_q154_physical_endpoint_join/audit.py": "c8649863c6666a5023bd58e524d43f321f9092a5bf0badab67684796a9da2f74",
+    "results/core_current_head_q154_physical_endpoint_join/q154.py": "ddf88a74e258b27205982228e68f9ed6b737685ad237efe1a9ac0319c92d1cee",
+    "results/core_current_head_q154_physical_endpoint_join/test_audit.py": "d9247bfef4a6d57c332b45a7b058a6b87b9886c0f441d4778bc99b34173b8878",
+    "results/core_current_head_q7_corner_endpoint_join/README.md": "7128459d6ad0f53c8229577f0db1fd0d6439a0905556c822cf7727c6c68bf87a",
+    "results/current_endpoint_jets/README.md": "81689cb2aa3d57fca23d997bdd184bab49ce0820aaa3031f5138e7a917841229",
+    "results/endpoint_foundation/README.md": "3e45642afe62a2bd50dd74d88a210a988f0ab67438d570d1c885efd9e175800d",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5"
+  },
+  "status": "Q154-physical-diagonal-punctured-endpoint-bound-conditionally",
+  "symbolic": {
+    "compact_force_energy_comparison_or_blowup_certified": false,
+    "correction": "Q7's closed-time inequality was genuinely open at that head, but Q149-Q153 now supply it on the same physical field: one admitted later band tail, one-sided physical pulse jets, finite generated-source/compact graphs and a locally finite complete-potential diagonal",
+    "established": "on every punctured terminal compact, every fixed jet of the Q153 complete potential, divergence-safe direct swirl and fixed-gauge pressure has a uniform one-sided bound and compatible terminal limit; full exterior heat and pressure jets retain the complete Leibniz convolution",
+    "historical_frozen_records_modified": false,
+    "next": "replay the exact axisymmetric space-time localization and zero initialization on this same field, retaining all potential cutoff derivatives, full pressure, unit viscosity, both nonlinear crosses and the cutoff-curl square before smooth force extension",
+    "punctured_closed_time_endpoint_certified_conditionally": true,
+    "scope": "conditional analytical join of named continuum providers; the singular origin is excluded, exterior time Taylor series have zero radius when the heat constant is nonzero, and tests are diagnostics rather than continuum proofs",
+    "singular_origin_regularized": false,
+    "status": "Q154-physical-diagonal-punctured-endpoint-bound-conditionally"
+  }
+}
