@@ -1,0 +1,44 @@
+{
+  "closure": {
+    "edges": 1243,
+    "nodes": 390,
+    "source_bindings": 5308
+  },
+  "dependency_evidence_sha256": {
+    "results/actual_band_pulse_bounds/evidence.json": "02d59fe4906a7bab5272200a9135fbd63ecce3e04bb1ec88e31e7671bdf4f23d",
+    "results/complete_covariance_initial_means/evidence.json": "64d6891cdfd7e17bcb6ff8d50eef18c8e1ecbebf5a2f122c0a1ef49870060def",
+    "results/core_actual_scalar_gain_join/evidence.json": "970e7ec61be056ef8e95158e527cc161bdffa0cbe4410345e95f7e86a2a1bd6b",
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q151_family_stress_gate/evidence.json": "6a1afc2ce785fcd99db5582f5ce8a215b4a38a07ffe3c9e5bc65a82cb92a0cab",
+    "results/core_fast_row_gain_join/evidence.json": "af0cd5e853f7781c54c918b416b92ae8048076feb43087d7bba141737058d5bc",
+    "results/core_haar_row_stress_join/evidence.json": "fc205e58ea69504932bd143198ed5a32b4c90be9b7f84ab22e1a882640b16002",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0"
+  },
+  "parent": "387edc730980a28fe72d61a5d33d2d50402c56a6",
+  "source_hashes": {
+    "results/actual_band_pulse_bounds/README.md": "b95bccb7103ec813babf7ccb9a43d65ee0b74b221914fa66fb9c2f1b98f4847f",
+    "results/complete_covariance_initial_means/README.md": "c0c0ed167bc7bf84e5b48c1a2e360b7080c2892d88390c00a5d6cfbbcfccef0d",
+    "results/core_actual_scalar_gain_join/README.md": "57c32651ffdfe1a7272f89a21ec52d68047cd068d2d72f2798ab834fa3d9ab22",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q151_family_stress_gate/README.md": "a945eade27dd7f475a87ea4bedef86c6fc45249a65afde527a245056e88f5be0",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q152_physical_stress_feedback_join/audit.py": "2735e2817757a542d098bef7692b553dcdc70f601485dbc046346fcdfb973054",
+    "results/core_current_head_q152_physical_stress_feedback_join/q152.py": "1258eb50f3ab35061cb7e02beef01fbc3011ca3369d698b9a9eed9e725c6913a",
+    "results/core_current_head_q152_physical_stress_feedback_join/test_audit.py": "5ee6a48ace039b9092dc34f9efbb20781ed73a961d2da8e8146e18a81855e717",
+    "results/core_fast_row_gain_join/README.md": "d86842b7bda2973fd9dcfc08d9d8713507e222b72c925dbbbe591a0e130ed9b8",
+    "results/core_haar_row_stress_join/README.md": "ba1527dcee682b3928444cd689c5f0f8e8faa862d692ec0c8e41b97d4b146b55",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5"
+  },
+  "status": "Q152-physical-principal-stress-gate-closed-and-feedback-D-joined",
+  "symbolic": {
+    "canonical_and_physical_primary_families_identified": false,
+    "complete_residual_or_blowup_certified": false,
+    "correction": "Q151 correctly rejected transfer by physical/canonical frame closeness, but overlooked the inherited physical family's own H_beta y_beta=T_beta root equation, physical square scaling and squared partition identity",
+    "established": "on Q149's inherited physical family, the localized principal selected stress equals Sigma0 exactly; the complete-curl selected remainder has order 2-2kappa, so the stress gate and conditional mean-feedback/source order D follow with full pressure, axial covariance, viscosity and A1 memory",
+    "generated_source_endpoint_and_complete_tail_join_certified": false,
+    "historical_frozen_records_modified": false,
+    "next": "prove every generated regular harmonic has the physical full-path Gaussian/input bounds and smooth endpoint extension at the exposed high jets, and bound every excluded additive Gaussian/spatial/scale/A0/A1 tail after physical differentiation before invoking the complete residual diagonal",
+    "scope": "same-family conditional finite-stage join; it does not identify the physical and canonical entrances or prove the generated-source endpoint class, additive physical tails, a complete residual theorem or blow-up",
+    "status": "Q152-physical-principal-stress-gate-closed-and-feedback-D-joined"
+  }
+}
