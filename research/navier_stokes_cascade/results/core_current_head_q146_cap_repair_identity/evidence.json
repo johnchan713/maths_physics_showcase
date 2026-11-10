@@ -1,0 +1,36 @@
+{
+  "closure": {
+    "edges": 1220,
+    "nodes": 384,
+    "source_bindings": 5235
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q145_hierarchy_gate/evidence.json": "f5b2c73cf3e2e5d82c7d0b062d2337ef9ffe3e77c6cda0ffe8cd81262195a58f"
+  },
+  "parent": "db174e5ac98dad3fbad4718a45c5442e3bbfb4f0",
+  "source_hashes": {
+    "results/core_current_head_q127_annular_radius_axis/README.md": "ec5941589ea2af28460da30b5461dc58eb28a6ca18350e56787d953b16f332bf",
+    "results/core_current_head_q131_swirl_memory_gevrey/README.md": "1ad7acf7f3554fe15da5692688753c24b7c22c36b6dadacbcc83889eff2bf8a4",
+    "results/core_current_head_q132_exact_repair_gevrey/README.md": "0e029fcd984fc8c7a9344740397508a883759cfd3ab5ad39de82712eb36ad34a",
+    "results/core_current_head_q137_physical_repair_mixed/README.md": "063f5484270f2c3c507deba016bbec9c4e2c0e18d550e0ffd4f3637d2e854d16",
+    "results/core_current_head_q138_mixed_modulation_pullback/README.md": "df4fe63b2cfc0933e39b0fe48f61f81a0548c49d246eb2303368c4421d3a3f6e",
+    "results/core_current_head_q145_hierarchy_gate/README.md": "0d4b6f8cad0fd65ca4faa415bf975a33a4d9865c5a694e632be0f3564258b1fa",
+    "results/core_current_head_q146_cap_repair_identity/README.md": "4b18f84b34ba770c8b2250854039e846f6651bac76e370cfb86b602723a555f3",
+    "results/core_current_head_q146_cap_repair_identity/audit.py": "39d4c21b845ba75078eff9d2d59269c6608f4ad0cdded0c6beb55e1bf87d6f06",
+    "results/core_current_head_q146_cap_repair_identity/q146.py": "7b821496c6e78bc33ebe4f9767b5cb4ff03ae65929ff2fc6d997ed8af3753c9f",
+    "results/core_current_head_q146_cap_repair_identity/test_audit.py": "ae73617442259a43bf962152eb298f862e830bd4445c54b90fc122008dc673f7",
+    "results/core_current_head_q72_short_taper_inputs/README.md": "954a50591c0c688169434b9dee1db8f05492092c941d2787eb5a6e74c91925f5",
+    "results/core_current_head_q73_annular_target_all_orders/README.md": "54498a7f0a0fa9532cd3ac342272b791a47e33a2d762d640c1ab6a08c700f59b",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4"
+  },
+  "status": "same-profile-complex-cap-specialization-and-exact-repair-identity-obstruction",
+  "symbolic": {
+    "blocking_inequality": "for every r in M,I,J,S,Pi prove |partial_eta^m d_r^base|<=T_r L_r^m(m!)^3 for the same modulation, then retain (m,(m-j)/lambda,i,-s,cp) and the original root/positive-field gates",
+    "cap": "L0=J6+e*v; n=ceil(200B0+L0+4); Ecap=max(endpoint,3^n/C,4P); invEcap=max(endpoint inverse,C*3^n,20/P)",
+    "correction": "Q73 and Q127 already analytically discharge Q145 same-profile cap inequality; selected huge caps need not be materialized",
+    "exact_repair_cone_join_pulse_covariance_residual_or_blowup_certified": false,
+    "historical_frozen_records_modified": false,
+    "repair": "stage compatibility does not bind Q138 modulation to Q131 five-row memory and Q132 actual baseline target",
+    "status": "same-profile-complex-cap-specialization-and-exact-repair-identity-obstruction"
+  }
+}
