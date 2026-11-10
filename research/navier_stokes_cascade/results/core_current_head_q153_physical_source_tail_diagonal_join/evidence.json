@@ -1,0 +1,45 @@
+{
+  "closure": {
+    "edges": 1251,
+    "nodes": 391,
+    "source_bindings": 5320
+  },
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_current_head_q152_physical_stress_feedback_join/evidence.json": "e79f9d49a8100f871e4636037595c2ac185cd9c5986e9ecffe1168e45fbfc1a1",
+    "results/core_finite_stage_compact_recurrence/evidence.json": "f49b4132de95667046e884aeaf0049bd6df21a9d1ed34272c98a8fd739147c34",
+    "results/core_first_sourced_physical_tail_closure/evidence.json": "b0aaab66353c1461ea1c9b2ee62e4faa69d9eb206573d2d4b18b34111949eff7",
+    "results/core_physical_tail_join/evidence.json": "d5916638d86000f381517d55a740313d48513009fac446018472cfaaca3ec22c",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+    "results/regular_source_foundation/evidence.json": "91f71ce32b4427f504553f4d8dfe5d555ae8822ec3f8e8da75123f729e487e28",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "parent": "30cdd67580073347b99bb9f4d84a75af326cbd1e",
+  "source_hashes": {
+    "results/core_certified_complete_potential_diagonal_join/README.md": "0cb3d009cb30423205199e924522c270d55272c2a66630775d0b9a3f0c0356ae",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/audit.py": "9d71977ae41a7eb0a29260e965e1f7e750b40012593d69b178bf8a4d593baf9c",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/q153.py": "e4be61e8af609b7614c0c38250ba8ddb36c78465ae528bb45a4e6e11b27d82ca",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/test_audit.py": "daeb58c5e687e673d6c82041d7c061fccb3f81dac2f3a7686e88c1985acf368a",
+    "results/core_finite_stage_compact_recurrence/README.md": "c8a160689babfa80da97b0aef5d8692cd21e99f086711a865403d67941049470",
+    "results/core_first_sourced_physical_tail_closure/README.md": "45c8cf71add63aae30839495e95e82afcbc686c93bf535c179a21d0c1195cd7e",
+    "results/core_physical_tail_join/README.md": "d370bf1aa9b7133d05b001050d538e6fe653008528144e02196b4bb7b59e9de0",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4"
+  },
+  "status": "Q153-physical-source-tail-and-complete-potential-diagonal-bound-conditionally",
+  "symbolic": {
+    "all_fixed_stage_additive_physical_tails_certified_conditionally": true,
+    "closed_time_forcing_energy_or_blowup_certified": false,
+    "complete_potential_diagonal_applicable_conditionally": true,
+    "correction": "Q152's requested source and tail estimates were already proved as family-local conditional theorems; spatial cutoff terms belong to the regular operator and scale cutoffs to the complete-potential diagonal, not to the excluded per-stage tail ledger",
+    "established": "Q149-Q152's same physical family satisfies the inherited full-path Gaussian quotient and endpoint source contracts at every fixed requested jet; its temporal Gaussian, compact A0/A1, and base/exterior tails are conditionally flat after every fixed physical derivative, and the corrected D seed binds to the finite-stage recurrence and complete-potential diagonal",
+    "historical_frozen_records_modified": false,
+    "next": "bind this same physical locally finite field, cutoff sequence, support and pressure gauge to the closed-time endpoint atlas and complete one-sided jets before localization, compact forcing, energy, comparison and the core lower bound",
+    "physical_generated_source_endpoint_join_certified_conditionally": true,
+    "scope": "conditional analytical composition of named continuum premises; no giant seminorm is numerically evaluated, no stage-uniform uncut series is claimed, and tests do not prove the continuum estimates",
+    "status": "Q153-physical-source-tail-and-complete-potential-diagonal-bound-conditionally"
+  }
+}
