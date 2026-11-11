@@ -6,7 +6,19 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q184 generated-source logarithmic loss correction](core_current_head_q184_generated_source_log_loss_correction/README.md).
+Latest source audit: [Q185 corrected-rate diagonal, localization and comparison replay](core_current_head_q185_corrected_rate_diagonal_comparison_replay/README.md).
+Q185 replays Q180--Q182 after Q184's norm correction. The existing
+log-renormalized `W/M/S` route retains Q181's regular/cross margin
+`49997/40000000`; the corrected pure-power gain changes that margin to
+`49996/40000000`. The disjoint compact `A0/A1` reserves remain
+`1/40000000`. Both positive gains reach every fixed diagonal request, and the
+complete residual, twelve-term localization, `R^-2` comparison and protected
+core implications replay conditionally. A pure-rate diagonal may select
+different finite scales, so no byte-identical field claim is made. Independent
+exact-core and finite existence/inverse/gap validation remains open; no
+unconditional pulse, residual, force, exclusion or blow-up follows.
+
+Preceding source audit: [Q184 generated-source logarithmic loss correction](core_current_head_q184_generated_source_log_loss_correction/README.md).
 Q184 corrects Q183's frontier. The named analytical source theorems already
 supply fixed-cycle raw-source jets, `log P` jets and smooth endpoint extension
 in the repository's logarithmically renormalized classes. Q183's displayed

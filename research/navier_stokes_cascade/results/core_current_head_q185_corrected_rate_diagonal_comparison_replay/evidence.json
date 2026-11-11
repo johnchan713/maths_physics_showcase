@@ -1,0 +1,164 @@
+{
+  "closure": {
+    "edges": 1505,
+    "nodes": 431,
+    "source_bindings": 5799
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q166_complete_residual_frontier_audit/evidence.json": "9b080d720000d317ed76ad08017d8cfb5fe8d90fb55c8c5140ae3b07827e069c",
+    "results/core_current_head_q181_diagonal_endpoint_force_replay/evidence.json": "34a0033dd2dfa6990c8fa5dca2563eb208d7ed00238589a76ff401aae1efb25c",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/evidence.json": "2148704390a3b45d796e10d96a1b884e765f3633b9f62f56f19f3634b17bce5d",
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9"
+  },
+  "parent": "13683a535b9d8625b1dac84c8ce6a18e9cb2b2a1",
+  "review": {
+    "checks": {
+      "Q181_margin_is_exactly_the_log_route_margin": true,
+      "all_provider_statuses_match": true,
+      "both_routes_reach_every_fixed_diagonal_request": true,
+      "compact_margins_remain_separate_and_positive": true,
+      "comparison_and_core_are_rate_independent_after_rebuild": true,
+      "complete_residual_endpoint_and_localization_memory_survives": true,
+      "pure_route_margin_is_corrected_by_one_over_forty_million": true
+    },
+    "comparison_replay": {
+      "Poisson_alone_removes_harmonic_gradient": false,
+      "annular_diagonal_terms_vanish_exactly": true,
+      "background_terms_vanish_exactly": false,
+      "common_force_cancellations": 1,
+      "competitor_boundary_flux_bound_assumed": false,
+      "competitor_derivative_bound_assumed": false,
+      "core_exponent": "101/200",
+      "cutoff_power": 8,
+      "finite_energy_essential": true,
+      "future_velocity_or_pressure_constructed": false,
+      "limit_order": [
+        "fix T_tau<1 and recover the pressure gradient",
+        "send the comparison radius R to infinity at this fixed T_tau",
+        "deduce v=u at t=1-tau, then let tau decrease to zero"
+      ],
+      "structural_input_only_requires_rebuilt_same_field_force_pair": true,
+      "threshold_strictly_positive": true,
+      "unconditional_blowup_claimed": false,
+      "uniform_comparison_constant_as_T_to_one_required": false,
+      "worst_radius_decay": "2"
+    },
+    "correction": {
+      "Q181_exact_margin_remains_valid_for_log_renormalized_WMS_route": true,
+      "Q181_margin_is_too_large_for_corrected_pure_power_route": true,
+      "Q182_implication_replays_on_either_rebuilt_same_field_force_pair": true,
+      "corrected_pure_margin_is_49996_over_40000000": true,
+      "historical_frozen_evidence_modified": false,
+      "pure_route_may_reselect_diagonal_scales_so_no_byte_identity_is_claimed": true
+    },
+    "diagonal_replay": {
+      "all_fixed_cartesian_residual_jets_flat": true,
+      "all_six_groups_retain_complete_memory": true,
+      "complete_pressure_retained": "p0 grad c",
+      "every_fixed_target_has_finite_log_stage": true,
+      "every_fixed_target_has_finite_pure_stage": true,
+      "fixed_jet_then_finite_stage": true,
+      "future_velocity_or_pressure_constructed": false,
+      "localized_term_count": 12,
+      "log_route_is_existing_WMS_diagonal": true,
+      "margins": {
+        "A0_own_margin_both_routes": "1/40000000",
+        "A1_own_margin_both_routes": "1/40000000",
+        "both_regular_margins_positive": true,
+        "compact_accounts_disjoint": true,
+        "compact_margins_positive": true,
+        "inherited_Q181_margin": "49997/40000000",
+        "log_delta": "49997/100000",
+        "log_regular_and_cross_margin": "49997/40000000",
+        "pure_delta": "12499/25000",
+        "pure_margin_correction": "-1/40000000",
+        "pure_regular_and_cross_margin": "12499/10000000"
+      },
+      "one_compact_smooth_force": true,
+      "protected_late_core_unchanged_by_support_geometry": true,
+      "punctured_endpoint_supplied_separately": true,
+      "pure_route_identified_byte_for_byte_with_Q181_field": false,
+      "pure_route_reselects_finite_stages_and_may_change_diagonal_scales": true,
+      "stage_uniform_constant_used": false,
+      "terminal_origin_included": false,
+      "unit_viscosity_retained": "1"
+    },
+    "next": "begin an independent source-level audit of the earliest retained exact-core and finite existence/inverse/gap premise, preserving the corrected log or pure rate route",
+    "provider_status_checks": {
+      "core_current_head_q166_complete_residual_frontier_audit": true,
+      "core_current_head_q181_diagonal_endpoint_force_replay": true,
+      "core_current_head_q182_comparison_core_exclusion_replay": true,
+      "core_current_head_q184_generated_source_log_loss_correction": true
+    },
+    "residual_margins": {
+      "A0_own_margin_both_routes": "1/40000000",
+      "A1_own_margin_both_routes": "1/40000000",
+      "both_regular_margins_positive": true,
+      "compact_accounts_disjoint": true,
+      "compact_margins_positive": true,
+      "inherited_Q181_margin": "49997/40000000",
+      "log_delta": "49997/100000",
+      "log_regular_and_cross_margin": "49997/40000000",
+      "pure_delta": "12499/25000",
+      "pure_margin_correction": "-1/40000000",
+      "pure_regular_and_cross_margin": "12499/10000000"
+    },
+    "sample_log_stage": {
+      "J0": 800,
+      "delta": "49997/100000",
+      "h": "1/200",
+      "loss_H": 0,
+      "loss_L": 0,
+      "replay_beats_target_by_margin": true,
+      "replay_left": "20048797/20000000",
+      "replay_stage": 801,
+      "retained_half_stage_margin": "49997/40000000",
+      "route": "log",
+      "target": 0,
+      "threshold_holds": true,
+      "threshold_left": "40047597/40000000"
+    },
+    "sample_pure_stage": {
+      "J0": 800,
+      "delta": "12499/25000",
+      "h": "1/200",
+      "loss_H": 0,
+      "loss_L": 0,
+      "replay_beats_target_by_margin": true,
+      "replay_left": "5012099/5000000",
+      "replay_stage": 801,
+      "retained_half_stage_margin": "12499/10000000",
+      "route": "pure",
+      "target": 0,
+      "threshold_holds": true,
+      "threshold_left": "10011699/10000000"
+    },
+    "scope": {
+      "Q180_Q182_corrected_pure_route_replayed_conditionally": true,
+      "Q180_Q182_log_route_replayed_conditionally": true,
+      "exact_core_and_finite_existence_inverse_gap_lemmas_independently_reproved": false,
+      "original_old_rate_exact_pure_power_contract_proved": false,
+      "tests_are_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q166_complete_residual_frontier_audit/README.md": "837ae11decd2576c11582950cfd0226af62e934bc40f6b4c4be343f369eb1896",
+    "results/core_current_head_q181_diagonal_endpoint_force_replay/README.md": "497f2b778ee1459fd0ddf35c8d95daa07b65d889b2e0459ddbcb5ac240d1f6df",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/README.md": "4efd532051a973e3b30441f2d77fd36c113b68b37f14ec2b371f1e8d8c0ba9f6",
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q185_corrected_rate_diagonal_comparison_replay/README.md": "294288c16f1d1035eef130382ccffbb71125fb48a9bfb040eb2bc4e9cb3746cc",
+    "results/core_current_head_q185_corrected_rate_diagonal_comparison_replay/audit.py": "283d91566de1c7226bae0aeda5b4275368a16bc2eeecdf427fac170d077bbd65",
+    "results/core_current_head_q185_corrected_rate_diagonal_comparison_replay/q185.py": "ca970bc515fd6db90b3e341739d9aca48ca6f834ded1bca335860af8c743a6a2",
+    "results/core_current_head_q185_corrected_rate_diagonal_comparison_replay/test_audit.py": "2e95e3bb3bf4a9a07b079d3054f192c160aecda9cc9636e3171891aed48086ea"
+  },
+  "status": "Q185-corrected-rate-diagonal-localization-comparison-replayed-conditionally",
+  "symbolic": {
+    "correction": "Q181's 49997/40000000 regular/cross reserve is the log-renormalized margin; the corrected pure-power gain gives 49996/40000000, while the disjoint A0/A1 margins remain 1/40000000",
+    "established": "the Q180--Q182 diagonal, complete residual, endpoint, localization, fixed-gauge comparison and protected-core implications close conditionally in the exact W/M/S classes and also after spending kappa for a corrected pure-power recurrence",
+    "historical_frozen_records_modified": false,
+    "object_limit": "the pure route may choose different finite diagonal scales, so it is not identified byte-for-byte with Q181's field; Q182 replays structurally on its rebuilt common field-force pair with the same support hole and background",
+    "status": "Q185-corrected-rate-diagonal-localization-comparison-replayed-conditionally",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
