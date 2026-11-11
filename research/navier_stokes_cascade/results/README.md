@@ -6,17 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q178 physical primary-pulse source boundary and covariance obstruction](core_current_head_q178_physical_primary_source_audit/README.md).
-Q178 joins the audited physical primary-pulse theorem to the same finalized
-Q177 profile and records one rule-defined schedule for every actual used
-scale and fixed physical derivative order. Complete curl velocity, wave
-pressure, fixed potential and closed supports are bounded conditionally on
-the retained exact-core and finite lemmas. The sourced inverse still requires
-explicit generated-source bounds and smooth endpoint support; the uncut
-radial-amplitude lower bound is not a cutoff-velocity floor. The uncancelled
-covariance power `Q^(-1-2h*kappa)` grows on later bands, so complete radial,
-axial, tensor, curl and `Pi1/Pi2` mean identities remain necessary before any
-nonlinear hierarchy, residual, force or blow-up conclusion.
+Latest source audit: [Q179 complete initial covariance means and finite-cycle frontier](core_current_head_q179_covariance_mean_cycle_frontier/README.md).
+Q179 corrects Q178's provisional raw-covariance frontier: exact six-entry
+identities cancel the negative raw power at the initial stage, and the
+inherited physical family's own root and squared-partition identity closes
+the first feedback at order `D=3/2-2*kappa` with axial velocity, viscosity,
+`A1`, compact/moving pressure and `Pi1/Pi2` retained. This does not close the
+universal cycle. Every recomputed finite target still needs a `zeta`-weighted
+edge estimate and both exact tangential moment identities. Ordinary compact
+seminorms do not supply the vanishing edge weight, so the downstream source
+and residual diagonal remains conditional and no force or blow-up conclusion
+follows.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
 The broad foundation obstruction left by the explicit-tail join is now split

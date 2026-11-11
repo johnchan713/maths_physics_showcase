@@ -1,0 +1,117 @@
+{
+  "closure": {
+    "edges": 1459,
+    "nodes": 425,
+    "source_bindings": 5729
+  },
+  "dependency_evidence_sha256": {
+    "results/complete_covariance_initial_means/evidence.json": "64d6891cdfd7e17bcb6ff8d50eef18c8e1ecbebf5a2f122c0a1ef49870060def",
+    "results/core_current_head_q150_initial_covariance_mean_join/evidence.json": "4d99026d3503e6fff52e9d3361500605414a85998d23d6f9236f4fce77a895e9",
+    "results/core_current_head_q151_family_stress_gate/evidence.json": "6a1afc2ce785fcd99db5582f5ce8a215b4a38a07ffe3c9e5bc65a82cb92a0cab",
+    "results/core_current_head_q152_physical_stress_feedback_join/evidence.json": "e79f9d49a8100f871e4636037595c2ac185cd9c5986e9ecffe1168e45fbfc1a1",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json": "b7a3b0b717f27c364ba212a1ce3575c48abe13e69363c032c92126213931e08b",
+    "results/core_current_head_q159_primary_contract_frontier/evidence.json": "60ce1330f10c571b2c3716995d4f5cbe75e9f79dcf2c6e5644cb284f03be0485",
+    "results/core_current_head_q178_physical_primary_source_audit/evidence.json": "883c7fe8ebeb0756808f61ae2b9257f199b56eff9bb1d3d93fa26fd40dd9f64d"
+  },
+  "parent": "d992833f7984553de28d1b794f1a8be4e9df95e4",
+  "review": {
+    "checks": {
+      "P3_all_finite_cycle_quantifier_remains_open": true,
+      "P3_requires_complete_pressure_axial_and_support_memory": true,
+      "Q178_requests_Q150_complete_covariance_audit": true,
+      "all_provider_statuses_match": true,
+      "both_background_pressure_tails_use_same_base_subtraction": true,
+      "canonical_feedback_does_not_transfer_by_closeness": true,
+      "complete_curl_has_half_power_margin": true,
+      "first_physical_feedback_reaches_D": true,
+      "generated_source_tail_diagonal_is_only_conditional": true,
+      "initial_all_six_covariances_are_joined": true,
+      "initial_fast_Haar_means_vanish_and_defects_are_recomputed": true,
+      "initial_negative_raw_power_is_canceled_structurally": true,
+      "no_complete_residual_or_blowup_promotion": true,
+      "ordinary_compactness_does_not_supply_edge_weight": true,
+      "physical_same_family_principal_stress_is_exact": true,
+      "two_exact_moment_rows_are_independent_obligations": true
+    },
+    "correction": {
+      "Q151_family_transfer_gate_is_closed_by_a_physical_same_family_identity": true,
+      "Q153_does_not_discharge_the_all_finite_cycle_target_quantifier": true,
+      "Q178_raw_negative_covariance_power_is_not_the_initial_stage_frontier": true,
+      "historical_frozen_evidence_modified": false
+    },
+    "established": {
+      "axial_velocity_Pi1_Pi2_compact_and_moving_pressure_retained": true,
+      "initial_complete_six_entry_covariance_mean_cancellation": true,
+      "same_physical_family_principal_stress_and_first_feedback_D": true
+    },
+    "moment_fixture": {
+      "angular_exact": true,
+      "axial_exact": true,
+      "both_exact": true
+    },
+    "next": "derive the P3 weighted Xi_j edge estimate and both complete tangential moment identities inductively for every finite physical cycle, retaining all six covariances, axial velocity, Pi1/Pi2, the whole moving pressure product, zero-Haar data and the reserved hull",
+    "obstruction": {
+      "angular_moment": "integral R^2 overline(E_theta,j)=epsilon partial_Z J_theta,j",
+      "axial_moment": "integral R overline(E_z,j)=epsilon partial_Z(J_z,j+c_rho P_mean,j)",
+      "every_finite_cycle_and_fixed_jet": true,
+      "ordinary_unweighted_compact_seminorms_suffice": false,
+      "weighted_target": "|D^I Xi_j|<=C_(j,I) epsilon^(alpha_j) zeta ya^(-p_(j,I)) yb^(-q_(j,I))"
+    },
+    "principal_assembly_fixture": {
+      "actual": "30",
+      "cover": "1",
+      "defect": "0",
+      "exact": true,
+      "root_defect": "0"
+    },
+    "provider_status_checks": {
+      "complete_covariance_initial_means": true,
+      "core_current_head_q150_initial_covariance_mean_join": true,
+      "core_current_head_q151_family_stress_gate": true,
+      "core_current_head_q152_physical_stress_feedback_join": true,
+      "core_current_head_q153_physical_source_tail_diagonal_join": true,
+      "core_current_head_q159_primary_contract_frontier": true,
+      "core_current_head_q178_physical_primary_source_audit": true
+    },
+    "rates": {
+      "B": "99999/100000",
+      "C": "149999/100000",
+      "D": "74999/50000",
+      "Q_initial_residual_exponent": "199997/20000000",
+      "available_complete_curl_after_epsilon_inverse": "49999/50000",
+      "complete_curl_margin": "1/2",
+      "first_feedback_order": "74999/50000",
+      "initial_margin_over_D": "49999/100000",
+      "initial_residual_order": "199997/100000",
+      "required_stress_after_epsilon_inverse": "24999/50000"
+    },
+    "scope": {
+      "P3_universal_finite_cycle_target_gate_discharged": false,
+      "base_and_first_feedback_only": true,
+      "complete_residual_force_exclusion_or_blowup": false,
+      "tests_are_continuum_proof": false
+    }
+  },
+  "source_hashes": {
+    "results/complete_covariance_initial_means/README.md": "c0c0ed167bc7bf84e5b48c1a2e360b7080c2892d88390c00a5d6cfbbcfccef0d",
+    "results/core_current_head_q150_initial_covariance_mean_join/README.md": "44fc37e4ab21a460bf6a41c6dd9a5b27703d087a08e3c02d48e41dd1128e25c3",
+    "results/core_current_head_q151_family_stress_gate/README.md": "a945eade27dd7f475a87ea4bedef86c6fc45249a65afde527a245056e88f5be0",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q159_primary_contract_frontier/README.md": "1c3d1a3cbdcda4750908d17b86d9c8e5986646498b88a7d63d394b9debd73267",
+    "results/core_current_head_q178_physical_primary_source_audit/README.md": "4156762eede76b7ea06ad2a1ca5d0ed9a97df4d94b43dc02b341e4394de31ba3",
+    "results/core_current_head_q179_covariance_mean_cycle_frontier/README.md": "09c62f8349bd5e91a6af45124c4ace16e8ffb094e954050c8ddfa13f0b754a89",
+    "results/core_current_head_q179_covariance_mean_cycle_frontier/audit.py": "e90ab6d3fae6f2d78e2487511d3365f98eb32f97fd797d2b4e47b4307fa7fdc7",
+    "results/core_current_head_q179_covariance_mean_cycle_frontier/q179.py": "4003d4f05a24bc95c7fead7e6b7b0ee11ce651e89bef1c2801ce30c7d4f83e2d",
+    "results/core_current_head_q179_covariance_mean_cycle_frontier/test_audit.py": "90c386e138791a666148fa3230b5e38d7b56f46555128f1326503ea22d20c76e"
+  },
+  "status": "Q179-initial-and-first-feedback-covariance-means-closed-P3-universal-target-obstructed",
+  "symbolic": {
+    "correction": "Q178's negative raw covariance power is canceled at the initial stage, and Q151's family-transfer concern is bypassed by the inherited physical family's own root and squared-partition identity; neither fact proves every later finite cycle",
+    "established": "the Q149 physical primary has exact complete six-entry initial covariance/mean cancellation and an exact same-family principal-stress identity; the first feedback reaches D=3/2-2kappa with axial velocity, Pi1/Pi2, compact and moving pressure, viscosity and A1 retained",
+    "historical_frozen_records_modified": false,
+    "obstruction": "P3 requires a zeta-weighted Xi_j edge estimate plus the exact angular and axial moment identities for every finite recomputed physical cycle; ordinary compact seminorms and the base/first-feedback cases do not prove this universal quantifier",
+    "status": "Q179-initial-and-first-feedback-covariance-means-closed-P3-universal-target-obstructed",
+    "unconditional_complete_covariance_cycle_residual_force_or_blowup_certified": false
+  }
+}
