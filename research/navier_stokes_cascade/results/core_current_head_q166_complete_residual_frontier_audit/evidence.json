@@ -1,0 +1,100 @@
+{
+  "closure": {
+    "edges": 1355,
+    "nodes": 406,
+    "source_bindings": 5515
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q165_finite_map_frontier_audit/evidence.json": "4d8854401c547ce14d43978eefae3d4cd5a1de99767206ff4a7883c1ffc68aaf",
+    "results/core_current_head_q6_complete_residual_join/evidence.json": "5fae10a744d7085c1a618a989d302f861e6d450572c9d1c1a20c0958c11778c3"
+  },
+  "frontier": [
+    {
+      "id": "U1",
+      "status": "closed-by-Q164-core-pressure-audit"
+    },
+    {
+      "id": "U2",
+      "status": "closed-by-Q165-finite-map-audit"
+    },
+    {
+      "id": "U3",
+      "status": "closed-conditionally-by-Q166-Q6-residual-audit"
+    },
+    {
+      "id": "U4",
+      "status": "next-Q7-corner-and-endpoint-audit"
+    }
+  ],
+  "parent": "1ef03fa642fd5cc7fad27f322c6c29b2f4465b5a",
+  "providers": {
+    "Q165_U2_closed": true,
+    "Q165_frontier_was_Q6": true,
+    "Q5_evidence_sha256": "c72458f8e1ca2ad2d8901b9cfa0dd3c2953e7a8d69fcd8a948816dae658d89c3",
+    "Q6_all_provider_gates_hold": true,
+    "Q6_unconditional_claimed": false,
+    "identical_Q5_evidence_enters_Q165_and_Q6": true
+  },
+  "remaining_gate": {
+    "U3_complete_six_group_local_residual": "closed-conditionally-by-Q6-and-audited-by-Q166",
+    "closed_corner_endpoint_localization_force_energy_comparison_replayed_here": false,
+    "next": "audit Q7's Cartesian-corner transfer and punctured endpoint premise on the same Q164-Q166 object; residual flatness must not be used as a substitute for bounded terminal velocity, potential or pressure jets",
+    "unconditional_theorem_gate_closed": false
+  },
+  "residual": {
+    "all_sample_controls_hold": true,
+    "all_six_groups_retained_in_order": true,
+    "both_cross_orientations_retained": true,
+    "complete_exponent_is_minimum_not_sum": true,
+    "complete_pressure_covariance_axial_and_cutoff_memory_retained": true,
+    "default_complete_minimum": "20030773/20000000",
+    "default_fixed_state_exponent": "1181473097/40000000",
+    "default_limiting_cross_exponent": "20030773/20000000",
+    "fixed_jet_target_then_finite_stage_quantifier_retained": true,
+    "sample_complete_minimum_exponents": [
+      "20030773/20000000",
+      "160094743/40000000",
+      "24004357/2000000"
+    ],
+    "sample_stages": [
+      12817,
+      18418,
+      37619
+    ],
+    "stage_uniform_constant_or_J_of_q_used": false
+  },
+  "source_hashes": {
+    "results/core_current_head_q165_finite_map_frontier_audit/README.md": "5640ea97b01b4393db1e2158f757934af656d6fa88e3402117a8f2dd3d6a56ce",
+    "results/core_current_head_q166_complete_residual_frontier_audit/README.md": "837ae11decd2576c11582950cfd0226af62e934bc40f6b4c4be343f369eb1896",
+    "results/core_current_head_q166_complete_residual_frontier_audit/audit.py": "0fad71bdf3006bffa1197383d70f6f852c6fca0bb9fad45485dc80dadb1b42ca",
+    "results/core_current_head_q166_complete_residual_frontier_audit/q166.py": "928d226b45769c621f1a0eaa44ca87bb2594a6b7ee73800160f4416842f427fb",
+    "results/core_current_head_q166_complete_residual_frontier_audit/test_audit.py": "c659f44611158749bd326459da4d4edd81498ece03ccaa59ef07ca0c491371f0",
+    "results/core_current_head_q6_complete_residual_join/README.md": "f2494caf2342cdf20b470d1d18e3df0988512ef31a9a61af4e76d01d381aaf80"
+  },
+  "status": "Q166-current-head-complete-six-group-local-residual-audited-conditionally",
+  "symbolic": {
+    "U3_complete_local_residual_closed_conditionally": true,
+    "corner_endpoint_or_localized_force_replayed_here": false,
+    "correction": "Q6 predates Q164-Q165 and was not a direct dependency of their new frontier; Q166 joins it through the identical frozen Q5 source object and rederives the all-fixed-jet stage margins",
+    "established": "for every fixed jet and target one finite stage controls time, unit viscosity, complete pressure, both nonlinear crosses and the new square, with separate positive logarithmic accounts and complete physical memory",
+    "historical_frozen_records_modified": false,
+    "next": "audit Q7's Cartesian-corner transfer and punctured endpoint premise on the same Q164-Q166 object; residual flatness must not be used as a substitute for bounded terminal velocity, potential or pressure jets",
+    "scope": "conditional local residual flatness relative to named continuum providers; exact arithmetic, evidence hashes and passing tests are not a continuum proof",
+    "status": "Q166-current-head-complete-six-group-local-residual-audited-conditionally",
+    "unconditional_pulse_residual_force_exclusion_or_blowup_certified": false
+  },
+  "universal_margin": {
+    "A0_own_log_retained_margin": "1/40000000",
+    "A1_own_log_retained_margin": "1/40000000",
+    "compact_reserves_may_pay_regular_or_cutoff_logs": false,
+    "delta": "49997/100000",
+    "disjoint_reserves_added_to_strengthen_common_exponent": false,
+    "h": "1/200",
+    "kappa": "1/100000",
+    "limiting_cross_margin_at_least": "49997/40000000",
+    "one_stage_gain": "49997/20000000",
+    "regular_and_cross_reserves_same_size_but_distinct_owners": true,
+    "regular_retained_margin": "49997/40000000",
+    "universal_common_margin_at_least": "49997/40000000"
+  }
+}
