@@ -1723,6 +1723,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q168_localization_force_frontier_audit/evidence.json \
             --output navier_stokes_core_current_head_q168_ci.json
 
+      - name: Check Q169 fixed-gauge pressure and comparison frontier audit
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q169_pressure_comparison_frontier_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q169_pressure_comparison_frontier_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q169_pressure_comparison_frontier_audit/evidence.json \
+            --output navier_stokes_core_current_head_q169_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2310,6 +2317,7 @@ jobs:
             navier_stokes_core_current_head_q166_ci.json
             navier_stokes_core_current_head_q167_ci.json
             navier_stokes_core_current_head_q168_ci.json
+            navier_stokes_core_current_head_q169_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

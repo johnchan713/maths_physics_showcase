@@ -1,0 +1,158 @@
+{
+  "closure": {
+    "edges": 1366,
+    "nodes": 409,
+    "source_bindings": 5538
+  },
+  "commutator": {
+    "cutoff_power": 8,
+    "cutoff_sufficient": true,
+    "exponent": "4/3",
+    "far_coefficient": "1",
+    "far_radial_power": "-2",
+    "kernel": "|z|^-3 min(|z|/R,1)",
+    "near_coefficient": "3",
+    "near_radial_power": "-2/3",
+    "norm_decay": "3/4",
+    "radial_coefficient": "4",
+    "seventh_power_sufficient": false,
+    "weight_condition": "k/2-1>=3k/8"
+  },
+  "dependency_evidence_sha256": {
+    "results/comparison_foundation/evidence.json": "8375a9e06205b9817bd114a22320915f264fd760ae85d385a474f776ecebd0ca",
+    "results/core_current_head_q156_physical_pressure_comparison/evidence.json": "bca6d20dad86b7d91ea802ede03fef7a92c91c4f4c6aeb2f5930ce326973932f",
+    "results/core_current_head_q163_comparison_core_exclusion_join/evidence.json": "1f24a86164ef1457a44194a01a58bd4e666747c58a0b7372675302e0bce68690",
+    "results/core_current_head_q168_localization_force_frontier_audit/evidence.json": "1bc8e23d261ab6cce9d4508610a32213a25cbdb31b6c3386afeea6a6b40ab999"
+  },
+  "frontier": [
+    {
+      "id": "U1",
+      "status": "closed-by-Q164-core-pressure-audit"
+    },
+    {
+      "id": "U2",
+      "status": "closed-by-Q165-finite-map-audit"
+    },
+    {
+      "id": "U3",
+      "status": "closed-conditionally-by-Q166-residual-audit"
+    },
+    {
+      "id": "U4",
+      "status": "closed-conditionally-by-Q167-corner-endpoint-audit"
+    },
+    {
+      "id": "U5",
+      "status": "closed-conditionally-by-Q168-localization-force-energy-audit"
+    },
+    {
+      "id": "U6",
+      "status": "closed-conditionally-by-Q169-pressure-comparison-audit"
+    },
+    {
+      "id": "U7",
+      "status": "next-Q157-Q163-protected-core-limit-audit"
+    }
+  ],
+  "parent": "06185eb484f89e9b767f2221e30b4dc093b083f0",
+  "pressure": {
+    "Poisson_equation_alone_removes_harmonic_gradient": false,
+    "averaged_gradient_space": "H^-3",
+    "competitor_pressure_decay_assumed": false,
+    "constructed_pressure_gauge": "p=c p0 with Q155 complete fixed pressure memory",
+    "difference_equation": "w_t+div g=Delta w-grad pi; -Delta pi=partial_i partial_j g_ij",
+    "finite_energy_counterexample": "without L2 control, v=t e1, P=-x1 and u=p=0 have the same zero datum and force but a nonzero harmonic pressure gradient",
+    "finite_energy_essential": true,
+    "force_cancellations": 1,
+    "individual_pressures": "-Delta p=partial_i partial_j(u_i u_j)-div f; -Delta P=partial_i partial_j(v_i v_j)-div f",
+    "recovery": "grad pi=grad sum_ij R_i R_j g_ij in space-time distributions",
+    "recovery_logic": "for every compact time test, momentum puts grad(pi-pi_star) in H^-3; it is harmonic, so its weighted-L2 Fourier transform is supported at {0} and therefore vanishes",
+    "riesz_pressure_space": "L_infinity([0,T];H^-2)",
+    "spatial_constant_gauge_flux": "zero by div(w)=0",
+    "stress": "g=w tensor w+w tensor u+u tensor w"
+  },
+  "providers": {
+    "Q168_localization_force_energy_closed_conditionally": true,
+    "all_identity_links_hold": true,
+    "comparison_R_minus_two_provider": true,
+    "comparison_pressure_gradient_recovery_provider": true,
+    "identity_chain": {
+      "Q156_and_Q168_share_Q155": true,
+      "Q156_uses_frozen_comparison_foundation": true,
+      "Q163_and_Q168_share_Q162": true,
+      "Q163_to_Q156": true,
+      "Q164_to_Q163": true,
+      "Q165_to_Q164": true,
+      "Q166_to_Q165": true,
+      "Q167_to_Q166": true,
+      "Q168_to_Q167": true
+    },
+    "same_Q162_field_force_pressure_gauge_and_localization": true
+  },
+  "radius": {
+    "annular_L1_volume_cost": "3/2",
+    "compact_mixed_flux_decay": "5/2",
+    "competitor_boundary_flux_bound_assumed": false,
+    "competitor_derivative_bound_assumed": false,
+    "competitor_dissipation_bound_assumed": false,
+    "conclusion": "v=u on R^3 x [0,T] for every T<1",
+    "cutoff": "chi_R=phi_R^8",
+    "cutoff_laplacian_decay": "2",
+    "gradient_cutoff_decay": "1",
+    "gronwall": "E_R(t)<=2 C_T T exp(2 T L_T) R^-2",
+    "limit_order": "fix T<1; recover pressure; send R to infinity",
+    "localized_inequality": "0.5 E_R'+0.5 D_R^2<=||grad u||_infinity E_R+C_T R^-2",
+    "mixed_pressure_point_decay": "3",
+    "obsolete_unsplit_decay": "4/3",
+    "quadratic_flux": "C_T(R^-1 B_R^(3/2)+R^-7/4 B_R^(3/4))",
+    "support_split": "g=w tensor w+h; h=w tensor u+u tensor w; supp h subset supp u",
+    "terminal_uniform_constants_assumed": false,
+    "terms": [
+      {
+        "dissipation_power": "3/2",
+        "name": "quadratic pressure and transport",
+        "radius_power": "1",
+        "sobolev_offset_decay": "5/2",
+        "young_decay": "4"
+      },
+      {
+        "dissipation_power": "3/4",
+        "name": "quadratic pressure commutator",
+        "radius_power": "7/4",
+        "sobolev_offset_decay": "5/2",
+        "young_decay": "14/5"
+      }
+    ],
+    "worst_decay": "2"
+  },
+  "remaining_gate": {
+    "U6_fixed_gauge_pressure_and_comparison": "closed-conditionally-by-Q169",
+    "comparison_only_requires_fixed_T_constants": true,
+    "future_velocity_or_pressure_constructed": false,
+    "next": "audit Q157/Q163's protected physical core path, localization plateau and legal fixed-T then radius then terminal limit order on the Q164-Q169 object",
+    "protected_core_or_terminal_exclusion_replayed_here": false,
+    "unconditional_theorem_gate_closed": false
+  },
+  "source_hashes": {
+    "results/comparison_foundation/README.md": "f8e801cb10c97f6678e784b6c1c246be7ed8f0487fc5834aded3a9d8b4452a81",
+    "results/core_current_head_q156_physical_pressure_comparison/README.md": "958197cf00dfbafdcef3ae1664ffcf1f046ab0ce01e547bd0da77e75e14a5df4",
+    "results/core_current_head_q163_comparison_core_exclusion_join/README.md": "04f10ffc8dc70a3f797a68468d1bbba2022390c0592e66ee7a0a903d068595c0",
+    "results/core_current_head_q168_localization_force_frontier_audit/README.md": "89b553770cd6ea966a56e3c1023bf3035c8e6517d7e6d632970d1f98e1b4bf37",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/README.md": "6576abfd9fd92478e021b804bbef850ef0266dc128fdea24cf43db363931b42d",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/audit.py": "3270ca043255c5d94b60e398abe1c80b4deaf6983e3d96f52fc29ffb75278c71",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/q169.py": "0fbf8d3022333ad608981cd6019c3b03281e00cad83d927db47d90026a810bd4",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/test_audit.py": "f55f9b61417b446e6483659031c8cf621dc3ec79760e78dcf77f58b36bd83043"
+  },
+  "status": "Q169-current-head-fixed-gauge-pressure-comparison-audited-conditionally",
+  "symbolic": {
+    "U6_pressure_comparison_closed_conditionally": true,
+    "correction": "Q156 already lies in the Q164 ancestry, but Q168's forward frontier did not bind its comparison explicitly; Q169 verifies the same Q155/Q162 field and rederives the pressure and radius estimates without adding competitor hypotheses",
+    "established": "for every fixed T<1, any locally smooth same-force zero-datum competitor with a uniform L2 bound on [0,T] has the same pressure gradient modulo a spatial constant and equals the Q168 velocity after the expanding-ball radius tends to infinity",
+    "future_velocity_or_pressure_constructed": false,
+    "historical_frozen_records_modified": false,
+    "next": "audit Q157/Q163's protected physical core path, localization plateau and legal fixed-T then radius then terminal limit order on the Q164-Q169 object",
+    "protected_core_exclusion_or_blowup_certified": false,
+    "scope": "conditional analytical join of named continuum providers; no competitor pressure decay, derivative, dissipation or boundary-flux bound is assumed, constants need not be uniform as T approaches one, and no terminal exclusion is replayed here",
+    "status": "Q169-current-head-fixed-gauge-pressure-comparison-audited-conditionally"
+  }
+}
