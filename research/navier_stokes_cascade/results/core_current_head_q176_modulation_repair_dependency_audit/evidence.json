@@ -1,0 +1,194 @@
+{
+  "closure": {
+    "edges": 1433,
+    "nodes": 422,
+    "source_bindings": 5691
+  },
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/compact_global_reconciliation/evidence.json": "1b218ecb397f9dde3acad6f632e5ba533ae25aeb0cf02986c989ffe896f6003d",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/evidence.json": "300f6db8bd01cdc124d9f14e3f11d3b2aa6e9c4c7f61357f84933bcf4e38ea11",
+    "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a",
+    "results/foundation_bundle_route/evidence.json": "8e585d7b90ba9938fea314a1d2efc13be394011e7baa285145e3675fc6be4f24",
+    "results/loop_modulation_bounds/evidence.json": "89822b9058906cb2638d8a74f5a024f876b7af7faad4ece73fde71d48f0fbfb1",
+    "results/matching_root_foundation/evidence.json": "22fd0e2a826ae3916a99dbd68eeb09f9e2836ae383364057e2e8bdbb67071bd5",
+    "results/modulation_repair_all_order/evidence.json": "05ac3c9c9a3784abb2818d7b91f23c171ec4427d53173fba4cbc7fe062f2c16e",
+    "results/prescribed_continuation_foundation/evidence.json": "33a4bbbac554dd669d2177dc86d8c1370b947082d3f24fb78309ffdab2e2fc80",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/repair_state_bounds/evidence.json": "78d12a7000cf0ef78a60ea05ee76ef292e551d5f5c9e6d72af6b35eca015632a"
+  },
+  "parent": "341e2842c6fa455fa3912797fc64bc47e393051f",
+  "review": {
+    "checks": {
+      "all_order_derivatives_use_same_root_without_Ck_reselection": true,
+      "all_order_map_precedes_annular_exterior_composition": true,
+      "all_provider_statuses_match": true,
+      "coarse_foundation_route_conflates_two_matching_and_modulation_levels": true,
+      "cone_error_is_absorbed_at_a_very_weak_G_floor": true,
+      "conservative_all_order_Jacobian_gate_is_strict": true,
+      "global_reconciliation_keeps_same_frequency_root_and_pressure": true,
+      "independent_continuum_certificate_remains_open": true,
+      "later_matching_reaudit_retains_all_five_rows_and_pressure": true,
+      "later_matching_reaudit_sharpens_the_same_gate": true,
+      "later_matching_root_reaudit_is_not_an_input_to_all_order_map": true,
+      "leading_pressure_identity_keeps_positive_order_memory": true,
+      "refined_route_is_acyclic": true,
+      "regional_selection_precedes_all_order_same_map_theorem": true,
+      "same_selected_low_order_map_is_accepted": true,
+      "whole_compact_input_is_supplied_in_the_composition_checkpoint": true,
+      "zero_transformed_rows_are_exactly_zero_original_defects": true
+    },
+    "cone_gate": {
+      "left": 536870912,
+      "right_at_floor": 1152921504606846976,
+      "strict_cone_absorption": true
+    },
+    "correction": {
+      "annular_exterior_checkpoint_proves_the_input_then_composes_the_conditional_map": true,
+      "foundation_route_matching_roots_node_was_too_coarse": true,
+      "historical_frozen_evidence_modified": false,
+      "low_order_repair_acceptance_and_later_matching_root_reaudit_are_distinct": true,
+      "regional_cone_selection_precedes_the_all_order_same_map_theorem": true
+    },
+    "established": {
+      "conditional_same_map_all_order_modulation_and_exact_repair": true,
+      "exact_five_row_pressure_memory": true,
+      "inner_compact_outer_leading_cone_join": true,
+      "radial_field_errors_uniformly_small_at_all_derivative_orders": false
+    },
+    "next": "independently validate the retained finite-order continuation, low-order loop/repair and regional input suprema on the selected profile, then audit the weighted first-stress edge quotient and reserved supports; do not treat the later matching-root reaudit as an upstream premise",
+    "provider_status_checks": {
+      "annular_exterior_foundation": true,
+      "compact_global_reconciliation": true,
+      "core_current_head_q175_canonical_source_route_reconciliation": true,
+      "core_pressure_identification": true,
+      "foundation_bundle_route": true,
+      "loop_modulation_bounds": true,
+      "matching_root_foundation": true,
+      "modulation_repair_all_order": true,
+      "prescribed_continuation_foundation": true,
+      "regional_cone_join": true,
+      "repair_state_bounds": true
+    },
+    "refined_route": {
+      "edges": [
+        [
+          "continuation_shape",
+          "regional_value_selection"
+        ],
+        [
+          "low_order_loop_repair",
+          "regional_value_selection"
+        ],
+        [
+          "continuation_shape",
+          "all_order_same_map"
+        ],
+        [
+          "regional_value_selection",
+          "all_order_same_map"
+        ],
+        [
+          "all_order_same_map",
+          "annular_exterior_composition"
+        ],
+        [
+          "regional_value_selection",
+          "annular_exterior_composition"
+        ],
+        [
+          "all_order_same_map",
+          "matching_root_reaudit"
+        ],
+        [
+          "annular_exterior_composition",
+          "matching_root_reaudit"
+        ],
+        [
+          "regional_value_selection",
+          "compact_global_reconciliation"
+        ],
+        [
+          "matching_root_reaudit",
+          "compact_global_reconciliation"
+        ],
+        [
+          "annular_exterior_composition",
+          "pressure_identification"
+        ],
+        [
+          "compact_global_reconciliation",
+          "pressure_identification"
+        ]
+      ],
+      "nodes": [
+        "continuation_shape",
+        "low_order_loop_repair",
+        "regional_value_selection",
+        "all_order_same_map",
+        "annular_exterior_composition",
+        "matching_root_reaudit",
+        "compact_global_reconciliation",
+        "pressure_identification"
+      ],
+      "topological_order": [
+        "continuation_shape",
+        "low_order_loop_repair",
+        "regional_value_selection",
+        "all_order_same_map",
+        "annular_exterior_composition",
+        "matching_root_reaudit",
+        "compact_global_reconciliation",
+        "pressure_identification"
+      ]
+    },
+    "repair_gate": {
+      "H_floor": 8,
+      "beta": 1000,
+      "inverse_bound": 2000,
+      "jacobian_perturbation_upper_bound": "48828125/34359738368",
+      "q": 100000,
+      "strict_half_gate": true
+    },
+    "scope": {
+      "actual_selected_continuum_input_suprema_independently_recomputed_here": false,
+      "finite_order_existence_inverse_and_gap_inputs_discharged_unconditionally": false,
+      "unconditional_force_exclusion_or_blowup_proved": false,
+      "uniform_actual_pulse_or_complete_residual_proved": false
+    },
+    "sharpened_matching_reaudit_gate": {
+      "H_floor": 8,
+      "beta": 800,
+      "inverse_bound": 1600,
+      "jacobian_perturbation_upper_bound": "1953125/8589934592",
+      "q": 25000,
+      "strict_half_gate": true
+    }
+  },
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/compact_global_reconciliation/README.md": "64d2e735f6d3d75c5b8a56f7abe6c44fbc56109dfdedcc02f994c4739745f08d",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/README.md": "5d20478c5b79e04378b2d36dab80476e39b5549d9779a21d0040e60530a28896",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/README.md": "5d915801afac31045d896b1f3741a7494db8ef96e334aeb0e63d46656e01aeae",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/audit.py": "2aa473ffa044ba35756ed7cc2c50e4e1017223c0e41fcf4f72020412d22f8d40",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/q176.py": "bb66dac914d66f4f67d95a7abcc7ed914d956b9a3ea74dde75631501ec9f628b",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/test_audit.py": "35cc948315f34996bb4efe0e5a5ff0f20a4b004ce8261226c72af2ec60c48ecd",
+    "results/core_pressure_identification/README.md": "2fa6c0975eba8027bf8d5859b0eb0213b4e615a6bd9df98436e77aec18ddcf9a",
+    "results/foundation_bundle_route/README.md": "cd8aa2473d5ee59576d0f79ee5fbf65347df7c70c6e14bf8908cf84a094a4ad6",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/matching_root_foundation/README.md": "071203671f89e0152ff82d5ff85b55ffc31ccc9b8064f1ffd09461e2e052c925",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/prescribed_continuation_foundation/README.md": "fa32edfdb1093b444542dda0b98db4efe3ae02d07550ba5d08ad9ccab2698728",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/repair_state_bounds/README.md": "163dce199a65acd22ef68ee7d906a112c1f8dbcb698000f40df848a424af8a4c"
+  },
+  "status": "Q176-compact-modulation-exact-repair-audited-with-refined-dependency-order",
+  "symbolic": {
+    "correction": "the coarse foundation graph placed matching_root_foundation upstream of modulation, but that frozen matching record is a later reaudit; the actual upstream inputs are the low-order loop/repair bounds and regional selected-map acceptance",
+    "established": "the fixed-N moving-phase modulation and exact five-row repair form a valid conditional same-map all-order implication; the strict Jacobian and cone absorption inequalities close and full pressure memory joins inner compact and exterior leading cones",
+    "historical_frozen_records_modified": false,
+    "obstruction": "actual selected-profile continuation and low-order regional input suprema remain retained continuum premises; all-order finiteness does not make radial errors N-uniform or independently certify those inputs",
+    "status": "Q176-compact-modulation-exact-repair-audited-with-refined-dependency-order",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

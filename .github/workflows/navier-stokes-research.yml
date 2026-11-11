@@ -1772,6 +1772,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q175_canonical_source_route_reconciliation/evidence.json \
             --output navier_stokes_core_current_head_q175_ci.json
 
+      - name: Check Q176 compact modulation and exact-repair dependency audit
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q176_modulation_repair_dependency_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q176_modulation_repair_dependency_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q176_modulation_repair_dependency_audit/evidence.json \
+            --output navier_stokes_core_current_head_q176_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2366,6 +2373,7 @@ jobs:
             navier_stokes_core_current_head_q173_ci.json
             navier_stokes_core_current_head_q174_ci.json
             navier_stokes_core_current_head_q175_ci.json
+            navier_stokes_core_current_head_q176_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

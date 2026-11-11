@@ -6,16 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q175 canonical source-route reconciliation](core_current_head_q175_canonical_source_route_reconciliation/README.md).
-Q174's one-way Q5 operator estimates and its rejection of physical-to-
-canonical family transfer remain valid.  Its frontier was stale: the older
-source-envelope, current-target and canonical finite-cycle checkpoints already
-rebuild the half-weight harmonic and full-weight target estimates on the same
-canonical family, and the complete finite residual is conditionally joined.
-Q175 restores the actual frontier: independent continuum validation of the
-routed foundation theorems, beginning with compact modulation/exact repair
-and its continuation, matching-root and cone-join inputs.  No unconditional
-pulse, residual, force or blow-up conclusion follows.
+Latest source audit: [Q176 compact modulation and exact-repair dependency audit](core_current_head_q176_modulation_repair_dependency_audit/README.md).
+The same finite-frequency moving-phase map and exact five-row repair give a
+valid conditional all-order implication, with strict pointwise-Jacobian and
+cone-absorption inequalities and complete pressure memory. Q176 also corrects
+the coarse foundation order: low-order regional acceptance precedes the
+all-order same-map theorem, while `matching_root_foundation` is a later
+quantitative reaudit. The selected-profile continuation and regional input
+suprema remain retained continuum premises. No unconditional pulse, residual,
+force or blow-up conclusion follows.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
 The broad foundation obstruction left by the explicit-tail join is now split
