@@ -1,0 +1,407 @@
+{
+  "closure": {
+    "edges": 1361,
+    "nodes": 408,
+    "source_bindings": 5529
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q155_physical_force_energy_join/evidence.json": "242e711fbb1babf4ae71e7fc723850c4d079e9f102a4433a28bbfdcdc1456a23",
+    "results/core_current_head_q162_diagonal_endpoint_force_join/evidence.json": "2b02b1f94bf50e01b3b3bffb9fd9d4b4faa4f469f215ddecf926b8d02eb4f5de",
+    "results/core_current_head_q167_corner_endpoint_frontier_audit/evidence.json": "4239f89e2ebba8b6b9ddb4b41b85cf4adafac07cefc28aa8c1a4cfdce9c9ff27",
+    "results/core_current_head_q8_localization_force_join/evidence.json": "8230a13912bd36b1d0bed507b2a373a152dc67e3dd3332d77238f1cba5578062",
+    "results/core_current_head_q9_preterminal_energy_join/evidence.json": "7e1c5047c3420e13251b482cc280325ac1de2793424c7418c2c0a99d855d6260"
+  },
+  "energy": {
+    "Q155_integrated_dissipation": "49/18",
+    "Q155_sup_energy": "49/9",
+    "budgets_match": true,
+    "combined_endpoint_extrema_budget_claimed": false,
+    "factor_two_retained": true,
+    "fixed_time": "E(t)+2 integral_0^t D <= F(t)^2",
+    "identity": "0.5 E'(t)+D(t)=<f(t),u(t)>",
+    "integrated_dissipation": "49/18",
+    "sup_energy": "49/9",
+    "terminal_dissipation_limit": "monotone convergence",
+    "terminal_velocity_pressure_or_energy_trace_used": false,
+    "zero_safe_step": {
+      "bound": "Y_delta'<=||f||_2 sqrt(E)/sqrt(E+delta^2)<=||f||_2",
+      "delta": "1/1000",
+      "derivative": "Y_delta'=E'/(2 sqrt(E+delta^2))",
+      "integrated": "sqrt(E(t)+delta^2)<=delta+F(t)",
+      "limit": "sqrt(E(t))<=F(t)",
+      "quantity": "Y_delta=sqrt(E+delta^2)"
+    }
+  },
+  "force": {
+    "all_samples_have_geometric_tails": true,
+    "compact_spacetime_support": "K x [1-tau0,3/2]",
+    "former_Q8_endpoint_premise": "closed-conditionally-by-Q154-Q162-on-same-object",
+    "formula": "f_plus=sum_j chi0(b_j sigma) sigma^j F_j/j!",
+    "future_velocity_or_pressure_constructed": false,
+    "raw_Taylor_convergence_used": false,
+    "sample_derivatives": [
+      {
+        "checks": {
+          "all_sample_constraints_admit": true,
+          "all_scale_exponents_are_negative": true,
+          "exact_Leibniz_factor_retained": true,
+          "tail_bound_is_geometric": true
+        },
+        "first_controlled_index": 1,
+        "sample_tail": [
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/2",
+            "index": 1,
+            "scale_exponent": -1
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/4",
+            "index": 2,
+            "scale_exponent": -2
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/8",
+            "index": 3,
+            "scale_exponent": -3
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/16",
+            "index": 4,
+            "scale_exponent": -4
+          }
+        ],
+        "spatial_order": 0,
+        "time_order": 0
+      },
+      {
+        "checks": {
+          "all_sample_constraints_admit": true,
+          "all_scale_exponents_are_negative": true,
+          "exact_Leibniz_factor_retained": true,
+          "tail_bound_is_geometric": true
+        },
+        "first_controlled_index": 8,
+        "sample_tail": [
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/256",
+            "index": 8,
+            "scale_exponent": -5
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/512",
+            "index": 9,
+            "scale_exponent": -6
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/1024",
+            "index": 10,
+            "scale_exponent": -7
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/2048",
+            "index": 11,
+            "scale_exponent": -8
+          }
+        ],
+        "spatial_order": 1,
+        "time_order": 3
+      },
+      {
+        "checks": {
+          "all_sample_constraints_admit": true,
+          "all_scale_exponents_are_negative": true,
+          "exact_Leibniz_factor_retained": true,
+          "tail_bound_is_geometric": true
+        },
+        "first_controlled_index": 48,
+        "sample_tail": [
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/281474976710656",
+            "index": 48,
+            "scale_exponent": -44
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/562949953421312",
+            "index": 49,
+            "scale_exponent": -45
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/1125899906842624",
+            "index": 50,
+            "scale_exponent": -46
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/2251799813685248",
+            "index": 51,
+            "scale_exponent": -47
+          }
+        ],
+        "spatial_order": 20,
+        "time_order": 4
+      },
+      {
+        "checks": {
+          "all_sample_constraints_admit": true,
+          "all_scale_exponents_are_negative": true,
+          "exact_Leibniz_factor_retained": true,
+          "tail_bound_is_geometric": true
+        },
+        "first_controlled_index": 152,
+        "sample_tail": [
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/5708990770823839524233143877797980545530986496",
+            "index": 152,
+            "scale_exponent": -82
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/11417981541647679048466287755595961091061972992",
+            "index": 153,
+            "scale_exponent": -83
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/22835963083295358096932575511191922182123945984",
+            "index": 154,
+            "scale_exponent": -84
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/45671926166590716193865151022383844364247891968",
+            "index": 155,
+            "scale_exponent": -85
+          }
+        ],
+        "spatial_order": 6,
+        "time_order": 70
+      },
+      {
+        "checks": {
+          "all_sample_constraints_admit": true,
+          "all_scale_exponents_are_negative": true,
+          "exact_Leibniz_factor_retained": true,
+          "tail_bound_is_geometric": true
+        },
+        "first_controlled_index": 400,
+        "sample_tail": [
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/2582249878086908589655919172003011874329705792829223512830659356540647622016841194629645353280137831435903171972747493376",
+            "index": 400,
+            "scale_exponent": -300
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/5164499756173817179311838344006023748659411585658447025661318713081295244033682389259290706560275662871806343945494986752",
+            "index": 401,
+            "scale_exponent": -301
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/10328999512347634358623676688012047497318823171316894051322637426162590488067364778518581413120551325743612687890989973504",
+            "index": 402,
+            "scale_exponent": -302
+          },
+          {
+            "finite_constraint_admits": true,
+            "geometric_target": "1/20657999024695268717247353376024094994637646342633788102645274852325180976134729557037162826241102651487225375781979947008",
+            "index": 403,
+            "scale_exponent": -303
+          }
+        ],
+        "spatial_order": 100,
+        "time_order": 100
+      }
+    ],
+    "scale_rule": "choose increasing dyadic b_j once from the finite terminal norms at index j; impose |a|+m<=floor(j/2) and a 2^-j bound",
+    "terminal_jets": "F_j=lim_(t up to 1) partial_t^j f_minus in C_c^infinity(K), with every spatial jet zero at the origin",
+    "uniform_in_j_norm_assumed": false,
+    "whole_support_bound": "||D_x^a partial_sigma^m T_j||_infinity <=C_(j,a,m) b_j^(m-j)"
+  },
+  "frontier": [
+    {
+      "id": "U1",
+      "status": "closed-by-Q164-core-pressure-audit"
+    },
+    {
+      "id": "U2",
+      "status": "closed-by-Q165-finite-map-audit"
+    },
+    {
+      "id": "U3",
+      "status": "closed-conditionally-by-Q166-residual-audit"
+    },
+    {
+      "id": "U4",
+      "status": "closed-conditionally-by-Q167-corner-endpoint-audit"
+    },
+    {
+      "id": "U5",
+      "status": "closed-conditionally-by-Q168-localization-force-energy-audit"
+    },
+    {
+      "id": "U6",
+      "status": "next-Q156-pressure-comparison-audit"
+    }
+  ],
+  "localization": {
+    "Cauchy_orders": {
+      "direct_swirl": 7,
+      "potential": 8,
+      "pressure": 6
+    },
+    "Q155_term_count": 12,
+    "Q155_terms_match_after_notation_normalization": true,
+    "Q167_supplied_orders": {
+      "direct_swirl": 8,
+      "potential": 9,
+      "pressure": 7
+    },
+    "complete_pressure": "p0 grad c",
+    "direct_force_orders": {
+      "direct_swirl": 6,
+      "potential": 7,
+      "pressure": 5
+    },
+    "divergence_free": true,
+    "field": "u=curl(cA)+cB=c u0+d, d=grad(c) cross A; p=c p0",
+    "force_divergence_retained": true,
+    "pressure_Poisson": "-Delta p=partial_i partial_j(u_i u_j)-div f_minus",
+    "protected_late_core_unchanged": true,
+    "residual_Cauchy_jet": 6,
+    "sample_request": {
+      "Q7_order_reserve": {
+        "direct_swirl": 1,
+        "potential": 1,
+        "pressure": 1
+      },
+      "Q7_supplied_orders": {
+        "direct_swirl": 8,
+        "potential": 9,
+        "pressure": 7
+      },
+      "checks": {
+        "Cauchy_uses_one_next_time_derivative": true,
+        "Q7_parent_request_closes": true,
+        "Q7_retains_next_residual_jet": true,
+        "Q7_retains_one_unused_field_derivative": true,
+        "direct_potential_order_from_Delta_d_or_grad_u0": true,
+        "direct_pressure_order_from_p0_grad_c": true,
+        "direct_swirl_order_from_grad_u0": true
+      },
+      "comparison_stage": 40819,
+      "endpoint_blocking_inequality": "sup_(E x [1-delta,1)) |D_x^alpha partial_t^j(A,B,p)|<infinity for every fixed alpha,j",
+      "flat_power": 11,
+      "residual_Cauchy_jet": 6,
+      "sharp_Cauchy_orders": {
+        "direct_swirl": 7,
+        "potential": 8,
+        "pressure": 6
+      },
+      "sharp_direct_force_orders": {
+        "direct_swirl": 6,
+        "potential": 7,
+        "pressure": 5
+      },
+      "spatial_order": 3,
+      "time_order": 2,
+      "total_mixed_order": 5
+    },
+    "term_count": 12,
+    "term_names": [
+      "base_residual",
+      "cutoff_time",
+      "curl_time",
+      "cutoff_laplacian",
+      "gradient_viscosity",
+      "curl_viscosity",
+      "pressure_cutoff",
+      "quadratic_rescaling",
+      "velocity_cutoff_transport",
+      "old_curl_transport",
+      "curl_old_transport",
+      "curl_square"
+    ],
+    "terms": [
+      "c R_1(u0,p0)",
+      "c_t u0",
+      "d_t",
+      "-(Delta c)u0",
+      "-2 sum_i c_i partial_i u0",
+      "-Delta d",
+      "p0 grad c",
+      "c(c-1)(u0.grad)u0",
+      "c(u0.grad c)u0",
+      "c(u0.grad)d",
+      "c(d.grad)u0",
+      "(d.grad)d"
+    ],
+    "unit_viscosity": "1",
+    "unused_field_derivative": {
+      "direct_swirl": 1,
+      "potential": 1,
+      "pressure": 1
+    },
+    "vanishing_thirteenth": "(d dot grad c)u0=0 because d=grad(c) cross A",
+    "zero_initial_velocity": true
+  },
+  "parent": "e273c3b389bd708b8b61287488b130d0e0d5c386",
+  "providers": {
+    "Q154_supplies_Q8_punctured_endpoint_premise": true,
+    "Q155_compact_force_and_energy_conditional": true,
+    "all_identity_links_hold": true,
+    "identity_chain": {
+      "Q155_to_Q8": true,
+      "Q162_to_Q154": true,
+      "Q162_to_Q155": true,
+      "Q167_and_Q8_share_Q7": true,
+      "Q167_to_Q162": true,
+      "Q9_to_Q8": true
+    },
+    "same_physical_field_cutoff_sequence_support_and_pressure_gauge": true
+  },
+  "remaining_gate": {
+    "U5_localization_force_energy": "closed-conditionally-by-Q168",
+    "comparison_or_core_exclusion_replayed_here": false,
+    "future_velocity_or_pressure_constructed": false,
+    "next": "audit Q156's fixed-gauge pressure recovery and expanding-ball comparison on the Q164-Q168 object, retaining -div(f) in each individual pressure equation and cancelling the common force exactly once",
+    "singular_terminal_origin_regularized": false,
+    "unconditional_theorem_gate_closed": false
+  },
+  "source_hashes": {
+    "results/core_current_head_q155_physical_force_energy_join/README.md": "48d7294690234b882491b994451e457445ccbabc96cb5ae1dba99804530882fa",
+    "results/core_current_head_q162_diagonal_endpoint_force_join/README.md": "136c42e5776ad6bfeb9476220d4b354dc0e297f0b299695e2764bd14d781541d",
+    "results/core_current_head_q167_corner_endpoint_frontier_audit/README.md": "f43991354621c689a082e636e1430a0f1e066abb1e28ee203e79c8a7f23fc1b4",
+    "results/core_current_head_q168_localization_force_frontier_audit/README.md": "89b553770cd6ea966a56e3c1023bf3035c8e6517d7e6d632970d1f98e1b4bf37",
+    "results/core_current_head_q168_localization_force_frontier_audit/audit.py": "85fe01ebcb8d4a6bbac01459362c4729821a46d2770a96d0603bd0f6b9e017c0",
+    "results/core_current_head_q168_localization_force_frontier_audit/q168.py": "0acd583cc4f2c280e0bc40a8ec559b7c51574383e6a2051f2f5ac8c9a52e8076",
+    "results/core_current_head_q168_localization_force_frontier_audit/test_audit.py": "a294c606839d5c0bce49312f980ada1467f3b5f2ce4fb81750d0349788de3790",
+    "results/core_current_head_q8_localization_force_join/README.md": "8cb594d53fb6a740f9903c131ca7bed63f9cc6bbd9741523f95c20b7ac563355",
+    "results/core_current_head_q9_preterminal_energy_join/README.md": "93e42b904be2117e91b4b7ee9b988654a119613a01c25403f0387b3e690fdfed"
+  },
+  "status": "Q168-current-head-localization-force-energy-audited-conditionally",
+  "symbolic": {
+    "U5_localization_force_energy_closed_conditionally": true,
+    "comparison_core_exclusion_or_blowup_certified": false,
+    "correction": "Q8 left its punctured endpoint estimate open, but Q154 proves that estimate and Q162 binds Q154-Q155 to the same physical field, cutoff sequence, supports and pressure gauge already audited through Q167",
+    "established": "the Q164-Q167 field admits exact divergence-free localization with zero initial velocity; its residual has exactly twelve nonzero groups with unit viscosity, complete pressure, both nonlinear crosses and the curl square; one compact smooth force matches every terminal force jet, and the factor-two preterminal energy and separate dissipation estimates follow",
+    "future_velocity_or_pressure_constructed": false,
+    "historical_frozen_records_modified": false,
+    "next": "audit Q156's fixed-gauge pressure recovery and expanding-ball comparison on the Q164-Q168 object, retaining -div(f) in each individual pressure equation and cancelling the common force exactly once",
+    "scope": "conditional analytical join of named continuum providers; the force is extended after t=1 but no future velocity or pressure is constructed, the terminal origin is not regularized, and tests/hashes are not continuum proofs",
+    "status": "Q168-current-head-localization-force-energy-audited-conditionally"
+  }
+}
