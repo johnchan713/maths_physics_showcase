@@ -6,16 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q177 selected-input, weighted-stress and reserved-support reconciliation](core_current_head_q177_weighted_support_source_reconciliation/README.md).
-Q177 corrects Q176's overly broad missing-input frontier: the frozen
-continuation, compact-envelope, loop, repair and regional providers already
-give a conditional analytical selected-frequency cone route. It joins that
-route to the same-gauge five global moments, all-fixed weighted first-stress
-edges, and separated finite coefficient/reserved-velocity supports while
-retaining the nonzero `Pi1/Pi2` memory. The exact core and finite
-existence/inverse/gap lemmas remain explicit, independently uncertified
-premises. No unconditional pulse, residual, force or blow-up conclusion
-follows.
+Latest source audit: [Q178 physical primary-pulse source boundary and covariance obstruction](core_current_head_q178_physical_primary_source_audit/README.md).
+Q178 joins the audited physical primary-pulse theorem to the same finalized
+Q177 profile and records one rule-defined schedule for every actual used
+scale and fixed physical derivative order. Complete curl velocity, wave
+pressure, fixed potential and closed supports are bounded conditionally on
+the retained exact-core and finite lemmas. The sourced inverse still requires
+explicit generated-source bounds and smooth endpoint support; the uncut
+radial-amplitude lower bound is not a cutoff-velocity floor. The uncancelled
+covariance power `Q^(-1-2h*kappa)` grows on later bands, so complete radial,
+axial, tensor, curl and `Pi1/Pi2` mean identities remain necessary before any
+nonlinear hierarchy, residual, force or blow-up conclusion.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
 The broad foundation obstruction left by the explicit-tail join is now split

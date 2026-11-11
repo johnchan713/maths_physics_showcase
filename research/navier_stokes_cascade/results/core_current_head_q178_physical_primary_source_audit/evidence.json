@@ -1,0 +1,105 @@
+{
+  "closure": {
+    "edges": 1454,
+    "nodes": 424,
+    "source_bindings": 5720
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q148_coefficient_support_pressure/evidence.json": "4c95824a4d9749da7e70f0bbc2d8fd30ea46c2620fa700ffd5fe0a805d4729b7",
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/evidence.json": "c3350ad1f287da03e4bc329c991f06d7e11822b67f474dd3b24e46aca1594225",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/physical_pulse_transfer/evidence.json": "4fd33b054abaa66aa34052eccf97086a1db9ea8325afe857b1de35e03e63fc85"
+  },
+  "parent": "9cd8abaa2c69e8b6108dcafdcf22f9e80b392563",
+  "review": {
+    "borel_tail_fixture": {
+      "bounded": true,
+      "exact": "243/20480",
+      "uniform_upper": "1/16"
+    },
+    "checks": {
+      "Q148_retains_reserved_pressure_and_support_frontier": true,
+      "Q149_corrects_the_rule_defined_schedule_frontier": true,
+      "Q177_requests_this_exact_source_audit": true,
+      "all_actual_used_bands_and_fixed_derivatives_are_covered": true,
+      "all_provider_statuses_match": true,
+      "complete_covariance_residual_and_blowup_are_not_promoted": true,
+      "complete_velocity_pressure_potential_and_supports_are_retained": true,
+      "formal_or_numerical_certificate_is_absent": true,
+      "moving_pressure_and_background_pressure_memory_are_retained": true,
+      "primary_covariance_remainder_grows_absolutely": true,
+      "rule_defined_tail_has_one_uniform_bound": true,
+      "same_profile_uniform_primary_family_is_joined": true,
+      "sourced_inverse_input_class_boundary_is_retained": true,
+      "uncut_amplitude_is_not_a_cutoff_velocity_floor": true,
+      "zero_and_mixed_physical_exponents_are_exact": true
+    },
+    "correction": {
+      "finite_primary_bounds_do_not_verify_generated_source_membership": true,
+      "historical_frozen_evidence_modified": false,
+      "negative_Q_exponent_cannot_be_called_absolute_decay": true,
+      "uncut_radial_amplitude_lower_bound_is_not_a_pointwise_cutoff_velocity_lower_bound": true
+    },
+    "covariance_fixture": {
+      "Q_exponent": "-10000001/10000000",
+      "absolutely_decaying": false,
+      "binary_growth_exponent": "10000001/1000000",
+      "grows_with_band": true
+    },
+    "established": {
+      "conditional_uniform_actual_primary_pulse_values_fixed_derivatives_and_supports": true,
+      "full_graph_frame_curl_axial_velocity_and_pressure_memory_retained": true,
+      "one_rule_defined_schedule_and_one_later_tail": true
+    },
+    "next": "source-audit the complete covariance/mean construction beginning with Q150, retaining radial and axial velocity, every tensor and curl term, Pi1/Pi2, moving pressure and cutoff derivatives",
+    "physical_loss_fixtures": {
+      "mixed_2_1": {
+        "potential_growth": "161/80",
+        "pressure_growth": "1207/400",
+        "spatial_loss": "201/400",
+        "time_loss": "403/400",
+        "velocity_growth": "503/200"
+      },
+      "zero": {
+        "potential_growth": "0",
+        "pressure_growth": "201/200",
+        "spatial_loss": "201/400",
+        "time_loss": "403/400",
+        "velocity_growth": "201/400"
+      }
+    },
+    "provider_status_checks": {
+      "core_current_head_q148_coefficient_support_pressure": true,
+      "core_current_head_q149_primary_pulse_join": true,
+      "core_current_head_q177_weighted_support_source_reconciliation": true,
+      "physical_pulse_foundation": true,
+      "physical_pulse_transfer": true
+    },
+    "scope": {
+      "all_generated_nonlinear_source_inputs_verified": false,
+      "analytical_provider_theorems_replaced_by_tests": false,
+      "complete_covariance_mean_residual_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q148_coefficient_support_pressure/README.md": "a041d10064ecc0fee93671e0483109ab3e5ea30dd6660e1a0f67b2d01745584a",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/README.md": "05f1fa9ccf12a4b042be91ddc8865dfac0247437fdec41c22e48fb408eeccba2",
+    "results/core_current_head_q178_physical_primary_source_audit/README.md": "4156762eede76b7ea06ad2a1ca5d0ed9a97df4d94b43dc02b341e4394de31ba3",
+    "results/core_current_head_q178_physical_primary_source_audit/audit.py": "a6d153a41441174dd56ec6244c5c2d6ead6ce161a81eeaf812b1171819dcef2b",
+    "results/core_current_head_q178_physical_primary_source_audit/q178.py": "10825f0035f12b7070fd8b63048deb96b17405adaf926c9e59b048696f6d695e",
+    "results/core_current_head_q178_physical_primary_source_audit/test_audit.py": "613da1315b0b9e3e3a7b2873e7c12aad420968fc7d7b25e6baf1fee18a47bf97",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428"
+  },
+  "status": "Q178-physical-primary-pulse-source-boundary-and-covariance-obstruction-audited",
+  "symbolic": {
+    "correction": "the uncut radial ODE lower bound is not a pointwise floor for the oscillating cutoff velocity, and the sourced inverse remains conditional on explicit source bounds and smooth endpoint support",
+    "established": "relative to the retained exact-core and finite lemmas, one rule-defined schedule gives uniform complete primary curl velocity, wave pressure and fixed-potential value, fixed-derivative and closed-support estimates on every used physical scale",
+    "historical_frozen_records_modified": false,
+    "obstruction": "the uncancelled primary covariance remainder is Q^(-1-2h*kappa); its negative Q exponent makes it grow on later bands, so complete covariance/mean identities are required before any nonlinear hierarchy or residual claim",
+    "status": "Q178-physical-primary-pulse-source-boundary-and-covariance-obstruction-audited",
+    "unconditional_generated_pulses_complete_covariance_residual_or_blowup_certified": false
+  }
+}
