@@ -1,0 +1,163 @@
+{
+  "closure": {
+    "edges": 1370,
+    "nodes": 410,
+    "source_bindings": 5546
+  },
+  "core_path": {
+    "A": "101/200",
+    "X_a": "4/101",
+    "X_in": "1/101",
+    "annular_corrections": "every stage increment vanishes for X<X_a",
+    "annular_diagonal_terms_vanish_exactly": true,
+    "background_remainder": "q^A u_theta=e0+R_bg; |R_bg|<=C_bg q^(2h)",
+    "background_terms_vanish_exactly": false,
+    "canonical_physical_primary_identification_used": false,
+    "coordinates": {
+      "X": "1/101",
+      "eta": "0",
+      "q": "1/1000",
+      "r_squared": "1/50500",
+      "t": "999/1000",
+      "z": "0"
+    },
+    "h": "1/200",
+    "leading_coefficient": "e0=E0(X_in,0)=sqrt(2 X_in)*varphi_star*Phi/C>0",
+    "path": "x_tau=(sqrt(2 X_in tau),0,0), t=1-tau",
+    "pressure_gauge_changed": false,
+    "support_hole_margin": "3/101",
+    "two_h_reciprocal": 100
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q157_physical_core_exclusion/evidence.json": "2dee92bbbf297f9abdfe12d2215353ffac69a8cc716cda8ee9d4b5868f7dc6a5",
+    "results/core_current_head_q163_comparison_core_exclusion_join/evidence.json": "1f24a86164ef1457a44194a01a58bd4e666747c58a0b7372675302e0bce68690",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/evidence.json": "9acd68d5092c38c4f6d74a5c9add5face583b33702150c17c160e88425704aec",
+    "results/core_same_field_positive_core_reconciliation/evidence.json": "21151dd33b0c85350655cd06deaf950efcefe15b8c579135d7deb8bfef848f84"
+  },
+  "frontier": [
+    {
+      "id": "U1",
+      "status": "closed-by-Q164-core-pressure-audit"
+    },
+    {
+      "id": "U2",
+      "status": "closed-by-Q165-finite-map-audit"
+    },
+    {
+      "id": "U3",
+      "status": "closed-conditionally-by-Q166-residual-audit"
+    },
+    {
+      "id": "U4",
+      "status": "closed-conditionally-by-Q167-corner-endpoint-audit"
+    },
+    {
+      "id": "U5",
+      "status": "closed-conditionally-by-Q168-localization-force-energy-audit"
+    },
+    {
+      "id": "U6",
+      "status": "closed-conditionally-by-Q169-pressure-comparison-audit"
+    },
+    {
+      "id": "U7",
+      "status": "closed-conditionally-by-Q170-protected-core-limit-audit"
+    },
+    {
+      "id": "U8",
+      "status": "next-consolidated-provider-discharge-audit"
+    }
+  ],
+  "limit": {
+    "comparison_time": "6427752177035961102167848369364650410088811975131171341205503/6427752177035961102167848369364650410088811975131171341205504",
+    "conditional_conclusion": "no globally smooth same-force zero-datum finite-energy competitor exists",
+    "first": "fix T_tau<1 and recover the pressure gradient",
+    "future_velocity_or_pressure_constructed": false,
+    "global_smooth_competitor_property": "bounded velocity on one compact space-time neighborhood of (0,1)",
+    "growth_exponent": "101/200",
+    "path_tends_to_terminal_origin": true,
+    "path_time": "3213876088517980551083924184682325205044405987565585670602751/3213876088517980551083924184682325205044405987565585670602752",
+    "second": "send the comparison radius R to infinity at this fixed T_tau",
+    "strict_time_order": true,
+    "tau": "1/3213876088517980551083924184682325205044405987565585670602752",
+    "third": "deduce v=u at t=1-tau, then let tau decrease to zero",
+    "unconditional_blowup_claimed": false,
+    "uniform_comparison_constant_as_T_to_one_required": false
+  },
+  "parent": "388c35b51044b14738b381d86fd1532a0783a7fd",
+  "providers": {
+    "Q149_same_background_phrase_present": true,
+    "Q169_preterminal_comparison": true,
+    "all_identity_links_hold": true,
+    "identity_chain": {
+      "Q157_and_Q168_share_Q155": true,
+      "Q157_and_Q169_share_Q156": true,
+      "Q157_to_Q153": true,
+      "Q157_uses_frozen_positive_core": true,
+      "Q157_uses_same_Q149_background": true,
+      "Q163_to_Q157": true,
+      "Q164_to_Q163": true,
+      "Q165_to_Q164": true,
+      "Q166_to_Q165": true,
+      "Q167_to_Q166": true,
+      "Q168_to_Q167": true,
+      "Q169_to_Q168": true
+    },
+    "localization_plateau_bound_to_same_field": true,
+    "physical_diagonal_has_unchanged_annular_support_hole": true,
+    "positive_core_provider_conclusions": {
+      "all_annular_diagonal_increments_vanish_exactly_on_the_path": true,
+      "leading_cartesian_swirl_coefficient_is_E0_at_z_zero": true,
+      "localized_field_preserves_the_bound_on_its_unit_plateau": true,
+      "rule_defined_positive_order_background_is_o_one_after_qA_normalization": true,
+      "same_complete_diagonal_has_positive_core_lower_bound": true
+    },
+    "same_finalized_background": true
+  },
+  "remaining_gate": {
+    "Q163_stale_next_core_audit_already_completed_by_Q164": true,
+    "U7_protected_core_and_limit_order": "closed-conditionally-by-Q170",
+    "all_named_continuum_providers_independently_discharged_here": false,
+    "next": "perform a consolidated provider-discharge audit of Q164-Q170, reconcile the older comparison-foundation unresolved flag with the later independent audits, and prove or precisely obstruct the first remaining continuum premise",
+    "unconditional_admissible_force_or_blowup_certified": false
+  },
+  "source_hashes": {
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q157_physical_core_exclusion/README.md": "ce970f27fde11bcf79971729d22dac8863a9ca70d603653fffc25cdb1332ab6b",
+    "results/core_current_head_q163_comparison_core_exclusion_join/README.md": "04f10ffc8dc70a3f797a68468d1bbba2022390c0592e66ee7a0a903d068595c0",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/README.md": "6576abfd9fd92478e021b804bbef850ef0266dc128fdea24cf43db363931b42d",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/README.md": "1c7c8011bb5e31742ff9c00e90d928318f04798faef0e59b69bd9f37efe96749",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/audit.py": "6047fe01918d82fec0b1b1ff5e37e2b16a30381f72b29824fa4b23dc3ec7692d",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/q170.py": "8d0b103e8f99f78af461979de46c62ce1075968352a180851ec0a5013d02ffcd",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/test_audit.py": "780ff9bd0398bafcc1288f46488e8ab6efef3be5a5fbf8d9a88052b6b2194a05",
+    "results/core_same_field_positive_core_reconciliation/README.md": "e081722d44d6cab95894f9fa6a2f1ddba15fa3415febe0661d0b252f48039d18"
+  },
+  "status": "Q170-current-head-protected-core-and-limit-order-audited-conditionally",
+  "symbolic": {
+    "U7_protected_core_limit_closed_conditionally": true,
+    "conditional_same_force_competitor_exclusion": true,
+    "correction": "annular diagonal increments vanish exactly in the support hole, whereas the positive-order shared Borel background is only O(tau^(2h)); the exponent-100 threshold controls that remainder without identifying canonical and physical pulses",
+    "established": "the Q169 localized physical field has a protected path with A=101/200 and a strictly positive threshold on which |u_theta|>=(e0/2)tau^(-A); completing the radius limit separately at T_tau=1-tau/2 conditionally excludes a globally smooth same-force zero-datum fixed-interval finite-energy competitor",
+    "future_velocity_or_pressure_constructed": false,
+    "historical_frozen_records_modified": false,
+    "next": "perform a consolidated provider-discharge audit of Q164-Q170, reconcile the older comparison-foundation unresolved flag with the later independent audits, and prove or precisely obstruct the first remaining continuum premise",
+    "scope": "conditional analytical join of named continuum providers; no future field is constructed, dependency hashes and tests are not continuum proofs, and the result is not an unconditional admissible-force or Navier-Stokes blow-up theorem",
+    "status": "Q170-current-head-protected-core-and-limit-order-audited-conditionally",
+    "unconditional_admissible_force_or_blowup_certified": false
+  },
+  "threshold": {
+    "half_leading_value": "1/2",
+    "lower_bound": "|u_theta(x_tau,1-tau)|>=(e0/2) tau^(-101/200) for 0<tau<=tau_star",
+    "normalized_error_bound_on_interval": "1/2",
+    "normalized_error_within_half": true,
+    "path_inside_quarter_radius_squared": true,
+    "path_radius_squared": "1/81150371235079008914869085663228711427371251186031038182719488",
+    "plateau": "1/32",
+    "q_core": "1/1606938044258990275541962092341162602522202993782792835301376",
+    "radial_plateau_bound": true,
+    "strictly_positive": true,
+    "tau_star": "1/1606938044258990275541962092341162602522202993782792835301376",
+    "time_plateau_bound": true
+  }
+}
