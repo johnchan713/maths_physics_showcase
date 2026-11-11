@@ -1,0 +1,140 @@
+{
+  "closure": {
+    "edges": 1485,
+    "nodes": 429,
+    "source_bindings": 5771
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_current_head_q172_q2_q3_source_audit/evidence.json": "32785539ee020495ce6a9bcfaadfa1a9a6c989f15446274b626b28587e169eda",
+    "results/core_current_head_q173_q4_source_audit/evidence.json": "55ac57577b9a1d9558bb29835cd910fb835bd3d78ee98891a7f14e570f27a4b1",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/evidence.json": "300f6db8bd01cdc124d9f14e3f11d3b2aa6e9c4c7f61357f84933bcf4e38ea11",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/evidence.json": "f8fd6ff0034c26e26c9dbcfd042b0ea8a348ac3dff224516043c312586888ac6",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/evidence.json": "c3350ad1f287da03e4bc329c991f06d7e11822b67f474dd3b24e46aca1594225",
+    "results/core_current_head_q178_physical_primary_source_audit/evidence.json": "883c7fe8ebeb0756808f61ae2b9257f199b56eff9bb1d3d93fa26fd40dd9f64d",
+    "results/core_current_head_q180_target_source_simultaneous_induction/evidence.json": "9315c63504df9084cf79c5efec336eae2eb749380871e9b74905192f821c9322",
+    "results/core_current_head_q181_diagonal_endpoint_force_replay/evidence.json": "34a0033dd2dfa6990c8fa5dca2563eb208d7ed00238589a76ff401aae1efb25c",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/evidence.json": "2148704390a3b45d796e10d96a1b884e765f3633b9f62f56f19f3634b17bce5d",
+    "results/core_current_head_q26_source_domain_join/evidence.json": "53c4a643a62e99d6f09cee23da8b39312bea69a470459004a898787b6d66c09e"
+  },
+  "parent": "0cbffccc6930ca8e9c94b9cd1dc7575b7a2dd3ee",
+  "review": {
+    "blocking_gate": {
+      "arrays_cover_requested_jet": false,
+      "bell": {
+        "conditional_only": true,
+        "input_suprema_supplied": false,
+        "inverse_gaussian": null,
+        "quotient": null
+      },
+      "endpoint_flatness_proved": false,
+      "gate_discharged": false,
+      "harmonic": 1,
+      "jet_order": 2,
+      "required_endpoint_input": "all mixed endpoint jets of the actual cut source vanish after pressure, viscosity, cutoff and nonlinear interaction terms are assembled",
+      "required_gaussian_inputs": "finite same-domain weighted suprema K_i for D^i log(P), 1<=i<=jet_order",
+      "required_raw_inputs": "finite same-domain weighted suprema A_i for every raw physical generated-source jet after extracting P, 0<=i<=jet_order",
+      "stage": 0,
+      "target_inequality": "sup_(ell>=ell_*) epsilon_ell^(-B_j) sup_(Omega_(j,ell)) zeta^(-1/2) y_a^r y_b^s |D^I(f_(j,m)/P)| < infinity"
+    },
+    "checks": {
+      "all_frontier_reconciliations_hold": true,
+      "all_provider_statuses_match": true,
+      "bell_recurrence_does_not_supply_missing_suprema": true,
+      "downstream_pressure_comparison_remains_conditional": true,
+      "finite_inputs_and_endpoint_flatness_would_close_fixed_jet_gate": true
+    },
+    "correction": {
+      "Q161_Bell_arithmetic_is_valid": true,
+      "Q161_provider_flags_route_but_do_not_independently_derive_Ai_Ki": true,
+      "Q161_synthetic_source_quotient_fixture_is_not_a_physical_supremum_proof": true,
+      "historical_frozen_evidence_modified": false
+    },
+    "finite_control": {
+      "arrays_cover_requested_jet": true,
+      "bell": {
+        "conditional_only": false,
+        "input_suprema_supplied": true,
+        "inverse_gaussian": [
+          "1",
+          "3",
+          "14"
+        ],
+        "quotient": [
+          "1",
+          "5",
+          "29"
+        ]
+      },
+      "endpoint_flatness_proved": true,
+      "gate_discharged": true,
+      "harmonic": 1,
+      "jet_order": 2,
+      "required_endpoint_input": "all mixed endpoint jets of the actual cut source vanish after pressure, viscosity, cutoff and nonlinear interaction terms are assembled",
+      "required_gaussian_inputs": "finite same-domain weighted suprema K_i for D^i log(P), 1<=i<=jet_order",
+      "required_raw_inputs": "finite same-domain weighted suprema A_i for every raw physical generated-source jet after extracting P, 0<=i<=jet_order",
+      "stage": 0,
+      "target_inequality": "sup_(ell>=ell_*) epsilon_ell^(-B_j) sup_(Omega_(j,ell)) zeta^(-1/2) y_a^r y_b^s |D^I(f_(j,m)/P)| < infinity"
+    },
+    "frontier_reconciliation": {
+      "Q171_broad_Q2_Q3_frontier_is_stale": true,
+      "Q172_Q177_supply_current_conditional_routes": true,
+      "Q173_locates_generated_source_boundary": true,
+      "Q175_route_is_not_independent_validation": true,
+      "Q177_selected_input_route_is_conditional": true,
+      "Q178_primary_bounds_do_not_prove_generated_sources": true,
+      "Q180_reuses_named_source_estimates": true,
+      "Q181_Q182_are_downstream_conditional_replays": true,
+      "Q26_closes_current_local_later_tail_domain": true,
+      "historical_finite_head_determinant_margin_is_not_first_current_obstruction": true
+    },
+    "next": "derive the fixed-cycle physical A_i and K_i suprema and actual endpoint flatness directly from the explicit current field and complete source operator, retaining pressure memory, viscosity, cutoffs and every interaction; then propagate the result through the finite-cycle simultaneous induction",
+    "provider_status_checks": {
+      "core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q172_q2_q3_source_audit": true,
+      "core_current_head_q173_q4_source_audit": true,
+      "core_current_head_q175_canonical_source_route_reconciliation": true,
+      "core_current_head_q176_modulation_repair_dependency_audit": true,
+      "core_current_head_q177_weighted_support_source_reconciliation": true,
+      "core_current_head_q178_physical_primary_source_audit": true,
+      "core_current_head_q180_target_source_simultaneous_induction": true,
+      "core_current_head_q181_diagonal_endpoint_force_replay": true,
+      "core_current_head_q182_comparison_core_exclusion_replay": true,
+      "core_current_head_q26_source_domain_join": true
+    },
+    "scope": {
+      "actual_physical_generated_source_supremum_proved": false,
+      "complete_residual_improvement_proved": false,
+      "current_head_provider_frontier_reconciled": true,
+      "endpoint_extension_for_complete_actual_source_proved_here": false,
+      "tests_are_continuum_proof": false,
+      "unconditional_pulse_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q172_q2_q3_source_audit/README.md": "4df9477f02e64d3d98c7a0d7833fb66b89ec2ae34deb539fda49497ff63a0dca",
+    "results/core_current_head_q173_q4_source_audit/README.md": "06be3ebff6b4defb1411552ea206cbefaa501d3a3bc2d8c7ad06e631327cbb4e",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/README.md": "5d20478c5b79e04378b2d36dab80476e39b5549d9779a21d0040e60530a28896",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/README.md": "5d915801afac31045d896b1f3741a7494db8ef96e334aeb0e63d46656e01aeae",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/README.md": "05f1fa9ccf12a4b042be91ddc8865dfac0247437fdec41c22e48fb408eeccba2",
+    "results/core_current_head_q178_physical_primary_source_audit/README.md": "4156762eede76b7ea06ad2a1ca5d0ed9a97df4d94b43dc02b341e4394de31ba3",
+    "results/core_current_head_q180_target_source_simultaneous_induction/README.md": "c7ccc0ebf30d037338a1140721de4b830f39b2229f1d8df818873a2e078eba6c",
+    "results/core_current_head_q181_diagonal_endpoint_force_replay/README.md": "497f2b778ee1459fd0ddf35c8d95daa07b65d889b2e0459ddbcb5ac240d1f6df",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/README.md": "4efd532051a973e3b30441f2d77fd36c113b68b37f14ec2b371f1e8d8c0ba9f6",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/README.md": "dd19e4232668c41dfa5abcf35e3047786b918feca677ebea32e465fadf6d0f38",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/audit.py": "7d4b53db2a339df9ca1766c5ade7d9b91287c3e2d39c925e531f7437e6f84257",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/q183.py": "ed66c0c8d5e294eca39a207ed015473da52c7dfd05ff2d2f9597644ab636a517",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/test_audit.py": "21cbdaebd82bfe0944dfe6338278926d8586bcf5f2e1dcbe6b2c78f1c6ac38dc",
+    "results/core_current_head_q26_source_domain_join/README.md": "774e90b21566473b21d763072bbc4b325d47404b754f70de1947a59fa95a1fd3"
+  },
+  "status": "Q183-current-head-provider-frontier-reconciled-to-generated-source-supremum",
+  "symbolic": {
+    "correction": "the Q161 executable uses synthetic finite A_i and K_i arrays and its provider flags only route the corresponding continuum estimates; neither independently derives those actual physical suprema or complete endpoint flatness",
+    "established": "Q172--Q182 supersede Q171's broad frontier and conditionally route every later modulation, repair, covariance, induction, force and pressure step; the exact Bell recurrence converts supplied raw-source and log-Gaussian jet suprema into quotient bounds at each fixed physical jet",
+    "historical_frozen_records_modified": false,
+    "obstruction": "prove the all-fixed-jet weighted generated-source inequality and smooth endpoint extension from the explicit physical field/source formulas, with full pressure, viscosity, cutoff and interaction memory",
+    "status": "Q183-current-head-provider-frontier-reconciled-to-generated-source-supremum",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

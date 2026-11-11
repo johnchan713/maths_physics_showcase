@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q182 fixed-gauge comparison and protected-core replay](core_current_head_q182_comparison_core_exclusion_replay/README.md).
+Latest source audit: [Q183 current-head provider discharge and generated-source frontier](core_current_head_q183_provider_discharge_generated_source_frontier/README.md).
+Q183 reconciles Q172--Q182 and removes the stale Q171 frontier. The later
+records conditionally route the modulation, repair, covariance, induction,
+force and pressure chain, but the first surviving physical input is the
+all-fixed-jet generated-source supremum and actual endpoint extension used by
+Q161/Q180. The Bell recurrence is exact once physical raw-source and
+`log P` suprema are supplied; the Q161 executable uses synthetic arrays and
+does not derive those suprema. The checkpoint records the precise blocking
+inequality without promoting tests or provider flags to a continuum proof.
+No unconditional pulse, residual, force, exclusion or blow-up claim follows.
+
+Preceding source audit: [Q182 fixed-gauge comparison and protected-core replay](core_current_head_q182_comparison_core_exclusion_replay/README.md).
 Q182 binds Q181's localized physical field to the corrected pressure,
 expanding-ball and protected-core chain. The force divergence remains in both
 individual pressure equations and cancels exactly once; finite energy and the
