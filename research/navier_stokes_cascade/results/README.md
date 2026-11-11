@@ -6,16 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q173 Q4 fixed-profile source boundary](core_current_head_q173_q4_source_audit/README.md).
-The fixed compensator and explicit rho-squared projectors retain uniform
-fixed-order jets, exact weighted moments, strictly enclosed actual supports
-and the complete moving-pressure product on the Q172-corrected tail.  The
-audit also corrects the scope of the same-choice recomputation: it is a
-conditional algebraic/norm-chain rebuild and does not prove the actual
-generated-source weighted continuum supremum.  That precise inequality,
-the compact and slow inverse domains, complete covariance means and the
-physical residual remain open; no unconditional pulse or blow-up conclusion
-follows.
+Latest source audit: [Q174 Q5 operator and typed source boundary](core_current_head_q174_q5_operator_source_audit/README.md).
+The shifted compact maps, zero-Haar temporal inverse and fixed slow response
+preserve their declared typed weighted domains on the Q173 coefficients,
+conditional on matching source membership, exact moments and full pressure
+memory.  The audit corrects the blanket full-edge source class to separate
+half-weight harmonic and full-weight mean/target bounds.  Q160--Q161 prove
+those bounds for the inherited physical primary family, while the canonical
+Q3--Q4 provider explicitly leaves the two primary families unidentified.
+The canonical same-object source inequalities and complete physical residual
+therefore remain open; no unconditional pulse or blow-up conclusion follows.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
 The broad foundation obstruction left by the explicit-tail join is now split

@@ -1,0 +1,135 @@
+{
+  "closure": {
+    "edges": 1411,
+    "nodes": 419,
+    "source_bindings": 5637
+  },
+  "dependency_evidence_sha256": {
+    "results/core_canonical_full_path_ode_join/evidence.json": "fd28c1af3c9a5cb11dabe7df96e95525b3d90136ab16fcfd42898be5d65ff7d2",
+    "results/core_compact_slow_inverse_reconstruction/evidence.json": "22e4b560e1f4928d9fd74d9f11045d00fbebe01c361bfcac5e86c26e1c6aee19",
+    "results/core_current_head_q117_current_covariant_response/evidence.json": "49a5c8d08d5331ea4194dc86ec4455fb3cc37ababd63c40fad6a340315295208",
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q160_physical_target_induction/evidence.json": "7df2d117988dd9cdc149ef68c0c42086e8ec1963c27f2932e829839612168b5e",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_current_head_q173_q4_source_audit/evidence.json": "55ac57577b9a1d9558bb29835cd910fb835bd3d78ee98891a7f14e570f27a4b1",
+    "results/core_current_head_q18_edge_weight_obstruction/evidence.json": "95ccb024eb52fb21306137c83b8230d58e7a1930f5ad47741ef5f71c320f967f",
+    "results/core_current_head_q19_typed_weight_cycle/evidence.json": "70c8149dc84a3a7f22b2f18ceadb7dbdf49ddd6c1077c3f5deb5e05af295905e",
+    "results/core_current_head_q20_gaussian_quotient_join/evidence.json": "6fa1656cb6b02a95181104605b38ca96c894a0560d0aa42cb8aa09bdf4a271b7",
+    "results/core_current_head_q21_lifted_path_join/evidence.json": "4b0c65e5024fc153a7bb0bf65b6b2b789f32ac0ed76656ee7dd7aad168667f27",
+    "results/core_current_head_q26_source_domain_join/evidence.json": "53c4a643a62e99d6f09cee23da8b39312bea69a470459004a898787b6d66c09e",
+    "results/core_current_head_q5_weighted_inverse_source_join/evidence.json": "c72458f8e1ca2ad2d8901b9cfa0dd3c2953e7a8d69fcd8a948816dae658d89c3",
+    "results/core_current_head_q94_full_regular_source/evidence.json": "88805fbee295650e395aed9368aa0e9ebf25dc47f582470dea8a8325897dfdd9",
+    "results/core_direct_compact_slow_provider_reconstruction/evidence.json": "ad698e873be65c32dcd6a2e00ce98dc1ffec1a514bfa5075d0b23813b8a52ad3"
+  },
+  "parent": "afa4cd8d2ab1e23f434dbd25d0ce0de55866d445",
+  "review": {
+    "checks": {
+      "Q117_covariant_response_keeps_native_entrance_contract_open": true,
+      "Q161_physical_bounds_cannot_be_substituted_into_canonical_chain": true,
+      "Q173_fixed_projector_object_is_direct": true,
+      "Q94_regular_source_polynomial_keeps_native_inequalities_conditional": true,
+      "all_provider_statuses_match": true,
+      "canonical_provider_preserves_nonidentification": true,
+      "compact_slow_maps_close_when_typed_inputs_are_supplied": true,
+      "finite_same_family_fixture_closes_only_its_fixture": true,
+      "half_weight_does_not_promote_to_full_weight": true,
+      "operator_estimates_do_not_supply_their_input": true,
+      "physical_join_preserves_nonidentification": true,
+      "typed_canonical_gate_remains_open": true
+    },
+    "correction": {
+      "Q160_Q161_theorem_is_for_inherited_physical_family": true,
+      "Q173_pure_power_gate_is_sufficient_not_exact": true,
+      "Q5_blanket_full_zeta_generated_source_domain_is_invalid": true,
+      "canonical_Q3_Q4_family_is_not_identified_with_that_family": true,
+      "correct_domain_is_typed_and_log_renormalized": true
+    },
+    "family_interface": {
+      "canonical_family": "canonical-reference-mixing",
+      "identification_proof_supplied": false,
+      "may_transfer_actual_source_bounds": false,
+      "physical_family": "inherited-actual-mixing",
+      "same_name": false
+    },
+    "half_weight_control": {
+      "blanket_full_weight_follows": false,
+      "index": 32,
+      "lower_log_ratio": "288",
+      "pole": 7,
+      "positive_after_four_poles": true
+    },
+    "next": "either prove the two typed bounds for the canonical reference-mixing family, or rebuild the current Q3-Q5 spine explicitly on the inherited physical family before replaying Q6",
+    "operator_contract": {
+      "complete_pressure_memory": true,
+      "exact_weighted_moment": true,
+      "operator_bound_implies_source_membership": false,
+      "operator_output_bound": true,
+      "source_membership": true
+    },
+    "provider_status_checks": {
+      "core_canonical_full_path_ode_join": true,
+      "core_compact_slow_inverse_reconstruction": true,
+      "core_current_head_q117_current_covariant_response": true,
+      "core_current_head_q149_primary_pulse_join": true,
+      "core_current_head_q160_physical_target_induction": true,
+      "core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q173_q4_source_audit": true,
+      "core_current_head_q18_edge_weight_obstruction": true,
+      "core_current_head_q19_typed_weight_cycle": true,
+      "core_current_head_q20_gaussian_quotient_join": true,
+      "core_current_head_q21_lifted_path_join": true,
+      "core_current_head_q26_source_domain_join": true,
+      "core_current_head_q5_weighted_inverse_source_join": true,
+      "core_current_head_q94_full_regular_source": true,
+      "core_direct_compact_slow_provider_reconstruction": true
+    },
+    "scope": {
+      "Q5_operator_mapping_audited_on_Q173_fixed_coefficients": true,
+      "actual_canonical_typed_source_membership_proved": false,
+      "complete_residual_replayed_here": false,
+      "physical_source_theorem_promoted_to_canonical_source_theorem": false,
+      "unconditional_pulse_force_exclusion_or_blowup_claimed": false
+    },
+    "typed_open_gate": {
+      "fixture": {
+        "family_identified": false,
+        "gate_closed": false,
+        "harmonic_quotient_bound_supplied": false,
+        "mean_target_bound_supplied": false
+      },
+      "harmonic": "sup_{ell>=ell_*} epsilon_ell^{-B_j}(1+|log epsilon_ell|)^{-K_{j,R}} max_{|I|<=R} sup_{lifted Omega_{j,ell}} zeta^{-1/2} delta^{p_{j,I}} |D^I(f_{j,ell}/P_{j,ell})| < infinity",
+      "mean_target": "sup_{ell>=ell_*} epsilon_ell^{-C_j}(1+|log epsilon_ell|)^{-L_{j,R}} max_{|I|<=R} sup_{Omega_{j,ell}} zeta^{-1} delta^{q_{j,I}} |D^I Xi_{j,ell}| < infinity",
+      "moment_memory": "both exact tangential moments, all six covariances, gd-A1 gd, dZ(Jz+c_rho P), old pressure and Pi1/Pi2"
+    }
+  },
+  "source_hashes": {
+    "results/core_canonical_full_path_ode_join/README.md": "7c07f7efc5504fe0a678efe42a53ab93bc6406e16ece8789b052bca605f14d76",
+    "results/core_compact_slow_inverse_reconstruction/README.md": "70f42063c5b4eb4c3f735edf8d6a55cdc9847d74c274c125ed864c5d6a5cb35f",
+    "results/core_current_head_q117_current_covariant_response/README.md": "88e5320866b3cefee95b22a94ba8c56458459af1b926430074c5416cdd67a348",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q160_physical_target_induction/README.md": "b8e6cb93143ae4bde7d22da05db8a98af82eac37ecbd33a790e6976c4918e916",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q173_q4_source_audit/README.md": "06be3ebff6b4defb1411552ea206cbefaa501d3a3bc2d8c7ad06e631327cbb4e",
+    "results/core_current_head_q174_q5_operator_source_audit/README.md": "0dfeea1f52c67c04ad24423fe044a98a7ece6ff71e8dac3167ecd08a8aa53d9c",
+    "results/core_current_head_q174_q5_operator_source_audit/audit.py": "49f47478ea30b0ba98097ac533244f5ad0892e3deae7d0d366d3ae3ec25b63c6",
+    "results/core_current_head_q174_q5_operator_source_audit/q174.py": "9b2cc46185803a80cc2c1ca4bcb30ab33c61c0dc9b2289fb71855b2b46919620",
+    "results/core_current_head_q174_q5_operator_source_audit/test_audit.py": "60917c89bcbd787e6669c4b588b00a7f39b588eebba29d79e454498134b0c40f",
+    "results/core_current_head_q18_edge_weight_obstruction/README.md": "0a53691f89c68a80dc3490eee8f38d2cf54585f1fa3998c233d0ce914a9ba716",
+    "results/core_current_head_q19_typed_weight_cycle/README.md": "627c38cfe82cadcac7852d22ff2b7998708156cabca6cee9d2f4611d82852926",
+    "results/core_current_head_q20_gaussian_quotient_join/README.md": "bdca37e4d0322f478207ca4b531635a3b326c4722cb0983d53809ebe2a6c83af",
+    "results/core_current_head_q21_lifted_path_join/README.md": "119c8d751803a2e2fa9b3becf3f4cebce46c52dca448f55ad926a334fb01db9a",
+    "results/core_current_head_q26_source_domain_join/README.md": "774e90b21566473b21d763072bbc4b325d47404b754f70de1947a59fa95a1fd3",
+    "results/core_current_head_q5_weighted_inverse_source_join/README.md": "6ada1ea7416077edfb0aed83a4be54c163368616498523ccae5226042ade39af",
+    "results/core_current_head_q94_full_regular_source/README.md": "3676ec2aeaae54d4eb682db657e1bc55b98433a8eeb15205668ff54f6bf1738a",
+    "results/core_direct_compact_slow_provider_reconstruction/README.md": "a109b3a201357df0910aa0c0ff6ebc7411051d6bace6ecd81b585e2bb6df4a0b"
+  },
+  "status": "Q174-Q5-operator-source-audited-with-family-and-typed-domain-boundary",
+  "symbolic": {
+    "correction": "the exact source frontier is typed and log-renormalized; Q5's blanket full-zeta generated-source statement and Q173's pure-power display are not the exact current domain",
+    "established": "the shifted compact maps, zero-Haar temporal inverse and fixed slow response preserve their declared typed weighted domains at every fixed order, conditional on matching source membership and exact moments",
+    "historical_frozen_records_modified": false,
+    "obstruction": "Q160-Q161 prove source/target bounds for the inherited physical primary family, while the canonical Q3-Q4 provider explicitly leaves that family unidentified; those bounds cannot be substituted into the canonical same-object Q5 chain",
+    "status": "Q174-Q5-operator-source-audited-with-family-and-typed-domain-boundary",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
