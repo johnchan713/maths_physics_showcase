@@ -1,0 +1,147 @@
+{
+  "closure": {
+    "edges": 1466,
+    "nodes": 426,
+    "source_bindings": 5740
+  },
+  "dependency_evidence_sha256": {
+    "results/compact_mean_foundation/evidence.json": "4aac9ac6ed533ea1bd275490c794e9123db45ff47b4b65c7f1206b4f6b25a2c9",
+    "results/core_current_head_q160_physical_target_induction/evidence.json": "7df2d117988dd9cdc149ef68c0c42086e8ec1963c27f2932e829839612168b5e",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_current_head_q174_q5_operator_source_audit/evidence.json": "a62a84f41930a16cf12b0d194bc4cc7a5d2842427599e6224248950c934cd422",
+    "results/core_current_head_q179_covariance_mean_cycle_frontier/evidence.json": "681a9caf6c43da2704f331fc270a083f8904c47f14d978b2457008d03912a6e6",
+    "results/current_target_cycle_bridge/evidence.json": "402de981f9b3b1c2ae57360e8602552e9b595e444113b33d4fcb4ffd2d2d6c14",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+    "results/regular_source_foundation/evidence.json": "91f71ce32b4427f504553f4d8dfe5d555ae8822ec3f8e8da75123f729e487e28",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea",
+    "results/sourced_inverse_foundation/evidence.json": "15afc498fa42605b0fcbaaff81b4245ceb388e447527e63395eeb45348c41827"
+  },
+  "parent": "958dab86f98784bf98fc4eabc6cd61ffc150f7bf",
+  "review": {
+    "checks": {
+      "Q160_has_exact_target_recurrence": true,
+      "Q161_corrects_sequential_order_to_simultaneous_induction": true,
+      "Q179_supplies_physical_seed_but_leaves_universal_gate_open": true,
+      "all_provider_statuses_match": true,
+      "compact_mean_inverses_retain_all_fixed_orders": true,
+      "coupled_step_closes_with_exact_positive_target_slack": true,
+      "endpoint_and_complete_operator_rows_retained": true,
+      "physical_family_not_promoted_to_canonical_family": true,
+      "same_domain_sourced_inverse_retained": true,
+      "source_grammar_retains_full_path_and_current_targets": true
+    },
+    "correction": {
+      "Q160_standalone_sequential_P3_then_P4_reading_is_invalid": true,
+      "Q160_target_recurrence_is_used_inside_Q161_simultaneous_step": true,
+      "Q179_obstruction_is_closed_only_relative_to_named_continuum_maps": true,
+      "historical_frozen_evidence_modified": false
+    },
+    "coupled_step": {
+      "closes_coupled_next": true,
+      "closes_source_next": true,
+      "closes_target_next": true,
+      "rates": {
+        "B0": "74999/50000",
+        "B_j": "74999/50000",
+        "B_next": "39999/20000",
+        "C_j": "99999/50000",
+        "C_next": "49999/20000",
+        "delta": "49997/100000",
+        "j": 0,
+        "kappa": "1/100000",
+        "target_bridge_order": "249997/100000",
+        "target_slack": "1/50000"
+      },
+      "source_limiter": "sourced_full_linear",
+      "source_margins": {
+        "fast_mean_wave_change": "1/50000",
+        "signed_actual_mean_cross": "1/50000",
+        "signed_full_linear": "0",
+        "signed_new_square": "1",
+        "signed_old_wave_cross": "1/50000",
+        "slow_mean_wave_change": "3/100000",
+        "sourced_actual_mean_cross": "1/50000",
+        "sourced_full_linear": "0",
+        "sourced_new_square": "1",
+        "sourced_old_wave_cross": "1/50000"
+      },
+      "source_minimum_margin": "0",
+      "target_limiter": "signed_old_error",
+      "target_margins": {
+        "fast_old_new_means": "150001/100000",
+        "fast_square": "249999/100000",
+        "signed_axial_pressure": "50003/100000",
+        "signed_full_curl": "1/50000",
+        "signed_old_error": "1/50000",
+        "signed_square": "50001/100000",
+        "slow_linear_pressure_viscosity": "50003/100000",
+        "slow_old_new_means": "75001/50000",
+        "slow_square": "250001/100000"
+      },
+      "target_minimum_margin": "1/50000",
+      "target_slack": "1/50000"
+    },
+    "established": {
+      "constants_uniform_in_cycle_harmonic_jet_or_power": false,
+      "physical_P3_target_and_both_moments_for_each_finite_cycle": true,
+      "physical_P4_generated_source_quotient_and_endpoint_extension": true,
+      "physical_P5_fixed_stage_tail_for_each_fixed_jet_and_power": true
+    },
+    "moment_and_edge_contract": {
+      "angular": "int R^2 overline(E_theta,j)=epsilon partial_Z J_theta,j",
+      "axial": "int R overline(E_z,j)=epsilon partial_Z(J_z,j+c_rho P_mean,j)",
+      "compactness_alone_suffices": false,
+      "mean_weight": "zeta times zeta is bounded by zeta because 0<zeta<=1",
+      "memory": "all six covariance entries, axial velocity, Pi1/Pi2, compact pressure, the whole moving c_rho P_mean product, zero-Haar data, both velocity moments, reserved interior hull and unchanged C^-20 width",
+      "primitive_gate": "exact zero weighted total is required at both edges",
+      "stage_uniform_constant_claimed": false,
+      "target": "|D^I Xi_j| <= C_(j,I) epsilon^(C_j) zeta ya^(-p_(j,I)) yb^(-q_(j,I))",
+      "wave_weight": "sqrt(zeta) times sqrt(zeta) gives zeta"
+    },
+    "next": "replay the complete-potential diagonal, punctured endpoint and localized-force ledger on this coupled physical state, retaining every cutoff curl, pressure gradient, viscosity term, nonlinear cross and square",
+    "provider_status_checks": {
+      "compact_mean_foundation": true,
+      "core_current_head_q160_physical_target_induction": true,
+      "core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q174_q5_operator_source_audit": true,
+      "core_current_head_q179_covariance_mean_cycle_frontier": true,
+      "current_target_cycle_bridge": true,
+      "finite_stage_induction": true,
+      "regular_source_foundation": true,
+      "source_envelope_edge_audit": true,
+      "sourced_inverse_foundation": true
+    },
+    "scope": {
+      "canonical_family_identified": false,
+      "complete_diagonal_endpoint_force_replayed_here": false,
+      "same_inherited_physical_family": true,
+      "tests_are_continuum_proof": false,
+      "unconditional_complete_residual_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/compact_mean_foundation/README.md": "f17ddf5d7858d835669ad897bf2ad22357175531c5f54d26fdf05fb04b8e4256",
+    "results/core_current_head_q160_physical_target_induction/README.md": "b8e6cb93143ae4bde7d22da05db8a98af82eac37ecbd33a790e6976c4918e916",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q174_q5_operator_source_audit/README.md": "0dfeea1f52c67c04ad24423fe044a98a7ece6ff71e8dac3167ecd08a8aa53d9c",
+    "results/core_current_head_q179_covariance_mean_cycle_frontier/README.md": "09c62f8349bd5e91a6af45124c4ace16e8ffb094e954050c8ddfa13f0b754a89",
+    "results/core_current_head_q180_target_source_simultaneous_induction/README.md": "c7ccc0ebf30d037338a1140721de4b830f39b2229f1d8df818873a2e078eba6c",
+    "results/core_current_head_q180_target_source_simultaneous_induction/audit.py": "f35c776fad640c98a3d59ae611bcd1fc0cb6cc7604b050d47df69364dd7ebb72",
+    "results/core_current_head_q180_target_source_simultaneous_induction/q180.py": "89e13634aca3287cd348d9d21989f405e60121e4c673fdf1e5ad7065a7cb7cb9",
+    "results/core_current_head_q180_target_source_simultaneous_induction/test_audit.py": "5bdf5e8f0940e190d4281a01ef0e9915b3f5c8c4e63899e897807daf1a63986e",
+    "results/current_target_cycle_bridge/README.md": "0c96ac838ab7bc1861f5b178164318400eeebdd97c6f2d9855ba2200277830f2",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4",
+    "results/sourced_inverse_foundation/README.md": "6f784f977d69cf489e2416d98069f2e12a1db1580fc6adbc43cde45cb55352c2"
+  },
+  "status": "Q180-physical-target-source-tail-simultaneous-induction-reconciled",
+  "symbolic": {
+    "correction": "Q160 cannot be read as a complete sequential P3 proof followed by P4; the next target and next generated source are mutually dependent and close only in the Q161 simultaneous induction",
+    "established": "relative to the named current-state source and inverse estimates, one simultaneous finite-cycle induction proves the physical zeta-weighted Xi_j estimate, both exact moments, generated-source quotient/endpoint extension and every fixed-stage tail",
+    "historical_frozen_records_modified": false,
+    "limiting_inequalities": "source gain delta=1/2-3*kappa is saturated by the sourced and signed full linear rows; target gain 1/2-kappa exceeds the required delta by exactly 2*kappa",
+    "status": "Q180-physical-target-source-tail-simultaneous-induction-reconciled",
+    "unconditional_complete_residual_force_exclusion_or_blowup_certified": false
+  }
+}

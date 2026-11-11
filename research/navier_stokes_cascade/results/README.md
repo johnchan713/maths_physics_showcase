@@ -6,16 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q179 complete initial covariance means and finite-cycle frontier](core_current_head_q179_covariance_mean_cycle_frontier/README.md).
-Q179 corrects Q178's provisional raw-covariance frontier: exact six-entry
-identities cancel the negative raw power at the initial stage, and the
-inherited physical family's own root and squared-partition identity closes
-the first feedback at order `D=3/2-2*kappa` with axial velocity, viscosity,
-`A1`, compact/moving pressure and `Pi1/Pi2` retained. This does not close the
-universal cycle. Every recomputed finite target still needs a `zeta`-weighted
-edge estimate and both exact tangential moment identities. Ordinary compact
-seminorms do not supply the vanishing edge weight, so the downstream source
-and residual diagonal remains conditional and no force or blow-up conclusion
+Latest source audit: [Q180 physical target/source simultaneous induction](core_current_head_q180_target_source_simultaneous_induction/README.md).
+Q180 binds Q179's physical seed to the corrected coupled recurrence. The
+generated source and next covariance target cannot be proved sequentially:
+each uses the other within the next physical cycle. The simultaneous step has
+source gain `1/2-3*kappa`, saturated by both full-linear rows, while the exact
+current-state target gains `1/2-kappa`, leaving `2*kappa` slack. It retains all
+six covariances, axial velocity, `Pi1/Pi2`, compact and moving pressure, both
+exact moments, zero-Haar data, the reserved hull and the full edge weight.
+Thus P3--P5 close for every finite physical cycle relative to the named
+continuum source and inverse estimates, with no uniformity in cycle, harmonic,
+jet or requested tail power. The complete diagonal, endpoint and localized
+force have not been replayed here; no unconditional residual or blow-up claim
 follows.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
