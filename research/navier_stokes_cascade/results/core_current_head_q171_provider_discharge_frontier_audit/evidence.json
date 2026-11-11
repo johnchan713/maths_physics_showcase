@@ -1,0 +1,116 @@
+{
+  "closure": {
+    "edges": 1375,
+    "nodes": 411,
+    "source_bindings": 5555
+  },
+  "dependency_evidence_sha256": {
+    "results/comparison_foundation/evidence.json": "8375a9e06205b9817bd114a22320915f264fd760ae85d385a474f776ecebd0ca",
+    "results/core_current_head_primitive_frontier_audit/evidence.json": "9a7e4521af282ecfb8a699bb66e852bc3c367adfb40e7b8f71d0e7b2f4f954de",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/evidence.json": "87611e138ed2df71bd15f3ffe4a3b0997e206fe0bfa3324f77a53d4670a30c30",
+    "results/core_current_head_q165_finite_map_frontier_audit/evidence.json": "4d8854401c547ce14d43978eefae3d4cd5a1de99767206ff4a7883c1ffc68aaf",
+    "results/core_current_head_q166_complete_residual_frontier_audit/evidence.json": "9b080d720000d317ed76ad08017d8cfb5fe8d90fb55c8c5140ae3b07827e069c",
+    "results/core_current_head_q167_corner_endpoint_frontier_audit/evidence.json": "4239f89e2ebba8b6b9ddb4b41b85cf4adafac07cefc28aa8c1a4cfdce9c9ff27",
+    "results/core_current_head_q168_localization_force_frontier_audit/evidence.json": "1bc8e23d261ab6cce9d4508610a32213a25cbdb31b6c3386afeea6a6b40ab999",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/evidence.json": "9acd68d5092c38c4f6d74a5c9add5face583b33702150c17c160e88425704aec",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/evidence.json": "3bfe170d5b2a7a9d85270a0647e9f21ccc4de2125e580e844e4777afcbdc1916",
+    "results/core_current_head_q2_regional_gap_join/evidence.json": "64f62c4bf9c0cd36306bf028e63f8293626e494e5f85bd6b1336b05694af59a7",
+    "results/core_current_head_q3_full_frame_join/evidence.json": "c2d4e74e82ce44940b6101fb7e445553c1a70acb5679495d24d1db8a8311b9c7"
+  },
+  "first_open_premise": {
+    "Q2_provider_chain_bound_but_not_fully_reproved_in_join": true,
+    "Q3_provider_chain_bound_but_not_fully_reproved_in_join": true,
+    "blocking_selector": "2h(ell-2)>=max_i log2(C_i/r_i)",
+    "first_not_independently_reproved_current_head_premise": "on the selected Q164 core profile, independently establish the actual Q2 regional continuum margins and Q3 finite whole-path/frame constants",
+    "logical_obstruction": "ell is not defined by this row until every actual r_i is positive and every C_i is finite; q-smallness cannot prove those antecedents",
+    "positive_finite_inputs_imply_a_finite_selector": true,
+    "provider_claims_declared_false": false,
+    "required_constants": "0<C_i<infinity for every value, relative-stress, chart, length and frame row",
+    "required_margin": "m_base=min(f,t,d,omega,m_phi,c_a,b_0,lambda_min,b_min^2)>0",
+    "smaller_q_alone_can_prove_missing_positivity_or_finiteness": false
+  },
+  "frontier": [
+    {
+      "id": "U1-U7",
+      "status": "successor-audits-reconciled-relative-to-named-providers"
+    },
+    {
+      "id": "U8",
+      "status": "closed-by-Q171-provider-frontier-reconciliation"
+    },
+    {
+      "id": "U9",
+      "status": "next-independent-Q2-Q3-continuum-provider-audit"
+    }
+  ],
+  "parent": "bff4c7188acf7c2dd41046f64e0d5029c27bf3a8",
+  "providers": {
+    "Q164_later_closes_current_head_core_pressure_frontier": true,
+    "Q165_later_closes_current_head_finite_map_frontier": true,
+    "Q2_bound_only_relative_to_named_providers": true,
+    "Q3_bound_only_relative_to_named_providers": true,
+    "all_identity_links_hold": true,
+    "historical_comparison_flag_all_dependencies_discharged": false,
+    "historical_comparison_flag_core_and_finite_maps_still_dependencies": true,
+    "identity_chain": {
+      "Q165_to_Q164": true,
+      "Q166_to_Q165": true,
+      "Q167_to_Q166": true,
+      "Q168_to_Q167": true,
+      "Q169_to_Q168": true,
+      "Q170_to_Q169": true
+    }
+  },
+  "selector": {
+    "ell": 302,
+    "exact_selector_holds": true,
+    "h": "1/200",
+    "m_base": "1/4",
+    "previous_integer_fails_when_ell_is_nontrivial": true,
+    "raised_power": 100,
+    "ratios": [
+      "8",
+      "8"
+    ]
+  },
+  "source_hashes": {
+    "results/comparison_foundation/README.md": "f8e801cb10c97f6678e784b6c1c246be7ed8f0487fc5834aded3a9d8b4452a81",
+    "results/core_current_head_primitive_frontier_audit/README.md": "a31585b85bb48130ee21ecc1935c8f142b51dc242cf261b98255921cbe3c0dd2",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/README.md": "69d021b3b916967a81c361d8b2abdb980767ff995373691fa76f7fabd593cf55",
+    "results/core_current_head_q165_finite_map_frontier_audit/README.md": "5640ea97b01b4393db1e2158f757934af656d6fa88e3402117a8f2dd3d6a56ce",
+    "results/core_current_head_q166_complete_residual_frontier_audit/README.md": "837ae11decd2576c11582950cfd0226af62e934bc40f6b4c4be343f369eb1896",
+    "results/core_current_head_q167_corner_endpoint_frontier_audit/README.md": "f43991354621c689a082e636e1430a0f1e066abb1e28ee203e79c8a7f23fc1b4",
+    "results/core_current_head_q168_localization_force_frontier_audit/README.md": "89b553770cd6ea966a56e3c1023bf3035c8e6517d7e6d632970d1f98e1b4bf37",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/README.md": "6576abfd9fd92478e021b804bbef850ef0266dc128fdea24cf43db363931b42d",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/README.md": "1c7c8011bb5e31742ff9c00e90d928318f04798faef0e59b69bd9f37efe96749",
+    "results/core_current_head_q171_provider_discharge_frontier_audit/README.md": "03314faf4058406da740aa8a995289ea0d6713a005e66a3884241d3e5f718735",
+    "results/core_current_head_q171_provider_discharge_frontier_audit/audit.py": "a27da3fe2fda9e8a24bcc1b558e9b7f3d307939aa8a46c2a9ed817f19df08cf5",
+    "results/core_current_head_q171_provider_discharge_frontier_audit/q171.py": "5fe17192a309b611f7e94c43351fcc11614b72c1362cfb499ba938fa758ca4d1",
+    "results/core_current_head_q171_provider_discharge_frontier_audit/test_audit.py": "bd5eede27804df94360924224f2b562b1bd29afe75eb3b79e4e4c74bedc63935",
+    "results/core_current_head_q2_regional_gap_join/README.md": "a75b85f7acf75f692734a0c9e096c52d6cc7bd25e27cc681adc36ad66c447ae9",
+    "results/core_current_head_q3_full_frame_join/README.md": "0d99b23c53ebe5e2a58c1db5f99ec498cb000f4a2900192f7524bdd93808608e"
+  },
+  "status": "Q171-current-head-provider-frontier-reconciled-with-selector-obstruction",
+  "successors": {
+    "comparison_foundation_historical_scope": "accurate at its own head; historical evidence is not rewritten",
+    "complete_local_residual": "later-conditional-audit-Q166",
+    "corner_and_punctured_endpoint": "later-conditional-audit-Q167",
+    "exact_core_and_leading_pressure": "later-current-head-audit-Q164",
+    "finite_regional_frame_projector_inverse_chain": "later-current-head-audit-Q165",
+    "fixed_gauge_pressure_and_comparison": "later-conditional-audit-Q169",
+    "later_audits_make_every_named_provider_unconditional": false,
+    "localization_compact_force_and_energy": "later-conditional-audit-Q168",
+    "old_comparison_core_finite_map_flag_is_current_frontier": false,
+    "protected_core_and_limit_order": "later-conditional-audit-Q170"
+  },
+  "symbolic": {
+    "correction": "comparison_foundation's old core/finite-map dependency flag is historical, not the Q170 frontier: Q164 and Q165 later audit those interfaces on the current-head object, while Q166-Q170 close the downstream implications only relative to their named continuum providers",
+    "established": "the Q164-Q170 successor chain is byte-identical and acyclic; every current-head interface through comparison and the protected core is joined, and positive finite Q2/Q3 inputs would give a finite selector by an exact exponent-100 argument",
+    "historical_frozen_records_modified": false,
+    "next": "independently audit the actual Q2 ten-region continuum infima and factored flat-edge coefficients, then the Q3 whole-path/frame constants, on the exact Q164 selected profile before rerunning the common selector and downstream chain",
+    "obstruction": "the current-head joins do not independently reprove every Q2 regional continuum infimum or Q3 whole-path/frame constant on the selected profile; until m_base>0 and all C_i are finite are independently validated, 2h(ell-2)>=max_i log2(C_i/r_i) does not define a finite ell",
+    "scope": "provider-frontier and exact selector audit; it neither falsifies the named provider theorems nor upgrades tests and frozen hashes into continuum proofs",
+    "status": "Q171-current-head-provider-frontier-reconciled-with-selector-obstruction",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
