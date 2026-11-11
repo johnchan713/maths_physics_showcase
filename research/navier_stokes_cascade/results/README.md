@@ -6,18 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q181 physical diagonal, endpoint and localized-force replay](core_current_head_q181_diagonal_endpoint_force_replay/README.md).
-Q181 binds Q180's coupled physical induction to the complete-potential
-diagonal and the later corrected endpoint/localization ledgers. For every
-fixed jet and power, all six residual groups have strict regular/cross margin
-`49997/40000000`; `A0` and `A1` each retain their own independent logarithmic
-margin `1/40000000`. Residual flatness is kept separate from Q154's punctured
-endpoint field bounds. Exact divergence-free localization retains twelve
-nonzero pressure, viscosity and nonlinear groups, while the apparent
-thirteenth vanishes algebraically. One compact smooth force and the zero-safe
-preterminal energy estimate follow conditionally. The terminal origin, future
-velocity/pressure, global residual improvement, comparison, exclusion and
-blow-up remain unproved.
+Latest source audit: [Q182 fixed-gauge comparison and protected-core replay](core_current_head_q182_comparison_core_exclusion_replay/README.md).
+Q182 binds Q181's localized physical field to the corrected pressure,
+expanding-ball and protected-core chain. The force divergence remains in both
+individual pressure equations and cancels exactly once; finite energy and the
+momentum equation, rather than Poisson alone, remove the harmonic pressure
+gradient. The eighth-power cutoff yields an `R^-2` limiting remainder without
+competitor derivative or flux hypotheses. On the same localization plateau,
+annular corrections vanish while the Borel background is only
+`O(tau^(2h))`, producing the conditional lower bound
+`(e0/2) tau^(-101/200)`. Fixed `T_tau`, then radius, then terminal time is the
+legal limit order. Same-force competitor exclusion is conditional on named
+continuum providers; no unconditional admissible force or blow-up follows.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
 The broad foundation obstruction left by the explicit-tail join is now split

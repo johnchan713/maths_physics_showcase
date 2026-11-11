@@ -1,0 +1,138 @@
+{
+  "closure": {
+    "edges": 1481,
+    "nodes": 428,
+    "source_bindings": 5763
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q163_comparison_core_exclusion_join/evidence.json": "1f24a86164ef1457a44194a01a58bd4e666747c58a0b7372675302e0bce68690",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/evidence.json": "9acd68d5092c38c4f6d74a5c9add5face583b33702150c17c160e88425704aec",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/evidence.json": "3bfe170d5b2a7a9d85270a0647e9f21ccc4de2125e580e844e4777afcbdc1916",
+    "results/core_current_head_q181_diagonal_endpoint_force_replay/evidence.json": "34a0033dd2dfa6990c8fa5dca2563eb208d7ed00238589a76ff401aae1efb25c"
+  },
+  "parent": "c82212fb774e7a83b460c9ee90fb5b3ce761c9e9",
+  "review": {
+    "checks": {
+      "all_provider_statuses_match": true,
+      "all_same_object_links_hold": true,
+      "common_force_is_retained_then_cancelled_once": true,
+      "eighth_cutoff_power_is_required_by_this_factorization": true,
+      "expanding_ball_remainder_is_R_minus_two": true,
+      "limit_order_is_fixed_T_then_radius_then_tau": true,
+      "pressure_gradient_uses_momentum_and_finite_energy": true,
+      "protected_path_separates_annular_vanishing_and_background_smallness": true
+    },
+    "correction": {
+      "Poisson_equation_alone_does_not_remove_harmonic_gradient": true,
+      "annular_corrections_vanish_but_background_is_only_small": true,
+      "common_force_cancels_exactly_once_in_difference": true,
+      "historical_frozen_evidence_modified": false,
+      "individual_pressure_equations_retain_force_divergence": true,
+      "no_comparison_constant_uniform_as_T_to_one_is_required": true
+    },
+    "identity_chain": {
+      "Q170_uses_frozen_Q169": true,
+      "Q181_and_Q163_share_Q162": true,
+      "Q181_and_Q169_share_Q168": true,
+      "same_field_force_pressure_gauge_and_localization": true
+    },
+    "next": "perform a current-head provider-discharge audit of Q172-Q182, avoiding the stale Q171 frontier, and identify the first named continuum estimate still only routed rather than independently proved",
+    "pressure_comparison": {
+      "Poisson_alone_removes_harmonic_gradient": false,
+      "commutator_exponent": "4/3",
+      "commutator_norm_decay": "3/4",
+      "commutator_radial_coefficient": "4",
+      "compact_mixed_flux_decay": "5/2",
+      "competitor_boundary_flux_bound_assumed": false,
+      "competitor_derivative_bound_assumed": false,
+      "competitor_dissipation_bound_assumed": false,
+      "competitor_pressure_decay_assumed": false,
+      "conclusion": "v=u on R^3 x [0,T] for every T<1",
+      "constructed_pressure_gauge": "p=c p0 with Q155 complete fixed pressure memory",
+      "cutoff_laplacian_decay": "2",
+      "cutoff_power": 8,
+      "difference_equation": "w_t+div g=Delta w-grad pi; -Delta pi=partial_i partial_j g_ij",
+      "finite_energy_counterexample": "without L2 control, v=t e1, P=-x1 and u=p=0 have the same zero datum and force but a nonzero harmonic pressure gradient",
+      "finite_energy_essential": true,
+      "force_cancellations": 1,
+      "gronwall": "E_R(t)<=2 C_T T exp(2 T L_T) R^-2",
+      "individual_pressures": "-Delta p=partial_i partial_j(u_i u_j)-div f; -Delta P=partial_i partial_j(v_i v_j)-div f",
+      "localized_inequality": "0.5 E_R'+0.5 D_R^2<=||grad u||_infinity E_R+C_T R^-2",
+      "pressure_recovery": "grad pi=grad sum_ij R_i R_j g_ij in space-time distributions",
+      "recovery_logic": "for every compact time test, momentum puts grad(pi-pi_star) in H^-3; it is harmonic, so its weighted-L2 Fourier transform is supported at {0} and therefore vanishes",
+      "seventh_cutoff_power_sufficient": false,
+      "sobolev_offset_decays": [
+        "5/2",
+        "5/2"
+      ],
+      "terminal_uniform_constants_assumed": false,
+      "worst_radius_decay": "2",
+      "young_decays": [
+        "4",
+        "14/5"
+      ]
+    },
+    "protected_core": {
+      "A": "101/200",
+      "X_a": "4/101",
+      "X_in": "1/101",
+      "annular_diagonal_terms_vanish_exactly": true,
+      "background_remainder": "q^A u_theta=e0+R_bg; |R_bg|<=C_bg q^(2h)",
+      "background_terms_vanish_exactly": false,
+      "canonical_physical_primary_identification_used": false,
+      "conditional_conclusion": "no globally smooth same-force zero-datum finite-energy competitor exists",
+      "first_limit": "fix T_tau<1 and recover the pressure gradient",
+      "future_velocity_or_pressure_constructed": false,
+      "h": "1/200",
+      "leading_coefficient": "e0=E0(X_in,0)=sqrt(2 X_in)*varphi_star*Phi/C>0",
+      "lower_bound": "|u_theta(x_tau,1-tau)|>=(e0/2) tau^(-101/200) for 0<tau<=tau_star",
+      "normalized_error_within_half": true,
+      "path": "x_tau=(sqrt(2 X_in tau),0,0), t=1-tau",
+      "pressure_gauge_changed": false,
+      "q_core": "1/1606938044258990275541962092341162602522202993782792835301376",
+      "radial_plateau_bound": true,
+      "second_limit": "send the comparison radius R to infinity at this fixed T_tau",
+      "strict_time_order": true,
+      "support_hole_margin": "3/101",
+      "tau_star": "1/1606938044258990275541962092341162602522202993782792835301376",
+      "third_limit": "deduce v=u at t=1-tau, then let tau decrease to zero",
+      "threshold_strictly_positive": true,
+      "time_plateau_bound": true,
+      "unconditional_blowup_claimed": false,
+      "uniform_comparison_constant_as_T_to_one_required": false
+    },
+    "provider_status_checks": {
+      "core_current_head_q163_comparison_core_exclusion_join": true,
+      "core_current_head_q169_pressure_comparison_frontier_audit": true,
+      "core_current_head_q170_protected_core_limit_frontier_audit": true,
+      "core_current_head_q181_diagonal_endpoint_force_replay": true
+    },
+    "scope": {
+      "P7_same_force_competitor_exclusion_closed_conditionally": true,
+      "all_named_continuum_providers_independently_reproved": false,
+      "future_velocity_or_pressure_constructed": false,
+      "globally_smooth_competitor_class_requires_fixed_interval_L2": true,
+      "tests_are_continuum_proof": false,
+      "unconditional_admissible_force_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q163_comparison_core_exclusion_join/README.md": "04f10ffc8dc70a3f797a68468d1bbba2022390c0592e66ee7a0a903d068595c0",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/README.md": "6576abfd9fd92478e021b804bbef850ef0266dc128fdea24cf43db363931b42d",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/README.md": "1c7c8011bb5e31742ff9c00e90d928318f04798faef0e59b69bd9f37efe96749",
+    "results/core_current_head_q181_diagonal_endpoint_force_replay/README.md": "497f2b778ee1459fd0ddf35c8d95daa07b65d889b2e0459ddbcb5ac240d1f6df",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/README.md": "4efd532051a973e3b30441f2d77fd36c113b68b37f14ec2b371f1e8d8c0ba9f6",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/audit.py": "00fb09b06e921f5f423b1b798f0938843839bf7e8b659f8aa25902bd719d7bec",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/q182.py": "00f8a3d25830f53bf0f6c06bd6509004f594b8a39e2073357348388b6e68ea44",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/test_audit.py": "6188eecf35fffaa999cdf82364f1e2029433b56ba81cd1e3b05d8bee2deb455d"
+  },
+  "status": "Q182-physical-pressure-comparison-protected-core-replayed-conditionally",
+  "symbolic": {
+    "correction": "the force divergence is retained in both individual pressure equations and cancels once; momentum plus finite energy removes the harmonic pressure gradient; annular increments vanish on the core path while the shared Borel background is only small",
+    "established": "on Q181's exact localized field, fixed-energy pressure recovery and the expanding-ball estimate give preterminal uniqueness for every fixed T<1; the same protected physical core path then conditionally excludes a globally smooth same-force zero-datum fixed-interval finite-energy competitor",
+    "historical_frozen_records_modified": false,
+    "limiting_estimates": "the expanding-ball remainder is O(R^-2), the core exponent is A=101/200, and limits are taken at fixed T_tau<1, then R to infinity, then tau to zero",
+    "status": "Q182-physical-pressure-comparison-protected-core-replayed-conditionally",
+    "unconditional_admissible_force_breakdown_or_blowup_certified": false
+  }
+}
