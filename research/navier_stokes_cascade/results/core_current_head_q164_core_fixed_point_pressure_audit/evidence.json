@@ -1,0 +1,173 @@
+{
+  "closure": {
+    "edges": 1343,
+    "nodes": 404,
+    "source_bindings": 5495
+  },
+  "contraction": {
+    "H_condition": "H=K^(1/16)>1",
+    "H_denominator_power": 127,
+    "Lambda": "10^12 H^128 epsilon^-2",
+    "ball_invariant": true,
+    "coefficient_before_H": "1/100000000000000000000000000000000000000000000000000",
+    "epsilon": "1/10000000000000000",
+    "finite_jet_iteration_used_as_convergence_proof": false,
+    "selected_bound": "epsilon^2/(10^18 H^127)",
+    "strict_contraction": true,
+    "strict_universal_ceiling": "1/100000000000000000000000000000000000000000000000000",
+    "strictly_below_ceiling_because_H_gt_one": true
+  },
+  "dependency_evidence_sha256": {
+    "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+    "results/core_current_head_q163_comparison_core_exclusion_join/evidence.json": "1f24a86164ef1457a44194a01a58bd4e666747c58a0b7372675302e0bce68690",
+    "results/core_current_head_q1_exact_map_join/evidence.json": "2163895c04626750c32ba4df499e1a7dd95c4aed54b06753da5cc402b3622961",
+    "results/core_fixed_point_ledger_recheck/evidence.json": "f210da4a0a7bf19dc9bba14f5d3d7cd6465ee0e6b24b80251b29526f462b3a73",
+    "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a",
+    "results/core_same_field_pressure_reconciliation/evidence.json": "a0a6bb8cc8d3e1c52227a1b2cb4f7a1adc0e340d2b9fc5fb2ac5aa9ebdc99f0c"
+  },
+  "equations": {
+    "angular_equation": "-2L(X phi_XX+2 phi_X)/phi=S_q",
+    "axial_equation": "-2L(X U_XX+U_X)=S_n",
+    "axis_regularity_forces_both_constants_zero": true,
+    "exact_leading_core_stress": "T0 identically zero",
+    "homogeneous_forward_modes": "constant/(XH) and constant/X",
+    "map": "(Phi,u)->(Phi0+(1+T)^-1 J2 R1/(2 Lambda),u0+J1 R2/(2 Lambda))",
+    "pressure_identity": "Pi_X=phi^2/C^2",
+    "pressure_or_one_of_its_derivatives_removed": false,
+    "regular_forward_candidates": "Q=-2L phi_X/phi; N=-2L U_X"
+  },
+  "frontier": [
+    {
+      "id": "P1",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P2",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P3",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P4",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P5",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P6",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P7",
+      "status": "closed-as-conditional-consequence-by-Q163"
+    },
+    {
+      "id": "U1",
+      "status": "closed-by-independent-core-pressure-audit"
+    },
+    {
+      "id": "U2",
+      "status": "next-independent-finite-map-audit"
+    }
+  ],
+  "operator": {
+    "all_index_mixed_allocation_bound_rederived": true,
+    "all_index_product_bound_rederived": true,
+    "angular_inverse_bound": "V=exp(30720)",
+    "angular_inverse_word": "30720^k/(k!(k+1)!)",
+    "exact_checks": {
+      "R1_linear_sum_is_19237_over_50": true,
+      "R1_quadratic_sum_is_952_over_25": true,
+      "R1_zeta_multiplier_is_10": true,
+      "R2_linear_sum_is_442": true,
+      "R2_pressure_sum_is_34": true,
+      "R2_quadratic_sum_is_32": true,
+      "all_21_normalized_source_terms_present_once": true,
+      "cauchy_fixed_coefficient_multipliers_at_most_one": true,
+      "finite_convolution_controls_below_exact_A0": true,
+      "inverse_word_recurrence_has_two_factorial_denominators": true,
+      "mixed_allocations_at_most_one": true,
+      "pressure_lipschitz_keeps_two_S_factor": true,
+      "pressure_primitive_uses_three_algebra_products": true,
+      "pressure_source_uses_fourth_algebra_power": true,
+      "remaining_H_power_is_127": true,
+      "universal_selected_formula_gives_10_minus_50": true
+    },
+    "finite_samples_are_not_all_index_proofs": true,
+    "integrated_derivative_constant_D0": "80/rho",
+    "product_constant_A0": 256,
+    "weight": "a_nk=20^-n rho^-k k! binom(n+k,k)/((n+1)^2(k+1)^2)"
+  },
+  "parent": "6d0dacc5b2ec662857cb40eafdc750c22bcc3c84",
+  "pressure": {
+    "A": "101/200",
+    "defect_equation": "4A eta delta-(1-eta^2) delta'=0",
+    "full_corrected_pressure_collapsed_to_leading_pressure": false,
+    "homogeneous_mode": "C*(1-eta^2)^(-2A)",
+    "later_background_wave_mean_localization_pressure_retained": true,
+    "leading_core_equals_completed_leading_backward_pressure": true,
+    "nonzero_mode_endpoint_bounded": false,
+    "positive_exponent": true,
+    "same_gauge_identity": "Pi_axis+C_p,infinity=0",
+    "smooth_endpoint_compatibility_forces_C_zero": true
+  },
+  "providers": {
+    "Q163_U1_was_stale_relative_to_live_provider_graph": true,
+    "independent_all_index_rederivation_bound_to_Q1_current_head": true,
+    "later_complete_pressure_memory_retained": true,
+    "original_equations_and_regular_forward_stress_recovered": true,
+    "same_gauge_leading_pressure_identified": true
+  },
+  "remaining_gate": {
+    "Q2_regional_continuum_infima_discharged": false,
+    "Q3_full_frame_primitive_domain_discharged": false,
+    "U1_all_index_core_contraction_original_equations_leading_pressure": "closed-by-existing-independent-rederivations-and-Q164-current-head-join",
+    "dependency_hashes_or_passing_tests_suffice": false,
+    "next": "audit the finite defining, existence, inverse and gap maps on the same Q1-Q163 object, beginning with Q2's positive core, determinant, orientation, same-tilt cone and factored flat-edge continuum infima over the actual finite regional cover",
+    "unconditional_theorem_gate_closed": false
+  },
+  "source": {
+    "complete_pressure_memory_retained": true,
+    "group_sums": {
+      "R1_linear": "19237/50",
+      "R1_quadratic": "952/25",
+      "R1_zeta": "10",
+      "R2_linear": "442",
+      "R2_pressure": "34",
+      "R2_quadratic": "32"
+    },
+    "pressure_lipschitz_per_S": "23364622090240",
+    "pressure_primitive": 1342177280,
+    "pressure_source": "11682311045120",
+    "term_count": 21,
+    "unique_term_names": 21
+  },
+  "source_hashes": {
+    "results/core_contraction_audit/README.md": "29d504122e83a45ab7c36c98a90d1857ebc5fa82c248b302308881ad99abcb86",
+    "results/core_current_head_q163_comparison_core_exclusion_join/README.md": "04f10ffc8dc70a3f797a68468d1bbba2022390c0592e66ee7a0a903d068595c0",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/README.md": "69d021b3b916967a81c361d8b2abdb980767ff995373691fa76f7fabd593cf55",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/audit.py": "ad915321cf8a81353ac53e606a24d8b4a1f4dd90c71a8b6acd73322aab00fa5a",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/q164.py": "b676debb037920adcaf8cd0f52441527c0fb2ac11d2c9e7b0475b9e7a7e87e33",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/test_audit.py": "b0cb49ec077ff144624726e5015915156772d47705a095cfcda14c812998b885",
+    "results/core_current_head_q1_exact_map_join/README.md": "541d3b84400dfa3afddb532e90ec474d14d40e3d48200a269487e1be8b2b0a5e",
+    "results/core_fixed_point_ledger_recheck/README.md": "3f9a4d4d0a7a637a598ebf1314c16c7a405ffc6e5be2e4ffa5ff34d8c0d9a7ae",
+    "results/core_pressure_identification/README.md": "2fa6c0975eba8027bf8d5859b0eb0213b4e615a6bd9df98436e77aec18ddcf9a",
+    "results/core_same_field_pressure_reconciliation/README.md": "6e5be45b1d48b65b84edb2804941b943688d9f86dfa7aeafa13d81b173c63ede"
+  },
+  "status": "Q164-all-index-core-contraction-and-leading-pressure-audited",
+  "symbolic": {
+    "Q2_or_Q3_independently_closed": false,
+    "U1_core_contraction_and_leading_pressure_closed": true,
+    "correction": "Q163's stated next gate was too pessimistic: the live branch already contained an independent all-index source/contraction rederivation and a same-field leading-pressure reconciliation; Q164 binds those records to the current-head Q1-Q163 object",
+    "established": "all 21 normalized source terms, the full three-term pressure memory, the invariant ball and strict <10^-50 contraction, original-equation recovery, regular forward stress cancellation and the same-gauge leading backward-pressure identity",
+    "historical_frozen_records_modified": false,
+    "next": "audit the finite defining, existence, inverse and gap maps on the same Q1-Q163 object, beginning with Q2's positive core, determinant, orientation, same-tilt cone and factored flat-edge continuum infima over the actual finite regional cover",
+    "scope": "analytical conclusion from the displayed all-index estimates relative to the selected exact pressure family; finite diagnostics and evidence hashes are regressions, and later corrected pressure terms remain",
+    "status": "Q164-all-index-core-contraction-and-leading-pressure-audited",
+    "unconditional_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
