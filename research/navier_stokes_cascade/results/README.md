@@ -6,7 +6,19 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q183 current-head provider discharge and generated-source frontier](core_current_head_q183_provider_discharge_generated_source_frontier/README.md).
+Latest source audit: [Q184 generated-source logarithmic loss correction](core_current_head_q184_generated_source_log_loss_correction/README.md).
+Q184 corrects Q183's frontier. The named analytical source theorems already
+supply fixed-cycle raw-source jets, `log P` jets and smooth endpoint extension
+in the repository's logarithmically renormalized classes. Q183's displayed
+pure-power supremum omits their allowed polynomial `S=ell^2` loss and need not
+be finite at the same exponent. The exact absorption
+`ell^(2d) epsilon^eta <= (2D)! (2/(h eta))^(2D)`, `D=ceil(d)`, repairs it. With
+`eta=kappa`, a pure-power recurrence has seed `3/2-3kappa` and gain
+`1/2-4kappa`, while the target step retains `2kappa` slack. Downstream replay
+at the corrected rate and independent exact-core/finite-map validation remain
+open; no unconditional pulse, residual, force, exclusion or blow-up follows.
+
+Preceding source audit: [Q183 current-head provider discharge and generated-source frontier](core_current_head_q183_provider_discharge_generated_source_frontier/README.md).
 Q183 reconciles Q172--Q182 and removes the stale Q171 frontier. The later
 records conditionally route the modulation, repair, covariance, induction,
 force and pressure chain, but the first surviving physical input is the

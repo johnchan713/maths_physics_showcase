@@ -1,0 +1,160 @@
+{
+  "closure": {
+    "edges": 1496,
+    "nodes": 430,
+    "source_bindings": 5786
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/evidence.json": "c3350ad1f287da03e4bc329c991f06d7e11822b67f474dd3b24e46aca1594225",
+    "results/core_current_head_q180_target_source_simultaneous_induction/evidence.json": "9315c63504df9084cf79c5efec336eae2eb749380871e9b74905192f821c9322",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/evidence.json": "aaf0f49636f62cf2e1774df881e164dc2082904b1c65b19fac3e7035ccfed6de",
+    "results/current_target_cycle_bridge/evidence.json": "402de981f9b3b1c2ae57360e8602552e9b595e444113b33d4fcb4ffd2d2d6c14",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/regular_source_foundation/evidence.json": "91f71ce32b4427f504553f4d8dfe5d555ae8822ec3f8e8da75123f729e487e28",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "parent": "72caa8850ab2c7279f6c6331e882bdbbe2d4b898",
+  "review": {
+    "checks": {
+      "Q183_exact_power_normalization_is_not_implied": true,
+      "all_analytic_source_derivation_links_hold": true,
+      "all_provider_statuses_match": true,
+      "corrected_pure_cycle_has_positive_gain": true,
+      "one_kappa_absorbs_every_fixed_polynomial_degree": true,
+      "target_retains_two_kappa_pure_margin": true
+    },
+    "corrected_rates": {
+      "B_log": "74999/50000",
+      "B_pure": "149997/100000",
+      "C_log": "99999/50000",
+      "C_pure": "199997/100000",
+      "delta_log": "49997/100000",
+      "delta_pure": "12499/25000",
+      "eta": "1/100000",
+      "j": 0,
+      "kappa": "1/100000",
+      "pure_source_gain_positive": true,
+      "target_log_gain": "49999/100000",
+      "target_pure_gain": "24999/50000",
+      "target_pure_margin_over_required": "1/50000"
+    },
+    "correction": {
+      "Q183_displayed_exact_power_supremum_omits_allowed_polynomial_S_degree": true,
+      "Q183_fixture_warning_remains_valid": true,
+      "Q183_misidentified_missing_Ai_Ki_as_first_conditional_gap": true,
+      "historical_frozen_evidence_modified": false,
+      "named_analytic_theorems_supply_Ai_Ki_and_endpoint_extension_with_polynomial_S_losses": true
+    },
+    "exact_power_counterexample": {
+      "all_band_supremum_finite": false,
+      "bands": [
+        16,
+        32,
+        64
+      ],
+      "degree_in_S": 1,
+      "epsilon_minus_B_times_epsilon_B_Sd": [
+        "256",
+        "1024",
+        "4096"
+      ],
+      "reason": "the normalized sequence is S^d=ell^(2d), which is unbounded",
+      "strictly_increasing": true
+    },
+    "fixed_cycle_contract": {
+      "Q183_exact_power_bound_follows_without_margin": false,
+      "absorption": {
+        "degree_ceiling": 1,
+        "degree_in_S": "1",
+        "eta": "1/100000",
+        "h": "1/200",
+        "inequality": "ell^(2d) epsilon^eta <= (2D)! (2/(h eta))^(2D), D=ceil(d), epsilon=2^(-h ell)",
+        "power_in_ell": 2,
+        "uniform_upper": "3200000000000000",
+        "uses_log_two_lower_bound_one_half": true
+      },
+      "jet_order": 2,
+      "log_renormalized_bound": "|D^I(f_(j,m)/P)| <= C epsilon^(B_log) S^d sqrt(zeta) y_a^(-r) y_b^(-s)",
+      "polynomial_degree": "1",
+      "pure_power_bound_after_kappa_reserve": "|D^I(f_(j,m)/P)| <= C_eta epsilon^(B_pure) sqrt(zeta) y_a^(-r) y_b^(-s)",
+      "rates": {
+        "B_log": "74999/50000",
+        "B_pure": "149997/100000",
+        "C_log": "99999/50000",
+        "C_pure": "199997/100000",
+        "delta_log": "49997/100000",
+        "delta_pure": "12499/25000",
+        "eta": "1/100000",
+        "j": 0,
+        "kappa": "1/100000",
+        "pure_source_gain_positive": true,
+        "target_log_gain": "49999/100000",
+        "target_pure_gain": "24999/50000",
+        "target_pure_margin_over_required": "1/50000"
+      },
+      "same_domain_log_P_Ki_exist_conditionally": true,
+      "same_domain_raw_source_Ai_exist_conditionally": true,
+      "smooth_endpoint_extension_exists_conditionally": true,
+      "stage": 0
+    },
+    "next": "replay Q180--Q182 using either the exact logarithmically renormalized classes or the pure-power rates B0=3/2-3*kappa and delta=1/2-4*kappa; then begin independent review of the retained exact-core and finite existence/inverse/gap premises",
+    "provider_derivation": {
+      "Bell_majorants_are_analytically_available_at_all_fixed_mixed_orders": true,
+      "Q183_correctly_rejects_synthetic_fixture_as_proof": true,
+      "complete_cut_source_has_endpoint_extension": true,
+      "current_targets_are_derived_on_the_whole_half_line": true,
+      "finite_cycle_preserves_source_envelope_and_endpoint_hypotheses": true,
+      "independent_exact_core_and_finite_lemma_validation_remains_open": true,
+      "polynomial_band_degrees_are_part_of_the_named_classes": true,
+      "pressure_viscosity_graph_and_connections_are_retained": true,
+      "primary_fixed_jets_share_one_later_band": true,
+      "raw_source_grammar_retains_full_path_and_current_targets": true
+    },
+    "provider_status_checks": {
+      "core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q177_weighted_support_source_reconciliation": true,
+      "core_current_head_q180_target_source_simultaneous_induction": true,
+      "core_current_head_q183_provider_discharge_generated_source_frontier": true,
+      "current_target_cycle_bridge": true,
+      "finite_stage_induction": true,
+      "physical_pulse_foundation": true,
+      "regular_source_foundation": true,
+      "source_envelope_edge_audit": true
+    },
+    "scope": {
+      "downstream_Q180_Q182_replayed_with_corrected_pure_rates_here": false,
+      "exact_core_and_finite_existence_inverse_gap_lemmas_independently_reproved": false,
+      "log_renormalized_fixed_cycle_source_contract_closed_conditionally": true,
+      "original_exact_delta_pure_power_contract_proved": false,
+      "pure_power_contract_closed_after_one_kappa_reserve": true,
+      "tests_are_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/README.md": "05f1fa9ccf12a4b042be91ddc8865dfac0247437fdec41c22e48fb408eeccba2",
+    "results/core_current_head_q180_target_source_simultaneous_induction/README.md": "c7ccc0ebf30d037338a1140721de4b830f39b2229f1d8df818873a2e078eba6c",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/README.md": "dd19e4232668c41dfa5abcf35e3047786b918feca677ebea32e465fadf6d0f38",
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q184_generated_source_log_loss_correction/audit.py": "b0221590a9c98aec3a44ac7d11095e74d510dd9f1cd61621087bfad35af195fe",
+    "results/core_current_head_q184_generated_source_log_loss_correction/q184.py": "19379c004ff1d7886f3ed5face257951fb9eb13227ef8b09159ded97e1baf494",
+    "results/core_current_head_q184_generated_source_log_loss_correction/test_audit.py": "54da8eb17b04ab2af73540d96a2bd8361947a82cb533f7870ba4e3e31d6d7443",
+    "results/current_target_cycle_bridge/README.md": "0c96ac838ab7bc1861f5b178164318400eeebdd97c6f2d9855ba2200277830f2",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4"
+  },
+  "status": "Q184-generated-source-log-loss-corrected-and-pure-power-reserve-derived",
+  "symbolic": {
+    "correction": "Q183 correctly rejects synthetic Bell arrays as a continuum proof but overlooks the separate analytical source theorem and writes an exact-power supremum without the polynomial S=ell^2 losses allowed by W/M/S; that supremum need not be finite",
+    "established": "relative to the named current-state, source and finite-map theorems, every fixed physical generated-source jet has finite raw-source and log-Gaussian Bell inputs, complete endpoint extension and a uniform logarithmically renormalized bound; spending eta=kappa converts every fixed polynomial band loss to a pure-power bound",
+    "historical_frozen_records_modified": false,
+    "limiting_inequalities": "ell^(2d) epsilon^eta <= (2D)!(2/(h eta))^(2D), D=ceil(d); choosing eta=kappa changes B0 from 3/2-2kappa to 3/2-3kappa and cycle gain from 1/2-3kappa to 1/2-4kappa, while the target step retains margin 2kappa",
+    "status": "Q184-generated-source-log-loss-corrected-and-pure-power-reserve-derived",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
