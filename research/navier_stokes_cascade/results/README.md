@@ -6,7 +6,20 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q185 corrected-rate diagonal, localization and comparison replay](core_current_head_q185_corrected_rate_diagonal_comparison_replay/README.md).
+Latest source audit: [Q186 exact-core/finite-map frontier correction](core_current_head_q186_exact_finite_frontier_correction/README.md).
+Q186 corrects Q185's next obligation against the live source graph. Q164
+already independently rederives the all-index exact core and same-gauge
+leading pressure, while the root, axial and matching foundations trace the
+actual finite root maps and Q165 binds Q2--Q5. The first surviving
+independent-validation edge is therefore the actual Q2 regional input set,
+not an unnamed exact core or finite map. The exact blocking condition is
+`Cval*q^(2h) <= rho_gap(f,Fbar,t,Gbar,d,omega,gamma,u)` on the selected
+ten-region profile. Q2's frozen value `33/387618781940` uses a manufactured
+rational fixture and cannot replace the actual constants. The conditional
+provider route remains intact; no unconditional pulse, residual, force,
+exclusion or blow-up follows.
+
+Preceding source audit: [Q185 corrected-rate diagonal, localization and comparison replay](core_current_head_q185_corrected_rate_diagonal_comparison_replay/README.md).
 Q185 replays Q180--Q182 after Q184's norm correction. The existing
 log-renormalized `W/M/S` route retains Q181's regular/cross margin
 `49997/40000000`; the corrected pure-power gain changes that margin to

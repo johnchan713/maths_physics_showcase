@@ -1,0 +1,147 @@
+{
+  "closure": {
+    "edges": 1509,
+    "nodes": 433,
+    "source_bindings": 5829
+  },
+  "dependency_evidence_sha256": {
+    "results/axial_root_foundation/evidence.json": "0ca0e15d6a1b6b9c39ec7e09f3869ae0e710219bc32a0f650a47b0ef94f1ebad",
+    "results/background_gap_certificate/evidence.json": "817bdf4eeccd85458485509c86350fd0787aa8bdb8106cb8a34017283152b90c",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/evidence.json": "87611e138ed2df71bd15f3ffe4a3b0997e206fe0bfa3324f77a53d4670a30c30",
+    "results/core_current_head_q165_finite_map_frontier_audit/evidence.json": "4d8854401c547ce14d43978eefae3d4cd5a1de99767206ff4a7883c1ffc68aaf",
+    "results/core_current_head_q185_corrected_rate_diagonal_comparison_replay/evidence.json": "8d8bf1e014f25ab44c282bdf3a93ef8e6e4cfc6ddd010d22b53374016173aa2c",
+    "results/core_current_head_q1_exact_map_join/evidence.json": "2163895c04626750c32ba4df499e1a7dd95c4aed54b06753da5cc402b3622961",
+    "results/core_current_head_q2_regional_gap_join/evidence.json": "64f62c4bf9c0cd36306bf028e63f8293626e494e5f85bd6b1336b05694af59a7",
+    "results/core_same_band_gap_reconstruction/evidence.json": "cfb45fd4152877bdccae26f5e533c6bdb51747b65dca8d4176b8bd2007e62d0c",
+    "results/matching_root_foundation/evidence.json": "22fd0e2a826ae3916a99dbd68eeb09f9e2836ae383364057e2e8bdbb67071bd5",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/root_foundation/evidence.json": "dc3533a665e4cfc318cb2f069b1de76c83f3ada673dddbd5cb69b891b97c84ff"
+  },
+  "parent": "0653ebda03b82fdfb46dfda749bbde53d4babdd0",
+  "review": {
+    "actual_same_band_gate": {
+      "Dbar": "Gbar^2+2*Fbar*Gbar",
+      "LD": "4*Gbar+2*Fbar+3",
+      "LH": "1+2/t",
+      "LP": "Fbar+Gbar+1",
+      "Lc": "2*LD/(f*t)+2*Dbar*LP/(f^2*t^2)",
+      "Lphi": "3*u^2*LH+(1+u^2)*(4*Lc+3*cbar^2*LH)",
+      "Q2_does_not_independently_reprove_every_provider": true,
+      "actual_Cval_and_huge_constants_numerically_evaluated": false,
+      "actual_constants": "f=inf F0, Fbar=sup F0, t=inf(-g0_theta), Gbar=sup|g0|, d=inf D0, omega=orientation margin, gamma=same-tilt margin",
+      "blocking_inequality": "Cval*q^(2h) <= rho_gap(actual selected-profile constants)",
+      "conditional_existence": "if f,t,d,omega,gamma,u,Cval are finite and strictly positive, then rho_gap>0 and a finite later dyadic ell exists",
+      "dyadic_form": "2^(2h*(ell-2)) >= Cval/rho_gap",
+      "fixture_value_may_be_substituted_for_actual_rho_gap": false,
+      "mphi": "u^2*omega^2*gamma*(2-gamma)",
+      "primitive_inputs_independently_proved_in_background_certificate": false,
+      "regional_provider_derives_value_margins": true,
+      "regional_provider_replays_analytic_lemmas": true,
+      "rho_gap": "min(1/2,f/2,t/2,d/(2*LD),omega/(2*LH),mphi/(2*Lphi))",
+      "same_band_contract_is_conditional_on_cited_continuum_providers": true
+    },
+    "checks": {
+      "Q185_broad_exact_core_frontier_is_stale": true,
+      "Q185_broad_finite_map_frontier_is_stale": true,
+      "Q2_frozen_number_is_only_a_fixture": true,
+      "actual_same_band_gate_is_symbolic_and_profile_dependent": true,
+      "all_provider_statuses_match": true,
+      "conditional_Q2_route_and_independent_validation_are_distinguished": true
+    },
+    "correction": {
+      "Q185_next_obligation_was_too_broad": true,
+      "conditional_downstream_replay_invalidated": false,
+      "exact_core_source_level_audit_already_exists": true,
+      "finite_root_and_map_source_level_audits_already_exist": true,
+      "first_surviving_independent_validation_edge": "rederive the actual ten-region f,t,d,omega,gamma and weighted Cval inputs, then verify Cval*q^(2h)<=rho_gap on the selected tail",
+      "historical_frozen_evidence_modified": false
+    },
+    "exact_core": {
+      "Q185_exact_core_frontier_is_current_head_stale": true,
+      "all_index_core_and_pressure_audited": true,
+      "complete_later_pressure_memory_retained": true,
+      "strict_contraction": true,
+      "strict_universal_ceiling": "1/100000000000000000000000000000000000000000000000000"
+    },
+    "finite_maps": {
+      "Q185_unnamed_finite_map_frontier_is_current_head_stale": true,
+      "Q2_Q5_chain_bound": true,
+      "annular_and_repair_maps_traced": true,
+      "annular_inverse_below_610": true,
+      "axial_map_and_strength_traced": true,
+      "provider_continuum_theorems_independently_reproved_by_join": false,
+      "reference_angular_heat_maps_traced": true,
+      "repair_inverse_below_800": true
+    },
+    "fixture": {
+      "actual_selected_profile_constants": false,
+      "all_rows_positive": true,
+      "continuum_infima_certified_by_fixture": false,
+      "inputs": [
+        "1/5",
+        "3",
+        "1/7",
+        "4",
+        "1/11",
+        "1/13",
+        "1/17",
+        "2"
+      ],
+      "manufactured_rational_fixture": true,
+      "radius": "33/387618781940",
+      "rows": {
+        "D": "1/550",
+        "F": "1/10",
+        "minus_gtheta": "1/14",
+        "orientation": "1/390",
+        "relative_stress": "1/2",
+        "same_tilt_cone": "33/387618781940"
+      }
+    },
+    "provider_status_checks": {
+      "axial_root_foundation": true,
+      "background_gap_certificate": true,
+      "core_current_head_q164_core_fixed_point_pressure_audit": true,
+      "core_current_head_q165_finite_map_frontier_audit": true,
+      "core_current_head_q185_corrected_rate_diagonal_comparison_replay": true,
+      "core_current_head_q1_exact_map_join": true,
+      "core_current_head_q2_regional_gap_join": true,
+      "core_same_band_gap_reconstruction": true,
+      "matching_root_foundation": true,
+      "regional_cone_join": true,
+      "root_foundation": true
+    },
+    "scope": {
+      "actual_regional_infima_independently_rederived_here": false,
+      "complete_residual_or_blowup_proved": false,
+      "current_head_frontier_corrected": true,
+      "fixture_promoted_to_actual_profile_certificate": false,
+      "tests_are_continuum_proof": false
+    }
+  },
+  "source_hashes": {
+    "results/axial_root_foundation/README.md": "6c17ddd89197a8e430948abd2a7f5cf4301b99c8a09816f91e4adf5e6353eb12",
+    "results/background_gap_certificate/README.md": "b1e4f589214117cf4227a78b6b7dca2231d72b589f9755f0708326d74e74ae97",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/README.md": "69d021b3b916967a81c361d8b2abdb980767ff995373691fa76f7fabd593cf55",
+    "results/core_current_head_q165_finite_map_frontier_audit/README.md": "5640ea97b01b4393db1e2158f757934af656d6fa88e3402117a8f2dd3d6a56ce",
+    "results/core_current_head_q185_corrected_rate_diagonal_comparison_replay/README.md": "294288c16f1d1035eef130382ccffbb71125fb48a9bfb040eb2bc4e9cb3746cc",
+    "results/core_current_head_q186_exact_finite_frontier_correction/README.md": "8ef593dfdca693846b3a603164c3cb90d0e733a6f2d4c13acb6b3f5fa146013a",
+    "results/core_current_head_q186_exact_finite_frontier_correction/audit.py": "b70e409001e23bd9fb7776fdc264b1f94b7c1a49c1babd8d9f4e368b67152019",
+    "results/core_current_head_q186_exact_finite_frontier_correction/q186.py": "c01d3b88b2587741ce1558ec9743cdff2335a6f62037560237f4a2e566707fb7",
+    "results/core_current_head_q186_exact_finite_frontier_correction/test_audit.py": "63187c2813fda25111356b059a26ecc5cfe7dc983d750f3db6ab67fa01985ff8",
+    "results/core_current_head_q1_exact_map_join/README.md": "541d3b84400dfa3afddb532e90ec474d14d40e3d48200a269487e1be8b2b0a5e",
+    "results/core_current_head_q2_regional_gap_join/README.md": "a75b85f7acf75f692734a0c9e096c52d6cc7bd25e27cc681adc36ad66c447ae9",
+    "results/core_same_band_gap_reconstruction/README.md": "60d03166bbe6143226b57dda833880709add1cd761ebbb0d6c9c029772b9b955",
+    "results/matching_root_foundation/README.md": "071203671f89e0152ff82d5ff85b55ffc31ccc9b8064f1ffd09461e2e052c925",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/root_foundation/README.md": "c0733b883447de163d8084c12a126155d64d3dfbf137c53120e3c6217c80f9a2"
+  },
+  "status": "Q186-exact-core-finite-map-frontier-corrected-to-actual-Q2-infima",
+  "symbolic": {
+    "blocking_inequality": "Cval*q^(2h) <= rho_gap(actual selected-profile constants)",
+    "established": "Q164 and the root/matching audits remove Q185's broad exact-core and unnamed finite-map frontier; the Q2 radius theorem is positive conditionally, but its frozen rational value is a fixture",
+    "next": "independently rederive the actual selected ten-region f,t,d,omega,gamma and weighted Cval constants and bind them to one later-tail selector; then continue through any surviving provider premise in dependency order",
+    "status": "Q186-exact-core-finite-map-frontier-corrected-to-actual-Q2-infima",
+    "unconditional_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
