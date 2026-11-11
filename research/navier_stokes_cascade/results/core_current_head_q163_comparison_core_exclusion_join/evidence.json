@@ -1,0 +1,164 @@
+{
+  "closure": {
+    "edges": 1337,
+    "nodes": 403,
+    "source_bindings": 5485
+  },
+  "comparison": {
+    "common_force_cancels_once": true,
+    "compact_mixed_flux": "O(R^-5/2)",
+    "comparison": {
+      "competitor": "locally smooth v,P with the same f and zero datum and sup_[0,T] ||v||_2 finite for every T<1",
+      "competitor_boundary_flux_bound_assumed": false,
+      "competitor_derivative_bound_assumed": false,
+      "competitor_dissipation_bound_assumed": false,
+      "conclusion": "v=u on R^3 x [0,T] for every T<1",
+      "gronwall": "E_R(t)<=2 C_T T exp(2 T L_T) R^-2",
+      "limit_order": "fix T<1; recover pressure; send R to infinity",
+      "localized": "0.5 E_R'+0.5 D_R^2<=||grad u||_infinity E_R+C_T R^-2",
+      "terminal_uniform_constants_assumed": false
+    },
+    "competitor_pressure_decay_assumed": false,
+    "cutoff_power": "chi_R=phi_R^8",
+    "finite_energy_essential": true,
+    "pressure_difference": "w_t+div g=Delta w-grad pi; -Delta pi=partial_i partial_j g_ij",
+    "pressure_recovery": "grad pi=grad sum_ij R_i R_j g_ij in space-time distributions",
+    "worst_radius_decay": "2"
+  },
+  "contradiction": {
+    "comparison_applies_at_path_time": true,
+    "conditional_conclusion": "no globally smooth same-force zero-datum finite-energy competitor exists",
+    "future_velocity_or_pressure_constructed": false,
+    "global_smooth_competitor_property": "bounded velocity on one compact space-time neighborhood of (0,1)",
+    "growth": "|u_theta(x_tau,1-tau)| >= (e0/2) tau^(-A)",
+    "path": "x_tau=(sqrt(2 X_in tau),0,0) tends to zero",
+    "positive_exponent": true,
+    "unconditional_blowup_claimed": false
+  },
+  "core": {
+    "binding": {
+      "background": "Q149 uses the same finalized leading profile and rule-defined Borel background as the positive-core provider",
+      "background_remainder": "q^A u_theta=e0+R_bg; |R_bg|<=C_bg q^(2h)",
+      "canonical_physical_primary_identification_used": false,
+      "diagonal": "Q153 applies the certified complete-potential diagonal to the inherited physical family with unchanged closed annular supports",
+      "localization": "Q155 has c=1 and grad c=0 on the late core, hence u=u0 there",
+      "path_inside_hole": true,
+      "pressure_gauge_changed": false,
+      "support_hole": "every stage increment vanishes for X<X_a"
+    },
+    "localization_plateau_preserved": true,
+    "lower_bound": {
+      "bound": "|u_theta(x_tau,1-tau)|>=(e0/2) tau^(-A) for 0<tau<=tau_star",
+      "conditional": true,
+      "exponent": "101/200",
+      "leading_coefficient": "e0=E0(X_in,0)=sqrt(2 X_in)*varphi_star*Phi/C>0",
+      "path": "x_tau=(sqrt(2 X_in tau),0,0), t=1-tau",
+      "tau_star": "min(q0,(e0/(2 C_bg))^100,tau0/2,r_L^2/(8 X_in))"
+    },
+    "parameters": {
+      "A": "101/200",
+      "X_a": "4/101",
+      "X_in": "1/101",
+      "h": "1/200",
+      "two_h_reciprocal": 100
+    },
+    "path_inside_annular_support_hole": true,
+    "threshold_example": {
+      "plateau": "1/32",
+      "q_core": "1/1606938044258990275541962092341162602522202993782792835301376",
+      "tau_star": "1/1606938044258990275541962092341162602522202993782792835301376"
+    },
+    "threshold_positive": true
+  },
+  "dependency_evidence_sha256": {
+    "results/comparison_foundation/evidence.json": "8375a9e06205b9817bd114a22320915f264fd760ae85d385a474f776ecebd0ca",
+    "results/core_current_head_q156_physical_pressure_comparison/evidence.json": "bca6d20dad86b7d91ea802ede03fef7a92c91c4f4c6aeb2f5930ce326973932f",
+    "results/core_current_head_q157_physical_core_exclusion/evidence.json": "2dee92bbbf297f9abdfe12d2215353ffac69a8cc716cda8ee9d4b5868f7dc6a5",
+    "results/core_current_head_q162_diagonal_endpoint_force_join/evidence.json": "2b02b1f94bf50e01b3b3bffb9fd9d4b4faa4f469f215ddecf926b8d02eb4f5de",
+    "results/core_current_head_q1_exact_map_join/evidence.json": "2163895c04626750c32ba4df499e1a7dd95c4aed54b06753da5cc402b3622961",
+    "results/core_same_field_positive_core_reconciliation/evidence.json": "21151dd33b0c85350655cd06deaf950efcefe15b8c579135d7deb8bfef848f84"
+  },
+  "frontier": [
+    {
+      "id": "P1",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P2",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P3",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P4",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P5",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P6",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P7",
+      "status": "closed-as-conditional-consequence-by-Q163"
+    },
+    {
+      "id": "U1",
+      "status": "next-independent-foundation-audit"
+    }
+  ],
+  "limit_order": {
+    "T_tau": "6427752177035961102167848369364650410088811975131171341205503/6427752177035961102167848369364650410088811975131171341205504",
+    "first": "fix T_tau<1 and recover the pressure gradient",
+    "reason": "the R-limit gives exact equality separately for each tau; no bound on C_T or L_T uniform as T approaches one is used",
+    "second": "send the comparison radius R to infinity at this fixed T_tau",
+    "strict_time_order": true,
+    "t": "3213876088517980551083924184682325205044405987565585670602751/3213876088517980551083924184682325205044405987565585670602752",
+    "tau": "1/3213876088517980551083924184682325205044405987565585670602752",
+    "third": "deduce v=u at t=1-tau, then let tau decrease to zero",
+    "uniform_comparison_constant_as_T_to_one_required": false
+  },
+  "parent": "7b1629dc7f33bf63efc790d6de93c0c0b72e9595",
+  "providers": {
+    "P7_conditional_consequence_closed": true,
+    "fixed_T_then_radius_then_core_limit_order": true,
+    "historical_conditional_records_preserved": true,
+    "same_Q162_field_force_pressure_gauge_and_localization": true
+  },
+  "remaining_foundation_gate": {
+    "Q1_every_provider_theorem_independently_reproved": false,
+    "comparison_foundation_all_dependencies_discharged": false,
+    "dependency_hashes_or_passing_tests_suffice": false,
+    "first_audit": "independently rederive the selected all-index core-map ball invariance and strict contraction, recover the original equations, and identify its pressure with the completed leading backward pressure on the Q1-Q162 object",
+    "required_inequalities": "T(B_r) subset B_r and ||T(Phi)-T(Psi)||_X <= lambda ||Phi-Psi||_X with one explicit lambda<1, followed by Pi_axis+C_p,infinity=0 in the same fixed gauge",
+    "unconditional_theorem_gate_closed": false
+  },
+  "source_hashes": {
+    "results/comparison_foundation/README.md": "f8e801cb10c97f6678e784b6c1c246be7ed8f0487fc5834aded3a9d8b4452a81",
+    "results/core_current_head_q156_physical_pressure_comparison/README.md": "958197cf00dfbafdcef3ae1664ffcf1f046ab0ce01e547bd0da77e75e14a5df4",
+    "results/core_current_head_q157_physical_core_exclusion/README.md": "ce970f27fde11bcf79971729d22dac8863a9ca70d603653fffc25cdb1332ab6b",
+    "results/core_current_head_q162_diagonal_endpoint_force_join/README.md": "136c42e5776ad6bfeb9476220d4b354dc0e297f0b299695e2764bd14d781541d",
+    "results/core_current_head_q163_comparison_core_exclusion_join/README.md": "04f10ffc8dc70a3f797a68468d1bbba2022390c0592e66ee7a0a903d068595c0",
+    "results/core_current_head_q163_comparison_core_exclusion_join/audit.py": "b74cc40977c74c243b275e78877c90384db5f8b48d7d45f0ff961edae81ec0c9",
+    "results/core_current_head_q163_comparison_core_exclusion_join/q163.py": "23b8408a933a0ffc0b219da4444e6f76a353f71a9f4d3dccd580e24d6435bff6",
+    "results/core_current_head_q163_comparison_core_exclusion_join/test_audit.py": "c8d89cd22a798af10c10d291bff2b5402e925fb4c72a8e4a00112169f811fa4c",
+    "results/core_current_head_q1_exact_map_join/README.md": "541d3b84400dfa3afddb532e90ec474d14d40e3d48200a269487e1be8b2b0a5e",
+    "results/core_same_field_positive_core_reconciliation/README.md": "e081722d44d6cab95894f9fa6a2f1ddba15fa3415febe0661d0b252f48039d18"
+  },
+  "status": "Q163-same-object-comparison-and-core-exclusion-joined-conditionally",
+  "symbolic": {
+    "P7_comparison_and_core_exclusion_replayed_conditionally": true,
+    "correction": "the terminal comparison needs no constants uniform as T approaches one: for each protected tau choose T_tau=1-tau/2, take R to infinity at fixed T_tau, and only then send tau to zero",
+    "established": "Q162's exact localized field, complete fixed-gauge pressure and compact force satisfy the Q156 comparison hypotheses; Q157's path lies on the same unit plateau and forces conditional exclusion of a globally smooth same-force zero-datum finite-energy competitor",
+    "historical_frozen_records_modified": false,
+    "next": "independently rederive the selected all-index core-map ball invariance and strict contraction, recover the original equations, and identify its pressure with the completed leading backward pressure on the Q1-Q162 object",
+    "scope": "same-object implication relative to the named analytical continuum providers; no future field is constructed and dependency hashes or tests are not a proof of the retained provider theorems",
+    "status": "Q163-same-object-comparison-and-core-exclusion-joined-conditionally",
+    "unconditional_admissible_force_breakdown_or_blowup_certified": false
+  }
+}
