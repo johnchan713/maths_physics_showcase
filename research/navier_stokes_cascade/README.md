@@ -206,7 +206,973 @@
 
 > **Q62:** [Unstripped target and terminal heat memory](results/core_current_head_q62_target_memory/README.md) bounds the axial-test stress from velocity with only low angular derivatives of incoming moments.
 
-> **Q61:** [Leading covariance compar…17094 tokens truncated…ng the growing coordinate changes the physical primary.
+> **Q61:** [Leading covariance comparison](results/core_current_head_q61_covariance_comparison/README.md) charges the Borel correction at low order in the principal axial moment.
+
+> **Q60:** [Affine normal path stencil](results/core_current_head_q60_affine_path_generator/README.md) reduces high path derivatives of the primary pulse to slow background inputs while retaining moving-normal pressure.
+
+> **Q59:** [Squared roots in the primary covariance](results/core_current_head_q59_squared_root_budget/README.md) separate slow column and entrance derivatives from high path derivatives in the axial test.
+
+> **Q58:** [Leading-background enclosure of the axial weights](results/core_current_head_q58_leading_weight_enclosure/README.md) reduces the pressure cutoff to one shape moment and charges positive-order background corrections at low derivative order.
+
+> **Q57:** [Primary amplitude estimates for the axial tail](results/core_current_head_q57_primary_tail_budget/README.md) isolate the high derivatives needed in the principal products and bound the curl square at low order.
+
+> **Q56:** [The axial pressure moment](results/core_current_head_q56_axial_pressure_moment/README.md) reduces the remaining tail test to diagonal anisotropy and two original primary shear covariances.
+
+> **Q55:** [Sharp derivative threshold for the axial tail](results/core_current_head_q55_axial_tail_threshold/README.md). Compact zero-Haar sources can resonate with the shift; the estimate distinguishes the generic operator cost from the unverified physical source.
+
+> **Q54:** [Two leading channels of the final axial row](results/core_current_head_q54_axial_row/README.md). The direct axial correction bound suffices inside viscosity; the unmultiplied post-signed pressure tail still needs a stronger estimate.
+
+> **Q53:** [A common support gap and the angular stress floor](results/core_current_head_q53_primary_oscillation/README.md) show that the conditional Q52 exponent is sharp for eight auxiliary derivatives along shrinking bands.
+
+> **Q52:** [Two viscous terms in the final angular row](results/core_current_head_q52_double_viscosity/README.md). The limiting term depends on the original primary covariance; the signed target contributes at a higher order.
+
+> **Q51:** [Radial curl and the initial target](results/core_current_head_q51_radial_curl_target/README.md). The selected curl product contains an explicit axial derivative factor, giving a conditional order-two Q36 target.
+
+> **Q50:** [Necessary target bound for strict viscosity gain](results/core_current_head_q50_viscosity_inverse/README.md). Five auxiliary derivatives of the leading viscous term control the signed target value under the common-zero premise.
+
+> **Q49:** [The original axial graph flux cancels](results/core_current_head_q49_initial_flux_tail/README.md). The initial tail now follows from low-order covariance and full shifted pressure.
+
+> **Q48:** [Original axial tail](results/core_current_head_q48_original_axial_tail/README.md). Divisor spacing saves two source derivatives, and both native chart transfers are explicit. The high-order original covariance archive remains unverified.
+
+> **Q47 correction:** [Full compact pressure in Q40 rows](results/core_current_head_q47_full_pressure_correction/README.md). The Haar primitive does not bound general auxiliary modes by the Q38 argument. Use the corrected full-row factory for Q41 composition.
+
+> **Q46:** [Moving cutoff jets](results/core_current_head_q46_moving_cutoff/README.md) derive the native mixed derivatives from the fixed physical shape, including the extra axial cutoff derivative. The initial A1 tail remains open.
+
+> **Q45:** [Directed kernel bounds](results/core_current_head_q45_directed_kernel/README.md) use the existing fixed cutoff gap to supply four of Q44’s remaining inputs. Raw cutoff jets and the initial A1 tail remain open.
+
+> **Q44 update:** The [radial multiplier bounds](results/core_current_head_q44_radial_multipliers/README.md)
+> derive the native hull, three compact multipliers and logarithmic Jacobian
+> from the same positive R hull. Cutoff/kernel and A1-tail inputs remain open.
+
+> **Q43 update:** The [compact chart conversion](results/core_current_head_q43_compact_chart/README.md)
+> supplies normalized-R/raw-U operator conversion in both directions, preserving
+> the same weight and pole. Actual profile and A1-tail hypotheses remain open.
+
+> **Q42 update:** The [explicit compact provider](results/core_current_head_q42_compact_provider/README.md)
+> connects Q29 weighted constants to the current fast inverse and enforces
+> cutoff-jet and exact-pole coverage. Actual raw input bounds and A1 tails remain open.
+
+> **Q41 update:** The [postslow reset](results/core_current_head_q41_postslow_reset/README.md)
+> uses the retained initial Haar means with the fresh Q39/Q40 slow response,
+> preserving nonlinear remainders and the whole moving pressure moment.
+> Actual input contracts and complete row/source closure remain conditional.
+
+> **Q40 update:** The [current-row fast join](results/core_current_head_q40_current_fast_rows/README.md)
+> derives rows from both old mean differences, complete signed covariance
+> and the retained initial A1 remainder, then applies the complete fast inverse.
+> Original tail/map premises and postslow/full-source closure remain open.
+
+> **Q39 update:** The [current scalar refresh](results/core_current_head_q39_current_scalar_refresh/README.md)
+> retains full old-mean correlations, adds the signed change only once,
+> and feeds fresh postfast scalars to the same slow response. The actual
+> new fast-source estimate and complete postslow/source closure remain open.
+
+> **Q38 update:** The [new-pole radial maps](results/core_current_head_q38_new_pole_maps/README.md)
+> derive Q37’s pressure, primitive and projector bounds on its enlarged domain,
+> retaining exact moments, flat extensions and the original moving profile.
+> Actual source contracts, fresh means and full residual closure remain open.
+
+> **Q37 update:** The [signed covariance/pressure join](results/core_current_head_q37_signed_covariance_pressure/README.md)
+> retains all six tensor entries, signed squares and old pressure/scalars.
+> It derives profile/moment inputs and exposes the larger pressure-map pole.
+> New-domain maps, fresh means and full source closure remain conditional.
+
+> **Q36 update:** The [fixed-profile signed-target join](results/core_current_head_q36_profile_signed_target/README.md)
+> binds density, moving pressure and both projectors to one fixed profile,
+> then recomputes Q35’s target through both edges and the unchanged root.
+> Actual map/root inputs, fresh signed covariance and full source remain conditional.
+
+> **Q35 update:** The [initial projected-source composition](results/core_current_head_q35_initial_projected_source/README.md)
+> binds corrected covariance and stress norms to the sharp fast/slow scalar
+> and Haar-row chain, retaining the moving pressure moment and distinct channels.
+> Fixed-map validity and the signed primitive/full source remain conditional.
+
+> **Q34 correction:** The [Haar norm interface](results/core_current_head_q34_haar_norm_correction/README.md)
+> supplies the missing raw-U to through-order R covariance conversion and
+> background derivative count. Q33 polynomial compatibility alone did not
+> certify this norm interface. Full mean/source and residual closure remain open.
+
+> **Q33 update:** The [common covariance join](results/core_current_head_q33_common_covariance_join/README.md)
+> supplies the initial weighted covariance and selected-flux defect from the
+> canonical root and normalized background stress, retaining full curl squares.
+> Actual lower premises and complete mean/source closure remain open.
+
+> **Q32 update:** The [stress normalization join](results/core_current_head_q32_stress_normalization/README.md)
+> retains the physical scale multiplier and its derivatives, derives the
+> epsilon-cubed higher stress and supplies native root-target norm inputs.
+> Canonical/atlas source composition and complete residual bounds remain open.
+
+> **Q31 update:** The [weighted stress input budget](results/core_current_head_q31_stress_input_budget/README.md)
+> makes the finite coefficient head, exceptional first stress and exact weight
+> derivative constants explicit on the combined Borel schedule. Physical/atlas
+> and canonical source joins remain; no full residual is promoted.
+
+> **Q30 update:** The [fixed support join](results/core_current_head_q30_fixed_support_join/README.md)
+> binds the uniform cutoff gap and full slow-potential hull to the existing
+> fixed choices, with explicit finite slow-matrix denominators. Background,
+> canonical and weighted-source premises remain; no full residual is promoted.
+
+> **Q29 update:** The [weighted compact constants](results/core_current_head_q29_weighted_compact_constants/README.md)
+> make the radial Jacobian, actual plateau gap and distinct pole archive explicit
+> for shifted T_e/A_e bounds, without an extra M or q loss. Actual profile/support
+> identification, slow-response constants and complete source closure remain open.
+
+> **Q28 update:** The [initial mean composition](results/core_current_head_q28_initial_mean_composition/README.md)
+> removes the independent initial-mean input by composing the actual primary
+> and signed fast/slow passes, retaining fresh pressure and both pole archives.
+> The conservative route requests primary wave jets through j+27. Actual
+> fixed-map, background and canonical premises remain conditional.
+
+> **Q27 update:** The [first signed-wave input join](results/core_current_head_q27_signed_wave_inputs/README.md)
+> derives the source recipe's T, R, Pi and U bounds from the original roots,
+> signed target, homogeneous pressure and complete cut potential. It retains
+> signed/cutoff curls and traces the additional root/target jet request.
+> The complete source still requires its lower mean, background and fixed-map premises.
+
+> **Q26 update:** The [local source-domain join](results/core_current_head_q26_source_domain_join/README.md)
+> binds Q25 cone coverage to the existing certified tail and proves that
+> radial/auxiliary maps preserve its q fibers through finite source stages.
+> Background-chart enlargement is not iterated source-domain enlargement.
+> Actual source norms and historical localization membership remain open.
+
+> **Q25 update:** The [direct canonical cone join](results/core_current_head_q25_direct_cone_join/README.md)
+> derives Q24 determinant margins and the original beta/K0 constants on
+> the certified direct-cone tail, retaining mass cancellation and basis
+> conversion. Membership of an earlier historical domain remains a
+> separate obligation; no field or selector is changed.
+
+> **Q24 update:** The [canonical cone gate](results/core_current_head_q24_root_cone_gate/README.md)
+> reduces the finite-head positive-root obligation to three oriented
+> determinant margins, with explicit enclosure errors and inverse/root
+> constants. Actual whole-chart margins remain unproved; upper propagator
+> and positive pulse mass alone do not supply them.
+
+> **Q23 update:** The [finite-band frame completion](results/core_current_head_q23_finite_band_frame_join/README.md)
+> obtains a uniform upper propagator by combining a quantitative tail with
+> a finite earlier-band estimate. It changes no selector or field. This
+> removes Q22 constant dominance for upper bounds only; canonical root
+> and cone lower bounds still require their own proof.
+
+> **Q22 correction:** The [uniform frame audit](results/core_current_head_q22_uniform_frame_join/README.md)
+> separates per-band compactness from a band-uniform propagator bound. It
+> derives Db/Mz from the existing finite-head background estimates and guards
+> reuse of the original selector constants. The actual constant/domain
+> comparison remains open; no unconditional source bound is promoted.
+
+> **Q21 update:** The [affine lifted-path join](results/core_current_head_q21_lifted_path_join/README.md)
+> transfers extended-domain source jets along each original lift with factor
+> 2^(k+r) S^(-r), no extra source derivatives and no new q loss. Together
+> with Q20 this supplies the conditional whole-path norm conversion;
+> actual extended-domain source bounds remain open.
+
+
+> **Q20 update:** The [Gaussian quotient jet join](results/core_current_head_q20_gaussian_quotient_join/README.md)
+> converts whole-path weighted raw source jets to f/P jets by a finite
+> triangular recurrence, without an inverse Gaussian minimum or extra source
+> derivatives. Actual lifted-domain source estimates remain required;
+> a physical trace alone does not supply them.
+
+
+> **Q19 update:** The [typed radial cycle](results/core_current_head_q19_typed_weight_cycle/README.md)
+> conditionally preserves half weight for harmonics and full weight for mean
+> increments and signed targets. Exact angular projection removes single-wave
+> linear terms from the mean equations; covariance restores the full weight.
+> Whole-path inverse, root and epsilon-rate contracts remain required.
+
+
+> **Q18 correction:** The [edge-weight audit](results/core_current_head_q18_edge_weight_obstruction/README.md)
+> finds that Q5's blanket full-weight source bound is not justified by the
+> harmonic source foundation, which retains only sqrt(zeta). No finite
+> radial pole, band reserve or logarithmic factor repairs that embedding.
+> A typed harmonic/mean/signed-target induction is required; this is an
+> obstruction to the inherited implication, not a failure proof for the field.
+
+
+> **Q17 update:** The [projected mean/pressure support join](results/core_current_head_q17_mean_support_join/README.md)
+> derives the missing aggregation count from the frozen slow mesh. Compact
+> maps may fill radial and auxiliary supports, but collect only O(S^3)
+> original labels at fixed slow coordinates. This costs finite logarithmic
+> degree and no q power. Actual normalized coefficient estimates and all
+> endpoint/unconditional residual conclusions remain unproved here.
+
+> **Q16 update:** The [termwise representative transfer](results/core_current_head_q16_representative_transfer/README.md)
+> maps the corrected normalized orders through the physical potential,
+> velocity and pressure rescalings. Every component has a positive exponent
+> margin; full pressure is the limiting row. The result remains conditional
+> on actual band-uniform normalized inputs and mean/pressure support overlap.
+> No endpoint or unconditional residual theorem is promoted.
+
+> **Q15 update:** The [fixed-width edge-transfer bound](results/core_current_head_q15_flat_edge_transfer/README.md)
+> converts the inherited weighted jet estimates to ordinary uniform bounds
+> and flat zero extensions with explicit finite symbolic constants. It spends
+> no q-exponent reserve and retains logarithmic weights. Actual complete
+> representative estimates still require a term-by-term physical transfer;
+> endpoint closure and unconditional residual claims remain open.
+
+> **Q14 correction:** The [primitive-ceiling audit](results/core_current_head_q14_primitive_ceiling/README.md)
+> corrects Q12's labeling of first-real interface counts as primitive counts.
+> The certified provider adds 400009 derivatives after both enlarged compact
+> requests; the operator-pole domains must use those expanded orders.
+> Q12's exponent arithmetic and Q13's cutoff proof remain valid, but actual
+> all-band representative bounds and endpoint closure remain unproved.
+
+> **Q13 update:** The [cutoff-uniformity derivation](results/core_current_head_q13_cutoff_uniformity/README.md)
+> proves the all-order implicit-coordinate cutoff bounds uniformly in scale,
+> including both seams and the complete curl/pressure cutoff terms. The
+> original diagonal rule is already symbolic: no numerical cutoff list is
+> required. The remaining frontier is the actual fixed-gauge representative
+> bound over every physical band and closed support, before endpoint promotion.
+
+> **Q12 update:** The [symbolic root-parameter audit](results/core_current_head_q12_symbolic_parameter/README.md)
+> derives a sufficient fixed comparison stage at the exact root h, compresses
+> the derivative recurrence to a quadratic formula, and carries both extra
+> compact integrations to the original primitive requests. All six exponent
+> accounts close algebraically. The same-field join remains blocked until
+> the original cutoff sequence and its full closed-chart constants satisfy
+> the displayed root-parameter inequalities. No cutoff sequence is reselected,
+> and no endpoint or unconditional residual theorem is promoted.
+
+> **Q11 correction:** The [parameter-identity audit](results/core_current_head_q11_parameter_obstruction/README.md)
+> finds that Q1 retains `h=lambda^2=exp(-8*(exp(64)+10))`, while Q6 defaults
+> to `h=1/200` and Q7 calls that the selected field. These values differ.
+> The recorded same-object Q6--Q10 promotion is therefore blocked; their
+> generic conditional implications and historical evidence remain preserved.
+> The frozen `J=12817` cross-bound fails after substituting the root parameter.
+> Next is a symbolic same-parameter source/stage/cutoff audit before endpoint
+> promotion, not another downstream replay or a blow-up claim.
+
+
+This directory is an **experimental research scaffold, not a claimed proof or
+disproof** of the Navier-Stokes Millennium Prize problem. It gives the
+repository a reproducible place to test one concrete direction: whether
+finite-stage transfer of energy toward high frequencies can be organized into
+an accumulating cascade, or whether viscosity and geometric depletion prevent
+that transfer.
+
+The [active research goal](GOAL.md) is an actual finite-time blow-up result
+for the stated Navier-Stokes equations. Current work focuses on completing
+and testing the manuscript-based construction, beginning with its first
+unclosed obligation. Test counts and small reference parameters do not
+measure how close the construction is to a proof.
+
+The latest [explicit tilt and primary-pulse tail checkpoint](results/explicit_tilt_pulse_tail/README.md)
+corrects the inherited first-band quantifier: no numerical historical tilt
+or first integer was frozen, so that absent integer cannot be retroactively
+verified. It instead specializes the previously existential tilt to
+`u^2=2^19 G^22`, obtains the rigorous raw deficit
+`d0=1/(2^19 G^22)`, and gives an exact integer threshold for a separately
+certified later tail using the selected coefficient cutoff and full mixed
+current-frame gate. Finalized `K0,5`, `K1,3*` and `H2,3*` then enter finite
+primary-pulse prefactors without changing the uniform physical exponents or
+supports on that tail. The old localization/force is not automatically
+reidentified; generated nonlinear source classes, complete covariance/means,
+residual and blow-up obligations remain open.
+
+The preceding [global second-coefficient H2,3 checkpoint](results/global_second_coefficient_h23/README.md)
+inserts `K0,5<H^262` and the finalized `K1,3*` into the complete whole-support
+`Q10,Q11` identities.  It retains both shifted axial-viscosity moments,
+keeps the repaired `F1` and `U1` bounds distinct, propagates the explicit
+coefficient cutoff and all actual repair-bump jets through radial order three,
+and converts finalized `F2` jets to `E2=sqrt(2X)F2` before defining the finite
+selected-parameter certificate `H2,3*`.  No guessed `H` power hides the nested
+Picard exponentials or geometric denominators.  The historical first-band
+raw-deficit gate, uniform all-scale pulse family, complete covariance/means,
+residual and blow-up obligations remain open.
+
+The preceding [global first-coefficient C3 checkpoint](results/global_first_coefficient_c3/README.md)
+inserts the selected `K0,5<H^262` bound into the complete signed `Q03,Q13`
+totals, retaining the axis-viscosity boundary and pressure memory through the
+true `Xv`.  It combines the explicit core/collar value constant with the
+eta-independent cutoff, exact inverse-800 map and actual disjoint `U1` bump
+value to obtain `K1,3*=J1,3+320C1,3`.  The bound remains an explicit formula
+in the unchanged selected parameters; no guessed `H` power hides its small
+denominators or Picard exponentials.  Its shifted-viscosity second-source and
+repair obligation is discharged by the latest checkpoint; all-scale
+pulse-family, complete covariance/mean, residual and blow-up obligations remain.
+
+The preceding [global leading fifth-angular checkpoint](results/global_leading_c5/README.md)
+lifts the same later axial/reference root, complete energy and positive
+strength to `C_eta^5`.  The exact fifth interpolation derivative preserves
+the `8192T` energy budget, and the complete later axial cover has norm at
+most 132.  Joining this row to the native sixth-angular estimate and the
+selected FINAL compact fifth gate proves the quantitative whole-support
+bound `K0,5<H^262`.  That input is consumed by the latest checkpoint; the
+shifted-viscosity second source and repair, `H2,3`, all-scale pulse-family,
+complete covariance/mean, residual and blow-up obligations remain open.
+
+The preceding [global first-coefficient C3 boundary checkpoint](results/first_coefficient_c3_boundary/README.md)
+extends the whole-inner first coefficient through `X^3 C_eta^3` and propagates
+it through the selected eta-independent coefficient cutoff.  Keeping the full
+signed pressure memory and the unchanged inverse-800 repair exposes a corrected
+derivative ladder: constructing the repair in `C_eta^3` needs a quantitative
+whole-support leading `U0` bound in `C_eta^5`, not merely the newly joined
+fourth-order bound.  Explicit formulas reduce the missing global repair to
+that one higher leading input. The new fifth-angular checkpoint supplies it,
+but has not yet assembled the resulting first repair. Global `K1,3`, the second
+repair and `H2,3` therefore remain conditional, as do all pulse-family,
+covariance/mean, residual and blow-up obligations.
+
+The preceding [compact/global reconciliation checkpoint](results/compact_global_reconciliation/README.md)
+propagates the newly fixed cutoff through the mixed-third, joint-fourth and
+tame-fifth loop interfaces. It proves the complete compact ordinary fourth
+pressure/flux budget, uses the same frequency and exact five-row root to join
+the inner/compact/compensated-outer leading value cone, and restores the five
+global defects with complete pressure memory so the exterior leading stresses
+agree. The result is relative to the retained core/native/regional/root
+premises. Higher all-scale pulse-family, full covariance/axial-pressure mean,
+complete residual, realization/comparison and blow-up obligations remain.
+
+The latest [explicit coefficient-cutoff checkpoint](results/explicit_coefficient_cutoff/README.md)
+separates that modulation variance cutoff from the distinct radial coefficient
+cutoff used by the higher coefficients and pulse frames. The latter had only
+been chosen qualitatively. One admissible C-infinity member is now fixed at
+the same `C^-20` window, with `L1<729`, `L2<2916`, `L3<58320` and an exact
+all-fixed-order physical-jet formula. This closes the cutoff-only part of the
+second-coefficient and pulse-jet inputs. It also isolates the actual next
+obstructions: the raw-deficit mixed first-scale inequality and the finalized
+global first `U1` third-angular/full second-repair bound needed for `H2,3`.
+No all-family pulse, covariance/mean, residual or blow-up conclusion follows.
+
+The preceding [explicit variance-cutoff checkpoint](results/explicit_variance_cutoff/README.md)
+corrects an inherited premise: printed (C.9) specifies an admissible smooth
+cutoff class, not an already selected quantitative shape. It now freezes one
+explicit C-infinity member at the SAME `deltaL` window, proves
+`Z4<3,000,000` and `Z5<1,000,000,000`, and discharges the fourth target and
+fifth frequency gates using the previous `R5<A^32`. The compressed-cutoff
+obstruction remains valid for the unrestricted class. Complete FINAL joint
+and global physical-scale joins, pulse/covariance/mean and residual closure,
+and blow-up remain unproved.
+
+The preceding [native sixth-angular checkpoint](results/native_sixth_angular/README.md)
+derives a seventh core/reference packet, propagates the ACTUAL sixth angular
+fields and moments through the SAME earlier annular root, and bounds native
+fifth shear/pressure inputs by R5<A^32 under the retained foundation. It
+retains full axis/Cp and axial pressure memory. The remaining fifth-loop
+inequality has the raw cutoff Z5 explicit; the separate fourth target gate
+also remains unverified. This is PREMOD angular/one-radial input work, not
+complete joint J6, FINAL global acceptance, physical pulse/covariance/mean
+or residual closure, or a blow-up claim.
+
+The preceding [fifth moving-loop input gate](results/fifth_loop_input_gate/README.md)
+derives an affine fifth signed-root/moving-inverse/primitive bound from the
+original native scalar fifth jets and the unchanged cutoff's raw Z5. It
+reduces Lambda5 acceptance to an explicit sufficient inequality, while
+identifying the missing total-order-six field and full sixth pressure/moment
+rows. Actual native/cutoff inputs and the separate joint fourth target gate
+remain unverified. No fifth y bound, global physical-scale acceptance,
+pulse/covariance/mean/residual closure or blow-up claim follows.
+
+The preceding [FINAL fifth-moment interface](results/final_fifth_moment_interface/README.md)
+retains an explicit fifth angular primitive seminorm Lambda5 and propagates
+it affinely through all five moments, the SAME pointwise repair Jacobian,
+and the COMPLETE compact fourth pressure/flux maps. It gives a sufficient
+Lambda5 inequality, not an enclosure of that actual input. A protected-support
+functional control shows that uniform fourth primitive bounds alone cannot
+control the partial fifth moment. Actual cutoff/high-input gates and global,
+pulse, covariance/mean and residual closure remain open.
+
+The preceding [joint fourth-loop Gamma checkpoint](results/joint_fourth_loop_gamma/README.md)
+derives full (y,eta,phase) fourth source/primitive bounds and Gamma<2H,
+CONDITIONAL on the actual variance target's joint J4 bound. This closes
+the same-frequency compact FIELD interface below K^2=H^128 using the same
+exact repair, with K unchanged. Actual cutoff acceptance, FINAL fifth angular
+moment inputs and complete global fourth flux/pressure estimates remain open;
+neither the field-only bound nor the leading-loop means are complete physical
+pulse, covariance/mean or residual closure.
+
+The preceding [actual native mixed-fifth cover](results/native_fifth_mixed_cover/README.md)
+supplies the eight missing fifth mixed field inputs: both PREMOD fields have
+joint J5 norm <A^5 under the retained native/core hypotheses. It proves the
+extra sixth step derivative needed by the earlier relative annular bumps,
+then derives native fourth mixed shears and a full joint fourth variance
+target bound with the actual cutoff shape explicit. The earlier sufficient
+raw-shape gate implies this new joint gate too; its actual premise remains
+unverified. Full fourth moving-loop/Gamma propagation and FINAL global,
+physical-pulse, covariance/mean and residual closure remain open.
+
+The preceding [native mixed-fourth boundary](results/native_mixed_fourth_boundary/README.md)
+bounds complete PREMOD joint-fourth pressure coordinates by A^1547, retaining
+the full axis and cumulative pressure. It identifies the fifth mixed field
+inputs still needed by native fourth shears and derives the exact fourth
+fixed-frequency FIELD transfer with a linear, unverified slow-jet seminorm
+Gamma. Conditional on the retained shape gate, Gamma<=N H^128/(4 A^256)
+is sufficient for a separate compact field budget; neither condition has
+been evaluated on the actual loop. Third-order primitive/source bounds do
+not remove Gamma. FINAL global jets, all-scale pulses and full residual
+closure remain open.
+
+The preceding [mixed-shape cone bridge](results/mixed_shape_cone_bridge/README.md)
+derives a fresh joint third-order moving-loop bound with the cutoff premise
+explicit. The earlier sufficient fourth-angular shape gate implies this
+mixed gate too, conditionally allowing the SAME N and exact five-row repair
+to join the retained leading value cones. This does not verify the actual
+cutoff condition or FINAL mixed/global/pulse/covariance/residual bounds;
+older unqualified joint-H/frequency readings must retain this shape premise.
+
+The preceding [actual cutoff-window pullback](results/actual_cutoff_pullback/README.md)
+proves that the retained native axial taper crosses the entire variance
+window nondegenerately. An exact fourth-order inverse pullback gives the
+necessary estimate Z<=192*deltaL^(-1/2)*S. This excludes an angular-flatness
+bypass on that actual region, but neither encloses the selected Z nor proves
+S<=G (or its failure). The earlier sufficient gate and all FINAL global,
+pulse, covariance/mean and residual limits remain conditional/open.
+
+The preceding [moving-loop composition obstruction](results/cutoff_composition_obstruction/README.md)
+shows that the moving inverse and zero-mean primitive do not automatically
+suppress the missing variance-cutoff budget. An auxiliary local family has
+uniform native C4 bounds but unbounded first angular primitive derivatives.
+This is a nonimplication for the generic loop interface, NOT an actual
+global pressure-compatible counterexample or disproof of the actual H bound.
+The unchanged cutoff/composition condition still needs its own proof.
+
+The preceding [fourth scalar/moving-loop shape gate](results/fourth_loop_shape_gate/README.md)
+derives the required q5, signed fourth root and complete fourth moving inverse
+estimates. If the UNCHANGED variance target has angular C4 norm <=G, the
+primitives fit H and the same normalized five-row angular compact gate has
+headroom at the retained N. This is a conditional implication: the actual
+cutoff-shape inequality is still unverified. Radial/state acceptance, FINAL
+global mixed jets, first/second coefficient inputs and complete physical
+pulse/covariance/residual closure remain open.
+
+The preceding [actual native fifth-input bound](results/actual_fifth_native/README.md)
+propagates the reference sources through the actual continuation, shape,
+same earlier annular root and outer compact prefix. It bounds pure fifth
+fields and all six entering fifth traces, retains complete forward pressure,
+and derives a distinct native fourth pressure envelope A^1546. These are
+conditional PREMOD estimates, not FINAL modulated/repaired field bounds.
+The variance-cutoff budget, fourth scalar/q5/moving-phase maps, compact gate,
+global jets and full pulse/covariance/residual closure remain open.
+
+The preceding [reference fifth-source transfer](results/reference_fifth_transfer/README.md)
+derives the full axis-pressure C6 bound, preserves sixth angular reference
+inputs using the same positive radial taper, and bounds reference Sq,Sn,p1,ns
+in C5 within the unchanged attachment budget. It also bounds the genuine
+core-Xa fifth moment traces without resetting either pressure memory.
+These are conditional reference/core estimates: propagation through the
+actual prescribed continuation, joining root and outer prefix is next.
+The variance-cutoff shape gap, compact gate, FINAL global jets and full
+pulse/covariance/residual obligations remain open.
+
+The preceding [pre-modulation mixed-input audit](results/premodulation_mixed_shear/README.md)
+bounds the actual native mixed derivatives YE,YU and a,bs,ts,vs in C4,
+relative to retained regional estimates. It also corrects a quantitative
+premise: the manuscript's variance-cutoff window does not specify its
+derivative budget. Earlier parameter-only loop H estimates need an actual
+shape enclosure or a separate justified composition estimate; the radial
+squared-flat step cannot silently supply it. No cutoff, root or frequency
+is replaced. Pure fifth fields/entering moments, the variance-shape gate,
+FINAL global jets, full pulse/covariance/residual closure remain open.
+
+The preceding [fifth-moment Volterra estimate](results/fifth_moment_volterra/README.md)
+reduces both pressure combinations to pure fifth field jets and entering
+data. Combining the complete energy and pressure rows gives a local swirl
+kernel with a quadratic length bound, without erasing accumulated pressure.
+Explicit lower-remainder and mixed-shear estimates leave the precise actual
+native high inputs to quantify before the unchanged compact gate can be
+accepted. Global/pulse/covariance/residual closure remains open.
+
+The preceding [fourth pressure/moving-phase input audit](results/fourth_pressure_input_boundary/README.md)
+extracts the exact fifth-moment combinations in fourth pressure-coordinate
+jets, including axial U, both pressure memories and all lower denominator
+derivatives. A compatible-field symbolic limit shows that C4 native inputs
+alone cannot control C4 pressure coordinates; this is not a failure of the
+selected profile. The full fourth moving-inverse formula identifies the
+remaining native inputs and transfers them into the unchanged compact gate.
+Actual fifth-moment combinations, mixed shear jets, scalar fourth constants
+and that gate remain unquantified. All global/pulse/covariance/residual and
+independent-foundation limits below still apply.
+
+The preceding [fourth-order normalized target bound](results/fourth_target_normalization/README.md)
+bounds all five complete modulation-density and moment differences, then
+charges every normalizer derivative and the inverse-lambda M-J row. The
+target Z4 is now explicitly affine in the two primitives' highest angular
+jets; a substituted compact C4 inequality leaves only those moving-phase
+primitive inputs. They are not yet quantified at the actual parameters.
+All roots, frequency, supports, pressure gauges and historical evidence
+are unchanged. Global leading C4, finalized first C3 and second H2,3,
+cutoff/scale acceptance, full physical pulses, covariance/means and complete
+residual closure remain open; no unconditional blow-up claim is made.
+
+The preceding [fourth-angular axial input interface](results/fourth_angular_axial_interface/README.md)
+raises the SAME reference angular root, complete strength energy and later
+reference axial pulse to fourth angular order, retaining both affine end
+corrections. It gives an explicit inequality for the remaining compact
+loop-primitive and normalized five-moment target jets. These actual B4,Z4
+inputs are not evaluated, and the old C3 budget is not relabelled C4.
+The global leading U0 C4, finalized first U1 C3, cutoff/final H2,3, retained
+scale, full physical pulses, covariance/means and complete residual remain
+open. Full pressure/heat-compensation memory, roots, supports, frequency,
+construction choices and historical evidence are unchanged.
+
+The preceding [nested second-coefficient axis estimate](results/axis_second_coefficient/README.md)
+uses a smaller analytic seed disk to bound the full second source from the
+first core solution, retaining the extra leading angular jet and the true
+nested Picard exponential. Reflection parity and Cauchy estimates give
+conditional axis-safe second-coefficient third radial jets, joined to the
+positive collar with separate core/collar constants. This closes the local
+pre-cut inner axis gap relative to retained hypotheses, not finalized global
+H2,3. Actual cutoff norms, global repair/angular inputs, retained-scale
+acceptance, complete physical pulses, covariance/means and residual closure
+remain open. Full pressure memory, construction choices and historical
+evidence are unchanged; no analyticity across flat cutoffs is assumed.
+
+The preceding [complete second inner source bound](results/second_coefficient_source/README.md)
+retains both ordered interactions, all viscosities and the distinct
+current/lower exponents, then bounds every source/operator xi derivative.
+The leading radial axial viscosity needs a third angular derivative of U0;
+the same leading Cauchy envelope supplies it explicitly. Combining the
+axis/collar first input with the unchanged cutoff gives a conditional
+positive-radius third-jet estimate for the second inner solution, with its
+true source-dependent Picard exponential kept symbolic. Actual cutoff norms,
+global second repair/final H2,3, second-axis jets, retained-scale acceptance,
+all physical pulses, covariance/means and full residual closure remain open.
+No pressure memory, construction choice or historical evidence is changed.
+
+The preceding [axis-safe first-coefficient jet bound](results/axis_first_coefficient/README.md)
+uses the analytic seed core, regular complex-ray Volterra inverse and exact
+reflection parity to derive first-coefficient radial jets at the axis.
+A Cauchy estimate joins the existing positive-radius bound into an explicit
+whole-inner-interval regular F1,U1 bound through X order three and angular
+order two. The complex extension is used only to estimate the unchanged core;
+no radial analyticity across flat activation or cutoffs is asserted.
+Full pressure and viscosity terms and separate core/collar constants remain.
+The actual cutoff jets, global repair angular inputs, second coefficient H2,3,
+retained-scale acceptance, all physical pulses, covariance/means and residual
+closure remain open. Historical evidence and construction choices are unchanged.
+
+The preceding [higher pressure-source moment bound](results/higher_pressure_source_moments/README.md)
+derives the full ordered radial-source flux and its two signed moments at
+every finite order, with the previous-order axial viscosity retained from
+pressure order two. Its weighted total generally does not vanish when the
+radial-viscosity boundary cancels. Explicit conditional second-repair bounds
+retain F1 squared, U1 squared and U1F1, the unchanged inverse-800 costs and
+complete future pressure memory. The resulting input still needs actual
+full-support U1 third-angular and U0 fourth-angular bounds, plus the second
+inner coefficient estimate before H2,3 can be evaluated. Manufactured
+algebraic/float checks are not actual PDE solutions or continuum proof.
+Actual cutoff/scale acceptance, complete physical pulses, covariance/means,
+residual closure and independent inherited-foundation checks remain open.
+Historical evidence and construction choices are unchanged.
+
+The preceding [finite-head and radial-frame jet bound](results/finite_head_frame_jets/README.md)
+turns the diagonal Borel prescription into an explicit finite-head formula:
+third radial derivatives retain the second coefficient's own third-jet norm,
+unless a stronger SAME-schedule stage-two budget has separately been checked.
+The old value/first-radial half-tail estimate is unchanged. Radius/shear
+product rules then give conditional first/second radial bounds for the
+current spectral frame and growth rate, with physical scale losses retained.
+Abstract controls explain why the second input cannot be inferred from
+lower-order budgets; they are not actual PDE counterexamples or a defect in
+the original finite-head proof. Actual second-coefficient/cutoff inputs,
+value/scale acceptance, all phase/potential pulse jets, full covariance/means
+and residual closure remain open. Historical evidence and choices are unchanged.
+
+The preceding [third inner-coefficient collar bound](results/collar_third_coefficient/README.md)
+quantifies the actual activated leading third radial jets and derivatives of
+the full six-variable matrix/source, then derives an explicit J3 for the
+same first coefficient on the positive cutoff collar. Angular strip losses,
+the singular diagonal, inverse-radius Jacobians, pressure coupling and both
+shifted viscosities are retained; no radial analyticity is assumed. This
+discharges the local J3 input relative to the retained core/Picard hypotheses,
+not the unchanged cutoff's L3, actual scale acceptance or all-order pulse,
+covariance/mean and complete residual obligations. Enormous exponential
+factors are kept symbolic; diagnostic fixtures are not the selected solution.
+Construction choices and historical evidence are unchanged.
+
+The preceding [higher cutoff/repair jet interface](results/cutoff_higher_jet_interface/README.md)
+gives explicit all-finite-order bounds for the five actual repair bumps and
+propagates supplied cutoff/collar jets to repaired coefficients and physical
+radial derivatives, with logarithmic Jacobians and scale losses retained.
+A smooth monotone auxiliary family passes a common two-jet affine bound
+while its third jets diverge; disjoint exact repair cannot remove the local
+viscous second-stress-derivative cost when the inner coefficient is nonzero.
+That nondegeneracy is not verified for the actual profile. This explains why
+the original all-jet Borel requirements cannot be replaced by the recent
+low-order Cstar, not a failure of that prescription or an actual PDE field.
+Unchanged higher cutoff/collar jets, actual scale acceptance, complete
+physical pulses, covariance/means and full residual remain open. Full pressure
+memory, construction choices and historical evidence are unchanged.
+
+The preceding [sharp complete cutoff/current-scale floor](results/sharp_current_scale_floor/README.md)
+solves the minimum of all four fixed affine cost rows and joins it to the
+mixed current-frame budget. The derivative row can raise the stress-only
+infimum; a dominating constant row can instead make the full minimum
+attainable. The exact boundary test and required-deficit floor exclude
+impossible proposed shape/scale certificates before evaluating the old
+cutoff. They remain bounds for that sufficient program: auxiliary shape
+existence does not identify the unchanged cutoff or certify the historical
+first band, actual PDE error, all-scale pulses or the complete residual.
+Full pressure/viscosity inputs, construction choices and frozen evidence
+are retained.
+
+The preceding [current-frame value freezing](results/current_frame_freezing/README.md)
+extends the leading comparison using two endpoint value errors. It gives a
+mixed mesh/background bound, charges the band normalization and the smaller
+current orientation floor, and joins the compact cone to the exact outer
+sign cover without requiring a new global small-stress condition. A smooth
+small-oscillation control shows why value closeness alone cannot justify
+discarding the background term. No current derivative estimate is needed
+for this value step, but arbitrary nonlinear frames must still satisfy its
+hypotheses. The actual cutoff/deficit and retained-scale inequalities, all
+physical pulses, full covariance/means and complete residual remain open.
+Construction choices and historical evidence are unchanged.
+
+The preceding [leading-reference frame freezing](results/leading_frame_freezing/README.md)
+bounds Cfreeze explicitly from the global F/U jets, endpoint frame floors
+and retained doubled-box geometry. The complete target stays at the
+evaluation point, so its magnitude cancels and no direction derivative or
+flat-edge amplitude floor is needed. Its pressure-sensitive orientation and
+cone remain premises. The resulting independent chart/freezing tests join
+the prior full-cost deficit gate conditionally, not as actual first-band
+acceptance. A flat-amplitude countercontrol explains why freezing the stress
+itself would be invalid. Perturbed/nonlinear frames need their own jet and
+value inputs; actual uniform pulses, covariance/mean corrections and the
+complete residual remain open. Historical evidence and choices are unchanged.
+
+The preceding [same-tilt deficit radius](results/same_tilt_deficit/README.md)
+derives an explicit cone radius directly from the original fixed tilt's raw
+deficit. Original strict admissibility already gives qualitative positivity,
+conditional on the leading lemmas; it need not pass the later stronger
+coarse sufficient tilt test. The new normalized estimate joins the complete
+cutoff/pressure/viscosity bound to the independent representative-freezing
+condition, exposing the quantitative deficit required at a retained scale.
+It does not compute the actual deficit, cutoff norms or freezing constant.
+All construction choices and historical evidence are unchanged; actual scale
+acceptance, uniform physical pulses and the complete residual remain open.
+
+The preceding [sharp cutoff-shape feasibility](results/cutoff_shape_feasibility/README.md)
+derives an exact joint constraint on the two derivative enclosures: the
+clipped-slope capacity must be strictly greater than one. It proves this
+continuum statement by an endpoint comparison and an interior smooth
+approximation, obtains a sharp unattained viscous stress-row infimum, and
+eliminates shape variables from the four affine scale inequalities by a
+rational quadratic test. A relaxed corner can pass while no smooth cutoff
+can satisfy that sufficient certificate. Auxiliary shape existence is not
+identification of the unchanged cutoff; actual tilt/scale acceptance, physical
+pulses and the complete residual remain unverified. No field or historical
+evidence is changed.
+
+The preceding [combined cutoff/cone/scale gate](results/cutoff_cone_scale_gate/README.md)
+corrects a historical width misidentification: the coefficient collar uses
+tc=C^-20/(10 sqrt(log C)), not the native width C^-20. With all primitive
+leading inputs supplied, the complete first-stress bound is exactly a maximum
+of four affine rows in the unchanged cutoff's two shape norms. A positive
+viscous second-shape cost gives a precise obstruction to certifying a fixed
+scale uniformly from smoothness/support alone. An explicit feasible region
+and conditional later-band witness are derived, retaining full pressure
+memory. Actual cutoff-shape, same-tilt and retained-scale acceptance, physical
+pulses and the complete residual remain unverified. Historical evidence and
+all construction choices are unchanged; the width correction is documented
+in the new checkpoint, not silently patched into frozen records.
+
+The preceding [global swirl and same-heat-root envelope](results/global_swirl_envelope/README.md)
+derives a C3 target for the complete heat correction and identifies the same
+accepted root by common pointwise uniqueness. It bounds the original later
+reference/heat swirl in mixed third order, preserving the actual normalized
+two-unit terminal taper, and supplies the remaining global F, radial and
+shifted-swirl inputs to the first-stress estimate. These complete its
+primitive leading-field inputs relative to retained lemmas, not its actual
+scale acceptance. The unchanged coefficient-cutoff shape, full Cstar/tilt/
+scale gates, physical pulses and complete residual remain unverified.
+
+The preceding [global axial/source envelope](results/global_axial_source_envelope/README.md)
+joins new mixed third-order modulation/repair bounds to every later axial
+reference stage. An exact divergence identity avoids an unnecessary fourth
+mixed derivative demand and yields separate pointwise and absolute
+pressure-source bounds, retaining viscosity and the full future support.
+The complete shifted axial U viscosity is also bounded with coordinate
+derivatives retained. These are conditional leading-field inputs, not a
+complete residual improvement. Global swirl/shifted-swirl estimates, the
+actual cutoff shape, full Cstar and fixed-tilt/scale acceptance remain open.
+
+The preceding [cutoff and exact repair derivative audit](results/cutoff_repair_derivative_budget/README.md)
+supplies analytical bounds for the five retained unit-mass repair bumps and
+their first two logarithmic derivatives, then propagates their full
+inverse-radius costs into the first coefficient. It isolates a missing input:
+the retained inner cutoff has no specified shape or derivative budget.
+Even monotone smooth cutoffs with the same allowed window have unbounded
+derivative costs across admissible choices. This is a gap in a uniform
+estimate, not nonexistence of a suitable cutoff. Its actual two shape norms,
+pointwise leading/shifted-axial inputs, fixed tilt and scale gates remain open.
+No field, root, width, support, pressure memory or historical record is changed.
+
+The preceding [global third-angular axial bound](results/global_axial_angular_bound/README.md)
+joins the actual axis-side activation, existing compact modulation/repair
+jets and the later same-root reference pulse into an explicit global KU.
+It derives C3 bounds for the complete post-pulse energy and positive axial
+strength, retaining both affine end-bump terms. The pressure-source moment
+inputs Q0,Q1 now follow from fixed construction parameters, conditional on
+the retained core/regional lemmas, without materializing the huge values.
+Exact heat/compensation moment identities preserve the full strength equation;
+no pointwise power-tail formula is assigned to the heat-modified profile.
+Separate pointwise stress/shifted-axial and cutoff/bump inputs, fixed tilt and
+scale gates remain open. No unconditional pulse, residual or blow-up follows.
+
+The preceding [signed full-pressure source moments](results/signed_pressure_source_moments/README.md)
+derives a conservative radial flux and exact full-support formulas for the
+two source integrals needed by the first-coefficient repair. The unweighted
+total retains 2nu*v(0); the weighted viscosity total cancels only at the full
+support edge. Explicit finite-endpoint corrections prevent truncating future
+pressure memory. For this repair input, bounds in one global third-angular
+axial norm replace the stronger absolute-source integrals and avoid global
+second radial derivatives. The actual full-stage angular norm still needs
+quantification; separate pointwise stress/axial-source bounds, fixed-tilt and
+scale gates remain open. Local I4 pressure memory and all historical evidence
+are retained; no unconditional pulse, residual or blow-up claim is made.
+
+The preceding [actual activated-collar operator envelope](results/collar_operator_envelope/README.md)
+removes the unspecified local C_col input from the first-coefficient estimate.
+It derives explicit first/second radial and angular complex-strip bounds
+for the actual flat activation, with unchanged C^-20 width, then bounds
+the six-variable matrices and full pressure/shifted-axial source by
+C_col=4096(1+x+b)^3 H^2. The common strip and sparse Picard inputs are
+explicit; the actual huge parameters are not numerically materialized.
+The conditional estimate keeps incoming pressure and regular axis values.
+Full future pressure integrals, global leading/cutoff/repair-bump inputs,
+the unchanged-tilt test and combined scale acceptance remain open.
+It is not an unconditional pulse bound, complete residual gain or proof.
+
+The preceding [global leading direction margin](results/leading_cone_margin/README.md)
+derives explicit orientation omega_star=1/(640G^13) and raw-cone deficit
+epsilon_star=1/(2^18 G^22), retaining finite-radius terms and both smooth
+edge limits. For the SAME fixed tilt, the sufficient test is
+u^2>(1-epsilon_star)/epsilon_star; a padded test yields gamma=epsilon_star/4.
+Existential admissibility of u alone does not verify this conservative
+quantitative gate, and failure of the gate is not actual cone failure.
+The chart interface retains all band factors, including the squared
+discriminant factor. Actual collar/jet bounds and combined scale acceptance
+remain unverified; no tilt, frame, pressure memory or old first band is changed.
+
+The preceding [explicit compact leading-stress floor](results/regional_stress_floor/README.md)
+removes the free stress-amplitude floor from the preceding first-coefficient
+estimate: tau_star=f_star/(64G^10) works on the original [Xinner,Xc] interval,
+relative to the retained same-profile leading lemmas. The three-region join
+keeps the actual tc/16 inner offset, compact modulation/repair D margin and
+compensated exterior finite-radius terms with exact pressure/moment matching.
+It is not a floor at either flat edge, a same-tilt cone margin or a derivative
+bound. Actual collar/jet/source envelopes and the combined scale acceptance
+test remain to be certified; no unconditional proof is promoted.
+
+The preceding [quantitative first-coefficient bound](results/first_seminorm_bound/README.md)
+propagates the actual collar Picard envelope through angular Cauchy estimates,
+radial cutoff jets and the exact linear five-moment repair. Its amplitude
+retains the complete later radial-pressure source and nonconstant angular
+normalizers. Full first pressure and shifted leading axial viscosity enter
+the compact stress bound; the exact inner zero avoids division at the flat
+edge. This supplies a formula for the previous gate's finite constant C*,
+not an evaluation of the actual primitive envelopes or leading stress floor.
+The remaining sufficient chart inequality is 2h(ell-2)>=log2(C*/r_Kc), together
+with every other accepted-tail gate. No historical first-band, unconditional
+pulse, complete residual or blow-up conclusion is promoted.
+
+The preceding [regional weighted-value input join](results/regional_weighted_gate/README.md)
+derives the background error constant from finite first-coefficient seminorms
+and the shared velocity/stress Borel budget. Orders n>=2 contribute at most
+q^(2h)/2; exact band radial derivatives retain the inverse-radius term.
+It uses the preceding explicit small-error gate only on the compact part,
+and joins the already proved nonnegative first-stress outer cone stability.
+A large harmless outer correction is not a cone failure. Actual primitive
+regional bounds and first-coefficient seminorm values remain to be justified;
+the historical first band and unconditional proof are not certified.
+
+The preceding [explicit background gap certificate](results/background_gap_certificate/README.md)
+replaces the unspecified background continuity radius with explicit swirl,
+shear, discriminant, orientation and same-tilt cone bounds. Its sufficient
+value gate is Cval*q^(2h)<=r_star, with the full 4Q chart cost retained.
+It requires the actual smooth relative-stress input at both flat edges;
+positive swirl/shear or small absolute errors alone do not suffice.
+It does not redefine the frozen pulse frame or certify the historical first
+band. The canonical initial route was already completed and is not counted
+again. Next independently discharge the actual regional and weighted-error
+inputs to this gate; no unconditional pulse, residual or blow-up is claimed.
+
+The preceding [complete current residual-ledger audit](results/current_residual_ledger_audit/README.md)
+derives the exact nonzero-angular split into the next regular source and
+retained cutoff tails, including full wave pressure, cutoff curls, both
+old-new interaction orientations and new squares. Recomputed angular-zero
+mean pressure does not reclassify that nonzero residual, but still changes
+the full mean equation; both Pi1/Pi2 memories remain. Quantitative Gaussian
+constants give every fixed physical tail power on the same accepted domain,
+without treating physical flatness as normalized-source improvement.
+Only the temporal pulse cutoff is assigned to Gaussian-flat tails; spatial
+and slow localizer derivatives stay in the regular remainder. The generic
+spatial cutoff diagnostic is not a Gaussian-flatness certificate.
+Together with the current target bridge and listed operator/seed inputs,
+this supplies a conditional finite-cycle residual bound, not an unconditional
+theorem. Next identify and independently discharge those actual initial,
+core/background and common-domain inverse premises before promoting the
+same accepted-tail single-field/force construction. Historical first-band
+and old-force acceptance remain unverified.
+
+The preceding [current-target cycle bridge](results/current_target_cycle_bridge/README.md)
+derives the missing higher-order target cancellation from exact CURRENT-state
+differences through signed covariance and fast/slow mean updates, conditional
+on the accepted canonical initial input and reviewed operator estimates.
+It retains all six covariance entries, changed axial pressure, nonzero old
+mean correlations and a generally nonzero moving-compensator derivative
+commutator. The target order advances by 1/2-kappa on the whole accepted
+half-line; it is not inferred from raw support/moment conditions or protocol
+stamps. The parent's countercontrol remains valid. Next audit the complete
+nonzero-angular residual, exact cutoff/pressure tail reclassification and
+all physical-jet/support costs with these same current inputs. Initial
+analytical premises and unconditional pulse/residual/blow-up claims remain open.
+
+The preceding [current-target and moment audit](results/current_target_moment_audit/README.md)
+derives exact current pressure/flux moments and both full integrated residual
+identities, keeping all six covariance entries, radial time/axial transport,
+old-new mean correlations and the whole moving pressure-bump derivative.
+The signed target is exactly a radial flux plus a compensated primitive;
+this gives all-fixed-jet full-zeta functional membership relative to current
+field bounds. A smooth compact swirl control shows why support and the two
+velocity moments alone cannot give arbitrarily improving epsilon orders.
+Next prove the explicit weighted cancellation inequality for the ACTUAL
+current targets at each canonical substep; exponent tables or historical
+targets do not establish it. The control is not a counterexample to that
+construction. No unconditional pulse, residual or blow-up theorem is claimed.
+
+The preceding [source-envelope and weighted-edge audit](results/source_envelope_edge_audit/README.md)
+corrects a missing displayed condition in the tail selector: target-direction
+freezing needs ell^6>=8*Cfreeze/gamma0 in addition to pulse-length bounds,
+and those bounds must use the certified frozen cone margin. Use the corrected
+initial selector; the historical first band, field and force are not thereby
+recertified or identified with a corrected instance. The new estimates give
+all-fixed mixed quotient-jet bounds for f/P, signed reciprocal-root half-weight
+cancellation, and a quantitative two-edge primitive bound requiring the exact
+zero total. Full pressure memory and actual width costs remain. Generated
+regular-source membership is supplied relative to current target/moment jets;
+actual later full-covariance mean/signed targets still require verification.
+No unconditional pulse, complete residual or blow-up theorem is claimed.
+
+The preceding [certified-tail reconstruction](results/certified_tail_reconstruction/README.md)
+propagates the accepted tail from actual finite real value budgets through
+fresh realization and force-extension diagonals, localization, energy and
+same-force comparison, conditional on the retained finite-map/source/edge
+estimates. It does not numerically instantiate the actual giant fields.
+The old first band remains unverified, but is not an extra premise for this
+DISTINCT existential tail witness. The old schedules, field and force remain
+historical objects: new cutoffs can change terminal norms and forces, so
+old scale inequalities cannot simply be reused. Full pressure, axial means,
+viscosity and all interactions remain. Next audit actual generated-source
+inverse-class and weighted-edge hypotheses through signed/mean updates.
+No unconditional pulse, complete residual or blow-up result is claimed.
+
+The preceding [canonical value-domain certificate](results/canonical_value_domain/README.md)
+gives an exact dyadic all-later-band bound for both frame/cone domains and
+relative root comparison, retaining the physical radius and whole-pulse
+rounding/axial costs. One value threshold works for every fixed jet order.
+Canonical positive roots use their own cone gate; closeness to historical
+roots is a stronger, separate condition, not necessary for their existence.
+The old first band and localized force are NOT thereby certified: actual
+outward norm enclosures and the existing minimum-band inequality remain.
+A certified observation tail is described without replacing qstar, fields,
+supports, localization or schedules. Complete pressure memory remains.
+No unconditional pulse, residual or blow-up theorem is claimed.
+
+The preceding [leading core-pressure identification](results/core_pressure_identification/README.md)
+traces the exact reference datum through the same-root leading moment ledger.
+That leading backward-pressure identity is already closed relative to the
+accepted leading maps; it is not equality with the full corrected pressure.
+A new bounded angular inverse controls a pressure-normalization defect by
+its axial pressure-stress defect, with explicit all-fixed-jet bounds and a
+weighted endpoint compatibility condition. An exact singular homogeneous
+mode shows why bounded endpoint traces are essential. The exceptional Pi1/Pi2
+background pressure memory remains. Next audit actual canonical common
+value/root acceptance on the unchanged domain, rather than promoting
+manufactured diagnostic inputs. Retained analytical construction premises
+remain; no unconditional pulse, complete residual or blow-up result is claimed.
+
+The preceding [canonical comparison join](results/canonical_comparison_join/README.md)
+checks the ordinary pressure-recovery and expanding-ball comparison hypotheses
+on the SAME canonical field, zero datum and compact force. Relative to retained
+analytical premises, every admissible smooth finite-energy global competitor
+agrees with that field before terminal time; retained positive-core growth
+then gives a conditional exclusion implication. The complete energy and local
+dissipation remainders decay as R^-2, without added competitor pressure,
+global derivative or energy-inequality assumptions. A new mixed-pressure
+moment expansion has an explicit R^-4 error; a compact divergence-free tensor
+witness shows why support and incompressibility alone do not remove its R^-3
+leading moment. This is not a same-force fluid counterexample or an
+unconditional blow-up theorem. Next trace exact-core pressure-family/global
+backward-pressure identification and discharge retained analytical premises.
+Historical fields and frozen evidence are unchanged.
+
+The preceding [canonical compact-force join](results/canonical_force_join/README.md)
+localizes the SAME canonical field with complete potential/pressure terms,
+zero initial velocity, one smooth compact global FORCE and preterminal
+energy/dissipation bounds, conditional on retained analytical premises.
+All terminal force jets are flat along the protected equatorial disk;
+an exact dyadic Borel construction preserves that flat disk in the future
+force without assuming analytic or Gevrey growth of the complete force.
+It constructs no future velocity. Global competitor pressure recovery and
+comparison for this same force, plus independent discharge of retained
+core/background and finite analytical premises, remain before any
+unconditional admissibility, residual or blow-up claim.
+
+The preceding [canonical endpoint join](results/canonical_endpoint_join/README.md)
+derives compatible one-sided potential, direct-swirl, velocity and full
+pressure jets for the SAME canonical field on punctured terminal compacts,
+conditional on retained analytical premises. The unchanged nonzero heat
+exterior has sharp Gevrey-2 terminal growth, including complete pressure;
+no such order is claimed for the interior. An exact zero-residual bounded
+velocity counterexample shows why residual flatness cannot replace uniform
+next-derivative bounds. Canonical localization, admissible global force,
+energy and comparison remain; no origin regularity or unconditional
+blow-up result is claimed. Historical evidence is unchanged.
+
+The preceding [canonical local realization](results/canonical_local_realization/README.md)
+joins the canonical finite states to ONE locally finite divergence-free
+field, with a complete all-fixed-jet flat residual CONDITIONAL on retained
+core/background and analytical premises. Whole-interval shrinking cutoffs
+use complete operator-defined potentials, separate direct swirl and full
+fixed-gauge pressure differences. Exact controls show why equal uncut
+states do not license arbitrary stage-dependent potential/pressure gauges.
+This is not the historical realized field or an unconditional residual or
+blow-up theorem. Its own closed-time endpoint, localization, force, energy
+and global comparison joins remain.
+
+The preceding [canonical finite-cycle bridge](results/canonical_finite_cycle_join/README.md)
+rebuilds the signed/sourced/mean seed on the canonical roots and applies the
+reviewed operator estimates to that same family at every finite cycle.
+Conditional regular orders are B_j=3/2-2kappa+j*(1/2-kappa), with full mean
+order B_j+1/2, complete pressure, viscosity, interactions and exact additive
+tails retained. This is not an identification with historical fields or an
+unconditional residual theorem. A growing-constant counterexample shows
+that improving finite-stage orders does not license an arbitrary j(q) or
+one limiting field. A controlled canonical realization and the retained
+analytical premises remain; historical evidence is unchanged.
+
+The preceding [canonical initial-mean join](results/canonical_initial_mean_join/README.md)
+supplies the rebuilt canonical family's complete real six-entry covariance
+and fresh pressure/fast-mean/slow-five-map inputs. Conditional initial defects
+are S2 and tangential angular-mean residuals M_(2-3kappa), retaining viscosity,
+axial velocity and the whole moving pressure moment. A same-plane example
+shows that matching two momentum fluxes does not fix tangential variance;
+inverse-length closeness is not an extra epsilon-power gain, so old mean
+targets cannot be transplanted. Later complex signed/sourced states and the
+full residual still require consistent rebuilding. No unconditional proof
+is claimed, and all historical evidence remains unchanged.
+
+The preceding [canonical-primary foundation](results/canonical_primary_foundation/README.md)
+constructs the manuscript reference-mixing primary and its positive principal
+covariance roots separately from the inherited family. It derives conditional
+whole-pulse, full-pressure, physical-Haar and relative-root comparison bounds,
+with an explicit common value-acceptance condition. Reusing old roots generally
+leaves a covariance defect; rebuilding the canonical roots restores the exact
+principal target. No physical pulses or root values are declared identical.
+Historical evidence is unchanged. Later complete covariance, fresh mean and
+repair maps must consistently use one family before the full viscous/cutoff/
+interaction residual join; no unconditional pulse or blow-up theorem is claimed.
+
+The preceding [frame/column foundation](results/frame_column_foundation/README.md)
+derives an exact two-coordinate projected-frame identity and explicit
+operator-norm, damping and primary-column error constants from the current
+phase and background jet bounds. Moving-normal pressure, the frame derivative
+and the secondary frame coordinate all contribute; omission controls detect
+each. The same value-acceptance and cone inequalities retain the original
+repository radius, carriers, roots and width. A newly identified convention
+mismatch is explicit: manuscript (7.8) mixes with reference s, while inherited
+replays mix with actual sa. Exact conjugacy requires transporting entrance
+data; resetting the growing coordinate changes the physical primary.
 Separate operator bounds are supplied, but exact canonical-primary/root
 identification remains an obligation. The remaining current covariance/mean/
 residual join and core/background dependencies stay explicit; no unconditional
