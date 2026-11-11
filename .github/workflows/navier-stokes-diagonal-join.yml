@@ -210,6 +210,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q159_primary_contract_frontier/**
       - research/navier_stokes_cascade/results/core_current_head_q160_physical_target_induction/**
       - research/navier_stokes_cascade/results/core_current_head_q161_source_tail_simultaneous_induction/**
+      - research/navier_stokes_cascade/results/core_current_head_q162_diagonal_endpoint_force_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -427,6 +428,7 @@ on:
       - research/navier_stokes_cascade/results/core_current_head_q159_primary_contract_frontier/**
       - research/navier_stokes_cascade/results/core_current_head_q160_physical_target_induction/**
       - research/navier_stokes_cascade/results/core_current_head_q161_source_tail_simultaneous_induction/**
+      - research/navier_stokes_cascade/results/core_current_head_q162_diagonal_endpoint_force_join/**
       - research/navier_stokes_cascade/results/core_current_head_q15_flat_edge_transfer/**
       - research/navier_stokes_cascade/results/core_current_head_q14_primitive_ceiling/**
       - research/navier_stokes_cascade/results/core_current_head_q13_cutoff_uniformity/**
@@ -1586,6 +1588,8 @@ jobs:
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q160_physical_target_induction/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q160_physical_target_induction/evidence.json --output q160_ci.json
           /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q161_source_tail_simultaneous_induction/test_audit.py -v
           /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q161_source_tail_simultaneous_induction/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json --output q161_ci.json
+          /usr/bin/python3 -u research/navier_stokes_cascade/results/core_current_head_q162_diagonal_endpoint_force_join/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q162_diagonal_endpoint_force_join/audit.py --verify-record research/navier_stokes_cascade/results/core_current_head_q162_diagonal_endpoint_force_join/evidence.json --output q162_ci.json
 
       - name: Recheck inherited complete-potential diagonal
         run: /usr/bin/python3 research/navier_stokes_cascade/results/canonical_local_realization/test_audit.py -v

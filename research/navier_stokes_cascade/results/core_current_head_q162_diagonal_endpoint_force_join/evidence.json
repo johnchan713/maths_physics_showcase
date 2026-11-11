@@ -1,0 +1,197 @@
+{
+  "closure": {
+    "edges": 1324,
+    "nodes": 402,
+    "source_bindings": 5468
+  },
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_certified_complete_potential_endpoint_join/evidence.json": "f40db0ddfb1fd3fc661ede433d8ce88c8be10d25b77c635e1b61c3ec75c64e49",
+    "results/core_certified_complete_potential_force_join/evidence.json": "1a905bb3625c77096c1d0414d0e26b316a0f17aab5b7d6e98a376ee882cda7d9",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json": "b7a3b0b717f27c364ba212a1ce3575c48abe13e69363c032c92126213931e08b",
+    "results/core_current_head_q154_physical_endpoint_join/evidence.json": "7370613e214432fa5742dc9f782840e2d77bd411517c6339a4ffad56baaed366",
+    "results/core_current_head_q155_physical_force_energy_join/evidence.json": "242e711fbb1babf4ae71e7fc723850c4d079e9f102a4433a28bbfdcdc1456a23",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_scale_compatible_corner_force_replay/evidence.json": "df473ba6a001763ef44b7674134533c93ae4479e83a48891333230d7b0827b5e",
+    "results/current_endpoint_jets/evidence.json": "de61c70e5aea7ef14663e8fa4d34736bcf50399db4660c1eb3f01827c2e7e6d6",
+    "results/current_localized_force/evidence.json": "70f3240badb5a8c7d55c2df150b550fec815ecd84314800edd3d5057bb3e6cb1",
+    "results/endpoint_foundation/evidence.json": "1325b04b9c7e8a81e13df85f3f3aef2b8de1d0fa2a0d4cd28868552901ef03f7",
+    "results/force_foundation/evidence.json": "fa218255c624ed5337c72d8096d6d4250ccf6efbd5ae72dd489bf024543c7abc",
+    "results/localized_force_extension/evidence.json": "fe63f5a0081b100f310630a9319b34eaf5cef15a01a7ec51d9d67388b065d5dc"
+  },
+  "diagonal": {
+    "all_fixed_graphs_finite_and_acyclic": true,
+    "all_fixed_residual_jets_flat": true,
+    "arbitrary_finite_stage_constants_absorbed": true,
+    "comparison_stage_fixed_before_q_limit": true,
+    "complete_pressure_covariance_axial_velocity_and_supports_retained": true,
+    "complete_residual_groups": [
+      "time",
+      "viscosity",
+      "pressure",
+      "old_new",
+      "new_old",
+      "new_square"
+    ],
+    "cutoff_sequence_chosen_once": true,
+    "fixed_gauges": true,
+    "one_locally_finite_divergence_free_field": true,
+    "physical_stage_zero_primitive_ceiling": 60900051,
+    "raw_series_convergence_used": false
+  },
+  "endpoint": {
+    "closed_band_window": {
+      "bands": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "lower": 18,
+      "upper": 26
+    },
+    "exterior_time_Taylor_radius_positive": false,
+    "fixed_request_example": {
+      "corner_residual": 6,
+      "direct_swirl": 8,
+      "m": 5,
+      "potential": 9,
+      "pressure": 7
+    },
+    "implicit_floor": "99/100",
+    "observation_beyond_first_band": true,
+    "observation_inside_qstar": true,
+    "one_sided_jets": "every fixed potential, direct-swirl, velocity, pressure and residual jet has a uniform one-sided limit on every punctured terminal compact",
+    "pressure_convolution_at_two": "8120601/400000000",
+    "pressure_convolution_strictly_exceeds_two_A2": true,
+    "singular_origin_included": false
+  },
+  "frontier": [
+    {
+      "contract": "PREMOD value/root envelope",
+      "id": "P1",
+      "status": "closed"
+    },
+    {
+      "contract": "Borel background and physical primary pulses",
+      "id": "P2",
+      "status": "closed"
+    },
+    {
+      "contract": "complete covariance/mean targets",
+      "id": "P3",
+      "status": "closed"
+    },
+    {
+      "contract": "generated-source quotient and endpoint extension",
+      "id": "P4",
+      "status": "closed"
+    },
+    {
+      "contract": "weighted inverses and physical tails",
+      "id": "P5",
+      "status": "closed-for-each-fixed-stage-jet-power"
+    },
+    {
+      "contract": "complete diagonal, endpoint and localized force",
+      "id": "P6",
+      "status": "closed-by-Q162-same-object-replay"
+    },
+    {
+      "contract": "comparison and core exclusion",
+      "id": "P7",
+      "status": "next-replay-required"
+    }
+  ],
+  "localization_force": {
+    "complete_pressure": "p0 grad c",
+    "corner_transfer_arbitrary_power": true,
+    "derivative_request_example": {
+      "Q154_spare": {
+        "direct_swirl": 1,
+        "potential": 1,
+        "pressure": 1
+      },
+      "cauchy": {
+        "direct_swirl": 7,
+        "potential": 8,
+        "pressure": 6,
+        "residual": 6
+      },
+      "force": {
+        "direct_swirl": 6,
+        "potential": 7,
+        "pressure": 5
+      }
+    },
+    "energy": {
+      "fixed_time": "E(t)+2 integral_0^t D <= F(t)^2",
+      "integrated_dissipation": "49/18",
+      "sum_of_separate_extrema_budget_claimed": false,
+      "sup_energy": "49/9"
+    },
+    "force_divergence_retained": true,
+    "future_velocity_or_pressure_constructed": false,
+    "localization_terms": [
+      "c R_1(u0,p0)",
+      "c_t u0",
+      "d_t",
+      "-(Delta c)u0",
+      "-2 sum_i c_i partial_i u0",
+      "-Delta d",
+      "p0 grad c",
+      "c(c-1)(u0 dot grad)u0",
+      "c(u0 dot grad c)u0",
+      "c(u0 dot grad)d",
+      "c(d dot grad)u0",
+      "(d dot grad)d"
+    ],
+    "single_Borel_schedule": "choose each future-force cutoff scale after the finite terminal jet norms at that index; every fixed mixed derivative has a geometric tail",
+    "term_count": 12,
+    "unit_viscosity": "1",
+    "vanishing_thirteenth": "(d dot grad c)u0=0 because d=grad(c) cross A"
+  },
+  "parent": "851765e34a4943dec9bc02c752c8a327418e4d6e",
+  "providers": {
+    "P6_complete_diagonal_endpoint_localized_force_contract_closed": true,
+    "P7_comparison_and_core_exclusion_not_replayed_here": true,
+    "historical_conditional_records_preserved": true,
+    "same_physical_field_cutoff_sequence_support_and_pressure_gauge": true
+  },
+  "source_hashes": {
+    "results/core_certified_complete_potential_diagonal_join/README.md": "0cb3d009cb30423205199e924522c270d55272c2a66630775d0b9a3f0c0356ae",
+    "results/core_certified_complete_potential_endpoint_join/README.md": "cb9e933a0fe8137c6a8ba2190a6acb33504e6225fb86b340f18d04bab9abbd83",
+    "results/core_certified_complete_potential_force_join/README.md": "17aef1c72e9efb852519ef4de90472fdb62398027016dc4e54a1cf0feb5162fd",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q154_physical_endpoint_join/README.md": "7c45e1649c5ad48848c9d44b1e049bddcc45ce3105abc1e81bfad187bfd1f852",
+    "results/core_current_head_q155_physical_force_energy_join/README.md": "48d7294690234b882491b994451e457445ccbabc96cb5ae1dba99804530882fa",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q162_diagonal_endpoint_force_join/README.md": "136c42e5776ad6bfeb9476220d4b354dc0e297f0b299695e2764bd14d781541d",
+    "results/core_current_head_q162_diagonal_endpoint_force_join/audit.py": "5900d212d8fded63d89489a1183ca71f45465b843825307cd034300dcbaf48bc",
+    "results/core_current_head_q162_diagonal_endpoint_force_join/q162.py": "7232720d8440c69b9dfc3a0931dd6ae3af0a6d16d317a88bb4fbbe1e076f6db8",
+    "results/core_current_head_q162_diagonal_endpoint_force_join/test_audit.py": "17f2581ea23116cf2b3568ddcb4579d5dbdba04a5103072296c55593c48f3ba0",
+    "results/core_scale_compatible_corner_force_replay/README.md": "c64e5c9c6c7f31f6b1f194ae013c789ac32b7a58c495c29719db3ff1ee05f71a",
+    "results/current_endpoint_jets/README.md": "81689cb2aa3d57fca23d997bdd184bab49ce0820aaa3031f5138e7a917841229",
+    "results/current_localized_force/README.md": "fbc568355f9f41cb9a82bc760bd8a235d56a73791ff4bf8ad9f1e284ead5041f",
+    "results/endpoint_foundation/README.md": "3e45642afe62a2bd50dd74d88a210a988f0ab67438d570d1c885efd9e175800d",
+    "results/force_foundation/README.md": "9fd97cb4536f2b459eb3bc451bd9f6c3a3a9e453e158c11ea72bca8b60d76bce",
+    "results/localized_force_extension/README.md": "3526b5b5043ff16f4e4664957885560574f98b194de9e8fd4a165ceea7319989"
+  },
+  "status": "Q162-physical-diagonal-endpoint-localized-force-chain-joined",
+  "symbolic": {
+    "P6_complete_diagonal_endpoint_localized_force_contract_discharged": true,
+    "P7_comparison_and_core_exclusion_replayed": false,
+    "correction": "Q153-Q155 were conditional because their physical source/target/tail inputs had not been closed together; Q161 now supplies those inputs on the same field and gauge",
+    "established": "one locally finite divergence-free complete-potential field has complete residual flat in every fixed Cartesian jet; its potential, direct swirl and fixed-gauge pressure have compatible one-sided jets on every punctured terminal compact; exact localization gives zero initial velocity, one compact smooth global force, and the preterminal energy and integrated-dissipation estimates",
+    "historical_frozen_records_modified": false,
+    "next": "replay fixed-gauge pressure recovery, expanding-ball comparison and the protected-core lower bound on this exact localized field and force, respecting the order T<1, R to infinity, then tau to zero",
+    "scope": "same-object analytical composition of the named continuum providers; the singular terminal origin is not regularized, exterior time Taylor series have zero radius, and no future velocity or pressure is constructed",
+    "status": "Q162-physical-diagonal-endpoint-localized-force-chain-joined",
+    "unconditional_competitor_exclusion_or_blowup_certified": false
+  }
+}
