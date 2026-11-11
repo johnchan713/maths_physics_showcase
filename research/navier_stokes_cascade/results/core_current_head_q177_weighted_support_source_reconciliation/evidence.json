@@ -1,0 +1,127 @@
+{
+  "closure": {
+    "edges": 1444,
+    "nodes": 423,
+    "source_bindings": 5706
+  },
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/coefficient_support_foundation/evidence.json": "c2765404ee77a58d1879d138fd0d137f29ac3e9a2fb671025a80dc0b58342827",
+    "results/compact_jet_envelope/evidence.json": "304c78d3a0882d80305c1e37b0e5badc926c6f2e8abed6ecd37776a4cf5931fd",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/evidence.json": "f8fd6ff0034c26e26c9dbcfd042b0ea8a348ac3dff224516043c312586888ac6",
+    "results/global_pressure_moment_foundation/evidence.json": "1fa0851e09081c1e9ea7e198c7e2f747ffb6aab7391f9141d2717a178e58503e",
+    "results/loop_modulation_bounds/evidence.json": "89822b9058906cb2638d8a74f5a024f876b7af7faad4ece73fde71d48f0fbfb1",
+    "results/prescribed_continuation_foundation/evidence.json": "33a4bbbac554dd669d2177dc86d8c1370b947082d3f24fb78309ffdab2e2fc80",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/repair_state_bounds/evidence.json": "78d12a7000cf0ef78a60ea05ee76ef292e551d5f5c9e6d72af6b35eca015632a",
+    "results/weighted_stress_foundation/evidence.json": "5033fd870260a6561b9e4a2c342a9cc67365d077c8acc802e32a2a08de59882a"
+  },
+  "parent": "d125a9aeec0eec74cea0ebbcc7d63da36825be74",
+  "review": {
+    "checks": {
+      "Q176_left_selected_suprema_as_unrecomputed": true,
+      "actual_pulse_and_complete_mean_residual_are_not_promoted": true,
+      "all_five_global_moments_and_same_gauge_pressure_are_joined": true,
+      "all_provider_statuses_match": true,
+      "compact_envelope_is_analytically_bounded": true,
+      "external_or_formal_independent_certificate_remains_absent": true,
+      "loop_and_repair_constants_are_supplied_in_sequence": true,
+      "positive_order_inverse_and_supports_are_joined": true,
+      "prescribed_continuation_has_all_fixed_jets_relative_to_exact_core": true,
+      "reserved_pressure_and_leading_radial_memory_are_not_erased": true,
+      "same_frequency_regional_cone_is_joined": true,
+      "selected_frequency_is_conditionally_accepted": true,
+      "weighted_background_edges_are_joined_at_all_fixed_orders": true,
+      "weighted_first_stress_is_smooth_at_eta_zero": true,
+      "whole_compact_and_exterior_inputs_are_composed": true
+    },
+    "correction": {
+      "Q176_missing_selected_supremum_route_was_too_broad": true,
+      "external_independent_validation_of_exact_core_and_finite_lemmas_still_open": true,
+      "historical_frozen_evidence_modified": false,
+      "in_repository_conditional_analytic_route_already_supplies_selected_inputs": true
+    },
+    "established": {
+      "all_fixed_weighted_first_stress_and_background_edges": true,
+      "conditional_selected_input_frequency_and_cone_chain": true,
+      "finite_coefficient_and_reserved_velocity_supports_with_pressure_memory": true,
+      "same_root_global_pressure_and_five_moments": true
+    },
+    "frequency_acceptance": {
+      "G": 4,
+      "cone_absorption": true,
+      "cone_absorption_slack": 1152921504069976064,
+      "log_threshold_below_32_G4": true,
+      "log_threshold_slack": 3324
+    },
+    "linear_inverse": {
+      "E_inverse_upper": "393781/500",
+      "U_inverse_upper": "2",
+      "max_inverse_upper": "393781/500",
+      "strict_inverse_gate": true,
+      "target": "800"
+    },
+    "next": "source-audit physical_pulse_foundation and the Q149 same-profile join, retaining the sourced-inverse input-class boundary; then audit complete covariance means with radial and axial velocity and Pi1/Pi2",
+    "outer_quotient_fixture": {
+      "cubic_coefficient": "13/8",
+      "second_eta_derivative": "52",
+      "third_delta_derivative": "39/4"
+    },
+    "provider_status_checks": {
+      "annular_exterior_foundation": true,
+      "coefficient_support_foundation": true,
+      "compact_jet_envelope": true,
+      "core_current_head_q176_modulation_repair_dependency_audit": true,
+      "global_pressure_moment_foundation": true,
+      "loop_modulation_bounds": true,
+      "prescribed_continuation_foundation": true,
+      "regional_cone_join": true,
+      "repair_state_bounds": true,
+      "weighted_stress_foundation": true
+    },
+    "reserved_pressure_fixture": {
+      "Pi1": "34/5",
+      "Pi2": "11",
+      "higher_pressure": "0"
+    },
+    "scope": {
+      "actual_huge_fields_or_scales_materialized": false,
+      "complete_covariance_mean_residual_or_blowup": false,
+      "provider_theorems_replaced_by_tests_or_numerical_diagnostics": false,
+      "unconditional_uniform_actual_pulses": false
+    },
+    "support_geometry": {
+      "i3_right": "51/20",
+      "i4_left": "6",
+      "i4_right": "11",
+      "reserved_gap": "3",
+      "strict_separation": true,
+      "velocity_edge": "3"
+    }
+  },
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/coefficient_support_foundation/README.md": "df4b656a5e83d45e45c19b3330b66537e35acd24782d818818b59c0ac848d84d",
+    "results/compact_jet_envelope/README.md": "b0597dab919b3cf0a233b066d14a977385f530b2575d137fc75b3c53d996d915",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/README.md": "5d915801afac31045d896b1f3741a7494db8ef96e334aeb0e63d46656e01aeae",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/README.md": "05f1fa9ccf12a4b042be91ddc8865dfac0247437fdec41c22e48fb408eeccba2",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/audit.py": "036ea6ae9da86d760b8adafb5d989a8719ee6d083cf089b731bc119c27039441",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/q177.py": "5f2321e7e48005c7f092b5963df7f12c74640c6aa74e59149aa14e79fea25041",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/test_audit.py": "cd4f2e1749fc3029578f3b3d8006f306e930c956e3a03ae589407c0a64739016",
+    "results/global_pressure_moment_foundation/README.md": "d473b97f5200affbf5035a9ca585bd5d860c472a9ad098d60158815f7290ad1b",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/prescribed_continuation_foundation/README.md": "fa32edfdb1093b444542dda0b98db4efe3ae02d07550ba5d08ad9ccab2698728",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/repair_state_bounds/README.md": "163dce199a65acd22ef68ee7d906a112c1f8dbcb698000f40df848a424af8a4c",
+    "results/weighted_stress_foundation/README.md": "18d60471dd6d794f440e184375fe3d64d1787c854cdd67bc840878a9e37f0f16"
+  },
+  "status": "Q177-selected-input-weighted-stress-and-reserved-support-route-reconciled",
+  "symbolic": {
+    "correction": "Q176's missing selected-profile supremum frontier was too broad as an in-repository route claim; the missing qualification is independent validation of the retained exact-core and finite existence/inverse/gap lemmas",
+    "established": "the repository already supplies a conditional analytical selected-input/frequency/cone chain, exact same-gauge five-moment pressure identities, all-fixed weighted first-stress edges, and separated finite coefficient/reserved-velocity supports retaining Pi1/Pi2",
+    "historical_frozen_records_modified": false,
+    "obstruction": "no test or diagnostic independently certifies those continuum providers, and this checkpoint does not audit the actual primary pulse theorem, sourced nonlinear inverse inputs, complete covariance means or the full residual",
+    "status": "Q177-selected-input-weighted-stress-and-reserved-support-route-reconciled",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

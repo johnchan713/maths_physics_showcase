@@ -6,15 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q176 compact modulation and exact-repair dependency audit](core_current_head_q176_modulation_repair_dependency_audit/README.md).
-The same finite-frequency moving-phase map and exact five-row repair give a
-valid conditional all-order implication, with strict pointwise-Jacobian and
-cone-absorption inequalities and complete pressure memory. Q176 also corrects
-the coarse foundation order: low-order regional acceptance precedes the
-all-order same-map theorem, while `matching_root_foundation` is a later
-quantitative reaudit. The selected-profile continuation and regional input
-suprema remain retained continuum premises. No unconditional pulse, residual,
-force or blow-up conclusion follows.
+Latest source audit: [Q177 selected-input, weighted-stress and reserved-support reconciliation](core_current_head_q177_weighted_support_source_reconciliation/README.md).
+Q177 corrects Q176's overly broad missing-input frontier: the frozen
+continuation, compact-envelope, loop, repair and regional providers already
+give a conditional analytical selected-frequency cone route. It joins that
+route to the same-gauge five global moments, all-fixed weighted first-stress
+edges, and separated finite coefficient/reserved-velocity supports while
+retaining the nonzero `Pi1/Pi2` memory. The exact core and finite
+existence/inverse/gap lemmas remain explicit, independently uncertified
+premises. No unconditional pulse, residual, force or blow-up conclusion
+follows.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
 The broad foundation obstruction left by the explicit-tail join is now split
