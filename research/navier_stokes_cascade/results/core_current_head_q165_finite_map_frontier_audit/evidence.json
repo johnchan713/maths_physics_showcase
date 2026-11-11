@@ -1,0 +1,294 @@
+{
+  "closure": {
+    "edges": 1349,
+    "nodes": 405,
+    "source_bindings": 5505
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/evidence.json": "87611e138ed2df71bd15f3ffe4a3b0997e206fe0bfa3324f77a53d4670a30c30",
+    "results/core_current_head_q1_exact_map_join/evidence.json": "2163895c04626750c32ba4df499e1a7dd95c4aed54b06753da5cc402b3622961",
+    "results/core_current_head_q2_regional_gap_join/evidence.json": "64f62c4bf9c0cd36306bf028e63f8293626e494e5f85bd6b1336b05694af59a7",
+    "results/core_current_head_q3_full_frame_join/evidence.json": "c2d4e74e82ce44940b6101fb7e445553c1a70acb5679495d24d1db8a8311b9c7",
+    "results/core_current_head_q4_fixed_profile_join/evidence.json": "1d4bcbc2aeaec87cec83917079276c286bce9f83470c560d287c4092456e77f1",
+    "results/core_current_head_q5_weighted_inverse_source_join/evidence.json": "c72458f8e1ca2ad2d8901b9cfa0dd3c2953e7a8d69fcd8a948816dae658d89c3"
+  },
+  "frame": {
+    "budget": {
+      "H": "41/12",
+      "Kframe": "99",
+      "dstar": "1/404",
+      "exponential_power": 4,
+      "normal_reciprocal": "103424/961",
+      "picard_index": 1003912,
+      "picard_next_ratio": "5788562273/11577124716",
+      "tangent_constant": "8019"
+    },
+    "moving_normal_pressure": {
+      "moving_normal_over_i": "1/28",
+      "source_normal_over_i": "0",
+      "total_without_K_over_i": "1/28"
+    },
+    "moving_normal_pressure_retained": true,
+    "old_numeric_Cphi_gate_required": false,
+    "picard_factorial_ratio_at_most_one_half": true,
+    "positive_normal_frame_and_diffusion_denominators": true,
+    "potential_and_pressure_cutoff_commutators_retained": true,
+    "pure_normal_source_pressure": {
+      "moving_normal_over_i": "0",
+      "source_normal_over_i": "2/5",
+      "total_without_K_over_i": "2/5"
+    },
+    "unprojected_source_pressure_retained": true,
+    "unspecified_historical_first_band_certified": false
+  },
+  "frontier": [
+    {
+      "id": "P1",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P2",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P3",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P4",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P5",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P6",
+      "status": "closed-relative-to-named-providers"
+    },
+    {
+      "id": "P7",
+      "status": "closed-as-conditional-consequence-by-Q163"
+    },
+    {
+      "id": "U1",
+      "status": "closed-by-Q164-core-pressure-audit"
+    },
+    {
+      "id": "U2",
+      "status": "closed-by-Q165-finite-map-audit"
+    },
+    {
+      "id": "U3",
+      "status": "next-Q6-complete-residual-audit"
+    }
+  ],
+  "parent": "6e0764b0e0eea89b054019e7cf140dc178c9f83f",
+  "projector": {
+    "actual_support_strictly_inside_hull": true,
+    "all_six_moments_exact": true,
+    "crho_Z_times_P_retained": true,
+    "fixed_order_majorant": "285922",
+    "moving_pressure_memory": {
+      "Jz_Z": "17/9",
+      "crho_Z_times_P": "7/15",
+      "crho_times_P_Z": "143/24",
+      "total_without_epsilon": "2993/360"
+    },
+    "projector_rows": [
+      {
+        "actual_support": [
+          "5/8",
+          "7/8"
+        ],
+        "hull": [
+          "1/2",
+          "1"
+        ],
+        "moment": "1",
+        "reciprocal_A2": "7/10",
+        "reciprocal_bound": "1",
+        "strict_support": true
+      },
+      {
+        "actual_support": [
+          "5/4",
+          "7/4"
+        ],
+        "hull": [
+          "1",
+          "2"
+        ],
+        "moment": "1",
+        "reciprocal_A2": "7/10",
+        "reciprocal_bound": "1",
+        "strict_support": true
+      },
+      {
+        "actual_support": [
+          "5/2",
+          "7/2"
+        ],
+        "hull": [
+          "2",
+          "4"
+        ],
+        "moment": "1",
+        "reciprocal_A2": "7/10",
+        "reciprocal_bound": "1",
+        "strict_support": true
+      },
+      {
+        "actual_support": [
+          "5/8",
+          "7/8"
+        ],
+        "hull": [
+          "1/2",
+          "1"
+        ],
+        "moment": "1",
+        "reciprocal_A2": "7/10",
+        "reciprocal_bound": "1",
+        "strict_support": true
+      },
+      {
+        "actual_support": [
+          "5/4",
+          "7/4"
+        ],
+        "hull": [
+          "1",
+          "2"
+        ],
+        "moment": "1",
+        "reciprocal_A2": "7/10",
+        "reciprocal_bound": "1",
+        "strict_support": true
+      },
+      {
+        "actual_support": [
+          "5/2",
+          "7/2"
+        ],
+        "hull": [
+          "2",
+          "4"
+        ],
+        "moment": "1",
+        "reciprocal_A2": "7/10",
+        "reciprocal_bound": "1",
+        "strict_support": true
+      }
+    ],
+    "same_choice_recompute_after_projector_selection": true,
+    "uniformity_over_arbitrary_profiles_or_all_orders_claimed": false
+  },
+  "providers": {
+    "Q164_U2_frontier_was_stale_relative_to_live_Q2_Q5_chain": true,
+    "Q2_regional_and_factored_edge_contract_bound": true,
+    "Q3_full_frame_and_whole_path_contract_bound": true,
+    "Q4_fixed_projector_and_compensator_contract_bound": true,
+    "Q5_weighted_inverse_and_log_source_contract_bound": true,
+    "Q6_complete_residual_replayed_here": false
+  },
+  "regional": {
+    "absolute_flat_edge_stress_infimum": "0",
+    "all_same_band_rows_positive": true,
+    "corrected_outer_ramp_floor": "0.58615931165792861430599575312569545370475491670969128617912039406251195084770282",
+    "exact_shared_endpoints": true,
+    "floor_exceeds_one_half": true,
+    "positive_absolute_flat_edge_floor_claimed": false,
+    "region_count": 10,
+    "same_band_radius": "33/387618781940",
+    "same_band_rows": {
+      "D": "1/550",
+      "F": "1/10",
+      "minus_gtheta": "1/14",
+      "orientation": "1/390",
+      "relative_stress": "1/2",
+      "same_tilt_cone": "33/387618781940"
+    },
+    "smooth_edge_directions": true,
+    "uncertified_historical_existing_tilt_gate_used": false,
+    "weighted_flat_edge_bound": "|T0|>=c*zeta"
+  },
+  "remaining_gate": {
+    "Q6_current_head_residual_audited_here": false,
+    "U1_core_contraction_and_leading_pressure": "closed-by-Q164",
+    "U2_finite_regional_frame_projector_inverse_source_chain": "closed-by-current-head-Q2-Q5-providers-and-Q165-audit",
+    "corner_endpoint_localization_force_energy_comparison_promoted_here": false,
+    "dependency_hashes_or_passing_tests_suffice": false,
+    "next": "audit Q6's complete six-group local residual replay on the same Q164-Q165 object, retaining time, unit viscosity, full pressure, both nonlinear cross orientations, the new square, every potential/pressure cutoff derivative, repeated covariance means and fresh axial velocity",
+    "unconditional_theorem_gate_closed": false
+  },
+  "source_hashes": {
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/README.md": "69d021b3b916967a81c361d8b2abdb980767ff995373691fa76f7fabd593cf55",
+    "results/core_current_head_q165_finite_map_frontier_audit/README.md": "5640ea97b01b4393db1e2158f757934af656d6fa88e3402117a8f2dd3d6a56ce",
+    "results/core_current_head_q165_finite_map_frontier_audit/audit.py": "39dff0670bc1c0293468662227e45127a9014b2efcca40165431802119c510bc",
+    "results/core_current_head_q165_finite_map_frontier_audit/q165.py": "3b0754d3af3b92ef50c202ea193c15e8acef208f0b00dce18b11993d843c58e8",
+    "results/core_current_head_q165_finite_map_frontier_audit/test_audit.py": "fe25580500a496459014491d2e7410f9c1f436b74a4ded685502485af62a0161",
+    "results/core_current_head_q1_exact_map_join/README.md": "541d3b84400dfa3afddb532e90ec474d14d40e3d48200a269487e1be8b2b0a5e",
+    "results/core_current_head_q2_regional_gap_join/README.md": "a75b85f7acf75f692734a0c9e096c52d6cc7bd25e27cc681adc36ad66c447ae9",
+    "results/core_current_head_q3_full_frame_join/README.md": "0d99b23c53ebe5e2a58c1db5f99ec498cb000f4a2900192f7524bdd93808608e",
+    "results/core_current_head_q4_fixed_profile_join/README.md": "acee08b0752b8d889b937682eaa3853d81acf80cdb6bef2a692e5ff954f3c3db",
+    "results/core_current_head_q5_weighted_inverse_source_join/README.md": "6ada1ea7416077edfb0aed83a4be54c163368616498523ccae5226042ade39af"
+  },
+  "status": "Q165-current-head-finite-map-and-weighted-source-chain-audited",
+  "symbolic": {
+    "Q6_complete_residual_audited_here": false,
+    "U2_finite_map_and_weighted_source_chain_closed": true,
+    "correction": "Q164's U2 frontier was stale: current-head Q2--Q5 already bind the regional gaps, full frame/path domain, fixed same-choice projectors and log-renormalized weighted inverse/source chain; Q165 joins them directly to Q164's audited core",
+    "established": "the valid weighted flat-edge bound and positive same-band radius, finite full-frame constrained ODE with complete pressure, exact fixed-profile projector moments/supports, and a strict log-renormalized source reserve after rejecting the zero-margin pure-power route",
+    "historical_frozen_records_modified": false,
+    "next": "audit Q6's complete six-group local residual replay on the same Q164-Q165 object, retaining time, unit viscosity, full pressure, both nonlinear cross orientations, the new square, every potential/pressure cutoff derivative, repeated covariance means and fresh axial velocity",
+    "scope": "same-object analytical join relative to the named continuum providers; exact fixtures and evidence hashes are regressions, not proofs of actual continuum infima or selected-field values",
+    "status": "Q165-current-head-finite-map-and-weighted-source-chain-audited",
+    "unconditional_pulse_residual_force_exclusion_or_blowup_certified": false
+  },
+  "weighted_inverse": {
+    "A1_axial_velocity_retained": true,
+    "complete_moving_pressure_and_Pi1_Pi2_retained": true,
+    "fixed_stage_domain": {
+      "derivative_uniform_constant_required": false,
+      "finite_log_degree": 37,
+      "jet_fixed_first": true,
+      "stage_fixed_first": true,
+      "stage_uniform_constant_required": false,
+      "target_fixed_first": true
+    },
+    "log_reserve": {
+      "constant_exponent": "13690000000",
+      "gain": "1/20000000",
+      "retained": "1/40000000",
+      "spent_on_logs": "1/40000000"
+    },
+    "old_pure_power_margin_is_exactly_zero": true,
+    "physical_characteristic_shift_retained": true,
+    "pure_power_equality": {
+      "B": "99999/100000",
+      "D": "49999/25000",
+      "equality": true,
+      "nu": "149997/50000",
+      "radial_viscosity": "149997/50000",
+      "source_margin": "0",
+      "viscosity_margin": "0"
+    },
+    "request_graph": {
+      "A0_with_extra_integration": 399997,
+      "A1_with_extra_integration": 200003,
+      "fast_radial_potential": 5,
+      "fast_tangential_or_axial": 4,
+      "prefast_source": 8,
+      "whole_axial_pressure_moment": 9
+    },
+    "retained_log_reserve_positive": true,
+    "stage_or_derivative_uniform_constant_required": false,
+    "two_edge_kernel": {
+      "inner": "4/49",
+      "interior": "1/4900",
+      "outer": "401/100",
+      "sum": "401/98"
+    }
+  }
+}
