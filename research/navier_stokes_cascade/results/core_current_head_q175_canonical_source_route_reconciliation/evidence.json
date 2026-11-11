@@ -1,0 +1,96 @@
+{
+  "closure": {
+    "edges": 1426,
+    "nodes": 421,
+    "source_bindings": 5680
+  },
+  "dependency_evidence_sha256": {
+    "results/canonical_finite_cycle_join/evidence.json": "2845cf27e214aac6784cc378e668c9aa4f8f135c1108871c7b0a7d1eb7c52ab6",
+    "results/core_current_head_q174_q5_operator_source_audit/evidence.json": "a62a84f41930a16cf12b0d194bc4cc7a5d2842427599e6224248950c934cd422",
+    "results/current_residual_ledger_audit/evidence.json": "d7ec24ec9270889d1ae0038ecdfd02996485a5c2e2af3e7d12386b200c2869e3",
+    "results/current_target_cycle_bridge/evidence.json": "402de981f9b3b1c2ae57360e8602552e9b595e444113b33d4fcb4ffd2d2d6c14",
+    "results/explicit_tail_complete_join/evidence.json": "41f353f45c998fc99e2bb81027c412d3834fa14ed32c983421db9a7f02fc3aa2",
+    "results/foundation_bundle_route/evidence.json": "8e585d7b90ba9938fea314a1d2efc13be394011e7baa285145e3675fc6be4f24",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "parent": "479d3c5349d4407f6f4fba38b951b289e25647f7",
+  "review": {
+    "checks": {
+      "Q174_operator_and_typed_weight_correction_retained": true,
+      "Q174_physical_family_transfer_rejection_retained": true,
+      "all_provider_statuses_match": true,
+      "canonical_conditional_typed_route_closes_without_family_transfer": true,
+      "canonical_cycle_is_rebuilt_on_its_own_family": true,
+      "complete_finite_residual_is_already_conditionally_joined": true,
+      "complete_pressure_memory_is_retained": true,
+      "current_target_bridge_supplies_full_weight_targets_and_moments_conditionally": true,
+      "foundation_route_is_acyclic_and_same_object": true,
+      "independent_continuum_validation_remains_open": true,
+      "polynomial_S_cost_is_a_fixed_logarithmic_degree": true,
+      "source_grammar_supplies_harmonic_half_weight_inputs_conditionally": true
+    },
+    "conditional_conclusion": {
+      "harmonic_bound": "for each fixed stage and jet, the canonical f/P source has epsilon power, zeta^(1/2), finite edge poles and a finite logarithmic degree",
+      "mean_target_bound": "for each fixed stage and jet, the recomputed canonical Xi target has epsilon power, full zeta, exact tangential moments and complete pressure memory",
+      "residual": "the same canonical family has a conditional complete finite residual bound with viscosity, cutoffs, both crosses, squares and all current interactions"
+    },
+    "correction": {
+      "Q174_family_nonidentification_obstruction_remains_valid_for_transfer": true,
+      "Q174_instruction_to_replay_Q6_was_already_satisfied_conditionally": true,
+      "Q174_same_family_source_frontier_was_stale": true,
+      "canonical_route_closes_by_fresh_same_family_rebuild_not_transfer": true,
+      "historical_Q174_evidence_modified": false
+    },
+    "log_control": {
+      "S_power": 7,
+      "bound_holds": true,
+      "log_degree": 14,
+      "ratio": "13937965749081639463459823920405225941237760000000000000000000000000000/165821179423881807155297483720788828689",
+      "uniform_bound": "163840000000000000000000000000000"
+    },
+    "next": "independently validate the compact modulation/exact-repair theorem with its continuation and matching-root inputs on the selected profile, then recheck its annular/exterior and regional-cone joins; do not repeat the already routed canonical source or Q6 residual checkpoint",
+    "provider_status_checks": {
+      "canonical_finite_cycle_join": true,
+      "core_current_head_q174_q5_operator_source_audit": true,
+      "current_residual_ledger_audit": true,
+      "current_target_cycle_bridge": true,
+      "explicit_tail_complete_join": true,
+      "foundation_bundle_route": true,
+      "source_envelope_edge_audit": true
+    },
+    "scope": {
+      "conditional_canonical_typed_source_membership_closed_relative_to_named_analytic_providers": true,
+      "historical_first_band_or_physical_family_identified": false,
+      "provider_theorems_independently_reproved_here": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup_proved": false,
+      "uniform_in_stage_contraction_or_uncontrolled_diagonal_proved": false
+    },
+    "typed_route": {
+      "conditional_typed_source_route_closed": true,
+      "independently_validated_typed_source_route": false,
+      "physical_to_canonical_transfer_used": false
+    }
+  },
+  "source_hashes": {
+    "results/canonical_finite_cycle_join/README.md": "ab1076960e4356f4a4388c32f35cd5424168dd67db9bb3716d7f6937cd94c69a",
+    "results/core_current_head_q174_q5_operator_source_audit/README.md": "0dfeea1f52c67c04ad24423fe044a98a7ece6ff71e8dac3167ecd08a8aa53d9c",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/README.md": "5d20478c5b79e04378b2d36dab80476e39b5549d9779a21d0040e60530a28896",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/audit.py": "359ebf8d4f2bf72099a6132f5fbefaab58bcc44cb12ffaf2baaf30977280b4e1",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/q175.py": "8dc2b0e8639ed6a146d3fbdf074aaee9a4bb848d0339273e1a0e561cda09fc48",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/test_audit.py": "3ccc2623d023bc6fd3b359a234c2cc0095df73b039d1ab4b57fc1316ead63d62",
+    "results/current_residual_ledger_audit/README.md": "eb38445afe8c34fdd3f18245da6f3dee30831051808bb7d43e69c6aba3e5e842",
+    "results/current_target_cycle_bridge/README.md": "0c96ac838ab7bc1861f5b178164318400eeebdd97c6f2d9855ba2200277830f2",
+    "results/explicit_tail_complete_join/README.md": "467047556b72d661b8929ee283debb23a2d8de4721f27613f4ee2dd88fd6701c",
+    "results/foundation_bundle_route/README.md": "cd8aa2473d5ee59576d0f79ee5fbf65347df7c70c6e14bf8908cf84a094a4ad6",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4"
+  },
+  "status": "Q175-canonical-typed-source-route-reconciled-and-independent-frontier-restored",
+  "symbolic": {
+    "correction": "Q174 correctly rejected transfer from the inherited physical family but incorrectly left the canonical same-family typed source route open; that route is rebuilt independently on canonical Hc, ac and current means",
+    "established": "the pre-existing same-family canonical source grammar, current-target recurrence and finite-cycle bridge conditionally close Q174's two typed source gates, and the complete residual was already conditionally joined",
+    "historical_frozen_records_modified": false,
+    "obstruction": "the remaining frontier is independent continuum validation of the routed foundation theorems, beginning with compact modulation/exact repair and its continuation, matching-root and cone-join inputs, not another family-identification or residual replay",
+    "status": "Q175-canonical-typed-source-route-reconciled-and-independent-frontier-restored",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
