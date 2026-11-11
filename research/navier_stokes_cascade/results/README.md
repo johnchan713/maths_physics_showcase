@@ -6,19 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q180 physical target/source simultaneous induction](core_current_head_q180_target_source_simultaneous_induction/README.md).
-Q180 binds Q179's physical seed to the corrected coupled recurrence. The
-generated source and next covariance target cannot be proved sequentially:
-each uses the other within the next physical cycle. The simultaneous step has
-source gain `1/2-3*kappa`, saturated by both full-linear rows, while the exact
-current-state target gains `1/2-kappa`, leaving `2*kappa` slack. It retains all
-six covariances, axial velocity, `Pi1/Pi2`, compact and moving pressure, both
-exact moments, zero-Haar data, the reserved hull and the full edge weight.
-Thus P3--P5 close for every finite physical cycle relative to the named
-continuum source and inverse estimates, with no uniformity in cycle, harmonic,
-jet or requested tail power. The complete diagonal, endpoint and localized
-force have not been replayed here; no unconditional residual or blow-up claim
-follows.
+Latest source audit: [Q181 physical diagonal, endpoint and localized-force replay](core_current_head_q181_diagonal_endpoint_force_replay/README.md).
+Q181 binds Q180's coupled physical induction to the complete-potential
+diagonal and the later corrected endpoint/localization ledgers. For every
+fixed jet and power, all six residual groups have strict regular/cross margin
+`49997/40000000`; `A0` and `A1` each retain their own independent logarithmic
+margin `1/40000000`. Residual flatness is kept separate from Q154's punctured
+endpoint field bounds. Exact divergence-free localization retains twelve
+nonzero pressure, viscosity and nonlinear groups, while the apparent
+thirteenth vanishes algebraically. One compact smooth force and the zero-safe
+preterminal energy estimate follow conditionally. The terminal origin, future
+velocity/pressure, global residual improvement, comparison, exclusion and
+blow-up remain unproved.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
 The broad foundation obstruction left by the explicit-tail join is now split
