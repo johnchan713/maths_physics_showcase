@@ -6,15 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q172 Q2/Q3 source and uniform-frame correction](core_current_head_q172_q2_q3_source_audit/README.md).
-The ten Q2 regional gaps, corrected outer ramp, compact five-row pressure
-repair and factored flat edges trace to analytical continuum providers.  The
-audit also corrects Q3: compactness on each member of an infinite band tail
-does not make the frame constants uniform.  The later Q23 finite-head and
-analytic-tail estimate repairs that upper-propagator step on the unchanged
-field.  Fixed projectors/compensators, weighted inverses, complete covariance
-means and the physical residual remain unproved; no unconditional pulse or
-blow-up conclusion follows.
+Latest source audit: [Q173 Q4 fixed-profile source boundary](core_current_head_q173_q4_source_audit/README.md).
+The fixed compensator and explicit rho-squared projectors retain uniform
+fixed-order jets, exact weighted moments, strictly enclosed actual supports
+and the complete moving-pressure product on the Q172-corrected tail.  The
+audit also corrects the scope of the same-choice recomputation: it is a
+conditional algebraic/norm-chain rebuild and does not prove the actual
+generated-source weighted continuum supremum.  That precise inequality,
+the compact and slow inverse domains, complete covariance means and the
+physical residual remain open; no unconditional pulse or blow-up conclusion
+follows.
 
 Latest checkpoint: [foundation-bundle route closure](foundation_bundle_route/README.md).
 The broad foundation obstruction left by the explicit-tail join is now split

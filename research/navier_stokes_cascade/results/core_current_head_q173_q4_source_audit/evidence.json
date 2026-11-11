@@ -1,0 +1,188 @@
+{
+  "closure": {
+    "edges": 1401,
+    "nodes": 418,
+    "source_bindings": 5623
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q172_q2_q3_source_audit/evidence.json": "32785539ee020495ce6a9bcfaadfa1a9a6c989f15446274b626b28587e169eda",
+    "results/core_current_head_q4_fixed_profile_join/evidence.json": "1d4bcbc2aeaec87cec83917079276c286bce9f83470c560d287c4092456e77f1",
+    "results/core_finite_support_closure/evidence.json": "b58b5e36e18e5ad5938ff81c12db9706d1c229b5e4d549b3604f58bd1d6e7867",
+    "results/core_fixed_profile_projector_join/evidence.json": "08ee8eac5d445843295dba79a45ff82e587b41d0e285d63151beb8a49696c8b2",
+    "results/core_fixed_profile_projector_reconstruction/evidence.json": "254afd864a80b8d2da3e0d81554fcc31cff8659d8a22607f76856bad3d1cd18d",
+    "results/core_fixed_profile_tame/evidence.json": "d06ccf98dad28493112700e3bc7041adfddb52a232733a7443f3934149ac8851",
+    "results/core_log_pullback_projector_join/evidence.json": "7379c94a13f593ce155fd5badc68fa7e7eb0df8f5cef2f62e66c83414c403001",
+    "results/core_reserved_geometry_recheck/evidence.json": "b911312cddc119be917f88d18161ea91b2fae7b67a2c679ed35ec96740087820",
+    "results/core_rho_projector_signed_recompute/evidence.json": "d1ffd1f8709d7705b607f093e819d9177f6d002414d75843b7a8a807ec3988d6",
+    "results/core_rho_squared_projector_realization/evidence.json": "a92f80a3678398fc0738461f441a4fb419be8328793bb089b0b93e30499943f9"
+  },
+  "parent": "e8f403601c85d2942f4cd5bb2d9c127aa5a35f7e",
+  "review": {
+    "checks": {
+      "Q172_corrected_tail_is_direct": true,
+      "actual_support_is_strict_not_the_enclosure": true,
+      "all_provider_statuses_match": true,
+      "bounded_operators_do_not_supply_source_membership": true,
+      "finite_supplied_control_closes_only_its_fixture": true,
+      "missing_actual_generated_source_supremum_blocks_promotion": true,
+      "moving_pressure_keeps_crho_Z_P": true,
+      "projector_moments_are_exact": true
+    },
+    "first_open_gate": {
+      "fixture": {
+        "actual_weighted_supremum_supplied": false,
+        "epsilon_power": "1/8",
+        "gate_closed": false,
+        "order": 6,
+        "stage": 1
+      },
+      "inequality": "sup_{ell>=ell_*} epsilon_ell^{-b_j} max_{|alpha|<=R_j(m,N)} sup_{Omega_{j,ell}} zeta^{-1} delta^{p_{j,alpha}} |D^alpha F_{j,ell}| < infinity",
+      "logical_status": "not implied by fixed projector jets, support, exact moments or bounded inverse operators; it requires actual recomputed current-target/source bounds"
+    },
+    "next": "audit Q5 compact and slow inverse weighted domains on this fixed choice while retaining the generated-source gate as an explicit downstream premise",
+    "operator_counterexample": {
+      "finite_prefix_output_supremum": "32",
+      "finite_prefix_source_supremum": "32",
+      "operator_boundedness_implies_uniform_source_bound": false,
+      "prefix_outputs_strictly_increase": true,
+      "uniform_operator_bound": "1"
+    },
+    "pressure_memory": {
+      "Jz_Z": "17/9",
+      "crho_P_Z": "143/24",
+      "crho_Z_P": "7/15",
+      "total_without_epsilon": "2993/360"
+    },
+    "projector_controls": [
+      {
+        "actual_support": [
+          "5/8",
+          "7/8"
+        ],
+        "moving_enclosure": [
+          "1/2",
+          "1"
+        ],
+        "reciprocal_a2": "7/10",
+        "reciprocal_a2_bound": "1",
+        "strictly_enclosed": true,
+        "weighted_moment": "1"
+      },
+      {
+        "actual_support": [
+          "5/4",
+          "7/4"
+        ],
+        "moving_enclosure": [
+          "1",
+          "2"
+        ],
+        "reciprocal_a2": "7/10",
+        "reciprocal_a2_bound": "1",
+        "strictly_enclosed": true,
+        "weighted_moment": "1"
+      },
+      {
+        "actual_support": [
+          "5/2",
+          "7/2"
+        ],
+        "moving_enclosure": [
+          "2",
+          "4"
+        ],
+        "reciprocal_a2": "7/10",
+        "reciprocal_a2_bound": "1",
+        "strictly_enclosed": true,
+        "weighted_moment": "1"
+      },
+      {
+        "actual_support": [
+          "5/8",
+          "7/8"
+        ],
+        "moving_enclosure": [
+          "1/2",
+          "1"
+        ],
+        "reciprocal_a2": "7/10",
+        "reciprocal_a2_bound": "1",
+        "strictly_enclosed": true,
+        "weighted_moment": "1"
+      },
+      {
+        "actual_support": [
+          "5/4",
+          "7/4"
+        ],
+        "moving_enclosure": [
+          "1",
+          "2"
+        ],
+        "reciprocal_a2": "7/10",
+        "reciprocal_a2_bound": "1",
+        "strictly_enclosed": true,
+        "weighted_moment": "1"
+      },
+      {
+        "actual_support": [
+          "5/2",
+          "7/2"
+        ],
+        "moving_enclosure": [
+          "2",
+          "4"
+        ],
+        "reciprocal_a2": "7/10",
+        "reciprocal_a2_bound": "1",
+        "strictly_enclosed": true,
+        "weighted_moment": "1"
+      }
+    ],
+    "provider_status_checks": {
+      "core_current_head_q172_q2_q3_source_audit": true,
+      "core_current_head_q4_fixed_profile_join": true,
+      "core_finite_support_closure": true,
+      "core_fixed_profile_projector_join": true,
+      "core_fixed_profile_projector_reconstruction": true,
+      "core_fixed_profile_tame": true,
+      "core_log_pullback_projector_join": true,
+      "core_reserved_geometry_recheck": true,
+      "core_rho_projector_signed_recompute": true,
+      "core_rho_squared_projector_realization": true
+    },
+    "scope": {
+      "Q4_fixed_profile_geometry_source_audited_on_Q172_tail": true,
+      "actual_generated_source_weighted_suprema_proved": false,
+      "compact_slow_inverse_domain_audited_here": false,
+      "complete_covariance_means_or_residual_proved": false,
+      "same_choice_recomputation_is_conditional_norm_chain": true,
+      "unconditional_pulse_force_exclusion_or_blowup_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q172_q2_q3_source_audit/README.md": "4df9477f02e64d3d98c7a0d7833fb66b89ec2ae34deb539fda49497ff63a0dca",
+    "results/core_current_head_q173_q4_source_audit/README.md": "06be3ebff6b4defb1411552ea206cbefaa501d3a3bc2d8c7ad06e631327cbb4e",
+    "results/core_current_head_q173_q4_source_audit/audit.py": "91677c87902b27e1747b4275dcea5def86c0912d30f96017d8da08419d848868",
+    "results/core_current_head_q173_q4_source_audit/q173.py": "2173faa303cacae7c4e4efb2e76b8c345a7482547f298f11e65c3baf5caeb1e0",
+    "results/core_current_head_q173_q4_source_audit/test_audit.py": "1d992ce2156f5b105012616c66e538bc8ffa39a0a0eb6e7d32868543f1a60357",
+    "results/core_current_head_q4_fixed_profile_join/README.md": "acee08b0752b8d889b937682eaa3853d81acf80cdb6bef2a692e5ff954f3c3db",
+    "results/core_finite_support_closure/README.md": "5034221837ca97be051722e139a5f32d00967c2795a080390711fafcbadd3810",
+    "results/core_fixed_profile_projector_join/README.md": "6caedd6ba074a69d58ab0187af4c763bc13e717b626c0d9c37f2b4fcfad32162",
+    "results/core_fixed_profile_projector_reconstruction/README.md": "9251371fceb7192a68df7dfd3199f94695a206f4130dd2a47d6e71e29e7303ea",
+    "results/core_fixed_profile_tame/README.md": "6046cfdcf2540a7ce245b1abebeec00e0d57196dc719f84185c04fcbb5c10a6d",
+    "results/core_log_pullback_projector_join/README.md": "3bcaa9f21300865a984526a929ed5aa12761acf82858fceafa57ca12a9050bd4",
+    "results/core_reserved_geometry_recheck/README.md": "9427bd6d51a42cee4f562eadf1a1ed3bf21358af9a6fbac66cca4b6100e8a13f",
+    "results/core_rho_projector_signed_recompute/README.md": "a6c60a895b8baf61f76242ba7821096d16d117c550df4f5588ae7e28259d5958",
+    "results/core_rho_squared_projector_realization/README.md": "0377a4684cbfeda09154385063317f7931399bafa4ea19d029175a9c316b99de"
+  },
+  "status": "Q173-Q4-fixed-profile-source-audited-with-generated-source-boundary",
+  "symbolic": {
+    "correction": "Q4 same-choice recomputation is a conditional algebraic/norm-chain rebuild; it does not establish the actual recomputed generated-source weighted continuum suprema",
+    "established": "the fixed compensator and rho-squared projector jets, exact moments, strictly enclosed supports and full moving-pressure product are analytic on the Q172-corrected tail",
+    "historical_frozen_records_modified": false,
+    "obstruction": "bounded projector/inverse operators do not imply the actual F_{j,ell} weighted source inequality; that inequality remains a separate same-state premise",
+    "status": "Q173-Q4-fixed-profile-source-audited-with-generated-source-boundary",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
