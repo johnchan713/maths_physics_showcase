@@ -1856,6 +1856,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q187_actual_symbolic_q2_selector/evidence.json \
             --output navier_stokes_core_current_head_q187_ci.json
 
+      - name: Check Q188 compact repair hierarchy and continuum envelope frontier
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q188_compact_repair_hierarchy_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q188_compact_repair_hierarchy_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q188_compact_repair_hierarchy_audit/evidence.json \
+            --output navier_stokes_core_current_head_q188_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2462,6 +2469,7 @@ jobs:
             navier_stokes_core_current_head_q185_ci.json
             navier_stokes_core_current_head_q186_ci.json
             navier_stokes_core_current_head_q187_ci.json
+            navier_stokes_core_current_head_q188_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

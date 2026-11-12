@@ -1,0 +1,164 @@
+{
+  "closure": {
+    "edges": 1530,
+    "nodes": 438,
+    "source_bindings": 5936
+  },
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/collar_operator_envelope/evidence.json": "6284e397f6cdee992a5be197017222b322f577f995ff178059c0d5a30e467693",
+    "results/compact_jet_envelope/evidence.json": "304c78d3a0882d80305c1e37b0e5badc926c6f2e8abed6ecd37776a4cf5931fd",
+    "results/core_current_head_q187_actual_symbolic_q2_selector/evidence.json": "4a87f946453761477a09ee363783b881f08bf299d9d0cd92c944e802845d521f",
+    "results/explicit_coefficient_cutoff/evidence.json": "b8dbd4ac8db98696aeb8b25bea96f91ab43940c60af2fdf4730bc6bd424805b4",
+    "results/explicit_tilt_pulse_tail/evidence.json": "430fe9f055c92581a813530934ddc7f2561984dc5b179c8a5ca24601e7dda9e1",
+    "results/global_axial_angular_bound/evidence.json": "ab015d2c2b19a0fa83a81a149ef0d2f3bcde7e51d7a11cacbe0fc63bfa3cb97a",
+    "results/global_axial_source_envelope/evidence.json": "83f8eb3c4d995595c5257e153077c0e7ac7c2e9e0e967740f007e49fac16de93",
+    "results/global_swirl_envelope/evidence.json": "5868fa5e33e20100c9765d43b7c34bfb3440d1debaf0cfae60ebda67b4cb225e",
+    "results/loop_modulation_bounds/evidence.json": "89822b9058906cb2638d8a74f5a024f876b7af7faad4ece73fde71d48f0fbfb1",
+    "results/modulation_repair_all_order/evidence.json": "05ac3c9c9a3784abb2818d7b91f23c171ec4427d53173fba4cbc7fe062f2c16e",
+    "results/prescribed_continuation_foundation/evidence.json": "33a4bbbac554dd669d2177dc86d8c1370b947082d3f24fb78309ffdab2e2fc80",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/regional_stress_floor/evidence.json": "ac6e28a042667db642c3358cb41421fdff53a1ea6fa19fa6d0333bade6e8565d",
+    "results/repair_state_bounds/evidence.json": "78d12a7000cf0ef78a60ea05ee76ef292e551d5f5c9e6d72af6b35eca015632a",
+    "results/signed_pressure_source_moments/evidence.json": "9ee82436bd1067d32469ffd1c569bd2ac07f71f1f4a636a0fef8069e0c1361e9"
+  },
+  "parent": "06e77c9804e579c2d6acd18af03b0f0ac9797993",
+  "review": {
+    "checks": {
+      "all_provider_statuses_match": true,
+      "complete_pressure_memory_retained": true,
+      "continuum_boundary_not_promoted": true,
+      "later_provider_inventory_corrects_Q187_frontier": true,
+      "repair_frequency_hierarchy_rederived_exactly": true
+    },
+    "correction": {
+      "Q187_frontier_was_too_coarse_as_a_provider_inventory": true,
+      "annular_exterior_same_root_inputs_supplied": true,
+      "coefficient_cutoff_explicit": true,
+      "continuation_all_fixed_jets_supplied": true,
+      "global_axial_sources_explicit": true,
+      "independent_first_principles_reproof_completed_here": false,
+      "primitive_swirl_inputs_explicit": true,
+      "same_map_all_order_modulation_repair_supplied": true
+    },
+    "hierarchy": {
+      "A": 65536,
+      "accepted_gates": {
+        "coefficient_radius": "N > 4000*H^16*A^128",
+        "contraction": "N > 8*10^11*H^16 (checked with 16*10^11)",
+        "incoming_memory": "N > 512*A^6*H",
+        "modulation_transfer": "N >= 4*A*H",
+        "state": "N > 2*H^16*(1+2000*A^128)*G^64"
+      },
+      "all_exact_reductions_hold": true,
+      "checks": {
+        "cone_lipschitz_tolerance": true,
+        "contraction_log_constant": true,
+        "field_C1_perturbation_below_one": true,
+        "four_state_repair_bound": true,
+        "incoming_pressure_memory": true,
+        "modulation_transfer_frequency": true,
+        "positive_E_neighborhood": true,
+        "radius_log_constant": true,
+        "repair_constants_exact": true,
+        "root_contraction_exponent": true,
+        "root_radius_exponent": true,
+        "shear_error_absorbed": true,
+        "state_frequency_exponent": true,
+        "state_log_constant": true
+      },
+      "definitions": {
+        "Ccorr": "A^128",
+        "Cstate": "H^16",
+        "D": "H^16",
+        "G": "exp(A^32)",
+        "H": "exp(G^4)",
+        "N": "1+floor(H^32)",
+        "epsilon": "G^-64",
+        "r": "A^-128"
+      },
+      "scales_materialized": false
+    },
+    "pressure_memory": {
+      "all_order_provider_keeps_five_rows": true,
+      "forward_rows": [
+        "M",
+        "I",
+        "J",
+        "S",
+        "Cp"
+      ],
+      "four_row_repair_is_insufficient": true,
+      "later_pressure_identity": "same Pi_axis plus exact Cp equality gives the same pressure and integrated stress coordinates at every later radius",
+      "loop_moment_error": "m=32*A^4*H/N with Pi_axis unchanged",
+      "pressure": "Pi=Pi_axis+Cp",
+      "regional_provider_uses_exact_global_ledger": true,
+      "repair_target": "Bc+Q(c,c)=z_N(eta), all five normalized rows",
+      "right_endpoint_identity": "M=I=J=S=Cp=original as functions of eta"
+    },
+    "provider_status_checks": {
+      "annular_exterior_foundation": true,
+      "collar_operator_envelope": true,
+      "compact_jet_envelope": true,
+      "core_current_head_q187_actual_symbolic_q2_selector": true,
+      "explicit_coefficient_cutoff": true,
+      "explicit_tilt_pulse_tail": true,
+      "global_axial_angular_bound": true,
+      "global_axial_source_envelope": true,
+      "global_swirl_envelope": true,
+      "loop_modulation_bounds": true,
+      "modulation_repair_all_order": true,
+      "prescribed_continuation_foundation": true,
+      "regional_cone_join": true,
+      "regional_stress_floor": true,
+      "repair_state_bounds": true,
+      "signed_pressure_source_moments": true
+    },
+    "remaining_obstruction": {
+      "compact_envelope": "max of the required mixed-order <=2 field/moment/Pi norms, order <=1 (a,b,p1,p2) norms, E^-1, Hx^-1 and lambda^-1 must be <=A",
+      "frequency_or_repair_arithmetic_still_blocks": false,
+      "kind": "continuum-provider-validation, not a frequency inequality",
+      "regional_gap": "min{a, Pc-2, Pc-v, 2(Pc-v)^2-(v-2)Jc^2} >= A^-1 on the subsets where the last two expressions are required",
+      "same_profile_requirement": "both inequalities must be independently derived on the same selected continuation/root profile with all five moments and Pi_axis+Cp",
+      "tests_discharge_continuum_suprema": false
+    },
+    "scope": {
+      "all_provider_continuum_suprema_reproved_from_initial_equations": false,
+      "historical_first_band_recertified": false,
+      "low_order_compact_repair_hierarchy_closed_relative_to_actual_provider_bounds": true,
+      "same_map_pressure_complete_cone_join_bound": true,
+      "tests_are_continuum_proof": false,
+      "unconditional_force_exclusion_or_blowup_proved": false,
+      "uniform_actual_pulse_or_complete_residual_proved": false
+    }
+  },
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/collar_operator_envelope/README.md": "4afac9f2f93f93c59dc93644694e87059319474ba964f2e12d7027e09833384a",
+    "results/compact_jet_envelope/README.md": "b0597dab919b3cf0a233b066d14a977385f530b2575d137fc75b3c53d996d915",
+    "results/core_current_head_q187_actual_symbolic_q2_selector/README.md": "5c4f1ee7cf30af725af81107890ce9810a365dc0936253e9bcec1909cad191a1",
+    "results/core_current_head_q188_compact_repair_hierarchy_audit/README.md": "257d1060220de8a04bce8063be249f9fee705a9b71d41dd60864287b3fd36761",
+    "results/core_current_head_q188_compact_repair_hierarchy_audit/audit.py": "b8f9e3e7faab680cc798858e8be691a07356b6f9f51b619ea7a61c8bffa35ba2",
+    "results/core_current_head_q188_compact_repair_hierarchy_audit/q188.py": "c82645ff3c002c812c71d8bba3c39f5c36d40f57b140d3c90cddac494822ab62",
+    "results/core_current_head_q188_compact_repair_hierarchy_audit/test_audit.py": "c1e83c77fd02c76eca621d47b54f2b1bd28aae7f4e803985e346df3a1e6dd600",
+    "results/explicit_coefficient_cutoff/README.md": "728c8c352fef842ed8d69449867f3d3378ea79e3865d98b08abc597a35d2fb20",
+    "results/explicit_tilt_pulse_tail/README.md": "6e7f3ff13510870a53978de90bd61e53318aa3296788d2a9fff9ac4b827b5a84",
+    "results/global_axial_angular_bound/README.md": "3bce78996e4ad9d30d4743e24cc3e03bf317e0648c2a3a9b3623c50354e152c5",
+    "results/global_axial_source_envelope/README.md": "0b5b3e686c738bb0dcc4d657bd210ad973fffb2b98eee966fcdf4a1be2d1579d",
+    "results/global_swirl_envelope/README.md": "a899a23ab7f41d865b315f3fa6462758fcae4ae5e93df99de3e674be859d2758",
+    "results/loop_modulation_bounds/README.md": "19592bd4c69050ad06e2d3822782e4c7cead0aa927e50198e14178fed5e561b6",
+    "results/modulation_repair_all_order/README.md": "a34b0c7bcbbea5a65bdacde3c9ff507ec25f1d6953cb248b9a5be0ae9698ba8b",
+    "results/prescribed_continuation_foundation/README.md": "fa32edfdb1093b444542dda0b98db4efe3ae02d07550ba5d08ad9ccab2698728",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/regional_stress_floor/README.md": "cfd17189bf26ab7c0414c91d1c36843e6588b1f96bd6d85bbf43f524cf0e321c",
+    "results/repair_state_bounds/README.md": "163dce199a65acd22ef68ee7d906a112c1f8dbcb698000f40df848a424af8a4c",
+    "results/signed_pressure_source_moments/README.md": "1a4d2a5dd23917b197f7edb489b34ed77047ef08fca630bfb16a72228244f959"
+  },
+  "status": "Q188-compact-repair-hierarchy-closed-and-continuum-envelope-frontier-isolated",
+  "symbolic": {
+    "established": "the actual low-order compact modulation/exact-repair hierarchy, complete five-row pressure memory and regional cone composition have no remaining scalar frequency obstruction",
+    "next": "independently rederive the displayed compact envelope and regional gap inequalities on the same selected full-pressure profile",
+    "status": "Q188-compact-repair-hierarchy-closed-and-continuum-envelope-frontier-isolated",
+    "unconditional_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
