@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q186 exact-core/finite-map frontier correction](core_current_head_q186_exact_finite_frontier_correction/README.md).
+Latest source audit: [Q187 actual symbolic Q2 selector](core_current_head_q187_actual_symbolic_q2_selector/README.md).
+Q187 binds the current leading-profile floors, global cone margins, explicit
+tilt and full-pressure first-seminorm functional to the exact Q2 radius. It
+proves that the actual symbolic constants give a finite later dyadic selector
+through `Cstar*2^(-2h(ell-2)) <= rho_actual`; numerical evaluation is needed
+to identify a prescribed historical band, not for this existence statement.
+The result remains conditional on the retained finite-order continuation,
+low-order loop/repair, leading-frame strict-margin and regional-source
+supremum lemmas. Those primitive providers are the next independent audit;
+no unconditional pulse, residual, force, exclusion or blow-up follows.
+
+Preceding source audit: [Q186 exact-core/finite-map frontier correction](core_current_head_q186_exact_finite_frontier_correction/README.md).
 Q186 corrects Q185's next obligation against the live source graph. Q164
 already independently rederives the all-index exact core and same-gauge
 leading pressure, while the root, axial and matching foundations trace the

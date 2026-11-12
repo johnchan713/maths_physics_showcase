@@ -1,0 +1,146 @@
+{
+  "closure": {
+    "edges": 1520,
+    "nodes": 436,
+    "source_bindings": 5896
+  },
+  "dependency_evidence_sha256": {
+    "results/background_gap_certificate/evidence.json": "817bdf4eeccd85458485509c86350fd0787aa8bdb8106cb8a34017283152b90c",
+    "results/core_current_head_q172_q2_q3_source_audit/evidence.json": "32785539ee020495ce6a9bcfaadfa1a9a6c989f15446274b626b28587e169eda",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/evidence.json": "f8fd6ff0034c26e26c9dbcfd042b0ea8a348ac3dff224516043c312586888ac6",
+    "results/core_current_head_q186_exact_finite_frontier_correction/evidence.json": "6f0c571a48185b3d158d6e085e240bcc5212ecb3e0fdc0df85b3b95f9438cc0e",
+    "results/explicit_tilt_pulse_tail/evidence.json": "430fe9f055c92581a813530934ddc7f2561984dc5b179c8a5ca24601e7dda9e1",
+    "results/first_seminorm_bound/evidence.json": "988820278123697c55b4ffb1c6d25615491fb7586e8ed99a43f92ff51591a979",
+    "results/leading_cone_margin/evidence.json": "378a5a82c562a1a9973835f7517d7342c6c117ed269aef95ddce49dfd5bebd1d",
+    "results/leading_frame_foundation/evidence.json": "fec0aee5eecb7873d2e76abd50a24e2f2a4ff236f97380e9bc36629d1ba30fba",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/regional_weighted_gate/evidence.json": "4417ffa7e693f8ba13cb1a922b6a8fbd2761e7e74de7af84d94eb5c9d4f010cd"
+  },
+  "parent": "9bc45f7f2a9015b3d189b79422158f6e8490b825",
+  "review": {
+    "actual_symbolic_inputs": {
+      "Fbar": "5*fupper",
+      "Gbar": "5*fupper*(Ab+Bb)",
+      "all_value_inputs_strictly_positive_and_finite": true,
+      "alpha": "1/(2*G^3)",
+      "d": "alpha*nu*fstar^2/25",
+      "epsilon": "1/(2^18*G^22)",
+      "f": "fstar/5",
+      "fstar": "exp(-2*Lambda*M)/(4*C)*exp(-Ab*log(Xb/Xa)/2)",
+      "gamma": "epsilon/4 = 1/(2^20*G^22)",
+      "nu": "1/(2*G^4)",
+      "numerically_evaluated": false,
+      "omega": "1/(640*G^13)",
+      "same_selected_profile": true,
+      "t": "alpha*fstar/5",
+      "u_squared": "2/epsilon = 2^19*G^22"
+    },
+    "checks": {
+      "actual_Cstar_functional_bound_with_full_pressure": true,
+      "actual_symbolic_value_cone_and_tilt_inputs_bound": true,
+      "all_provider_statuses_match": true,
+      "conditional_gate_and_primitive_validation_distinguished": true,
+      "exact_rational_selector_diagnostic": true,
+      "positive_finite_Q2_radius_and_later_selector": true
+    },
+    "coefficient_functional": {
+      "Cstar": "max(1,5*(A_E+1/2)/a,5*(2*c*(A_EX+A_UX+1)+(A_E+1/2)/a),A_W+1/2)",
+      "actual_shared_budget_and_first_seminorm_functional": true,
+      "explicit_finite_Cstar": true,
+      "finite_positive_relative_to_primitive_profile_bounds": true,
+      "first_seminorms": {
+        "A_E": "2*c*S",
+        "A_EX": "2*c*Sx+S/a",
+        "A_UX": "Sx",
+        "A_W": "(Xc*Htheta/2+c*Hz)/tau"
+      },
+      "full_pressure_moment_memory": true,
+      "numerically_evaluated": false,
+      "pressure_and_axial_viscosity_terms": true
+    },
+    "correction": {
+      "Q186_demand_for_numerical_actual_constants_was_too_strong_for_existence": true,
+      "Q186_fixture_warning_remains_correct": true,
+      "actual_symbolic_provider_join_replaces_fixture": true,
+      "historical_frozen_evidence_modified": false
+    },
+    "exact_rational_diagnostic": {
+      "chart_gate": true,
+      "dyadic_power": 12,
+      "ell": 1202,
+      "exponent": "12",
+      "gate": true,
+      "minimal_dyadic_power": true
+    },
+    "frontier": {
+      "Q186_actual_symbolic_join_completed": true,
+      "Q2_source_audited_relative_to_displayed_providers": true,
+      "modulation_repair_same_map_and_pressure_audited": true,
+      "numeric_evaluation_required_for_later_tail_existence": false,
+      "numeric_evaluation_required_to_identify_a_prescribed_historical_band": true,
+      "primitive_continuation_loop_repair_regional_suprema_independently_validated_here": false,
+      "primitive_frontier": "independently validate the retained finite-order continuation, low-order loop/repair, leading-frame strict margins and regional source suprema on the same selected profile"
+    },
+    "later_tail_selector": {
+      "Cstar_strictly_positive_and_finite": true,
+      "Dbar": "Gbar^2+2*Fbar*Gbar",
+      "LD": "4*Gbar+2*Fbar+3",
+      "LH": "1+2/t",
+      "LP": "Fbar+Gbar+1",
+      "Lc": "2*LD/(f*t)+2*Dbar*LP/(f^2*t^2)",
+      "Lphi": "3*u^2*LH+(1+u^2)*(4*Lc+3*cbar^2*LH)",
+      "background_certificate_has_exact_radius_formula": true,
+      "blocking_inequality": "Cstar*2^(-2h*(ell-2)) <= rho_actual",
+      "cbar_squared": "Dbar/(2*f*t)",
+      "finite_later_selector_exists": true,
+      "historical_first_integer_or_profile_constant_evaluated": false,
+      "rho_actual": "min(1/2,f/2,t/2,d/(2*LD),omega/(2*LH),u^2*omega^2*gamma*(2-gamma)/(2*Lphi))",
+      "rho_strictly_positive_and_finite": true,
+      "selector": "choose integer N with 2^N>=Cstar/rho_actual, then integer ell>=2+N/(2h), together with every earlier accepted-tail gate"
+    },
+    "provider_status_checks": {
+      "background_gap_certificate": true,
+      "core_current_head_q172_q2_q3_source_audit": true,
+      "core_current_head_q176_modulation_repair_dependency_audit": true,
+      "core_current_head_q186_exact_finite_frontier_correction": true,
+      "explicit_tilt_pulse_tail": true,
+      "first_seminorm_bound": true,
+      "leading_cone_margin": true,
+      "leading_frame_foundation": true,
+      "regional_cone_join": true,
+      "regional_weighted_gate": true
+    },
+    "scope": {
+      "actual_symbolic_Q2_selector_closed_relative_to_named_providers": true,
+      "historical_first_band_recertified": false,
+      "primitive_provider_theorems_reproved_from_initial_equations": false,
+      "tests_are_continuum_proof": false,
+      "unconditional_force_exclusion_or_blowup_proved": false,
+      "uniform_actual_pulse_or_complete_residual_proved": false
+    }
+  },
+  "source_hashes": {
+    "results/background_gap_certificate/README.md": "b1e4f589214117cf4227a78b6b7dca2231d72b589f9755f0708326d74e74ae97",
+    "results/core_current_head_q172_q2_q3_source_audit/README.md": "4df9477f02e64d3d98c7a0d7833fb66b89ec2ae34deb539fda49497ff63a0dca",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/README.md": "5d915801afac31045d896b1f3741a7494db8ef96e334aeb0e63d46656e01aeae",
+    "results/core_current_head_q186_exact_finite_frontier_correction/README.md": "8ef593dfdca693846b3a603164c3cb90d0e733a6f2d4c13acb6b3f5fa146013a",
+    "results/core_current_head_q187_actual_symbolic_q2_selector/README.md": "5c4f1ee7cf30af725af81107890ce9810a365dc0936253e9bcec1909cad191a1",
+    "results/core_current_head_q187_actual_symbolic_q2_selector/audit.py": "ecbd488aeff302364d63be34c5297508be1e6c006f502620b495052fbab3957f",
+    "results/core_current_head_q187_actual_symbolic_q2_selector/q187.py": "d4dcfd514a8c9a0f5820ee4b65da6e1a9cb721df5f8dc0b25f9bba7c2735d161",
+    "results/core_current_head_q187_actual_symbolic_q2_selector/test_audit.py": "8798f555d9f6bdc0d29bf3fbcf3afa009c8bcc26859113e5f7aa79ee3950aec5",
+    "results/explicit_tilt_pulse_tail/README.md": "6e7f3ff13510870a53978de90bd61e53318aa3296788d2a9fff9ac4b827b5a84",
+    "results/first_seminorm_bound/README.md": "71ac5f694e06f31b40e65cd89ec7229c9f80027831e6be449c8363b895f46fe8",
+    "results/leading_cone_margin/README.md": "c2a64a6826133d6968b0a85eafc7b79a663065c5a9edbe428e5551ab07baa578",
+    "results/leading_frame_foundation/README.md": "43e94ef9e98ddccecad6953412396384ae795bd33534295ceb2d48db145038eb",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/regional_weighted_gate/README.md": "b03e1e9e8b5f51cb81d34a5b2344fb3d8784d3fa0db8ba8fce796270a502f0b3"
+  },
+  "status": "Q187-actual-symbolic-Q2-selector-joined-and-primitive-frontier-isolated",
+  "symbolic": {
+    "blocking_inequality": "Cstar*2^(-2h*(ell-2)) <= rho_actual",
+    "established": "the actual symbolic leading floors, cone/tilt margins and finite first-seminorm Cstar functional give a positive Q2 radius and an exact finite later-tail selector, relative to the named providers",
+    "next": "independently validate the retained finite-order continuation, low-order loop/repair, leading-frame strict margins and regional source suprema on the same selected profile",
+    "status": "Q187-actual-symbolic-Q2-selector-joined-and-primitive-frontier-isolated",
+    "unconditional_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

@@ -1849,6 +1849,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q186_exact_finite_frontier_correction/evidence.json \
             --output navier_stokes_core_current_head_q186_ci.json
 
+      - name: Check Q187 actual symbolic Q2 selector and primitive frontier
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q187_actual_symbolic_q2_selector/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q187_actual_symbolic_q2_selector/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q187_actual_symbolic_q2_selector/evidence.json \
+            --output navier_stokes_core_current_head_q187_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2454,6 +2461,7 @@ jobs:
             navier_stokes_core_current_head_q184_ci.json
             navier_stokes_core_current_head_q185_ci.json
             navier_stokes_core_current_head_q186_ci.json
+            navier_stokes_core_current_head_q187_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
