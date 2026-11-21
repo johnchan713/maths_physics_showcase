@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q199 exact-moment weighted current-target obstruction](core_current_head_q199_weighted_target_obstruction/README.md).
+Latest source audit: [Q200 physical weighted-target reconciliation at corrected rates](core_current_head_q200_physical_weighted_target_reconciliation/README.md).
+Q200 corrects Q199's global dependency conclusion while preserving its
+mathematical obstruction. Unweighted fixed-jet bounds, exact moments and
+compact support still do not imply flat-edge divisibility, but the omitted
+Q160/Q161/Q180 physical state-difference route propagates the full weight
+directly. Q197's post-source order `D=3/2-2*kappa` equals the physical source
+seed and Q198's signed output `C0=2-2*kappa` equals the physical target seed.
+Later source and target advance simultaneously, with target slack `2*kappa`.
+Post-signed mean recomputation and the complete residual remain open.
+
+Preceding source audit: [Q199 exact-moment weighted current-target obstruction](core_current_head_q199_weighted_target_obstruction/README.md).
 Q199 corrects Q198's illustrative constant obstruction, which did not encode
 the inherited exact moment and compact-support conditions. A scaled smooth
 two-bump family has exact zero total, compact interior support and every
@@ -16,7 +26,7 @@ dependency cut also contains no actual weighted current-target certificate.
 This obstructs an inference from the available estimates; it is not a
 counterexample to the intended canonical field.
 
-Preceding source audit: [Q198 corrected generic complex signed target and weighted-input obstruction](core_current_head_q198_generic_signed_target/README.md).
+Earlier source audit: [Q198 corrected generic complex signed target and weighted-input obstruction](core_current_head_q198_generic_signed_target/README.md).
 Q198 substitutes Q197's corrected current-wave order `B=1-kappa` into the
 generic original-root signed identity. All three complete covariance errors
 meet at `C0=2-2kappa`, so the conditional projected-target gain is

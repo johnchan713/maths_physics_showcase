@@ -1,0 +1,164 @@
+{
+  "closure": {
+    "edges": 1612,
+    "nodes": 450,
+    "source_bindings": 6066
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q150_initial_covariance_mean_join/evidence.json": "4d99026d3503e6fff52e9d3361500605414a85998d23d6f9236f4fce77a895e9",
+    "results/core_current_head_q152_physical_stress_feedback_join/evidence.json": "e79f9d49a8100f871e4636037595c2ac185cd9c5986e9ecffe1168e45fbfc1a1",
+    "results/core_current_head_q160_physical_target_induction/evidence.json": "7df2d117988dd9cdc149ef68c0c42086e8ec1963c27f2932e829839612168b5e",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_current_head_q180_target_source_simultaneous_induction/evidence.json": "9315c63504df9084cf79c5efec336eae2eb749380871e9b74905192f821c9322",
+    "results/core_current_head_q197_first_sourced_covariance/evidence.json": "740dc0de9d5d8eac8791d4b13721b546c2e7448917b6b9b435e47290152abd1c",
+    "results/core_current_head_q198_generic_signed_target/evidence.json": "fd5418fae4401e788eefefb7a28e3a86c300a8664ac20d694a7286de46b01004",
+    "results/core_current_head_q199_weighted_target_obstruction/evidence.json": "3d20d5e12d3ed7697bb498d14b9997b200084d3bd407951b1e531fcf0d53e545"
+  },
+  "parent": "894aaf69f93270f74630d09299ecb439ca8113e3",
+  "review": {
+    "actual_weight_route": {
+      "Q199_scaled_bump_obstruction_retained": true,
+      "actual_same_family_target_constructed_by_state_difference": true,
+      "all_six_covariances_in_pressure_reconstruction": true,
+      "axial_velocity_retained": true,
+      "cancellation_before_estimation": true,
+      "compact_pressure_retained": true,
+      "direct_physical_route_present": true,
+      "exact_difference": "X_e(new)-X_e(old)=-I_e Q_e overline(Delta E_e)",
+      "mean_product_weight": "zeta^2<=zeta",
+      "moving_projection_commutator_retained": true,
+      "primitive_gate": "exact zero weighted total retains zeta at both edges",
+      "raw_Q199_inequality_proved_as_generic_seminorm_implication": false,
+      "reserved_bumps_use_positive_interior_weight_floor": true,
+      "standalone_unweighted_to_weighted_inference_valid": false,
+      "wave_product_weight": "sqrt(zeta)*sqrt(zeta)=zeta",
+      "whole_moving_pressure_product_retained": true
+    },
+    "checks": {
+      "Q197_and_Q160_source_seeds_match": true,
+      "Q198_and_Q160_target_seeds_match": true,
+      "Q199_obstruction_retained_but_global_conclusion_corrected": true,
+      "all_provider_statuses_match": true,
+      "complete_pressure_and_moving_memory_retained": true,
+      "direct_weight_route_uses_exact_difference_not_generic_inference": true,
+      "generic_signed_errors_all_tie_at_C0": true,
+      "generic_target_gain_is_half_minus_kappa": true,
+      "initial_physical_target_has_positive_margin_over_Q197_C": true,
+      "no_post_signed_mean_residual_or_blowup_promotion": true,
+      "normalized_source_still_not_absolute_decay": true,
+      "simultaneous_cycle_has_exact_two_kappa_target_slack": true
+    },
+    "correction": {
+      "Q199_global_no_route_conclusion_was_too_strong": true,
+      "Q199_local_provider_cut_was_accurately_reported": true,
+      "constructive_scope": "the named physical state-difference and simultaneous-induction providers propagate the full weight directly on the same inherited physical family",
+      "historical_frozen_evidence_modified": false,
+      "obstruction_scope": "exact moments, compact support and fixed unweighted jets do not by themselves imply a flat-weight estimate",
+      "omitted_physical_providers": [
+        "core_current_head_q149_primary_pulse_join",
+        "core_current_head_q150_initial_covariance_mean_join",
+        "core_current_head_q152_physical_stress_feedback_join",
+        "core_current_head_q160_physical_target_induction",
+        "core_current_head_q161_source_tail_simultaneous_induction",
+        "core_current_head_q180_target_source_simultaneous_induction"
+      ]
+    },
+    "frontier": {
+      "closed_here": "the corrected Q197/Q198 first generic signed target is bound to the direct same-family weighted target/source induction, with complete pressure memory",
+      "complete_residual_or_blowup_proved_here": false,
+      "next": "recompute the actual post-signed fast and slow mean maps at the corrected rates, then join their complete pressure, viscosity, cutoff, cross and square terms to the simultaneous source/target and nonzero residual ledger",
+      "post_signed_means_recomputed_here": false,
+      "same_family_weighted_target_route_available": true,
+      "standalone_generic_weighted_inference_proved": false
+    },
+    "generic_step": {
+      "all_errors_equal_output": true,
+      "errors": {
+        "complete_signed_square": "99999/50000",
+        "complete_wave_signed_curl_remainder": "99999/50000",
+        "old_error_signed_principal": "99999/50000"
+      },
+      "gain": "49999/100000",
+      "input_target_order": "149999/100000",
+      "output_target_order": "99999/50000"
+    },
+    "physical_residual_power": "-15025001/10000000",
+    "provider_status_checks": {
+      "core_current_head_q149_primary_pulse_join": true,
+      "core_current_head_q150_initial_covariance_mean_join": true,
+      "core_current_head_q152_physical_stress_feedback_join": true,
+      "core_current_head_q160_physical_target_induction": true,
+      "core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q180_target_source_simultaneous_induction": true,
+      "core_current_head_q197_first_sourced_covariance": true,
+      "core_current_head_q198_generic_signed_target": true,
+      "core_current_head_q199_weighted_target_obstruction": true
+    },
+    "rates": {
+      "Q160_first_source_B0": "74999/50000",
+      "Q160_target_seed_C0": "99999/50000",
+      "Q197_current_error_B": "99999/100000",
+      "Q197_current_target_input_C": "149999/100000",
+      "Q197_post_source_regular_D": "74999/50000",
+      "Q198_signed_output_C0": "99999/50000",
+      "future_source_gain": "49997/100000",
+      "future_target_bridge_gain": "49999/100000",
+      "future_target_slack": "1/50000",
+      "generic_target_gain": "49999/100000",
+      "initial_physical_target": "199997/100000",
+      "kappa": "1/100000"
+    },
+    "scope": {
+      "analytical_relative_to_named_continuum_providers": true,
+      "numerical_or_symbolic_tests_are_continuum_proof": false,
+      "same_family_not_canonical_family_promotion": true,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false,
+      "uniform_in_cycle_constants_claimed": false
+    },
+    "simultaneous_step": {
+      "B_j": "74999/50000",
+      "B_next": "39999/20000",
+      "C_j": "99999/50000",
+      "C_next": "49999/20000",
+      "closes": true,
+      "j": 0,
+      "proved_target_order": "249997/100000",
+      "sequential_Q160_then_source_reading_valid": false,
+      "source_and_target_advanced_simultaneously": true,
+      "target_slack": "1/50000"
+    },
+    "stage_identification": {
+      "Q197_D_equals_Q160_B0": true,
+      "Q198_C0_equals_Q160_C0": true,
+      "initial_target_is_stronger_than_Q197_C": "24999/50000",
+      "physical_and_canonical_families_identified": false,
+      "same_inherited_physical_family_only": true,
+      "same_profile_chain": "Q149 physical primary; Q150 complete initial covariance/mean; Q152 same-family stress and first feedback; Q197 first sourced correction; Q198 first generic signed step"
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q150_initial_covariance_mean_join/README.md": "44fc37e4ab21a460bf6a41c6dd9a5b27703d087a08e3c02d48e41dd1128e25c3",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q160_physical_target_induction/README.md": "b8e6cb93143ae4bde7d22da05db8a98af82eac37ecbd33a790e6976c4918e916",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q180_target_source_simultaneous_induction/README.md": "c7ccc0ebf30d037338a1140721de4b830f39b2229f1d8df818873a2e078eba6c",
+    "results/core_current_head_q197_first_sourced_covariance/README.md": "e0c153f70ffee2995a93a2316146b0466fdda28e10e9e2b03c0cc41cbbf73564",
+    "results/core_current_head_q198_generic_signed_target/README.md": "921e5ce86e37b4248a3864ef09b03b82829a18a0c115d193ac5df5ef346f6ae6",
+    "results/core_current_head_q199_weighted_target_obstruction/README.md": "c806f1c429414f462c75bc418fd61d504f21a8e24e53de14a1c5bdbe16bc3813",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/README.md": "235cd5e586db353edce0abc963a2bf8a0d81a78ff936edd775e84f1a27a19c73",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/audit.py": "4695f3f08d3c7d861b2c6f5b5f9b84c1fd4c2a4821a8d494ab2e3629aa3cab8b",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/q200.py": "623149f076954b49464d9bf7256e512dac58d582f05cfe0755465228ce8935c6",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/test_audit.py": "0f14a175e3a2362703566208e62a80fe30cd7d88b45b455d05775935e1deb51d"
+  },
+  "status": "Q200-physical-weighted-target-route-reconciled-at-corrected-rates",
+  "symbolic": {
+    "correction": "Q199 correctly blocks an unweighted-to-weighted inference but overlooked the Q160/Q161/Q180 same-family state-difference and simultaneous-induction route",
+    "established": "relative to the named physical continuum providers, Q197 D equals the Q160 source seed, Q198 C0 equals the Q160 target seed, and the full zeta target propagates with gain 1/2-kappa while the coupled source cycle gains 1/2-3*kappa",
+    "historical_frozen_records_modified": false,
+    "next": "recompute the actual post-signed fast and slow mean maps at the corrected rates, then join their complete pressure, viscosity, cutoff, cross and square terms to the simultaneous source/target and nonzero residual ledger",
+    "status": "Q200-physical-weighted-target-route-reconciled-at-corrected-rates",
+    "unconditional_post_signed_means_complete_residual_force_exclusion_or_blowup_certified": false
+  }
+}
