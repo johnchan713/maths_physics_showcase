@@ -1,0 +1,145 @@
+{
+  "closure": {
+    "edges": 1557,
+    "nodes": 440,
+    "source_bindings": 5971
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/evidence.json": "87611e138ed2df71bd15f3ffe4a3b0997e206fe0bfa3324f77a53d4670a30c30",
+    "results/core_current_head_q165_finite_map_frontier_audit/evidence.json": "4d8854401c547ce14d43978eefae3d4cd5a1de99767206ff4a7883c1ffc68aaf",
+    "results/core_current_head_q166_complete_residual_frontier_audit/evidence.json": "9b080d720000d317ed76ad08017d8cfb5fe8d90fb55c8c5140ae3b07827e069c",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/evidence.json": "c3350ad1f287da03e4bc329c991f06d7e11822b67f474dd3b24e46aca1594225",
+    "results/core_current_head_q178_physical_primary_source_audit/evidence.json": "883c7fe8ebeb0756808f61ae2b9257f199b56eff9bb1d3d93fa26fd40dd9f64d",
+    "results/core_current_head_q179_covariance_mean_cycle_frontier/evidence.json": "681a9caf6c43da2704f331fc270a083f8904c47f14d978b2457008d03912a6e6",
+    "results/core_current_head_q180_target_source_simultaneous_induction/evidence.json": "9315c63504df9084cf79c5efec336eae2eb749380871e9b74905192f821c9322",
+    "results/core_current_head_q181_diagonal_endpoint_force_replay/evidence.json": "34a0033dd2dfa6990c8fa5dca2563eb208d7ed00238589a76ff401aae1efb25c",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/evidence.json": "2148704390a3b45d796e10d96a1b884e765f3633b9f62f56f19f3634b17bce5d",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/evidence.json": "aaf0f49636f62cf2e1774df881e164dc2082904b1c65b19fac3e7035ccfed6de",
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q185_corrected_rate_diagonal_comparison_replay/evidence.json": "8d8bf1e014f25ab44c282bdf3a93ef8e6e4cfc6ddd010d22b53374016173aa2c",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/evidence.json": "7f8cf179242fffe5c7d91614e33eb955d9e52565f3b3182a585dbe935b28842d",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0"
+  },
+  "parent": "a7b7d8ee7b30deb2ff9e2b5e23a449c6f0dc8748",
+  "review": {
+    "checks": {
+      "Q185_frontier_is_stale_at_current_head": true,
+      "Q189_object_reaches_every_downstream_provider": true,
+      "all_provider_statuses_match": true,
+      "both_corrected_diagonal_routes_have_exact_positive_margin": true,
+      "no_missing_provider_is_not_an_unconditional_proof": true
+    },
+    "correction_and_frontier": {
+      "Q164_Q165_and_Q189_now_discharge_that_provider_level_frontier": true,
+      "Q185_named_exact_core_and_finite_maps_as_next": true,
+      "all_provider_theorems_rederived_from_initial_equations_in_Q190": false,
+      "blocking_supremum": "for each fixed a,b, bound the normalized suprema of grad^a dt^b(u_p,p_p,A_p) over every accepted band by finite constants with losses Q^{-((a+1)sx+b st)}, Q^{-((a+2)sx+b st)}, Q^{-(a sx+b st)} respectively, and prove smooth zero extension on the same supports",
+      "first_fresh_independent_rederivation": "the physical_pulse_foundation all-band complete-curl, pressure and potential bounds, including the frame/graph coefficient estimates and smooth closed support",
+      "historical_first_band_or_giant_profile_numerically_certified": false,
+      "missing_named_analytical_provider_through_Q185": false,
+      "missing_scalar_selector_or_diagonal_inequality_through_Q185": false
+    },
+    "downstream_contract": {
+      "complete_covariance_and_generated_source_cycle": true,
+      "complete_residual_endpoint_localization_force": true,
+      "exact_core_and_leading_pressure": true,
+      "finite_maps_and_weighted_sources": true,
+      "fixed_gauge_comparison_and_protected_core": true,
+      "log_source_contract_and_corrected_pure_contract": true,
+      "one_selected_profile_and_log_route_object": true,
+      "same_profile_envelope_and_gaps": true,
+      "uniform_primary_all_scale_fixed_jet_bounds": true,
+      "weighted_stress_coefficients_and_reserved_supports": true
+    },
+    "provider_status_checks": {
+      "core_current_head_q164_core_fixed_point_pressure_audit": true,
+      "core_current_head_q165_finite_map_frontier_audit": true,
+      "core_current_head_q166_complete_residual_frontier_audit": true,
+      "core_current_head_q177_weighted_support_source_reconciliation": true,
+      "core_current_head_q178_physical_primary_source_audit": true,
+      "core_current_head_q179_covariance_mean_cycle_frontier": true,
+      "core_current_head_q180_target_source_simultaneous_induction": true,
+      "core_current_head_q181_diagonal_endpoint_force_replay": true,
+      "core_current_head_q182_comparison_core_exclusion_replay": true,
+      "core_current_head_q183_provider_discharge_generated_source_frontier": true,
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q185_corrected_rate_diagonal_comparison_replay": true,
+      "core_current_head_q189_same_profile_envelope_gap_audit": true,
+      "physical_pulse_foundation": true
+    },
+    "quantifier_order": {
+      "A0_A1_each_own_margin": "1/40000000",
+      "all_strict": true,
+      "comparison_stage_depends_on_q": false,
+      "log_margin": "49997/40000000",
+      "log_route": {
+        "J0": 25601,
+        "delta": "49997/100000",
+        "h": "1/200",
+        "kappa": "1/100000",
+        "loss_H": 13,
+        "loss_L": 11,
+        "replay_holds_with_margin": true,
+        "replay_stage": 25602,
+        "retained_margin": "49997/40000000",
+        "route": "log",
+        "target": 7,
+        "threshold": "160011597/20000000",
+        "threshold_holds": true
+      },
+      "order": "fix Cartesian jet m and target N; choose a finite comparison stage J; collect the finitely many constants through J; choose one later band beyond the Q2, primary-pulse and finite-stage thresholds; then send q to zero",
+      "pure_margin": "12499/10000000",
+      "pure_route": {
+        "J0": 25602,
+        "delta": "12499/25000",
+        "h": "1/200",
+        "kappa": "1/100000",
+        "loss_H": 13,
+        "loss_L": 11,
+        "replay_holds_with_margin": true,
+        "replay_stage": 25603,
+        "retained_margin": "12499/10000000",
+        "route": "pure",
+        "target": 7,
+        "threshold": "80011897/10000000",
+        "threshold_holds": true
+      },
+      "stage_uniform_constant_required": false
+    },
+    "scope": {
+      "Q189_through_Q185_provider_route_closed_conditionally": true,
+      "all_primitive_continuum_providers_independently_reproved_here": false,
+      "same_object_complete_pressure_log_route_retained": true,
+      "tests_are_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/README.md": "69d021b3b916967a81c361d8b2abdb980767ff995373691fa76f7fabd593cf55",
+    "results/core_current_head_q165_finite_map_frontier_audit/README.md": "5640ea97b01b4393db1e2158f757934af656d6fa88e3402117a8f2dd3d6a56ce",
+    "results/core_current_head_q166_complete_residual_frontier_audit/README.md": "837ae11decd2576c11582950cfd0226af62e934bc40f6b4c4be343f369eb1896",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/README.md": "05f1fa9ccf12a4b042be91ddc8865dfac0247437fdec41c22e48fb408eeccba2",
+    "results/core_current_head_q178_physical_primary_source_audit/README.md": "4156762eede76b7ea06ad2a1ca5d0ed9a97df4d94b43dc02b341e4394de31ba3",
+    "results/core_current_head_q179_covariance_mean_cycle_frontier/README.md": "09c62f8349bd5e91a6af45124c4ace16e8ffb094e954050c8ddfa13f0b754a89",
+    "results/core_current_head_q180_target_source_simultaneous_induction/README.md": "c7ccc0ebf30d037338a1140721de4b830f39b2229f1d8df818873a2e078eba6c",
+    "results/core_current_head_q181_diagonal_endpoint_force_replay/README.md": "497f2b778ee1459fd0ddf35c8d95daa07b65d889b2e0459ddbcb5ac240d1f6df",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/README.md": "4efd532051a973e3b30441f2d77fd36c113b68b37f14ec2b371f1e8d8c0ba9f6",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/README.md": "dd19e4232668c41dfa5abcf35e3047786b918feca677ebea32e465fadf6d0f38",
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q185_corrected_rate_diagonal_comparison_replay/README.md": "294288c16f1d1035eef130382ccffbb71125fb48a9bfb040eb2bc4e9cb3746cc",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/README.md": "ec59ea11e23d44c27e60797eb75ac5d178328949170d97d3becba0ecec870878",
+    "results/core_current_head_q190_downstream_route_frontier_audit/README.md": "7cb10a0b46c474eabffa62fcdf2ff2faff5cb46b0872a1a0cf44f8bbb3f74f55",
+    "results/core_current_head_q190_downstream_route_frontier_audit/audit.py": "43ddfcb4f117d9f91305688758d47f1c9775a87e057a7441f867af483c7b7f69",
+    "results/core_current_head_q190_downstream_route_frontier_audit/q190.py": "4de3a568a376f52019305de435f5a362ff9a61f21645accb4dfd66ea8b0c51ce",
+    "results/core_current_head_q190_downstream_route_frontier_audit/test_audit.py": "3e4c03d9f00a9f6dd068eb4145843c6793e29d3ade23d8b78210b42c23ad0eaf",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5"
+  },
+  "status": "Q190-Q189-through-Q185-downstream-route-closed-conditionally-and-frontier-corrected",
+  "symbolic": {
+    "correction": "Q185's next exact-core/finite-map frontier is stale after Q164--Q165 and Q187--Q189; there is no remaining scalar selector or named-provider gap through Q185, but this composition is not an independent reproof of every continuum provider",
+    "established": "Q189's same-profile full-pressure envelope/gap object composes through the Q177--Q185 primary-pulse, covariance/mean, generated-source, residual, localization and comparison providers with the exact fixed-request quantifier order and positive log/pure margins",
+    "next": "the physical_pulse_foundation all-band complete-curl, pressure and potential bounds, including the frame/graph coefficient estimates and smooth closed support",
+    "status": "Q190-Q189-through-Q185-downstream-route-closed-conditionally-and-frontier-corrected",
+    "unconditional_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

@@ -6,7 +6,20 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q189 same-profile envelope and gap reconstruction](core_current_head_q189_same_profile_envelope_gap_audit/README.md).
+Latest source audit: [Q190 downstream same-profile route and frontier correction](core_current_head_q190_downstream_route_frontier_audit/README.md).
+Q190 binds Q189's full-pressure compact envelope/gap object through the
+Q177--Q185 primary-pulse, covariance/mean, generated-source, residual,
+localization and comparison providers. It independently reconstructs the
+fixed-request comparison-stage formula and the exact log/pure residual
+margins `49997/40000000` and `49996/40000000`. Q185's exact-core/finite-map
+next frontier is stale after Q164--Q165 and Q187--Q189: no scalar selector or
+named analytical-provider gap remains through Q185. This composition is not
+an independent reproof of every provider theorem. The next fresh audit is the
+all-band physical primary-pulse estimate with complete frame, curl, pressure,
+axial-velocity and support memory; no unconditional pulse, residual, force,
+exclusion or blow-up result follows.
+
+Preceding source audit: [Q189 same-profile envelope and gap reconstruction](core_current_head_q189_same_profile_envelope_gap_audit/README.md).
 Q189 independently reconstructs the compact exponent ledger and the regional
 gap arithmetic left displayed by Q188. The largest required exponent is
 `1371<4096`; the joined applicable gap is `C^-1024>C^-4096`, with the first
