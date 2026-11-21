@@ -1,0 +1,162 @@
+{
+  "closure": {
+    "edges": 1546,
+    "nodes": 439,
+    "source_bindings": 5956
+  },
+  "dependency_evidence_sha256": {
+    "results/compact_jet_envelope/evidence.json": "304c78d3a0882d80305c1e37b0e5badc926c6f2e8abed6ecd37776a4cf5931fd",
+    "results/compact_pressure_bridge/evidence.json": "ee32047ced47a6a76a566a9895c17041adbe362a48571be2ac910ca468aa6b7c",
+    "results/core_contraction_audit/evidence.json": "032369ca3a5cc6da57015be88b37feec3b253ff9951454892b4a071e974471f9",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/evidence.json": "87611e138ed2df71bd15f3ffe4a3b0997e206fe0bfa3324f77a53d4670a30c30",
+    "results/core_current_head_q165_finite_map_frontier_audit/evidence.json": "4d8854401c547ce14d43978eefae3d4cd5a1de99767206ff4a7883c1ffc68aaf",
+    "results/core_current_head_q188_compact_repair_hierarchy_audit/evidence.json": "cd47edc1992d79834d3c2ff3ca82310107dffb83489bf82b91de418442f8646e",
+    "results/core_growth_activation/evidence.json": "a9ffd6b5abe161c2c9cfa0080d6e3c9d7461352474558af4e2b20d83330bb8e9",
+    "results/global_moment_stress/evidence.json": "0b1ce61f32a75e46817d99351dac0512dbb7f1a503a0158612a953f6d8a6636e",
+    "results/reduced_continuation_margins/evidence.json": "7b197dcefe6342e21b329489f99eeb48498332f7d224d165450acdbd14991b33",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/shape_join_pressure/evidence.json": "f050948e240aa2f50652624001d026d47eab260b369f713c4d44ef3499bf1d47"
+  },
+  "parent": "7457c5108177a9767b422fc9cc92efa8dcde5812",
+  "review": {
+    "checks": {
+      "all_provider_statuses_match": true,
+      "compact_envelope_reconstructed": true,
+      "conditional_scope_preserved": true,
+      "regional_gap_join_reconstructed": true,
+      "same_selected_full_pressure_profile": true
+    },
+    "correction_and_frontier": {
+      "Q188_displayed_C4096_envelope_reconstructed": true,
+      "Q188_displayed_Cminus4096_gap_reconstructed": true,
+      "Q188_obstruction_closed_relative_to_named_region_theorems": true,
+      "historical_first_band_or_numeric_giant_profile_certified": false,
+      "next": "bind this same-profile envelope/gap object through Q177-Q185 and isolate the first downstream premise not already supplied by an analytical provider",
+      "provider_theorems_reproved_from_initial_equations_here": false
+    },
+    "independent_exponent_ledger": {
+      "checks": {
+        "E_inverse_cost": true,
+        "H_inverse_cost": true,
+        "a_inverse_cost": true,
+        "all_below_C4096": true,
+        "loop_coordinates": true,
+        "maximum_is_vs": true,
+        "pressure_coordinates": true,
+        "repair_normalization_and_gap": true,
+        "shear_coordinates": true
+      },
+      "envelope_exponent": 4096,
+      "exponents": {
+        "E_inverse_J1": 73,
+        "E_inverse_J2": 144,
+        "H_inverse_J1": 75,
+        "H_inverse_J2": 146,
+        "Jc_J1": 1070,
+        "L_inverse_J2": 1,
+        "Ns_J1": 327,
+        "Pc_J1": 1070,
+        "Pi_J2": 257,
+        "Qs_J1": 337,
+        "W_J1": 262,
+        "X_inverse_J2": 2,
+        "a_J1": 140,
+        "a_inverse_J1": 301,
+        "bs_J1": 139,
+        "fields_J2": 64,
+        "moments_J2": 256,
+        "normalized_moments_C2": 546,
+        "p1_J1": 351,
+        "p2_J1": 414,
+        "repair_normalization_operator_C2": 290,
+        "required_gap_inverse_C0": 1024,
+        "ts_J1": 557,
+        "vs_J1": 1371
+      },
+      "maximum": 1371,
+      "strictly_inside_envelope": true
+    },
+    "independent_gap_join": {
+      "A": "C^4096",
+      "A_inverse": "C^-4096",
+      "C": 1000000000,
+      "all_gap_reductions_hold": true,
+      "axial_fourth_lower": "960351/1000",
+      "checks": {
+        "Pc_minus_two_point_one_beats_Ainverse": true,
+        "a_floor_Cminus22_beats_Ainverse": true,
+        "activation_fourth_Cminus802_beats_Ainverse": true,
+        "activation_third_Cminus401_beats_Ainverse": true,
+        "axial_fourth_gap_above_one": true,
+        "common_Cminus1024_beats_Ainverse": true,
+        "intermediate_fourth_gap_above_one": true,
+        "outer_ramp_exact_lower_above_half": true,
+        "right_collar_Cminus1_beats_Ainverse": true
+      },
+      "common_required_gap": "C^-1024",
+      "intermediate_fourth_lower": "11286/125",
+      "outer_ramp": {
+        "above_half": true,
+        "e_minus_one_upper": "2",
+        "exp_minus_three_fifths_lower": "68/125",
+        "normalized_p1_lower": "17701/30625"
+      },
+      "third_and_fourth_gaps_required_only_where_v_at_least_two": true
+    },
+    "provider_status_checks": {
+      "compact_jet_envelope": true,
+      "compact_pressure_bridge": true,
+      "core_contraction_audit": true,
+      "core_current_head_q164_core_fixed_point_pressure_audit": true,
+      "core_current_head_q165_finite_map_frontier_audit": true,
+      "core_current_head_q188_compact_repair_hierarchy_audit": true,
+      "core_growth_activation": true,
+      "global_moment_stress": true,
+      "reduced_continuation_margins": true,
+      "regional_cone_join": true,
+      "shape_join_pressure": true
+    },
+    "same_profile_contract": {
+      "continuation_full_forward_pressure": true,
+      "endpoint_identity": "Xrep=rhop*e^5=Xstar",
+      "exact_core_pressure_family_and_zero_stress": true,
+      "global_five_moment_and_gauge_identity": true,
+      "one_selected_profile": true,
+      "regional_same_finite_frequency": true,
+      "same_core_growth_and_activation_width": true,
+      "shape_same_C2_root_and_pressure_ledger": true,
+      "whole_activation_pressure_memory": true
+    },
+    "scope": {
+      "Q188_envelope_and_gap_conjunction_closed_relative_to_named_analytical_providers": true,
+      "all_primitive_provider_theorems_independently_reproved_here": false,
+      "tests_are_continuum_proof": false,
+      "unconditional_force_exclusion_or_blowup_proved": false,
+      "uniform_actual_pulse_or_complete_residual_proved": false
+    }
+  },
+  "source_hashes": {
+    "results/compact_jet_envelope/README.md": "b0597dab919b3cf0a233b066d14a977385f530b2575d137fc75b3c53d996d915",
+    "results/compact_pressure_bridge/README.md": "52ff987d785e5780ef25f85ef1c73fe9d3e3b6e6eea257fa90941562b82bf689",
+    "results/core_contraction_audit/README.md": "29d504122e83a45ab7c36c98a90d1857ebc5fa82c248b302308881ad99abcb86",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/README.md": "69d021b3b916967a81c361d8b2abdb980767ff995373691fa76f7fabd593cf55",
+    "results/core_current_head_q165_finite_map_frontier_audit/README.md": "5640ea97b01b4393db1e2158f757934af656d6fa88e3402117a8f2dd3d6a56ce",
+    "results/core_current_head_q188_compact_repair_hierarchy_audit/README.md": "257d1060220de8a04bce8063be249f9fee705a9b71d41dd60864287b3fd36761",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/README.md": "ec59ea11e23d44c27e60797eb75ac5d178328949170d97d3becba0ecec870878",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/audit.py": "c9ddf3e6adf0b4a3ed6266d659361c15e02f026a5ecd517ee25e47143b893c56",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/q189.py": "2692b60a2f2f594a90eb8fe2b50633a5e848955f5ee6c53cc3deb86f5ca18aa5",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/test_audit.py": "1e4de3cfce7ae436973323a9b50c5e4de602506b8d6542557a47a2c697cec4cb",
+    "results/core_growth_activation/README.md": "fd6134a88a69d49203235f9b2ef9abd1f80ee63baf129b5985c9e3136ad09a0a",
+    "results/global_moment_stress/README.md": "93620eac607bd40fd777052cc107d69795d6e378cfd73f1de7eae53d03621734",
+    "results/reduced_continuation_margins/README.md": "2379d8e049d3927b70202218654502ed4915a645d96a65e3dce19f78a8964bdb",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/shape_join_pressure/README.md": "6120069fc0b45b2a5cdf25584a1eeb6bbfc363589a1dc8658e1af45093935cff"
+  },
+  "status": "Q189-same-profile-envelope-and-gap-join-closed-relative-to-region-theorems",
+  "symbolic": {
+    "established": "the selected compact input ledger has maximum exponent 1371<4096 and the regional common gap C^-1024 exceeds A^-1=C^-4096 on the same five-moment full-pressure profile",
+    "next": "bind this same-profile envelope/gap object through Q177-Q185 and isolate the first downstream premise not already supplied by an analytical provider",
+    "status": "Q189-same-profile-envelope-and-gap-join-closed-relative-to-region-theorems",
+    "unconditional_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

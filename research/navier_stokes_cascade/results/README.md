@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q188 compact modulation/repair hierarchy](core_current_head_q188_compact_repair_hierarchy_audit/README.md).
+Latest source audit: [Q189 same-profile envelope and gap reconstruction](core_current_head_q189_same_profile_envelope_gap_audit/README.md).
+Q189 independently reconstructs the compact exponent ledger and the regional
+gap arithmetic left displayed by Q188. The largest required exponent is
+`1371<4096`; the joined applicable gap is `C^-1024>C^-4096`, with the first
+outer-ramp floor proved by an exact rational comparison. The core, activation,
+continuation, shape/join, compact repair and exterior records use one selected
+five-moment full-pressure profile, so Q188's envelope/gap obstruction closes
+relative to those named analytical regional theorems. Their primitive ODE
+theorems are not all rederived here, and no unconditional pulse, residual,
+force, exclusion or blow-up result follows.
+
+Preceding source audit: [Q188 compact modulation/repair hierarchy](core_current_head_q188_compact_repair_hierarchy_audit/README.md).
 Q188 corrects Q187's coarse provider inventory: later records already supply
 all-fixed-jet continuation, same-map modulation/repair, annular/exterior,
 regional source, cutoff and tilt inputs. It independently reduces the actual
@@ -14,12 +25,13 @@ low-order repair acceptance to exact integer inequalities and verifies that
 `N=1+floor(H^32)` clears the state, coefficient-radius, contraction,
 incoming-memory and modulation-transfer gates while retaining all five
 moment rows and `Pi=Pi_axis+Cp`. No scalar frequency obstruction remains.
-The precise surviving boundary is independent same-profile derivation of the
-compact `<=A` envelope and regional `>=A^-1` gaps; tests do not establish
+The precise surviving boundary was independent same-profile reconstruction of
+the compact `<=A` envelope and regional `>=A^-1` gaps; Q189 closes that
+provider-level reconstruction. Tests alone do not establish
 those continuum suprema or an unconditional pulse, residual, force,
 exclusion or blow-up result.
 
-Preceding source audit: [Q187 actual symbolic Q2 selector](core_current_head_q187_actual_symbolic_q2_selector/README.md).
+Earlier source audit: [Q187 actual symbolic Q2 selector](core_current_head_q187_actual_symbolic_q2_selector/README.md).
 Q187 binds the current leading-profile floors, global cone margins, explicit
 tilt and full-pressure first-seminorm functional to the exact Q2 radius. It
 proves that the actual symbolic constants give a finite later dyadic selector
