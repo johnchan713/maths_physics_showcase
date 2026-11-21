@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q196 corrected initial generated-source stage and quotient bound](core_current_head_q196_initial_generated_source/README.md).
+Latest source audit: [Q197 first sourced inverse, complex covariance and current means](core_current_head_q197_first_sourced_covariance/README.md).
+Q197 carries Q196's `1-kappa` source through the existing real signed/mean
+prefix, whose added source rows are stronger, and then solves the first
+zero-entry forced pulse with both moving-normal and source-normal pressure.
+Equal-frequency convolution retains all six covariance entries and the
+harmonic-two square. Recomputed compact pressure, the whole moving axial
+moment and current defects have order `C=3/2-kappa`; the full post-source
+rows have order `D=3/2-2kappa`. The pure-power ledger loses one `kappa`.
+The next generic signed/mean cycle, complete residual and blow-up remain open.
+
+Preceding source audit: [Q196 corrected initial generated-source stage and quotient bound](core_current_head_q196_initial_generated_source/README.md).
 Q196 corrects Q195's stated next frontier in two respects. The immediate
 complete primary-plus-initial-mean source has normalized order `1-kappa`;
 `3/2-2kappa` is reached only after the first sourced correction. Its fixed

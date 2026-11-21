@@ -1,0 +1,227 @@
+{
+  "closure": {
+    "edges": 1598,
+    "nodes": 447,
+    "source_bindings": 6040
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q196_initial_generated_source/evidence.json": "52c19252a65d5478fbc32bbc27d44353ceb14f2380bfb95b76d3fe7b88b34b7e",
+    "results/first_sourced_foundation/evidence.json": "79c48c09868edef6f8efed9ec9df8a7ffd7c3dffc520fd91685259754a7c003a",
+    "results/sourced_inverse_foundation/evidence.json": "15afc498fa42605b0fcbaaff81b4245ceb388e447527e63395eeb45348c41827"
+  },
+  "parent": "6803cff8a2f77fcd0ab721e02768f938cda48e53",
+  "review": {
+    "checks": {
+      "all_provider_statuses_match": true,
+      "complete_covariance_retains_all_entries_and_m2_square": true,
+      "covariance_cross_and_square_meet_C": true,
+      "current_pressure_and_whole_moving_axial_moment_recomputed": true,
+      "finite_Duhamel_degree_at_each_fixed_order": true,
+      "forced_pressure_preserves_constraint_and_both_normal_terms": true,
+      "high_harmonic_residence_has_inverse_square_gain": true,
+      "no_next_signed_cycle_or_complete_residual_promotion": true,
+      "normalized_gain_not_promoted_to_absolute_physical_decay": true,
+      "postsource_groups_meet_D": true,
+      "signed_and_mean_prefix_is_retained_before_solve": true
+    },
+    "correction": {
+      "Q196_source_must_pass_through_existing_signed_mean_prefix": true,
+      "historical_frozen_evidence_modified": false,
+      "source_normal_pressure_and_second_harmonic_square_not_dropped": true,
+      "unequal_harmonics_are_not_combined_before_angular_average": true
+    },
+    "covariance_fixture": {
+      "all_six_present": true,
+      "cross": [
+        [
+          "7",
+          "5",
+          "9"
+        ],
+        [
+          "5",
+          "4",
+          "7"
+        ],
+        [
+          "9",
+          "7",
+          "7"
+        ]
+      ],
+      "entries": {
+        "rr": "22",
+        "rtheta": "27/2",
+        "rz": "19",
+        "thetatheta": "23/2",
+        "thetaz": "31/2",
+        "zz": "18"
+      },
+      "matrix": [
+        [
+          "22",
+          "27/2",
+          "19"
+        ],
+        [
+          "27/2",
+          "23/2",
+          "31/2"
+        ],
+        [
+          "19",
+          "31/2",
+          "18"
+        ]
+      ],
+      "second_harmonic_square_retained": true,
+      "square": [
+        [
+          "15",
+          "17/2",
+          "10"
+        ],
+        [
+          "17/2",
+          "15/2",
+          "17/2"
+        ],
+        [
+          "10",
+          "17/2",
+          "11"
+        ]
+      ],
+      "symmetric": true,
+      "unequal_harmonic_crosses_omitted_exactly": true
+    },
+    "degree_recurrence_fixture": {
+      "finite_each_fixed_order": true,
+      "input": [
+        1,
+        2,
+        4,
+        7,
+        11
+      ],
+      "solution": [
+        2,
+        4,
+        6,
+        8,
+        12
+      ]
+    },
+    "forced_pressure_fixture": {
+      "constraint_preserved": true,
+      "constraint_scalar": "0",
+      "moving_normal_retained": true,
+      "pi_over_i": "5/33",
+      "source_normal_retained": true
+    },
+    "frontier": {
+      "blocking_inequality": "form the next generic complex signed target at order C from the current full rows and defects, using old wave error B rather than residual order D; prove its weighted original-root update and then recompute fast/slow means and full pressure after each operation before advancing the later source induction",
+      "closed_here": "the first sourced zero-entry solve, complete harmonics one and two, six-entry complex covariance increment, compact pressure/axial moments and recomputed C-defects/D-rows close conditionally on one domain",
+      "complete_finite_cycle_residual_rederived_here": false,
+      "next_generic_signed_target_and_mean_refresh_rederived_here": false
+    },
+    "mean_change_fixture": {
+      "DeltaJtheta": "13",
+      "DeltaJz": "4419/400",
+      "DeltaP_from_covariance": "2197/200",
+      "all_six_roles_retained": true,
+      "dZ_c_rho_DeltaP": "29",
+      "moving_bump_term": "15"
+    },
+    "physical_powers": {
+      "postsource_residual_zero_jet": "-15025001/10000000",
+      "sourced_potential_zero_jet": "49999/20000000",
+      "sourced_pressure_zero_jet": "-20050001/20000000",
+      "sourced_velocity_zero_jet": "-10000001/20000000"
+    },
+    "prefix_orders": {
+      "H_fast_row": "49999/25000",
+      "alpha_signed_target": "199997/100000",
+      "groups": {
+        "original_primary_regular_source": "99999/100000",
+        "post_signed_fast_mean_wave": "49999/25000",
+        "post_signed_slow_mean_wave": "199997/100000",
+        "signed_linear_primary_cross_actual_mean_cross": "49999/25000",
+        "signed_square": "299993/100000"
+      },
+      "minimum": "99999/100000",
+      "original_source_remains_limiting": true,
+      "signed_and_mean_prefix_must_not_be_skipped": true
+    },
+    "provider_status_checks": {
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q196_initial_generated_source": true,
+      "first_sourced_foundation": true,
+      "sourced_inverse_foundation": true
+    },
+    "rates": {
+      "B_pure": "49999/50000",
+      "B_source_and_sourced_wave_log": "99999/100000",
+      "C_pressure_potential_covariance_log": "149999/100000",
+      "C_pure": "74999/50000",
+      "D_postsource_regular_log": "74999/50000",
+      "D_pure": "149997/100000",
+      "covariance_square": "99999/50000",
+      "kappa": "1/100000",
+      "postsource_square": "199997/100000",
+      "source_gain": "49999/100000"
+    },
+    "residence_fixtures": [
+      {
+        "harmonic": 1,
+        "high_harmonic_inverse_square": true,
+        "pressure_does_not_gain_inverse_square": true,
+        "residence": "10"
+      },
+      {
+        "harmonic": 2,
+        "high_harmonic_inverse_square": true,
+        "pressure_does_not_gain_inverse_square": true,
+        "residence": "2/3"
+      },
+      {
+        "harmonic": 3,
+        "high_harmonic_inverse_square": true,
+        "pressure_does_not_gain_inverse_square": true,
+        "residence": "1/4"
+      },
+      {
+        "harmonic": -2,
+        "high_harmonic_inverse_square": true,
+        "pressure_does_not_gain_inverse_square": true,
+        "residence": "2/3"
+      }
+    ],
+    "scope": {
+      "current_pressure_moments_and_defects_recomputed": true,
+      "first_sourced_inverse_and_complete_covariance_closed_conditionally": true,
+      "next_generic_signed_cycle_independently_rederived": false,
+      "tests_are_continuum_proof": false,
+      "unconditional_complete_residual_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q196_initial_generated_source/README.md": "a847944d5da4d166d77dc5921fee163ed799c5fb4712741e421589d20cd5b0ce",
+    "results/core_current_head_q197_first_sourced_covariance/README.md": "e0c153f70ffee2995a93a2316146b0466fdda28e10e9e2b03c0cc41cbbf73564",
+    "results/core_current_head_q197_first_sourced_covariance/audit.py": "71815e85a950479eb7567692c492baa60f640808efa97cf78e163ec54d05d661",
+    "results/core_current_head_q197_first_sourced_covariance/q197.py": "c1224f5752b89d8f4851a762e968438fb70babe95939844d7160008e2671d11a",
+    "results/core_current_head_q197_first_sourced_covariance/test_audit.py": "b82ac6df96c45174adeb0d2235fcbfc631d936fabb6e9af03473501528ac4b8d",
+    "results/first_sourced_foundation/README.md": "b4b4fa32c4d37ce3cef2aa60c688f1a83faccbe3bab8b248c95e0ca909e55839",
+    "results/sourced_inverse_foundation/README.md": "6f784f977d69cf489e2416d98069f2e12a1db1580fc6adbc43cde45cb55352c2"
+  },
+  "status": "Q197-first-sourced-complex-covariance-and-current-means-joined",
+  "symbolic": {
+    "correction": "the first sourced solve is not applied immediately to the bare Q195 state: the existing real signed correction and mean relaxation are preserved, while the original B-source remains the limiting row",
+    "established": "after retaining the existing signed/mean prefix, the Q196 B-source has an exact zero-entry sourced solve with full forced pressure; its harmonics one and two produce a complete C-order covariance/pressure change and D-order current rows",
+    "next": "form the next generic complex signed target at order C from the current full rows and defects, using old wave error B rather than residual order D; prove its weighted original-root update and then recompute fast/slow means and full pressure after each operation before advancing the later source induction",
+    "status": "Q197-first-sourced-complex-covariance-and-current-means-joined",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

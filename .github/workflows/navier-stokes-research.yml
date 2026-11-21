@@ -1919,6 +1919,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q196_initial_generated_source/evidence.json \
             --output navier_stokes_core_current_head_q196_ci.json
 
+      - name: Check Q197 first sourced complex covariance and current means
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q197_first_sourced_covariance/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q197_first_sourced_covariance/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q197_first_sourced_covariance/evidence.json \
+            --output navier_stokes_core_current_head_q197_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2534,6 +2541,7 @@ jobs:
             navier_stokes_core_current_head_q194_ci.json
             navier_stokes_core_current_head_q195_ci.json
             navier_stokes_core_current_head_q196_ci.json
+            navier_stokes_core_current_head_q197_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
