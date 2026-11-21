@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q193 uncut Duhamel and phase-partition recurrence](core_current_head_q193_duhamel_phase_recurrence/README.md).
+Latest source audit: [Q194 complete primary field bounds and support assembly](core_current_head_q194_primary_field_assembly/README.md).
+Q194 applies the actual cutoffs to vector potentials and pressures before
+taking the complete cylindrical curl. It retains radial, angular and axial
+velocity, all seven component terms and every `1/r` connection. Exact
+allocation arithmetic shows phase, coefficient/cutoff and connection hits
+fit the same `s_x,s_t` budget, yielding the conditional primary velocity,
+pressure and potential estimates on every accepted band and one common
+support domain. Complete-wave covariance means, generated sources and the
+full residual remain open; no unconditional pulse, force, exclusion or
+blow-up result follows.
+
+Preceding source audit: [Q193 uncut Duhamel and phase-partition recurrence](core_current_head_q193_duhamel_phase_recurrence/README.md).
 Q193 propagates Q192's conservative all-fixed frame ledger through the
 homogeneous differentiated Duhamel recurrence, obtaining the sufficient
 polynomial degree `7j`. It deliberately does not import the provider's sharper

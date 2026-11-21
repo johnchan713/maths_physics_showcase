@@ -1,0 +1,591 @@
+{
+  "closure": {
+    "edges": 1585,
+    "nodes": 444,
+    "source_bindings": 6015
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q192_frame_graph_jet_transfer/evidence.json": "e162ff26d4f0dab816d239c1a31504ff1663fddf0571d7960edcf171357f2b4f",
+    "results/core_current_head_q193_duhamel_phase_recurrence/evidence.json": "5ba00b84182bbdca640ab95d627ef263c4518de468080d9c0793ed339e80936b",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/physical_pulse_transfer/evidence.json": "4fd33b054abaa66aa34052eccf97086a1db9ea8325afe857b1de35e03e63fc85"
+  },
+  "parent": "c58b5f2d5add7e2da6ed366f6f965e9f473ff836",
+  "review": {
+    "allocation_summary": {
+      "count": 840,
+      "maximum_target_Q_loss": "2617/400",
+      "minimum_margin": "0"
+    },
+    "base_scalings": {
+      "A": "101/200",
+      "potential": "0",
+      "potential_matches": true,
+      "pressure": "-201/200",
+      "pressure_matches": true,
+      "st": "403/400",
+      "sx": "201/400",
+      "velocity": "-201/400",
+      "velocity_matches": true
+    },
+    "checks": {
+      "all_base_rescalings_match_target_exponents": true,
+      "all_provider_statuses_match": true,
+      "all_three_field_families_have_finite_losses": true,
+      "complete_cylindrical_curl_keeps_axial_and_connection_terms": true,
+      "covariance_means_and_residual_not_promoted": true,
+      "every_checked_product_rule_allocation_fits_sx_st": true,
+      "no_positive_complete_velocity_floor_promoted": true,
+      "same_support_and_one_sided_endpoint_memory_retained": true
+    },
+    "curl_ledger": {
+      "axial_velocity_retained": true,
+      "component_count": 3,
+      "cut_before_curl": true,
+      "cylindrical_connections_retained": true,
+      "divergence_free_by_curl_identity": true,
+      "term_count": 7,
+      "terms": {
+        "u_r": [
+          "r^-1*dtheta(A_z)",
+          "-dz(A_theta)"
+        ],
+        "u_theta": [
+          "dz(A_r)",
+          "-dr(A_z)"
+        ],
+        "u_z": [
+          "dr(A_theta)",
+          "r^-1*A_theta",
+          "-r^-1*dtheta(A_r)"
+        ]
+      }
+    },
+    "field_requests": [
+      {
+        "Q_loss": "201/400",
+        "bound": "C*Q^(-((0+1)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 0,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "151/100",
+        "bound": "C*Q^(-((0+1)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 0,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "1007/400",
+        "bound": "C*Q^(-((0+1)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 0,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "141/40",
+        "bound": "C*Q^(-((0+1)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 0,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/200",
+        "bound": "C*Q^(-((1+1)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 1,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "161/80",
+        "bound": "C*Q^(-((1+1)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 1,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "151/50",
+        "bound": "C*Q^(-((1+1)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 1,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "1611/400",
+        "bound": "C*Q^(-((1+1)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 1,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "603/400",
+        "bound": "C*Q^(-((2+1)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 2,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "503/200",
+        "bound": "C*Q^(-((2+1)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 2,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "1409/400",
+        "bound": "C*Q^(-((2+1)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 2,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "453/100",
+        "bound": "C*Q^(-((2+1)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 2,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/100",
+        "bound": "C*Q^(-((3+1)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 3,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "1207/400",
+        "bound": "C*Q^(-((3+1)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 3,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "161/40",
+        "bound": "C*Q^(-((3+1)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 3,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "2013/400",
+        "bound": "C*Q^(-((3+1)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 3,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/80",
+        "bound": "C*Q^(-((4+1)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 4,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "88/25",
+        "bound": "C*Q^(-((4+1)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 4,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "1811/400",
+        "bound": "C*Q^(-((4+1)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 4,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "1107/200",
+        "bound": "C*Q^(-((4+1)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 4,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/200",
+        "bound": "C*Q^(-((0+2)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 0,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "161/80",
+        "bound": "C*Q^(-((0+2)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 0,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "151/50",
+        "bound": "C*Q^(-((0+2)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 0,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "1611/400",
+        "bound": "C*Q^(-((0+2)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 0,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "603/400",
+        "bound": "C*Q^(-((1+2)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 1,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "503/200",
+        "bound": "C*Q^(-((1+2)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 1,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "1409/400",
+        "bound": "C*Q^(-((1+2)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 1,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "453/100",
+        "bound": "C*Q^(-((1+2)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 1,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/100",
+        "bound": "C*Q^(-((2+2)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 2,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "1207/400",
+        "bound": "C*Q^(-((2+2)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 2,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "161/40",
+        "bound": "C*Q^(-((2+2)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 2,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "2013/400",
+        "bound": "C*Q^(-((2+2)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 2,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/80",
+        "bound": "C*Q^(-((3+2)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 3,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "88/25",
+        "bound": "C*Q^(-((3+2)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 3,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "1811/400",
+        "bound": "C*Q^(-((3+2)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 3,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "1107/200",
+        "bound": "C*Q^(-((3+2)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 3,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "603/200",
+        "bound": "C*Q^(-((4+2)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 4,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "1609/400",
+        "bound": "C*Q^(-((4+2)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 4,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "503/100",
+        "bound": "C*Q^(-((4+2)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 4,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "483/80",
+        "bound": "C*Q^(-((4+2)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 4,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "0",
+        "bound": "C*Q^(-((0+0)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 0,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "403/400",
+        "bound": "C*Q^(-((0+0)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 0,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "403/200",
+        "bound": "C*Q^(-((0+0)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 0,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "1209/400",
+        "bound": "C*Q^(-((0+0)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 0,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/400",
+        "bound": "C*Q^(-((1+0)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 1,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "151/100",
+        "bound": "C*Q^(-((1+0)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 1,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "1007/400",
+        "bound": "C*Q^(-((1+0)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 1,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "141/40",
+        "bound": "C*Q^(-((1+0)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 1,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/200",
+        "bound": "C*Q^(-((2+0)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 2,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "161/80",
+        "bound": "C*Q^(-((2+0)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 2,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "151/50",
+        "bound": "C*Q^(-((2+0)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 2,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "1611/400",
+        "bound": "C*Q^(-((2+0)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 2,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "603/400",
+        "bound": "C*Q^(-((3+0)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 3,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "503/200",
+        "bound": "C*Q^(-((3+0)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 3,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "1409/400",
+        "bound": "C*Q^(-((3+0)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 3,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "453/100",
+        "bound": "C*Q^(-((3+0)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 3,
+        "time_order": 3
+      },
+      {
+        "Q_loss": "201/100",
+        "bound": "C*Q^(-((4+0)*sx+0*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 4,
+        "time_order": 0
+      },
+      {
+        "Q_loss": "1207/400",
+        "bound": "C*Q^(-((4+0)*sx+1*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 4,
+        "time_order": 1
+      },
+      {
+        "Q_loss": "161/40",
+        "bound": "C*Q^(-((4+0)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 4,
+        "time_order": 2
+      },
+      {
+        "Q_loss": "2013/400",
+        "bound": "C*Q^(-((4+0)*sx+3*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 4,
+        "time_order": 3
+      }
+    ],
+    "frontier": {
+      "blocking_inequality": "derive the complete-wave covariance mean identities using the assembled radial, angular and axial velocity and wave pressure, retaining all six covariance entries, the moving pressure response and the radial/axial mean corrections on one domain",
+      "closed_here": "conditional complete primary potential, pressure and curl velocity fixed-order bounds and smooth support on every accepted band",
+      "complete_wave_covariance_means_rederived_here": false,
+      "generated_source_and_complete_residual_rederived_here": false
+    },
+    "primary_assembly": {
+      "base_scalings_close": true,
+      "complete_curl_components": {
+        "u_r": [
+          "r^-1*dtheta(A_z)",
+          "-dz(A_theta)"
+        ],
+        "u_theta": [
+          "dz(A_r)",
+          "-dr(A_z)"
+        ],
+        "u_z": [
+          "dr(A_theta)",
+          "r^-1*A_theta",
+          "-r^-1*dtheta(A_r)"
+        ]
+      },
+      "conditional_uniform_all_accepted_bands_and_fixed_orders": true,
+      "constants_not_uniform_in_derivative_order_harmonic_or_fixed_geometry": true,
+      "positive_pointwise_lower_bound_for_complete_velocity": false,
+      "potential": {
+        "Q_loss": "1409/400",
+        "bound": "C*Q^(-((3+0)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "potential",
+        "spatial_order": 3,
+        "time_order": 2
+      },
+      "pressure": {
+        "Q_loss": "1811/400",
+        "bound": "C*Q^(-((3+2)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "pressure",
+        "spatial_order": 3,
+        "time_order": 2
+      },
+      "same_domain_support": {
+        "T_zero_jets_are_one_sided_not_zero_extended": true,
+        "axis_smoothness_from_zero_support_near_axis": true,
+        "closed_enlarged_preimages_have_at_most_one_label": true,
+        "cutoffs_on_potential_and_pressure_before_curl": true,
+        "derivatives_and_curl_do_not_enlarge_support": true,
+        "generated_source_still_needs_own_endpoint_extension": true,
+        "positive_P_not_used_as_endpoint_support": true,
+        "primary_cutoff_supplies_smooth_pulse_endpoint_extension": true,
+        "pulse": "|v/Ls-1/2|<=2/5; cutoff one on the central fifth",
+        "shell": "fixed closed active shell with flat sqrt(zeta) edges",
+        "transverse": "|xi|<=r0/2"
+      },
+      "velocity": {
+        "Q_loss": "161/40",
+        "bound": "C*Q^(-((3+1)*sx+2*st))*S^B*sqrt(zeta)*delta^-B*P",
+        "field": "velocity",
+        "spatial_order": 3,
+        "time_order": 2
+      }
+    },
+    "provider_status_checks": {
+      "core_current_head_q192_frame_graph_jet_transfer": true,
+      "core_current_head_q193_duhamel_phase_recurrence": true,
+      "physical_pulse_foundation": true,
+      "physical_pulse_transfer": true
+    },
+    "scope": {
+      "complete_primary_fixed_order_field_bounds_closed_conditionally": true,
+      "complete_residual_improvement_or_blowup": false,
+      "complete_wave_covariance_means_rederived": false,
+      "tests_are_continuum_proof": false,
+      "uniform_every_accepted_band_relative_to_named_inputs": true
+    },
+    "support_contract": {
+      "T_zero_jets_are_one_sided_not_zero_extended": true,
+      "axis_smoothness_from_zero_support_near_axis": true,
+      "closed_enlarged_preimages_have_at_most_one_label": true,
+      "cutoffs_on_potential_and_pressure_before_curl": true,
+      "derivatives_and_curl_do_not_enlarge_support": true,
+      "generated_source_still_needs_own_endpoint_extension": true,
+      "positive_P_not_used_as_endpoint_support": true,
+      "primary_cutoff_supplies_smooth_pulse_endpoint_extension": true,
+      "pulse": "|v/Ls-1/2|<=2/5; cutoff one on the central fifth",
+      "shell": "fixed closed active shell with flat sqrt(zeta) edges",
+      "transverse": "|xi|<=r0/2"
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q192_frame_graph_jet_transfer/README.md": "80bad4c334a27aa1ed6f8e56a1bb18ccdb6a42390893b444e3177fbc73a48ded",
+    "results/core_current_head_q193_duhamel_phase_recurrence/README.md": "de90b01cad423889ef5d80cd4b9622512af769d9f9cf1c1f26d126cef2b49525",
+    "results/core_current_head_q194_primary_field_assembly/README.md": "b1181cb00f0fce6f78033bdb7c7fb436b34e683a22a8c5b35af7c64a421ca056",
+    "results/core_current_head_q194_primary_field_assembly/audit.py": "620a4e2901bce726d1cb9e9a268d823c777c809d7ed5983fd00cccab5fd79f98",
+    "results/core_current_head_q194_primary_field_assembly/q194.py": "30188b596340b71ee734480a25f441a9474570f15c857246cbf7ad20ca584988",
+    "results/core_current_head_q194_primary_field_assembly/test_audit.py": "74a1d926d210a554e09d8dfdd4e2c5659d913ed0459cc145343b14419f446eba",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428"
+  },
+  "status": "Q194-complete-primary-field-bounds-and-support-assembled-conditionally",
+  "symbolic": {
+    "established": "Q193's uncut recurrence and Q192's graph ledger assemble into complete primary curl velocity, wave pressure and fixed potential bounds on one support domain",
+    "next": "derive the complete-wave covariance mean identities using the assembled radial, angular and axial velocity and wave pressure, retaining all six covariance entries, the moving pressure response and the radial/axial mean corrections on one domain",
+    "status": "Q194-complete-primary-field-bounds-and-support-assembled-conditionally",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
