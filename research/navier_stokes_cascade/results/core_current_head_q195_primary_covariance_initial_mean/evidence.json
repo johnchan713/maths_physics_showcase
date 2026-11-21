@@ -1,0 +1,354 @@
+{
+  "closure": {
+    "edges": 1589,
+    "nodes": 445,
+    "source_bindings": 6023
+  },
+  "dependency_evidence_sha256": {
+    "results/complete_covariance_initial_means/evidence.json": "64d6891cdfd7e17bcb6ff8d50eef18c8e1ecbebf5a2f122c0a1ef49870060def",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/evidence.json": "aaf0f49636f62cf2e1774df881e164dc2082904b1c65b19fac3e7035ccfed6de",
+    "results/core_current_head_q194_primary_field_assembly/evidence.json": "1443933dd8d6ebfb4a254253e3438346fbd3a8b4cd91c2a432a45ca83e3955ee",
+    "results/physical_pulse_transfer/evidence.json": "4fd33b054abaa66aa34052eccf97086a1db9ea8325afe857b1de35e03e63fc85"
+  },
+  "parent": "477a0d22eb94e4332017e98418d0f6874507035c",
+  "review": {
+    "checks": {
+      "Q194_envelope_alone_not_used_as_stress_matching": true,
+      "all_provider_statuses_match": true,
+      "all_six_entries_have_distinct_mean_or_stress_roles": true,
+      "covariance_and_wave_pressure_have_same_physical_Q_loss": true,
+      "covariance_has_full_squared_shell_and_Gaussian_weights": true,
+      "exact_real_harmonic_mean_has_all_six_entries": true,
+      "initial_mean_gain_retains_fast_viscous_loss": true,
+      "no_later_complex_cycle_or_complete_residual_promotion": true,
+      "same_family_root_Haar_match_is_exact": true,
+      "wave_pressure_zero_mean_does_not_delete_pointwise_pressure": true,
+      "whole_moving_pressure_product_is_differentiated": true
+    },
+    "correction": {
+      "Q194_pointwise_envelope_does_not_by_itself_imply_matched_stress": true,
+      "historical_frozen_evidence_modified": false,
+      "matching_uses_the_same_physical_root_and_Haar_columns": true,
+      "wave_pressure_is_only_zero_in_angular_mean": true
+    },
+    "covariance_fixture": {
+      "all_six_present": true,
+      "entries": {
+        "rr": "17/2",
+        "rtheta": "11",
+        "rz": "27/2",
+        "thetatheta": "29/2",
+        "thetaz": "18",
+        "zz": "45/2"
+      },
+      "matrix": [
+        [
+          "17/2",
+          "11",
+          "27/2"
+        ],
+        [
+          "11",
+          "29/2",
+          "18"
+        ],
+        [
+          "27/2",
+          "18",
+          "45/2"
+        ]
+      ],
+      "mixed_sine_cosine_mean": "0",
+      "symmetric": true
+    },
+    "frontier": {
+      "blocking_inequality": "for the first actual generated nonzero harmonic f_(0,m), derive on the same physical domain every fixed-jet weighted quotient bound sup epsilon^(-B0) zeta^(-1/2) ya^r yb^s |D^I(f_(0,m)/P)|<infinity and smooth mixed-jet zero extension at both pulse endpoints, with full pressure, viscosity, cutoffs and all interactions retained",
+      "closed_here": "the Q194 assembled real primary has an exact six-entry covariance, same-family matched stresses, complete initial compact pressure/moment identities and the initial S2/M_(2-3kappa) mean gain",
+      "complete_generated_source_or_residual_rederived_here": false,
+      "later_complex_covariance_cycle_rederived_here": false
+    },
+    "initial_targets_fixture": {
+      "Jtheta": "13",
+      "Jz": "4419/400",
+      "P": "2197/200",
+      "rtheta_enters_tangential_stress_row": true,
+      "used_components": [
+        "rr",
+        "rz",
+        "thetatheta",
+        "thetaz",
+        "zz"
+      ]
+    },
+    "moving_pressure_fixture": {
+      "bump_motion_term": "15",
+      "omission_changes_identity": true,
+      "omitted_bump_motion": "14",
+      "whole_product": "29"
+    },
+    "physical_losses": [
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "201/400",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "151/100",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "1007/400",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "201/200",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "161/80",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "151/50",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "603/400",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "503/200",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "1409/400",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "201/100",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "1207/400",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "161/40",
+        "field": "velocity",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "201/200",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "161/80",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "151/50",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "603/400",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "503/200",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "1409/400",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "201/100",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "1207/400",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "161/40",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "201/80",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "88/25",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P^2",
+        "Q_loss": "1811/400",
+        "field": "covariance",
+        "shell_weight": "zeta"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "201/200",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "161/80",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "151/50",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "603/400",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "503/200",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "1409/400",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "201/100",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "1207/400",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "161/40",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "201/80",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "88/25",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      },
+      {
+        "Gaussian_weight": "P",
+        "Q_loss": "1811/400",
+        "field": "wave_pressure",
+        "shell_weight": "sqrt(zeta)"
+      }
+    ],
+    "principal_match_fixture": {
+      "axial": "14",
+      "axial_defect": "0",
+      "cover": "1",
+      "exact": true,
+      "theta": "6",
+      "theta_defect": "0"
+    },
+    "provider_status_checks": {
+      "complete_covariance_initial_means": true,
+      "core_current_head_q183_provider_discharge_generated_source_frontier": true,
+      "core_current_head_q194_primary_field_assembly": true,
+      "physical_pulse_transfer": true
+    },
+    "rates": {
+      "covariance_remainder": "99999/50000",
+      "initial_tangential_residual": "199997/100000",
+      "initial_three_defects": "2",
+      "positive_initial_margin": true,
+      "viscous_loss": "3/100000"
+    },
+    "scope": {
+      "complete_initial_mean_joined": true,
+      "complete_real_primary_covariance_rederived": true,
+      "later_complex_cycles_and_generated_sources_rederived": false,
+      "tests_are_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/complete_covariance_initial_means/README.md": "c0c0ed167bc7bf84e5b48c1a2e360b7080c2892d88390c00a5d6cfbbcfccef0d",
+    "results/core_current_head_q183_provider_discharge_generated_source_frontier/README.md": "dd19e4232668c41dfa5abcf35e3047786b918feca677ebea32e465fadf6d0f38",
+    "results/core_current_head_q194_primary_field_assembly/README.md": "b1181cb00f0fce6f78033bdb7c7fb436b34e683a22a8c5b35af7c64a421ca056",
+    "results/core_current_head_q195_primary_covariance_initial_mean/README.md": "d076195b0054029a576d3cb2e64221175a9d271239007c15d2cea60007a6c8e9",
+    "results/core_current_head_q195_primary_covariance_initial_mean/audit.py": "6dbe9be39525bf376e098d56a712607e11d06b6f38c9d50237aa1ebfee6a79e0",
+    "results/core_current_head_q195_primary_covariance_initial_mean/q195.py": "7111feb5ddce0f333a1e774852f212f2257ddb3c53ee69317c2fd8a999edc27d",
+    "results/core_current_head_q195_primary_covariance_initial_mean/test_audit.py": "b262673e3c74c18b92283d1e629efb9ad6566d930ba52a4f4f0f7de765619177",
+    "results/physical_pulse_transfer/README.md": "10c47bcd5cac87ec666d993692684704c9d0a6c9897844615f6b4ec79fbe8428"
+  },
+  "status": "Q195-primary-six-entry-covariance-and-initial-complete-mean-joined",
+  "symbolic": {
+    "correction": "the Q194 field envelope bounds the tensor but cannot prove stress matching; that cancellation uses the unchanged physical root identity, while wave pressure is zero only after angular averaging",
+    "established": "the Q194 assembled real physical primary has exact six-entry angular covariance; the same-family Haar/root identity supplies the two matched stresses, and the full initial compact pressure and radial/axial mean update reaches S2 with tangential order 2-3kappa",
+    "next": "for the first actual generated nonzero harmonic f_(0,m), derive on the same physical domain every fixed-jet weighted quotient bound sup epsilon^(-B0) zeta^(-1/2) ya^r yb^s |D^I(f_(0,m)/P)|<infinity and smooth mixed-jet zero extension at both pulse endpoints, with full pressure, viscosity, cutoffs and all interactions retained",
+    "status": "Q195-primary-six-entry-covariance-and-initial-complete-mean-joined",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

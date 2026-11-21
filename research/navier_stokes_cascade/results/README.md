@@ -6,7 +6,19 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q194 complete primary field bounds and support assembly](core_current_head_q194_primary_field_assembly/README.md).
+Latest source audit: [Q195 primary covariance and complete initial mean join](core_current_head_q195_primary_covariance_initial_mean/README.md).
+Q195 takes the exact real Q194 cut-curl field and derives its complete
+six-entry angular covariance. It corrects the possible inference that Q194's
+pointwise envelope supplies stress matching: the two matched entries require
+the unchanged same-family positive-root/Haar identity. With that identity,
+all six entries, axial velocity, `Pi1/Pi2`, compact pressure and the whole
+moving product `c_rho P` enter the initial mean update. The three scalar
+defects reach `S_2` and the tangential angular-mean residual reaches
+`M_(2-3kappa)`, with the fast viscous loss retained. Later complex cycles,
+the actual generated-source quotient, the complete residual and blow-up
+remain open.
+
+Preceding source audit: [Q194 complete primary field bounds and support assembly](core_current_head_q194_primary_field_assembly/README.md).
 Q194 applies the actual cutoffs to vector potentials and pressures before
 taking the complete cylindrical curl. It retains radial, angular and axial
 velocity, all seven component terms and every `1/r` connection. Exact
