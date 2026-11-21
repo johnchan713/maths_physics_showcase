@@ -1,0 +1,202 @@
+{
+  "closure": {
+    "edges": 1631,
+    "nodes": 452,
+    "source_bindings": 6093
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q160_physical_target_induction/evidence.json": "7df2d117988dd9cdc149ef68c0c42086e8ec1963c27f2932e829839612168b5e",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_current_head_q180_target_source_simultaneous_induction/evidence.json": "9315c63504df9084cf79c5efec336eae2eb749380871e9b74905192f821c9322",
+    "results/core_current_head_q201_post_signed_mean_reconciliation/evidence.json": "dc00309f702395523d3550ea057129b487765008e5141dda1b0de695cbd98d74",
+    "results/core_physical_tail_join/evidence.json": "d5916638d86000f381517d55a740313d48513009fac446018472cfaaca3ec22c",
+    "results/core_post_signed_residual_join/evidence.json": "bb9833093f77cebeb4045096f4c0c8d2ad7c03fab4a830f6e6f848831895f662",
+    "results/core_post_signed_seed_sync/evidence.json": "bde939a084970802d41f349088e68c4ce89c4accf1f8bd6cbcfb629252328db1",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1",
+    "results/regular_source_foundation/evidence.json": "91f71ce32b4427f504553f4d8dfe5d555ae8822ec3f8e8da75123f729e487e28",
+    "results/sourced_inverse_foundation/evidence.json": "15afc498fa42605b0fcbaaff81b4245ceb388e447527e63395eeb45348c41827"
+  },
+  "parent": "148f5b87c5ea2224a3678dc610d26a826bfc2848",
+  "review": {
+    "checks": {
+      "Q201_normalized_domain_not_reused_as_physical_domain": true,
+      "all_provider_statuses_match": true,
+      "both_physical_compact_branches_have_strict_margin": true,
+      "complete_post_signed_source_is_exactly_D": true,
+      "full_constraint_pressure_and_support_operations_retained": true,
+      "next_source_and_target_rates_close_with_two_kappa_target_slack": true,
+      "next_source_gain_saturates_only_full_linear_rows": true,
+      "no_diagonal_force_or_blowup_promotion": true,
+      "physical_common_pole_and_domains_match": true,
+      "physical_pulse_and_next_residual_are_not_absolute_decay": true,
+      "physical_request_counts_match_frozen_residual_join": true,
+      "sourced_inverse_orders_are_D_C0_and_C0_minus_kappa": true
+    },
+    "correction": {
+      "Q201_normalized_mean_domain_is_not_the_physical_tail_domain": true,
+      "Q201_normalized_mean_domain_remains_valid_for_mean_block": true,
+      "historical_frozen_evidence_modified": false,
+      "normalized_pole": 1200114,
+      "physical_domain_strictly_larger": true,
+      "physical_pole": 361200138
+    },
+    "current_source": {
+      "all_nonzero_terms_retain_complete_cut_wave_factor": true,
+      "angular_harmonics": [
+        -4,
+        -3,
+        -2,
+        -1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "flat_Gaussian_and_base_exterior_terms_forward_inverted": false,
+      "full_pressure_gradient_viscosity_cylindrical_crosses_and_squares_retained": true,
+      "groups": {
+        "both_old_signed_wave_crosses": "74999/50000",
+        "inherited_current_source": "74999/50000",
+        "new_fast_feedback": "74999/50000",
+        "new_slow_feedback": "149999/100000",
+        "old_mean_signed_wave": "74999/50000",
+        "signed_complete_linear": "74999/50000",
+        "signed_square": "199997/100000"
+      },
+      "order": "74999/50000",
+      "smooth_endpoint_zero_extension_relative_to_named_support_inputs": true
+    },
+    "frontier": {
+      "absolute_physical_residual_decay_proved": false,
+      "actual_giant_constants_or_high_jets_evaluated": false,
+      "closed_here": "relative to the named same-family fixed-jet source, frame and support providers, the exact D-order post-signed source enters the constrained sourced inverse on the corrected physical domain and the coupled source/target step reaches B1 and C1",
+      "complete_diagonal_force_exclusion_or_blowup_proved": false,
+      "next": "replay the complete-potential diagonal, punctured endpoint and localization-force ledger on this corrected coupled state, retaining every scale-cutoff curl, pressure gradient, viscosity term, nonlinear cross and square",
+      "stage_uniform_infinite_sum_proved": false
+    },
+    "next_cycle": {
+      "closes_relative_to_named_continuum_inputs": true,
+      "next_required_target": "49999/20000",
+      "next_source": "39999/20000",
+      "proved_target_bridge": "249997/100000",
+      "source_and_target_advanced_simultaneously": true,
+      "source_limiters": [
+        "sourced_full_linear",
+        "signed_full_linear"
+      ],
+      "source_margins_over_B1": {
+        "fast_mean_wave_change": "1/50000",
+        "signed_actual_mean_cross": "1/50000",
+        "signed_full_linear": "0",
+        "signed_new_square": "1",
+        "signed_old_wave_cross": "1/50000",
+        "slow_mean_wave_change": "3/100000",
+        "sourced_actual_mean_cross": "1/50000",
+        "sourced_full_linear": "0",
+        "sourced_new_square": "1",
+        "sourced_old_wave_cross": "1/50000"
+      },
+      "target_minimum_margin": "1/50000",
+      "target_slack": "1/50000"
+    },
+    "physical_domain": {
+      "A0_integrations": 30100002,
+      "A0_source_order": 60200007,
+      "A1_integrations": 30050003,
+      "A1_source_order": 60100009,
+      "N": 0,
+      "actual_high_jet_values_evaluated": false,
+      "common_wave_pole": 361200138,
+      "final_radial_source_domain": 1444800552,
+      "full_nonzero_source_domain": 1083600414,
+      "m": 0,
+      "maxima": {
+        "new_covariance": 60200020,
+        "next_signed_target_input": 60200021,
+        "post_signed_row": 60200017
+      },
+      "normalized_mean_pole_for_default_request": 1200114,
+      "normalized_mean_pole_suffices_for_physical_request": false,
+      "post_signed_and_fast_domain": 722400276,
+      "strict_A0_exponent_margin": "1/20000000",
+      "strict_A1_exponent_margin": "1/20000000"
+    },
+    "physical_powers": {
+      "next_regular_source_zero_jet": "-6000001/4000000",
+      "sourced_potential_zero_jet": "49999/10000000",
+      "sourced_pressure_zero_jet": "-10000001/10000000",
+      "sourced_velocity_zero_jet": "-4975001/10000000"
+    },
+    "provider_status_checks": {
+      "core_current_head_q160_physical_target_induction": true,
+      "core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q180_target_source_simultaneous_induction": true,
+      "core_current_head_q201_post_signed_mean_reconciliation": true,
+      "core_physical_tail_join": true,
+      "core_post_signed_residual_join": true,
+      "core_post_signed_seed_sync": true,
+      "finite_stage_induction": true,
+      "regular_source_foundation": true,
+      "sourced_inverse_foundation": true
+    },
+    "rates": {
+      "current_source_D": "74999/50000",
+      "current_target_C0": "99999/50000",
+      "cycle_gain_delta": "49997/100000",
+      "initial_B": "99999/100000",
+      "kappa": "1/100000",
+      "next_required_target_C1": "49999/20000",
+      "next_source_B1": "39999/20000",
+      "proved_target_bridge": "249997/100000",
+      "target_slack": "1/50000"
+    },
+    "scope": {
+      "actual_enormous_derivatives_or_constants_evaluated": false,
+      "conditional_analytical_next_sourced_cycle": true,
+      "tests_or_integer_request_arithmetic_are_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false,
+      "uniform_in_cycle_constants_claimed": false
+    },
+    "sourced_inverse": {
+      "complete_curl_remainder": "199997/100000",
+      "complete_cut_velocity": "74999/50000",
+      "constraint": "t'+Kt+m^2dt+ikmn*pi=-f, n.t=0, t(0)=0",
+      "finite_harmonic_set_only": true,
+      "input_source": "74999/50000",
+      "moving_normal_term_retained": true,
+      "potential_and_pressure_cut_before_complete_curl": true,
+      "pressure": "pi=i(n.Kt-n'.t+n.f)/(km|n|^2)",
+      "pressure_and_vector_potential": "99999/50000",
+      "pressure_equals_current_C0": true,
+      "same_accepted_domain_and_C_minus_20_width": true,
+      "source_normal_term_retained": true,
+      "uncut_exit_declared_zero": false,
+      "uncut_tangential_response": "74999/50000"
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q160_physical_target_induction/README.md": "b8e6cb93143ae4bde7d22da05db8a98af82eac37ecbd33a790e6976c4918e916",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q180_target_source_simultaneous_induction/README.md": "c7ccc0ebf30d037338a1140721de4b830f39b2229f1d8df818873a2e078eba6c",
+    "results/core_current_head_q201_post_signed_mean_reconciliation/README.md": "26847a24923c992bb16de9aaf895739d4a27bb15ea31111dad2865db350a305f",
+    "results/core_current_head_q202_next_sourced_cycle/README.md": "babbc50812ba2b1c361a92add6ab179f9011a3be7b933c493e8cf868d1ad31f1",
+    "results/core_current_head_q202_next_sourced_cycle/audit.py": "efb1bdd9f6b1c73cb239c5f0846aa3ddf7cbee236022e91417ee6f1583e44f19",
+    "results/core_current_head_q202_next_sourced_cycle/q202.py": "84f08774a96db0e4d6619a6e612c0863e3f4d83065f5a72bce75ea9c8d7fb31e",
+    "results/core_current_head_q202_next_sourced_cycle/test_audit.py": "3725af970163c6b82923c431b14a638212b8e622184da2c7f054c2f0f2991733",
+    "results/core_physical_tail_join/README.md": "d370bf1aa9b7133d05b001050d538e6fe653008528144e02196b4bb7b59e9de0",
+    "results/core_post_signed_residual_join/README.md": "dfd31f1ebaa2af7acd6f4bfe9cdc7c6941fdc216d88a524cbdc67a6094d781fe",
+    "results/core_post_signed_seed_sync/README.md": "8f45c620e935c4e74959685820276d3ddd0e53f0e09142927ef057abc9bb081e",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856",
+    "results/sourced_inverse_foundation/README.md": "6f784f977d69cf489e2416d98069f2e12a1db1580fc6adbc43cde45cb55352c2"
+  },
+  "status": "Q202-next-constrained-sourced-cycle-joined-on-corrected-physical-domain",
+  "symbolic": {
+    "correction": "Q201's normalized mean pole 1200114 does not cover the physical compact-tail request; the default physical join requires common pole 361200138",
+    "established": "relative to the named same-family continuum providers, the exact D source enters the full constrained sourced inverse and the simultaneous cycle reaches source B1=2-5*kappa and required target C1=5/2-5*kappa with 2*kappa target slack",
+    "historical_frozen_records_modified": false,
+    "next": "replay the complete-potential diagonal, punctured endpoint and localization-force ledger on this corrected coupled state, retaining every scale-cutoff curl, pressure gradient, viscosity term, nonlinear cross and square",
+    "status": "Q202-next-constrained-sourced-cycle-joined-on-corrected-physical-domain",
+    "unconditional_complete_residual_force_exclusion_or_blowup_certified": false
+  }
+}

@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q201 corrected post-signed fast and slow mean reconciliation](core_current_head_q201_post_signed_mean_reconciliation/README.md).
+Latest source audit: [Q202 next constrained sourced cycle on the corrected physical domain](core_current_head_q202_next_sourced_cycle/README.md).
+Q202 carries Q201's exact `D=3/2-2*kappa` nonzero source through the full
+constrained sourced inverse, retaining moving-normal and source-normal
+pressure, endpoint support and complete curl memory. It corrects a domain
+ambiguity: Q201's normalized pole `1200114` does not cover the physical
+compact-tail request, whose default common pole is `361200138`. Relative to
+the named fixed-jet providers, the simultaneous next cycle reaches source
+`B1=2-5*kappa` and required target `C1=5/2-5*kappa`, with `2*kappa` target
+slack. The large requests remain symbolic and the physical residual exponent
+is still negative.
+
+Preceding source audit: [Q201 corrected post-signed fast and slow mean reconciliation](core_current_head_q201_post_signed_mean_reconciliation/README.md).
 Q201 binds Q200's corrected physical target seed to the exact current fast
 and slow mean maps. The zero-Haar fast increment has tangential order
 `D=3/2-2*kappa`, recomputed postfast scalars and the fresh slow increment
@@ -18,7 +29,7 @@ margin, so the analytical result remains conditional on the named fixed-jet
 continuum providers. The complete nonzero source still has order `D` and
 does not give absolute physical residual decay.
 
-Preceding source audit: [Q200 physical weighted-target reconciliation at corrected rates](core_current_head_q200_physical_weighted_target_reconciliation/README.md).
+Earlier source audit: [Q200 physical weighted-target reconciliation at corrected rates](core_current_head_q200_physical_weighted_target_reconciliation/README.md).
 Q200 corrects Q199's global dependency conclusion while preserving its
 mathematical obstruction. Unweighted fixed-jet bounds, exact moments and
 compact support still do not imply flat-edge divisibility, but the omitted
