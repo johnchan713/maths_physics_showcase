@@ -1,0 +1,138 @@
+{
+  "closure": {
+    "edges": 1571,
+    "nodes": 441,
+    "source_bindings": 5989
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q187_actual_symbolic_q2_selector/evidence.json": "4a87f946453761477a09ee363783b881f08bf299d9d0cd92c944e802845d521f",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/evidence.json": "7f8cf179242fffe5c7d91614e33eb955d9e52565f3b3182a585dbe935b28842d",
+    "results/core_current_head_q190_downstream_route_frontier_audit/evidence.json": "97a4c2446c6a222404b54699498fc2b81d076acf5c867fd19a7283371ded29e9",
+    "results/leading_frame_foundation/evidence.json": "fec0aee5eecb7873d2e76abd50a24e2f2a4ff236f97380e9bc36629d1ba30fba",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0",
+    "results/weighted_stress_foundation/evidence.json": "5033fd870260a6561b9e4a2c342a9cc67365d077c8acc802e32a2a08de59882a"
+  },
+  "parent": "f8d3b963ee0b684e22ea43c58b58dd1a7d59b65f",
+  "review": {
+    "Gaussian_absorption": {
+      "curvature": "1/10",
+      "finite_uniform_constant_exists": true,
+      "linear_exponent": "15",
+      "maximum_exponent": "1125/2",
+      "one_threshold_handles_every_later_band_for_each_fixed_request": true,
+      "square_identity": "d*l-a*l^2=d^2/(4a)-a*(l-d/(2a))^2"
+    },
+    "Riccati_seed": {
+      "outward_derivative": "-47/512",
+      "ratio": "1/8",
+      "ratio_at_most_one_eighth": true,
+      "strict_outward_sign": true,
+      "upper": "-47/512"
+    },
+    "chart_seed": {
+      "A": "101/200",
+      "D": "99/200",
+      "Q_cancels_from_implicit_equation": true,
+      "h": "1/200",
+      "implicit_equation": "s-Z^2*s^(2h)=T",
+      "jacobian": "99/100",
+      "jacobian_positive": true,
+      "two_D_plus_two_h": "1",
+      "uniform_floor": "99/100"
+    },
+    "checks": {
+      "Riccati_barrier_has_strict_outward_sign": true,
+      "all_provider_statuses_match": true,
+      "carrier_and_length_geometry_close_exactly": true,
+      "chart_has_no_Q_loss_and_positive_jacobian": true,
+      "complete_pressure_preserves_constraint": true,
+      "primary_Q_powers_and_all_band_absorption_close": true,
+      "remaining_all_fixed_jet_boundary_not_promoted": true
+    },
+    "frontier": {
+      "all_fixed_actual_mixed_frame_jets_independently_rederived_here": false,
+      "blocking_inequality": "for every fixed mixed index alpha, derive on the actual Q189 representatives |D^alpha E_frame|+|D^alpha(d-dref)| <= C_alpha S^p_alpha/Ls, with finite C_alpha,p_alpha on one common later-band domain, while retaining derivatives of n, B, Bleft, graph coefficients and the complete pressure denominator",
+      "closed_here": "dimensionless chart Jacobian, carrier and pulse-length scales, complete constrained pressure formula, Riccati nonvanishing barrier, primary Q-power arithmetic and fixed-request Gaussian all-band absorption",
+      "historical_first_band_or_giant_profile_numerically_certified": false,
+      "provider_supplies_it_relative_to_named_inputs": true,
+      "why_needed": "this is the input to differentiated Duhamel/Faa-di-Bruno estimates for every fixed physical curl, pressure and potential jet; low-order fixtures cannot replace it"
+    },
+    "geometry_seed": {
+      "Ls_lower": "8/378567",
+      "Ls_lower_positive": true,
+      "Ls_upper_below_S": true,
+      "Ls_upper_using_Tg_below_six": "16/126189",
+      "carrier_ceiling": true,
+      "carrier_floor": true,
+      "epsilon": "4/1089",
+      "epsilon_k_squared": "1156/1089",
+      "inverse_sqrt_epsilon": "33/2",
+      "nearest_nonzero_carrier_ceiling": 17,
+      "r0": "1/6057072",
+      "rounding_error_bound": "|p-ptilde|<=1/k; a nonzero-integer constraint does not give 1/(2k)"
+    },
+    "physical_exponents": {
+      "A": "101/200",
+      "a": 3,
+      "b": 2,
+      "coefficient_space": "10000001/20000000",
+      "coefficient_time": "201/200",
+      "phase_losses_dominate_coefficients": true,
+      "potential_loss": "1409/400",
+      "pressure_loss": "1811/400",
+      "st": "403/400",
+      "sx": "201/400",
+      "velocity_loss": "161/40",
+      "zero_order_scaling_checks": {
+        "potential": true,
+        "pressure": true,
+        "velocity": true
+      }
+    },
+    "pressure_constraint": {
+      "P_for_pi_equal_iP": "-34164913/670770870",
+      "constraint_derivative": "0",
+      "constraint_preserved": true,
+      "formula": "pi=i*(n.Kt-nprime.t+n.f)/(k*m*|n|^2)",
+      "moving_normal_nonzero": true,
+      "n_dot_t": "0",
+      "norm_squared": "1",
+      "source_normal_nonzero": true
+    },
+    "provider_status_checks": {
+      "core_current_head_q187_actual_symbolic_q2_selector": true,
+      "core_current_head_q189_same_profile_envelope_gap_audit": true,
+      "core_current_head_q190_downstream_route_frontier_audit": true,
+      "leading_frame_foundation": true,
+      "physical_pulse_foundation": true,
+      "weighted_stress_foundation": true
+    },
+    "scope": {
+      "all_fixed_actual_physical_pulse_jets_rederived": false,
+      "generated_source_covariance_or_complete_residual_reproved_here": false,
+      "physical_pulse_low_order_and_scaling_seed_rederived": true,
+      "tests_are_continuum_proof": false,
+      "unconditional_pulse_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q187_actual_symbolic_q2_selector/README.md": "5c4f1ee7cf30af725af81107890ce9810a365dc0936253e9bcec1909cad191a1",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/README.md": "ec59ea11e23d44c27e60797eb75ac5d178328949170d97d3becba0ecec870878",
+    "results/core_current_head_q190_downstream_route_frontier_audit/README.md": "7cb10a0b46c474eabffa62fcdf2ff2faff5cb46b0872a1a0cf44f8bbb3f74f55",
+    "results/core_current_head_q191_physical_pulse_seed_audit/README.md": "60616c586151b45150c2e24d700cd86ff0c21cb59f1df73ca4c2ed8bb1ab35ac",
+    "results/core_current_head_q191_physical_pulse_seed_audit/audit.py": "42ada36808d3bcd4060ed56da18c74f3f0e836901aaf53f544b896c7297c258f",
+    "results/core_current_head_q191_physical_pulse_seed_audit/q191.py": "0bd4777514f43f7bf991b99e6977880ef9cf64945f21585ee877bf16ff3f9239",
+    "results/core_current_head_q191_physical_pulse_seed_audit/test_audit.py": "aaa8308d9ed7827897f0e72aaf07f4346593860647db830502556301045f20f7",
+    "results/leading_frame_foundation/README.md": "43e94ef9e98ddccecad6953412396384ae795bd33534295ceb2d48db145038eb",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5",
+    "results/weighted_stress_foundation/README.md": "18d60471dd6d794f440e184375fe3d64d1787c854cdd67bc840878a9e37f0f16"
+  },
+  "status": "Q191-physical-pulse-chart-frame-pressure-and-scaling-seed-rederived",
+  "symbolic": {
+    "established": "on the Q189 selected-profile provider chain, the dimensionless chart Jacobian, carrier/length scales, full normal pressure formula, Riccati continuation, primary physical Q powers and fixed-request Gaussian all-band absorption close exactly",
+    "next": "derive the all-fixed actual mixed frame/graph jet inequality and feed it through differentiated Duhamel and Faa-di-Bruno recurrences for complete curl, pressure and potential",
+    "obstruction": "for every fixed mixed index alpha, derive on the actual Q189 representatives |D^alpha E_frame|+|D^alpha(d-dref)| <= C_alpha S^p_alpha/Ls, with finite C_alpha,p_alpha on one common later-band domain, while retaining derivatives of n, B, Bleft, graph coefficients and the complete pressure denominator",
+    "status": "Q191-physical-pulse-chart-frame-pressure-and-scaling-seed-rederived",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

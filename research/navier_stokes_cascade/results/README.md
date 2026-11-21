@@ -6,7 +6,19 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q190 downstream same-profile route and frontier correction](core_current_head_q190_downstream_route_frontier_audit/README.md).
+Latest source audit: [Q191 physical-pulse chart, pressure and scaling seed](core_current_head_q191_physical_pulse_seed_audit/README.md).
+Q191 independently reconstructs the no-loss implicit chart and `99/100`
+Jacobian floor, `1<=epsilon k^2<=4` carrier geometry, pulse-length bounds,
+complete moving/source-normal pressure constraint, exact `47/64` Riccati
+barrier, physical `Q` exponents and fixed-request Gaussian all-band
+absorption. It corrects the nonzero-integer rounding memory to the available
+`1/k` bound. The surviving independent obligation is the all-fixed actual
+mixed frame/graph jet inequality, including every normal, frame, graph and
+pressure-denominator derivative, before differentiated Duhamel and Faà di
+Bruno can yield complete physical curl, pressure and potential jets. No
+unconditional pulse, residual, force, exclusion or blow-up result follows.
+
+Preceding source audit: [Q190 downstream same-profile route and frontier correction](core_current_head_q190_downstream_route_frontier_audit/README.md).
 Q190 binds Q189's full-pressure compact envelope/gap object through the
 Q177--Q185 primary-pulse, covariance/mean, generated-source, residual,
 localization and comparison providers. It independently reconstructs the
