@@ -1,0 +1,215 @@
+{
+  "closure": {
+    "edges": 1602,
+    "nodes": 448,
+    "source_bindings": 6048
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q197_first_sourced_covariance/evidence.json": "740dc0de9d5d8eac8791d4b13721b546c2e7448917b6b9b435e47290152abd1c",
+    "results/core_generic_signed_covariance_join/evidence.json": "3045e57d7de58962a774ba3fc173816dc7b36433ce417ab78a33650c1feae9cb",
+    "results/core_signed_target_edge_budget/evidence.json": "196dc0e2b97b88a14e4b639ed81d970cc8b212662a06eaf785d3fd92124eb99f"
+  },
+  "parent": "17a7a424c30e6e208696b4d98960d835f15c1439",
+  "review": {
+    "checks": {
+      "actual_weighted_inputs_means_and_complete_residual_not_promoted": true,
+      "all_provider_statuses_match": true,
+      "all_three_covariance_errors_tie_at_C0": true,
+      "corrected_Q197_B_not_residual_D_is_old_wave_error": true,
+      "generic_covariance_identity_exact_all_six_complex_entries": true,
+      "moving_projection_and_pressure_product_terms_retained": true,
+      "new_pressure_domain_strictly_exceeds_old_example": true,
+      "normalized_current_source_is_not_absolute_decay": true,
+      "pressure_scalar_and_pointwise_rows_not_promoted": true,
+      "strict_target_gain_is_half_minus_kappa": true,
+      "unweighted_bound_does_not_imply_zeta_divisibility": true
+    },
+    "covariance_fixture": {
+      "all_six_symmetric_entries_present": true,
+      "complex_quadratures_retained": true,
+      "error": [
+        [
+          "24",
+          "65/2",
+          "37"
+        ],
+        [
+          "65/2",
+          "83/2",
+          "46"
+        ],
+        [
+          "37",
+          "46",
+          "55"
+        ]
+      ],
+      "identity_exact": true,
+      "left": [
+        [
+          "29",
+          "38",
+          "89/2"
+        ],
+        [
+          "38",
+          "99/2",
+          "57"
+        ],
+        [
+          "89/2",
+          "57",
+          "65"
+        ]
+      ],
+      "principal": [
+        [
+          "5",
+          "11/2",
+          "15/2"
+        ],
+        [
+          "11/2",
+          "8",
+          "11"
+        ],
+        [
+          "15/2",
+          "11",
+          "10"
+        ]
+      ],
+      "right": [
+        [
+          "29",
+          "38",
+          "89/2"
+        ],
+        [
+          "38",
+          "99/2",
+          "57"
+        ],
+        [
+          "89/2",
+          "57",
+          "65"
+        ]
+      ],
+      "unequal_harmonics_not_crossed": true
+    },
+    "covariance_orders": {
+      "E": "99999/100000",
+      "L": "99999/100000",
+      "R": "74999/50000",
+      "W0_and_U": "1/2",
+      "all_errors_tie_at_C0": true,
+      "error_minimum": "99999/50000",
+      "error_terms": {
+        "complete_signed_square": "99999/50000",
+        "complete_wave_signed_curl_remainder": "99999/50000",
+        "old_error_signed_principal": "99999/50000"
+      },
+      "gain_condition_minimum": "49999/100000",
+      "gain_condition_terms": {
+        "curl_margin": "49999/100000",
+        "old_error_margin": "49999/100000",
+        "target_margin": "49999/100000"
+      },
+      "principal_cross": "149999/100000"
+    },
+    "edge_counterexamples": [
+      {
+        "grows_with_N": true,
+        "unweighted_value": "1",
+        "weighted_quotient": "10000/81",
+        "zeta": "81/10000"
+      },
+      {
+        "grows_with_N": true,
+        "unweighted_value": "1",
+        "weighted_quotient": "100000000/9801",
+        "zeta": "9801/100000000"
+      }
+    ],
+    "frontier": {
+      "actual_weighted_input_inequality_proved_here": false,
+      "blocking_inequality": "for every requested mixed jet I, prove the actual same-family current target bound |D^I Xi| <= K_I epsilon^C zeta y_a^(-p_I)y_b^(-q_I), together with the separate original-principal, current-error, root, chart, support and compact operator bounds through the expanded 2q pressure pole",
+      "closed_here": "the corrected Q197 rates close the generic complex covariance algebra and projected target exponent C0, retaining complete pressure and enlarged finite domains",
+      "complete_residual_or_blowup_proved_here": false,
+      "post_signed_fast_slow_refresh_proved_here": false
+    },
+    "moving_derivative_fixture": {
+      "moving_terms_nonzero": true,
+      "projected_derivative": "-162",
+      "projection_commutator": "30",
+      "whole_pressure_product_derivative": "658"
+    },
+    "physical_residual_power": "-15025001/10000000",
+    "pressure_domain_fixture": {
+      "common_wave_pole": 30,
+      "covariance_input_order": 2,
+      "covariance_pressure_source_pole": 60,
+      "old_domain_suffices": false,
+      "old_largest_declared_pole": 12,
+      "target_input_order": 3
+    },
+    "pressure_projection_orders": {
+      "Haar_pressure_change": "149999/100000",
+      "axial_covariance_pressure_response": "249999/100000",
+      "complete_covariance_change": "149999/100000",
+      "moving_projection_commutator_retained": true,
+      "pointwise_pressure_change": "74999/50000",
+      "pressure_or_scalar_promoted_to_C0": false,
+      "projected_tangential_target": "99999/50000",
+      "projection_after_differentiation": true,
+      "scalar_and_radial_Haar_change": "149999/100000",
+      "whole_c_rho_DeltaP_derivative_retained": true
+    },
+    "provider_status_checks": {
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q197_first_sourced_covariance": true,
+      "core_generic_signed_covariance_join": true,
+      "core_signed_target_edge_budget": true
+    },
+    "rates": {
+      "B_current_error_and_signed_principal_log": "99999/100000",
+      "B_pure": "49999/50000",
+      "C0_covariance_error_and_projected_target_log": "99999/50000",
+      "C0_pure": "199997/100000",
+      "C_pure": "74999/50000",
+      "C_target_and_covariance_log": "149999/100000",
+      "D_complete_curl_and_current_source_log": "74999/50000",
+      "D_pure": "149997/100000",
+      "kappa": "1/100000",
+      "target_gain_log": "49999/100000",
+      "target_gain_pure": "49999/100000"
+    },
+    "scope": {
+      "actual_signed_pulse_or_post_signed_mean_refresh_certified": false,
+      "complete_pressure_memory_and_finite_domain_expansion_retained": true,
+      "generic_signed_covariance_and_projected_target_exponents_closed_conditionally": true,
+      "tests_are_continuum_proof": false,
+      "unconditional_complete_residual_force_exclusion_or_blowup": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q197_first_sourced_covariance/README.md": "e0c153f70ffee2995a93a2316146b0466fdda28e10e9e2b03c0cc41cbbf73564",
+    "results/core_current_head_q198_generic_signed_target/README.md": "921e5ce86e37b4248a3864ef09b03b82829a18a0c115d193ac5df5ef346f6ae6",
+    "results/core_current_head_q198_generic_signed_target/audit.py": "038869e5c9ef4dce1982b68a9eaaab593d71c777269c0fc4fd48cc7a5c55f64d",
+    "results/core_current_head_q198_generic_signed_target/q198.py": "aaa0662a0f61b9cf67c8dc9afe91691103ec9229e2810714c7d56b1d489b62f3",
+    "results/core_current_head_q198_generic_signed_target/test_audit.py": "23246f18f4a95f470f1cc488ac8e0b239922007c4a2a8b5f23d24965fe64d3d2",
+    "results/core_generic_signed_covariance_join/README.md": "4be7970360bfccd085bab75bc4e78e94bac400f820d34c00745481c9ebe6532f",
+    "results/core_signed_target_edge_budget/README.md": "d311c52ee1e321ba10c780fa9956f5f06ee901f0e3aae0f4a608dc8a37245ffc"
+  },
+  "status": "Q198-corrected-generic-complex-signed-target-and-weighted-input-obstruction",
+  "symbolic": {
+    "correction": "the C0 cancellation does not promote the Haar pressure, scalar defects or pointwise pressure, and the next pressure proof requires the enlarged 2q source domain",
+    "established": "at the corrected Q197 rates, the complete generic complex covariance error and projected current target have order C0=2-2kappa with gain 1/2-kappa over C",
+    "next": "for every requested mixed jet I, prove the actual same-family current target bound |D^I Xi| <= K_I epsilon^C zeta y_a^(-p_I)y_b^(-q_I), together with the separate original-principal, current-error, root, chart, support and compact operator bounds through the expanded 2q pressure pole",
+    "status": "Q198-corrected-generic-complex-signed-target-and-weighted-input-obstruction",
+    "unconditional_actual_signed_pulse_means_residual_force_exclusion_or_blowup_certified": false
+  }
+}

@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q197 first sourced inverse, complex covariance and current means](core_current_head_q197_first_sourced_covariance/README.md).
+Latest source audit: [Q198 corrected generic complex signed target and weighted-input obstruction](core_current_head_q198_generic_signed_target/README.md).
+Q198 substitutes Q197's corrected current-wave order `B=1-kappa` into the
+generic original-root signed identity. All three complete covariance errors
+meet at `C0=2-2kappa`, so the conditional projected-target gain is
+`C0-C=1/2-kappa`. Complete pressure memory, the moving projection
+commutator and the enlarged pressure pole are retained. The missing actual
+inequality is the weighted `zeta`-divisible current target and separate
+root/chart/support/operator bounds through pole `2q`; unweighted bounds do
+not imply it. Post-signed fresh means and the complete residual remain open.
+
+Preceding source audit: [Q197 first sourced inverse, complex covariance and current means](core_current_head_q197_first_sourced_covariance/README.md).
 Q197 carries Q196's `1-kappa` source through the existing real signed/mean
 prefix, whose added source rows are stronger, and then solves the first
 zero-entry forced pulse with both moving-normal and source-normal pressure.
