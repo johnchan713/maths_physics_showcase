@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q192 auxiliary frame jets and corrected physical graph losses](core_current_head_q192_frame_graph_jet_transfer/README.md).
+Latest source audit: [Q193 uncut Duhamel and phase-partition recurrence](core_current_head_q193_duhamel_phase_recurrence/README.md).
+Q193 propagates Q192's conservative all-fixed frame ledger through the
+homogeneous differentiated Duhamel recurrence, obtaining the sufficient
+polynomial degree `7j`. It deliberately does not import the provider's sharper
+`2j` without its sharper `S^i` coefficient ledger. Every Faà di Bruno phase
+partition fits the unchanged physical exponents, with exact margin
+`h*(a+b-j)/2>=0`; the maximal-factor partition saturates it. Complete cutoff,
+curl, pressure and potential assembly remains to be independently derived.
+No unconditional pulse, residual, force, exclusion or blow-up result follows.
+
+Preceding source audit: [Q192 auxiliary frame jets and corrected physical graph losses](core_current_head_q192_frame_graph_jet_transfer/README.md).
 Q192 closes the all-fixed rational auxiliary-frame, damping and complete
 pressure-denominator jet transfer relative to the named primitive profile-jet
 inputs. It corrects Q191's ambiguous mixed-derivative display: physical radial
