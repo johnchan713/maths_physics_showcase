@@ -1,0 +1,152 @@
+{
+  "closure": {
+    "edges": 1593,
+    "nodes": 446,
+    "source_bindings": 6031
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q195_primary_covariance_initial_mean/evidence.json": "e69d5854b1c82aff73e3c7a71b173bff01ecc74a30483a2f0a534a5fde77466c",
+    "results/first_sourced_foundation/evidence.json": "79c48c09868edef6f8efed9ec9df8a7ffd7c3dffc520fd91685259754a7c003a",
+    "results/regular_source_foundation/evidence.json": "91f71ce32b4427f504553f4d8dfe5d555ae8822ec3f8e8da75123f729e487e28",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "parent": "fb74dd3975157277afb5d41f4e8b2033ff18d13e",
+  "review": {
+    "checks": {
+      "Q195_exact_power_display_omitted_polynomial_loss": true,
+      "all_provider_statuses_match": true,
+      "all_three_complete_initial_source_groups_meet_B": true,
+      "complete_linear_ledger_retains_pressure_viscosity_connections": true,
+      "endpoint_extension_uses_cut_support_not_Gaussian_smallness": true,
+      "flat_cutoff_terms_are_not_forwarded": true,
+      "immediate_source_stage_is_B_not_D": true,
+      "no_first_sourced_or_complete_residual_promotion": true,
+      "one_kappa_reserve_absorbs_fixed_polynomial_degree": true
+    },
+    "correction": {
+      "Q184_already_corrected_Q183_fixed_cycle_gate": true,
+      "Q195_displayed_exact_power_supremum_omitted_allowed_S_degree": true,
+      "Q195_frontier_skipped_the_immediate_B_source_stage": true,
+      "historical_frozen_evidence_modified": false
+    },
+    "endpoint_contract": {
+      "P_positive_at_each_finite_endpoint": true,
+      "cutoff_commutator_and_one_minus_cutoff_source_are_additive": true,
+      "linear_forwarded_source_contains_temporal_cutoff": true,
+      "nonlinear_source_contains_complete_cut_velocity": true,
+      "positive_Gaussian_is_not_used_as_support": true,
+      "potential_and_pressure_cut_before_zero_extension": true,
+      "source_over_P_mixed_endpoint_jets_vanish": true,
+      "uncut_exit_not_claimed_zero": true
+    },
+    "frontier": {
+      "blocking_inequality": "independently solve the first zero-entry sourced ODE from this exact source, retaining n dot f in pressure, and rederive the complete complex covariance increment (including every new harmonic square), compact pressure, axial moment and current defects on the same physical domain",
+      "closed_here": "the immediate primary-plus-initial-mean regular source has log-renormalized order 1-kappa with all fixed quotient jets and smooth endpoint extension; one kappa reserve gives a uniform pure-power order 1-2kappa",
+      "complete_finite_cycle_residual_rederived_here": false,
+      "first_sourced_complex_covariance_independently_rederived_here": false
+    },
+    "linear_ledger": {
+      "cylindrical_connections_retained": true,
+      "gains": {
+        "angular_vector_connection": "1/2",
+        "base_derivatives_and_connection": "1",
+        "mixed_viscosity_and_phase_divergence": "49999/100000",
+        "phase_defect": "1/2",
+        "pressure_gradient": "49999/100000",
+        "principal_operator_on_complete_curl_remainder": "49999/100000",
+        "slow_time_bDr_GDz": "99999/100000",
+        "vector_viscosity": "49999/50000"
+      },
+      "minimum_gain": "49999/100000",
+      "mixed_viscosity_retained": true,
+      "moving_normal_pressure_retained": true,
+      "pressure_gradient_retained": true,
+      "source_normal_pressure_retained": true,
+      "source_order": "99999/100000"
+    },
+    "provider_status_checks": {
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q195_primary_covariance_initial_mean": true,
+      "first_sourced_foundation": true,
+      "regular_source_foundation": true,
+      "source_envelope_edge_audit": true
+    },
+    "quotient_contract": {
+      "absorption": {
+        "degree": "1",
+        "degree_ceiling": 1,
+        "eta": "1/100000",
+        "exact_exponent_supremum_follows_without_reserve": false,
+        "h": "1/200",
+        "inequality": "ell^(2d) epsilon^eta <= (2D)! (2/(h eta))^(2D)",
+        "uniform_upper": "3200000000000000"
+      },
+      "jet_order": 2,
+      "log_exponent": "99999/100000",
+      "log_renormalized": "|D^I(f_initial,m/P)| <= C epsilon^(1-kappa) S^d sqrt(zeta) ya^(-r) yb^(-s)",
+      "polynomial_degree": "1",
+      "pure_exponent": "49999/50000",
+      "pure_power_after_reserve": "|D^I(f_initial,m/P)| <= C_eta epsilon^(1-2kappa) sqrt(zeta) ya^(-r) yb^(-s)",
+      "same_domain_log_P_jets": true,
+      "same_domain_raw_source_jets": true,
+      "smooth_mixed_endpoint_zero_extension": true,
+      "source_divided_by_cutoff_or_amplitude": false
+    },
+    "rates": {
+      "B_initial_source_log": "99999/100000",
+      "B_initial_source_pure_after_kappa": "49999/50000",
+      "C_first_sourced_pressure_potential": "149999/100000",
+      "D_after_first_sourced_correction": "74999/50000",
+      "alpha_primary": "1/2",
+      "initial_mean_primary": "99999/100000",
+      "linear": "99999/100000",
+      "mu_initial_mean": "99999/100000",
+      "primary_square": "99999/100000"
+    },
+    "scope": {
+      "first_sourced_complex_covariance_independently_rederived": false,
+      "initial_generated_source_quotient_closed_conditionally": true,
+      "pure_power_closed_after_one_kappa_reserve": true,
+      "tests_are_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    },
+    "source_groups": {
+      "Pi1_Pi2_remain_in_same_base_and_mean_equations": true,
+      "all_equal_B": true,
+      "all_forwarded_groups_contain_complete_cut_wave": true,
+      "flat_cutoff_commutators_remain_additive_tails": true,
+      "minimum": "99999/100000",
+      "nonzero_harmonics": [
+        1,
+        -1,
+        2,
+        -2
+      ],
+      "orders": {
+        "actual_initial_mean_primary": "99999/100000",
+        "complete_primary_linear": "99999/100000",
+        "complete_primary_square": "99999/100000"
+      }
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q195_primary_covariance_initial_mean/README.md": "d076195b0054029a576d3cb2e64221175a9d271239007c15d2cea60007a6c8e9",
+    "results/core_current_head_q196_initial_generated_source/README.md": "a847944d5da4d166d77dc5921fee163ed799c5fb4712741e421589d20cd5b0ce",
+    "results/core_current_head_q196_initial_generated_source/audit.py": "951d667800d02f05781a20bc9bab84f0e2e08595b9ffe239995ff9226e98745e",
+    "results/core_current_head_q196_initial_generated_source/q196.py": "c716843430f1f25fe9b5629b1b97b7f3c8053fa6659be563df59e85b958ddb39",
+    "results/core_current_head_q196_initial_generated_source/test_audit.py": "540ec7c72974278d4186c14b5e6a23333c2b4ea8c51187ab2a74244fe8d13c07",
+    "results/first_sourced_foundation/README.md": "b4b4fa32c4d37ce3cef2aa60c688f1a83faccbe3bab8b248c95e0ca909e55839",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4"
+  },
+  "status": "Q196-initial-generated-source-stage-and-log-quotient-corrected",
+  "symbolic": {
+    "correction": "Q195 jumped to the post-first-sourced order 3/2-2kappa and repeated Q183's exact-power supremum without the allowed polynomial S degree; the immediate source order is 1-kappa and fixed polynomial loss needs an exponent reserve",
+    "established": "the complete primary-plus-initial-mean nonzero source has order 1-kappa in the log-renormalized class, with every fixed f/P jet and smooth endpoint extension; one kappa reserve yields a uniform pure-power 1-2kappa bound",
+    "next": "independently solve the first zero-entry sourced ODE from this exact source, retaining n dot f in pressure, and rederive the complete complex covariance increment (including every new harmonic square), compact pressure, axial moment and current defects on the same physical domain",
+    "status": "Q196-initial-generated-source-stage-and-log-quotient-corrected",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}

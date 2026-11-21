@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q195 primary covariance and complete initial mean join](core_current_head_q195_primary_covariance_initial_mean/README.md).
+Latest source audit: [Q196 corrected initial generated-source stage and quotient bound](core_current_head_q196_initial_generated_source/README.md).
+Q196 corrects Q195's stated next frontier in two respects. The immediate
+complete primary-plus-initial-mean source has normalized order `1-kappa`;
+`3/2-2kappa` is reached only after the first sourced correction. Its fixed
+quotient jets carry an allowed finite polynomial `S^d` loss, so the exact
+power supremum written in Q195 does not follow when `d>0`. The
+log-renormalized bound closes with full pressure, viscosity, cylindrical and
+endpoint memory, and one `kappa` reserve gives uniform pure-power order
+`1-2kappa`. The first sourced complex covariance/mean step, complete residual
+and blow-up remain open.
+
+Preceding source audit: [Q195 primary covariance and complete initial mean join](core_current_head_q195_primary_covariance_initial_mean/README.md).
 Q195 takes the exact real Q194 cut-curl field and derives its complete
 six-entry angular covariance. It corrects the possible inference that Q194's
 pointwise envelope supplies stress matching: the two matched entries require
