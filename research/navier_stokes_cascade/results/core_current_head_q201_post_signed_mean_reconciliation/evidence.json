@@ -1,0 +1,173 @@
+{
+  "closure": {
+    "edges": 1621,
+    "nodes": 451,
+    "source_bindings": 6079
+  },
+  "dependency_evidence_sha256": {
+    "results/compact_mean_foundation/evidence.json": "4aac9ac6ed533ea1bd275490c794e9123db45ff47b4b65c7f1206b4f6b25a2c9",
+    "results/core_current_head_q160_physical_target_induction/evidence.json": "7df2d117988dd9cdc149ef68c0c42086e8ec1963c27f2932e829839612168b5e",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_current_head_q180_target_source_simultaneous_induction/evidence.json": "9315c63504df9084cf79c5efec336eae2eb749380871e9b74905192f821c9322",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/evidence.json": "86afaf50eff3a1422a8e9fe267fafe2ee3d85c3a4c36fbac210cf8d4cf1b1274",
+    "results/core_post_signed_mean_closure/evidence.json": "9bdbd0648a56ebf220a8c464a0d477564b1aac27664988fcb0f3324cdd4a38d0",
+    "results/core_post_signed_residual_join/evidence.json": "bb9833093f77cebeb4045096f4c0c8d2ad7c03fab4a830f6e6f848831895f662",
+    "results/core_post_signed_seed_sync/evidence.json": "bde939a084970802d41f349088e68c4ce89c4accf1f8bd6cbcfb629252328db1",
+    "results/current_target_moment_audit/evidence.json": "1d265466edb12722bdfd84425a5c4287b4e39d382aa36b1b46b375903daafb7f",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1"
+  },
+  "parent": "83ba6759e3e4ff3edfa60ad206cecbb9dc332b74",
+  "review": {
+    "blocking_inputs": {
+      "A0_inequality": "N_200003(Qcirc gr_final) <= epsilon^B P_I(S+K_mean) on the common same-family domain",
+      "A1_inequality": "N_100005(Qcirc EpostSigned_z) <= epsilon^D Q_I(S+K_mean) on the common same-family domain",
+      "closed_relative_to_named_continuum_providers": true,
+      "finite_request_graph_explicit": true,
+      "independently_evaluated_or_formally_certified": false,
+      "required_target_rate": "99999/50000",
+      "whole_hull_contract": "G=0 on the entire reserved potential hull, including gaps between bumps"
+    },
+    "checks": {
+      "all_provider_statuses_match": true,
+      "all_regular_mean_rows_close_at_C0": true,
+      "compact_counts_and_strict_kappa_margins_are_exact": true,
+      "complete_pressure_axial_and_old_new_memory_retained": true,
+      "conditionality_is_explicit": true,
+      "fast_and_slow_full_differences_have_strict_margins": true,
+      "finite_request_graph_matches_frozen_mean_closure": true,
+      "fresh_fast_and_slow_orders_are_D_and_C": true,
+      "no_diagonal_force_or_blowup_promotion": true,
+      "physical_regular_residual_still_has_negative_exponent": true,
+      "post_signed_fast_source_is_corrected_D": true,
+      "postfast_scalars_stay_C_and_postslow_gain_one": true
+    },
+    "compact_requests": {
+      "A0_source_order": 200003,
+      "A1_source_order": 100005,
+      "actual_high_jets_evaluated": false,
+      "common_wave_pole": 1200114,
+      "maxima": {
+        "new_covariance": 200016,
+        "next_signed_target_input": 200017,
+        "post_signed_row": 200013
+      },
+      "old_DAGs_expanded": false,
+      "output_order": 0,
+      "postfast_and_final_radial_domain": 4800456,
+      "signed_covariance_and_fast_domain": 2400228
+    },
+    "exact_mean_memory": {
+      "A1_sign_positive": true,
+      "all_six_covariances_retained": true,
+      "axial_velocity_retained": true,
+      "both_velocity_moments_preserved": true,
+      "compact_pressure_retained": true,
+      "fast_all_components_zero_Haar": true,
+      "fast_divergence_exact": true,
+      "fast_identity": "c_i N_t(du,dgamma)=-(Ftheta,Fz)+(0,A1 Fz)",
+      "fast_source": "Qcirc of the complete post-signed Etheta and Ez rows",
+      "final_radial_identity": "Er_final=-rho Pnew-A0(gr_final-rho Pnew)",
+      "final_tangential_identity": "Efinal=Haar(EpostSigned)+(0,A1 Fz)+Rf+Rs",
+      "moving_rho_and_whole_c_rho_P_derivative_retained": true,
+      "postfast_scalars": "previous postslow scalars plus complete signed covariance change plus correlations of the full old means with the actual new fast field",
+      "slow_uses_current_postfast_scalars": true,
+      "slow_uses_same_fixed_five_map": true,
+      "viscosity_time_cylindrical_cross_and_square_terms_retained": true,
+      "whole_reserved_potential_hull_G_zero_required": true
+    },
+    "frontier": {
+      "absolute_physical_residual_decay_proved": false,
+      "actual_high_jet_values_or_stage_uniform_constants_proved": false,
+      "closed_here": "relative to the named physical fixed-jet continuum providers, the corrected first post-signed fast and slow maps give all three regular mean rows at C0=2-2*kappa",
+      "complete_diagonal_force_exclusion_or_blowup_proved": false,
+      "next": "bind the complete post-signed nonzero residual at order D to the Q161/Q180 next constrained sourced solve on the same expanded domains, then replay the physical complete-potential diagonal and localization ledger"
+    },
+    "mean_orders": {
+      "A0_integrations": 100000,
+      "A1_integrations": 50001,
+      "fast_radial": "124999/50000",
+      "fast_tangential": "74999/50000",
+      "final_radial": "99999/50000",
+      "final_regular_mean": "99999/50000",
+      "final_tangential": "99999/50000",
+      "post_signed_Qcirc_rows": "74999/50000",
+      "postfast_scalars": "149999/100000",
+      "postslow_axial_moment": "349999/100000",
+      "postslow_scalars": "249999/100000",
+      "radial_margins_over_C0": {
+        "A0_compact_remainder": "1/100000",
+        "radial_compensator": "50001/100000"
+      },
+      "radial_terms": {
+        "A0_compact_remainder": "199999/100000",
+        "radial_compensator": "249999/100000"
+      },
+      "slow_radial": "249999/100000",
+      "slow_tangential": "149999/100000",
+      "tangential_margins_over_C0": {
+        "A1_compact_remainder": "1/100000",
+        "fast_full_difference": "24999/50000",
+        "post_signed_Haar": "0",
+        "slow_full_difference": "49999/100000"
+      },
+      "tangential_terms": {
+        "A1_compact_remainder": "199999/100000",
+        "fast_full_difference": "62499/25000",
+        "post_signed_Haar": "99999/50000",
+        "slow_full_difference": "249997/100000"
+      }
+    },
+    "physical_residual_power": "-15025001/10000000",
+    "provider_status_checks": {
+      "compact_mean_foundation": true,
+      "core_current_head_q160_physical_target_induction": true,
+      "core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q180_target_source_simultaneous_induction": true,
+      "core_current_head_q200_physical_weighted_target_reconciliation": true,
+      "core_post_signed_mean_closure": true,
+      "core_post_signed_residual_join": true,
+      "core_post_signed_seed_sync": true,
+      "current_target_moment_audit": true,
+      "finite_stage_induction": true
+    },
+    "rates": {
+      "B": "99999/100000",
+      "C": "149999/100000",
+      "C0": "99999/50000",
+      "D": "74999/50000",
+      "kappa": "1/100000"
+    },
+    "scope": {
+      "actual_enormous_derivatives_numerically_evaluated": false,
+      "conditional_analytical_first_post_signed_mean_block": true,
+      "tests_or_finite_request_arithmetic_are_continuum_proof": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false,
+      "uniform_in_cycle_constants_claimed": false
+    }
+  },
+  "source_hashes": {
+    "results/compact_mean_foundation/README.md": "f17ddf5d7858d835669ad897bf2ad22357175531c5f54d26fdf05fb04b8e4256",
+    "results/core_current_head_q160_physical_target_induction/README.md": "b8e6cb93143ae4bde7d22da05db8a98af82eac37ecbd33a790e6976c4918e916",
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q180_target_source_simultaneous_induction/README.md": "c7ccc0ebf30d037338a1140721de4b830f39b2229f1d8df818873a2e078eba6c",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/README.md": "235cd5e586db353edce0abc963a2bf8a0d81a78ff936edd775e84f1a27a19c73",
+    "results/core_current_head_q201_post_signed_mean_reconciliation/README.md": "26847a24923c992bb16de9aaf895739d4a27bb15ea31111dad2865db350a305f",
+    "results/core_current_head_q201_post_signed_mean_reconciliation/audit.py": "8bffa7a6dd2960d8016913153858193543ff2e8d7bfc8406e392225ee934f1c8",
+    "results/core_current_head_q201_post_signed_mean_reconciliation/q201.py": "b8476399241ffe33f78e593383e5a79a03d813a5538807a781c02de13f28fc86",
+    "results/core_current_head_q201_post_signed_mean_reconciliation/test_audit.py": "572fe1a5aa9afec3aec45fb394bc3ad36769b1737a5135188b2c66bedec67f91",
+    "results/core_post_signed_mean_closure/README.md": "07423e815116884e207d72acd38201c280489a7507e18c787141e8a3902b2c54",
+    "results/core_post_signed_residual_join/README.md": "dfd31f1ebaa2af7acd6f4bfe9cdc7c6941fdc216d88a524cbdc67a6094d781fe",
+    "results/core_post_signed_seed_sync/README.md": "8f45c620e935c4e74959685820276d3ddd0e53f0e09142927ef057abc9bb081e",
+    "results/current_target_moment_audit/README.md": "94513dd4ede449f05d470b4d533f6dd21101e990666cfa018df3590e86c62ec1",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5"
+  },
+  "status": "Q201-corrected-post-signed-fast-slow-mean-block-joined-conditionally",
+  "symbolic": {
+    "established": "relative to the named physical fixed-jet continuum providers, the actual zero-Haar fast map at D and current five-map at C retain complete pressure memory and place all three regular mean rows at C0=2-2*kappa",
+    "historical_frozen_records_modified": false,
+    "limiting_rows": "the post-signed Haar rows tie C0; A1 and A0 compact branches require 50001 and 100000 integrations and finish only kappa above C0",
+    "next": "bind the complete post-signed nonzero residual at order D to the Q161/Q180 next constrained sourced solve on the same expanded domains, then replay the physical complete-potential diagonal and localization ledger",
+    "status": "Q201-corrected-post-signed-fast-slow-mean-block-joined-conditionally",
+    "unconditional_complete_residual_force_exclusion_or_blowup_certified": false
+  }
+}
