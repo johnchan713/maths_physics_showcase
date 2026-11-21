@@ -1,0 +1,278 @@
+{
+  "closure": {
+    "edges": 1606,
+    "nodes": 449,
+    "source_bindings": 6056
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q198_generic_signed_target/evidence.json": "fd5418fae4401e788eefefb7a28e3a86c300a8664ac20d694a7286de46b01004",
+    "results/core_finite_support_closure/evidence.json": "b58b5e36e18e5ad5938ff81c12db9706d1c229b5e4d549b3604f58bd1d6e7867",
+    "results/core_generic_signed_covariance_join/evidence.json": "3045e57d7de58962a774ba3fc173816dc7b36433ce417ab78a33650c1feae9cb",
+    "results/core_primary_root_budget/evidence.json": "7989063bee8c75332fd0351d967282913e88ed955c906ec9c4cd105a15fb8983",
+    "results/core_signed_target_edge_budget/evidence.json": "196dc0e2b97b88a14e4b639ed81d970cc8b212662a06eaf785d3fd92124eb99f"
+  },
+  "parent": "10f9e41ccbcca8538dab3eb00674321085b50718",
+  "review": {
+    "bump_geometries": [
+      {
+        "first_support": [
+          "1/64",
+          "5/256"
+        ],
+        "observation": "3/128",
+        "positive_bump_mass": "1/165150720",
+        "primitive_at_observation_without_common_amplitude": "1/10569646080",
+        "second_support": [
+          "7/256",
+          "1/32"
+        ],
+        "signed_total_mass": "0",
+        "supports_disjoint": true,
+        "supports_strictly_interior": true
+      },
+      {
+        "first_support": [
+          "1/32",
+          "5/128"
+        ],
+        "observation": "3/64",
+        "positive_bump_mass": "1/165150720",
+        "primitive_at_observation_without_common_amplitude": "1/5284823040",
+        "second_support": [
+          "7/128",
+          "1/16"
+        ],
+        "signed_total_mass": "0",
+        "supports_disjoint": true,
+        "supports_strictly_interior": true
+      },
+      {
+        "first_support": [
+          "1/16",
+          "5/64"
+        ],
+        "observation": "3/32",
+        "positive_bump_mass": "1/165150720",
+        "primitive_at_observation_without_common_amplitude": "1/2642411520",
+        "second_support": [
+          "7/64",
+          "1/8"
+        ],
+        "signed_total_mass": "0",
+        "supports_disjoint": true,
+        "supports_strictly_interior": true
+      }
+    ],
+    "checks": {
+      "Q198_constant_example_strengthened_to_exact_side_conditions": true,
+      "all_provider_statuses_match": true,
+      "dependency_cut_contains_no_actual_weighted_certificate": true,
+      "every_checked_fixed_edge_pole_is_defeated": true,
+      "every_checked_fixed_unweighted_jet_can_tend_to_zero": true,
+      "flat_weight_exponential_gap_is_seven_over_thirty_six": true,
+      "no_actual_field_means_residual_or_blowup_promotion": true,
+      "normalized_source_still_not_absolute_decay": true,
+      "polynomial_fixture_mass_positive": true,
+      "primitive_between_bumps_is_nonzero": true,
+      "required_current_target_rate_is_corrected_C": true,
+      "two_bumps_disjoint_interior_and_exact_zero_total": true
+    },
+    "correction": {
+      "Q198_constant_example_did_not_encode_exact_moment_and_support": true,
+      "counterexample_is_only_to_the_inference_not_the_canonical_field": true,
+      "historical_frozen_evidence_modified": false,
+      "scaled_two_bump_family_encodes_both_side_conditions": true
+    },
+    "frontier": {
+      "actual_canonical_counterexample_constructed": false,
+      "blocking_inequality": "sup_chart epsilon^(-C) zeta^(-1) delta^(p_n) J_n((R^((e+1)/2)) E_e) <= Ehat_e,n(S)",
+      "closed_here": "the dependency cut is explicit and the unweighted-to-weighted inference is ruled out even with smooth compact support, exact moment cancellation and small fixed jets",
+      "complete_residual_or_blowup_proved_here": false,
+      "signed_pulse_or_post_signed_means_proved_here": false,
+      "weighted_current_target_proved_here": false
+    },
+    "physical_residual_power": "-15025001/10000000",
+    "pole_obstructions": [
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 2,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 0,
+        "power_after_lower_bound": -1,
+        "series_order": 1,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 3,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 1,
+        "power_after_lower_bound": -2,
+        "series_order": 2,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 4,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 2,
+        "power_after_lower_bound": -1,
+        "series_order": 2,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 5,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 3,
+        "power_after_lower_bound": -2,
+        "series_order": 3,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 6,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 4,
+        "power_after_lower_bound": -1,
+        "series_order": 3,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 7,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 5,
+        "power_after_lower_bound": -2,
+        "series_order": 4,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 8,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 6,
+        "power_after_lower_bound": -1,
+        "series_order": 4,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 9,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 7,
+        "power_after_lower_bound": -2,
+        "series_order": 5,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 10,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 8,
+        "power_after_lower_bound": -1,
+        "series_order": 5,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 11,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 9,
+        "power_after_lower_bound": -2,
+        "series_order": 6,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 12,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 10,
+        "power_after_lower_bound": -1,
+        "series_order": 6,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 13,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 11,
+        "power_after_lower_bound": -2,
+        "series_order": 7,
+        "weight_exponential_gap": "7/36"
+      },
+      {
+        "defeats_fixed_pole": true,
+        "fixed_unweighted_derivative_decay_power": 14,
+        "fixed_unweighted_derivatives_can_tend_to_zero": true,
+        "pole": 12,
+        "power_after_lower_bound": -1,
+        "series_order": 7,
+        "weight_exponential_gap": "7/36"
+      }
+    ],
+    "polynomial_bump_mass": "1/165150720",
+    "provider_cut": {
+      "all_required_actual_certificates_present": false,
+      "generic_actual_weighted_inputs": false,
+      "root_actual_current_target": false,
+      "support_original_weighted_inputs": false,
+      "target_actual_weighted_rows": false,
+      "target_all_sourced_inputs": false
+    },
+    "provider_status_checks": {
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q198_generic_signed_target": true,
+      "core_finite_support_closure": true,
+      "core_generic_signed_covariance_join": true,
+      "core_primary_root_budget": true,
+      "core_signed_target_edge_budget": true
+    },
+    "rates": {
+      "B": "99999/100000",
+      "C": "149999/100000",
+      "C0": "99999/50000",
+      "D": "74999/50000",
+      "conditional_target_gain": "49999/100000",
+      "kappa": "1/100000"
+    },
+    "requested_inequality": {
+      "components": [
+        1,
+        2
+      ],
+      "proved_here": false,
+      "rate": "149999/100000",
+      "required_on_every_accepted_band_and_fixed_jet": true,
+      "statement": "sup_chart epsilon^(-C) zeta^(-1) delta^(p_n) J_n((R^((e+1)/2)) E_e) <= Ehat_e,n(S)"
+    },
+    "scope": {
+      "actual_weighted_current_target_or_signed_pulse_certified": false,
+      "post_signed_mean_refresh_or_complete_residual_certified": false,
+      "tests_are_continuum_proof": false,
+      "unconditional_force_exclusion_or_blowup": false,
+      "weighted_input_dependency_cut_and_inference_obstruction_closed": true
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q198_generic_signed_target/README.md": "921e5ce86e37b4248a3864ef09b03b82829a18a0c115d193ac5df5ef346f6ae6",
+    "results/core_current_head_q199_weighted_target_obstruction/README.md": "c806f1c429414f462c75bc418fd61d504f21a8e24e53de14a1c5bdbe16bc3813",
+    "results/core_current_head_q199_weighted_target_obstruction/audit.py": "1d482c1138279badd622ed3274d06b08afa5a65979a4d5672f8f3f76518abe5a",
+    "results/core_current_head_q199_weighted_target_obstruction/q199.py": "6a5c4440d2ba79b19c6340e4e3f0338e116e79eb6114001b4a9a5c778648af55",
+    "results/core_current_head_q199_weighted_target_obstruction/test_audit.py": "2f766d9aae29d137cf493ebd32b9817c7d64bd99800b353e0dc1d77a0945e1cd",
+    "results/core_finite_support_closure/README.md": "5034221837ca97be051722e139a5f32d00967c2795a080390711fafcbadd3810",
+    "results/core_generic_signed_covariance_join/README.md": "4be7970360bfccd085bab75bc4e78e94bac400f820d34c00745481c9ebe6532f",
+    "results/core_primary_root_budget/README.md": "67c1f6b41f441c58866cab8c5571f83bc18aa718e8a926f71120b77c27eaa899",
+    "results/core_signed_target_edge_budget/README.md": "d311c52ee1e321ba10c780fa9956f5f06ee901f0e3aae0f4a608dc8a37245ffc"
+  },
+  "status": "Q199-exact-moment-weighted-current-target-obstruction",
+  "symbolic": {
+    "correction": "Q198's constant illustration omitted the inherited moment/support side conditions; the scaled two-bump family supplies a valid obstruction to that stronger inference",
+    "established": "smooth compact support, exact projected moment cancellation and arbitrarily small fixed unweighted jets do not imply the zeta-weighted current-target estimate",
+    "next": "sup_chart epsilon^(-C) zeta^(-1) delta^(p_n) J_n((R^((e+1)/2)) E_e) <= Ehat_e,n(S)",
+    "status": "Q199-exact-moment-weighted-current-target-obstruction",
+    "unconditional_actual_signed_pulse_means_residual_force_exclusion_or_blowup_certified": false
+  }
+}

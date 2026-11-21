@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q198 corrected generic complex signed target and weighted-input obstruction](core_current_head_q198_generic_signed_target/README.md).
+Latest source audit: [Q199 exact-moment weighted current-target obstruction](core_current_head_q199_weighted_target_obstruction/README.md).
+Q199 corrects Q198's illustrative constant obstruction, which did not encode
+the inherited exact moment and compact-support conditions. A scaled smooth
+two-bump family has exact zero total, compact interior support and every
+fixed unweighted jet tending to zero, yet its oriented primitive divided by
+the flat edge weight defeats every fixed inverse-distance pole. The frozen
+dependency cut also contains no actual weighted current-target certificate.
+This obstructs an inference from the available estimates; it is not a
+counterexample to the intended canonical field.
+
+Preceding source audit: [Q198 corrected generic complex signed target and weighted-input obstruction](core_current_head_q198_generic_signed_target/README.md).
 Q198 substitutes Q197's corrected current-wave order `B=1-kappa` into the
 generic original-root signed identity. All three complete covariance errors
 meet at `C0=2-2kappa`, so the conditional projected-target gain is
