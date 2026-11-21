@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q191 physical-pulse chart, pressure and scaling seed](core_current_head_q191_physical_pulse_seed_audit/README.md).
+Latest source audit: [Q192 auxiliary frame jets and corrected physical graph losses](core_current_head_q192_frame_graph_jet_transfer/README.md).
+Q192 closes the all-fixed rational auxiliary-frame, damping and complete
+pressure-denominator jet transfer relative to the named primitive profile-jet
+inputs. It corrects Q191's ambiguous mixed-derivative display: physical radial
+graph derivatives can cost `epsilon^(-kappa)` each, so their coefficient loss
+is `a(1/2+h*kappa)+b(1+h)`, not a pure polynomial in `S`. The retained phase
+budget exceeds it by the exact positive margin
+`a*h*(1/2-kappa)+b*h/2`. Differentiated Duhamel/Faà di Bruno estimates and
+complete field assembly remain to be independently carried out. No
+unconditional pulse, residual, force, exclusion or blow-up result follows.
+
+Preceding source audit: [Q191 physical-pulse chart, pressure and scaling seed](core_current_head_q191_physical_pulse_seed_audit/README.md).
 Q191 independently reconstructs the no-loss implicit chart and `99/100`
 Jacobian floor, `1<=epsilon k^2<=4` carrier geometry, pulse-length bounds,
 complete moving/source-normal pressure constraint, exact `47/64` Riccati

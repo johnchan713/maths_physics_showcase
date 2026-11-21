@@ -1,0 +1,234 @@
+{
+  "closure": {
+    "edges": 1577,
+    "nodes": 442,
+    "source_bindings": 5999
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/evidence.json": "7f8cf179242fffe5c7d91614e33eb955d9e52565f3b3182a585dbe935b28842d",
+    "results/core_current_head_q191_physical_pulse_seed_audit/evidence.json": "f6206e1fb9828b6c6a11f91a02f8c7e0272952e2f968e01c0a72fe70fa0ecda3",
+    "results/leading_frame_foundation/evidence.json": "fec0aee5eecb7873d2e76abd50a24e2f2a4ff236f97380e9bc36629d1ba30fba",
+    "results/physical_pulse_foundation/evidence.json": "aa85a76e6391de1a85f1326781ea967f7cd263b7fe522bc87b7c143bb2a3e8f0"
+  },
+  "parent": "9bad836772511537fc9ee491f5d12406a2528bed",
+  "review": {
+    "auxiliary_frame_transfer": {
+      "conclusion": "|partial^alpha Eframe|+|partial^alpha(d-dref)| <=C_alpha*S^(2|alpha|+4)/Ls for auxiliary derivatives",
+      "conservative_power": 14,
+      "frame_floor": "|c0|>=cstar and sqrt(1+sa^2)>=1",
+      "full_terms": "n,nprime,Kbg,B,Bprime,Bleft,c0,|n|^-2 and the moving/source-normal pressure numerator",
+      "no_order_dependent_smallness_gate": true,
+      "normalization_floor": "|n_tan|>=Bstar/2",
+      "order": 5,
+      "pressure_floor": "|n|^2>=Bstar^2/4",
+      "primitive_orders_required_through": 6,
+      "reciprocal_majorants": [
+        "2",
+        "8",
+        "80",
+        "1184",
+        "23360",
+        "576128",
+        "17050880"
+      ]
+    },
+    "checks": {
+      "Q191_ambiguity_corrected_without_erasing_graph_loss": true,
+      "all_provider_statuses_match": true,
+      "complete_actual_field_suprema_not_promoted": true,
+      "complete_pressure_memory_retained": true,
+      "every_checked_corrected_graph_loss_is_absorbed": true,
+      "primitive_value_gap_reduces_to_inverse_length": true,
+      "rational_auxiliary_jets_need_no_new_smallness": true
+    },
+    "correction": {
+      "Q191_literal_mixed_D_inequality_is_ambiguous": true,
+      "correct_auxiliary_statement": "partial auxiliary frame jets have C_alpha*S^p_alpha/Ls bounds on one domain",
+      "correct_physical_graph_statement": "a spatial graph derivatives may add epsilon^(-a*kappa); after physical rescaling coefficient losses are a*(1/2+h*kappa)+b*(1+h)",
+      "phase_budget_strictly_absorbs_corrected_loss": true,
+      "pure_polynomial_S_bound_for_physical_radial_graph_jets_claimed": false
+    },
+    "frontier": {
+      "blocking_inequality": "run the corrected coefficient losses through differentiated Duhamel and Faa-di-Bruno recurrences for the actual uncut amplitude, then assemble complete curl, pressure and potential jets with every cutoff, cylindrical connection and support endpoint term",
+      "closed_here": "auxiliary all-fixed rational frame/denominator transfer and corrected physical graph loss ledger, relative to the named primitive profile-jet inputs",
+      "complete_actual_field_suprema_independently_rederived_here": false,
+      "historical_first_band_numerically_certified": false,
+      "provider_supplies_them_relative_to_named_inputs": true
+    },
+    "graph_losses": [
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "0",
+        "expected_margin": "0",
+        "normalized_radial_graph_factor": "epsilon^(-0*kappa)",
+        "phase_Q_loss": "0",
+        "spatial_order": 0,
+        "strict_margin": "0",
+        "time_order": 0
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "201/200",
+        "expected_margin": "1/400",
+        "normalized_radial_graph_factor": "epsilon^(-0*kappa)",
+        "phase_Q_loss": "403/400",
+        "spatial_order": 0,
+        "strict_margin": "1/400",
+        "time_order": 1
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "201/100",
+        "expected_margin": "1/200",
+        "normalized_radial_graph_factor": "epsilon^(-0*kappa)",
+        "phase_Q_loss": "403/200",
+        "spatial_order": 0,
+        "strict_margin": "1/200",
+        "time_order": 2
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "10000001/20000000",
+        "expected_margin": "49999/20000000",
+        "normalized_radial_graph_factor": "epsilon^(-1*kappa)",
+        "phase_Q_loss": "201/400",
+        "spatial_order": 1,
+        "strict_margin": "49999/20000000",
+        "time_order": 0
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "30100001/20000000",
+        "expected_margin": "99999/20000000",
+        "normalized_radial_graph_factor": "epsilon^(-1*kappa)",
+        "phase_Q_loss": "151/100",
+        "spatial_order": 1,
+        "strict_margin": "99999/20000000",
+        "time_order": 1
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "50200001/20000000",
+        "expected_margin": "149999/20000000",
+        "normalized_radial_graph_factor": "epsilon^(-1*kappa)",
+        "phase_Q_loss": "1007/400",
+        "spatial_order": 1,
+        "strict_margin": "149999/20000000",
+        "time_order": 2
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "10000001/10000000",
+        "expected_margin": "49999/10000000",
+        "normalized_radial_graph_factor": "epsilon^(-2*kappa)",
+        "phase_Q_loss": "201/200",
+        "spatial_order": 2,
+        "strict_margin": "49999/10000000",
+        "time_order": 0
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "20050001/10000000",
+        "expected_margin": "74999/10000000",
+        "normalized_radial_graph_factor": "epsilon^(-2*kappa)",
+        "phase_Q_loss": "161/80",
+        "spatial_order": 2,
+        "strict_margin": "74999/10000000",
+        "time_order": 1
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "30100001/10000000",
+        "expected_margin": "99999/10000000",
+        "normalized_radial_graph_factor": "epsilon^(-2*kappa)",
+        "phase_Q_loss": "151/50",
+        "spatial_order": 2,
+        "strict_margin": "99999/10000000",
+        "time_order": 2
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "30000003/20000000",
+        "expected_margin": "149997/20000000",
+        "normalized_radial_graph_factor": "epsilon^(-3*kappa)",
+        "phase_Q_loss": "603/400",
+        "spatial_order": 3,
+        "strict_margin": "149997/20000000",
+        "time_order": 0
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "50100003/20000000",
+        "expected_margin": "199997/20000000",
+        "normalized_radial_graph_factor": "epsilon^(-3*kappa)",
+        "phase_Q_loss": "503/200",
+        "spatial_order": 3,
+        "strict_margin": "199997/20000000",
+        "time_order": 1
+      },
+      {
+        "absorbed": true,
+        "coefficient_Q_loss": "70200003/20000000",
+        "expected_margin": "249997/20000000",
+        "normalized_radial_graph_factor": "epsilon^(-3*kappa)",
+        "phase_Q_loss": "1409/400",
+        "spatial_order": 3,
+        "strict_margin": "249997/20000000",
+        "time_order": 2
+      }
+    ],
+    "pressure_memory": {
+      "channels": [
+        "n.Kbg*t",
+        "-nprime.t",
+        "n.f"
+      ],
+      "denominator": "all fixed auxiliary jets of |n|^-2 use the single |n| floor",
+      "formula": "pi=i*(n.Kbg*t-nprime.t+n.f)/(k*m*|n|^2)",
+      "moving_normal_retained": true,
+      "primary_f_zero_only_for_the_primary_homogeneous_pulse": true,
+      "source_normal_retained": true
+    },
+    "primitive_gap": {
+      "S": "64",
+      "closes": true,
+      "delta": "372140689/64000000000000",
+      "derivative_statement": "after j auxiliary derivatives, frozen representatives and smooth compact profile factors give C_j*S^j/Ls",
+      "length": "1/10000",
+      "raw_gap": "6400000003721779030689/640000000000000000",
+      "small": "2000001/1000000000000",
+      "upper": "50000"
+    },
+    "provider_status_checks": {
+      "core_current_head_q189_same_profile_envelope_gap_audit": true,
+      "core_current_head_q191_physical_pulse_seed_audit": true,
+      "leading_frame_foundation": true,
+      "physical_pulse_foundation": true
+    },
+    "scope": {
+      "all_fixed_auxiliary_frame_denominator_transfer_closed_relative_to_inputs": true,
+      "complete_actual_pulse_field_bounds_rederived": false,
+      "complete_residual_improvement_or_blowup": false,
+      "physical_graph_loss_ledger_corrected": true,
+      "tests_are_continuum_proof": false
+    }
+  },
+  "source_hashes": {
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/README.md": "ec59ea11e23d44c27e60797eb75ac5d178328949170d97d3becba0ecec870878",
+    "results/core_current_head_q191_physical_pulse_seed_audit/README.md": "60616c586151b45150c2e24d700cd86ff0c21cb59f1df73ca4c2ed8bb1ab35ac",
+    "results/core_current_head_q192_frame_graph_jet_transfer/README.md": "80bad4c334a27aa1ed6f8e56a1bb18ccdb6a42390893b444e3177fbc73a48ded",
+    "results/core_current_head_q192_frame_graph_jet_transfer/audit.py": "cac9147d2d94fef63e729a79ff75f27114f754346639ae8324fa1ba61f51d59b",
+    "results/core_current_head_q192_frame_graph_jet_transfer/q192.py": "2c90be93053d097afeb97605b73639f54fb917ec7650c449dd266f7ee0eaa181",
+    "results/core_current_head_q192_frame_graph_jet_transfer/test_audit.py": "1ec0a2dceeba7b2433b269612183f2f13d117bfdb2653a89203616549c8eaaf0",
+    "results/leading_frame_foundation/README.md": "43e94ef9e98ddccecad6953412396384ae795bd33534295ceb2d48db145038eb",
+    "results/physical_pulse_foundation/README.md": "34e81ec3457450cf15e5ce8830e2607e9508320f536f2318039d0cf7d0ad99e5"
+  },
+  "status": "Q192-auxiliary-frame-jets-closed-and-physical-graph-loss-corrected",
+  "symbolic": {
+    "correction": "a spatial graph derivatives may add epsilon^(-a*kappa); after physical rescaling coefficient losses are a*(1/2+h*kappa)+b*(1+h)",
+    "established": "positive denominator floors and the actual later-band gate close every fixed auxiliary frame, damping and pressure-denominator jet with polynomial S loss over Ls",
+    "next": "run the corrected coefficient losses through differentiated Duhamel and Faa-di-Bruno recurrences for the actual uncut amplitude, then assemble complete curl, pressure and potential jets with every cutoff, cylindrical connection and support endpoint term",
+    "status": "Q192-auxiliary-frame-jets-closed-and-physical-graph-loss-corrected",
+    "unconditional_actual_pulse_residual_force_exclusion_or_blowup_certified": false
+  }
+}
