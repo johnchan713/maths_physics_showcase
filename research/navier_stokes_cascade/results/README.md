@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q213 reconstructed primitive bundle and exact core/root frontier](core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/README.md).
+Latest source audit: [Q214 exact core, selected roots and leading-pressure join](core_current_head_q214_exact_core_root_pressure_join/README.md).
+Q214 corrects Q213's stale proposed frontier. Q164 already proves the
+complete-source infinite-space core contraction and original equations;
+the matching-root and annular/exterior records prove the exact selected
+root identities with positive inverse floors; and the pressure-identification
+record binds the core datum to the completed leading backward pressure in the
+unchanged gauge. Positive-order `Pi1/Pi2`, covariance, moving and cutoff
+pressure memory remains. The next audit must decide whether Q213--Q214's
+finite quantified primitive bundle discharges Q207's concrete fixed-stage
+request and joins the complete residual recurrence.
+
+Preceding source audit: [Q213 reconstructed primitive bundle and exact core/root frontier](core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/README.md).
 Q213 joins the later same-object reconstruction chain that Q212 did not
 include. The finalized leading profile, fixed-order background/Borel
 selector, same-band gap floors, full-path ODE, explicit same-choice

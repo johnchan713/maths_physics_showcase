@@ -1,0 +1,118 @@
+{
+  "closure": {
+    "edges": 1731,
+    "nodes": 464,
+    "source_bindings": 6246
+  },
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/evidence.json": "87611e138ed2df71bd15f3ffe4a3b0997e206fe0bfa3324f77a53d4670a30c30",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/evidence.json": "f8fd6ff0034c26e26c9dbcfd042b0ea8a348ac3dff224516043c312586888ac6",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/evidence.json": "7f8cf179242fffe5c7d91614e33eb955d9e52565f3b3182a585dbe935b28842d",
+    "results/core_current_head_q204_global_ledger_uniform_primary/evidence.json": "6baeb949f1a4384a567f8f4614df626bbf30369a3822adbaf21fd46350e027a2",
+    "results/core_current_head_q207_residual_constant_frontier/evidence.json": "3457e6c0a3ffec9df2f1141844176ba2104c8be30d356ac0df36eadce56db5f9",
+    "results/core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/evidence.json": "4c239fceec5a57d098e183bbbce7f34e71ed62aae286b8d1af799efc80bc07ca",
+    "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a",
+    "results/matching_root_foundation/evidence.json": "22fd0e2a826ae3916a99dbd68eeb09f9e2836ae383364057e2e8bdbb67071bd5"
+  },
+  "parent": "cfaf48992ae699b2feb5c0355f51e60cf5ea3db2",
+  "review": {
+    "checks": {
+      "Q213_core_gate_already_closed": true,
+      "Q213_leading_pressure_gate_already_closed": true,
+      "Q213_selected_root_gate_already_closed": true,
+      "provider_statuses_match": true
+    },
+    "next": "audit whether Q213-Q214's quantified finite primitive bundle discharges Q207's concrete fixed-stage request and joins the complete residual recurrence",
+    "scope": {
+      "Q213_three_part_frontier_closed_relative_to_named_providers": true,
+      "high_jet_constants_numerically_evaluated": false,
+      "positive_order_pressure_memory_preserved": true,
+      "same_profile_and_unchanged_pressure_gauge": true,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    },
+    "status": "Q214-exact-core-selected-roots-and-leading-pressure-joined-conditionally"
+  },
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/core_current_head_q164_core_fixed_point_pressure_audit/README.md": "69d021b3b916967a81c361d8b2abdb980767ff995373691fa76f7fabd593cf55",
+    "results/core_current_head_q176_modulation_repair_dependency_audit/README.md": "5d915801afac31045d896b1f3741a7494db8ef96e334aeb0e63d46656e01aeae",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/README.md": "ec59ea11e23d44c27e60797eb75ac5d178328949170d97d3becba0ecec870878",
+    "results/core_current_head_q204_global_ledger_uniform_primary/README.md": "821ba5a6b50c705917ee60fd70e48ace66eff97bbd9eac7da66728398c4a82ad",
+    "results/core_current_head_q207_residual_constant_frontier/README.md": "57a89e7e33b534da56f46a48a10b5302fb6e7b6f916a2c4ec6215a8206322125",
+    "results/core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/README.md": "1d7c76840bca219a95dc622b14a8186bd28d1c6bf8dcbd8b3fab0fcefdd1ca6d",
+    "results/core_current_head_q214_exact_core_root_pressure_join/README.md": "bcda9e9df2c9830fc9c33ca41e6ba450bcdccb88f7c87911f5ac067b5ee17c4c",
+    "results/core_current_head_q214_exact_core_root_pressure_join/audit.py": "14b941e19c1dbad9ca762f64fc833388ab3eab781514bef152eec776b868ead5",
+    "results/core_current_head_q214_exact_core_root_pressure_join/q214.py": "b0924b1f6592c61dc83cc1eb2250ba674bdfb90a4f5d539565d0b81914218534",
+    "results/core_current_head_q214_exact_core_root_pressure_join/test_audit.py": "ce92863cb03a6fbea105716834cd70e162d2744e0b8410bbd1578c4dbb8afb07",
+    "results/core_pressure_identification/README.md": "2fa6c0975eba8027bf8d5859b0eb0213b4e615a6bd9df98436e77aec18ddcf9a",
+    "results/matching_root_foundation/README.md": "071203671f89e0152ff82d5ff85b55ffc31ccc9b8064f1ffd09461e2e052c925"
+  },
+  "status": "Q214-exact-core-selected-roots-and-leading-pressure-joined-conditionally",
+  "symbolic": {
+    "core_gate": {
+      "complete_pressure_source_retained": true,
+      "leading_core_stress_exactly_zero": true,
+      "original_core_equations_recovered": true,
+      "q_core_upper": "1/17014118346046923173168730371588410572800000000000000000000000000000000000000000000000000",
+      "strict_contraction": true
+    },
+    "pressure_gate": {
+      "Pi_core_equals_completed_leading_pressure": true,
+      "full_corrected_pressure_identified_with_centrifugal_pressure": false,
+      "positive_order_pressure_memory_retained": [
+        "Pi1/Pi2",
+        "covariance pressure",
+        "moving pressure",
+        "cutoff pressure derivatives"
+      ],
+      "reference_measure_is_core_datum": true,
+      "same_root_five_row_ledger": true,
+      "smooth_endpoint_kills_homogeneous_mode": true
+    },
+    "providers": {
+      "annular_exterior_foundation": true,
+      "core_current_head_q164_core_fixed_point_pressure_audit": true,
+      "core_current_head_q176_modulation_repair_dependency_audit": true,
+      "core_current_head_q189_same_profile_envelope_gap_audit": true,
+      "core_current_head_q204_global_ledger_uniform_primary": true,
+      "core_current_head_q207_residual_constant_frontier": true,
+      "core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier": true,
+      "core_pressure_identification": true,
+      "matching_root_foundation": true
+    },
+    "review": {
+      "checks": {
+        "Q213_core_gate_already_closed": true,
+        "Q213_leading_pressure_gate_already_closed": true,
+        "Q213_selected_root_gate_already_closed": true,
+        "provider_statuses_match": true
+      },
+      "next": "audit whether Q213-Q214's quantified finite primitive bundle discharges Q207's concrete fixed-stage request and joins the complete residual recurrence",
+      "scope": {
+        "Q213_three_part_frontier_closed_relative_to_named_providers": true,
+        "high_jet_constants_numerically_evaluated": false,
+        "positive_order_pressure_memory_preserved": true,
+        "same_profile_and_unchanged_pressure_gauge": true,
+        "unconditional_pulse_residual_force_exclusion_or_blowup": false
+      },
+      "status": "Q214-exact-core-selected-roots-and-leading-pressure-joined-conditionally"
+    },
+    "root_gates": {
+      "all_displayed_floors_positive": true,
+      "all_fixed_jets_use_same_root": true,
+      "exact_five_rows_include_pressure": true,
+      "inverse_floors": {
+        "annular_five_row": "1/1220",
+        "axial_end_correction": "1/2000",
+        "compact_repair": "1/1600",
+        "heat_compensation": "1/100",
+        "pulse_strength": "7/20",
+        "two_angular_corrections": "1/10"
+      },
+      "same_accepted_roots": true,
+      "signed_variance_and_moving_phase_derivatives_positive": true
+    },
+    "status": "Q214-exact-core-selected-roots-and-leading-pressure-joined-conditionally"
+  }
+}
