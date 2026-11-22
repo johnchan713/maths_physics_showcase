@@ -2066,6 +2066,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q217_localization_comparison_frontier_join/evidence.json \
             --output navier_stokes_core_current_head_q217_ci.json
 
+      - name: Check Q218 energy class comparison entry
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q218_energy_class_comparison_entry/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q218_energy_class_comparison_entry/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q218_energy_class_comparison_entry/evidence.json \
+            --output navier_stokes_core_current_head_q218_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2702,6 +2709,7 @@ jobs:
             navier_stokes_core_current_head_q215_ci.json
             navier_stokes_core_current_head_q216_ci.json
             navier_stokes_core_current_head_q217_ci.json
+            navier_stokes_core_current_head_q218_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

@@ -6,6 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
+Latest source audit: [Q218 energy-class entry to fixed-gauge comparison](core_current_head_q218_energy_class_comparison_entry/README.md).
+Q218 corrects the comparison theorem's competitor class. For a locally smooth
+energy solution, the energy inequality and compact smooth force give
+`sup_[0,T] ||v||_2^2 <= exp(T) int_0^T ||f||_2^2`, so Q169's pressure recovery
+and expanding-ball comparison apply on every fixed preterminal horizon. The
+affine-pressure solution from Q217 proves that bare local smoothness still
+does not imply this global spatial condition. The resulting exclusion is
+therefore conditional and restricted to smooth-through-terminal energy-class
+competitors.
+
 Latest source audit: [Q217 localization, compact-force, energy and comparison frontier join](core_current_head_q217_localization_comparison_frontier_join/README.md).
 Q217 binds Q216's source-audited physical object to the exact twelve-group
 localization, smooth compact force trace, zero-safe energy bound, fixed-gauge

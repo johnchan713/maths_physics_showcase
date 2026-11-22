@@ -1,0 +1,124 @@
+{
+  "closure": {
+    "edges": 1766,
+    "nodes": 468,
+    "source_bindings": 6297
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q168_localization_force_frontier_audit/evidence.json": "1bc8e23d261ab6cce9d4508610a32213a25cbdb31b6c3386afeea6a6b40ab999",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/evidence.json": "9acd68d5092c38c4f6d74a5c9add5face583b33702150c17c160e88425704aec",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/evidence.json": "3bfe170d5b2a7a9d85270a0647e9f21ccc4de2125e580e844e4777afcbdc1916",
+    "results/core_current_head_q206_terminal_origin_obstruction/evidence.json": "19b3d33ce901e10b683173605d5f6fc3c34144f80765d7aafdeea10c14726a9d",
+    "results/core_current_head_q217_localization_comparison_frontier_join/evidence.json": "6951cae4413d632917b2209b6591517d8228e0cedf744780d0619d18f73b6e11"
+  },
+  "parent": "fe03f338f4c59c3ece385a4f7cd359b050977d30",
+  "review": {
+    "checks": {
+      "bare_smooth_class_still_blocked": true,
+      "energy_class_supplies_Q169_L2_entry": true,
+      "pressure_recovery_keeps_full_memory": true,
+      "provider_statuses_match": true,
+      "terminal_limit_order_preserved": true
+    },
+    "next": "audit the first upstream continuum leaf left cited by Q216: the same-band regional gap infima and weighted relative-stress estimate on the finalized profile",
+    "scope": {
+      "bare_local_smooth_competitor_exclusion": false,
+      "conditional_smooth_energy_competitor_exclusion": true,
+      "finite_energy_comparison_premise_discharged_for_energy_class": true,
+      "unconditional_force_residual_or_blowup": false,
+      "upstream_continuum_providers_discharged": false
+    },
+    "status": "Q218-energy-class-entry-to-fixed-gauge-comparison-derived-conditionally"
+  },
+  "source_hashes": {
+    "results/core_current_head_q168_localization_force_frontier_audit/README.md": "89b553770cd6ea966a56e3c1023bf3035c8e6517d7e6d632970d1f98e1b4bf37",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/README.md": "6576abfd9fd92478e021b804bbef850ef0266dc128fdea24cf43db363931b42d",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/README.md": "1c7c8011bb5e31742ff9c00e90d928318f04798faef0e59b69bd9f37efe96749",
+    "results/core_current_head_q206_terminal_origin_obstruction/README.md": "256a6763ec17d6dc6c58b6220332bb2e45249e634f66d7a3ca0d63615778cee8",
+    "results/core_current_head_q217_localization_comparison_frontier_join/README.md": "c081f3eed6cf51ce4ff9676e010d70748f69838818fbefae9ab4c3d276f5c65e",
+    "results/core_current_head_q218_energy_class_comparison_entry/README.md": "4d722f9e042464dd0e56d97ba9ef9a3a432e04a380e03249b72696a1176fc06d",
+    "results/core_current_head_q218_energy_class_comparison_entry/audit.py": "6cdd2893694cdbd9948db53866e61e520ed1bab195828f2913b9c6c5b976c816",
+    "results/core_current_head_q218_energy_class_comparison_entry/q218.py": "c959f288742a211574fbb4c22f4ff929fcef0609dd1987597f4ab9e991c56cc2",
+    "results/core_current_head_q218_energy_class_comparison_entry/test_audit.py": "01c57b042718d3c1191a8dbd753527d7e09c2ea2a73aab77c78dc63fce7df3f6"
+  },
+  "status": "Q218-energy-class-entry-to-fixed-gauge-comparison-derived-conditionally",
+  "symbolic": {
+    "energy_class": {
+      "energy_inequality": true,
+      "gradient_in_L2_t_L2_x": true,
+      "local_smoothness_on_fixed_preterminal_intervals": true,
+      "pressure_decay_assumed": false,
+      "same_compact_smooth_force": true,
+      "terminal_smoothness_assumed": false,
+      "velocity_in_Linfinity_t_L2_x": true,
+      "zero_initial_velocity": true
+    },
+    "energy_entry": {
+      "compact_smooth_force_has_finite_rhs": true,
+      "derived_from_bare_local_smoothness": false,
+      "gronwall_bound": "sup_[0,T] E <= exp(T) int_0^T ||f||_2^2",
+      "starting_inequality": "E(t)+2 int_0^t D <= 2 int_0^t <f,v>",
+      "supremum_L2_required_by_Q169": true,
+      "young_inequality": "2 <f,v> <= ||f||_2^2+E"
+    },
+    "harmonic_counterexample": {
+      "convection": "0",
+      "finite_energy_at_positive_time": false,
+      "force": "0",
+      "locally_smooth": true,
+      "pressure": "-x_1",
+      "pressure_gradient": "-e_1",
+      "residual": "0",
+      "time_derivative": "e_1",
+      "velocity": "t e_1",
+      "viscosity": "0",
+      "zero_initial_velocity": true
+    },
+    "pressure_entry": {
+      "common_force_cancels_exactly_once": true,
+      "competitor_pressure_decay_needed": false,
+      "harmonic_Hminus3_gradient_vanishes": true,
+      "momentum_places_harmonic_gradient_in_Hminus3": true,
+      "quadratic_difference_in_Linfinity_t_L1_x": true,
+      "riesz_pressure_in_Hminus2": true,
+      "w_in_Linfinity_t_L2_x": true
+    },
+    "protected_limit": {
+      "excludes_every_locally_smooth_competitor": false,
+      "excludes_smooth_through_terminal_energy_class_competitor": true,
+      "limit_order": [
+        "fix T_tau<1",
+        "send R to infinity",
+        "send tau to zero"
+      ],
+      "support_hole_margin": "3/101",
+      "velocity_exponent": "101/200"
+    },
+    "providers": {
+      "core_current_head_q168_localization_force_frontier_audit": true,
+      "core_current_head_q169_pressure_comparison_frontier_audit": true,
+      "core_current_head_q170_protected_core_limit_frontier_audit": true,
+      "core_current_head_q206_terminal_origin_obstruction": true,
+      "core_current_head_q217_localization_comparison_frontier_join": true
+    },
+    "review": {
+      "checks": {
+        "bare_smooth_class_still_blocked": true,
+        "energy_class_supplies_Q169_L2_entry": true,
+        "pressure_recovery_keeps_full_memory": true,
+        "provider_statuses_match": true,
+        "terminal_limit_order_preserved": true
+      },
+      "next": "audit the first upstream continuum leaf left cited by Q216: the same-band regional gap infima and weighted relative-stress estimate on the finalized profile",
+      "scope": {
+        "bare_local_smooth_competitor_exclusion": false,
+        "conditional_smooth_energy_competitor_exclusion": true,
+        "finite_energy_comparison_premise_discharged_for_energy_class": true,
+        "unconditional_force_residual_or_blowup": false,
+        "upstream_continuum_providers_discharged": false
+      },
+      "status": "Q218-energy-class-entry-to-fixed-gauge-comparison-derived-conditionally"
+    },
+    "status": "Q218-energy-class-entry-to-fixed-gauge-comparison-derived-conditionally"
+  }
+}
