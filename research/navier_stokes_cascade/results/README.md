@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q203 corrected-domain diagonal, endpoint and localized-force replay](core_current_head_q203_diagonal_endpoint_force_corrected_domain/README.md).
+Latest source audit: [Q204 global ledger, uniform primary and covariance reconciliation](core_current_head_q204_global_ledger_uniform_primary/README.md).
+Q204 binds the five unchanged-gauge global pressure/moment identities, exact
+finite coefficient and reserved-mean supports, rule-defined Borel schedule,
+uniform primary bounds on every used band, complete covariance/axial/pressure
+memory and Q203's diagonal/localization residual to one frozen physical
+object. It corrects Q203's frontier: unevaluated finite coefficient constants
+do not obstruct the rule-selected background or primary family. Reserved
+pressure has a sharp positive two-point floor, absolute-decay exponents remain
+negative, and generated-hierarchy constants remain stage-dependent.
+
+Preceding source audit: [Q203 corrected-domain diagonal, endpoint and localized-force replay](core_current_head_q203_diagonal_endpoint_force_corrected_domain/README.md).
 Q203 binds Q202's corrected coupled state to the complete-potential diagonal,
 separate punctured endpoint and exact twelve-term localization/force ledger.
 The existing `W/M/S` route retains regular/cross reserve

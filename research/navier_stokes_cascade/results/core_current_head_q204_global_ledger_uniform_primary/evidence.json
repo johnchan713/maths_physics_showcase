@@ -1,0 +1,209 @@
+{
+  "closure": {
+    "edges": 1644,
+    "nodes": 454,
+    "source_bindings": 6114
+  },
+  "dependency_evidence_sha256": {
+    "results/core_coefficient_support_recheck/evidence.json": "5b17e83b6dfea94bee8fc720e11b01a9bce3fc1093926110b05828bdacd7aff6",
+    "results/core_current_head_q148_coefficient_support_pressure/evidence.json": "4c95824a4d9749da7e70f0bbc2d8fd30ea46c2620fa700ffd5fe0a805d4729b7",
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q152_physical_stress_feedback_join/evidence.json": "e79f9d49a8100f871e4636037595c2ac185cd9c5986e9ecffe1168e45fbfc1a1",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/evidence.json": "fb013b6bafd8ab7eef9b61c62313b9fb74495fd76d78c6bc93a99208964d1434",
+    "results/core_global_pressure_moment_recheck/evidence.json": "f24e08f6c2bb68780ec67c792eb3fa7e8962462242571f9f0f6257a3de88e557"
+  },
+  "parent": "fd7d3b924b1a731bcc02a68507fee685642b214a",
+  "review": {
+    "checks": {
+      "all_provider_statuses_match": true,
+      "coefficient_supports_and_pressure_exceptions_are_exact": true,
+      "complete_covariance_pressure_and_axial_memory_reaches_current_cycle": true,
+      "complete_residual_ledger_reaches_diagonal_and_localization": true,
+      "five_global_pressure_moment_rows_close_in_one_gauge": true,
+      "remaining_limits_are_not_promoted": true,
+      "rule_defined_schedule_and_uniform_primary_close": true,
+      "same_object_chain_reaches_global_ledgers": true
+    },
+    "coefficient_reserved_supports": {
+      "finite_order_only": true,
+      "general_pressure_floor": "|chi(c1q)|q^(2h)mu^2(e^-6-e^-11)/(8rho3)",
+      "inverse_bound": 800,
+      "order_1_support": {
+        "pressure": "Xv",
+        "stress": "Xb",
+        "velocity": "Xvel"
+      },
+      "order_2_support": {
+        "pressure": "Xv",
+        "stress": "Xv",
+        "velocity": "Xvel"
+      },
+      "order_3_support": {
+        "pressure": "Xvel",
+        "stress": "Xvel",
+        "velocity": "Xvel"
+      },
+      "pressure_floor_independent_of_K1_K2": true,
+      "pressure_floor_sharp_after_constant_cancellation": true,
+      "pressure_on_I4": [
+        "Pi1=K1(eta)-mu^2/(4X)",
+        "Pi2=K2(eta)",
+        "Pi_n=0 for n>=3"
+      ],
+      "reserved_pressure_floor_sample": "9/1400",
+      "rows": [
+        "M",
+        "(M-J)/lambda",
+        "I",
+        "-S",
+        "Cp"
+      ],
+      "velocity_on_I4": "leading only, including potential-cutoff transitions"
+    },
+    "complete_covariance_current_cycle": {
+      "complete_curl_margin": "1/2",
+      "current_pressure_and_potential_order": "99999/50000",
+      "current_source_has_complete_operator_memory": true,
+      "current_source_order": "74999/50000",
+      "cycle_closes_relative_to_named_inputs": true,
+      "fresh_fast": "D retaining the exact A1 remainder",
+      "fresh_slow": "C",
+      "initial_and_dynamic_memory": "all six covariance entries, radial and axial velocity, curl remainders, Pi1/Pi2, compact pressure and the whole derivative of c_rho P",
+      "mean_feedback": "D",
+      "moving_and_source_normal_pressure_retained": true,
+      "next_source": "39999/20000",
+      "next_target": "49999/20000",
+      "postfast_scalars": "C",
+      "principal_stress_gate_closed_exactly": true,
+      "same_physical_family": true,
+      "target_slack": "1/50000"
+    },
+    "diagonal_localized_residual": {
+      "all_six_groups": [
+        "e_t",
+        "-Delta e",
+        "grad pi",
+        "(U.grad)e",
+        "(e.grad)U",
+        "(e.grad)e"
+      ],
+      "complete_localized_pressure": "p0 grad c",
+      "complete_memory": true,
+      "conditional_fixed_jet_flatness": true,
+      "cutoff_curl_and_pressure_derivatives": true,
+      "fixed_jet_then_finite_stage": true,
+      "localization_term_count": 12,
+      "stage_uniform_constant_used": false,
+      "unit_viscosity": "1"
+    },
+    "global_pressure_moments": {
+      "all_exact_checks": true,
+      "common_future_tail_required": true,
+      "endpoint_to_global_formula": "Delta R=Delta I(Xrep)+int_Xrep^infinity Delta(H-Hpow) dX",
+      "functional_in_eta": true,
+      "global_zero_defects": [
+        "M",
+        "R",
+        "J",
+        "S",
+        "Pi_axis+Cp"
+      ],
+      "intermediate_pressure_memory_may_be_nonzero": true,
+      "pressure_eta_slope_defect_grows_linearly_in_X": true,
+      "raw_I_infinity_exists": false,
+      "renormalized_heat_moment": "int_0^infinity (H-Hpow) dX",
+      "same_pressure_gauge_gives_backward_tail": true,
+      "zero_U_removes_M_induced_radial_velocity": false,
+      "zero_five_defects_remove_all_exterior_memory": true
+    },
+    "next": "audit the sourced and signed pulse value, derivative and closed-support constants through every finite cycle on the selected physical family, deciding whether the stage-dependent bounds suffice directly or require a new hierarchy majorant before any unconditional complete-residual claim",
+    "precise_limits": {
+      "Q202_constants_uniform_in_cycle": false,
+      "absolute_decay_certified": false,
+      "primary_pressure_zero_jet_power": "-201/200",
+      "primary_velocity_zero_jet_power": "-201/400",
+      "reserved_pressure_cannot_be_replaced_by_leading_pressure": true,
+      "reserved_pressure_floor": "sup_I4|q^(2A)p_B-Pi0| >= |chi(c1q)|q^(2h)mu^2(e^-6-e^-11)/(8rho3)",
+      "sourced_pressure_zero_jet_power": "-10000001/10000000",
+      "sourced_velocity_zero_jet_power": "-4975001/10000000",
+      "tests_or_evidence_hashes_are_continuum_proof": false,
+      "uniform_generated_hierarchy_constants_certified": false,
+      "uniform_primary_scale_bounds_certified": true
+    },
+    "provider_status_checks": {
+      "core_coefficient_support_recheck": true,
+      "core_current_head_q148_coefficient_support_pressure": true,
+      "core_current_head_q149_primary_pulse_join": true,
+      "core_current_head_q152_physical_stress_feedback_join": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain": true,
+      "core_global_pressure_moment_recheck": true
+    },
+    "same_object_chain": {
+      "core_coefficient_support_recheck_uses_core_global_pressure_moment_recheck": true,
+      "core_current_head_q148_coefficient_support_pressure_uses_core_coefficient_support_recheck": true,
+      "core_current_head_q149_primary_pulse_join_uses_core_current_head_q148_coefficient_support_pressure": true,
+      "core_current_head_q152_physical_stress_feedback_join_uses_core_current_head_q149_primary_pulse_join": true,
+      "core_current_head_q153_physical_source_tail_diagonal_join_uses_core_current_head_q152_physical_stress_feedback_join": true,
+      "core_current_head_q161_source_tail_simultaneous_induction_uses_core_current_head_q153_physical_source_tail_diagonal_join": true,
+      "core_current_head_q180_target_source_simultaneous_induction_uses_core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q202_next_sourced_cycle_uses_core_current_head_q180_target_source_simultaneous_induction": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain_uses_core_current_head_q202_next_sourced_cycle": true
+    },
+    "schedule_uniform_primary": {
+      "Q148_schedule_obstruction_discharge": "Q148 equation (7) follows from the rule-defined scale choice after each finite coefficient seminorm exists; it is not an external unresolved inequality",
+      "canonical_and_physical_families_identified": false,
+      "complete_generated_hierarchy_certified": false,
+      "full_pressure_memory": "Pi1=K1-mu^2/(4X), Pi2=K2, moving-normal pressure and cutoff derivatives retained",
+      "potential_bound": "|nabla^a dt^b A_primary|<=C_ab Q^(-a*s_x-b*s_t) S^B sqrt(zeta) delta^-B P",
+      "preexisting_numeric_scale_certificate_required": false,
+      "pressure_bound": "|nabla^a dt^b p_primary|<=C_ab Q^(-(a+2)s_x-b*s_t) S^B sqrt(zeta) delta^-B P",
+      "primary_zero_jet_powers": {
+        "potential": "0",
+        "pressure": "-201/200",
+        "velocity": "-201/400"
+      },
+      "scale_chosen_after_finite_Cnm": true,
+      "scale_domain": "every actual used dyadic Q=2^-ell with ell>=ell0 on the common derivative-independent later tail",
+      "schedule_binary_margin_sample": "2",
+      "schedule_strict_padded_rule_holds": true,
+      "supports": {
+        "pulse": "abs(v/Ls-1/2)<=2/5",
+        "radial": "fixed closed active shell",
+        "slow": "fixed eta cutoff support",
+        "transverse": "abs(xi)<=r0/2"
+      },
+      "uniform_primary_pulse_family_certified": true,
+      "velocity_bound": "|nabla^a dt^b u_primary|<=C_ab Q^(-(a+1)s_x-b*s_t) S^B sqrt(zeta) delta^-B P"
+    },
+    "scope": {
+      "absolute_pulse_smallness_proved": false,
+      "future_velocity_or_pressure_constructed": false,
+      "global_ledgers_and_uniform_primary_joined_to_Q203_conditionally": true,
+      "reserved_pressure_deleted": false,
+      "terminal_origin_regularized": false,
+      "unconditional_complete_residual_force_exclusion_or_blowup": false,
+      "uniform_complete_generated_hierarchy_proved": false
+    }
+  },
+  "source_hashes": {
+    "results/core_coefficient_support_recheck/README.md": "f66cda979f43cd1c719475c5b179b2b3bf12ad839d4dc7acd9ea6087474f33e5",
+    "results/core_current_head_q148_coefficient_support_pressure/README.md": "a041d10064ecc0fee93671e0483109ab3e5ea30dd6660e1a0f67b2d01745584a",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/README.md": "ab03785aa13a62ea48a92b413a0b146d4d88361db7176c7e9de04c6590b07159",
+    "results/core_current_head_q204_global_ledger_uniform_primary/README.md": "821ba5a6b50c705917ee60fd70e48ace66eff97bbd9eac7da66728398c4a82ad",
+    "results/core_current_head_q204_global_ledger_uniform_primary/audit.py": "5aa7b919c956312819a64c06e8e7efa2d1e3ab7619dd00b2c53539e7109a7166",
+    "results/core_current_head_q204_global_ledger_uniform_primary/q204.py": "2ef79b8a7097f8e82d2a327a2cacff2b9a2b35afdff14a023abef7ba13813a6a",
+    "results/core_current_head_q204_global_ledger_uniform_primary/test_audit.py": "cbc00292bffcefd6fb56a70d73cb34c9371c13d8b020e9a88846724cd61ae779",
+    "results/core_global_pressure_moment_recheck/README.md": "16d03f9a5f0fef160b8e6af1c5a76cf9eaf34cc7aa593f631a0338e212ac176a"
+  },
+  "status": "Q204-global-pressure-coefficient-uniform-primary-and-covariance-ledgers-joined-conditionally",
+  "symbolic": {
+    "correction": "Q148's displayed Borel inequality is discharged by the implemented scale rule after each finite seminorm; unevaluated giant constants prevent a numerical scale certificate but do not obstruct the logical background or uniform primary construction",
+    "established": "the same Q203 object carries the five unchanged-gauge global moment/pressure identities, finite coefficient and reserved-mean supports, the rule-defined Borel schedule, uniform primary bounds on every used band, complete covariance/axial/pressure memory and the six-group diagonal plus twelve-term localization ledger",
+    "historical_frozen_records_modified": false,
+    "precise_limit": "reserved pressure has a sharp positive two-point floor, the primary and first sourced zero-jet velocity/pressure powers do not certify absolute decay, and constants for the complete generated hierarchy remain stage-dependent",
+    "status": "Q204-global-pressure-coefficient-uniform-primary-and-covariance-ledgers-joined-conditionally",
+    "unconditional_complete_residual_force_exclusion_or_blowup_certified": false
+  }
+}

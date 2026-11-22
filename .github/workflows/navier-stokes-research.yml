@@ -1968,6 +1968,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/evidence.json \
             --output navier_stokes_core_current_head_q203_ci.json
 
+      - name: Check Q204 global ledger uniform primary and covariance reconciliation
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q204_global_ledger_uniform_primary/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q204_global_ledger_uniform_primary/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q204_global_ledger_uniform_primary/evidence.json \
+            --output navier_stokes_core_current_head_q204_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2590,6 +2597,7 @@ jobs:
             navier_stokes_core_current_head_q201_ci.json
             navier_stokes_core_current_head_q202_ci.json
             navier_stokes_core_current_head_q203_ci.json
+            navier_stokes_core_current_head_q204_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
