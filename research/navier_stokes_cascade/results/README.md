@@ -6,7 +6,19 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q206 terminal-origin velocity and pressure obstruction](core_current_head_q206_terminal_origin_obstruction/README.md).
+Latest source audit: [Q207 fixed-stage residual constant and primitive-seminorm frontier](core_current_head_q207_residual_constant_frontier/README.md).
+Q207 corrects Q206's next frontier: the fixed-stage complete residual constant
+is already a finite acyclic monotone composition of same-object primitive
+seminorms, positive gaps and compact/slow inverse constants. It
+joins regular, compact, Gaussian, exterior and all six diagonal residual
+groups, including pressure, unit viscosity, cutoffs, both nonlinear
+orientations and the square. At the first zero-jet retained-rate stage it computes
+the exact request ceiling `36,479,350,300` and common pole
+`218,876,101,818`. The remaining promotion gap is an independent continuum
+certificate for that finite primitive weighted-seminorm, endpoint, gap and
+inverse bundle; request counts and tests do not prove those suprema.
+
+Preceding source audit: [Q206 terminal-origin velocity and pressure obstruction](core_current_head_q206_terminal_origin_obstruction/README.md).
 Q206 shows, conditional on the same frozen continuum providers, that regular
 one-sided velocity and pressure jets at the terminal origin are impossible.
 The protected azimuthal velocity grows at least as `tau^-101/200`. A

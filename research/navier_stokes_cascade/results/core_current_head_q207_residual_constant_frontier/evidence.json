@@ -1,0 +1,234 @@
+{
+  "closure": {
+    "edges": 1661,
+    "nodes": 457,
+    "source_bindings": 6143
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q161_source_tail_simultaneous_induction/evidence.json": "762f4af964badac3ec61f03becc5f103768ce457ef73d08e92cbc0df61e2a551",
+    "results/core_current_head_q166_complete_residual_frontier_audit/evidence.json": "9b080d720000d317ed76ad08017d8cfb5fe8d90fb55c8c5140ae3b07827e069c",
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q190_downstream_route_frontier_audit/evidence.json": "97a4c2446c6a222404b54699498fc2b81d076acf5c867fd19a7283371ded29e9",
+    "results/core_current_head_q194_primary_field_assembly/evidence.json": "1443933dd8d6ebfb4a254253e3438346fbd3a8b4cd91c2a432a45ca83e3955ee",
+    "results/core_current_head_q196_initial_generated_source/evidence.json": "52c19252a65d5478fbc32bbc27d44353ceb14f2380bfb95b76d3fe7b88b34b7e",
+    "results/core_current_head_q202_next_sourced_cycle/evidence.json": "0f3dc3220c07d638f1bb860f810b20fd4ac340ccaf995c2a074e42e18309ee58",
+    "results/core_current_head_q206_terminal_origin_obstruction/evidence.json": "19b3d33ce901e10b683173605d5f6fc3c34144f80765d7aafdeea10c14726a9d",
+    "results/core_finite_stage_compact_recurrence/evidence.json": "f49b4132de95667046e884aeaf0049bd6df21a9d1ed34272c98a8fd739147c34"
+  },
+  "parent": "47e6374b15a3a4c3498ca33ff98301a34ab95ab7",
+  "review": {
+    "checks": {
+      "complete_residual_and_cutoff_memory_retained": true,
+      "finite_acyclic_constant_recipe_closes_conditionally": true,
+      "first_direct_request_computed_exactly": true,
+      "primitive_promotion_gap_stated_precisely": true,
+      "provider_statuses_match": true,
+      "same_object_links_frozen": true,
+      "sample_stage_ceiling_exact": true
+    },
+    "next": "prove a quantitative all-fixed-order primitive majorant and common gap/inverse theorem covering the stage-602 request",
+    "scope": {
+      "complete_pressure_viscosity_cutoffs_and_interactions_retained": true,
+      "fixed_stage_residual_constant_reconstructed": true,
+      "primitive_same_object_continuum_bundle_proved_independently": false,
+      "stage_uniform_constant_required": false,
+      "unconditional_complete_residual_force_exclusion_or_blowup": false
+    },
+    "status": "Q207-fixed-stage-complete-residual-constant-reconstructed-conditionally-primitive-seminorm-frontier-isolated"
+  },
+  "source_hashes": {
+    "results/core_current_head_q161_source_tail_simultaneous_induction/README.md": "9eb2e280a49a5995d094747dd524c663d04f688260459f35b47229f600ebdd84",
+    "results/core_current_head_q166_complete_residual_frontier_audit/README.md": "837ae11decd2576c11582950cfd0226af62e934bc40f6b4c4be343f369eb1896",
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q190_downstream_route_frontier_audit/README.md": "7cb10a0b46c474eabffa62fcdf2ff2faff5cb46b0872a1a0cf44f8bbb3f74f55",
+    "results/core_current_head_q194_primary_field_assembly/README.md": "b1181cb00f0fce6f78033bdb7c7fb436b34e683a22a8c5b35af7c64a421ca056",
+    "results/core_current_head_q196_initial_generated_source/README.md": "a847944d5da4d166d77dc5921fee163ed799c5fb4712741e421589d20cd5b0ce",
+    "results/core_current_head_q202_next_sourced_cycle/README.md": "babbc50812ba2b1c361a92add6ab179f9011a3be7b933c493e8cf868d1ad31f1",
+    "results/core_current_head_q206_terminal_origin_obstruction/README.md": "256a6763ec17d6dc6c58b6220332bb2e45249e634f66d7a3ca0d63615778cee8",
+    "results/core_current_head_q207_residual_constant_frontier/README.md": "57a89e7e33b534da56f46a48a10b5302fb6e7b6f916a2c4ec6215a8206322125",
+    "results/core_current_head_q207_residual_constant_frontier/audit.py": "5bb0237d38d54caf536888b919ab93fe64edab9a0b0e90bb2e8cbb78d939ea56",
+    "results/core_current_head_q207_residual_constant_frontier/q207.py": "c06407283b05bf8809b5e3c122199c4a9ab46517a9c2e641ff3726402624a5a0",
+    "results/core_current_head_q207_residual_constant_frontier/test_audit.py": "a8520fa6e77e99a1b610b161e8429fd12fbc33b57fcea3b8bdbef06868884656",
+    "results/core_finite_stage_compact_recurrence/README.md": "c8a160689babfa80da97b0aef5d8692cd21e99f086711a865403d67941049470",
+    "results/core_finite_stage_compact_recurrence/recurrence.py": "1230877412571408bf5ef1d400077c624b5573917c6aacdd1e0919f9efc3c138"
+  },
+  "status": "Q207-fixed-stage-complete-residual-constant-reconstructed-conditionally-primitive-seminorm-frontier-isolated",
+  "symbolic": {
+    "concrete_request": {
+      "A0_integrations": 30100002,
+      "A0_strict_margin": "1/20000000",
+      "A1_integrations": 1,
+      "A1_strict_margin": "48193/20000000",
+      "actual_derivatives_or_operator_constants_evaluated": false,
+      "first_real_derivative_ceiling": 36479350300,
+      "largest_pressure_moment_archive_pole": 2626513221816,
+      "physical_jet": 0,
+      "stage": 602,
+      "sufficient_common_pole": 218876101818,
+      "target_power": 0
+    },
+    "constant": {
+      "constant_finite_if_primitive_bundle_holds": true,
+      "constant_uniform_in_stage": false,
+      "finite_monotone_composition_of_tame_and_archived_inverse_estimates": true,
+      "finite_request": "R_(j,m,N)<infinity",
+      "gap_bundle": "g_R=min Jacobian/normal/root/determinant/variance/support gaps>0",
+      "graph_acyclic": true,
+      "graph_finite": true,
+      "large_derivative_array_evaluated": false,
+      "literal_polynomial_in_all_inverse_norms_claimed": false,
+      "numerical_materialization_required": false,
+      "operator_bundle": "K_R=max compact/slow inverse constants<infinity",
+      "primitive_bundle": "P_R=max weighted selected-profile/root/frame/source/pressure/mean seminorms",
+      "recipe": "C_(j,m,N)=F_(j,m,N)(1+P_R,1+g_R^-1,1+K_R)"
+    },
+    "frontier": {
+      "Q196_initial_source_and_endpoint_already_derived_conditionally": true,
+      "common_positive_gap_bundle": "required on the same closed domain",
+      "evidence_hashes_prove_continuum_supremum": false,
+      "finite_symbolic_request_proves_continuum_supremum": false,
+      "independent_primitive_continuum_proof_complete": false,
+      "log_renormalized_inequality": "sup_(ell>=ell*) epsilon_ell^-B_j S^-d sup_Omega zeta^-1/2 y_a^r y_b^s |D^I(f_(j,m)/P)| < infinity",
+      "moderate_fixture_proves_actual_all_band_bound": false,
+      "named_providers_supply_log_renormalized_bounds_conditionally": true,
+      "new_exponent_or_algebraic_obstruction_found": false,
+      "pure_power_conversion": "for eta>0 the exponent is B_j-eta",
+      "same_exponent_pure_power_requires_d_zero": true,
+      "smooth_mixed_jet_zero_extension_both_endpoints": "required",
+      "source_terms": [
+        "radial_advection",
+        "complete_pressure",
+        "vector_mixed_viscosity",
+        "cylindrical_connections",
+        "cutoff_curls",
+        "mean_wave_terms",
+        "both_cross_orientations",
+        "square"
+      ]
+    },
+    "providers": {
+      "core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q166_complete_residual_frontier_audit": true,
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q190_downstream_route_frontier_audit": true,
+      "core_current_head_q194_primary_field_assembly": true,
+      "core_current_head_q196_initial_generated_source": true,
+      "core_current_head_q202_next_sourced_cycle": true,
+      "core_current_head_q206_terminal_origin_obstruction": true,
+      "core_finite_stage_compact_recurrence": true
+    },
+    "rates": {
+      "B0": "74999/50000",
+      "Lambda": "151/100",
+      "delta": "49997/100000",
+      "h": "1/200",
+      "kappa": "1/100000"
+    },
+    "residual": {
+      "complete_fixed_jet_residual_bound_conditionally": true,
+      "complete_memory": [
+        "six_covariances",
+        "radial_axial_velocity",
+        "source_moving_normal_pressure",
+        "Pi1_Pi2",
+        "whole_moving_pressure_product",
+        "both_velocity_moments"
+      ],
+      "cutoff_scale_chosen_after_finite_constant": true,
+      "finite_state_parts": [
+        "regular",
+        "compact_A0_A1",
+        "Gaussian",
+        "base_exterior"
+      ],
+      "potential_direct_swirl_pressure_cut_together": true,
+      "regular_contains": [
+        "spatial_slow_cutoffs",
+        "pressure_gradients",
+        "unit_viscosity",
+        "cylindrical_connections",
+        "old_new_crosses",
+        "square"
+      ],
+      "scale_cutoffs_allocated_only_in_diagonal": true,
+      "six_diagonal_groups": [
+        "e_t",
+        "-Delta e",
+        "grad pi",
+        "(U.grad)e",
+        "(e.grad)U",
+        "(e.grad)e"
+      ],
+      "stage_uniform_constant_used": false
+    },
+    "review": {
+      "checks": {
+        "complete_residual_and_cutoff_memory_retained": true,
+        "finite_acyclic_constant_recipe_closes_conditionally": true,
+        "first_direct_request_computed_exactly": true,
+        "primitive_promotion_gap_stated_precisely": true,
+        "provider_statuses_match": true,
+        "same_object_links_frozen": true,
+        "sample_stage_ceiling_exact": true
+      },
+      "next": "prove a quantitative all-fixed-order primitive majorant and common gap/inverse theorem covering the stage-602 request",
+      "scope": {
+        "complete_pressure_viscosity_cutoffs_and_interactions_retained": true,
+        "fixed_stage_residual_constant_reconstructed": true,
+        "primitive_same_object_continuum_bundle_proved_independently": false,
+        "stage_uniform_constant_required": false,
+        "unconditional_complete_residual_force_exclusion_or_blowup": false
+      },
+      "status": "Q207-fixed-stage-complete-residual-constant-reconstructed-conditionally-primitive-seminorm-frontier-isolated"
+    },
+    "same_object": {
+      "core_current_head_q161_source_tail_simultaneous_induction_uses_core_finite_stage_compact_recurrence": true,
+      "core_current_head_q190_downstream_route_frontier_audit_uses_core_current_head_q166_complete_residual_frontier_audit": true,
+      "core_current_head_q190_downstream_route_frontier_audit_uses_core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q194_primary_field_assembly_uses_core_current_head_q192_frame_graph_jet_transfer": true,
+      "core_current_head_q197_first_sourced_covariance_uses_core_current_head_q196_initial_generated_source": true,
+      "core_current_head_q198_generic_signed_target_uses_core_current_head_q197_first_sourced_covariance": true,
+      "core_current_head_q199_weighted_target_obstruction_uses_core_current_head_q198_generic_signed_target": true,
+      "core_current_head_q200_physical_weighted_target_reconciliation_uses_core_current_head_q199_weighted_target_obstruction": true,
+      "core_current_head_q201_post_signed_mean_reconciliation_uses_core_current_head_q200_physical_weighted_target_reconciliation": true,
+      "core_current_head_q202_next_sourced_cycle_uses_core_current_head_q161_source_tail_simultaneous_induction": true,
+      "core_current_head_q202_next_sourced_cycle_uses_core_current_head_q201_post_signed_mean_reconciliation": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain_uses_core_current_head_q202_next_sourced_cycle": true,
+      "core_current_head_q205_stagewise_pulse_diagonal_uses_core_current_head_q203_diagonal_endpoint_force_corrected_domain": true,
+      "core_current_head_q206_terminal_origin_obstruction_uses_core_current_head_q205_stagewise_pulse_diagonal": true
+    },
+    "sample_stages": {
+      "m0_N0": {
+        "N": 0,
+        "eta": "1/100000",
+        "exponent": "5999/2500000",
+        "m": 0,
+        "meets_target": true,
+        "minimal": true,
+        "previous_exponent": "-401/4000000",
+        "stage": 602
+      },
+      "m0_N1": {
+        "N": 1,
+        "eta": "1/100000",
+        "exponent": "2505849/2500000",
+        "m": 0,
+        "meets_target": true,
+        "minimal": true,
+        "previous_exponent": "3999359/4000000",
+        "stage": 1002
+      },
+      "m1_N0": {
+        "N": 0,
+        "eta": "1/100000",
+        "exponent": "5699/2500000",
+        "m": 1,
+        "meets_target": true,
+        "minimal": true,
+        "previous_exponent": "-881/4000000",
+        "stage": 1402
+      }
+    },
+    "status": "Q207-fixed-stage-complete-residual-constant-reconstructed-conditionally-primitive-seminorm-frontier-isolated"
+  }
+}
