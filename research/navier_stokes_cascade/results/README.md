@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q212 existing target degree contract and restored raw-map frontier](core_current_head_q212_existing_target_degree_raw_map_frontier/README.md).
+Latest source audit: [Q213 reconstructed primitive bundle and exact core/root frontier](core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/README.md).
+Q213 joins the later same-object reconstruction chain that Q212 did not
+include. The finalized leading profile, fixed-order background/Borel
+selector, same-band gap floors, full-path ODE, explicit same-choice
+projectors and compact/slow weighted inverses supply one finite conditional
+`A_R,g_R,K_R` bundle on a common tail, with complete pressure memory. The
+independent frontier is reduced to the exact core pressure-family fixed point,
+the selected implicit-root identities and their positive Jacobian floors, and
+identification of the local pressure datum with the finalized global gauge.
+
+Preceding source audit: [Q212 existing target degree contract and restored raw-map frontier](core_current_head_q212_existing_target_degree_raw_map_frontier/README.md).
 Q212 corrects Q211's proposed next step. Q160 already derives the exact
 same-family current-target state difference, and the governing `W/M/S`
 definition assigns a finite polynomial `S=ell^2` degree to every fixed stage
@@ -15,7 +25,9 @@ retains the polynomial loss explicitly. A finite jet request therefore has
 one finite conditional target/primitive degree maximum, although no degree
 is evaluated. The independent frontier returns to the raw selected-profile
 and first-coefficient weighted majorant, common positive gap floor and
-same-object compact/slow inverse archive.
+same-object compact/slow inverse archive. Q213 observes that the current
+reconstruction chain already joins that bundle conditionally and isolates
+the exact core/root premises below it.
 
 Preceding source audit: [Q211 polynomial degree grammar and weighted primitive frontier](core_current_head_q211_degree_grammar_primitive_frontier/README.md).
 Q211 corrects Q210's proposed next step: Q196--Q202 already derive the

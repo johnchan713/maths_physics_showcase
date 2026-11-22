@@ -1,0 +1,121 @@
+{
+  "closure": {
+    "edges": 1720,
+    "nodes": 463,
+    "source_bindings": 6231
+  },
+  "dependency_evidence_sha256": {
+    "results/annular_exterior_foundation/evidence.json": "b7bf656adf682db75d3305f8967d7257aed0c99c029065184aea4f2b038e1494",
+    "results/core_all_order_foundation/evidence.json": "97a357bf4a494a0b1dc676994245f7bc0de8f1fde4d169a6f1e25b09e69196c1",
+    "results/core_compact_slow_inverse_reconstruction/evidence.json": "22e4b560e1f4928d9fd74d9f11045d00fbebe01c361bfcac5e86c26e1c6aee19",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/evidence.json": "7f8cf179242fffe5c7d91614e33eb955d9e52565f3b3182a585dbe935b28842d",
+    "results/core_current_head_q204_global_ledger_uniform_primary/evidence.json": "6baeb949f1a4384a567f8f4614df626bbf30369a3822adbaf21fd46350e027a2",
+    "results/core_current_head_q212_existing_target_degree_raw_map_frontier/evidence.json": "743bb3a316ca27eaacdd90ea36e08693008a5d18e5a61cdbfc93f416ed957ba9",
+    "results/core_fixed_profile_projector_reconstruction/evidence.json": "254afd864a80b8d2da3e0d81554fcc31cff8659d8a22607f76856bad3d1cd18d",
+    "results/core_full_path_ode_reconstruction/evidence.json": "3debeabf5ee1f2d9d49b2e781a2ebf6d55f1dc0a0c0347126837b14a9bfbfd43",
+    "results/core_leading_background_seminorm_reconstruction/evidence.json": "fb58eeb5071645adaf4f64df4814a7f91c628e9602320d20027758ceb281b0f1",
+    "results/core_leading_profile_certificate/evidence.json": "3e540aa5be3669ba682ff6f9ad03e40f15abb24869583ec40ad1299ff5574aff",
+    "results/core_same_band_gap_reconstruction/evidence.json": "cfb45fd4152877bdccae26f5e533c6bdb51747b65dca8d4176b8bd2007e62d0c"
+  },
+  "parent": "9d84632658fde16893666aa59372e3986bd55fa9",
+  "review": {
+    "checks": {
+      "Q212_bundle_is_already_reconstructed_conditionally": true,
+      "exact_core_root_frontier_not_promoted": true,
+      "finite_bundle_quantifier_closes": true,
+      "provider_statuses_match": true
+    },
+    "next": "audit the exact core pressure-family fixed point and the selected implicit roots against the finalized same-pressure profile, beginning with the core pressure datum",
+    "scope": {
+      "actual_high_jet_constants_numerically_evaluated": false,
+      "exact_core_and_root_hypotheses_independently_reproved": false,
+      "raw_majorant_gap_inverse_bundle_joined_conditionally": true,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    },
+    "status": "Q213-reconstructed-primitive-bundle-joined-conditionally-exact-core-root-frontier-isolated"
+  },
+  "source_hashes": {
+    "results/annular_exterior_foundation/README.md": "82fdbcd3d63302f0ba139e79f5965869c6dd7bbcc694ab35ddab94c5363a1fa9",
+    "results/core_all_order_foundation/README.md": "db2334588db56d7251950fad6e4cff6e6306df145b32f85d8b70a3dd42a415a7",
+    "results/core_compact_slow_inverse_reconstruction/README.md": "70f42063c5b4eb4c3f735edf8d6a55cdc9847d74c274c125ed864c5d6a5cb35f",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/README.md": "ec59ea11e23d44c27e60797eb75ac5d178328949170d97d3becba0ecec870878",
+    "results/core_current_head_q204_global_ledger_uniform_primary/README.md": "821ba5a6b50c705917ee60fd70e48ace66eff97bbd9eac7da66728398c4a82ad",
+    "results/core_current_head_q212_existing_target_degree_raw_map_frontier/README.md": "61ca8aecd533b04e47b666c5e517e0f5d09fc72d99336d5ae28e3b6958427e71",
+    "results/core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/README.md": "1d7c76840bca219a95dc622b14a8186bd28d1c6bf8dcbd8b3fab0fcefdd1ca6d",
+    "results/core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/audit.py": "7e3aea490d4a8c218818b8ec8153467a44f1a438b158459b89a9b10659dc0b15",
+    "results/core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/q213.py": "38cb80ce6c3bd0f496420ffbc3de375b334b9c22b587cea14d99de564079e9bd",
+    "results/core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/test_audit.py": "a333bef765bd93feb5aff3c82b56c82d95737bb6cf1b1cbdf8425765bb231e6a",
+    "results/core_fixed_profile_projector_reconstruction/README.md": "9251371fceb7192a68df7dfd3199f94695a206f4130dd2a47d6e71e29e7303ea",
+    "results/core_full_path_ode_reconstruction/README.md": "87d336bacbf8ecea067b590e43f8613664971a2059813ffe339402d58029a8d1",
+    "results/core_leading_background_seminorm_reconstruction/README.md": "21f062f120ecd2cf39188f6db092426473c777c8551e11ae06ee979b9592643e",
+    "results/core_leading_profile_certificate/README.md": "fd0cff6bd915613706388e2b83d416b7fb46a62a0b58204979b0ffaf10b71bfe",
+    "results/core_same_band_gap_reconstruction/README.md": "60d03166bbe6143226b57dda833880709add1cd761ebbb0d6c9c029772b9b955"
+  },
+  "status": "Q213-reconstructed-primitive-bundle-joined-conditionally-exact-core-root-frontier-isolated",
+  "symbolic": {
+    "finite_bundle_example": {
+      "A_R": "9",
+      "K_R": "11",
+      "diagnostic_only": true,
+      "g_R": "1/9"
+    },
+    "frontier": {
+      "core_fixed_point": "for the exact pressure-family datum, prove the infinite Banach-space map is a self-map and contraction and that its fixed point satisfies the original core equations",
+      "exact_root_rows": "for each selected modulation, annular, axial-strength and heat map prove F(c_*)=0 exactly and a positive Jacobian/inverse floor on the accepted root neighborhood",
+      "independently_rederived_in_Q213": false,
+      "named_analytical_providers_exist": true,
+      "precise_joint_gate": "q_core<1, F_root(c_*)=0, inf_N ||D F_root(c)^(-1)||^(-1)>0, and Pi_core=Pi_final on the same selected profile",
+      "pressure_identification": "identify the pressure-family datum used by the local core with the finalized forward/backward full-pressure profile and unchanged gauge",
+      "tests_or_hashes_are_continuum_proof": false,
+      "unconditional_residual_or_blowup": false
+    },
+    "providers": {
+      "annular_exterior_foundation": true,
+      "core_all_order_foundation": true,
+      "core_compact_slow_inverse_reconstruction": true,
+      "core_current_head_q189_same_profile_envelope_gap_audit": true,
+      "core_current_head_q204_global_ledger_uniform_primary": true,
+      "core_current_head_q212_existing_target_degree_raw_map_frontier": true,
+      "core_fixed_profile_projector_reconstruction": true,
+      "core_full_path_ode_reconstruction": true,
+      "core_leading_background_seminorm_reconstruction": true,
+      "core_leading_profile_certificate": true,
+      "core_same_band_gap_reconstruction": true
+    },
+    "reconstructed_bundle": {
+      "Q212_raw_majorant_gap_inverse_obligation_closed_conditionally": true,
+      "borel_selector": "after the finite seminorms are known, the real selector chooses a_n so every fixed row satisfies C_(n,m) q^(nh)<2^(-n)",
+      "complete_pressure_memory": [
+        "Pi1/Pi2",
+        "all six covariances",
+        "radial and axial velocity",
+        "whole moving pressure product",
+        "both moment identities"
+      ],
+      "full_path": "the homogeneous/sourced ODE has fixed-jet Duhamel bounds and retains the unprojected n dot f pressure and every cutoff derivative",
+      "gap_floor": "the same-band reconstruction selects one accepted tail with positive value, spectral, cone, determinant, support and phase-normal floors",
+      "leading_majorant": "the finalized leading-profile certificate and fixed-order background reconstruction give every requested selected-profile/first-coefficient weighted seminorm before the real Borel scale is selected",
+      "numerical_high_jet_bundle_evaluated": false,
+      "one_common_tail_and_same_profile": true,
+      "projector_inverse": "one explicit same-choice projector family, both exact moments, shifted compact maps, zero-Haar temporal inverse and fixed slow response share that tail",
+      "unconditional_foundation_claimed": false
+    },
+    "review": {
+      "checks": {
+        "Q212_bundle_is_already_reconstructed_conditionally": true,
+        "exact_core_root_frontier_not_promoted": true,
+        "finite_bundle_quantifier_closes": true,
+        "provider_statuses_match": true
+      },
+      "next": "audit the exact core pressure-family fixed point and the selected implicit roots against the finalized same-pressure profile, beginning with the core pressure datum",
+      "scope": {
+        "actual_high_jet_constants_numerically_evaluated": false,
+        "exact_core_and_root_hypotheses_independently_reproved": false,
+        "raw_majorant_gap_inverse_bundle_joined_conditionally": true,
+        "unconditional_pulse_residual_force_exclusion_or_blowup": false
+      },
+      "status": "Q213-reconstructed-primitive-bundle-joined-conditionally-exact-core-root-frontier-isolated"
+    },
+    "status": "Q213-reconstructed-primitive-bundle-joined-conditionally-exact-core-root-frontier-isolated"
+  }
+}
