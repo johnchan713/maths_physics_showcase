@@ -2010,6 +2010,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q209_cutoff_role_separation/evidence.json \
             --output navier_stokes_core_current_head_q209_ci.json
 
+      - name: Check Q210 finite bundle and uniform all-band source frontier
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q210_finite_bundle_uniform_tail/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q210_finite_bundle_uniform_tail/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q210_finite_bundle_uniform_tail/evidence.json \
+            --output navier_stokes_core_current_head_q210_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2638,6 +2645,7 @@ jobs:
             navier_stokes_core_current_head_q207_ci.json
             navier_stokes_core_current_head_q208_ci.json
             navier_stokes_core_current_head_q209_ci.json
+            navier_stokes_core_current_head_q210_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

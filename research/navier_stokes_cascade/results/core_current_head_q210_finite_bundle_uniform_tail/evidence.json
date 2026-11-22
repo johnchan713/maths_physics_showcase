@@ -1,0 +1,154 @@
+{
+  "closure": {
+    "edges": 1684,
+    "nodes": 460,
+    "source_bindings": 6182
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q165_finite_map_frontier_audit/evidence.json": "4d8854401c547ce14d43978eefae3d4cd5a1de99767206ff4a7883c1ffc68aaf",
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/evidence.json": "7f8cf179242fffe5c7d91614e33eb955d9e52565f3b3182a585dbe935b28842d",
+    "results/core_current_head_q192_frame_graph_jet_transfer/evidence.json": "e162ff26d4f0dab816d239c1a31504ff1663fddf0571d7960edcf171357f2b4f",
+    "results/core_current_head_q196_initial_generated_source/evidence.json": "52c19252a65d5478fbc32bbc27d44353ceb14f2380bfb95b76d3fe7b88b34b7e",
+    "results/core_current_head_q207_residual_constant_frontier/evidence.json": "3457e6c0a3ffec9df2f1141844176ba2104c8be30d356ac0df36eadce56db5f9",
+    "results/core_current_head_q209_cutoff_role_separation/evidence.json": "813939840515298e157440642c482b00468b574d69674fe394aa66bffff660ed",
+    "results/core_direct_compact_slow_provider_reconstruction/evidence.json": "ad698e873be65c32dcd6a2e00ce98dc1ffec1a514bfa5075d0b23813b8a52ad3",
+    "results/core_same_band_gap_reconstruction/evidence.json": "cfb45fd4152877bdccae26f5e533c6bdb51747b65dca8d4176b8bd2007e62d0c",
+    "results/leading_frame_foundation/evidence.json": "fec0aee5eecb7873d2e76abd50a24e2f2a4ff236f97380e9bc36629d1ba30fba",
+    "results/weighted_stress_foundation/evidence.json": "5033fd870260a6561b9e4a2c342a9cc67365d077c8acc802e32a2a08de59882a"
+  },
+  "parent": "218ba251c6a9c79d56623da304db1e28784d6ad8",
+  "review": {
+    "checks": {
+      "finite_provider_rows_unify_without_evaluation": true,
+      "frontier_reduced_to_uniform_tail_input": true,
+      "provider_statuses_match": true,
+      "smooth_bandwise_countermodel_blocks_invalid_inference": true
+    },
+    "next": "derive the polynomial-in-S all-band primitive source bound from the explicit selected profile and first generated source, then propagate it through one sourced/generic cycle",
+    "scope": {
+      "counterexample_to_actual_selected_profile_claimed": false,
+      "numerical_stage_602_bundle_evaluated": false,
+      "stage_602_bundle_finite_relative_to_named_contracts": true,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false,
+      "uniform_actual_source_tail_proved_independently": false
+    },
+    "status": "Q210-finite-primitive-bundle-unified-conditionally-uniform-all-band-source-frontier-isolated"
+  },
+  "source_hashes": {
+    "results/core_current_head_q165_finite_map_frontier_audit/README.md": "5640ea97b01b4393db1e2158f757934af656d6fa88e3402117a8f2dd3d6a56ce",
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/README.md": "ec59ea11e23d44c27e60797eb75ac5d178328949170d97d3becba0ecec870878",
+    "results/core_current_head_q192_frame_graph_jet_transfer/README.md": "80bad4c334a27aa1ed6f8e56a1bb18ccdb6a42390893b444e3177fbc73a48ded",
+    "results/core_current_head_q196_initial_generated_source/README.md": "a847944d5da4d166d77dc5921fee163ed799c5fb4712741e421589d20cd5b0ce",
+    "results/core_current_head_q207_residual_constant_frontier/README.md": "57a89e7e33b534da56f46a48a10b5302fb6e7b6f916a2c4ec6215a8206322125",
+    "results/core_current_head_q209_cutoff_role_separation/README.md": "948847785d5fdd483e84000713edd993d3cb3d1daf37832a443c32170da45e94",
+    "results/core_current_head_q210_finite_bundle_uniform_tail/README.md": "66614f49603935e3e9d3a85dc1e04d500c4342a81ca9dd9295a185530b125b56",
+    "results/core_current_head_q210_finite_bundle_uniform_tail/audit.py": "936906d1f1dc4499ba06b1504b05b18d7b5a651ddbc946a5199ca526cd1a5b0d",
+    "results/core_current_head_q210_finite_bundle_uniform_tail/q210.py": "aa7d81b83404184d4e4ee634e1212e6067b129b503545b6c0b397d16d6769c8a",
+    "results/core_current_head_q210_finite_bundle_uniform_tail/test_audit.py": "26656ed6640481acd4e5d8e264bd3f723943359493e89ebe598cc8028eb1a96b",
+    "results/core_direct_compact_slow_provider_reconstruction/README.md": "a109b3a201357df0910aa0c0ff6ebc7411051d6bace6ecd81b585e2bb6df4a0b",
+    "results/core_same_band_gap_reconstruction/README.md": "60d03166bbe6143226b57dda833880709add1cd761ebbb0d6c9c029772b9b955",
+    "results/leading_frame_foundation/README.md": "43e94ef9e98ddccecad6953412396384ae795bd33534295ceb2d48db145038eb",
+    "results/weighted_stress_foundation/README.md": "18d60471dd6d794f440e184375fe3d64d1787c854cdd67bc840878a9e37f0f16"
+  },
+  "status": "Q210-finite-primitive-bundle-unified-conditionally-uniform-all-band-source-frontier-isolated",
+  "symbolic": {
+    "bundle": {
+      "conditional_on_named_continuum_contracts": true,
+      "contracts_independently_reproved_here": false,
+      "finite_maximum_needs_numerical_materialization": false,
+      "gap_bundle": "g_R=min_(g in finite stage-prefix gaps) g > 0",
+      "jet_index_set_finite": true,
+      "operator_bundle": "K_R=max_(K in finite requested compact/slow archive) K < infinity",
+      "order": 36479350301,
+      "per_jet_contract": "M_I=sup_(ell>=ell*) epsilon^-B S^-d_I edge_I |D^I(source/P)| < infinity",
+      "stage": 602,
+      "stage_prefix_finite": true,
+      "unified_majorant": "A_R=max_(|I|<=R) M_I < infinity"
+    },
+    "countermodels": {
+      "d0": {
+        "absolute_source_tends_to_zero_for_positive_B": true,
+        "counterexample_claimed_for_actual_selected_source": false,
+        "degree": 0,
+        "each_band_seminorm_finite": true,
+        "elementary_bound": "log(n)<=n/2 gives normalized_log>=n(n-4d)",
+        "endpoint_jets_vanish": true,
+        "lower_bound_positive": true,
+        "normalized_log": "sqrt(ell)-2d log(ell)=n^2-8d log(n)",
+        "normalized_polynomial_supremum_finite": false,
+        "smooth_source": "F_ell=epsilon_ell^B exp(sqrt(ell)) phi, phi in C_c^infinity(Omega)",
+        "subsequence": "ell=n^4",
+        "witness_ell": 4096,
+        "witness_lower_bound": 64,
+        "witness_n": 8
+      },
+      "d100": {
+        "absolute_source_tends_to_zero_for_positive_B": true,
+        "counterexample_claimed_for_actual_selected_source": false,
+        "degree": 100,
+        "each_band_seminorm_finite": true,
+        "elementary_bound": "log(n)<=n/2 gives normalized_log>=n(n-4d)",
+        "endpoint_jets_vanish": true,
+        "lower_bound_positive": true,
+        "normalized_log": "sqrt(ell)-2d log(ell)=n^2-8d log(n)",
+        "normalized_polynomial_supremum_finite": false,
+        "smooth_source": "F_ell=epsilon_ell^B exp(sqrt(ell)) phi, phi in C_c^infinity(Omega)",
+        "subsequence": "ell=n^4",
+        "witness_ell": 426231402496,
+        "witness_lower_bound": 329664,
+        "witness_n": 808
+      }
+    },
+    "frontier": {
+      "Q192_role": "propagates a supplied primitive polynomial-in-S majorant through a finite graph",
+      "Q209_numeric_A_R_is_first_obligation": false,
+      "compact_slow_role": "maps the weighted source space boundedly but cannot prove its own input",
+      "conditional_finite_bundle_follows_from_existing_contracts": true,
+      "first_independent_inequality": "sup_(ell>=ell*) epsilon_ell^-B_j S^-d_(j,I) sup_Omega zeta^-1/2 y_a^r y_b^s |D^I(f_(j,m)/P)| < infinity",
+      "must_hold_for": [
+        "same selected profile",
+        "same roots and frame",
+        "complete pressure",
+        "radial and axial velocity",
+        "all six covariances",
+        "all supported rows"
+      ],
+      "per_band_smoothness_suffices": false,
+      "tests_or_hashes_prove_uniform_tail": false,
+      "unconditional_residual_or_blowup": false
+    },
+    "providers": {
+      "core_current_head_q165_finite_map_frontier_audit": true,
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q189_same_profile_envelope_gap_audit": true,
+      "core_current_head_q192_frame_graph_jet_transfer": true,
+      "core_current_head_q196_initial_generated_source": true,
+      "core_current_head_q207_residual_constant_frontier": true,
+      "core_current_head_q209_cutoff_role_separation": true,
+      "core_direct_compact_slow_provider_reconstruction": true,
+      "core_same_band_gap_reconstruction": true,
+      "leading_frame_foundation": true,
+      "weighted_stress_foundation": true
+    },
+    "review": {
+      "checks": {
+        "finite_provider_rows_unify_without_evaluation": true,
+        "frontier_reduced_to_uniform_tail_input": true,
+        "provider_statuses_match": true,
+        "smooth_bandwise_countermodel_blocks_invalid_inference": true
+      },
+      "next": "derive the polynomial-in-S all-band primitive source bound from the explicit selected profile and first generated source, then propagate it through one sourced/generic cycle",
+      "scope": {
+        "counterexample_to_actual_selected_profile_claimed": false,
+        "numerical_stage_602_bundle_evaluated": false,
+        "stage_602_bundle_finite_relative_to_named_contracts": true,
+        "unconditional_pulse_residual_force_exclusion_or_blowup": false,
+        "uniform_actual_source_tail_proved_independently": false
+      },
+      "status": "Q210-finite-primitive-bundle-unified-conditionally-uniform-all-band-source-frontier-isolated"
+    },
+    "status": "Q210-finite-primitive-bundle-unified-conditionally-uniform-all-band-source-frontier-isolated"
+  }
+}

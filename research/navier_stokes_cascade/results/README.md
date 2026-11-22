@@ -6,7 +6,20 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q209 coefficient/stage cutoff role separation and corrected primitive frontier](core_current_head_q209_cutoff_role_separation/README.md).
+Latest source audit: [Q210 finite primitive unification and uniform all-band source frontier](core_current_head_q210_finite_bundle_uniform_tail/README.md).
+Q210 narrows Q209's stage-602 primitive-bundle frontier. Relative to the
+existing all-fixed-order continuum
+contracts, the finite jet set, finite stage-prefix gap set and finite requested
+operator archive have a finite maximum, positive minimum and finite maximum,
+respectively. The actual independent obstruction is the polynomially
+normalized supremum over the infinite accepted-band tail. A smooth compactly
+supported countermodel proves that finite seminorms on every band, even with
+absolute decay and flat endpoint jets, do not imply that uniform bound. The
+next obligation is to derive the all-band polynomial-in-`S` source estimate
+from the explicit primary-plus-initial-mean maps and propagate it through one
+sourced/generic cycle.
+
+Preceding source audit: [Q209 coefficient/stage cutoff role separation and corrected primitive frontier](core_current_head_q209_cutoff_role_separation/README.md).
 Q209 corrects Q208's proposed same-cutoff identity blocker. The Q120
 squared-flat cutoff controls coefficient-background Borel summation, whereas
 Q205's generated-cycle diagonal fixes a separate smooth plateau stage cutoff.
