@@ -1,0 +1,133 @@
+{
+  "closure": {
+    "edges": 1670,
+    "nodes": 458,
+    "source_bindings": 6157
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q120_closed_borel_cutoff/evidence.json": "8f2ab19a6c02e4f105c7e9657ace329d64d70430a6f9fcdeeb889c1ea02f473f",
+    "results/core_current_head_q192_frame_graph_jet_transfer/evidence.json": "e162ff26d4f0dab816d239c1a31504ff1663fddf0571d7960edcf171357f2b4f",
+    "results/core_current_head_q204_global_ledger_uniform_primary/evidence.json": "6baeb949f1a4384a567f8f4614df626bbf30369a3822adbaf21fd46350e027a2",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/evidence.json": "5456e97ac6be1af97fb21384795567534125438894798aa7603f14d9de2e067a",
+    "results/core_current_head_q207_residual_constant_frontier/evidence.json": "3457e6c0a3ffec9df2f1141844176ba2104c8be30d356ac0df36eadce56db5f9",
+    "results/regional_weighted_gate/evidence.json": "4417ffa7e693f8ba13cb1a922b6a8fbd2761e7e74de7af84d94eb5c9d4f010cd",
+    "results/weighted_stress_foundation/evidence.json": "5033fd870260a6561b9e4a2c342a9cc67365d077c8acc802e32a2a08de59882a"
+  },
+  "parent": "929c5f5390e183500f0e0e030e2b0d615f11db68",
+  "review": {
+    "checks": {
+      "derived_maps_propagate_only_after_seed_array": true,
+      "existing_cutoff_provider_covers_stage_602": true,
+      "provider_statuses_match": true,
+      "remaining_profile_frontier_stated_without_promotion": true,
+      "same_object_links_frozen": true,
+      "wrong_cutoff_draft_and_identity_gap_recorded": true
+    },
+    "next": "bind Q207's cutoff to the Q120 squared-flat function, then derive A_R with common gap floors and the archived compact/slow inverse bundle",
+    "scope": {
+      "complete_stage_602_primitive_bundle_proved": false,
+      "existing_scale_cutoff_bound_available_conditionally": true,
+      "same_field_cutoff_identity_certified": false,
+      "stage_602_cutoff_binary_budget": 4414001386307,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    },
+    "status": "Q208-squared-flat-cutoff-budget-computed-same-field-binding-and-primitive-frontier-isolated"
+  },
+  "source_hashes": {
+    "results/core_current_head_q120_closed_borel_cutoff/README.md": "2d63394caae8c94c03424a2ec21dbb17666139cd85904582217cea4b932711bd",
+    "results/core_current_head_q192_frame_graph_jet_transfer/README.md": "80bad4c334a27aa1ed6f8e56a1bb18ccdb6a42390893b444e3177fbc73a48ded",
+    "results/core_current_head_q204_global_ledger_uniform_primary/README.md": "821ba5a6b50c705917ee60fd70e48ace66eff97bbd9eac7da66728398c4a82ad",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/README.md": "c6a8d3214346d3c074a379b271208be304df79accdfa3851853557b5effd4dc0",
+    "results/core_current_head_q207_residual_constant_frontier/README.md": "57a89e7e33b534da56f46a48a10b5302fb6e7b6f916a2c4ec6215a8206322125",
+    "results/core_current_head_q208_cutoff_gevrey_frontier/README.md": "9da869a37093156c11395bccefc3c4c34131a0163a1cc98292fc3a5879729021",
+    "results/core_current_head_q208_cutoff_gevrey_frontier/audit.py": "2e1d388cbcb4e8c97a0e36fd32f5e18ca48a9cb54f9f28841f098809f9e45020",
+    "results/core_current_head_q208_cutoff_gevrey_frontier/q208.py": "7c8142fcce129abd50d4e11b7c029d5adb01aa6dc8bc972da1c5dffb92130a15",
+    "results/core_current_head_q208_cutoff_gevrey_frontier/test_audit.py": "86ed7bb79aa3d1ffc66e8e4ec600f947f0f55d8ee6f3bb572d2bfb428bf2e92d",
+    "results/regional_weighted_gate/README.md": "b03e1e9e8b5f51cb81d34a5b2344fb3d8784d3fa0db8ba8fce796270a502f0b3",
+    "results/weighted_stress_foundation/README.md": "18d60471dd6d794f440e184375fe3d64d1787c854cdd67bc840878a9e37f0f16"
+  },
+  "status": "Q208-squared-flat-cutoff-budget-computed-same-field-binding-and-primitive-frontier-isolated",
+  "symbolic": {
+    "correction": {
+      "Q120_already_proved_all_order_cutoff_bound": true,
+      "Q204_rule_selects_background_scale_after_finite_constants": true,
+      "Q205_rule_selects_stage_scale_after_finite_constants": true,
+      "Q207_to_Q120_same_field_identity_explicitly_certified": false,
+      "conditional_budget_available": true,
+      "cutoff_shape_removed_from_frontier_unconditionally": false,
+      "discarded_draft_seed": "exp(-1/x)",
+      "historical_evidence_modified": false,
+      "reason": "the live implemented Borel cutoff is squared-flat exp(-1/x^2)"
+    },
+    "cutoff": {
+      "Euler_majorant": "K_m <= 82*4097^m*(m!)^3",
+      "binary_budget": 4414001386307,
+      "binary_budget_formula": "7+13*m+3*m*ceil(log2(m))",
+      "ceil_log2_order": 36,
+      "direct_q120_budget_match": true,
+      "factorial_or_derivative_array_materialized": false,
+      "flat_seed": "g(x)=exp(-1/x^2) for x>0 and zero for x<=0",
+      "identity": "implemented-squared-flat-Borel",
+      "new_cutoff_substituted": false,
+      "order": 36479350300,
+      "q120_actual_field_identity_certified": false,
+      "stage_602_order_match": true
+    },
+    "frontier": {
+      "R": 36479350300,
+      "actual_weighted_first_coefficient_orderwise_finite": true,
+      "additional_required_bundle": "common positive gaps g_R and every archived compact/slow inverse K_R",
+      "closed_majorant_A_R_from_selected_defining_maps_recorded": false,
+      "common_value_floors_are_separate_from_high_derivative_sizes": true,
+      "first_missing_majorant": "A_R=max_(|I|<=R+1) sup_D w_I S^(-d_I) |D^I(F0,U0,Pi0,M0,V0,E1,U1,W1,T1/zeta)| <= A_R",
+      "passing_tests_or_hashes_prove_this_supremum": false,
+      "same_cutoff_identity_obligation": "bind Q207 chi(a_j q) to Q120 implemented squared-flat Borel chi before applying the bit budget",
+      "unconditional_residual_or_blowup": false
+    },
+    "propagation": {
+      "background_schedule": "Q204 rule-defined after each finite coefficient row",
+      "cutoff_shape": "Q120 squared-flat Euler bound through every fixed order",
+      "cutoff_shape_bound_available_after_identity_binding": true,
+      "frame_reciprocals": "Q192 finite Leibniz recurrence after primitive jets and floors",
+      "pressure_memory": "Pi1/Pi2, whole moving product and all six covariance entries retained",
+      "same_field_cutoff_identity_bound": false,
+      "selected_profile_gap_and_operator_bundle_closed_directly": false,
+      "stage_schedule": "Q205 rule-defined after each finite stage request"
+    },
+    "providers": {
+      "core_current_head_q120_closed_borel_cutoff": true,
+      "core_current_head_q192_frame_graph_jet_transfer": true,
+      "core_current_head_q204_global_ledger_uniform_primary": true,
+      "core_current_head_q205_stagewise_pulse_diagonal": true,
+      "core_current_head_q207_residual_constant_frontier": true,
+      "regional_weighted_gate": true,
+      "weighted_stress_foundation": true
+    },
+    "review": {
+      "checks": {
+        "derived_maps_propagate_only_after_seed_array": true,
+        "existing_cutoff_provider_covers_stage_602": true,
+        "provider_statuses_match": true,
+        "remaining_profile_frontier_stated_without_promotion": true,
+        "same_object_links_frozen": true,
+        "wrong_cutoff_draft_and_identity_gap_recorded": true
+      },
+      "next": "bind Q207's cutoff to the Q120 squared-flat function, then derive A_R with common gap floors and the archived compact/slow inverse bundle",
+      "scope": {
+        "complete_stage_602_primitive_bundle_proved": false,
+        "existing_scale_cutoff_bound_available_conditionally": true,
+        "same_field_cutoff_identity_certified": false,
+        "stage_602_cutoff_binary_budget": 4414001386307,
+        "unconditional_pulse_residual_force_exclusion_or_blowup": false
+      },
+      "status": "Q208-squared-flat-cutoff-budget-computed-same-field-binding-and-primitive-frontier-isolated"
+    },
+    "same_object": {
+      "Q207_to_Q120": 30,
+      "Q207_to_Q192": 2,
+      "Q207_to_Q204": 3,
+      "Q207_to_Q205": 2
+    },
+    "status": "Q208-squared-flat-cutoff-budget-computed-same-field-binding-and-primitive-frontier-isolated"
+  }
+}

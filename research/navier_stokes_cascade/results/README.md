@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q207 fixed-stage residual constant and primitive-seminorm frontier](core_current_head_q207_residual_constant_frontier/README.md).
+Latest source audit: [Q208 existing Borel-cutoff provider join and narrowed primitive frontier](core_current_head_q208_cutoff_gevrey_frontier/README.md).
+Q208 corrects an overbroad part of Q207's frontier. Q120 already proves an
+all-order Euler bound for the squared-flat Borel cutoff; if Q207's actual
+cutoff is bound to that function, its derivative ceiling `36,479,350,300`
+has symbolic budget `K_R <= 2^4414001386307`. Q120 deliberately leaves that
+actual-field identity uncertified, so Q208 records it as a precise blocker
+rather than promoting the conditional budget. Q204--Q205 already supply the
+scale-choice quantifier. The selected profile/root/frame/source/pressure/mean
+weighted seminorms, common positive gaps and archived compact/slow inverse
+constants also remain unresolved.
+
+Preceding source audit: [Q207 fixed-stage residual constant and primitive-seminorm frontier](core_current_head_q207_residual_constant_frontier/README.md).
 Q207 corrects Q206's next frontier: the fixed-stage complete residual constant
 is already a finite acyclic monotone composition of same-object primitive
 seminorms, positive gaps and compact/slow inverse constants. It
