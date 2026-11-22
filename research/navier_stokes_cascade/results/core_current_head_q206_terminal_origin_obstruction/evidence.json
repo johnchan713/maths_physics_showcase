@@ -1,0 +1,135 @@
+{
+  "closure": {
+    "edges": 1655,
+    "nodes": 456,
+    "source_bindings": 6133
+  },
+  "dependency_evidence_sha256": {
+    "results/background_summation/evidence.json": "a2e55ad429914b2ce33aff913efd43165d2fd1f2fb88f13a6edfffc887b23853",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/evidence.json": "3bfe170d5b2a7a9d85270a0647e9f21ccc4de2125e580e844e4777afcbdc1916",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/evidence.json": "2148704390a3b45d796e10d96a1b884e765f3633b9f62f56f19f3634b17bce5d",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/evidence.json": "fb013b6bafd8ab7eef9b61c62313b9fb74495fd76d78c6bc93a99208964d1434",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/evidence.json": "5456e97ac6be1af97fb21384795567534125438894798aa7603f14d9de2e067a",
+    "results/core_pressure_identification/evidence.json": "9bb5c29c29756e878683d7b2f56df4765fef58817605be912a358ce659436d4a"
+  },
+  "parent": "b3a47a3e059b24dcbad8e9f43135d673f8ce4777",
+  "review": {
+    "checks": {
+      "pressure_obstruction_is_gauge_independent": true,
+      "pressure_two_path_gap_positive": true,
+      "protected_paths_stay_inside_support_hole": true,
+      "provider_statuses_match": true,
+      "punctured_jets_force_and_corner_field_are_separated": true,
+      "same_object_chain_frozen": true,
+      "velocity_value_jet_obstructed": true
+    },
+    "next": "reconstruct fixed-stage complete residual constants from the selected profile roots and compact/slow inverse maps",
+    "scope": {
+      "punctured_terminal_jets_preserved": true,
+      "regular_terminal_pressure_obstructed": true,
+      "regular_terminal_velocity_obstructed": true,
+      "smooth_force_trace_preserved": true,
+      "unconditional_complete_residual_force_exclusion_or_blowup": false
+    },
+    "status": "Q206-terminal-origin-velocity-and-gauge-independent-pressure-value-jets-obstructed-conditionally"
+  },
+  "source_hashes": {
+    "results/background_summation/README.md": "1f2d37750821432fa04c1b0ca968d7d3db079c3cb6fb02c8ae4b82bc5639e8be",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/README.md": "1c7c8011bb5e31742ff9c00e90d928318f04798faef0e59b69bd9f37efe96749",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/README.md": "4efd532051a973e3b30441f2d77fd36c113b68b37f14ec2b371f1e8d8c0ba9f6",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/README.md": "ab03785aa13a62ea48a92b413a0b146d4d88361db7176c7e9de04c6590b07159",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/README.md": "c6a8d3214346d3c074a379b271208be304df79accdfa3851853557b5effd4dc0",
+    "results/core_current_head_q206_terminal_origin_obstruction/README.md": "256a6763ec17d6dc6c58b6220332bb2e45249e634f66d7a3ca0d63615778cee8",
+    "results/core_current_head_q206_terminal_origin_obstruction/audit.py": "118ed7b3ddc4b6787136e70ade4d5674e3748cc18e421d41eb9257c4c2a9b6f7",
+    "results/core_current_head_q206_terminal_origin_obstruction/q206.py": "0fa1f81933e81c49c11a381f14819882b88e77b9edbc3ef07136639674754d0a",
+    "results/core_current_head_q206_terminal_origin_obstruction/test_audit.py": "b9849dd33598c30f64abc54ca0126ef1f56e88b13cab7bc6849e007104cf9057",
+    "results/core_pressure_identification/README.md": "2fa6c0975eba8027bf8d5859b0eb0213b4e615a6bd9df98436e77aec18ddcf9a"
+  },
+  "status": "Q206-terminal-origin-velocity-and-gauge-independent-pressure-value-jets-obstructed-conditionally",
+  "symbolic": {
+    "endpoint": {
+      "complete_residual_corner_flatness": true,
+      "corner_flatness_implies_field_value_bound": false,
+      "future_velocity_or_pressure_constructed": false,
+      "punctured_one_sided_velocity_pressure_jets": true,
+      "smooth_force_implies_smooth_field": false,
+      "smooth_localized_force_trace": true,
+      "terminal_origin_in_punctured_atlas": false
+    },
+    "geometry": {
+      "A": "101/200",
+      "X1": "1/101",
+      "Xa": "4/101",
+      "annular_generated_support_starts_at_Xa": true,
+      "h": "1/200",
+      "inverse_2h": "100",
+      "localization_plateau_preserves_both_paths": true,
+      "path": "x_(X,tau)=(sqrt(2 X tau),0,0); q=tau, eta=0",
+      "support_margin": "3/101",
+      "two_A": "101/100"
+    },
+    "pressure": {
+      "X2": "3/202",
+      "actual_continuum_X2_selected_by_continuity_not_by_this_fixture": true,
+      "assumed_continuity_interval_bound": "|E0(X,0)|>=e0/2 on [X1,X2]",
+      "continuous_terminal_pressure_in_any_time_gauge_possible": false,
+      "d0_rational_lower": "9/500",
+      "leading_gauge": "Pi0(X,eta)=-integral_X^infinity E0(x,eta)^2/(2x) dx",
+      "log_ratio_lower": "2/5",
+      "lower_bound": "|p(x2_tau)-p(x1_tau)|>=(d0/2)tau^(-101/100)",
+      "lower_bound_exponent": "-101/100",
+      "normalized_difference": "tau^(2A)(p(x2_tau)-p(x1_tau))=d0+R_p(tau)",
+      "pressure_gap": "d0=Pi0(X2,0)-Pi0(X1,0)>0",
+      "remainder": "|R_p(tau)|<=C_p tau^(2h)",
+      "time_dependent_spatial_gauge_cancels": true,
+      "value_jet_exists": false
+    },
+    "providers": {
+      "background_summation": true,
+      "core_current_head_q170_protected_core_limit_frontier_audit": true,
+      "core_current_head_q182_comparison_core_exclusion_replay": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain": true,
+      "core_current_head_q205_stagewise_pulse_diagonal": true,
+      "core_pressure_identification": true
+    },
+    "review": {
+      "checks": {
+        "pressure_obstruction_is_gauge_independent": true,
+        "pressure_two_path_gap_positive": true,
+        "protected_paths_stay_inside_support_hole": true,
+        "provider_statuses_match": true,
+        "punctured_jets_force_and_corner_field_are_separated": true,
+        "same_object_chain_frozen": true,
+        "velocity_value_jet_obstructed": true
+      },
+      "next": "reconstruct fixed-stage complete residual constants from the selected profile roots and compact/slow inverse maps",
+      "scope": {
+        "punctured_terminal_jets_preserved": true,
+        "regular_terminal_pressure_obstructed": true,
+        "regular_terminal_velocity_obstructed": true,
+        "smooth_force_trace_preserved": true,
+        "unconditional_complete_residual_force_exclusion_or_blowup": false
+      },
+      "status": "Q206-terminal-origin-velocity-and-gauge-independent-pressure-value-jets-obstructed-conditionally"
+    },
+    "same_object": {
+      "core_current_head_q170_protected_core_limit_frontier_audit_uses_core_same_field_positive_core_reconciliation": true,
+      "core_current_head_q182_comparison_core_exclusion_replay_uses_core_current_head_q170_protected_core_limit_frontier_audit": true,
+      "core_current_head_q185_corrected_rate_diagonal_comparison_replay_uses_core_current_head_q182_comparison_core_exclusion_replay": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain_uses_core_current_head_q185_corrected_rate_diagonal_comparison_replay": true,
+      "core_current_head_q205_stagewise_pulse_diagonal_uses_core_current_head_q203_diagonal_endpoint_force_corrected_domain": true
+    },
+    "status": "Q206-terminal-origin-velocity-and-gauge-independent-pressure-value-jets-obstructed-conditionally",
+    "velocity": {
+      "continuous_terminal_velocity_possible": false,
+      "leading_coefficient": "e0=E0(X1,0)>0",
+      "lower_bound": "|u_theta|>=(e0/2)tau^(-101/200)",
+      "lower_bound_exponent": "-101/200",
+      "normalized_identity": "tau^A u_theta=e0+R_u(tau)",
+      "path_tends_to_terminal_origin": true,
+      "remainder": "|R_u(tau)|<=C_u tau^(2h)",
+      "threshold_power": "100",
+      "value_jet_exists": false
+    }
+  }
+}

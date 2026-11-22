@@ -6,7 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q205 stagewise generated pulses and the diagonal quantifier](core_current_head_q205_stagewise_pulse_diagonal/README.md).
+Latest source audit: [Q206 terminal-origin velocity and pressure obstruction](core_current_head_q206_terminal_origin_obstruction/README.md).
+Q206 shows, conditional on the same frozen continuum providers, that regular
+one-sided velocity and pressure jets at the terminal origin are impossible.
+The protected azimuthal velocity grows at least as `tau^-101/200`. A
+gauge-independent pressure difference along two protected paths grows at
+least as `tau^-101/100`, so no time-dependent spatial pressure constant can
+restore continuity. Punctured endpoint jets and the smooth force trace remain
+valid; they do not regularize the field at the corner.
+
+Preceding source audit: [Q205 stagewise generated pulses and the diagonal quantifier](core_current_head_q205_stagewise_pulse_diagonal/README.md).
 Q205 establishes, conditional on the named continuum providers, that every
 fixed sourced/signed cycle has all-scale value, derivative, pressure and
 closed-support estimates with finite stage-dependent constants, and that the

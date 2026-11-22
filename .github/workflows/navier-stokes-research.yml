@@ -1982,6 +1982,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q205_stagewise_pulse_diagonal/evidence.json \
             --output navier_stokes_core_current_head_q205_ci.json
 
+      - name: Check Q206 terminal origin velocity and pressure obstruction
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q206_terminal_origin_obstruction/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q206_terminal_origin_obstruction/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q206_terminal_origin_obstruction/evidence.json \
+            --output navier_stokes_core_current_head_q206_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2606,6 +2613,7 @@ jobs:
             navier_stokes_core_current_head_q203_ci.json
             navier_stokes_core_current_head_q204_ci.json
             navier_stokes_core_current_head_q205_ci.json
+            navier_stokes_core_current_head_q206_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
