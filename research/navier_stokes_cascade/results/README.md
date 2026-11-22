@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q215 fixed-stage primitive bundle and complete residual join](core_current_head_q215_fixed_stage_residual_bundle_join/README.md).
+Latest source audit: [Q216 source audit of the quantified primitive providers](core_current_head_q216_quantified_provider_source_audit/README.md).
+Q216 verifies that Q215's all-fixed-order and all-finite-pole inputs come from
+analytical recurrences rather than enumeration or sampled diagnostics. For a
+fixed giant jet request, the background proof splits into a finite coefficient
+head and a geometric tail; the gap selector is request-independent; the
+full-path and projector proofs use fixed-order induction; and the compact
+kernels accept every finite terminal pole without recursively generating a
+larger one. The dependency order is acyclic and the strict log reserves remain
+separate from the rejected zero-margin pure-power route.
+
+Preceding source audit: [Q215 fixed-stage primitive bundle and complete residual join](core_current_head_q215_fixed_stage_residual_bundle_join/README.md).
 Q215 discharges Q207's concrete primitive-provider request relative to the
 quantified Q213--Q214 analytical providers. It corrects the safe request from
 the displayed derivative ceiling to the larger pressure/moment descendant
@@ -14,7 +24,8 @@ the displayed derivative ceiling to the larger pressure/moment descendant
 and joins the resulting finite constant to the six-group residual and
 locally finite diagonal/localization ledgers. The conclusion remains
 conditional; no uniform raw hierarchy constant or terminal-origin
-regularization follows.
+regularization follows. Q216 source-audits the provider quantifiers used in
+that join.
 
 Preceding source audit: [Q214 exact core, selected roots and leading-pressure join](core_current_head_q214_exact_core_root_pressure_join/README.md).
 Q214 corrects Q213's stale proposed frontier. Q164 already proves the
