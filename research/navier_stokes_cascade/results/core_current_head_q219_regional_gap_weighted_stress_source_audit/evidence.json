@@ -1,0 +1,146 @@
+{
+  "closure": {
+    "edges": 1771,
+    "nodes": 469,
+    "source_bindings": 6306
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/evidence.json": "7f8cf179242fffe5c7d91614e33eb955d9e52565f3b3182a585dbe935b28842d",
+    "results/core_current_head_q216_quantified_provider_source_audit/evidence.json": "44d0232e3bb1fea2a0a7e4572c09d08d1c4bc7bfae55843bc706398eb67d7a46",
+    "results/core_current_head_q218_energy_class_comparison_entry/evidence.json": "eafc43e60e53a881489832001b196ff993b5d2a2304820de2238a776212f6d8e",
+    "results/core_leading_profile_certificate/evidence.json": "3e540aa5be3669ba682ff6f9ad03e40f15abb24869583ec40ad1299ff5574aff",
+    "results/core_same_band_gap_join/evidence.json": "b240040bacac856e039b6320f734078ce486cd48b1d91c02ddb6ba6396c291be",
+    "results/core_same_band_gap_reconstruction/evidence.json": "cfb45fd4152877bdccae26f5e533c6bdb51747b65dca8d4176b8bd2007e62d0c",
+    "results/regional_cone_join/evidence.json": "22acab6a9712c6dd877d93dbc19644298adb3bc256760d8647e5fb4ae811f04d",
+    "results/weighted_background_edges/evidence.json": "04eb035805766e43a80c93bb0a215bfb05e1be60364c18da7791d70c7a0abc2c"
+  },
+  "parent": "413e9d6c2bfb0dff19d6a49f437bd94da9b4002b",
+  "review": {
+    "checks": {
+      "common_selector_is_acyclic": true,
+      "continuum_claim_not_from_diagnostics": true,
+      "corrected_outer_and_later_region_floors_are_strict": true,
+      "provider_statuses_match": true,
+      "regional_powers_fit_compact_envelope": true,
+      "relative_stress_uses_exact_construction": true,
+      "zero_stress_edges_use_weighted_not_absolute_floor": true
+    },
+    "next": "audit Q216's next cited source theorem: the shifted two-edge weighted kernel estimate for every finite pole, including its exact physical shift and edge weights",
+    "scope": {
+      "Q216_same_band_gap_leaf_supported_by_continuum_source_chain": true,
+      "all_primitive_regional_theorems_first_principles_reproved": false,
+      "false_positive_absolute_stress_floor_rejected": true,
+      "unconditional_force_exclusion_or_blowup": false,
+      "uniform_actual_pulse_or_complete_residual": false
+    },
+    "status": "Q219-same-band-regional-gaps-and-weighted-relative-stress-source-audited"
+  },
+  "source_hashes": {
+    "results/core_current_head_q189_same_profile_envelope_gap_audit/README.md": "ec59ea11e23d44c27e60797eb75ac5d178328949170d97d3becba0ecec870878",
+    "results/core_current_head_q216_quantified_provider_source_audit/README.md": "8df4d850a2adc7fdfd5ff87a230a4666952328584017c88658fea825ab308f2f",
+    "results/core_current_head_q218_energy_class_comparison_entry/README.md": "4d722f9e042464dd0e56d97ba9ef9a3a432e04a380e03249b72696a1176fc06d",
+    "results/core_current_head_q219_regional_gap_weighted_stress_source_audit/README.md": "6ede83f176b7db3fb6ae2bc1d7126851e1591feb558871c4142ab089e5a8c27a",
+    "results/core_current_head_q219_regional_gap_weighted_stress_source_audit/audit.py": "1b4712940b08a3646460d7848e999ef05b1b6ee1f11086f57fd751ff8846b969",
+    "results/core_current_head_q219_regional_gap_weighted_stress_source_audit/q219.py": "ab7dbd8505ebebf898805251a47c348374b37cadbc03aed938460d6c1cd59a4b",
+    "results/core_current_head_q219_regional_gap_weighted_stress_source_audit/test_audit.py": "93120e86c83356beae47e89829aa19a06c07ff13be495a71798a5f76f6f89d06",
+    "results/core_leading_profile_certificate/README.md": "fd0cff6bd915613706388e2b83d416b7fb46a62a0b58204979b0ffaf10b71bfe",
+    "results/core_same_band_gap_join/README.md": "a0bcf8350c50e6d397383635ae21023895f193bea9c54e31aff64fa078680834",
+    "results/core_same_band_gap_reconstruction/README.md": "60d03166bbe6143226b57dda833880709add1cd761ebbb0d6c9c029772b9b955",
+    "results/regional_cone_join/README.md": "3fcbd9e022c7a5c592dc8c7a62ff88cf141e48cce402eaa2d335edbad7e5d2e4",
+    "results/weighted_background_edges/README.md": "1ae6a1ab7b9d08ae8fb47e399a14711e86f7ebb8561281ee179864328226f716"
+  },
+  "status": "Q219-same-band-regional-gaps-and-weighted-relative-stress-source-audited",
+  "symbolic": {
+    "background_contract": {
+      "all_fixed_derivative_orders": true,
+      "coefficient_one_kept_in_finite_head": true,
+      "constants_uniform_in_order": false,
+      "exact_edge_factor_and_support_used": true,
+      "finite_head_plus_geometric_tail": true,
+      "generic_absolute_weighted_bound_is_sufficient": false,
+      "higher_coefficients_have_common_compact_support": true,
+      "one_domain_for_all_fixed_orders": true,
+      "relative_stress": "D^I[(T_hat-T0)/|T0|]=O_I(q^(2h))"
+    },
+    "edge_contract": {
+      "global_absolute_stress_infimum": "0",
+      "global_absolute_stress_infimum_positive": false,
+      "inner_factor": "exp(-t1^2/y_a^2) A_a",
+      "inner_factor_floor_positive": true,
+      "normalized_direction_extends_smoothly": true,
+      "opposite_edge_factor_kept": true,
+      "outer_b0_positive": true,
+      "outer_factor": "exp(-4/y_b^2) y_b^-3 (b0,y_b^6 b_z)",
+      "weighted_floor": "|T0| >= c zeta"
+    },
+    "perturbation_contract": {
+      "D_floor": "d/2",
+      "F_floor": "f/2",
+      "c_shear_squared_floor": "d/[4*(Fbar+1)*(Gbar+1)]",
+      "lambda_shear_squared_floor": "f*t*d/[4*(Gbar+1)^2]",
+      "minus_g_theta_floor": "t/2",
+      "rho_gap": "min(1/2,f/2,t/2,d/(2L_D),omega/(2L_H),m_phi/(2L_phi))",
+      "rho_gap_positive_from_finite_positive_inputs": true,
+      "scale_selection_circularity": false,
+      "selector_is_derivative_order_independent": true,
+      "selector_uses_finitely_many_value_direction_rows": true
+    },
+    "providers": {
+      "core_current_head_q189_same_profile_envelope_gap_audit": true,
+      "core_current_head_q216_quantified_provider_source_audit": true,
+      "core_current_head_q218_energy_class_comparison_entry": true,
+      "core_leading_profile_certificate": true,
+      "core_same_band_gap_join": true,
+      "core_same_band_gap_reconstruction": true,
+      "regional_cone_join": true,
+      "weighted_background_edges": true
+    },
+    "regional_ledger": {
+      "activation_a_floor_power": 22,
+      "activation_fourth_gap_power": 802,
+      "activation_third_gap_power": 401,
+      "axial_control_exceeds_one": true,
+      "axial_fourth_gap_lower_control": "960351/1000",
+      "compact_envelope_power": 4096,
+      "complete_pressure_memory_retained": true,
+      "corrected_outer_ramp_exceeds_half": true,
+      "corrected_outer_ramp_floor": "17701/30625",
+      "intermediate_control_exceeds_one": true,
+      "intermediate_fourth_gap_lower_control": "11286/125",
+      "joined_gap_power": 1024,
+      "regionwise_suprema_from_analytic_inequalities": true,
+      "sample_grid_used_as_continuum_proof": false
+    },
+    "review": {
+      "checks": {
+        "common_selector_is_acyclic": true,
+        "continuum_claim_not_from_diagnostics": true,
+        "corrected_outer_and_later_region_floors_are_strict": true,
+        "provider_statuses_match": true,
+        "regional_powers_fit_compact_envelope": true,
+        "relative_stress_uses_exact_construction": true,
+        "zero_stress_edges_use_weighted_not_absolute_floor": true
+      },
+      "next": "audit Q216's next cited source theorem: the shifted two-edge weighted kernel estimate for every finite pole, including its exact physical shift and edge weights",
+      "scope": {
+        "Q216_same_band_gap_leaf_supported_by_continuum_source_chain": true,
+        "all_primitive_regional_theorems_first_principles_reproved": false,
+        "false_positive_absolute_stress_floor_rejected": true,
+        "unconditional_force_exclusion_or_blowup": false,
+        "uniform_actual_pulse_or_complete_residual": false
+      },
+      "status": "Q219-same-band-regional-gaps-and-weighted-relative-stress-source-audited"
+    },
+    "source_classification": {
+      "diagnostic_only_continuum_row_found": false,
+      "every_primitive_regional_ODE_rederived_here": false,
+      "flat_edges_are_handled_by_exact_factorization": true,
+      "gap_leaf_supported_at_theorem_dependency_level": true,
+      "interval_arithmetic_role": "fixed scalar outward rounding only",
+      "regional_cover_is_continuum_and_finite": true,
+      "tests_role": "identity provenance and regression checks only",
+      "weighted_relative_stress_is_continuum": true
+    },
+    "status": "Q219-same-band-regional-gaps-and-weighted-relative-stress-source-audited"
+  }
+}

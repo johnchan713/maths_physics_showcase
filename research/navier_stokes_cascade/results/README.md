@@ -6,6 +6,15 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
+Latest source audit: [Q219 regional-gap and weighted-relative-stress source audit](core_current_head_q219_regional_gap_weighted_stress_source_audit/README.md).
+Q219 discharges Q216's same-band gap leaf at the theorem-dependency level.
+The regional infima come from a finite analytic cover with the corrected
+signed outer-ramp estimate, while exact inner/outer factorizations yield the
+weighted floor and a smooth relative background stress on one common Borel
+tail. It rejects the false positive absolute stress floor: the leading stress
+infimum is exactly zero at the flat edges. Tests and interval fixtures remain
+regression controls rather than continuum proofs.
+
 Latest source audit: [Q218 energy-class entry to fixed-gauge comparison](core_current_head_q218_energy_class_comparison_entry/README.md).
 Q218 corrects the comparison theorem's competitor class. For a locally smooth
 energy solution, the energy inequality and compact smooth force give
