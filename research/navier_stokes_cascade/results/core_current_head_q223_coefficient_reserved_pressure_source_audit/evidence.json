@@ -1,0 +1,185 @@
+{
+  "closure": {
+    "edges": 1808,
+    "nodes": 473,
+    "source_bindings": 6359
+  },
+  "dependency_evidence_sha256": {
+    "results/core_coefficient_support_recheck/evidence.json": "5b17e83b6dfea94bee8fc720e11b01a9bce3fc1093926110b05828bdacd7aff6",
+    "results/core_current_head_q148_coefficient_support_pressure/evidence.json": "4c95824a4d9749da7e70f0bbc2d8fd30ea46c2620fa700ffd5fe0a805d4729b7",
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/evidence.json": "c3350ad1f287da03e4bc329c991f06d7e11822b67f474dd3b24e46aca1594225",
+    "results/core_current_head_q188_compact_repair_hierarchy_audit/evidence.json": "cd47edc1992d79834d3c2ff3ca82310107dffb83489bf82b91de418442f8646e",
+    "results/core_current_head_q204_global_ledger_uniform_primary/evidence.json": "6baeb949f1a4384a567f8f4614df626bbf30369a3822adbaf21fd46350e027a2",
+    "results/core_current_head_q209_cutoff_role_separation/evidence.json": "813939840515298e157440642c482b00468b574d69674fe394aa66bffff660ed",
+    "results/core_current_head_q214_exact_core_root_pressure_join/evidence.json": "d1d828091e317a61deb89bee5afef2dd71b6dca5b3ef7d5bb3a472c857a7c203",
+    "results/core_current_head_q222_global_pressure_moment_source_audit/evidence.json": "41d0bebd45ae2d769af228da989fe640072397da4cf9b91fa1410896ea6cc533",
+    "results/core_reserved_geometry_recheck/evidence.json": "b911312cddc119be917f88d18161ea91b2fae7b67a2c679ed35ec96740087820"
+  },
+  "parent": "f76255c013a02198843db0a94b4602b0307484b1",
+  "review": {
+    "checks": {
+      "Pi1_minimax_floor_is_positive_and_sharp": true,
+      "Pi2_memory_retained_without_nonzero_claim": true,
+      "Pi2_only_has_zero_radial_two_point_floor": true,
+      "five_row_target_keeps_lambda_loss": true,
+      "linear_solve_has_no_small_target_gate": true,
+      "provider_statuses_match": true,
+      "reserved_velocity_pressure_supports_are_separated": true,
+      "scope_stops_before_complete_residual": true,
+      "three_support_regimes_are_distinct": true
+    },
+    "next": "audit the uniform actual primary-pulse value/derivative/support theorem at its exact source interfaces, then retain full Pi1/Pi2 and axial pressure memory in the complete covariance and residual join",
+    "scope": {
+      "complete_residual_or_blowup": false,
+      "finite_positive_order_coefficient_solve_source_audited": true,
+      "positive_Pi2_floor_claimed": false,
+      "sharp_Pi1_radial_pressure_floor_derived": true,
+      "uniform_raw_generated_hierarchy_bound": false,
+      "velocity_pressure_stress_supports_kept_distinct": true
+    },
+    "status": "Q223-finite-coefficient-reserved-support-and-Pi1-pressure-floor-source-audited"
+  },
+  "source_hashes": {
+    "results/core_coefficient_support_recheck/README.md": "f66cda979f43cd1c719475c5b179b2b3bf12ad839d4dc7acd9ea6087474f33e5",
+    "results/core_current_head_q148_coefficient_support_pressure/README.md": "a041d10064ecc0fee93671e0483109ab3e5ea30dd6660e1a0f67b2d01745584a",
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/README.md": "05f1fa9ccf12a4b042be91ddc8865dfac0247437fdec41c22e48fb408eeccba2",
+    "results/core_current_head_q188_compact_repair_hierarchy_audit/README.md": "257d1060220de8a04bce8063be249f9fee705a9b71d41dd60864287b3fd36761",
+    "results/core_current_head_q204_global_ledger_uniform_primary/README.md": "821ba5a6b50c705917ee60fd70e48ace66eff97bbd9eac7da66728398c4a82ad",
+    "results/core_current_head_q209_cutoff_role_separation/README.md": "948847785d5fdd483e84000713edd993d3cb3d1daf37832a443c32170da45e94",
+    "results/core_current_head_q214_exact_core_root_pressure_join/README.md": "bcda9e9df2c9830fc9c33ca41e6ba450bcdccb88f7c87911f5ac067b5ee17c4c",
+    "results/core_current_head_q222_global_pressure_moment_source_audit/README.md": "2fba4df4d90cc18d4e434c4749a8abaa6f3582cd76a66f20bd9f5a80a15c6c5d",
+    "results/core_current_head_q223_coefficient_reserved_pressure_source_audit/README.md": "41362731cc8b1db402e8b7ae30a3fa2f7b8a305571ca25cc468030df1860a770",
+    "results/core_current_head_q223_coefficient_reserved_pressure_source_audit/audit.py": "29a3d53143f17d16695365443bc9a639c73c5a46a1fba0fe4c8ab3fcdfeb5ddb",
+    "results/core_current_head_q223_coefficient_reserved_pressure_source_audit/q223.py": "cfae269d75b421659ece439aa3013f1000e313df1bca432bd4392e0f1a720b57",
+    "results/core_current_head_q223_coefficient_reserved_pressure_source_audit/test_audit.py": "e7e3aafc2bb4426a7b9bbbc82a58f706bb21e881c7266b43d28c371f919be9c4",
+    "results/core_reserved_geometry_recheck/README.md": "9427bd6d51a42cee4f562eadf1a1ed3bf21358af9a6fbac66cca4b6100e8a13f"
+  },
+  "status": "Q223-finite-coefficient-reserved-support-and-Pi1-pressure-floor-source-audited",
+  "symbolic": {
+    "Pi1_two_point_sample": {
+      "endpoint_difference": "15/77",
+      "formula": "scale*mu^2*(Xa^-1-Xb^-1)/8",
+      "left_at_optimum": "-15/154",
+      "optimal_constant": "135/308",
+      "right_at_optimum": "15/154",
+      "sharp_floor": "15/154",
+      "strictly_positive": true
+    },
+    "Pi2_constant_negative_control": {
+      "left_at_optimum": "0",
+      "optimal_constant": "-13/17",
+      "right_at_optimum": "0",
+      "sharp_floor": "0"
+    },
+    "coefficient_contract": {
+      "all_lower_orders_finalized_first": true,
+      "fixed_positive_order": true,
+      "inverse_bound": "||B^-1||<800",
+      "linear_solve_requires_small_target": false,
+      "solve": "c_n=-B^-1 z_n",
+      "target": "z_n=(M,(M-J)/lambda,I,-S,Cp)",
+      "uniform_in_order_or_derivative": false
+    },
+    "coefficient_target_sample": [
+      "3",
+      "-18",
+      "5",
+      "-11",
+      "13"
+    ],
+    "corrected_claim": {
+      "Pi2_deletion_permitted": false,
+      "Pi2_role": "X-independent K2 source memory retained in complete pressure",
+      "full_residual_lower_bound": false,
+      "joint_Pi1_Pi2_positive_floor": false,
+      "positive_two_point_floor_source": "Pi1 radial term -mu^2/(4X)",
+      "reason": "Pi2 cancels from every same-eta radial two-point difference"
+    },
+    "frontier": {
+      "complete_covariance_pressure_viscosity_cutoff_interaction_residual": false,
+      "fixed_order_coefficient_support_obligation": "closed conditionally on finite Volterra providers",
+      "next": "audit the uniform actual primary-pulse value/derivative/support theorem at its exact source interfaces, then retain full Pi1/Pi2 and axial pressure memory in the complete covariance and residual join",
+      "rule_selected_Borel_schedule": "already closed by Q204",
+      "unconditional_blowup": false,
+      "uniform_primary_all_used_band_bounds": "already supplied by Q149/Q204",
+      "uniform_raw_uncut_generated_hierarchy_constant": false
+    },
+    "providers": {
+      "core_coefficient_support_recheck": true,
+      "core_current_head_q148_coefficient_support_pressure": true,
+      "core_current_head_q149_primary_pulse_join": true,
+      "core_current_head_q177_weighted_support_source_reconciliation": true,
+      "core_current_head_q188_compact_repair_hierarchy_audit": true,
+      "core_current_head_q204_global_ledger_uniform_primary": true,
+      "core_current_head_q209_cutoff_role_separation": true,
+      "core_current_head_q214_exact_core_root_pressure_join": true,
+      "core_current_head_q222_global_pressure_moment_source_audit": true,
+      "core_reserved_geometry_recheck": true
+    },
+    "reserved_geometry": {
+      "bump_end": "51/20",
+      "positive_order_velocity_zero_on_reserved_interval": true,
+      "potential_cutoff_commutator_zero_there": true,
+      "pressure_inferred_zero_from_velocity_support": false,
+      "reserved_interval": [
+        "6",
+        "11"
+      ],
+      "strict_separation": true,
+      "velocity_end": "3"
+    },
+    "reserved_pressure_ledger": {
+      "K1_K2_retain_later_source_memory": true,
+      "Pi1": "K1(eta)-mu^2/(4X)",
+      "Pi1_has_forced_radial_oscillation": true,
+      "Pi2": "K2(eta)",
+      "Pi2_has_forced_radial_oscillation": false,
+      "Pi_n_n_ge_3": "0",
+      "actual_K2_proved_nonzero": false,
+      "local_zero_pressure_derivative_sets_K1_or_K2_zero": false
+    },
+    "review": {
+      "checks": {
+        "Pi1_minimax_floor_is_positive_and_sharp": true,
+        "Pi2_memory_retained_without_nonzero_claim": true,
+        "Pi2_only_has_zero_radial_two_point_floor": true,
+        "five_row_target_keeps_lambda_loss": true,
+        "linear_solve_has_no_small_target_gate": true,
+        "provider_statuses_match": true,
+        "reserved_velocity_pressure_supports_are_separated": true,
+        "scope_stops_before_complete_residual": true,
+        "three_support_regimes_are_distinct": true
+      },
+      "next": "audit the uniform actual primary-pulse value/derivative/support theorem at its exact source interfaces, then retain full Pi1/Pi2 and axial pressure memory in the complete covariance and residual join",
+      "scope": {
+        "complete_residual_or_blowup": false,
+        "finite_positive_order_coefficient_solve_source_audited": true,
+        "positive_Pi2_floor_claimed": false,
+        "sharp_Pi1_radial_pressure_floor_derived": true,
+        "uniform_raw_generated_hierarchy_bound": false,
+        "velocity_pressure_stress_supports_kept_distinct": true
+      },
+      "status": "Q223-finite-coefficient-reserved-support-and-Pi1-pressure-floor-source-audited"
+    },
+    "status": "Q223-finite-coefficient-reserved-support-and-Pi1-pressure-floor-source-audited",
+    "support_ledger": {
+      "1": {
+        "pressure": "Xv",
+        "stress": "Xb",
+        "velocity": "Xvel"
+      },
+      "2": {
+        "pressure": "Xv",
+        "stress": "Xv",
+        "velocity": "Xvel"
+      },
+      "3": {
+        "pressure": "Xvel",
+        "stress": "Xvel",
+        "velocity": "Xvel"
+      }
+    }
+  }
+}

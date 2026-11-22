@@ -6,6 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
+Latest source audit: [Q223 finite coefficient, reserved support and pressure-floor source audit](core_current_head_q223_coefficient_reserved_pressure_source_audit/README.md).
+Q223 joins the fixed positive-order five-row linear solve to its exact
+velocity, pressure and stress supports and the reserved I4 interval.  It
+proves the sharp minimax pressure floor from the nonconstant `Pi1` term and
+corrects the overbroad `Pi1/Pi2` wording: `Pi2` retains indispensable source
+memory, but its radial two-point floor is zero and the actual `K2` has not
+been proved nonzero.  The rule-selected background and uniform primary
+bounds were already closed conditionally; raw generated-hierarchy constants,
+the complete residual and blow-up remain open.
+
 Latest source audit: [Q222 joined global pressure and moment source audit](core_current_head_q222_global_pressure_moment_source_audit/README.md).
 Q222 joins the leading five global defects and the evolving compact/fast/slow
 mean identities on the same profile and gauge.  It corrects the shorthand

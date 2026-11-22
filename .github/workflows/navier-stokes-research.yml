@@ -2101,6 +2101,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q222_global_pressure_moment_source_audit/evidence.json \
             --output navier_stokes_core_current_head_q222_ci.json
 
+      - name: Check Q223 finite coefficient reserved support and pressure floor source audit
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q223_coefficient_reserved_pressure_source_audit/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q223_coefficient_reserved_pressure_source_audit/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q223_coefficient_reserved_pressure_source_audit/evidence.json \
+            --output navier_stokes_core_current_head_q223_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2742,6 +2749,7 @@ jobs:
             navier_stokes_core_current_head_q220_ci.json
             navier_stokes_core_current_head_q221_ci.json
             navier_stokes_core_current_head_q222_ci.json
+            navier_stokes_core_current_head_q223_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json
