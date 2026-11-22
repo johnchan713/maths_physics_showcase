@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q202 next constrained sourced cycle on the corrected physical domain](core_current_head_q202_next_sourced_cycle/README.md).
+Latest source audit: [Q203 corrected-domain diagonal, endpoint and localized-force replay](core_current_head_q203_diagonal_endpoint_force_corrected_domain/README.md).
+Q203 binds Q202's corrected coupled state to the complete-potential diagonal,
+separate punctured endpoint and exact twelve-term localization/force ledger.
+The existing `W/M/S` route retains regular/cross reserve
+`49997/40000000`; a pure-power rebuild spends one `kappa`, retains
+`49996/40000000` and may reselect scales. The physical pole `361200138` is
+not a diagonal exponent loss. Complete pressure, viscosity, cutoff curls,
+both nonlinear orientations and the square remain, but the giant seminorms
+are unevaluated and the physical upper-bound powers remain negative.
+
+Preceding source audit: [Q202 next constrained sourced cycle on the corrected physical domain](core_current_head_q202_next_sourced_cycle/README.md).
 Q202 carries Q201's exact `D=3/2-2*kappa` nonzero source through the full
 constrained sourced inverse, retaining moving-normal and source-normal
 pressure, endpoint support and complete curl memory. It corrects a domain
