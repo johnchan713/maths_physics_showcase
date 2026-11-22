@@ -1,0 +1,158 @@
+{
+  "closure": {
+    "edges": 1798,
+    "nodes": 472,
+    "source_bindings": 6345
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q147_repair_pressure_join/evidence.json": "0ace77bed60329655532117b5c76d79ef154d95f64bafc14cc91c1b02fae2431",
+    "results/core_current_head_q160_physical_target_induction/evidence.json": "7df2d117988dd9cdc149ef68c0c42086e8ec1963c27f2932e829839612168b5e",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/evidence.json": "c3350ad1f287da03e4bc329c991f06d7e11822b67f474dd3b24e46aca1594225",
+    "results/core_current_head_q17_mean_support_join/evidence.json": "cc1405f8b150a4a750a25b0d6354e1bb0f0eee1dca9f79cba3e870e718b8e3c1",
+    "results/core_current_head_q204_global_ledger_uniform_primary/evidence.json": "6baeb949f1a4384a567f8f4614df626bbf30369a3822adbaf21fd46350e027a2",
+    "results/core_current_head_q221_fourier_slow_response_source_audit/evidence.json": "dbc61a478fa315e87db7ef62c650464534296f5b9d84c358661faad8a542c6e2",
+    "results/core_global_pressure_moment_recheck/evidence.json": "f24e08f6c2bb68780ec67c792eb3fa7e8962462242571f9f0f6257a3de88e557",
+    "results/core_preserved_haar_scalar_join/evidence.json": "981fd391dad2f83de7ec00e63a275ec38ade24e92bdfbcbca400d56d49d0dd94",
+    "results/core_signed_target_edge_budget/evidence.json": "196dc0e2b97b88a14e4b639ed81d970cc8b212662a06eaf785d3fd92124eb99f",
+    "results/core_sourced_covariance_moment_join/evidence.json": "28f095d981697425320988358ffbb3b7a4b4ce43668c83f0078fcae5b9dbca9d"
+  },
+  "parent": "69153a8653e0c07794f5b4cce95ec943b9d1a649",
+  "review": {
+    "checks": {
+      "both_complete_mean_moments_retained": true,
+      "compact_pressure_moment_has_both_terms": true,
+      "endpoint_to_global_join_keeps_common_tail_hypothesis": true,
+      "finite_row_transforms_round_trip": true,
+      "leading_pressure_row_not_reset": true,
+      "moving_product_uses_all_three_derivative_terms": true,
+      "projected_rows_have_exact_distinct_moments": true,
+      "provider_statuses_match": true,
+      "updates_preserve_velocity_moments_without_erasing_correlations": true
+    },
+    "next": "audit the finite coefficient solves and reserved-mean supports on this joined pressure/moment object, including the nonremovable Pi1/Pi2 pressure floor",
+    "scope": {
+      "compact_fast_slow_mean_moment_rows_joined": true,
+      "complete_pressure_or_Pi1_Pi2_deleted": false,
+      "endpoint_I_identified_with_global_R_without_tail": false,
+      "leading_five_global_rows_joined_on_common_tail": true,
+      "pointwise_Haar_rows_inferred_from_moments": false,
+      "unconditional_force_exclusion_or_blowup": false,
+      "uniform_actual_pulse_or_complete_residual": false
+    },
+    "status": "Q222-leading-and-evolving-global-pressure-moment-identities-source-audited"
+  },
+  "source_hashes": {
+    "results/core_current_head_q147_repair_pressure_join/README.md": "7d2135992623db537fbcae04c1e3fb2fd4ada35645d990fe8b7f3fe1d46fe1ff",
+    "results/core_current_head_q160_physical_target_induction/README.md": "b8e6cb93143ae4bde7d22da05db8a98af82eac37ecbd33a790e6976c4918e916",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/README.md": "05f1fa9ccf12a4b042be91ddc8865dfac0247437fdec41c22e48fb408eeccba2",
+    "results/core_current_head_q17_mean_support_join/README.md": "f59a9b2f443431861c9c9b25fb22c6428fc4cc1db81a637c47fa62d8aac01982",
+    "results/core_current_head_q204_global_ledger_uniform_primary/README.md": "821ba5a6b50c705917ee60fd70e48ace66eff97bbd9eac7da66728398c4a82ad",
+    "results/core_current_head_q221_fourier_slow_response_source_audit/README.md": "7dbce788cfa1b254ec94d88a7b817bd51b97d6e0fa84555a13f87033930b1d54",
+    "results/core_current_head_q222_global_pressure_moment_source_audit/README.md": "2fba4df4d90cc18d4e434c4749a8abaa6f3582cd76a66f20bd9f5a80a15c6c5d",
+    "results/core_current_head_q222_global_pressure_moment_source_audit/audit.py": "5b21f5057e9498a656b1cbcee5f8e750840cc4f0badd0893cf4d446875510c20",
+    "results/core_current_head_q222_global_pressure_moment_source_audit/q222.py": "b19ee649af2c566bf7e5e699e0d12c404746b27883c1c9327f6d0b06ae66f624",
+    "results/core_current_head_q222_global_pressure_moment_source_audit/test_audit.py": "bfbe4e27a1bb0535fa734df496b42c2428d7ae3b73a05c5fb558a5146289f843",
+    "results/core_global_pressure_moment_recheck/README.md": "16d03f9a5f0fef160b8e6af1c5a76cf9eaf34cc7aa593f631a0338e212ac176a",
+    "results/core_preserved_haar_scalar_join/README.md": "a2493d94135c1a31aa0a841aa263d8a7d41bfb8b33604f562c93bfc626d3926e",
+    "results/core_signed_target_edge_budget/README.md": "d311c52ee1e321ba10c780fa9956f5f06ee901f0e3aae0f4a608dc8a37245ffc",
+    "results/core_sourced_covariance_moment_join/README.md": "a3800e5b00fd601a97834b534d2b99f5ef88aa9358c5529ab1a09f197e266084"
+  },
+  "status": "Q222-leading-and-evolving-global-pressure-moment-identities-source-audited",
+  "symbolic": {
+    "compact_pressure_sample": {
+      "A0_pointwise_remainder_deleted": false,
+      "derivation": "int R p=-1/2 int R^2 partial_R p",
+      "integral_R_pbar": "167/34",
+      "unit_mass_compensator": true
+    },
+    "global_heat_common_tail": {
+      "common_tail": true,
+      "delta_R": "0",
+      "endpoint_I_is_global_R": false,
+      "endpoint_match_suffices_only_with_common_tail": true
+    },
+    "global_heat_missing_tail_obstruction": {
+      "common_tail": false,
+      "delta_R": "1/19",
+      "endpoint_I_is_global_R": false,
+      "endpoint_match_suffices_only_with_common_tail": true
+    },
+    "leading_global_ledger": {
+      "all_five_rows_required_for_exterior_stress_join": true,
+      "backward_pressure": "Pi(X)=-int_X^infty E(x)^2/(2x) dx",
+      "finite_row_order": "(M,I,J,S,Cp)",
+      "global_identities": "M_infty=R=J_infty=S_infty=0",
+      "global_row_order": "(M,R,J,S,Cp)",
+      "intermediate_pressure_reset": false,
+      "pressure_derivative_defect_is_independent": true,
+      "pressure_identity": "Pi_axis+Cp_infty=0"
+    },
+    "mean_moment_ledger": {
+      "J_theta_contains_full_angular_axial_flux": true,
+      "J_z_contains_axial_squares_Wzz_and_minus_Qg_over_2": true,
+      "angular": "int R^2 Haar(E_theta)=epsilon partial_Z J_theta",
+      "axial": "int R Haar(E_z)=epsilon partial_Z(J_z+c_rho P)",
+      "compact_radial_boundary_terms_zero": true,
+      "pointwise_rows_determined_by_moments": false,
+      "whole_moving_product_differentiated": true
+    },
+    "moving_product_sample": "1222",
+    "preservation_ledger": {
+      "Pi1_Pi2_cancel_only_in_same_complete_base_subtraction": true,
+      "all_six_covariances_retained": true,
+      "covariances_recomputed_after_each_update": true,
+      "nonzero_harmonic_waves_change_Haar_velocity_moments": false,
+      "slow_map_exact_divergence": true,
+      "slow_map_zero_moment_rows": 2,
+      "zero_Haar_correlations_discarded": false,
+      "zero_Haar_fast_curl_change_Haar_velocity_moments": false
+    },
+    "projected_targets": {
+      "M1": "epsilon partial_Z(J_z+c_rho P)",
+      "M2": "epsilon partial_Z J_theta",
+      "h1_zero_moment": true,
+      "h2_zero_moment": true,
+      "projection_deletes_pressure_or_mean_scalar": false,
+      "sigma1_moment": "int R sigma_1=1",
+      "sigma2_moment": "int R^2 sigma_2=1",
+      "two_edge_primitive_right_collar_requires_exact_zero_moment": true
+    },
+    "providers": {
+      "core_current_head_q147_repair_pressure_join": true,
+      "core_current_head_q160_physical_target_induction": true,
+      "core_current_head_q177_weighted_support_source_reconciliation": true,
+      "core_current_head_q17_mean_support_join": true,
+      "core_current_head_q204_global_ledger_uniform_primary": true,
+      "core_current_head_q221_fourier_slow_response_source_audit": true,
+      "core_global_pressure_moment_recheck": true,
+      "core_preserved_haar_scalar_join": true,
+      "core_signed_target_edge_budget": true,
+      "core_sourced_covariance_moment_join": true
+    },
+    "review": {
+      "checks": {
+        "both_complete_mean_moments_retained": true,
+        "compact_pressure_moment_has_both_terms": true,
+        "endpoint_to_global_join_keeps_common_tail_hypothesis": true,
+        "finite_row_transforms_round_trip": true,
+        "leading_pressure_row_not_reset": true,
+        "moving_product_uses_all_three_derivative_terms": true,
+        "projected_rows_have_exact_distinct_moments": true,
+        "provider_statuses_match": true,
+        "updates_preserve_velocity_moments_without_erasing_correlations": true
+      },
+      "next": "audit the finite coefficient solves and reserved-mean supports on this joined pressure/moment object, including the nonremovable Pi1/Pi2 pressure floor",
+      "scope": {
+        "compact_fast_slow_mean_moment_rows_joined": true,
+        "complete_pressure_or_Pi1_Pi2_deleted": false,
+        "endpoint_I_identified_with_global_R_without_tail": false,
+        "leading_five_global_rows_joined_on_common_tail": true,
+        "pointwise_Haar_rows_inferred_from_moments": false,
+        "unconditional_force_exclusion_or_blowup": false,
+        "uniform_actual_pulse_or_complete_residual": false
+      },
+      "status": "Q222-leading-and-evolving-global-pressure-moment-identities-source-audited"
+    },
+    "status": "Q222-leading-and-evolving-global-pressure-moment-identities-source-audited"
+  }
+}

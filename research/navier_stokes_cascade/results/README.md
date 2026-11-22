@@ -6,6 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
+Latest source audit: [Q222 joined global pressure and moment source audit](core_current_head_q222_global_pressure_moment_source_audit/README.md).
+Q222 joins the leading five global defects and the evolving compact/fast/slow
+mean identities on the same profile and gauge.  It corrects the shorthand
+that identifies the finite endpoint row `I` with the renormalized heat moment
+`R`: endpoint matching needs the proved common future tail.  It rederives the
+compact pressure moment and both integrated tangential identities, retaining
+the full derivative of `J_z+c_rho P`, axial velocity, all six covariances and
+`Pi1/Pi2`.  Integrated moments still do not control the full pointwise Haar
+rows.
+
 Latest source audit: [Q221 zero-Haar Fourier and fixed slow-response source audit](core_current_head_q221_fourier_slow_response_source_audit/README.md).
 Q221 completes the source audit of Q216's remaining inverse maps.  The exact
 quadratic conjugate bound and four-torus-derivative loss give a summable
