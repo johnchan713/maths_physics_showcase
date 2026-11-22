@@ -1,0 +1,158 @@
+{
+  "closure": {
+    "edges": 1779,
+    "nodes": 470,
+    "source_bindings": 6318
+  },
+  "dependency_evidence_sha256": {
+    "results/core_compact_slow_inverse_domain_join/evidence.json": "129ae2d83800c7f78c79c9a7eba38f2405c8d17c83f0ec466975c49f2bb63e86",
+    "results/core_compact_slow_inverse_reconstruction/evidence.json": "22e4b560e1f4928d9fd74d9f11045d00fbebe01c361bfcac5e86c26e1c6aee19",
+    "results/core_current_head_q174_q5_operator_source_audit/evidence.json": "a62a84f41930a16cf12b0d194bc4cc7a5d2842427599e6224248950c934cd422",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/evidence.json": "86afaf50eff3a1422a8e9fe267fafe2ee3d85c3a4c36fbac210cf8d4cf1b1274",
+    "results/core_current_head_q216_quantified_provider_source_audit/evidence.json": "44d0232e3bb1fea2a0a7e4572c09d08d1c4bc7bfae55843bc706398eb67d7a46",
+    "results/core_current_head_q219_regional_gap_weighted_stress_source_audit/evidence.json": "52ada0b7129dd778f4c48c86dfbe6c9a5dd6ae52c2d11bd41cf4239bd35832b7",
+    "results/core_current_head_q29_weighted_compact_constants/evidence.json": "45310893f46bd77c72e4a3f1b714bda27ca712d1a690bebd57ccb274e17f75b5",
+    "results/core_direct_compact_slow_provider_reconstruction/evidence.json": "ad698e873be65c32dcd6a2e00ce98dc1ffec1a514bfa5075d0b23813b8a52ad3",
+    "results/core_symbolic_weighted_maps/evidence.json": "58a73b2ea141c75417953b5ef83ced0c28aae5b9341c85e8b59dda0c2df2e810"
+  },
+  "parent": "ec12b02b169efbaa3538c64d855cdb728123bf0f",
+  "review": {
+    "checks": {
+      "cutoff_selects_correct_edges_and_interior_floor": true,
+      "every_fixed_pole_returns_same_pole": true,
+      "physical_shift_and_derivative_order_are_preserved": true,
+      "provider_statuses_match": true,
+      "source_proof_not_diagnostic": true,
+      "three_branch_constant_is_finite_without_materialization": true,
+      "typed_source_boundary_is_not_erased": true
+    },
+    "next": "audit the remaining compact/slow source theorems: the zero-Haar Fourier inverse and fixed slow response with axial velocity, moving pressure product and finite lambda^-1",
+    "scope": {
+      "Q216_two_edge_kernel_quantifier_supported": true,
+      "blanket_full_weight_generated_source_claim": false,
+      "same_pole_and_weight_preserved_for_typed_inputs": true,
+      "unconditional_force_exclusion_or_blowup": false,
+      "uniform_actual_pulse_or_complete_residual": false
+    },
+    "status": "Q220-shifted-two-edge-weighted-kernel-every-finite-pole-source-audited"
+  },
+  "source_hashes": {
+    "results/core_compact_slow_inverse_domain_join/README.md": "9042cb461a4f944473ab86b5dfd1a0c7c27d0a2dfb2411f5df1cdc7bb7ba9d96",
+    "results/core_compact_slow_inverse_reconstruction/README.md": "70f42063c5b4eb4c3f735edf8d6a55cdc9847d74c274c125ed864c5d6a5cb35f",
+    "results/core_current_head_q174_q5_operator_source_audit/README.md": "0dfeea1f52c67c04ad24423fe044a98a7ece6ff71e8dac3167ecd08a8aa53d9c",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/README.md": "235cd5e586db353edce0abc963a2bf8a0d81a78ff936edd775e84f1a27a19c73",
+    "results/core_current_head_q216_quantified_provider_source_audit/README.md": "8df4d850a2adc7fdfd5ff87a230a4666952328584017c88658fea825ab308f2f",
+    "results/core_current_head_q219_regional_gap_weighted_stress_source_audit/README.md": "6ede83f176b7db3fb6ae2bc1d7126851e1591feb558871c4142ab089e5a8c27a",
+    "results/core_current_head_q220_shifted_two_edge_kernel_source_audit/README.md": "8ed7a5fad6be05e04c4bcc95ffba71e79f09796cb1d65733a17f7ad84386cab2",
+    "results/core_current_head_q220_shifted_two_edge_kernel_source_audit/audit.py": "41db41bd078b7ca734af927d66a11ea6837c78e89c8b2d3a7f7bc6f9f7569995",
+    "results/core_current_head_q220_shifted_two_edge_kernel_source_audit/q220.py": "2d3e2a1a30585cf2b9b680a2964d3a49e813955261d2a81c06a9d6b2fdfbc461",
+    "results/core_current_head_q220_shifted_two_edge_kernel_source_audit/test_audit.py": "e038142ba51aca5ddcee4f20c069bae36e7248cd580dee9d5dbef38c357fbcd2",
+    "results/core_current_head_q29_weighted_compact_constants/README.md": "9587194f819b20f5552654e9e160ad4e4ad892e49f38730ca69bae5c96057caf",
+    "results/core_direct_compact_slow_provider_reconstruction/README.md": "a109b3a201357df0910aa0c0ff6ebc7411051d6bace6ecd81b585e2bb6df4a0b",
+    "results/core_symbolic_weighted_maps/README.md": "2e953dfcbdedb865291c20f1119671520b3ff041197f8673c123ccf2a48ff6b5"
+  },
+  "status": "Q220-shifted-two-edge-weighted-kernel-every-finite-pole-source-audited",
+  "symbolic": {
+    "cutoff_contract": {
+      "A_e_keeps_whole_shifted_moment": true,
+      "I_minus_selected_away_from_right_edge": true,
+      "I_plus_selected_away_from_left_edge": true,
+      "chi_U_support_has_positive_weight_floor": true,
+      "chi_one_on_right_plateau": true,
+      "chi_zero_on_left_plateau": true,
+      "cutoff_jet_request_for_output_order_m": "m+1",
+      "uniform_interior_gap_positive": true,
+      "zero_Haar_alone_deletes_A_e": false
+    },
+    "directed_maps": {
+      "A_e": "k_e chi_U int_R F(U+a,y+Ma v_r) da",
+      "I_minus": "int_{a<0} F(U+a,y+Ma v_r) da",
+      "I_plus": "int_{a>0} F(U+a,y+Ma v_r) da",
+      "T_e": "g_e[(1-chi)I_minus-chi I_plus]",
+      "differentiate_at_fixed_integration_shift": true,
+      "extra_M_power_from_differentiation": 0,
+      "physical_shift_retained": true,
+      "smooth_zero_extension_removes_boundary_terms": true,
+      "translation_depends_on_differentiated_variables": false,
+      "wrong_edge_orientation_valid": false
+    },
+    "providers": {
+      "core_compact_slow_inverse_domain_join": true,
+      "core_compact_slow_inverse_reconstruction": true,
+      "core_current_head_q174_q5_operator_source_audit": true,
+      "core_current_head_q200_physical_weighted_target_reconciliation": true,
+      "core_current_head_q216_quantified_provider_source_audit": true,
+      "core_current_head_q219_regional_gap_weighted_stress_source_audit": true,
+      "core_current_head_q29_weighted_compact_constants": true,
+      "core_direct_compact_slow_provider_reconstruction": true,
+      "core_symbolic_weighted_maps": true
+    },
+    "review": {
+      "checks": {
+        "cutoff_selects_correct_edges_and_interior_floor": true,
+        "every_fixed_pole_returns_same_pole": true,
+        "physical_shift_and_derivative_order_are_preserved": true,
+        "provider_statuses_match": true,
+        "source_proof_not_diagnostic": true,
+        "three_branch_constant_is_finite_without_materialization": true,
+        "typed_source_boundary_is_not_erased": true
+      },
+      "next": "audit the remaining compact/slow source theorems: the zero-Haar Fourier inverse and fixed slow response with axial velocity, moving pressure product and finite lambda^-1",
+      "scope": {
+        "Q216_two_edge_kernel_quantifier_supported": true,
+        "blanket_full_weight_generated_source_claim": false,
+        "same_pole_and_weight_preserved_for_typed_inputs": true,
+        "unconditional_force_exclusion_or_blowup": false,
+        "uniform_actual_pulse_or_complete_residual": false
+      },
+      "status": "Q220-shifted-two-edge-weighted-kernel-every-finite-pole-source-audited"
+    },
+    "source_classification": {
+      "Gaussian_absorbs_every_fixed_polynomial_pole": true,
+      "actual_generated_source_membership_proved_by_kernel_itself": false,
+      "floating_point_materialization_required": false,
+      "interior_weight_floor_is_continuum": true,
+      "kernel_theorem_supported_at_source_level": true,
+      "symbolic_exponential_sum_is_exact_and_finite": true,
+      "tests_used_as_continuum_proof": false
+    },
+    "status": "Q220-shifted-two-edge-weighted-kernel-every-finite-pole-source-audited",
+    "typed_boundary": {
+      "full_weight_input": "zeta delta^-p",
+      "full_weight_output": "zeta delta^-p",
+      "half_weight_input_automatically_upgraded": false,
+      "obstruction": "zeta^-1 x^p sqrt(zeta) -> infinity at x downarrow 0",
+      "physical_covariance_products_supply_full_weight_by_structure": true,
+      "source_membership_is_separate_from_operator_boundedness": true,
+      "unweighted_jets_plus_support_and_moments_imply_full_weight": false
+    },
+    "weight_contract_R_star": {
+      "all_three_branches_finite_for_fixed_positive_data": true,
+      "constant_uniform_in_pole": false,
+      "delta": "min(1,x,L-x)",
+      "giant_constant_numerically_materialized": false,
+      "inner_branch": "D(w^2) exp(4/(L-r)^2)",
+      "input_pole": 2626513221816,
+      "interior_branch": "L E_p exp((w^2+4)/r^2)",
+      "outer_branch": "D(4) exp(w^2/(L-r)^2)",
+      "output_pole": 2626513221816,
+      "pole_growth": 0,
+      "proof_collar": "r=min(1,L/4,g)",
+      "weight": "zeta=exp(-w^2/x^2-4/(L-x)^2)"
+    },
+    "weight_contract_low_pole": {
+      "all_three_branches_finite_for_fixed_positive_data": true,
+      "constant_uniform_in_pole": false,
+      "delta": "min(1,x,L-x)",
+      "giant_constant_numerically_materialized": false,
+      "inner_branch": "D(w^2) exp(4/(L-r)^2)",
+      "input_pole": 0,
+      "interior_branch": "L E_p exp((w^2+4)/r^2)",
+      "outer_branch": "D(4) exp(w^2/(L-r)^2)",
+      "output_pole": 0,
+      "pole_growth": 0,
+      "proof_collar": "r=min(1,L/4,g)",
+      "weight": "zeta=exp(-w^2/x^2-4/(L-x)^2)"
+    }
+  }
+}

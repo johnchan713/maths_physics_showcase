@@ -6,6 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
+Latest source audit: [Q220 shifted two-edge weighted-kernel source audit](core_current_head_q220_shifted_two_edge_kernel_source_audit/README.md).
+Q220 verifies Q216's compact two-edge kernel for every fixed finite endpoint
+pole on its correct typed domain.  The physical transverse shift is retained,
+the directed half-line primitives preserve the full flat weight and the same
+pole, and the whole shifted moment is controlled on the cutoff transition by
+an interior weight floor.  It also preserves the decisive source boundary:
+half-weight harmonic inputs cannot be promoted to full weight by any finite
+pole.  Actual generated-source membership remains a separate obligation;
+tests check the frozen closure rather than proving the continuum estimate.
+
 Latest source audit: [Q219 regional-gap and weighted-relative-stress source audit](core_current_head_q219_regional_gap_weighted_stress_source_audit/README.md).
 Q219 discharges Q216's same-band gap leaf at the theorem-dependency level.
 The regional infima come from a finite analytic cover with the corrected
