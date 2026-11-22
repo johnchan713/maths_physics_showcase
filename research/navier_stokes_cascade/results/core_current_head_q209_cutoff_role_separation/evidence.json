@@ -1,0 +1,135 @@
+{
+  "closure": {
+    "edges": 1677,
+    "nodes": 459,
+    "source_bindings": 6168
+  },
+  "dependency_evidence_sha256": {
+    "results/canonical_local_realization/evidence.json": "dd24a12408a5e0f8ed6ac12b621783b020f353fb80bf3add44a134237212614c",
+    "results/core_borel_prescription_closure/evidence.json": "3f412f6d8171c476a5b42c28d79f53986e2ac7744e6b001d4cab8dfd0a5d989b",
+    "results/core_current_head_q120_closed_borel_cutoff/evidence.json": "8f2ab19a6c02e4f105c7e9657ace329d64d70430a6f9fcdeeb889c1ea02f473f",
+    "results/core_current_head_q192_frame_graph_jet_transfer/evidence.json": "e162ff26d4f0dab816d239c1a31504ff1663fddf0571d7960edcf171357f2b4f",
+    "results/core_current_head_q208_cutoff_gevrey_frontier/evidence.json": "84bd41c582a7d7ae7910a68a021b9720d41ee2a424925322256f583b181d3eab",
+    "results/regional_weighted_gate/evidence.json": "4417ffa7e693f8ba13cb1a922b6a8fbd2761e7e74de7af84d94eb5c9d4f010cd",
+    "results/weighted_stress_foundation/evidence.json": "5033fd870260a6561b9e4a2c342a9cc67365d077c8acc802e32a2a08de59882a"
+  },
+  "parent": "43813f5f730fee634fe65e3fb3b5ee73bb146edc",
+  "review": {
+    "checks": {
+      "Q208_import_is_corrected": true,
+      "provider_statuses_match": true,
+      "remaining_frontier_not_promoted": true,
+      "source_roles_are_distinct": true,
+      "stage_cutoff_constant_exists_analytically": true,
+      "stage_scale_absorbs_abstract_finite_constant": true
+    },
+    "next": "derive A_R from the selected profile and first coefficient maps, with common gap floors and every archived compact/slow inverse constant",
+    "scope": {
+      "Q120_budget_applied_to_stage_cutoff": false,
+      "complete_stage_602_primitive_bundle_proved": false,
+      "numerical_stage_cutoff_high_jet_bound_proved": false,
+      "stage_cutoff_fixed_order_finiteness_proved": true,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    },
+    "status": "Q209-background-and-stage-cutoff-roles-separated-Q208-identity-blocker-corrected"
+  },
+  "source_hashes": {
+    "results/canonical_local_realization/README.md": "2feccfd8c154364458da5e5c2366c50e7d7ed8e804473b7658eba02b52fd32c8",
+    "results/canonical_local_realization/realization.py": "55fad98af693eb80932884e8fd977b5088d3068d7d7073dfd646caa32b541906",
+    "results/core_borel_prescription_closure/README.md": "969735f83b28f7e07b3c4e16a390e22bdcef4a478f5274ab423fc7917bbd49d5",
+    "results/core_current_head_q120_closed_borel_cutoff/README.md": "2d63394caae8c94c03424a2ec21dbb17666139cd85904582217cea4b932711bd",
+    "results/core_current_head_q192_frame_graph_jet_transfer/README.md": "80bad4c334a27aa1ed6f8e56a1bb18ccdb6a42390893b444e3177fbc73a48ded",
+    "results/core_current_head_q208_cutoff_gevrey_frontier/README.md": "9da869a37093156c11395bccefc3c4c34131a0163a1cc98292fc3a5879729021",
+    "results/core_current_head_q209_cutoff_role_separation/README.md": "948847785d5fdd483e84000713edd993d3cb3d1daf37832a443c32170da45e94",
+    "results/core_current_head_q209_cutoff_role_separation/audit.py": "774c31c41341ffd61994b92bfbe6945e06b3ba2d28dd73fc527f164098be80ab",
+    "results/core_current_head_q209_cutoff_role_separation/q209.py": "33673f7d4cfa8589bed3dd6037b5391dc272cf04545c7fcfbda1c55f956d0f02",
+    "results/core_current_head_q209_cutoff_role_separation/test_audit.py": "3e5b25531a19c3c7aae3a6b522f9fe17df59b7d620514c3ebd3d5ea7ddcb82ce",
+    "results/full_potential_realization/cutoff_checks.py": "55f6fe89c5a56089b20f51ad09ccd156dec3299ec5953c7a32429f267420546d",
+    "results/outer_pressure_pilot/schedule.py": "8b76461a06628ab4c4f1962a11f35dd011b9383880626fd5e7a32ea98a1fdc6e",
+    "results/regional_weighted_gate/README.md": "b03e1e9e8b5f51cb81d34a5b2344fb3d8784d3fa0db8ba8fce796270a502f0b3",
+    "results/weighted_stress_foundation/README.md": "18d60471dd6d794f440e184375fe3d64d1787c854cdd67bc840878a9e37f0f16"
+  },
+  "status": "Q209-background-and-stage-cutoff-roles-separated-Q208-identity-blocker-corrected",
+  "symbolic": {
+    "frontier": {
+      "Q208_same_field_cutoff_identity_is_next_blocker": false,
+      "R": 36479350300,
+      "closed_A_R_gap_and_operator_bundle_recorded": false,
+      "common_gap_bundle": "g_R>0 for all selected Jacobian/normal/root/determinant/variance/support gaps",
+      "first_missing_majorant": "A_R=max_(|I|<=R+1) sup_D w_I S^(-d_I) |D^I(F0,U0,Pi0,M0,V0,E1,U1,W1,T1/zeta)| <= A_R",
+      "operator_bundle": "all compact/slow inverse constants at every archived pole are finite",
+      "passing_tests_prove_continuum_suprema": false,
+      "reason": "Q120 and Q205 control different cutoff roles; Q205 only needs one fixed smooth stage cutoff",
+      "unconditional_residual_or_blowup": false
+    },
+    "providers": {
+      "canonical_local_realization": true,
+      "core_borel_prescription_closure": true,
+      "core_current_head_q120_closed_borel_cutoff": true,
+      "core_current_head_q192_frame_graph_jet_transfer": true,
+      "core_current_head_q208_cutoff_gevrey_frontier": true,
+      "regional_weighted_gate": true,
+      "weighted_stress_foundation": true
+    },
+    "review": {
+      "checks": {
+        "Q208_import_is_corrected": true,
+        "provider_statuses_match": true,
+        "remaining_frontier_not_promoted": true,
+        "source_roles_are_distinct": true,
+        "stage_cutoff_constant_exists_analytically": true,
+        "stage_scale_absorbs_abstract_finite_constant": true
+      },
+      "next": "derive A_R from the selected profile and first coefficient maps, with common gap floors and every archived compact/slow inverse constant",
+      "scope": {
+        "Q120_budget_applied_to_stage_cutoff": false,
+        "complete_stage_602_primitive_bundle_proved": false,
+        "numerical_stage_cutoff_high_jet_bound_proved": false,
+        "stage_cutoff_fixed_order_finiteness_proved": true,
+        "unconditional_pulse_residual_force_exclusion_or_blowup": false
+      },
+      "status": "Q209-background-and-stage-cutoff-roles-separated-Q208-identity-blocker-corrected"
+    },
+    "roles": {
+      "Q120_bit_budget_applies_to_Q205_stage_cutoff": false,
+      "coefficient_background_cutoff": "chi_bg(a_n q): background coefficient Borel summation; Q120 squared-flat bound",
+      "generated_stage_cutoff": "chi_stage(a_j q): Q205 complete-potential stage diagonal; one fixed smooth plateau cutoff",
+      "historical_cutoff_changed_or_reselected": false,
+      "identifying_the_two_cutoffs_is_required_by_Q205": false,
+      "indices_are_distinct": "coefficient n versus generated cycle j",
+      "scale_rules_are_distinct": "background coefficient rule versus generated-stage after-constant rule"
+    },
+    "scale_absorption": {
+      "abstract_K_can_be_included_in_log_C": true,
+      "chosen_after_current_constants": true,
+      "decreasing_after_cutoff": true,
+      "endpoint_bound_holds": true,
+      "finite_request_count": 11,
+      "stage": 10,
+      "stage_uniform_constant_used": false,
+      "works_for_arbitrary_finite_stage_constants": true
+    },
+    "source_roles": {
+      "Q120_names_squared_flat_background_cutoff": true,
+      "background_source_uses_squared_flat_step": true,
+      "older_diagnostic_is_actual_supported_giant_field": false,
+      "older_diagnostic_uses_linear_reciprocal_exponent": true,
+      "same_symbol_implies_same_function": false,
+      "stage_field_formula_keeps_symbolic_chi": true,
+      "stage_specification_is_qualitative_smooth_plateau": true,
+      "stage_specification_names_squared_flat_formula": false
+    },
+    "stage_cutoff": {
+      "Euler_identity": "E^m chi=sum_(k=0)^m S2(m,k) s^k chi^(k)",
+      "K_order": "max_(0<=m<=order) ||(s d/ds)^m chi_stage||_infinity < infinity",
+      "Q120_formula_used": false,
+      "compact_transition_and_continuity_give_finite_supremum": true,
+      "continuum_reason": "finite-order smoothness plus compact transition, not sampling",
+      "finite_sum_at_each_fixed_order": true,
+      "numerical_K_order_evaluated": false,
+      "order": 36479350301,
+      "positive_derivative_support": "1/2 <= s <= 1"
+    },
+    "status": "Q209-background-and-stage-cutoff-roles-separated-Q208-identity-blocker-corrected"
+  }
+}

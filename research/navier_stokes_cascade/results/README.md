@@ -6,7 +6,19 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q208 existing Borel-cutoff provider join and narrowed primitive frontier](core_current_head_q208_cutoff_gevrey_frontier/README.md).
+Latest source audit: [Q209 coefficient/stage cutoff role separation and corrected primitive frontier](core_current_head_q209_cutoff_role_separation/README.md).
+Q209 corrects Q208's proposed same-cutoff identity blocker. The Q120
+squared-flat cutoff controls coefficient-background Borel summation, whereas
+Q205's generated-cycle diagonal fixes a separate smooth plateau stage cutoff.
+For every fixed finite request its Euler seminorm is finite by the exact
+Stirling expansion, smoothness and compact transition support, and Q205
+chooses the stage scale after that finite constant is known. No Q120 bit
+budget or equality of the two cutoff functions is required. The first missing
+direct input remains the selected-profile/first-coefficient weighted
+majorant, common positive gap floors and every archived compact/slow inverse
+constant on the same physical object.
+
+Preceding source audit: [Q208 existing Borel-cutoff provider join and narrowed primitive frontier](core_current_head_q208_cutoff_gevrey_frontier/README.md).
 Q208 corrects an overbroad part of Q207's frontier. Q120 already proves an
 all-order Euler bound for the squared-flat Borel cutoff; if Q207's actual
 cutoff is bound to that function, its derivative ceiling `36,479,350,300`
