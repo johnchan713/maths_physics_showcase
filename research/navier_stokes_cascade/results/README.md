@@ -6,6 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
+Latest source audit: [Q217 localization, compact-force, energy and comparison frontier join](core_current_head_q217_localization_comparison_frontier_join/README.md).
+Q217 binds Q216's source-audited physical object to the exact twelve-group
+localization, smooth compact force trace, zero-safe energy bound, fixed-gauge
+pressure recovery and protected-core comparison. It keeps Q206's singular
+terminal velocity and pressure separate from the smooth force. The first new
+downstream premise is the competitor's finite `L2` norm on each fixed
+preterminal interval; a smooth zero-data zero-force affine-pressure solution
+shows that local smoothness and compact forcing do not imply this condition.
+The exclusion implication therefore remains restricted to the stated
+finite-energy class and conditional on the upstream continuum providers.
+
 Latest source audit: [Q216 source audit of the quantified primitive providers](core_current_head_q216_quantified_provider_source_audit/README.md).
 Q216 verifies that Q215's all-fixed-order and all-finite-pole inputs come from
 analytical recurrences rather than enumeration or sampled diagnostics. For a

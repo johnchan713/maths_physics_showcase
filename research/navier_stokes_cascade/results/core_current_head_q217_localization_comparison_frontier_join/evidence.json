@@ -1,0 +1,151 @@
+{
+  "closure": {
+    "edges": 1759,
+    "nodes": 467,
+    "source_bindings": 6286
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q168_localization_force_frontier_audit/evidence.json": "1bc8e23d261ab6cce9d4508610a32213a25cbdb31b6c3386afeea6a6b40ab999",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/evidence.json": "9acd68d5092c38c4f6d74a5c9add5face583b33702150c17c160e88425704aec",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/evidence.json": "3bfe170d5b2a7a9d85270a0647e9f21ccc4de2125e580e844e4777afcbdc1916",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/evidence.json": "2148704390a3b45d796e10d96a1b884e765f3633b9f62f56f19f3634b17bce5d",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/evidence.json": "fb013b6bafd8ab7eef9b61c62313b9fb74495fd76d78c6bc93a99208964d1434",
+    "results/core_current_head_q206_terminal_origin_obstruction/evidence.json": "19b3d33ce901e10b683173605d5f6fc3c34144f80765d7aafdeea10c14726a9d",
+    "results/core_current_head_q216_quantified_provider_source_audit/evidence.json": "44d0232e3bb1fea2a0a7e4572c09d08d1c4bc7bfae55843bc706398eb67d7a46"
+  },
+  "parent": "21566beab39c60b2100f69805db2cb09488d0ce5",
+  "review": {
+    "checks": {
+      "finite_energy_is_not_automatic": true,
+      "limit_order_is_legal": true,
+      "localization_has_one_spare_cauchy_derivative": true,
+      "pressure_memory_and_force_cancellation_are_distinct": true,
+      "protected_path_stays_in_support_hole": true,
+      "provider_statuses_match": true
+    },
+    "next": "either derive finite-energy entry from an explicitly stronger global-solution class or retain it as an essential comparison hypothesis; separately discharge the cited upstream continuum provider theorems before any unconditional claim",
+    "scope": {
+      "all_locally_smooth_competitors_excluded": false,
+      "finite_energy_competitor_exclusion_implication": true,
+      "force_trace_separated_from_terminal_field_regularization": true,
+      "same_source_audited_object_reaches_compact_smooth_force": true,
+      "unconditional_force_residual_or_blowup": false
+    },
+    "status": "Q217-Q216-object-localization-force-energy-and-comparison-joined-conditionally"
+  },
+  "source_hashes": {
+    "results/core_current_head_q168_localization_force_frontier_audit/README.md": "89b553770cd6ea966a56e3c1023bf3035c8e6517d7e6d632970d1f98e1b4bf37",
+    "results/core_current_head_q169_pressure_comparison_frontier_audit/README.md": "6576abfd9fd92478e021b804bbef850ef0266dc128fdea24cf43db363931b42d",
+    "results/core_current_head_q170_protected_core_limit_frontier_audit/README.md": "1c7c8011bb5e31742ff9c00e90d928318f04798faef0e59b69bd9f37efe96749",
+    "results/core_current_head_q182_comparison_core_exclusion_replay/README.md": "4efd532051a973e3b30441f2d77fd36c113b68b37f14ec2b371f1e8d8c0ba9f6",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/README.md": "ab03785aa13a62ea48a92b413a0b146d4d88361db7176c7e9de04c6590b07159",
+    "results/core_current_head_q206_terminal_origin_obstruction/README.md": "256a6763ec17d6dc6c58b6220332bb2e45249e634f66d7a3ca0d63615778cee8",
+    "results/core_current_head_q216_quantified_provider_source_audit/README.md": "8df4d850a2adc7fdfd5ff87a230a4666952328584017c88658fea825ab308f2f",
+    "results/core_current_head_q217_localization_comparison_frontier_join/README.md": "c081f3eed6cf51ce4ff9676e010d70748f69838818fbefae9ab4c3d276f5c65e",
+    "results/core_current_head_q217_localization_comparison_frontier_join/audit.py": "76d472d706029ca77d9e1acfde303f34f717d84ef0f3864f0191e310a11de8af",
+    "results/core_current_head_q217_localization_comparison_frontier_join/q217.py": "bd1018ea2ee211d553b959fecec60484b677b97a836798115121c56750de678f",
+    "results/core_current_head_q217_localization_comparison_frontier_join/test_audit.py": "7d3ebc2e38f87ff3b6e7976448e90ae9972b6a7f50d6e6dabdeaf98f186acf90"
+  },
+  "status": "Q217-Q216-object-localization-force-energy-and-comparison-joined-conditionally",
+  "symbolic": {
+    "comparison": {
+      "common_force_cancels_exactly_once": true,
+      "competitor_derivative_bound_used": false,
+      "competitor_finite_energy_used": true,
+      "expanding_ball_error_rate": "2",
+      "harmonic_gradient_removed_using_momentum_and_finite_energy": true,
+      "individual_pressures_keep_minus_div_f": true,
+      "limit_order": [
+        "fix T<1",
+        "send R to infinity",
+        "send tau to zero"
+      ]
+    },
+    "energy": {
+      "bound": "E(t)+2*integral_0^t D(s) ds <= F(t)^2",
+      "energy_and_dissipation_extrema_added_under_one_rhs": false,
+      "terminal_field_value_used": false,
+      "zero_safe_regularization": "sqrt(E+epsilon^2)"
+    },
+    "first_new_conditional_premise": {
+      "counterexample": {
+        "divergence_free": true,
+        "finite_L2_at_positive_time": false,
+        "force": "0",
+        "navier_stokes_residual_zero": true,
+        "pressure": "P(x,t)=-x_1",
+        "velocity": "v(x,t)=t e_1",
+        "zero_initial_data": true
+      },
+      "implied_by_local_smoothness_zero_data_and_compact_force": false,
+      "introduced_at": "fixed-gauge pressure recovery and expanding-ball comparison",
+      "premise": "sup_{0<=t<=T} ||v(t)||_2 < infinity for every fixed T<1",
+      "upstream_Q216_provider_theorems_remain_analytical_inputs": true
+    },
+    "localization_order_5": {
+      "cauchy": {
+        "direct_swirl": 7,
+        "potential": 8,
+        "pressure": 6
+      },
+      "complete_pressure_cutoff_retained": true,
+      "direct": {
+        "direct_swirl": 6,
+        "potential": 7,
+        "pressure": 5
+      },
+      "force_divergence_retained": true,
+      "order": 5,
+      "spare_over_cauchy": {
+        "direct_swirl": 1,
+        "potential": 1,
+        "pressure": 1
+      },
+      "supplied": {
+        "direct_swirl": 8,
+        "potential": 9,
+        "pressure": 7
+      },
+      "twelve_nonzero_groups": true
+    },
+    "protected_core": {
+      "X_a": "4/101",
+      "X_in": "1/101",
+      "annular_corrections_vanish_exactly": true,
+      "background_remainder_exponent": "1/100",
+      "background_vanishes": false,
+      "localization_is_identity_on_path": true,
+      "support_hole_margin": "3/101",
+      "velocity_exponent": "101/200"
+    },
+    "providers": {
+      "core_current_head_q168_localization_force_frontier_audit": true,
+      "core_current_head_q169_pressure_comparison_frontier_audit": true,
+      "core_current_head_q170_protected_core_limit_frontier_audit": true,
+      "core_current_head_q182_comparison_core_exclusion_replay": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain": true,
+      "core_current_head_q206_terminal_origin_obstruction": true,
+      "core_current_head_q216_quantified_provider_source_audit": true
+    },
+    "review": {
+      "checks": {
+        "finite_energy_is_not_automatic": true,
+        "limit_order_is_legal": true,
+        "localization_has_one_spare_cauchy_derivative": true,
+        "pressure_memory_and_force_cancellation_are_distinct": true,
+        "protected_path_stays_in_support_hole": true,
+        "provider_statuses_match": true
+      },
+      "next": "either derive finite-energy entry from an explicitly stronger global-solution class or retain it as an essential comparison hypothesis; separately discharge the cited upstream continuum provider theorems before any unconditional claim",
+      "scope": {
+        "all_locally_smooth_competitors_excluded": false,
+        "finite_energy_competitor_exclusion_implication": true,
+        "force_trace_separated_from_terminal_field_regularization": true,
+        "same_source_audited_object_reaches_compact_smooth_force": true,
+        "unconditional_force_residual_or_blowup": false
+      },
+      "status": "Q217-Q216-object-localization-force-energy-and-comparison-joined-conditionally"
+    },
+    "status": "Q217-Q216-object-localization-force-energy-and-comparison-joined-conditionally"
+  }
+}
