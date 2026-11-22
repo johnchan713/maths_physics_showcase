@@ -1,0 +1,130 @@
+{
+  "closure": {
+    "edges": 1709,
+    "nodes": 462,
+    "source_bindings": 6215
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q149_primary_pulse_join/evidence.json": "616713ceb3dc15a6833ee583343faa6a8888e57bcabf4ce79f946f42e633419f",
+    "results/core_current_head_q150_initial_covariance_mean_join/evidence.json": "4d99026d3503e6fff52e9d3361500605414a85998d23d6f9236f4fce77a895e9",
+    "results/core_current_head_q152_physical_stress_feedback_join/evidence.json": "e79f9d49a8100f871e4636037595c2ac185cd9c5986e9ecffe1168e45fbfc1a1",
+    "results/core_current_head_q160_physical_target_induction/evidence.json": "7df2d117988dd9cdc149ef68c0c42086e8ec1963c27f2932e829839612168b5e",
+    "results/core_current_head_q180_target_source_simultaneous_induction/evidence.json": "9315c63504df9084cf79c5efec336eae2eb749380871e9b74905192f821c9322",
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q192_frame_graph_jet_transfer/evidence.json": "e162ff26d4f0dab816d239c1a31504ff1663fddf0571d7960edcf171357f2b4f",
+    "results/core_current_head_q209_cutoff_role_separation/evidence.json": "813939840515298e157440642c482b00468b574d69674fe394aa66bffff660ed",
+    "results/core_current_head_q210_finite_bundle_uniform_tail/evidence.json": "32c2c5b40e067d34b62fd1b1689e3a3a20af280066202da1d3ea7efa6488c219",
+    "results/core_current_head_q211_degree_grammar_primitive_frontier/evidence.json": "ddaed958e460c885c48ef07d5ad0e6af31a8f93de937876f155cb9c57df2e027",
+    "results/finite_stage_induction/evidence.json": "71e69bac66b9d4eb6f5b455dd878bd298d413b6d083332c6615b07ebe5c939a1"
+  },
+  "parent": "63c6394c8c27520357514e5b9ab7d2fc1da8d0b5",
+  "review": {
+    "checks": {
+      "existing_target_degree_contract_joined": true,
+      "finite_request_maximum_is_valid": true,
+      "frontier_restored_to_raw_same_object_premises": true,
+      "provider_statuses_match": true
+    },
+    "next": "prove the selected-profile/first-coefficient weighted majorant, common positive gap floor and compact/slow inverse archive on one actual accepted tail",
+    "scope": {
+      "actual_degree_array_evaluated": false,
+      "conditional_target_primitive_degree_existence_joined": true,
+      "raw_selected_profile_first_coefficient_bundle_proved": false,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    },
+    "status": "Q212-existing-target-degree-contract-joined-conditionally-raw-map-frontier-restored"
+  },
+  "source_hashes": {
+    "results/core_current_head_q149_primary_pulse_join/README.md": "bb8bf8bbca7fcd80f01314587e9f9f9172cf31100ea1146cdde40effa1d527eb",
+    "results/core_current_head_q150_initial_covariance_mean_join/README.md": "44fc37e4ab21a460bf6a41c6dd9a5b27703d087a08e3c02d48e41dd1128e25c3",
+    "results/core_current_head_q152_physical_stress_feedback_join/README.md": "dd2209fa7c3658851ed87aee5c4cd0ef4e224628ec5b61ba7c046ef8e11085c6",
+    "results/core_current_head_q160_physical_target_induction/README.md": "b8e6cb93143ae4bde7d22da05db8a98af82eac37ecbd33a790e6976c4918e916",
+    "results/core_current_head_q180_target_source_simultaneous_induction/README.md": "c7ccc0ebf30d037338a1140721de4b830f39b2229f1d8df818873a2e078eba6c",
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q192_frame_graph_jet_transfer/README.md": "80bad4c334a27aa1ed6f8e56a1bb18ccdb6a42390893b444e3177fbc73a48ded",
+    "results/core_current_head_q209_cutoff_role_separation/README.md": "948847785d5fdd483e84000713edd993d3cb3d1daf37832a443c32170da45e94",
+    "results/core_current_head_q210_finite_bundle_uniform_tail/README.md": "66614f49603935e3e9d3a85dc1e04d500c4342a81ca9dd9295a185530b125b56",
+    "results/core_current_head_q211_degree_grammar_primitive_frontier/README.md": "9a4d2f53c7b39dbba08585cb9a8d9ee98fae04dfc8cbe658699a9549365eb12e",
+    "results/core_current_head_q212_existing_target_degree_raw_map_frontier/README.md": "61ca8aecd533b04e47b666c5e517e0f5d09fc72d99336d5ae28e3b6958427e71",
+    "results/core_current_head_q212_existing_target_degree_raw_map_frontier/audit.py": "fe6f0e823e2aa0369fcef29ef65cab04941f98b53b16a10e992ce4a6d6a7e13a",
+    "results/core_current_head_q212_existing_target_degree_raw_map_frontier/q212.py": "5d1543356b395729d9ae685c0552c8012017fd7ac2b73819d8bc9dbcfe344fc4",
+    "results/core_current_head_q212_existing_target_degree_raw_map_frontier/test_audit.py": "dc90a7c3bdc066048f5e3e3a330e0a5b509b5fd708a73c87dd1def4b88f7f4cf",
+    "results/current_target_cycle_bridge/README.md": "0c96ac838ab7bc1861f5b178164318400eeebdd97c6f2d9855ba2200277830f2",
+    "results/finite_stage_induction/README.md": "5039e4321b83553823250325fa733c2157369d3dad3a2207ad51fdb42e9f19f5"
+  },
+  "status": "Q212-existing-target-degree-contract-joined-conditionally-raw-map-frontier-restored",
+  "symbolic": {
+    "finite_degree_example": {
+      "degrees": [
+        "0",
+        "3/2",
+        "7"
+      ],
+      "diagnostic_only": true,
+      "maximum": "7"
+    },
+    "frontier": {
+      "Q211_degree_algebra_remains_valid": true,
+      "Q211_next_step_repeats_existing_conditional_target_theorem": true,
+      "common_gap_and_inverse_archive_independently_proved": false,
+      "conditional_target_primitive_degree_obligation_closed": true,
+      "raw_majorant": "max_(|I|<=R+1) sup_D w_I S^(-d_I) |D^I(F0,U0,Pi0,M0,V0,E1,U1,W1,T1/zeta)| <= A_R<infinity",
+      "raw_selected_map_majorant_independently_proved": false,
+      "same_object_gaps": "g_R=min of the selected Jacobian, normal, root, determinant, variance and support gaps is positive on the same accepted tail",
+      "same_object_inverse_archive": "K_R=max of every requested compact/slow pressure and moment inverse constant is finite on that same object",
+      "unconditional_residual_or_blowup": false,
+      "why_not_closed": "Q160/Q180/WMS and Q192 are conditional on the selected leading/background geometry and finite existence/inverse/gap premises; hashes and finite tests do not prove their continuum suprema or positive infima"
+    },
+    "pressure_memory": [
+      "all six covariance entries",
+      "radial and axial velocity",
+      "complete reconstructed pressure",
+      "Pi1/Pi2 in the same base equation",
+      "whole moving pressure product and its derivative",
+      "both tangential moment identities",
+      "zero weighted primitive totals at both edges",
+      "reserved interior support"
+    ],
+    "providers": {
+      "core_current_head_q149_primary_pulse_join": true,
+      "core_current_head_q150_initial_covariance_mean_join": true,
+      "core_current_head_q152_physical_stress_feedback_join": true,
+      "core_current_head_q160_physical_target_induction": true,
+      "core_current_head_q180_target_source_simultaneous_induction": true,
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q192_frame_graph_jet_transfer": true,
+      "core_current_head_q209_cutoff_role_separation": true,
+      "core_current_head_q210_finite_bundle_uniform_tail": true,
+      "core_current_head_q211_degree_grammar_primitive_frontier": true,
+      "finite_stage_induction": true
+    },
+    "review": {
+      "checks": {
+        "existing_target_degree_contract_joined": true,
+        "finite_request_maximum_is_valid": true,
+        "frontier_restored_to_raw_same_object_premises": true,
+        "provider_statuses_match": true
+      },
+      "next": "prove the selected-profile/first-coefficient weighted majorant, common positive gap floor and compact/slow inverse archive on one actual accepted tail",
+      "scope": {
+        "actual_degree_array_evaluated": false,
+        "conditional_target_primitive_degree_existence_joined": true,
+        "raw_selected_profile_first_coefficient_bundle_proved": false,
+        "unconditional_pulse_residual_force_exclusion_or_blowup": false
+      },
+      "status": "Q212-existing-target-degree-contract-joined-conditionally-raw-map-frontier-restored"
+    },
+    "status": "Q212-existing-target-degree-contract-joined-conditionally-raw-map-frontier-restored",
+    "target_degree_join": {
+      "Q160_displayed_degree_zero_claimed": false,
+      "class_definition": "finite-stage W/M/S membership includes, for every fixed stage and derivative, a finite polynomial degree in S=ell^2 and finite inverse-edge powers",
+      "conditional_degree_array_exists": true,
+      "degree_array_numerically_evaluated": false,
+      "exact_difference": "X_e(new)-X_e(old)=-I_e Q_e overline(Delta E_e)",
+      "expanded_Q160_target": "|D^I Xi_j| <= C_(j,I) epsilon^(C_j) S^(d_(j,I)) zeta ya^(-p_(j,I)) yb^(-q_(j,I))",
+      "finite_request_implication": "D_R^Xi=max_(|I|<=R) d_(j,I)<infinity, and the finitely many primitive, root, frame and mean rows have one finite conditional maximum",
+      "independent_raw_selected_map_certificate": false,
+      "primitive": "zero weighted totals and the two oriented current inverses preserve zeta with finite polynomial-S and inverse-edge costs"
+    }
+  }
+}

@@ -2024,6 +2024,13 @@ jobs:
             --verify-record research/navier_stokes_cascade/results/core_current_head_q211_degree_grammar_primitive_frontier/evidence.json \
             --output navier_stokes_core_current_head_q211_ci.json
 
+      - name: Check Q212 existing target degree contract and raw map frontier
+        run: |
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q212_existing_target_degree_raw_map_frontier/test_audit.py -v
+          /usr/bin/python3 research/navier_stokes_cascade/results/core_current_head_q212_existing_target_degree_raw_map_frontier/audit.py \
+            --verify-record research/navier_stokes_cascade/results/core_current_head_q212_existing_target_degree_raw_map_frontier/evidence.json \
+            --output navier_stokes_core_current_head_q212_ci.json
+
       - name: Verify frozen t014 history and published archive
         run: |
           /usr/bin/python3 research/navier_stokes_cascade/results/late_growth_t014/test_tools.py -v
@@ -2654,6 +2661,7 @@ jobs:
             navier_stokes_core_current_head_q209_ci.json
             navier_stokes_core_current_head_q210_ci.json
             navier_stokes_core_current_head_q211_ci.json
+            navier_stokes_core_current_head_q212_ci.json
             navier_stokes_paper_profile_audit_ci.json
             navier_stokes_peak_probe_controls.json
             navier_stokes_peak_audit_ci.json

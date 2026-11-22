@@ -6,7 +6,18 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q211 polynomial degree grammar and weighted primitive frontier](core_current_head_q211_degree_grammar_primitive_frontier/README.md).
+Latest source audit: [Q212 existing target degree contract and restored raw-map frontier](core_current_head_q212_existing_target_degree_raw_map_frontier/README.md).
+Q212 corrects Q211's proposed next step. Q160 already derives the exact
+same-family current-target state difference, and the governing `W/M/S`
+definition assigns a finite polynomial `S=ell^2` degree to every fixed stage
+and jet. Q180 couples that target theorem to the source step, while Q184
+retains the polynomial loss explicitly. A finite jet request therefore has
+one finite conditional target/primitive degree maximum, although no degree
+is evaluated. The independent frontier returns to the raw selected-profile
+and first-coefficient weighted majorant, common positive gap floor and
+same-object compact/slow inverse archive.
+
+Preceding source audit: [Q211 polynomial degree grammar and weighted primitive frontier](core_current_head_q211_degree_grammar_primitive_frontier/README.md).
 Q211 corrects Q210's proposed next step: Q196--Q202 already derive the
 initial complete source, first constrained sourced wave, corrected physical
 signed target, post-signed means and the next sourced cycle, all
@@ -17,7 +28,9 @@ reciprocal and sourced-Duhamel degree recurrences preserve polynomial
 degrees at most `7i + D_R + 1`. The independent frontier is therefore the
 actual all-band weighted primitive degree array for the first physical
 current target; the degree grammar can propagate that input but cannot
-create it.
+create it. Q212 observes that the existing conditional `W/M/S` target
+theorem already supplies existence of this array and restores the lower
+raw-map frontier.
 
 Preceding source audit: [Q210 finite primitive unification and uniform all-band source frontier](core_current_head_q210_finite_bundle_uniform_tail/README.md).
 Q210 narrows Q209's stage-602 primitive-bundle frontier. Relative to the
