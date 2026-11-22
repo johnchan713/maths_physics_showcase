@@ -1,0 +1,222 @@
+{
+  "closure": {
+    "edges": 1695,
+    "nodes": 461,
+    "source_bindings": 6197
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q192_frame_graph_jet_transfer/evidence.json": "e162ff26d4f0dab816d239c1a31504ff1663fddf0571d7960edcf171357f2b4f",
+    "results/core_current_head_q193_duhamel_phase_recurrence/evidence.json": "5ba00b84182bbdca640ab95d627ef263c4518de468080d9c0793ed339e80936b",
+    "results/core_current_head_q194_primary_field_assembly/evidence.json": "1443933dd8d6ebfb4a254253e3438346fbd3a8b4cd91c2a432a45ca83e3955ee",
+    "results/core_current_head_q195_primary_covariance_initial_mean/evidence.json": "e69d5854b1c82aff73e3c7a71b173bff01ecc74a30483a2f0a534a5fde77466c",
+    "results/core_current_head_q196_initial_generated_source/evidence.json": "52c19252a65d5478fbc32bbc27d44353ceb14f2380bfb95b76d3fe7b88b34b7e",
+    "results/core_current_head_q197_first_sourced_covariance/evidence.json": "740dc0de9d5d8eac8791d4b13721b546c2e7448917b6b9b435e47290152abd1c",
+    "results/core_current_head_q198_generic_signed_target/evidence.json": "fd5418fae4401e788eefefb7a28e3a86c300a8664ac20d694a7286de46b01004",
+    "results/core_current_head_q199_weighted_target_obstruction/evidence.json": "3d20d5e12d3ed7697bb498d14b9997b200084d3bd407951b1e531fcf0d53e545",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/evidence.json": "86afaf50eff3a1422a8e9fe267fafe2ee3d85c3a4c36fbac210cf8d4cf1b1274",
+    "results/core_current_head_q201_post_signed_mean_reconciliation/evidence.json": "dc00309f702395523d3550ea057129b487765008e5141dda1b0de695cbd98d74",
+    "results/core_current_head_q202_next_sourced_cycle/evidence.json": "0f3dc3220c07d638f1bb860f810b20fd4ac340ccaf995c2a074e42e18309ee58",
+    "results/core_current_head_q210_finite_bundle_uniform_tail/evidence.json": "32c2c5b40e067d34b62fd1b1689e3a3a20af280066202da1d3ea7efa6488c219",
+    "results/regular_source_foundation/evidence.json": "91f71ce32b4427f504553f4d8dfe5d555ae8822ec3f8e8da75123f729e487e28",
+    "results/source_envelope_edge_audit/evidence.json": "f2f3fd85548c25b144a23953a8f07b797ea7ef0a42ef0eb61341df7a09a0d1ea"
+  },
+  "parent": "c4c86e6926d1828605aa9eca600c4e9d85f2d6c2",
+  "review": {
+    "checks": {
+      "Q210_conditional_cycle_work_not_repeated": true,
+      "degree_grammar_closes_one_sourced_solve": true,
+      "frontier_lowered_to_weighted_primitive_degree": true,
+      "provider_statuses_match": true
+    },
+    "next": "derive the actual weighted current-target primitive degree array from the explicit state-difference, pressure and moment maps, beginning at the first physical target",
+    "scope": {
+      "actual_primitive_degree_array_certified_independently": false,
+      "finite_degree_algebra_and_sourced_recurrence_proved": true,
+      "initial_and_first_sourced_cycles_recognized_as_existing_conditional_work": true,
+      "unconditional_pulse_residual_force_exclusion_or_blowup": false
+    },
+    "status": "Q211-polynomial-degree-grammar-closed-conditionally-weighted-primitive-frontier-isolated"
+  },
+  "source_hashes": {
+    "results/core_current_head_q192_frame_graph_jet_transfer/README.md": "80bad4c334a27aa1ed6f8e56a1bb18ccdb6a42390893b444e3177fbc73a48ded",
+    "results/core_current_head_q193_duhamel_phase_recurrence/README.md": "de90b01cad423889ef5d80cd4b9622512af769d9f9cf1c1f26d126cef2b49525",
+    "results/core_current_head_q194_primary_field_assembly/README.md": "b1181cb00f0fce6f78033bdb7c7fb436b34e683a22a8c5b35af7c64a421ca056",
+    "results/core_current_head_q195_primary_covariance_initial_mean/README.md": "d076195b0054029a576d3cb2e64221175a9d271239007c15d2cea60007a6c8e9",
+    "results/core_current_head_q196_initial_generated_source/README.md": "a847944d5da4d166d77dc5921fee163ed799c5fb4712741e421589d20cd5b0ce",
+    "results/core_current_head_q197_first_sourced_covariance/README.md": "e0c153f70ffee2995a93a2316146b0466fdda28e10e9e2b03c0cc41cbbf73564",
+    "results/core_current_head_q198_generic_signed_target/README.md": "921e5ce86e37b4248a3864ef09b03b82829a18a0c115d193ac5df5ef346f6ae6",
+    "results/core_current_head_q199_weighted_target_obstruction/README.md": "c806f1c429414f462c75bc418fd61d504f21a8e24e53de14a1c5bdbe16bc3813",
+    "results/core_current_head_q200_physical_weighted_target_reconciliation/README.md": "235cd5e586db353edce0abc963a2bf8a0d81a78ff936edd775e84f1a27a19c73",
+    "results/core_current_head_q201_post_signed_mean_reconciliation/README.md": "26847a24923c992bb16de9aaf895739d4a27bb15ea31111dad2865db350a305f",
+    "results/core_current_head_q202_next_sourced_cycle/README.md": "babbc50812ba2b1c361a92add6ab179f9011a3be7b933c493e8cf868d1ad31f1",
+    "results/core_current_head_q210_finite_bundle_uniform_tail/README.md": "66614f49603935e3e9d3a85dc1e04d500c4342a81ca9dd9295a185530b125b56",
+    "results/core_current_head_q211_degree_grammar_primitive_frontier/README.md": "9a4d2f53c7b39dbba08585cb9a8d9ee98fae04dfc8cbe658699a9549365eb12e",
+    "results/core_current_head_q211_degree_grammar_primitive_frontier/audit.py": "08d379520bd81e1cf106e5ce260af5e5e3ab0ae91109a3ecb51f79de14240810",
+    "results/core_current_head_q211_degree_grammar_primitive_frontier/q211.py": "449ddce3a64b0931240f214f25a47035add6828614e68262d78a07064cf435e2",
+    "results/core_current_head_q211_degree_grammar_primitive_frontier/test_audit.py": "47b88676db71da598da60e5f3096a6e06c03ba662893342020b296c293789aad",
+    "results/regular_source_foundation/README.md": "05f898df2d26918f54786454da602c18ebf146c705c3194d5ad20af7183a8856",
+    "results/source_envelope_edge_audit/README.md": "366643931a551850f1882cc330d79a6e72d1edfa5540dbe44655513279fe7cf4"
+  },
+  "status": "Q211-polynomial-degree-grammar-closed-conditionally-weighted-primitive-frontier-isolated",
+  "symbolic": {
+    "completed_route": {
+      "Q196": "initial source quotient and uniform pure-power bound after one kappa reserve",
+      "Q197": "first sourced constrained solve, complete covariance and current means",
+      "Q198_Q200": "generic signed target corrected and physical weighted route reconciled",
+      "Q201": "post-signed fast/slow means with complete pressure and axial memory",
+      "Q202": "next sourced cycle on the corrected physical domain",
+      "Q210_next_step_already_present_conditionally": true,
+      "these_records_are_unconditional_continuum_proofs": false
+    },
+    "degree_algebra": {
+      "affine_sourced": {
+        "actual_optimized_offset_evaluated": false,
+        "closes": true,
+        "coefficient_degrees": [
+          0,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28
+        ],
+        "expected_solution": [
+          21,
+          28,
+          35,
+          42,
+          49,
+          56,
+          63,
+          70,
+          77,
+          84,
+          91,
+          98,
+          105
+        ],
+        "forcing_degrees": [
+          20,
+          27,
+          34,
+          41,
+          48,
+          55,
+          62,
+          69,
+          76,
+          83,
+          90,
+          97,
+          104
+        ],
+        "offset": 20,
+        "order": 12,
+        "reason": "2i+5<=7i for every i>=1",
+        "solution_degrees": [
+          21,
+          28,
+          35,
+          42,
+          49,
+          56,
+          63,
+          70,
+          77,
+          84,
+          91,
+          98,
+          105
+        ],
+        "source_degrees": [
+          20,
+          27,
+          34,
+          41,
+          48,
+          55,
+          62,
+          69,
+          76,
+          83,
+          90,
+          97,
+          104
+        ]
+      },
+      "product_sample": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "reciprocal_sample": [
+        0,
+        6,
+        12,
+        18
+      ]
+    },
+    "frontier": {
+      "Q199_countermodel_remains_applicable_to_that_invalid_inference": true,
+      "existing_physical_route_supplies_obligation_conditionally": true,
+      "finite_degree_closure": "finite sums/products, reciprocals with positive floors, Bell quotients, weighted primitives and the sourced Duhamel recurrence preserve finite S degree",
+      "independent_raw_map_certificate_complete": false,
+      "must_retain": [
+        "all six covariances",
+        "radial and axial velocity",
+        "complete pressure",
+        "Pi1/Pi2",
+        "whole moving pressure product",
+        "zero weighted totals",
+        "both flat-edge primitives",
+        "reserved interior support"
+      ],
+      "primitive_degree_obligation": "D_R^prim=max_(|I|<=R) inf{d>=0: sup_(ell>=ell*) S^-d N_I(actual current target/root/frame data)<infinity}<infinity",
+      "source_grammar_can_create_superpolynomial_S_growth_from_polynomial_inputs": false,
+      "unconditional_residual_or_blowup": false,
+      "unweighted_jets_moments_and_support_imply_primitive_degree_obligation": false,
+      "weighted_target_identity": "X_e^new-X_e^old=-I_e Q_e conjugate(Delta E_e)"
+    },
+    "providers": {
+      "core_current_head_q192_frame_graph_jet_transfer": true,
+      "core_current_head_q193_duhamel_phase_recurrence": true,
+      "core_current_head_q194_primary_field_assembly": true,
+      "core_current_head_q195_primary_covariance_initial_mean": true,
+      "core_current_head_q196_initial_generated_source": true,
+      "core_current_head_q197_first_sourced_covariance": true,
+      "core_current_head_q198_generic_signed_target": true,
+      "core_current_head_q199_weighted_target_obstruction": true,
+      "core_current_head_q200_physical_weighted_target_reconciliation": true,
+      "core_current_head_q201_post_signed_mean_reconciliation": true,
+      "core_current_head_q202_next_sourced_cycle": true,
+      "core_current_head_q210_finite_bundle_uniform_tail": true,
+      "regular_source_foundation": true,
+      "source_envelope_edge_audit": true
+    },
+    "review": {
+      "checks": {
+        "Q210_conditional_cycle_work_not_repeated": true,
+        "degree_grammar_closes_one_sourced_solve": true,
+        "frontier_lowered_to_weighted_primitive_degree": true,
+        "provider_statuses_match": true
+      },
+      "next": "derive the actual weighted current-target primitive degree array from the explicit state-difference, pressure and moment maps, beginning at the first physical target",
+      "scope": {
+        "actual_primitive_degree_array_certified_independently": false,
+        "finite_degree_algebra_and_sourced_recurrence_proved": true,
+        "initial_and_first_sourced_cycles_recognized_as_existing_conditional_work": true,
+        "unconditional_pulse_residual_force_exclusion_or_blowup": false
+      },
+      "status": "Q211-polynomial-degree-grammar-closed-conditionally-weighted-primitive-frontier-isolated"
+    },
+    "status": "Q211-polynomial-degree-grammar-closed-conditionally-weighted-primitive-frontier-isolated"
+  }
+}

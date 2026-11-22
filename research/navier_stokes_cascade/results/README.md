@@ -6,7 +6,20 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q210 finite primitive unification and uniform all-band source frontier](core_current_head_q210_finite_bundle_uniform_tail/README.md).
+Latest source audit: [Q211 polynomial degree grammar and weighted primitive frontier](core_current_head_q211_degree_grammar_primitive_frontier/README.md).
+Q211 corrects Q210's proposed next step: Q196--Q202 already derive the
+initial complete source, first constrained sourced wave, corrected physical
+signed target, post-signed means and the next sourced cycle, all
+conditionally. For every fixed finite jet request, exact product,
+reciprocal and sourced-Duhamel degree recurrences preserve polynomial
+`S` growth. With Q192's coefficient degrees, source degrees
+`a_i <= 7i + D_R` give forcing degrees at most `7i + D_R` and solution
+degrees at most `7i + D_R + 1`. The independent frontier is therefore the
+actual all-band weighted primitive degree array for the first physical
+current target; the degree grammar can propagate that input but cannot
+create it.
+
+Preceding source audit: [Q210 finite primitive unification and uniform all-band source frontier](core_current_head_q210_finite_bundle_uniform_tail/README.md).
 Q210 narrows Q209's stage-602 primitive-bundle frontier. Relative to the
 existing all-fixed-order continuum
 contracts, the finite jet set, finite stage-prefix gap set and finite requested
@@ -14,10 +27,9 @@ operator archive have a finite maximum, positive minimum and finite maximum,
 respectively. The actual independent obstruction is the polynomially
 normalized supremum over the infinite accepted-band tail. A smooth compactly
 supported countermodel proves that finite seminorms on every band, even with
-absolute decay and flat endpoint jets, do not imply that uniform bound. The
-next obligation is to derive the all-band polynomial-in-`S` source estimate
-from the explicit primary-plus-initial-mean maps and propagate it through one
-sourced/generic cycle.
+absolute decay and flat endpoint jets, do not imply that uniform bound. Its
+proposed next obligation is superseded by Q211 because those conditional
+cycles were already present in Q196--Q202.
 
 Preceding source audit: [Q209 coefficient/stage cutoff role separation and corrected primitive frontier](core_current_head_q209_cutoff_role_separation/README.md).
 Q209 corrects Q208's proposed same-cutoff identity blocker. The Q120
