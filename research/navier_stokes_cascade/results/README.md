@@ -6,7 +6,19 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q204 global ledger, uniform primary and covariance reconciliation](core_current_head_q204_global_ledger_uniform_primary/README.md).
+Latest source audit: [Q205 stagewise generated pulses and the diagonal quantifier](core_current_head_q205_stagewise_pulse_diagonal/README.md).
+Q205 establishes, conditional on the named continuum providers, that every
+fixed sourced/signed cycle has all-scale value, derivative, pressure and
+closed-support estimates with finite stage-dependent constants, and that the
+certified complete-potential diagonal absorbs those constants by choosing
+each cutoff afterward. It corrects Q204's frontier: a
+hierarchy-uniform constant is not required for the conditional locally finite
+residual. A precise `C_j=2^(j^2)` countermodel shows why no common raw uncut
+generated-pulse constant follows. Full pressure, axial velocity, covariance,
+viscosity, cutoff and interaction memory remain; absolute pulse decay and an
+unconditional residual remain unproved.
+
+Preceding source audit: [Q204 global ledger, uniform primary and covariance reconciliation](core_current_head_q204_global_ledger_uniform_primary/README.md).
 Q204 binds the five unchanged-gauge global pressure/moment identities, exact
 finite coefficient and reserved-mean supports, rule-defined Borel schedule,
 uniform primary bounds on every used band, complete covariance/axial/pressure

@@ -1,0 +1,160 @@
+{
+  "closure": {
+    "edges": 1650,
+    "nodes": 455,
+    "source_bindings": 6124
+  },
+  "dependency_evidence_sha256": {
+    "results/core_certified_complete_potential_diagonal_join/evidence.json": "b7c2264346a297d9feed0b5e12900e63fdc6633302e643e1c866567f9ace3fb7",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/evidence.json": "b7a3b0b717f27c364ba212a1ce3575c48abe13e69363c032c92126213931e08b",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/evidence.json": "fb013b6bafd8ab7eef9b61c62313b9fb74495fd76d78c6bc93a99208964d1434",
+    "results/core_current_head_q204_global_ledger_uniform_primary/evidence.json": "6baeb949f1a4384a567f8f4614df626bbf30369a3822adbaf21fd46350e027a2",
+    "results/sourced_inverse_foundation/evidence.json": "15afc498fa42605b0fcbaaff81b4245ceb388e447527e63395eeb45348c41827"
+  },
+  "parent": "fd91fff61a1ce514283afbd267870883c14d352c",
+  "review": {
+    "checks": {
+      "common_raw_uniform_inference_blocked": true,
+      "complete_residual_groups_preserved_conditionally": true,
+      "fixed_cycle_all_band_bounds_and_closed_support": true,
+      "full_pressure_memory_retained": true,
+      "provider_statuses_match": true,
+      "same_object_links_frozen": true,
+      "stagewise_constants_absorbed_by_diagonal": true
+    },
+    "next": "audit one-sided terminal velocity and pressure jets on the same locally finite fixed-gauge object",
+    "scope": {
+      "absolute_pulse_decay_proved": false,
+      "stagewise_actual_generated_pulse_bounds_joined": true,
+      "unconditional_complete_residual_or_blowup": false,
+      "uniform_generated_hierarchy_constant_required_by_diagonal": false,
+      "uniform_uncut_generated_hierarchy_proved": false
+    },
+    "status": "Q205-stagewise-generated-pulse-bounds-suffice-for-diagonal-uniform-raw-hierarchy-remains-unproved"
+  },
+  "source_hashes": {
+    "results/core_certified_complete_potential_diagonal_join/README.md": "0cb3d009cb30423205199e924522c270d55272c2a66630775d0b9a3f0c0356ae",
+    "results/core_current_head_q153_physical_source_tail_diagonal_join/README.md": "f2b9fd5fdbf2fa2672cd65954e302b93f62f4d5d990c47f039d6a6a23690cd0c",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/README.md": "ab03785aa13a62ea48a92b413a0b146d4d88361db7176c7e9de04c6590b07159",
+    "results/core_current_head_q204_global_ledger_uniform_primary/README.md": "821ba5a6b50c705917ee60fd70e48ace66eff97bbd9eac7da66728398c4a82ad",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/README.md": "c6a8d3214346d3c074a379b271208be304df79accdfa3851853557b5effd4dc0",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/audit.py": "e7ef623ad8d69913e93ca6c08d59af5b2f660fe260e7eb2228a5f1440fc99452",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/q205.py": "5fa67eaae10511a35d0aec743297035a59db5f864ab848b70689a85a6ea2641f",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/test_audit.py": "f2ffab1514cc9c4c6e1b4a434e1b7d15f44206d49752ba8f014b02f2fe182897",
+    "results/sourced_inverse_foundation/README.md": "6f784f977d69cf489e2416d98069f2e12a1db1580fc6adbc43cde45cb55352c2"
+  },
+  "status": "Q205-stagewise-generated-pulse-bounds-suffice-for-diagonal-uniform-raw-hierarchy-remains-unproved",
+  "symbolic": {
+    "diagonal": {
+      "J_of_q_substitution_used": false,
+      "P": 7,
+      "chosen_log_cutoff": 326329.75174309144,
+      "countermodel_log_C": 69.31471805599453,
+      "endpoint_bound_holds": true,
+      "endpoint_log_lhs": -3920.692764365446,
+      "endpoint_log_rhs": -6.931471805599453,
+      "finite_request_count": 11,
+      "gamma": 0.01249925,
+      "j": 10,
+      "locally_finite_on_q_positive": true,
+      "log_bound_decreasing_after_cutoff": true,
+      "scale_chosen_after_current_constants": true,
+      "stage_uniform_constant_used": false,
+      "works_for_arbitrary_finite_stage_constants": true
+    },
+    "fixed_cycle": {
+      "A": "101/200",
+      "closed_support_not_enlarged_by_curl_graph_or_frame": true,
+      "compact_source_need_not_have_zero_exit": true,
+      "constant_independent_of_running_band_at_fixed_cycle": true,
+      "constant_may_depend_on_cycle_derivative_and_profiles": true,
+      "full_path_zero_gives_smooth_zero_extension": true,
+      "h": "1/200",
+      "moving_normal_pressure_retained": true,
+      "normal_source_blocks_extra_inverse_square_pressure_gain": true,
+      "potential_and_pressure_cut_before_curl": true,
+      "potential_zero_jet_power": "49999/10000000",
+      "pressure_zero_jet_power": "-10000001/10000000",
+      "sample_alpha": "74999/50000",
+      "source_normal_pressure_retained": true,
+      "st": "403/400",
+      "sx": "201/400",
+      "velocity_zero_jet_power": "-4975001/10000000"
+    },
+    "pressure_support": {
+      "Pi1_Pi2_and_same_base_tails": true,
+      "closed_support_stagewise": true,
+      "cut_complete_potential_direct_swirl_and_pressure": true,
+      "fixed_gauge_increment": "Delta u_j=curl A_j+b_j e_theta; pi_j=p^[j]-p^[j-1]",
+      "moving_pressure_product": true,
+      "radial_and_axial_velocity": true,
+      "reserved_pressure_floor_preserved": true,
+      "six_covariances": true,
+      "stage_dependent_potential_gauge_allowed": false,
+      "stage_dependent_pressure_gauge_allowed": false,
+      "viscosity_cutoffs_both_crosses_and_square": true
+    },
+    "providers": {
+      "core_certified_complete_potential_diagonal_join": true,
+      "core_current_head_q153_physical_source_tail_diagonal_join": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain": true,
+      "core_current_head_q204_global_ledger_uniform_primary": true,
+      "sourced_inverse_foundation": true
+    },
+    "raw_uniform_obstruction": {
+      "actual_pulse_lower_bound": false,
+      "available_quantifiers": "forall j,m exists finite C_jm",
+      "base_two_exponents": [
+        "19950003/20000000",
+        "39950003/10000000",
+        "179850009/20000000",
+        "79950003/5000000",
+        "99950003/4000000",
+        "359850009/10000000",
+        "979650021/20000000",
+        "159950003/2500000",
+        "1619550027/20000000",
+        "199950003/2000000",
+        "2419450033/20000000",
+        "719850009/5000000"
+      ],
+      "common_raw_hierarchy_constant_follows": false,
+      "countermodel_Cj": "2^(j^2)",
+      "countermodel_Pj": 0,
+      "countermodel_Xj": "2^(j^2) q^(h delta j-L_m)",
+      "countermodel_satisfies_stagewise_representative_bound": true,
+      "fixed_q0": "1/2",
+      "residual_lower_bound": false,
+      "strictly_increasing_sample": true,
+      "unbounded_in_j": true,
+      "unproved_quantifiers": "forall m exists finite C_m forall j"
+    },
+    "review": {
+      "checks": {
+        "common_raw_uniform_inference_blocked": true,
+        "complete_residual_groups_preserved_conditionally": true,
+        "fixed_cycle_all_band_bounds_and_closed_support": true,
+        "full_pressure_memory_retained": true,
+        "provider_statuses_match": true,
+        "same_object_links_frozen": true,
+        "stagewise_constants_absorbed_by_diagonal": true
+      },
+      "next": "audit one-sided terminal velocity and pressure jets on the same locally finite fixed-gauge object",
+      "scope": {
+        "absolute_pulse_decay_proved": false,
+        "stagewise_actual_generated_pulse_bounds_joined": true,
+        "unconditional_complete_residual_or_blowup": false,
+        "uniform_generated_hierarchy_constant_required_by_diagonal": false,
+        "uniform_uncut_generated_hierarchy_proved": false
+      },
+      "status": "Q205-stagewise-generated-pulse-bounds-suffice-for-diagonal-uniform-raw-hierarchy-remains-unproved"
+    },
+    "same_object": {
+      "core_current_head_q153_physical_source_tail_diagonal_join_uses_core_current_head_q152_physical_stress_feedback_join": true,
+      "core_current_head_q161_source_tail_simultaneous_induction_uses_core_current_head_q153_physical_source_tail_diagonal_join": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain_uses_core_current_head_q202_next_sourced_cycle": true,
+      "core_current_head_q204_global_ledger_uniform_primary_uses_core_current_head_q203_diagonal_endpoint_force_corrected_domain": true
+    },
+    "status": "Q205-stagewise-generated-pulse-bounds-suffice-for-diagonal-uniform-raw-hierarchy-remains-unproved"
+  }
+}
