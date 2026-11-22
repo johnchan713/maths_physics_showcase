@@ -1,0 +1,167 @@
+{
+  "closure": {
+    "edges": 1788,
+    "nodes": 471,
+    "source_bindings": 6331
+  },
+  "dependency_evidence_sha256": {
+    "results/core_compact_slow_inverse_reconstruction/evidence.json": "22e4b560e1f4928d9fd74d9f11045d00fbebe01c361bfcac5e86c26e1c6aee19",
+    "results/core_current_head_q174_q5_operator_source_audit/evidence.json": "a62a84f41930a16cf12b0d194bc4cc7a5d2842427599e6224248950c934cd422",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/evidence.json": "300f6db8bd01cdc124d9f14e3f11d3b2aa6e9c4c7f61357f84933bcf4e38ea11",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/evidence.json": "c3350ad1f287da03e4bc329c991f06d7e11822b67f474dd3b24e46aca1594225",
+    "results/core_current_head_q216_quantified_provider_source_audit/evidence.json": "44d0232e3bb1fea2a0a7e4572c09d08d1c4bc7bfae55843bc706398eb67d7a46",
+    "results/core_current_head_q220_shifted_two_edge_kernel_source_audit/evidence.json": "32279cc18e79b2aec222dbfbdbace7ce24bdf1ed77d5688922fb740574271aea",
+    "results/core_current_head_q28_initial_mean_composition/evidence.json": "b3cc6ea87c93e3a7f606474d1fe745d58c1f83790498b61cfb22377d17d2c22d",
+    "results/core_current_head_q30_fixed_support_join/evidence.json": "ad15216ed97e21d2e7337bbc4743c30669883b2acdc0fb2ab32af345cac629da",
+    "results/core_fast_inverse_budget/evidence.json": "cabd9b46cd156fc9f7bd7b7a9e36348e292b801cf9e96d17898544a2dc03c4f3",
+    "results/core_slow_inverse_budget/evidence.json": "9a292fdd67f0e86b7ba9e36c9121460496c73943397711215686dd661d2dc6a7"
+  },
+  "parent": "376836e797c2dac1899fef7c83a89786dc953a5e",
+  "review": {
+    "checks": {
+      "complete_pressure_memory_not_frozen": true,
+      "fast_axial_and_pressure_losses_retained": true,
+      "four_derivatives_leave_summable_shell": true,
+      "integer_norm_excludes_nonzero_resonances": true,
+      "provider_statuses_match": true,
+      "selected_axial_conditioning_finite_but_not_uniform": true,
+      "slow_map_keeps_pole_support_and_scale_rows": true,
+      "zero_Haar_boundary_is_explicit": true
+    },
+    "next": "audit the global pressure and moment identities on the joined compact/fast/slow object, including both exact tangential moments, the whole moving pressure derivative, axial velocity and Pi1/Pi2",
+    "scope": {
+      "Q216_remaining_inverse_quantifiers_supported": true,
+      "actual_generated_source_membership_proved_by_operators": false,
+      "every_fixed_order_and_finite_pole_on_typed_inputs": true,
+      "lambda_uniform_slow_inverse_claim": false,
+      "nonzero_Haar_inverse_claim": false,
+      "unconditional_force_exclusion_or_blowup": false,
+      "uniform_actual_pulse_or_complete_residual": false
+    },
+    "status": "Q221-zero-Haar-Fourier-and-fixed-slow-response-source-audited"
+  },
+  "source_hashes": {
+    "results/core_compact_slow_inverse_reconstruction/README.md": "70f42063c5b4eb4c3f735edf8d6a55cdc9847d74c274c125ed864c5d6a5cb35f",
+    "results/core_current_head_q174_q5_operator_source_audit/README.md": "0dfeea1f52c67c04ad24423fe044a98a7ece6ff71e8dac3167ecd08a8aa53d9c",
+    "results/core_current_head_q175_canonical_source_route_reconciliation/README.md": "5d20478c5b79e04378b2d36dab80476e39b5549d9779a21d0040e60530a28896",
+    "results/core_current_head_q177_weighted_support_source_reconciliation/README.md": "05f1fa9ccf12a4b042be91ddc8865dfac0247437fdec41c22e48fb408eeccba2",
+    "results/core_current_head_q216_quantified_provider_source_audit/README.md": "8df4d850a2adc7fdfd5ff87a230a4666952328584017c88658fea825ab308f2f",
+    "results/core_current_head_q220_shifted_two_edge_kernel_source_audit/README.md": "8ed7a5fad6be05e04c4bcc95ffba71e79f09796cb1d65733a17f7ad84386cab2",
+    "results/core_current_head_q221_fourier_slow_response_source_audit/README.md": "7dbce788cfa1b254ec94d88a7b817bd51b97d6e0fa84555a13f87033930b1d54",
+    "results/core_current_head_q221_fourier_slow_response_source_audit/audit.py": "b028b54086ff6b55a34968b61f34bc0ea9caf1560c3a5d90e4b9ebbe6f5125bb",
+    "results/core_current_head_q221_fourier_slow_response_source_audit/q221.py": "06964a96c9ff20a559401353e58c7131b84629d34f89a76304cc64336c7f697f",
+    "results/core_current_head_q221_fourier_slow_response_source_audit/test_audit.py": "bf20714f0c43e05b1a3f16d92c2b99d94cda964d833d25c4ad356849102a518e",
+    "results/core_current_head_q28_initial_mean_composition/README.md": "f12b03ac2c94edce7c618409ad295a2f93474371c4e2572d523c9c7b25abf89d",
+    "results/core_current_head_q30_fixed_support_join/README.md": "3005d7d6cb917a970a1ff85ec9a0f18b2a13f513934629e4fc130d4b22448069",
+    "results/core_fast_inverse_budget/README.md": "3e0aa53e966d57c4212b9ccbbbcbab0d0705d9fb54fd671e0d22fdbd648b6176",
+    "results/core_slow_inverse_budget/README.md": "f3539fc205e5f3dc0c261d286ab7387ca0c0e5d615abaf94863f69970f8f2a03"
+  },
+  "status": "Q221-zero-Haar-Fourier-and-fixed-slow-response-source-audited",
+  "symbolic": {
+    "axial_conditioning": {
+      "angular_block_singular_at_lambda_zero": false,
+      "axial_determinant_factor": "g(1-v)",
+      "exact_singular_factor": "(1-exp(-2 d lambda))^-1",
+      "finite_for_selected_lambda": true,
+      "precise_obstruction": "(1-exp(-2 d lambda))^-1 ~ (2 d lambda)^-1",
+      "selected_lambda_positive": true,
+      "uniform_as_lambda_downarrow_zero": false,
+      "upper_bound": "exp(2 d lambda)/(2 d lambda)",
+      "v": "exp(-2 d lambda)"
+    },
+    "fast_contract": {
+      "actual_A1_axial_repair_retained": true,
+      "beta": "-epsilon partial_Z psi",
+      "g_d": "-c^-1 N_t^-1 F_z",
+      "gamma": "g_d-A_1 g_d",
+      "postslow_prefast_source_order": 25,
+      "psi": "T_1 g_d",
+      "radial_potential_source_order": 22,
+      "tangential_axial_source_order": 21,
+      "u": "-c^-1 N_t^-1 F_theta",
+      "whole_axial_pressure_source_order": 26
+    },
+    "fourier_contract": {
+      "Gamma_m": "24*2^(2400066+4)",
+      "coefficient_reciprocal_jets_are_separate_finite_factors": true,
+      "divisor_power_cost": 1,
+      "giant_constant_materialized": false,
+      "l1_shell_multiplicity": "4r",
+      "output_order": 2400066,
+      "post_integration_per_mode_power": -3,
+      "slow_radial_weight_is_passive": true,
+      "source_order": 2400070,
+      "tail_bound": "sum_(r>=1) r^-2 <= 2",
+      "zero_Haar_required": true,
+      "zero_mode_obstruction": "the multiplier (v.k)^-1 is undefined at k=0"
+    },
+    "pressure_memory": {
+      "Pi1_Pi2_retained_in_reconstructed_pressure": true,
+      "actual_axial_velocity_retained": true,
+      "all_six_covariances_retained_in_inputs": true,
+      "c_rho_Z_P_retained": true,
+      "operator_creates_its_own_source_bounds": false,
+      "whole_moving_pressure_derivative": "epsilon[J_z,Z+c_rho,Z P+c_rho P_Z]"
+    },
+    "providers": {
+      "core_compact_slow_inverse_reconstruction": true,
+      "core_current_head_q174_q5_operator_source_audit": true,
+      "core_current_head_q175_canonical_source_route_reconciliation": true,
+      "core_current_head_q177_weighted_support_source_reconciliation": true,
+      "core_current_head_q216_quantified_provider_source_audit": true,
+      "core_current_head_q220_shifted_two_edge_kernel_source_audit": true,
+      "core_current_head_q28_initial_mean_composition": true,
+      "core_current_head_q30_fixed_support_join": true,
+      "core_fast_inverse_budget": true,
+      "core_slow_inverse_budget": true
+    },
+    "quadratic_norm_sample": {
+      "both_norms_nonzero": true,
+      "conjugate_factor_bound": "(1+sqrt(2))|k|_1 < 3|k|_1",
+      "inverse_divisor_bound": "|v_r.k|^-1,|v_t.k|^-1 < 3|k|_1",
+      "radius_l1": 5026579,
+      "vr_integer_norm": -13745862834529,
+      "vt_integer_norm": 13745862834529
+    },
+    "review": {
+      "checks": {
+        "complete_pressure_memory_not_frozen": true,
+        "fast_axial_and_pressure_losses_retained": true,
+        "four_derivatives_leave_summable_shell": true,
+        "integer_norm_excludes_nonzero_resonances": true,
+        "provider_statuses_match": true,
+        "selected_axial_conditioning_finite_but_not_uniform": true,
+        "slow_map_keeps_pole_support_and_scale_rows": true,
+        "zero_Haar_boundary_is_explicit": true
+      },
+      "next": "audit the global pressure and moment identities on the joined compact/fast/slow object, including both exact tangential moments, the whole moving pressure derivative, axial velocity and Pi1/Pi2",
+      "scope": {
+        "Q216_remaining_inverse_quantifiers_supported": true,
+        "actual_generated_source_membership_proved_by_operators": false,
+        "every_fixed_order_and_finite_pole_on_typed_inputs": true,
+        "lambda_uniform_slow_inverse_claim": false,
+        "nonzero_Haar_inverse_claim": false,
+        "unconditional_force_exclusion_or_blowup": false,
+        "uniform_actual_pulse_or_complete_residual": false
+      },
+      "status": "Q221-zero-Haar-Fourier-and-fixed-slow-response-source-audited"
+    },
+    "slow_contract": {
+      "beta": "-epsilon partial_Z psi",
+      "distinct_scale_powers_retained": true,
+      "divergence_identity": "D_1 beta+epsilon partial_Z gamma=0",
+      "five_moment_rows_exact": true,
+      "fixed_profile_jets_finite_at_every_fixed_order": true,
+      "gamma": "a^-1 s^(A-3/2) J_theta F_g",
+      "hull_strictly_inside_reserved_annulus": true,
+      "input_pole": 2626513221816,
+      "interior_weight_floor_preserves_every_fixed_pole": true,
+      "output_order": 2400066,
+      "output_pole": 2626513221816,
+      "psi": "a^-1 s^(A-1) J_theta Psi",
+      "u": "a^-1[s^A P F_P+s^(A-1) J_z F_z]",
+      "whole_convex_potential_hull_used": true
+    },
+    "status": "Q221-zero-Haar-Fourier-and-fixed-slow-response-source-audited"
+  }
+}

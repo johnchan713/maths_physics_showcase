@@ -6,6 +6,16 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
+Latest source audit: [Q221 zero-Haar Fourier and fixed slow-response source audit](core_current_head_q221_fourier_slow_response_source_audit/README.md).
+Q221 completes the source audit of Q216's remaining inverse maps.  The exact
+quadratic conjugate bound and four-torus-derivative loss give a summable
+two-dimensional Fourier inverse on zero-Haar inputs; the fixed five-profile
+response preserves every fixed finite pole on its interior reserved hull.
+The actual `-A1 g_d` axial velocity and the whole moving-pressure derivative
+remain.  The audit records two sharp boundaries: the Fourier zero mode is not
+invertible, and the axial slow constant grows like `lambda^-1`, so neither a
+nonzero-Haar nor a `lambda`-uniform theorem follows.
+
 Latest source audit: [Q220 shifted two-edge weighted-kernel source audit](core_current_head_q220_shifted_two_edge_kernel_source_audit/README.md).
 Q220 verifies Q216's compact two-edge kernel for every fixed finite endpoint
 pole on its correct typed domain.  The physical transverse shift is retained,
