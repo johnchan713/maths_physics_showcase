@@ -1,0 +1,125 @@
+{
+  "closure": {
+    "edges": 1740,
+    "nodes": 465,
+    "source_bindings": 6259
+  },
+  "dependency_evidence_sha256": {
+    "results/core_current_head_q166_complete_residual_frontier_audit/evidence.json": "9b080d720000d317ed76ad08017d8cfb5fe8d90fb55c8c5140ae3b07827e069c",
+    "results/core_current_head_q184_generated_source_log_loss_correction/evidence.json": "bcde17610b00bac2bbc0b0c42b795f141aa9f2b8742a3b764c0dd214c5461bd9",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/evidence.json": "fb013b6bafd8ab7eef9b61c62313b9fb74495fd76d78c6bc93a99208964d1434",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/evidence.json": "5456e97ac6be1af97fb21384795567534125438894798aa7603f14d9de2e067a",
+    "results/core_current_head_q206_terminal_origin_obstruction/evidence.json": "19b3d33ce901e10b683173605d5f6fc3c34144f80765d7aafdeea10c14726a9d",
+    "results/core_current_head_q207_residual_constant_frontier/evidence.json": "3457e6c0a3ffec9df2f1141844176ba2104c8be30d356ac0df36eadce56db5f9",
+    "results/core_current_head_q211_degree_grammar_primitive_frontier/evidence.json": "ddaed958e460c885c48ef07d5ad0e6af31a8f93de937876f155cb9c57df2e027",
+    "results/core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/evidence.json": "4c239fceec5a57d098e183bbbce7f34e71ed62aae286b8d1af799efc80bc07ca",
+    "results/core_current_head_q214_exact_core_root_pressure_join/evidence.json": "d1d828091e317a61deb89bee5afef2dd71b6dca5b3ef7d5bb3a472c857a7c203"
+  },
+  "parent": "d13adc712ffb6de3f11f66690c75e9f2c5097bae",
+  "review": {
+    "checks": {
+      "complete_request_includes_pole_descendants": true,
+      "complete_residual_memory_retained": true,
+      "fixed_request_bundle_closes_conditionally": true,
+      "provider_statuses_match": true,
+      "stage_602_is_first_positive_regular_stage": true
+    },
+    "next": "independently audit the source proofs behind Q213's all-fixed-order and all-pole quantifiers at the enlarged R_star request, detecting any circular or diagnostic-only row",
+    "scope": {
+      "Q207_concrete_request_discharged_relative_to_quantified_providers": true,
+      "conditional_fixed_jet_residual_flatness_joined": true,
+      "terminal_origin_velocity_or_pressure_regular": false,
+      "unconditional_residual_force_exclusion_or_blowup": false,
+      "uniform_uncut_pulse_hierarchy": false
+    },
+    "status": "Q215-fixed-stage-primitive-bundle-and-complete-residual-recurrence-joined-conditionally"
+  },
+  "source_hashes": {
+    "results/core_current_head_q166_complete_residual_frontier_audit/README.md": "837ae11decd2576c11582950cfd0226af62e934bc40f6b4c4be343f369eb1896",
+    "results/core_current_head_q184_generated_source_log_loss_correction/README.md": "4f7f58b8fcebbb6aba4da52b91514f8a83acc6d7a8697e1c3add22560f87719d",
+    "results/core_current_head_q203_diagonal_endpoint_force_corrected_domain/README.md": "ab03785aa13a62ea48a92b413a0b146d4d88361db7176c7e9de04c6590b07159",
+    "results/core_current_head_q205_stagewise_pulse_diagonal/README.md": "c6a8d3214346d3c074a379b271208be304df79accdfa3851853557b5effd4dc0",
+    "results/core_current_head_q206_terminal_origin_obstruction/README.md": "256a6763ec17d6dc6c58b6220332bb2e45249e634f66d7a3ca0d63615778cee8",
+    "results/core_current_head_q207_residual_constant_frontier/README.md": "57a89e7e33b534da56f46a48a10b5302fb6e7b6f916a2c4ec6215a8206322125",
+    "results/core_current_head_q211_degree_grammar_primitive_frontier/README.md": "9a4d2f53c7b39dbba08585cb9a8d9ee98fae04dfc8cbe658699a9549365eb12e",
+    "results/core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/README.md": "1d7c76840bca219a95dc622b14a8186bd28d1c6bf8dcbd8b3fab0fcefdd1ca6d",
+    "results/core_current_head_q214_exact_core_root_pressure_join/README.md": "bcda9e9df2c9830fc9c33ca41e6ba450bcdccb88f7c87911f5ac067b5ee17c4c",
+    "results/core_current_head_q215_fixed_stage_residual_bundle_join/README.md": "54adf6a565f97f869a8ae5f723d7bd1b91bd9b9af73dd77a09ceb23315040139",
+    "results/core_current_head_q215_fixed_stage_residual_bundle_join/audit.py": "b19f2449c5819253d3cc6a9c0c2b8a6450c8c29ee8e0c170220ccc28611da903",
+    "results/core_current_head_q215_fixed_stage_residual_bundle_join/q215.py": "edcf0cf84d280a102928f33a1352451f3abba470b398984c8bec808d48a54cb3",
+    "results/core_current_head_q215_fixed_stage_residual_bundle_join/test_audit.py": "c81e0837ec9c91ad13d5e297344ed057ac8d568fcfe933d19a9fccf6ef3636f1"
+  },
+  "status": "Q215-fixed-stage-primitive-bundle-and-complete-residual-recurrence-joined-conditionally",
+  "symbolic": {
+    "bundle_join": {
+      "A_R_finite": true,
+      "K_R_finite_including_6q_12q": true,
+      "Q207_primitive_provider_flag_closed_conditionally": true,
+      "degree_numerically_evaluated": false,
+      "g_R_positive": true,
+      "polynomial_S_degree_finite": true,
+      "request_fixed_before_tail_selection": true,
+      "safe_request": 2626513221816,
+      "same_profile_root_pressure_and_support_object": true
+    },
+    "concrete_request": {
+      "common_pole": 218876101818,
+      "derivative_ceiling": 36479350300,
+      "derivative_ceiling_alone_is_incomplete": true,
+      "finite": true,
+      "safe_request": 2626513221816,
+      "six_pole": 1313256610908,
+      "stage": 602,
+      "twelve_pole": 2626513221816
+    },
+    "providers": {
+      "core_current_head_q166_complete_residual_frontier_audit": true,
+      "core_current_head_q184_generated_source_log_loss_correction": true,
+      "core_current_head_q203_diagonal_endpoint_force_corrected_domain": true,
+      "core_current_head_q205_stagewise_pulse_diagonal": true,
+      "core_current_head_q206_terminal_origin_obstruction": true,
+      "core_current_head_q207_residual_constant_frontier": true,
+      "core_current_head_q211_degree_grammar_primitive_frontier": true,
+      "core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier": true,
+      "core_current_head_q214_exact_core_root_pressure_join": true
+    },
+    "residual_join": {
+      "compact_reserve": "1/40000000",
+      "conditional_fixed_jet_residual_flatness_joined": true,
+      "cutoff_curls_and_pressure_derivatives_retained": true,
+      "first_zero_jet_zero_target_stage": 602,
+      "log_reserve": "49997/40000000",
+      "six_groups": [
+        "time",
+        "unit viscosity",
+        "complete pressure",
+        "old-new cross",
+        "new-old cross",
+        "new square"
+      ],
+      "stage_601_exponent": "-401/4000000",
+      "stage_602_exponent": "5999/2500000",
+      "terminal_origin_regularized": false,
+      "uniform_raw_hierarchy_constant_proved": false
+    },
+    "review": {
+      "checks": {
+        "complete_request_includes_pole_descendants": true,
+        "complete_residual_memory_retained": true,
+        "fixed_request_bundle_closes_conditionally": true,
+        "provider_statuses_match": true,
+        "stage_602_is_first_positive_regular_stage": true
+      },
+      "next": "independently audit the source proofs behind Q213's all-fixed-order and all-pole quantifiers at the enlarged R_star request, detecting any circular or diagnostic-only row",
+      "scope": {
+        "Q207_concrete_request_discharged_relative_to_quantified_providers": true,
+        "conditional_fixed_jet_residual_flatness_joined": true,
+        "terminal_origin_velocity_or_pressure_regular": false,
+        "unconditional_residual_force_exclusion_or_blowup": false,
+        "uniform_uncut_pulse_hierarchy": false
+      },
+      "status": "Q215-fixed-stage-primitive-bundle-and-complete-residual-recurrence-joined-conditionally"
+    },
+    "status": "Q215-fixed-stage-primitive-bundle-and-complete-residual-recurrence-joined-conditionally"
+  }
+}

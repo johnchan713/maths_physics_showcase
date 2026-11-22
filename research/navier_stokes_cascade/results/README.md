@@ -6,7 +6,17 @@ singularity claim. The gates and equations are documented in the
 
 ## Active cascade continuation
 
-Latest source audit: [Q214 exact core, selected roots and leading-pressure join](core_current_head_q214_exact_core_root_pressure_join/README.md).
+Latest source audit: [Q215 fixed-stage primitive bundle and complete residual join](core_current_head_q215_fixed_stage_residual_bundle_join/README.md).
+Q215 discharges Q207's concrete primitive-provider request relative to the
+quantified Q213--Q214 analytical providers. It corrects the safe request from
+the displayed derivative ceiling to the larger pressure/moment descendant
+`R*=12*218876101818=2626513221816`, retains a finite polynomial `S` degree,
+and joins the resulting finite constant to the six-group residual and
+locally finite diagonal/localization ledgers. The conclusion remains
+conditional; no uniform raw hierarchy constant or terminal-origin
+regularization follows.
+
+Preceding source audit: [Q214 exact core, selected roots and leading-pressure join](core_current_head_q214_exact_core_root_pressure_join/README.md).
 Q214 corrects Q213's stale proposed frontier. Q164 already proves the
 complete-source infinite-space core contraction and original equations;
 the matching-root and annular/exterior records prove the exact selected
@@ -15,7 +25,8 @@ record binds the core datum to the completed leading backward pressure in the
 unchanged gauge. Positive-order `Pi1/Pi2`, covariance, moving and cutoff
 pressure memory remains. The next audit must decide whether Q213--Q214's
 finite quantified primitive bundle discharges Q207's concrete fixed-stage
-request and joins the complete residual recurrence.
+request and joins the complete residual recurrence. Q215 completes that join
+conditionally at the corrected enlarged request.
 
 Preceding source audit: [Q213 reconstructed primitive bundle and exact core/root frontier](core_current_head_q213_reconstructed_primitive_bundle_exact_root_frontier/README.md).
 Q213 joins the later same-object reconstruction chain that Q212 did not
